@@ -1,0 +1,370 @@
+{
+  "slug": "lard-cold-process-soap",
+  "title": "Lard cold-process soap",
+  "subtitle": "A traditional white bar made with 70% lard for a hard, mild, long-lasting soap",
+  "excerpt": "Lard soap is one of the oldest soap formulas in existence. It produces a very hard, very white bar with a small, creamy lather and exceptional mildness. The high saturated fat content means a long shelf life and a slow-moving trace that is forgiving for beginners.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lard soap tradition well documented in historic soap-making texts. SAP value for lard 0.138 from SoapCalc. Formulation cross-checked against Brambleberry beginner guides.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 4-week cure)",
+    "prepMinutes": 45,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2925,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally and rerun through a lye calculator.",
+    "makeAheadNotes": "Lard bars benefit from a long cure of 6 to 8 weeks, which improves hardness and mildness considerably.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Combine oils and lye solution at 40 to 50 degrees Celsius.",
+    "foundational": true,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date. The high saturated fat content makes lard bars very stable. Discard if rancid."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "notes": "Accurate to 1 g"
+    },
+    {
+      "slug": "stick-blender",
+      "notes": "Dedicated to soap making"
+    },
+    {
+      "slug": "measuring-jug",
+      "notes": null
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "notes": null
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "notes": null
+    },
+    {
+      "slug": "thermometer-probe",
+      "notes": null
+    },
+    {
+      "slug": "safety-goggles",
+      "notes": null
+    },
+    {
+      "slug": "nitrile-gloves",
+      "notes": null
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lard-sap-value",
+      "term": "SAP value",
+      "definition": "The saponification value of a fat or oil: the number of grams of sodium hydroxide (NaOH) needed to fully saponify 1 gram of that fat. Lard has a SAP value of approximately 0.138."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils left unsaponified in a soap formula, providing a conditioning margin."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The emulsification point when the soap batter holds a visible trail drizzled on its surface."
+    },
+    {
+      "slug": "gel-phase",
+      "term": "Gel phase",
+      "definition": "A translucent, jelly-like phase that soap passes through during the first 24 hours in the mould as heat from saponification builds. Lard soaps gel easily and the result is a slightly glossier bar."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4 to 8 week drying and finishing period after unmoulding cold-process soap."
+    }
+  ],
+  "techniqueSlugs": [
+    "working-with-lye-safely",
+    "cold-process-soap-method"
+  ],
+  "criticalTechniques": [
+    "working-with-lye-safely"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is the soap your great-grandmother would recognise. Lard has a ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "SAP value",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lard-sap-value"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of approximately 0.138, making the lye calculation straightforward. At 70% of the oil weight it produces a very firm, very white bar with a fine, creamy lather. Coconut oil brings the cleansing power and the bubbles; castor oil anchors the lather. The 5% ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "superfat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " leaves the bar notably mild. Shelf life is 2 years from the end of",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cure",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cure"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Tallow can substitute for lard at the same weight; the result is almost identical.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you begin"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "working-with-lye-safely"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " technique before starting. Wear protective goggles and gloves throughout lye handling. Pour sodium hydroxide into water, never the reverse.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "lard",
+              "amount": 700,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "70% of oil weight; rendered leaf lard preferred"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 200,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "20% of oil weight"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 100,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "10% of oil weight"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 131,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "Confirm with a lye calculator; 5% superfat"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "33% of oil weight"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "cold-process-soap-method"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " technique. Melt the lard and coconut oil together, then add the castor oil. Prepare the lye solution in a separate jug. Allow both to cool to 40 to 50 degrees Celsius before combining.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lard soap comes to ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trace"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " slowly, which is ideal for beginners. Stick-blend in short bursts until light trace, then pour into the mould. Insulate and leave for 48 hours. Lard bars go through a pronounced ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "gel phase",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gel-phase"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " which is normal. Unmould, cut, and cure on a rack for 6 to 8 weeks for the hardest, mildest result.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bars keep for 2 years in cool, dry storage. The high saturated fat content makes this one of the most stable soap formulas available. Discard if the bar smells off or shows rancid spotting.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}

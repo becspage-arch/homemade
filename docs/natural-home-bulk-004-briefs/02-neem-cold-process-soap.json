@@ -1,0 +1,390 @@
+{
+  "slug": "neem-cold-process-soap",
+  "title": "Neem cold-process soap",
+  "subtitle": "A deeply cleansing bar with 15% neem oil for oily and problem-prone skin",
+  "excerpt": "Neem oil has a distinctive earthy, sulphurous scent that mellows considerably with a long cure. At 15% in this formula it delivers its skin-clearing properties without overpowering the bar, which is otherwise a classic olive and coconut base.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Formulation based on standard cold-process soap-making references. Neem oil properties referenced from Neem Foundation technical notes and Journal of Ethnopharmacology.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 4-week cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally and rerun through a lye calculator before making.",
+    "makeAheadNotes": "Bars require a minimum 4-week cure. The neem scent softens and becomes far more pleasant after 6 to 8 weeks.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Combine lye solution and oils at 40 to 45 degrees Celsius.",
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date in cool, dry storage. Discard if rancid smell develops or DOS (orange spots) appear."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "notes": "Accurate to 1 g"
+    },
+    {
+      "slug": "stick-blender",
+      "notes": "Dedicated to soap making"
+    },
+    {
+      "slug": "measuring-jug",
+      "notes": "For lye solution"
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "notes": "Silicone or lined wooden"
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "notes": "Stainless steel or heat-resistant plastic"
+    },
+    {
+      "slug": "thermometer-probe",
+      "notes": null
+    },
+    {
+      "slug": "safety-goggles",
+      "notes": null
+    },
+    {
+      "slug": "nitrile-gloves",
+      "notes": null
+    },
+    {
+      "slug": "apron",
+      "notes": null
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils in a soap formula left unsaponified, providing conditioning free fatty acids in the finished bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point during soap making when the batter has emulsified enough that a drizzle leaves a visible trail on the surface. The batter is ready to pour at light trace."
+    },
+    {
+      "slug": "cure",
+      "term": "Cure",
+      "definition": "The 4 to 8 week resting period after unmoulding cold-process soap. During cure, remaining water evaporates and saponification completes, producing a harder, milder bar."
+    },
+    {
+      "slug": "azadirachtin",
+      "term": "Azadirachtin",
+      "definition": "The principal active compound in neem oil, responsible for its well-documented cleansing and skin-supporting properties. It partially survives the saponification process in cold-process soap."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between an oil or fat and an alkali that produces soap and glycerol."
+    }
+  ],
+  "techniqueSlugs": [
+    "working-with-lye-safely",
+    "cold-process-soap-method"
+  ],
+  "criticalTechniques": [
+    "working-with-lye-safely"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Neem oil has a reputation that precedes it, mostly on account of its smell. Fresh from the bottle it is pungent and earthy, somewhere between garlic and sulphur. That scent does not survive a long ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cure",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cure"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " at all. By 6 to 8 weeks most of it has gone, leaving a mild, unremarkable bar well suited to oily or congested skin. The active compound",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "azadirachtin",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "azadirachtin"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " partially survives the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " process and contributes to the bar's reputation. This formula keeps neem at 15% to balance efficacy with wearability. Shelf life is 2 years from the cure date.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you begin"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe uses sodium hydroxide. Read the full ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "working-with-lye-safely"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " technique before starting. Wear goggles and protective gloves throughout. Always pour sodium hydroxide into water, not the reverse. Work in a ventilated space.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 500,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "50% of oil weight"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 300,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "30% of oil weight"
+            },
+            {
+              "ingredientSlug": "neem-oil",
+              "amount": 150,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "15% of oil weight; cold-pressed"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "5% of oil weight"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 136,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "Confirm with a lye calculator using your exact oils"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 330,
+              "unit": "g",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "cold-process-soap-method"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " technique. Weigh all oils together in a mixing bowl. Melt coconut oil if solid. In a separate jug, carefully add sodium hydroxide to the distilled water and stir until fully dissolved. Cool both to 40 to 45 degrees Celsius.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils, stirring as you go. Stick-blend in short bursts until ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trace"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is reached. Pour into the mould, cover, and insulate for 48 hours. Unmould, cut, and cure on an open rack for at least 4 weeks. A 6 to 8 week cure is strongly recommended to allow the neem scent to mellow fully.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 5% ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "superfat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " keeps the bar conditioning rather than stripping. This matters most on the face and neck, where neem soap is often used.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cured bars keep for 2 years in a cool, dry place. Store in paper or on an open rack. Discard if the bar develops a rancid smell or shows orange-brown spots (DOS). Neem has a natural deep yellow-green colour that fades to tan over the cure period.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}
