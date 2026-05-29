@@ -1,0 +1,345 @@
+{
+  "slug": "inkle-band-with-pickup-patterns",
+  "title": "Inkle band with pickup patterns",
+  "subtitle": "A warp-faced cotton band with a diamond chain in two-pattern-thread pickup",
+  "excerpt": "A warp-faced band woven on an inkle loom, approximately 2 cm wide and 150 cm finished length. Cotton warp; two-pattern-thread pickup builds a repeating diamond chain figure. Suited as a guitar strap, bag strap, or decorative trim. The warp count, pickup sequence, and working tension are stated step by step.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Two-pattern-thread inkle pickup technique documented in Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive. The diamond chain pickup sequence draws on the traditional Central American and European narrow-band weaving repertoire catalogued in late-19th and early-20th-century textile manuals. Mary E. Black, The Key to Weaving (1945), cited as standard reference for inkle loom setup and pickup principles; written around, not quoted.",
+  "recipeTools": [
+    { "slug": "inkle-loom", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pickup",
+      "term": "Pickup",
+      "definition": "A supplementary shed-opening technique used on inkle and rigid-heddle looms. A pickup stick or the fingers lift selected warp threads not raised by the heddle, creating a pattern shed that differs from the plain tabby shed. Pickup allows geometric figures to be woven into a plain-weave band."
+    },
+    {
+      "slug": "warp-faced",
+      "term": "Warp-faced",
+      "definition": "A cloth in which the warp threads cover the weft completely on the surface. Inkle bands are warp-faced: the weft is invisible and only the warp threads show. The pattern is created by which warp threads appear on the upper surface."
+    },
+    {
+      "slug": "heddle",
+      "term": "Heddle",
+      "definition": "On an inkle loom, a loop of string tied around alternate warp threads to create two distinct groups. Lifting the heddle strings raises one group of threads (the heddle threads); the remaining threads (the free threads) sit lower. Together they form the two plain-weave sheds."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The spacing of the warp threads across the working width. On an inkle loom, sett is set by how closely the warp threads are wound onto the loom pegs. A tighter sett produces a stiffer, denser band."
+    },
+    {
+      "slug": "tabby",
+      "term": "Tabby",
+      "definition": "Plain weave: each weft thread passes over one warp thread and under the next, alternating across the width. On an inkle loom, the tabby sheds are the two plain sheds opened by the string heddles. The pickup pattern is built on top of the tabby structure by lifting additional threads."
+    }
+  ],
+  "aliases": [
+    "inkle loom band weaving",
+    "warp-faced pickup band",
+    "diamond chain inkle band"
+  ],
+  "techniqueSlugs": [
+    "warping-a-rigid-heddle-loom",
+    "how-to-read-a-weaving-draft",
+    "finishing-handwoven-cloth"
+  ],
+  "criticalTechniques": [
+    "how-to-read-a-weaving-draft"
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An inkle band is " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp-faced" } }],
+            "text": "warp-faced"
+          },
+          { "type": "text", "text": ": the weft is packed between the warp threads and invisible on the surface. All the pattern comes from which warp threads show on the top face at any given pick. This band uses a two-pattern-thread " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pickup" } }],
+            "text": "pickup"
+          },
+          { "type": "text", "text": " to build a diamond chain. The finished band is approximately 2 cm wide and 150 cm long, woven on an inkle loom from cotton warp thread. It works as a guitar strap, bag strap, or trim." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The warp uses two colours: a background colour (natural or off-white cotton) and a pattern colour (any strong contrast). The band carries 24 warp ends: 12 in background, 12 in pattern colour, arranged in alternating pairs across the width. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }],
+            "text": "sett"
+          },
+          { "type": "text", "text": " is determined by how tightly the threads are wound onto the loom pegs; a snug but not rigid tension is correct for a band of this width." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Inkle loom", "qty": "1" },
+            { "name": "Cotton warp thread, approximately 4-ply weight, background colour (natural or off-white)", "qty": "50 g" },
+            { "name": "Cotton warp thread, same weight, pattern colour (dark contrast)", "qty": "50 g" },
+            { "name": "Stick shuttle (for the weft)", "qty": "1" },
+            { "name": "Soft measuring tape", "qty": "1" },
+            { "name": "Craft scissors", "qty": "1" },
+            { "name": "Blunt darning needle (for finishing ends)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Two-pattern-thread inkle pickup, diamond chain",
+            "loomType": "inkle",
+            "threading": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+            "tieUp": [
+              [1, 0],
+              [0, 1]
+            ],
+            "treadling": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The draft shows the 24-thread " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }],
+            "text": "heddle"
+          },
+          { "type": "text", "text": " structure. Shaft 1 represents the heddle threads (those looped in string heddles); shaft 2 represents the free threads (sitting below the heddles). The base structure is " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby" } }],
+            "text": "tabby"
+          },
+          { "type": "text", "text": ": alternating heddle and free threads in two plain sheds. The pickup pattern lifts selected free threads into the top shed to create the diamond figure. On an inkle loom the treadling corresponds to alternating shed openings: lift the heddle string group for shed A, release and use the free thread group for shed B. The pickup modifies shed A only." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warping the inkle loom" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the warp onto the inkle loom pegs following the standard inkle warping path: the thread passes around the top peg, then between the heddle-bar and the next peg, forming a loop. The heddle string is tied around each alternate thread as you pass through the heddle position, creating the heddle group. The threads that do not pass through the heddle position form the free group." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind 24 ends in alternating colours: background (B) and pattern (P) in pairs across the full width. The order reads B, P, B, P, B, P repeated 12 times across the 24 ends. Keep all 12 background ends in the heddle group and all 12 pattern ends in the free group. Or the reverse: all pattern in the heddle group and all background free. Whichever you choose, consistency across all 24 ends is what makes the pickup figure clean." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adjust the loom peg spacing so the finished warp is under firm, even tension across its length. The band should feel taut but not rigid when you press it lightly at the centre peg. If the tension is uneven (some threads slack, some tight), re-wind the slack ends. Uneven tension shows as a lumpy surface in the finished band." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The pickup sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The diamond chain uses a pickup sequence of 8 rows per repeat. In each repeat, rows 1-4 build the top half of the diamond (expanding), and rows 5-8 build the bottom half (contracting). Each pickup row is followed by a plain tabby return pick." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open shed A by lifting all heddle threads. Before throwing the shuttle, use your fingers or a pickup stick to lift additional free threads according to the pickup row. The free threads sit below the heddle threads; you are reaching under the heddle group and pulling selected free threads up into the shed. The pickup for each row of the diamond:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 1 (pickup): lift free threads 6 and 7 (counting from the left selvedge). Throw the shuttle through the modified shed. Throw a plain tabby return (shed B, no pickup)." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 2 (pickup): lift free threads 5, 6, 7, and 8. Throw shuttle. Return pick." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 3 (pickup): lift free threads 4, 5, 6, 7, 8, and 9. Throw shuttle. Return pick." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 4 (pickup): lift free threads 3, 4, 5, 6, 7, 8, 9, and 10. Throw shuttle. Return pick. This is the widest row of the diamond." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 5 (pickup): lift free threads 4, 5, 6, 7, 8, and 9. Throw shuttle. Return pick." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 6 (pickup): lift free threads 5, 6, 7, and 8. Throw shuttle. Return pick." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 7 (pickup): lift free threads 6 and 7. Throw shuttle. Return pick." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Row 8: plain tabby only (no pickup), two plain picks. This is the gap between diamond repeats." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Repeat the 8-row sequence for the full band length. At 150 cm finished length you will weave approximately 180-190 cm on the loom (allowing for take-up and the draw-in across the band width), which amounts to roughly 60-70 complete diamond repeats." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The working tension during pickup: hold the warp under the normal inkle band tension (firm, not rigid). When lifting the free threads for the pickup shed, support the threads from below with the flat of your finger rather than pulling sharply. Jerking free threads upward disturbs the adjacent threads and blurs the edge of the figure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the finished band from the inkle loom by cutting the warp threads at the starting point on the loom. Each end of the band will have a fringe of loose warp threads. Knot these in pairs with overhand knots close to the weaving to prevent unravelling." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Trim the fringe to a uniform length of about 3-4 cm, or weave the ends back into the band using the blunt darning needle for a clean finish. Thread the needle with one warp tail, pass it back along the warp path (over and under alternate threads) for about 2 cm, then trim close to the surface." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the band is to be used as a guitar or bag strap, sew metal D-rings or swivel snaps to each end using a strong doubled cotton thread and a backstitch through the weaving. Cotton inkle bands are robust but have no stretch; they hold hardware attachments well." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "problem": "The pickup figure is blurred: the diamond edges are ragged and indistinct",
+              "cause": "Free threads adjacent to the pickup group were accidentally lifted, or the pickup shed was not opened cleanly before throwing the shuttle",
+              "fix": "Lift only the specified free threads for each row. Count from the left selvedge each time; do not rely on visual estimation of which threads to lift. Before throwing, check that the threads on either side of the pickup group are sitting in their correct shed."
+            },
+            {
+              "problem": "The band is narrower at the pickup rows than at the plain rows",
+              "cause": "The weft is being pulled tight during pickup rows, drawing the selvedge threads in",
+              "fix": "Leave a slightly larger weft arc on pickup rows than on plain rows. Pickup rows compact more thread into the shed; the weft needs more slack to fill the space without pulling the edges in."
+            },
+            {
+              "problem": "The pattern colour bleeds through to the face where it should show only background",
+              "cause": "The heddle group and free group thread colours are inconsistent, or some threads swapped group during warping",
+              "fix": "Check the colour order in both the heddle and free groups. If any pattern-colour threads ended up in the heddle group (or vice versa), re-wind those threads in the correct position. On a 24-end warp, one misplaced thread is usually visible immediately as an off-colour dot in the pattern."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

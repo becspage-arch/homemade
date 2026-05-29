@@ -1,0 +1,268 @@
+{
+  "slug": "tabby-weave-bookmark-set",
+  "title": "Tabby-weave bookmark set",
+  "subtitle": "Three colourway bookmarks woven on a rigid heddle at 8 epi",
+  "excerpt": "A set of three bookmarks woven in plain tabby on a rigid heddle loom. Each bookmark is approximately 4 cm wide by 20 cm long, woven in cotton at 8 epi, and finished with a twisted fringe. Three colourways: natural and navy, natural and rust, natural and forest green.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from standard rigid-heddle tabby practice documented in Hooper, Hand-Loom Weaving (1910), public domain, Internet Archive. Colourway conventions draw on general cotton-weaving guild practice; no single named source.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tabby",
+      "term": "Tabby",
+      "definition": "The simplest weave structure: each weft thread passes over one warp thread, then under the next, alternating across the width. The following pick reverses the sequence. Also called plain weave."
+    },
+    {
+      "slug": "epi",
+      "term": "EPI (ends per inch)",
+      "definition": "Ends per inch: the number of warp threads in each inch of width. EPI sets the sett of the cloth and determines how closely packed the warp threads are. 8 epi on cotton produces a balanced cloth where warp and weft are equally visible."
+    },
+    {
+      "slug": "sett",
+      "term": "Sett",
+      "definition": "The density of the warp: the number of threads per unit of width. On a rigid heddle loom the sett is determined by which heddle reed is fitted."
+    },
+    {
+      "slug": "heddle",
+      "term": "Heddle",
+      "definition": "On a rigid heddle loom, the combined reed-and-heddle bar that sits in the loom frame. Each warp thread passes through either a slot or a hole in the heddle. Lifting the heddle raises the hole threads and creates the up shed; pushing it down raises the slot threads and creates the down shed."
+    },
+    {
+      "slug": "twisted-fringe",
+      "term": "Twisted fringe",
+      "definition": "A finishing technique where pairs of warp tails are twisted together in opposite directions and then allowed to ply back on each other. The result is a tidy, firm fringe that holds its shape without knotting."
+    }
+  ],
+  "aliases": [
+    "cotton bookmark weaving",
+    "rigid heddle bookmark project",
+    "woven bookmarks set"
+  ],
+  "techniqueSlugs": [
+    "warping-a-rigid-heddle-loom",
+    "finishing-handwoven-cloth"
+  ],
+  "criticalTechniques": [
+    "warping-a-rigid-heddle-loom"
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three bookmarks woven on a rigid heddle loom in " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby" } }],
+            "text": "tabby"
+          },
+          { "type": "text", "text": ": natural and navy, natural and rust, natural and forest green. Each bookmark finishes at approximately 4 cm wide by 20 cm long, woven in 8/2 cotton at " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epi" } }],
+            "text": "8 epi"
+          },
+          { "type": "text", "text": " on a single warp. The whole set comes off one short warp with a colour-swap between bookmarks. A twisted fringe finishes each end. This is a practical first project for the rigid heddle loom: the warp is narrow and short, the structure is the most straightforward weave that exists, and the finished pieces are useful immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Rigid heddle loom, 30 cm or wider weaving width", "qty": "1" },
+            { "name": "8-dent rigid heddle reed (for 8 epi)", "qty": "1" },
+            { "name": "Warp yarn: 8/2 cotton in natural (undyed or off-white)", "qty": "50 g" },
+            { "name": "Weft yarn: 8/2 cotton in navy", "qty": "15 g" },
+            { "name": "Weft yarn: 8/2 cotton in rust", "qty": "15 g" },
+            { "name": "Weft yarn: 8/2 cotton in forest green", "qty": "15 g" },
+            { "name": "Warping board", "qty": "1" },
+            { "name": "Stick shuttle", "qty": "1 or 3 (one per colour simplifies swapping)" },
+            { "name": "Soft measuring tape", "qty": "1" },
+            { "name": "Craft scissors", "qty": "1" },
+            { "name": "Blunt darning needle (for finishing ends)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Tabby on rigid heddle",
+            "loomType": "rigid-heddle",
+            "threading": [1, 2, 1, 2, 1, 2, 1, 2],
+            "tieUp": [
+              [1, 0],
+              [0, 1]
+            ],
+            "treadling": [1, 2, 1, 2, 1, 2, 1, 2]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The draft shows the two-shed structure of a rigid heddle loom. Shaft 1 represents hole threads (raised when the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }],
+            "text": "heddle"
+          },
+          { "type": "text", "text": " is lifted) and shaft 2 represents slot threads (raised when the heddle is pushed down). Alternating the two sheds in sequence produces plain " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby" } }],
+            "text": "tabby"
+          },
+          { "type": "text", "text": ": the weft travels over one thread and under the next, reversing on the following pick. The drawdown shows the resulting balanced cloth where warp and weft threads are equally visible on the surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warping and threading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }],
+            "text": "sett"
+          },
+          { "type": "text", "text": " for this project is 8 epi. Fit the 8-dent reed to the loom. Each slot and each hole in the 8-dent reed will hold one warp thread, giving 8 threads per inch across the width." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Calculate the warp width: three bookmarks at 4 cm each, plus approximately 2 cm combined draw-in allowance across the set, gives a working warp of about 15 cm (6 inches). At 8 epi that is 48 warp ends. Round up to 48 ends for an even heddle threading." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warp length: three bookmarks at 20 cm finished length each, plus 15 cm fringe at each end of each bookmark (some warp threads go into the fringe), plus loom waste of 40 cm front and back, plus take-up of approximately 10% of weaving length, gives a warp of about 130 cm. Wind to 140 cm to give a small margin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the warping board pegs 140 cm apart. Wind 48 ends of natural 8/2 cotton at even tension, making the threading cross at the near peg. Tie the cross with contrasting yarn before removing from the board. Thread the heddle by alternating slot and hole: pass the first thread through a slot, the second through the adjacent hole, continuing across all 48 ends. Tie the warp tails to the front and back apron rods in small groups of 6-8 threads, adjusting each group to an even tension before tying the bow knot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving the pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the navy weft yarn onto a stick shuttle. Weave four to six picks of scrap yarn across the full 15 cm width to spread the warp evenly and establish the fell line. Remove the scrap yarn after the first few centimetres of actual weaving pull the warp straight." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave the first bookmark: lift the heddle to open the up shed, pass the shuttle through from right to left, and beat the weft down with the heddle edge. Push the heddle down for the down shed, pass the shuttle back from left to right, and beat again. Continue this alternating sequence until the first bookmark measures 20 cm on the loom (it will draw in slightly in width and contract in length when cut off; the loom length of 20 cm gives a finished length close to 19-20 cm after wet-finishing)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave five picks of scrap cotton or a doubled strand of waste yarn across the full width at the end of the first bookmark. This marks the cut line between bookmarks and keeps the weaving from unravelling when you cut. Leave the scrap yarn in until you have secured the warp ends." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the rust weft yarn onto the second shuttle (or onto the same shuttle after the navy weft is used up). Weave the second bookmark in the same way. Add another scrap-yarn spacer at the end. Wind the forest green weft and weave the third bookmark." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beat consistently throughout: a firm beat at the start of each pick, applied parallel to the fell line. If the selvedges begin to pull in more than 5 mm on either side, leave a larger weft arc before beating. The common cause of a narrowing selvedge is pulling the weft taut before beating it in." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the warp off the loom at the scrap-yarn spacers between bookmarks and at the front and back of the warp. Each bookmark now has a fringe of loose warp ends at both ends." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twisted-fringe" } }],
+            "text": "twisted fringe"
+          },
+          { "type": "text", "text": ": take two adjacent warp ends and twist them both in the same direction (clockwise, for example) until they are firmly twisted along their length. Hold both tightly, bring the ends together, and let them twist around each other in the opposite direction. The two-strand cord that forms naturally will not unravel. Tie a small overhand knot at the base of the twist to hold it, trimming any unevenness to a consistent length of about 5 cm. Work across all the warp ends on each end of each bookmark." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave in any loose weft tails on the selvedge edges using the blunt darning needle, passing them back along the weft path for 2-3 cm. Wet-finish the bookmarks by hand-washing in cool water with a small amount of wool wash or gentle soap, pressing out excess water in a towel, and drying flat. Cotton bookmarks rarely shrink more than 3-4% but the wet-finish removes any finishing agents and relaxes the cloth structure." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "problem": "The selvedges pull inward and the bookmark is narrower in the middle than at the ends",
+              "cause": "The weft is being pulled too taut before beating, or the weft arc is too flat",
+              "fix": "Leave a slightly curved arc of weft in the shed before beating: raise the weft thread about 1 cm above the fell line before pushing the heddle home. This gives the weft enough slack to lie over and under the warp threads without drawing the edges in."
+            },
+            {
+              "problem": "The weft skips over two or three warp threads at once instead of alternating",
+              "cause": "The heddle was not opened fully before throwing the shuttle, or the shed was partially closed",
+              "fix": "Move the heddle firmly to its full up or full down position before each pass. If the loom has a ratchet or locking position, confirm the heddle is seated there before throwing."
+            },
+            {
+              "problem": "The two bookmarks at the colour-change boundaries are loosely woven",
+              "cause": "Weft tension varied when switching from one shuttle to another",
+              "fix": "At each colour change, pull the last pick of the outgoing colour firmly into the fell before tying off. Start the new colour by tucking the tail end back into the shed for the first two picks to lock it."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

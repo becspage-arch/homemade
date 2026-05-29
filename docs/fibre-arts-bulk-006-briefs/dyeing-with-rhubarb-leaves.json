@@ -1,0 +1,279 @@
+{
+  "slug": "dyeing-with-rhubarb-leaves",
+  "title": "Dyeing with rhubarb leaves",
+  "subtitle": "Using Rheum rhabarbarum leaves as both mordant and dye source for a yellow-green on wool",
+  "excerpt": "Rhubarb leaves contain oxalic acid, which acts as both a mordant and a colorant on wool. An overnight pre-soak extracts the oxalic acid and dye compounds; the resulting decoction gives a soft yellow-green on wool without a separate mineral mordant. Oxalic acid is toxic if ingested: gloves and eye protection are mandatory throughout and the leaves must be handled carefully. This tutorial covers the full method including safety precautions and wastewater disposal.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Hummel, J. J. The Dyeing of Textile Fabrics. London: Cassell, 1885. Public domain. Internet Archive. Oxalic-acid mordant chemistry; action of oxalic acid as a combined mordant and dye-modifier on wool protein fibre.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "kilner-jar", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. Rhubarb leaves are unusual in that oxalic acid, present in the leaf, acts as a mordant alongside functioning as part of the dye complex. No separate mineral mordant is required."
+    },
+    {
+      "slug": "decoction",
+      "term": "Decoction",
+      "definition": "A dye extract made by simmering plant material in water, straining the solids, and using the remaining liquid as the dye bath. Rhubarb leaves are pre-soaked overnight and then simmered to make the decoction."
+    },
+    {
+      "slug": "tannin",
+      "term": "Tannin",
+      "definition": "A class of polyphenolic compounds present in bark, leaves, and fruit skins. Rhubarb leaves contain both oxalic acid and some tannin; together they give the leaf its dual mordanting and dyeing action on protein fibres."
+    },
+    {
+      "slug": "weight-of-fibre",
+      "term": "Weight of fibre",
+      "definition": "Abbreviated as WOF. The dry weight of the fibre being dyed, used as a baseline for calculating dye material quantities. A recipe using leaves at 200% WOF means 200 g of leaves for every 100 g of dry fibre."
+    }
+  ],
+  "aliases": [
+    "rhubarb leaf natural dye",
+    "oxalic acid dye wool",
+    "rheum rhabarbarum dye"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordant-overview",
+    "tannin-pre-mordant-plant-fibres",
+    "natural-dye-mordanting-with-alum"
+  ],
+  "criticalTechniques": [
+    "natural-dye-mordant-overview"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Rhubarb leaf toxicity",
+          "body": "Rhubarb leaves contain oxalic acid and are toxic if ingested. Wear gloves and eye protection throughout. Keep away from children, pets, and food preparation areas."
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Wear gloves, an apron, and closed-toe shoes. Work outdoors or with extraction running."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rhubarb leaves are one of the few garden dye materials that also act as their own " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordant"
+          },
+          { "type": "text", "text": ". The leaves contain oxalic acid in high concentration alongside some " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tannin" } }],
+            "text": "tannin"
+          },
+          { "type": "text", "text": ". On wool, the oxalic acid binds to the protein fibre and simultaneously acts on the dye compounds, giving a yellow-green without a separate mineral mordant. The result is a soft yellow-green: not a saturated lime, but a grassy yellow with a perceptible green component, something between a straw-yellow and a sage." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The leaves are taken from the rhubarb plant after the stalks have been harvested (the stalks are edible; the leaves are not). Fresh leaves or lightly dried leaves both work. An overnight pre-soak extracts the oxalic acid and dye compounds into the soaking water, reducing the simmering time needed for the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "decoction" } }],
+            "text": "decoction"
+          },
+          { "type": "text", "text": ". Use 200% " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weight-of-fibre" } }],
+            "text": "weight of fibre"
+          },
+          { "type": "text", "text": " (WOF) of leaves: 200 g of leaves for 100 g of dry fibre." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "rhubarb-growing-and-harvesting" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or fleece, dry weight", "qty": "100 g" },
+            { "name": "Rhubarb leaves, fresh or lightly dried (200% WOF)", "qty": "200 g" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve or muslin for straining", "qty": "1" },
+            { "name": "Kilner jar or container for pre-soak", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Safety glasses or goggles for leaf handling", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" },
+            { "name": "Measuring jug", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Pre-soak the leaves overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put on gloves and eye protection before handling the leaves. Tear or roughly chop 200 g of rhubarb leaves and place in the kilner jar or a covered container. Cover completely with cold water. Leave to soak overnight, at least 8 to 12 hours. The soaking water will turn yellow-green as the oxalic acid and dye compounds dissolve. Transfer the leaves and all their soaking liquid to the dye-pot the next morning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Pre-wet the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Submerge the wool in cool water and leave for at least 30 minutes before dyeing. Because rhubarb-leaf dyeing does not use a separate mineral mordant bath, the pre-wetting is the only preparation before the dye bath itself. Squeeze gently without wringing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Extract the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the pot of soaked leaves and their liquid to 80°C over 20 minutes and hold at 80°C for 30 minutes, pressing the leaves occasionally. The bath will deepen to a stronger yellow-green. Strain through a fine-mesh sieve or muslin, pressing the leaves to extract as much liquid as possible. Discard the spent leaves in a sealed bag into general waste. Do not compost them: the oxalic acid content is high and can affect plants in a compost heap. Return the strained yellow-green liquid to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the pre-wetted wool into the strained dye bath. Bring to 80°C over 20 minutes and hold at 80°C for 60 minutes. Turn the wool every 15 minutes. The oxalic acid in the bath will bond with the wool protein while the dye compounds deposit colour simultaneously. Lift a small section after 45 minutes and rinse under cold water to check the colour: a soft yellow-green is the expected result. Remove the wool once the colour is settled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the wool and cool slightly before rinsing. Rinse in water at a similar temperature to avoid felting; cold water straight from the tap onto hot wool will cause shrinkage. Rinse until the water runs clear. Squeeze gently without wringing. Dry in shade. The yellow-green is reasonably stable on wool given the oxalic acid mordanting, but will gradually fade in prolonged direct sunlight like most plant-based yellows." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rhubarb leaves at 200% WOF give the base yellow-green on wool. Increasing to 300% WOF intensifies the result toward a slightly stronger yellow with more green character. Reducing to 100% WOF gives a paler straw-yellow with less green shift." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding 25% WOF alum potash as a conventional mineral mordant before the rhubarb leaf dye bath strengthens the colour and improves light fastness compared with the leaf-only approach. In this case, run a standard mordant bath at 80°C for 45 minutes before lowering the mordanted wool into the rhubarb dye bath. The result is a sharper, more durable yellow-green." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On cotton or linen the results are poor. Oxalic acid bonds to wool protein; it does not bond to cellulose fibres. Cotton and linen need a separate tannin pre-treatment and mineral mordant to take any colour from this dye bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Colour is very pale with almost no green component",
+              "cause": "Too few leaves relative to fibre weight, or the extraction did not reach 80°C",
+              "fix": "Use at least 200% WOF of leaves. Hold the extraction at 80°C for 30 minutes, pressing the leaves firmly during straining."
+            },
+            {
+              "problem": "Wool has an unpleasant smell after dyeing",
+              "cause": "Normal for rhubarb-leaf work; the oxalic acid has a sharp, slightly acrid smell when hot",
+              "fix": "Work outdoors or with strong extraction. The smell disperses as the wool dries. Rinse thoroughly and dry outside where possible."
+            },
+            {
+              "problem": "Uneven colour with paler patches",
+              "cause": "Wool was not pre-wetted, or was lowered into the bath without temperature equalisation",
+              "fix": "Pre-wet the wool for 30 minutes in cool water. Lower it gently into a warm bath before bringing up to temperature; do not drop cold wool straight into a hot bath."
+            },
+            {
+              "problem": "Colour shifts strongly toward yellow with almost no green",
+              "cause": "Water is hard or acidic; acidic conditions suppress the green component",
+              "fix": "Use rainwater or softened water for the dye bath. A very small pinch of soda ash can raise the pH slightly and encourage the green shift without overalkalising the bath."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rhubarb-leaf dye bath contains oxalic acid. At home quantities (the bath from 200 g of leaves and 100 g of fibre), cooled spent bath can go down a foul drain with plenty of running water. Do not pour it into a storm drain, a watercourse, a garden soak-away, or onto plants: oxalic acid disrupts soil chemistry and is harmful to aquatic life at higher concentrations." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spent leaves should go into general waste in a sealed bag rather than food waste or a home compost heap. The residual oxalic acid content is too high for safe composting. For larger quantities of spent bath (over 2 litres), contact your local council waste service." }
+        ]
+      }
+    ]
+  }
+}

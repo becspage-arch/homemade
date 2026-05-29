@@ -116,6 +116,21 @@ spinning, weaving, natural dyeing, macramé, rug-making).
   genuinely serves a structural anchoring role, `mount` reads more
   natural than `anchor` in macramé instruction.
 
+- **`"fall"` triggers americanism substring check** `[warn]`
+  Pattern: instruction prose using "fall apart", "fall over",
+  "fall into place", "should fall in", "fall between" anywhere
+  in body / troubleshooter / supplies. Recurred 3+ times in bulk-006
+  across felting, macramé, and weaving briefs (continuing a pattern
+  that bulk-005 also surfaced as "fall apart" specifically).
+  **Why:** `voice-check`'s americanism rule matches "fall" on the
+  substring with `whole: false`, catching the verb in its instruction
+  uses.
+  **How to fix:** Substitute with the more specific physical verb.
+  "Tip over" for pincushions / vessels that lose vertical stability;
+  "sit between" for items resting in gaps; "settle into" for fibres
+  bedding into a structure; "slip" for cords moving past each other.
+  The substitution is usually more precise than the original.
+
 - **`"Jacob"` as sheep breed name triggers brand-trademark check** `[warn]`
   Pattern: any spinning, fleece, or sheep entry that names the Jacob
   breed (multi-coloured British heritage sheep).
@@ -151,6 +166,20 @@ spinning, weaving, natural dyeing, macramé, rug-making).
   spinning or felting technique: "Carded fleece prepared as a
   [rolag tooltip] compacts well too; allow a few extra minutes at
   the start as the lofty fibres bed in."
+
+- **Glossary slug must match lowercase-with-hyphens pattern** `[block]`
+  Pattern: a glossaryTerms[] entry with a `slug` that uses uppercase
+  letters or symbols. Bulk-005 surfaced this with `WOF`; bulk-006
+  with `pH`. The upload script enforces
+  `slug.match(/^[a-z][a-z0-9-]*$/)` and rejects anything else,
+  including initialisms.
+  **Why:** Glossary slugs are URL-safe identifiers for the
+  Tutorial-Glossary join. Mixed-case or symbol-bearing slugs break
+  URL routing and the join sync.
+  **How to fix:** Use the lowercase-with-hyphens slug and keep the
+  display term as-is. `slug: "weight-of-fibre"`, `term: "WOF"`;
+  `slug: "ph"`, `term: "pH"`; `slug: "x-y-axis"`, `term: "X-Y axis"`.
+  The display string isn't affected by the slug shape.
 
 ---
 

@@ -1,0 +1,246 @@
+{
+  "slug": "spinning-targhee-wool",
+  "title": "Spinning Targhee wool",
+  "subtitle": "A medium American breed with fine crimp and good sock-yarn suitability",
+  "excerpt": "Targhee is an American medium-staple wool at around 25 microns, crossed from Rambouillet and Lincoln. The fibre is fine enough for next-to-skin garments, springy enough to hold stitch definition, and long enough to suit a gentle short-forward worsted draw. A singles at 22-24 WPI plies to a sock-weight 2-ply; 18-20 WPI gives a DK.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Observation-led. Targhee's fibre characteristics (micron count 24-27, staple 8-12 cm, Rambouillet/Lincoln cross) are documented by the National Targhee Sheep Association and summarised in breed guides from Spinning Daily and Interweave (referenced for substance). The worsted-draw technique for medium-staple fine wools follows conventional guild teaching.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "spinning-wheel-saxony", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "micron",
+      "term": "Micron",
+      "definition": "A unit of measurement (one millionth of a metre) used to express the diameter of individual wool fibres. Finer fibres have lower micron counts and feel softer against the skin. Merino sits at 15-25 microns; Targhee at 24-27 microns; Corriedale at 26-31 microns. Fibres below 30 microns are generally considered next-to-skin wearable for most people."
+    },
+    {
+      "slug": "worsted-draw",
+      "term": "Worsted draw",
+      "definition": "A drafting technique in which both hands stay close together and one hand always blocks the twist from running into unsupported fibre. Produces a smooth, dense, hard-wearing yarn with fibres lying parallel. Suited to combed preparations and medium-to-long staple breeds such as Targhee, Corriedale, and Romney."
+    },
+    {
+      "slug": "wpi",
+      "term": "WPI",
+      "definition": "Wraps per inch: the number of times a yarn wraps around a ruler or gauge over one inch (2.5 cm) without stretching or overlapping. Sock weight sits at approximately 16-20 WPI; DK at 11-14 WPI; aran at 8-11 WPI."
+    },
+    {
+      "slug": "staple-length",
+      "term": "Staple length",
+      "definition": "The length of an individual prepared fibre from one end to the other, measured in centimetres. Targhee staples run 8-12 cm, which places it in the medium range. The hand position for short-forward draw stays closer together than the staple length so no fibre is left unsupported in the drafting zone."
+    }
+  ],
+  "aliases": ["targhee spinning", "american medium wool spinning", "targhee sock yarn"],
+  "techniqueSlugs": ["the-short-forward-draw", "spinning-2-ply", "spinning-setting-twist", "woollen-vs-worsted-draw"],
+  "criticalTechniques": ["the-short-forward-draw", "spinning-2-ply"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Wheel safety",
+          "body": "Tie hair back and roll sleeves away from the drive band and flyer. No necklaces or scarves near spinning wheel components."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Targhee is an American breed crossed from Rambouillet and Lincoln. Rambouillet gives fineness; Lincoln gives staple length and resilience. The resulting fibre sits at 24-27 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "micron" } }],
+            "text": "microns"
+          },
+          { "type": "text", "text": " with a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }],
+            "text": "staple length"
+          },
+          { "type": "text", "text": " of 8-12 cm: fine enough for next-to-skin garments, long enough for a steady " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worsted-draw" } }],
+            "text": "worsted draw"
+          },
+          { "type": "text", "text": " without the fibre slipping apart." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Because Targhee is springy and takes twist well, it is well suited to sock yarn: the bounce in the fibre translates directly to resilience in the knitted fabric. A singles at 22-24 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wpi" } }],
+            "text": "WPI"
+          },
+          { "type": "text", "text": " plied with S-twist gives a sock-weight 2-ply at 16-20 WPI. A coarser singles at 18-20 WPI plies to a DK at 11-14 WPI." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Targhee top, combed", "qty": "100 g" },
+            { "name": "Spinning wheel (castle or Saxony) set to a moderate whorl: 8:1 to 10:1 twist ratio for sock weight, 7:1 to 8:1 for DK", "qty": "1" },
+            { "name": "Niddy-noddy for winding the finished hank", "qty": "1" },
+            { "name": "Soft tape measure or WPI gauge", "qty": "1" },
+            { "name": "Lazy kate for holding two bobbins during plying", "qty": "1" },
+            { "name": "Kitchen scales (optional: to check equal bobbin weights before plying)", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Targhee top arrives combed, with fibres running parallel. The staple at 8-12 cm is longer than merino but shorter than a longwool, which places it in the comfortable range for short-forward draw on a wheel. Pull a 30-40 cm length from the bump and split it lengthways once if it feels dense. The split half should feel light and airy rather than compact. Over-thick top produces over-thick singles; splitting is faster than adjusting the drafting draw mid-bobbin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the staple-length test if you are unfamiliar with this top: pull a small tuft gently between two fingers and let the fibres slip free. They should release smoothly, not break. If they snap, the top has been over-processed; predraft more aggressively before spinning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spinning" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Set the wheel for the planned yarn weight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For sock-weight singles: choose a whorl giving 9:1 to 10:1 twist ratio. More twist per inch than a DK project because the singles will be finer and needs the extra twist to hold together without drifting apart. Set the brake tension light: Targhee's fine fibres are less forgiving than a longwool if the take-up is too aggressive." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For DK singles: 7:1 to 8:1. The singles at this weight is thicker and more forgiving. A slightly heavier brake tension is acceptable because the thicker strand has more fibres holding it together." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Spin Z-twist singles with short-forward draw" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Join onto the leader with a short overlap and hold the top in the back hand. The front (pinch) hand sits 6-8 cm ahead of the drafting triangle, which is less than the 8-12 cm staple length of the Targhee: no fibre should be unsupported between your hands. Treadle steadily to build Z-twist (wheel turning so yarn twists clockwise viewed from the orifice end). Draw the back hand backward 8-10 cm; release the front pinch; let the twist run into the drafted zone; advance the front hand; repeat." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The movement is a controlled pulse rather than a continuous slide. Targhee's crimp means the twist distributes quickly into each drawn section; you do not need to hold the pinch gate for more than one treadle beat. If you hold it too long, twist piles up in one spot and produces a hard, wiry length in the yarn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Check twist count per inch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a sock-weight singles: aim for 10-12 twists per inch. Stop treadling, hold the yarn near the orifice with one hand, and count the spirals in 2.5 cm. Ten spirals is the count to hold for a balanced sock-weight 2-ply after plying. For DK: 8-10 twists per inch. Fewer than eight on a DK singles and the finished yarn will be under-twisted and pill quickly in use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Fill the second bobbin at the same settings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spin a second bobbin at the same settings and speed as the first. Consistency between the two bobbins matters more than hitting an exact twist count. Two equal but slightly under-twisted bobbins will ply balanced; two unequal ones will not. If in doubt, weigh both bobbins: equal weight means roughly equal yardage and twist." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plying and setting the twist" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place both bobbins on a lazy kate behind the wheel. Ply with S-twist at 5:1 to 6:1. Targhee's crimp means the 2-ply will bloom as the ply twist beds in: the finished yarn will be slightly thicker than the wet measurement. Hold both singles in the back hand under light tension. Let the ply twist run up between them. Check balance as you ply: let a 20-30 cm length hang free. A balanced 2-ply hangs straight with no corkscrew." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind the plied yarn onto the niddy-noddy. Tie the hank in three places with waste yarn. Soak in lukewarm water for 20 minutes. Press gently in a dry towel, snap the hank once between your hands to even the twist, and hang to dry under no weight for a sock-weight yarn (the crimp sets without any tension). Use a light weight for DK, which benefits from a small amount of settling tension." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure WPI after the hank is fully dry: wrap the yarn around a ruler for one inch without stretching. Sock weight: 16-20 WPI. DK weight: 11-14 WPI. If the plied yarn is finer than planned, the singles were spun at a higher WPI than intended: adjust by widening the top strip or slowing the drafting draw on the next batch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Singles break frequently at the drafting triangle",
+              "cause": "The pinch gate (front hand) is releasing before enough twist has entered the drafted zone, or the top strip is too narrow for the chosen singles diameter.",
+              "fix": "Hold the front pinch for one full treadle beat before releasing. If breaks continue, widen the top strip by 0.5 cm. Check that brake tension is not pulling the yarn onto the bobbin before the twist has stabilised."
+            },
+            {
+              "problem": "The finished yarn is hard and wiry rather than springy",
+              "cause": "Over-twist on the singles: too many twists per inch, so the fibre's natural crimp is compressed out of the yarn rather than maintained.",
+              "fix": "Reduce the treadle rate or increase the drawing speed. For Targhee specifically, aim for 10-12 tpi on a sock-weight singles; above 14 tpi the yarn loses the springiness that makes Targhee useful for socks."
+            },
+            {
+              "problem": "The 2-ply twists to one side after washing",
+              "cause": "Unequal twist in the two singles bobbins, or insufficient ply twist to balance the active Z-twist in the singles.",
+              "fix": "Add 1-2 more treadle beats per inch of ply. Let the re-soaked hank dry under a light weight to help the ply set evenly. For the next batch, check both bobbins weigh roughly the same before plying."
+            },
+            {
+              "problem": "The finished sock-weight yarn is thicker than expected after plying",
+              "cause": "Targhee blooms when the ply twist beds in with the crimp. The plied wet measurement is not the final measurement.",
+              "fix": "Always measure WPI after the hank is fully dry. If consistently over-estimate fineness, aim for 24-26 WPI on the singles rather than 22-24, to allow for bloom."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

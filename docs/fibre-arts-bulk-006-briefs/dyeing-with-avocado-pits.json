@@ -1,0 +1,284 @@
+{
+  "slug": "dyeing-with-avocado-pits",
+  "title": "Dyeing with avocado pits",
+  "subtitle": "Using avocado pits and skins with alum mordant to dye wool a soft pink and cotton a beige-tan",
+  "excerpt": "Avocado pits and skins give alum-mordanted wool a soft dusty pink and alum-mordanted cotton a beige-tan. Longer dye-bath times and a raised pH with soda ash shift the pink toward a warm peach. This technique has no documented pre-1928 canon and is noted as synthesised from post-1970s natural-dye revival practice. It is accessible for a first natural-dyeing project: no pre-soaking, a single mordant, and a straightforward dye-bath extraction.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Avocado-pit dyeing does not appear in the main pre-1928 dye manuals (Hummel 1885, Pellew 1913). The technique was documented and shared through natural-dye revival practitioners from the 1970s onward. The pink-from-pits result is established in the post-revival natural-dye literature but has no single public-domain canonical source. Mordant chemistry (alum potash bond to wool protein fibre) and the pH-shift behaviour of phenolic dye compounds are supported by Hummel's mordant tables applied to this dye class.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "mordant-jar", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "kitchen-scales", "isOptional": false },
+    { "slug": "measuring-jug", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "ph-strips", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A metallic salt or mineral compound that bonds to both the fibre and the dye molecule, creating a stable bridge between them. Without a mordant, most plant dyes wash out quickly. Alum potash is the most widely used mordant for wool and gives clear, warm results with most plant dyes."
+    },
+    {
+      "slug": "weight-of-fibre",
+      "term": "Weight of fibre",
+      "definition": "Abbreviated as WOF. The dry weight of the fibre being dyed, used as a baseline for calculating dye material and mordant quantities. A recipe stating 25% WOF alum means 25 g of alum per 100 g of dry fibre."
+    },
+    {
+      "slug": "decoction",
+      "term": "Decoction",
+      "definition": "A dye extract made by simmering plant material in water, straining out the solids, and using the remaining liquid as the dye bath. Avocado pits require about an hour of simmering to release their full colour."
+    },
+    {
+      "slug": "ph",
+      "term": "pH",
+      "definition": "A scale measuring how acidic or alkaline a solution is, running from 0 (strongly acidic) to 14 (strongly alkaline). In natural dyeing, pH affects both dye extraction and the final colour on the fibre. Many plant dyes shift toward warmer, pinker tones in alkaline conditions and toward yellower, greener tones in acid conditions."
+    }
+  ],
+  "aliases": [
+    "avocado pit natural dye",
+    "avocado stone dye wool pink",
+    "avocado skin dye"
+  ],
+  "techniqueSlugs": [
+    "natural-dye-mordanting-with-alum",
+    "natural-dye-mordant-overview"
+  ],
+  "criticalTechniques": [
+    "natural-dye-mordanting-with-alum"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Dye-pots are dedicated and never return to food use. Wear gloves, an apron, and closed-toe shoes. Work outdoors or with extraction running."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avocado pits give a soft dusty pink on alum-" },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }],
+            "text": "mordanted"
+          },
+          { "type": "text", "text": " wool. The colour is subtle: a pale rose-pink rather than anything saturated. Skins dye at a similar shade with slightly more yellow in the result. On alum-mordanted cotton the same bath gives a beige-tan, as cellulose fibres take the dye less efficiently than protein fibres. This is one of the few natural dyeing techniques where the material is typically a kitchen by-product rather than a sourced dye plant." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The pink deepens with longer dye-bath time. A higher " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ph" } }],
+            "text": "pH"
+          },
+          { "type": "text", "text": " in the dye bath also shifts the result: a small pinch of soda ash (around 2% " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weight-of-fibre" } }],
+            "text": "weight of fibre"
+          },
+          { "type": "text", "text": " ) added to the bath raises the alkalinity enough to move the pink toward a warm peach. The shift is subtle, not dramatic. Use pH strips to monitor the bath if experimenting with soda ash." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avocado-pit dyeing grew from the natural-dye revival of the 1970s. No pre-1928 dye manuals document it. This tutorial draws on post-revival practice and is marked as synthesised." }
+        ]
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "avocado-growing-and-harvesting" }
+      },
+      {
+        "type": "subTutorialCard",
+        "attrs": { "slug": "mordant-safety" }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Wool yarn or fleece, dry weight", "qty": "100 g" },
+            { "name": "Avocado pits, cleaned (approximately 4 large pits per 100 g fibre; skins from the same avocados can be added)", "qty": "100 g combined pit and skin weight" },
+            { "name": "Alum potash (25% WOF)", "qty": "25 g" },
+            { "name": "Soda ash, optional pH modifier (2% WOF)", "qty": "2 g" },
+            { "name": "Stainless steel dye-pot, dedicated to dyeing", "qty": "1" },
+            { "name": "Dye-pot thermometer (dedicated)", "qty": "1" },
+            { "name": "Fine-mesh sieve for straining", "qty": "1" },
+            { "name": "Mordant storage jar for alum solution", "qty": "1" },
+            { "name": "Long rubber gloves (dyeing)", "qty": "1 pair" },
+            { "name": "Apron (dyeing-dedicated)", "qty": "1" },
+            { "name": "Kitchen scales", "qty": "1" },
+            { "name": "Measuring jug", "qty": "1" },
+            { "name": "pH strips (optional, for soda-ash variation)", "qty": "a few strips" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Prepare the pits and skins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse the avocado pits under cold water to remove any flesh residue. Roughly chop or break the pits if they are large; this is not essential but speeds up dye release. Skins can be added whole. There is no need to pre-soak avocado pits overnight: unlike hard wood chips, they release their dye within a standard simmering extraction. Place the pits and skins in the dye-pot, cover with water, and proceed to the extraction step." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Pre-wet the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Submerge the wool in cool water and leave for at least 30 minutes before the mordant bath. Pre-wetting allows the mordant to penetrate the fibre evenly. Squeeze gently without wringing before moving the wool to the mordant bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Mordant bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 25 g of alum potash in 200 ml of hot water in the mordant jar, then stir into a pot of warm water large enough for the wool to move freely. Lower the pre-wetted wool in. Bring to 80°C over 30 minutes and hold at 80°C for 45 minutes. Turn the wool every 10 minutes. Remove and set aside without rinsing. The mordant bath can cool and be stored for one further use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Extract the dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the pot of pits and skins to a gentle simmer and hold at 80 to 85°C for 60 minutes. The water will turn from pale pink to a stronger rust-red as the dye releases. This is the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "decoction" } }],
+            "text": "decoction"
+          },
+          { "type": "text", "text": " step. Strain through a fine-mesh sieve, pressing the pits firmly to extract as much liquid as possible. Discard the spent pits and skins; return the red-brown liquid to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted wool into the strained dye bath. Bring to 80°C over 20 minutes and hold at 80°C for 60 to 90 minutes. Longer time in the bath deepens the pink noticeably; check the colour at 60 minutes by lifting a small section and rinsing it quickly under cool water. The wet fibre will look darker than the dried result. Turn the wool every 15 minutes throughout." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Optional soda-ash pH shift" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To shift the pink toward a warm peach, dissolve 2 g of soda ash in 100 ml of hot water and stir into the dye bath in the final 20 minutes of dyeing. Check the bath pH with a strip: a reading around 8 to 9 is enough to shift the result without over-alkalising the bath and potentially stressing the wool. Keep the temperature at 80°C and continue turning the wool. The colour shift is subtle: warm peach rather than vivid orange." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 7: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lift the wool from the dye bath. Cool slightly, then rinse in water at a similar temperature to avoid felting. Rinse until the water runs clear. Squeeze gently without wringing. Dry in shade. The soft pink is reasonably fast on alum-mordanted wool; expect slight lightening over time with regular use or prolonged exposure to strong sunlight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum mordant (25% WOF) with avocado pits at 100% WOF and a 60-minute dye bath gives a soft dusty pink on wool. Extending the dye bath to 90 minutes deepens the result toward a slightly stronger pink, still within the dusty, muted range that is typical of this dye material. Using skins only (without pits) gives a similar pink with a slightly more yellow tone." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding 2% WOF soda ash in the final 20 minutes moves the pink toward a warm peach. On alum-mordanted cotton, the same bath gives a beige-tan with no pink character. Unmordanted wool gives a paler version of the dusty pink; cellulose fibres without mordant take almost no colour from this dye bath." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Wool came out beige or tan rather than pink",
+              "cause": "Mordant was insufficient, or the dye-bath temperature was too low",
+              "fix": "Ensure the mordant bath holds at 80°C for 45 minutes. Hold the dye bath at 80°C throughout. Below 75°C the dye bond is much weaker."
+            },
+            {
+              "problem": "Colour is very uneven with dark patches",
+              "cause": "Wool was not pre-wetted or was lowered into the bath while dry",
+              "fix": "Pre-wet the wool for at least 30 minutes. Lower it gently into a warm, not hot, bath and then bring up to temperature slowly."
+            },
+            {
+              "problem": "Colour faded noticeably after the first wash",
+              "cause": "Rinse was incomplete or the mordant was washed out before it had fully bonded",
+              "fix": "Rinse until the water runs entirely clear. Wash the dyed wool by hand in cool water with a small amount of neutral wool wash; avoid hot water and agitation, which accelerate fading."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wastewater disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avocado pits and alum is a low-hazard combination at home quantities. The spent dye bath and mordant bath can both go down a foul drain once cooled. The spent pits and skins are organic material; they can go in a food-waste bin or general waste. If the soda-ash pH variation was used, the dye bath will be mildly alkaline when spent; flush the foul drain with water after disposal." }
+        ]
+      }
+    ]
+  }
+}
