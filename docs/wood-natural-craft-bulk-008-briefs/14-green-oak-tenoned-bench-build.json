@@ -1,0 +1,276 @@
+{
+  "slug": "green-oak-tenoned-bench-build",
+  "title": "Green oak tenoned bench",
+  "subtitle": "A four-legged garden bench in green oak with drawbored tenon joints",
+  "excerpt": "A low garden bench in green oak: a slab seat on four round-tenoned legs driven into tapered mortises. Drawboring locks the tenons as the green oak dries. The bench tightens with age.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "woodState": "green",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the green-oak bench construction and drawbored mortise method; Newey and Drage Practical Carpentry for the round-tenon boring sequence.",
+  "recipeTools": [
+    { "slug": "froe", "isOptional": false },
+    { "slug": "beetle-mallet", "isOptional": false },
+    { "slug": "drawknife-straight", "isOptional": false },
+    { "slug": "shaving-horse", "isOptional": false },
+    { "slug": "spokeshave-flat", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "bow-saw-21-inch", "isOptional": false },
+    { "slug": "leather-strop", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "riven", "term": "Riven", "definition": "Split along the grain with a froe and maul, rather than sawn across the grain. Riven oak is stronger than sawn oak for structural work." },
+    { "slug": "froe", "term": "Froe", "definition": "A wedge-shaped blade with a vertical handle, driven into the end-grain of a billet to split it along the grain." },
+    { "slug": "green-wood", "term": "Green wood", "definition": "Freshly felled or recently riven wood, still high in moisture content. Green oak is workable with hand tools and tightens as it dries." },
+    { "slug": "drawknife", "term": "Drawknife", "definition": "A two-handled blade pulled toward the body along the workpiece. The green-woodwork rough-shaping tool." },
+    { "slug": "shaving-horse", "term": "Shaving horse", "definition": "A foot-pedalled bench that clamps the workpiece for two-handed drawknife and spokeshave work." },
+    { "slug": "beetle", "term": "Beetle", "definition": "A heavy wooden club for driving a froe. Also used to drive tenons home in green-wood joinery." }
+  ],
+  "techniqueSlugs": ["drawknife-technique", "froe-riving-technique"],
+  "criticalTechniques": ["froe-riving-technique"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Rive and drawknife the seat and legs",
+      "body": "Rive the oak slab for the seat and four leg blanks. Drawknife and spokeshave the legs to round. Drill the seat mortises and drive the legs.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Check for loosening and re-drive",
+      "body": "After two weeks of initial drying, check each leg. Re-drive any that have loosened slightly with the beetle. The drawbore pegs should be holding firm.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 90,
+      "title": "Three-month check and trim",
+      "body": "After three months, the green oak will have dried significantly. Check all joints, saw any protruding tenon stubs flush, and trim the legs to final length if needed.",
+      "surfaceAs": "NOTIFICATION_ONLY",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A green-oak bench uses the movement of drying wood as a structural advantage rather than a problem. The round tenon legs are driven into mortises drilled into the seat slab while both are still " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-wood" } }], "text": "green" },
+          { "type": "text", "text": ". As the seat dries, the mortise tightens around the tenon. As the leg dries, the tenon shrinks slightly across the grain but remains locked by the drawbore pin. The result is a bench that gets harder and tighter over its first year outdoors." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oak is the recommendation: hard, durable outdoors, and strong enough in a slab section for a seat that takes a sitting person's weight. The seat slab is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riven" } }], "text": "riven" },
+          { "type": "text", "text": " from a round section 350 mm in diameter; it should be 1000 mm long, 250 to 280 mm wide, and 50 mm thick. The legs are riven from a smaller oak round and drawknifed to a 40 mm diameter round tenon. Elm and ash are acceptable alternatives for the seat; legs should stay oak or ash." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tools" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Froe and beetle: for riving the seat slab and leg blanks from the oak round." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drawknife and shaving horse: for reducing leg blanks to round-tenon form." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spokeshave, flat: for final rounding and the taper on the tenon section." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cordless drill with 40 mm auger bit: for boring the seat mortises." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bow saw: for crosscutting leg blanks to length." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leather strop." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Before you start cutting." }]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grip: four-finger grip on the work; thumb-push grip on the knife. Never make a cut whose blade-path can reach a body part." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut direction: push cuts (blade away from body) and thumb-pivot cuts are the default. Pull cuts only with the work braced against the chest and the blade-arc unable to reach anything vital." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sharpening: a dull tool is more dangerous than a sharp one. Strop every fifteen minutes of carving, hone weekly, oilstone monthly." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First aid: keep a styptic pencil, gauze, and a clean dressing within reach. Apply firm pressure, elevate, and dress. A cut that shows fat or will not close with pressure goes to A&amp;E, not a plaster." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Workspace: stable seat, good light, no children or pets within arm-and-blade reach." }] }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Riving the seat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stand the oak round on its end. Place the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "froe" } }], "text": "froe" },
+          { "type": "text", "text": " across a diameter on the end-grain and drive it with the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beetle" } }], "text": "beetle" },
+          { "type": "text", "text": ". The oak splits in half. Take one half and rive it again to produce a slab roughly 250 mm wide and 50 mm thick. Adjust the slab face with the drawknife on the shaving horse; the goal is two parallel flat faces 50 mm apart." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the legs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rive four leg blanks, each 420 mm long, from a smaller oak section. Clamp each blank in the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shaving-horse" } }], "text": "shaving horse" },
+          { "type": "text", "text": ". Use the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drawknife" } }], "text": "drawknife" },
+          { "type": "text", "text": " to reduce each blank to an octagonal section, then to a round with the spokeshave. The body of the leg is 42 mm in diameter. At the top 80 mm, the leg tapers to 40 mm diameter; this is the tenon section." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Boring and driving the mortises" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark the four mortise positions on the seat slab: 80 mm from each end and 60 mm from the front and back edges. Bore each mortise with the 40 mm auger bit at a splay angle of 8 degrees outward and 4 degrees forward; this angle gives the bench stability. The mortise is 60 mm deep." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drive each leg tenon into its mortise with the beetle. The tenon should be a snug push-fit; forcing with the beetle is the final seating, not the whole fit. Bore a 10 mm drawbore pin hole through the seat and through the tenon 5 mm off-centre toward the shoulder. Drive a tapered green-oak peg through the hole; the offset draws the tenon tight into the mortise." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Levelling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stand the bench on a flat surface. Mark the leg bottoms where they do not contact the floor and trim with the bow saw until all four legs sit level. Two weeks later, as the wood dries, re-check and trim again if needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Green oak left outdoors will silver to a pale grey over one to two seasons. No finish is needed; oil finishes on outdoor green oak slow the silvering without preventing it. If a natural-coloured surface is wanted, apply raw linseed oil after the three-month drying check." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Three-legged version: three legs (one at each end and one in the centre of the back) never wobble on uneven ground." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slab stool: the same method at a seat 300 mm wide and two shorter legs (400 mm finished height) for a low work stool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ash legs: ash is slightly lighter than oak; ash-legged bench suits a location that is moved frequently." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Move the bench under cover for winter if possible; green-oak joinery survives outdoors but life expectancy doubles with winter cover. Re-check the leg tenons each spring and re-drive any that feel at all loose." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "A leg joint loosened after the first winter",
+              "cause": "Mortise dried and shrank away from the tenon before the drawbore peg fully set",
+              "fix": "Bore out the old drawbore peg, re-drive the tenon deeper if any movement remains, and re-bore and drive a larger peg. If the mortise has shrunk significantly, the tenon may need to be wrapped in linen thread before re-driving."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The seat slab split along the grain during drying",
+              "cause": "Too-rapid drying or a tension-wood section in the oak",
+              "fix": "A single split along the grain in a slab bench is normal; it does not affect structural strength unless it passes through a mortise. Seal a cosmetically unwanted split with raw linseed worked in with a brush."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The bench rocks on two legs",
+              "cause": "Leg splay angles inconsistent",
+              "fix": "Mark the short leg at floor contact and trim it carefully with the bow saw. Small adjustments of 2 to 3 mm at a time; re-check after each trim."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
