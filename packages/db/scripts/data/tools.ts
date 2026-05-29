@@ -186,6 +186,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'tongs', name: 'Tongs', pluralName: 'tongs', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 1000, notes: 'Spring-loaded. For flipping bacon, lifting pasta, plating.' },
   { slug: 'pasta-server', name: 'Pasta server', category: 'utensil', aliases: ['spaghetti spoon'], isPurchasable: true, typicalPriceGbp: 800 },
   { slug: 'spider-strainer', name: 'Spider strainer', category: 'utensil', aliases: ['Asian skimmer'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'For lifting fried food and noodles out of liquid.' },
+  { slug: 'rosette-iron', name: 'Rosette iron', category: 'utensil', aliases: ['rosette mould', 'scandinavian rosette iron'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Cast-iron mould preheated in oil, dipped in batter, then fried to form crisp lacy rosette pastries.' },
   { slug: 'rolling-pin', name: 'Rolling pin', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Heavy hardwood. French (tapered, no handles) gives better feel.' },
   { slug: 'pastry-brush', name: 'Pastry brush', category: 'utensil', aliases: ['basting brush'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Silicone is easier to wash; natural bristle holds more glaze.' },
   { slug: 'colander', name: 'Colander', category: 'utensil', aliases: [], isPurchasable: true, typicalPriceGbp: 1500 },

@@ -1,0 +1,182 @@
+{
+  "slug": "filled-doughnuts-custard",
+  "title": "Custard-filled doughnuts",
+  "subtitle": "Deep-fried yeasted dough balls filled with vanilla pastry cream",
+  "excerpt": "Custard-filled doughnuts use the same enriched dough as jam doughnuts. The filling is a thick vanilla pastry cream made the day before and chilled until firm enough to pipe. The pastry cream must be cold when you fill the doughnuts; warm cream will melt and run.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Custard-filled doughnuts are a British and European pastry tradition, closely related to the German Windbeutel and the French beignet with creme patissiere. In British baking they became popular in bakeries from the mid-twentieth century. The pastry cream (creme patissiere) technique is a French pastry foundation. This recipe is synthesised from both traditions.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 12 doughnuts",
+    "prepMinutes": 45,
+    "cookMinutes": 25,
+    "restingMinutes": 90,
+    "chillingMinutes": 240,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the pastry cream the day before and refrigerate overnight. The dough can also be made the night before and proved in the fridge.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 55,
+      "saltPercent": 1.5,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "deep-fried at 175 degrees C, not oven-baked",
+      "steamMethod": null,
+      "decoratingTechnique": "icing sugar dusted",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "whisk", "isOptional": false },
+    { "slug": "deep-fryer", "isOptional": true },
+    { "slug": "large-saucepan", "isOptional": true },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "cling-film", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "creme-patissiere-doughnuts",
+      "term": "Pastry cream",
+      "definition": "Pastry cream (creme patissiere) is a thick, set custard made from egg yolks, sugar, cornflour and hot milk. The cornflour prevents the yolks from curdling and makes the cream firm enough to pipe. It must be chilled completely before using. Press cling film directly onto the surface while it cools to prevent a skin forming."
+    }
+  ],
+  "techniqueSlugs": ["deep-frying", "making-pastry-cream"],
+  "criticalTechniques": ["deep-frying"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-patissiere-doughnuts", "term": "pastry cream" } }],
+            "text": "pastry cream"
+          },
+          { "type": "text", "text": " the day before baking so it has time to chill and firm up. Cold pastry cream pipes cleanly and holds inside the doughnut. Warm or runny cream will flow out the moment you bite in." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Deep-frying: The oil must reach 170 to 175 degrees C and stay there. Use a probe thermometer. Keep the pan on medium heat and adjust between batches. Never leave hot oil unattended." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "cornflour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry cream (make ahead)" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 180, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "egg-yolks", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "litre", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "Frying" },
+            { "ingredientSlug": "icing-sugar", "amount": 3, "unit": "tbsp", "prepNote": "sifted, for dusting", "isOptional": false, "groupLabel": "Coating" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the 400 ml milk in a medium saucepan to just below the boil. Whisk the 4 egg yolks, 80 g caster sugar and 40 g cornflour in a bowl until smooth and pale. Pour the hot milk over the egg mixture in a steady stream, whisking constantly. Return to the pan over medium heat and cook, whisking continuously, until the cream thickens and bubbles, about 3 to 4 minutes. Remove from heat, stir in the 1 tsp vanilla and 20 g butter. Pour into a bowl, press cling film directly onto the surface and refrigerate for at least 4 hours or overnight until firm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough, shape and fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make the dough and fry the doughnuts using the same method as jam-filled doughnuts. Dust the warm doughnuts with sifted icing sugar instead of rolling in caster sugar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the doughnuts are cool enough to handle, beat the chilled pastry cream with a spatula until smooth and just soft enough to pipe. Fill a piping bag fitted with a plain nozzle. Push the nozzle into the side of each doughnut and pipe until you feel resistance. Dust with icing sugar and serve within 2 hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Pastry cream is lumpy",
+              "solution": "The milk was added too quickly to the yolks, cooking them unevenly, or the cream was not whisked continuously once it returned to the heat. If the cooked cream has lumps, pass it through a fine-mesh sieve while still hot before chilling."
+            },
+            {
+              "problem": "Pastry cream runs out of the doughnut when bitten",
+              "solution": "It was not cold enough. Chilled pastry cream should hold its shape on a spoon. Refrigerate overnight rather than just 4 hours for a firmer set."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

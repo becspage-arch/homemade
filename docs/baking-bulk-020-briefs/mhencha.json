@@ -1,0 +1,183 @@
+{
+  "slug": "mhencha",
+  "title": "Mhencha",
+  "subtitle": "A Moroccan coiled almond pastry, baked until deep amber",
+  "excerpt": "Mhencha is a Moroccan coiled pastry: a long rope of filo filled with almond paste scented with orange blossom water and cinnamon, wound into a flat spiral and baked until deep amber. The name means serpent in Moroccan Arabic, describing the coil. It is made for celebrations and served dusted with icing sugar.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mhencha is a traditional Moroccan celebration pastry from the Fez and Meknes regions. It is closely related to other North African nut-filled pastries and shares its filling with briouat and cornes de gazelle. The authentic version uses warqa, a very thin Moroccan pastry made by patting wet dough repeatedly onto a hot griddle. Filo pastry is the widely accepted substitute outside Morocco. This recipe is synthesised from the established Moroccan pastry tradition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 coil (about 25 cm, serves 8 to 10)",
+    "prepMinutes": 40,
+    "cookMinutes": 30,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The almond filling can be made and refrigerated a day ahead. Assemble and bake on the day.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "moroccan",
+    "mealType": "dessert",
+    "mood": ["special-occasion", "weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 0,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan or conventional; fan gives a more even colour across the coil",
+      "steamMethod": null,
+      "decoratingTechnique": "icing sugar dusted, cinnamon",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mhencha-coiling",
+      "term": "Coiling the pastry",
+      "definition": "To form the mhencha coil, roll the filled filo into a long sausage shape, then wind it into a flat spiral starting from the centre. Press each coil firmly against the last to prevent gaps opening during baking. If the pastry cracks or tears, patch it with a small piece of filo brushed with butter; the cracks will seal under heat."
+    },
+    {
+      "slug": "almond-paste-north-african",
+      "term": "Almond filling",
+      "definition": "The almond filling for North African pastries is made from ground blanched almonds, icing sugar, orange blossom water and rose water, worked to a paste stiff enough to roll without crumbling. Some versions add a small amount of unsalted butter for richness. The paste should be firm and dry; if it is too sticky, add a tablespoon more ground almonds."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The work in mhencha is in the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mhencha-coiling", "term": "coiling" } }],
+            "text": "coiling"
+          },
+          { "type": "text", "text": ". The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "almond-paste-north-african", "term": "almond filling" } }],
+            "text": "almond filling"
+          },
+          { "type": "text", "text": " is straightforward and can be made entirely in a food processor. Keep the filo covered with a damp cloth as you work; it dries out in minutes and becomes brittle and impossible to handle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "blanched-almonds", "amount": 250, "unit": "g", "prepNote": "toasted and finely ground", "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "icing-sugar", "amount": 80, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "orange-blossom-water", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "rose-water", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "orange", "amount": 1, "unit": "each", "prepNote": "zest only", "isOptional": false, "groupLabel": "Almond filling" },
+            { "ingredientSlug": "filo-pastry", "amount": 8, "unit": "sheet", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "melted, for brushing", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 2, "unit": "tbsp", "prepNote": "to finish", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": "Pastry" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the almond filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 250 g ground toasted almonds, 80 g icing sugar, 1 tbsp orange blossom water, 1 tsp rose water, 1 tsp cinnamon, 20 g softened butter and the orange zest in a bowl. Work together with your hands or a food processor until the mixture comes together as a firm paste. It should hold its shape when pressed; if too dry, add a few drops more orange blossom water. Divide into thirds and roll each portion into a long sausage about 30 cm long." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wrap in filo" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180 degrees C. Line a large baking tray with baking paper. Lay one sheet of filo flat and brush lightly with melted butter. Lay a second sheet on top. Place one almond sausage along the long edge of the filo and roll it up into a cylinder, keeping the filling centred. Brush the cylinder all over with melted butter. Repeat with the remaining filling and filo to make three cylinders." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coil and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Starting in the centre of the baking tray, coil the first cylinder into a spiral. Butt the second and third cylinders directly against the end of the first and continue the coil outward. Press the coils firmly together. Brush the whole surface with melted butter. Bake for 25 to 30 minutes until deep amber and crisp. Leave to cool on the tray for 10 minutes, then dust generously with the 2 tbsp icing sugar mixed with half a teaspoon cinnamon before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Filo tears when rolling",
+              "solution": "The pastry dried out. Keep unused sheets under a clean damp cloth at all times. Work quickly once a sheet is exposed. A small tear can be patched with a scrap of filo and a brush of butter."
+            },
+            {
+              "problem": "Coil opened up or unspiralled during baking",
+              "solution": "The cylinders were not pressed together firmly enough before baking. On the next attempt, press each new loop firmly against the last and make sure the join sits on the base of the tin where the weight holds it down."
+            },
+            {
+              "problem": "Bottom is pale and soggy",
+              "solution": "The baking tray was too thin or the oven temperature was uneven. Use a heavy baking sheet and check the underside after 20 minutes; if pale, move the tray to a lower oven shelf for the remaining time."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "slug": "pain-rustique",
+  "title": "Pain rustique",
+  "subtitle": "A high-hydration rustic loaf, shaped from a slack dough",
+  "excerpt": "Pain rustique is a French rustic loaf made with a wet, just-pourable dough that you fold rather than shape. A poolish built the night before gives the crumb its open texture and gentle tang. The result is a crackling crust and an irregular, translucent interior.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pain rustique descends from the French tradition of high-hydration country breads documented in early twentieth-century boulangerie manuals. The slack-dough method (folding in the bowl rather than kneading on the bench) was formalised by French bakers working with wheat flours of lower protein content than British strong bread flour. The poolish pre-ferment is a nineteenth-century technique brought to France via Austrian bakers working in Paris. No single public-domain text covers this precise recipe; the technique is synthesised from the established French bread-baking canon.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf (about 800 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 150,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf, freeze flat in a sealed bag for up to 3 months. Toast from frozen or thaw at room temperature for an hour.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Build the poolish the night before (5 minutes of work) and the rest follows the next morning.",
+    "dietaryFlags": ["vegan", "vegetarian"],
+    "cuisine": "french",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 74,
+      "saltPercent": 2,
+      "yeastPercent": 0.7,
+      "levainPercent": null,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "conventional oven; drop to 220 degrees C after 10 minutes",
+      "steamMethod": "heatproof bowl of boiling water on the oven floor for the first 12 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "POOLISH"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "oven-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poolish-pain-rustique",
+      "term": "Poolish",
+      "definition": "A poolish is an overnight pre-ferment made from equal weights of flour and water with a pinch of yeast. Left at room temperature for 8 to 14 hours, it develops lactic and acetic acids that deepen the bread's flavour without pushing it into sourdough territory. In a high-hydration loaf like pain rustique it also improves the open crumb structure."
+    },
+    {
+      "slug": "stretch-fold-rustique",
+      "term": "Stretch and fold",
+      "definition": "Stretch and fold is how a very wet dough builds gluten without kneading. Wet your hand, reach under one side of the dough in the bowl, stretch it up and fold it over the top, then rotate the bowl a quarter turn and repeat. Four folds per set, every 30 minutes during bulk fermentation."
+    }
+  ],
+  "techniqueSlugs": ["stretch-and-fold", "scoring-bread"],
+  "criticalTechniques": ["stretch-and-fold"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pain rustique is a loaf you fold, not knead. The dough at 74% hydration is too slack to work on the bench; instead you leave it in the bowl, stretching it over itself every 30 minutes while it ferments. The payoff is a crust that shatters when you cut it and a crumb full of irregular holes. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poolish-pain-rustique", "term": "Poolish" } }],
+            "text": "poolish"
+          },
+          { "type": "text", "text": " built the night before does the flavour work while you sleep. Plan for about 3 active hours the next day, most of it hands-off fermentation time." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Domestic ovens drift by 20 degrees C or more from the dial setting. An oven thermometer is worth using here; a loaf baked 20 degrees too cool will have a pale, soft crust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 150, "unit": "g", "prepNote": "for the poolish", "isOptional": false, "groupLabel": "Poolish (night before)" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 0.5, "unit": "g", "prepNote": "a very small pinch, for the poolish", "isOptional": false, "groupLabel": "Poolish (night before)" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 350, "unit": "g", "prepNote": "for the main dough", "isOptional": false, "groupLabel": "Main dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Main dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Main dough" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the poolish, the night before" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a large bowl, stir together 150 g strong bread flour, 150 ml cold water and the 0.5 g of yeast (a pinch the size of a rice grain). The mixture will be a thick paste. Cover with a clean cloth or plate and leave at room temperature for 8 to 14 hours. It is ready when it smells pleasantly yeasty, has bubbled up slightly, and shows a network of small holes on the surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add 220 ml of cold water to the poolish and stir briefly to loosen it. Add the 350 g of bread flour and the 3 g of yeast. Mix with your hand or a large spoon until no dry flour remains. The dough will look rough and shaggy. Cover and leave for 15 minutes (autolyse). After 15 minutes, scatter the 10 g of salt over the dough and work it in with your fingers, squeezing it through the mass until fully incorporated." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment with stretch and fold, about 2 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the bowl and leave the dough in a warm place. Every 30 minutes for the first 2 hours, perform one set of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stretch-fold-rustique", "term": "Stretch and fold" } }],
+            "text": "stretch and fold"
+          },
+          { "type": "text", "text": ": wet your hand, reach under one side of the dough, stretch it up and fold it over the top, rotate the bowl a quarter turn and repeat four times. After four sets the dough will have tightened noticeably and will spring back when you press it lightly. By the end of 2 hours the dough should have grown by about 50 per cent and will feel soft and pillowy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and proof, 30 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the dough out onto a lightly floured surface. Use a bench scraper and one quick fold to create a rough oval. There is no tight shaping with this dough; you are just giving it a coherent form. Transfer to a baking-paper-lined tray, cover with a clean cloth, and leave at room temperature for 30 minutes. The loaf is ready when it looks puffy and holds a shallow finger indent without snapping back immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 240 degrees C (conventional; not fan) at least 30 minutes before baking, with a heavy baking tray on the middle shelf and a heatproof bowl on the oven floor. Just before loading the bread, pour a cup of boiling water into the bowl to create steam. Score the top of the loaf with a sharp knife or lame, making two or three diagonal cuts about 1 cm deep. Slide the bread on its paper onto the hot tray." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake at 240 degrees C for 10 minutes, then drop to 220 degrees C and remove the water bowl. Continue baking for 25 to 30 minutes until the crust is a deep burnished brown and the loaf sounds hollow when you tap the base. An internal probe should read 96 to 98 degrees C. Transfer to a wire rack and leave for at least 45 minutes before cutting; the crumb continues to set as the loaf cools." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Loaf spread rather than rising upward",
+              "solution": "The dough over-proofed or was too warm. Keep the bulk fermentation below 24 degrees C and proof for no more than 40 minutes. A collapsed or spread loaf usually still tastes good but has a denser crumb."
+            },
+            {
+              "problem": "Crust is pale and soft",
+              "solution": "The oven was not hot enough. Check the temperature with an oven thermometer; the dial may read 240 but the actual temperature is lower. Preheat for a full 30 minutes so the tray itself is fully hot when the bread lands on it."
+            },
+            {
+              "problem": "Crumb is very dense with few holes",
+              "solution": "The gluten was under-developed. Make sure to complete all four stretch-and-fold sets during the bulk ferment. The dough should feel noticeably springier after each set."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
