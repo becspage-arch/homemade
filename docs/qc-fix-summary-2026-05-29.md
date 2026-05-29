@@ -380,3 +380,19 @@ SKIPPED: 0
 - medieval-link-stitch-binding: hero-missing
 - memorabilia-preservation-page: hero-missing
 - newspaper-fold-zine: hero-missing
+
+---
+
+## Run at 11:07:11
+
+Generated: 2026-05-29T11:07:11.196Z
+
+Processed: 66
+PASS: 66
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
