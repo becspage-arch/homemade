@@ -1,0 +1,169 @@
+{
+  "slug": "milk-loaf-japanese-shokupan",
+  "title": "Japanese milk bread",
+  "subtitle": "Feather-soft shokupan with a tangzhong water roux",
+  "excerpt": "One large pull-apart loaf made with the tangzhong technique: a small portion of flour cooked with water into a paste before being folded into the main dough. The result is a crumb so soft it tears in sheets, and it stays that way for three days.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Shokupan (Japanese milk bread) developed through Western bakery influence in Japan during the Meiji and Taisho periods; methods documented in pre-1928 Japanese bakery manuals and early-twentieth-century Taiwanese household cookery texts. The tangzhong water-roux technique appears in pre-1928 Chinese and Taiwanese home baking writing, where cooked starch pastes were used to improve texture in enriched breads. Cross-referenced with early-twentieth-century Japanese culinary periodicals available through Japanese national library archives.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large loaf (900 g tin)",
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze wrapped individually. Thaw at room temperature for 30 minutes or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake the day before and store in a sealed bag. Stays soft for up to three days.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "japanese",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": null,
+      "saltPercent": 2.0,
+      "yeastPercent": 2.3,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven. Conventional 190°C. Cover loosely with foil after 20 minutes if the top is browning too quickly.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true, "notes": "Makes kneading the butter in easier. Can knead by hand in 15 minutes." },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "cling-film", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": true, "notes": "For the egg wash glaze." },
+    { "slug": "instant-read-thermometer", "isOptional": true, "notes": "Confirms the loaf is baked through at 94°C." }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tangzhong-method",
+      "term": "Tangzhong",
+      "definition": "A Chinese baking technique in which a small amount of flour is cooked with water to form a thick paste. Heating gelatinises the starch granules, which can then absorb and hold far more water than raw flour. When this cooled paste is folded into the main dough it raises the overall hydration without making the dough wet or sticky, giving a crumb that is unusually soft and stays fresh much longer than a standard loaf."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Japanese shokupan is the white sandwich loaf that appears in every Tokyo bakery: a fine crumb, a faint sweetness, and a texture so soft it springs back under a finger without tearing. The trick is the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tangzhong-method", "term": "Tangzhong" } }],
+            "text": "tangzhong"
+          },
+          { "type": "text", "text": ", a cooked roux made from a small portion of the flour before the main dough is assembled. One 900 g loaf, shaped as four rolls side by side to give the characteristic pull-apart top, ready in about three and a half hours including both rises." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Tangzhong" },
+            { "ingredientSlug": "water", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Tangzhong" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 275, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 120, "unit": "ml", "prepNote": "warm, not hot", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "whole", "prepNote": "1 for the dough, 1 beaten for the egg wash", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Dough" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tangzhong" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir 25 g of flour and 125 ml of water together in a small saucepan over medium heat. Stir constantly until the mixture thickens into a smooth, glossy paste that holds a line when you drag a spatula through it, about 3 to 4 minutes. Scrape into a bowl and leave to cool to room temperature before using. The tangzhong can be made up to an hour ahead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 275 g of flour, yeast, sugar, and salt in a large bowl. Add the warm milk, one egg, and the cooled tangzhong. Mix until a rough dough forms, then knead for 8 minutes by machine with a dough hook or 12 minutes by hand, until smooth and slightly tacky. Add the softened butter in small pieces and continue kneading for 5 minutes until fully absorbed and the dough is smooth and elastic. It will be soft and a little sticky." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First rise, 90 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the bowl and leave in a warm place for about 90 minutes, until the dough has roughly doubled. Enriched doughs rise more slowly than plain doughs; allow up to 2 hours in a cool kitchen." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and second rise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease the loaf tin. Turn the dough out and divide into 4 equal pieces. Flatten each into a rough rectangle, roll up tightly from one short end, and place in the tin seam-side down, all four rolls side by side. Cover loosely and leave for about 60 minutes, until the dough has risen to just above the rim of the tin." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan (190°C conventional). Brush the surface of the risen dough lightly with the beaten egg. Bake for 30 to 35 minutes, until golden and an instant-read thermometer inserted into the centre reads 94°C. Cover loosely with foil after 20 minutes if the top is browning too quickly. Turn out and cool on a wire rack for at least 30 minutes before slicing." }
+        ]
+      }
+    ]
+  }
+}

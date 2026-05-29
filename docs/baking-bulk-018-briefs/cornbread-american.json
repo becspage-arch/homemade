@@ -1,0 +1,164 @@
+{
+  "slug": "cornbread-american",
+  "title": "American cornbread",
+  "subtitle": "Cast-iron skillet cornbread, golden and faintly sweet",
+  "excerpt": "A 20-minute skillet cornbread baked in a hot cast-iron pan for a crisp, dark underside. Buttermilk keeps the crumb tender; the corn gives it its yellow and its character.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "USDA Extension Service publications on corn cookery, circa 1920-1940, public domain, for the buttermilk-and-bicarbonate ratio. Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg, the basic cornmeal bread formula. The southern skillet method is documented across early-twentieth-century American state agricultural guides.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Wrap wedges individually, freeze up to 3 months. Reheat from frozen in a 180°C oven for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Mix the dry ingredients up to a day ahead and keep in a sealed container.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["weeknight", "weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 160,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven. Conventional 230°C. The pan must be hot before the batter goes in.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "quick-bread",
+      "term": "Quick bread",
+      "definition": "A bread leavened with bicarbonate of soda or baking powder rather than yeast. It rises when it meets heat, not over time, so the batter goes straight from bowl to oven. Cornbread, soda bread, and banana bread are all quick breads. The method is unforgiving of over-mixing: once the liquid hits the soda, the gas begins releasing, and working the batter too hard deflates it before it sets."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is a southern-American skillet cornbread: crumbly, faintly sweet, with a dark underside that comes from pouring the batter into a very hot pan. Eight wedges, ready in under 30 minutes. It goes well with chilli, with fried chicken, or with nothing at all and a scraping of cold butter." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method is a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quick-bread", "term": "Quick bread" } }],
+            "text": "quick bread"
+          },
+          { "type": "text", "text": ": bicarbonate of soda does the lifting, not yeast. Mix dry into wet, fold until no white streaks show, and stop. Over-mixing builds gluten and turns the crumb from crumbly to rubbery." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "polenta", "amount": 200, "unit": "g", "prepNote": "fine or medium-ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 160, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "buttermilk", "amount": 300, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "melted and cooled slightly, plus extra for the pan", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the pan and oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the oven to 220°C fan (230°C conventional). Put the cast-iron skillet in the oven while it heats. The pan needs to be very hot before the batter arrives; the contact heat sets the base quickly and creates the crisp underside that defines good cornbread. If your pan is not cast iron, a heavy metal cake tin will do, though the crust will be lighter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk the cornmeal, flour, sugar, baking powder, bicarbonate of soda, and salt together in a large bowl. In a separate bowl, whisk the buttermilk, eggs, and melted butter until combined. Pour the wet ingredients into the dry and fold with a spatula in 12 to 15 strokes, until no dry flour shows. The batter will be thick and slightly lumpy. Do not smooth it further." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the hot skillet from the oven using a dry oven cloth. Add a small knob of butter to the pan and swirl to coat the base and sides. The butter should foam immediately. Pour in the batter at once and return the pan to the top shelf. Bake for 18 to 22 minutes, until the surface is set and golden, the edges have pulled away from the pan, and a skewer through the centre comes out with only moist crumbs. Let it rest in the pan for 5 minutes before cutting." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Pale, soft base",
+              "solution": "The pan was not hot enough before the batter went in. Put the pan back in the oven to preheat for a full 10 minutes at temperature before adding butter and batter."
+            },
+            {
+              "problem": "Dense, gummy crumb",
+              "solution": "Over-mixed. Fold dry and wet together until the flour just disappears; lumps in the batter are fine and will cook out."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

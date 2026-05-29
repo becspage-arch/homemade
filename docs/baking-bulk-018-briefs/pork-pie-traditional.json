@@ -1,0 +1,159 @@
+{
+  "slug": "pork-pie-traditional",
+  "title": "Traditional pork pie",
+  "subtitle": "Hot water crust pastry with seasoned pork and jellied stock",
+  "excerpt": "One large pork pie made with hot water crust pastry and a hand-raised or tin-raised filling of coarsely seasoned pork mince, bacon, and sage. Filled with jellied stock after baking. Serve cold. An ambitious British bake that rewards patience.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The British pork pie tradition is documented from the seventeenth century, with the Melton Mowbray form codified in nineteenth-century Leicestershire household baking. Recipes appear in Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136), and in pre-1928 English regional cookery manuals. The hot water crust method and jellied stock finish are consistent across all pre-1928 sources. Cross-referenced with the British Baker trade magazine (pre-1928 digitised issues) and regional cookery manuscripts available through the British Library.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large pie (serves 6)",
+    "prepMinutes": 45,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Must be made at least one day ahead. The jelly needs overnight chilling to set, and the flavour improves significantly after 24 hours.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven. Conventional 190°C. Start at 200°C fan for the first 20 minutes to set the pastry, then reduce to 180°C fan for the remainder.",
+      "steamMethod": null,
+      "decoratingTechnique": "crimped pastry lid with a central hole for the jelly",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "springform-tin", "isOptional": true, "notes": "A 15 cm springform tin makes the most reliable result for home bakers." },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-water-crust",
+      "term": "Hot water crust pastry",
+      "definition": "A pastry made by pouring boiling water and melted lard into flour, then mixing while still warm. The heat gelatinises some of the starch, producing a pliable dough that can be moulded into a freestanding case while warm or lined into a tin. Hot water crust sets firm and does not crumble when cold, which is why it is used for hand-raised pies: it supports its own weight. It should be used while warm; it stiffens and cracks if allowed to cool before shaping."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A traditional pork pie has three components: " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-water-crust", "term": "Hot water crust pastry" } }],
+            "text": "hot water crust pastry"
+          },
+          { "type": "text", "text": ", a seasoned pork filling, and a poured jelly that sets in the gap left as the filling cooks down. One large pie, serves 6. Make it at least a day ahead; it must be fully cold and the jelly must be set before cutting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "lard", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "water", "amount": 150, "unit": "ml", "prepNote": "boiling", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "salt-table", "amount": 8, "unit": "g", "prepNote": "for the pastry", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "whole", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "pork-mince", "amount": 600, "unit": "g", "prepNote": "at least 20% fat", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "back-bacon", "amount": 150, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "sage", "amount": 5, "unit": "g", "prepNote": "fresh, finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "salt-table", "amount": 8, "unit": "g", "prepNote": "for the filling", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "black-pepper", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "nutmeg", "amount": 2, "unit": "g", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "gelatine-leaves", "amount": 4, "unit": "each", "prepNote": "for the jelly", "isOptional": false, "groupLabel": "Jelly" },
+            { "ingredientSlug": "water", "amount": 200, "unit": "ml", "prepNote": "hot, for the jelly", "isOptional": false, "groupLabel": "Jelly" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix the pork mince, bacon, sage, salt, pepper, and nutmeg together thoroughly. Fry a small patty and taste for seasoning before assembling; the filling should be well-seasoned. Refrigerate while you make the pastry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the hot water crust and line the tin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt the lard in 150 ml of boiling water. Pour over the flour and salt and stir with a wooden spoon until a warm, pliable dough forms. Work quickly while the dough is still warm; it stiffens rapidly. Keep a quarter of the dough for the lid. Press the rest into the base and up the sides of the greased tin, working it up to the rim with your fingers. The walls should be 5 to 6 mm thick." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill, lid, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C fan (210°C conventional). Pack the cold filling firmly into the pastry case, pressing out air pockets. Roll the reserved dough into a lid. Brush the rim with egg wash, press the lid on, and crimp or press firmly to seal. Cut a small hole in the centre. Brush the top with egg wash. Bake at 200°C fan for 20 minutes, then reduce to 180°C fan and bake for a further 65 to 70 minutes, until a thermometer inserted through the hole reads 75°C at the centre and the pastry is deep golden. Remove from the tin and brush the sides with egg wash. Return to the oven for 10 minutes to colour the sides. Cool on a rack." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill with jelly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak the gelatine leaves in cold water for 5 minutes, then squeeze out and dissolve in 200 ml of hot (not boiling) water. Season with a pinch of salt. Once the pie is completely cold, use a small funnel to pour the liquid jelly slowly through the hole in the lid. There will be a gap between the filling and the pastry lid from the cooking; the jelly fills this. Refrigerate overnight before cutting." }
+        ]
+      }
+    ]
+  }
+}

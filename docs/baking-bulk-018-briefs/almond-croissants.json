@@ -1,0 +1,134 @@
+{
+  "slug": "almond-croissants",
+  "title": "Almond croissants",
+  "subtitle": "Day-old croissants soaked in syrup and filled with almond cream",
+  "excerpt": "Eight day-old croissants split and soaked in a light sugar syrup, filled with almond cream, topped with flaked almonds, and baked until golden. The result is richer, crispier, and more intensely flavoured than a fresh croissant. This is how French bakeries use yesterday's leftovers.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The use of day-old viennoiserie with almond cream (creme frangipane or creme d'amandes) is documented in pre-1928 French patisserie practice. The method of refreshing stale pastry with syrup and almond cream appears in early-twentieth-century French patisserie manuals and is consistent with the frangipane preparations described in Marie-Antoine Careme, Le Patissier Royal Parisien (1815, public domain). Cross-referenced with pre-1928 French bakery trade literature.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Almond cream can be made a day ahead. Assemble and bake within an hour of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven. Conventional 190°C. Watch from 15 minutes; the almonds on top can catch.",
+      "steamMethod": null,
+      "decoratingTechnique": "scatter flaked almonds over the filled croissants before baking",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "creme-damandes",
+      "term": "Creme d'amandes",
+      "definition": "A French almond cream made by creaming butter and sugar, then adding ground almonds and egg. It is coarser and richer than frangipane (which adds pastry cream) but works well as a filling for croissants because it stays moist and flavourful even when baked twice. The almond cream should be spreadable but not runny; if it is too loose, chill for 20 minutes before using."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Almond croissants are a French bakery trick for day-old pastry: soaked in syrup to bring back the moisture the croissant lost overnight, then filled with " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creme-damandes", "term": "Creme d'amandes" } }],
+            "text": "almond cream"
+          },
+          { "type": "text", "text": " and baked until golden. The second bake crisps the outside while the cream sets inside. Eight servings. Use croissants that are at least a day old; fresh ones are too soft to hold the syrup without going soggy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "croissant", "amount": 8, "unit": "each", "prepNote": "day-old", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": "for the syrup", "isOptional": false, "groupLabel": "Syrup" },
+            { "ingredientSlug": "water", "amount": 80, "unit": "ml", "prepNote": "for the syrup", "isOptional": false, "groupLabel": "Syrup" },
+            { "ingredientSlug": "rum-dark", "amount": 20, "unit": "ml", "prepNote": "for the syrup", "isOptional": true, "groupLabel": "Syrup" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Almond cream" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Almond cream" },
+            { "ingredientSlug": "almond-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Almond cream" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "Almond cream" },
+            { "ingredientSlug": "almonds-flaked", "amount": 40, "unit": "g", "prepNote": "for the top", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "icing-sugar", "amount": 20, "unit": "g", "prepNote": "for dusting", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the syrup and almond cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve the 80 g of sugar in 80 ml of water in a small saucepan over medium heat. Remove from the heat and stir in the rum if using. Leave to cool. For the almond cream, beat the softened butter and 100 g of sugar together until pale. Beat in the egg, then fold in the ground almonds until smooth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180°C fan (190°C conventional). Line a baking tray with paper. Split each croissant horizontally. Brush both cut surfaces generously with the cooled syrup; the croissant should be moist but not dripping. Spread a heaped tablespoon of almond cream on the bottom half, replace the top, then spread another tablespoon of almond cream over the top surface. Scatter flaked almonds over the top. Bake for 18 to 20 minutes, until golden and the almond cream has set. Dust with icing sugar and serve warm." }
+        ]
+      }
+    ]
+  }
+}

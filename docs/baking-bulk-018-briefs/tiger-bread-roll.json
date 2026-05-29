@@ -1,0 +1,145 @@
+{
+  "slug": "tiger-bread-roll",
+  "title": "Tiger bread rolls",
+  "subtitle": "Soft white rolls with a cracked rice flour crust",
+  "excerpt": "Eight white rolls coated before baking with a rice flour paste that dries and fractures in the oven heat, creating the mottled pattern. The rolls themselves are soft and light; the surface is thin and crisp.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tijgerbrood (tiger bread) is a Dutch bread variety with the rice flour crust technique documented in pre-1928 Dutch bakery practice, drawing on Indonesian rice-flour preparations introduced through Dutch colonial commerce. Early-twentieth-century Dutch baking manuals describe a yeast-activated rice paste applied to loaves for a decorative finish. Cross-referenced with Indonesian rice-flour cookery in colonial-era Dutch household manuals available through the Dutch national archive.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 rolls",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled. Refresh in a 180°C oven for 8 minutes from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the dough the day before. After shaping, cover and refrigerate overnight. Make the rice paste on the day. Take the rolls out of the fridge 30 minutes before coating and baking.",
+    "dietaryFlags": ["vegan", "vegetarian"],
+    "cuisine": "european",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 64,
+      "saltPercent": 2.0,
+      "yeastPercent": 2.2,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven. Conventional 230°C. The paste needs high heat to crack properly.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tiger-paste-cracking",
+      "term": "Tiger bread paste",
+      "definition": "A thick paste made from rice flour, a little yeast, sesame oil, and water, spread over the shaped rolls before their final proof. As the rolls expand in the oven and the paste dries, it pulls apart across the surface in irregular cracks. The pattern is entirely natural: it follows the shape of the dough underneath. A thin layer produces fine cracks; a thicker layer produces bolder fractures."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tiger bread gets its surface from a coating of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tiger-paste-cracking", "term": "Tiger bread paste" } }],
+            "text": "tiger paste"
+          },
+          { "type": "text", "text": ": a rice flour and sesame oil mixture spread over shaped rolls before the final proof. In the oven it dries faster than the dough below it can rise, cracking into the irregular pattern. Eight rolls. The process has two stages and takes about 3 hours in total." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 11, "unit": "g", "prepNote": "7 g for the dough, 4 g for the paste", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": "8 g for the dough, 2 g for the paste", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 15, "unit": "g", "prepNote": "10 g for the dough, 5 g for the paste", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 450, "unit": "ml", "prepNote": "320 ml lukewarm for the dough, 130 ml warm for the paste", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "for the dough", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "rice-flour", "amount": 120, "unit": "g", "prepNote": "for the paste", "isOptional": false, "groupLabel": "Tiger paste" },
+            { "ingredientSlug": "sesame-oil", "amount": 15, "unit": "ml", "prepNote": "for the paste", "isOptional": false, "groupLabel": "Tiger paste" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and rise the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the flour, 7 g of the yeast, 8 g of the salt, and 10 g of the sugar in a large bowl. Add 320 ml of lukewarm water and the butter. Mix until a dough forms, then knead for 8 to 10 minutes until smooth and elastic. Cover and leave in a warm place for about 60 minutes until doubled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and coat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Make the tiger paste: mix the rice flour, 4 g of the yeast, 2 g of the salt, 5 g of the sugar, the sesame oil, and 130 ml of warm water into a thick, smooth paste. Leave for 15 minutes while you shape the rolls. Divide the dough into 8 equal pieces, shape each into a smooth ball, and space them on lined baking trays. Spread a generous layer of tiger paste over the top and sides of each roll using a pastry brush or the back of a spoon. The coating should be 3 to 4 mm thick." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Proof and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave uncovered for 45 minutes; the rolls will rise and the paste will begin to look dry and textured at the edges. Heat the oven to 220°C fan (230°C conventional). Bake for 18 to 20 minutes, until the rolls are deep golden and the paste has cracked into the tiger pattern. Cool on a wire rack." }
+        ]
+      }
+    ]
+  }
+}

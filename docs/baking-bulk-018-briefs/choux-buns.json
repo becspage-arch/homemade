@@ -1,0 +1,159 @@
+{
+  "slug": "choux-buns",
+  "title": "Choux buns",
+  "subtitle": "Light hollow pastry shells filled with whipped cream",
+  "excerpt": "Twenty small choux buns piped from a pastry bag, baked hollow, then filled with whipped cream and dipped in dark chocolate. The choux pastry is straightforward once you understand the dough: a cooked flour paste beaten with eggs until it falls from a spoon in a V-shape.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Choux pastry (pate a choux) is documented in French cookery from at least the seventeenth century, attributed variously to the chefs of the Renaissance French court. The method appears in Marie-Antoine Careme, Le Patissier Royal Parisien (1815, public domain), and in Menon, La Cuisiniere Bourgeoise (1746, public domain). Cream-filled choux buns (profiteroles) are documented in pre-1928 French and British household cookery writing and are described in Mrs Beeton, Book of Household Management (1861, Project Gutenberg #10136).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 buns",
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unfilled baked shells. Reheat in a 180°C oven for 5 minutes to crisp, then cool before filling.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shells can be baked up to 24 hours ahead and stored in an airtight tin. Fill within 2 hours of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "fan oven. Conventional 210°C. Do not open the oven door for the first 20 minutes or the buns will collapse. Pierce each bun with a skewer as soon as it comes out to let steam escape.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "choux-panade",
+      "term": "Panade",
+      "definition": "The cooked flour paste that forms the base of choux pastry. Water and butter are brought to a boil, then flour is added all at once and beaten vigorously over heat until the paste pulls away from the pan as a smooth ball. This cooking pre-gelatinises the starch and drives off enough moisture so that the paste can absorb eggs without becoming too wet. The correct consistency for piping is reached when the paste falls from the spoon in a slow, drooping V-shape: too stiff and the buns will not expand; too loose and they will spread and not hold their shape."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Choux buns are hollow pastry shells made from a cooked flour paste called a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "choux-panade", "term": "Panade" } }],
+            "text": "panade"
+          },
+          { "type": "text", "text": ", enriched with eggs and piped onto a tray before baking. The steam trapped inside causes them to puff and hollow out. Twenty buns, filled with whipped cream and dipped in dark chocolate. The shells can be made ahead; fill them on the day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "unsalted-butter", "amount": 120, "unit": "g", "prepNote": "cubed", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "water", "amount": 240, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "salt-table", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "caster-sugar", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "whole", "prepNote": "lightly beaten", "isOptional": false, "groupLabel": "Choux" },
+            { "ingredientSlug": "double-cream", "amount": 300, "unit": "ml", "prepNote": "for the filling", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "icing-sugar", "amount": 20, "unit": "g", "prepNote": "for the filling", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "for the topping", "isOptional": false, "groupLabel": "Topping" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "for the chocolate sauce", "isOptional": false, "groupLabel": "Topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the panade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the water, butter, salt, and sugar in a medium saucepan over medium heat. Bring to a full boil, then tip in all the flour at once. Stir vigorously with a wooden spoon for about 2 minutes until the paste forms a smooth ball and pulls cleanly away from the pan. Remove from the heat and leave to cool for 5 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Beat in the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the beaten eggs a little at a time, beating vigorously after each addition. The paste will look as though it is splitting; keep beating and it will come back together. The finished paste should fall from the spoon in a slow, drooping V-shape when the spoon is lifted. You may not need all the egg; stop when the consistency is right." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pipe and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 200°C fan (210°C conventional). Line two trays with baking paper. Pipe the paste in rounds about 4 cm across, spacing them 5 cm apart. Bake for 25 to 30 minutes until deep golden. Do not open the oven for the first 20 minutes. When the buns come out, immediately pierce each one with a skewer to let steam escape. Leave to cool completely on a rack, about 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whip the 300 ml of cream with the icing sugar to soft peaks. Split the buns and fill generously. For the chocolate sauce, heat the remaining cream until just simmering, pour over the chopped dark chocolate, and stir until smooth. Dip the tops of the filled buns in the warm chocolate or drizzle over. Serve within 2 hours." }
+        ]
+      }
+    ]
+  }
+}
