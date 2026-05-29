@@ -1,0 +1,137 @@
+{
+  "slug": "fitting-a-twin-gang-socket-from-single",
+  "title": "Fitting a twin-gang socket from a single",
+  "subtitle": "Replace a single 13-amp socket with a double using the existing cable",
+  "excerpt": "How to replace a single 13-amp wall socket with a twin-gang socket: isolating the circuit, opening the back box, checking the wiring, fitting the new faceplate, and testing with a socket tester.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "socket-tester", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "double socket from single",
+    "replace single socket double",
+    "twin socket upgrade"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "twin-gang-socket",
+      "term": "Twin-gang socket",
+      "definition": "A socket faceplate carrying two 13-amp BS 1363 outlets in a single unit, connected to the same supply cable as the original single socket. A twin-gang flush faceplate fits onto the same single back box if the box has sufficient depth; a larger back box may be required if the existing box is shallow."
+    },
+    {
+      "slug": "back-box",
+      "term": "Back box",
+      "definition": "The metal or plastic mounting box set into the wall that houses the wiring connections behind a socket or switch faceplate. Standard single back boxes are 25 mm or 35 mm deep; twin faceplates need at least 25 mm to accommodate the connections. Check the depth before buying the faceplate."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a single socket with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twin-gang-socket" } }], "text": "twin-gang socket" },
+          { "type": "text", "text": " is one of the most common DIY electrical jobs and does not require new cable. The existing ring-main or radial circuit cable connects to the new faceplate in exactly the same way as the old single. The only variable is whether the existing " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-box" } }], "text": "back box" },
+          { "type": "text", "text": " is deep enough for the extra connections." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Always use the live-dead-live isolation procedure: test the socket is live, switch off the MCB and fit the lock-off device, test the socket is dead, proceed. A lock-off alone is not sufficient; verify dead with the two-pole tester before touching any conductor." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, isolate the circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Test the socket is live with the two-pole tester. Switch off the MCB that controls this circuit and fit the lock-off device. Test the socket again: it must be dead before you unscrew the faceplate. If you are unsure which MCB controls the socket, switch off each in turn while testing the socket." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, open and inspect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew and remove the faceplate. Note the cable connections: a ring-main socket will have two cables (two live, two neutral, two earth), a spur will have one. Photograph the connections before disconnecting. Measure the back box depth; if it is shallower than 25 mm, fit a deeper box before proceeding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, connect the new faceplate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect the cable(s) to the new twin faceplate terminals: brown (live) to L, blue (neutral) to N, green/yellow (earth) to E. On a ring-main socket, both cables connect to the same terminals; the faceplate terminals are designed to take two wires. Trim and re-strip any wire ends that were scored or nicked when removing them; use the wire strippers to produce a clean 8 mm bare conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, fit and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold the cable neatly into the back box and screw the faceplate home. Remove the lock-off device and switch the MCB back on. Plug the socket tester into each outlet; all three LEDs should indicate correct wiring (live/neutral/earth present and in the correct terminals). Test the RCD trip function if the socket tester has a trip button." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Socket tester shows wiring fault after fitting",
+              "cause": "A conductor is in the wrong terminal, or a wire is not fully inserted into the terminal.",
+              "fix": "Isolate again, remove the faceplate, and check each connection against the terminal markings (L, N, E)."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips immediately on switch-on",
+              "cause": "A live conductor is touching the back box (earthed), or a neutral and earth are reversed.",
+              "fix": "Isolate, recheck all connections with the photograph taken during dismantling. Confirm no bare copper touches the metal back box."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

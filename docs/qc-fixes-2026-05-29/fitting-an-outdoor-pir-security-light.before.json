@@ -1,0 +1,197 @@
+{
+  "slug": "fitting-an-outdoor-pir-security-light",
+  "tutorialId": "cmprc1gtk0001igv4061ra882",
+  "capturedAt": "2026-05-29T19:49:06.777Z",
+  "preFix": {
+    "title": "Fitting an outdoor PIR security light",
+    "subtitle": "Mount a motion-activated floodlight on an outside wall with a junction box",
+    "excerpt": "How to install an outdoor PIR security light: isolating the circuit, feeding the cable to the exterior, mounting the light, making the connections in the junction box, and adjusting the sensor.",
+    "sourceNotes": "Collins Complete DIY Manual.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An outdoor PIR security light uses a built-in ",
+              "type": "text"
+            },
+            {
+              "text": "PIR sensor",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprc1grm0000igv4hy7642yh"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to detect movement and switch the floodlight on. The fitting is a standard Part P electrical job: isolate the circuit, run the cable, make the connections. In England and Wales, adding a new circuit for an outdoor light is notifiable under Part P; adding a new light fitting to an existing external circuit is not.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "warning"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Outdoor fittings must be IP44 rated or higher. Check the fitting's IP rating before installation; an indoor fitting used outside will fail and may become a fire or shock risk.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, plan and isolate",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Choose the mounting position: high enough to cover the area you want lit, typically 2.5 m above ground. Point the sensor away from roads or paths that would cause constant triggering. Then isolate the circuit: switch off the MCB, fit the lock-off device, and verify dead with the two-pole tester.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, route the cable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Drill through the external wall at the cable exit point with the cordless drill, angling the hole slightly downward toward the outside to shed rainwater. Pass the cable through the wall in conduit or through a rubber grommet. If running the cable along the exterior wall, use UV-resistant outdoor conduit or armoured cable; standard 2.5 mm twin-and-earth is not rated for direct outdoor use.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, mount the fitting",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Mark the fixing holes with a spirit level to ensure the backplate is level. Drill and plug masonry fixings into the wall. Feed the cable through the backplate grommet before screwing the backplate to the wall. Seal around the cable entry with silicone sealant after the fitting is in place to prevent water tracking into the wall.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, connect and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Strip and connect the cable in the fitting's terminal block: brown to L, blue to N, green/yellow to E. Close and tighten the backplate. Remove the lock-off device and restore the circuit. Test by walking through the detection zone at night (most PIR lux sensors will not trigger in daylight unless the sensitivity is at maximum). Adjust the PIR head direction, detection range, and lux threshold using the controls on the sensor housing.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Reposition the PIR head to avoid the false-trigger source, or reduce the detection range using the range control.",
+                "cause": "PIR sensor aimed at a moving heat source: a road, a ventilation outlet, or a bush moving in wind.",
+                "symptom": "Light triggers randomly without movement"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Adjust the lux dial clockwise and reduce the time-on setting. If the light stays on even in bright daylight, the PIR head is faulty.",
+                "cause": "The lux sensitivity is set too low, or the time-on control is set to maximum.",
+                "symptom": "Light stays on continuously"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "An outdoor PIR security light uses a built-in PIR sensor to detect movement and switch the floodlight on. The fitting is a standard Part P e"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "clearing-a-blocked-bath-waste",
+  "title": "Clearing a blocked bath waste",
+  "subtitle": "Free a slow or completely blocked bath drain without chemicals",
+  "excerpt": "How to clear a blocked or slow bath waste: cleaning the pop-up plug linkage, plunging the drain, and using a drain snake if needed to clear a partial or full blockage in the waste trap or run.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "plunger-cup", "isOptional": false },
+    { "slug": "drain-snake-5m", "isOptional": true },
+    { "slug": "water-pump-pliers", "isOptional": true },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "bath drain blockage",
+    "unblock bath waste",
+    "bath drain slow"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "p-trap-bath",
+      "term": "Trap",
+      "definition": "The curved section of waste pipe immediately below the bath outlet that holds a permanent water seal. The water seal blocks drain gases from entering the bathroom. Most bath traps are a P-trap shape (accessible via a screwed cover plate) or a bottle trap; both types accumulate hair and soap residue over time."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A slow or blocked bath waste is almost always caused by hair and soap in the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "p-trap-bath" } }], "text": "trap" },
+          { "type": "text", "text": " or on the pop-up plug linkage. Work through these steps from easiest to most involved. Chemical drain cleaners are not needed and can damage older pipework." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, clean the pop-up plug linkage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the bath has a pop-up waste, unscrew the overflow cover plate with the screwdriver and pull out the linkage rod. Hair accumulates densely on the rod and on the plug pivot. Clean both with hot water and a cloth, then refit and test the drain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, plunge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Block the overflow opening with a damp cloth held in place (or taped). Place the cup plunger firmly over the waste outlet and add enough water to keep the plunger cup submerged. Push down firmly and pull back sharply, repeating ten to fifteen times. The seal at the overflow is essential: without it the pressure dissipates through the overflow rather than acting on the blockage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, clear the trap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If plunging does not clear the blockage, access the trap. On a P-trap, undo the cleaning eye at the bottom of the U-bend using water-pump pliers while holding a container below. Remove and clean the trap by hand. On a bottle trap, unscrew the base section by hand. Refit and test." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, use the drain snake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the trap is clear but the drain remains slow, the blockage is further down the waste run. Feed the drain snake into the waste outlet (or from the trap access point) and crank the handle to work the coil through the pipe. Withdraw the snake with the blockage caught on the coil. Run hot water for two minutes after clearing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Drain slow but not fully blocked, and clears briefly after plunging then blocks again",
+              "cause": "Partial blockage further down the waste run, outside the reach of the snake.",
+              "fix": "Check whether the same waste run serves another fitting that also drains slowly. If so, the blockage is at a junction; this may need professional jetting."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Trap leaks after refitting",
+              "cause": "The trap seal washer is damaged or was not seated correctly on reassembly.",
+              "fix": "Check the rubber seal is seated in the correct groove before tightening. A replacement seal washer costs less than a pound at any plumbers merchant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

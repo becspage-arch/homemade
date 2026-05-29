@@ -1125,3 +1125,45 @@ SKIPPED: 0
 - solar-pv-string-vs-microinverter-choice: grade-level-strict
 - using-refill-shops-and-zero-waste-stores: voice-violation, grade-level-strict
 - zero-waste-bathroom-swaps-practical: grade-level-strict
+
+---
+
+## Run at 19:49:14
+
+Generated: 2026-05-29T19:49:14.959Z
+
+Processed: 110
+PASS: 70
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| body-missing-method | 39 |
+| grade-level-strict | 31 |
+
+## Still BLOCKED (sample 20)
+
+- building-under-stair-storage: hero-missing
+- clearing-a-blocked-bath-waste: hero-missing
+- cutting-a-scarf-joint: hero-missing
+- filling-expansion-gaps-in-laminate-flooring: hero-missing, grade-level-strict
+- fitting-a-dado-rail: hero-missing
+- fitting-a-door-frame-liner: hero-missing
+- fitting-a-filling-loop-to-a-sealed-heating-system: hero-missing
+- fitting-a-loft-ladder: hero-missing
+- fitting-a-picture-rail: hero-missing
+- fitting-a-toilet-pan-connector: hero-missing
+- fitting-a-twin-gang-socket-from-single: hero-missing
+- fitting-an-outdoor-pir-security-light: hero-missing
+- fitting-flexible-hoses-to-a-basin-tap: hero-missing
+- fitting-gimp-braid-to-a-chair: hero-missing
+- fitting-kitchen-drawer-runners: hero-missing
+- fitting-plasterboard-to-a-stud-wall: hero-missing
+- fitting-tiles-around-a-window-reveal: hero-missing
+- laying-porcelain-floor-tiles: hero-missing
+- making-a-basic-piped-cushion-cover: hero-missing
+- making-a-simple-leather-notebook-cover: hero-missing, grade-level-strict

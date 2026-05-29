@@ -1,0 +1,189 @@
+{
+  "slug": "wiring-a-simple-doorbell",
+  "tutorialId": "cmprc4sg900010ov4113p20dm",
+  "capturedAt": "2026-05-29T19:49:14.699Z",
+  "preFix": {
+    "title": "Wiring a simple doorbell",
+    "subtitle": "Install a transformer-and-chime doorbell from scratch",
+    "excerpt": "How to install a wired doorbell: fitting the transformer to an existing spur, running the extra-low-voltage bell wire to a pushbutton and chime, and testing the circuit.",
+    "sourceNotes": "Collins Complete DIY Manual.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A wired doorbell has two parts. First, the mains connection at the ",
+              "type": "text"
+            },
+            {
+              "text": "doorbell transformer",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprc4seq00000ov4scuygke2"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ": isolate before touching this. Second, the bell-wire circuit from the transformer to the pushbutton and chime: this runs at extra-low voltage and is safe to handle with the power on.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "warning"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "In England and Wales, connecting a new mains spur for the transformer is notifiable work under Part P of the Building Regulations unless it is an addition to an existing circuit. Check whether the transformer can be plugged into an existing socket rather than hard-wired, as this avoids the notification requirement.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, plan the layout",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Place the transformer near the consumer unit or an existing spur. The bell wire runs from the transformer secondary terminals to the chime (usually inside the house near the front door), and a separate bell wire run continues from the chime to the pushbutton at the front door. Measure the total wire run to calculate how much bell wire is needed; standard two-core bell wire is sold in 10 m and 25 m reels.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, isolate and connect the transformer",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Switch off the circuit being used for the mains connection and verify dead with the voltage tester pen before touching any conductors. Connect the mains supply to the transformer primary terminals (marked L, N, E). The transformer secondary terminals (labelled with the output voltage) are for the bell wire only. Screw the transformer to the wall with the cordless drill.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, run the bell wire",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Run two-core bell wire from the transformer secondary to the chime unit, and from the chime to the pushbutton. Fix the wire with cable clips at 300 mm intervals. Thread through walls using a cable-routing drill if necessary. Keep mains and bell wire separated by at least 50 mm where they run parallel.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, connect and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Connect the bell wire at the chime and at the pushbutton according to the terminal markings on each unit (usually marked 1, 2, T for transformer, or B for bell). Restore the mains supply and press the button: the chime should sound. If the chime does not trigger, check the polarity at the chime terminals (reverse the two bell wires at the transformer secondary if the chime is polarity-dependent).",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Disconnect the bell wire at the pushbutton. If the chime stops, the button is stuck; replace it. If it continues, find and isolate the short in the wire run.",
+                "cause": "The bell wire is shorted somewhere along the run, or the pushbutton is stuck closed.",
+                "symptom": "Chime fires continuously without the button being pressed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 14.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > infoPanel[1] > paragraph[0]",
+      "snippet": "In England and Wales, connecting a new mains spur for the transformer is notifiable work under Part P of the Building Regulations unless it "
+    }
+  ]
+}

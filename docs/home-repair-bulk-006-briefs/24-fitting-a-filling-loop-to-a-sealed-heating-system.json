@@ -1,0 +1,124 @@
+{
+  "slug": "fitting-a-filling-loop-to-a-sealed-heating-system",
+  "title": "Fitting a filling loop to a sealed heating system",
+  "subtitle": "Add cold water to a sealed central heating circuit to restore correct pressure",
+  "excerpt": "How to fit a filling loop to a sealed central heating system: locating the correct connection points, fitting the loop, opening the valves to raise system pressure, and removing the loop when done.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "pressurise sealed heating system",
+    "filling loop boiler",
+    "top up central heating pressure"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "filling-loop",
+      "term": "Filling loop",
+      "definition": "A short braided flexible hose with a quarter-turn valve at each end, used to connect the sealed central heating circuit to the cold mains supply for topping up pressure. Building regulations require the loop to be removed after use to prevent backflow contamination of the mains water supply. A permanent internal filling loop (fitted inside the boiler) is allowed only with a double-check valve."
+    },
+    {
+      "slug": "system-bar-pressure",
+      "term": "System pressure (bar)",
+      "definition": "The static water pressure inside a sealed central heating circuit, shown on the boiler pressure gauge or a separate system gauge. Cold fill pressure is typically 1.0 to 1.5 bar; the system drops below 1 bar when the expansion vessel loses its pre-charge or when water is lost through a leak or a relief valve discharge."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sealed central heating system that loses pressure needs a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "filling-loop" } }], "text": "filling loop" },
+          { "type": "text", "text": " connected to restore the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "system-bar-pressure" } }], "text": "system pressure" },
+          { "type": "text", "text": " to the correct cold-fill level. Find and fix the underlying cause of the pressure loss rather than just topping up repeatedly." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Do not top up a system that has lost pressure more than twice in six months without investigating the cause: a weeping radiator valve, a leaking expansion vessel, or a relief valve that is discharging all represent underlying problems that need a Gas Safe registered engineer or a plumber." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 1, locate the filling point. " },
+          { "type": "text", "text": "The filling loop connection points are usually under or beside the boiler, on the cold water inlet pipe and on the heating return pipe. They are typically 15 mm compression or push-fit sockets with a cap, or screw-thread ports. Check the boiler manual to identify them." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 2, check the system pressure. " },
+          { "type": "text", "text": "Read the boiler pressure gauge before adding water. The cold fill target is 1.0 to 1.5 bar; add water until the gauge reads within this range. Do not exceed 1.5 bar cold." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 3, fit the loop. " },
+          { "type": "text", "text": "Ensure both valves on the filling loop are closed. Apply PTFE tape to the threaded connection ports if the loop uses screw-thread fittings. Screw or push the loop ends onto both ports, tightening the compression nuts with the spanner until hand-tight plus a quarter turn." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 4, fill to pressure. " },
+          { "type": "text", "text": "Open both valves on the filling loop simultaneously, or open the mains-side valve first then the system-side valve. Watch the pressure gauge. Close both valves immediately when the gauge reaches the target pressure. Do not walk away during filling; pressure rises fast." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Step 5, remove the loop. " },
+          { "type": "text", "text": "Disconnect and remove the filling loop entirely. Replace the caps on both ports. UK building regulations require the loop to be removed to prevent a backflow path from the heating circuit to the potable water supply." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Overfilling the system. " },
+          { "type": "text", "text": "Pressure above 2.5 bar cold risks the pressure relief valve discharging. If the gauge rises faster than expected, close both valves immediately." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Leaving the loop fitted. " },
+          { "type": "text", "text": "A permanently fitted external filling loop is a backflow risk and may invalidate buildings insurance. Remove it after every use." }
+        ]
+      }
+    ]
+  }
+}

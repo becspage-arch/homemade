@@ -1,0 +1,131 @@
+{
+  "slug": "fitting-an-outdoor-pir-security-light",
+  "title": "Fitting an outdoor PIR security light",
+  "subtitle": "Mount a motion-activated floodlight on an outside wall with a junction box",
+  "excerpt": "How to install an outdoor PIR security light: isolating the circuit, feeding the cable to the exterior, mounting the light, making the connections in the junction box, and adjusting the sensor.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "outdoor security light fitting",
+    "PIR floodlight installation",
+    "motion sensor light outside"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-sensor",
+      "term": "PIR sensor",
+      "definition": "A passive infrared detector that triggers the light when it detects the difference in infrared radiation between a warm moving body and the ambient background within its detection cone. The sensor is passive: it receives infrared rather than emitting it. Detection range and angle are adjustable on most domestic PIR lights; lux sensitivity sets the threshold below which the light can trigger."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An outdoor PIR security light uses a built-in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-sensor" } }], "text": "PIR sensor" },
+          { "type": "text", "text": " to detect movement and switch the floodlight on. The fitting is a standard Part P electrical job: isolate the circuit, run the cable, make the connections. In England and Wales, adding a new circuit for an outdoor light is notifiable under Part P; adding a new light fitting to an existing external circuit is not." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Outdoor fittings must be IP44 rated or higher. Check the fitting's IP rating before installation; an indoor fitting used outside will fail and may become a fire or shock risk." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, plan and isolate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Choose the mounting position: high enough to cover the area you want lit, typically 2.5 m above ground. Point the sensor away from roads or paths that would cause constant triggering. Then isolate the circuit: switch off the MCB, fit the lock-off device, and verify dead with the two-pole tester." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, route the cable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drill through the external wall at the cable exit point with the cordless drill, angling the hole slightly downward toward the outside to shed rainwater. Pass the cable through the wall in conduit or through a rubber grommet. If running the cable along the exterior wall, use UV-resistant outdoor conduit or armoured cable; standard 2.5 mm twin-and-earth is not rated for direct outdoor use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, mount the fitting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mark the fixing holes with a spirit level to ensure the backplate is level. Drill and plug masonry fixings into the wall. Feed the cable through the backplate grommet before screwing the backplate to the wall. Seal around the cable entry with silicone sealant after the fitting is in place to prevent water tracking into the wall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, connect and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Strip and connect the cable in the fitting's terminal block: brown to L, blue to N, green/yellow to E. Close and tighten the backplate. Remove the lock-off device and restore the circuit. Test by walking through the detection zone at night (most PIR lux sensors will not trigger in daylight unless the sensitivity is at maximum). Adjust the PIR head direction, detection range, and lux threshold using the controls on the sensor housing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light triggers randomly without movement",
+              "cause": "PIR sensor aimed at a moving heat source: a road, a ventilation outlet, or a bush moving in wind.",
+              "fix": "Reposition the PIR head to avoid the false-trigger source, or reduce the detection range using the range control."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light stays on continuously",
+              "cause": "The lux sensitivity is set too low, or the time-on control is set to maximum.",
+              "fix": "Adjust the lux dial clockwise and reduce the time-on setting. If the light stays on even in bright daylight, the PIR head is faulty."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "replacing-a-pendant-lamp-holder",
+  "title": "Replacing a pendant lamp holder",
+  "subtitle": "Swap out a cracked or heat-damaged lamp holder on a ceiling pendant",
+  "excerpt": "How to replace a lamp holder on a ceiling pendant: isolating the circuit, disconnecting at the ceiling rose, fitting the new holder, and restoring the supply.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "ceiling pendant lamp holder replacement",
+    "lamp holder repair",
+    "replace bulb holder ceiling"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pendant-lamp-holder",
+      "term": "Pendant lamp holder",
+      "definition": "The ES (Edison screw) or BC (bayonet cap) socket at the end of a pendant flex into which the lamp screws or clips. The holder body is heat-resistant thermoplastic; cracking, browning, or a seized lamp socket are all reasons to replace it. Pendant holders are sold complete with a cord grip and a skirt; the flex connects to two terminals inside."
+    },
+    {
+      "slug": "cord-grip",
+      "term": "Cord grip",
+      "definition": "A clamp inside the lamp holder body that grips the outer sheath of the flex rather than relying on the terminal connections to bear the weight of the pendant. Without a correctly set cord grip, the weight of the lamp holder pulls on the live and neutral conductors, which will eventually work loose from their terminals."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pendant-lamp-holder" } }], "text": "pendant lamp holder" },
+          { "type": "text", "text": " that is cracked, heat-discoloured, or has a seized lamp socket is a fire risk and should be replaced. The job is simple once the circuit is isolated: the flex disconnects from the ceiling rose, the old holder unscrews, and the new holder screws on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, isolate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the lighting circuit MCB and fit the lock-off device. Test the ceiling rose terminals are dead with the two-pole tester. If you are unsure which MCB controls the circuit, switch each in turn until the light goes out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, disconnect the flex at the rose" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew and lower the ceiling rose cover. Note which terminals the flex conductors connect to (photograph before disconnecting). Loosen the terminal screws and withdraw the flex conductors. Release the cord grip at the top of the rose that holds the flex. Lower the pendant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, replace the lamp holder" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the skirt from the old lamp holder and slide off the old holder. Thread the flex through the skirt of the new holder. Connect the flex conductors to the new holder terminals: the blue (neutral) connects to the terminal linked to the screw thread of an ES holder, and the brown (live) connects to the centre contact. Tighten the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cord-grip" } }], "text": "cord grip" },
+          { "type": "text", "text": " on the outer flex sheath before tightening the terminal screws, so the weight of the holder rests on the grip rather than on the wire connections. Screw the skirt closed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, reconnect at the rose and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pass the flex through the ceiling rose cord grip and reconnect the conductors to the same terminals they came from. Set the cord grip in the rose to take the flex weight. Refit the rose cover. Remove the lock-off device, restore the circuit, and test the lamp." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Lamp flickers or does not light after replacement",
+              "cause": "A conductor is not fully tightened in a terminal, or the live and neutral are reversed at the ES holder.",
+              "fix": "Isolate again and check all four terminal connections (two at the rose, two at the holder). An ES holder with live and neutral reversed will function but the lamp shell is live; reverse them."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
