@@ -1093,3 +1093,35 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 18:54:05
+
+Generated: 2026-05-29T18:54:05.595Z
+
+Processed: 95
+PASS: 87
+STILL_BLOCKED: 8
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 51 |
+| body-missing-method | 8 |
+| voice-violation | 8 |
+| em-dash-in-content | 2 |
+
+## Still BLOCKED (sample 20)
+
+- composting-toilet-annual-maintenance: grade-level-strict
+- heat-battery-for-solar-storage: voice-violation, grade-level-strict
+- managing-a-legacy-feed-in-tariff: grade-level-strict
+- natural-cleaning-products-diy: voice-violation, grade-level-strict
+- off-grid-load-calculation-worksheet: voice-violation, grade-level-strict
+- solar-pv-string-vs-microinverter-choice: grade-level-strict
+- using-refill-shops-and-zero-waste-stores: voice-violation, grade-level-strict
+- zero-waste-bathroom-swaps-practical: grade-level-strict

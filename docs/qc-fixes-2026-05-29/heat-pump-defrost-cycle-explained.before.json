@@ -1,0 +1,257 @@
+{
+  "slug": "heat-pump-defrost-cycle-explained",
+  "tutorialId": "cmpr9zcot0001ysv4qe63jmla",
+  "capturedAt": "2026-05-29T18:54:01.760Z",
+  "preFix": {
+    "title": "Understanding the heat pump defrost cycle",
+    "subtitle": "Why the outdoor unit frosts up, what the system does about it, and when to be concerned",
+    "excerpt": "When outdoor air is between -5°C and +5°C and humidity is high, the heat pump's outdoor coil drops below 0°C and frost builds up on the fins. The unit detects this and runs a defrost cycle, reversing the refrigerant flow briefly to melt the ice. This is normal and expected. Knowing what a defrost looks like, how often it should happen, and what abnormal defrosting means prevents unnecessary service calls and explains the occasional cold blast from the unit.",
+    "sourceNotes": "Mitsubishi Electric Ecodan installer and user guide 2024. Vaillant arotherm plus technical data sheet. Heat Pump Association UK owner guidance 2024.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The outdoor unit of an air source heat pump extracts heat from outside air by drawing it over a refrigerant-filled coil. When the coil surface temperature falls below 0°C, which it does whenever outdoor temperature is below about +5°C and humidity is above 80%, moisture in the air freezes on the fins. A thin layer of frost increases thermal resistance and reduces airflow, cutting efficiency. The ",
+              "type": "text"
+            },
+            {
+              "text": "defrost cycle",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpr9z68s0000s8v4pl7s0upr"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " removes this frost before it builds up to the point where performance degrades significantly.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What happens during a defrost",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The controller detects that defrost is needed. It uses either a timer (every 30 to 90 minutes in frosting conditions) or a temperature sensor on the coil.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The outdoor fan stops. The system reverses the ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "refrigerant flow",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpr9zcnm0000ysv4qhlo0gva"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": ": hot refrigerant from the compressor is directed to the outdoor coil rather than the indoor unit.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The outdoor coil heats up to above 0°C. The ice melts. Water drips from the unit, this is normal and explains why there is a condensate tray and drain beneath the outdoor unit.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The controller detects the coil is clear (by temperature or time), reverses back to normal heating mode, and restarts the outdoor fan.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you observe inside",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "On a system with a buffer cylinder, a defrost cycle is nearly invisible indoors. The buffer holds a small reserve of hot water. The heating circuit keeps running from the buffer while the heat pump defrosts, and room temperatures barely move. Without a buffer, or with a very small one, you may notice the backup element cutting in (if fitted), the room temperature dropping 0.5 to 1°C, and a steam cloud from the outdoor unit as the frost melts.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Normal versus abnormal defrosting",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Normal: defrost occurs every 30 to 90 minutes during frost (typically 0°C to +4°C). Each cycle lasts 3 to 8 minutes. The unit resumes heating promptly.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Concern: defrost cycles more than once every 20 minutes, or any cycle lasting over 15 minutes, point to a problem. Possible causes: the unit is recirculating its own cold exhaust air, the condensate drain is blocked causing ice build-up at the base, or there is a refrigerant pressure fault.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Action: check the condensate drain is clear and draining away from the unit. Confirm at least 300 mm clearance on all sides. Make sure the unit is not in a corner, alcove, or against a wall that bounces cold wet air back to the inlet.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The efficiency cost of defrosting",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A unit in continuous frost conditions (0°C outdoor temperature, 90% humidity) may defrost every 45 minutes, losing 8 minutes out of every 45 to defrost. That is roughly 18% downtime on the heating output. The heat drawn from the house during defrost further reduces the effective seasonal COP. In UK climate modelling, the defrost penalty is typically included in the published SCOP figure, so the published number is the real seasonal average, not an optimistic number before accounting for defrost.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "The outdoor unit of an air source heat pump extracts heat from outside air by drawing it over a refrigerant-filled coil. When the coil surfa"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > bulletList[6] > listItem[1] > paragraph[0]",
+      "snippet": "Concern: defrost cycles more than once every 20 minutes, or any cycle lasting over 15 minutes, point to a problem. Possible causes: the unit"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[8]",
+      "snippet": "A unit in continuous frost conditions (0°C outdoor temperature, 90% humidity) may defrost every 45 minutes, losing 8 minutes out of every 45"
+    }
+  ]
+}

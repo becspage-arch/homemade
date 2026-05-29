@@ -565,3 +565,12 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 
 - external-wall-insulation-etics-installation hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
 - roman-script-families voice-violation,grade-level-strict — applied: 
+
+- composting-toilet-annual-maintenance grade-level-strict — applied: 
+- heat-battery-for-solar-storage voice-violation,grade-level-strict — applied: 
+- managing-a-legacy-feed-in-tariff grade-level-strict — applied: 
+- natural-cleaning-products-diy voice-violation,grade-level-strict — applied: 
+- off-grid-load-calculation-worksheet voice-violation,grade-level-strict — applied: 
+- solar-pv-string-vs-microinverter-choice grade-level-strict — applied: 
+- using-refill-shops-and-zero-waste-stores voice-violation,grade-level-strict — applied: 
+- zero-waste-bathroom-swaps-practical grade-level-strict — applied: 

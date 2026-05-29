@@ -1,0 +1,208 @@
+{
+  "slug": "rainwater-roof-area-yield-calculation",
+  "tutorialId": "cmpra0ein000134v4xbz0n3ga",
+  "capturedAt": "2026-05-29T18:54:03.817Z",
+  "preFix": {
+    "title": "Calculating how much water your roof can collect",
+    "subtitle": "Estimating annual rainwater yield from roof area and local rainfall data",
+    "excerpt": "A roof collecting into a water butt or underground cistern produces a calculable yield. UK annual rainfall ranges from 600 mm in east London to over 1,400 mm in the Lake District. A 50 m2 roof section in Bristol (around 850 mm/year) can theoretically yield 42,500 litres per year, more than enough for kitchen garden irrigation if stored correctly. The calculation takes five minutes and tells you whether a storage system is worth the investment.",
+    "sourceNotes": "Met Office UK Annual Rainfall 1981 to 2010 averages. CIRIA C539 Rainwater and Greywater Use in Buildings (2001). Environment Agency guidance on rainwater harvesting 2022.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The yield of a rainwater collection system depends on three numbers: the plan area of the roof feeding the collection point (m2), the local annual rainfall (mm), and the ",
+              "type": "text"
+            },
+            {
+              "text": "runoff coefficient",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpra0eh4000034v4ieb9hrxw"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " for the roof type. Multiply these together to get the annual collectable yield in litres.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The formula",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Annual yield (litres) = Roof plan area (m2) × Annual rainfall (mm) × Runoff coefficient",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Note: 1 mm of rainfall over 1 m2 = 1 litre. The formula already accounts for this unit conversion.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Finding the inputs",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Roof plan area: measure the ground footprint below the roof section draining to your chosen downpipe. For a terraced house with a rear roof slope 8 m wide and 4.5 m deep (measured horizontally, not along the slope): plan area = 8 × 4.5 = 36 m2. The slope angle does not affect the plan area calculation, it is always the horizontal projection.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Annual rainfall: look up your postcode on the Met Office rainfall map or use these regional approximations: London 600 mm, Bristol 850 mm, Manchester 800 mm, Cardiff 1,100 mm, Edinburgh 700 mm, Lake District 1,400 mm. The Met Office provides free 1981 to 2010 averages at monthly resolution.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Runoff coefficient: for a standard concrete or clay-tiled pitched roof with a water butt diverter and first-flush diverter fitted, use 0.75. Without a first-flush diverter but with a gutter guard, use 0.80. Without any gutter treatment, use 0.70 to account for evaporation from debris.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Worked examples",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "South London terrace, rear roof only: 36 m2 × 600 mm × 0.75 = 16,200 litres per year. A standard 210-litre water butt fills 77 times per year, roughly once every 4 to 5 days in an average year.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Bristol semi, whole rear + side roof (60 m2): 60 × 850 × 0.75 = 38,250 litres per year. A 1,000-litre IBC tank takes roughly 16 litres per day on average. The demand from a kitchen garden in summer is typically 40 to 60 litres per day, peak demand exceeds the average daily supply, so a 1,000-litre tank buffers winter surplus into summer use.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Storage sizing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Once you know the annual yield, divide by 365 to get the average daily yield. Compare this to your estimated daily garden water demand. If daily demand exceeds average daily yield, you need storage to bridge the gap between wet seasons (winter and spring) and high-demand seasons (summer). A storage volume equal to 1 to 3 months of peak demand (July demand × 30 to 90 days) is the practical sizing rule for UK garden irrigation systems.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "The yield of a rainwater collection system depends on three numbers: the plan area of the roof feeding the collection point (m2), the local "
+    }
+  ]
+}
