@@ -1,0 +1,98 @@
+{
+  "slug": "heat-pump-noise-and-planning",
+  "title": "Heat pump noise and planning rules",
+  "subtitle": "MCS siting requirements, permitted development conditions, and noise mitigation",
+  "excerpt": "Air-source heat pump outdoor units produce continuous fan noise. MCS siting rules and permitted development conditions set where units can be placed. This is the guidance for residential installations.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS Planning Standards MIS 3005 on siting and noise for air-source heat pumps. gov.uk permitted development guidance for microgeneration in England. MHCLG technical guidance on renewable energy in the planning system.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme: the UK certification standard for renewable energy installers and products. MCS certification is required for Smart Export Guarantee eligibility and for most government grants."
+    },
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a low-temperature source (outside air or the ground) to a higher-temperature heat emitter circuit using a refrigerant cycle and electrical energy. At a flow temperature of 35 degrees C an air-source heat pump typically delivers 3-4 kWh of heat for every 1 kWh of electricity used."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An air-source " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }], "text": "heat pump" },
+          { "type": "text", "text": " outdoor unit runs its fan whenever the system is heating, which is most of the heating season. The noise at 1 m from the unit is typically 40-52 dB(A) depending on the model, roughly the level of a quiet conversation. Where the unit goes matters: a unit close to a bedroom window or a neighbour's boundary is likely to cause complaints even if it meets the technical limits." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Permitted development conditions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In England, an air-source heat pump on a residential property is permitted development (no planning application needed) if it meets the conditions in the General Permitted Development Order 2015, Part 14. The main conditions:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Only one unit on the property." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The unit must not be on a roof, a wall or roof of a building in a conservation area, or a listed building." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The unit must be at least 1 m from the boundary of the property." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The unit must meet the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }], "text": "MCS" },
+          { "type": "text", "text": " noise standard MIS 3005: measured noise at the nearest neighbour's habitable window must not exceed 42 dB(A)." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The MCS noise calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "MIS 3005 requires the installer to calculate the predicted noise at the nearest neighbouring habitable window using the manufacturer's declared sound power level and the distance from the unit to the window. The simplified calculation for a point source in free air: noise level at distance = sound power level - 10 x log10(2 x pi x distance squared). For a unit with a sound power level of 60 dB(A) at 5 m from a neighbouring bedroom window, the calculated level is approximately 42 dB(A). At 4 m it would be 45 dB(A), which exceeds the limit." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting choices that reduce noise impact" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Increase distance: every doubling of distance reduces the noise by 6 dB(A). A unit that is 5 m from a window is 6 dB quieter than the same unit at 2.5 m." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid siting opposite a bedroom window: the noise is most likely to cause disturbance at night when the heating system runs at low demand. Place the unit on the opposite side of the house from bedrooms where possible." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anti-vibration mounting: the fan and compressor vibration transmits through the mounting feet into the surface the unit sits on. Rubber anti-vibration feet reduce this transmission path. Most units ship with these; confirm they are fitted." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Acoustic screening: a close-boarded fence or a wall between the unit and the nearest neighbour boundary can reduce the transmitted noise by 3-8 dB depending on the screen height and material. The screen must not restrict airflow to the unit." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wales, Scotland, and Northern Ireland" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scotland has its own permitted development rules under the General Permitted Development (Scotland) Order 1992. The principles are similar but conditions differ. Confirm with the local planning authority in conservation areas or Article 4 areas. Wales aligns closely with England on ASHP rules. Northern Ireland has its own planning guidance." }]
+      }
+    ]
+  }
+}

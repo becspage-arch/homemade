@@ -1,0 +1,97 @@
+{
+  "slug": "standby-power-reduction",
+  "title": "Reducing standby power in the home",
+  "subtitle": "Identifying phantom loads and cutting the always-on baseline",
+  "excerpt": "The average UK home uses 200-450 watts continuously in standby and background loads. Over a year this costs 180-430 pounds at current electricity prices. Most of it can be cut without affecting daily convenience.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DECC Household Electricity Survey (2012) for baseline standby consumption by appliance category, still the most comprehensive UK domestic standby dataset. Energy Saving Trust standby and always-on guidance (2024 update).",
+  "approximateCostGbp": 30,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Every device that remains plugged in draws some power even when not actively being used. The total of all these standby, sleep, and background loads is the always-on baseline: the minimum power the home draws whether anyone is awake or not. In a typical UK home this runs at 200-450 W. At 27p/kWh that is between 1,580 and 3,540 kWh per year, costing 430-950 pounds. The proportion that can be eliminated varies by household, but most homes can cut 100-200 W from the baseline without any practical inconvenience." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What makes up the baseline" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Always-on loads (cannot be switched off without losing function)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Refrigerator and freezer: 30-100 W per appliance continuously. This is unavoidable but can be reduced by choosing A-rated appliances and ensuring the rear coils are not in a warm enclosed space." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Router and broadband equipment: 10-30 W. Leaving this on is usually necessary; some routers can be scheduled to power down between midnight and 6 am if the household does not need overnight connectivity." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Security system and smart home hub: 5-20 W. Usually necessary." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Phantom loads (standby draws that serve no necessary function overnight)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Television in standby: 0.5-2 W for modern LED TVs; up to 20 W for older LCD or plasma sets." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set-top boxes and streaming sticks: 2-15 W in standby. Some set-top boxes update schedules in the background and draw 12-15 W even when the screen is off." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Desktop computers and monitors: 0.5-5 W in sleep; up to 70 W if not in sleep mode." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Microwave and oven with clocks: 2-5 W continuously for the digital clock display." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Phone chargers left plugged in without a phone: 0.1-0.5 W each. Negligible per charger but often five to ten chargers in a household." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Older game consoles in standby: 1-70 W depending on the console generation and sleep mode setting." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to measure your baseline" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A whole-home energy monitor (a clamp on the meter tails connected to an app) shows the baseline directly: look at the reading at 3 am when all active appliances are off. This is the number to reduce. Alternatively, use a plug-in power meter on each appliance to measure its standby draw individually." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practical reductions" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit switched multi-way extension leads to entertainment equipment clusters. One switch turns off the TV, set-top box, and games console together. This typically saves 15-30 W overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enable sleep mode on all computers. A desktop in sleep mode draws under 1 W versus 50-100 W when the screen is on and the machine is idle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Schedule the router to power down at night if no one needs overnight connectivity. Most routers have a timer setting in the admin interface." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replace older set-top boxes with a streaming stick when the box reaches end of life. Modern streaming sticks draw 1-2 W in standby versus 12-15 W for an older set-top box." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The numbers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cutting 100 W from the always-on baseline saves 876 kWh per year at 2025/26 electricity prices of 27p/kWh, that is approximately 237 pounds per year. A 30-pound investment in smart power strips typically pays back in under two months if it eliminates 40 W of phantom load in the living room and office." }]
+      }
+    ]
+  }
+}

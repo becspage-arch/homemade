@@ -1,0 +1,132 @@
+{
+  "slug": "enclosed-tumbler-composter",
+  "title": "Setting up and using an enclosed tumbler composter",
+  "subtitle": "Filling, balancing, and tumbling rhythm for a drum-style composter",
+  "excerpt": "A tumbler composter is sealed against pests, aerates on every turn, and suits gardens where space for a static heap is limited. The key to success is balancing wet and dry inputs and tumbling at least every three days.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Garden Organic tumbler composting guidance. HDRA Organic Growing technical notes on enclosed-drum composting.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": true },
+    { "slug": "bucket-10l", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "An actively managed compost heap that reaches internal temperatures of 55-70 degrees C through microbial activity. Hot composting kills weed seeds and pathogens and produces finished compost in 8-12 weeks."
+    },
+    {
+      "slug": "browns-and-greens",
+      "term": "Browns and greens",
+      "definition": "The two categories of compost material. Browns are carbon-rich dry materials: cardboard, straw, woodchip, shredded paper. Greens are nitrogen-rich wet materials: grass clippings, vegetable peelings, coffee grounds, fresh manure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 21,
+      "title": "Check temperature in tumbler",
+      "body": "After three weeks of regular tumbling with a balanced input of browns and greens, open the hatch and push the compost thermometer through the centre of the load. A reading above 45 degrees C confirms hot composting is active. If the material smells sour, add a handful of shredded cardboard and tumble twice daily for three days.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 56,
+      "title": "Assess maturity",
+      "body": "Open the hatch and take a handful of the material. It should be dark brown, crumbly, earthy-smelling, and show no recognisable food scraps. If pieces of food are still visible, continue tumbling for another two weeks.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A drum tumbler sits on a frame above the ground, is fully sealed against vermin, and aerates the compost each time it is rotated. Manufacturers often claim it handles cooked food, but " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot-composting" },
+          { "type": "text", "text": " temperatures are needed to make that safe. Pest access is near-impossible. The main discipline is keeping the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "browns-and-greens" } }], "text": "browns-and-greens" },
+          { "type": "text", "text": " balance and tumbling regularly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Position in partial sun: a tumbler in full shade processes more slowly than one that gains solar heat gain during the day. The tumbler must be on a level surface to rotate freely. Tumblers with a side-mounted drum require more lateral space than those with an end-mounted drum; check the rotation arc before positioning." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Starting up" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a base layer of browns: torn cardboard, shredded paper, or dry leaves. Fill to around 20 percent of the drum volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the first green layer: kitchen vegetable waste, grass clippings, or coffee grounds. Volume roughly equal to the browns layer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rotate the drum 8-10 full rotations. This mixes the layers and introduces air throughout." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue adding kitchen and garden waste in a 1:1 greens-to-browns ratio by volume. Tumble after every addition." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tumbling rhythm" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tumble at least every three days. More frequent tumbling (every day) in warm weather accelerates decomposition. Less frequent tumbling leads to wet compaction and anaerobic conditions in the centre. In winter, monthly tumbling maintains slow cold decomposition; expect 6-12 months for finished compost rather than 6-8 weeks in summer." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to stop adding and let it finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A tumbler works best when filled to about 75 percent capacity and then left to process without new additions. Adding fresh material to a near-finished batch slows the process: the new greens need more time than material that is close to done. If the tumbler is a single-drum model, stop adding once it is three-quarters full and keep a bucket for kitchen waste until the batch is empty." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Contents compacted into a solid wet mass", "cause": "Too many greens, insufficient tumbling, or drum overfilled", "fix": "Open the hatch and break up the compacted mass with a stick or trowel. Add a full bucket of torn cardboard, close the hatch, and tumble vigorously. Do not fill above 75 percent capacity." }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Very slow decomposition in summer", "cause": "Drum too dry, or C:N ratio too high (too many browns)", "fix": "Add a litre of water before tumbling, or add a batch of high-nitrogen greens. The wrung-out-sponge moisture test applies in a tumbler as much as in a static heap." }
+          }
+        ]
+      }
+    ]
+  }
+}

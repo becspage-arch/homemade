@@ -1,0 +1,115 @@
+{
+  "slug": "solar-thermal-hot-water",
+  "title": "Solar thermal hot water: decision guide",
+  "subtitle": "Flat-plate versus evacuated tube, system sizing, and when it makes sense",
+  "excerpt": "Solar thermal panels on a south-facing roof can provide 40-60 percent of a household's hot water demand annually. The system pays back in 10-20 years at current energy prices, depending on hot water usage and roof orientation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust solar thermal guidance for annual output and payback figures. MCS Solar Thermal Planning and Installation Standard (MCS 024) for system sizing. gov.uk BUS guidance on solar thermal eligibility.",
+  "approximateCostGbp": 4000,
+  "paybackYears": 15,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "solar-thermal",
+      "term": "Solar thermal",
+      "definition": "A system that uses roof-mounted collectors to absorb solar radiation and transfer the heat to a hot-water cylinder. Distinct from solar PV, which generates electricity."
+    },
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme: the UK certification standard for renewable energy installers and products. MCS certification is required for Smart Export Guarantee eligibility and for most government grants."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A solar thermal system captures heat from sunlight and uses it to pre-heat domestic hot water. On a south-facing roof at 30-40 degrees pitch in the UK, a 4 m2 flat-plate collector delivers around 1,500-2,000 kWh per year of useful heat. A typical UK household uses around 3,500 kWh per year heating water; " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-thermal" } }], "text": "solar thermal" },
+          { "type": "text", "text": " covers 40-60 percent of that demand. The remainder is provided by the existing boiler, an immersion heater, or a heat pump." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Flat-plate versus evacuated tube" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flat-plate collectors are a glass-covered insulated panel with an absorber plate bonded to a serpentine water circuit. They are lower cost, robust, and well-suited to the UK climate. Output per m2 at UK irradiance levels is typically 350-450 kWh per m2 per year." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Evacuated tube collectors use glass tubes evacuated of air to provide high thermal insulation around the absorber element. They operate more efficiently at low irradiance and in cold ambient conditions, making them better suited to north-facing or shaded roofs and winter operation. Output per m2 is typically 400-550 kWh per m2 per year. Evacuated tubes cost 20-30 percent more than flat-plate for the same collector area and are more fragile." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Which to choose" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a south-facing pitch at 30-45 degrees in the UK, flat-plate is usually the better value. Evacuated tubes earn their price premium on roofs below 30 degrees pitch, above 45 degrees north latitude, or in areas with long overcast winters." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "System sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The MCS solar thermal sizing method uses the household occupancy and the annual hot-water demand. Standard UK figure: 40 litres of hot water per person per day at 60 degrees C. For a three-person household: 120 litres per day. Annual demand: 120 litres x 365 days x (60 - 10) degrees C temperature rise x 4.19 J/g/K / 3,600,000 = approximately 2,500 kWh per year." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Collector area required to cover 50 percent of demand: 2,500 kWh x 0.5 / 400 kWh per m2 = 3.1 m2. Round up to 4 m2 for real-world losses. Standard residential installations are 2-4 m2 of collector area for flats, 4-6 m2 for houses." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cylinder requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A solar thermal system requires a twin-coil hot-water cylinder: one coil for the solar circuit and one for the boiler or immersion backup. If the existing cylinder is single-coil, it must be replaced. A standard solar-compatible cylinder for a three-person household is 200-250 litres. The solar cylinder must be located in a space where the long cylinder (typically 1400-1600 mm tall) will fit; check the airing cupboard dimensions before specifying." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Overheating in summer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In June and July a solar thermal system on a south-facing roof can produce more heat than the household uses. The cylinder reaches 60 degrees C by 10 am and stays there all day. If the system has no pressure relief and the pump does not circulate the glycol fluid, the collector will stagnate and the fluid degrades rapidly. A correctly specified system includes a thermal dump (a separate small radiator in the loft) or a drain-back design that allows the fluid to return to a tank when the pump stops. Specify this with the installer." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Solar thermal installation requires " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }], "text": "MCS" },
+          { "type": "text", "text": " certification for grant eligibility. The roof must carry the extra load (about 25-35 kg per m2 for flat-plate). Planning permission is not usually needed for roof-mounted solar on most homes, but check with the local authority if the property is listed or in a conservation area." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Solar thermal versus solar PV plus immersion diverter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In a house with solar PV, an immersion diverter sends surplus PV output to the hot-water cylinder. This gives a similar annual hot-water result to a solar thermal system without the separate collector circuit. The diverter costs far less than a solar thermal installation. If PV is already fitted, the diverter is usually the more cost-effective option. For a house with no renewable generation, either approach works depending on roof space, budget, and cylinder type." }]
+      }
+    ]
+  }
+}

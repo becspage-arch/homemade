@@ -1,0 +1,205 @@
+{
+  "slug": "three-bin-hot-compost-system",
+  "title": "Building a three-bin hot compost system",
+  "subtitle": "A weekend build from reclaimed timber that processes 6 cubic metres of waste per year",
+  "excerpt": "A three-bin hot compost system turns garden and kitchen waste into finished compost in 8-12 weeks rather than the 9-12 months a cold heap takes. This is the full build from pressure-treated 100 x 100 mm posts and reclaimed boards.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HDRA (Garden Organic) Technical Leaflet on hot composting. Centre for Alternative Technology guidance on three-bin systems. National Trust woodland management notes on compost system construction.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "saw-hand", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "garden-fork", "isOptional": false },
+    { "slug": "compost-thermometer", "isOptional": false },
+    { "slug": "spade", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "An actively managed compost heap that reaches internal temperatures of 55-70 degrees C through microbial activity. Hot composting kills weed seeds and pathogens and produces finished compost in 8-12 weeks."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "The ratio of carbon-rich (brown) material to nitrogen-rich (green) material in a compost heap. The optimal range for hot composting is 25:1 to 30:1 by weight; too much carbon slows decomposition, too much nitrogen causes anaerobic conditions and odour."
+    },
+    {
+      "slug": "browns-and-greens",
+      "term": "Browns and greens",
+      "definition": "The two categories of compost material. Browns are carbon-rich dry materials: cardboard, straw, woodchip, shredded paper. Greens are nitrogen-rich wet materials: grass clippings, vegetable peelings, coffee grounds, fresh manure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 2,
+      "title": "Take the first temperature reading",
+      "body": "Push the compost thermometer 300 mm into the centre of the first filled bin. A reading of 45-70 degrees C within 48 hours confirms the heap is hot-composting actively. Below 40 degrees C means the C:N ratio needs adjustment or the heap is too dry.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "First turn: move heap to bin two",
+      "body": "Turn the contents of bin one into bin two using the garden fork. Move the outer cooler layers to the centre of the new bin. Take a temperature reading in bin two within 24 hours of turning; it should reheat to 55-65 degrees C.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 28,
+      "title": "Second turn: move heap to bin three",
+      "body": "Turn bin two into bin three. The material should now be well broken down, dark, and earthy-smelling. After this turn, bin three is the maturation bin. Begin filling bin one with fresh material.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 84,
+      "title": "Compost is ready to use",
+      "body": "After 8-12 weeks total from the first fill, the contents of bin three should be dark brown, crumbly, earthy-smelling, and at ambient temperature. Sieve into 10 mm riddle and apply to beds or store under cover.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A three-bin system manages " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot composting" },
+          { "type": "text", "text": " through a sequential turning process: bin one fills with fresh material, bin two receives the first turn, bin three receives the second turn and completes the maturation. Each bin holds roughly 1 m3. The system processes approximately 6 m3 of raw material per year and yields around 1 m3 of finished compost per cycle. The build requires a weekend plus sourcing and delivery of timber." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the finished system saves" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "What this produces" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One cubic metre of finished compost applied to 50 m2 of garden bed at 20 mm depth replaces approximately 10 bags of bought compost and provides around 3-5 kg of available nitrogen. A three-bin system running continuously produces 3-4 m3 of compost per year from a household with a medium-sized garden." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "8 upright posts: 100 x 100 mm pressure-treated softwood, 900 mm long. These form the four corners and the two intermediate posts." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boards for the sides and back: reclaimed fence boards, pallet planks, or 22 mm sawn softwood. Width should be 100-150 mm to allow gaps for aeration. You need approximately 24 linear metres of 100 mm board to build three bays, each 1 m wide and 1 m tall." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boards for the front (removable): 8 boards per bay, 100 x 22 mm, 1 m long. These slot between battens screwed to the corner posts, allowing the front to be dropped one board at a time." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "4 x 50 mm galvanised screws: approximately 200 for the build." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Post spikes or concrete: 8 ground anchors for the posts, or 12 kg of concrete per post if driven into soft ground." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Position the system in partial shade: full sun dries the heap too quickly in summer. Level ground allows the turning fork to work without obstruction. Allow at least 1 m in front of each bay for turning access. The system footprint is approximately 3.5 m wide x 1.3 m deep; check the space before buying materials." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Proximity to the back door" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The further the compost system is from the kitchen door, the less frequently kitchen waste reaches it. Most households find 10-15 m is the practical maximum distance. A covered kitchen caddy collected weekly makes the distance manageable." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The build" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set out the post positions. Mark four corners plus two intermediate posts. The overall frame is 3.2 m wide (three 1 m bays with the posts in between) and 1 m deep. Drive a stake and string line to confirm the posts will be square." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install the corner posts. Drive post spikes 450 mm into the ground. Check each spike is vertical with the spirit level before driving fully home. For firm or stony ground, pre-drill a pilot hole with a bar or drill." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install the intermediate posts (between bays). These carry the back boards on one face and the front guide battens on the other. Check for vertical." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Screw the back and side boards. Start at the bottom and work upward, leaving 25-30 mm gaps between boards for aeration. Alternate the end of each board so the joints do not line up." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Screw guide battens to the front face of the front posts and the intermediate posts. The battens create a channel into which the removable front boards slot. Width of the channel: board thickness plus 5 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut and label the front boards. Label each set of 8 boards for their bay. Slot them in and confirm they slide freely in and out." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Starting the first heap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Layer " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "browns-and-greens" } }], "text": "browns and greens" },
+          { "type": "text", "text": " in a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }], "text": "C:N ratio" },
+          { "type": "text", "text": " of roughly 3:1 by volume (more browns than greens). A base layer of woodchip or straw 100 mm deep, then alternating layers of kitchen waste and garden material with a thin layer of browns between each green addition. Water each layer if dry materials dominate; the moisture content should feel like a wrung-out sponge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Heap does not heat above 35 degrees C after filling", "cause": "C:N ratio too high (too many browns), heap too dry, or heap too small to insulate itself", "fix": "Add a batch of high-nitrogen greens (fresh grass clippings, coffee grounds, or a small amount of chicken manure). Water to damp-sponge moisture. A heap smaller than 0.8 m3 struggles to heat in cool weather; add more material or insulate the top with a cardboard layer." }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Heap smells of ammonia", "cause": "Too much nitrogen (too many greens), anaerobic conditions", "fix": "Turn the heap, adding a thick layer of shredded cardboard or straw as you turn. The ammonia smell indicates nitrogen is being lost to the air; the browns absorb it and bring the C:N ratio back into range." }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Heap is full of ants and the material is dry", "cause": "Heap too dry; ants colonise when moisture drops below 40 percent", "fix": "Water the heap thoroughly, turning as you add water to ensure even moisture distribution. Add a layer of damp grass clippings to the top to slow surface evaporation." }
+          }
+        ]
+      }
+    ]
+  }
+}

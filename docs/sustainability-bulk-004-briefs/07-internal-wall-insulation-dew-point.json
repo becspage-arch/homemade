@@ -1,0 +1,145 @@
+{
+  "slug": "internal-wall-insulation-dew-point",
+  "title": "Internal wall insulation: the dew-point risk",
+  "subtitle": "Understanding interstitial condensation before you insulate from inside",
+  "excerpt": "Adding insulation to the inside of a cold wall moves the dew point into the wall construction. If the insulation is the wrong type or the wrong thickness, condensation forms inside the wall and causes rot, mould, and structural damage over several years.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AECB technical notes on internal wall insulation and interstitial condensation. BRE Good Building Guide 44 on moisture in buildings. gov.uk Part C (Site Preparation and Resistance to Contaminants and Moisture) approved document for damp-proofing requirements.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised area of construction where the thermal resistance is lower than the surrounding area, causing concentrated heat loss and a locally cold surface where condensation can form."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane that slows the movement of water vapour through a building element. Required on the warm side of insulation in many assemblies to prevent interstitial condensation."
+    },
+    {
+      "slug": "solid-wall-insulation",
+      "term": "Solid wall insulation",
+      "definition": "Insulation applied to a solid (non-cavity) wall, either on the outside face (external wall insulation) or the inside face (internal wall insulation). Both methods change the thermal and moisture behaviour of the wall."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding insulation to the inside of an external wall keeps the room warmer and reduces heat loss. It also changes where the dew point sits within the wall construction. When you insulate from inside, the outer part of the wall becomes colder than before because less heat flows through it. The dew point moves inward. If the insulation and any " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+          { "type": "text", "text": " are specified correctly, the dew point sits on the warm side of the insulation and no condensation forms. If they are not, condensation forms inside the wall and causes progressive damage over three to five years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The dew point" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At any given air temperature, air can hold a maximum amount of water vapour. When air cools below the dew point, it can no longer hold all its vapour and water condenses out as liquid. In a wall assembly, water vapour from the warm interior diffuses outward through the construction. Where the construction temperature drops below the dew point of the vapour moving through it, interstitial condensation occurs. In a solid wall without insulation, this typically happens harmlessly on the outer face. With internal insulation, the temperature profile changes and condensation may now form on the original cold wall surface, hidden behind the insulation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know before specifying" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wall construction: is it solid brick, solid stone, or cavity construction? A cavity wall typically has enough air movement in the cavity to manage some vapour. A solid wall has no such buffer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Existing dampness: do not add internal insulation to a wall with active rising or penetrating damp. The insulation will trap moisture and cause rapid damage. Diagnose and treat the damp first." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Room use and humidity: a bathroom, kitchen, or utility room produces more vapour than a bedroom or hallway. Higher vapour loads increase the risk. Mechanical extract ventilation in high-humidity rooms reduces the vapour reaching the wall." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wall exposure: a west-facing wall in an exposed location drives more rainwater into the outer face. This raises the moisture content and leaves less tolerance for condensation from inside." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The Glaser method: a simplified check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The Glaser method checks for condensation risk in a wall assembly. It calculates the vapour pressure at each layer and compares it with the saturation point at that layer's temperature. If vapour pressure exceeds saturation, condensation is predicted. The method uses the vapour resistance and thermal resistance of each layer to build a temperature and vapour profile through the wall." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a simple check, take a 220 mm solid brick wall with 60 mm PIR board on the inside face and a vapour control layer behind the plasterboard:" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The interior at 20 degrees C and 50 percent relative humidity has a vapour pressure of approximately 1.17 kPa." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The vapour control layer resists vapour movement. The vapour pressure at the insulation-to-masonry interface drops sharply across the vapour control layer and the PIR board." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The temperature at the masonry inner face on a design-day exterior of -3 degrees C comes from the thermal resistance of the wall. For a 220 mm brick wall (U-value 1.8 W/m2K) with 60 mm PIR at 0.022 W/mK, the masonry inner face is roughly 2-4 degrees C." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The saturation vapour pressure at 2-4 degrees C is approximately 0.72-0.81 kPa. If the vapour pressure at that interface (after the vapour resistance of the layers on the warm side) is below this, no condensation is predicted. A correctly specified vapour control layer keeps the vapour pressure at this interface well below saturation." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The role of the vapour control layer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The vapour control layer sits on the warm side of the insulation (between the insulation and the plasterboard). Its function is to limit the vapour pressure that reaches the cold masonry interface. A correctly installed " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+          { "type": "text", "text": " reduces the vapour pressure at the cold face to a level that stays below saturation even on the coldest design-day conditions. Gaps and penetrations in the vapour control layer (at sockets, light switches, and skirting) allow localised vapour bypass. These must be sealed with specialist tape or proprietary air-sealing products." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thermal bridges at the perimeter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The junction between an insulated wall and an uninsulated floor, ceiling, partition wall, or window reveal is a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }], "text": "thermal bridge" },
+          { "type": "text", "text": ". Surface temperatures drop sharply at these junctions. Condensation and mould often appear there first, even when the main insulated area is working correctly. Return the insulation at least 300 mm around every external corner and insulate the reveals, head, and sill at each window." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Internal wall insulation on a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solid-wall-insulation" } }], "text": "solid wall" },
+          { "type": "text", "text": " in a high-humidity room, an exposed site, or a damp property needs a moisture analysis before installation. A surveyor with solid-wall experience can run one using tools such as WUFI. It typically costs a few hundred pounds and is the only way to confirm the design is safe before you start." }
+        ]
+      }
+    ]
+  }
+}

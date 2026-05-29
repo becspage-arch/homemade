@@ -1,0 +1,95 @@
+{
+  "slug": "off-grid-solar-charge-controller",
+  "title": "Selecting and setting up an MPPT charge controller",
+  "subtitle": "Matching the controller to the panel and battery for a small off-grid system",
+  "excerpt": "A charge controller is the brain of an off-grid solar system. The wrong size destroys the battery. The right size, correctly programmed for the battery chemistry, extends battery life and maximises harvest from the panel. This is how to select and set one up.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Victron Energy MPPT charge controller SmartSolar series documentation. Renogy MPPT controller installation guide. Battery University BU-403 guidance on lead-acid and LiFePO4 charge profiles.",
+  "approximateCostGbp": 50,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "multimeter-digital", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mppt",
+      "term": "MPPT",
+      "definition": "Maximum Power Point Tracking. An algorithm used by solar charge controllers to continuously find the voltage at which a solar panel produces maximum power, which varies with light level and temperature. MPPT controllers extract 10-30 percent more energy from the same panel than simpler PWM controllers, especially in partial shade or low light."
+    },
+    {
+      "slug": "bulk-absorption-float",
+      "term": "Bulk, absorption, and float charging",
+      "definition": "The three stages of a lead-acid battery charge cycle. Bulk: maximum current until the battery reaches approximately 14.4V. Absorption: constant voltage at 14.4V until current drops to a low level. Float: voltage drops to 13.6V to maintain the battery fully charged without overcharging. LiFePO4 batteries use bulk and absorption only, with no float stage."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mppt" } }], "text": "MPPT" },
+          { "type": "text", "text": " charge controller converts the panel's output to the voltage and current the battery requires. A 20V panel output becomes a 14.4V charging voltage for a 12V lead-acid battery. The controller also extracts the maximum current at each light level. Without a controller, a panel connected directly to a battery would overcharge and damage it within days." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Selecting the right controller size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Controller size is rated in amps of maximum output current. Calculate the required current: panel wattage divided by battery voltage. A 100W panel with a 12V battery system requires at least 100 / 12 = 8.3A controller. Add 25 percent headroom for peak conditions: a 10A controller is the minimum for a 100W panel. Common sizes are 10A, 20A, and 30A. Oversizing slightly is not wasteful; the controller only draws what the panel and battery require." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Panel voltage compatibility" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Check the open-circuit voltage (Voc) of the panel against the maximum input voltage of the controller. A standard 100W 12V panel has a Voc of approximately 21V. On a cold clear morning this can rise to 24-26V. A controller with a maximum input of 50V handles this comfortably. Some cheap controllers have maximum inputs of 25-30V and can be damaged by cold-weather peak voltage. Always check both the panel Voc and the controller maximum input voltage before purchasing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the battery charge profile" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most MPPT controllers have a DIP switch or digital menu to select the battery type: sealed lead-acid (AGM or gel), flooded lead-acid, or lithium. Select the correct profile for the battery in use. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bulk-absorption-float" } }], "text": "bulk, absorption, and float" },
+          { "type": "text", "text": " voltages for each type are preset in the controller firmware. Using the wrong profile (for example, a sealed AGM profile on a lithium battery) can lead to overcharging, battery damage, or in the worst case a safety incident. If the battery manufacturer provides specific charge voltage recommendations, use these via the controller's custom voltage settings rather than the preset." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Low-voltage disconnect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Set the low-voltage disconnect (LVD) threshold to protect the battery from deep discharge. For a 12V lead-acid battery, set LVD to 11.8V. For LiFePO4, set to 12.0V or follow the battery manufacturer's specification. When battery voltage drops to the LVD threshold under load, the controller disconnects the load output automatically. The battery is not dead at this voltage; it reconnects when solar charging raises the voltage above the reconnect threshold (typically LVD + 0.5V)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Verifying correct operation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Connect the multimeter to the battery terminals after two hours of sun. The voltage should be above 13.8V (absorption phase) on a clear day. A voltage below 13V on a sunny day indicates the controller is not charging, the panel connection has high resistance, or the panel is in partial shade. Check each connection with the multimeter in continuity mode." }]
+      }
+    ]
+  }
+}

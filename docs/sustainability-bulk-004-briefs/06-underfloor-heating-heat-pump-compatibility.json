@@ -1,0 +1,144 @@
+{
+  "slug": "underfloor-heating-heat-pump-compatibility",
+  "title": "Underfloor heating and heat pump compatibility",
+  "subtitle": "Checking whether your floor system can run at low flow temperatures",
+  "excerpt": "Heat pumps run at peak efficiency when the flow temperature stays below 45 degrees C. Underfloor heating systems designed for gas boilers typically run at 45-55 degrees C and may need adjustment to work well with a heat pump.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Pump Association technical guide on emitter sizing and flow temperatures (2023). CIBSE Guide B2 on low-temperature heating systems. Energy Saving Trust heat pump guidance for typical COP vs flow temperature relationships.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a low-temperature source (outside air or the ground) to a higher-temperature heat emitter circuit using a refrigerant cycle and electrical energy. At a flow temperature of 35 degrees C an air-source heat pump typically delivers 3-4 kWh of heat for every 1 kWh of electricity used."
+    },
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance: the ratio of heat delivered to electricity consumed at a given operating point. COP is a snapshot figure; SCOP is the seasonal average over a full heating season."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature at which heated water leaves the heat source and enters the distribution circuit. Lower flow temperatures improve heat pump efficiency and reduce running costs."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }], "text": "heat pump" },
+          { "type": "text", "text": " delivers a given amount of heat most efficiently at the lowest possible " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flow-temperature" } }], "text": "flow temperature" },
+          { "type": "text", "text": ". For a typical air-source unit, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }], "text": "COP" },
+          { "type": "text", "text": " at 35 degrees C flow is around 3.5-4.0; at 55 degrees C it falls to 2.0-2.5. Underfloor heating (UFH) inherently operates at lower flow temperatures than radiators because it has far more emitter surface area for the same room. Whether an existing UFH system can run comfortably at 35-45 degrees C depends on how it was designed and what screed depth covers the pipes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to find out" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Current flow temperature: check your boiler or manifold controller. The thermostat may show the setpoint. If it is above 55 degrees C, the UFH was designed as an assisted-warm system and may struggle at heat-pump temperatures." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pipe spacing: measure the spacing between floor pipes by looking for the pipe clips or by feeling the slight ridges through a vinyl floor covering. Standard UFH spacing is 200 mm or 150 mm between pipe centres. Closer spacing means more heat per m2 at a given flow temperature." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Screed depth over the pipes: the floor finish and screed depth affect how much heat reaches the room surface. A 65 mm screed is typical; a 40 mm or polymer-modified screed responds faster but still requires the correct flow temperature to maintain output." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Floor finish: carpet with an underlay reduces heat output significantly. A 10 mm carpet with 7 mm underlay cuts output by around 35 percent compared to a tile or stone floor. This is the most common reason a UFH system seems undersized." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The heat loss calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A UFH system is sized to match the design heat loss of each room. If the room is well-insulated, the heat loss is low and the floor can deliver enough heat at 35-40 degrees C. If the room has poor insulation, the heat loss is high and the floor may need 50-55 degrees C to keep up on the coldest days." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a simple check: measure the room dimensions in metres, multiply length by width to get the floor area in m2. A well-insulated room (post-2000 construction or recently retrofitted) has a design heat loss of around 40-60 W/m2. A poorly insulated room may be 80-120 W/m2. A 200 mm pipe-spacing UFH system in a 65 mm screed delivers roughly 50-60 W/m2 at a mean water temperature of 35 degrees C (flow 40, return 30). If the room heat loss is within this range, the system will perform adequately with a heat pump without modification." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 1990s detached house in Reading. Living room: 6 m x 5 m = 30 m2. UFH with 200 mm pipe spacing, 65 mm screed, ceramic tile finish. Current flow temperature: 50 degrees C, return 40 degrees C." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Estimated room design heat loss: the house is 1990s cavity-wall construction, likely with cavity fill and loft insulation. A reasonable estimate is 55 W/m2. Total heat demand: 30 m2 x 55 W/m2 = 1,650 W." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Current UFH output at 50-40 degrees C mean water temperature of 45 degrees C: approximately 80 W/m2. Total output: 30 m2 x 80 W/m2 = 2,400 W. The system has headroom." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At heat-pump target of 40-30 degrees C mean water temperature of 35 degrees C: approximately 50 W/m2. Total output: 30 m2 x 50 W/m2 = 1,500 W. This is just below the 1,650 W room demand." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Conclusion: at 40-30 degrees C this room is slightly undersized. Options: raise the flow temperature to 45-35 degrees C on the coldest weeks (COP around 3.0 on those days); improve room insulation to bring heat loss below 50 W/m2; or accept a slightly cooler room on the coldest days." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mixing UFH and radiators in the same house" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "When a house has UFH on the ground floor and radiators above, the two circuits need different flow temperatures. UFH runs at 35-40 degrees C; radiators need 50-55 degrees C unless they are oversized low-temperature models. A heat pump serving both circuits needs a mixing valve or a plate heat exchanger to keep the temperatures separate." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Solid floor versus suspended timber" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "UFH in a suspended timber floor uses a different construction: the pipes sit in profiled aluminium spreader plates between the joists, transferring heat upward through the floor boards. These systems are less thermally massive than screed systems and respond faster to thermostat changes. They can run at 35-40 degrees C flow temperature provided the floor covering is low-resistance." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A full whole-house calculation requires a room-by-room survey. MCS certification for a heat pump requires a BS EN 12831 heat-loss calculation. The check above gives a rough indication; the installer's survey will confirm the actual figures." }]
+      }
+    ]
+  }
+}

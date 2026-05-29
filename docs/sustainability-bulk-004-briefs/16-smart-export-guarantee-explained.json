@@ -1,0 +1,110 @@
+{
+  "slug": "smart-export-guarantee-explained",
+  "title": "Getting the most from the Smart Export Guarantee",
+  "subtitle": "Choosing a tariff, timing your export, and what smart tariffs change",
+  "excerpt": "The Smart Export Guarantee pays solar PV owners for electricity exported to the grid. Export rates vary from 4p to 24p per kWh depending on the tariff and time of day. Choosing well and timing battery charge cycles can improve annual income by 30-50 percent.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Smart Export Guarantee guidance for scheme overview and eligibility. Ofgem SEG data on current tariff rates (Q1 2026). Solar Energy UK guide to optimising SEG income.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "seg",
+      "term": "SEG",
+      "definition": "Smart Export Guarantee: a UK government-mandated scheme requiring licensed energy suppliers with more than 150,000 customers to offer a tariff paying solar PV and other eligible microgenerators for electricity exported to the grid. Replaced the Feed-in Tariff in 2020."
+    },
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight directly into electricity. Rated in kilowatt-peak (kWp), the output under standard test conditions."
+    },
+    {
+      "slug": "battery-storage",
+      "term": "Battery storage",
+      "definition": "A battery system coupled to solar PV that stores surplus generation for use when the panels are not generating. Common systems are 5-10 kWh capacity for a typical UK home."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "seg" } }], "text": "SEG" },
+          { "type": "text", "text": " pays " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " owners for each kWh they export to the grid. To qualify, the system must be MCS certified and the home must have a smart meter that records half-hourly export data. In practice, flat-rate tariffs run from 4p to 15p per kWh. Time-of-use tariffs pay up to 24p per kWh during evening peaks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to register for SEG" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm your installation has an MCS certificate. If the installer did not provide one, contact them: the MCS certificate is a legal requirement for SEG eligibility." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm you have a smart meter capable of recording export (a SMETS2 meter). A first-generation SMETS1 meter may not support export measurement; contact your supplier to check." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply to your supplier or to a different SEG licencee. You do not have to use your electricity supplier for SEG; some standalone generators offer higher export rates than electricity suppliers." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Provide the MCS certificate number and installation details. The application process typically takes two to four weeks." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing a tariff" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flat-rate tariffs pay the same rate for all exported kWh regardless of when they occur. They are simpler to optimise but cap the income potential. A flat rate of 8p/kWh is average; rates above 12p/kWh are available from some suppliers." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Time-of-use export tariffs pay a higher rate during peak demand periods (typically 16:00-20:00 on weekdays) and a lower rate at other times. Octopus Agile Export and similar tariffs can pay 20-24p/kWh during peak periods. To benefit from these tariffs, you need a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-storage" } }], "text": "battery" },
+        { "type": "text", "text": " to hold surplus solar generation from midday and release it for export during the evening peak." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: 4 kWp system, no battery" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 4 kWp south-facing system in the UK generates approximately 3,500 kWh per year. A typical household uses around 1,800 kWh of that directly, exporting 1,700 kWh. At a flat-rate tariff of 8p/kWh, the SEG income is approximately 136 pounds per year. At a premium flat-rate of 14p/kWh, the income rises to 238 pounds per year." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: 4 kWp with 10 kWh battery" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "With a 10 kWh battery, the household self-consumption rises to approximately 2,800 kWh (from 1,800 kWh without storage). This reduces annual export to around 700 kWh. However, the battery can be programmed to export at peak times: charging from the grid at 12p/kWh on a cheap overnight tariff and exporting 5-7 kWh per evening at 20p/kWh during peak periods. The net income from battery arbitrage is approximately 3-5 pounds per week, or 150-250 pounds per year, on top of the reduced import bill from self-consumption." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to watch for" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tariff changes: SEG rates are not guaranteed long-term. Check annually whether a better rate is available from a different supplier." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Smart meter data accuracy: SEG payments are based on half-hourly export data from the smart meter. If the smart meter loses its connection to the national data system, payments may be estimated or delayed. Check that the IHD (in-home display) shows export data." }] }] }
+        ]
+      }
+    ]
+  }
+}

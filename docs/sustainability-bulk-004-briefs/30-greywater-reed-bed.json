@@ -1,0 +1,117 @@
+{
+  "slug": "greywater-reed-bed",
+  "title": "Building a small greywater reed bed",
+  "subtitle": "Treating and reusing sink or bath water on a garden bed",
+  "excerpt": "A constructed reed bed can treat greywater from a bathroom sink or bath and release it safely into a garden. The system requires planning permission in most cases, must not accept toilet water, and works only for ground-floor or single-storey outflows where gravity drainage is available.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Centre for Alternative Technology guidance on domestic greywater reed beds. Environment Agency greywater reuse guidance for domestic properties. Constructed Wetlands Association technical notes on horizontal-flow reed beds.",
+  "approximateCostGbp": 200,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "spade", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "greywater",
+      "term": "Greywater",
+      "definition": "Wastewater from baths, showers, hand-basins, and washing machines. Greywater does not contain human waste but may contain soap, detergent, skin cells, and hair. It is distinct from blackwater (toilet waste) and must be treated before reuse. Never mix with toilet waste."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 14,
+      "title": "Check for plant establishment",
+      "body": "Two weeks after planting, check that the reed bed plants (common reed, phragmites australis, or iris pseudacorus) show new growth. A healthy reed bed will show green shoot tips. If plants appear dead, replace and check that the inlet is distributing flow evenly across the bed width.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 90,
+      "title": "Check outlet water quality",
+      "body": "Collect a small sample of the outlet water from the reed bed. It should be clear or pale yellow with no detectable odour. If it is cloudy, grey, or smells of soap or sewage, the bed is undersized for the load or the flow rate is too high. Reduce the input flow or add a second bed in series.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Planning permission and regulations" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Greywater reuse systems in England require building regulations compliance (Part H, drainage) and may require planning permission. Check with your local planning authority before installation. Never connect toilet waste to a greywater system." }] }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A small horizontal-flow reed bed filters " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greywater" } }], "text": "greywater" },
+          { "type": "text", "text": " through a planted gravel bed before the treated water enters the soil. The plants take up nutrients, the gravel supports a biofilm of bacteria that break down organic matter, and the outlet water is clean enough to irrigate ornamental plants. It should not be used to irrigate edible crops at ground level." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this system handles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A single bathroom sink produces approximately 6-10 litres per day of greywater from handwashing. A bath produces 80-150 litres per use. A small reed bed of 2 m2 can treat approximately 50-100 litres per day continuously. For higher volumes (a shower or washing machine) a proportionally larger bed is required: approximately 2 m2 per 100 litres per day." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Construction" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Excavate a bed 2 m x 1 m x 0.6 m deep, positioned downhill from the outlet pipe. The bed must be below the outfall so that gravity feeds it without pumping." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Line the excavation with 1 mm butyl pond liner. The liner must be continuous with no joins. Fold the corners rather than cutting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install a perforated inlet pipe (50 mm diameter) along one short end of the bed, running the full width 50 mm below the eventual gravel surface. The pipe distributes the inflow across the full width of the bed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install a solid outlet pipe at the opposite end, set 50-100 mm lower than the inlet pipe to create a gentle horizontal flow gradient across the bed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill with 10-20 mm washed gravel to within 50 mm of the liner edge. Plant common reed (Phragmites australis) or yellow flag iris (Iris pseudacorus) at 3-4 plants per square metre." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the inlet pipe to the household outfall and direct the outlet to a planted bed or soakaway at least 2 m from any building." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Detergent considerations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Standard household detergents pass through a reed bed and are present in low concentrations in the outlet. For ornamental garden irrigation this is acceptable. If the outlet water will reach edible crops, use phosphate-free, biodegradable soap products in the source bathroom. Products marketed for grey water reuse systems are formulated specifically for this purpose and are available from most hardware retailers." }]
+      }
+    ]
+  }
+}

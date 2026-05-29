@@ -1,0 +1,122 @@
+{
+  "slug": "12v-shed-battery-bank",
+  "title": "Building a 12V battery bank for a shed",
+  "subtitle": "Solar input, LED lighting, and USB charging from a simple off-grid system",
+  "excerpt": "A 12V lead-acid or lithium battery bank charged by a small solar panel can power LED lighting, phone charging, and low-wattage tools in a shed or outbuilding without running a mains cable. This is the wiring, component selection, and safety requirements for a basic system.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust off-grid guidance for outbuildings. Solar Trade Association domestic PV system technical notes. Victron Energy MPPT charge controller installation documentation. IET Wiring Regulations BS 7671 guidance on battery installations.",
+  "approximateCostGbp": 150,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "multimeter-digital", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "drill-driver", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mppt",
+      "term": "MPPT charge controller",
+      "definition": "Maximum Power Point Tracking charge controller. A device that converts the variable voltage output of a solar panel to the correct charging voltage for a battery. More efficient than PWM (Pulse Width Modulation) controllers, especially in partial shade. Essential for any system above 20W panel capacity."
+    },
+    {
+      "slug": "depth-of-discharge",
+      "term": "Depth of discharge (DoD)",
+      "definition": "The percentage of a battery's capacity used before recharging. Lead-acid batteries should not be discharged below 50 percent DoD to avoid shortening battery life. Lithium iron phosphate (LiFePO4) batteries can be discharged to 80-90 percent without damage."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Check battery voltage after first full day",
+      "body": "After the first day of sun, check the battery voltage with the multimeter at the battery terminals. A 12V lead-acid battery at full charge reads 12.7V at rest (no load, no charge). A reading below 12.4V after a full day of sun suggests the solar panel is undersized for the battery capacity, or the MPPT controller is not wired correctly.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 30,
+      "title": "Check connections for corrosion",
+      "body": "After a month, inspect all battery terminals, cable lugs, and the charge controller connections. Lead-acid batteries can produce hydrogen gas and sulphuric acid mist that corrodes terminals. Clean any white or blue-green deposit with a dry brush. Apply petroleum jelly (Vaseline) to bare metal terminals to slow future corrosion.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Electrical safety" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "This system operates at 12V DC, which is low-voltage and not in itself dangerous. The fuse at the battery must be the correct rating and must be fitted within 300mm of the battery positive terminal. Never work on the battery connections with metal tools that can bridge the terminals — the short-circuit current can cause burns and fire." }] }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A basic shed battery system has four components: a solar panel (10-100W), an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mppt" } }], "text": "MPPT charge controller" },
+          { "type": "text", "text": ", a 12V battery (lead-acid leisure or lithium iron phosphate), and the DC load (LED lights and USB charger). The charge controller sits between the panel and the battery and manages charging to avoid overcharging. The battery powers the load directly via fused cables." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work out daily consumption first. Two LED strip lights at 5W each for three hours per evening is 30Wh per day. A phone charger at 5W for two hours is 10Wh. Total: 40Wh per day. A 12V 50Ah lead-acid battery stores 600Wh but should not be discharged below 50 percent, giving a usable 300Wh. That is 7.5 days of use from a full battery with no solar input." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To replenish 40Wh per day from solar in the UK, a 40W panel generates approximately 120-160Wh on an average summer day (3-4 peak sun hours) and 40-80Wh on a typical winter day. A 40W panel is marginal for year-round use; a 60-80W panel provides a comfortable margin. Check the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "depth-of-discharge" } }], "text": "depth of discharge" },
+          { "type": "text", "text": " over several cloudy days by reading battery voltage daily." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wiring sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the charge controller to the battery first. Most controllers require the battery to be connected before the panel. Red to positive, black to negative." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the fuse holder in the positive cable between the battery terminal and the charge controller, within 300 mm of the battery. Use a 20A fuse for a system up to 100W panel / 50Ah battery." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the solar panel to the charge controller panel input. Check polarity before connecting; reverse polarity will damage most controllers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the load output of the charge controller to the LED lights and USB charger. The charge controller load output includes low-voltage disconnect protection, which disconnects the load before the battery is damaged by deep discharge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Battery choice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 12V 50Ah AGM lead-acid leisure battery is the lowest-cost entry point and is widely available from motor factors and caravan suppliers. It weighs 12-15 kg. A 12V 50Ah lithium iron phosphate (LiFePO4) battery is lighter, lasts three to five times longer in cycle terms, and tolerates deeper discharge, but costs significantly more upfront. For a basic shed with low daily consumption, AGM is adequate. For a more heavily used system, the total cost of ownership over ten years may favour lithium." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "slug": "improving-your-epc-rating",
+  "title": "Improving your EPC rating",
+  "subtitle": "What each measure adds to your SAP score and how to reach band C",
+  "excerpt": "Most UK homes are EPC band D or E. Reaching band C requires adding around 15-30 SAP points, typically achieved by improving loft insulation, cavity fill, and heating controls. This is the step-by-step decision framework.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk SAP 10.2 methodology notes for score contributions by measure. Ministry of Housing Communities and Local Government EPC statistics England and Wales (2023) for baseline band distribution. Energy Saving Trust EPC improvement guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "epc",
+      "term": "EPC",
+      "definition": "Energy Performance Certificate: a certificate rating a building's energy efficiency from A to G. Required at sale or let in the UK, and used as a reference point for retrofit grant eligibility and minimum energy efficiency standards."
+    },
+    {
+      "slug": "part-l",
+      "term": "Part L",
+      "definition": "Part L of the Building Regulations (England and Wales): Fuel and Power Conservation. Sets minimum thermal performance standards for new builds and significant retrofits."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epc" } }], "text": "EPC" },
+          { "type": "text", "text": " rates a property on an A-G scale derived from a SAP (Standard Assessment Procedure) score. Band A is SAP 92-100; Band G is SAP 1-20. A typical 1930s semi with loft insulation, cavity fill, and a condensing boiler scores around SAP 60-65, which is Band D. Reaching Band C requires SAP 69 or above. The measures that most reliably add SAP points for most UK house types are listed below, roughly in order of cost-effectiveness." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Measures with the most impact per pound spent" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Loft insulation to 270 mm: typically adds 5-10 SAP points depending on the current depth. For a house with no loft insulation, the gain is 15-20 SAP points. For a house with 100 mm, the top-up adds 5-8 points." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Cavity wall insulation: typically adds 4-10 SAP points for a standard 220 mm cavity. This assumes the cavity is accessible and the wall is not in an exposed location where fill is not recommended." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Boiler upgrade to A-rated condensing: adds 2-8 SAP points if the existing boiler is a non-condensing G-rated unit. If the existing boiler is already A-rated condensing, no gain here." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heating controls upgrade (programmer, TRVs, room thermostat): typically adds 2-4 SAP points. Required for any home that runs on a basic on/off switch without room-temperature feedback." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Solar PV (3-4 kWp): typically adds 10-18 SAP points. One of the highest SAP-point gains available, particularly effective for pushing a band-D or band-E house to band B or C." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Floor insulation (suspended timber floor): typically adds 2-6 SAP points depending on the floor area and existing heat loss through the floor." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the assessor looks at" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "An EPC assessor visits and records construction details, insulation levels, boiler type and age, and heating controls. The assessor does not measure; they record what is visible and classify by standard type. If loft insulation is buried under boarding, the assessor uses the default depth for the build year. That figure is often lower than what is actually there." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Keep evidence: cavity fill certificates, photos of the loft insulation depth, and boiler records. If the assessor logs a lower insulation level than is in place, provide the evidence and ask for the record to be corrected." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: 1930s semi, Band D" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Starting SAP: 63 (Band D). Existing: cavity fill present, 100 mm loft insulation, G-rated boiler, no room thermostat." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top up loft insulation to 270 mm: +7 SAP points. New total: 70 (Band C)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Upgrade boiler to A-rated condensing: +6 SAP points. New total: 76 (Band C)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add room thermostat and programmer: +3 SAP points. New total: 79 (Band C)." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In this example, loft insulation top-up alone is enough to cross into Band C. The boiler and controls upgrades consolidate the position within Band C. Further measures (solar PV, wall insulation) would push toward Band B." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The landlord minimum standard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Minimum Energy Efficiency Standards (MEES) ban renting homes in England and Wales below EPC E since 2018. Band D enforcement for new tenancies is expected from 2025. The government aims for Band C for all rented homes. For landlords, the SAP pathway above is likely the minimum needed to stay compliant. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-l" } }], "text": "Part L" },
+          { "type": "text", "text": " standard does not apply to existing properties except on major renovation, but MEES runs alongside it." }
+        ]
+      }
+    ]
+  }
+}

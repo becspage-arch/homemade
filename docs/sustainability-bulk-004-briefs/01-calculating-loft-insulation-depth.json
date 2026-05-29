@@ -1,0 +1,192 @@
+{
+  "slug": "calculating-loft-insulation-depth",
+  "title": "Calculating how much loft insulation you need",
+  "subtitle": "A worked example for a typical UK home",
+  "excerpt": "Most UK lofts have 100-150 mm of existing insulation. Current best practice is 270-300 mm. This is the calculation that tells you how many packs to buy and what U-value you will achieve.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for the 0.16 W/m2K loft target. Energy Saving Trust loft-insulation guidance for typical-loft-depth statistics and pack coverage figures.",
+  "approximateCostGbp": 300,
+  "paybackYears": 4,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of heat flow through a building element, in watts per square metre per degree Kelvin (W/m2K). Lower is better: a U-value of 0.16 loses half as much heat as one of 0.32."
+    },
+    {
+      "slug": "lambda-value",
+      "term": "Lambda value",
+      "definition": "The thermal conductivity of an insulation material, in W/mK. Lower lambda means the material conducts less heat; a thinner layer achieves the same U-value. Mineral wool is typically 0.040 W/mK; PIR board is around 0.022 W/mK."
+    },
+    {
+      "slug": "part-l",
+      "term": "Part L",
+      "definition": "Part L of the Building Regulations (England and Wales): Fuel and Power Conservation. Sets minimum thermal performance standards for new builds and significant retrofits."
+    },
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Glass or rock fibre insulation supplied as batts, rolls, or loose fill. The standard loft-insulation material in the UK, with a lambda value of around 0.040 W/mK."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most UK lofts have between 100 mm and 150 mm of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mineral-wool" } }], "text": "mineral wool" },
+          { "type": "text", "text": " on the floor. Part L1B of the Building Regulations targets a finished " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+          { "type": "text", "text": " of 0.16 W/m2K for loft insulation upgrades. To hit that target with mineral wool (lambda 0.040 W/mK), you need 250-270 mm of total depth. Most lofts need a top-up of 120-170 mm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to measure first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Existing depth: measure the insulation currently in the loft at three or four points (centre of bay, near the eaves, near the hatch). Use a ruler pushed down to the joist top. Note the lowest reading." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft floor area: measure length and width of the loft space from inside. Subtract the area covered by cold-water tanks or obstructions." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Joist depth: measure the depth of the floor joists. Standard UK domestic joists are 100 mm or 125 mm deep. This tells you how much of the top-up sits above the joists." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The target total depth depends on the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lambda-value" } }], "text": "lambda value" },
+          { "type": "text", "text": " of the insulation you are buying. The formula is:" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Target depth (mm) = (lambda / target U-value) x 1000" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For mineral wool at lambda 0.040 and a target U-value of 0.16: (0.040 / 0.16) x 1000 = 250 mm. For sheep wool at lambda 0.038: (0.038 / 0.16) x 1000 = 238 mm. For a loose-fill blown product at lambda 0.044: (0.044 / 0.16) x 1000 = 275 mm." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Existing insulation counts" },
+        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If you already have 100 mm in place, you need 150-170 mm of top-up to reach 250-270 mm total. Existing insulation is fully credited: the top-up sits directly on top of it." }] }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 1930s semi in Leeds. Loft floor area 42 m2. Existing insulation: 100 mm of compressed mineral wool between 100 mm joists. Buying standard mineral wool roll at lambda 0.040." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Target total depth: (0.040 / 0.16) x 1000 = 250 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top-up needed: 250 mm minus 100 mm existing = 150 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 150 mm roll covering 5 m2 per roll: 42 m2 / 5 = 8.4 rolls. Buy 9 rolls to account for waste and the area around the hatch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First layer: 100 mm batts between the joists (flush with joist top). Second layer: 150 mm rolls laid across the joists at 90 degrees to the first layer. This is the standard two-layer method that avoids cold bridges through the joists." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Loft with boarding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Boarding laid directly on top of insulation compresses the wool and destroys its performance. The insulation under boarding in a typical UK loft is compressed to around 50 mm and performs at roughly U 0.50, four times worse than the target. The solution is to raise the boarding on legs or bearers to clear 270 mm of insulation beneath it. Proprietary loft-leg systems exist for this; alternatively, cut 100 x 50 mm timber bearers and bolt them through the joists." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chalet bungalow or room-in-roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Where part of the loft is habitable, the insulation target moves to the roof slope rather than the floor. This changes the calculation: a warm-roof method uses PIR board or a high-performance mineral wool between and below the rafters, and the target U-value of 0.16 still applies to the finished assembly. A separate tutorial covers insulating below rafters for a warm-roof conversion." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "North-facing or cold loft" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The target depth does not change based on orientation. What changes is the urgency: a north-facing loft on an exposed hillside site loses more heat per degree than the same loft in a sheltered southern suburb. The calculation is the same; the payback is faster." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Loft insulation top-up is the most DIY-friendly retrofit available. Call a professional if the loft has structural issues, if wiring needs moving first, or if the roof shows moisture damage. ECO4 funding and council schemes sometimes cover the cost; check eligibility before buying materials." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done well: 270 mm across the full floor to the eaves. The cold-water tank is wrapped on sides and lid (not underneath). The hatch board is insulated to the same depth as the floor, and the hatch frame has a draught-proof brush seal. Wiring is buried in the insulation." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done badly: the insulation is patchy, the eaves are unfilled (often blocked by old insulation roll rather than filled to the eaves ventilation baffle), the cold-water tank sits on uninsulated boards with the lid missing, and the hatch board is a plain piece of plywood with no seal. These are the failure modes the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-l" } }], "text": "Part L" },
+        { "type": "text", "text": " inspector checks at new-build. In an existing house, they are your checklist." }]
+      }
+    ]
+  }
+}

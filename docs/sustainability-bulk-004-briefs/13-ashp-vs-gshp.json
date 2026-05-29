@@ -1,0 +1,129 @@
+{
+  "slug": "ashp-vs-gshp",
+  "title": "Air-source versus ground-source heat pumps",
+  "subtitle": "Efficiency, installation, and which makes sense for a UK home",
+  "excerpt": "Air-source heat pumps are significantly cheaper to install than ground-source but slightly less efficient in cold weather. For most UK properties, air-source is the practical choice; ground-source is suited to rural sites with sufficient land.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Pump Association UK performance data. gov.uk BUS scheme guidance for eligible technologies. CIBSE AM15 guidance on heat pump performance in UK climate conditions.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a low-temperature source (outside air or the ground) to a higher-temperature heat emitter circuit using a refrigerant cycle and electrical energy. At a flow temperature of 35 degrees C an air-source heat pump typically delivers 3-4 kWh of heat for every 1 kWh of electricity used."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance: the average heat output per unit of electricity consumed over a full heating season, accounting for temperature variation and defrost cycles. A more realistic performance figure than instantaneous COP."
+    },
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance: the ratio of heat delivered to electricity consumed at a given operating point. COP is a snapshot figure; SCOP is the seasonal average over a full heating season."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Both air-source and ground-source " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }], "text": "heat pumps" },
+          { "type": "text", "text": " extract heat from a natural source and upgrade it to a useful temperature for space heating and hot water. The source differs: air-source uses the ambient outdoor air; ground-source uses the relatively stable temperature of the ground at 1-2 metres depth. The refrigerant cycle and the distribution system are the same in both types." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Efficiency comparison" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }], "text": "SCOP" },
+          { "type": "text", "text": " is the standard metric for comparing heat pump performance over a heating season. Measured SCOP data from UK homes:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Air-source heat pumps in UK residential use: median SCOP of 2.8-3.2 (Electrification of Heat project, 2022 data). In well-insulated homes running at low flow temperatures, SCOP reaches 3.5-4.0." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ground-source heat pumps in UK residential use: median SCOP of 3.3-3.8 (same dataset). The ground temperature at slinky depth stays at 8-12 degrees C year-round, giving a consistently higher source temperature than air in winter." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The efficiency advantage of ground-source is most significant on the coldest design days. When outdoor air falls to -3 degrees C, an air-source unit's instantaneous " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }], "text": "COP" },
+        { "type": "text", "text": " may drop to 2.0-2.5. The ground at the same time is still at 8-10 degrees C, and a ground-source unit maintains COP of 3.0-3.5. In a UK climate with relatively few days below -5 degrees C, this design-day difference has a modest effect on the annual SCOP figure." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation comparison" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Air-source" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outdoor unit sits on the ground outside the building or on a wall bracket. Requires a clear space of roughly 1.5 m x 0.7 m x 0.8 m for the outdoor unit." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pipes from the outdoor unit enter the building through a 65-100 mm core drilled in the wall." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No ground works required. Installation is typically completed in one or two days by an MCS-registered installer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Installation cost: typically 8,000-12,000 pounds for a 5-8 kW residential unit, plus the BUS grant of 7,500 pounds reduces the net cost to 500-4,500 pounds (England and Wales, 2026 figures)." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Ground-source" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Horizontal slinky loop requires 200-400 m2 of accessible ground at 1-1.5 m depth. The ground works take two to three days and leave the garden unusable for one to two years while the grass re-establishes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vertical borehole loop requires drilling to 80-120 metres depth per borehole. A 5-6 kW system typically needs two boreholes. Borehole drilling requires specialist equipment and access for a drilling rig." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Installation cost: typically 15,000-25,000 pounds for the full system including ground works. The BUS grant of 7,500 pounds applies here too, but covers a smaller proportion of the total cost." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Noise and planning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Air-source units produce noise from the outdoor fan, typically 40-50 dB at 1 m. Planning permission for an air-source heat pump in permitted development does not require prior approval in most cases, provided the unit meets the MCS noise siting rules (no closer than 1 m to the property boundary and not on a listed building). Ground-source units produce no outdoor noise; the indoor unit is similar in noise level to a refrigerator." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which to choose" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Urban or suburban property with a small garden: air-source. Ground-source is not practical without a significant garden or borehole access." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rural property with at least 400 m2 of accessible flat land: ground-source is viable. The higher SCOP gives better running efficiency over the life of the system." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Budget constrained: air-source. The lower installation cost and the BUS grant make the net outlay substantially lower, and in a well-insulated UK home the SCOP difference rarely justifies the additional cost of ground-source." }] }] }
+        ]
+      }
+    ]
+  }
+}
