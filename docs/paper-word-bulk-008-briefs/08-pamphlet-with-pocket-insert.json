@@ -1,0 +1,174 @@
+{
+  "slug": "pamphlet-with-pocket-insert",
+  "title": "Pamphlet with a folded pocket insert",
+  "subtitle": "A single-signature book with a folded pocket inside the back cover for loose pages or cards",
+  "excerpt": "A standard pamphlet stitch binds a single folded signature inside a cover. This version adds a folded-paper pocket glued inside the back cover, creating a holder for loose inserts, pressed items, or reference cards.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on pamphlet binding. Internet Archive: https://archive.org/details/bookbindingandca00cock. The pocket-insert adaptation is a common workshop modification not specifically documented by Cockerell; the base pamphlet structure is his.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pamphlet-stitch", "term": "Pamphlet stitch", "definition": "A three-hole sewing structure for binding a single signature inside a cover: in at the centre, out at the head, back to centre, out at the tail, and tied off at centre." },
+    { "slug": "turn-in", "term": "Turn-in", "definition": "The strip of cover material that wraps over the edge of the board or over the cut edge of a soft cover, protecting the edge and securing the cover sheet." }
+  ],
+  "techniqueSlugs": ["pamphlet-with-pocket-insert"],
+  "criticalTechniques": ["pamphlet-with-pocket-insert"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pamphlet-stitch" } }], "text": "pamphlet stitch" },
+          { "type": "text", "text": " uses three holes, one signature, and a few inches of thread. Adding a folded pocket inside the back cover takes five minutes. It turns a plain notebook into a travel journal, field sketchbook, or seed collection book with space for loose materials at the back." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A4", "slug": "cutting-mat-a4", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Cartridge paper, 220 gsm (for cover)", "slug": "cartridge-paper-220", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm (for text pages and pocket)", "slug": "cartridge-paper-130", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: cutting tools",
+          "body": "Use a metal ruler and self-healing mat for all cuts. Change the craft-knife blade if it tugs or catches: a sharp blade makes cleaner cuts and is safer than a blunt one that skids."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the book" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This example makes an A6 pamphlet (105 x 148 mm when closed) from A4 sheets. Paper grain must run parallel to the spine, which is the short edge of the folded A6." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut five sheets of 130 gsm cartridge to A5 (148 x 210 mm), long-grain. Fold each in half to A6 size. Score along the fold with the bone folder and a metal ruler before folding for a crisp crease." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nest all five folded sheets together to form one signature. Align the folds and the foredge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut one cover sheet from 220 gsm cartridge to 155 x 220 mm, long-grain. Fold in half to form the cover. The cover is 5 mm taller and 5 mm wider than the text pages at the foredge, giving a small overhang." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slip the text signature inside the cover." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the pocket insert" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a strip of 130 gsm cartridge 155 mm wide and 90 mm tall, long-grain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score a fold line 20 mm from the long bottom edge. Fold this strip up to create the pocket tab. Burnish the fold with the bone folder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The pocket now has a 70 mm tall front face and a 20 mm gluing tab at the bottom. Score and fold the two short side edges of the front face inward by 5 mm to form side gussets. These gussets add a little depth to the pocket." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a thin line of acid-free PVA along the bottom tab and the two side gussets. Press the pocket onto the inside face of the back cover, aligned flush with the bottom and sides. Hold for 30 seconds, then place under a weight for 15 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the pamphlet" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nest the signature back inside the cover. Hold everything together with a small clip at the foredge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pierce three sewing stations along the fold: one at the centre, one 15 mm from the head, and one 15 mm from the tail. Pierce through both cover and signature in one pass." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a length of linen thread three times the spine height. Thread the needle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enter at the centre hole from outside, leaving a 50 mm tail outside. Pass to the head hole and exit outside. Re-enter at head, travel back to centre, exit outside. Pass to the tail hole, enter, and return to centre." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tie the working end to the tail of thread left at the centre hole with a square knot. The knot sits on the outside of the spine, alongside the long centre thread run. Trim both tails to 10 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }], "text": "turn-in" },
+          { "type": "text", "text": " at the cover edge can be left raw or scored and folded in by 5 mm for a cleaner edge. Press the finished book under a weight overnight." }
+        ]
+      }
+    ]
+  }
+}

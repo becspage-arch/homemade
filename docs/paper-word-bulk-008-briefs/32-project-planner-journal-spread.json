@@ -1,0 +1,96 @@
+{
+  "slug": "project-planner-journal-spread",
+  "title": "Project planner journal spread",
+  "subtitle": "Laying out a single-spread project overview with tasks, timeline, and materials list",
+  "excerpt": "A project planner spread keeps all information about a single project on two facing pages: what needs doing, in what order, by when, and with what materials. The spread acts as a persistent overview that survives without reference to a phone or separate app.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Common bullet journal and creative journalling practice for project tracking. No single primary source.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "task-migration", "term": "Task migration", "definition": "In journal planning, the practice of carrying an incomplete task forward to the next page, week, or month by copying it and marking the original as migrated. The visible cost of re-copying an undone task encourages either completing or abandoning tasks rather than perpetually deferring them." },
+    { "slug": "brain-dump", "term": "Brain dump", "definition": "An unfiltered list of every task, concern, or idea associated with a project, written out without prioritisation. The brain dump captures everything that needs to be handled before the list is organised into prioritised or sequenced steps." }
+  ],
+  "techniqueSlugs": ["project-planner-journal-spread"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A project planner spread is most useful for projects with a defined end: making a book, planning an event, completing a course of study. Open-ended projects need a different format. The spread should give an overview of the whole project rather than a daily task list: what phases exist, what is blocking what, what materials are needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the spread" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Head the spread with the project name and target completion date. If there is no hard deadline, write a self-imposed target: a project without a date tends to remain open indefinitely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brain-dump" } }], "text": "brain dump" },
+              { "type": "text", "text": " of everything the project involves, in no particular order, on scratch paper. Include tasks, materials needed, questions to answer, and dependencies. The brain dump goes on scratch paper, not the finished spread." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Organise the brain dump into three or four phases or categories. Typical project phases: planning, preparation/materials, execution, finishing. Every project has a different shape; the phase labels should reflect the actual work." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay out four zones across the spread. A task list fills most of both pages, divided by phase. A narrow column on the right page holds the materials list. A small area at the bottom holds notes. Each task line has a status symbol at the left." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write task lines with an open square checkbox to the left. When a task is done, fill the square. When a task needs to move to a daily page, draw an arrow in the square. When a task is abandoned, draw an X. This simple key makes the status of the whole project readable at a glance." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Task migration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When a project runs across multiple sessions, tasks that were not completed in the previous session must be reviewed. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "task-migration" } }], "text": "Task migration" },
+          { "type": "text", "text": " means re-evaluating each undone item: is it still necessary? Still in the right phase? The cost of copying it forward is small but visible. Any task migrated three times without progress is worth examining critically: either the task is blocked by something external (note the blocker explicitly) or it is something you are avoiding, which is a different kind of problem." }
+        ]
+      }
+    ]
+  }
+}

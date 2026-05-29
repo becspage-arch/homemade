@@ -1,0 +1,108 @@
+{
+  "slug": "reading-log-page-design",
+  "title": "Designing a reading log journal page",
+  "subtitle": "Laying out a spread that records books read, ratings, notes, and quotations in a consistent format",
+  "excerpt": "A reading log spread captures what you read, what you thought of it, and any passages worth keeping. A clear layout separates the bibliographic record from personal notes and makes past entries easy to scan. The format can be minimal or detailed depending on how much you want to record.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Common journalling practice consolidated from bullet journal, commonplace book, and reading diary traditions. No single primary source.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "spread", "term": "Spread", "definition": "Two facing pages in a journal, treated as a single design unit. Spread design considers how the left and right pages relate to each other visually and how information flows between them." },
+    { "slug": "key-block", "term": "Key block", "definition": "A fixed header block at the top or side of a journal page that identifies the content type: month, year, category, or purpose. The key block makes a page identifiable at a glance when flipping through the journal." }
+  ],
+  "techniqueSlugs": ["reading-log-page-design"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A reading log needs two things: a bibliographic record (title, author, date finished) and a personal record (rating, notes, quotations). These serve different purposes and benefit from visual separation. The bibliographic record is reference; the notes are meaning. Grouping them without distinction produces a page that is difficult to scan later." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You also need: pencil for layout planning; fine-liner or dip pen for final lines; and a rubber." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The spread layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard A5 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spread" } }], "text": "spread" },
+          { "type": "text", "text": " for a reading log can hold four to six entries depending on how much space you give to notes. Plan the grid in pencil before inking." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "key-block" } }], "text": "key block" },
+              { "type": "text", "text": " at the top of the left page: month, year, and the label 'Reading log'. Ink this in a larger size or bold hand to make it identifiable at a glance." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the remaining space into entry rows. Each entry row has two zones: a left strip (approximately one third of the page width) for the bibliographic record, and a right zone (two thirds) for notes and quotations. A thin ruled line between the two zones keeps entries readable." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the left strip, write: title, author, date finished, and your rating. A simple system (1 to 5 dots or 1 to 5 stars) takes up minimal space and is easy to scan. Some readers add genre or format (audiobook, physical, e-reader) as a small code." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the right zone, write your notes or a memorable quotation. Keep notes short: one or two sentences on why the book worked or did not work, or what you would tell someone before recommending it. If you want to record longer quotations, give them a dedicated page in the journal and cross-reference from the log entry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Separate entries with a thin horizontal line drawn with ruler and fine-liner. Leave a small margin at the top and bottom of each entry box so text does not crowd the lines." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Some readers use a single-page list format rather than a spread, with just title, author, date, and rating in four columns. This is faster to complete and fits more entries per page, but leaves no room for notes. A hybrid approach keeps the compact list on one page for the month and uses facing pages for detailed notes on standout books only." }
+        ]
+      }
+    ]
+  }
+}

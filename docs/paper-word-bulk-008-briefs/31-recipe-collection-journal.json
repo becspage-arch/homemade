@@ -1,0 +1,102 @@
+{
+  "slug": "recipe-collection-journal",
+  "title": "Designing a handwritten recipe collection journal",
+  "subtitle": "Laying out a consistent recipe page format that works for every dish type",
+  "excerpt": "A handwritten recipe journal is a functional document and a personal record. A consistent page format that handles ingredients, method, timing, and notes in a set place makes the journal useful to cook from as well as to browse. The format should accommodate both a three-ingredient dressing and a multi-stage cake without redesign.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Common journalling practice for recipe collection. No single primary source.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "index-tab", "term": "Index tab", "definition": "A protruding label at the edge of a page that identifies its contents. In a recipe journal, index tabs cut into the page edges (or made from sticky labels) allow the journal to open directly to a section without searching through every page." },
+    { "slug": "masthead", "term": "Masthead", "definition": "The title area at the top of a page or spread that names the content. In a recipe journal, the masthead holds the recipe name, the serving count, and any identifying notes such as source attribution or dietary information." }
+  ],
+  "techniqueSlugs": ["recipe-collection-journal"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A recipe journal is used in the kitchen, often while cooking and often with wet hands. The layout must be legible at a distance. Ingredient quantities and temperatures must be easy to find at a glance. The page must survive the odd splash." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 15 cm", "slug": "metal-ruler-15cm", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You also need a pencil for layout planning, a fine-liner or pen for headings, a regular pen for ingredient lists, and a ruler. If the journal will be used daily in the kitchen, laminate the finished pages with sticky-back laminate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The standard recipe page layout" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "masthead" } }], "text": "masthead" },
+              { "type": "text", "text": " block at the top of the page, 3 to 4 cm deep. Write the recipe name in your largest clear hand, followed by a smaller serving count and key details: prep time, cook time, temperature. These are the facts you need most urgently when using the recipe." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Below the masthead, set up two columns. A narrow left column (one third of the page width) holds ingredients and quantities. A wider right column holds the method steps. This mirrors how most cookbooks are laid out and makes quantities easy to scan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the ingredients column, list each ingredient on its own line. Write quantity first (in bold or a different size), then ingredient name. Keep the unit consistent: grams rather than a mix of 'a handful', '200g', and 'two of'. Consistency makes the journal easier to scale or adapt later." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the method column, write the steps as short numbered instructions. Use a separate line for each step. Long recipes that overflow a single page continue on the reverse: mark 'continued overleaf' at the bottom of the recto and 'continued' at the top of the verso." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave a notes section at the bottom of the page, a narrow band 2 to 3 cm deep, below a rule. Record variations, results, and adjustments here. This is the working record of the recipe over time." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Index tabs for sections" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A recipe journal becomes much more useful with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "index-tab" } }], "text": "index tabs" },
+          { "type": "text", "text": " that identify sections (baking, soups, salads, preserves, etc.). Cut a small notch from the outer edge of the first page in each section and reinforce with a paper label. Alternatively, use purchased section dividers or create a separate index page at the front of the journal." }
+        ]
+      }
+    ]
+  }
+}

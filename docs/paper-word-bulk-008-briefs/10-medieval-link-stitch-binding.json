@@ -1,0 +1,161 @@
+{
+  "slug": "medieval-link-stitch-binding",
+  "title": "Medieval link stitch",
+  "subtitle": "The early exposed-sewing structure in which each signature links to the previous with a chain stitch on the outside of the spine",
+  "excerpt": "Before the development of case binding, many medieval manuscripts were sewn using a link stitch: each signature loops around the thread of the previous one at the head and tail, creating a visible chain on the outside of the spine. The structure is strong and requires no glue.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on the history of sewing structures. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cockerell traces the link stitch to early manuscript bindings from the medieval period and shows the chain on the spine as a defining feature of early European codices.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "link-stitch", "term": "Link stitch", "definition": "A stitch that loops around the thread of the previous signature at the head and tail, creating a chain that ties successive signatures together without sewing supports or a backing board." },
+    { "slug": "signature", "term": "Signature", "definition": "A group of folded pages sewn together as one unit in a multi-signature book." },
+    { "slug": "chain-line", "term": "Chain line", "definition": "The visible row of linked stitches running head to tail along the outside of the spine, characteristic of the link-stitch and Coptic binding families." }
+  ],
+  "techniqueSlugs": ["medieval-link-stitch-binding"],
+  "criticalTechniques": ["medieval-link-stitch-binding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "link-stitch" } }], "text": "link stitch" },
+          { "type": "text", "text": " is among the oldest documented bookbinding structures in the Western tradition, visible in manuscript bindings from the sixth century onward. Each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": " is sewn with a simple running stitch along the fold, but at the head and tail the thread loops around the thread of the previous signature before continuing. These looped links hold the signatures together without covers, supports, or adhesive. The result is a flexible, strong book that shows its " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-line" } }], "text": "chain line" },
+          { "type": "text", "text": " on the outside of the spine. Cockerell documented surviving examples in the collections of the Victoria and Albert Museum." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The link stitch requires at least three signatures, ideally five or more, for the chain to develop clearly. The signatures should have four to eight sheets each (80 to 100 gsm, folded with the grain parallel to the fold). No cover boards are needed for the demonstration; they can be added afterwards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Piercing the stations" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark four sewing stations in the fold of each signature: one 10 mm from the head, one 10 mm from the tail, and two equally spaced in between." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pierce all signatures using the first signature as a template." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the first signature" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the needle with a length of waxed linen thread twice the spine height. Enter at the head station from inside, pulling all but a 50 mm tail through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass to the next station and enter from outside. Continue along to the tail station, alternating inside and outside until you exit at the tail station from outside. The thread now lies along the outer spine in a running stitch pattern." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tie the working thread to the tail at the tail station. Set the sewn signature aside." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding subsequent signatures with link stitches" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place signature two on signature one, spines aligned." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enter at the tail station of signature two from inside. Before pulling the thread tight, loop it once around the corresponding thread run on the outer spine of signature one, then pull tight. This is the link stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sew the running stitch along signature two, working toward the head." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the head station, loop around the head thread of signature one before pulling tight. The link stitches at head and tail are now visible as small loops on the outer spine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for all remaining signatures, always looping at head and tail before pulling the thread." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The chain line is missing at one end",
+              "cause": "The link stitch was only worked at one station.",
+              "fix": "Link at both head and tail on every signature. Linking at only one end produces a binding that fans open on the unlinked side."
+            },
+            {
+              "symptom": "The signatures are loose and can be pulled apart",
+              "cause": "The link loops were not pulled tight.",
+              "fix": "After each link stitch, pull the thread firmly until the loop seats flat against the previous signature's thread run."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "ox-gall-surfactant-in-marbling",
+  "title": "Ox gall as a surfactant in marbling",
+  "subtitle": "How ox gall reduces surface tension in marbling paint and why the amount matters",
+  "excerpt": "Marbling acrylic dropped onto carrageenan size without a surfactant beads up or fails to spread. Ox gall, added drop by drop to each colour, reduces the paint's surface tension enough to allow it to float and expand. Too much gall causes the colour to spread invisibly thin; too little causes it to clump.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Charles W. Woolnough, The Art of Marbling (1881), chapter on colour preparation including the role of ox gall. Internet Archive: https://archive.org/details/artofmarbling00wool. Woolnough describes the gall as the essential agent for spreading colour on the size and specifies testing by dropping onto the tray surface.",
+  "recipeTools": [
+    { "slug": "ox-gall", "isOptional": false },
+    { "slug": "eyedropper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "surfactant", "term": "Surfactant", "definition": "A substance that reduces the surface tension of a liquid, allowing it to spread more readily. From 'surface active agent'. In marbling, the surfactant in the paint allows each colour to push adjacent colours aside as it spreads on the size surface." },
+    { "slug": "surface-tension", "term": "Surface tension", "definition": "The cohesive force that causes the surface of a liquid to resist breaking. Water has high surface tension; a single drop of washing-up liquid on still water immediately demonstrates how a surfactant collapses it." }
+  ],
+  "techniqueSlugs": ["ox-gall-surfactant-in-marbling"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Marbling depends on pigments floating on the surface of a thickened size rather than sinking into it. Acrylic paint out of the tube is too dense and too high in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "surface-tension" } }], "text": "surface tension" },
+          { "type": "text", "text": " to spread on carrageenan size. A few drops of ox gall, a natural " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "surfactant" } }], "text": "surfactant" },
+          { "type": "text", "text": ", reduces this tension. The colour then spreads across the size as a thin film when it makes contact, pushing adjacent colours aside to fill the available surface. Ox gall is the traditional material and remains the most reliable; synthetic surfactants such as dilute washing-up liquid work but are less controllable because concentration varies between products." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Ox-gall (marbling)", "slug": "ox-gall", "isOptional": false },
+            { "name": "Eyedropper / pipette", "slug": "eyedropper", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why each colour needs individual adjustment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Different colours need different amounts of ox gall. Dark pigments (black, dark blue) are typically denser and need more gall than pale colours (yellow, light grey). The pigment load of the paint also matters: a heavily pigmented black may need three times as much gall as a lightly pigmented raw sienna. This means each colour pot must be tested and adjusted individually before laying a print." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The drop test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Load an eyedropper with the thinned colour and allow one drop to fall from approximately 15 cm onto the size surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Watch what happens. A well-adjusted colour spreads to a circle approximately 5 to 8 cm across within two seconds and holds that diameter. A colour with too little gall beads up into a small dome less than 2 cm across and may sink. A colour with too much gall spreads beyond 15 cm in a second or two, leaving the colour too thin to be visible." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the colour spreads too slowly or beads, add one drop of ox gall to the pot, stir, and test again. Repeat until the drop spreads correctly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the colour spreads too fast, thin it further with water (which reduces pigment concentration and therefore density), then retest." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skim the test drops from the size with a newspaper strip before laying the first print." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spread order matters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each colour dropped onto the size pushes all existing colours outward. The first colour dropped occupies the most surface area; each subsequent colour pushes the previous ones into smaller, thinner zones. In practice this means the first colour dropped should have slightly more gall than the last, since it must spread against nothing, while the last colour is spreading against a surface already fully covered. Woolnough noted that experienced marblers adjust gall levels sequentially, adding a fraction more to each pot in the laying order." }
+        ]
+      }
+    ]
+  }
+}

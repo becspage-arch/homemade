@@ -369,3 +369,44 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - whittled-ash-butter-knife grade-level-strict — applied: 
 
 - vaccinating-sheep-with-a-clostridial-vaccine grade-level-strict — applied: 
+
+- adhesive-types-for-bookbinding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- alum-mordanting-for-marbling hero-missing — applied: hero-fill-deferred-to-standalone-script
+- calendering-handmade-sheets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- calligraphy-warm-up-exercises hero-missing — applied: hero-fill-deferred-to-standalone-script
+- choosing-paper-for-different-uses hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cloth-corner-application hero-missing — applied: hero-fill-deferred-to-standalone-script
+- colour-palette-scrapbooking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- concertina-with-extra-signatures hero-missing — applied: hero-fill-deferred-to-standalone-script
+- copperplate-uppercase-study hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- folk-art-bird-papercut hero-missing — applied: hero-fill-deferred-to-standalone-script
+- formal-italic-chancery-cursive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fraktur-blackletter-alphabet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- gothic-rotunda-script hero-missing — applied: hero-fill-deferred-to-standalone-script
+- grain-direction-in-paper hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herringbone-long-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- islamic-binding-structure hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lombardic-capitals-alphabet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- medieval-link-stitch-binding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- memorabilia-preservation-page hero-missing — applied: hero-fill-deferred-to-standalone-script
+- newspaper-fold-zine hero-missing — applied: hero-fill-deferred-to-standalone-script
+- origami-envelope-fold hero-missing — applied: hero-fill-deferred-to-standalone-script
+- origami-lotus-flower hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ox-gall-surfactant-in-marbling hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pamphlet-with-pocket-insert hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pointed-pen-fundamentals hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pouring-a-sheet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- project-planner-journal-spread hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- reading-log-page-design hero-missing — applied: hero-fill-deferred-to-standalone-script
+- recipe-collection-journal hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sewn-boards-binding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sewn-multi-section-zine hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-pattern-marbling hero-missing — applied: hero-fill-deferred-to-standalone-script
+- starch-sizing-for-paper hero-missing — applied: hero-fill-deferred-to-standalone-script
+- suminagashi-basics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- textile-inclusions-in-pulp hero-missing — applied: hero-fill-deferred-to-standalone-script
+- travel-journal-spread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-colour-sewn-headband hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vytynanky-ukrainian-papercutting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wooden-boards-for-bookbinding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- x-height-and-nib-width-explained hero-missing — applied: hero-fill-deferred-to-standalone-script

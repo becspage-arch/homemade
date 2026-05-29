@@ -1,0 +1,106 @@
+{
+  "slug": "alum-mordanting-for-marbling",
+  "title": "Alum mordanting for marbling",
+  "subtitle": "Preparing paper to accept marbled colour by coating it with an alum solution",
+  "excerpt": "Marbling pigments will not bond permanently to unsized or plain paper. A thin wash of alum solution applied before marbling prepares the surface to accept and hold the pigment when the sheet contacts the size. Without mordanting, the pattern rinses off under running water.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Charles W. Woolnough, The Art of Marbling (1881), chapter on preparing paper for marbling by alum treatment. Internet Archive: https://archive.org/details/artofmarbling00wool. Woolnough specifies the alum-water ratio and drying method in use throughout the Victorian trade.",
+  "recipeTools": [
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "alum", "term": "Alum (mordant)", "definition": "Potassium aluminium sulphate: a mineral salt used in papermaking and marbling as a mordant. Applied to paper as a dilute solution, it leaves an aluminium compound on the surface that bonds chemically with the pigments in marbling paint, fixing the pattern permanently." },
+    { "slug": "mordant", "term": "Mordant", "definition": "A substance applied to a material before colouring to fix the dye or pigment. From the French 'mordre' (to bite). In marbling, the mordant is alum applied to the paper; without it, the floating pigment will not adhere when lifted from the size." }
+  ],
+  "techniqueSlugs": ["alum-mordanting-for-marbling"],
+  "criticalTechniques": ["alum-mordanting-for-marbling"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A sheet of plain paper lowered onto a marbled size picks up the pattern temporarily. Rinsed under water, it washes clean, leaving no trace. The step that makes the colour permanent is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }], "text": "mordanting" },
+          { "type": "text", "text": " the paper with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alum" } }], "text": "alum" },
+          { "type": "text", "text": " before it contacts the size. The alum bonds with the pigment on contact, and the pattern survives rinsing and drying." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Alum, potash (mordant)", "slug": "alum-potash", "isOptional": false },
+            { "name": "Papermaking sponge", "slug": "papermaking-sponge", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You also need: a shallow tray or bowl; warm water; a clean towel or rack to hang treated sheets; and the paper to be mordanted." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mixing the alum solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 2 tablespoons of alum in 500 ml of warm water. Stir until fully clear. A stronger solution leaves a white haze on the paper surface after drying; a weaker solution may not provide enough mordant for full colour adhesion. The standard Woolnough proportion is roughly 1 part alum to 25 parts water by volume." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the alum" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dampen the papermaking sponge in the alum solution. Wring it to damp rather than wet: excess alum solution causes sheets to cockle severely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the paper flat on a clean surface. Wipe the sponge across the surface of the paper in one direction, then turn 90 degrees and wipe again. The aim is an even, thin, damp coat over the entire sheet. One to two passes is sufficient." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Alternatively, float the sheet face-down on the surface of the alum solution for 15 to 20 seconds, then lift and drain. This is faster for larger batches. The resulting coat is thinner than the sponge method and may need a second application for heavily textured papers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hang the treated sheets to dry on a line, or lay flat on a rack. Allow to dry fully before marbling: a damp alum coat on paper laid onto the size will dissolve some of the size surface, which blurs the pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How long mordanted paper keeps" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum-mordanted paper remains usable for several weeks stored in a cool, dry location. In humid conditions, the alum absorbs atmospheric moisture and the paper may feel slightly damp. If this happens, allow a further hour of drying before use. Very old mordanted sheets sometimes show a dusty white bloom on the surface: this is alum crystallising out of the coating and indicates over-concentration. Remake the solution at a lower alum proportion and re-coat the sheets." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "slug": "fraktur-blackletter-alphabet",
+  "title": "Fraktur: the German blackletter alphabet",
+  "subtitle": "The broken-letter Gothic script of German printed books and manuscripts, distinct from Textura and Batarde",
+  "excerpt": "Fraktur is the most widely recognised German blackletter script: the one used in German printing from the sixteenth century through the twentieth. It differs from Textura in its broken-arch letterforms and from Batarde in its more upright proportion and angular treatment of curves.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Platt Rogers Spencer, Spencerian Key to Practical Penmanship (1866), for comparative German letterform context. Rudolf Koch's Schreibbuchlein (1910), public domain via Internet Archive, contains Fraktur exemplars. The letter family is documented in multiple German calligraphy copybooks from the late nineteenth century available through HathiTrust.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "nib-brause-bandzug", "isOptional": true },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": true },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "fraktur", "term": "Fraktur", "definition": "A German blackletter script characterised by broken arches, angular curves, and the use of the broad-edge nib held at approximately 45 degrees. The term comes from the Latin fractura, meaning breaking." },
+    { "slug": "broken-arch", "term": "Broken arch", "definition": "In Fraktur and related blackletter scripts, the characteristic interruption of a curved stroke where it would otherwise form a smooth arch. The arch is split at the top and re-entered, giving the script its angular, broken quality." },
+    { "slug": "hairline-entry", "term": "Hairline entry", "definition": "A fine thin stroke used to begin many Fraktur letters, drawn with the corner of the nib before the main weighted stroke begins." }
+  ],
+  "techniqueSlugs": ["fraktur-blackletter-alphabet"],
+  "criticalTechniques": ["fraktur-blackletter-alphabet"],
+  "calligraphyExemplar": {
+    "alphabet": "fraktur",
+    "nibAngle": 45,
+    "xHeight": 5,
+    "guideLines": ["ascender", "cap-height", "x-height", "baseline", "descender"]
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The word " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fraktur" } }], "text": "Fraktur" },
+          { "type": "text", "text": " comes from the Latin fractura, meaning a break. The defining move of the script is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broken-arch" } }], "text": "broken arch" },
+          { "type": "text", "text": ": where a Foundational script would arc smoothly over the shoulder of a letter like n or m, Fraktur splits the arch. The pen lifts, re-enters at the inside top of the arch, and draws downward. The script looks severe on the page; each letter is densely textured and the upright structure emphasises the vertical over the horizontal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Brause Bandzug nib (alternative)", "slug": "nib-brause-bandzug", "isOptional": true },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Iron-gall ink (modern formulation)", "slug": "iron-gall-ink", "isOptional": false },
+            { "name": "Sumi ink (alternative)", "slug": "sumi-ink", "isOptional": true },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm (for ruling guide lines)", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Proportions and nib angle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fraktur x-height is five nib widths. The ascenders reach to roughly seven nib widths and the descenders drop two nib widths below the baseline. The nib angle is 45 degrees from the baseline. This steeper angle than Foundational (30 degrees) or Italic (45 degrees) produces the characteristic thick downstrokes and fine diagonal hairlines that give the script its texture." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fundamental stroke: the broken arch of n" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The letter n illustrates the technique for the full minuscule alphabet." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin with a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hairline-entry" } }], "text": "hairline entry" },
+              { "type": "text", "text": ": touch the top of the paper with just the corner of the nib at x-height, then swing downward into the left stem. This is stroke 1." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the top of stroke 1, draw a short thick diagonal to the right and slightly upward: the first part of the broken arch. Lift the pen. This is stroke 2." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Re-enter at the inside top of the arch from the right, drawing a short horizontal entry stroke, then pull the second stem straight downward to the baseline. Add a small foot serif turning right. This is stroke 3." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The completed n has two parallel vertical stems of equal weight, connected by the angular broken arch. The arch gap at the top is the defining visual marker of the Fraktur family." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Uppercase letters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fraktur uppercase letters are highly decorated and depart significantly from their Roman counterparts. Each capital is a set piece with hairline ornamental strokes added after the main body. The capital D, for example, carries a large curved body with two internal hairline strokes that echo the outer curve. The capital I is a single broad downstroke with elaborate hairline entry and exit flourishes. Begin with the simpler capitals (I, L, T) before attempting the highly ornamented M, N, and W." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Differences from Textura and Batarde" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Textura Quadrata (see the Gothic Textura tutorials) has a strictly upright, diamond-foot structure: every stroke terminates in a precise horizontal diamond. Fraktur uses angled foot serifs and a more varied stroke end. Batarde is a cursive French Gothic that slopes forward and has more flowing transitions between strokes. Fraktur is upright, broken, and angular at every arch. The scripts are neighbours in the Gothic blackletter family but immediately distinguishable in practice." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The broken arch looks like two separate strokes with no visual connection",
+              "cause": "Too large a gap between stroke 2 and stroke 3.",
+              "fix": "Keep the gap minimal: stroke 3 should re-enter just a fraction inside the end of stroke 2. The arch break is a split, not a gap."
+            },
+            {
+              "symptom": "The script looks inconsistent: some letters have arches, some don't",
+              "cause": "Different letters use different arch types in Fraktur, which takes time to learn.",
+              "fix": "Study a printed Fraktur alphabet and note which letters break the arch (n, m, h, k) and which use a different construction (a, e, g). Trace the examples before writing freely."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

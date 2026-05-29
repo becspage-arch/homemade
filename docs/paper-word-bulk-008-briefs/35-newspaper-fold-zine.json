@@ -1,0 +1,105 @@
+{
+  "slug": "newspaper-fold-zine",
+  "title": "Single-sheet newspaper-fold zine",
+  "subtitle": "Making an eight-page zine from one sheet of A4 paper using a single cut and a series of folds",
+  "excerpt": "A single sheet of A4 paper folded and cut in a specific sequence produces an eight-page booklet with no staples or binding. The newspaper fold is the simplest zine format: one sheet, one cut, and the result is a small book that can be printed, photocopied, or hand-drawn before folding.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The single-sheet eight-page fold is a standard zine format taught across the DIY publishing tradition from the 1980s onward. No single primary source; the fold is now documented in numerous zine-making and bookbinding primers.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "scissors-craft", "isOptional": false },
+    { "slug": "cartridge-paper-90", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "saddle-stitch", "term": "Saddle stitch", "definition": "A binding method in which staples or thread pass through the fold of a booklet at the centre. The name comes from the resemblance to a horse saddle. The newspaper-fold zine does not use saddle stitch; it holds its form by folding alone." },
+    { "slug": "mini-zine", "term": "Mini-zine", "definition": "A zine format produced from a single unbound sheet. The single-sheet fold produces eight pages each measuring A7 (one quarter of A5): four pages per A5 face. Mini-zines are designed to be economical to reproduce, hand out, and send in an envelope." }
+  ],
+  "techniqueSlugs": ["newspaper-fold-zine"],
+  "criticalTechniques": ["newspaper-fold-zine"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The single-sheet eight-page fold is the founding format of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mini-zine" } }], "text": "mini-zine" },
+          { "type": "text", "text": " making. No tools are needed beyond scissors and a bone folder. The zine is fully assembled in under two minutes once you understand the fold sequence. It requires no " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saddle-stitch" } }], "text": "saddle stitching" },
+          { "type": "text", "text": " or staples because the single cut at the centre allows the fold to lock the pages in sequence." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft scissors", "slug": "scissors-craft", "isOptional": false },
+            { "name": "Cartridge paper, 90 gsm", "slug": "cartridge-paper-90", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One sheet of A4 produces one eight-page zine. For a printed zine, the content must be laid out on the sheet before printing, oriented correctly for each page. For a hand-drawn zine, fold and cut first, then unfold and number the panels, then refold to check page order before drawing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fold sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the sheet in half lengthwise (hotdog fold: the long edge meets the long edge). Crease firmly with the bone folder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the sheet. Fold in half widthwise (hamburger fold: the short edge meets the short edge). Crease and unfold again." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold widthwise again (hamburger fold) and keep folded. Cut along the centre crease only, from the folded edge to the centre intersection of the two creases. Do not cut all the way to the open edges. The cut is approximately half the sheet's short dimension in length." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the sheet fully. Fold lengthwise again (hotdog fold). Hold the sheet by the two short ends and push the ends toward each other. The centre of the sheet opens outward at the cut line. Push the ends together until the four pages fan open into a cross shape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue folding in one direction to bring all pages together into a single spine. The result is an eight-page booklet with a spine at the left and all pages in sequence." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold back any loose pages and run the bone folder down each crease to sharpen the spine and all page folds." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning the page layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a hand-drawn zine, assemble the blank booklet first, then number each page lightly in pencil. Open the booklet fully and note which page number corresponds to which panel on the flat sheet. Draw or write on the flat sheet, then refold. For a printed zine, there are free print-layout templates online; search for 'A4 eight-page zine template' and print onto 90 gsm paper. Heavier paper (130 gsm) makes a more substantial booklet but does not fold as crisply through multiple layers." }
+        ]
+      }
+    ]
+  }
+}

@@ -336,3 +336,47 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - vaccinating-sheep-with-a-clostridial-vaccine: grade-level-strict
+
+---
+
+## Run at 10:43:53
+
+Generated: 2026-05-29T10:43:53.294Z
+
+Processed: 78
+PASS: 38
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| grade-level-strict | 27 |
+| voice-violation | 2 |
+| body-missing-method | 1 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- adhesive-types-for-bookbinding: hero-missing
+- alum-mordanting-for-marbling: hero-missing
+- calendering-handmade-sheets: hero-missing
+- calligraphy-warm-up-exercises: hero-missing
+- choosing-paper-for-different-uses: hero-missing
+- cloth-corner-application: hero-missing
+- colour-palette-scrapbooking: hero-missing
+- concertina-with-extra-signatures: hero-missing
+- copperplate-uppercase-study: hero-missing, voice-violation, grade-level-strict
+- folk-art-bird-papercut: hero-missing
+- formal-italic-chancery-cursive: hero-missing
+- fraktur-blackletter-alphabet: hero-missing, grade-level-strict
+- gothic-rotunda-script: hero-missing
+- grain-direction-in-paper: hero-missing
+- herringbone-long-stitch: hero-missing
+- islamic-binding-structure: hero-missing
+- lombardic-capitals-alphabet: hero-missing
+- medieval-link-stitch-binding: hero-missing
+- memorabilia-preservation-page: hero-missing
+- newspaper-fold-zine: hero-missing

@@ -1,0 +1,145 @@
+{
+  "slug": "formal-italic-chancery-cursive",
+  "title": "Formal Italic: the chancery cursive hand",
+  "subtitle": "The 15th-century Italian script that is the historical root of all modern Italic calligraphy",
+  "excerpt": "The chancery cursive hand developed in the Papal chancery in Rome around 1420 and spread through the Italian Renaissance courts. It is the direct ancestor of the Italic typeface and the standard Italic calligraphy hand. Formal chancery cursive moves faster than Foundational but maintains strict letter proportion and a consistent 5-degree forward slope.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on Italic and its Renaissance origins. Internet Archive: https://archive.org/details/writingillumina00john. Also: Ludovico degli Arrighi, La Operina (1522), the first printed manual for the chancery hand, public domain scans available through the Newberry Library and Internet Archive.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "nib-brause-bandzug", "isOptional": true },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "tracing-paper", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "chancery-cursive", "term": "Chancery cursive", "definition": "The formal administrative script of the Italian Renaissance courts and the Papal chancery. Fast, compressed, and slightly forward-sloping, with serifs that flick rather than sit as flat platforms." },
+    { "slug": "arched-stroke", "term": "Arched stroke", "definition": "In Italic calligraphy, the branching stroke that springs from the side of the stem at approximately two-thirds height, arching out and downward to form the second stroke of letters like n, m, and h. The arch branches from inside the stem, not from the top." },
+    { "slug": "pen-lift", "term": "Pen lift", "definition": "A deliberate break in the stroke where the pen leaves the paper to reposition. Formal chancery cursive uses fewer pen lifts than Foundational because the branching arches are designed to flow from the stem continuously." }
+  ],
+  "techniqueSlugs": ["formal-italic-chancery-cursive"],
+  "criticalTechniques": ["formal-italic-chancery-cursive"],
+  "calligraphyExemplar": {
+    "alphabet": "italic-chancery",
+    "nibAngle": 45,
+    "xHeight": 5,
+    "guideLines": ["ascender", "x-height", "baseline", "descender"]
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ludovico degli Arrighi wrote the first printed manual for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chancery-cursive" } }], "text": "chancery cursive" },
+          { "type": "text", "text": " in Rome in 1522. La Operina contains 28 pages of exemplars and instructions, printed from engraved woodblocks, for the lettera di cancellería: the hand used in Papal correspondence and court documents across the Italian peninsula. The script he described is the direct ancestor of every Italic calligraphy hand taught today. The proportions have not changed in five hundred years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Brause Bandzug nib (stiffer, period-appropriate feel)", "slug": "nib-brause-bandzug", "isOptional": true },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Iron-gall ink (modern formulation)", "slug": "iron-gall-ink", "isOptional": false },
+            { "name": "Cartridge paper, 220 gsm", "slug": "cartridge-paper-220", "isOptional": false },
+            { "name": "Tracing paper (as hand guard)", "slug": "tracing-paper", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Proportions and pen angle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chancery cursive x-height is five nib widths, the same as standard Italic. The nib angle is 45 degrees from the baseline. The slope is 5 to 8 degrees forward from vertical. Ascenders are typically three nib widths above x-height; descenders drop two nib widths. The key proportion difference from modern Italic practice is the compressed oval: in chancery cursive the oval is narrower, approximately 2:3 height-to-width rather than the 1:1 of a round Foundational oval." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The branching arch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "arched-stroke" } }], "text": "arched stroke" },
+          { "type": "text", "text": " is what makes chancery cursive fast. In Foundational, the arch of n springs from the top of the first stem (the pen lifts, repositions at the top, and draws the shoulder separately). In chancery cursive, the arch branches from inside the first stem at two-thirds height without a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pen-lift" } }], "text": "pen lift" },
+          { "type": "text", "text": ". The stroke draws downward to two-thirds height, then the nib springs outward on a flicking upward curve and descends into the second stem. The arch is generated by the wrist's natural forward pivot, not by repositioning the hand." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stroke order for n" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the first stem from x-height to baseline. Add the entry hairline at the top (a short curved horizontal entry that tucks under the stroke, not a serif platform)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Re-enter inside the first stem at two-thirds height. Pivot the wrist to spring the nib outward and upward on a shallow arc, then pull it downward. This is one continuous stroke: in, spring, descend." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The second stem lands at the baseline with a small curved foot serif. No separate serif addition: the foot is the natural end of the descending stroke." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Joins and connections" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chancery cursive is not a fully joined script; not all letters connect. But where a joining hairline exits the foot of one letter and enters the next, it is drawn as a continuation of the exit stroke: a hairline from the baseline up to the entry point of the next letter. In the Italian scribal tradition, connecting hairlines appear between a and n, i and a, and across the long words of administrative documents. Modern practice often uses fewer joins; the script reads well either way." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The arched stroke looks like a separate addition, not a branch",
+              "cause": "The pen was lifted before re-entering the stem.",
+              "fix": "Keep the nib in contact with the paper throughout the branch movement. The re-entry is a lateral movement, not a lift."
+            },
+            {
+              "symptom": "The script looks too upright and loses the Italic slope",
+              "cause": "The stems are vertical rather than sloped at 5 to 8 degrees.",
+              "fix": "Rule slope lines at the target angle before writing. All downstrokes should parallel the slope lines."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "slug": "herringbone-long-stitch",
+  "title": "Herringbone long-stitch binding",
+  "subtitle": "The angled variant that crosses the spine in a visible chevron pattern",
+  "excerpt": "Long-stitch sewn in alternating diagonal pairs rather than straight runs. The thread crosses the spine in a herringbone arrangement visible from outside without a cover board.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing structures. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cockerell documents the long-stitch family; the herringbone arrangement is a documented variant of the exposed-spine long-stitch.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "long-stitch", "term": "Long stitch", "definition": "A bookbinding stitch where the thread runs the full length of the spine on the outside of the book, passing through holes pierced through the signatures and the cover simultaneously." },
+    { "slug": "sewing-station", "term": "Sewing station", "definition": "A pierced hole through a signature and cover board through which the needle and thread pass during sewing." },
+    { "slug": "signature", "term": "Signature", "definition": "A group of folded pages that forms one sewable section of a book. A standard pamphlet-size signature is four to eight sheets folded together." },
+    { "slug": "foredge", "term": "Foredge", "definition": "The outer edge of a book's pages, opposite the spine." }
+  ],
+  "techniqueSlugs": ["herringbone-long-stitch"],
+  "criticalTechniques": ["herringbone-long-stitch"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Standard " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "long-stitch" } }], "text": "long-stitch" },
+          { "type": "text", "text": " sewing runs straight along the spine: each " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "signature" },
+          { "type": "text", "text": " contributes a horizontal run of thread. The herringbone variant angles those runs. Two adjacent sewing stations on one signature lean right; the next pair lean left. Viewed from outside, the thread makes a continuous chevron, V after V, from head to tail. The structure is a direct descendant of the long-stitch family documented in early manuscript bindings, where exposed-spine decoration was functional as well as visual." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm (optional cover)", "slug": "bookbinding-board-2mm", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A herringbone long-stitch book typically has a soft cover: the signatures sew directly through a folded wrapper of heavier paper (140 to 180 gsm cartridge or cover stock), or through a thin board. Paper grain must run parallel to the spine in the wrapper. For a wrapper, cut the cover long-grain with the grain running head to tail." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A herringbone pattern needs an even number of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }], "text": "sewing stations" },
+          { "type": "text", "text": " per signature, arranged in angled pairs. Six stations per signature is the standard layout for an A5 book." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the spine of the first signature with a pencil. Place two stations 10 mm from the head, 8 mm apart and angled so the left hole is 2 mm closer to the head than the right. The pair leans slightly head-left." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the next pair in the centre of the spine, angled the opposite way: left hole 2 mm closer to the tail. The pair leans tail-left." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the third pair 10 mm from the tail, matching the angle of the first pair. Head-left lean." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use this signature as a template to mark and pierce all remaining signatures and the cover. Stack everything together with a piece of waste board underneath, and pierce through the whole set in one pass with the bookbinding awl. The holes line up automatically." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the needle with a length of waxed linen thread roughly four times the book's spine height. Wax the thread a second time before starting." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Start inside signature one, at the left hole of the head pair. Pass the needle out through the cover. Leave a 50 mm tail inside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass back in through the right hole of the same pair. Pull the thread through so a diagonal run shows on the outside of the spine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move to the centre pair. Pass out through the left hole, then in through the right hole. Two diagonals showing on the spine, now leaning the opposite direction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the tail pair: out left, in right. Three V shapes on the spine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place signature two over signature one. Enter through the tail-pair left hole from outside, travelling inward through the signature. Knot around the previous thread run before moving to the centre and head pairs." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across all signatures in the same order: head pair, centre pair, tail pair, working out and in through each station. The herringbone pattern builds on the outside as each signature adds its row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After the last signature, knot the working thread around the previous run at the head and trim the tail flush with the inside of the first signature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The completed book has a pronounced herringbone pattern along the full spine. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }], "text": "foredge" },
+          { "type": "text", "text": " is untrimmed in most herringbone long-stitch work; the deckle edge of handmade paper or the slightly uneven foredge of folded signatures reads as part of the aesthetic. If you want a trimmed foredge, press the book in a finishing press, mark a pencil line, and cut against a steel rule with a very sharp craft knife." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The herringbone pattern is uneven across signatures",
+              "cause": "The sewing stations were not pierced through all signatures simultaneously.",
+              "fix": "Re-pierce using a stacked jig with a backing board. Even tiny misalignments accumulate across five or more signatures."
+            },
+            {
+              "symptom": "Thread breaks at the station holes",
+              "cause": "The holes are too small for the thread or the thread is not waxed enough.",
+              "fix": "Pierce with a slightly larger awl and wax the thread twice. Linen thread without wax abrades against the paper fibres at each hole."
+            },
+            {
+              "symptom": "Signatures splay open at the foredge",
+              "cause": "The thread tension is inconsistent across pairs.",
+              "fix": "After each pair, pull the thread firmly and hold for two seconds before moving on. Consistent tension requires deliberate slowing down."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where it leads" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The herringbone uses the same sewing stations as a standard long-stitch. To vary the pattern, try a four-hole version. Or add a second thread colour. Pass the second thread over the spine thread between signatures to deepen the herringbone lines." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "slug": "pointed-pen-fundamentals",
+  "title": "Pointed pen fundamentals",
+  "subtitle": "Setting up the oblique pen holder, loading the nib, and making the first pressure strokes",
+  "excerpt": "The pointed flex nib is the tool of Copperplate and Spencerian calligraphy. Unlike broad-edge nibs, it produces thick strokes through pressure rather than nib width. Getting comfortable with the oblique holder, nib preparation, and the basic push-pull movement is the foundation for everything else.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Platt Rogers Spencer, Spencerian Key to Practical Penmanship (1866), sections on pen-hold and stroke fundamentals. HathiTrust digitised copies. Spencer's pen-hold instructions and oval drill are the canonical source for pointed-pen fundamentals in the Spencerian and Copperplate traditions.",
+  "recipeTools": [
+    { "slug": "nib-nikko-g", "isOptional": false },
+    { "slug": "oblique-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "tracing-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "flex-nib", "term": "Flex nib", "definition": "A pointed nib with tines designed to spread apart under pressure, producing a wider stroke on the downward pull. The flex is the mechanism that creates the thick downstrokes characteristic of Copperplate and Spencerian calligraphy." },
+    { "slug": "oblique-holder", "term": "Oblique holder", "definition": "A pen holder with a side-mounted metal flange that holds the nib at an angle to the holder barrel. The angle aligns a right-handed writer's nib with the 55-degree slope of Copperplate script without requiring an awkward wrist rotation." },
+    { "slug": "underturn", "term": "Underturn", "definition": "A Copperplate stroke that descends as a shaded downstroke, then curves under and rises as a hairline. The basic building block of the letters u, n, and m in the Copperplate family." }
+  ],
+  "techniqueSlugs": ["pointed-pen-fundamentals"],
+  "criticalTechniques": ["pointed-pen-fundamentals"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flex-nib" } }], "text": "flex nib" },
+          { "type": "text", "text": " and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oblique-holder" } }], "text": "oblique holder" },
+          { "type": "text", "text": " require a different physical relationship to the pen than broad-edge calligraphy. In broad-edge work, the nib angle to the page is everything; pressure is constant. In pointed-pen work, the nib angle is fixed by the holder, and pressure variation is everything. The same nib, held the same way, makes either a hairline or a thick stroke depending purely on how much pressure the fingers apply." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Nikko G nib (the standard beginner's flex nib)", "slug": "nib-nikko-g", "isOptional": false },
+            { "name": "Oblique pen holder", "slug": "oblique-pen-holder", "isOptional": false },
+            { "name": "Iron-gall ink (modern formulation)", "slug": "iron-gall-ink", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm (for ruling guide lines)", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Tracing paper (as hand guard to prevent smudging)", "slug": "tracing-paper", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing a new nib" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "New steel nibs are coated in a protective oil that prevents ink from flowing. Remove it before the first use with one of these methods: pass the nib briefly through a candle flame (one second only, no more), or rub both sides lightly with a clean pencil eraser. Then rinse under water and dry. A nib that has been prepared this way will ink immediately on the first dip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The pen hold" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the oblique holder between the index finger and the middle finger, resting lightly on the thumb. The barrel should rest in the channel between the index finger and the first knuckle, not pinched between the fingertips." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The hand rests on the side of the little finger and the outer edge of the palm. This is the hand position Spencer described: the hand moves smoothly across the page by pivoting at the shoulder and elbow, not by flexing at the wrist alone." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The nib should point toward the upper-right corner of the page at roughly 55 degrees from the writing line. The oblique flange achieves this automatically for right-handed writers." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three fundamental strokes" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The hairline: pull the pen downward at a 55-degree angle with no pressure. The nib should glide without resistance. The line is the width of a single tine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The shaded downstroke: pull the pen downward, applying increasing pressure as the stroke descends. The tines spread gradually. At maximum pressure the stroke is roughly two to three times the hairline width. Release the pressure smoothly before the stroke ends." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "underturn" } }], "text": "underturn" },
+              { "type": "text", "text": ": descend as a shaded stroke, curve under at the baseline, and push upward as a hairline. The curve at the baseline is where the pressure releases: apply maximum pressure on the descend, then release completely as the curve begins. Tension at the turn causes the nib to catch." }
+            ] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The nib catches and spatters on the upstroke",
+              "cause": "Applying pressure on the upstroke, which forces the nib against the direction of travel.",
+              "fix": "Release all pressure completely before beginning any upward movement. The nib is pulled down and pushed up as a hairline only."
+            },
+            {
+              "symptom": "Ink does not flow on the first stroke after a dip",
+              "cause": "Too much ink was loaded onto the nib, or the nib was not prepared.",
+              "fix": "Dip to the vent hole only. Excess ink should be removed by touching the nib to the ink bottle's edge on the way out. If the nib still does not flow, repeat the preparation step."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

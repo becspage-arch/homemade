@@ -1,0 +1,155 @@
+{
+  "slug": "gothic-rotunda-script",
+  "title": "Gothic Rotunda",
+  "subtitle": "The Italian round Gothic that softens the angular Textura into a more open, readable script",
+  "excerpt": "Rotunda is the Italian variant of Gothic blackletter. Where Northern European Textura makes every curve a hard angle, Rotunda keeps rounded arches. The letters are wide, open, and accessible. It was the dominant script of Italian manuscripts from the thirteenth century through the fifteenth.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on the Gothic families. Internet Archive: https://archive.org/details/writingillumina00john. Johnston distinguishes Rotunda from Textura on the basis of the rounded arches and wider counter spaces, and notes its dominance in Italian manuscript production.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "nib-brause-bandzug", "isOptional": true },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rotunda", "term": "Rotunda", "definition": "The Italian round Gothic script, characterised by rounded arches, wide counters, and a less angular treatment of curves than Northern Gothic Textura." },
+    { "slug": "textura", "term": "Textura", "definition": "The Northern European Gothic blackletter script characterised by compressed, angular letterforms with diamond-foot serifs. Visually dense and angular in contrast to Rotunda." },
+    { "slug": "counter-space", "term": "Counter space", "definition": "The open area within or around a letter. Rotunda has noticeably wider counter spaces than Textura, giving it a lighter, more readable appearance at the same nib size." }
+  ],
+  "techniqueSlugs": ["gothic-rotunda-script"],
+  "criticalTechniques": ["gothic-rotunda-script"],
+  "calligraphyExemplar": {
+    "alphabet": "rotunda",
+    "nibAngle": 40,
+    "xHeight": 4,
+    "guideLines": ["ascender", "cap-height", "x-height", "baseline", "descender"]
+  },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The defining difference between Gothic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rotunda" } }], "text": "Rotunda" },
+          { "type": "text", "text": " and Gothic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "textura" } }], "text": "Textura" },
+          { "type": "text", "text": " is what happens at the arch. Textura breaks every arch into an angular shoulder. Rotunda lets the arch be round. The letters are wider and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "counter-space" } }], "text": "counter spaces" },
+          { "type": "text", "text": " are more open. A page of Rotunda looks like Gothic calligraphy that has relaxed its shoulders. Italian scribes and printers preferred it for Humanist and liturgical texts through the fourteenth and fifteenth centuries; it is the script of the early Italian printed book." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Brause Bandzug nib (alternative)", "slug": "nib-brause-bandzug", "isOptional": true },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Iron-gall ink (modern formulation)", "slug": "iron-gall-ink", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Proportions and nib angle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rotunda x-height is four nib widths. The nib angle is approximately 40 degrees from the baseline: steeper than Foundational (30 degrees) but flatter than Fraktur (45 degrees). The wider counter spaces come partly from this intermediate angle and partly from the rounded arch treatment. Ascenders and descenders are minimal, typically no more than one nib width above cap height or below baseline." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stroke 1: the pull stem" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a clean vertical downstroke from x-height to baseline. The entry is a short horizontal hairline at the top (the Rotunda entry hairline is finer and less pronounced than the Fraktur hairline entry). The foot terminates in a small curved serif turning right." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the pen. The pull stem is the building block of all Rotunda upright letters." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The rounded arch: letter n" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw the first pull stem." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin a second stroke from inside the first stem at about three-quarters height. Arc gently right and slightly upward (a rounded shoulder), then pull downward into the second stem. The arch is a gentle curve, not an angular shoulder. This is the key distinction from Textura." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The second stem foot curves right to match the first. Two parallel stems with a rounded bridge between them." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Differences in practice from Textura" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In Textura, the arch of n breaks into an angular shoulder: the pen lifts, resets, and draws a short diagonal before the second stem. In Rotunda the arch flows directly from the first stem without a break. The hand movement is actually simpler. Rotunda is also wider: the second stem of n should sit noticeably further right than in Textura, creating a wide, readable counter space inside the letter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The script looks like Foundational rather than Gothic",
+              "cause": "The letters are too tall or the angle is too low.",
+              "fix": "Reduce x-height to exactly four nib widths and increase the nib angle to 40 degrees. The extra angle and reduced height create the darker texture of the Gothic family."
+            },
+            {
+              "symptom": "The arch of n is angular even when trying to make it round",
+              "cause": "The pen slows down at the top of the arch, causing a corner.",
+              "fix": "Maintain a smooth, continuous arm movement through the arch. The curve forms naturally when the hand does not hesitate."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

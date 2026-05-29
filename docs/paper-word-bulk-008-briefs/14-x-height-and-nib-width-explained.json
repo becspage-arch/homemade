@@ -1,0 +1,131 @@
+{
+  "slug": "x-height-and-nib-width-explained",
+  "title": "X-height and nib width: how broad-edge calligraphy is measured",
+  "subtitle": "Why the x-height of a broad-edge script is always measured in nib widths, not millimetres",
+  "excerpt": "In broad-edge calligraphy, letter height is not fixed in millimetres. It is set by stacking nib widths: five nib widths for Foundational, five for Italic, three for Roman capitals. Changing the nib changes every letter proportionally. This is the system that makes broad-edge scripts scalable.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on the proportions of letters and the nib-width ladder. Internet Archive: https://archive.org/details/writingillumina00john. Johnston formalised the nib-width ladder as the standard way to determine x-height in the revived broad-edge tradition.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "nib-mitchell-roundhand-6", "isOptional": true },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "nib-width-ladder", "term": "Nib-width ladder", "definition": "A sequence of stacked horizontal strokes drawn at the full nib width, used to measure and set the x-height guide lines before writing a broad-edge script. The number of rungs on the ladder determines the letter height." },
+    { "slug": "x-height", "term": "X-height", "definition": "The height of the small letter x in a given script, used as the standard unit for measuring all other letter proportions. In broad-edge calligraphy, x-height is measured in nib widths." },
+    { "slug": "cap-height", "term": "Cap-height", "definition": "The height of uppercase letters, typically 6 to 8 nib widths in broad-edge scripts, measured from the baseline." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A broad-edge calligraphy nib is not just a writing instrument; it is also the unit of measurement. The thickness of the nib at maximum width is the base unit. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "x-height" } }], "text": "x-height" },
+          { "type": "text", "text": " of the script is set by stacking a fixed number of those nib widths. Edward Johnston called the stacked stack a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nib-width-ladder" } }], "text": "nib-width ladder" },
+          { "type": "text", "text": ", and it remains the standard method for ruling guide lines before a broad-edge writing session." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium, for practice)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Mitchell Roundhand nib, 6 (fine, to compare)", "slug": "nib-mitchell-roundhand-6", "isOptional": true },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drawing a nib-width ladder" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Charge the nib with ink. Hold the pen at 90 degrees to the paper for the ladder: the nib should be fully flat, laying down its maximum width." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a short horizontal stroke. This is the first rung of the ladder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the nib directly above the first stroke so the bottom of the nib touches the top of the first stroke. Draw a second horizontal stroke. Stack four or five rungs in this way." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The height of five rungs is the x-height for Foundational and Italic. The height of seven or eight rungs is the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cap-height" } }], "text": "cap-height" },
+              { "type": "text", "text": " for Roman capitals with the same nib." }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark a light pencil line at the top of the fifth rung. This is the x-height line. Rule this line across the full width of the sheet. Repeat to create as many writing lines as needed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the numbers mean in practice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foundational lower case uses five nib widths x-height. With a Mitchell 3 nib (the medium in the series), the nib width is approximately 2.4 mm. Five nib widths gives an x-height of roughly 12 mm. With a Mitchell 6 (the finest), the nib width is approximately 1.4 mm, so the x-height becomes roughly 7 mm. Change to the finer nib and the text shrinks; the proportions stay the same because the ratio of stroke width to letter height is unchanged." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is why a calligrapher changes nibs to change scale, not to change the letter structure. A piece written at very small scale with a size 6 nib has exactly the same letter proportions as a large display piece written with a size 0 nib. The nib-width ladder ensures this automatically." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Standard nib-width heights across scripts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foundational lower case: 5 nib widths. Italic lower case: 5 nib widths (the same height, but the compressed oval and slope create a different appearance). Roman capitals (inscriptional style): 7 to 8 nib widths. Gothic Textura lower case: 4 to 5 nib widths. Uncial: 4 nib widths. The different heights explain why a Textura page feels darker than a Foundational page written with the same nib: the shorter x-height means the strokes are relatively heavier than the letter height, producing a denser texture." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A worked comparison" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Write the word \"minimum\" in Foundational at 5 nib widths with a Mitchell 3. Then rule a new set of guide lines at 4 nib widths with the same nib and write \"minimum\" again. The two words have identical stroke widths but different letter heights. The second version looks slightly denser and more compressed. This is the practical effect of x-height variation: denser scripts use fewer nib widths; lighter, airier scripts use more." }
+        ]
+      }
+    ]
+  }
+}

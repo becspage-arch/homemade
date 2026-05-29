@@ -1,0 +1,166 @@
+{
+  "slug": "cloth-corner-application",
+  "title": "Cloth corners on a quarter or half binding",
+  "subtitle": "Cutting and applying the reinforced cloth triangles that protect the corners of a case-bound book",
+  "excerpt": "The corners of a bound book take more wear than the rest of the cover. Cloth triangles mitre over the board corners and bond under the paper covering, protecting the most vulnerable points of a case binding.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on quarter and half bindings, including corner construction. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cockerell's diagrams show the mitre angle and turn-in sequence still followed today.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-cloth", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "quarter-binding", "term": "Quarter binding", "definition": "A binding where the spine only is covered in a different material from the boards; the corners are plain." },
+    { "slug": "half-binding", "term": "Half binding", "definition": "A binding where both the spine and the board corners are covered in a stronger material, typically cloth, with the remainder of the board covered in paper." },
+    { "slug": "turn-in", "term": "Turn-in", "definition": "The portion of cover material that wraps over the edge of the board and adheres to the inside face." },
+    { "slug": "mitre", "term": "Mitre", "definition": "A 45-degree cut at the corner of a cover material that allows the turn-ins to meet neatly at the board corner without overlapping bulk." }
+  ],
+  "techniqueSlugs": ["cloth-corner-application"],
+  "criticalTechniques": ["cloth-corner-application"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "half-binding" } }], "text": "half binding" },
+          { "type": "text", "text": " the corners take the same cloth as the spine. In a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quarter-binding" } }], "text": "quarter binding" },
+          { "type": "text", "text": " they stay plain, but cloth corners can be added as a reinforcement regardless of binding style. The technique is the same in either case: cut a cloth triangle, apply it to the board corner, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mitre" } }], "text": "mitre" },
+          { "type": "text", "text": " the tip, and fold the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }], "text": "turn-ins" },
+          { "type": "text", "text": " over cleanly. Done well, the corner shows the grain of the cloth across the face of the board; done carelessly, it shows a lumpy fold." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A4", "slug": "cutting-mat-a4", "isOptional": false },
+            { "name": "Metal ruler, 15 cm", "slug": "metal-ruler-15cm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Book cloth", "slug": "book-cloth", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm", "slug": "bookbinding-board-2mm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety: cutting tools",
+          "body": "Sharp blades are safer than blunt blades. Change the craft-knife blade at the first sign of dulling. Cut on a self-healing mat with a metal ruler held firmly; keep the non-cutting hand at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting the cloth triangles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut one cloth rectangle per corner. For a 2 mm board, the rectangle should be 50 mm square. This gives 10 mm of cloth visible on the board face and 10 mm of turn-in on each side, with a 30 mm mitre allowance at the tip." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the cloth wrong-side-up with a pencil. Cut four 50 mm squares, one per corner." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On each square, mark a line 8 mm from the corner tip, parallel to the diagonal. This is the mitre cut line." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not cut along this line yet. Paste the cloth first, then trim." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying and mitring" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a thin, even coat of acid-free PVA to the wrong side of one cloth square with a small brush or finger. Work from the centre outward." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the board corner centred on the cloth so the board corner sits exactly at the diagonal mid-point of the square. Press down firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim the cloth tip along the mitre cut line with the craft knife and ruler. Remove the triangle of waste cloth. This prevents a bulge at the corner tip when the turn-ins fold over." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold one turn-in flap over the board edge and rub it down firmly with the bone folder. Then fold the adjacent flap, pulling it gently taut before pressing it down. The two turn-ins meet at the corner tip and should align without overlapping." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the bone folder along the board edge in both directions to seat the cloth turn-in against the board. The edge should be straight and the cloth face unrucked." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the board under a weight for 30 minutes before applying the paper covering." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The corner tip has a visible bump",
+              "cause": "The mitre cut was not made or the mitre left too much cloth.",
+              "fix": "Trim the cloth tip to within 1 to 2 board-thicknesses of the corner before folding the turn-ins."
+            },
+            {
+              "symptom": "The two turn-in flaps overlap at the corner tip",
+              "cause": "The mitre cut line was too far from the corner.",
+              "fix": "Trim one flap back with scissors so the two edges meet without overlapping."
+            },
+            {
+              "symptom": "Cloth wrinkles appear on the board face near the corner",
+              "cause": "The cloth was pasted too wetly or placed unevenly.",
+              "fix": "Dampen the surface slightly with a damp sponge to relax the PVA, reposition, and burnish with the bone folder working from the centre of the cloth outward."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

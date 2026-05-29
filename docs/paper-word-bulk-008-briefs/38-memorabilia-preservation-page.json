@@ -1,0 +1,102 @@
+{
+  "slug": "memorabilia-preservation-page",
+  "title": "Preserving memorabilia in a scrapbook page",
+  "subtitle": "How to mount tickets, letters, pressed flowers, and other flat keepsakes without damaging them",
+  "excerpt": "Flat keepsakes like theatre tickets, handwritten notes, pressed flowers, and fabric scraps can be included in scrapbook pages safely if they are mounted correctly. The mounting method matters: permanent adhesive on an original document destroys its future retrievability, while reversible mounting preserves both the document and the option to remove it later.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "scrapbooking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Archival mounting practice adapted for home scrapbooking. Principles drawn from conservation and archive practice broadly documented in museum and library literature. No single primary source.",
+  "recipeTools": [
+    { "slug": "photo-corners", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "foam-adhesive-dots", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "reversible-mounting", "term": "Reversible mounting", "definition": "An adhesive method that can be undone without damaging the mounted item. Photo corners, hinges, and Japanese tissue hinges are reversible. Permanent adhesive applied directly to the surface of an original document is irreversible and can cause long-term damage to the item." },
+    { "slug": "acid-migration", "term": "Acid migration", "definition": "The transfer of acid from one material to another in contact with it. Acidic card or paper placed against photographs causes yellowing and embrittlement to spread from the card into the photograph over years. Acid-free materials prevent migration." }
+  ],
+  "techniqueSlugs": ["memorabilia-preservation-page"],
+  "criticalTechniques": ["memorabilia-preservation-page"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The central question in mounting any piece of memorabilia is: how important is this item to preserve intact? A cinema ticket from last summer and a handwritten letter from a grandparent both deserve to be on the page, but they do not deserve the same treatment. The letter should be mounted " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "reversible-mounting" } }], "text": "reversibly" },
+          { "type": "text", "text": " so it can be removed later without damage. The ticket can take permanent adhesive. All papers used on the page should be acid-free to prevent " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "acid-migration" } }], "text": "acid migration" },
+          { "type": "text", "text": " over time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Photo corners", "slug": "photo-corners", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Foam adhesive dots (for dimensional mounting)", "slug": "foam-adhesive-dots", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mounting methods by item type" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Photographs: use photo corners or a window mat. These hold the photograph without any adhesive touching it. Never apply glue or tape directly to the photograph surface. Even acid-free adhesive can damage printed and developed photographs over time." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tickets, labels, and printed ephemera: these can take direct acid-free PVA application to the back surface if preservation is not critical. For items you might want to retrieve later, use photo corners or create a small envelope or pocket on the page from folded card." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Handwritten letters and documents: mount using photo corners at all four corners, or make paper hinges. A paper hinge is a small strip of acid-free paper folded in half, with one half adhered to the back of the document and the other half adhered to the page. The document lifts cleanly from the hinge if needed. Never tape letters to a page with standard sellotape: the adhesive yellows and migrates within years." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pressed flowers and botanicals are fragile. Place them in a protective enclosure or cover with a vellum overlay to keep off dust and prevent abrasion. A small spot of acid-free PVA at the base of the stem holds the piece. Keep the adhesive away from the petals." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fabric swatches: stitch or adhere with acid-free PVA at the edges. Loose fabric corners lift over time and can catch and tear; stitch with a few whip stitches through the page if the weight of the fabric causes the edges to peel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dimensional mounting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foam adhesive dots raise elements off the page surface, creating shadow and depth. Use them under photographs, ticket stubs, or layered paper elements where you want a three-dimensional quality on the spread. They are not suitable for items you want to preserve reversibly: the foam adhesive is strong and permanent." }
+        ]
+      }
+    ]
+  }
+}
