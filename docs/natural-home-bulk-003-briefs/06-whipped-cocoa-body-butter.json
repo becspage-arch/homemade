@@ -1,0 +1,160 @@
+{
+  "slug": "whipped-cocoa-body-butter",
+  "title": "Whipped cocoa body butter",
+  "subtitle": "An anhydrous body butter whipped from cocoa butter, shea butter, and sweet almond oil",
+  "excerpt": "An anhydrous body butter whipped from melted cocoa butter, shea butter, and sweet almond oil. The cocoa contributes a faint chocolate aroma; whipping at the cool-down stage gives a light mousse texture rather than a solid slab. Spreads on dry skin and warms into a thin oil film.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "beauty",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Anhydrous body butter ratios per Susan Miller Cavitch and standard cosmetic-chemist guides: hard butters 50-60%, soft butters 20-30%, carrier oils 15-25%. Whipping at 25-30 degrees Celsius (just-set stage) holds air for the mousse texture.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 x 250 ml jar (~220 g whipped butter)",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "totalMinutes": 115,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. The whipping step takes longer with a larger volume; allow 15 minutes of mixing rather than 5.",
+    "makeAheadNotes": "Anhydrous and shelf-stable. Best within 6 months for full whipped texture; the air will gradually settle out and the butter will firm up. A re-whip with a hand mixer restores the texture.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 365,
+    "shelfLifeNotes": "12 months stored cool and dark. The cocoa aroma fades over months; the butter is still useable. Discard if the jar develops a rancid smell or a yellow oily separation."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "metal-bowl", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false },
+    { "slug": "jam-jars", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "anhydrous-formulation",
+      "term": "Anhydrous formulation",
+      "definition": "A cosmetic product made entirely of oil-soluble ingredients - no water, no aqueous extracts, no hydrosols. Anhydrous products don't support bacterial growth so they don't require a broad-spectrum preservative. Shelf life is limited by oil oxidation rather than microbial spoilage."
+    },
+    {
+      "slug": "whipping-window",
+      "term": "Whipping window for butters",
+      "definition": "The temperature range at which a melted butter blend will hold air when whipped. For a cocoa/shea/oil blend this is 25-30 degrees Celsius - cooler than this and the butter is set solid; warmer and the air pumps out as fast as it goes in. Chill the bowl partially in cold water to hit the window."
+    }
+  ],
+  "techniqueSlugs": ["double-boiler-method"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A whipped body butter spreads more easily than a solid balm and feels less greasy on application even though the ingredients are identical. The "},
+          { "type": "text", "text": "anhydrous", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anhydrous-formulation" } }] },
+          { "type": "text", "text": " base (no water) means no preservative is needed; shelf life is the oxidation life of the oils, which the cool dark jar protects." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The trick is the "},
+          { "type": "text", "text": "whipping window", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "whipping-window" } }] },
+          { "type": "text", "text": " - the butter blend must be at 25-30 degrees Celsius when you start the mixer. Too warm and the air pumps straight out; too cool and the butter is already set. A cold-water bowl bath gets the temperature down quickly. The cocoa contributes a faint chocolate aroma that pairs with vanilla or sweet orange if you want to scent the batch; left unscented it smells of clean cocoa." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "cocoa-butter", "amount": 80, "unit": "g", "prepNote": "Raw or refined cocoa butter. Raw retains the chocolate aroma; refined is neutral. Both whip identically.", "isOptional": false, "groupLabel": "Hard butter" },
+            { "ingredientSlug": "shea-butter", "amount": 80, "unit": "g", "prepNote": "Refined shea is smoothest for whipping; raw shea sometimes gives a grainy texture if the temperature isn't tightly controlled.", "isOptional": false, "groupLabel": "Soft butter" },
+            { "ingredientSlug": "sweet-almond-oil", "amount": 50, "unit": "g", "prepNote": "Carrier oil. Light, slow to oxidise.", "isOptional": false, "groupLabel": "Carrier oil" },
+            { "ingredientSlug": "jojoba-oil", "amount": 10, "unit": "g", "prepNote": "Stabilises the blend; jojoba is very slow to go rancid and extends overall shelf life.", "isOptional": false, "groupLabel": "Carrier oil" },
+            { "ingredientSlug": "essential-oil-sweet-orange", "amount": 8, "unit": "g", "prepNote": "3-4% of total batch. Pairs with cocoa. Skip for a pure unscented butter.", "isOptional": true, "groupLabel": "Scent" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the butters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weigh the cocoa butter and shea butter into the metal bowl. Set over a "},
+          { "type": "text", "text": "double-boiler", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "double-boiler-method" } }] },
+          { "type": "text", "text": " (saucepan with 3 cm simmering water). Stir until fully liquid - about 5 minutes. Remove from the heat. Add the sweet almond and jojoba oils. Stir to combine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cool to the whipping window" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the bowl in a cold-water bath in the sink. Stir steadily; the temperature drops from melt (~50 degrees Celsius) to whipping window (25-30 degrees Celsius) in 10-15 minutes. The blend will start to cloud and thicken around 30 degrees Celsius - this is the right moment. The bowl should feel cool to the touch but the contents must still be pourable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add scent and whip" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stir in the sweet orange essential oil if using. Beat with the hand mixer on medium-high for 5-8 minutes; the blend pales from cream to ivory, fluffs up, and holds soft peaks. If it stays runny, the temperature was too warm - chill for another 2 minutes and re-whip. If it's grainy, the cocoa butter crystallised too fast - re-melt and start over." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Jar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spoon the whipped butter into a clean dry 250 ml jam jar. Don't pack down; the air is the point. Lid and label with the date. The butter will firm up slightly in the first 24 hours; the texture stays light for 4-6 weeks before gradually settling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Use and storage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply a small scoop to dry skin - elbows, knees, shins, hands. Warms from skin temperature to a thin oil film. Use clean dry fingers or a spoon; do not dip wet fingers into the jar (water in a water-free product needs a preservative the recipe doesn't include). Store at room temperature out of direct sun. 12 months shelf life. Discard if the smell goes rancid or oil separates as a yellow layer." }
+        ]
+      }
+    ]
+  }
+}

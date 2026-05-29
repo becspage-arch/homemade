@@ -1,0 +1,234 @@
+{
+  "slug": "coffee-cold-process-soap",
+  "title": "Coffee cold-process soap",
+  "subtitle": "A coffee-grounds exfoliating bar made with brewed coffee in the lye solution",
+  "excerpt": "A cold-process bar soap built on coconut, olive, and castor oils, with brewed coffee in place of half the water and used coffee grounds folded in as a mild scrub. The coffee neutralises kitchen smells like garlic and fish on the hands. Allow 6 weeks to harden before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cavitch, The Soapmaker's Companion (1997): coconut/olive/castor base ratios. Dunn, Caveman Chemistry (2003): saponification, lye discount. Coffee-in-soap is a well-documented technique in the soapmaking community; brewed coffee substitutes for water in the lye solution and used grounds are folded in at trace as exfoliant.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg bar soap (~7 x 130 g bars after cure)",
+    "prepMinutes": 90,
+    "cookMinutes": 0,
+    "restingMinutes": 1440,
+    "chillingMinutes": 0,
+    "totalMinutes": 1530,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles to 2 kg cleanly if your mould and stick blender have headroom. Beyond that, batch in 1 kg lots; large soap batches set up faster and can race the pour.",
+    "makeAheadNotes": "The bar keeps a year or more in a cool dark cupboard. Longer cures (8-12 weeks) give a milder, harder bar.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Stable 2 years or more cured and stored cool and dry. Discard if the bar develops orange spots (DOS, rancid superfat) or smells sharply of paint or crayon. The coffee scent fades over the cure; expect a chocolatey trace at 6 weeks rather than fresh-brewed."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and lye that produces soap and glycerine. Each oil has a SAP value, the grams of lye needed to fully saponify a gram of that oil. The recipe lye weight is the sum of SAP values across the oil blend, less the superfat percentage."
+    },
+    {
+      "slug": "lye-discount",
+      "term": "Lye discount",
+      "definition": "The water in the lye solution as a percentage of the oil weight. A 33% lye discount means 330 g water per 1 kg oils. Lower discounts (30%) give harder, faster-tracing soap; higher (38%) gives a longer working time at thinner trace."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils intentionally left unsaponified at the end of the cure, to leave free oil on the skin for conditioning. 5-7% is standard for body bars; 0-2% for laundry soap; 8-10% for facial bars."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point in the cold-process method when the soap batter thickens enough that a drizzled spoonful leaves a visible trail on the surface before sinking back in. Light trace is custard-like; medium trace is pudding-like; thick trace is too late for fragrance additions."
+    },
+    {
+      "slug": "brewed-coffee-lye-water",
+      "term": "Brewed coffee in the lye solution",
+      "definition": "Strong brewed coffee replaces half the distilled water in the lye solution. The lye reaction will neutralise much of the coffee aroma but contributes a deep brown colour and trace mineral content. The brewed coffee must be cooled to room temperature and any sugars (do not sweeten) avoided, as sugar accelerates trace dramatically."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coffee soap deodorises hands after garlic, fish, or onion prep better than any commercial kitchen bar. The coconut, olive, and castor base gives a creamy lather; the brewed coffee in the lye water contributes a chocolate-brown colour and a faint roasted aroma at the cured bar. Used coffee grounds folded in at trace work as a mild physical exfoliant. The bar suits a kitchen sink as much as a bathroom."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a "
+          },
+          { "type": "text", "text": "cold-process", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }] },
+          {
+            "type": "text",
+            "text": " recipe at a 6% "
+          },
+          { "type": "text", "text": "superfat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }] },
+          {
+            "type": "text",
+            "text": " and 33% "
+          },
+          { "type": "text", "text": "lye discount", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-discount" } }] },
+          {
+            "type": "text",
+            "text": ". The base is 30% coconut for lather, 60% olive for mildness, 10% castor for bubble stability. Half the lye-water is replaced with cooled "
+          },
+          { "type": "text", "text": "brewed coffee", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brewed-coffee-lye-water" } }] },
+          {
+            "type": "text",
+            "text": ". Cure 6 weeks before use; the soap will be useable at 4 weeks but harder and milder at 8."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sodium hydroxide (lye) is caustic and the lye solution can splash and burn. Wear "
+          },
+          { "type": "text", "text": "working-with-lye-safely", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "working-with-lye-safely" } }] },
+          {
+            "type": "text",
+            "text": ": safety goggles, nitrile gloves, long sleeves, closed shoes. Work in a ventilated kitchen, away from children and animals. Have the kitchen sink running cold ready to flush a splash. Mix the lye solution outdoors or under an extractor; the fumes are sharp for the first 30 seconds. Pour lye INTO water (or here, lye into the coffee-water blend), never the other way around. Keep neat vinegar in the kitchen for spills on surfaces, not skin; vinegar on a fresh lye burn worsens the injury."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 600, "unit": "g", "prepNote": "Pomace or refined olive oil works; extra-virgin gives a slightly softer bar.", "isOptional": false, "groupLabel": "Oils" },
+            { "ingredientSlug": "coconut-oil", "amount": 300, "unit": "g", "prepNote": "Refined, solid below 24 degrees Celsius. Melts at 24-26 degrees Celsius.", "isOptional": false, "groupLabel": "Oils" },
+            { "ingredientSlug": "castor-oil", "amount": 100, "unit": "g", "prepNote": "Adds creamy bubble stability. Do not exceed 10% or the bar gets soft.", "isOptional": false, "groupLabel": "Oils" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 138, "unit": "g", "prepNote": "Lye flakes or pearls, food-grade or technical grade. 6% superfat calculation.", "isOptional": false, "groupLabel": "Lye solution" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "prepNote": "Half of the lye-water. Distilled, not tap; mineral impurities can cloud trace.", "isOptional": false, "groupLabel": "Lye solution" },
+            { "ingredientSlug": "coffee-instant", "amount": 165, "unit": "g", "prepNote": "Or use 165 g cooled strong brewed coffee. Make a double-strength espresso (4 g instant per 100 g water) and refrigerate to room temperature before use.", "isOptional": false, "groupLabel": "Lye solution" },
+            { "ingredientSlug": "ground-coffee", "amount": 20, "unit": "g", "prepNote": "Used coffee grounds, dried. Fold in at trace as exfoliant. Used grounds (already brewed) give a brown bar; fresh grounds give a slightly oilier finish and stronger aroma.", "isOptional": false, "groupLabel": "Inclusions" },
+            { "ingredientSlug": "essential-oil-peppermint", "amount": 15, "unit": "g", "prepNote": "1.5% of oils. Optional but pairs well with coffee; gives a cooling note. Skip if you want a pure coffee bar.", "isOptional": true, "groupLabel": "Scent" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put on goggles and gloves. Weigh the distilled water and cooled brewed coffee into the HDPE pitcher. Weigh the sodium hydroxide separately. Take the pitcher outdoors or to the extractor. Add the lye to the water-coffee a tablespoon at a time, stirring with a stainless or silicone spatula until dissolved. The solution will heat to 80-90 degrees Celsius and the coffee will turn from medium brown to a dark muddy brown. Set aside in a safe spot and allow to cool to 38-42 degrees Celsius. This takes 45-60 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weigh the coconut oil into a stainless or heatproof glass bowl. Melt over a low water bath until fully liquid, then add the olive and castor oils. Stir to combine. The blend should be 38-42 degrees Celsius when the lye is. If too hot, set the bowl in cool water; if too cool, return briefly to the water bath. Aim to match the lye temperature within 5 degrees Celsius." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and reach trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the lye-coffee solution into the oils through a fine strainer (a coarse mesh sieve catches any undissolved lye). Pulse the stick blender in 5-second bursts, stirring between, until the batter reaches "},
+          { "type": "text", "text": "trace", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }] },
+          { "type": "text", "text": " - 3-5 minutes for this oil blend. Light trace is custard consistency; a drizzled spoonful leaves a visible trail on the surface before sinking back. At light trace, add the dried coffee grounds and the peppermint essential oil if using. Stir by hand to disperse." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould and unmould" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the batter into the silicone loaf mould. Tap the mould on the counter to release air bubbles. Cover the top with cardboard and a folded towel, set somewhere undisturbed for 24-48 hours. The soap will heat from "},
+          { "type": "text", "text": "saponification", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }] },
+          { "type": "text", "text": ", then cool. Unmould when firm to a fingertip press; this is usually 24 hours but can be 48 for a deep coffee bar. Cut into 7 x 130 g bars with a soap cutter or sharp knife while still slightly soft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stand the bars on a wire rack or baking paper in a cool, dry, airy spot. Turn every few days for the first week to expose all faces. The bars finish saponifying in 2-3 days but the water continues to evaporate over the 6-week cure, leaving a harder, milder bar. Use after 6 weeks; lather will improve through 12 weeks. The coffee aroma is strongest at week 4 and mellows; expect a chocolatey trace rather than fresh-brewed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wrap each bar in waxed paper or store unwrapped in a wooden box in a cool dark cupboard. Shelf life is 2 years or more. Discard if orange spots appear (DOS, dreaded orange spots, rancid superfat oil) or the bar develops a sharp paint-like smell. The coffee bar darkens slightly with age; this is harmless oxidation of the chlorogenic acids." }
+        ]
+      }
+    ]
+  }
+}
