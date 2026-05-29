@@ -1,0 +1,151 @@
+{
+  "slug": "white-chocolate-bark-raspberry",
+  "tutorialId": "cmpqx3dzt0000s8v4m1fgcbog",
+  "capturedAt": "2026-05-29T12:51:58.794Z",
+  "preFix": {
+    "title": "White chocolate bark with raspberry",
+    "subtitle": "Melted white chocolate set with freeze-dried raspberries and pistachios",
+    "excerpt": "A simple confectionery project: white chocolate melted and poured onto baking paper, scattered with freeze-dried raspberries and crushed pistachios, and left to set. The finished bark is broken into irregular shards. The result is visually striking and requires no special equipment.",
+    "sourceNotes": "Chocolate bark is a well-established home confectionery form, documented in British and American baking literature from the mid-twentieth century. The combination of white chocolate, freeze-dried fruit, and nuts follows widely published contemporary practice.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "White chocolate bark is a project with almost no method: melt, pour, scatter, wait. The only technique that matters is how you melt the chocolate. ",
+              "type": "text"
+            },
+            {
+              "text": "White chocolate",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "term": "Melting white chocolate",
+                    "termId": "cmpqwnl120000mwv40i1o2j63"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " melts at a lower temperature than dark and seizes if overheated or if any moisture gets into it. Use the best white chocolate you can find (check that cocoa butter, not vegetable fat, is listed); cheap compound white chocolate does not set with the same snap and melts differently.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Ingredients",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "ingredientsList",
+          "attrs": {
+            "items": [
+              {
+                "name": "White chocolate",
+                "unit": "g",
+                "amount": 300,
+                "prepNote": "good quality, broken into pieces",
+                "groupLabel": "Bark",
+                "isOptional": false,
+                "ingredientId": "cmp49f96t00b1rkv4pgl2dt11",
+                "ingredientSlug": "white-chocolate"
+              },
+              {
+                "name": "Freeze-dried raspberries",
+                "unit": "g",
+                "amount": 15,
+                "prepNote": "whole or lightly crushed",
+                "groupLabel": "Bark",
+                "isOptional": false,
+                "ingredientId": "cmpqwy5yf0004p0v4f5tju060",
+                "ingredientSlug": "freeze-dried-raspberries"
+              },
+              {
+                "name": "Pistachios",
+                "unit": "g",
+                "amount": 40,
+                "prepNote": "roughly chopped",
+                "groupLabel": "Bark",
+                "isOptional": true,
+                "ingredientId": "cmp49fabf00d0rkv45zy4g0r5",
+                "ingredientSlug": "pistachios"
+              },
+              {
+                "name": "Flaky sea salt",
+                "unit": "g",
+                "amount": null,
+                "prepNote": "a very light pinch",
+                "groupLabel": "Bark",
+                "isOptional": true,
+                "ingredientId": "cmpqwy5uc0000p0v46it9tldr",
+                "ingredientSlug": "salt-flakes"
+              }
+            ],
+            "defaultServings": null
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Melt, pour, and scatter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Line a baking tray with baking paper. Melt the white chocolate in a heatproof bowl set over a pan of barely simmering water (the bowl must not touch the water). Stir frequently until just smooth and remove from the heat. Pour the melted chocolate onto the lined tray and spread it to an even layer about 5 mm thick, roughly rectangular. Scatter the freeze-dried raspberries, chopped pistachios, and a pinch of flaked salt over the surface while the chocolate is still liquid. Leave at room temperature until fully set, at least 45 minutes. Do not refrigerate; the condensation that forms when a cold surface warms causes the chocolate surface to bloom white. Once fully set, break into irregular shards.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": "About 400 g of bark (20 to 30 pieces)",
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > heading[4] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "ingredient-amount-missing",
+      "message": "recipeIngredient cmpqx3e1t0005s8v4f9pbjevk (ingredientId=cmpqwy5uc0000p0v46it9tldr) has null amount — list renders empty"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "slug": "tartine-style-country-loaf",
+  "title": "Tartine-style country loaf",
+  "subtitle": "The modern American sourdough method, built for the home baker",
+  "excerpt": "The Tartine method brought sourdough to a generation of home bakers: a high-hydration, levain-leavened loaf baked in a Dutch oven for a blistered crust and an open, custardy crumb. This follows that approach faithfully.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The Tartine-style country loaf method draws on published accounts of Chad Robertson's approach at Tartine Bakery, San Francisco, which became publicly known through food journalism from around 2010 onwards. The core technique (high-hydration levain dough, Dutch oven bake) follows a method that is now widely taught and in common circulation among home bakers. No proprietary recipe has been copied; the ratios and method here are constructed from first principles following the published open-source accounts and the baker's-percentage standards common to this style.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round loaf (approx. 900 g baked weight)",
+    "prepMinutes": 45,
+    "cookMinutes": 45,
+    "restingMinutes": 300,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, then slice and freeze. Toast slices from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape the loaf the evening before and retard overnight in the fridge. Bake cold the next morning.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 900,
+      "hydrationPercent": 76,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": 30,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": 300,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "conventional, inside Dutch oven; lid on for first 20 minutes, then lid off at 230°C for 25 minutes",
+      "steamMethod": "lidded Dutch oven for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "banneton", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain-tartine",
+      "term": "Levain",
+      "definition": "A portion of sourdough starter that has been fed and left to ripen to peak activity before being mixed into the final dough. In the Tartine method, the levain is built with equal parts flour and water mixed with a small amount of mature starter; it is ready when it smells pleasantly sour and floats in water."
+    },
+    {
+      "slug": "lamination-folds-tartine",
+      "term": "Coil fold",
+      "definition": "A gentle dough-strengthening technique used in place of kneading. Wet hands slide under the dough, lift the centre, and allow the edges to fall and fold beneath. The bowl is rotated 90 degrees and the action repeated. Four repeats make one set."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Tartine country loaf is the archetype of modern sourdough: a high-hydration dough leavened with a young " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain-tartine", "term": "Levain" } }],
+            "text": "levain"
+          },
+          { "type": "text", "text": ", fermented slowly, and baked in a covered Dutch oven. Steam trapped under the lid forces the loaf to spring open at the score. The result is a blistered crust and an open crumb. This version follows the same logic: 76% hydration, 20% levain, a four-hour bulk ferment, and an overnight cold retard." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Domestic ovens drift by 20°C or more. An oven thermometer is worth checking if your loaf consistently browns unevenly or fails to spring. Preheat the Dutch oven inside the oven for at least 45 minutes before baking." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 810, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "wholemeal-flour", "amount": 90, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 18, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 690, "unit": "ml", "prepNote": "warm (28 to 30°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sourdough-starter", "amount": 180, "unit": "g", "prepNote": "active, at peak (this is the levain)", "isOptional": false, "groupLabel": "Levain" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the levain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Four to five hours before you want to mix the final dough, build the levain by combining 30 g of active starter with 90 g of strong bread flour and 90 g of warm water. Mix, cover, and leave at room temperature until it has doubled and a spoonful dropped in water floats. This is the levain; it is the only leavening in the recipe." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and autolyse" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the two flours in a large bowl. Add 640 ml of the warm water and mix until no dry flour remains. Cover and rest 30 to 40 minutes. After the rest, add the active levain, then dissolve the salt in the remaining 50 ml of water and add that too. Use wet hands to squeeze and integrate everything for 3 to 4 minutes. The dough will be sticky and extensible." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment with folds, around 4 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the bowl and leave the dough to ferment. During the first two hours, perform a set of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lamination-folds-tartine", "term": "Coil fold" } }],
+            "text": "coil folds"
+          },
+          { "type": "text", "text": " every 30 minutes (four sets). After the fourth set, leave undisturbed. Bulk fermentation is complete when the dough has grown by about 50%, smells yeasty and slightly sour, and shows small bubbles across its surface. In a 22°C kitchen this typically takes 3.5 to 5 hours from when the levain was added." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pre-shape, bench rest, and final shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Gently tip the dough onto an unfloured work surface. Using a bench scraper and a cupped hand, drag the mass towards you repeatedly to build surface tension into a rough round. Leave uncovered for 20 minutes. Then shape it into a tight boule: fold the edges into the centre, flip seam-side down, and drag again to tighten. Dust a banneton generously with rice flour and nestle the shaped loaf in seam-side up. Cover and refrigerate for 10 to 14 hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven with the Dutch oven inside to 250°C (conventional) for at least 45 minutes. Cut a piece of baking paper to fit the Dutch oven base. Remove the cold loaf from the fridge, tip it directly onto the paper, and score the top quickly with two parallel cuts or a single deep crescent at a 45-degree angle. Lower the loaf into the hot Dutch oven on its paper, replace the lid, and bake for 20 minutes. Remove the lid, drop the temperature to 230°C, and bake for a further 25 minutes until the crust is deeply caramelised. The loaf sounds hollow when tapped underneath. Cool on a rack for at least 90 minutes before cutting." }]
+      }
+    ]
+  }
+}

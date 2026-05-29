@@ -1,0 +1,171 @@
+{
+  "slug": "pretzels-bavarian-lye",
+  "title": "Bavarian lye pretzels",
+  "subtitle": "The authentic dark-crusted pretzel, dipped in food-grade lye solution",
+  "excerpt": "The Bavarian pretzel's distinctive dark-mahogany crust and chewy crumb come from dipping the shaped dough in a dilute lye solution before baking. This recipe uses food-grade sodium hydroxide at safe working concentrations, handled with basic precautions.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Bavarian pretzel baking, including the lye-dipping process, is documented in German regional baking records from the nineteenth century. Early descriptions appear in agricultural fair records and regional craft-guild accounts, now public-domain. The lye process (Laugengebäck) is also detailed in public-domain German food-science literature from the early twentieth century.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 pretzels",
+    "prepMinutes": 40,
+    "cookMinutes": 16,
+    "restingMinutes": 90,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked pretzels once cooled. Refresh at 200°C for 5 minutes from frozen.",
+    "batchable": true,
+    "batchNotes": "Double the recipe for 16 pretzels; two baking trays, baked on separate shelves in sequence.",
+    "makeAheadNotes": "Shaped, unboiled pretzels can refrigerate on trays overnight. Dip and bake the next day.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "european",
+    "mealType": "snack",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 56,
+      "saltPercent": 2,
+      "yeastPercent": 1.5,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 20,
+      "retardingMinutes": 30,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; rotate the tray at the halfway point for even browning",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lye-pretzel-process",
+      "term": "Food-grade lye solution",
+      "definition": "A dilute solution of sodium hydroxide (NaOH) in water, typically 3 to 4% by weight. Dipping the shaped dough in this alkaline solution before baking causes a Maillard reaction at a lower temperature than usual, producing the pretzel's characteristic dark-mahogany crust and distinctive chew. Food-grade sodium hydroxide is sold by baking suppliers and is the same chemical used in cured olives and lutefisk. It must be handled with nitrile gloves and avoided near the eyes."
+    },
+    {
+      "slug": "pretzel-shaping",
+      "term": "Pretzel shaping",
+      "definition": "The traditional pretzel is formed by rolling a rope of dough to about 60 cm with tapered ends, crossing the ends twice to form a twist, then folding the crossed ends down onto the thick loop and pressing them to adhere. The thick centre knot ends up at the bottom of the finished pretzel."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What separates a Bavarian pretzel from every other pretzel is the lye dip. The dough is the same soft yeasted wheat dough used for dinner rolls, but dipping it in a dilute " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-pretzel-process", "term": "Food-grade lye solution" } }],
+            "text": "food-grade lye solution"
+          },
+          { "type": "text", "text": " before baking triggers a surface reaction that no other method replicates: a dark-mahogany crust that is shiny, crackled, and slightly chewy, with a subtle metallic tang underneath the salt. The baking soda alternative (widely suggested as a safe substitute) produces a pale, soft-crusted pretzel with almost none of these qualities. Lye is the ingredient. Handled simply with nitrile gloves, it is not especially hazardous." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Lye solution irritates skin and eyes. Wear nitrile or rubber gloves and eye protection when mixing and working with it. Use a glass, stainless steel, or food-grade plastic bowl. Never aluminium. If lye solution contacts skin, rinse immediately with running water for at least ten minutes. Mix lye into cold water, not the reverse, and allow it to cool before using it." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": "or plain flour for a softer crumb", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 280, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-flakes", "amount": null, "unit": null, "prepNote": "coarse pretzel salt or flaked salt, for finishing", "isOptional": false, "groupLabel": "Finishing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "For the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "To make a 3.5% lye solution: weigh 500 ml of cold water into a glass or stainless-steel bowl. Wearing gloves and eye protection, add 18 g of food-grade sodium hydroxide granules (lye) to the water, not the reverse. Stir with a metal spoon until dissolved. The solution heats up; allow it to cool to room temperature before using it to dip the pretzels. Discard unused lye solution by diluting heavily with water before pouring down the drain." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, salt, sugar, and yeast in a large bowl. Add the warm water and the softened butter and mix to a dough. Knead by hand for 10 minutes, or use a stand mixer with a dough hook for 7 minutes on medium speed, until the dough is smooth and pulls cleanly from the bowl. It should be stiffer than a bread dough: not sticky, but not dry either. Cover and prove at room temperature for 60 minutes, until roughly doubled." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Divide and shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Knock back the dough and divide into 8 equal pieces (about 105 g each). Roll each into a 60 cm rope: start from the centre, working outward, tapering the ends to a thin point. Use the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pretzel-shaping", "term": "Pretzel shaping" } }],
+            "text": "pretzel shaping"
+          },
+          { "type": "text", "text": " technique to form each rope into a pretzel shape. Place on baking-paper-lined trays. Refrigerate the shaped pretzels, uncovered, for 30 minutes; this firms the dough slightly and makes the lye dip easier." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Lye dip and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C (fan). Wearing gloves, submerge each cold pretzel in the lye solution for 20 to 30 seconds, then lift it out with a slotted metal spoon or tongs and return it to the lined baking tray. The pretzels will feel slightly slippery. Slash the thick middle section of each pretzel with a sharp knife: a single deep cut, about 5 mm deep. Scatter coarse salt over immediately. Bake for 14 to 16 minutes, rotating the tray at the 8-minute mark. The finished pretzels are deep mahogany-brown on the thick sections and lighter at the arms; they feel firm when pressed. Cool on a rack for 10 minutes before eating." }]
+      }
+    ]
+  }
+}

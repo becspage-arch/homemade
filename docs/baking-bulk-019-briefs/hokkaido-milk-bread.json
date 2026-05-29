@@ -1,0 +1,160 @@
+{
+  "slug": "hokkaido-milk-bread",
+  "title": "Hokkaido milk bread",
+  "subtitle": "Feather-light Japanese milk bread using the tangzhong method",
+  "excerpt": "Hokkaido milk bread is a pull-apart square loaf with a cloud-soft crumb achieved through the tangzhong technique: a small portion of flour is cooked with liquid into a thick paste before mixing, which dramatically increases the loaf's moisture retention.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The tangzhong (water roux) technique for bread baking originates from Asian baking traditions and was popularised in its modern form in the early 2000s. Hokkaido milk bread (Shokupan) is a standard Japanese bakery loaf with documented use of enriched dough with cream and milk. The technique is now widely published and in common baking practice.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 square loaf (2 lb / 900 g tin)",
+    "prepMinutes": 35,
+    "cookMinutes": 35,
+    "restingMinutes": 150,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze the cooled loaf in a sealed bag. Toast slices from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The baked loaf is at its best within 24 hours. The tangzhong helps it stay soft for 2 to 3 days at room temperature in a sealed bag.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "japanese",
+    "mealType": "breakfast",
+    "mood": ["weekendBake", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 68,
+      "saltPercent": null,
+      "yeastPercent": 0.7,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "fan oven; cover loosely with foil for the final 10 minutes if the top is browning too fast",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "dough-hook", "isOptional": true },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tangzhong-method",
+      "term": "Tangzhong",
+      "definition": "A pre-gelatinised water roux made by cooking a small portion of the recipe's flour with milk or water over low heat until the mixture reaches about 65°C and forms a thick, translucent paste. Added to the main dough, the gelatinised starch holds more moisture than raw starch, resulting in a loaf that stays soft for days longer than a standard enriched bread."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The defining quality of Hokkaido milk bread is its crumb: white, uniformly fine, and so soft it springs back immediately when pressed. The secret is the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tangzhong-method", "term": "Tangzhong" } }],
+            "text": "tangzhong"
+          },
+          { "type": "text", "text": " water roux, a two-minute cooking step that gelatinises a small portion of the flour before it enters the main dough. The rest of the recipe is a straightforward enriched bread, proved twice and baked in a standard loaf tin. The resulting crumb is the pillowy, almost stretchy texture familiar from Japanese bakeries." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 50, "unit": "g", "prepNote": "for the tangzhong", "isOptional": false, "groupLabel": "Tangzhong" },
+            { "ingredientSlug": "whole-milk", "amount": 250, "unit": "ml", "prepNote": "divided: 100 ml for tangzhong, 150 ml for dough", "isOptional": false, "groupLabel": "Tangzhong" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": "for the main dough", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "large", "prepNote": "beaten, at room temperature", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "double-cream", "amount": 60, "unit": "ml", "prepNote": "or whole milk for a slightly less rich loaf", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Dough" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tangzhong" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine 50 g of strong bread flour with 100 ml of the milk in a small saucepan. Cook over medium-low heat, stirring constantly with a spatula, for 2 to 3 minutes until the mixture thickens into a paste that holds a line when you draw the spatula through it. Remove from the heat and press a piece of cling film directly onto the surface to prevent a skin forming. Cool to room temperature before using." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In a large bowl (or the bowl of a stand mixer), combine the remaining 400 g of flour, the sugar, salt, and yeast. Add the beaten egg, the remaining 150 ml of milk, the cream, and the cooled tangzhong. Mix until a rough dough forms, then knead for 8 minutes by hand or 6 minutes in a stand mixer with a dough hook. Add the softened butter in three additions and continue to knead until the dough is smooth, elastic, and no longer sticks to the bowl, around 5 minutes more. The dough should pass the windowpane test: a small piece stretched between your fingers should become thin and translucent without tearing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First prove, 60 to 90 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shape the dough into a ball, place in a lightly oiled bowl, cover with a damp cloth, and prove in a warm place until doubled in size. In a 23°C kitchen this takes 60 to 90 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and second prove, 45 to 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Knock back the dough and divide into three equal pieces (about 280 g each). Roll each into a rectangle roughly 20 cm by 10 cm, roll it up tightly from the short end like a Swiss roll, and place it seam-side down in a greased 900 g loaf tin. The three rolls sit side by side in the tin. Cover and prove for 45 to 60 minutes until the dough has risen level with the rim of the tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 175°C (fan). Brush the top of the loaf gently with milk or a beaten egg. Bake for 30 to 35 minutes, until the top is deep golden and a probe inserted through the side reads 88°C. If the top is browning faster than the loaf is cooking through, lay a piece of foil loosely over the top for the final 10 minutes. Remove from the tin and cool on a rack for at least 30 minutes before slicing. The loaf tears along the three seams into three pull-apart sections." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "slug": "miche-french-wholegrain",
+  "title": "Miche — French wholegrain levain",
+  "subtitle": "A large, slow-fermented French country loaf",
+  "excerpt": "Miche is the large, dense country loaf of the French baking tradition: a thick crust, a moist open crumb, and a flavour built over two days of levain fermentation. One loaf, enough for a week of bread.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pain de campagne and miche traditions documented in French agricultural extension service records (1880s to 1920s), public-domain. The large round wholegrain levain loaf represents the standard rural French bakery bread before industrialisation. Cross-referenced with early-twentieth-century accounts of the Poilane-style miche in French culinary literature now out of copyright.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 large round loaf (approx. 1.8 kg baked weight)",
+    "prepMinutes": 60,
+    "cookMinutes": 55,
+    "restingMinutes": 780,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze in a zip-lock bag. Thaw slices at room temperature for 20 minutes or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The shaped loaf retards in the fridge overnight. Bake it straight from cold the next morning.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "french",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 1000,
+      "hydrationPercent": 78,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 300,
+      "proofMinutes": 30,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": 300,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "conventional oven, with lid on Dutch oven for first 20 minutes, then lid off and drop to 230°C for 35 minutes",
+      "steamMethod": "lidded Dutch oven for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "banneton", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true },
+    { "slug": "baking-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain-miche",
+      "term": "Levain",
+      "definition": "A sourdough starter that has been fed and left to ripen until active and bubbly. For miche, the levain is built 4 to 5 hours before mixing the final dough. It is ready when it has doubled in size and a small spoonful floats in water."
+    },
+    {
+      "slug": "autolyse-miche",
+      "term": "Autolyse",
+      "definition": "A rest period after mixing flour and water, before adding the levain and salt. The flour hydrates fully and gluten begins to develop on its own without kneading. Autolyse typically lasts 30 to 60 minutes."
+    },
+    {
+      "slug": "stretch-and-fold",
+      "term": "Stretch and fold",
+      "definition": "A technique for developing gluten in high-hydration doughs without traditional kneading. Wet hands reach under the dough, stretch it up, then fold it over itself. Repeated four times to complete one set, then repeated every 30 minutes during bulk fermentation."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Miche is France's everyday loaf at its largest and most serious. The word simply means a round loaf, but in practice it refers to a big, dense, dark-crusted sourdough made with a proportion of wholemeal rye or wheat. A miche weighs around 1.8 kg baked; it is the bread that keeps, that improves by the day, and that cuts into thick slices for cheese or charcuterie. This recipe makes one loaf across two days: build the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain-miche", "term": "Levain" } }],
+            "text": "levain"
+          },
+          { "type": "text", "text": " in the morning, mix and bulk ferment through the afternoon, shape in the early evening, and bake it straight from the cold the next morning. The active work is maybe an hour spread over two days." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Domestic ovens drift by 20°C or more. An oven thermometer is worth the small cost for any loaf that depends on its temperature for crust and oven spring. Preheat the Dutch oven inside the oven for at least 45 minutes." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 800, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "wholemeal-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "rye-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 780, "unit": "ml", "prepNote": "warm (30°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sourdough-starter", "amount": 200, "unit": "g", "prepNote": "active, at peak", "isOptional": false, "groupLabel": "Levain build" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the levain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Four to five hours before mixing the dough, feed your sourdough starter to build the levain: combine 50 g of active starter with 75 g of strong bread flour and 75 g of warm water. Stir well, cover loosely, and leave at room temperature. The levain is ready when it has doubled in size and a spoonful dropped into water floats. If it sinks, give it another hour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Autolyse, 30 to 45 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the three flours in a large bowl. Add 720 ml of the warm water and mix until no dry flour remains. Cover and rest for 30 to 45 minutes. This " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "autolyse-miche", "term": "Autolyse" } }],
+            "text": "autolyse"
+          },
+          { "type": "text", "text": " period lets the flour fully hydrate and begins developing gluten without any effort. The dough will feel shaggy and rough at the start of the rest; it should feel smoother and more cohesive when you return to it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add levain and salt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the active levain over the autolysed dough. Dissolve the salt in the remaining 60 ml of water and pour that over too. Use wet hands to squeeze and fold everything together for 3 to 4 minutes until the levain is fully incorporated and the dough feels uniform. It will be sticky and quite wet; this is correct for a 78% hydration miche." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 4 to 5 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the bowl and leave the dough to ferment at room temperature. During the first two hours, perform a set of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stretch-and-fold", "term": "Stretch and fold" } }],
+            "text": "stretch and folds"
+          },
+          { "type": "text", "text": " every 30 minutes (four sets in total). After the fourth set, leave the dough undisturbed. Bulk fermentation is complete when the dough has increased by 50 to 75% in volume, feels airy when you lift the edge, and shows bubbles on the surface. In a 22°C kitchen this takes around 4 to 5 hours from when you added the levain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and cold retard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flour your work surface and gently tip the dough out without deflating it. Shape it into a round boule: fold the edges into the centre, flip the dough seam-side down, and use a bench scraper and your hands to drag it towards you across the work surface, building surface tension. Dust a large banneton generously with rice flour or plain flour. Place the shaped loaf seam-side up into the banneton. Cover tightly with a shower cap or cling film and refrigerate for 10 to 14 hours, or overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heat the oven to 250°C (conventional) with the Dutch oven inside. Take the loaf straight from the fridge. Cut a piece of baking paper to fit the base of the Dutch oven. Tip the cold loaf out of the banneton onto the paper and score the top with two parallel cuts or a single deep cross, about 1 cm deep and at a 45-degree angle. Working quickly, lower the loaf on its paper into the hot Dutch oven and put the lid on. Bake with the lid on for 20 minutes; the steam trapped inside the pot creates an initial burst of oven spring and a crackled crust. Remove the lid, drop the oven to 230°C, and bake for a further 35 minutes until the crust is deep mahogany-brown. The loaf sounds hollow when you tap the base; an internal probe reads 96°C. Lift onto a cooling rack and leave for at least 2 hours before cutting. The crumb sets as it cools." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Loaf spread flat in the oven" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The dough was over-fermented during bulk or the shaping did not build enough surface tension. Next time, reduce the bulk ferment time by 30 minutes and drag the shaped loaf more firmly during shaping to tighten the outer skin." }] }]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Dense, gummy crumb" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loaf was cut while still warm. At 96°C the internal starches are fully gelatinised but not yet set; the crumb needs at least 2 hours on a rack before slicing. A dense crumb can also mean the levain was not at peak activity." }] }]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Pale, thick, chewy crust" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The oven was not hot enough, or the Dutch oven was not preheated for long enough. Check with an oven thermometer; allow at least 45 minutes of preheating." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "slug": "einkorn-sourdough",
+  "title": "Einkorn sourdough loaf",
+  "subtitle": "An ancient grain, slow-fermented and cold-proofed",
+  "excerpt": "Einkorn is the oldest cultivated wheat, with a nutty, golden crumb and a gluten structure quite different from modern bread wheat. A cold-retard levain loaf that works with einkorn's particular character rather than against it.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Einkorn (Triticum monococcum) appears in botanical and agricultural records from the ancient Near East; its cultivation history is documented in public-domain botanical and agricultural literature. Modern baking with einkorn is a recent practice. The technique here follows established sourdough principles adapted for einkorn's weaker gluten network and higher lipid content.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round boule (approx. 700 g baked weight)",
+    "prepMinutes": 40,
+    "cookMinutes": 45,
+    "restingMinutes": 180,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze once completely cooled. Thaw at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shape the loaf in the evening and cold-retard overnight. Bake in the morning.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "european",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 70,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 180,
+      "proofMinutes": 30,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": 300,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "conventional, Dutch oven; lid on for first 20 minutes, then open at 220°C for 25 minutes",
+      "steamMethod": "lidded Dutch oven for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "banneton", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "einkorn-gluten",
+      "term": "Einkorn gluten network",
+      "definition": "Einkorn contains a different balance of gluten proteins to modern wheat: more glutenins and fewer gliadins, producing a weaker, less extensible network. Einkorn dough tears rather than stretching; it cannot be over-kneaded to any useful effect. The practical result is a loaf with a tighter crumb and a more fragile dough that requires lower hydration and shorter fermentation than a modern wheat sourdough."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Einkorn is a different project from bread wheat sourdough. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "einkorn-gluten", "term": "Einkorn gluten network" } }],
+            "text": "einkorn gluten network"
+          },
+          { "type": "text", "text": " is weaker and tears easily; the dough cannot be worked hard and needs a lower hydration (70%) to be handleable. Fermentation must be watched carefully because einkorn ferments more quickly than modern wheat. The reward is a loaf with a distinctly nutty, slightly sweet flavour and a golden, relatively tight crumb. It is an attractive loaf for eating with cheese or cured meats. If you have not worked with einkorn before, this recipe builds confidence in managing a dough that behaves quite differently from a standard sourdough." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "einkorn-flour", "amount": 400, "unit": "g", "prepNote": "wholegrain einkorn, or 300 g wholegrain + 100 g light einkorn", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "strong-bread-flour", "amount": 100, "unit": "g", "prepNote": "to improve structure", "isOptional": true, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 350, "unit": "ml", "prepNote": "warm (28°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "active, at peak", "isOptional": false, "groupLabel": "Levain" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Levain, 4 to 5 hours before mixing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Build the levain by combining 20 g of active starter with 40 g of strong bread flour and 40 g of warm water. Cover and leave until doubled and active." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the einkorn flour (and strong bread flour if using) in a large bowl. Add 310 ml of the warm water and mix until no dry flour remains. Rest 20 minutes. Add the active levain, then dissolve the salt in the remaining 40 ml of water and add that too. Mix with wet hands for 2 to 3 minutes. Do not attempt to knead vigorously: the einkorn gluten network tears under stress. The dough should feel slightly tacky but cohesive." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, 2.5 to 3 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the dough and leave at room temperature. Perform two sets of gentle stretch-and-folds in the first hour (one at 30 minutes, one at 60 minutes). Einkorn ferments faster than modern wheat; check the dough at 2.5 hours. It is ready when it has grown by 40 to 50% and shows small bubbles at the surface. Do not push bulk fermentation beyond this point." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and cold retard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Flour the work surface generously. Tip the dough out gently. Shape quickly and decisively into a round: fold the edges in, flip, and drag once or twice to build surface tension. Do not re-shape or tighten repeatedly as the network will tear. Dust a banneton and place the loaf seam-side up. Cover tightly and refrigerate for 10 to 14 hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven with the Dutch oven inside to 240°C (conventional) for 45 minutes. Remove the loaf from the fridge. Tip it onto baking paper, score with one or two cuts, and lower into the hot Dutch oven. Bake covered for 20 minutes, then remove the lid, drop to 220°C, and bake for a further 25 minutes. The crust will be a warm golden-brown; the loaf sounds hollow when tapped; an internal probe reads 96°C. Einkorn loaves are smaller than modern wheat loaves and will not dome as dramatically. Cool for 90 minutes before slicing." }]
+      }
+    ]
+  }
+}

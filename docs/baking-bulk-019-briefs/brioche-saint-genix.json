@@ -1,0 +1,151 @@
+{
+  "slug": "brioche-saint-genix",
+  "title": "Brioche Saint-Genix",
+  "subtitle": "A pink-praline-studded brioche from the Savoie",
+  "excerpt": "Brioche Saint-Genix is a regional French brioche from Saint-Genix-sur-Guiers, studded throughout with pink pralines that melt into jammy pockets during the bake. Rich, buttery, and visually striking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Brioche Saint-Genix is associated with the town of Saint-Genix-sur-Guiers in the Savoie region of France; the pink praline (praline rose) it contains is a sugar-coated almond confection specific to Lyon and the surrounding region, documented in French regional food literature now out of copyright. The brioche form and enriched dough ratios follow standard French brioche practice.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round loaf (serves 8)",
+    "prepMinutes": 40,
+    "cookMinutes": 35,
+    "restingMinutes": 120,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely before freezing. Wrap tightly; freeze for up to 1 month. Thaw at room temperature, then warm at 160°C for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough must be made the day before: an overnight cold retard is part of the recipe, not an option.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 120,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; tent with foil if the top browns too quickly in the final 10 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "dough-hook", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pink-pralines",
+      "term": "Pink pralines",
+      "definition": "Sugar-coated almonds dyed pink (or occasionally red), a speciality of the Lyon region of France. In baking, they are left whole and embedded in the dough; the sugar coating melts during baking to form sticky, jammy pockets. Available from French food importers and specialist confectionery suppliers; crushed rose-coloured candy almonds are the nearest substitute."
+    },
+    {
+      "slug": "brioche-dough-enriched",
+      "term": "Enriched dough",
+      "definition": "A bread dough that contains a significant amount of butter, eggs, or sugar beyond the basic flour-water-yeast-salt recipe. Enriched doughs are richer, softer, and more tender than lean doughs. The fat and eggs coat the flour proteins, resulting in a finer, more cake-like crumb. They also ferment more slowly; an overnight cold retard is standard for brioche to develop flavour without over-fermenting."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brioche Saint-Genix is one of those French regional bakes that looks almost too decorative to eat: a golden dome studded with pink pralines that have melted partially into the bread, leaving jammy caramel streaks on the crust. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pink-pralines", "term": "Pink pralines" } }],
+            "text": "pink pralines"
+          },
+          { "type": "text", "text": " are a Lyon speciality, sugar-coated almonds that colour the surrounding crumb deep pink as they bake. The brioche itself is a classic " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brioche-dough-enriched", "term": "Enriched dough" } }],
+            "text": "enriched dough"
+          },
+          { "type": "text", "text": ": butter-rich and egg-heavy, made in a stand mixer the day before and cold-retarded overnight so the gluten can relax and the flavour develop. The bake takes 35 minutes on the following morning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "caster-sugar", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "large", "prepNote": "at room temperature", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "softened, cut into cubes", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "pink-pralines", "amount": 200, "unit": "g", "prepNote": "left whole", "isOptional": false, "groupLabel": "Pralines" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "large", "prepNote": "beaten with a teaspoon of milk, for egg wash", "isOptional": false, "groupLabel": "Glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Day one: make and retard the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the flour, sugar, salt, and yeast in the stand-mixer bowl; add the eggs and the warm milk. Mix with the dough hook on medium-low for 5 minutes until a rough dough forms. Increase to medium and add the butter cube by cube, waiting for each addition to be fully absorbed before adding the next. This takes 10 to 12 minutes. The finished dough should be smooth and shiny, pulling from the sides of the bowl in a cohesive mass. If it refuses to come together, it needs more time. Cover the bowl and leave at room temperature for 1.5 to 2 hours until it has grown by about 50%. Knock it back gently, press flat, cover tightly, and refrigerate for at least 8 hours (or overnight)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Day two: shape, prove, and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove the cold dough from the fridge. It will be firm and easy to handle. On a lightly floured surface, press it into a rough rectangle about 2 cm thick. Scatter two-thirds of the pink pralines over the surface and fold the dough over itself to enclose them. Press gently, then fold again and press. Shape the dough into a round ball and transfer to a greased and lined 23 cm round cake tin. Press the remaining pralines onto the top, pushing them in so they sit half-embedded. Cover with a clean cloth and prove at room temperature for 1.5 to 2 hours, until the dough has risen noticeably and feels puffy when you press it gently." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 180°C (fan). Brush the top of the loaf gently with the beaten egg wash, being careful not to disturb the pralines. Bake for 30 to 35 minutes, until the brioche is deep golden-brown. The pralines will have melted and caramelised; the internal temperature should read 88°C. If the top is browning too quickly before the 25-minute mark, lay a sheet of foil loosely over the top. Cool in the tin for 15 minutes, then transfer to a rack. The caramelised pralines will be very hot; do not touch them until cool." }]
+      }
+    ]
+  }
+}

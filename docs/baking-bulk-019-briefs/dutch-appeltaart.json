@@ -1,0 +1,151 @@
+{
+  "slug": "dutch-appeltaart",
+  "title": "Dutch appeltaart",
+  "subtitle": "A deep-dish apple cake with spiced filling and shortcrust pastry sides",
+  "excerpt": "Appeltaart is the Dutch national apple cake: a high-sided springform tin lined with sweetened shortcrust pastry, filled with cinnamon-spiced cooking apples and raisins, and sealed with a pastry lattice. Dense, fruity, and best eaten at room temperature.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Appeltaart appears in Dutch household cookbooks from the nineteenth century; the deep-dish form with sweetened short pastry and cinnamon apple filling is documented in public-domain Dutch culinary literature. The recipe here follows the standard home-baking tradition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "One 23 cm cake (10 to 12 slices)",
+    "prepMinutes": 40,
+    "cookMinutes": 70,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, wrap in foil, and freeze. Thaw at room temperature for 3 hours.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cake improves overnight. Keeps well at room temperature for 3 days, covered loosely.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "dutch",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 375,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan: 160 degrees C; if the top lattice browns before the base is cooked, cover loosely with foil",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "appeltaart-distinction",
+      "term": "Appeltaart",
+      "definition": "The Dutch appeltaart is a deep-dish cake rather than a thin tart: the springform tin is lined entirely with pastry up the sides, the filling sits thick inside, and the top is usually latticed or sealed with a pastry lid. The result is closer in structure to an American pie than a French tarte aux pommes, though the pastry is a sweetened shortcrust rather than a flaky one."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "appeltaart-distinction", "term": "Appeltaart" } }],
+            "text": "appeltaart"
+          },
+          { "type": "text", "text": " is a forgiving cake: the pastry is straightforward to mix and line, the filling goes in raw and cooks in the oven, and the result is dense and sliceable rather than delicate. Cooking apples are essential here; eating apples turn mushy and release too much liquid. The raisins soak up the excess juice. Breadcrumbs scattered over the base of the pastry before the filling also help absorb moisture, keeping the bottom crust from going soft." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 175, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "large", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "salt-table", "amount": 2, "unit": "g", "prepNote": "a pinch", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "cooking-apple", "amount": 1000, "unit": "g", "prepNote": "peeled, cored, and cut into 1 cm pieces (about 4 large Bramleys)", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for the filling", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 8, "unit": "g", "prepNote": "2 tsp", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "lemon-juice", "amount": 15, "unit": "ml", "prepNote": "1 tbsp", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "raisins", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 30, "unit": "g", "prepNote": "for the base, to absorb juice", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "large", "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": "Glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the flour, sugar, and salt in a large bowl. Rub in the cold butter with your fingertips until the mixture resembles coarse breadcrumbs. Add the egg and bring the dough together with your hands, pressing it until it coheres. Divide into two-thirds and one-third, wrap each in cling film, and refrigerate for 30 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Toss the prepared apples with the caster sugar, cinnamon, lemon juice, and raisins. Set aside; the apples will begin to release juice. Preheat the oven to 180 degrees C (conventional). Grease and flour the springform tin." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a lightly floured surface, roll the larger piece of pastry to a circle large enough to line the base and sides of the tin. Ease it in carefully; the pastry should come at least 5 cm up the sides. Scatter the breadcrumbs over the base. Pack in the apple filling tightly; it will settle during baking. Roll the remaining pastry and cut into strips for a lattice, or leave whole for a solid lid. Lay the strips in a cross-hatch pattern over the filling. Brush with beaten egg." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and cool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bake for 65 to 70 minutes, until the pastry is deep golden and a skewer through the lattice meets tender apple. If the top is browning faster than you would like, cover loosely with foil. Cool in the tin for 30 minutes before releasing the springform. Leave on a rack for at least another 30 minutes. The cake is best eaten at room temperature, not straight from the oven; cutting it hot will cause the filling to collapse." }]
+      }
+    ]
+  }
+}

@@ -482,3 +482,21 @@ SKIPPED: 0
 - salambo-kirsch-cream-choux: hero-missing
 - small-wind-turbine-decision: hero-missing
 - solar-diverter-vs-battery: hero-missing, grade-level-strict
+
+---
+
+## Run at 12:52:02
+
+Generated: 2026-05-29T12:52:02.641Z
+
+Processed: 3990
+PASS: 3990
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 4 |
+| grade-level-strict | 3 |

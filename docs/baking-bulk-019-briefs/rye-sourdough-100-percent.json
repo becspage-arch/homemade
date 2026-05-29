@@ -1,0 +1,168 @@
+{
+  "slug": "rye-sourdough-100-percent",
+  "title": "100% rye sourdough loaf",
+  "subtitle": "Dense, moist Scandinavian rye, baked in a tin",
+  "excerpt": "A fully wholegrain rye loaf leavened with a rye levain. No wheat, no added yeast. The crumb is dense and moist with a complex, malty sourness; it keeps for a week and slices thin for open sandwiches.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "100% rye sourdough bread is a staple across Scandinavia and northern Germany; recipes appear in Danish and German agricultural extension service publications from the early twentieth century, now public-domain. The tin-baked approach and rye-levain ratios follow the traditional farmhouse method documented in those records.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (900 g / 2 lb tin)",
+    "prepMinutes": 30,
+    "cookMinutes": 70,
+    "restingMinutes": 180,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice completely cooled loaf; freeze flat in a bag for up to 3 months. Thaw at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The loaf tastes better the day after baking. Slice and serve with butter and pickled fish or strong cheese.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "european",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 85,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 30,
+      "bulkFermentMinutes": 180,
+      "proofMinutes": 60,
+      "retardingMinutes": null,
+      "levainBuildMinutes": 480,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "conventional oven; start at 220°C for 20 minutes with a tin of water in the oven for steam, then drop to 180°C for 50 minutes",
+      "steamMethod": "tin of boiling water on the oven floor for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-levain",
+      "term": "Rye levain",
+      "definition": "A sourdough starter maintained on rye flour. Rye ferments more quickly than wheat due to its higher enzyme activity and natural sugars, so a rye levain is ready in 6 to 8 hours. It is stickier and more paste-like than a wheat starter."
+    },
+    {
+      "slug": "panning-rye",
+      "term": "Panning",
+      "definition": "The technique of pushing a sticky rye dough into a greased loaf tin with wet hands or a wet spatula, smoothing the top flush with the rim. Rye dough is too dense and sticky to shape like a wheat loaf."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 100% rye sourdough is not like a wheat loaf: it does not spring open at a score, it does not develop a crackled artisan crust, and it does not slice well when warm. What it does is keep. The crumb stays moist for a week, the flavour deepens by the day, and the slices are best cut thin, topped with butter and something sharp. The dough is closer to a thick batter than a shapeable mass; it goes into the tin with wet hands rather than being shaped by hand. The leavening comes entirely from a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-levain", "term": "Rye levain" } }],
+            "text": "rye levain"
+          },
+          { "type": "text", "text": " built the night before or the morning of baking." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Domestic ovens drift; 220°C on the dial can be 200°C in practice. An oven thermometer matters here because the initial high heat sets the crust and drives moisture out. The loaf is done when an internal probe reads 98°C and the sides have pulled from the tin." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 500, "unit": "g", "prepNote": "wholegrain / dark rye", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 425, "unit": "ml", "prepNote": "warm (30°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sourdough-starter", "amount": 150, "unit": "g", "prepNote": "active rye starter (the levain)", "isOptional": false, "groupLabel": "Levain" },
+            { "ingredientSlug": "caraway-seeds", "amount": 10, "unit": "g", "prepNote": "optional but traditional", "isOptional": true, "groupLabel": "Additions" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the levain, 6 to 8 hours ahead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Feed your rye starter: combine 30 g of active rye starter with 60 g of rye flour and 60 g of warm water. Stir, cover, and leave at room temperature. It is ready when it has doubled and smells pleasantly sour, around 6 to 8 hours. If you keep a wheat starter, mix 20 g of it with 65 g of rye flour and 65 g of warm water; it will adapt after two or three feeds." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and ferment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Combine the rye flour and salt in a large bowl. Add the warm water, the active levain, and the caraway seeds if using. Stir vigorously with a spatula for 2 minutes; the dough is a thick, sticky paste, not a shapeable mass. Cover the bowl tightly and leave at room temperature for 2.5 to 3 hours. The dough will rise by 30 to 50% and show cracks and bubbles across the surface when it is ready." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pan the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease a 900 g loaf tin generously with oil or butter and dust with rye flour. Wet your hands and spatula. Use the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "panning-rye", "term": "Panning" } }],
+            "text": "panning"
+          },
+          { "type": "text", "text": " technique to transfer the dough into the tin: push it in with a wet spatula, pressing out air pockets and smoothing the top level with the tin rim. Dip the spatula in water to prevent sticking. Wet your fingers and run them over the surface to smooth it. Cover loosely with cling film and leave to prove at room temperature for 45 to 60 minutes. The dough should dome very slightly above the rim." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 220°C (conventional) with a small tin of water on the oven floor. Bake the loaf for 20 minutes with the steam in the oven; this sets the crust and prevents a hard skin forming before the dough has fully risen. Drop the temperature to 180°C, remove the water tin, and bake for a further 50 minutes. The loaf is ready when an internal probe reads 98°C and the sides have pulled away from the tin. Turn out onto a rack immediately and leave to cool for a minimum of 3 hours before cutting. Cutting warm produces a gummy, collapsing crumb." }]
+      }
+    ]
+  }
+}

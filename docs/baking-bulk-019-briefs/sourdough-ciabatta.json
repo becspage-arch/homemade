@@ -1,0 +1,168 @@
+{
+  "slug": "sourdough-ciabatta",
+  "title": "Sourdough ciabatta",
+  "subtitle": "High-hydration Italian loaves, leavened with levain",
+  "excerpt": "Ciabatta is all about the holes. An 80% hydration dough, leavened slowly with sourdough starter, produces a loaf with a crisp, airy crust and a wildly open crumb. Four long flatbread shapes from one batch.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The ciabatta was developed in northern Italy in the 1980s as a response to imported French baguettes; the technique (very high hydration, no kneading, folded dough, baked at high heat) draws on Italian baking traditions documented in agricultural extension service literature from the Veneto and Lombardy regions in the early twentieth century. The sourdough adaptation follows established baking practice now widely published.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 ciabatta loaves (each approx. 30 cm)",
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 300,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely. Freeze the loaves whole in a sealed bag. Refresh from frozen in a 200°C oven for 8 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Retard the portioned, shaped dough in the fridge overnight on lined trays. Bake straight from cold the next morning.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 300,
+      "proofMinutes": 60,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": 300,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 230,
+      "bakeTemperatureNote": "fan oven, top third of the oven, with a tray of boiling water on the shelf below for the first 8 minutes",
+      "steamMethod": "tray of boiling water on the shelf below for the first 8 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain-ciabatta",
+      "term": "Levain",
+      "definition": "An active portion of sourdough starter built a few hours before mixing. For ciabatta, a young, mildly sour levain works best; an over-ripe levain will produce a more acidic loaf that can inhibit the oven spring the recipe depends on."
+    },
+    {
+      "slug": "slap-and-fold-ciabatta",
+      "term": "Slap and fold",
+      "definition": "A high-hydration dough-handling technique: lift the dough with both hands, slap it down onto the work surface, and fold it over itself. Repeated quickly, this builds gluten in a dough too wet to knead conventionally. Alternatively, a series of stretch-and-fold sets in the bowl achieves a similar result without the mess."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ciabatta's defining quality is its holes: a crumb so open and irregular that it is almost more air than bread. This comes from a very wet dough (80% hydration) that is handled as little as possible to preserve the gas bubbles formed during fermentation. The sourdough version replaces commercial yeast with a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "levain-ciabatta", "term": "Levain" } }],
+            "text": "levain"
+          },
+          { "type": "text", "text": ", which slows the process to produce a more complex flavour. Mix on one day, bake the next. Expect a sticky, unruly dough that looks wrong until it goes into the oven." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "This is a dough you handle with wet hands and a bench scraper, not dry flour. Adding flour to reduce stickiness will lower the hydration and close up the crumb. Keep a bowl of water next to the work surface throughout." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 400, "unit": "ml", "prepNote": "warm (28°C)", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "sourdough-starter", "amount": 100, "unit": "g", "prepNote": "active, at peak", "isOptional": false, "groupLabel": "Levain" },
+            { "ingredientSlug": "olive-oil", "amount": 20, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": "Dough" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a large bowl, combine the flour with 360 ml of the warm water. Mix with wet hands until no dry flour remains. Leave to rest for 30 minutes (autolyse). Add the active levain, the salt dissolved in the remaining 40 ml of water, and the olive oil if using. Use the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slap-and-fold-ciabatta", "term": "Slap and fold" } }],
+            "text": "slap and fold"
+          },
+          { "type": "text", "text": " technique for 5 minutes, or perform four sets of stretch-and-folds in the bowl over the first two hours of fermentation (one set every 30 minutes). The dough should become noticeably more elastic, though it will remain very wet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, around 5 hours" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cover the bowl and leave at room temperature for the bulk ferment. After the four fold sets, leave undisturbed for the remaining time. The dough is ready when it has grown by 50 to 75% and bubbles are visible through the side of the bowl." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Divide, shape, and retard overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Line two baking trays with baking paper and drizzle lightly with olive oil. Flour your work surface generously. Tip the dough out in one piece; it will spread. Using a bench scraper, divide it into four roughly equal rectangles without deflating it more than necessary. Slide each piece onto a floured surface, fold the ends gently under, and transfer to the lined trays. The shapes will be uneven; this is expected. Cover the trays with cling film and refrigerate overnight, or for 8 to 12 hours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Preheat the oven to 230°C (fan) with a deep tray on the bottom shelf. Put the kettle on. Take the trays of shaped ciabatta straight from the fridge. Place them in the oven and pour a mug of boiling water into the bottom tray to generate steam. Bake for 22 to 25 minutes until the crust is deeply golden and the loaves sound hollow when tapped. The crumb needs time to set; leave on a rack for 20 minutes before eating." }]
+      }
+    ]
+  }
+}
