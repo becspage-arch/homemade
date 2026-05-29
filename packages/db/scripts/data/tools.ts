@@ -811,6 +811,10 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'ear-tag-applicator', name: 'Ear tag applicator', category: 'other', aliases: ['tagging pliers', 'tag gun', 'ear tagger'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Plier-action applicator for driving a two-part plastic or metal ear tag through the mid-section of the ear, away from blood vessels. Used to fit DEFRA-approved eartags to sheep, goats, and cattle. Disinfect between animals.' },
   { slug: 'vaccination-syringe', name: 'Vaccination syringe, livestock (5 ml)', category: 'other', aliases: ['auto-syringe', 'repeating syringe', 'drench syringe'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'A 5 ml repeating syringe with a luer-lock neck for fitting disposable needles. Pre-set to the correct dose; pull back once and the spring resets for the next animal. Use a fresh needle per animal; disinfect the barrel between batches.' },
 
+  // Animals & smallholding — bulk-007 additions
+  { slug: 'queen-introduction-cage', name: 'Queen introduction cage', category: 'other', aliases: ['queen cage', 'mailing cage', 'push-in cage'], isPurchasable: true, typicalPriceGbp: 200, notes: 'A small wooden or plastic cage with a candy plug at one end, used to introduce a mated queen to a colony without immediate exposure to the workers. Bees eat through the candy over 2-3 days, by which time the new queen\'s pheromone is established.' },
+  { slug: 'raddle-harness', name: 'Raddle harness', category: 'other', aliases: ['ram harness', 'tupping harness', 'service marker harness'], isPurchasable: true, typicalPriceGbp: 2000, notes: 'A padded chest harness worn by a tup (ram) during the tupping season. Holds a coloured raddle crayon against the brisket; the colour transfers to the ewe\'s rump when the ram serves her. Change crayon colour every 16-17 days to identify which ewes return to service.' },
+
   // ────────────────────────────────────────────────────────────────────────
   // Natural-home pipeline tools (phase_natural_home_pipeline_001).
   //
