@@ -1,29 +1,2768 @@
 {
-  "generatedAt": "2026-05-29T18:36:02.466Z",
-  "totalScanned": 1,
-  "passCount": 1,
-  "blockCount": 0,
+  "generatedAt": "2026-05-29T20:07:41.172Z",
+  "totalScanned": 4761,
+  "passCount": 0,
+  "blockCount": 121,
   "warnOnlyCount": 0,
   "perCategory": {
-    "paper-word": {
-      "total": 1,
-      "pass": 1,
-      "block": 0,
+    "wood-natural-craft": {
+      "total": 27,
+      "pass": 0,
+      "block": 27,
+      "warnOnly": 0
+    },
+    "mindset": {
+      "total": 78,
+      "pass": 0,
+      "block": 78,
+      "warnOnly": 0
+    },
+    "sustainability": {
+      "total": 9,
+      "pass": 0,
+      "block": 9,
+      "warnOnly": 0
+    },
+    "home-repair": {
+      "total": 5,
+      "pass": 0,
+      "block": 5,
+      "warnOnly": 0
+    },
+    "animals-smallholding": {
+      "total": 2,
+      "pass": 0,
+      "block": 2,
       "warnOnly": 0
     }
   },
-  "perRuleKind": {},
+  "perRuleKind": {
+    "body-missing-method": 25,
+    "voice-violation": 59,
+    "body-missing-orientation": 1,
+    "grade-level-strict": 106
+  },
   "verdicts": [
     {
-      "slug": "roman-script-families",
-      "tutorialId": "cmpr93h5r000200v4qfo8muhg",
+      "slug": "bridle-joint-technique",
+      "tutorialId": "cmpr4blyk0002j0v47epvct9r",
+      "type": "TECHNIQUE",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:10:15.394Z",
+      "heroMediaId": "cmpr4sw340004akv4yy1t4xx7",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        }
+      ]
+    },
+    {
+      "slug": "cancel-one-thing-this-week-with-kindness",
+      "tutorialId": "cmppsol9j0000f0v4fh8l2tsh",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:46.463Z",
+      "publishedAt": "2026-05-29T14:38:32.322Z",
+      "heroMediaId": "cmpr167rj0002u8v47y8yct4k",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-orientation",
+          "message": "No orientation paragraph (first paragraph empty or under 12 words)"
+        }
+      ]
+    },
+    {
+      "slug": "carved-birch-spice-spoon",
+      "tutorialId": "cmpr49d8k00008cv4xepvlsmg",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:30.768Z",
+      "heroMediaId": "cmpr4sygp0008akv4475pzthd",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[13] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "carved-cherry-tasting-spoon",
+      "tutorialId": "cmpr497th00005cv4810gtcna",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:23.746Z",
+      "heroMediaId": "cmpr4szhp000aakv4cdx5jeet",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "carved-lime-broth-ladle",
+      "tutorialId": "cmpr494vi00008kv47neeexin",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:19.930Z",
+      "heroMediaId": "cmpr4t16j000cakv47fwm1sb3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[17] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "carved-sycamore-spatula-spoon",
+      "tutorialId": "cmpr49aka0000z4v441fjrtna",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:27.303Z",
+      "heroMediaId": "cmpr4t2cv000eakv4f6za3jv9",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "carving-a-kuksa-interior",
+      "tutorialId": "cmpr4qehd0000ckv4dacg7j57",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:21:45.528Z",
+      "heroMediaId": "cmpr4t3vd000gakv43ihlxin5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[10] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[12] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "cleft-ash-spade-handle",
+      "tutorialId": "cmpr4aiis0000z0v44m3ndbcg",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:24.269Z",
+      "heroMediaId": "cmpr4t7tz000makv4o1tmwj6v",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[9] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "composting-toilet-annual-maintenance",
+      "tutorialId": "cmpra16pt0001tov4psdijf11",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:00.575Z",
+      "publishedAt": "2026-05-29T18:50:06.773Z",
+      "heroMediaId": "cmpra5ad3000iacv4aq2h417w",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+          "path": "body > orderedList[3] > listItem[1] > paragraph[0] > text",
+          "snippet": "nitrile"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[3] > listItem[4] > paragraph[0]",
+          "snippet": "Clean the bowl and seat with a mild non-antibacterial cleaner. Antibacterial cleaners can kill the microorganisms in the composting chamber "
+        }
+      ]
+    },
+    {
+      "slug": "drawknife-on-chair-backs",
+      "tutorialId": "cmpr4qs730000ogv484zih3or",
+      "type": "TECHNIQUE",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:22:03.302Z",
+      "heroMediaId": "cmpr4ta60000qakv4aybtvcx1",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[11] > text",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "expansion-continues-with-ease-affirmation",
+      "tutorialId": "cmpccjduu00008sv4c282epce",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:49:55.447Z",
+      "publishedAt": "2026-05-19T08:03:42.419Z",
+      "heroMediaId": "cmpmfwy31003c2gv4orpv5o4a",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[3] > paragraph[0]",
+          "snippet": "I allow expansion to continue with ease, generosity, and alignment."
+        }
+      ]
+    },
+    {
+      "slug": "external-wall-insulation-etics-installation",
+      "tutorialId": "cmpr8j5dm000210v4ld8w2o8y",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:31:52.295Z",
+      "publishedAt": "2026-05-29T18:08:05.612Z",
+      "heroMediaId": "cmpr9ifdp0004l0v489kzgfg5",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "sourceNotes",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[11] > listItem[4] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[1] > paragraph[0]",
+          "snippet": "EWI installation requires scaffolding, specialist adhesives and renders, and mechanical fixings that must be specified for the substrate. Th"
+        }
+      ]
+    },
+    {
+      "slug": "filling-expansion-gaps-in-laminate-flooring",
+      "tutorialId": "cmprbzhyo0000vgv4y9ybqs1m",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T19:49:04.895Z",
+      "publishedAt": "2026-05-29T19:44:47.261Z",
+      "heroMediaId": "cmprc5puk0006vkv4lihrqggh",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Filling expansion gaps in laminate flooring go here."
+        }
+      ]
+    },
+    {
+      "slug": "five-senses-scan-three-minutes",
+      "tutorialId": "cmpr0qqyh0000q8v4kx0a33bb",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:43:49.863Z",
+      "publishedAt": "2026-05-29T14:38:44.207Z",
+      "heroMediaId": "cmpr16ag80008u8v4qlgn6h23",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "This technique is used in mindfulness and therapy. Script by homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "giving-feels-expansive-and-fearless-affirmation",
+      "tutorialId": "cmpbufihg000050v4syx6gixt",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:50:25.793Z",
+      "publishedAt": "2026-05-18T23:36:48.706Z",
+      "heroMediaId": "cmpmfxlux00482gv4atzqjpin",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[3] > paragraph[0]",
+          "snippet": "I allow giving to feel expansive and fearless, knowing every act of generosity multiplies my wealth."
+        }
+      ]
+    },
+    {
+      "slug": "green-birch-coat-pegs",
+      "tutorialId": "cmpr4qjrc00008kv4ie3wuo5r",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:21:52.371Z",
+      "heroMediaId": "cmpr4tc2t000sakv42rxp4wbq",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "green-hazel-bean-pole-arch",
+      "tutorialId": "cmpr4a6pa0001ucv4jap38qgn",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:08.964Z",
+      "heroMediaId": "cmpr4td4t000uakv4sxr9df10",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[15] > listItem[0] > paragraph[0]",
+          "snippet": "Wigwam: six poles pushed into a circle 600 mm diameter, bent in and lashed at a single apex, for a compact climbing structure for peas or sw"
+        }
+      ]
+    },
+    {
+      "slug": "heat-battery-for-solar-storage",
+      "tutorialId": "cmpr9yzsf00020gv4ss4rowc4",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:01.533Z",
+      "publishedAt": "2026-05-29T18:48:24.482Z",
+      "heroMediaId": "cmpra5f7j000uacv4p3tghxj5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 16.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 16.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Heat batteries as an alternative to electrochemical battery storage go here."
+        }
+      ]
+    },
+    {
+      "slug": "i-steward-wealth-with-purpose-and-joy",
+      "tutorialId": "cmpc7mwbt0000psv4mhhqw3ls",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:50:56.033Z",
+      "publishedAt": "2026-05-19T05:46:28.233Z",
+      "heroMediaId": "cmpmg2t9300bg2gv4ligpnfft",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[3] > paragraph[0]",
+          "snippet": "I joyfully steward wealth that blesses my family, my community, and future generations."
+        }
+      ]
+    },
+    {
+      "slug": "lamb-pneumonia-recognition-and-response",
+      "tutorialId": "cmpr6nfe20002esv493iumx7g",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T17:15:55.309Z",
+      "publishedAt": "2026-05-29T17:15:25.980Z",
+      "heroMediaId": "cmpr9ijd0000cl0v4ymr7zhg2",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"colostrum\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[1] > text",
+          "snippet": "colostrum"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Recognising and responding to pneumonia in lambs go here."
+        }
+      ]
+    },
+    {
+      "slug": "long-exhale-breath-for-perimenopause-anxiety",
+      "tutorialId": "cmpr0rdmk000048v4pewfk1ov",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T14:39:15.565Z",
+      "heroMediaId": "cmpr16iqs000ou8v4er83av5h",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[9]",
+          "snippet": "Extended exhale breathing draws on the vagal brake. A long, slow exhale activates the body's calming system. This is public-domain physiolog"
+        }
+      ]
+    },
+    {
+      "slug": "making-a-simple-leather-notebook-cover",
+      "tutorialId": "cmprc21oh0001r8v4tsuw560l",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T19:49:09.049Z",
+      "publishedAt": "2026-05-29T19:46:46.134Z",
+      "heroMediaId": "cmprc6hi6000ki4v4bqk5s8xk",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[6] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Making a simple leather notebook cover go here."
+        }
+      ]
+    },
+    {
+      "slug": "managing-a-legacy-feed-in-tariff",
+      "tutorialId": "cmpr9z35p0002zgv4vti9izfu",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:02.418Z",
+      "publishedAt": "2026-05-29T18:48:28.849Z",
+      "heroMediaId": "cmpra5mkv0016acv460xbsr8l",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
+          "snippet": "Generation payment: based on the generation meter reading submitted to your FiT administrator, typically quarterly or annually. The payment "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[3] > listItem[1] > paragraph[0]",
+          "snippet": "Export payment: either a deemed 50% of generation or an actual reading from an export meter. Deemed export is paid automatically; actual exp"
+        }
+      ]
+    },
+    {
+      "slug": "my-anxiety-is-information-not-identity",
+      "tutorialId": "cmpcyjqfn00001kv4hzyzq5e6",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:44:20.682Z",
+      "publishedAt": "2026-05-29T14:39:24.348Z",
+      "heroMediaId": "cmpr16k8v000su8v4b3a64bln",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[1]",
+          "snippet": "This affirmation is for restoring the gap between the experience and the experiencer."
+        }
+      ]
+    },
+    {
+      "slug": "natural-cleaning-products-diy",
+      "tutorialId": "cmpra0p860000zsv4obtkdrga",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:02.753Z",
+      "publishedAt": "2026-05-29T18:49:44.093Z",
+      "heroMediaId": "cmpra5n8s0018acv4ekti9kf0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Making effective cleaning products from vinegar, bicarbonate, and castile soap go here."
+        }
+      ]
+    },
+    {
+      "slug": "new-moon-full-moon-two-monthly-anchors",
+      "tutorialId": "cmpr13bii0000c8v4d5izwv5p",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:44:23.865Z",
+      "publishedAt": "2026-05-29T14:39:49.745Z",
+      "heroMediaId": "cmpr16rdd0014u8v4iwft63vo",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "sourceNotes",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[12]",
+          "snippet": "By homemade.education. The lunar cycle as a marker appears across many cultural traditions. This version is secular."
+        }
+      ]
+    },
+    {
+      "slug": "off-grid-load-calculation-worksheet",
+      "tutorialId": "cmpra13sg0001zgv4muhm4ith",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:03.027Z",
+      "publishedAt": "2026-05-29T18:50:02.979Z",
+      "heroMediaId": "cmpra5o3s001aacv47tikwgo5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 16.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[14] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 16.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Calculating off-grid electrical load requirements go here."
+        }
+      ]
+    },
+    {
+      "slug": "pole-lathe-turned-bobbin",
+      "tutorialId": "cmpr4qpr00000s4v44mi7owm8",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:22:00.138Z",
+      "heroMediaId": "cmpr4tozr001aakv49npon09f",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "preparing-floor-self-levelling-compound",
+      "tutorialId": "cmprc4pt70001u4v4yi4z303l",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T19:49:10.287Z",
+      "publishedAt": "2026-05-29T19:48:50.720Z",
+      "heroMediaId": "cmprc6lfu000si4v45wvzylfg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[17] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Preparing a floor with self-levelling compound go here."
+        }
+      ]
+    },
+    {
+      "slug": "pyrography-christmas-tree-ornaments",
+      "tutorialId": "cmpr4ri800000lgv4ovjg9w36",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:22:37.031Z",
+      "heroMediaId": "cmpr4tr2w001cakv4tfohy886",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Named ornaments: a name and year make a personalised gift or an annual family ornament tradition."
+        }
+      ]
+    },
+    {
+      "slug": "pyrography-on-curved-surfaces",
+      "tutorialId": "cmpr4bwdj00015gv4w3pnwgbl",
+      "type": "TECHNIQUE",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:10:28.890Z",
+      "heroMediaId": "cmpr4tsd1001eakv4kfgx37ae",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[2] > text",
+          "snippet": "Anchor"
+        }
+      ]
+    },
+    {
+      "slug": "pyrography-round-slice-decoration",
+      "tutorialId": "cmpr4brjq0001l8v4dqcek7sm",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:10:22.630Z",
+      "heroMediaId": "cmpr4ttbk001gakv4p0hnmfew",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A wood round slice is one of the best surfaces for learning pyrography: the concentric annual rings provide a natural design grid, and the f"
+        }
+      ]
+    },
+    {
+      "slug": "pyrography-tip-maintenance",
+      "tutorialId": "cmpr4rc950000k0v4dsciihov",
+      "type": "TECHNIQUE",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:22:29.298Z",
+      "heroMediaId": "cmpr4tu9z001iakv4vlnqn9pa",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A burning tip accumulates carbon residue and metal oxidation during use. A clean tip glides across the wood surface at low heat; a dirty tip"
+        }
+      ]
+    },
+    {
+      "slug": "re-webbing-a-sagging-sofa-base",
+      "tutorialId": "cmprc1tsz00005wv4e68d7j2w",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T19:49:11.001Z",
+      "publishedAt": "2026-05-29T19:46:35.921Z",
+      "heroMediaId": "cmprc6nme000yi4v4mprlerer",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A sofa that sags in the seat or springs have worked loose is often a webbing failure rather than a spring or foam problem. Replacing the int"
+        }
+      ]
+    },
+    {
+      "slug": "reclaiming-homemaker-as-feminist-identity",
+      "tutorialId": "cmpdswh7p0000pgv499q7jwn1",
       "type": "READING",
-      "categorySlug": "paper-word",
-      "status": "PASS",
-      "voiceRetrofittedAt": "2026-05-29T18:31:53.537Z",
-      "publishedAt": "2026-05-29T18:35:19.999Z",
-      "heroMediaId": "cmpr9io7q000kl0v4jmdy40va",
-      "findings": []
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:50.308Z",
+      "publishedAt": "2026-05-20T08:29:33.325Z",
+      "heroMediaId": "cmpmg88jw00is2gv44iw3szkk",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A reading on what happens when we treat running a home as a consolation prize. The cultural messaging that homemaking is lesser work is so p"
+        }
+      ]
+    },
+    {
+      "slug": "replacing-a-worn-radiator-compression-valve",
+      "tutorialId": "cmprc0vdg0001rov4f23m9qvq",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T19:49:12.372Z",
+      "publishedAt": "2026-05-29T19:45:51.303Z",
+      "heroMediaId": "cmprc6rpk001ai4v43li6994o",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Replacing a worn radiator compression valve go here."
+        }
+      ]
+    },
+    {
+      "slug": "riven-ash-garden-fork-handle",
+      "tutorialId": "cmpr4a1680000i0v4dz3hjae1",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:01.789Z",
+      "heroMediaId": "cmpr4txqr001makv4xx9r3pm9",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
+          "snippet": "Hazel for border tools: hazel coppice handles suit lighter tools; not recommended for spades under heavy digging pressure."
+        }
+      ]
+    },
+    {
+      "slug": "rush-coiled-mat-oval",
+      "tutorialId": "cmpr4asom0002nkv43qtmvfd2",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:37.447Z",
+      "heroMediaId": "cmpr4tyrm001oakv4nk4w7kwx",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "solar-pv-string-vs-microinverter-choice",
+      "tutorialId": "cmpr9ytny0003l8v4susiu8lm",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:04.386Z",
+      "publishedAt": "2026-05-29T18:48:16.540Z",
+      "heroMediaId": "cmpra5sml001macv4vgozuw04",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for String inverters versus microinverters for a home solar PV system go here."
+        }
+      ]
+    },
+    {
+      "slug": "sourcing-replacement-stock-after-a-disease-outbreak",
+      "tutorialId": "cmpr6nplp000188v4djl2hw64",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T17:15:56.780Z",
+      "publishedAt": "2026-05-29T17:15:39.218Z",
+      "heroMediaId": "cmpr9ioyx000ml0v4g3kyywh0",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+          "path": "subtitle",
+          "snippet": "standstill"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[7] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+          "path": "body > paragraph[10] > text",
+          "snippet": "standstill"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "Before bringing in replacement animals, clean and disinfect all housing, feeders, drinkers, and handling equipment. The order matters: remov"
+        }
+      ]
+    },
+    {
+      "slug": "sudden-vs-anticipated-loss",
+      "tutorialId": "cmpr0seym0000e0v4okzejynn",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:01.417Z",
+      "publishedAt": "2026-05-29T14:40:08.744Z",
+      "heroMediaId": "cmpr16w8s001eu8v4uzkshq4z",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "Drawn from bereavement research. No single source. Framing by homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-always-behind",
+      "tutorialId": "cmpr13syz0000s4v41q2m3wma",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:03.602Z",
+      "publishedAt": "2026-05-29T14:40:12.372Z",
+      "heroMediaId": "cmpr16xv2001gu8v4suoay1g2",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-bold-action-without-fear",
+      "tutorialId": "cmpbhyc0b0000d8v4kr06qhef",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:15.040Z",
+      "publishedAt": "2026-05-18T17:47:31.764Z",
+      "heroMediaId": "cmpmgab9t00lg2gv4lke3pjtp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I sometimes hesitate when action is needed, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-calm-mornings",
+      "tutorialId": "cmpbhyewp0000gsv4uko0n6jr",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:15.371Z",
+      "publishedAt": "2026-05-18T17:47:35.522Z",
+      "heroMediaId": "cmpmgae2y00lk2gv43e4nuls5",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[12] > listItem[0] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[16] > listItem[7] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
+          "snippet": "Even though my mornings often begin in a blur of movement, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-chronic-pain",
+      "tutorialId": "cmpr13vzm00002gv4ydqkqdl4",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:04.196Z",
+      "publishedAt": "2026-05-29T14:40:16.282Z",
+      "heroMediaId": "cmpr16zdr001iu8v4o9c4grmy",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-fear-of-judgment",
+      "tutorialId": "cmpr13z2j0000ncv4jk0xwz17",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:04.706Z",
+      "publishedAt": "2026-05-29T14:40:20.278Z",
+      "heroMediaId": "cmpr170yh001ku8v4xqt13ua6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-fear-of-owning-property",
+      "tutorialId": "cmpavm9ui0000tsv4w3nl8gz1",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:16.011Z",
+      "publishedAt": "2026-05-18T07:22:17.543Z",
+      "heroMediaId": "cmpmgarht00m22gv4l47t63b7",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though owning property feels heavy and risky, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-fear-of-repeating-family-patterns",
+      "tutorialId": "cmpa834o20000swv43lj9j585",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:16.377Z",
+      "publishedAt": "2026-05-17T20:23:33.192Z",
+      "heroMediaId": "cmpmgatbp00m42gv4kx9x6vby",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I fear I am turning into the family money story, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-financial-admin-dread",
+      "tutorialId": "cmpbocwu90000vcv48jt7s99d",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:16.703Z",
+      "publishedAt": "2026-05-18T20:46:49.646Z",
+      "heroMediaId": "cmpmgavw300m82gv4bkb97udg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though financial paperwork once drained me, I deeply and completely accept myself."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Even though I worried I'd miss something important, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-hosting-anxiety",
+      "tutorialId": "cmpqckm7c0000w8v465pe5fi4",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:51.728Z",
+      "publishedAt": "2026-05-29T14:40:24.103Z",
+      "heroMediaId": "cmpr172fs001mu8v4kg4gxkiq",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I'm anxious about people coming over, I deeply and completely accept myself."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-i-am-a-natural-investor",
+      "tutorialId": "cmpb1pysm0000qkv49pqe5hgy",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:17.557Z",
+      "publishedAt": "2026-05-18T10:13:07.528Z",
+      "heroMediaId": "cmpmgb3s500mk2gv41x1c7ehu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I believed investing was for wealthier people, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-i-feel-guilty-asking-for-more",
+      "tutorialId": "cmpcgjknv00002kv498wkt0v6",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:17.998Z",
+      "publishedAt": "2026-05-19T09:55:49.700Z",
+      "heroMediaId": "cmpmgbbrk00mq2gv4w5x9ao4z",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[1] > paragraph[0]",
+          "snippet": "Even though asking feels like a demand rather than a reasonable request, there is something more solid underneath."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-i-should-be-over-it",
+      "tutorialId": "cmpr1480j000070v41z5pa8d0",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:05.459Z",
+      "publishedAt": "2026-05-29T14:40:31.865Z",
+      "heroMediaId": "cmpr173xz001ou8v4x9q2exc4",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-imposter-syndrome",
+      "tutorialId": "cmpr144sh0000vsv4m8rznxv6",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:05.843Z",
+      "publishedAt": "2026-05-29T14:40:27.692Z",
+      "heroMediaId": "cmpr17591001qu8v4u1jatpiz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-investing-isnt-for-me",
+      "tutorialId": "cmpcj72n80000d4v4kaitli6s",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:50.755Z",
+      "publishedAt": "2026-05-19T11:10:05.316Z",
+      "heroMediaId": "cmpmgbk2400n22gv4tjijs58o",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I believe investing isn't really for someone like me, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-is-it-selfish-to-enjoy-this",
+      "tutorialId": "cmpqo6n6i0000rwv45vq5o2ad",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:51.680Z",
+      "publishedAt": "2026-05-29T08:41:22.646Z",
+      "heroMediaId": "cmpqor21w00iigcv4efblhkaw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though I keep pulling back from enjoyment before it fully arrives, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-mum-guilt",
+      "tutorialId": "cmp9bjtk1000020v47ytbnj5n",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:06.495Z",
+      "publishedAt": "2026-05-29T14:40:36.238Z",
+      "heroMediaId": "cmpr176qh001su8v4ggn0q0vz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-never-enough-hours",
+      "tutorialId": "cmpcyknqs00009cv4imfeqgh6",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:47.293Z",
+      "publishedAt": "2026-05-29T03:13:29.657Z",
+      "heroMediaId": "cmpqor3nj00ikgcv4bzf640qn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though there is never enough time and today is already behind, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-perimenopause-mood-swings",
+      "tutorialId": "cmpr14eip000068v40ithey5z",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:06.899Z",
+      "publishedAt": "2026-05-29T14:40:40.297Z",
+      "heroMediaId": "cmpr1786y001uu8v4jefn4ych",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education. Framing draws on perimenopause research."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-permission-to-play",
+      "tutorialId": "cmpr14j1g00005sv4cgz7fa9h",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:07.249Z",
+      "publishedAt": "2026-05-29T14:40:46.153Z",
+      "heroMediaId": "cmpr179px001wu8v4z8m04dfu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-safety-in-stillness",
+      "tutorialId": "cmpa83atu00000ov4onqx2cfm",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:20.954Z",
+      "publishedAt": "2026-05-17T20:23:41.175Z",
+      "heroMediaId": "cmpmgcba000o82gv42qrbjxa7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "sourceNotes",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though stillness feels uneasy and unsafe, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-self-forgiveness",
+      "tutorialId": "cmpefo0lr0000gkv46yp59t35",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:46.355Z",
+      "publishedAt": "2026-05-20T19:06:49.713Z",
+      "heroMediaId": "cmpmgcf4100oe2gv4c2f17pl9",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I did something I am still holding against myself, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-spiritual-but-not-religious",
+      "tutorialId": "cmpdsx8220000e0v4exsul5nk",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:50.897Z",
+      "publishedAt": "2026-05-29T03:13:33.498Z",
+      "heroMediaId": "cmpqor4yk00imgcv4s18hvy06",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though my spirituality is made of pieces from many places, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-ageing-body",
+      "tutorialId": "cmppsq4n80000o0v42rp6ghxl",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:50.831Z",
+      "publishedAt": "2026-05-28T17:57:51.211Z",
+      "heroMediaId": "cmppx2jnt006048v4eb4sqctw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Even though the marketing-world body is not my body, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-family-money-story-i-inherited",
+      "tutorialId": "cmpa80wpr0000l4v4dq99g0wp",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-27T22:49:28.080Z",
+      "publishedAt": "2026-05-17T20:21:49.579Z",
+      "heroMediaId": "cmpmgcqaw00ow2gv49w0ek3te",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I absorbed money beliefs that aren't mine to carry, I deeply and completely accept myself."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though these beliefs ran my money for years without me noticing, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-fear-of-being-seen-with-money",
+      "tutorialId": "cmpai9ulw00008wv4gd6vwe5n",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:24.937Z",
+      "publishedAt": "2026-05-18T01:08:42.913Z",
+      "heroMediaId": "cmpmgcrnn00oy2gv4b3fwb203",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though attention around money makes me nervous, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-money-fight-that-keeps-returning",
+      "tutorialId": "cmpcgjwj2000008v4oj7r4h41",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:26.120Z",
+      "publishedAt": "2026-05-19T09:56:05.052Z",
+      "heroMediaId": "cmpmgczbk00pa2gv4wzynu4jg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[5] > listItem[1] > paragraph[0]",
+          "snippet": "Even though our money histories are different in ways that keep creating friction, something more is possible."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-new-family-story",
+      "tutorialId": "cmpaa2zrx000008v4z6xut0fc",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:26.551Z",
+      "publishedAt": "2026-05-17T21:50:17.637Z",
+      "heroMediaId": "cmpmgd1kl00pe2gv4cvuiwe49",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though that story ran for generations, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-parent-money-tangle",
+      "tutorialId": "cmpcgk17t0000fgv4uygi8kys",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:46.390Z",
+      "publishedAt": "2026-05-19T09:56:11.138Z",
+      "heroMediaId": "cmpmgd5wg00pk2gv4fam9he0t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[3] > paragraph[0]",
+          "snippet": "Under nose: my security and their care are not automatically opposed."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-the-wait-for-apology-trap",
+      "tutorialId": "cmpehzfw70000ugv4fh2rgjis",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:09.120Z",
+      "publishedAt": "2026-05-29T14:40:50.150Z",
+      "heroMediaId": "cmpr17b6t001yu8v4e4h515pc",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though I don't want to let go without acknowledgement, I deeply and completely accept myself."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-trust-in-perfect-timing",
+      "tutorialId": "cmpbhyl1f000090v4ptawumpb",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:28.629Z",
+      "publishedAt": "2026-05-18T17:47:43.467Z",
+      "heroMediaId": "cmpmgdl7j00q62gv4j8ocu0jz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I've worried about missing the perfect moment, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-turning-40",
+      "tutorialId": "cmpcyl5zb0000fov4e9052qhn",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:09.555Z",
+      "publishedAt": "2026-05-29T14:40:54.148Z",
+      "heroMediaId": "cmpr17cql0020u8v4gvkb7ofe",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-for-we-cant-talk-anymore",
+      "tutorialId": "cmpehygya0000g4v4k81mq2jg",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:29.019Z",
+      "publishedAt": "2026-05-20T20:10:56.691Z",
+      "heroMediaId": "cmpmgdor200qc2gv4hov4x50p",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though we keep having the same conversation and it goes nowhere, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-allow-myself-to-be-the-wealthy-one",
+      "tutorialId": "cmpaabye60000eov47evjx9e7",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:29.962Z",
+      "publishedAt": "2026-05-17T21:50:25.379Z",
+      "heroMediaId": "cmpmgdzng00qs2gv480huic5k",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though wealth felt impossible in my family line, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-anchor-calm-as-the-default",
+      "tutorialId": "cmpaa36pc0000o0v4ogp8xxmw",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:22:01.542Z",
+      "publishedAt": "2026-05-17T21:19:35.057Z",
+      "heroMediaId": "cmpmge27o00qw2gv4148eylpy",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "title",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "sourceNotes",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > bulletList[9] > listItem[5] > paragraph[0] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I've spent the whole day running on adrenaline, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-anchor-trust-in-multi-million-investments",
+      "tutorialId": "cmpc7ncid0000t4v41ukegneh",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:30.778Z",
+      "publishedAt": "2026-05-19T05:46:49.206Z",
+      "heroMediaId": "cmpmge77g00r22gv4m18xw0ly",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "title",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though multi-million deals once felt scary, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-attract-the-right-advisors-and-deals",
+      "tutorialId": "cmpc7nfpv0000lkv4k40yg4qt",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:31.093Z",
+      "publishedAt": "2026-05-19T05:46:53.371Z",
+      "heroMediaId": "cmpmge8h800r42gv4jmpxf5o5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I once felt alone in big financial decisions, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-begin-the-30-day-sleep-reset",
+      "tutorialId": "cmpr14scg00008wv4phcizmxt",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:10.380Z",
+      "publishedAt": "2026-05-29T14:40:58.218Z",
+      "heroMediaId": "cmpr17e9u0022u8v4nyvqlopq",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-celebrate-her",
+      "tutorialId": "cmpavaxbm000088v4ajkfz8fo",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:31.806Z",
+      "publishedAt": "2026-05-18T07:13:28.096Z",
+      "heroMediaId": "cmpmgegbn00rg2gv4j4mrwmn8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I've only just begun to claim this identity, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-celebrate-new-opportunities",
+      "tutorialId": "cmpax84ib0000c0v4m5kpwr90",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:32.202Z",
+      "publishedAt": "2026-05-18T08:07:16.673Z",
+      "heroMediaId": "cmpmgekoy00rm2gv4a2bfnhxv",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[8] > listItem[2] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though I sometimes hesitate when new chances appear, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-claim-calm-sleeper-identity",
+      "tutorialId": "cmpbhyr6h0000asv4jjbctkex",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:32.668Z",
+      "publishedAt": "2026-05-18T17:47:51.423Z",
+      "heroMediaId": "cmpmgep0e00rs2gv40xbyghho",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "excerpt",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[10] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[16] > listItem[7] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Even though the old label sometimes whispers, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-come-back-to-now",
+      "tutorialId": "cmpaa3a3n0000jov4kdez3f7r",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:22:01.568Z",
+      "publishedAt": "2026-05-17T21:50:31.397Z",
+      "heroMediaId": "cmpmgerrn00rw2gv4p67rxbiz",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "sourceNotes",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[8] > listItem[7] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though my mind keeps time-travelling, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-fall-asleep-in-belonging",
+      "tutorialId": "cmpbugqw60000lgv4bmok2s0b",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:33.428Z",
+      "publishedAt": "2026-05-18T23:37:46.257Z",
+      "heroMediaId": "cmpmgew9f00s22gv4rzz2p4xl",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "title",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "sourceNotes",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[6] > listItem[7] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[8] > listItem[6] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though night sometimes feels lonely, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-give-freely-without-fear",
+      "tutorialId": "cmpbugw3z0000dcv4ksw9nkmd",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:34.062Z",
+      "publishedAt": "2026-05-18T23:37:53.020Z",
+      "heroMediaId": "cmpmgf4wo00se2gv49x0isbmi",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though giving has sometimes felt unsafe, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-live-in-daily-overflow",
+      "tutorialId": "cmpbugynl00002gv44elbkkh4",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:34.771Z",
+      "publishedAt": "2026-05-18T23:37:56.318Z",
+      "heroMediaId": "cmpmgfjcc00sy2gv4ff1k5jmq",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[8] > listItem[4] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Even though overflow once felt rare and temporary, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-lock-in-ease-with-receiving-and-spending",
+      "tutorialId": "cmpcckuik0000gsv4ongdb0ds",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:35.088Z",
+      "publishedAt": "2026-05-19T08:04:50.665Z",
+      "heroMediaId": "cmpmgfkor00t02gv4yz2ywamy",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Even though I worried about each decision, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-release-guilt-about-wanting-wealth",
+      "tutorialId": "cmpaac1bc000088v47025wop7",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:35.711Z",
+      "publishedAt": "2026-05-17T21:26:27.985Z",
+      "heroMediaId": "cmpmgfu5800te2gv4nkm11ths",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Even though I worry people will judge me for wanting financial freedom, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "tapping-to-see-myself-as-someone-who-has-it",
+      "tutorialId": "cmpav96740000j8v4b6a03wwe",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:36.312Z",
+      "publishedAt": "2026-05-18T07:13:38.092Z",
+      "heroMediaId": "cmpmgg3n900tq2gv4ls21citt",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Even though \"having money\" has felt like it belongs to other people, I deeply and completely accept myself."
+        }
+      ]
+    },
+    {
+      "slug": "the-first-thing-my-savings-will-buy-journal",
+      "tutorialId": "cmpbodo7s0000d0v4p94jfquy",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:44.393Z",
+      "publishedAt": "2026-05-18T20:47:25.125Z",
+      "heroMediaId": "cmpmgi7wm00wm2gv4raydgv05",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[14]",
+          "snippet": "A concrete action: set up an automatic transfer, open a new savings account, move a specific amount."
+        }
+      ]
+    },
+    {
+      "slug": "the-legacy-alignment-activation",
+      "tutorialId": "cmpc7ody30000q8v434b8ignq",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:46.101Z",
+      "publishedAt": "2026-05-19T05:47:37.731Z",
+      "heroMediaId": "cmpmgj52k00xq2gv41wekesye",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "excerpt",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > heading[11] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[13] > paragraph[0]",
+          "snippet": "I am grateful that I am building a legacy of abundance, safety, and freedom for generations to come."
+        }
+      ]
+    },
+    {
+      "slug": "the-overflow-and-circulation-activation",
+      "tutorialId": "cmpciwvc800008sv4grj3m1xy",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:48.018Z",
+      "publishedAt": "2026-05-19T11:11:22.742Z",
+      "heroMediaId": "cmpmgk3l200yy2gv4v145i7vk",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > heading[11] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[12] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[13] > paragraph[0]",
+          "snippet": "This week, overflow and generosity move together in every area of my life."
+        }
+      ]
+    },
+    {
+      "slug": "the-overflow-and-circulation-ritual",
+      "tutorialId": "cmpbuhlro0000agv4uqkal3d0",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:48.273Z",
+      "publishedAt": "2026-05-18T23:38:26.272Z",
+      "heroMediaId": "cmpmgk5fd00z02gv42whieqty",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "excerpt",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > heading[10] > text",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[12] > paragraph[0]",
+          "snippet": "This week, I am grateful that overflow and generosity now dance together in every area of my life."
+        }
+      ]
+    },
+    {
+      "slug": "the-perfect-advisors-find-me-easily",
+      "tutorialId": "cmpc7olvz0000ogv4udearyd8",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:48.676Z",
+      "publishedAt": "2026-05-19T05:47:48.017Z",
+      "heroMediaId": "cmpmgkf6400zc2gv46o6zmdau",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > pullQuote[3] > paragraph[0]",
+          "snippet": "The perfect advisors, opportunities, and partnerships align with my vision of generational wealth. They find me easily."
+        }
+      ]
+    },
+    {
+      "slug": "the-slow-leak-what-drains-your-energy",
+      "tutorialId": "cmpr1y9xr0000jov4oe7zc315",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T15:07:17.789Z",
+      "publishedAt": "2026-05-29T15:03:54.034Z",
+      "heroMediaId": "cmpr1zncx000ebcv420u9h6ah",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "Slow leaks often appear in the heavier column repeatedly without the person registering them as a pattern. Once the pattern is visible, deci"
+        }
+      ]
+    },
+    {
+      "slug": "three-habits-wealthy-me-already-has-journal",
+      "tutorialId": "cmpbodwf80000dov43i5ywoun",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:54:52.065Z",
+      "publishedAt": "2026-05-18T20:47:35.761Z",
+      "heroMediaId": "cmpmgm4lc011o2gv4cmj2952t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "Write the specific qualities: calm, orderly, intentional, unhurried. What else?"
+        }
+      ]
+    },
+    {
+      "slug": "touched-out-the-science-and-the-soft-answer",
+      "tutorialId": "cmpqclipc0000a4v4j8iwbg80",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:51.981Z",
+      "publishedAt": "2026-05-29T03:14:08.476Z",
+      "heroMediaId": "cmpqosoaz00kegcv4neo3lbh3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[3]",
+          "snippet": "At the same time, caregiving requires sustained attention: monitoring, responding, adjusting. This adds to the physical load. The combinatio"
+        }
+      ]
+    },
+    {
+      "slug": "two-voices-on-the-same-budget-activity",
+      "tutorialId": "cmpcgl2u90000ecv4o8h6nhyp",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:51.550Z",
+      "publishedAt": "2026-05-19T14:47:50.673Z",
+      "heroMediaId": "cmpmgmfsw01222gv4u7k4rbo5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
+          "snippet": "One shared real financial document: the monthly budget, a bank-account summary, a savings statement, the credit-card bill. Not hypothetical "
+        }
+      ]
+    },
+    {
+      "slug": "using-refill-shops-and-zero-waste-stores",
+      "tutorialId": "cmpra0s8g0000iov4z2actix9",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:04.967Z",
+      "publishedAt": "2026-05-29T18:49:47.993Z",
+      "heroMediaId": "cmpra5wof001wacv4ilp0ozus",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"tare\" — domain jargon — register in glossaryTerms[] or write \"the empty container weight\" in plain English",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0] > text",
+          "snippet": "tare"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"tare\" — domain jargon — register in glossaryTerms[] or write \"the empty container weight\" in plain English",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0] > text",
+          "snippet": "tare"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Using refill shops and zero-waste stores effectively go here."
+        }
+      ]
+    },
+    {
+      "slug": "walnut-small-charcuterie-board",
+      "tutorialId": "cmpr4bgzj00025wv4yxro1bp1",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:10:08.948Z",
+      "heroMediaId": "cmpr4u2qz001uakv4nwqesmna",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Walnut is one of the best hardwoods for a serving board: it has a fine closed grain that resists moisture absorption, a natural oil in the f"
+        }
+      ]
+    },
+    {
+      "slug": "what-body-neutrality-actually-means",
+      "tutorialId": "cmpr1ydav0000icv4v3g70yzi",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T15:07:29.037Z",
+      "publishedAt": "2026-05-29T15:03:58.400Z",
+      "heroMediaId": "cmpr1zpk2000ibcv43c2u5dsw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Drawn from body image research and clinical writing on body dissatisfaction. No single source. By homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "what-does-safe-with-money-feel-like-in-my-body-journal",
+      "tutorialId": "cmpaiasps0000kov4cejrqk0u",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:55:25.354Z",
+      "publishedAt": "2026-05-18T01:09:27.118Z",
+      "heroMediaId": "cmpmgoiky014w2gv4ughuh1xn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "Name the specific physical signals, not \"anxious\" but the actual sensation of anxiety in your body."
+        }
+      ]
+    },
+    {
+      "slug": "what-does-the-sleepless-version-of-me-deserve-to-hear-journal",
+      "tutorialId": "cmpaxh9q30000oov42jdo6zhz",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:55:25.973Z",
+      "publishedAt": "2026-05-18T08:14:23.337Z",
+      "heroMediaId": "cmpmgomto01522gv4jelagejl",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[5]",
+          "snippet": "Write the specific thing, not a general description of tiredness but the particular cost that didn't get acknowledged."
+        }
+      ]
+    },
+    {
+      "slug": "what-forgiveness-is-what-it-isnt",
+      "tutorialId": "cmpefnrri0000rsv4t41zshyg",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:48.410Z",
+      "publishedAt": "2026-05-20T19:06:38.263Z",
+      "heroMediaId": "cmpmgowy1015g2gv4j3rc60zs",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "The most clinically consistent finding in forgiveness research is that the person who benefits from forgiveness is the person who does the f"
+        }
+      ]
+    },
+    {
+      "slug": "what-is-available-to-her-is-available-to-me",
+      "tutorialId": "cmpaa4nzz000008v4vz9qi7t7",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:55:27.136Z",
+      "publishedAt": "2026-05-19T14:47:50.673Z",
+      "heroMediaId": "cmpmgpdj801622gv4psj7ues8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[9]",
+          "snippet": "If the Allow won't land, name the specific woman whose win triggered the feeling. Say the Release with her name in it: \"I am ready to releas"
+        }
+      ]
+    },
+    {
+      "slug": "when-the-sleepless-years-leave-a-mark",
+      "tutorialId": "cmpaxh74600003gv4904k8eiv",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:49.583Z",
+      "publishedAt": "2026-05-19T14:47:50.673Z",
+      "heroMediaId": "cmpmgr5l4018e2gv4rfgu8tyw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "Low-level resentment toward the body, because it lets you down in a way with real, visible consequences. Hypervigilance, monitoring sleepine"
+        }
+      ]
+    },
+    {
+      "slug": "when-womens-friendships-disappear-in-midlife",
+      "tutorialId": "cmpefphvf0000sov4hxcrzbus",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:48.896Z",
+      "publishedAt": "2026-05-20T19:07:58.751Z",
+      "heroMediaId": "cmpmgra34018k2gv4oerg049v",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[2] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[3]",
+          "snippet": "The result is not a character deficiency in women who find themselves friendship-lonely. It is the predictable output of a set of structural"
+        }
+      ]
+    },
+    {
+      "slug": "where-to-start-with-money-work",
+      "tutorialId": "cmpcj9vk3000060v48vb52moo",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:55:31.138Z",
+      "publishedAt": "2026-05-19T11:12:16.109Z",
+      "heroMediaId": "cmpmgrpxs01962gv4hg9ubfcg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[12]",
+          "snippet": "Written for homemade.education as a way in to the money section of the Mindset library."
+        }
+      ]
+    },
+    {
+      "slug": "whittled-ash-dibber-short",
+      "tutorialId": "cmpr49kue0000ucv46sv6728y",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:40.628Z",
+      "heroMediaId": "cmpr4u40p001wakv43qetacq0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "whittled-birch-darning-mushroom",
+      "tutorialId": "cmpr49qb90000l8v4byagvbz6",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:47.713Z",
+      "heroMediaId": "cmpr4u5aj001yakv40vkid2v8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[15] > listItem[2] > paragraph[0]",
+          "snippet": "Flat-bottomed version: leave the base of the dome flat rather than curved for setting on a table; some darners prefer it stable while thread"
+        }
+      ]
+    },
+    {
+      "slug": "whittled-hazel-peg-dolls",
+      "tutorialId": "cmpr4rkro00013sv4yqj46xgq",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:22:40.342Z",
+      "heroMediaId": "cmpr4u6ce0020akv4nzfk543t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "whittled-lime-leaf-pendant",
+      "tutorialId": "cmpr49nkl0000vcv4ddccynf5",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:44.156Z",
+      "heroMediaId": "cmpr4u7b70022akv4kzsqfeqn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[3] > paragraph[0]",
+          "snippet": "Sandpaper, 320 grit (optional): for final surface refinement before oiling."
+        }
+      ]
+    },
+    {
+      "slug": "whittled-sycamore-butter-curler",
+      "tutorialId": "cmpr49t2w000080v4vkcnza2p",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:08:51.300Z",
+      "heroMediaId": "cmpr4u86i0024akv4isbvtk72",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "why-anxiety-hits-in-perimenopause",
+      "tutorialId": "cmpr0u3360000ncv4k3f89pyq",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:45:31.689Z",
+      "publishedAt": "2026-05-29T14:41:43.649Z",
+      "heroMediaId": "cmpr17q51002ou8v4jtnbq81r",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[2] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "The usual anxiety toolkit is a useful starting point: breathwork, tapping, reducing caffeine and alcohol, consistent sleep. These address th"
+        }
+      ]
+    },
+    {
+      "slug": "why-debt-obsession-grows-in-the-dark",
+      "tutorialId": "cmpa4yg3p0000c8v485vo04b9",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:55:35.852Z",
+      "publishedAt": "2026-05-17T18:55:55.883Z",
+      "heroMediaId": "cmpmgsb4f019w2gv4g0jbckjd",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[13]",
+          "snippet": "The avoidance-rumination cycle is well documented in cognitive-behavioural therapy and in anxiety research. The specific debt-avoidance patt"
+        }
+      ]
+    },
+    {
+      "slug": "why-inheritance-and-tax-fear-slows-down-wealth-planning",
+      "tutorialId": "cmpc7rumi00004cv45kji9zbw",
+      "type": "READING",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T14:27:51.643Z",
+      "publishedAt": "2026-05-19T05:50:19.297Z",
+      "heroMediaId": "cmpmgsgu501a42gv46tbjtfpg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[3]",
+          "snippet": "Inheritance and tax anxiety has several distinct components and most people are running two or three at once."
+        }
+      ]
+    },
+    {
+      "slug": "why-we-fight-about-the-same-things",
+      "tutorialId": "cmpr1ywwl000010v4g43zy5xb",
+      "type": "PRACTICE",
+      "categorySlug": "mindset",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T15:07:34.798Z",
+      "publishedAt": "2026-05-29T15:04:23.805Z",
+      "heroMediaId": "cmpr1ztu6000qbcv422fz67fp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Drawn from Gottman relationship research and attachment theory. No single source. By homemade.education."
+        }
+      ]
+    },
+    {
+      "slug": "willow-egg-basket",
+      "tutorialId": "cmpr4an330000tsv47fxnycy8",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:30.187Z",
+      "heroMediaId": "cmpr4ua550026akv4uoegw6l0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "willow-hanging-basket-liner",
+      "tutorialId": "cmpr4ax7x00006ov46mg46v6j",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:43.321Z",
+      "heroMediaId": "cmpr4ufym0008zov4ix3tvmpx",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "willow-herb-trug",
+      "tutorialId": "cmpr4b3o90000zcv4llwlqfya",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:51.680Z",
+      "heroMediaId": "cmpr4ugnf000azov4f4683rn3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "willow-market-basket-lidded",
+      "tutorialId": "cmpr4apxz0000sgv4tthwp6vi",
+      "type": "PATTERN",
+      "categorySlug": "wood-natural-craft",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-29T16:09:33.889Z",
+      "heroMediaId": "cmpr4uhak000czov4gnh62a9c",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
+      "slug": "zero-waste-bathroom-swaps-practical",
+      "tutorialId": "cmpra10vi00007sv4ykxbm17p",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T18:54:05.359Z",
+      "publishedAt": "2026-05-29T18:49:59.195Z",
+      "heroMediaId": "cmpra5zj30024acv4kb9ldzxj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Practical zero-waste bathroom product swaps go here."
+        }
+      ]
     }
   ]
 }

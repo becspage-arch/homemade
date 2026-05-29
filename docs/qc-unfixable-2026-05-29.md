@@ -574,3 +574,44 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - solar-pv-string-vs-microinverter-choice grade-level-strict — applied: 
 - using-refill-shops-and-zero-waste-stores voice-violation,grade-level-strict — applied: 
 - zero-waste-bathroom-swaps-practical grade-level-strict — applied: 
+
+- building-under-stair-storage hero-missing — applied: hero-fill-deferred-to-standalone-script
+- clearing-a-blocked-bath-waste hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cutting-a-scarf-joint hero-missing — applied: hero-fill-deferred-to-standalone-script
+- filling-expansion-gaps-in-laminate-flooring hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-dado-rail hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-door-frame-liner hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-filling-loop-to-a-sealed-heating-system hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-loft-ladder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-picture-rail hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-toilet-pan-connector hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-twin-gang-socket-from-single hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-an-outdoor-pir-security-light hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-flexible-hoses-to-a-basin-tap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-gimp-braid-to-a-chair hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-kitchen-drawer-runners hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-plasterboard-to-a-stud-wall hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-tiles-around-a-window-reveal hero-missing — applied: hero-fill-deferred-to-standalone-script
+- laying-porcelain-floor-tiles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-basic-piped-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-simple-leather-notebook-cover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- making-a-simple-pine-bookcase hero-missing — applied: hero-fill-deferred-to-standalone-script
+- painting-a-floor-with-floor-paint hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polishing-and-protecting-smooth-leather-shoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- preparing-floor-self-levelling-compound hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- re-edging-a-chipboard-kitchen-unit-door hero-missing — applied: hero-fill-deferred-to-standalone-script
+- re-grouting-bathroom-tiles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- re-webbing-a-sagging-sofa-base hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- repairing-a-chipped-laminate-worktop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repairing-a-garden-fence-panel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repairing-a-rotted-fascia-board hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repairing-crumbling-chimney-breast-plaster hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-pendant-lamp-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-worn-radiator-compression-valve hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- replacing-an-internal-stopcock hero-missing — applied: hero-fill-deferred-to-standalone-script
+- restoring-a-teak-garden-table hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reupholstering-a-piano-stool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stripping-and-repainting-pine-kitchen-chairs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stripping-and-staining-floorboards hero-missing — applied: hero-fill-deferred-to-standalone-script
+- understanding-paint-finishes-interior-walls hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wiring-a-simple-doorbell hero-missing — applied: hero-fill-deferred-to-standalone-script

@@ -1167,3 +1167,19 @@ SKIPPED: 0
 - laying-porcelain-floor-tiles: hero-missing
 - making-a-basic-piped-cushion-cover: hero-missing
 - making-a-simple-leather-notebook-cover: hero-missing, grade-level-strict
+
+---
+
+## Run at 20:06:54
+
+Generated: 2026-05-29T20:06:54.219Z
+
+Processed: 64
+PASS: 64
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
