@@ -1,0 +1,163 @@
+{
+  "slug": "hand-cut-dovetail-technique",
+  "title": "Hand-cut through dovetail",
+  "subtitle": "Laying out, sawing, and chiselling a through dovetail joint",
+  "excerpt": "The full sequence for a hand-cut through dovetail: setting out the tails, sawing and chopping, using the tails to mark the pins, chopping the pin board, and fitting the joint. The foundational joint in hand-tool woodwork.",
+  "type": "TECHNIQUE",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "seasoned-wood",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Newey and Drage Practical Carpentry and Joinery for dovetail proportions, marking sequence, and fitting. Cassell's Cyclopaedia of Mechanics vol. III for hand-tool dovetail construction.",
+  "recipeTools": [
+    { "slug": "tenon-saw", "isOptional": false },
+    { "slug": "mortise-chisel-9mm", "isOptional": false },
+    { "slug": "skew-chisel-12mm", "isOptional": false },
+    { "slug": "marking-gauge", "isOptional": false },
+    { "slug": "marking-knife", "isOptional": false },
+    { "slug": "sliding-bevel", "isOptional": false },
+    { "slug": "try-square-200mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "dovetail", "term": "Dovetail", "definition": "An interlocking joint with fan-shaped tails on one board and matching pins on the other. Resistant to pulling apart along its length." },
+    { "slug": "tail", "term": "Tail", "definition": "The fan-shaped element of a dovetail joint, cut on the end of one board." },
+    { "slug": "pin", "term": "Pin", "definition": "The narrow element of a dovetail joint, cut on the mating board to fit between the tails." },
+    { "slug": "baseline", "term": "Baseline", "definition": "A scribed line across both boards at the depth of the joint, marking the boundary between the joint area and the face of the board." },
+    { "slug": "seasoned-wood", "term": "Seasoned wood", "definition": "Air-dried or kiln-dried wood. Dovetails cut in seasoned timber produce the tightest and most stable joints." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Cutting tools are sharp. Work with the blade travelling away from your body and your free hand behind the cutting edge at all times. Strop the tool before starting and whenever the edge feels rough." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A through " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dovetail" } }], "text": "dovetail" },
+          { "type": "text", "text": " is cut in sequence: tails first, then pins are marked directly from the tails. The joint is cut in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "seasoned-wood" } }], "text": "seasoned" },
+          { "type": "text", "text": " timber; green or partially dried wood will move after cutting and open the joint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the baseline" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the marking gauge to the thickness of the pin board (the board that will receive the tails). Scribe the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "baseline" } }], "text": "baseline" },
+          { "type": "text", "text": " around all four faces of the tail board. Reset the gauge to the thickness of the tail board and scribe the baseline on the pin board. Both baselines mark the depth to which the joint is cut." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying out the tails" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the sliding bevel to a 1:8 slope for hardwood (1:6 for softwood). Mark the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tail" } }], "text": "tail" },
+          { "type": "text", "text": " slopes on the end grain of the tail board. A simple three-tail joint has one half-pin at each edge and three full tails between. Use the marking knife to scribe the tail lines clearly; a knife line gives a cleaner shoulder than a pencil line." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sawing the tails" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Clamp the tail board at an angle in the vice so that the angled saw cut is vertical. This allows the saw to travel vertically while cutting an angled face. Saw on the waste side of each knife line, down to the baseline. Saw all the left-leaning cuts, then reposition the board and saw all the right-leaning cuts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Chopping the tail waste" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pare out the waste between the tails with the mortise chisel. Work from the face side to the baseline, then flip the board and work from the other face. Keep the chisel vertical; the waste walls must be square to the face or the joint will not close. Clean the baseline wall last with the skew chisel." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marking the pins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the completed tail board against the end of the pin board, exactly flush with the outer face. Use the marking knife to scribe the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pin" } }], "text": "pin" },
+          { "type": "text", "text": " positions directly from the tails. This direct transfer avoids cumulative marking errors. Shade the waste areas immediately so that you saw and chop the correct sections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sawing and chopping the pins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Saw the pin cheeks vertically, on the waste side of each knife line. Chop out the waste between the pins with the mortise chisel, working from both faces to the baseline. Check that the pin walls are vertical and the baseline is clean before attempting a trial fit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Press the joint together by hand. It should close to within a few millimetres of the baseline under hand pressure alone. Identify tight spots by the marks the tails leave on the pins and pare those specific areas with the skew chisel. A well-fitted dovetail closes flush with the baseline under a single mallet blow." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sawing on the wrong side of the knife line: always saw on the waste side. A saw kerf removed from the tail produces a gap that cannot be filled. When in doubt, shade the waste area before sawing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chopping past the baseline: stop the chisel just at the scribed line. Chopping past it undercuts the joint and produces a visible gap at the shoulder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Marking pins from a drawing rather than from the actual tails: always mark the pins by scribing directly from the cut tail board. Template layouts accumulate errors." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

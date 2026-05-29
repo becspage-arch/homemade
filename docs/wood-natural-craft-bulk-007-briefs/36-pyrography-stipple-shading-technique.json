@@ -1,0 +1,121 @@
+{
+  "slug": "pyrography-stipple-shading-technique",
+  "title": "Pyrography stipple shading",
+  "subtitle": "Building tone and depth with dots rather than continuous lines",
+  "excerpt": "How to shade a pyrography design using stipple: placing individual dots with a ball-stylus or shading tip to build tone gradually. Stipple shading is forgiving and reversible; over-burned areas are avoided by building up in passes rather than trying to reach full depth in a single session.",
+  "type": "TECHNIQUE",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "pyrography",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III for pyrography shading technique. Museum of English Rural Life open-access archive on poker-work and pyrography as domestic crafts.",
+  "recipeTools": [
+    { "slug": "pyrography-solid-tip-burner", "isOptional": false },
+    { "slug": "pyrography-tip-shading", "isOptional": false },
+    { "slug": "pyrography-tip-ball-stylus", "isOptional": true },
+    { "slug": "pyrography-cooling-stand", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pyrography", "term": "Pyrography", "definition": "The technique of burning designs into wood using a heated metal tip." },
+    { "slug": "stipple", "term": "Stipple", "definition": "A shading method using individual dots rather than continuous strokes. Dot density and size control the apparent tone." },
+    { "slug": "shading-tip", "term": "Shading tip", "definition": "A flat or spoon-shaped pyrography tip that contacts the wood over a wider area than a writing tip, allowing smooth tonal gradients when swept." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "The burning tip reaches temperatures that will cause an instant burn on skin contact. Never touch the tip directly. Rest the unit on the cooling stand between strokes. Allow the tip to cool fully before changing attachments." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pyrography" } }], "text": "pyrography" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stipple" } }], "text": "stipple" },
+          { "type": "text", "text": " shading places individual dots that build up into tone. The dots in a dark shadow area are large and close together; in a lighter area they are smaller and further apart. Stipple is more forgiving than smooth shading because each dot is a separate decision; a dot that is too dark is surrounded by lighter dots and reads as normal variation. A continuous sweep that is too dark cannot be lightened." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a ball-stylus tip for round dots of consistent size, or the corner of a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shading-tip" } }], "text": "shading tip" },
+          { "type": "text", "text": " for larger marks. Set the burner temperature lower than for line work; dots placed at moderate heat allow more control over tone than high-heat dots, which char the wood rather than burning it. Test on an offcut before starting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building tone in passes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work from the lightest areas toward the darkest, building tone in passes rather than placing all the dots in one go. On the first pass, place dots at the spacing needed for the mid-tones. On the second pass, add more dots in the darkest areas. Step back between passes to assess the overall tone; it is easier to add dots than to remove them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Controlling dot size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dot size is controlled by contact time, not by pressure. Touch the tip to the wood and lift; the longer it rests, the larger the dot. At a given temperature, a count of one produces a fine dot and a count of three produces a noticeably larger one. Establish a consistent rhythm before starting the main work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Edge transitions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Where a dark area meets a light area, taper the dot density gradually across the boundary. A sharp stipple edge (rows of dense dots stopping abruptly) reads as a hard line. Feathering the dots outward over 5 to 10 mm produces a soft transition that reads as a tonal change rather than an outline." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Overworking the darkest areas in one pass: the area looks patchy because the dots at full density show as individual marks. Build up in two or three passes, assessing after each." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dots in regular rows that read as a pattern rather than tone: break any row alignment by placing dots in a scattered, irregular distribution." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tip sticking briefly to the surface and tearing the wood fibres: the burner temperature is too low. Increase slightly until the tip lifts cleanly." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}
