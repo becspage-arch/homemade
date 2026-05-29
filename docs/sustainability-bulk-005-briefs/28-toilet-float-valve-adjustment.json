@@ -1,0 +1,92 @@
+{
+  "slug": "toilet-float-valve-adjustment",
+  "title": "Adjusting a toilet float valve to save water",
+  "subtitle": "Reducing the cistern fill level to cut water use per flush",
+  "excerpt": "A standard toilet cistern holds 9 litres. A modern dual-flush cistern uses 4 to 6 litres for a full flush. The actual amount used per flush is set by the float valve: the valve that stops water entering the cistern when it reaches the set level. Lowering the fill level by 1 to 2 cm saves 1 to 2 litres per flush. In a household of four flushing five times per day each, that is 8,000 to 16,000 litres per year.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP household water efficiency guide. Waterwise UK guidance on toilet water use (2023). Fluidmaster and Siamp float valve adjustment instructions. WRAS guidance on domestic float valves.",
+  "approximateCostGbp": 0,
+  "paybackYears": 1,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "float-valve",
+      "term": "Float valve",
+      "definition": "A valve in a toilet cistern that opens when the water level drops (after flushing) and closes when the water rises to the set fill level. The float arm or float cup rises with the water and mechanically closes the valve when the target height is reached."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before adjusting the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float-valve" } }], "text": "float valve" },
+          { "type": "text", "text": ", check that the cistern is not running. A running cistern (water trickling into the bowl continuously) wastes far more than a full fill level: up to 400 litres per day. Fix a running cistern first." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying the float valve type" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ball float arm: a horizontal arm with a ball on the end that floats. Adjusting the float arm angle or bending it slightly downward lowers the cut-off level. This type is less common in modern cisterns." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Float cup (piston type): a vertical stem with a sliding plastic float cup. The cut-off level is adjusted by a screw at the top of the valve stem. Clockwise lowers the fill level, anticlockwise raises it. This is the standard type in cisterns fitted after about 1990." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting a float cup valve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the cistern lid and set it safely aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Note the current water level. The target level is marked inside most cisterns as a line labelled MAX or WATERLINE. You want the water to sit 25 to 30 mm below the overflow pipe outlet." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the adjustment screw at the top of the valve body by hand or with a flat screwdriver. One full clockwise turn lowers the fill level by approximately 5 to 10 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flush and watch the cistern refill. The valve should stop filling with 25 to 30 mm of space between the water surface and the overflow pipe. The cistern should not overflow." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check that the flush still clears the bowl effectively. If the flush is too weak, raise the fill level by a quarter turn anticlockwise." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking for a running cistern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put a piece of dry toilet paper against the inside of the toilet bowl, below the waterline, for 30 seconds. If the paper moves or the water shows a faint ripple, the cistern is leaking. The most common cause is a worn or distorted flush valve seal. A replacement flush valve seal costs 2 to 5 pounds and is a 10-minute repair." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "heat-pump-hot-water-cylinder-sizing",
+  "title": "Sizing a hot water cylinder for a heat pump system",
+  "subtitle": "Why the cylinder matters more than the boiler, and how to choose the right size",
+  "excerpt": "A heat pump heats domestic hot water differently from a boiler. It runs slowly at a lower temperature over a longer period. The cylinder must be large enough to store the hot water the household needs, sized correctly for the heat pump's output, and fitted with an immersion heater as backup. Getting the cylinder wrong means either running out of hot water or running the heat pump inefficiently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS Heat Pump Planning Guide (MIS 3005). CIBSE Guide M on hot water systems. Heat Geek technical notes on DHW cylinder sizing for heat pumps. Vaillant and Mitsubishi cylinder installation guides. BEAMA guidance on unvented hot water cylinders (2023).",
+  "approximateCostGbp": 1500,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "dhw",
+      "term": "DHW",
+      "definition": "Domestic hot water. The heated water used for taps, showers, and baths in a building, as distinct from the water circulating in the central heating system. DHW must be stored above 60°C periodically to prevent Legionella growth."
+    },
+    {
+      "slug": "cop-dhw",
+      "term": "COP",
+      "definition": "Coefficient of performance. The ratio of heat energy output to electrical energy input. A heat pump producing 3 kWh of heat from 1 kWh of electricity has a COP of 3. For domestic hot water heating, the COP is lower than for space heating because the water must reach a higher temperature."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When a gas boiler heats hot water, it fires at full output for 10 to 20 minutes and raises the cylinder temperature rapidly. A heat pump works differently. It produces heat at a lower temperature over 1 to 3 hours. To deliver the same amount of stored heat, the cylinder must be larger to compensate for the slower charge rate. Most households replacing a boiler need to upsize their cylinder." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What size cylinder?" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "1 to 2 people: 150 to 180 litres minimum." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "3 to 4 people: 200 to 250 litres." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "5 or more people, or high shower usage: 250 to 300 litres." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "These are larger than typical boiler cylinders (120 to 150 litres). A heat pump cylinder should be large enough to store a full day's " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dhw" } }], "text": "DHW" },
+          { "type": "text", "text": " demand without requiring a second heat cycle. This allows the heat pump to run one DHW cycle per day, ideally overnight or during off-peak electricity periods." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Temperature and Legionella" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Legionella bacteria thrive between 25°C and 45°C. Hot water cylinders must be heated to 60°C periodically to kill any bacteria present. A heat pump DHW cycle runs to 45 to 55°C typically. The cylinder must have an immersion heater fitted to run a 60°C Legionella pasteurisation cycle once per week. This is mandatory under L8 guidance and should be wired with a timer as part of the installation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Coil sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The heat exchanger coil inside the cylinder (the coil through which the heat pump's flow passes) must be large enough to transfer heat at the heat pump's output rate. A heat pump with a 5 kW DHW output needs a coil surface area of at least 0.3 to 0.4 m². Standard boiler coils are often too small. Specify a purpose-built heat pump cylinder (sometimes called a twin-coil or thermal store) rather than a standard indirect cylinder." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Impact on " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop-dhw" } }], "text": "COP" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A heat pump heating water to 55°C has a lower COP than one heating a room to 35°C. Typical DHW COP is 2.0 to 2.5, compared to space heating COP of 3.0 to 4.5. To improve DHW COP, set the heat pump to run a daily DHW cycle in the early morning (when outdoor temperatures are lowest) rather than at peak times, and keep the target temperature to 50°C with the weekly 60°C Legionella cycle on a separate schedule." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Unvented hot water cylinders must be installed by a G3-registered plumber. The work includes a pressure vessel, expansion valve, and temperature-pressure relief valve. Wrong installation is a serious safety risk. The heat pump connection is covered by the MCS installation certificate." }]
+      }
+    ]
+  }
+}

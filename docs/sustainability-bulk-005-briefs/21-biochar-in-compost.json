@@ -1,0 +1,112 @@
+{
+  "slug": "biochar-in-compost",
+  "title": "Adding biochar to compost and soil",
+  "subtitle": "What biochar does, how to charge it, and how much to use",
+  "excerpt": "Biochar is a charcoal made by heating woody material without oxygen. Added to compost or soil, it improves water retention, provides a habitat for soil microbes, and stores carbon for centuries. Biochar must be charged with nutrients before it is useful: raw biochar added to soil pulls nitrogen from the soil while it absorbs water and organic matter.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "International Biochar Initiative (IBI) product standards and soil guidance. Lehmann and Joseph Biochar for Environmental Management (2nd edition, 2015). Garden Organic guidance on biochar use in growing media (2023). WRAP research on biochar in compost blends.",
+  "approximateCostGbp": 15,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "biochar",
+      "term": "Biochar",
+      "definition": "A porous, carbon-rich charcoal produced by pyrolysis: heating organic material (wood, straw, husks) above 350°C in the absence of oxygen. Biochar has a stable structure that resists biological breakdown. It can persist in soil for hundreds to thousands of years, making it a potential carbon sink."
+    },
+    {
+      "slug": "charging-biochar",
+      "term": "Charging biochar",
+      "definition": "The process of loading biochar's pore structure with nutrients before adding it to soil. Raw biochar is nutrient-poor and absorbs water, minerals, and nitrogen from the soil until saturated. Charging by soaking in compost tea, worm tea, or by mixing with compost for 2 to 4 weeks fills the pores with nutrients and prevents nutrient stripping in the soil."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Biochar's main mechanism in soil is physical. Its porous structure holds water and provides surface area for microbial colonisation. Soil with 3 percent biochar by volume holds 15 to 20 percent more water than the same soil without it. For sandy or chalky soils, this is significant. For heavy clay, it is less useful. The carbon storage benefit is real but quantified at the farm scale, not the garden scale." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Do not add raw biochar directly to soil" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Raw " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "biochar" } }], "text": "biochar" },
+            { "type": "text", "text": " has a very high surface area and will absorb nutrients from the soil as it hydrates. Studies show a 5 to 10 percent nitrogen loss in the first season after adding raw biochar. Always charge it first." }
+          ] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to charge biochar" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compost charging: mix 1 part biochar with 5 to 10 parts fresh or mature compost. Leave for 2 to 4 weeks. The biochar absorbs the compost nutrients and liquid. After charging, the mix smells of soil, not dry char." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Liquid charging: soak biochar in diluted comfrey liquid or worm tea (1:10) for 24 hours. Drain and air-dry for an hour before use. This is faster but provides fewer nutrients per volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The charged biochar is ready when it is dark and moist, holds its structure, and smells of compost rather than smoke." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How much to use" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Application rate: 2 to 5 percent of soil volume in the top 15 to 20 cm. For a raised bed (1.2 × 2.4 m, 20 cm deep), this is roughly 12 to 30 litres of charged biochar." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not exceed 10 percent by volume. At high concentrations, biochar can change soil pH (most biochar is alkaline, pH 7.5 to 9) and make the mix less suitable for acid-loving plants." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Biochar is a one-time addition: it does not break down. Once in the soil, it stays active for decades." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sourcing biochar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Agricultural biochar is widely available from online garden suppliers. Look for an IBI or EBC (European Biochar Certificate) mark. The particle size for garden use should be 2 to 10 mm. Fine dust-grade biochar is not suitable for soil applications as it compacts. Wood-based biochar is the most researched for garden use; biochar from rice husks or straw behaves differently." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding biochar to a compost heap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Adding biochar to an active compost heap (rather than the finished compost) allows natural " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "charging-biochar" } }], "text": "charging" },
+          { "type": "text", "text": " to happen over the compost cycle. Sprinkle dry biochar between layers at a rate of about 1 handful per 20 cm of compost material. The biochar absorbs leachate and gases from the decomposition process, reducing ammonia loss and cutting odour. The finished compost contains charged biochar ready for use." }
+        ]
+      }
+    ]
+  }
+}

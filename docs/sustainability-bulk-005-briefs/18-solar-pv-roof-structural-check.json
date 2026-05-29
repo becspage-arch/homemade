@@ -1,0 +1,89 @@
+{
+  "slug": "solar-pv-roof-structural-check",
+  "title": "What a structural check for solar PV involves",
+  "subtitle": "What the survey covers, when it is required, and what fails it",
+  "excerpt": "Before solar panels are fitted to a roof, the installer must check that the roof structure can carry the extra weight. A standard UK roof slate or tile array weighs 15 to 25 kg per panel plus the mounting system. Most post-1945 roofs pass without any strengthening. Older or modified roofs may need a timber survey first.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS Solar PV installation standard (MIS 3002). NHBC Standards Chapter 7.1 on roof structures. Structural Engineers for Solar Alliance guidance notes (SESA, 2023). BRE Solar panel structural assessment methodology for UK domestic housing.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "dead-load",
+      "term": "Dead load",
+      "definition": "The permanent static weight on a structure, including the weight of the building materials themselves. For a roof, the dead load includes tiles, rafters, battens, and any panels or equipment added. Solar panels add to the dead load on the rafters and roof structure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A structural check for solar PV is required by MCS (the certification scheme that governs UK solar installations). The check is part of the design process, not an optional extra. If the installer skips it, the installation is not MCS-certified and any grant or feed-in export payment is at risk." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the check covers" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rafter size and spacing: standard UK rafters are 100 × 50 mm at 400 to 600 mm centres. A panel mounting rail typically spans two to three rafters. The installer calculates the point load at each rafter fixing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rafter condition: access to the loft is needed to check for decay, beetle damage, past repairs, or modifications (notching for pipes or cables). A rafter that is visibly sound may have hidden decay where it meets the wall plate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roof pitch and loading: steeper roofs experience higher wind uplift on panels. Flat roofs with ballasted mounting systems need a different load calculation." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Added " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dead-load" } }], "text": "dead load" },
+            { "type": "text", "text": ": a typical solar panel weighs 18 to 22 kg. A 12-panel system adds 220 to 260 kg to the roof. This is roughly equivalent to adding another layer of tiles." }
+          ] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Roofs that usually pass" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Post-1945 houses with standard pitched roofs (30 to 45 degrees), tiles or slates, rafters at 400 to 600 mm centres." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houses with roofs that have been recently re-roofed: the condition of the rafters is often known and documented." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Roofs that may need further assessment" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-1919 roofs with smaller-section rafters: Victorian and Edwardian rafters are often 75 × 50 mm, which may be marginal for a full array." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roofs with concrete tiles: concrete tiles weigh twice as much as slate. The roof structure is already carrying a higher load and has less headroom for the panels." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roofs with evidence of past movement: cracked ridge tiles, doors sticking below the ridge, visible deflection in the ridge line." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flat roofs with lightweight decking or felt coverings from before 1990." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What happens if the roof fails the check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The installer should provide a written report. The options are: timber sistering (adding new timber alongside existing rafters to increase strength), reducing the number of panels, or choosing a lighter panel type. A structural engineer's report may be needed to satisfy building regulations if sistering is required. This adds cost (300 to 800 pounds typically) but does not necessarily prevent the installation." }]
+      }
+    ]
+  }
+}

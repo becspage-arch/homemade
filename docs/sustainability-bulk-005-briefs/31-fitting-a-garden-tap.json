@@ -1,0 +1,101 @@
+{
+  "slug": "fitting-a-garden-tap",
+  "title": "Fitting an external garden tap",
+  "subtitle": "Running a cold water feed through an external wall for a dedicated garden tap",
+  "excerpt": "A garden tap fed from the kitchen cold supply reduces carrying and wasted water from indoor sources. A standard installation costs 150 to 300 pounds via a plumber, or 40 to 60 pounds in materials if you do it yourself. The work involves a push-fit tee off the mains cold supply, a pipe run through the external wall, and a bib tap on the outside. Building regulations require a double-check valve to prevent backflow.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAS guidance on domestic water fittings and backflow prevention. Water Regulations Advisory Scheme approved products list. Plumbing and Mechanical Services Industry Authority (PLAMSA) guidance on outdoor tap installation. Which? guide to outdoor tap installation (2023).",
+  "approximateCostGbp": 50,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "adjustable-spanner", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-check-valve",
+      "term": "Double check valve",
+      "definition": "A WRAS-approved valve that prevents water from a hose or garden equipment flowing back into the mains supply. Required by law for any garden tap installation in the UK under Water Regulations. Typically a small brass or plastic unit installed on the pipe just before the tap."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A garden tap must include a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-check-valve" } }], "text": "double check valve" },
+          { "type": "text", "text": " to comply with the Water Supply (Water Fittings) Regulations 1999. Without it, fertiliser or pesticide residues in a hose connected to the tap can be sucked back into the mains if the pressure drops. This is a legal requirement, not an optional extra." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A garden tap kit (includes bib tap, double check valve, wall plate, and connecting pipe in some kits)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "15 mm push-fit tee to tap into the cold mains supply. Measure the pipe size first: most UK mains supply is 15 mm or 22 mm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "15 mm rigid copper pipe or push-fit hose for the run to the external wall." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 22 mm core drill bit for the external wall penetration." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pipe clips, PTFE tape, and silicone sealant for the wall entry." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation steps" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn off the mains water supply at the stopcock. Drain the pipe by opening a tap at the lowest point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the kitchen cold mains pipe with a pipe slice. Insert a push-fit tee. One outlet goes to the existing supply; the other becomes the garden tap feed. Fit an isolating valve on the new outlet so the garden tap can be shut off in winter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drill a 22 mm hole through the external wall at a slight downward angle from inside to outside, so any condensation drains outward." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the pipe from the tee to the wall. Fit the double check valve on the outside, between the pipe and the bib tap, or use the in-line type fitted on the inside just before the wall." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the bib tap to the wall plate on the external wall. Use PTFE tape on all threaded joints. Silicone around the pipe at the wall penetration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn on the stopcock and check all joints for leaks. Open the tap and check the flow." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winter maintenance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Close the indoor isolating valve before the first frost. Open the external tap to drain any water from the outdoor section of pipe. Leave the external tap open over winter so any residual water can drain without building pressure. Close and re-pressurise in spring." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "heat-loss-calculation-for-a-room",
+  "title": "Calculating the heat loss from a room",
+  "subtitle": "How to size a radiator or electric heater using room dimensions and U-values",
+  "excerpt": "A heat loss calculation tells you how much power a room needs to stay at a set temperature when it is coldest outside. The answer, in watts, determines the size of radiator or heater needed. The calculation takes about 20 minutes per room with a tape measure and a basic understanding of U-values.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE Guide A environmental design, Section 3 (heat loss calculations). BS EN 12831 on heating systems design. EST guidance on heating system sizing. British Standards Institution: BSRIA BG 29/2012 on heat load calculations.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "design-temperature-difference",
+      "term": "Design temperature difference",
+      "definition": "The temperature difference between the desired indoor temperature and the coldest expected outdoor temperature, used in heat loss calculations. For UK heating design, the design outdoor temperature is typically minus 2 to minus 4°C depending on region. With an indoor target of 21°C, the design temperature difference is 23 to 25°C."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat loss is calculated in watts (W). The formula for each surface element is: heat loss = Area (m²) × U-value (W/m²K) × temperature difference (K). Sum the losses from all walls, windows, floor, and ceiling, then add a ventilation loss. The total is the design heat load for the room." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: gather the inputs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Room dimensions: length, width, ceiling height in metres. Measure to the inside face of walls." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External walls: note which walls face outside (not party walls or walls to other heated rooms). Measure the area of each, subtract window areas." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Windows: measure width and height of each window." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Floor type: ground floor (heated below or unheated?), upper floor over heated room, or over garage/unheated space." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "U-values: use the table below or look up the specific construction type." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Typical UK U-values by construction type" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Solid brick wall (225 mm, uninsulated): 2.1 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cavity wall, unfilled (1960s standard): 1.5 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cavity wall, fully filled: 0.35 to 0.45 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Single glazing: 5.6 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Double glazing, standard: 2.8 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Double glazing, low-E argon filled: 1.4 to 1.8 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Suspended timber floor, uninsulated: 0.8 W/m²K" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flat ceiling below insulated loft: 0.15 to 0.25 W/m²K" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: calculate the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "design-temperature-difference" } }], "text": "design temperature difference" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a living room: target 21°C inside, minus 3°C outside. Temperature difference = 24 K. For a bedroom: target 18°C. Temperature difference = 21 K. For UK south and midlands, use minus 3°C outdoor design temperature. For Scotland and exposed northern locations, use minus 5°C." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A Victorian terrace living room in Bristol: 4.5 m × 3.5 m, 2.7 m ceiling. Front wall external (solid brick, 4.5 × 2.7 = 12.15 m²), one sash window (1.5 × 1.6 = 2.4 m²). Design temperature difference: 24 K." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External wall (minus window): (12.15 - 2.4) × 2.1 × 24 = 491 W" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Single glazing: 2.4 × 5.6 × 24 = 323 W" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Suspended floor: 15.75 × 0.8 × 24 = 302 W" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ceiling (below first floor, heated above): 0 W (no loss to heated space)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ventilation loss (0.5 air changes per hour, volume 42.5 m³): 0.5 × 42.5 × 0.33 × 24 = 168 W" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Total: ~1,280 W. A 1,200 W radiator is the minimum size." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the result" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A radiator sized to the design heat load will just keep the room at temperature on the coldest day. In practice, radiators are often sized 10 to 20 percent over the design load to give headroom. When upgrading from a gas boiler to a heat pump, the design load matters more: a heat pump running at lower flow temperature needs larger radiators to deliver the same heat output." }]
+      }
+    ]
+  }
+}

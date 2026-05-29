@@ -1,0 +1,86 @@
+{
+  "slug": "night-rate-electricity-and-load-shifting",
+  "title": "Using night-rate electricity to cut bills",
+  "subtitle": "Time-of-use tariffs and how to shift flexible loads to cheaper overnight hours",
+  "excerpt": "Time-of-use electricity tariffs charge less for electricity used overnight or at off-peak times. Households with flexible loads (dishwashers, washing machines, EV chargers, heat pump hot water, battery storage) can shift most of these loads to off-peak hours. The saving is 10 to 20p per kWh depending on the tariff, with an annual saving of 100 to 400 pounds in a typical household.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem guidance on time-of-use tariffs (2024). Octopus Energy Go and Flux tariff structures. British Gas Electric Driver tariff. Uswitch analysis of time-of-use tariff uptake (2024). National Grid ESO flexibility documents.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "time-of-use-tariff",
+      "term": "Time-of-use tariff",
+      "definition": "An electricity tariff where the unit rate varies by time of day. Overnight rates (typically 00:30 to 07:30 on Octopus Go) are cheaper, often 7 to 15p/kWh. Peak rates (usually 16:00 to 19:00) are more expensive, sometimes above 30p/kWh. Requires a smart meter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "time-of-use-tariff" } }], "text": "time-of-use tariff" },
+          { "type": "text", "text": " is only useful if you can actually shift load. If your lifestyle means the dishwasher runs at 7 pm and the washing machine at 9 am, a flat-rate tariff may be cheaper. The first step is to work out what you can move and what you cannot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What can be shifted" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dishwasher: most modern dishwashers have a delay-start option. Set it before bed; it runs in the cheap window overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Washing machine: as above. Wash at night. Drying in a tumble dryer also benefits from off-peak, though a heated airer or outdoor drying removes the dryer cost entirely." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "EV charger: an EV with a smart charger can be set to begin charging at 00:30 and stop by 07:30. At 7p/kWh overnight vs 28p/kWh peak, the saving per charge is significant. A 40 kWh charge overnight costs 2.80 pounds instead of 11.20 pounds." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat pump hot water: schedule the DHW cycle to run between 01:00 and 06:00. This is also when outdoor temperatures are lowest, which reduces the heat pump's COP slightly, but the tariff saving usually outweighs the efficiency loss." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Home battery: charge the battery overnight at 7p/kWh and use stored power during peak periods at 28p. The saving per cycle is about 21p per kWh stored." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What cannot be shifted" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Space heating during the morning and evening: people are in the house and need heat at peak times. Time-of-use tariffs are less useful for households that heat mainly in the peak window." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cooking: meal times are what they are." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A household with an EV, heat pump, and dishwasher: EV charges 25 kWh per week (saving 5.25 pounds/week vs peak), hot water 5 kWh per day shifted to overnight (saving 0.63 pounds/day × 180 days = 113 pounds), dishwasher 1 kWh per day shifted (saving 0.21 pounds/day × 300 days = 63 pounds). Total annual saving: roughly 400 pounds. The key requirement is a SMETS2 smart meter and a tariff that offers the right overnight window." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which tariff to choose" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Octopus Go (7p overnight, 28p peak at time of writing), Octopus Cosy (cheaper mid-afternoon and overnight), and British Gas Electric Driver (cheap overnight for EV users) are common UK options. Check uswitch.com or the supplier's own site for current rates. Switch tariffs annually: prices change. The comparison sites allow you to upload half-hourly data from your smart meter to find the cheapest tariff for your specific usage pattern." }]
+      }
+    ]
+  }
+}

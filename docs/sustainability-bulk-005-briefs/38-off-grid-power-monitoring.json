@@ -1,0 +1,106 @@
+{
+  "slug": "off-grid-power-monitoring",
+  "title": "Monitoring a 12V off-grid power system",
+  "subtitle": "How to track state of charge, usage, and battery health",
+  "excerpt": "An off-grid 12V system without monitoring is a guessing game. You do not know how much charge is left, whether the panels are working, or whether a load is draining the battery overnight. A battery monitor installed between the battery and the rest of the system shows voltage, current, and state of charge in real time. A logging display adds the history. This turns a black box into a readable system.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Victron Energy BMV battery monitor installation guide. Renogy battery monitoring product documentation. Practical Photovoltaics (Komp, R.J., 2002). Rolls Battery technical notes on state of charge estimation. Off-grid solar system design guides (Wholecircle Energy, 2023).",
+  "approximateCostGbp": 40,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": true },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "state-of-charge",
+      "term": "State of charge",
+      "definition": "The remaining energy in a battery expressed as a percentage of its full capacity. A battery at 50 percent state of charge holds half its rated amp-hour capacity. Lead-acid batteries should not be regularly discharged below 50 percent state of charge; doing so shortens their lifespan significantly."
+    },
+    {
+      "slug": "coulomb-counting",
+      "term": "Coulomb counting",
+      "definition": "A method of tracking battery state of charge by measuring the electrical charge flowing in and out of the battery over time. A shunt resistor in the battery circuit measures current. The monitor integrates current over time to estimate remaining charge. More accurate than voltage-only estimation, particularly under load."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Battery voltage gives a rough indication of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "state-of-charge" } }], "text": "state of charge" },
+          { "type": "text", "text": " but it is not accurate under load or immediately after charging. A 12V lead-acid battery reads 12.7V when fully charged at rest and 11.7V when discharged to 50 percent at rest. Under a 5 A load, the same battery might read 12.1V at 80 percent charge. Voltage alone misleads. A battery monitor using " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coulomb-counting" } }], "text": "coulomb counting" },
+          { "type": "text", "text": " is significantly more accurate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to monitor" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Battery voltage: the instantaneous voltage at the battery terminals." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Current in/out: amps flowing into the battery from the solar panels and out to the loads." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "State of charge: the estimated remaining capacity in amp-hours and as a percentage." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Time to discharge (at current rate): how many hours of use remain if loads stay constant." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installing a shunt-based monitor" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Disconnect the battery negative terminal before starting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install the shunt on the negative battery cable, between the battery negative terminal and the rest of the circuit. The shunt must carry all current flowing to and from the battery, so all negative connections must route through it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the monitor head to the shunt via the data cable provided. Mount the display where it is visible from the working or living area." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enter the battery capacity in amp-hours and the battery type (AGM, flooded lead-acid, LiFePO4) into the settings. The monitor uses these to calibrate its readings." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow the battery to charge fully before the first reading. The monitor calibrates its baseline at the first full charge event." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the data" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check daily solar harvest: compare the incoming amp-hours from the panels to the expected output given the weather. A persistent shortfall suggests shading, a dirty panel, or a connection problem." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check overnight discharge rate: the current flowing out at midnight tells you what is on. A background draw of more than 0.5 A points to something left running." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Track charge over a season: a battery that never hits 100 percent after a full sunny day is either ageing or the panels cannot cover the load." }] }] }
+        ]
+      }
+    ]
+  }
+}

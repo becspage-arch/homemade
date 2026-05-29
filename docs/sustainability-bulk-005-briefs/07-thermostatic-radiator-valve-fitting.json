@@ -1,0 +1,145 @@
+{
+  "slug": "thermostatic-radiator-valve-fitting",
+  "title": "Fitting a thermostatic radiator valve",
+  "subtitle": "Replacing a manual radiator valve with a TRV to control room temperature",
+  "excerpt": "A thermostatic radiator valve senses the temperature in the room and throttles the radiator when the target temperature is reached. Fitting TRVs to every radiator except the one in the room with the main thermostat reduces overheating in warmer rooms and cuts gas use. A TRV costs 10 to 20 pounds and takes about 30 minutes to fit.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on heating controls (2024). CIBSE Guide M on maintenance engineering. Boiler Plus regulations (2018) requiring TRVs on new boiler installations. Manufacturer fitting instructions for Honeywell V2000/Drayton RVT.",
+  "approximateCostGbp": 15,
+  "paybackYears": 3,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "adjustable-spanner", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "trv",
+      "term": "TRV",
+      "definition": "Thermostatic radiator valve. A valve fitted to a radiator that includes a wax capsule or electronic sensor. As the room warms, the capsule expands and closes the valve, reducing hot water flow to the radiator. The valve opens again when the room cools below the set temperature."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heating controls are one of the most cost-effective measures in an existing house. A fully zoned system with a main programmer, a room thermostat, and a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trv" } }], "text": "TRV" },
+          { "type": "text", "text": " on every radiator can cut heating bills by 8 to 12 percent compared to a single thermostat with manual valves. The saving comes from not heating rooms that are already warm enough." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Don't fit a TRV in the thermostat room" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "The room with the main room thermostat should have a fully open manual valve or a lockshield valve, not a TRV. If the TRV in that room closes, the boiler has no way to satisfy its demand and will short-cycle." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replacement TRV head and body (or TRV head only if the valve body is already a TRV-compatible design). Measure the thread size of the existing valve: most UK radiator valves are 15 mm or 1/2 inch BSP." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Two adjustable spanners or a spanner and a radiator valve key." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PTFE tape." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A bucket and towels to catch any water spill." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Head swap only" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the existing radiator valve body is a TRV-compatible body (check: the head screws or clips on with a standard collar), only the head needs replacing. No draining down is required." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the existing valve to fully closed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unscrew the existing head by turning the collar anticlockwise. Some heads are push-fit and lift straight off." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the TRV head, making sure the arrow on the head points in the direction of flow if marked. Tighten the collar by hand and a quarter turn with a spanner." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the TRV to setting 3. Run the heating and check the radiator warms up, then turns down as the room reaches temperature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Full valve replacement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the valve body needs replacing, the system must be drained down to the level of the radiator or a local drain valve used. This is more involved and may need a plumber if you have a pressurised sealed system and are not confident re-pressurising the system afterward." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the TRV" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "TRV settings are roughly: 1 = 10°C, 2 = 15°C, 3 = 20°C, 4 = 24°C, 5 = fully open. Start every room at 3 and adjust over one heating season. Bedrooms are usually set to 2. Living rooms to 3 or 4. Spare rooms to 1 (frost protection only)." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Radiator stays cold even on setting 5",
+              "cause": "TRV pin stuck in closed position",
+              "fix": "Remove the TRV head and press the pin manually. If it is seized, replace the head."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Radiator runs hot regardless of TRV setting",
+              "cause": "TRV pin stuck in open position, or valve body is a manual valve incompatible with TRV head",
+              "fix": "Check pin moves freely. Confirm the valve body is TRV-compatible (pin-actuated)."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler keeps cycling on and off",
+              "cause": "All TRVs are closing and leaving the boiler with no heat to distribute",
+              "fix": "Ensure the room with the main thermostat has a manual valve, not a TRV."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

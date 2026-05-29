@@ -1,0 +1,77 @@
+{
+  "slug": "draught-proofing-stairs-and-hall",
+  "title": "Draught-proofing a cold staircase and hallway",
+  "subtitle": "Why the hall is always coldest and what can be done about it",
+  "excerpt": "Hallways and stairwells are cold for structural reasons. The stairwell acts as a chimney: warm air rises from the ground floor, escapes through the ceiling, and pulls cold air in at the bottom. Multiple draughts feed this loop. Sealing the sources one by one is more effective than adding heat.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust draught-proofing guides (2024). AIRTIGHTNESS.co.uk guidance on staircase air leakage. BRE study on air infiltration in UK dwellings (2006). CIBSE TM23 on testing for building air leakage.",
+  "approximateCostGbp": 30,
+  "paybackYears": 4,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "stack-effect",
+      "term": "Stack effect",
+      "definition": "The movement of air through a building driven by the difference in air density between warm indoor air and cold outdoor air. Warm air rises and escapes through gaps at the top of the building. Cold air enters through gaps at the bottom to replace it. A stairwell accelerates this by connecting ground and upper floors in a single air column."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The hall is cold because of the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stack-effect" } }], "text": "stack effect" },
+          { "type": "text", "text": ". The stairwell connects ground floor to upper floors in a tall, open column. Cold air enters at the front door, floor gaps, and understairs spaces. Warm air rises and escapes through the loft hatch, ceiling gaps, and light fittings. The hall feels cold even with the heating on because it is in a continuous draughty loop." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sources to address, in order of impact" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Front door: the single largest draught source in most halls. See the dedicated front door draught-stripping guide. A well-sealed front door has more impact on hall temperature than any other measure." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft hatch: the open chimney at the top of the stack. An unsealed, uninsulated hatch draws warm air upward all day. Seal the edges with compression strip and fit 100 mm rigid insulation board on top of the hatch cover." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Understairs cupboard: the back wall often has gaps to the foundation void or an external wall. Seal any visible gaps with expanding foam. Check for cold air by running a hand along the back wall on a cold day." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hall floorboards: suspended timber floors under halls often have wide gaps between boards. Filling these with flexible decorator's caulk (allow for movement) or cutting strips of wood to press into the gaps reduces the cold air rising from below." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stair risers: on an open-back staircase, gaps between the riser and the tread are draught paths. Seal from the front with flexible filler if the stairs are carpeted, or timber strips if exposed boards." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Light fittings in the ceiling above the stair: recessed downlights in a ceiling below a loft are significant draughts. Replace with air-tight fire-rated covers or seal around the fitting with intumescent foam." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What not to do" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not fit a TRV to the hall radiator and set it high. The hall radiator is not the problem. The draughts are the problem." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not block habitable room ventilation to reduce the stack effect. Rooms need background ventilation." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not add a draught lobby (inner porch) without checking whether it will reduce natural ventilation to the extent that a mechanical vent is needed. Well-sealed halls with no background ventilation can see condensation rise." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Heating the hall" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Once draughts are sealed, the hall radiator (or TRV) should be set to frost-protection level (1 on most TRVs, around 8 to 10°C). The hall does not need to be as warm as a living room. A cool hall is comfortable if there are no draughts. A warm hall with draughts still feels cold." }]
+      }
+    ]
+  }
+}

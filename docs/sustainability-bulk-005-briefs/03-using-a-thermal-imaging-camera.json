@@ -1,0 +1,110 @@
+{
+  "slug": "using-a-thermal-imaging-camera",
+  "title": "Using a thermal imaging camera to find heat loss",
+  "subtitle": "What to look for, when to look, and how to interpret the results",
+  "excerpt": "A thermal imaging camera shows the surface temperature of walls, windows, and doors as a colour map. Cold patches point to missing insulation. Warm streaks point to draughts. You can hire a suitable camera for around 50 pounds per day, or borrow one through a tool library or local energy advice scheme.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "FLIR thermography guide for building surveys. BSRIA guide to thermal imaging in buildings (AG2/2014). Energy Saving Trust thermal imaging guidance for householders (2023). Historic England thermal imaging note on solid wall buildings.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "emissivity",
+      "term": "Emissivity",
+      "definition": "A measure of how efficiently a surface radiates thermal energy, on a scale of 0 to 1. Painted plaster and brick have high emissivity (around 0.9) and read accurately on a thermal camera. Shiny metal surfaces have low emissivity and give misleading readings unless the camera's emissivity setting is adjusted."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "When to do the survey" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "You need a temperature difference of at least 10°C between inside and outside. In the UK this means the heating season: November through March. Survey on a day when the heating has been on for at least two hours before you start." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thermal cameras do not see through walls. They read the surface temperature of whatever they are pointed at. Where the surface is cold, either heat is escaping through the material from inside out, or cold air is entering from outside. These two causes look different, which is what makes the tool useful." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to look for from inside the house" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cold patches on internal wall surfaces: these indicate that the wall at that point conducts heat more readily than the surrounding area. Missing cavity fill, a gap in the insulation layer, or a structural cold bridge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cold streaks at skirting boards and floor edges: draughts entering under the floor or through the junction between wall and floor." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cold halo around electrical sockets on external walls: a draughty void behind the back-box. This is one of the most common findings in older houses." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm streaks at ceiling edges: heat rising to the loft through gaps at the wall-plate junction or around ceiling services." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Window frames cold at the corners: the frame is acting as a thermal bridge, more so than the glass itself." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to look for from outside the house" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Outside surveys show heat escaping outward. A warm patch on the outside of an external wall means heat is passing through the wall at that point. Frost patterns on the roof are useful: where frost stays longest on a cold morning, the roof is well insulated. Where frost melts first, heat is escaping through the roof at that point." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Getting accurate readings" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the camera's " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "emissivity" } }], "text": "emissivity" },
+            { "type": "text", "text": " to 0.95 for painted plaster, brick, and tile. Shiny surfaces like aluminium window frames read inaccurately at the default setting." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stand close enough to fill the image with the surface under inspection. Thermal cameras have low resolution; a wall photographed from 6 m away will show very little detail." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not survey on sunny days. Solar gain heats surface temperatures and makes the outside survey useless. Overcast and still is best." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move furniture away from external walls before the internal survey. Heat trapped between furniture and a wall gives a false warm reading." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common findings in UK houses" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft hatch: almost always shows as a warm patch in an otherwise cold ceiling. The hatch cover is rarely well sealed or insulated." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chimney breast: the flue void is a cold column running through the house. Cold air pours down an open flue and the breast radiates cold outward." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Window reveals: the return wall at the side of a window is thinner than the main wall. Cold corners at window reveals are normal but can be reduced with slim insulation boards." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Party wall in a semi-detached house: if the neighbour is away and their heating is off, the party wall will be colder than usual and show up clearly." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do with the results" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Note each finding with its location and the colour temperature. Prioritise by area: a large cold patch covering a whole wall section is worth more attention than a cold corner. Seal draughts first (low cost, immediate saving), then insulate (higher cost, longer payback). A thermal survey before and after an insulation project confirms whether the fix worked." }]
+      }
+    ]
+  }
+}

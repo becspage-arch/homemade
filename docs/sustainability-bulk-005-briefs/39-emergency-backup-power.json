@@ -1,0 +1,85 @@
+{
+  "slug": "emergency-backup-power",
+  "title": "Emergency backup power for the home",
+  "subtitle": "UPS units, power stations, and what they can and cannot run during a grid outage",
+  "excerpt": "Grid power cuts in the UK last an average of 47 minutes. Most households have nothing to keep critical devices running during an outage. A portable battery power station can run a phone charger, router, and LED lighting for 8 to 24 hours. A UPS keeps a router or computer running for 30 to 60 minutes. Neither can run an electric hob, kettle, or immersion heater for more than a few minutes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem guaranteed standards of performance for electricity distribution (2023). NICEIC guidance on emergency lighting and backup power. EcoFlow, Jackery, and Bluetti product specifications (2024). BEIS household energy use during winter power outages (2022).",
+  "approximateCostGbp": 200,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "ups",
+      "term": "UPS",
+      "definition": "Uninterruptible Power Supply. A device that contains a battery and an inverter. When mains power cuts, the UPS switches to battery instantly, with no interruption. Typically provides 10 to 60 minutes of power at the rated load. Used primarily for computers, routers, and medical equipment where even a brief interruption is disruptive."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "What you need during a power cut depends on how long the cut is likely to last. For the typical 47-minute UK outage, you need to keep communications working (phone, router) and have some light. For a longer outage in winter (storm damage, 4 to 12 hours), you also need heat or the ability to boil water and cook." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What can and cannot run on battery" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Phone charger (10 to 20 W): runs for days on any power station above 100 Wh." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wi-Fi router (5 to 15 W): runs for hours on a small UPS or power station." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "LED lighting (5 to 10 W per bulb): a 500 Wh power station runs 10 LED bulbs for 5 hours." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Laptop (30 to 100 W): runs for 5 to 15 hours on a 500 Wh station." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Kettle (2,000 to 3,000 W): runs for 6 to 10 minutes on a 500 Wh station. Feasible for one cup." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Electric hob, immersion heater, hair dryer, electric shower (3,000 to 10,000 W): not practical on battery." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ups" } }], "text": "UPS" },
+        { "type": "text", "text": " vs a portable power station" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UPS (300 to 600 VA, 50 to 150 pounds): best for router and computer. Provides instant switchover (no disruption). Limited runtime (15 to 45 minutes at 100 W). Not portable." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Portable power station (500 to 1,500 Wh, 150 to 500 pounds): handles a wider range of devices. Runtime from 4 to 20 hours depending on load. Has a built-in inverter for standard 240V devices. Not instant-switch: a brief gap when connected loads restart. Can be recharged by solar panel." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Longer outages and gas heating" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A gas boiler requires mains electricity to run the pump and controls (typically 150 to 250 W). A 500 Wh power station can keep a gas boiler running for 2 to 3 hours. Plug the boiler into the power station using a standard socket. This is the single most cost-effective use of a backup battery in a gas-heated home in winter." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gas camping stove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For cooking during outages, a camping gas stove (butane or propane) is the simplest and cheapest option. A 500 g butane cartridge boils 5 litres of water. Keep one cartridge per household member per day as a minimum emergency reserve. Store in a well-ventilated space away from heat sources." }]
+      }
+    ]
+  }
+}

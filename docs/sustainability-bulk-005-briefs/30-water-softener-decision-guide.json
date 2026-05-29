@@ -1,0 +1,89 @@
+{
+  "slug": "water-softener-decision-guide",
+  "title": "Deciding whether a water softener is worth it",
+  "subtitle": "Hard water, limescale, and when the running costs make sense",
+  "excerpt": "Hard water contains dissolved calcium and magnesium. These deposit as limescale on heating elements, in kettles, and inside boilers. In very hard water areas, limescale reduces boiler efficiency by 12 to 15 percent over time. A water softener removes the hardness minerals by ion exchange. The unit costs 400 to 900 pounds and uses salt and a small amount of water for regeneration. The question is whether the fuel saving and appliance life extension outweigh those costs.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAS guidance on water softeners (2023). British Water Council softener performance data. Energy Saving Trust guidance on scale and heating efficiency. Water Hardness Map (Hydrolab, 2024). Which? water softener guide (2023).",
+  "approximateCostGbp": 600,
+  "paybackYears": 8,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "water-hardness-measurement",
+      "term": "Water hardness",
+      "definition": "The concentration of dissolved calcium and magnesium in water, measured in milligrams per litre (mg/L) as calcium carbonate or in Clark degrees. Soft water is below 100 mg/L. Hard water is 150 to 300 mg/L. Very hard water exceeds 300 mg/L. UK hard water areas include London, the South East, East Anglia, and parts of the Midlands."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whether a water softener is cost-effective depends almost entirely on how hard your water is. Soft water areas (Scotland, Wales, northern England) have no case for a softener. Very hard water areas (London, Kent, Hampshire, Lincolnshire) have a clear case where boiler and appliance efficiency is a concern." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to check your water hardness" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Your water company publishes hardness data by postcode. Search for your supplier's water quality report. The figure is given in mg/L as calcium carbonate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A kettle test: a kettle with a 2 mm white deposit after one month of use indicates very hard water." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Water hardness test strips (5 pounds from hardware suppliers) give a reading in 5 minutes." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The case for a softener" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boiler efficiency: 1 mm of limescale on a heat exchanger increases the energy needed to heat water by 7 percent. At 3 mm, the loss is around 25 percent. A gas boiler in a very hard area can build 1 to 2 mm of scale per year. A softener stops this." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Appliance life: a washing machine heating element in very hard water may need replacement every 5 to 7 years; in soft water, 12 to 15 years." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skin and hair: soft water uses less soap and shampoo to lather. Some people with eczema see improvement." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The case against" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Salt running costs: about 60 to 100 pounds per year in salt. Plus small water waste for regeneration: 25 to 50 litres every 3 to 7 days." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sodium in drinking water: a softener adds sodium to the treated water. A separate unsoftened supply for drinking is required." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Moderate hardness (150 to 200 mg/L): the saving is smaller and the payback period stretches beyond 10 years." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A household in London (" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-hardness-measurement" } }], "text": "water hardness" },
+          { "type": "text", "text": " 300 mg/L) heating 180 litres of hot water per day at 6p/kWh. Scale builds at 1.5 mm per year on the boiler. At year 3, efficiency loss is around 15 percent. Annual extra gas cost: roughly 80 pounds. Softener cost: 600 pounds installed. Salt: 80 pounds/year. Payback period against boiler efficiency alone: approximately 8 years, not counting appliance replacement savings." }
+        ]
+      }
+    ]
+  }
+}

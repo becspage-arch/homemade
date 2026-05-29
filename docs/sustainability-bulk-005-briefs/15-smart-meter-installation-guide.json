@@ -1,0 +1,98 @@
+{
+  "slug": "smart-meter-installation-guide",
+  "title": "Getting a smart meter installed and using the data",
+  "subtitle": "What smart meters do, how to request one, and what to do with the readings",
+  "excerpt": "A smart meter sends electricity and gas readings to your supplier automatically. You no longer submit manual reads. The in-home display shows how much energy you are using in real time, in pounds and pence. Most UK suppliers install smart meters for free on request. The data becomes useful when you use it to find and cut baseload consumption.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS Smart Meters Great Britain rollout progress report (2024). SMETS2 technical specification summary. Energy UK guidance for consumers on smart meter installation. Smart Energy GB consumer guide. Ofgem guidance on smart meter obligations and consumer rights.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "smets2",
+      "term": "SMETS2",
+      "definition": "Second-generation smart metering equipment specification. SMETS2 meters communicate via the national Data Communications Company (DCC) network and remain functional when you switch suppliers, unlike the older SMETS1 meters which sometimes reverted to dumb operation after a switch."
+    },
+    {
+      "slug": "ihd",
+      "term": "IHD",
+      "definition": "In-home display. The small screen unit installed alongside a smart meter that shows real-time energy usage, cost, and carbon intensity. The IHD communicates with the smart meter by a short-range wireless link and does not need to be wired."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smart meters are free to request from your energy supplier. All UK energy suppliers are required to offer them. The meter replaces your existing gas and electricity meters. The installation takes one to two hours and is carried out by the supplier's engineer. You cannot install a smart meter yourself." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to request one" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Log into your supplier's account portal and look for 'book a smart meter' or 'upgrade meter'. Most suppliers now offer online booking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ask for a " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smets2" } }], "text": "SMETS2" },
+            { "type": "text", "text": " meter specifically. SMETS1 meters (installed before 2019) sometimes stop sending data after a supplier switch. Most new installations are SMETS2 by default now." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You will be asked to be present during installation. The electricity supply is off for about 20 minutes during the swap. The gas supply may need to be off briefly." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What changes after installation" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No more estimated bills. Readings are sent automatically, usually every 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ihd" } }], "text": "IHD" },
+            { "type": "text", "text": " is provided and paired to the meter. It shows live usage, daily spend, and a traffic-light indicator." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Your supplier may offer half-hourly data downloads through their app, showing usage in 30-minute slots." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do with the data" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Find your baseload: check the IHD or app at 3 am when nothing is running. The reading at that time is your standby consumption. A typical UK house should be below 200 W. Above 500 W points to something left on or a fault." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify appliance loads: switch appliances off one by one and watch the IHD. Each appliance's draw becomes visible. Electric showers (8 to 10 kW), immersion heaters (3 kW), and electric ovens (2 to 3 kW) show up clearly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Time flexible loads: use half-hourly data to see when your household uses most electricity. Shifting the dishwasher or washing machine to off-peak hours saves money on time-of-use tariffs." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Data sharing and privacy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Your supplier has a legal right to read meter data. You can request that your 30-minute data is held back to daily summary only. This reduces the resolution of billing but also limits what can be inferred about your daily routine from usage patterns. Set this preference in your account settings if privacy is a concern." }]
+      }
+    ]
+  }
+}

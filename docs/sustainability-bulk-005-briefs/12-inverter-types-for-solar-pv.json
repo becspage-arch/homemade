@@ -1,0 +1,109 @@
+{
+  "slug": "inverter-types-for-solar-pv",
+  "title": "String inverters, microinverters, and power optimisers",
+  "subtitle": "Which inverter architecture is right for a UK rooftop solar array",
+  "excerpt": "Solar panels produce DC electricity. An inverter converts it to AC for household use. The three architectures are string inverters (one central unit), microinverters (one per panel), and string inverters with power optimisers (a hybrid). For a simple unshaded south-facing roof, a string inverter is the standard choice. For a complex roof with shading or multiple orientations, the other approaches recover more output.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar Energy UK technology guide (2024). MCS Solar PV Systems design and installation guidance. Fronius, SolarEdge, and Enphase product documentation. BRE report on solar PV performance in UK conditions (2022).",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mppt",
+      "term": "MPPT",
+      "definition": "Maximum power point tracking. An algorithm in an inverter that continuously adjusts the electrical load to extract the maximum available power from a solar panel or string of panels. A string inverter has one or two MPPT inputs. A microinverter or power optimiser has one MPPT per panel."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The inverter choice affects how well the system handles shading, fault diagnosis, and expansion. It also affects cost and maintenance over the system's 20-year life. The choice is normally made at install time. Understanding the options helps when commissioning a new system or assessing why an existing system underperforms." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "String inverter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Panels are wired in series strings, and all strings feed one central inverter. The inverter has one or two " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mppt" } }], "text": "MPPT" },
+          { "type": "text", "text": " inputs. The system is simple, relatively cheap (500 to 1,000 pounds for a household-scale unit), and easy to maintain. One inverter to replace if it fails. The downside: if one panel is shaded, hot, or faulty, the whole string output drops to match the weakest panel." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best for: a clean, unshaded roof with all panels facing the same direction at the same pitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Typical cost uplift: baseline." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lifespan: 10 to 15 years before replacement." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Power optimisers with a string inverter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A power optimiser fitted to each panel allows per-panel MPPT. Each panel operates at its own maximum output regardless of its neighbours. A string inverter still handles the DC-to-AC conversion. Shading one panel does not reduce the whole string. Monitoring shows per-panel performance. Cost: 50 to 80 pounds per panel extra on top of the inverter cost." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best for: roofs with some shading, multiple orientations on one system, or long strings where mismatch between panels matters." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Typical output recovery vs unoptimised: 5 to 25 percent, depending on shading." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Microinverters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Each panel has its own small inverter mounted on the back. Each panel produces AC independently. There is no central inverter. Microinverters eliminate single-point failure: one panel failing does not affect others. The monitoring is per-panel. Cost: 100 to 180 pounds per panel vs 50 to 80 pounds for an optimiser." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best for: complex roofs, long cable runs, and systems that need per-panel output data." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Downside: more components on the roof. If a microinverter fails, it requires access to the panel on the roof to replace it." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: shaded east-west split roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 1960s semi in Reading has panels on both east and west-facing slopes, plus a chimney that shades two panels on the west side for two hours each morning. With a string inverter and no optimisers, the shaded panels pull the whole west string down during those hours. Adding optimisers to the west string recovers around 15 percent of the morning output on the west side, worth approximately 150 to 200 kWh per year, or around 40 to 55 pounds at current electricity prices." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the installer must provide" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Any MCS-certified installation must include monitoring of the total system output. Request per-panel monitoring if optimisers or microinverters are being fitted, as this is the main reason to pay the premium. Confirm the inverter or optimiser brand before signing the contract: replacement parts should be available in the UK for at least 10 years." }]
+      }
+    ]
+  }
+}

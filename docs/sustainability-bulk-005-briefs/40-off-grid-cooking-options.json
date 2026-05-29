@@ -1,0 +1,97 @@
+{
+  "slug": "off-grid-cooking-options",
+  "title": "Cooking off-grid: fuels, stoves, and what each costs to run",
+  "subtitle": "Wood stoves, gas, and solar cooking compared by fuel cost and practicality",
+  "excerpt": "Cooking off-grid means choosing a fuel and a stove that do not depend on the mains electricity or gas grid. The main options are bottled LPG, wood or biomass, and solar cooking. Each has different fuel costs, infrastructure needs, and seasonal constraints. For most UK off-grid settings, LPG handles daily cooking reliably; wood handles heating and slow cooking; solar is a summer supplement only.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust off-grid energy guide (2023). BRE report on LPG efficiency in domestic cooking. Practical Action Technical Brief on solar cooking. Ofgem guidance on off-grid energy supply. The Wood Heat Organisation guidance on cooking stoves.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "lpg",
+      "term": "LPG",
+      "definition": "Liquefied petroleum gas. A mixture of propane and butane supplied in pressurised cylinders or bulk tanks. Used for cooking, heating, and hot water in properties not connected to the mains gas network. Propane operates in colder temperatures (down to minus 40°C); butane becomes unreliable below 0°C."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An average UK household uses about 180 kWh per year for cooking. Gas cooking runs at around 6p/kWh for grid gas. Off-grid cooking fuels cost more per unit of heat. Bottled " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lpg" } }], "text": "LPG" },
+          { "type": "text", "text": " costs 7 to 12p/kWh depending on bulk vs cylinder supply. Wood is cheaper but requires storage, processing, and a suitable stove." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "LPG hob and oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "LPG is the closest equivalent to grid gas. The same hob fittings are used; the cylinder regulator and a flexible hose connect the cylinder. A standard 47 kg propane cylinder lasts 4 to 8 months for cooking only in a two-person household. A small outdoor cylinder bank (two 47 kg cylinders with an automatic changeover regulator) removes the risk of running out mid-cook." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pros: cooks the same as grid gas, widely available, and works all year." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cons: cylinder handling and storage, CO risk from indoor use without ventilation, slightly higher fuel cost than grid gas." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Safety: LPG must not be stored in a cellar or basement (it is denser than air and pools in low spaces). External cylinder storage in a ventilated cage is standard." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wood-burning range cooker" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A range cooker burning seasoned hardwood can handle all cooking and provides space and water heating simultaneously. The stove must be designed for cooking (a hotplate temperature of 200 to 250°C). Fuel cost is 1 to 3p/kWh for self-sourced or bought seasoned hardwood. The learning curve is significant: oven temperature control requires practice and takes 30 to 60 minutes to reach baking temperature." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pros: low fuel cost, heating and cooking combined, independence from supply chains." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cons: slow to start, needs a chimney and fuel storage, and must meet Ecodesign 2022 air quality rules." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Solar cooking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A parabolic solar cooker reaches 150 to 250°C in direct summer sun. In the UK, it works reliably from May to September on clear days. A solar box cooker (slow-cooker equivalent) reaches 90 to 130°C and can cook stews, grains, and beans in 2 to 4 hours. It cannot boil water quickly or fry food." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Practical use in the UK: a solar box cooker is a summer supplement, cutting summer gas use by 30 to 50 percent on sunny days. It is not a year-round replacement." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 50 cm parabolic reflector cooker from a specialist supplier costs 80 to 150 pounds and lasts 10 to 15 years with basic maintenance." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What most off-grid kitchens use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most UK off-grid kitchens combine LPG for daily cooking and hot water with a wood stove for winter heating. Solar cooking adds a summer supplement where there is outdoor space. The LPG provision is the baseline: it handles everything reliably. Wood and solar reduce fuel consumption and cost where conditions allow." }]
+      }
+    ]
+  }
+}

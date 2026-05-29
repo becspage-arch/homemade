@@ -1,0 +1,118 @@
+{
+  "slug": "foam-sealing-service-penetrations",
+  "title": "Sealing service pipe and cable penetrations",
+  "subtitle": "Closing draught paths where pipes, cables, and ducts pass through walls and floors",
+  "excerpt": "Every pipe, cable, or duct that passes through an external wall, floor, or ceiling is a potential draught path. Individually, each gap is small. Together, they can equal the draught area of an open window. Expanding foam and fire-rated sealant close most of these gaps in a day, with materials costing under 15 pounds.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust draught-proofing guide (2024). AIRTIGHTNESS.co.uk guidance on service penetrations. LABC technical note on fire-stopping of service penetrations. Building Regulations Approved Document B guidance on fire-rated sealants.",
+  "approximateCostGbp": 15,
+  "paybackYears": 2,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "silicone-sealant-gun", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fire-rated-sealant",
+      "term": "Fire-rated sealant",
+      "definition": "An expanding foam or silicone product tested to resist the passage of fire and smoke through a sealed gap for a minimum period (typically 30, 60, or 120 minutes). Required by Building Regulations Part B for any penetration through a fire-separating floor, ceiling, or wall. Standard grey or yellow expanding foam is not fire-rated and must not be used in these locations."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Houses accumulate service penetrations over decades. Gas pipe through the wall at the boiler. Soil pipe through the ceiling. Ethernet cable into the loft. Kitchen extract duct. Each gap around the service is small. A 10 mm annular gap around a 22 mm pipe is about 500 mm² of air path. In a typical house there are 20 to 40 such gaps. Sealing them is among the cheapest draught-reduction measures available." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Fire separation walls and floors" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Any penetration through a floor that separates floors of a dwelling, or through a wall between a house and an attached garage, must be sealed with a " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fire-rated-sealant" } }], "text": "fire-rated sealant" },
+            { "type": "text", "text": ". Standard expanding foam is not acceptable here. Fire-rated expanding foam and fire-rated silicone are both available from builders' merchants." }
+          ] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to look" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Under the kitchen sink: waste pipe and water supply pipes through the cabinet back wall to the exterior." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Behind the boiler: gas supply, flue, condensate pipe, and flow/return pipes all pass through walls." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Understairs cupboard: the floor of this void often has gaps to the ground floor void or external walls." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ceiling where central heating pipes or soil pipes pass through to the floor above." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External wall at the TV aerial or satellite cable entry point." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loft: where hot water pipes, cables, and soil vents pass through the ceiling into the loft space." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the right product" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Expanding foam: best for gaps wider than 5 mm around rigid pipes. Cut back flush when cured. Do not use on flexible pipes that move with thermal expansion, as the foam will crack." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Silicone sealant: use for small gaps (under 5 mm) and for pipes that move. Silicone stays flexible after cure. A paintable grade is useful if the finish matters." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pipe collars: a pre-formed rubber collar fits around a pipe at the wall surface. Useful for a clean finish in visible locations. Seals the gap without filler." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to seal" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean the area around the penetration. Remove dust, grease, and loose plaster." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For large gaps, pack loosely with mineral wool before applying foam. Foam alone can shrink in a deep gap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply foam or sealant around the full perimeter of the pipe or cable. Work slowly to avoid air bubbles." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow to cure fully (expanding foam typically takes 2 hours to firm, 24 hours to cure hard). Do not disturb until cured." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim foam flush with a utility knife. Apply a thin fillet of paintable sealant over the foam edge for a tidy finish if the location is visible." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "No gap is visible around any pipe or cable at external walls, floors, or ceilings. On a cold day, no cold air can be felt by hand around the sealed penetrations. A smoke pencil held near the gap shows no movement." }]
+      }
+    ]
+  }
+}

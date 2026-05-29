@@ -1,0 +1,95 @@
+{
+  "slug": "solar-panel-cleaning-and-maintenance",
+  "title": "Cleaning and maintaining solar panels",
+  "subtitle": "What reduces output, when to clean, and what to check each year",
+  "excerpt": "A clean solar panel in good condition produces roughly 3 to 5 percent more electricity than the same panel covered in dust and bird droppings. Most panels need cleaning once per year in the UK. The annual check also catches loose connections, cracked glass, and shading from new tree growth before they cause larger losses.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar Energy UK guidance on solar PV maintenance (2024). MCS Contractor Guidance on installation and maintenance. SEUK data on soiling losses in UK conditions. PVsell performance monitoring notes. Which? solar panel cleaning guide (2023).",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "soiling-loss",
+      "term": "Soiling loss",
+      "definition": "The reduction in solar panel output caused by dust, bird droppings, pollen, and other matter on the panel surface. In the UK, soiling losses are typically 2 to 5 percent per year. A heavily soiled panel can lose 10 to 20 percent. Rain clears most dust; bird droppings require manual cleaning."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "UK panels are partly self-cleaning. Rain removes fine dust from the tilted surface. The main residue that builds up over time is bird droppings, pollen, and the dark streak that appears below the panel frame where water ponds. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soiling-loss" } }], "text": "Soiling losses" },
+          { "type": "text", "text": " in the UK average 2 to 4 percent per year. That is worth cleaning if you have a monitoring system and can see the drop." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to clean" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once per year in spring, before the high-output summer months. Clean after the main pollen season ends (late May to June)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After a period of heavy bird activity (gutters near a flat area, trees overhanging the roof)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When monitoring shows output is below the expected level for the season, consistently." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to clean safely" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Roof safety" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Do not walk on solar panels. Do not clean from a ladder on a sloped roof without a harness. Most householder cleaning is done from the ground using a hose and a soft-bristle brush on an extension pole. If your panels are on a steep or high roof, hire a professional window cleaner with roof access experience." }] }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean early in the morning before the panels heat up. Hot glass can crack if hit with cold water." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use water only or a mild soapy solution. Do not use abrasive cloths, pressure washers, or household detergents. These scratch the glass or degrade the anti-reflective coating." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work from the top down. Rinse with clean water to remove soap residue. Soap left on the surface can streak and attract more dirt." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual check" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the ground using binoculars: look for cracked glass, dark patches (hot spots), and any panel that looks different from the others." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the inverter display or monitoring app for any error codes. A single panel underperforming consistently points to shading (check for new growth), a faulty cell, or a connection issue." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check for shading: trees grow 30 to 60 cm per year. A tree that did not shade the panels when installed may shade them now. Any shading on part of the string reduces the output of every panel in that string." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check roof fixings at the panel edges from the ground. Any panel that has moved or shows gaps at the mounting rail should be inspected by an installer." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Performance benchmarking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A 4 kWp south-facing array at 30° pitch in the UK should generate approximately 3,400 to 3,800 kWh per year. Keep a record of each year's total generation. If generation falls by more than 2 percent in a year (accounting for weather variation), investigate. Panel degradation averages 0.3 to 0.5 percent per year. A 10-year-old array should be producing around 95 to 97 percent of its original output." }]
+      }
+    ]
+  }
+}

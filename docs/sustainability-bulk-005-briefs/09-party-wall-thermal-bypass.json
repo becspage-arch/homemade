@@ -1,0 +1,98 @@
+{
+  "slug": "party-wall-thermal-bypass",
+  "title": "Heat loss through party walls and what to do about it",
+  "subtitle": "Understanding thermal bypass and when insulating a shared wall is worth it",
+  "excerpt": "In a semi-detached or terraced house, the party wall is shared with a neighbour. If the neighbour heats their home, the party wall loses little heat. If the neighbour's property is cold or empty, the party wall can be a significant heat-loss path. Internal insulation on the party wall is possible but rarely cost-effective when the neighbour is present and heated.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Report 262 on thermal insulation and wall construction. CIBSE Guide A environmental design (Section 3 on heat loss calculations). UCL Energy Institute study on party wall heat loss in UK terraced housing (2021). Historic England guidance on thermal improvements to traditional buildings.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bypass-party",
+      "term": "Thermal bypass",
+      "definition": "Heat flow that bypasses insulation through air movement within or around the insulation layer. In party walls, air can move through the masonry cavity or wall ties from the warm side to the cold side, reducing the effective insulation value significantly."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A party wall between two heated properties loses very little heat. Both sides are warm and there is almost no temperature difference to drive heat flow. The party wall only becomes a heat-loss route if the neighbour is absent, their heating is set very low, or the property next door is empty for a long period." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When party walls matter" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "End-of-terrace properties: the gable wall is an external wall, not a party wall. It should be treated as any other external wall. This is often confused with party wall heat loss." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Neighbour's property unoccupied for months: the party wall becomes an external wall in practice. A 9-inch (230 mm) brick party wall has a U-value of around 1.5 W/m²K. For a 5 x 8 m two-storey party wall at 10°C temperature difference, the heat loss is around 600 W." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top-floor flat with an unheated floor above: the ceiling of the top floor loses heat upward if the space above is cold. This is more of a floor-ceiling insulation issue than a party wall issue but follows the same principle." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thermal bypass in party walls" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Some party walls have a small air cavity. Air in this cavity can circulate by convection, carrying heat from the warm side to the cold side and bypassing the insulating effect of the masonry. This " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bypass-party" } }], "text": "thermal bypass" },
+          { "type": "text", "text": " is most significant in timber-frame construction where a service void sits against the party wall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Should you insulate the party wall?" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In most cases where both properties are occupied and heated, insulating the party wall is not cost-effective. The heat loss is small and the payback period is very long. Internal dry-lining with 50 mm PIR would cost 1,500 to 3,000 pounds per party wall and save around 20 to 50 pounds per year in a typical scenario. Payback exceeds 30 years." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The picture changes if the next property is a cold commercial unit, if the neighbour heats below 14°C, or if the property sits empty for long stretches." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do instead" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Prioritise external walls, loft, and floor insulation first. These have far better payback in a typical occupied terrace." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the next property will be empty for a long time, model the heat loss and decide then." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If you are already dry-lining cold external walls, adding the party wall at the same time cuts disruption." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning and party wall agreements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Insulating your own side of the party wall (internal insulation only, not penetrating the wall) does not require a party wall agreement under the Party Wall etc Act 1996. You are working entirely on your own property. You should still notify the neighbour as a courtesy if the work involves noise or access." }]
+      }
+    ]
+  }
+}

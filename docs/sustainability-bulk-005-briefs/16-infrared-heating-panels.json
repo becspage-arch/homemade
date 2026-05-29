@@ -1,0 +1,88 @@
+{
+  "slug": "infrared-heating-panels",
+  "title": "Infrared heating panels: when they make sense and when they don't",
+  "subtitle": "What infrared heating actually does and how to compare it to other electric options",
+  "excerpt": "Infrared panels heat surfaces and people directly rather than heating the air in a room. They are marketed heavily as efficient and low-cost. The efficiency claim is accurate: they convert electricity to heat with near 100 percent efficiency. The low-cost claim is not always accurate: running cost depends on electricity price and how long the panel runs, the same as any electric heater.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE report on electric heating in UK homes (2022). Energy Saving Trust guide to electric heating options. BEAMA guidance on radiant vs convective heating. Ofgem consumer guide to heating running costs. Which? infrared panel guide (2024).",
+  "approximateCostGbp": 300,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "radiant-heat",
+      "term": "Radiant heat",
+      "definition": "Heat transferred by electromagnetic radiation (infrared) directly from a warm surface to objects and people in its line of sight. Unlike convective heat, radiant heat does not warm the air between the source and the recipient. It feels warm immediately when you face the panel and cool as soon as you step out of the beam."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "All electric heaters convert electricity to heat at the same efficiency: 1 kWh of electricity produces 1 kWh of heat. An infrared panel, a storage heater, a convector, and a fan heater all do this. The difference is how the heat is delivered, not how efficiently it is produced. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "radiant-heat" } }], "text": "Radiant heat" },
+          { "type": "text", "text": " from an infrared panel warms surfaces and the people in its path. The air stays cooler. This feels warmer at a given air temperature, which means some people turn the thermostat down slightly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where infrared panels work well" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outdoor or semi-outdoor spaces: a patio heater, a covered workshop, a garage workshop. Convective heating these spaces is wasteful because the warm air escapes. Infrared heats the person sitting under it directly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rooms used briefly and occasionally: a bathroom used for 20 minutes twice a day. Heating the air to 21°C and then losing it for 22 hours is wasteful. An infrared panel above the bath or shower rail warms the occupant without the room needing to be warm first." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top-up heat in warm rooms: running a panel for an hour is cheaper than raising the main thermostat." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where infrared panels do not save money" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "As a replacement for gas central heating in a draughty house: you are still running on electricity at 27p/kWh vs gas at 6p/kWh. The running cost will be four to five times higher for the same heat output." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the claim is about efficiency: all direct electric heaters are 100 percent efficient. An infrared panel is no more efficient than a fan heater at converting electricity to room heat." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Running cost comparison" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 750 W infrared panel running 4 hours per day for 180 days: 540 kWh per year, at 27p/kWh = 146 pounds per year." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The same 540 kWh at night-rate electricity (15p/kWh on some tariffs): 81 pounds per year. Timed to run off-peak, the cost drops significantly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A heat pump producing 2.5 kWh of heat per 1 kWh electricity would cost 58 pounds per year for the same 540 kWh of heat output." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ceiling-mounted panels give the widest coverage and keep the floor clear. Wall-mounted panels should face the area where people sit, not a doorway or window. Any panel above 2 kW should be hardwired on a dedicated circuit by a registered electrician (Part P). Panels below 2 kW can be plugged into a standard 13 A socket." }]
+      }
+    ]
+  }
+}
