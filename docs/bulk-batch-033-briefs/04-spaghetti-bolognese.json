@@ -1,0 +1,247 @@
+{
+  "slug": "spaghetti-bolognese",
+  "title": "Spaghetti bolognese",
+  "subtitle": "The British home version with beef mince and a slow-cooked tomato sauce",
+  "excerpt": "This is the version most British households grew up with: beef mince, tinned tomatoes, onion, and a long simmer. It is not quite Italian ragù bolognese, but it is deeply satisfying, freezes well, and feeds a table of four with ease.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British home version of the Italian ragù tradition. The dish as made in British households since the 1970s differs significantly from the Bolognese taught at the Accademia Italiana della Cucina. This recipe reflects the British home interpretation, not the Emilian original.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The sauce (without pasta) freezes well in portions for up to 3 months. Defrost in the fridge overnight and reheat in a pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Make a double batch and freeze half. The sauce improves with a longer cook; allow 1.5 to 2 hours if making a large pot.",
+    "makeAheadNotes": "The sauce is better made the day before and reheated. Cook the pasta fresh to order.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sweating",
+      "term": "Sweating",
+      "definition": "Cooking vegetables over a low heat in fat so they soften without browning, releasing their moisture and sweetness into the pan."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti bolognese, the British way, is beef mince cooked down with onion, tinned tomatoes, and herbs until the sauce is thick and red. It is not the classic Italian ragù, which uses much less tomato and a far longer cook, but it has become one of the most-cooked midweek meals in British homes."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two things that make the most difference are getting a good colour on the mince before adding liquid, and giving the sauce time to reduce properly. A watery bolognese means the cook was impatient."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "1 tin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pasta-dried", "amount": 350, "unit": "g", "prepNote": "spaghetti", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "grated, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "g", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the vegetables" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the oil in a wide, deep saucepan over a medium heat. Add the onion, carrot, and celery and cook, ",
+                    "marks": []
+                  },
+                  { "type": "text", "text": "sweating",
+                    "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "sweating"}}]
+                  },
+                  { "type": "text", "text": " them for 8 to 10 minutes until soft and lightly golden. Add the garlic and cook for 1 minute more." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the mince and build the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Raise the heat to high. Add the beef mince and break it up with a wooden spoon. Cook without stirring too often so it browns rather than steams, about 5 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the tomato puree and stir for 1 minute. Pour in the tinned tomatoes and crush them with the spoon. Add the stock, oregano, and bay leaves. Season with salt and pepper." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Reduce the heat to low and simmer, partially covered, for 45 minutes to 1 hour, stirring occasionally, until the sauce is thick and dark. Remove the bay leaves." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring a large pot of well-salted water to the boil. Cook the spaghetti until just tender, following the packet instructions. Reserve a mug of the cooking water before draining." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Drain the pasta and add it directly to the sauce. Toss to coat, adding a splash of pasta water if the sauce looks too thick. Serve with grated parmesan." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is watery",
+              "cause": "The mince released a lot of moisture and the sauce didn't reduce enough.",
+              "fix": "Remove the lid completely and simmer at a higher heat for 15 to 20 minutes, stirring often, until the sauce is thick. Only add pasta once the sauce is right."
+            },
+            {
+              "symptom": "The mince is grey, not brown",
+              "cause": "Too much mince was added to the pan at once, or the heat was too low.",
+              "fix": "Cook in smaller batches over a higher heat next time. Once it's in the sauce and simmered for an hour, the colour matters less to the final taste."
+            },
+            {
+              "symptom": "The sauce tastes acidic",
+              "cause": "The tinned tomatoes were not cooked long enough to sweeten.",
+              "fix": "Continue simmering. A pinch of sugar can help in an emergency, but more time is the reliable fix."
+            },
+            {
+              "symptom": "The pasta is clumped together",
+              "cause": "The pasta was drained and left to sit before being added to the sauce.",
+              "fix": "Add pasta to sauce as soon as it is drained. Reserve pasta water to loosen if needed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti bolognese arrived in British homes during the 1960s and 1970s. It was not quite Italian food. British bolognese used tinned tomatoes and a simple mince sauce, and it suited the national preference for food that was filling and easy to make. In most British households it became the dish children asked for most."
+          }
+        ]
+      }
+    ]
+  }
+}
