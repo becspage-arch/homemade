@@ -1,0 +1,145 @@
+{
+  "slug": "sewn-album-with-stub-pages",
+  "title": "Sewn album with stub pages",
+  "subtitle": "A stab-sewn album structure where folded stub strips allow the pages to lie flat when photographs or thick items are mounted",
+  "excerpt": "A stub-bound album compensates for the swell added by mounted photographs by inserting a folded paper stub between each page. The stub stack equals the total mount thickness, so the sewn spine remains the same width open as closed. The album lies flat without pages doming or the spine splaying.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on album and guard-book structures. Internet Archive: https://archive.org/details/bookbindingandca00cock. The stub structure is documented as the standard solution for photograph albums and scrapbooks where mounted items add significant spine swell.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-mull", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "stub", "term": "Stub", "definition": "A narrow folded paper strip inserted between pages in an album. Each stub occupies the same thickness as the mount or photograph it compensates for, keeping the spine swell even." },
+    { "slug": "spine-swell", "term": "Spine swell", "definition": "The increased thickness of a sewn text block spine compared to the foredge. In a blank text block it comes from the thread; in an album it comes from thread plus mounts. Excessive swell prevents the book from closing flat." },
+    { "slug": "foredge", "term": "Foredge", "definition": "The outer edge of a book's pages, opposite the spine." }
+  ],
+  "techniqueSlugs": ["sewn-album-with-stub-pages"],
+  "criticalTechniques": ["sewn-album-with-stub-pages"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When photographs are mounted in an album, their combined thickness pushes the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }], "text": "foredge" },
+          { "type": "text", "text": " outward until the spine cannot close. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stub" } }], "text": "stub" },
+          { "type": "text", "text": " between each page compensates for that swell before it arrives. Fold a strip of paper the same thickness as each planned mount and insert it into the spine fold of each page leaf. The resulting " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spine-swell" } }], "text": "spine swell" },
+          { "type": "text", "text": " at sewing matches the foredge swell when the album is full. The finished album lies flat empty and flat full." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Book press / nipping press", "slug": "book-press", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm", "slug": "bookbinding-board-2mm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Book mull (super)", "slug": "book-mull", "isOptional": false },
+            { "name": "Paste brush (50 mm flat)", "slug": "paste-brush-bookbinding", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Album pages: 160-220 gsm cartridge, grain parallel to spine. Cut strips of the same card or a slightly lighter weight (120 gsm) for the stubs, each 15 mm wide × page height. Cover boards: 2 mm binders board." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating and making the stubs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the expected mount thickness: stack a sample photograph and its mounting card. Cut stub paper to equal that thickness. Each page leaf will have one stub folded around its spine edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold each stub strip in half lengthwise with the bone folder. The folded stub wraps around the spine fold of each page, sitting inside the fold like a narrow additional leaf." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gather each page leaf with its stub nested inside the fold. Build the block from these paired leaf-and-stub units." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing and casing in" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sew the album using a simple link-stitch or pamphlet-stitch variant. Each page with its stub is treated as one signature unit. After sewing, consolidate the spine with a thin coat of PVA. Apply the book mull. Construct the case from 2 mm boards and cover in book cloth or paper. Case the text block in using the endpapers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The album still domes at the foredge when full of photographs",
+              "cause": "The stub paper is thinner than the mount, so it does not fully compensate for the swell.",
+              "fix": "Weigh a sample mounted page before sewing and match stub thickness exactly. If in doubt, go slightly thicker, a stub 0.1 mm too thick closes the book a little stiffly, while a stub that is too thin still domes."
+            },
+            {
+              "symptom": "The stubs are visible at the page edges",
+              "cause": "The stubs were cut wider than the page spine fold.",
+              "fix": "Trim all stubs to exactly 15 mm. Fold and crease them tightly with the bone folder before inserting; a loose fold bulges at the spine rather than nesting flush."
+            },
+            {
+              "symptom": "The stitching pulls through the pages and stubs at the binding holes",
+              "cause": "The piercing holes are too large or the card too thin for the sewing tension.",
+              "fix": "Use a finer awl and thread for album work. 160 gsm card is the minimum page weight, thinner stock tears at the binding holes under repeated opening."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

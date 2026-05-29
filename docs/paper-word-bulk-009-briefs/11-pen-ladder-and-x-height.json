@@ -1,0 +1,135 @@
+{
+  "slug": "pen-ladder-and-x-height",
+  "title": "Pen ladder and x-height",
+  "subtitle": "Using the nib-width stack to set letter proportions correctly for any broad-edge alphabet",
+  "excerpt": "The pen ladder, a stack of nib-width squares drawn before ruling any guide lines, is the foundational measurement tool in broad-edge calligraphy. The ladder sets the x-height in nib widths, which automatically scales the letter body to the nib in use. A Mitchell No. 3 and a Brause Bandzug produce different-sized letters from the same x-height number; both will look correct.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing & Illuminating & Lettering (1906), chapter on tools and proportions. Internet Archive: https://archive.org/details/writingilluminat00john. Johnston established the nib-width ladder as the primary proportioning system for the Foundational revival.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pen-ladder", "term": "Pen ladder", "definition": "A column of squares, each drawn at 45° and exactly one nib width in height, stacked directly above one another. The total height of the stack gives the x-height for a given alphabet at a given nib size." },
+    { "slug": "x-height", "term": "X-height", "definition": "The height of the main body of a lowercase letter, the distance between baseline and waist line. Named after the letter x, which has no ascender or descender." },
+    { "slug": "nib-width", "term": "Nib width", "definition": "The width of the writing edge of a broad-edge nib, measured perpendicular to the stroke. The basic unit of measurement in broad-edge calligraphy proportioning." }
+  ],
+  "techniqueSlugs": ["pen-ladder-and-x-height", "ruling-guide-lines-for-calligraphy"],
+  "criticalTechniques": ["pen-ladder-and-x-height"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every broad-edge alphabet has a standard " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "x-height" } }], "text": "x-height" },
+          { "type": "text", "text": " expressed in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nib-width" } }], "text": "nib widths" },
+          { "type": "text", "text": ": Foundational is 4½, Italic is 5, Roman capitals are 7, Gothic textura is 4. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pen-ladder" } }], "text": "pen ladder" },
+          { "type": "text", "text": " turns that nib-width count into a millimetre measurement for the nib in hand. Once drawn, rule guide lines from the ladder for a correctly proportioned set of parallel lines." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Sumi ink", "slug": "sumi-ink", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drawing the ladder" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the nib and ink the pen. Hold the pen at 45° to the baseline, the standard Foundational nib angle. Press the nib flat to the paper and draw a single horizontal stroke approximately 5 mm long. This produces a filled square: one nib width tall, one nib width wide." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the pen and place it immediately above the first square, with its bottom edge touching the top edge of the first square. Draw another stroke. Repeat until you have five squares stacked vertically." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The total height of the five-square stack is 5 nib widths. For Foundational lowercase at 4½ nib widths, use four full squares and place the waist line halfway up the fifth." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ruling the guide lines" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the baseline at the bottom of the first ladder square with a pencil tick." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the waist line at the 4½ nib-width point. Mark the cap-height line at 7 nib widths for Roman capitals (rule a separate taller ladder for this)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rule horizontal guide lines at baseline and waist line across the full width of the practice sheet. Add a descender line 3 nib widths below the baseline and an ascender line 4 nib widths above the waist line for a complete guide sheet." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat the whole set of lines at whatever line spacing the piece requires, typically twice the x-height from baseline to baseline." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The ladder squares are different heights from each other",
+              "cause": "The pen angle shifted between squares, if the pen is held at 45° for some and 0° for others, the resulting squares vary in height.",
+              "fix": "Check the pen angle before drawing each square. The nib must sit completely flat against the paper. Set the paper at a slight slope if that helps keep the angle consistent."
+            },
+            {
+              "symptom": "Letters look too short or too tall compared to examples",
+              "cause": "Using the wrong x-height nib-width count for the alphabet.",
+              "fix": "Check the canonical count: Foundational 4½, Italic 5, Gothic textura 4, Uncial 3½. If in doubt, use Johnston's Writing & Illuminating & Lettering as the reference for Foundational proportions."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

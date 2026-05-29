@@ -1,0 +1,164 @@
+{
+  "slug": "tacket-binding",
+  "title": "Tacket binding",
+  "subtitle": "A single-signature binding held with knotted external thread, one of the oldest surviving Western structures",
+  "excerpt": "The tacket uses a looped thread passed through the cover and signature from outside, then knotted at the spine. No sewing frame, no lining, no boards, just paper, thread, and a piercing awl. The structure appears in early medieval manuscripts and survives in conservation practice as the simplest archival binding available.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on historical binding structures. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cyril Davenport, The Book, Its History and Development (1907), Internet Archive. Both authors document the tacket as the earliest surviving Western single-quire binding.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "scissors-craft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "tacket", "term": "Tacket", "definition": "A knotted-loop binding element used in early medieval manuscripts. A thread is passed through holes pierced in the cover and signature from the outside, then the two ends are knotted or looped over the spine to hold the leaves together." },
+    { "slug": "single-signature", "term": "Single signature", "definition": "A booklet made from one folded group of sheets, the simplest possible book structure. A single A4 sheet folded in half produces a four-page A5 signature." },
+    { "slug": "head", "term": "Head", "definition": "The top edge of a book, opposite the tail." }
+  ],
+  "techniqueSlugs": ["tacket-binding"],
+  "criticalTechniques": ["tacket-binding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tacket" } }], "text": "tacket" },
+          { "type": "text", "text": " is a single knotted thread that binds a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "single-signature" } }], "text": "single signature" },
+          { "type": "text", "text": " and its cover together. Medieval scribes used it for small notebooks, account books, and draft manuscripts where a full sewing would be wasteful. The thread enters the cover and the signature from the outside through paired holes, and the two loose ends are knotted or looped at the spine. No frame, no sewing stations cut along a template, no boards, the tacket produces a finished book in minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Craft scissors", "slug": "scissors-craft", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For the book: five to eight folded sheets of 80-120 gsm cartridge paper make a compact notebook. The cover can be the same weight or heavier (180-240 gsm). Fold each sheet precisely with the bone folder and gather them nested together before piercing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the signature" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold each sheet in half along its short axis with the bone folder. Score firmly along the fold, then fold cleanly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nest all folded sheets inside each other to form the signature. Add the cover sheet last, wrapped around the outside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark three piercing points on the spine: one at the centre, and one each at 10 mm from the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "head" } }], "text": "head" },
+              { "type": "text", "text": " and tail. Open the signature out flat on the cutting mat with the spine fold upward. Pierce each marked point from the inside outward." }
+            ] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the tacket" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a length of waxed linen thread approximately six times the spine height. Thread the needle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle through the centre hole from inside the signature outward. Pull all but a 50 mm tail through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle through the head hole from outside inward, then out through the tail hole. Pull the thread snug." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle back through the centre hole from outside inward, so the thread is now inside the signature at the centre hole alongside the starting tail." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tie the working thread and the starting tail together with a square knot at the centre hole. The knot sits inside the signature fold. Trim both ends to 10 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The three-hole tacket above is the simplest form. A five-hole version adds two extra piercing points between head and centre and between centre and tail, producing a more secure book with a longer thread run visible on the outside. For a cover with a decorative exterior, thread a second coloured thread through the outer holes only and tie it in a bow on the spine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The pages shift and the holes do not align",
+              "cause": "The signature was not held firmly during piercing.",
+              "fix": "Clamp the signature with a bulldog clip at the open edge before piercing. Remove the clip once the first hole is through."
+            },
+            {
+              "symptom": "The knot works loose after a few openings",
+              "cause": "A slip knot was used instead of a square knot.",
+              "fix": "Use a square (reef) knot: left over right, then right over left. A correctly tied square knot holds firmly under repeated bending."
+            },
+            {
+              "symptom": "The thread cuts through the paper at the piercing holes",
+              "cause": "The holes are too small or the paper weight is too light for the thread.",
+              "fix": "Use a slightly larger awl, or reduce the thread to a finer 2-cord linen. For very light paper (60 gsm or below), reinforce the spine fold with a strip of Japanese tissue before piercing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

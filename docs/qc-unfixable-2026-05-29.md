@@ -562,3 +562,6 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - managing-a-doe-from-kindle-to-weaning hero-missing — applied: hero-fill-deferred-to-standalone-script
 - managing-feather-pecking-in-a-flock hero-missing — applied: hero-fill-deferred-to-standalone-script
 - sourcing-replacement-stock-after-a-disease-outbreak hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+
+- external-wall-insulation-etics-installation hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- roman-script-families voice-violation,grade-level-strict — applied: 

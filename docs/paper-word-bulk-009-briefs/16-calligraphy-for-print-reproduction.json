@@ -1,0 +1,134 @@
+{
+  "slug": "calligraphy-for-print-reproduction",
+  "title": "Calligraphy for print and reproduction",
+  "subtitle": "Adapting ink, paper, and letterform so calligraphy scans or photographs cleanly for digital use, printing, and publication",
+  "excerpt": "Calligraphy written for reproduction requires different choices from calligraphy written for display. The ink must be opaque black against a white ground; the paper must be smooth enough to hold a clean edge; the letterforms must be slightly bolder than display work to survive the sharpening that digital thresholding applies. This tutorial covers the complete process from writing to a reproduction-ready file.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing & Illuminating & Lettering (1906), chapters on lettering for reproduction. Internet Archive: https://archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "gum-arabic", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "thresholding", "term": "Thresholding", "definition": "A digital image processing step that converts a greyscale scan into a pure black-and-white image by treating all pixels below a certain brightness as black and all above as white. Thin hairlines disappear; blurry edges become jagged." },
+    { "slug": "optical-density", "term": "Optical density", "definition": "The opacity of ink on paper as seen by a scanner or camera. Sumi ink has very high optical density, it reflects almost no light and scans as near-pure black even at fine line weights." }
+  ],
+  "techniqueSlugs": ["calligraphy-for-print-reproduction"],
+  "criticalTechniques": ["calligraphy-for-print-reproduction"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A calligraphic piece written for display and a piece written for reproduction are different objects. The display piece can carry watercolour wash, coloured ink, or textured paper, none of these survive " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thresholding" } }], "text": "thresholding" },
+          { "type": "text", "text": ". For reproduction, use ink with high " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "optical-density" } }], "text": "optical density" },
+          { "type": "text", "text": " on smooth white paper, and write at a size at least 150% of the final printed size so the scan has room to be reduced without losing fine strokes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Sumi ink", "slug": "sumi-ink", "isOptional": false },
+            { "name": "Cartridge paper, 220 gsm", "slug": "cartridge-paper-220", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Gum arabic (to thicken ink for finer hairlines)", "slug": "gum-arabic", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ink and paper choices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sumi ink is the first choice for reproduction: it produces near-pure black at any stroke width. Indian ink (shellac-based) is a close second and produces sharper hairlines but is slightly less consistent on broad edges. Avoid iron-gall ink for reproduction work, it is a warm grey-brown, not black, and scans at lower contrast." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paper: hot-press watercolour paper or 220 gsm smooth cartridge. Both surfaces resist feathering, the ink sits on the surface fibres rather than wicking along them. Cold-press (NOT) paper produces feathered edges that threshold badly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Writing at reproduction size" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Calculate the final print size and multiply by 1.5. If the final piece is 100 mm tall, write at 150 mm. Use a Mitchell No. 2 rather than No. 3 at this larger size to preserve the intended nib-width proportions." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write with slightly more weight, a hair more pressure at the start and end of strokes, to ensure hairlines survive the thresholding step at reduced size." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Let the piece dry for at least thirty minutes before scanning. Scanning over damp ink can smear if the glass makes contact." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scanning and cleaning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scan at 600 dpi minimum. In image software, convert to greyscale, adjust levels to push the white background to 255 and the ink to 0, then convert to bitmap at 50% threshold. The result is a two-colour (pure black and pure white) file suitable for any reproduction process." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Fine hairlines disappear when converted to bitmap",
+              "cause": "The hairlines are below 1 pixel at the output resolution, or the ink density is too low.",
+              "fix": "Scan at higher resolution (1200 dpi for hairline-heavy work) before downsampling. Or write slightly bolder hairlines at the original size."
+            },
+            {
+              "symptom": "The scan shows grey texture in the ink strokes rather than solid black",
+              "cause": "The ink was diluted or the paper absorbed the ink unevenly.",
+              "fix": "Use sumi ink undiluted from the bottle. If the ink is running too thick and clogging the nib, add one small drop of distilled water only."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

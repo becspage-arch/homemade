@@ -1050,3 +1050,46 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 18:31:54
+
+Generated: 2026-05-29T18:31:54.378Z
+
+Processed: 41
+PASS: 39
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 28 |
+| body-missing-method | 7 |
+| historical-century-in-body | 6 |
+| hero-missing | 3 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- external-wall-insulation-etics-installation: hero-missing, grade-level-strict
+- roman-script-families: voice-violation, grade-level-strict
+
+---
+
+## Run at 18:36:12
+
+Generated: 2026-05-29T18:36:12.546Z
+
+Processed: 39
+PASS: 39
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

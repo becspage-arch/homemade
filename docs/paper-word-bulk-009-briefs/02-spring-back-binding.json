@@ -1,0 +1,185 @@
+{
+  "slug": "spring-back-binding",
+  "title": "Spring-back binding",
+  "subtitle": "A flat-opening structure that makes each spread lie completely horizontal, the traditional choice for account books and ledgers",
+  "excerpt": "A spring-back binding uses a hollow-tube spine construction that bends backward when the book is opened, holding every spread flat without resistance. The pages neither arch nor close of their own weight. Used continuously from the eighteenth century for ledgers, music scores, and recipe collections.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on forwarding and flat-back structures. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cyril Davenport, The Book, Its History and Development (1907). The spring-back is documented in both as the standard English ledger binding of the period.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "finishing-press", "isOptional": false },
+    { "slug": "bookbinding-board-3mm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-mull", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "hollow-back", "term": "Hollow back", "definition": "A spine construction where the book cloth or leather is attached to a separate tube of paper rather than directly to the text block. The tube collapses inward when the book is opened, freeing the text block to flex." },
+    { "slug": "spring-spine", "term": "Spring spine", "definition": "The characteristic movement of a spring-back binding: the cover spine bows backward when the book is opened flat, then springs back to shape when closed." },
+    { "slug": "foredge", "term": "Foredge", "definition": "The outer edge of a book's pages, opposite the spine." },
+    { "slug": "joint", "term": "Joint", "definition": "The groove that runs along the edge of a book's boards where they meet the spine. The joint allows the boards to hinge open without stressing the text block." }
+  ],
+  "techniqueSlugs": ["spring-back-binding", "hollow-back-binding"],
+  "criticalTechniques": ["spring-back-binding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Bookbinding adhesives. PVA and wheat-paste are safe for indoor use without special ventilation. Work in a clean, dry space with no draughts. Nipping press and finishing press are heavy workshop tools; use steady, controlled force and keep hands clear of the screw threads." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hollow-back" } }], "text": "hollow-back" },
+          { "type": "text", "text": " construction is the key to the spring-back binding. Instead of gluing the spine cloth directly to the sewn text block, the binder creates a separate paper tube, the hollow, that adheres to the cloth but not the spine. When the book is opened, the cloth spine buckles backward into the characteristic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spring-spine" } }], "text": "spring" },
+          { "type": "text", "text": ", and every page lies flat. The boards hinge at the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joint" } }], "text": "joint" },
+          { "type": "text", "text": " rather than the spine, so repeated heavy use does not stress the sewing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Book press / nipping press", "slug": "book-press", "isOptional": false },
+            { "name": "Finishing press", "slug": "finishing-press", "isOptional": false },
+            { "name": "Bookbinding board, 3 mm", "slug": "bookbinding-board-3mm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Book mull (super)", "slug": "book-mull", "isOptional": false },
+            { "name": "Paste brush (50 mm flat)", "slug": "paste-brush-bookbinding", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paper for the hollow tube: one sheet of 90-120 gsm cartridge paper per text block, cut to the spine height and approximately three times the spine width. Text block paper should be 80-100 gsm, grain direction parallel to the spine (long-grain for A5 landscape books)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sewing the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sew the signatures onto three or five tapes using a supported sewing structure. The spring-back depends on a well-sewn, consolidated spine, loose sewing produces a spine that collapses rather than springs. After sewing, press the text block in the nipping press for twenty minutes with pressing boards flush against each joint line. Glue the spine with a thin coat of PVA, let it dry, then apply " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }], "text": "foredge" },
+          { "type": "text", "text": " pressure with the finishing press while trimming the edges to square." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the hollow tube" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the cartridge strip to exactly the spine height. Mark it in thirds along the width." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the strip at each third mark with the bone folder. The result is a three-layered strip the width of the spine. Paste the two outer layers together so the centre layer is free, this is the hollow. Let it dry under light weight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a coat of PVA to one face of the dry hollow strip and press it firmly against the spine of the text block. The free inner layer of the hollow must not be glued to the spine, check by gently pulling the outer skin away from the spine after pressing. It should come free 1-2 mm before the spine surface." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Covering and casing in" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the boards from 3 mm binders board, 3 mm taller than the text block at head and tail and 4 mm narrower than the text block depth at the foredge. Mark and score a joint groove 6 mm from the spine edge of each board using the bone folder against a straight edge. This groove becomes the hinge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the boards and spine in book cloth or covering paper of your choice. The spine cloth must be glued only to the hollow tube, not to the text block spine directly. Glue the boards' spine edges to the hollow cloth's outer surface. Case the text block into the boards by gluing the endpapers. Press overnight under the nipping press." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing the spring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once fully dry, open the book to the centre. The spine cloth should bow outward away from the text block spine; the pages should lie flat without being pressed down. If the pages arch up rather than lying flat, the hollow tube was glued too tightly to the text block. If the spine cloth does not spring back when the book is closed, the tube was too rigid, pare a replacement from lighter paper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The pages arch upward and do not lie flat",
+              "cause": "The hollow tube is glued to the text block spine rather than being free to move.",
+              "fix": "The inner layer of the hollow must remain unglued to the spine. Check after pressing: you should be able to slip a fingernail between the inner hollow layer and the spine cloth."
+            },
+            {
+              "symptom": "The spine cloth tears at the joint line after repeated use",
+              "cause": "The joint groove in the board was not deep enough, so all the flexing stress concentrates at one point.",
+              "fix": "Score the joint groove twice with firm pressure on a metal ruler. The groove should be visible as a 0.5 mm depression across the board."
+            },
+            {
+              "symptom": "The spine does not spring back to shape when the book is closed",
+              "cause": "The hollow tube paper is too heavy and resists the spring movement.",
+              "fix": "Use 70-80 gsm cartridge for the hollow tube strip. Heavy covers (150 gsm+) also resist; these need a correspondingly lighter hollow."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

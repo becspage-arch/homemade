@@ -1,0 +1,134 @@
+{
+  "slug": "making-a-sewing-frame",
+  "title": "Making a sewing frame",
+  "subtitle": "Building a simple adjustable upright frame for sewing book signatures onto tapes or cords",
+  "excerpt": "A sewing frame holds tapes or cords under vertical tension so the bookbinder can sew each signature onto them without the sewing element moving. A working home-studio frame needs only two uprights, a crossbar, and a means of tensioning, all constructible from hardware-store timber in an afternoon.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing. Cockerell describes the sewing frame in detail, including dimensions and the method of tensioning the tapes. Internet Archive: https://archive.org/details/bookbindingandca00cock.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "pencil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sewing-frame", "term": "Sewing frame", "definition": "An upright frame that holds sewing tapes or cords under tension while book signatures are sewn onto them. The frame is removed when sewing is complete." },
+    { "slug": "tape", "term": "Tape (bookbinding)", "definition": "A flat woven linen strip, typically 15 mm wide, used as the sewing element in tape-sewing. Signatures are sewn around the tape; the tape wings attach to the boards after sewing." },
+    { "slug": "kerf", "term": "Kerf", "definition": "A narrow slot cut into the spine of a signature to recess the sewing element flush with the spine surface, reducing the book's spine swell." }
+  ],
+  "techniqueSlugs": ["making-a-sewing-frame", "sewing-on-tapes"],
+  "criticalTechniques": ["making-a-sewing-frame"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-frame" } }], "text": "sewing frame" },
+          { "type": "text", "text": " is a simple piece of workshop furniture: two uprights held apart by a crossbar, with slots or pegs to hold the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tape" } }], "text": "tapes" },
+          { "type": "text", "text": " under tension. Traditional frames are made in fruitwood or oak. A working version for home studio use can be built from 25 x 50 mm softwood pine, four wing nuts, two bolts, and a short piece of cord." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl (for marking)", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Timber: two uprights at 25 × 50 × 300 mm, one crossbar at 25 × 50 × 350 mm, all in softwood. Hardware: two M8 × 60 mm carriage bolts, four M8 wing nuts, four M8 washers. For the tape holders: four small brass screws with flat heads, or four 40 mm cut tacks. Sandpaper (120 grit) to smooth all surfaces." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building the frame" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark a vertical slot 50 mm long × 10 mm wide at the top of each upright, centred on the width. Cut the slot with a craft knife and chisel, or drill a line of holes and clean with the knife. The slot allows the crossbar to slide up and down for height adjustment." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drill two 8.5 mm holes through the uprights, aligned with the slot centres at its midpoint. These holes take the carriage bolts." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drill matching 8.5 mm holes through the crossbar at 20 mm from each end. Pass the carriage bolts through the crossbar, through the upright slots, and secure with washers and wing nuts. The slots let you slide the crossbar up or down; the wing nuts lock it at height." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drive the brass screws or tacks into the upper face of the crossbar at evenly spaced intervals, typically 20-25 mm apart. Each screw receives one end of a tape or cord. For tapes, loop the tape end around the screw twice before securing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The lower end of each tape is weighted down by the book itself as it builds up, or tied to a matching screw on a lower bar. For simple home-studio work, rest the free tape ends under the text block being sewn, the weight of the growing book provides sufficient downward tension." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the frame on the edge of a table, with the crossbar at roughly chest height when seated. Position the first signature on the tapes with the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kerf" } }], "text": "kerf" },
+          { "type": "text", "text": " slots over each tape and sew. The frame holds the tapes perpendicular to the signature spine so the sewing element does not drift. Adjust the crossbar height so the signature face is level with the table surface, this makes it possible to support the book on the table while sewing without bending forward." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The tapes sag and go slack during sewing",
+              "cause": "Not enough downward tension on the tape lower ends.",
+              "fix": "Tie the tape lower ends to a small weight (a coin through a loop) or to a lower cross-member. Even 100 g of tension is enough to hold a tape straight."
+            },
+            {
+              "symptom": "The crossbar creeps down during a long sewing session",
+              "cause": "The wing nuts are not tight enough.",
+              "fix": "Tighten the wing nuts before starting and check again after the first two or three signatures. A small rubber washer under the nut stops it backing off."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

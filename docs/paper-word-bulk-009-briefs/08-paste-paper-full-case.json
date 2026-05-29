@@ -1,0 +1,164 @@
+{
+  "slug": "paste-paper-full-case",
+  "title": "Full paste-paper case binding",
+  "subtitle": "A case-bound book covered entirely in hand-made paste paper, front, back, and spine in one continuous decorative sheet",
+  "excerpt": "A full paste-paper case uses a single large sheet of hand-combed paste paper to cover both boards and the spine of a cased book, with the boards and spine joined before pasting. The paste paper absorbs and bonds like cloth; the dried starch creates a surface that polishes to a low sheen. The finished book looks like a hand-decorated cloth binding.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on covering materials. Internet Archive: https://archive.org/details/bookbindingandca00cock. Josef Halfer, The Progress of the Marbling Art (1893, English trans. 1894), on starch paste as a cover material.",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bone-folder-teflon", "isOptional": true },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "wheat-paste", "isOptional": false },
+    { "slug": "book-mull", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "paste-paper", "term": "Paste paper", "definition": "A decorative paper made by applying coloured cooked-wheat-paste to a dampened sheet and combing or dragging through it with tools. Dries to a stiff, slightly glossy surface that folds and pastes like a thin textile." },
+    { "slug": "case", "term": "Case", "definition": "The separate cover unit of a case-bound book, constructed before being attached to the text block. Consists of two boards and a spine piece joined by the covering material." },
+    { "slug": "spine-piece", "term": "Spine piece", "definition": "A strip of card or buckram glued between the two cover boards when constructing a case. It sets the width of the spine and keeps the spine rigid." }
+  ],
+  "techniqueSlugs": ["paste-paper-full-case", "case-making-for-hardcover"],
+  "criticalTechniques": ["paste-paper-full-case"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Bookbinding adhesives. PVA and cooked wheat-paste are safe for indoor use. The paste paper itself is made earlier and must be fully dry before use as a covering material, damp paste paper tears when handled." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paste-paper" } }], "text": "paste paper" },
+          { "type": "text", "text": " must be made and fully dry before this tutorial begins. Make it at least a day ahead, or prepare it while the text block dries after sewing. The technique of constructing the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "case" } }], "text": "case" },
+          { "type": "text", "text": " is the same as for a cloth-covered book; the paste paper handles like a stiff textile." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Bone folder (Teflon)", "slug": "bone-folder-teflon", "isOptional": true },
+            { "name": "Book press / nipping press", "slug": "book-press", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm", "slug": "bookbinding-board-2mm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Wheat-paste (cooked)", "slug": "wheat-paste", "isOptional": false },
+            { "name": "Book mull (super)", "slug": "book-mull", "isOptional": false },
+            { "name": "Paste brush (50 mm flat)", "slug": "paste-brush-bookbinding", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Paper for the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spine-piece" } }], "text": "spine piece" },
+          { "type": "text", "text": ": a strip of 2 mm card or buckram, cut to exactly the text block spine width and the board height. Endpaper stock at 120-140 gsm for the endpapers. The paste paper sheet must be large enough to cover both boards and the spine in one piece: width = (board width × 2) + spine width + 40 mm; height = board height + 40 mm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Constructing the case" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut two boards from 2 mm binders board, each 3 mm taller than the text block and 4 mm narrower than the text block depth. Score joint grooves 6 mm from the spine edge of each board." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the paste paper face down on the cutting mat. Apply PVA evenly to the paper's back surface. Let it relax for thirty seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Position the two boards face down on the pasted paper with the joint groove toward the centre and a 6 mm gap between the board spine edges. Place the spine piece card in the gap, centred between them." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold in the head and tail turn-ins, mitring the corners neatly. Fold in the foredge turn-ins. Burnish all surfaces firmly with the Teflon bone folder to avoid leaving marks on the paste-paper surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the finished case between pressing boards under the nipping press for one hour. The paste paper needs a full press to dry flat, without pressing it will cockle." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Casing in the text block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply PVA to the outer face of one endpaper. Lower the case onto the text block, aligning the joint groove along the text block joint. Press the endpaper down against the board. Close the book, flip it, and repeat for the second side. Press overnight under the nipping press with pressing boards inside the boards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The paste paper tears when folding the turn-ins",
+              "cause": "The paper was not fully dry or the PVA saturated the paper from the back.",
+              "fix": "Use a diluted PVA (80% PVA, 20% water) rather than full-strength to reduce saturation. Ensure the paste paper is thoroughly dry before pasting, it should not feel cold or pliable."
+            },
+            {
+              "symptom": "The case cockles after drying",
+              "cause": "Insufficient pressing or the paste paper grain running against the boards.",
+              "fix": "Press for at least one hour under heavy boards. Check grain: paste paper grain must run parallel to the spine. A cockled case is difficult to recover; re-damp the outside surface and re-press for a further hour."
+            },
+            {
+              "symptom": "Marks from the bone folder show on the paste paper surface",
+              "cause": "Bone folder used instead of the Teflon version.",
+              "fix": "Use a Teflon bone folder for all burnishing work on paste paper. If a mark has already appeared, dampen the surface very lightly and burnish again with the Teflon folder."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "slug": "resist-mould-formation",
+  "title": "Resisting mould in handmade paper",
+  "subtitle": "Environmental controls, alkaline buffering, and drying practice to prevent fungal growth on freshly formed sheets",
+  "excerpt": "Wet handmade paper is a perfect growth medium: cellulose, water, and warmth. Mould spores settle within hours and germinate overnight if the sheet stays damp and warm. The counter-measures are not complex, fast drying, clean equipment, alkaline pulp, and low-humidity storage, but they must be applied consistently. A single contaminated batch can introduce spores that persist in the studio.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Papermaking: The History and Technique of an Ancient Craft (2nd ed., 1947), chapters on hygiene and deterioration. Internet Archive.",
+  "recipeTools": [
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "papermaking-sponge", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "calcium-carbonate-light", "isOptional": false },
+    { "slug": "ph-testing-strips", "isOptional": false },
+    { "slug": "papermaking-press-boards", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "mould-spore", "term": "Mould spore", "definition": "The microscopic reproductive unit of fungi, present in all air and on all surfaces. Spores germinate on wet cellulose within 24-48 hours when temperature is above 15°C and the sheet stays damp. Once germinated, the colony is visible as fuzzy patches and its hyphae penetrate the cellulose structure." },
+    { "slug": "biocide", "term": "Biocide", "definition": "A chemical that kills or inhibits micro-organisms. In papermaking, thymol crystals dissolved in isopropanol (a few drops per litre of vat water) are the traditional addition. Sodium benzoate is a water-soluble alternative. Both reduce the risk of mould formation during slow drying but do not substitute for clean practice." },
+    { "slug": "hygroscopic", "term": "Hygroscopic", "definition": "The property of a material that causes it to absorb moisture from the surrounding air. Paper is hygroscopic, it will equilibrate to the ambient humidity. Storing finished sheets in high-humidity environments promotes mould growth even on fully dried paper." }
+  ],
+  "techniqueSlugs": ["resist-mould-formation"],
+  "criticalTechniques": ["resist-mould-formation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every surface in a papermaking studio carries " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mould-spore" } }], "text": "mould spores" },
+          { "type": "text", "text": ". The question is not whether spores are present but whether conditions allow them to germinate. The four conditions that enable germination, wet cellulose, warmth above 15°C, still air, and time, are all present in a stack of freshly couched sheets. Removing any one of them is enough to prevent a problem." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Papermaking vat", "slug": "papermaking-vat", "isOptional": false },
+            { "name": "Papermaking sponge", "slug": "papermaking-sponge", "isOptional": false },
+            { "name": "Paper mould + deckle, A4", "slug": "paper-mould-deckle-a4", "isOptional": false },
+            { "name": "Calcium carbonate (whiting)", "slug": "calcium-carbonate-light", "isOptional": false },
+            { "name": "pH testing strips", "slug": "ph-testing-strips", "isOptional": false },
+            { "name": "Press boards", "slug": "papermaking-press-boards", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dry fast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most effective single control is drying speed. Press the couched sheets as firmly as possible to remove bulk water, then separate them and dry individually, either laid flat on a dry board with a fan directed at the surface, or hung on a line. A sheet that dries in two to three hours is safe; one that takes twelve is at risk. Avoid stacking pressed but undried sheets overnight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Alkaline buffering" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Calcium carbonate added to the vat at 2% of dry fibre weight raises the sheet pH to 7.5-8.5. Mould grows best in slightly acid to neutral conditions (pH 5-7); an alkaline sheet is measurably more resistant to colonisation. Use pH testing strips on the vat water before pulling sheets to confirm the target range. The same addition that protects against long-term acid degradation provides a degree of biological resistance during drying." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Biocide addition" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For slow-drying batches or work done in hot, humid conditions, a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "biocide" } }], "text": "biocide" },
+          { "type": "text", "text": " addition provides additional protection. Add 5 drops of thymol-in-isopropanol solution (5 g thymol dissolved in 100 ml IPA) per litre of vat water. This is sufficient to inhibit germination without significantly affecting the sheet. The biocide dissipates as the sheet dries, leaving no residue that would compromise archival storage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage humidity" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Finished paper is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hygroscopic" } }], "text": "hygroscopic" },
+          { "type": "text", "text": ", it re-absorbs moisture from humid air. Store finished sheets interleaved with clean blotting paper in a flat box, in a room where the relative humidity stays below 65%. Avoid damp basements and unheated outbuildings. Sheets that feel limp or cold to the touch have re-absorbed moisture and should be dried again before use." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "White or grey fuzzy patches appear on pressed sheets within 24 hours",
+              "cause": "Sheets left in a damp stack overnight, still containing enough free water to support germination.",
+              "fix": "Discard affected sheets (mould hyphae are embedded in the cellulose and cannot be cleaned off). Separate and fan-dry future sheets within two hours of pressing. Clean the press boards with diluted white vinegar before the next session."
+            },
+            {
+              "symptom": "Mould appears on stored sheets that were fully dry when put away",
+              "cause": "The storage room is too damp. Above 65% humidity, dry sheets re-absorb moisture.",
+              "fix": "Move storage to a drier location. Re-dry the affected sheets in a low oven (50°C for 30 minutes) before re-storing, interleaved with fresh blotting paper."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

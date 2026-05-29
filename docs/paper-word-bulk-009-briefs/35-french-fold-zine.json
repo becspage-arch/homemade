@@ -1,0 +1,124 @@
+{
+  "slug": "french-fold-zine",
+  "title": "French-fold zine",
+  "subtitle": "Making an 8-page booklet from a single sheet of paper, no binding, no staples, one fold and one cut",
+  "excerpt": "The french fold zine is the simplest possible book: one sheet of paper folded twice and slit once produces eight pages that hold together without any binding. It is the classic format for an issue-based zine, a pocket field guide, a recipe card, or a small-run show catalogue. The entire print run of a hundred copies can be folded and cut in an afternoon.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Zine-making tradition originating in early 20th century science fiction fan publications (fanzines). The french fold format is documented in printing trade literature and in contemporary zine-making guides. No single canonical author.",
+  "recipeTools": [
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "cartridge-paper-90", "isOptional": false },
+    { "slug": "pencil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "imposition", "term": "Imposition", "definition": "The arrangement of pages on a flat sheet so that when folded and cut they fall in the correct reading order. In the 8-page french fold, the page placement is counter-intuitive when drawn flat, the front cover and the last page occupy the same face of the sheet." },
+    { "slug": "french-fold", "term": "French fold", "definition": "A sheet folded in half lengthwise, then in half again widthwise, with a single slit cut in the centre of the lengthwise fold to release the four inner pages. Produces an 8-page booklet with covers." },
+    { "slug": "signature", "term": "Signature", "definition": "A single folded section of a book or zine, typically 4, 8, or 16 pages. A french fold zine is a single-signature publication; longer zines use multiple signatures sewn or stapled together." }
+  ],
+  "techniqueSlugs": ["french-fold-zine"],
+  "criticalTechniques": ["french-fold-zine"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-fold" } }], "text": "french fold" },
+          { "type": "text", "text": " format produces a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "signature" } }], "text": "single-signature" },
+          { "type": "text", "text": " 8-page booklet from one A4 sheet. The standard size produces a portrait booklet approximately 105 × 148 mm (A6) when folded, exactly a quarter of an A4 sheet. The format is used unchanged in commercial printing for small programme booklets, leaflets, and menus." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Cartridge paper, 90 gsm (for folding and printing)", "slug": "cartridge-paper-90", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Page imposition" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "imposition" } }], "text": "Imposition" },
+          { "type": "text", "text": " for the 8-page french fold: lay the sheet landscape. The left half is the front of the booklet when folded; the right half is the back. Within each half, the top half of the sheet becomes the upper pages and the bottom half the lower pages. The page sequence on the flat sheet (reading from left to right across the landscape sheet, top row then bottom row) is: 8 | 1 | 2 | 7 and below: 5 | 4 | 3 | 6. Draw this layout on a dummy sheet before writing or printing the final content." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding and cutting" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the A4 sheet in half lengthwise (bringing the long edges together). Crease firmly with the bone folder along the full fold." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the resulting strip in half widthwise (bringing the short edges together). Crease firmly. You now have a folded packet of four layers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unfold to the half-sheet stage (single lengthwise fold). The lengthwise fold is now the spine of the booklet. Cut a slit from the centre fold to the halfway point of the sheet, use the craft knife and ruler along the pencilled centre line from one short edge to the exact middle of the sheet. Do not cut beyond the midpoint." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold back along the widthwise line and open the slit at the centre of the sheet by pushing the two ends toward each other until the four inner pages splay open into a diamond shape. Push the two outer covers together to close the booklet. The pages should fall in order." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The pages are in the wrong order when the booklet is assembled",
+              "cause": "The imposition was laid out incorrectly on the flat sheet.",
+              "fix": "Always fold and cut a blank dummy sheet first and number the pages 1-8 before writing. Check the order opens correctly before writing or printing the final version."
+            },
+            {
+              "symptom": "The slit tears the paper rather than cutting cleanly",
+              "cause": "The craft knife blade is blunt, or the ruler slipped.",
+              "fix": "Use a fresh blade for every cutting session. Hold the ruler firmly with several fingers along its length, not just at the ends."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "slug": "zine-binding-methods",
+  "title": "Zine binding methods",
+  "subtitle": "A survey of the binding options available for self-published zines, from no-binding french folds to sewn signatures, and when to use each",
+  "excerpt": "The right binding method depends on page count, budget, print run, and how formal the zine needs to feel. A one-sheet french fold needs no binding at all; a saddle-stitched 16-page zine needs a long-arm stapler and two minutes; a perfect-bound 40-pager needs glue and a little more patience. This survey covers the six most practical methods for home-studio zine production.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "General zine-making and small-press tradition. No single canonical source; methods documented in: Stolen Sharpie Revolution (Alex Wrekk, 2002) and the broader DIY publishing community.",
+  "recipeTools": [
+    { "slug": "long-arm-stapler", "isOptional": true },
+    { "slug": "bone-folder", "isOptional": true },
+    { "slug": "bookbinding-awl", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "saddle-stitch", "term": "Saddle stitch", "definition": "Binding by stapling or sewing through the spine fold of a folded signature. The zine lies open at the staples when held flat, like a magazine. Practical for 4-40 pages; more than 40 pages and the pages at the outer edges are noticeably narrower than those at the centre." },
+    { "slug": "perfect-binding", "term": "Perfect binding", "definition": "Binding individual leaves (not folded) into a stack, gluing the spine edge with PVA, and clamping a paper cover around the spine. Produces a spine that can be printed on, and pages that open flat. The standard binding for trade paperbacks; achievable at home with clamps and a brush." },
+    { "slug": "riso-printing", "term": "Risograph printing", "definition": "A stencil-based printing process that produces the characteristic grainy, overlapping colour effect associated with indie zine aesthetics. Risograph (or riso) printers work like photocopiers but use soy-based inks; they are available at community print studios. Not a binding method, but relevant context for anyone considering design choices that work best with riso." }
+  ],
+  "techniqueSlugs": ["zine-binding-methods"],
+  "criticalTechniques": ["zine-binding-methods"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Choosing a binding method is a design decision as much as a practical one. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saddle-stitch" } }], "text": "Saddle stitch" },
+          { "type": "text", "text": " reads as informal and accessible; " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "perfect-binding" } }], "text": "perfect binding" },
+          { "type": "text", "text": " reads as a publication. The six methods below cover the full range from no equipment to basic bookbinding tools, with page-count guidance for each." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The six methods" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "1. French fold (no binding)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One sheet, two folds, one slit. Produces 8 pages. No equipment beyond a bone folder and a knife. The only method that requires no binding material at all, the folded sheet holds itself together. See the french fold zine tutorial for full instructions. Best for: single-issue postcards, event guides, recipe cards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "2. Saddle stitch (staples)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fold the sheets as a single signature and staple through the spine fold with a long-arm stapler. Two staples at equal distances from head and tail are standard. Page count: 4-40 pages (1-10 sheets). Fastest method for a multi-page zine; the long-arm stapler is the only specific tool needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "3. Pamphlet stitch (sewn)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sew through three or five holes pierced in the spine fold with an awl. One piece of thread, one signature, visible thread on the outside. More archival than staples (no metal to rust) and has a handmade aesthetic that distinguishes it from stapled work. Page count: 8-32 pages. Tools: bookbinding awl, needle, thread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "4. Long stitch (multiple signatures)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Multiple folded signatures sewn directly onto a cover without any glued spine, with visible thread running across the outside of the spine in a decorative pattern. Lies completely flat when open. Best for 32-80 pages. Tools: awl, needle, thread, covers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "5. Perfect binding (glued)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gather all sheets as single leaves (not folded), tap the spine edge flat, clamp in a vice or between boards, and brush PVA along the spine edge twice with 10 minutes drying time between coats. Wrap a paper or card cover around the spine while the second coat is still tacky. Page count: 40-200 pages. The spine can be printed; the cover wraps around to meet the front and back boards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "6. Japanese stab binding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Four or more holes pierced through the full stack of single leaves (not folded signatures), with a decorative thread pattern stitched through them on the outside. Does not open fully flat, pages fan from the spine. Best for: art books, sketchbooks, and any format where the binding itself is part of the visual design. Tools: awl, needle, thread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing for your project" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The question for most home-studio makers is: can I print the spine? If the page count is under 3 mm of spine depth (roughly 32 pages at 80 gsm), there is no printable spine and any binding is suitable. Above 3 mm, a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riso-printing" } }], "text": "risograph" },
+          { "type": "text", "text": " or photocopied zine looks more polished with perfect binding because the spine can carry the title. Below 3 mm, saddle stitch or pamphlet stitch are cleaner choices." }
+        ]
+      }
+    ]
+  }
+}

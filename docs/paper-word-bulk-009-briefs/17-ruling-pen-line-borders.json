@@ -1,0 +1,134 @@
+{
+  "slug": "ruling-pen-line-borders",
+  "title": "Ruling-pen line borders",
+  "subtitle": "Using a ruling pen and straightedge to draw hairline grid rules and decorative line borders for calligraphic layouts",
+  "excerpt": "A ruling pen draws a line of exact, repeatable width that a dip-pen or brush cannot match. Loaded from a dropper or brush rather than by dipping, it holds exactly the amount of ink needed for one clean rule. The result complements calligraphy without competing with it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing & Illuminating & Lettering (1906), chapter on ruling and borders. Internet Archive: https://archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    { "slug": "ruling-pen", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "tine-gap", "term": "Tine gap", "definition": "The opening between the two parallel steel tines of a ruling pen, controlled by the knurled screw on the side. A narrow gap produces a hairline; opening the gap widens the rule. Always test on scrap before ruling on the final sheet." },
+    { "slug": "pull-stroke", "term": "Pull stroke", "definition": "A ruling-pen line drawn by moving the pen toward the body along the straightedge, never pushed away. Pushing bends the tines, breaks the even line weight, and blots." }
+  ],
+  "techniqueSlugs": ["ruling-pen-line-borders"],
+  "criticalTechniques": ["ruling-pen-line-borders"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A ruling pen produces a ruled line with consistent weight across its full length, something a calligraphy nib cannot do. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tine-gap" } }], "text": "tine gap" },
+          { "type": "text", "text": " is set before loading. For a hairline border alongside calligraphy, set the gap to about 0.3 mm, the width of the thinnest stroke your nib makes, so the border reads as a delicate frame rather than a structural element." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Ruling pen", "slug": "ruling-pen", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Sumi ink", "slug": "sumi-ink", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Loading the pen" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Never dip a ruling pen in ink, the ink wicks to the outside of the tines and blots on contact with the paper. Instead, use a small brush or dropper to introduce a bead of ink into the tine gap. The bead should fill the gap without touching the outer face of either tine. One loading gives approximately 20-30 cm of line at a 0.3 mm gap." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drawing the line" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pencil the border position lightly. Lay the metal ruler with its edge on the pencilled line." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Hold the pen at about 80° from the paper, nearly vertical, but tilted very slightly away from the ruler so the back tine doesn't drag against the edge. Use a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pull-stroke" } }], "text": "pull stroke" },
+              { "type": "text", "text": " only." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin the stroke with the pen already in contact with the paper and moving, a standing start pools ink. Stop before the end of the rule and reload for the next section rather than running the pen dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erase the pencil guides after the ink dries completely, usually 20-30 minutes for sumi ink on cartridge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ruling a double-line border" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A double-line border, two parallel hairlines with a narrow gap between them, is a standard decorative border for calligraphic panels. Rule both lines at the same gap setting. For the outer border of an A5 inscription panel, leave 15 mm margin from the sheet edge to the outer line and 2 mm between the two lines. Rule the four outer lines first, then the four inner lines. Mitred corners are not required, for hairline rules, the overlap at each corner is invisible to the eye." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The line blots at the start of each stroke",
+              "cause": "Too much ink in the tine gap, or the pen has ink on the outer face of the tines.",
+              "fix": "Wipe the outer faces clean with a cloth before drawing. Reduce the ink load to just below the capacity of the gap, the bead should be invisible from the side."
+            },
+            {
+              "symptom": "The line is not continuous, it fades and stops",
+              "cause": "The tine gap is too narrow for the ink to flow by capillary action.",
+              "fix": "Open the gap very slightly. If the ink is thick or old, it may also be too viscous to flow; add one drop of distilled water to the pen and test on scrap."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

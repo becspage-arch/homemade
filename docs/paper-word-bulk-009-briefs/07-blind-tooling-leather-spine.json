@@ -1,0 +1,150 @@
+{
+  "slug": "blind-tooling-leather-spine",
+  "title": "Blind tooling a leather spine",
+  "subtitle": "Pressing a decorative impression into damp leather without gold or colour, the foundation of all bookbinding leather decoration",
+  "excerpt": "Blind tooling leaves a pressed, slightly darkened impression in leather without any gilding. A heated metal tool, a fillet wheel, a pallet, or a hand stamp, is pressed into dampened leather so the fibres compress permanently. The result is a crisp, permanent design visible only by its texture and the shadow it casts.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on finishing and tooling. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cyril Davenport, The Book, Its History and Development (1907). Both describe blind-tooled binding traditions from the medieval period onward.",
+  "recipeTools": [
+    { "slug": "bookbinding-fillet", "isOptional": false },
+    { "slug": "veg-tan-leather-thin", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "blind-tooling", "term": "Blind tooling", "definition": "Decorating leather by pressing a heated metal tool into the dampened surface without any metallic leaf or colour. The impression compresses the fibres and darkens slightly as the water is driven out." },
+    { "slug": "fillet-wheel", "term": "Fillet wheel", "definition": "A rotating disc mounted on a heated handle, used to rule one or more parallel lines along a leather spine or cover. The wheel rolls in one continuous motion, producing a line of consistent depth and width." },
+    { "slug": "case-off", "term": "Case off", "definition": "The stage in finishing where the decorated cover is finally assembled around the text block." }
+  ],
+  "techniqueSlugs": ["blind-tooling-leather-spine"],
+  "criticalTechniques": ["blind-tooling-leather-spine"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Bookbinding finishing tools reach 100-150°C. Keep the tool moving when touching the leather surface; held stationary for more than two seconds it will scorch. Work away from open windows, leather fumes when overheated. Keep a small damp sponge nearby to cool the tool quickly." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "All bookbinding leather decoration begins with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-tooling" } }], "text": "blind tooling" },
+          { "type": "text", "text": ". Gold tooling adds a leaf on top; blind tooling is the impression alone. Medieval books used blind tooling exclusively before gold became common in the fifteenth century. The technique requires three elements: dampened leather, a heated tool, and steady controlled pressure. When all three are correct, the impression is permanent and the leather surface alongside it remains undamaged." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding fillet (finishing wheel)", "slug": "bookbinding-fillet", "isOptional": false },
+            { "name": "Veg-tan leather, 1-1.5 mm", "slug": "veg-tan-leather-thin", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat source: a spirit lamp or a small electric finishing-tool heater. A domestic candle flame also works but is less controllable. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fillet-wheel" } }], "text": "fillet wheel" },
+          { "type": "text", "text": " should be warm, test on a scrap piece: the tool is at the right temperature when it leaves a light impression on dampened leather immediately on contact without smoking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the leather" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The cover must be cased on the book or mounted firmly on a pressing board before tooling. Loose leather gives uneven impressions because the surface deflects under pressure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dampen the spine with a small damp sponge or a clean finger dipped in water. The leather should be evenly darkened with moisture but not wet enough to feel cold under the back of the hand. Tooling dry leather leaves no impression; tooling leather that is too wet produces a soft, blurry one." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the guide lines with pencil and a metal ruler. Two parallel lines 3 mm from each board edge and one or two more at equal intervals across the spine are the simplest classical pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Running the fillet" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the metal ruler firmly along the pencil guide line. Set the fillet wheel against the ruler with the wheel groove touching the leather surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the fillet forward from head to tail in one steady pass. Maintain consistent downward pressure. Do not stop mid-line; a stopped tool leaves a dark spot. Lift off cleanly at the tail end." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for each guide line. Allow the leather to dry fully before the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "case-off" } }], "text": "case-off" },
+              { "type": "text", "text": " if the book is still in progress." }
+            ] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The line is shallow and disappears when the leather dries",
+              "cause": "The tool was not hot enough or the leather too dry.",
+              "fix": "Dampen the leather slightly more and re-heat the fillet. Test on a scrap first: the impression should be clearly visible immediately after the pass and deepen slightly as it dries."
+            },
+            {
+              "symptom": "The leather scorches or darkens unevenly beside the line",
+              "cause": "The tool is too hot or moving too slowly.",
+              "fix": "Let the fillet cool slightly and increase the pace of the pass. A correctly heated fillet leaves the leather immediately adjacent to the line the same colour as the surrounding surface."
+            },
+            {
+              "symptom": "The line is not straight",
+              "cause": "The ruler shifted during the pass or the fillet left the ruler edge.",
+              "fix": "Use a second free hand to hold the ruler end firmly. The fillet wheel naturally wants to travel away from the ruler at the corners, keep light outward pressure on the handle as you run it."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

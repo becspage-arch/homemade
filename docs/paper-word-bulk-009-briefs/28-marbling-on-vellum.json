@@ -1,0 +1,138 @@
+{
+  "slug": "marbling-on-vellum",
+  "title": "Marbling on vellum",
+  "subtitle": "Applying carrageenan-bath marbling to calfskin vellum, surface preparation, mordanting, and managing vellum's response to moisture",
+  "excerpt": "Vellum and marbling are a historically significant combination: Ottoman and European bookbinders used marbled vellum as decorative endpapers and binding panels from the 16th century onwards. Marbling on vellum requires different preparation from paper, the surface must be de-greased and mordanted differently, and the sheet must be handled to prevent moisture-induced cockling. The result, when right, is a surface of exceptional depth and translucency.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Richard J. Wolfe, Marbled Paper: Its History, Techniques, and Patterns (1990), chapter on early vellum marbling. Bookbinding and marbling traditions documented in Museum of Fine Arts Boston and Victoria & Albert Museum collections.",
+  "recipeTools": [
+    { "slug": "calfskin-vellum", "isOptional": false },
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "ox-gall", "isOptional": false },
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "eyedropper", "isOptional": false },
+    { "slug": "marbling-stylus", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "vellum-humidity", "term": "Vellum humidity response", "definition": "Calfskin vellum is extremely sensitive to changes in ambient humidity. When damp, it expands irregularly along the grain of the skin; when drying, it contracts and cockles severely unless held flat under tension or weights. Marbling introduces moisture; managing how the skin dries determines whether the piece is usable." },
+    { "slug": "vellum-degreasing", "term": "Vellum degreasing", "definition": "The step of wiping the marbling face of the vellum with a mild solvent (diluted isopropanol or a pounce powder made from pumice) to remove natural skin oils before mordanting. Un-degreased vellum repels the alum solution and produces patchy pigment take-up." },
+    { "slug": "tension-drying", "term": "Tension drying", "definition": "Drying a marbled vellum sheet pinned or taped under gentle tension to a flat board. This counteracts the contractile force of the skin as it dries, producing a flat rather than cockled finish. The tension must be even on all four sides." }
+  ],
+  "techniqueSlugs": ["marbling-on-vellum"],
+  "criticalTechniques": ["marbling-on-vellum"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Calfskin vellum is expensive and irreversible. Practise the full process on alum-mordanted cartridge paper until the pattern and technique are reliable before applying to vellum. A failed marbling pull wastes the skin." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The critical difference between marbling on paper and marbling on vellum is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vellum-humidity" } }], "text": "humidity response" },
+          { "type": "text", "text": " of the skin. Paper expands evenly when wet; vellum expands along the grain and shrinks across it, producing cockles if left to dry freely. Managing this is the main technical challenge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Calfskin vellum", "slug": "calfskin-vellum", "isOptional": false },
+            { "name": "Carrageenan (marbling size)", "slug": "carrageenan", "isOptional": false },
+            { "name": "Marbling acrylic, liquid", "slug": "marbling-acrylic-liquid", "isOptional": false },
+            { "name": "Alum, potash (mordant)", "slug": "alum-potash", "isOptional": false },
+            { "name": "Ox-gall (marbling)", "slug": "ox-gall", "isOptional": false },
+            { "name": "Marbling tray", "slug": "marbling-tray", "isOptional": false },
+            { "name": "Eyedropper / pipette", "slug": "eyedropper", "isOptional": false },
+            { "name": "Marbling stylus", "slug": "marbling-stylus", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the vellum" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Cut the vellum to the required size. " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vellum-degreasing" } }], "text": "Degrease" },
+              { "type": "text", "text": " the marbling face by wiping firmly with a clean cloth dampened with diluted isopropanol (50/50 with water). Allow to dry completely, this takes only a minute or two." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mordant by sponging alum solution (1.5 tsp alum per 500 ml water) over the degreased face. The solution should wet the surface evenly. Let dry completely; alum dries to an invisible residue. Mordanting is non-negotiable for vellum, the skin's natural fats that survive degreasing will repel pigment without it." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling and drying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pull the marble as for paper: lay the vellum face-down onto the patterned size, allow 30 seconds of contact, then peel from one corner. Rinse under cold running water immediately, do not let the vellum sit wet." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tension-drying" } }], "text": "Tension drying" },
+          { "type": "text", "text": " is essential. While the vellum is still damp, tape all four edges to a clean flat board with masking tape, pulling each edge gently taut as you work. The tape must hold the skin in tension but not tear it. Leave the board horizontal in a room at normal humidity (40-60%); do not apply heat. The vellum typically takes 12-24 hours to dry flat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The marbled vellum cockles severely on drying despite tension drying",
+              "cause": "The ambient humidity during drying was too high, or the vellum dried too quickly on one face.",
+              "fix": "Dry in a room at 40-60% relative humidity. If humidity is too high, move to a drier space. Never dry in direct sunlight or near a radiator, one-sided fast drying maximises cockling."
+            },
+            {
+              "symptom": "The pigment pattern is patchy, some areas have no colour",
+              "cause": "Incomplete degreasing, leaving skin oils that repelled the mordant.",
+              "fix": "Re-degrease more firmly and re-mordant before the next attempt. Areas of skin with higher fat concentration (often near the spine of the original hide) need additional degreasing passes."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

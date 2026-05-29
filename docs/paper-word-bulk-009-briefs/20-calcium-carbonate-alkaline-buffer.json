@@ -1,0 +1,128 @@
+{
+  "slug": "calcium-carbonate-alkaline-buffer",
+  "title": "Calcium carbonate as an alkaline buffer",
+  "subtitle": "Adding whiting to the papermaking vat to raise pH and build an alkaline reserve that protects cellulose over time",
+  "excerpt": "Paper stored in a mildly alkaline environment ages far more slowly than paper stored in an acid or neutral one. Adding calcium carbonate to the vat at 2-3% of dry fibre weight raises the sheet pH to 7.5-8.5 and deposits a reserve of base that neutralises future acid attack. This single step extends the expected lifespan of a handmade sheet from decades to centuries.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Papermaking: The History and Technique of an Ancient Craft (2nd ed., 1947), chapters on chemistry and permanence. Internet Archive. Hunter was the first Western writer to systematically address the acid-degradation problem in handmade papers.",
+  "recipeTools": [
+    { "slug": "cotton-linter", "isOptional": false },
+    { "slug": "calcium-carbonate-light", "isOptional": false },
+    { "slug": "ph-testing-strips", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false },
+    { "slug": "papermaking-press-boards", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "alkaline-reserve", "term": "Alkaline reserve", "definition": "A deposit of base material (typically calcium carbonate) retained in the finished sheet after drying. It neutralises acids produced by the cellulose itself and absorbed from the environment, extending the paper's usable life." },
+    { "slug": "acid-hydrolysis", "term": "Acid hydrolysis", "definition": "The mechanism by which acid attacks the bonds between sugar units in the cellulose chain, progressively shortening the polymer and making the paper brittle and weak. The primary cause of historic paper deterioration." },
+    { "slug": "ph-target", "term": "pH target", "definition": "The optimal pH range for archival handmade paper: 7.5 to 8.5. Below 7 the sheet is acid; above 9 the alkalinity begins to affect some pigments. The pH of the freshly dried sheet is the relevant measurement." }
+  ],
+  "techniqueSlugs": ["calcium-carbonate-alkaline-buffer"],
+  "criticalTechniques": ["calcium-carbonate-alkaline-buffer"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Untreated handmade paper is chemically neutral or mildly acidic. Over years, the cellulose produces small amounts of acetic and formic acids as it ages, and additional acids are absorbed from the air. These acids drive " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "acid-hydrolysis" } }], "text": "acid hydrolysis" },
+          { "type": "text", "text": ", progressively breaking down the cellulose chains and making the sheet brittle. Building in an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alkaline-reserve" } }], "text": "alkaline reserve" },
+          { "type": "text", "text": " before the sheet is even dry preloads it against this process." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Cotton linter (half-stuff sheets)", "slug": "cotton-linter", "isOptional": false },
+            { "name": "Calcium carbonate (whiting)", "slug": "calcium-carbonate-light", "isOptional": false },
+            { "name": "pH testing strips", "slug": "ph-testing-strips", "isOptional": false },
+            { "name": "Papermaking vat", "slug": "papermaking-vat", "isOptional": false },
+            { "name": "Papermaking blender (dedicated)", "slug": "papermaking-blender", "isOptional": false },
+            { "name": "Paper mould + deckle, A4", "slug": "paper-mould-deckle-a4", "isOptional": false },
+            { "name": "Press boards", "slug": "papermaking-press-boards", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding calcium carbonate to the vat" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Prepare a standard cotton-linter pulp and transfer to the vat at working dilution (approximately 1% fibre by weight)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weigh out calcium carbonate at 2-3% of the dry fibre weight. For 50 g dry cotton linter, add 1-1.5 g of calcium carbonate. Mix the powder into a small amount of water to form a slurry before adding to the vat, this disperses it more evenly than adding dry powder directly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir the vat thoroughly to distribute the calcium carbonate through the slurry before pulling sheets." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "After pressing and drying the sheets, test the pH with strips. The target is " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ph-target" } }], "text": "pH 7.5-8.5" },
+              { "type": "text", "text": ". Dip the strip in water used to dampen the sheet rather than testing the dry paper directly." }
+            ]}]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why calcium carbonate specifically" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Calcium carbonate is only slightly soluble in water, which means it stays dispersed in the pulp rather than dissolving away before the sheet is formed. When the sheet dries, fine particles of calcium carbonate are trapped between the cellulose fibres. These particles dissolve slowly over time in response to acid, releasing carbonate ions that neutralise the acid before it can attack the cellulose. The reserve is not consumed all at once, it works gradually over decades. Two per cent by weight is the standard archival addition; three per cent is used for papers expected to be stored in environments with higher pollution levels." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The pH test shows the finished sheet is still neutral or slightly acid (below 7)",
+              "cause": "The calcium carbonate was added dry and clumped rather than dispersing through the pulp.",
+              "fix": "Always pre-mix the calcium carbonate into a slurry with a little water before adding it to the vat. Stir the vat well just before pulling each sheet."
+            },
+            {
+              "symptom": "The sheets have a slightly gritty surface texture",
+              "cause": "Too much calcium carbonate added, or the slurry particles were too coarse.",
+              "fix": "Reduce to 2% and ensure the powder is a fine precipitated grade (labelled 'whiting' or 'light calcium carbonate'), not a coarse chalk. Sieve the slurry before adding if the texture persists."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

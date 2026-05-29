@@ -1,0 +1,147 @@
+{
+  "slug": "chancery-italic-inscription-panel",
+  "title": "Chancery italic inscription panel",
+  "subtitle": "Laying out and writing a complete calligraphic inscription in formal italic, from rough sketch to finished piece",
+  "excerpt": "An inscription panel composes a complete calligraphic text, a poem, a dedication, a name, within a defined rectangular space. The process runs from thumbnail to rough to finished: planning line breaks, testing margins, adjusting interline spacing, then ruling and writing the final piece. The finished panel can be framed, tipped into a book, or gifted.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing & Illuminating & Lettering (1906), chapter on composition and layout. Internet Archive: https://archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "cartridge-paper-220", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "gum-arabic", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "inscription-panel", "term": "Inscription panel", "definition": "A rectangular area defined by margins within which a complete calligraphic text is arranged. The panel is the visual unit: the text, the margins, and the paper together form the composition." },
+    { "slug": "interline-spacing", "term": "Interline spacing", "definition": "The distance between the baseline of one line of text and the baseline of the line below it. Standard interline spacing in formal italic is two to two-and-a-half times the x-height." },
+    { "slug": "thumbnail", "term": "Thumbnail", "definition": "A small rough sketch made quickly to explore the overall layout before committing to the full-size piece. The thumbnail tests proportions without wasting good paper." }
+  ],
+  "techniqueSlugs": ["chancery-italic-inscription-panel", "calligraphy-composition-and-layout"],
+  "criticalTechniques": ["chancery-italic-inscription-panel"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A finished calligraphic " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inscription-panel" } }], "text": "inscription panel" },
+          { "type": "text", "text": " has three stages. First, plan the line breaks and layout in a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thumbnail" } }], "text": "thumbnail" },
+          { "type": "text", "text": ". Then write a full-size rough on practice paper. Finally, write the finished piece on good paper with guide lines already ruled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Sumi ink", "slug": "sumi-ink", "isOptional": false },
+            { "name": "Cartridge paper, 220 gsm (finished piece)", "slug": "cartridge-paper-220", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm (rough practice)", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Gum arabic (to adjust ink flow for fine detail)", "slug": "gum-arabic", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stage 1, thumbnail layout" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write the text on a strip of practice paper, paying no attention to layout. Count the lines and note the length of the longest line." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a rectangle at roughly A5 proportions (148 × 210 mm) on the thumbnail sheet. Divide the width into thirds: the outer third on each side is the margin, the centre third is the text column." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sketch horizontal lines across the text column to represent each line of text. Check that the lines fit within the rectangle with the chosen " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interline-spacing" } }], "text": "interline spacing" },
+              { "type": "text", "text": ". Adjust margins or spacing until the overall layout feels balanced, slightly more white space at the foot than the head is the classic rule." }
+            ] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stage 2, full-size rough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rule the full-size guide sheet on 130 gsm practice paper using the proportions from the thumbnail. Write the full text in the planned layout. This is where line breaks are finalised and problem words (awkward letter combinations, wide capital letters) are identified and practised." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stage 3, finished piece" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rule the 220 gsm sheet lightly in pencil. The guide lines must be faint enough to erase cleanly after the ink dries, hard-pressed pencil leaves a groove that stays visible even after erasure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Write each line without correction. If a letter fails badly, leave it and continue, the eye adjusts. Return with a sharp knife or eraser if the paper will take it. A single re-written word on a separate slip of paper can be cut and pasted over the error if the error is minor and close to the edge of a word." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erase guide lines after the ink has dried for at least one hour. Erase lightly in one direction only, back-and-forth erasing can lift ink from the surface of the paper." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Lines of text are visibly uneven in length, making the panel look ragged",
+              "cause": "Line breaks were not planned in the thumbnail stage.",
+              "fix": "In the rough stage, write each line onto a folded strip and cut strips to compare lengths. Adjust word breaks to bring lines closer to the same width. A centred layout disguises uneven line lengths more easily than a flush-left arrangement."
+            },
+            {
+              "symptom": "Pencil guide lines are still visible after erasing",
+              "cause": "Guide lines were ruled too heavily.",
+              "fix": "Rule guide lines at 2H or 4H pencil hardness, not HB. Hard pencil leaves a lighter, more easily erased mark. If the problem is on the finished piece, dampen the eraser very slightly and work very lightly."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

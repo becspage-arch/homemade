@@ -1,0 +1,122 @@
+{
+  "slug": "testing-paper-for-fountain-pens",
+  "title": "Testing paper for fountain pens",
+  "subtitle": "A practical method for assessing feathering, bleed-through, show-through, and dry time before committing to a new paper",
+  "excerpt": "Not all paper is equal for fountain pens. A sheet that handles ballpoint cleanly may feather badly with a wet nib, and a paper that looks fine with a fine nib may bleed through with a broad one. A structured test on each new paper stock takes five minutes and produces a reusable reference card that prevents wasted pages and spoiled journal entries.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Fountain pen community knowledge; the structured paper test protocol has been developed and refined online by the fountain pen community (The Fountain Pen Network, r/fountainpens) and is not attributable to a single author. The underlying paper chemistry references draw from general papermaking and surface-coating literature.",
+  "recipeTools": [
+    { "slug": "fountain-pen-medium", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "cartridge-paper-90", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pencil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "feathering", "term": "Feathering", "definition": "The spread of fountain pen ink along the fibres of unsized or lightly sized paper, producing ragged, fuzzy letter edges. Feathering is caused by capillary action: ink wicks along surface fibres rather than sitting where the nib deposited it." },
+    { "slug": "bleed-through", "term": "Bleed-through", "definition": "Ink that saturates the paper and transfers to the reverse face, making both sides of the sheet unusable. A sign of very thin paper or very wet ink on an absorbent surface." },
+    { "slug": "show-through", "term": "Show-through", "definition": "Ink visible through the paper when held to a backlight, without physically bleeding to the reverse face. All paper shows through to some degree; show-through becomes a problem when it is visible in ordinary reading conditions without transmitted light." }
+  ],
+  "techniqueSlugs": ["testing-paper-for-fountain-pens"],
+  "criticalTechniques": ["testing-paper-for-fountain-pens"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feathering" } }], "text": "Feathering" },
+          { "type": "text", "text": ", " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bleed-through" } }], "text": "bleed-through" },
+          { "type": "text", "text": ", and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "show-through" } }], "text": "show-through" },
+          { "type": "text", "text": " are the three main failure modes for fountain pen paper. A fourth, slow dry time, which leads to smearing, is particularly relevant for left-handed writers. The test below checks all four on a standard A6-sized sample, producing a reference card that can be kept in the pen case." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Fountain pen, medium nib", "slug": "fountain-pen-medium", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm (test subject)", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Cartridge paper, 90 gsm (test subject)", "slug": "cartridge-paper-90", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Pencil (HB, for labelling the test card)", "slug": "pencil", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The four-part test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Feathering test: write a line of lowercase letters with straight strokes (n, m, u, i) and a line with curved strokes (o, c, e, a) in your normal writing ink. Examine the letter edges with a loupe or at arm's length. Clean, hard edges indicate good sizing; ragged or fibrous edges indicate feathering." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bleed-through test: draw a thick, slow scribble covering about 2 cm square, the wettest line the nib can produce. Turn the sheet over and check immediately. Any darkening on the reverse indicates bleed-through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Show-through test: allow the bleed-through sample to dry completely (30 minutes), then hold the sheet up to a window. A small amount of show-through is normal; acceptable is when the text is barely legible from the reverse. Unacceptable is when it is clearly readable." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dry time test: write a short sentence and immediately smear it lightly with the side of the hand, left to right. Write the elapsed time (in seconds) beside the smear. Acceptable dry time for journal use is under 10 seconds for a medium-wet nib on a well-sized sheet." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What good paper looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Well-sized paper for fountain pens (Clairefontaine, Rhodia, Tomoe River, and similar) shows no feathering, no bleed-through, minimal show-through, and dries within 10-15 seconds for most inks. Standard UK cartridge paper at 130 gsm passes the feathering and bleed-through tests for most inks but has slow dry times with very wet inks. 90 gsm copier paper feathers and bleeds with almost any ink except the driest, finest-nib combinations." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A paper that performed well for fine nibs feathers badly with a broad or flex nib",
+              "cause": "The increased ink flow from a larger nib overwhelms the sizing that a fine nib's minimal flow did not challenge.",
+              "fix": "Test every paper with the wettest nib you intend to use it with, not just a fine nib. Many papers that pass a fine-nib test fail a broad-nib test."
+            },
+            {
+              "symptom": "The test card shows no feathering but the finished journal page does",
+              "cause": "The journal paper has a different coating than the test card, even within the same brand, inside pages and cover paper may differ.",
+              "fix": "Cut the test sample from a page inside the journal, not from the cover or a separate sample card."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

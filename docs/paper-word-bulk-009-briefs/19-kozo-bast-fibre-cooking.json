@@ -1,0 +1,145 @@
+{
+  "slug": "kozo-bast-fibre-cooking",
+  "title": "Cooking kozo bast fibre",
+  "subtitle": "Preparing raw kozo bark in a soda-ash bath to remove lignin before beating and sheet-forming",
+  "excerpt": "Raw kozo bark fibre cannot be beaten directly into paper pulp, the lignin binding the cellulose fibres together must first be dissolved by a long alkaline cook. Soda ash (sodium carbonate) at 15-20% of dry fibre weight, simmered for two to three hours, converts tough bast into soft, workable fibre that separates cleanly under the beater.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Timothy Barrett, Japanese Papermaking: Traditions, Tools, and Techniques (1983 / 2005 reprint). Barrett's technical instructions for bast fibre preparation are widely cited in the hand papermaking community and follow traditional Japanese methods adapted for Western studio use.",
+  "recipeTools": [
+    { "slug": "kozo-fibre-raw", "isOptional": false },
+    { "slug": "soda-ash", "isOptional": false },
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "papermaking-blender", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "paper-mould-deckle-a4", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bast-fibre", "term": "Bast fibre", "definition": "Cellulose fibre from the inner bark of a plant, kozo, flax, hemp, and abaca are the main papermaking bast fibres. Long and strong relative to cotton linter, producing sheets with high tear resistance." },
+    { "slug": "lignin", "term": "Lignin", "definition": "The natural polymer that binds cellulose fibres together in plant cell walls. Lignin is the enemy of archival paper: it yellows and becomes acidic over time. Cooking in an alkaline solution dissolves it, leaving clean cellulose behind." },
+    { "slug": "retting", "term": "Retting", "definition": "The preliminary step of soaking dry raw bast fibre in water for several hours to re-hydrate and soften it before cooking. Un-retted fibre does not absorb the alkaline cooking liquor evenly." }
+  ],
+  "techniqueSlugs": ["kozo-bast-fibre-cooking"],
+  "criticalTechniques": ["kozo-bast-fibre-cooking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Soda ash is strongly alkaline (pH 11-12 in solution). Wear rubber gloves and eye protection when handling the dry powder and during the cook. Work in a ventilated space. Keep the pot dedicated to fibre work, not food." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Kozo is a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bast-fibre" } }], "text": "bast fibre" },
+          { "type": "text", "text": ", the inner bark of the paper mulberry shrub. Its long cellulose bundles give kozo paper its strength and translucency, but they are bound together by " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lignin" } }], "text": "lignin" },
+          { "type": "text", "text": " that must be removed before the fibre can form a sheet. A two-hour soda-ash cook dissolves the lignin without damaging the cellulose." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Kozo fibre (raw, dried)", "slug": "kozo-fibre-raw", "isOptional": false },
+            { "name": "Soda ash (sodium carbonate)", "slug": "soda-ash", "isOptional": false },
+            { "name": "Dye-pot, stainless steel (dedicated)", "slug": "dye-pot-stainless", "isOptional": false },
+            { "name": "Papermaking blender (dedicated)", "slug": "papermaking-blender", "isOptional": false },
+            { "name": "Papermaking vat", "slug": "papermaking-vat", "isOptional": false },
+            { "name": "Paper mould + deckle, A4", "slug": "paper-mould-deckle-a4", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, rett the fibre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weigh out 50 g of dry kozo fibre. This produces approximately 20-25 A4 sheets. Place the fibre in a bucket of cold water and soak for at least four hours, or overnight. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "retting" } }], "text": "Retting" },
+          { "type": "text", "text": " rehydrates the tightly compressed fibre bundles so the cooking liquor penetrates evenly. Drain before cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, cook in soda ash" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weigh out soda ash at 15% of the dry fibre weight: for 50 g of kozo, use 7.5 g of soda ash." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Half-fill the stainless pot with water (3-4 litres for 50 g fibre). Add the soda ash and stir to dissolve." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the retted fibre. Bring to a low simmer (not a rolling boil) and maintain for 2 hours. Stir occasionally to keep the fibre submerged. The water will turn brown as lignin dissolves." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain and rinse the fibre thoroughly under running water until the rinse water runs clear. This removes residual soda ash, any remaining alkali will affect the final sheet pH." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, beat and form sheets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tear the cooked fibre into small pieces (5 cm or less) and blend in the papermaking blender with plenty of water, about a tablespoon of fibre per litre of water. Blend in short bursts of 5-10 seconds until the fibre separates into individual strands. Longer blending shortens the fibres and reduces sheet strength. Transfer to the vat, dilute to the working consistency, and form sheets as normal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The cooked fibre is still tough and chewy, it will not separate in the blender",
+              "cause": "Undercooked: the soda ash concentration was too low, or the simmer time was too short.",
+              "fix": "Return the fibre to the pot in fresh soda-ash solution and cook for a further hour. Well-cooked kozo should pull apart between the fingers with almost no resistance."
+            },
+            {
+              "symptom": "The finished sheets are very dark yellow-brown",
+              "cause": "The fibre was not rinsed thoroughly after cooking, leaving lignin-stained residual liquor in the pulp.",
+              "fix": "Rinse the cooked fibre until the water runs completely clear before blending. A second 30-minute soak in clean water also helps."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

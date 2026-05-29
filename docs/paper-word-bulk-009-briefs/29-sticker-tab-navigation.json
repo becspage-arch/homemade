@@ -1,0 +1,131 @@
+{
+  "slug": "sticker-tab-navigation",
+  "title": "Sticker and tab navigation",
+  "subtitle": "Building a page-edge tab and index system in a journal or planner using washi tape and cut stickers",
+  "excerpt": "A well-designed tab system makes a journal navigable without an index. Colour-coded washi tabs at the outer edge of section-start pages let you thumb directly to the right section. An index spread at the front or back ties the tabs to page numbers. The system works in any bound blank journal and requires only washi tape, scissors, and a pencil.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "General journalling craft tradition. No canonical single source; tab navigation is a standard bullet-journal and planner technique documented extensively in the community since Ryder Carroll introduced the Bullet Journal method (2013, now trademarked but widely adapted).",
+  "recipeTools": [
+    { "slug": "washi-tape", "isOptional": false },
+    { "slug": "scissors-craft", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "page-tab", "term": "Page tab", "definition": "A flag attached to the outer or upper edge of a page, extending beyond the journal's own edge, to mark a section or key page. Tabs are visible when the journal is closed and allow direct navigation by feel rather than by opening and scanning." },
+    { "slug": "washi-flag", "term": "Washi flag", "definition": "A strip of washi tape folded over the edge of a page so that half the tape faces one side and half faces the reverse, creating a self-adhesive double-sided flag tab. The fold-over construction means the tab does not require separate adhesive on the inside face." },
+    { "slug": "index-spread", "term": "Index spread", "definition": "A double-page spread at the front of a journal containing a contents list that maps section titles to page numbers or tab colours. Updated as new sections are added." }
+  ],
+  "techniqueSlugs": ["sticker-tab-navigation"],
+  "criticalTechniques": ["sticker-tab-navigation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "page-tab" } }], "text": "page tab" },
+          { "type": "text", "text": " system works on two principles: consistent position and consistent colour coding. Tabs at the same vertical position across all sections are immediately legible, the eye finds the right colour in one glance. Tabs placed randomly at different heights require scanning every one to find the right section." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Washi tape (multiple colours)", "slug": "washi-tape", "isOptional": false },
+            { "name": "Craft scissors", "slug": "scissors-craft", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Craft knife (for clean-cut tab edges)", "slug": "craft-knife", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning the tab positions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Count the number of sections in the journal. For up to eight sections, place all tabs at the same horizontal position on the right-hand edge, staggered vertically in equal steps, if the page is 210 mm tall, an eight-section system places tabs at 15 mm intervals from the head. Mark the target position lightly with a pencil before applying tape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making a washi flag tab" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Cut a strip of washi tape 30-35 mm long. Fold it over the page edge at the marked position so that 15 mm extends beyond the edge on both faces. Press both sides down firmly. This is the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "washi-flag" } }], "text": "washi flag" },
+              { "type": "text", "text": " construction." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim the protruding flag to a neat shape: square, semicircle, or angled point. A semicircle cut with scissors is the fastest and looks clean." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the same colour tab to every page within the section so the colour block is visible as a thick stripe when the journal is closed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The index spread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Reserve the first two pages of the journal as the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "index-spread" } }], "text": "index spread" },
+          { "type": "text", "text": ". Rule a simple table: section name, page range, tab colour. Stick a small sample of each tab colour next to its entry. Update the index as new sections open; leave a row or two blank for additions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Tabs at different vertical positions make the system unreadable by touch",
+              "cause": "Tabs were applied without planning consistent positions across sections.",
+              "fix": "Use the ruler to mark the tab position on a scrap strip first, then transfer the measurement to each section-start page before applying tape. Consistent position is more important than precise placement."
+            },
+            {
+              "symptom": "Washi flag tabs fall off after a few weeks of use",
+              "cause": "Washi tape low-tack adhesive, especially on coated or smooth paper.",
+              "fix": "Press the tab firmly with the bone folder after application. On very smooth paper, use a slightly higher-tack tape or reinforce the inner face with a small square of clear adhesive tape."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

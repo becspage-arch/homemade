@@ -1,0 +1,113 @@
+{
+  "slug": "origami-butterfly",
+  "title": "Origami butterfly",
+  "subtitle": "The Yoshizawa-style butterfly, a delicate decorative model with spread wings, folded from a single square of kami",
+  "excerpt": "The origami butterfly is one of the most recognisable decorative origami models. The Yoshizawa version, developed by the father of modern origami, Akira Yoshizawa, produces a naturalistic spread-wing form with a thin body and broad wings that can be posed at different angles. From a single 15 cm square of kami, it takes about five minutes once the fold sequence is familiar.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Yoshizawa, Akira, Origami Dokuhon I (1957, in Japanese). Yoshizawa's butterfly design is widely reproduced in origami literature and teaching collections. The model entered the public domain through decades of widespread non-commercial publication.",
+  "recipeTools": [
+    { "slug": "kami-15cm", "isOptional": false },
+    { "slug": "origami-bone-folder-mini", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "diagonal-crease", "term": "Diagonal crease", "definition": "A fold line running from one corner of a square sheet to the opposite corner. Diagonal creases are the foundation of many origami models, establishing the axis of symmetry. In the butterfly, both diagonal creases are made at the start to locate the centre point of the square." },
+    { "slug": "pleat-fold", "term": "Pleat fold", "definition": "Two adjacent parallel folds, one valley and one mountain, that create a flat stepped layer. In the butterfly, a central pleat fold compresses the body and raises the wings, giving the model its three-dimensional quality." },
+    { "slug": "wing-spread", "term": "Wing spread", "definition": "The angle between the two wings of the folded butterfly, adjusted by gently pressing or pulling the body. A wider spread (180°) gives a flat silhouette suitable for display; a narrower spread (90°) gives a more three-dimensional, in-flight appearance." }
+  ],
+  "techniqueSlugs": ["origami-butterfly"],
+  "criticalTechniques": ["origami-butterfly"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The butterfly uses the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "diagonal-crease" } }], "text": "diagonal creases" },
+          { "type": "text", "text": " as its primary symmetry axes. The sheet is worked symmetrically on both sides throughout, every fold on the left is mirrored on the right. This bilateral discipline is good practice for more complex models, and in the butterfly it produces wings that match without measuring." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Kami origami paper, 15 cm", "slug": "kami-15cm", "isOptional": false },
+            { "name": "Mini bone folder (origami)", "slug": "origami-bone-folder-mini", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the butterfly" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the square coloured-side down. Fold corner to corner along both diagonals, creasing and unfolding each time. Then fold the top edge down to the bottom edge (horizontal centre crease), crease, and unfold. You now have four crease lines converging at the centre." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the top edge down to the bottom edge again, but this time use the diagonal creases to collapse the sides inward, the left and right corners fold behind, and the sheet collapses into a triangle. This is the preliminary triangle base." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "With the point of the triangle at the top and the open end at the bottom: fold the bottom-left corner up to meet the top point, and fold the bottom-right corner up to meet the top point. Both folds are valley folds along lines that run from the top point to the lower midpoint of each side. Crease firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Fold the model in half vertically, left wing behind right wing, then lay it flat. Apply the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pleat-fold" } }], "text": "pleat fold" },
+              { "type": "text", "text": " at the centre of the body: fold the lower point upward about one-third of the body height, then fold it back down, creating a compressed Z-shape at the waist. Crease both folds sharply. This pleat forms the body and raises the wings." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Open the wings by pulling them gently apart. Adjust the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wing-spread" } }], "text": "wing spread" },
+              { "type": "text", "text": " to the desired angle, 120° looks naturalistic; 180° gives a flat silhouette for display." }
+            ]}]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The wings are unequal, one is wider than the other",
+              "cause": "The preliminary triangle base was not folded symmetrically along the centre axis.",
+              "fix": "Unfold back to the preliminary triangle and check that the two lower fold lines run exactly from the top apex to the exact lower midpoints of each side. Even a 2 mm deviation will be visible in the finished wings."
+            },
+            {
+              "symptom": "The pleat fold at the body makes the model buckle rather than lifting the wings",
+              "cause": "The pleat was made before folding the model in half, so the mountain fold of the pleat runs in the wrong direction.",
+              "fix": "Make the pleat fold after the model has been folded in half along its vertical axis. The pleat should fold toward the open side (front face), not toward the spine side."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

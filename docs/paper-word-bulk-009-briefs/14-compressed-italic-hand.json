@@ -1,0 +1,141 @@
+{
+  "slug": "compressed-italic-hand",
+  "title": "Compressed italic hand",
+  "subtitle": "The condensed form of italic, narrower letter widths, tighter spacing, for manuscripts and narrow-column work",
+  "excerpt": "Compressed italic reduces the width of each letter body to approximately half the x-height rather than the standard two-thirds. The slope increases slightly and the interspace between letters tightens. The result reads as italic but fits more words per line, making it the natural choice for marginalia, narrow column formats, and closely-written manuscripts.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing & Illuminating & Lettering (1906), chapters on italic and condensed scripts. Internet Archive: https://archive.org/details/writingilluminat00john.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "sumi-ink", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "compressed-italic", "term": "Compressed italic", "definition": "An italic hand where the letter width is reduced to approximately half the x-height, as opposed to the standard two-thirds width of formal italic. The slope typically increases slightly to balance the narrow form." },
+    { "slug": "letter-width", "term": "Letter width", "definition": "The horizontal extent of a single letter from its left edge to its right edge, expressed as a proportion of the x-height. Varies by alphabet: standard italic ~two-thirds x-height; compressed italic ~half x-height." },
+    { "slug": "counter", "term": "Counter", "definition": "The enclosed or partially enclosed white space inside a letter, the loop of an o, the bowl of a b, the inner arc of an n. The counter shape determines the character of an alphabet." }
+  ],
+  "techniqueSlugs": ["compressed-italic-hand", "italic-minuscule-alphabet"],
+  "criticalTechniques": ["compressed-italic-hand"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Standard formal italic is built on an o that is approximately two-thirds as wide as it is tall. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "compressed-italic" } }], "text": "Compressed italic" },
+          { "type": "text", "text": " narrows that o to half the x-height, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "counter" } }], "text": "counter" },
+          { "type": "text", "text": " becomes a narrower oval rather than a broad ellipse. The same compression carries through every letter: n-arches are narrower, u-bowls tighter, the a and d more upright. The overall effect is a hand that reads as italic in rhythm and weight but takes up less horizontal space per word." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Mitchell Roundhand nib, 3 (medium)", "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+            { "name": "Straight pen holder", "slug": "straight-pen-holder", "isOptional": false },
+            { "name": "Sumi ink", "slug": "sumi-ink", "isOptional": false },
+            { "name": "Cartridge paper, 130 gsm", "slug": "cartridge-paper-130", "isOptional": false },
+            { "name": "Pencil (HB)", "slug": "pencil", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The compressed o as the reference letter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rule a guide sheet at italic proportions: 5 nib widths x-height, nib angle 45°, slope 5-10°. Write a column of o letters with the standard two-thirds width. Beside it, write a column with the width reduced to half the x-height. Compare the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "letter-width" } }], "text": "letter widths" },
+          { "type": "text", "text": ": the compressed o should look like a narrow oval rather than a broad one. This comparison is the anchor for the entire alphabet, if the o is right, the rest follows." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjustments for each letter family" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The letters group into families that share the same shape modifications:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round group (o, c, e, d, g, q, b, p): narrow the oval to half x-height width." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Arch group (n, m, h, u, a): tighten the arch so it branches earlier, at one-third of the x-height rather than one-half." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Diagonal group (v, w, x, z, k): reduce the spread of the angles; the diagonals are steeper." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Straight group (i, l, t, r, f): no width change; these are already narrow. Increase slope by 2-3° so the straights harmonise with the tighter round and arch letters." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use compressed italic" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Compressed italic suits narrow column work: marginalia, index columns, long prose on A5 or smaller. It also works for formal quotations where standard italic would run too wide. Avoid it for display headings, where the narrow form reads as cramped rather than elegant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The compressed letters look squashed rather than elegant",
+              "cause": "The width was reduced but the arch branching point was not adjusted, the arch still branches at mid-x-height, producing a stubby form.",
+              "fix": "Raise the branching point to one-third of x-height as the letters narrow. Compression requires both narrowing the body and raising the branch."
+            },
+            {
+              "symptom": "Words become unreadable at the compressed width",
+              "cause": "Over-compression, letter width below 40% of x-height.",
+              "fix": "Set 50% of x-height as the minimum. Below this, individual letters become indistinct. Even professional calligraphers rarely compress below 45%."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

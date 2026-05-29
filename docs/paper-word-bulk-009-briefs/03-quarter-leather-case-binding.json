@@ -1,0 +1,173 @@
+{
+  "slug": "quarter-leather-case-binding",
+  "title": "Quarter-leather case binding",
+  "subtitle": "A leather spine strip combined with paper-covered boards, the standard two-material book cover",
+  "excerpt": "A quarter-leather binding uses leather for the spine and a few millimetres onto each board, with marbled or plain paper covering the rest. The leather takes the wear at the spine; the decorative paper takes the display surface. The combination was standard for reference books and personal journals from the seventeenth century onward.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on quarter, half, and full bindings. Internet Archive: https://archive.org/details/bookbindingandca00cock. Cyril Davenport, The Book, Its History and Development (1907).",
+  "recipeTools": [
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "book-press", "isOptional": false },
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "book-mull", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "veg-tan-leather-thin", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "quarter-binding", "term": "Quarter binding", "definition": "A book cover where only the spine is covered in a material different from the boards, typically leather on the spine and paper or cloth on the boards. The leather extends onto each board by approximately one-fifth of the board width." },
+    { "slug": "turn-in", "term": "Turn-in", "definition": "The 15-20 mm strip of cover material folded over the edge of the board onto the inside face. The turn-in is pasted and pressed to give the cover a clean, finished edge." },
+    { "slug": "endpaper", "term": "Endpaper", "definition": "The folded sheet at the front and back of a book that joins the text block to the case. Half is pasted to the board on the inside; the other half is a free flyleaf." }
+  ],
+  "techniqueSlugs": ["quarter-leather-case-binding", "case-binding-introduction"],
+  "criticalTechniques": ["quarter-leather-case-binding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Bookbinding adhesives. PVA and wheat-paste are safe for indoor use. Leather paring, if you are skiving the turn-in edges thin, involves a sharp knife: keep the edge moving away from you, and change the blade when it drags." }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "quarter-binding" } }], "text": "quarter binding" },
+          { "type": "text", "text": " puts leather where the book takes its hardest wear, the spine, and uses decorative paper or book cloth for the boards. The material change sits at roughly one-fifth of the board width. The two materials abut cleanly at the joint line; a well-made quarter binding looks like one piece of cover material because the transition is straight and flush." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Bookbinding awl", "slug": "bookbinding-awl", "isOptional": false },
+            { "name": "Bookbinding needle", "slug": "bookbinding-needle", "isOptional": false },
+            { "name": "Bookbinding thread, linen (waxed)", "slug": "bookbinding-thread-linen", "isOptional": false },
+            { "name": "Beeswax block", "slug": "beeswax-block", "isOptional": false },
+            { "name": "Bone folder", "slug": "bone-folder", "isOptional": false },
+            { "name": "Book press / nipping press", "slug": "book-press", "isOptional": false },
+            { "name": "Bookbinding board, 2 mm", "slug": "bookbinding-board-2mm", "isOptional": false },
+            { "name": "PVA, acid-free", "slug": "pva-acid-free", "isOptional": false },
+            { "name": "Book mull (super)", "slug": "book-mull", "isOptional": false },
+            { "name": "Paste brush (50 mm flat)", "slug": "paste-brush-bookbinding", "isOptional": false },
+            { "name": "Veg-tan leather, 1-1.5 mm", "slug": "veg-tan-leather-thin", "isOptional": false },
+            { "name": "Craft knife", "slug": "craft-knife", "isOptional": false },
+            { "name": "Self-healing cutting mat, A3", "slug": "cutting-mat-a3", "isOptional": false },
+            { "name": "Metal ruler, 30 cm", "slug": "metal-ruler-30cm", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Covering paper: marbled paper at 80-100 gsm or plain coloured stock. The grain must run parallel to the spine. Endpaper stock at 120-140 gsm for the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "endpaper" } }], "text": "endpapers" },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting the leather spine strip" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the spine: spine width + 30 mm (15 mm onto each board) × spine height + 40 mm (20 mm turn-in at head and tail). Cut the leather strip to these measurements." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pare the turn-in edges, the 15 mm at head, tail, and each long edge, to half thickness with a sharp craft knife at a shallow angle. This reduces bulk at the corners and allows the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }], "text": "turn-in" },
+              { "type": "text", "text": " to fold neatly." }
+            ] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pasting and attaching the spine" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Paste the flesh side of the leather strip with PVA diluted slightly with water. Leave for one minute to absorb into the leather." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Position the strip on the spine and boards, centred and with equal margins at head and tail. Press firmly from the spine outward to the board edges. Use the bone folder to push the leather into the groove along each joint line." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold in the head and tail turn-ins first, mitring the corners. Fold in the long edges last. Press under boards in the nipping press for thirty minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Covering the boards with paper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut two pieces of covering paper: each the full board height + 30 mm × the board width minus the leather's board coverage + 20 mm. The paper must butt tightly against the leather edge without overlapping. Paste the paper, let it relax for thirty seconds, then lay the board on it. Turn in the edges, starting with the head and tail. Mitre the foredge corners. Press under boards for one hour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A visible gap or ridge where the leather meets the paper",
+              "cause": "The paper is overlapping the leather rather than abutting it, or a curl at the leather edge is not pressed flat.",
+              "fix": "Check the leather-board coverage measurement: the paper edge must sit exactly at the line where the leather ends. Use the bone folder to press the leather flat before cutting the paper piece."
+            },
+            {
+              "symptom": "The leather wrinkles at the joint groove",
+              "cause": "The leather was not worked into the groove immediately after pasting.",
+              "fix": "Use the bone folder tip to push the pasted leather firmly into the groove while it is still wet. Work along the full length of the groove in one pass."
+            },
+            {
+              "symptom": "The covering paper cockles after drying",
+              "cause": "Paper grain running across the spine rather than parallel to it.",
+              "fix": "Cut covering paper with grain parallel to the spine. Test grain direction by bending the sheet gently in both directions, the low-resistance direction is with the grain."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

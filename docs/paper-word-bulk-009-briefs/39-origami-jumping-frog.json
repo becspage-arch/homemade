@@ -1,0 +1,111 @@
+{
+  "slug": "origami-jumping-frog",
+  "title": "Origami jumping frog",
+  "subtitle": "The classic action origami frog, press the back, release, and it jumps",
+  "excerpt": "The origami jumping frog is a functional toy: press its back end down with a finger, slide the finger off, and the frog jumps forward and upward. The model is made from a rectangle (not a square) of kami, a standard index card or a sheet of kami cut to 3:2 proportions works well. The jumping mechanism depends on a compressed accordion section at the back of the body.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional origami model; originator unknown. One of the most widely taught beginner action origami models, documented in multiple origami books and community resources since at least the 1950s.",
+  "recipeTools": [
+    { "slug": "kami-15cm", "isOptional": false },
+    { "slug": "origami-bone-folder-mini", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "valley-fold", "term": "Valley fold", "definition": "A fold in which the paper is folded toward the viewer, creating a V-shaped valley crease on the near face. In folding diagrams, valley folds are shown as dashed lines with an arrow pointing in the direction of the fold." },
+    { "slug": "mountain-fold", "term": "Mountain fold", "definition": "A fold in which the paper is folded away from the viewer, creating a ridge. In folding diagrams, mountain folds are shown as a dash-dot line. Many mountain folds are easier to execute by flipping the model over and making a valley fold, then turning it back." },
+    { "slug": "squash-fold", "term": "Squash fold", "definition": "Opening a pocket or flap and pressing it flat symmetrically. The result is a wider, flatter shape with two equal triangular flaps. The frog's front legs are made by a squash fold on the two front corners of the preliminary base." }
+  ],
+  "techniqueSlugs": ["origami-jumping-frog"],
+  "criticalTechniques": ["origami-jumping-frog"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The jumping frog starts from a rectangle with a 3:2 aspect ratio, a standard 15 cm kami sheet cut to 15 × 10 cm, or an index card works well. All " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "valley-fold" } }], "text": "valley folds" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mountain-fold" } }], "text": "mountain folds" },
+          { "type": "text", "text": " should be creased sharply with the mini bone folder as soon as they are made, loose creases reduce the jumping range significantly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Kami origami paper, 15 cm (cut to 15 × 10 cm)", "slug": "kami-15cm", "isOptional": false },
+            { "name": "Mini bone folder (origami)", "slug": "origami-bone-folder-mini", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the frog" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the rectangle with the long sides horizontal. Fold the top edge down to the bottom edge (valley fold along the horizontal centre), crease, and unfold. Then fold the left edge to the right edge (valley fold along the vertical centre), crease, and unfold. The sheet now has two intersecting crease lines." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the top-right and top-left corners down to the horizontal centre crease, creating two diagonal valley folds. The top of the sheet now forms a triangle pointing downward. Crease both diagonals firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Fold the left and right edges of the top triangle inward to meet at the centre, then perform a " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "squash-fold" } }], "text": "squash fold" },
+              { "type": "text", "text": " on each side corner of the triangle to form the two front legs." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the lower half of the body up so the bottom edge meets the horizontal centre crease. Then fold the lower corners out diagonally to form the back legs. Finally, fold the back half down by half its height, then fold it back up again on itself, this accordion section is the jumping spring." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To make the frog jump: press the back end of the accordion section flat with one finger, slide the finger off the back edge, and the spring extends and launches the frog." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Troubleshooting",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The frog slides forward instead of jumping",
+              "cause": "The accordion spring section is too loose, the creases were not sharp enough.",
+              "fix": "Re-crease the accordion section with the bone folder. The spring must fold completely flat when pressed and snap back fully when released. If the kami is worn from refolding, start with a fresh piece."
+            },
+            {
+              "symptom": "The front legs fold backward rather than spreading sideways",
+              "cause": "The squash fold on the front corners was not completed correctly.",
+              "fix": "Ensure the squash fold opens the corner symmetrically, with each layer folding outward at 45° from the body centre line. The two front legs should project to either side of the body when viewed from above."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
