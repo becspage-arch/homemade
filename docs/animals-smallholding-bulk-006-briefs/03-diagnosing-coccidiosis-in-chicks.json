@@ -1,0 +1,171 @@
+{
+  "slug": "diagnosing-coccidiosis-in-chicks",
+  "title": "Diagnosing coccidiosis in chicks",
+  "subtitle": "The most common killer of growing chicks, and how to catch it early.",
+  "excerpt": "Blood in the droppings is the obvious sign, but coccidiosis often kills before that stage is visible. What to look for from day 10 onwards, what to do when you suspect an outbreak, and how litter management prevents recurrence.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA/APHA Code of Practice for the Welfare of Meat Chickens and Laying Hens (2018). Merck Veterinary Manual, coccidiosis chapter. University of Wisconsin Extension, poultry health management series. Lewis Wright, The Practical Poultry Keeper (1867), Internet Archive, disease chapter (historical context only; treatment has moved on).",
+  "glossaryTerms": [
+    { "slug": "coccidiosis", "term": "Coccidiosis", "definition": "A parasitic intestinal disease caused by Eimeria protozoa. Oocysts pass out in droppings and are ingested by other birds. Young chicks have no immunity and can die within days of showing symptoms." },
+    { "slug": "oocyst", "term": "Oocyst", "definition": "The egg stage of the coccidian parasite. Shed in faeces, they become infective in warm damp conditions within 24 to 48 hours. Cleaning and drying litter breaks the cycle." },
+    { "slug": "litter", "term": "Litter", "definition": "The bedding material covering the floor of a brooder or coop. Wood shavings, straw, or paper. Wet litter is the primary risk factor for coccidiosis in young chicks." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["cocci in chicks", "bloody droppings chicks", "chick coccidiosis"],
+  "recipeTools": [
+    { "slug": "chicken-feeder", "isOptional": false },
+    { "slug": "chicken-drinker-gravity", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A batch of chicks that was lively at two weeks old and suddenly dull at three is a coccidiosis outbreak until proved otherwise. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coccidiosis" } }], "text": "Coccidiosis" },
+          { "type": "text", "text": " is the most common disease of growing poultry and moves fast. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oocyst" } }], "text": "oocysts" },
+          { "type": "text", "text": " are everywhere where birds have lived before; the question is whether the challenge outpaces the chick's developing immunity." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When coccidiosis strikes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most outbreaks appear between 10 days and 6 weeks of age. At this stage, chicks peck at " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "litter" } }], "text": "litter" },
+          { "type": "text", "text": " but have not yet built immunity to the Eimeria species in their environment. Spring hatchings are especially vulnerable: warm, damp conditions in the brooder accelerate oocyst development." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs to look for" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chicks standing hunched with ruffled feathers, not moving to the feeder" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Droppings watery or discoloured (pale, orange, or blood-streaked)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weight loss visible within 48 hours: keel bone prominent, crop not filling" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pallor around the face and comb in birds old enough to have colour" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Deaths in chicks that appeared healthy the day before" }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Not all bloody droppings are coccidiosis",
+          "body": "Caecal droppings (the dark, tarry, sometimes bloody-looking discharge that chickens pass every 8 to 10 normal droppings) are normal. The difference: caecal droppings appear once or twice a day per bird and the bird looks healthy. Coccidiosis produces multiple watery or bloody droppings per bird per hour and the bird is visibly unwell. If only one bird is affected and the others look normal, a single gut irritation is more likely than an outbreak."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The immediate response" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Contact your vet and describe the signs. A prescription course of a licensed anticoccidial (amprolium or toltrazuril are the two most common in the UK) added to the drinking water is the standard treatment. Start the medicated water within hours of diagnosing; do not wait for a confirmed laboratory result when the birds are deteriorating." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove and replace all litter immediately. Wet litter is both symptom and cause: infected droppings remain infective on damp shavings for days. Replace with dry material and keep the brooder temperature steady." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Management after the outbreak" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicks that recover from a mild challenge build some immunity to the cocci strain involved. Commercial poultry units vaccinate chicks at hatching for the same reason: a low-level challenge builds immunity faster than medicine. For small flocks, litter management is the key." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prevention" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep litter dry. Top up with fresh dry shavings daily in the brooder; wet patches around the drinker are the highest-risk area" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use nipple or raised drinkers rather than open trough drinkers, which chicks step in and contaminate" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean and disinfect the brooder between every batch. Use a product with efficacy against oocysts: most standard disinfectants do not kill them" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not overcrowd: allow at least 0.1 m² per chick in the brooder to the age of 4 weeks" }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What you might find",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Chicks dying despite treatment",
+              "cause": "Treatment started too late, or a different disease is present alongside or instead of coccidiosis",
+              "fix": "Request a post-mortem from your vet on one of the dead birds. Intestinal haemorrhage confirms coccidiosis. Other pathology points to Marek's disease, gumboro, or bacterial infection."
+            },
+            {
+              "symptom": "Recurrent outbreaks in the same brooder",
+              "cause": "Oocysts surviving between batches on the brooder floor or walls",
+              "fix": "Steam-clean the brooder between every batch. Allow it to dry for at least 48 hours before adding new chicks and fresh litter."
+            },
+            {
+              "symptom": "Single chick affected, rest of batch healthy",
+              "cause": "One bird more vulnerable than others, or a different issue such as gut irritation",
+              "fix": "Isolate the affected chick and monitor. If the rest of the batch remains healthy after 48 hours, treat the individual rather than the whole batch."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
