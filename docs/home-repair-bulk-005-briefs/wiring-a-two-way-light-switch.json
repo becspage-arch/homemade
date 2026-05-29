@@ -1,0 +1,106 @@
+{
+  "slug": "wiring-a-two-way-light-switch",
+  "title": "Wiring a two-way light switch",
+  "subtitle": "Replace or extend a single one-way switch to two-way control using three-core-and-earth cable",
+  "excerpt": "How to wire a two-way switching arrangement so a light can be controlled from two locations, the bottom and top of a staircase, for example. Covers the cable layout, the terminal connections at each switch, and testing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 7671 (18th Edition Wiring Regulations). Traditional UK domestic switching practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "two-way-switch-terminals",
+      "term": "COM / L1 / L2 terminals",
+      "definition": "The three terminals on a two-way switch. COM (common) carries the live supply in or out depending on switch position. L1 and L2 are the two strappers, connected by the three-core-and-earth cable running between the two switch positions. The L1 and L2 are sometimes labelled A1/A2 or simply 1/2 on older switches."
+    },
+    {
+      "slug": "three-core-earth-strapper",
+      "term": "Three-core-and-earth strapper cable",
+      "definition": "A cable with a grey outer sheath containing three cores (brown, black, and grey) plus an uninsulated earth. The coloured cores are used as the two strapper conductors and one switched-live between the switch positions. Conductors used as live must be sleeved brown at each end."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two-way switching is widely misunderstood, but the terminal labels on modern UK switches make it clear. Three cores run between the two switches: the two strappers (L1 and L2) and the common. The common carries the live feed at one switch and the switched-live output at the other." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, Isolate and verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB for the lighting circuit. Lock off the MCB. Carry out the live-dead-live test at both switch positions using the two-pole tester and proving unit before touching any conductors. Test live, test dead, retest live, only a passed three-step test proves isolation." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, Understand the cable layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the standard UK two-way arrangement: a twin-and-earth cable brings the live feed and neutral to switch 1. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "three-core-earth-strapper" } }], "text": "three-core-and-earth strapper cable" },
+          { "type": "text", "text": " runs between switch 1 and switch 2. A twin-and-earth cable runs from switch 2 to the light fitting. At switch 1: the incoming live goes to COM; the two strappers go to L1 and L2. At switch 2: the two strappers go to L1 and L2; the outgoing switched-live goes to COM." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, Connect switch 1 (feed switch)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At switch 1, connect the incoming live (brown) to " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "two-way-switch-terminals" } }], "text": "COM" },
+          { "type": "text", "text": ". Connect the brown core of the three-core cable to L1, and the black core (sleeve it with brown tape at each end) to L2. Connect all earths to the earth terminal. The neutral conductor from the incoming cable is not connected at the switch, it runs through to the light fitting or junction box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, Connect switch 2 (load switch)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At switch 2, connect the brown core of the three-core cable to L1 and the black core (sleeved brown) to L2, matching the connections at switch 1. Connect the outgoing switched-live to COM. This conductor leaves switch 2 and joins the live terminal at the light fitting. Connect all earths. Fold both cables neatly into the back boxes and screw on the faceplates." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 5, Restore and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Restore the MCB. Operate switch 1, the light should come on. Operate switch 2, the light should go off. Operate switch 2 again, the light should come on. Operate switch 1 again, the light should go off. Every combination of both switches should control the light. If the light does not respond to one switch, the strappers are swapped at one end, reverse L1 and L2 at one switch only." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "fitting-a-usb-socket-outlet",
+  "title": "Fitting a USB socket outlet",
+  "subtitle": "Replace a standard double socket with a USB-A/C combination faceplate using the existing wiring",
+  "excerpt": "How to replace a standard 13 A double socket with a twin-socket faceplate that includes one or two USB charging ports. Covers safe isolation, removing the old faceplate, and wiring the replacement.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional UK domestic electrical practice. BS 7671 (18th Edition Wiring Regulations).",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "socket-tester", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "live-dead-live-test",
+      "term": "Live-dead-live test",
+      "definition": "The correct three-step isolation procedure for electrical work. Step one: test the two-pole tester against a known live source to confirm it works. Step two: test the circuit you are working on to confirm it is dead. Step three: re-test the tester against the known live source to confirm it still works. Only all three steps together prove the circuit is safely isolated."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a standard socket faceplate is a like-for-like change. The wiring, back box, and circuit stay the same, so Part P notification is not required. The only new element is the faceplate. The critical step is correct isolation and verification before touching any terminal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, Isolate and verify dead using the live-dead-live test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB for the ring circuit feeding the socket (typically the downstairs or upstairs sockets circuit). Fit a lock-off clip to the MCB and label it. Carry out the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "live-dead-live-test" } }], "text": "live-dead-live test" },
+          { "type": "text", "text": " at the socket: test the two-pole tester against a proven live source (use the proving unit), test both socket apertures to confirm they read zero, then retest the tester against the proving unit to confirm it still works. Only a passed live-dead-live test proves the circuit is dead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, Remove the old faceplate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the two fixing screws on the socket faceplate and pull it gently away from the back box. The flex of the cables allows the faceplate to swing outward on a short length of cable. Note or photograph which conductors are in which terminals before removing them: live (brown) to L, neutral (blue) to N, earth (yellow-green) to E. Slacken the terminal screws with the electrician's screwdriver and remove each conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, Fit the new faceplate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "USB combination faceplates have the same L / N / E terminals as a standard socket plus an internal USB charger module. Connect the conductors to the matching terminals, tighten each terminal screw firmly so the cable cannot be pulled free, and fold the cable neatly into the back box. Screw the faceplate on, ensuring no conductors are pinched behind the faceplate edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, Restore and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off clip. Switch the MCB back on. Plug a socket tester into each socket aperture and confirm all three indicator lights are correct. Plug a USB device into the USB ports to confirm charging. If the socket tester shows a fault, switch off the MCB immediately, lock off, re-verify dead, and check the terminal connections inside the back box." }
+        ]
+      }
+    ]
+  }
+}

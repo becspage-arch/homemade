@@ -1,0 +1,119 @@
+{
+  "slug": "fitting-a-cooker-switch-and-connection-unit",
+  "title": "Fitting a cooker switch and connection unit",
+  "subtitle": "Replace a like-for-like cooker control unit on an existing 45 A circuit",
+  "excerpt": "How to replace a faulty or outdated cooker switch and connection unit on an existing dedicated cooker circuit. Covers safe isolation of a high-current circuit, the correct terminal connections, and Part P notification requirements.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 7671 (18th Edition Wiring Regulations). Part P Building Regulations (England and Wales).",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "multimeter-digital", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "cooker-circuit-6mm",
+      "term": "Cooker circuit",
+      "definition": "A dedicated 45 A radial circuit from the consumer unit to the cooker switch, typically wired in 6 mm² or 10 mm² twin-and-earth cable. The switch has both an isolator and a connection unit in one plate, the upper section breaks the supply; the lower section is a flex outlet for the appliance cable."
+    },
+    {
+      "slug": "part-p-notification",
+      "term": "Part P notification",
+      "definition": "The requirement under Part P of the Building Regulations (England and Wales) to notify building control of certain electrical work. Like-for-like replacement of a cooker switch on an existing circuit is not notifiable. Installing a new circuit or extending an existing one is notifiable, either by a Part P registered electrician or by self-certification with building control notification."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cooker-circuit-6mm" } }], "text": "cooker switch" },
+          { "type": "text", "text": " on an existing circuit is like-for-like maintenance. It is not notifiable under " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-p-notification" } }], "text": "Part P" },
+          { "type": "text", "text": ". The cables, back box, and circuit are unchanged; only the faceplate changes. The main precaution is that a cooker circuit carries 6 mm² or 10 mm² conductors under high current, terminal connections must be torqued to the manufacturer's specification, not just 'firm'." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, Isolate at the consumer unit and verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the dedicated cooker MCB at the consumer unit (typically 45 A or 32 A, labelled 'cooker'). Lock the MCB off with a lock-off clip. Carry out the live-dead-live test at the cooker switch using the two-pole tester and proving unit: test the tester against the proving unit (live), test the switch terminals (dead), retest the tester against the proving unit (live). Do not begin work unless all three steps pass. A 45 A cooker circuit at 230 V stores enough energy to cause a severe arc flash if worked on live." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, Remove the old switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the two fixing screws on the switch faceplate. The plate is heavier than a standard socket faceplate. Photograph or note the terminal positions before disconnecting. A cooker control unit typically has two cable entries: the supply from the consumer unit (arriving at the L and N terminals on the supply side) and the appliance cable to the cooker (at the L and N terminals on the load side), plus an earth bar. Remove each conductor from its terminal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, Prepare the conductors" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Check the stripped length on each conductor matches the new switch's terminal depth, typically 8 to 10 mm on a cooker control unit, more than a standard socket. If the old conductor ends are corroded or have marks from previous over-tightening, strip back 20 mm and re-strip to the correct length. Earth conductors must be sleeved green-and-yellow wherever they are exposed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, Wire and fit the new unit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect the supply cable (from the consumer unit) to the supply-side L and N terminals. Connect the appliance cable (to the cooker) to the load-side L and N terminals. Connect both earths to the earth bar. Tighten each terminal screw to the torque value stamped on the faceplate (usually 1.2 to 2 Nm for 6 mm² conductors), use a torque screwdriver if available, or tighten until the conductor cannot be pulled free by hand. Fold the cables into the back box and screw on the faceplate. Restore the MCB and test by switching the cooker on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "MCB trips immediately when restored",
+              "cause": "Terminal connection has shorted live to neutral or earth inside the back box",
+              "fix": "Lock off the MCB again and re-verify the circuit is dead. Open the back box and look for a pinched conductor behind the faceplate or a conductor that has slipped out of its terminal."
+            },
+            {
+              "symptom": "Cooker switch indicator lamp does not light",
+              "cause": "Some units have a separate indicator lamp connection that needs a neutral as well as the switched live",
+              "fix": "Check the new unit's wiring diagram. Some modern illuminated cooker switches require a neutral at the switch position; the old unit may not have had this connection. If the supply cable is twin-and-earth, a neutral is available in the cable, add it to the neutral terminal."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

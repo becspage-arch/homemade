@@ -1,0 +1,112 @@
+{
+  "slug": "fitting-a-window-lock",
+  "title": "Fitting a window lock",
+  "subtitle": "Fix a key-operated casement or sash window lock to a timber window frame",
+  "excerpt": "How to fit a key-operated lock to a timber casement or sash window. Covers the correct position for security, drilling and chiselling the keep, and fitting so the lock engages firmly when the window is closed.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "woodwork",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional UK domestic window security hardware fitting.",
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "chisel-set-bevel-edge", "isOptional": false },
+    { "slug": "mallet-wooden", "isOptional": false },
+    { "slug": "screwdriver-set-pozidriv", "isOptional": false },
+    { "slug": "combination-square-300mm", "isOptional": false },
+    { "slug": "carpenters-pencil", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "casement-lock",
+      "term": "Casement lock",
+      "definition": "A surface-mounted key-operated lock for a timber casement window. The lock body fixes to the opening sash; the keep (strike plate) fixes to the fixed frame."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fitting a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "casement-lock" } }], "text": "casement lock" },
+          { "type": "text", "text": " is one of the simpler security improvements. The lock body mounts on the sash surface; the keep recesses slightly into the fixed frame so the bolt can engage cleanly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, Choose the position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the lock midway up the sash on the closing edge, approximately 150 mm from either the top or bottom rail. Locks too near the top or bottom of the sash do not prevent a pane from being pushed in enough to reach the handle, the lock must act near the mid-point of the sash where flex is greatest." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, Fix the lock body to the sash" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hold the lock body in position on the sash face and mark the screw holes. Pre-drill pilot holes. Drive the screws firmly, use 30 to 38 mm screws that reach into the sash rail, not just the surface facing. Engage the lock bolt and mark where it meets the fixed frame: press the lock against the closed frame and press the bolt so it leaves an impression on the frame. This marks the keep position." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, Fit the keep" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The keep should be recessed flush into the frame face so the bolt engages without the lock body standing proud of the sash-frame gap. Hold the keep over the marked position and draw around it with a pencil. Chisel a shallow recess (typically 2 to 3 mm deep) to the depth of the keep plate, working carefully to the pencil lines. Drill a hole through the centre of the recess for the bolt to enter. Screw the keep flush into the recess." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, Test and adjust" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the window, operate the lock, and confirm the bolt enters the keep cleanly and the window cannot be lifted or pushed when locked. If the bolt binds, deepen the keep hole by 1 mm. If the window still moves when locked, the keep screws are not reaching solid timber, use longer screws." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Lock bolt will not engage the keep",
+              "cause": "Keep positioned slightly off from the bolt path",
+              "fix": "Deepen and widen the keep recess slightly, or adjust the keep by slotting one of the fixing holes with a file."
+            },
+            {
+              "symptom": "Window still lifts slightly when locked",
+              "cause": "Lock bolt too short for the gap between sash and frame, or keep not deep enough",
+              "fix": "Deepen the keep hole so the bolt engages further."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

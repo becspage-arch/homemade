@@ -1,0 +1,117 @@
+{
+  "slug": "replacing-a-bath-waste-and-trap",
+  "title": "Replacing a bath waste and trap",
+  "subtitle": "Remove the old waste, clean the bath deck, and fit a new waste and trap without touching the bath plumbing supply",
+  "excerpt": "How to replace a corroded or leaking bath waste and trap. Covers removing the old waste from inside the bath, fitting the new waste with fresh putty or silicone, and connecting the trap to the existing soil pipe.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional UK plumbing practice.",
+  "recipeTools": [
+    { "slug": "water-pump-pliers", "isOptional": false },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "glossaryTerms": [
+    {
+      "slug": "bath-waste-grid",
+      "term": "Waste grid",
+      "definition": "The slotted chrome or brass disc visible in the bath floor. Screws into the waste body from above. Removing it gives access to the locking nut below the bath for waste removal."
+    },
+    {
+      "slug": "bath-trap-p-s",
+      "term": "P-trap and S-trap",
+      "definition": "The curved waste trap below the bath that holds a water seal to prevent sewer gas from entering the room. A P-trap exits horizontally to a wall; an S-trap exits downward to the floor. The trap type determines which replacement fits."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A bath waste and trap is one of the more accessible plumbing jobs. No supply isolation is needed. The whole assembly is accessible from inside the bath and through the bath panel. The only specialist decision is matching the new trap to the existing outlet: horizontal (P-trap) or vertical (S-trap)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, Remove the old waste grid and body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bath-waste-grid" } }], "text": "waste grid" },
+          { "type": "text", "text": " from inside the bath using a screwdriver or a coin in the slot. Under the bath, unscrew the large backnut on the waste body with the water-pump pliers. Once loose, the whole waste assembly drops free. Have a cloth under it, the trap will still contain water. Score any silicone sealant around the waste hole from inside the bath with the utility knife before lifting the waste body out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, Disconnect the trap and check the outlet type" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew or unclip the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bath-trap-p-s" } }], "text": "trap" },
+          { "type": "text", "text": " from the pipe socket in the wall or floor. Note whether the outlet is horizontal (P-trap) or vertical (S-trap) before buying the replacement, this is not visible without removing the panel. Also note the pipe diameter: most UK baths use 40 mm outlet pipe but a few older installations are 1.5-inch (38 mm), measure the pipe outside diameter if uncertain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, Fit the new waste body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Clean the waste hole in the bath deck with the utility knife to remove old sealant and scale. Apply a ring of plumber's putty or the silicone sachet supplied with the waste under the waste flange, so the seal beds onto the bath surface. Lower the waste body through the hole from above and thread on the backnut below. Tighten with the water-pump pliers to firm, a slight squeeze of the putty visible at the flange edge is the right amount. Wipe away excess putty. Screw the waste grid back on from above." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4, Connect the trap and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand-tighten the new trap onto the waste body and into the outlet pipe. Do not use PTFE tape on the trap connections, they rely on rubber washers. Fill the bath with 100 mm of water, then pull the plug. Crouch at the panel and watch both the waste flange and the trap connections while water drains. Any drip at the flange means the backnut needs a further half-turn. Any drip at the trap joint needs the nut tightened or the washer replaced." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Waste leaks around the flange when the bath fills",
+              "cause": "Putty ring not forming a full seal, or bath surface not clean",
+              "fix": "Remove the waste, strip all old putty, degrease the bath deck with white spirit, apply a fresh ring of putty, and refit."
+            },
+            {
+              "symptom": "New trap does not reach the existing outlet pipe",
+              "cause": "Outlet pipe position changed, or replacement trap is a different geometry",
+              "fix": "Fit a length of 40 mm waste pipe and a 90° bend to bridge the gap. Push-fit waste fittings do not require solvent cement below 40 mm."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
