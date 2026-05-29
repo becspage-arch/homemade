@@ -1,0 +1,504 @@
+{
+  "slug": "pouring-glaze-inside-a-narrow-vessel",
+  "title": "Pouring glaze inside a narrow vessel",
+  "subtitle": "The fill-swirl-pour protocol for glazing interiors that are too narrow to dip",
+  "excerpt": "Vases, bottles, and tall narrow jars cannot be dipped; the form is too constrained for hand access to the inside. Instead the glaze goes in by pour: fill a measured amount, swirl to coat the interior, pour the excess back out. This tutorial covers the protocol for a narrow vessel up to 250 mm tall and 60 mm in neck diameter, mixed cone 6 glaze, glaze-fired in a kiln.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pouring-glaze protocol derived from first principles and standard studio practice. Encyclopaedia Britannica, eleventh edition (1911), ceramics entry. Orton Ceramic Foundation cone temperature reference.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "mid-fire-glaze-pre-mixed",
+    "wax-resist"
+  ],
+  "recipeTools": [
+    {
+      "slug": "glaze-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-sponge",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-liner",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bucket-dedicated",
+      "isOptional": false
+    },
+    {
+      "slug": "glaze-whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "p100-respirator",
+      "isOptional": false
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    },
+    {
+      "slug": "wet-cleanup-kit",
+      "isOptional": false
+    }
+  ],
+  "recipe": {
+    "foundational": true
+  },
+  "glossaryTerms": [
+    {
+      "slug": "bisqueware",
+      "term": "Bisqueware",
+      "definition": "Pottery fired once at cone 06 (999°C). Hard and porous; absorbs water from glaze on contact, leaving a pigment layer on the surface."
+    },
+    {
+      "slug": "wax-resist",
+      "term": "Wax resist",
+      "definition": "Water-based wax brushed onto bisque to mask areas the glaze should not touch."
+    },
+    {
+      "slug": "glaze-firing",
+      "term": "Glaze firing",
+      "definition": "The second kiln firing at the body's mature temperature (cone 6 / 1222°C for stoneware) that melts the glaze and vitrifies the body."
+    }
+  ],
+  "aliases": [
+    "interior glazing technique",
+    "pouring glaze into a vase",
+    "glazing inside a bottle"
+  ],
+  "techniqueSlugs": [
+    "mixing-a-commercial-dry-glaze",
+    "dipping-glaze-on-a-bisque-bowl",
+    "glaze-firing-schedule-cone-6"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A narrow vessel cannot be dipped on the inside. The neck is too small for a hand or a brush to reach in cleanly, and a hand passing repeatedly through wet glaze pulls the coat off the inside of the rim. The studio answer is the pour protocol: fill the vessel with a measured amount of glaze, swirl to coat the whole interior, pour the excess back out through the neck. The interior takes its coat from the contact with the moving glaze; the exterior is glazed separately afterwards. The work is for cone 6 stoneware bisqueware fired in a kiln, so kiln access is required."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Silica + kiln safety",
+          "body": "Silica dust is the chronic studio hazard and silicosis is irreversible. Wear a P100 respirator any time raw glaze powder is open. Wet-clean only. For the kiln firing: ventilation by downdraft vent or by an open window with an extractor pulling air past the kiln. Wear welder's shade-5 glasses when peephole-watching at high temperatures. Never open a hot kiln below 80°C. Keep a Class A fire extinguisher within reach of the studio area."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisqueware"
+                }
+              }
+            ],
+            "text": "bisqueware"
+          },
+          {
+            "type": "text",
+            "text": " vessel up to 250 mm tall with a neck 30-60 mm in inner diameter. A bucket of stirred mid-fire glaze, mixed to a working specific gravity around 1.45. A measuring jug capable of measuring 100-300 ml. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wax-resist"
+                }
+              }
+            ],
+            "text": "Wax resist"
+          },
+          {
+            "type": "text",
+            "text": ", a sponge, a liner brush, a P100 respirator and apron, a wet-cleanup kit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating the pour volume"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pour volume is the amount of glaze that goes into the vessel. Too little and the glaze does not reach every interior surface; too much and the glaze pools at the bottom and over-coats the lower interior. A working rule is one-quarter of the interior volume. A vessel that holds 800 ml of water takes about 200 ml of glaze for an even interior coat. For very narrow forms (under 40 mm neck diameter) reduce to one-fifth, because the glaze will move slowly through the narrow opening and a smaller volume is easier to control on the pour out."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure the pour volume with a measuring jug; pour glaze from the bucket into the jug to the marked line, then from the jug into the vessel. Pouring directly from the bucket is harder to control and leads to overfilling, which wastes glaze and over-coats the interior bottom."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparing the vessel"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wipe the bisque vessel with a damp sponge to remove any kiln dust. The bisqueware surface should be clean and free of finger grease; both contaminants make glaze coverage uneven. Allow the surface to dry; a damp surface absorbs glaze slower and gives a thinner coat than a dry surface."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply wax resist to the foot ring and to about 5 mm above the foot ring on the exterior. The wax also goes inside the very bottom of the foot ring recess if there is one. Wax is not applied to the interior; the interior is the surface being glazed. Allow the wax to dry for 20-30 minutes before pouring."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The pour, swirl, pour-out sequence"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Hold the vessel firmly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the bisque vessel by the body, both hands wrapped firmly around it. The neck and rim are not gripped; both areas are about to be glazed. The hands stay clear of the rim entirely so the glaze can reach the inside of the rim fully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. Pour the glaze in"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the measured glaze from the jug into the vessel in one continuous motion. Pour into the centre of the neck so the glaze enters the vessel cleanly and does not splash. The glaze hits the bottom of the vessel and begins coating from the bottom up."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Swirl to coat the interior"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tilt the vessel sideways and rotate it. The glaze flows around the inside of the body, coating the wall as it moves. Three full rotations are usually sufficient for the glaze to touch every interior surface. The vessel can be held at a low angle for the first rotation (glaze coats the lower body) and at a higher angle for the second and third (glaze reaches the shoulder and the inside of the rim)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The whole swirl takes 5-10 seconds. Move slowly; rapid swirling sloshes glaze through the neck and leaves uneven coverage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Pour out the excess"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip the vessel into the glaze bucket and pour out the excess glaze in a steady controlled stream. Continue tipping until no more glaze flows out, then hold the vessel inverted over the bucket for several seconds to drain the last drips. The interior is now coated; the rim has a slightly heavier coat than the body because the rim is the final exit point for the draining glaze."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "5. Wipe the rim and foot ring"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Right the vessel and place it on a board. Wipe the rim with a damp sponge to remove any glaze drips that ran down the outside as the excess was poured out. The wax resist on the foot ring should have repelled the glaze cleanly, but any spots that need touching up are wiped with a damp sponge at this stage. Allow the interior glaze to dry for an hour or more before glazing the exterior."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Glazing the exterior"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The exterior of a narrow vessel is glazed by dipping (if the vessel is short and the bucket wide enough), by pouring (a separate pour over the outside, working from rim down), or by brushing. Pouring is the most common for tall narrow forms: hold the vessel over the glaze bucket and pour stirred glaze over the outside, rotating the vessel as the glaze runs down, allowing excess to drain back into the bucket. Three to four passes give an even coat. Touch up any thin areas with a loaded liner brush."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Drying and firing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The whole glazed vessel needs to dry on a rack for several hours, ideally overnight, before loading. A glaze loaded into the kiln still slightly damp may bubble during the early firing climb. Load the vessel on a kiln-washed shelf and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glaze-firing"
+                }
+              }
+            ],
+            "text": "glaze fire"
+          },
+          {
+            "type": "text",
+            "text": " to cone 6 (1222°C) following the standard cone 6 glaze schedule."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What it looks like when it is right"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Look down into the fired vessel from above; the interior should show an even glaze coat from the rim down to the bottom, with no bare patches and no thick puddle at the bottom. The inside of the rim should be fully coated to the lip. The exterior glaze is even, with no runs onto the foot ring. The vessel rings cleanly when tapped, signalling a complete glaze firing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pouring in too much glaze. The vessel fills past the workable swirl level, the bottom gets a thick coat that runs in firing, and the glaze pools. Stick to the one-quarter rule and measure with a jug."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Swirling too fast. Glaze sloshes out through the neck before it has time to coat the rim, leaving the inside of the rim bare. Slow rotation gives the glaze time to flow around the form."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Not draining long enough after pouring out. Residual glaze pools at the bottom of the vessel and runs in firing, often onto the kiln shelf. Hold the vessel inverted over the bucket for the full draining time; at least 5-10 seconds beyond the visible flow stop."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Touching the rim with wet hands during the pour. Finger marks on the rim leave bare spots in the glaze that show clearly after firing. Hold by the body only, hands well below the rim line."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Interior pouring problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Glaze pools heavily at the bottom of the vessel after firing (a thick run)",
+              "cause": "Too much glaze poured in, or insufficient draining time after the pour out",
+              "fix": "Use the one-quarter-of-volume rule; pour the excess out slowly and hold the vessel inverted for 5-10 seconds after the flow stops"
+            },
+            {
+              "symptom": "Inside of rim is bare or thinly coated",
+              "cause": "Swirl was too fast, or the vessel was not tilted high enough on the final rotation",
+              "fix": "Swirl slowly; tilt the vessel to nearly horizontal on the final pass so glaze rides up to the inside of the rim"
+            },
+            {
+              "symptom": "Glaze coat is uneven, thick in patches and thin in others",
+              "cause": "Glaze not stirred properly before pouring, or the vessel was rotated inconsistently",
+              "fix": "Stir glaze thoroughly to suspension; rotate the vessel through three full rotations at a steady pace"
+            },
+            {
+              "symptom": "Drips on the outside from the rim after pour-out",
+              "cause": "Glaze ran down the outside as the vessel was inverted",
+              "fix": "Wipe drips off with a damp sponge before they dry. On the next vessel, hold the rim close to the bucket. The drained glaze then falls into the bucket rather than down the outside"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "slug": "mixing-a-commercial-dry-glaze",
+  "title": "Mixing a commercial dry glaze",
+  "subtitle": "Adding water to a pre-blended dry glaze powder, sieving, and testing for the right thickness",
+  "excerpt": "Commercial dry glazes ship as pre-blended powder; the studio adds the water. This tutorial covers measuring water, mixing without lumps, sieving to break suspension faults, and testing thickness with a hydrometer or the empirical dip-and-watch method. Mixing protects the studio from silica dust and produces a glaze that lays down evenly on bisqueware.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Glaze-mixing protocol derived from first principles and standard studio practice. Encyclopaedia Britannica, eleventh edition (1911), ceramics entry. Orton Ceramic Foundation reference for cone target context.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "mid-fire-glaze-pre-mixed"
+  ],
+  "recipeTools": [
+    {
+      "slug": "mixing-bucket-dedicated",
+      "isOptional": false
+    },
+    {
+      "slug": "glaze-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "glaze-sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "glaze-whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "hydrometer",
+      "isOptional": true
+    },
+    {
+      "slug": "p100-respirator",
+      "isOptional": false
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    },
+    {
+      "slug": "wet-cleanup-kit",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-sponge",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-mop",
+      "isOptional": true
+    }
+  ],
+  "recipe": {
+    "foundational": true
+  },
+  "glossaryTerms": [
+    {
+      "slug": "bisqueware",
+      "term": "Bisqueware",
+      "definition": "Pottery fired once at cone 06 (999°C). Hard and porous; absorbs water from glaze on contact, leaving an even pigment layer on the surface."
+    },
+    {
+      "slug": "specific-gravity",
+      "term": "Specific gravity",
+      "definition": "The density of a mixed glaze relative to water. Most dipping glazes work between 1.40 and 1.55. Lower readings give a thin coat; higher readings give a thick coat."
+    },
+    {
+      "slug": "deflocculant",
+      "term": "Deflocculant",
+      "definition": "An additive (often sodium silicate) that keeps glaze particles in suspension. Most commercial dry glazes already contain the necessary deflocculant."
+    }
+  ],
+  "aliases": [
+    "mixing dry glaze powder",
+    "how to prepare a dry glaze",
+    "wet-mixing pottery glaze"
+  ],
+  "techniqueSlugs": [
+    "dipping-glaze-on-a-bisque-bowl"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Commercial dry glazes ship as a sealed bag of pre-blended powder. The studio adds the water, mixes to a uniform suspension, sieves to break up any lumps or clumps, and tests the thickness. Mixing wet is the safer route compared to dry handling because the silica content stays bound up in liquid suspension once the water is in. The whole process takes one short studio session and the mixed glaze keeps in a sealed bucket for months. The mixed glaze is for use on cone 6 stoneware bisqueware fired in a kiln; both kiln access and glaze-firing equipment are needed for the finished workflow."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Silica + handling safety",
+          "body": "Silica dust is the chronic studio hazard and silicosis is irreversible. Mix wet wherever possible. Wear a P100 respirator any time raw glaze powder is open; even pre-blended commercial powder contains silica fines. Add water first to the bucket; then add powder slowly to the water. Never the other way round; pouring water onto dry powder kicks dust into the air. Wet-clean only; no sweeping, no dry cloths. Keep the dedicated mixing bucket labelled and stored away from food preparation areas."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A sealed bag of commercial dry glaze (typically 1 kg, 5 kg or 25 kg from the supplier; the smaller bag suits a home studio). A dedicated mixing bucket labelled for glaze and never shared with food, paint, or household work. A second clean bucket for the sieved glaze. A glaze sieve, usually 80 mesh, on a stand or a frame that fits over the second bucket. A glaze whisk or paint mixer attachment for a slow-speed drill. Cold water, measured. A P100 respirator. A studio apron and a wet-cleanup kit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Optionally, a glaze hydrometer for measuring "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "specific-gravity"
+                }
+              }
+            ],
+            "text": "specific gravity"
+          },
+          {
+            "type": "text",
+            "text": "; useful but not essential; the empirical dip test below works without one. A weighing scale accurate to 10 g for the water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The mixing ratio"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most commercial dry glazes mix at 1 kg of powder to 1 litre of water as a starting ratio, producing a specific gravity around 1.45 once mixed. The supplier datasheet gives the exact ratio for the glaze; follow the datasheet first time and adjust by feel on subsequent batches. For a small studio test batch, mix 500 g of powder with 500 ml of water and adjust from there."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. Water first"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the measured water into the dedicated mixing bucket. The water is the receiving liquid; the powder will be added to it. Pouring water onto dry powder kicks dust into the air and defeats the safer wet-mixing protocol."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. P100 respirator on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fit the P100 respirator before opening the powder bag. The seal needs to be tight against the face; check by inhaling sharply with the cartridges covered, the mask should pull onto the face slightly under negative pressure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "3. Add powder slowly to the water"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the powder bag and tip the powder slowly into the bucket; a steady stream from one corner of the bag rather than a heavy dump. Add about half the powder, then pause and stir gently with the whisk to wet the powder and let it sink. Continue with the remaining powder, stirring at intervals. The powder takes time to absorb water; large clumps will form if it goes in too fast."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "4. Mix to a uniform slurry"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once all the powder is in, mix thoroughly with the glaze whisk on a slow-speed drill or by hand. The mixture should reach a uniform consistency, like single cream; no dry clumps visible, no lumps catching on the whisk. Five minutes of slow mixing is usual; longer if the batch is large or the powder has settled hard from storage. Stop the whisk while it is below the glaze surface, never above; lifting a spinning whisk out of the bucket sprays glaze across the studio."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sieving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the glaze sieve over the second clean bucket. Pour the mixed glaze through the sieve in slow batches, working it through the mesh with a soft brush or a rubber rib. The sieve catches any lumps the whisk missed and breaks up clumps from the powder. Re-sieve any glaze that drains slowly; lumps that stay on the sieve at the second pass can be discarded; they are usually clay aggregates that did not fully dissolve."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sieved glaze is ready to use immediately or to store. For storage, transfer to a sealed bucket and label clearly with the glaze name, cone number, and date mixed. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "deflocculant"
+                }
+              }
+            ],
+            "text": "Deflocculant"
+          },
+          {
+            "type": "text",
+            "text": " in the commercial blend keeps the glaze in suspension for weeks; sieved glaze re-stirred before each use stays workable for months."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Testing the thickness"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "1. With a hydrometer"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stir the glaze thoroughly. Lower the glaze hydrometer into the bucket and read the value at the surface of the glaze. Most dipping glazes work between 1.40 and 1.55 specific gravity. Below 1.40 the glaze is too thin and will apply in a watery coat that may pinhole in firing; above 1.55 the glaze is too thick and may crawl or run. Add small amounts of water to thin or let stand to thicken (water evaporates from a stirred glaze faster than from a sealed one)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "2. By empirical dip test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Without a hydrometer, the test is to dip a small piece of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisqueware"
+                }
+              }
+            ],
+            "text": "bisqueware"
+          },
+          {
+            "type": "text",
+            "text": " (a test tile or an offcut) and watch the result. Submerge the bisque test piece for two seconds; lift and drain. The dried glaze coat should be 1-2 mm thick; enough to fully obscure the bisque colour with a soft chalky surface. Run a fingernail across the coat: the coat should feel solid, not powder away."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the coat is too thin (the bisque colour shows through), the glaze needs less water. Mix in 50 g of extra powder (with the respirator on) and re-sieve. If the coat is too thick (the coat cracks or starts to lift as it dries), add 50 ml of water and stir."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What it looks like when it is right"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A correctly mixed glaze is uniform in colour and texture throughout the bucket; no banding, no settled layer at the bottom that resists stirring. Stirred, the glaze flows off a stick in a smooth even stream, not in heavy drops or thin runs. A dipped test tile shows an even 1-2 mm coat that adheres without cracking as it dries. The glaze passes through a clean 80-mesh sieve without leaving more than a small amount of residue."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adding powder to a dry bucket and then pouring water on top. The powder kicks up dust as it settles and the silica goes airborne. Always water first."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing too fast with the drill whisk. High-speed mixing aerates the glaze and introduces bubbles; bubbles in the glaze coat cause pinholes in the fired surface. Use slow-speed drill or hand-mix."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skipping the sieve. Even commercial dry glaze contains lumps that did not fully break up during mixing; lumps applied to bisque ware show as raised marks in the fired glaze. Always sieve."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing without the respirator. The pre-blended commercial glaze is silica-heavy; even a few minutes of dry handling puts dust into lung tissue. The mask is non-negotiable for the dry-handling step."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Glaze mixing problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Glaze settles into a hard layer at the bottom of the bucket within a day",
+              "cause": "Insufficient deflocculant in the commercial blend, or batch was over-thinned with water",
+              "fix": "Add 1-2 g of sodium silicate per litre and re-stir; check the supplier datasheet for the recommended deflocculant if persistent"
+            },
+            {
+              "symptom": "Mixed glaze still has visible lumps after sieving",
+              "cause": "Powder dumped in too fast, did not have time to absorb water before clumping",
+              "fix": "Start over with fresh water; tip powder in slowly over several minutes; stir between additions"
+            },
+            {
+              "symptom": "Dipped test tile shows a thin watery coat through which bisque colour shows",
+              "cause": "Specific gravity too low; too much water in the mix",
+              "fix": "Let glaze settle overnight and pour off some of the clear water at the top, or add 50-100 g of dry powder (respirator on) and re-sieve"
+            },
+            {
+              "symptom": "Dipped coat cracks and lifts as it dries",
+              "cause": "Specific gravity too high; coat too thick",
+              "fix": "Add 50-100 ml of water and stir; re-test with a fresh tile"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
