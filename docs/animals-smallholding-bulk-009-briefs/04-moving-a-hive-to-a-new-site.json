@@ -1,0 +1,93 @@
+{
+  "slug": "moving-a-hive-to-a-new-site",
+  "title": "Moving a hive to a new site",
+  "subtitle": "The three-metre rule and the two exceptions that get you around it.",
+  "excerpt": "Bees navigate by memory to within centimetres of where their hive was. Moving a hive 3 m in any direction causes most foragers to return to the old spot and pile up on the ground. This tutorial covers the two reliable methods for moving a hive: over 3 km at once, or 1 m per day over several weeks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), hive management section. Frank Pearson, Bee-keeping for All (1923), Internet Archive, chapter on moving stocks. BBKA technical guidance on colony relocation.",
+  "glossaryTerms": [
+    { "slug": "forager-bee", "term": "Forager bee", "definition": "A worker bee at least 21 days old that has graduated from in-hive duties to flying for pollen, nectar, water, and propolis. Foragers navigate by memorising their hive position precisely and return to within centimetres of it." },
+    { "slug": "hive-stand", "term": "Hive stand", "definition": "A raised platform on which the hive sits, typically 20-40 cm off the ground to reduce ground moisture and provide clearance for the entrance." }
+  ],
+  "techniqueSlugs": ["inspecting-a-beehive-in-summer"],
+  "criticalTechniques": [],
+  "aliases": ["relocating a beehive", "hive relocation", "moving bees to a new spot"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Honey bees navigate by memorising the sun angle, landmarks, and the exact coordinates of their hive entrance. A " },
+          { "type": "text", "text": "forager bee", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "forager-bee" } }] },
+          { "type": "text", "text": " returning after a shift in the field will fly to the location her memory holds, not to where the hive now stands. Moving a hive less than 3 km but more than a metre or two in any direction means those foragers land where the hive was. On a warm day with several thousand foragers in the air, that is a substantial and quickly cooling cluster on empty ground." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three methods" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "There are three reliable options. Choose the one that fits the distance and urgency." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move more than 3 km. At this distance the colony is beyond the flight range of its foragers. They cannot locate the old site, so they reorient to the new one. This is the cleanest solution if you have a second apiary." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move 1 m per day. This is the slow method for short distances within the same apiary. Move the hive on its stand 1 m toward the new position each morning before foragers fly. Each day the foragers reorient to the slightly new position. Works but takes weeks for a 10 m move." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move at night and block the entrance temporarily. Close the entrance the evening before with a piece of foam, move the hive to the new site, and unblock at dusk the next day. Foragers forced to reorient at dawn will find and relearn the new position. Some losses are expected." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the hive for transport" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Close the entrance with foam after dark when all bees are inside. Strap the hive bodies together with a ratchet strap running under the floor and over the roof. Check that supers are secure; a full super weighs 20 kg or more. Carry the hive on a board between two people for any distance longer than a few steps." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up on the new site" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the hive on a level " },
+          { "type": "text", "text": "hive stand", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hive-stand" } }] },
+          { "type": "text", "text": " with the entrance facing broadly south. Open the entrance at dusk or dawn, not midday. Foragers on their first orientation flight will spiral outward from the entrance and memorise the new landmarks. If you moved at night and reopened at dawn, place a leafy twig across the entrance before opening: the unusual obstacle prompts bees to reorient rather than fly off on autopilot." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What can go wrong" }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cluster at the old site: if a significant cluster of foragers returns to the old location, place an empty brood body there to catch them, then add them to the moved hive at dusk." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hive overheating in transit: if moving any distance by vehicle, ensure there is adequate ventilation through an open-mesh floor. Bees clustered in a sealed box overheat fast, especially in summer." }] }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

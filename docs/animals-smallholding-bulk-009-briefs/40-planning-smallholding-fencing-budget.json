@@ -1,0 +1,78 @@
+{
+  "slug": "planning-smallholding-fencing-budget",
+  "title": "Planning and managing a smallholding fencing budget",
+  "subtitle": "The real cost of fencing a small farm, and how to prioritise which runs to do first.",
+  "excerpt": "Fencing is one of the largest capital costs on a smallholding and one of the most frequently underestimated. Understanding the cost per metre of different fence types, the labour involved, and the maintenance life of each option allows you to plan a phased investment rather than being caught short mid-project.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB, farm infrastructure investment guidance. Farmers Weekly, fencing cost comparisons. British Standard BS 1722, specification for fences.",
+  "glossaryTerms": [
+    { "slug": "stock-netting", "term": "Stock netting", "definition": "Woven wire fencing with fixed vertical and horizontal wires, typically 90-120 cm high. The standard boundary fence for sheep, goats, and cattle. Variations include rabbit netting (smaller bottom mesh), deer fencing (taller), and hinge-joint (more flexible than fixed-knot)." },
+    { "slug": "post-spacing-fencing", "term": "Post spacing", "definition": "The distance between fence posts along a run. Closer spacing (1.5-2 m) is required on soft or uneven ground or where the fence will face heavy pressure from animals. Wider spacing (3 m) is common on flat, firm ground with stock netting. Post spacing directly affects the total cost of materials." },
+    { "slug": "strainer-post", "term": "Strainer post", "definition": "A heavy end post at the corner or end of a fence run, set deeper and often braced, that anchors the entire tension of the fence. A fence run is only as strong as its strainer posts; using intermediate-post materials as strainers is a common cause of fence collapse." }
+  ],
+  "techniqueSlugs": ["calculating-stocking-rates", "planning-rotational-grazing-paddocks"],
+  "criticalTechniques": [],
+  "aliases": ["smallholding fencing costs", "farm fence planning", "stock fence cost per metre"],
+  "recipeTools": [
+    { "slug": "electric-fence-energiser", "isOptional": true },
+    { "slug": "electric-fence-stake", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fencing a 1-hectare field with " },
+          { "type": "text", "text": "stock netting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stock-netting" } }] },
+          { "type": "text", "text": " and a post-and-rail top rail, installed by a contractor, typically costs more than most new smallholders expect. The gap between the quoted cost and the actual cost usually comes from underestimating the number of " },
+          { "type": "text", "text": "strainer posts", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "strainer-post" } }] },
+          { "type": "text", "text": " needed at corners and changes of direction, and the extra cost of gates." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cost drivers in fencing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Post spacing is the primary variable in material cost: closer " },
+          { "type": "text", "text": "post spacing", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "post-spacing-fencing" } }] },
+          { "type": "text", "text": " means more posts and more labour. Ground conditions drive post type: soft or wet ground requires longer posts or concrete fill, both of which increase cost. The number of corners matters: each strainer assembly (strainer post, horizontal straining bar, and angled brace or wire-and-stake) is a fixed cost regardless of the fence length between corners. A long straight run is cheaper per metre than a heavily gated, multi-corner paddock." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fence types and their uses" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stock netting (C8/80/15 or similar) is the standard choice for sheep and goats. A top strand of plain or barbed wire at 90 cm prevents animals pushing over. Post-and-rail is appropriate for horse paddocks but expensive over long runs. Electric fencing, either temporary polywire or permanent post-and-rail with electric tape, is the cheapest way to subdivide existing fields for rotational grazing; it is not a boundary fence unless fitted with a mains or solar energiser and regularly maintained. Barbed wire alone is not acceptable for sheep or horses." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prioritising what to fence first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Secure the perimeter first, before any internal subdivision. A field that cannot contain animals is useless; internal rotational paddocks are a refinement. After the perimeter, fence off any area that animals must not enter: the area around your hay store, the vegetable garden, any unfenced water. Internal paddock divisions come last. Doing it in this order means each stage of the investment delivers immediate value." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Maintenance budget" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Factor an annual maintenance budget into the capital plan. Post-and-netting fence typically needs a tension check and re-stapling every two to three years. Timber posts rot at the ground line; a treated softwood post lasts 15-20 years, a hardwood post (oak, sweet chestnut) 25-30. Walk the entire fence line twice a year, spring and autumn, and record which sections need attention. Repair immediately rather than letting a weakened section become a breakout point." }]
+      }
+    ]
+  }
+}

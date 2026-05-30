@@ -1,0 +1,114 @@
+{
+  "slug": "setting-up-a-bait-hive",
+  "title": "Setting up a bait hive",
+  "subtitle": "A waiting hive that catches swarms before they disappear into a tree.",
+  "excerpt": "A bait hive is the simplest form of swarm management: put a hive in the right place with the right scent, and passing scout bees will bring the swarm to you. This tutorial covers site selection, lure frames, and what to do when the scouts arrive.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on swarm management and bait hives. Frank Pearson, Bee-keeping for All (1923), Internet Archive, chapter on catching swarms. British Beekeeping Association exam syllabus material on swarm biology.",
+  "glossaryTerms": [
+    { "slug": "scout-bee", "term": "Scout bee", "definition": "A worker bee sent out by a swarm cluster to locate a suitable new home. Scouts evaluate cavities for size, entrance position, and existing comb scent before returning to dance the location to the cluster." },
+    { "slug": "swarm-cluster", "term": "Swarm cluster", "definition": "The mass of bees hanging from a branch or structure after leaving the parent hive, while scout bees search for a permanent home. The cluster can remain for a few hours to several days." },
+    { "slug": "bait-hive", "term": "Bait hive", "definition": "An empty or part-filled hive positioned to attract a passing swarm, typically scented with old wax or lemongrass oil." },
+    { "slug": "lemongrass-oil", "term": "Lemongrass oil", "definition": "An essential oil whose components mimic the Nasonov pheromone that worker bees use to attract swarm members to a new home. A few drops in a bait hive substantially increases take-up rate." }
+  ],
+  "techniqueSlugs": ["swarm-control-artificial-swarm", "collecting-a-swarm-into-a-hive"],
+  "criticalTechniques": [],
+  "aliases": ["bait hive setup", "swarm trap", "setting up a swarm trap"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In late spring, when colonies are building up fast and the impulse to swarm is strong, a well-placed bait hive can intercept a swarm that would otherwise vanish into a hollow tree. The bees do the work; you provide a convincing destination. Getting that destination right is the whole technique." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to set it up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the bait hive in position before the swarm season opens, typically early April in the UK. Colonies begin raising swarm cells in late April once the colony has filled most of the brood chamber. " },
+          { "type": "text", "text": "Scout bees", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scout-bee" } }] },
+          { "type": "text", "text": " will start prospecting for cavities a few days before a swarm issues, so the " },
+          { "type": "text", "text": "bait hive", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bait-hive" } }] },
+          { "type": "text", "text": " needs to be ready before they begin looking." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the site" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scouts favour cavities at 3-5 m off the ground, facing south or south-east, with a small entrance of less than 15 sq cm and an interior volume of around 40 litres. In practice that means a single National brood body on a stand placed in light shade. A tree branch fork is ideal; a fence post bracket works just as well. Position it near your apiary if you want to catch your own swarms, or 100 m or more from your hives if you want to intercept feral ones passing through." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One brood body with a floor, crown board, and roof. Three or four old brood frames with drawn comb are the best lure; bees evaluate existing wax scent above almost everything else. Without old comb, use foundation frames and add a few drops of " },
+          { "type": "text", "text": "lemongrass oil", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lemongrass-oil" } }] },
+          { "type": "text", "text": " on a small piece of tissue placed just inside the entrance. A small entrance block reduces the opening to around 8-10 sq cm, the size scouts prefer." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the hive" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Assemble the hive with old comb frames in the centre and dummy boards at the sides to create a tight, dark cavity. Fix the box firmly to the stand; a " },
+          { "type": "text", "text": "swarm cluster", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "swarm-cluster" } }] },
+          { "type": "text", "text": " arriving at speed can shift a loosely placed hive. Check that the entrance is the right size and that the box is level before walking away." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the scouts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Check the entrance every day from mid-April. A single scout hovering at the entrance and going inside is normal prospecting. When you see ten or more scouts in a constant stream, entering and exiting and performing waggle dances on the landing board, the swarm is nearby and will arrive within hours. Have your equipment ready; you may need to transfer the swarm to a permanent hive position once it is settled." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A bait hive is not a guarantee. Scouts will reject a box if the entrance is too large, if the box smells of mould or new timber, or if a more attractive cavity is nearby. The capture rate in a well-sited box runs around 50%. Running two bait hives in different positions improves the odds considerably." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the swarm arrives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Leave the swarm undisturbed for 24-48 hours. The bees need time to settle and begin drawing comb. After that, inspect as you would a new colony: look for a laying queen, a healthy brood pattern, and the start of stores. Move the hive to its permanent position at night, after the foragers are in, making the transfer in a single lift to avoid crushing bees at the entrance." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A swarm caught in a bait hive carries unknown disease status. Treat for varroa before considering uniting it with an established colony, and run it separately for one brood cycle to assess health first." }] }
+        ]
+      }
+    ]
+  }
+}

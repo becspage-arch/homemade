@@ -1,0 +1,85 @@
+{
+  "slug": "fostering-a-lamb-onto-a-ewe",
+  "title": "Fostering a lamb onto a ewe",
+  "subtitle": "Getting a ewe to accept a lamb that is not her own.",
+  "excerpt": "A ewe recognises her lamb by smell, and she will reject any lamb that does not smell like her own. Fostering depends on either masking the foreign lamb's scent or exploiting the brief bonding window immediately after birth. The technique that works depends on the situation: birth fluids, skinning, or long-term patience.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Lambing Management factsheet (ahdb.org.uk). SAC Consulting Scotland, Sheep Rearing guidance. DEFRA Code of Practice for the Welfare of Sheep, 2020.",
+  "glossaryTerms": [
+    { "slug": "ewe", "term": "Ewe", "definition": "An adult female sheep. Ewes bond with their lambs primarily through smell in the first hours after birth; this bond, once established, is strong enough that a ewe will reject a lamb that was separated from her for more than a few hours." },
+    { "slug": "foster-lamb", "term": "Foster lamb", "definition": "A lamb placed on a ewe that is not its birth mother, either because the lamb is orphaned or because the ewe has more lambs than she can rear and another ewe has lost her own lamb." },
+    { "slug": "skinning-method", "term": "Skinning method", "definition": "A fostering technique in which the skin of a ewe's dead lamb is placed over a foster lamb, so the bereaved ewe accepts the live lamb by scent. Effective but requires a dead lamb of similar size." }
+  ],
+  "techniqueSlugs": ["orphan-lamb-bottle-feeding", "colostrum-and-newborn-lamb-management"],
+  "criticalTechniques": [],
+  "aliases": ["lamb fostering", "getting a ewe to accept a lamb", "bottle lamb onto a ewe"],
+  "recipeTools": [
+    { "slug": "shepherds-crook", "isOptional": false },
+    { "slug": "iodine-spray-navel", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two situations that call for fostering are a triplet or quad ewe with more lambs than she can rear, and an orphan lamb that needs a mother because bottle rearing is unsustainable. In both cases the " },
+          { "type": "text", "text": "foster lamb", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foster-lamb" } }] },
+          { "type": "text", "text": " needs to smell right to the " },
+          { "type": "text", "text": "ewe", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ewe" } }] },
+          { "type": "text", "text": " before she will allow it to suck. The three methods below work in different circumstances; the skinning method is fastest but requires a dead lamb; the birth-fluid method works only in the first hour." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: birth fluids at the moment of birth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If a ewe has just given birth to a single lamb and you have an orphan available, rub the birth fluids from the newborn lamb onto the orphan immediately. The ewe is at her most receptive in the first 30-60 minutes after birth when the bonding signal is strongest. Pen the ewe with the orphan alongside her own lamb, ensure both lambs receive colostrum from her within the first two hours, and monitor closely for the first 24 hours." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: skinning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When a ewe's own lamb has died and you have a live orphan, the " },
+          { "type": "text", "text": "skinning method", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "skinning-method" } }] },
+          { "type": "text", "text": " is the most reliable option. Remove the skin from the dead lamb, cutting leg and head holes. Place the jacket on the orphan and present it to the ewe. She smells her dead lamb's scent and accepts the live one. Remove the jacket over 3-5 days as the ewe learns the foster lamb's own smell. This is not pleasant work but it is effective and significantly better than bottle rearing an orphan from scratch." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 3: scent masking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Where no dead lamb is available, rub a small amount of Vicks VapoRub (or any strong-smelling substance) onto the ewe's nostrils and the foster lamb's body in equal measure. This temporarily confuses the ewe's scent discrimination. Pen them together and ensure the lamb gets access to the teat. The method is less reliable than skinning and requires patience: keep the ewe confined with the lamb for at least 48 hours and monitor every feeding attempt." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making it work: the pen" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A small bonding pen of around 2 m x 2 m is essential. The ewe cannot walk away from the lamb in a confined space and repeated physical contact accelerates acceptance. Check every 2-3 hours for the first 48 hours. Signs of progress: the ewe allows the lamb to suck without turning away or butting it. Signs of failure: the ewe consistently butts the lamb away from the teat even after 48 hours of confinement." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A ewe that has been milked by hand and bottle-fed the lamb can still accept the lamb on the teat once the scent-matching method is working. The key is ensuring the foster lamb gets enough colostrum in the first 6 hours regardless of method, even if that means topping up by bottle while the fostering is attempted." }] }
+        ]
+      }
+    ]
+  }
+}

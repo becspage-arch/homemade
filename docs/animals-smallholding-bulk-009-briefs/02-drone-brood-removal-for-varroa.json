@@ -1,0 +1,109 @@
+{
+  "slug": "drone-brood-removal-for-varroa",
+  "title": "Drone brood removal for varroa",
+  "subtitle": "Cutting drone comb to remove the mite population before it builds.",
+  "excerpt": "Varroa mites reproduce almost exclusively in drone brood. Cutting out capped drone comb at the right point in the season removes a large proportion of the mite population without chemicals. The timing is the whole skill: too early and the colony has no drones; too late and the mites have already emerged.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), integrated pest management section. BBKA exam syllabus, Unit 6 pests and diseases. Varroa management guidance at nationalbeeunit.com, updated 2024.",
+  "glossaryTerms": [
+    { "slug": "varroa", "term": "Varroa", "definition": "Varroa destructor, a parasitic mite that feeds on bees and their brood. Every colony in the UK is assumed infested; untreated populations collapse within two to three years." },
+    { "slug": "drone-brood", "term": "Drone brood", "definition": "Fertilised brood laid in larger cells that develop into male bees. The capped stage is 24 days long, compared to 12 for workers, giving varroa mites roughly twice the reproductive time in each capped cell." },
+    { "slug": "drone-comb", "term": "Drone comb", "definition": "Comb built by bees in large cells, typically along the lower edge of a frame or in any spare space, intended for drone brood." },
+    { "slug": "mite-wash", "term": "Mite wash", "definition": "A technique for counting varroa mites in a sample of bees, either by alcohol wash or sugar roll, to give a mite-per-hundred-bees figure." }
+  ],
+  "techniqueSlugs": ["varroa-mite-count", "oxalic-acid-trickle-treatment-for-varroa"],
+  "criticalTechniques": [],
+  "aliases": ["drone comb removal", "drone brood trapping for varroa", "removing drone comb"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "varroa-mite-board", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Varroa mites prefer drone brood because the longer capped period gives each mite more reproductive cycles. In spring, when colonies are raising large numbers of drones, removing capped drone comb destroys a concentrated mite population before those mites can emerge and enter worker brood. Done at the right point, it is one of the most effective non-chemical tools in the beekeeping toolkit." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to do this" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The window is spring, when the colony is expanding fast and building " },
+          { "type": "text", "text": "drone comb", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drone-comb" } }] },
+          { "type": "text", "text": " at the frame edges. The ideal moment is when drone cells are capped but before the drones have emerged, roughly 14-20 days after the cells were laid. In southern England this is typically mid-April to late May. In Scotland or higher ground, two to three weeks later. Check by pressing lightly on the capped surface: drone caps are domed and slightly rough." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Your standard inspection kit: smoker, hive tool, full suit. A bucket or bag to collect the cut comb. The varroa mite board is optional but useful: leaving it in for the week before the cut gives you a baseline mite drop to compare against counts after the intervention." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding the drone brood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the hive and work through the frames. " },
+          { "type": "text", "text": "Drone brood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drone-brood" } }] },
+          { "type": "text", "text": " concentrates at the lower outside corners of the brood nest, on the last one or two brood frames, and often on the frame backs as bees build comb into any available space. The capped domes are visibly raised above worker brood; look for the 'bullet' profile of the caps." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting and removing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use the hive tool to slice cleanly under the drone comb at the base. Cut down to the midrib, remove the section cleanly, and drop it into the bucket. Do not leave cut comb in the hive; the released mites will immediately enter other brood cells. Work quickly and with confidence: prolonged searching agitates the colony." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A single cut session can remove 200-400 capped drone cells. At an average infestation rate of one mite per drone cell in a moderately infested colony, that represents several hundred mites removed in under ten minutes. The effect is greatest in spring when the mite population is lowest and has not yet compounded through worker brood." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Seal the bucket and freeze the comb for 24 hours before composting it. This kills the mites and any developing drones without releasing them. Carry out a " },
+          { "type": "text", "text": "mite wash", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mite-wash" } }] },
+          { "type": "text", "text": " four to five weeks after the cut to assess whether the mite load has remained manageable or whether a chemical treatment is needed before the main honey flow." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Drone brood removal works best as one element of an integrated programme: summer monitoring, autumn oxalic acid treatment, and winter broodless-period oxalic treatment combine to keep mite loads below damaging thresholds. It is not a substitute for autumn treatment." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Do not attempt drone brood removal during a nectar flow when the colony is defensive. Choose a warm still morning on a non-flow day and keep the inspection short." }] }
+        ]
+      }
+    ]
+  }
+}

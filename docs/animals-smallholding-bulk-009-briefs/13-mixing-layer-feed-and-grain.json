@@ -1,0 +1,89 @@
+{
+  "slug": "mixing-layer-feed-and-grain",
+  "title": "Mixing layer feed and grain for laying hens",
+  "subtitle": "Why the ratio matters and what grain does to a laying hen's protein intake.",
+  "excerpt": "A laying hen needs 18-19% protein in her diet to maintain egg production. Layer pellets are formulated to supply this. Adding large quantities of wheat, maize, or mixed grain dilutes the protein to a level that reduces laying, softens shells, and in heavy grain feeders increases body fat. The right balance is less about tradition and more about what the bird actually requires.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Practice for the Welfare of Laying Hens, 2018. AHDB Poultry, Laying Hen Nutrition factsheet. Lewis Wright, The Practical Poultry Keeper (1867), chapter on feeding.",
+  "glossaryTerms": [
+    { "slug": "layer-pellets", "term": "Layer pellets", "definition": "A complete formulated feed for laying hens, balanced for protein (typically 17-19%), calcium (3.5-4% for shell production), and essential vitamins and minerals. Available in pellet or mash form." },
+    { "slug": "scratch-grain", "term": "Scratch grain", "definition": "A mix of whole cereals such as wheat, maize, and barley fed as a supplement or treat. Lower in protein than layer pellets; feeding in excess dilutes the overall diet protein below laying requirements." },
+    { "slug": "grit", "term": "Grit", "definition": "Insoluble grit (small stones or flint) and oyster shell (soluble calcium) provided free-choice to hens. Insoluble grit stays in the gizzard and grinds whole grain; oyster shell is absorbed and used for eggshell production." }
+  ],
+  "techniqueSlugs": ["feeding-laying-hens-through-the-seasons"],
+  "criticalTechniques": [],
+  "aliases": ["feeding chickens grain", "layer pellets and wheat", "hen diet protein"],
+  "recipeTools": [
+    { "slug": "chicken-feeder-hanging", "isOptional": false },
+    { "slug": "chicken-grit-feeder", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A laying hen eating good-quality " },
+          { "type": "text", "text": "layer pellets", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "layer-pellets" } }] },
+          { "type": "text", "text": " ad libitum does not need supplementary grain to maintain production. The pellets contain everything she needs. Scratch grain is useful as a foraging supplement and as a warming carbohydrate in cold weather, but it carries a cost in protein dilution if fed in large amounts." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What protein dilution means in practice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A layer pellet at 18% protein, mixed in equal amounts by weight with wheat at 12% protein, produces a combined diet of 15% protein. At 15% protein, a hen's egg production typically drops by 10-15%, her shells thin, and she may lay soft-shelled eggs more frequently. The effect is gradual and easy to miss in a flock where egg numbers shift for other reasons. If production drops in autumn when the grain ration increases, the feed ratio is the most likely cause." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A practical ratio for whole grain feeding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If you want to feed whole grain alongside pellets, the practical ceiling is around 10-15% of the total diet by weight. In practice, this means a small handful of " },
+          { "type": "text", "text": "scratch grain", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scratch-grain" } }] },
+          { "type": "text", "text": " scattered in the bedding in the afternoon, after the hens have had access to pellets all day. This is enough for the foraging behaviour and warmth benefit without meaningfully diluting the diet. Do not replace the morning pellet feed with grain." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Grit is not optional with whole grain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hens fed pellets only do not strictly need insoluble " },
+          { "type": "text", "text": "grit", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grit" } }] },
+          { "type": "text", "text": " because pellets dissolve easily without grinding. Add whole grain and the gizzard needs insoluble grit to process it. Provide insoluble grit in a separate feeder, free-choice, at all times. Oyster shell is a separate supplement for calcium; it does not substitute for flint grit in the gizzard." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Seasonal grain adjustments" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In cold weather, a carbohydrate-rich grain ration in the late afternoon provides a heat source as the birds digest overnight. This is the one moment in the year when a slightly higher grain ratio is justified: a small extra handful of wheat on the coldest winter evenings gives the hens metabolic warmth. Still keep it below 20% of the daily intake." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Maize (corn) is particularly calorific and high in carbohydrates. A flock fed large quantities of maize in a small run without exercise will put on body fat rapidly, reducing laying and making hens susceptible to fatty liver syndrome. Use it sparingly." }] }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "recognising-american-foulbrood",
+  "title": "Recognising American foulbrood",
+  "subtitle": "The one disease in beekeeping you cannot treat, only confirm and report.",
+  "excerpt": "American foulbrood is a notifiable disease in the UK. The hive that has it cannot be treated; it must be destroyed. Knowing the signs well enough to catch it early, and reporting it before you move equipment, is the only way to protect your apiary and your neighbours.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU American Foulbrood factsheet (2024), nationalbeeunit.com. APHA notifiable disease guidance for beekeepers, gov.uk. BBKA exam syllabus Unit 6, section on notifiable diseases.",
+  "glossaryTerms": [
+    { "slug": "american-foulbrood", "term": "American foulbrood", "definition": "A fatal bacterial disease of honey bee brood caused by Paenibacillus larvae. Notifiable in the UK: any suspected case must be reported to the Animal and Plant Health Agency. The spores survive in equipment for decades." },
+    { "slug": "sunken-cap", "term": "Sunken cap", "definition": "A brood cap that has collapsed inward, a classic early sign of diseased larvae that have died and begun to liquefy. The cap may also be perforated." },
+    { "slug": "ropiness-test", "term": "Ropiness test", "definition": "Inserting a twig or matchstick into a suspect cell and withdrawing it slowly. AFB-infected larvae pull out as a brown elastic thread 1-3 cm long before snapping. Healthy dead larvae do not rope." },
+    { "slug": "notifiable-disease", "term": "Notifiable disease", "definition": "A disease that must by law be reported to the relevant authority when suspected. In beekeeping in the UK, American foulbrood and European foulbrood are both notifiable under the Bee Diseases and Pests Control Order 2006." }
+  ],
+  "techniqueSlugs": ["varroa-mite-count", "reading-the-brood-frame"],
+  "criticalTechniques": [],
+  "aliases": ["AFB identification", "american foulbrood signs", "AFB in bees"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "American foulbrood is the worst news a beekeeper can find. It is a notifiable disease, the only bee disease in the UK that cannot be treated with antibiotics, and the only one where the correct response is destruction of the colony and all its equipment by fire. The sooner it is caught, the fewer hives and apiaries it spreads to." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What AFB is" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "American foulbrood (AFB) is caused by Paenibacillus larvae, a spore-forming bacterium. The spores remain viable in equipment, honey, and soil for 40 years or more. A larva becomes infected when it ingests spores in its food; the bacterium then kills it after the cell is capped. This is what makes AFB different from European foulbrood, which kills larvae before capping. " },
+          { "type": "text", "text": "American foulbrood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "american-foulbrood" } }] },
+          { "type": "text", "text": " is a " },
+          { "type": "text", "text": "notifiable disease", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "notifiable-disease" } }] },
+          { "type": "text", "text": " in the UK; suspected cases must be reported to APHA." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The signs to look for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Look first at the cappings pattern. In a healthy brood frame the cappings are uniform, slightly domed, and the same warm honey-brown across the frame. In a frame with AFB you will see scattered cappings that are " },
+          { "type": "text", "text": "sunken", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sunken-cap" } }] },
+          { "type": "text", "text": " or perforated, surrounded by healthy-looking cells in a random pattern sometimes called a 'pepper pot' or 'shotgun' brood. The infected cells may have small, irregular holes where bees have started to remove the capped brood." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Open a suspect cell with your hive tool and look inside. AFB-infected larvae change colour as the disease progresses: a coffee-brown or dark chocolate colour is typical in advanced infection. The smell is distinctive and unpleasant, often described as glue or rotting coffee." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Colour and smell alone are not diagnostic. European foulbrood and sacbrood can produce similar discoloration and odour. The confirmatory test is the ropiness test." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The ropiness test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Insert a thin twig, matchstick, or grass stalk into a suspect cell and withdraw it slowly. AFB gives a characteristic " },
+          { "type": "text", "text": "ropiness", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ropiness-test" } }] },
+          { "type": "text", "text": ": the infected larva pulls out as an elastic, stringy thread 1-3 cm long before it snaps. No other bee brood disease produces this response. If the ropiness test is positive, treat the situation as confirmed AFB until APHA says otherwise." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do if you suspect AFB" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Close the hive immediately and do not move the bees or equipment. Do not attempt to unite the colony with another or take honey. Contact your regional bee inspector through APHA (England), the Bee Health Unit (Wales), or equivalent authority in Scotland and Northern Ireland. Report immediately; there is a legal obligation to report a suspected notifiable disease." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The inspector will confirm the diagnosis and issue a standstill notice if AFB is found. The colony and all wooden equipment, frames, and comb must be destroyed by burning. The hive bodies can sometimes be cleaned and flame-treated if the inspector approves; the inspector will advise on the protocol." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Do not feed honey from an AFB hive to other colonies, and do not allow bees from the infected colony to robbed out by neighbours. Both routes spread the disease rapidly across an apiary. If in doubt about any frame, assume the worst and call the inspector." }] }
+        ]
+      }
+    ]
+  }
+}

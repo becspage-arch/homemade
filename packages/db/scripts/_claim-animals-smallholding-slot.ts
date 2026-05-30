@@ -7,15 +7,20 @@ let dir = __dirname
 for (let depth = 0; depth < 12; depth++) {
   const candidate = resolve(dir, '.env.credentials')
   if (existsSync(candidate)) { loadEnv({ path: candidate, override: true }); break }
-  const parent = dirname(dir); if (parent === dir) break; dir = parent
+  const parent = dirname(dir)
+  if (parent === dir) break
+  dir = parent
 }
+
 async function main() {
   const { prisma } = await import('../src/index.js')
-  await prisma.category.update({
+  const updated = await prisma.category.update({
     where: { slug: 'animals-smallholding' },
     data: { lastAutopilotRunAt: new Date() },
+    select: { slug: true, lastAutopilotRunAt: true },
   })
-  console.log('Claimed slot for animals-smallholding at ' + new Date().toISOString())
+  console.log('CLAIMED:', JSON.stringify(updated))
   await prisma.$disconnect()
 }
-main().catch((e) => { console.error(e); process.exit(1) })
+
+main().catch(e => { console.error(e); process.exit(1) })

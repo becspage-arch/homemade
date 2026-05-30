@@ -1,0 +1,85 @@
+{
+  "slug": "feeding-pollen-substitute-in-spring",
+  "title": "Feeding pollen substitute in spring",
+  "subtitle": "Supporting early brood rearing when natural pollen is scarce.",
+  "excerpt": "A colony needs pollen to raise brood, and a colony raising brood faster than the spring pollen flow can supply will stall or eat into its winter nurse population. Pollen substitute bridges the gap between the queen's early start and the point when catkins, willows, and crocuses are genuinely generous.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), nutrition section. Frank Pearson, Bee-keeping for All (1923), chapter on spring management. BBKA technical guidance on colony nutrition.",
+  "glossaryTerms": [
+    { "slug": "pollen-substitute", "term": "Pollen substitute", "definition": "A protein supplement fed to honey bees in early spring when natural pollen is scarce. Typically made from brewer's yeast, soy flour, or dried pollen with added carbohydrate. Sold in powder form; mixed with sugar syrup or honey to form a soft patty." },
+    { "slug": "nurse-bee", "term": "Nurse bee", "definition": "Young worker bees, typically 4-12 days old, that remain inside the hive to feed and tend the brood. Their protein glands (hypopharyngeal glands) produce royal jelly and brood food." },
+    { "slug": "brood-nest", "term": "Brood nest", "definition": "The area of the hive where the queen lays eggs and where brood is raised, typically in the lower brood box. The cluster maintains it at around 35 degrees C regardless of outside temperature." }
+  ],
+  "techniqueSlugs": ["spring-colony-assessment", "spring-fondant-emergency-feeding"],
+  "criticalTechniques": [],
+  "aliases": ["pollen substitute feeding", "spring pollen patty", "feeding bees protein"],
+  "recipeTools": [
+    { "slug": "hive-feeder-rapid", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Early spring is a trap for well-intentioned beekeepers. The queen begins laying in February and the colony starts raising brood faster than the small remaining winter cluster can support on existing stores. Without pollen, the " },
+          { "type": "text", "text": "nurse bees", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nurse-bee" } }] },
+          { "type": "text", "text": " cannot make brood food and the " },
+          { "type": "text", "text": "brood nest", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brood-nest" } }] },
+          { "type": "text", "text": " stalls. A " },
+          { "type": "text", "text": "pollen substitute", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pollen-substitute" } }] },
+          { "type": "text", "text": " patty placed directly over the cluster covers that gap until the willows, catkins, and crocuses are reliably flowering." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to feed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Late February to early April, depending on your location and the season. The cue is a colony that has started rearing brood (confirmed on a warm inspection day) but is in a location where natural pollen is not yet available in quantity: no flowering willows, no catkins, no early bulbs in the vicinity. In urban gardens this is less often an issue; on an open smallholding with no shelter plantings, it matters more." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the patty" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pollen substitute powder is available from beekeeping suppliers in 500 g to 5 kg bags. Mix it with thick sugar syrup (2:1 sugar to water by weight) to form a stiff, pliable dough. The target consistency is firm enough to hold its shape as a patty but soft enough that bees can work into it easily. Add syrup a tablespoon at a time; err on the firmer side. Shape into a patty about 150 g in weight and 1 cm thick." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Placing the patty" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Open the hive on a day above 10 degrees C. Remove the crown board and place the patty directly on top of the cluster frames, covering the cluster. The bees access it from below; there is no need to push it down between frames. Replace the crown board over the patty. On cold days the contact between patty and cluster is what matters, so do not centre the patty over an empty frame." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How often to replace it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Check every ten days. A vigorous colony will consume a 150 g patty in under a week when brood rearing is active. A patty that has gone mouldy was not taken up; the colony may not need supplementing, or the weather was too cold for the bees to break cluster. Replace mouldy patties with fresh ones and reduce to a single check two weeks later." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Pollen substitute supplements; it does not replace natural pollen. Once real pollen is genuinely coming in on the legs of returning foragers (visible in the pollen baskets as bright orange, yellow, or grey pellets), stop feeding. Over-feeding a well-stocked colony will cause it to store pollen substitute in cells intended for brood." }] }
+        ]
+      }
+    ]
+  }
+}

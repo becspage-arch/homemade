@@ -1,0 +1,99 @@
+{
+  "slug": "rendering-beeswax-from-comb",
+  "title": "Rendering beeswax from old comb and cappings",
+  "subtitle": "Clean usable wax from scrap comb, in the simplest possible setup.",
+  "excerpt": "Old brood comb and honey cappings are a worthwhile wax source if you render them properly. Done carelessly the wax picks up propolis, debris, and water; done in a solar melter or a double boiler with the right filtration, it comes out pale, clean, and ready to use for candles, polish, or hand cream.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "timeMinutes": 90,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), wax processing section. Frank Pearson, Bee-keeping for All (1923), chapter on beeswax. BBKA practical guide to hive products.",
+  "glossaryTerms": [
+    { "slug": "cappings", "term": "Cappings", "definition": "The thin wax layer bees seal over a filled honey cell when the honey has been reduced to the correct moisture content. Removed in sheets during honey extraction; a high-quality wax source." },
+    { "slug": "propolis", "term": "Propolis", "definition": "A resinous compound bees collect from tree buds and bark, used to seal gaps, coat surfaces, and block entrances. Insoluble in water and persistent in wax; a rendering contaminant that darkens and hardens the finished block." },
+    { "slug": "slumgum", "term": "Slumgum", "definition": "The dark, waxy residue left after rendering comb: a mix of dead brood casings, propolis, pollen, and cocoon silk. Cannot be further refined by simple melting; compost or discard it." }
+  ],
+  "techniqueSlugs": ["harvesting-honey-uncapping-and-extracting"],
+  "criticalTechniques": [],
+  "aliases": ["rendering wax", "processing beeswax", "making beeswax from old comb"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every hive produces wax: old brood comb rotated out of the brood box, " },
+          { "type": "text", "text": "cappings", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cappings" } }] },
+          { "type": "text", "text": " from the honey harvest, and the scrapings from frames and box edges. Rendered and filtered, this becomes usable beeswax. The process is not complicated, but wax is highly flammable near an open flame and needs a dedicated double-boiler setup away from your kitchen." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to render and what to discard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cappings are the best source: pale, clean, low in " },
+          { "type": "text", "text": "propolis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "propolis" } }] },
+          { "type": "text", "text": ", and quick to melt. Old brood comb is darker and takes more filtering because it is full of cocoon silk and dead brood casings, but it still yields usable wax. Comb that has been treated with oxalic acid in the last two years can be rendered; the wax level in treated comb remains low." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not render comb from a hive that had American foulbrood. The spores survive in wax for decades. All equipment from an AFB hive must be burned." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Solar melter method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A solar wax melter is a glazed wooden box angled to face south, with an inner tray lined with stainless mesh or muslin and a collection tray below. Load it with comb pieces, close the lid, and leave it in full sun. On a hot summer day the interior reaches 65-70 degrees C, which is enough to melt wax but not hot enough to darken it. Filtered wax drips into the tray below; slumgum stays in the mesh. Empty and refill daily while the weather holds." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Double-boiler method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a pan of water as the outer vessel and a smaller metal container sitting in it as the inner. Melt comb pieces in the inner container, keeping the temperature below 90 degrees C to avoid discolouration. Strain the melted wax through a nylon stocking or several layers of muslin into a clean container. Pour the strained wax into a silicone mould or a waxed cardboard box. Allow to cool slowly; fast cooling causes cracking. The wax will contract as it sets; the finished block should pull free of the mould cleanly." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Beeswax has a flash point of around 204 degrees C but should be treated with care around open flames at any temperature. Never leave melting wax unattended, and never melt it directly in a pan without a water bath." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Handling the residue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dark residue left in the mesh or the bottom of the melter is " },
+          { "type": "text", "text": "slumgum", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slumgum" } }] },
+          { "type": "text", "text": ". It cannot be further refined by simple melting. It can go on the compost heap or be used as a firelighter." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to use the wax for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rendered beeswax from cappings is suitable for candles, wood polish, leather conditioner, and hand cream. Wax from old brood comb is darker and more propolis-scented; it works well for boot polish and furniture wax but may give uneven results in candles. Store blocks wrapped in paper in a cool, dry place. Beeswax does not go off." }]
+      }
+    ]
+  }
+}

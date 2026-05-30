@@ -1,0 +1,77 @@
+{
+  "slug": "treating-abscesses-in-sheep",
+  "title": "Treating abscesses in sheep",
+  "subtitle": "Identifying the common sites, knowing when to drain and when to leave, and when to call the vet.",
+  "excerpt": "Abscesses are common in sheep and most resolve without intervention or respond to simple draining. The challenge is distinguishing between a caseous lymphadenitis abscess (infectious, notifiable in some contexts), a simple bacterial abscess from a wound or injection site, and a lymph node abscess that needs veterinary attention.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Health and Welfare guidance (ahdb.org.uk). SAC Consulting Scotland, Sheep Health Notes. DEFRA Code of Practice for the Welfare of Sheep, 2020.",
+  "glossaryTerms": [
+    { "slug": "abscess-sheep", "term": "Abscess", "definition": "A localised collection of pus under the skin, caused by bacterial infection of a wound, injection site, or lymph node. Soft-tissue abscesses in sheep typically contain thick white or yellow pus; caseous lymphadenitis abscesses contain dry, chalky, layered pus." },
+    { "slug": "caseous-lymphadenitis", "term": "Caseous lymphadenitis (CLA)", "definition": "A chronic bacterial disease caused by Corynebacterium pseudotuberculosis, presenting as recurring abscesses in the lymph nodes of sheep and goats. The pus has a distinctive layered, dry, cheesy texture. CLA is not notifiable in the UK but is significant because it persists in soil for years and spreads when an abscess is ruptured in the environment." }
+  ],
+  "techniqueSlugs": ["separating-a-poorly-sheep-for-treatment", "condition-scoring-sheep"],
+  "criticalTechniques": [],
+  "aliases": ["sheep abscess treatment", "lumps on sheep", "draining abscess sheep"],
+  "recipeTools": [
+    { "slug": "shepherds-crook", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Finding a lump on a sheep is common. Most are " },
+          { "type": "text", "text": "abscesses", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "abscess-sheep" } }] },
+          { "type": "text", "text": ": localised infections that can be drained and managed without significant welfare impact. The priority is identifying which type of abscess you have before acting, because the approach that is right for a simple wound abscess is wrong for a caseous lymphadenitis node." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common abscess sites" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Simple bacterial abscesses most commonly follow an injection site (particularly clostridial vaccines injected subcutaneously), a wound from thorns or wire, or an infected foot lesion that has tracked up the leg. They appear as soft, warm swellings that move under finger pressure and feel fluid-filled when ripe." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lymph node abscesses along the head and jaw line, in the flank skin folds, or around the prescapular node (in front of the shoulder) that feel firm and are slow-growing may be " },
+          { "type": "text", "text": "caseous lymphadenitis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caseous-lymphadenitis" } }] },
+          { "type": "text", "text": ". These should not be drained into the environment." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Draining a simple abscess" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Catch the sheep and secure her in a corner or with assistance. If the abscess is ripe (pointing with a visible soft centre, warm to the touch, and the pus is almost at the surface), it can be lanced with a clean sharp blade at the lowest point of the swelling. Drain and flush with clean water. Pack with clean dressing if the cavity is large. The sheep will manage the remaining infection if the drainage is established." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "warning" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Do not drain a firm, layered abscess in the lymph node chain without veterinary assessment. If CLA is confirmed, drain into a sealed container and disinfect the site. CLA pus spilled on pasture contaminates the ground for years and enters other sheep through any small skin break." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Internal abscesses" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A sheep that loses condition, appears dull, and has no obvious external abscess may have an internal abscess, most commonly in the liver, lungs, or thorax. Internal abscesses cannot be treated on-farm and require veterinary assessment. A blood test (plasma protein) can indicate chronic infection. Prognosis for internal CLA in an advanced state is poor." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "understanding-uk-pig-movement-rules",
+  "title": "Understanding UK pig movement rules",
+  "subtitle": "The paperwork, the standstills, and what happens before any pig leaves your holding.",
+  "excerpt": "Moving pigs in the UK is regulated more strictly than any other livestock. Every move requires an eAML2 form, triggers a 20-day standstill on the destination holding, and must be licensed if it involves a public road. Knowing these rules before your first pigs arrive is considerably easier than learning them during a move.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA, Pig Movement Rules (gov.uk, updated 2024). APHA, eAML2 guidance for pig keepers. Animal Health and Welfare (Scotland) Act 2006 equivalent provisions.",
+  "glossaryTerms": [
+    { "slug": "eaml2", "term": "eAML2", "definition": "Electronic Animal Movement Licence 2, the mandatory online movement document required for every pig movement in Great Britain. Completed before the move begins; a copy must accompany the pigs. The system is at eaml2.org.uk." },
+    { "slug": "pig-standstill", "term": "20-day standstill", "definition": "A restriction on moving any pig from a holding for 20 days after pigs have arrived at that holding. The standstill applies to the whole holding, not just the new animals. One of the strictest biosecurity controls in UK livestock." },
+    { "slug": "cph-number", "term": "CPH number", "definition": "County Parish Holding number, a unique identifier issued by the Rural Payments Agency to every holding where livestock are kept. Required before keeping any pigs; used in all movement documentation." }
+  ],
+  "techniqueSlugs": ["catching-and-loading-a-pig", "daily-feeding-and-checking-pigs"],
+  "criticalTechniques": [],
+  "aliases": ["pig movement licence UK", "eAML2 pigs", "20 day standstill pigs"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pig movement in Great Britain is governed by the Pig (Records, Identification and Movement) Order 2011. Every keeper of pigs, whether they have two weaners in a back garden or 200 on a farm, is legally required to have a " },
+          { "type": "text", "text": "CPH number", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cph-number" } }] },
+          { "type": "text", "text": ", register as a pig keeper on the APHA database, and complete " },
+          { "type": "text", "text": "eAML2", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eaml2" } }] },
+          { "type": "text", "text": " movement documentation for every pig that leaves or arrives at the holding." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Getting set up before the first pig arrives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Apply for your CPH number through the Rural Payments Agency before acquiring any pigs. This is free and typically takes a few days. Once you have the CPH, register as a pig keeper with APHA and create an eAML2 account at eaml2.org.uk. The seller's eAML2 form must be completed before the pigs are loaded; you will need to supply your CPH and postcode." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The 20-day standstill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "20-day standstill", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-standstill" } }] },
+          { "type": "text", "text": " is the most significant practical restriction for a small pig keeper. When your weaners arrive, the clock starts. For 20 days after that arrival, you cannot move any pig off your holding (to market, to the abattoir, or anywhere else). This is not the 20-day period before the abattoir date; it is 20 days from the last pig arrival at your holding." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a keeper buying weaners in spring and finishing them for the freezer in autumn, the standstill rarely causes problems because the pigs are on the holding for 5-6 months continuously. Where it matters is if you acquire replacement weaners while previous pigs are still on the holding: the standstill resets and any planned abattoir slot must be 20 days or more after the last arrival." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Moving pigs off the holding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before pigs can leave for slaughter or sale, complete an eAML2 form specifying the origin (your CPH), the destination (the abattoir's holding number), the number of pigs, and the transport details. Print or display the document digitally and ensure it accompanies the pigs. The driver may also require a vehicle movement licence from their local authority if the vehicle crosses a public road." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Keep a holding register: a written record of every pig that arrives or leaves the holding, with dates, numbers, origin, and destination. APHA may inspect it at any time. The register must be kept for at least 3 years. eAML2 provides a downloadable movement history that can serve as the basis for this record." }] }
+        ]
+      }
+    ]
+  }
+}

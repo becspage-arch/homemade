@@ -1,0 +1,74 @@
+{
+  "slug": "introducing-a-new-pig-to-an-existing-group",
+  "title": "Introducing a new pig to an existing group",
+  "subtitle": "Managing mixing aggression and keeping the 20-day standstill in mind.",
+  "excerpt": "Pigs establish a clear social hierarchy that determines access to food, space, and shelter. Introducing a new pig to an existing group disrupts that hierarchy and triggers aggression while the new ranking is established. The keeper's job is to manage the introduction so that fighting is brief and no pig is injured.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Practice for the Welfare of Pigs, 2003. AHDB Pork, Mixing Pigs guidance. Compassion in World Farming, Social Behaviour in Pigs technical note.",
+  "glossaryTerms": [
+    { "slug": "social-hierarchy-pigs", "term": "Social hierarchy", "definition": "The rank order established between pigs in a group through early fighting and ongoing assessment. Once established it is stable; introducing a new pig forces a re-establishment of all ranks, causing renewed fighting regardless of the new pig's size." },
+    { "slug": "mixing-aggression", "term": "Mixing aggression", "definition": "The intense fighting and biting that occurs when unfamiliar pigs are mixed. Normal and usually self-limiting within 2-4 hours in most groups, but can cause injury if pigs cannot escape or if space is too limited." }
+  ],
+  "techniqueSlugs": ["daily-feeding-and-checking-pigs", "outdoor-pig-paddock-rotation"],
+  "criticalTechniques": [],
+  "aliases": ["mixing pigs together", "adding a pig to a group", "new pig introduction"],
+  "recipeTools": [
+    { "slug": "pig-board", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before mixing any pigs, confirm that your holding is past the 20-day standstill period since the new pig arrived. Mixing before the standstill ends does not reset it, but moving either pig off the holding during the standstill would be a legal offence. The movement rules and the welfare management are separate problems; both must be right." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Understanding mixing aggression" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When pigs meet an unfamiliar pig, " },
+          { "type": "text", "text": "mixing aggression", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mixing-aggression" } }] },
+          { "type": "text", "text": " is inevitable. The fighting is normal and self-limiting in a group with adequate space; it typically resolves within 2-4 hours as the " },
+          { "type": "text", "text": "social hierarchy", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "social-hierarchy-pigs" } }] },
+          { "type": "text", "text": " re-establishes. The keeper's role is to ensure the space is large enough that the subordinate pig can escape and recover, and to intervene only if biting becomes severe enough to draw blood." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Timing and conditions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix in the late afternoon when pigs are full from their last feed and slightly tired. Hungry pigs fight harder and for longer. Mix in a large area or outdoor paddock rather than a confined pen; space reduces injury from corner-trapping. Mix in groups of similar size where possible; introducing one small pig to two larger ones puts the new animal at a significant disadvantage." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reduce aggression with familiar scent" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Allow the pigs to smell each other through a fence for 3-4 days before mixing. This reduces the novelty response significantly. Alternatively, rub both pigs with the same scented spray (some keepers use a small amount of diesel or pine disinfectant on each pig's back) before mixing, so neither smells strange to the other." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Intervening when necessary" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Monitor the mixing closely for the first hour. Use a pig board to separate pigs if one is being cornered and bitten repeatedly on the flank or ears without being able to escape. After 2-4 hours of initial fighting, if the group has settled to occasional flank-pushing and no sustained biting, the introduction is likely successful. If fighting continues for more than 4 hours without settling, separate and try a different introduction approach." }]
+      }
+    ]
+  }
+}
