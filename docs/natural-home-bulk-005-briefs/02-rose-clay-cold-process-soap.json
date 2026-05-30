@@ -1,0 +1,216 @@
+{
+  "slug": "rose-clay-cold-process-soap",
+  "title": "Rose clay cold-process soap",
+  "subtitle": "A pale pink bar with gentle kaolin-blend clay and rose geranium essential oil",
+  "excerpt": "Rose clay gives this cold-process bar a soft, dusty pink colour and a mild drawing action that suits most skin types. Rose geranium essential oil at 3% carries the floral note through the cure. The olive-heavy formula produces a long, creamy lather.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rose clay properties from Gracefruit cosmetic ingredients guide (gracefruit.com, May 2026). SAP values from SoapCalc. Olive and coconut oil formulation from Susan Miller Cavitch, The Soapmaker's Companion (1997).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 4-week cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally. Recalculate lye through a soap calculator before making.",
+    "makeAheadNotes": "Cure for a minimum of 4 weeks. The pink colour deepens slightly over the first week of cure.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Combine lye solution and oils when both are between 38 and 42 degrees Celsius.",
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date stored in a cool, dry place. The rose clay is inert and does not shorten shelf life. Discard if the bar develops orange spots or a rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "notes": "Accurate to 1 g" },
+    { "slug": "lye-pitcher-hdpe", "notes": "For lye solution; never glass" },
+    { "slug": "stick-blender", "notes": "Dedicated to soap making" },
+    { "slug": "silicone-loaf-mould", "notes": null },
+    { "slug": "thermometer-probe", "notes": null },
+    { "slug": "safety-goggles", "notes": null },
+    { "slug": "nitrile-gloves", "notes": null }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils left unsaponified in a finished bar. A 5% superfat leaves free fatty acids in the bar that provide conditioning without making the bar feel greasy."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point in cold-process soap making where the batter has emulsified enough to leave a visible drizzle trail on the surface. Add clay and essential oil at light trace."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between sodium hydroxide and the fats in an oil that produces soap and glycerol. The SAP value for each oil determines how much lye is needed."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rose clay is a blend of white and red kaolin clays with a pale pink colour from naturally occurring iron oxide. It has a mild drawing action, gentler than bentonite, and suits all skin types including sensitive. In cold-process soap, 1 to 2 tablespoons per kilogram of oils stirs in at ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " to give a uniform blush through the finished bar. This formula uses an olive-heavy base for a long, creamy lather and runs a 5% ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Rose geranium essential oil holds well through the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " process and survives the cure with a clear floral note. Yield is 7 bars weighing roughly 130 g each after a 4-week cure.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you begin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe uses sodium hydroxide, a caustic alkali. Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "working-with-lye-safely" } }]
+          },
+          {
+            "type": "text",
+            "text": " guidance before starting. Wear protective goggles and gloves throughout. Add lye to water, never the reverse. Ventilate the workspace.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 500, "unit": "g", "isOptional": false, "prepNote": "50% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 350, "unit": "g", "isOptional": false, "prepNote": "35% of oil weight; melt if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight" },
+            { "ingredientSlug": "shea-butter", "amount": 100, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight; melted" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 132, "unit": "g", "isOptional": false, "prepNote": "Run through a lye calculator to confirm" },
+            { "ingredientSlug": "distilled-water", "amount": 330, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight" },
+            { "ingredientSlug": "rose-clay", "amount": 20, "unit": "g", "isOptional": false, "prepNote": "2 tablespoons; dispersed in 2 tablespoons of an oil before adding at trace" },
+            { "ingredientSlug": "essential-oil-rose-geranium", "amount": 30, "unit": "g", "isOptional": false, "prepNote": "3% of oil weight; added at light trace" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the full ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " technique. Before starting, disperse the rose clay in 2 tablespoons of olive oil from the weighed amount. This prevents dry clay pockets in the batter. Weigh and melt the remaining solid oils. Mix the lye solution and cool both the oils and lye to 38 to 42 degrees Celsius.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils and blend to light trace. Stir in the clay-oil mixture and the rose geranium essential oil by hand. Mix until evenly incorporated and the batter is an even pale pink. Pour into the mould, smooth the top, and cover with cardboard. Leave undisturbed for 48 hours.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould and cut into bars. Cure on a rack with good air circulation for a minimum of 4 weeks. The pink colour in the cut bar is the benchmark: it should be a soft, even blush. Any orange tinge is a sign of rancidity rather than clay colouring.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cured bars keep for 2 years in a cool, dry place on an open rack. The clay is inert and does not shorten shelf life. Discard any bar that develops a rancid smell or shows orange spots on the surface.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}

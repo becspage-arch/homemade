@@ -1,0 +1,230 @@
+{
+  "slug": "milk-cold-process-soap",
+  "title": "Milk cold-process soap",
+  "subtitle": "A creamy bar made with whole milk powder dissolved in the lye water",
+  "excerpt": "Whole milk powder in the lye solution gives this bar a pale, creamy colour and a noticeably silky lather. The milk sugars react during saponification and produce a bar with a slightly higher pH than a water-based soap, which softens with a longer cure.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Susan Miller Cavitch, The Soapmaker's Companion (1997): milk soap formulation notes and heat management. SoapCalc SAP values for olive, coconut, and castor oils at a 5% superfat. USDA nutritional database: whole milk fat and lactose composition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 6-week cure)",
+    "prepMinutes": 75,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2955,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale the batch by multiplying all weights proportionally. Recalculate lye through a soap calculator before making at any new scale.",
+    "makeAheadNotes": "Bars must cure for a minimum of 4 weeks before use. A 6-week cure gives a harder, milder bar.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Mix lye solution and oils when both have cooled to between 38 and 42 degrees Celsius.",
+    "foundational": false,
+    "shelfLifeDays": 548,
+    "shelfLifeNotes": "18 months from cure date in a cool, dry place. Milk soaps are more prone to dreaded orange spots (DOS) than water-based bars because of the residual fats in the milk. Store on a rack with air circulation and discard any bar that smells sharp or shows orange or brown spots."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "notes": "Accurate to 1 g" },
+    { "slug": "lye-pitcher-hdpe", "notes": "Never glass for lye solution" },
+    { "slug": "stick-blender", "notes": "Dedicated to soap making" },
+    { "slug": "silicone-loaf-mould", "notes": null },
+    { "slug": "thermometer-probe", "notes": null },
+    { "slug": "safety-goggles", "notes": null },
+    { "slug": "nitrile-gloves", "notes": null }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils left unsaponified in a finished soap bar. A 5% superfat leaves a small cushion of free fatty acids that condition the skin."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between a fat or oil and an alkali that produces soap and glycerol. Each oil has a SAP value: the grams of sodium hydroxide needed to fully convert one gram of that oil to soap."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which blended oils and lye solution have emulsified enough that a drizzle on the surface leaves a visible trail before sinking. Light trace is the right consistency for most pours."
+    },
+    {
+      "slug": "gel-phase",
+      "term": "Gel phase",
+      "definition": "A translucent, jelly-like stage that cold-process soap passes through during the first 12 to 24 hours as the saponification reaction generates heat. Milk soaps often skip gel phase because the cooler lye solution reduces the internal temperature."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whole milk powder changes a cold-process bar in two ways: the milk fats add conditioning and the lactose sugars caramelise slightly during ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": ", giving the finished bar a warm, creamy colour. The same heat spike that colours the bar can scorch the milk if you add lye too quickly or work with a warm solution. Chilling the lye water before adding lye, and dissolving the milk powder into the water first, keeps the temperature manageable. This formula runs a 5% ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " on a 33% water-to-oil ratio, with olive oil for lather creaminess and coconut oil for hardness. Allow 6 weeks to cure; milk bars benefit from the longer cure.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you begin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe uses sodium hydroxide, a caustic alkali. Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "working-with-lye-safely" } }]
+          },
+          {
+            "type": "text",
+            "text": " guidance before starting. Wear protective goggles and gloves throughout. Add lye to liquid (never the reverse). Keep children and pets clear of the workspace.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 450, "unit": "g", "isOptional": false, "prepNote": "45% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 350, "unit": "g", "isOptional": false, "prepNote": "35% of oil weight; melt if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight; boosts lather" },
+            { "ingredientSlug": "shea-butter", "amount": 150, "unit": "g", "isOptional": false, "prepNote": "15% of oil weight; melted" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 131, "unit": "g", "isOptional": false, "prepNote": "Run through a lye calculator to confirm for your exact oil batch" },
+            { "ingredientSlug": "distilled-water", "amount": 250, "unit": "g", "isOptional": false, "prepNote": "Chilled; for dissolving milk powder and lye" },
+            { "ingredientSlug": "whole-milk-powder", "amount": 80, "unit": "g", "isOptional": false, "prepNote": "Full-fat milk powder; dissolved in the chilled water before lye is added" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the full ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " technique. Chill the distilled water in the freezer until slushy. Stir in the milk powder until fully dissolved. Carefully add the sodium hydroxide to the cold milk-water mixture in a slow, steady stream, stirring constantly. The solution will still heat, but more slowly than a standard lye solution. Aim to keep it below 50 degrees Celsius.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh all oils and melt the coconut oil and shea butter together. Allow both the oils and the lye solution to cool to between 38 and 42 degrees Celsius. Pour the lye solution slowly into the oils while stirring. Use a stick blender in short bursts, alternating with hand stirring, until ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " is reached. Pour into the prepared mould at light trace. Cover with cardboard and leave at room temperature to set.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Milk soaps often skip ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "gel phase",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gel-phase" } }]
+          },
+          {
+            "type": "text",
+            "text": " because of the lower working temperature. The finished bar will be opaque white to pale cream rather than translucent. Unmould after 48 hours and cut into bars. Cure on a rack with good air circulation for a minimum of 4 weeks, preferably 6.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cured bars keep for 18 months in a cool, dry place on an open rack. Avoid airtight containers. Milk soaps are more susceptible to dreaded orange spots than water-based bars because of the residual milk fats. Discard any bar that smells rancid, feels slimy, or shows orange or brown discolouration.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}

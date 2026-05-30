@@ -1,0 +1,204 @@
+{
+  "slug": "mango-butter-cold-process-soap",
+  "title": "Mango butter cold-process soap",
+  "subtitle": "A firm, skin-conditioning bar built on mango butter and olive oil",
+  "excerpt": "Mango butter has a higher stearic acid content than shea and melts just above body temperature, producing a harder, longer-lasting bar with a light, creamy skin feel. Combined with olive oil for conditioning and coconut oil for lather, the finished bar suits all skin types and sets to a smooth ivory.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mango butter fatty acid profile from USDA AAS database. SAP values from SoapCalc. Formulation ratios from Soap Queen (soapqueen.com, May 2026).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 4-week cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally. Recalculate lye through a soap calculator before making.",
+    "makeAheadNotes": "Cure for a minimum of 4 weeks. Mango butter bars are slow to cure to full hardness.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Combine lye solution and oils when both are between 38 and 42 degrees Celsius.",
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date in a cool, dry place. Mango butter is a stable fat with a long shelf life and does not significantly shorten the bar's life. Discard if the bar smells rancid or shows dreaded orange spots."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "notes": "Accurate to 1 g" },
+    { "slug": "lye-pitcher-hdpe", "notes": "For lye solution; never glass" },
+    { "slug": "stick-blender", "notes": "Dedicated to soap making" },
+    { "slug": "silicone-loaf-mould", "notes": null },
+    { "slug": "thermometer-probe", "notes": null },
+    { "slug": "safety-goggles", "notes": null },
+    { "slug": "nitrile-gloves", "notes": null }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oils left unsaponified in the finished bar. At 5%, it adds conditioning without leaving the bar greasy."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between sodium hydroxide and the fats in the oil blend that produces soap and glycerol. Each fat has a different SAP value that determines the amount of lye required."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point where the blended oils and lye solution have emulsified enough to leave a visible trail on the surface when drizzled. Mango butter batters can take longer to reach trace than shea butter batches because of the higher stearic acid content."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mango butter is pressed from the kernel inside the mango seed and has a fatty acid profile high in stearic and oleic acids. In cold-process soap it hardens the bar, slows the cure to trace, and produces a smooth surface after unmoulding. It is a direct substitute for cocoa butter and can be used interchangeably in most soap formulas. This formula runs a 5% ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " on a 33% water-to-oil ratio. The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " of mango butter's stearic acid produces a firm soap quickly; the bar can often be unmoulded after just 24 hours.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you begin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe uses sodium hydroxide, a caustic alkali. Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "working-with-lye-safely" } }]
+          },
+          {
+            "type": "text",
+            "text": " guidance before starting. Wear protective goggles and gloves throughout. Add lye to water in a well-ventilated space.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 400, "unit": "g", "isOptional": false, "prepNote": "40% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 300, "unit": "g", "isOptional": false, "prepNote": "30% of oil weight; melt if solid" },
+            { "ingredientSlug": "mango-butter", "amount": 200, "unit": "g", "isOptional": false, "prepNote": "20% of oil weight; melt gently" },
+            { "ingredientSlug": "castor-oil", "amount": 100, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 131, "unit": "g", "isOptional": false, "prepNote": "Run through a lye calculator to confirm" },
+            { "ingredientSlug": "distilled-water", "amount": 330, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the full ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " technique. Melt the mango butter and coconut oil together in a double boiler or a microwave in short bursts. Add the olive and castor oils. Mix the lye solution in the HDPE pitcher and allow both to cool to 38 to 42 degrees Celsius.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils and blend to ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Mango butter batches can be slow to trace because of the high stearic acid content; keep stick-blending in short bursts. At light trace, pour into the mould and leave undisturbed for 24 to 48 hours. Unmould, cut into bars, and cure on a rack for a minimum of 4 weeks.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cured bars keep for 2 years in a cool, dry place on an open rack. Mango butter is a stable fat and does not significantly increase the risk of rancidity. Discard any bar that smells sharp or shows orange spotting.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}

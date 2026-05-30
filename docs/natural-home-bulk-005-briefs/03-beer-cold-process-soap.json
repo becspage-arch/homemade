@@ -1,0 +1,214 @@
+{
+  "slug": "beer-cold-process-soap",
+  "title": "Beer cold-process soap",
+  "subtitle": "A firm, creamy bar made with dark ale as the lye liquid",
+  "excerpt": "Beer in cold-process soap replaces part or all of the distilled water in the lye solution. The sugars and proteins in the ale caramelise during saponification, producing a tan-coloured bar with a dense, conditioning lather. Dark ale gives more colour and a subtler malt note than pale ale.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Beer soap technique from Susan Miller Cavitch, The Soapmaker's Companion (1997): sugar-liquid lye management. SAP values from SoapCalc. Alcohol boiling-off step from Soap Queen (soapqueen.com, May 2026).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 kg soap batter (~7 x 130 g bars after 4-week cure)",
+    "prepMinutes": 75,
+    "cookMinutes": 15,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2970,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally and recalculate lye. Use the same beer-to-water ratio at any batch size.",
+    "makeAheadNotes": "Boil off the beer and chill it the day before to reduce preparation time on soap day.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": "Cool the beer-lye solution to below 40 degrees Celsius before combining with oils.",
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "2 years from cure date in a cool, dry place. Beer soaps cure to a tan or amber colour. Discard if the bar smells rancid or develops orange spots (DOS)."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "notes": "Accurate to 1 g" },
+    { "slug": "lye-pitcher-hdpe", "notes": "For lye solution; never glass" },
+    { "slug": "stick-blender", "notes": "Dedicated to soap making" },
+    { "slug": "silicone-loaf-mould", "notes": null },
+    { "slug": "thermometer-probe", "notes": null },
+    { "slug": "safety-goggles", "notes": null },
+    { "slug": "nitrile-gloves", "notes": null }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between sodium hydroxide and the fats in the oil blend that produces soap and glycerol. Sugar-containing liquids like beer accelerate the reaction and raise the temperature of the lye solution more than plain water."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the blended oils and lye solution have emulsified enough to leave a visible drizzle trail on the surface. Beer batter often reaches trace faster than water-based batters because of the sugars."
+    },
+    {
+      "slug": "dos",
+      "term": "Dreaded Orange Spots (DOS)",
+      "definition": "Orange or brown spots on the surface of cured soap, caused by oils going rancid. More common in soaps made with sugar-containing liquids because residual sugars can feed bacterial growth. Proper cure and dry storage prevent them."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beer soap has a long history in craft soaping. The sugars in the ale react during ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " and produce a dense, creamy lather. Dark ale gives more conditioning properties and a deeper colour than pale ale. The alcohol must be boiled off before use: active alcohol prevents the lye from dissolving cleanly and can cause the batter to seize. After boiling, chill the flat beer thoroughly before adding lye. The resulting lye solution heats sharply because of the dissolved sugars, so cold beer and careful addition are both important. This formula gives a firm, long-lasting bar with a mild malt note.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before you begin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe uses sodium hydroxide, a caustic alkali. Follow the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "working-with-lye-safely",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "working-with-lye-safely" } }]
+          },
+          {
+            "type": "text",
+            "text": " guidance. Wear protective goggles and gloves throughout. The beer-lye solution can reach higher temperatures than a standard water-lye mix. Work outdoors or in a well-ventilated area.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 400, "unit": "g", "isOptional": false, "prepNote": "40% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 350, "unit": "g", "isOptional": false, "prepNote": "35% of oil weight; melt if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 100, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight; boosts dense lather" },
+            { "ingredientSlug": "shea-butter", "amount": 150, "unit": "g", "isOptional": false, "prepNote": "15% of oil weight; melted" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 137, "unit": "g", "isOptional": false, "prepNote": "Run through a lye calculator to confirm" },
+            { "ingredientSlug": "beer", "amount": 330, "unit": "ml", "isOptional": false, "prepNote": "Dark ale; boiled flat and chilled overnight before use" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The day before: pour the beer into a saucepan and simmer for 15 minutes to boil off the alcohol. The beer will foam aggressively at first. Cool to room temperature, then refrigerate overnight. The flat, cold beer is now ready for the lye solution.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Follow the full ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cold-process-soap-method",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "cold-process-soap-method" } }]
+          },
+          {
+            "type": "text",
+            "text": " technique. Weigh the cold flat beer into the HDPE pitcher. Add the sodium hydroxide in a slow, steady stream while stirring. The solution will heat and may foam slightly. Cool to below 40 degrees Celsius before proceeding.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh and melt the solid oils. Cool the oils to 38 to 42 degrees Celsius. Pour the beer-lye solution into the oils and blend to ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Beer batter accelerates to trace faster than a standard batch; watch for this and pour before it thickens further. Pour into the mould and leave undisturbed for 48 hours. Unmould and cut into bars. Cure on a rack for a minimum of 4 weeks.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cured bars keep for 2 years in a cool, dry place. Beer soaps are somewhat more prone to ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "dreaded orange spots",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dos" } }]
+          },
+          {
+            "type": "text",
+            "text": " than water-based bars because of the residual sugars in the ale. Store on a rack with good air circulation. Discard any bar that smells rancid or shows orange spotting.",
+            "marks": []
+          }
+        ]
+      }
+    ]
+  }
+}

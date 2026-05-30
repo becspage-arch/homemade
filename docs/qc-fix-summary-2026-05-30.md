@@ -209,3 +209,68 @@ SKIPPED: 0
 - polymer-clay-miniature-cacti-trio: 
 - pyrography-christmas-tree-ornaments: 
 - reclaiming-homemaker-as-feminist-identity: 
+
+---
+
+## Run at 02:19:31
+
+Generated: 2026-05-30T02:19:31.825Z
+
+Processed: 134
+PASS: 94
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| grade-level-strict | 13 |
+| body-missing-method | 10 |
+| em-dash-in-content | 2 |
+
+## Still BLOCKED (sample 20)
+
+- chain-plying-on-a-drop-spindle: hero-missing
+- colour-sampling-with-mordants: hero-missing
+- drum-carder-batts-from-raw-locks: hero-missing
+- dyeing-silk-with-iron-modifier: hero-missing, grade-level-strict
+- dyeing-with-acorns-and-oak-bark: hero-missing
+- dyeing-with-ivy-berries: hero-missing, grade-level-strict
+- dyeing-with-meadowsweet: hero-missing
+- finger-weaving-chevron-band: hero-missing
+- four-shaft-birds-eye-twill: hero-missing
+- four-shaft-undulating-twill: hero-missing
+- four-shaft-waffle-weave: hero-missing
+- hooked-rug-portrait-panel: hero-missing
+- macrame-bottle-holder: hero-missing
+- macrame-hammock: hero-missing
+- macrame-window-valance: hero-missing
+- macrame-wreath-frame-hanger: hero-missing
+- making-a-skein-on-niddy-noddy: hero-missing
+- needle-felted-badger: hero-missing
+- needle-felted-elephant: hero-missing
+- needle-felted-pig: hero-missing
+
+---
+
+## Run at 03:13:51
+
+Generated: 2026-05-30T03:13:51.857Z
+
+Processed: 80
+PASS: 79
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 5 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- natural-perfume-oil-roller: voice-violation
