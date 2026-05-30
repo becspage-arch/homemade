@@ -1,14 +1,20 @@
 {
-  "generatedAt": "2026-05-30T14:34:20.341Z",
-  "totalScanned": 5584,
+  "generatedAt": "2026-05-30T15:36:48.765Z",
+  "totalScanned": 5591,
   "passCount": 0,
-  "blockCount": 167,
+  "blockCount": 154,
   "warnOnlyCount": 0,
   "perCategory": {
-    "sustainability": {
-      "total": 45,
+    "natural-home": {
+      "total": 14,
       "pass": 0,
-      "block": 45,
+      "block": 14,
+      "warnOnly": 0
+    },
+    "sustainability": {
+      "total": 39,
+      "pass": 0,
+      "block": 39,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -17,28 +23,10 @@
       "block": 13,
       "warnOnly": 0
     },
-    "natural-home": {
-      "total": 10,
-      "pass": 0,
-      "block": 10,
-      "warnOnly": 0
-    },
     "paper-word": {
-      "total": 6,
+      "total": 5,
       "pass": 0,
-      "block": 6,
-      "warnOnly": 0
-    },
-    "pottery-ceramics": {
-      "total": 18,
-      "pass": 0,
-      "block": 18,
-      "warnOnly": 0
-    },
-    "fibre-arts": {
-      "total": 1,
-      "pass": 0,
-      "block": 1,
+      "block": 5,
       "warnOnly": 0
     },
     "mindset": {
@@ -48,24 +36,48 @@
       "warnOnly": 0
     },
     "home-repair": {
-      "total": 8,
+      "total": 7,
       "pass": 0,
-      "block": 8,
+      "block": 7,
       "warnOnly": 0
     },
-    "wood-natural-craft": {
-      "total": 1,
+    "pottery-ceramics": {
+      "total": 11,
       "pass": 0,
-      "block": 1,
+      "block": 11,
       "warnOnly": 0
     }
   },
   "perRuleKind": {
-    "voice-violation": 145,
-    "grade-level-strict": 197,
-    "hero-missing": 5
+    "hero-missing": 12,
+    "grade-level-strict": 169,
+    "voice-violation": 149
   },
   "verdicts": [
+    {
+      "slug": "apothecary-soy-candle-herbal",
+      "tutorialId": "cmpsguvvk0000wkv4ktqcesdw",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:09:27.863Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "This candle uses a tall apothecary-style glass jar to show off layers of dried herbs and botanicals fixed against the inside of the glass. T"
+        }
+      ]
+    },
     {
       "slug": "battery-capacity-degradation",
       "tutorialId": "cmprmms7p0002rov4a9rprkvo",
@@ -257,32 +269,6 @@
       ]
     },
     {
-      "slug": "colloidal-oat-melt-pour-soap",
-      "tutorialId": "cmps3uz4k0000sgv404v0qady",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:45:05.471Z",
-      "heroMediaId": "cmps3vyoa000qfwv4wx1atpjd",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "The key distinction in this recipe is the type of oat: ordinary rolled or porridge oats will sink to the bottom of the mould before the base"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Wrap individually in clingfilm to prevent sweating. Bars are ready to use immediately. They are particularly useful for very dry, eczema-pro"
-        }
-      ]
-    },
-    {
       "slug": "community-energy-co-op-joining",
       "tutorialId": "cmps8ld590003jov4lj7x367z",
       "type": "TECHNIQUE",
@@ -393,39 +379,6 @@
       ]
     },
     {
-      "slug": "crater-glaze-surface-texture",
-      "tutorialId": "cmps4ikn30000g8v4tcpxegdl",
-      "type": "TECHNIQUE",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T09:24:26.752Z",
-      "publishedAt": "2026-05-30T09:03:26.432Z",
-      "heroMediaId": "cmps586oo000erwv4xe69jwf9",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[0] > paragraph[1]",
-          "snippet": "Handle raw oxides and glaze additives with gloves and a respirator. Never use near food preparation. This tutorial uses lithium carbonate as"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[14] > listItem[0] > paragraph[0]",
-          "snippet": "Colour over craters: dry-brush a contrasting glaze or iron oxide wash over the fired surface and re-fire to add colour inside the pits."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[14] > listItem[1] > paragraph[0]",
-          "snippet": "Partial coverage: apply crater glaze in a band across the middle and standard glaze above and below to show both surface types side by side."
-        }
-      ]
-    },
-    {
       "slug": "dishwasher-vs-handwashing-water-efficiency",
       "tutorialId": "cmps8m45s0002dgv4zjqqinas",
       "type": "TECHNIQUE",
@@ -447,44 +400,6 @@
           "message": "paragraph reads at grade 14.0 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Dishwasher vs handwashing: the water and energy comparison go here."
-        }
-      ]
-    },
-    {
-      "slug": "drip-emitter-maintenance",
-      "tutorialId": "cmps8m6fm0001iwv46uvrnf9w",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:07.478Z",
-      "publishedAt": "2026-05-30T10:58:13.124Z",
-      "heroMediaId": "cmps8z76f000kx0v4i3s6w1bo",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[2] > listItem[1] > paragraph[0]",
-          "snippet": "Remove the end-cap from each lateral line and flush for 30 seconds to clear sediment from the line body before addressing the emitters."
-        }
-      ]
-    },
-    {
-      "slug": "dyeing-with-ivy-berries",
-      "tutorialId": "cmprq12r40000lkv4azn0hxjr",
-      "type": "TECHNIQUE",
-      "categorySlug": "fibre-arts",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T02:19:18.438Z",
-      "publishedAt": "2026-05-30T02:17:55.471Z",
-      "heroMediaId": "cmprq3o6p000ahsv4iq68kzq5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[17]",
-          "snippet": "No mordant: on un-mordanted wool, ivy berries give a pale, washed-out grey with very low fastness. The alum mordant makes a meaningful diffe"
         }
       ]
     },
@@ -796,25 +711,6 @@
       ]
     },
     {
-      "slug": "home-battery-economy-7-charging",
-      "tutorialId": "cmprmv7yw0000ccv4z72uxwys",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:27.012Z",
-      "publishedAt": "2026-05-30T00:49:23.463Z",
-      "heroMediaId": "cmprmwt2u000u94v4lvofjgxf",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[11] > listItem[0] > paragraph[0]",
-          "snippet": "Solar + battery: if the system also has solar, the charge schedule prioritises solar charging during the day. Economy 7 charging fills the r"
-        }
-      ]
-    },
-    {
       "slug": "i-steward-wealth-with-purpose-and-joy",
       "tutorialId": "cmpc7mwbt0000psv4mhhqw3ls",
       "type": "PRACTICE",
@@ -977,28 +873,19 @@
       ]
     },
     {
-      "slug": "managing-a-legacy-feed-in-tariff",
-      "tutorialId": "cmpr9z35p0002zgv4vti9izfu",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
+      "slug": "mango-body-butter",
+      "tutorialId": "cmpshli700000ckv4tc7yyvb4",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T18:54:02.418Z",
-      "publishedAt": "2026-05-29T18:48:28.849Z",
-      "heroMediaId": "cmpra5mkv0016acv460xbsr8l",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:29:59.922Z",
+      "heroMediaId": null,
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
-          "snippet": "Generation payment: based on the generation meter reading submitted to your FiT administrator, typically quarterly or annually. The payment "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[3] > listItem[1] > paragraph[0]",
-          "snippet": "Export payment: either a deemed 50% of generation or an actual reading from an export meter. Deemed export is paid automatically; actual exp"
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1406,51 +1293,6 @@
       ]
     },
     {
-      "slug": "paper-clay-christmas-ornament-set",
-      "tutorialId": "cmprhtahg0000osv4xlboghrl",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:31.158Z",
-      "publishedAt": "2026-05-29T22:28:12.212Z",
-      "heroMediaId": "cmprlyxp1001i6cv4en4s7i8s",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
-          "snippet": "Press dried herb sprigs into the surface before cutting for botanical-imprint ornaments."
-        }
-      ]
-    },
-    {
-      "slug": "paper-clay-fairy-door-miniature",
-      "tutorialId": "cmprsv0ek00002ov4ifjumt9c",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:34.759Z",
-      "publishedAt": "2026-05-30T03:37:11.343Z",
-      "heroMediaId": "cmprswxzw000ubkv4mkkn94hp",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[2] > paragraph[0]",
-          "snippet": "Miniature window: cut a small opening in the upper panel before drying and back it with a thin sheet of translucent plastic after painting."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[3] > paragraph[0]",
-          "snippet": "Scale up to 150 mm tall for a more prominent garden display, increasing all hardware proportions accordingly."
-        }
-      ]
-    },
-    {
       "slug": "paper-clay-pressed-flower-frame",
       "tutorialId": "cmprht7xm0000zov4kbqnem2l",
       "type": "PATTERN",
@@ -1509,115 +1351,6 @@
           "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Switching to peat-free and plastic-reduced gardening supplies go here."
-        }
-      ]
-    },
-    {
-      "slug": "photo-mounting-options",
-      "tutorialId": "cmprkk9ip0003tsv4behkt2oe",
-      "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:55.929Z",
-      "publishedAt": "2026-05-29T23:44:53.029Z",
-      "heroMediaId": "cmprkoqoa001ksgv4fw5dqm5d",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "Best use: mounting printed-at-home or copy prints where the original file still exists. Not recommended for unique original photographs."
-        }
-      ]
-    },
-    {
-      "slug": "pinch-pot-cactus-planter-trio",
-      "tutorialId": "cmprsm0uy0001z8v4bczcv46n",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:35.325Z",
-      "publishedAt": "2026-05-30T03:30:12.042Z",
-      "heroMediaId": "cmprsx4mp0014bkv46qzqkwfi",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[0] > paragraph[0]",
-          "snippet": "Grouped set on a tray: make five or six pots in varied sizes using the same three shapes and arrange them on a wooden tray or piece of slate"
-        }
-      ]
-    },
-    {
-      "slug": "polymer-clay-faux-agate-pendant",
-      "tutorialId": "cmprhmrmw0001hsv47nxkaubg",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:33.116Z",
-      "publishedAt": "2026-05-29T22:26:31.771Z",
-      "heroMediaId": "cmprhsv85001ef0v4shsk3ylu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[17] > listItem[0] > paragraph[0]",
-          "snippet": "Add a small inclusion of mica-powder-dusted clay in the accent layer for a metallic shimmer within the banding."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
-          "snippet": "Use earthy red and terracotta with translucent for a carnelian agate effect instead of the cooler teal and white version."
-        }
-      ]
-    },
-    {
-      "slug": "polymer-clay-faux-druzy-crystal-pendant",
-      "tutorialId": "cmprsvh0h0001c8v4f0pgzbck",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:35.722Z",
-      "publishedAt": "2026-05-30T03:37:32.885Z",
-      "heroMediaId": "cmprsx86s0018bkv4sy370dvb",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
-          "snippet": "Geode slice: cut the pendant into a smooth half-circle outline and create a banded agate rim in concentric layers of coloured clay around th"
-        }
-      ]
-    },
-    {
-      "slug": "polymer-clay-faux-labradorite-pendant",
-      "tutorialId": "cmprsw9be000128v4btmykthi",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:36.027Z",
-      "publishedAt": "2026-05-30T03:38:09.564Z",
-      "heroMediaId": "cmprsx96x001abkv49hw9x5iw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[0] > paragraph[0]",
-          "snippet": "Gold flash version: substitute a gold or bronze metallic sheet layer for the blue-green pearl to approximate golden labradorite."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[13] > listItem[2] > paragraph[0]",
-          "snippet": "Matched earring set: cut two smaller oval slices from the same layered block to produce a pendant-and-earring set with consistent patterning"
         }
       ]
     },
@@ -1724,6 +1457,23 @@
       ]
     },
     {
+      "slug": "pressed-flower-soy-candle",
+      "tutorialId": "cmpsguszq00009kv4mx30p10c",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:09:23.467Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "preventing-egg-eating-by-hens",
       "tutorialId": "cmps6ipft0002d8v44c21xm0h",
       "type": "TECHNIQUE",
@@ -1775,25 +1525,6 @@
           "kind": "voice-violation",
           "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
           "path": "body > heading[12] > text"
-        }
-      ]
-    },
-    {
-      "slug": "pyrography-christmas-tree-ornaments",
-      "tutorialId": "cmpr4ri800000lgv4ovjg9w36",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T02:08:13.458Z",
-      "publishedAt": "2026-05-29T16:22:37.031Z",
-      "heroMediaId": "cmpr4tr2w001cakv4tfohy886",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[10] > listItem[0] > paragraph[0]",
-          "snippet": "Named ornaments: a name and year make a personalised gift or an annual family ornament tradition."
         }
       ]
     },
@@ -1991,17 +1722,10 @@
       "type": "PATTERN",
       "categorySlug": "home-repair",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:50:12.062Z",
+      "voiceRetrofittedAt": "2026-05-30T15:33:43.156Z",
       "publishedAt": "2026-05-30T11:30:59.147Z",
       "heroMediaId": "cmpsai5d3001q1kv4nhy1ui5w",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Replacing a socket faceplate like-for-like on an existing circuit is Part P exempt work in England under Schedule 4 of the Building Regulati"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
@@ -2012,79 +1736,15 @@
       ]
     },
     {
-      "slug": "replacing-a-shower-pump",
-      "tutorialId": "cmprlwify0002ucv4v77gbi07",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:25:02.448Z",
-      "publishedAt": "2026-05-30T00:22:24.084Z",
-      "heroMediaId": "cmprlz75n001w6cv4vagz7vfw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A domestic shower pump on a gravity-fed system is almost always a twin impeller unit fitted in the positive head configuration. Replacing li"
-        }
-      ]
-    },
-    {
-      "slug": "rich-heel-balm",
-      "tutorialId": "cmps3u2zj0000hcv4tz4u93wd",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:23.821Z",
-      "heroMediaId": "cmps3w8ty001kfwv40q8cce0a",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "The key to an effective heel balm is an occlusive base that stays on the skin long enough for the moisturising ingredients to penetrate. She"
-        }
-      ]
-    },
-    {
-      "slug": "rose-sachet",
-      "tutorialId": "cmps3t9q40001rkv4lqnd3b2a",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:43:45.895Z",
-      "heroMediaId": "cmps3w9js001mfwv40nsarkqr",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "The dried rose petals carry the scent and the visual appeal; orris root powder acts as a fixative, binding to the volatile aromatic oils in "
-        }
-      ]
-    },
-    {
       "slug": "routing-unwanted-homewares-to-charities",
       "tutorialId": "cmps8mfws0000s8v4jlf5gwmb",
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:13.352Z",
+      "voiceRetrofittedAt": "2026-05-30T15:33:43.363Z",
       "publishedAt": "2026-05-30T10:58:25.399Z",
       "heroMediaId": "cmps8zmlt001kx0v4i7x2q807",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[2] > listItem[4] > paragraph[0]",
-          "snippet": "Building materials: try salvage dealers or SALVO. Community RePaint handles paint. Habitat for Humanity ReStores accept building materials i"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
@@ -2197,44 +1857,6 @@
       ]
     },
     {
-      "slug": "solar-pv-dc-cable-sizing",
-      "tutorialId": "cmprmmiv4000018v4ezgdf5d8",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:31.486Z",
-      "publishedAt": "2026-05-30T00:42:37.676Z",
-      "heroMediaId": "cmprmxcg2001o94v462q0zipz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[8] > listItem[1] > paragraph[0]",
-          "snippet": "MC4 connectors: the industry standard connector for solar PV. Compatible MC4 connectors from different manufacturers may be used together if"
-        }
-      ]
-    },
-    {
-      "slug": "solar-pv-inverter-fault-diagnosis",
-      "tutorialId": "cmprmm8z50000ccv40jkvd2rc",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:31.798Z",
-      "publishedAt": "2026-05-30T00:42:24.860Z",
-      "heroMediaId": "cmprmxd5i001q94v4eicjxm0l",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
-          "snippet": "Seasonal pattern: a system generating 30% of its summer output in December is performing correctly for a south-facing 30° pitch in the UK. C"
-        }
-      ]
-    },
-    {
       "slug": "solar-pv-string-vs-microinverter-choice",
       "tutorialId": "cmpr9ytny0003l8v4susiu8lm",
       "type": "TECHNIQUE",
@@ -2256,25 +1878,6 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for String inverters versus microinverters for a home solar PV system go here."
-        }
-      ]
-    },
-    {
-      "slug": "solid-brick-garage-internal-insulation",
-      "tutorialId": "cmprmvsiq0000acv4lv3o1y2k",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:32.117Z",
-      "publishedAt": "2026-05-30T00:49:50.095Z",
-      "heroMediaId": "cmprmxdqu001s94v4on1yqrsd",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[1] > paragraph[0]",
-          "snippet": "Building Regulations: converting a garage to a habitable room requires Building Regulations approval. Using it as a hobby workshop, home gym"
         }
       ]
     },
@@ -2324,6 +1927,69 @@
       ]
     },
     {
+      "slug": "soy-candle-amber-sandalwood",
+      "tutorialId": "cmpshlfwq0000o4v4ctoodl0b",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:29:55.689Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[6] > text"
+        }
+      ]
+    },
+    {
+      "slug": "soy-candle-black-fig-tea",
+      "tutorialId": "cmpshl6wn00009ov44jadjiio",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:29:44.059Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "soy-candle-patchouli-orange",
+      "tutorialId": "cmpshla7z0000u8v4ws5mrgqo",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:29:48.075Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[6] > text"
+        }
+      ]
+    },
+    {
       "slug": "soy-candle-rose-geranium",
       "tutorialId": "cmps3uic20001b8v4s2zs1xw2",
       "type": "RECIPE",
@@ -2339,6 +2005,35 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "True rose essential oil is one of the most expensive in aromatherapy and performs poorly in candle wax -- most of its character evaporates d"
+        }
+      ]
+    },
+    {
+      "slug": "soy-candle-white-musk",
+      "tutorialId": "cmpshldjx0000acv40541gzm5",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T15:29:51.864Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[6] > text"
         }
       ]
     },
