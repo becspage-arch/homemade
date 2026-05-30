@@ -1,0 +1,100 @@
+{
+  "slug": "replacing-a-shower-pump",
+  "title": "Replacing a shower pump",
+  "subtitle": "Swap out a failed gravity-fed shower pump like-for-like",
+  "excerpt": "How to replace a failing shower pump on a gravity-fed system: isolating the hot and cold supplies, disconnecting and removing the old pump, fitting the new pump with correct flow orientation, reconnecting pipework, and testing for leaks and pressure.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. BS 6700 Water Supply in Buildings. Reader's Digest Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "water-pump-pliers", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "screwdriver-set-pozidriv", "isOptional": false },
+    { "slug": "pipe-cutter-mini", "isOptional": true }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "shower pump replacement",
+    "gravity shower pump",
+    "twin impeller pump",
+    "shower pump not working"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "positive-head",
+      "term": "Positive head",
+      "definition": "A pump installation where the base of the cold water cistern is at least 600 mm above the pump inlet, providing a natural gravity flow to start the pump. Most domestic gravity shower installations are positive head; the pump starts automatically when flow is detected."
+    },
+    {
+      "slug": "twin-impeller",
+      "term": "Twin impeller",
+      "definition": "A pump with two separate chambers sharing one motor: one chamber boosts the hot water supply and one boosts the cold. Both sides are boosted equally, ensuring the thermostatic mixer receives balanced pressure from each feed."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A domestic shower pump on a gravity-fed system is almost always a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twin-impeller" } }], "text": "twin impeller" },
+          { "type": "text", "text": " unit fitted in the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "positive-head" } }], "text": "positive head" },
+          { "type": "text", "text": " configuration. Replacing like-for-like is simple: same pipe centres, same flow direction, same electrical connection. The pump rating is printed on the casing; match it exactly when buying the replacement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A replacement pump matched to the original rating (bar pressure and litres per minute). PTFE tape. Adjustable spanner and water pump pliers. Screwdriver for the electrical connection cover. Towels and a bucket. The pump is connected to the electrical supply via a fused spur; the fused spur is not part of this replacement task, but it must be switched off before work begins." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, isolate the supplies" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the fused spur supplying the pump. Close the isolation valves on the hot and cold feeds to the pump; if there are no isolation valves, close the service valve on the cold supply at the cistern and the gate valve on the hot cylinder outlet. Open the shower head to release pressure and drain water from the pump hoses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, remove the old pump" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Note the flow direction arrow on the pump body before disconnecting anything: the replacement must be oriented the same way. Disconnect the flexible hoses from the pump inlet and outlet ports using the adjustable spanner. Disconnect the electrical supply at the pump terminal block. Unscrew the pump from its mounting bracket and lift it clear." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, fit the new pump and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mount the replacement pump on the bracket, orienting the flow arrows to match the original. Wrap PTFE tape onto the pump inlet and outlet threads and reconnect the flexible hoses, tightening firmly with the spanner. Reconnect the electrical supply at the terminal block. Open the isolation valves and check for leaks before switching on the fused spur. Run the shower to confirm pressure has been restored and check all hose connections again after 2 minutes of running." }
+        ]
+      }
+    ]
+  }
+}

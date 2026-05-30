@@ -1,0 +1,129 @@
+{
+  "slug": "fitting-a-towel-radiator",
+  "title": "Fitting a towel radiator",
+  "subtitle": "Connect a bathroom ladder radiator to the central heating circuit",
+  "excerpt": "How to install a wall-mounted towel radiator: fixing the brackets, making the compression connections to the 15 mm flow and return pipes, fitting a thermostatic valve and lockshield valve, bleeding the radiator, and checking for leaks.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. BS EN 442 Radiators and Convectors. Reader's Digest Complete DIY Manual.",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "towel rail installation",
+    "ladder radiator fitting",
+    "bathroom radiator plumbing",
+    "towel radiator central heating"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lockshield-valve",
+      "term": "Lockshield valve",
+      "definition": "The valve at the return end of a radiator, adjusted by the installer during commissioning to balance water flow across the central heating circuit. Once set, it is left in position and covered with a plastic cap; it is not used for daily temperature control."
+    },
+    {
+      "slug": "bleed-valve",
+      "term": "Bleed valve",
+      "definition": "A small screw-cap valve at the top corner of a radiator used to release trapped air. Opened with a radiator bleed key until water emerges, then closed immediately. Air in the circuit prevents the radiator from heating its full area."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A towel radiator connects to the same 15 mm flow and return pipes as any other radiator. The valve centres are set by the rail design and may not line up with the existing pipes. On some thermostatic valves, the flow direction also matters: check which inlet takes the flow pipe before connecting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The radiator, wall brackets, wall plugs, and screws (usually supplied). A thermostatic radiator valve (TRV) and a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lockshield-valve" } }], "text": "lockshield valve" },
+          { "type": "text", "text": " with 15 mm compression tails. PTFE tape. Radiator bleed key. 15 mm pipe cutter, adjustable spanner, spirit level, tape measure, cordless drill. Drain-down point or bucket and towels if cutting into live pipework." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, drain down and fix brackets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn off the boiler and drain the circuit at the lowest drain cock with a hose to an outside drain. Mark the bracket positions on the wall using the spirit level; the towel rail must be plumb. Drill and plug the wall, and fix the brackets at the correct centres using the template or dimensions supplied with the radiator." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, prepare and connect the pipework" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the 15 mm flow and return pipes to the correct lengths to reach the radiator valve tails. Wrap PTFE tape clockwise onto the male threads of the valve tails and screw them into the radiator. Connect the compression nuts from each valve body onto the pipe ends; tighten each nut one-and-a-quarter turns past hand-tight. Fit the thermostatic head to the TRV and set the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lockshield-valve" } }], "text": "lockshield valve" },
+          { "type": "text", "text": " open one full turn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, refill, bleed, and check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the drain cock and refill the system. Open the TRV fully, then use the bleed key to open the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bleed-valve" } }], "text": "bleed valve" },
+          { "type": "text", "text": " at the top corner of the radiator: hold a cloth below it and leave it open until water runs out without air bubbling. Close the bleed valve. Restart the boiler, run the system up to temperature, and check all connections for weeping. After 30 minutes of running, check that the radiator heats across its full area." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Radiator heats only at the bottom, stays cold at the top",
+              "cause": "Air trapped in the upper section of the rail.",
+              "fix": "Bleed again with the system hot and the TRV fully open. Multiple bleeding sessions may be needed on a tall ladder rail."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Weeping at a compression joint",
+              "cause": "Nut not fully tightened, or olive compressed unevenly.",
+              "fix": "Tighten the cap nut by a quarter-turn at a time; if the joint continues to weep after a half-turn of additional tightening, drain, disassemble, and fit a new olive."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

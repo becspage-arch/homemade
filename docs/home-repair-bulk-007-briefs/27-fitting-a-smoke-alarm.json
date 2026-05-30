@@ -1,0 +1,99 @@
+{
+  "slug": "fitting-a-smoke-alarm",
+  "title": "Fitting a smoke alarm",
+  "subtitle": "Mount and connect a battery or mains-interlinked smoke detector",
+  "excerpt": "How to choose and fit a smoke alarm: selecting the correct type for the room, positioning it on the ceiling at the correct distance from walls and light fittings, fixing the base plate, and testing the unit before treating the installation as complete.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 5839-6 Fire Detection and Fire Alarm Systems in Dwellings. Collins Complete DIY Manual. Building Regulations Part B.",
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "screwdriver-set-pozidriv", "isOptional": false },
+    { "slug": "combination-square-300mm", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "smoke detector installation",
+    "fitting smoke detector ceiling",
+    "battery smoke alarm",
+    "mains interlinked smoke alarm"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ionisation-alarm",
+      "term": "Ionisation alarm",
+      "definition": "A smoke alarm that uses a small quantity of radioactive material to ionise the air inside a detection chamber. Fast-flaming fires that produce small smoke particles trigger it quickly. Less responsive than optical types to slow smouldering fires."
+    },
+    {
+      "slug": "optical-alarm",
+      "term": "Optical alarm",
+      "definition": "A smoke alarm that uses a light beam inside a chamber; smoke particles entering the chamber scatter the beam and trigger the sensor. More sensitive to slow smouldering fires and less prone to nuisance trips from cooking steam than ionisation types."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two main alarm types are the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ionisation-alarm" } }], "text": "ionisation alarm" },
+          { "type": "text", "text": " and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "optical-alarm" } }], "text": "optical alarm" },
+          { "type": "text", "text": ". The recommended installation is one optical alarm on each floor, fitted in the circulation space (landing or hallway) as a minimum. A combination optical/heat alarm is preferred in the kitchen to reduce nuisance trips from cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Positioning rules" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the alarm on the ceiling, at least 300 mm from any wall and at least 300 mm from any light fitting. On a stairwell ceiling that slopes, position the alarm within the zone between 150 mm and 600 mm from the highest point. Avoid fitting alarms directly above a cooker, within 3 metres of a bathroom door, or in areas that reach extremes of temperature such as uninsulated lofts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, mark and drill the fixing holes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Separate the base plate from the alarm head. Hold the base plate against the ceiling at the chosen position, mark the screw holes with a pencil, then drill and plug the holes. Fix the base plate firmly; a loose base plate allows the alarm to rotate and disconnect from the battery contacts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, connect and fit the alarm head" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a battery model: insert the battery and twist the alarm head onto the base plate until it locks. For a mains-interlinked model: an electrician wires it before the alarm is fitted. Connect the mains supply and the interconnect cable to the terminal block, then lock the head to the base. The interconnect cable makes all alarms on the circuit sound together when one triggers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3, test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Press and hold the test button on the alarm head for 5 seconds. The alarm should sound at full volume. On an interlinked system, all other alarms on the circuit should also sound within 2 seconds. Test every alarm in the property. If any alarm fails to sound, check the battery terminal contacts, the interconnect cable polarity, and the mains supply at the fused spur." }
+        ]
+      }
+    ]
+  }
+}

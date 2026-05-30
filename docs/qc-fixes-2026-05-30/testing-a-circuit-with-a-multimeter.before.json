@@ -1,0 +1,172 @@
+{
+  "slug": "testing-a-circuit-with-a-multimeter",
+  "tutorialId": "cmprlwvoi000240v4k7ghs5fc",
+  "capturedAt": "2026-05-30T00:25:04.255Z",
+  "preFix": {
+    "title": "Testing a circuit with a multimeter",
+    "subtitle": "Use a digital multimeter to check voltage, continuity, and resistance",
+    "excerpt": "How to use a digital multimeter for basic electrical checks: measuring AC mains voltage at a socket, testing continuity in a cable, measuring resistance in a component, and understanding what each reading means in a domestic context.",
+    "sourceNotes": "IET Wiring Regulations 18th Edition. Collins Complete DIY Manual. Cassell's Cyclopaedia of Mechanics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A digital multimeter measures ",
+              "type": "text"
+            },
+            {
+              "text": "AC voltage",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprlwvmu000140v4ymt9s89z"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", DC voltage, ",
+              "type": "text"
+            },
+            {
+              "text": "continuity",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprlwvm6000040v4i5lndxdg"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", and resistance. It is the main fault-finding tool for domestic electrical work and costs under twenty pounds. Before using one on a mains circuit, isolate the supply and prove it dead at the point of work.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Safe isolation before any measurement",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "warning"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Before measuring voltage on a mains circuit, verify your voltage tester works by testing it against a known live socket using the proving unit. Test the circuit with the voltage tester to confirm live, then isolate at the consumer unit. Test again with the voltage tester to confirm dead. Only then use the multimeter on the conductors. This sequence is non-negotiable.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Measuring AC voltage at a socket",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Set the multimeter dial to VAC or V~ and select a range above 230 V (or use auto-range). Insert the black probe into the neutral slot of the socket (the right slot of a double socket or the bottom slot of a single), and the red probe into the live slot. The reading should fall between 216 V and 253 V. A reading below 216 V indicates a poor connection or high resistance upstream; report this to the DNO.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Testing continuity",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Set the dial to the continuity symbol (a speaker or diode symbol). Isolate the circuit and disconnect the cable end being tested from all terminals. Touch one probe to each end of the conductor under test. A continuous beep confirms the conductor is unbroken. No beep means an open circuit. Continuity testing is useful for verifying a fuse, checking a cable run for breaks, or confirming an extension lead is sound.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Reading the display",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "OL or 1 on the display means the reading is beyond the selected range; switch to a higher range or use auto-range. A reading of 0.000 on the resistance setting with probes apart means the probes are not making contact; press them firmly to the conductors. A resistance reading of several megaohms across a cable conductor to earth in an isolated circuit is normal and indicates correct insulation.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[0] > text"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+      "path": "body > paragraph[4] > text",
+      "snippet": "fall"
+    }
+  ]
+}

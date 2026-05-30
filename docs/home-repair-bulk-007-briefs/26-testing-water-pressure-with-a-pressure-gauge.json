@@ -1,0 +1,98 @@
+{
+  "slug": "testing-water-pressure-with-a-pressure-gauge",
+  "title": "Testing water pressure with a pressure gauge",
+  "subtitle": "Measure static and dynamic pressure at a tap outlet",
+  "excerpt": "How to attach a pressure gauge to an outdoor or kitchen tap and take static and dynamic pressure readings: understanding what the figures mean, comparing them to minimum guaranteed supply pressures, and knowing when low readings indicate a network issue rather than a household fault.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. BS 6700 Water Supply in Buildings. Water Supply (Water Fittings) Regulations 1999.",
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "water pressure test",
+    "mains water pressure gauge",
+    "low water pressure diagnosis",
+    "bar pressure domestic"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "static-pressure",
+      "term": "Static pressure",
+      "definition": "The water pressure measured at a tap when no water is flowing anywhere in the property. Gives a baseline figure for the incoming supply. UK regulations guarantee a minimum static pressure of 1 bar at the boundary."
+    },
+    {
+      "slug": "dynamic-pressure",
+      "term": "Dynamic pressure",
+      "definition": "The water pressure measured while water is flowing through the tap. Always lower than static pressure. A large drop between static and dynamic pressure points to high flow resistance inside the property's pipework."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measuring water pressure is the first step in diagnosing shower or tap performance problems. A pressure gauge that screws onto a tap or hose thread takes the reading in seconds and costs less than ten pounds. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "static-pressure" } }], "text": "Static pressure" },
+          { "type": "text", "text": " tells you what is coming into the property; " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dynamic-pressure" } }], "text": "dynamic pressure" },
+          { "type": "text", "text": " tells you what remains after losses through the pipework and fittings." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A domestic water pressure gauge with a 3/4 inch BSP male thread to fit a standard outdoor tap or kitchen tap outlet. PTFE tape. An adjustable spanner. The gauge dial typically reads from 0 to 10 bar; a dial that reads to 16 bar is harder to read in the low range and less useful for domestic work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1, attach the gauge and take the static reading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ensure all taps and appliances in the property are turned off. Wrap two turns of PTFE tape onto the male thread of the pressure gauge. Screw the gauge onto the outdoor tap outlet or onto the kitchen cold tap outlet using the adjustable spanner; tighten until firm. Open the tap fully. The gauge needle will rise and settle; read the figure after 10 seconds. This is the static pressure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2, take the dynamic reading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ask a second person to open another cold tap in the property fully while you watch the gauge. The reading will drop; the new lower figure is the dynamic pressure under load. Note both readings. If the dynamic pressure drops by more than half the static reading, there is significant flow resistance in the pipework: scaled bore, a partially closed valve, or undersized pipework." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Interpreting the readings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "UK water companies are required to maintain a minimum of 1 bar (10 metres head) at the property boundary. A static reading below 1 bar at the outdoor tap suggests a supply issue and is worth reporting to the water company. A reading between 1 and 3 bar is typical for most UK domestic supplies. A reading above 3.5 bar can stress fittings and appliances; a pressure-reducing valve at the mains entry point is recommended for readings above this level." }
+        ]
+      }
+    ]
+  }
+}

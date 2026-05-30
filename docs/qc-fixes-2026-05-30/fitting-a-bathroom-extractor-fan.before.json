@@ -1,0 +1,199 @@
+{
+  "slug": "fitting-a-bathroom-extractor-fan",
+  "tutorialId": "cmprlwzq40002xgv45b992dby",
+  "capturedAt": "2026-05-30T00:24:53.852Z",
+  "preFix": {
+    "title": "Fitting a bathroom extractor fan",
+    "subtitle": "Install a wall or ceiling fan with external ducting in a bathroom",
+    "excerpt": "How to fit a bathroom extractor fan: cutting the hole, running the ducting to an outside wall, making the electrical connection to a fused spur, and setting the humidistat and overrun timer.",
+    "sourceNotes": "IET Wiring Regulations 18th Edition. Building Regulations Part F Ventilation. Collins Complete DIY Manual.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A bathroom extractor fan must be wired to a fused spur, not a standard socket, and must have no accessible switch within reach of a bath or shower. Fans with a ",
+              "type": "text"
+            },
+            {
+              "text": "humidistat",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprlwzn20000xgv481as3o4h"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and ",
+              "type": "text"
+            },
+            {
+              "text": "overrun timer",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprlwzny0001xgv41wrgwkkj"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " are wired permanently live: they switch on and off without a separate light-switched connection.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Safe isolation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "tone": "warning"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Prove your two-pole voltage tester is working against a known live socket using the proving unit. Isolate the supply circuit at the consumer unit and apply a lock-off device. Prove the circuit dead at the point of work with the two-pole tester. Complete all live tests before connecting; do not connect to an unisolated circuit.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, cut the hole and run the ducting",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Mark the fan hole position using the template supplied with the fan. For a ceiling fan, drill a pilot hole, then cut with a jigsaw following the circle template. For a wall fan, mark the core hole on both faces of the wall and drill from each side with the SDS drill and a 100 mm or 150 mm core bit to match the fan spigot size. Fit the flexible or rigid ducting between the fan spigot and the external grille, keeping the run as short and straight as possible to maintain airflow.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, make the electrical connection",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Route a 1.5 mm two-core and earth cable from the consumer unit or a local fused spur to the fan position. With the circuit isolated and proved dead, connect the cable to the fan terminal block: brown to L, blue to N, green/yellow earth to the earth terminal. Where a separate switch connection is required for the overrun, follow the wiring diagram in the fan instructions. Clip the cover and restore the supply.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, set the humidistat and overrun",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Set the humidistat threshold using the adjustment pot inside the fan cover, typically marked with a screwdriver slot. Start at the mid-point and run a shower: the fan should start within 2 minutes of steam filling the room and stop within 5 minutes of the shower being turned off. Adjust higher if the fan starts at normal humidity (damp weather), lower if it does not start during a hot shower.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Inspect the full duct run and replace any section that has collapsed. Clean the external grille flap, which can stick with dirt or paint.",
+                "cause": "Ducting has collapsed, kinked, or the external grille flap is stuck shut.",
+                "symptom": "Fan runs but no airflow felt at the external grille"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Raise the humidistat threshold setting by a quarter-turn and retest over 24 hours.",
+                "cause": "Humidistat threshold set too low for the ambient humidity level in the building.",
+                "symptom": "Fan runs continuously and never switches off"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "A bathroom extractor fan must be wired to a fused spur, not a standard socket, and must have no accessible switch within reach of a bath or "
+    }
+  ]
+}
