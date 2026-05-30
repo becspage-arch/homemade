@@ -1,0 +1,209 @@
+{
+  "slug": "borehole-water-supply-feasibility",
+  "tutorialId": "cmps8lxwb0002ywv48vkstvdp",
+  "capturedAt": "2026-05-30T11:09:06.266Z",
+  "preFix": {
+    "title": "Assessing the feasibility of a private borehole water supply",
+    "subtitle": "What to check before drilling: hydrogeology, yield, quality testing, and legal requirements",
+    "excerpt": "A borehole can supply a private water source for garden irrigation, livestock, or even the house. Before drilling, you need hydrogeological data on the local aquifer, a water quality analysis, planning and Environment Agency registration, and a realistic cost assessment. This is the feasibility process from first question to commissioning decision.",
+    "sourceNotes": "Environment Agency Water Abstraction Licensing guidance (gov.uk, open licence). British Geological Survey aquifer data (freely available via British Geological Survey viewer). Private Water Supplies Regulations 2016 (England). CIBSE TM21 on rainwater and groundwater use in buildings.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A borehole makes most sense when a property has no mains supply, a high mains tariff, or high garden irrigation use. It works if there is an ",
+              "type": "text"
+            },
+            {
+              "text": "aquifer",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8lxtb0000ywv45ypdd9b5"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " within reach and the water quality suits the intended use.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1: check the local hydrogeology",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The British Geological Survey provides a free online BGS Borehole Index and aquifer mapping tool. Enter the postcode and check whether productive aquifers are present and at what depth. Chalk (southeastern England) and sandstone (West Midlands, Lancashire) are the most productive domestic aquifer types. Boulder clay or clay-rich lowland ground with no underlying permeable formation is a high-risk location for low yield.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2: check the legal position",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In England, abstracting under 20 m³ per day from a groundwater source does not require an ",
+              "type": "text"
+            },
+            {
+              "text": "abstraction licence",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8lxu20001ywv4tz84jfy9"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", but confirm the exemption with the Environment Agency. For a ",
+              "type": "text"
+            },
+            {
+              "text": "private water supply",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwltn4000130v4zcpe5o4u"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " used for drinking, cooking, or showering, notify the local authority before use. Planning permission is not usually needed, but check if the site is in a conservation area.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3: get a site assessment and trial bore",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A borehole contractor can survey the site, estimate yield, and recommend casing depth to avoid surface contamination. A trial bore gives yield data before you commit to full installation. Trial bore cost: 500 to 1,500 pounds. Full installation with pump, controls, and pressure vessel: 6,000 to 12,000 pounds.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Water quality testing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Test the water for nitrates, coliform bacteria, and hardness before installing a pump for domestic use. Nitrate levels above 50 mg/litre occur in many chalk aquifers under farmland and are a concern for households with infants. Test annually once in use; results change seasonally. UV treatment addresses biological contamination; nitrate removal requires reverse osmosis.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Running costs and payback",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A submersible borehole pump uses 0.5 to 1.5 kWh per m³ of water lifted, depending on depth. At 27p/kWh and a depth of 50 m, pumping 10 m³/day costs around 40 to 100 pounds per year in electricity. Against a mains tariff of 3.50 pounds per m³ (typical 2025/26 southern England rate), 10 m³/day would cost over 12,000 pounds per year. Even modest use at 0.5 m³/day saves 640 pounds per year at current tariff rates, giving payback on a 8,000-pound installation in around 12 years, and sooner if water tariffs rise.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[2]",
+      "snippet": "The British Geological Survey provides a free online BGS Borehole Index and aquifer mapping tool. Enter the postcode and check whether produ"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[4]",
+      "snippet": "In England, abstracting under 20 m³ per day from a groundwater source does not require an abstraction licence, but confirm the exemption wit"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[8]",
+      "snippet": "Test the water for nitrates, coliform bacteria, and hardness before installing a pump for domestic use. Nitrate levels above 50 mg/litre occ"
+    }
+  ]
+}

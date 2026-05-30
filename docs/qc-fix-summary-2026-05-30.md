@@ -708,3 +708,52 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 10:09:55
+
+Generated: 2026-05-30T10:09:55.302Z
+
+Processed: 143
+PASS: 133
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 60 |
+| body-missing-method | 20 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- calculating-stocking-rates: grade-level-strict
+- choosing-sheep-breeds-for-a-small-flock: grade-level-strict
+- inspecting-sealed-brood-for-chalkbrood: grade-level-strict
+- introducing-a-new-pig-to-an-existing-group: grade-level-strict
+- preventing-egg-eating-by-hens: grade-level-strict
+- rabbit-abscesses: grade-level-strict
+- rabbit-colony-vs-cage-system: grade-level-strict
+- rabbit-myxomatosis-and-rhd-vaccination: voice-violation, grade-level-strict
+- rabbit-snuffles-management: grade-level-strict
+- twin-lamb-disease-recognition-and-response: grade-level-strict
+
+---
+
+## Run at 11:07:00
+
+Generated: 2026-05-30T11:07:00.457Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

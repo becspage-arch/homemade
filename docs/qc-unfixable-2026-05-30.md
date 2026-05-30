@@ -286,3 +286,14 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - crater-glaze-surface-texture grade-level-strict — applied: 
 - making-a-simple-press-mould-bisque grade-level-strict — applied: 
 - throwing-a-teapot-lid-stoneware grade-level-strict — applied: 
+
+- calculating-stocking-rates grade-level-strict — applied: 
+- choosing-sheep-breeds-for-a-small-flock grade-level-strict — applied: 
+- inspecting-sealed-brood-for-chalkbrood grade-level-strict — applied: 
+- introducing-a-new-pig-to-an-existing-group grade-level-strict — applied: 
+- preventing-egg-eating-by-hens grade-level-strict — applied: 
+- rabbit-abscesses grade-level-strict — applied: 
+- rabbit-colony-vs-cage-system grade-level-strict — applied: 
+- rabbit-myxomatosis-and-rhd-vaccination voice-violation,grade-level-strict — applied: 
+- rabbit-snuffles-management grade-level-strict — applied: 
+- twin-lamb-disease-recognition-and-response grade-level-strict — applied: 
