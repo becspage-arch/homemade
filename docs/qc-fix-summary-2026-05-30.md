@@ -274,3 +274,32 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - natural-perfume-oil-roller: voice-violation
+
+---
+
+## Run at 03:39:38
+
+Generated: 2026-05-30T03:39:38.518Z
+
+Processed: 40
+PASS: 31
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 58 |
+
+## Still BLOCKED (sample 20)
+
+- paper-clay-fairy-door-miniature: grade-level-strict
+- pinch-pot-cactus-planter-trio: grade-level-strict
+- polymer-clay-faux-druzy-crystal-pendant: grade-level-strict
+- polymer-clay-faux-labradorite-pendant: grade-level-strict
+- polymer-clay-miniature-fairy-garden-house: grade-level-strict
+- throwing-a-cylindrical-candle-holder: grade-level-strict
+- throwing-a-small-teapot-stoneware: grade-level-strict
+- throwing-a-stoneware-casserole-dish: grade-level-strict
+- throwing-matched-nested-bowl-set: grade-level-strict

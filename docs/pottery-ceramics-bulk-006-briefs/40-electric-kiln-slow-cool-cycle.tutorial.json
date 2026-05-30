@@ -1,0 +1,388 @@
+{
+  "slug": "electric-kiln-slow-cool-cycle",
+  "title": "Electric kiln slow cool cycle",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "kiln-wash"
+  ],
+  "recipeTools": [],
+  "recipe": {
+    "foundational": true
+  },
+  "glossaryTerms": [
+    {
+      "slug": "dunting",
+      "term": "Dunting",
+      "definition": "thermal shock cracking caused by rapid temperature change through the cristobalite inversion point at 573 degrees C"
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "clay that has been through the first firing (cone 06, approximately 1000 degrees C) and is now hard but unglazed and porous"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no compressed air, no dry sanding indoors."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ventilation matters. Either a downdraft vent on the kiln or an open window with an extractor pulling air past the kiln. Never open a hot kiln below approximately 80 degrees C."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A slow cool cycle is a set descent rate added to a kiln firing schedule. It controls how fast the kiln cools after reaching peak temperature. The main reason to use one is to stop "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dunting",
+                  "label": "Dunting"
+                }
+              }
+            ],
+            "text": "dunting"
+          },
+          {
+            "type": "text",
+            "text": ". Dunting is cracking caused by passing too fast through 573 degrees C. At that point, silica in the clay shifts crystal form with a 2 percent volume change. A slow descent gives the clay time to adjust without cracking. A slow cool is also used for special-effect glazes. These glazes need the kiln held at a set temperature during the descent. Crystalline glazes, for example, form visible crystals during this hold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to use it"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a slow cool on any cone 6 glaze firing where the kiln would otherwise free-fall from peak temperature. Free-fall is faster than a controlled descent. It raises the risk of dunting, especially in thick-walled pieces and forms with abrupt thin-to-thick joins. A descent of 60 to 80 degrees C per hour from peak to 200 degrees C is a safe standard for smooth stoneware. A slow cool is less critical for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisque",
+                  "label": "Bisque"
+                }
+              }
+            ],
+            "text": "bisque"
+          },
+          {
+            "type": "text",
+            "text": " firings. Bisque ware has not yet built up the silica structures that cause dunting at cone 6. It is still good practice for thick-walled greenware."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            {
+              "name": "Smooth stoneware (glaze-fired pieces in kiln)",
+              "quantity": "standard kiln load",
+              "slug": "stoneware-smooth",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln wash",
+              "quantity": "applied to kiln shelves before loading",
+              "slug": "kiln-wash",
+              "isOptional": false
+            }
+          ],
+          "tools": []
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Load the kiln in the usual way, ensuring all pieces have clearance between them and are not in contact. Apply fresh kiln wash to any shelves that show bare or flaked areas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Programme the firing schedule in the kiln controller. A standard cone 6 glaze schedule fires to approximately 1220 to 1240 degrees C depending on the rate of climb. Programme the ascent schedule as usual: for example, 100 degrees C per hour to 600 degrees C, then 150 degrees C per hour to 1100 degrees C, then 60 degrees C per hour to 1220 degrees C, with a 10-minute hold at peak."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a controlled descent segment to the schedule immediately after the peak hold. A safe starting protocol for smooth stoneware: descend from peak temperature to 1100 degrees C at 100 degrees C per hour. Then continue at 80 degrees C per hour to 600 degrees C. Then descend at 150 degrees C per hour to 100 degrees C. Switch off the controller and allow free-fall to room temperature. This rate through the critical 573 degrees C inversion zone is slow enough to prevent dunting."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For crash-cool (rapid cooling from peak to about 1000 degrees C, then slow): use this when the glaze needs to be quenched quickly to stop devitrification. Devitrification is when the glaze turns matt and crystalline instead of glossy. Switch the kiln off at peak. Open the lid a small amount (1 to 2 cm) for ten minutes to drop to about 1000 degrees C. Close the lid and continue with a slow controlled descent from 1000 degrees C. Crash-cool is not suitable for thick-walled or unevenly built pieces where dunting is a risk."
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "dunting",
+                          "label": "Dunting"
+                        }
+                      }
+                    ],
+                    "text": "dunting"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": thick-walled or unevenly constructed pieces."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For a temperature hold during descent (crystalline glaze development): add a hold segment at the target temperature. A typical crystalline glaze hold is at 1100 degrees C for 30 to 60 minutes. The exact schedule depends on the glaze chemistry. Always test on samples before committing to full loads."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Do not open the kiln until the controller or a pyrometer reads below 80 degrees C. After switching off the controller at the end of the slow cool segment, the kiln will continue to fall at its free-fall rate, which at low temperatures is very slow due to the thermal mass of the kiln furniture. Allow at least 8 to 12 hours after the controller switches off before checking the temperature."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What it looks like when it works"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A correctly slow-cooled kiln load produces pieces with no hairline cracks through the glaze or body that were not present before loading. Glaze surfaces are smooth and fully melted, with no devitrification or unintended crystalline patches. Thick-walled forms that previously suffered dunting cracking come out intact. The kiln programme log shows the descent segments running at the programmed rates, and the total firing time is longer than a free-fall firing by the time added during the controlled descent."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Opening the kiln too early: the kiln may read below 80 degrees C at the thermocouple location while kiln shelves and dense pieces are still significantly hotter. Wait until the kiln has been below 80 degrees C for at least one hour before unloading."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Omitting the slow cool segment for thick-walled pieces: the free-fall rate of most electric kilns from 600 to 500 degrees C is fast enough to cause dunting on thick stoneware. The slow cool segment from 600 degrees C downward is the most critical part of the schedule."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Using crash-cool on thick-walled or unevenly constructed pieces: the rapid initial drop from peak to 1000 degrees C is tolerated by the glaze but can stress thick clay bodies. Reserve crash-cool for thin-walled pieces only."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Confusing the descent rate with the free-fall rate: a slow cool needs the controller to fire the elements at low power during the descent to keep to the programmed rate. A kiln with a faulty element, or a controller that does not support hold and descent segments, cannot run a true slow cool. It will only free-fall."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Not testing crystalline glaze hold temperatures on samples first: the specific temperature and duration for a hold varies by glaze. A hold at the wrong temperature produces no effect, or an unwanted effect. Always test on small sample tiles in a separate firing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
