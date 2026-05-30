@@ -1,0 +1,217 @@
+{
+  "slug": "cream-of-mushroom-soup",
+  "title": "Cream of mushroom soup",
+  "subtitle": "Deeply earthy, silky, and far better than the tin",
+  "excerpt": "A mix of chestnut and dried porcini mushrooms, sweated with shallots and thyme, then blended with stock and cream. The dried porcini are optional but multiply the depth of the fresh mushrooms several times over.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cream of mushroom soup is a standard of British and American home cooking; no single canonical public-domain source. Method synthesised from standard approaches using a combination of fresh and dried mushrooms for depth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to two days ahead without cream. Refrigerate and add cream when reheating over a low heat.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "soaking-porcini", "term": "Porcini", "definition": "A prized wild mushroom (Boletus edulis) with an intensely earthy flavour. Sold dried; soaked in hot water to rehydrate, with the soaking liquid itself used as a flavoured stock." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A handful of dried " },
+          { "type": "text", "text": "porcini", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soaking-porcini" } }] },
+          { "type": "text", "text": " soaked in hot water makes the difference between a pleasant mushroom soup and an outstanding one. The soaking liquid carries as much flavour as the mushrooms themselves; both go into the pot. The rest of the technique is simple: sweat the shallots, cook the chestnut mushrooms until they release their liquid and collapse, then blend with stock and cream." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "mushrooms-porcini-dried", "amount": 20, "unit": "g", "prepNote": "soaked in 200 ml boiling water for 20 minutes", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "shallot", "amount": 3, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 500, "unit": "g", "prepNote": "roughly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 700, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "plus extra to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the porcini" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pour boiling water over the {{mushrooms-porcini-dried}} of dried porcini and leave to soak for 20 minutes. Lift out the porcini and chop them roughly. Reserve the soaking liquid, leaving the last few spoonfuls (which may contain grit) in the bowl." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the mushrooms" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{shallot}} shallots with a pinch of salt. Cook for 6 minutes until soft." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of garlic and {{thyme}} of thyme. Cook for 1 minute. Add {{chestnut-mushrooms}} of chestnut mushrooms. Turn the heat up to medium and cook for 10 to 12 minutes, stirring occasionally, until the mushrooms have given off their liquid and the pan is dry again." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the chopped rehydrated porcini and pour in the porcini soaking liquid (stopping before any grit at the bottom). Add {{stock-vegetable}} of hot vegetable stock. Simmer for 5 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Remove the thyme stalks. Blend until smooth. Stir in {{double-cream}} of cream. Taste and season." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a swirl of cream and a twist of black pepper. A few thin raw mushroom slices on top are a classic finishing touch." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup tastes flat",
+              "cause": "The fresh chestnut mushrooms were not cooked until their liquid evaporated.",
+              "fix": "Cook the mushrooms past the watery stage until the pan is dry and they begin to brown slightly. That concentrated stage is where the flavour lives."
+            },
+            {
+              "symptom": "Soup is dark brown rather than pale",
+              "cause": "The mushrooms were cooked at too high a heat and darkened more than needed.",
+              "fix": "This affects appearance but not flavour. For a paler soup, use only 10 g of porcini and choose button mushrooms rather than chestnut mushrooms."
+            },
+            {
+              "symptom": "Soup is gritty",
+              "cause": "The porcini soaking liquid was added with the sediment at the bottom of the bowl.",
+              "fix": "Always leave the last 2 to 3 tablespoons of soaking liquid behind. Dried porcini carry fine grit from the forest floor that settles to the bottom."
+            },
+            {
+              "symptom": "Texture is not smooth",
+              "cause": "The mushrooms were not cooked tender enough before blending.",
+              "fix": "Add an extra 5 minutes of simmering in the stock before blending. A jug blender gives a finer result than a stick blender for mushroom soup."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cream of mushroom soup in a tin is one of the best-selling soups in British supermarkets. The homemade version, built on well-cooked chestnut mushrooms and dried porcini, tastes completely different. A small bag of dried porcini bought from any supermarket shelf multiplies the depth of any mushroom dish several times over." }
+        ]
+      }
+    ]
+  }
+}

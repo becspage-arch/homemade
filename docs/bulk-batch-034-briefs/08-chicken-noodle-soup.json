@@ -1,0 +1,218 @@
+{
+  "slug": "chicken-noodle-soup",
+  "title": "Chicken noodle soup",
+  "subtitle": "A clear, golden broth with tender chicken and egg noodles",
+  "excerpt": "A whole chicken simmered for two hours gives a deeply flavoured stock. Shred the meat, add egg noodles and vegetables, and you have the soup everyone wants when they are under the weather.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic home-made chicken noodle soup, the standard domestic British and American version. Method draws on the universal technique of simmering a whole chicken or carcass for stock.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth without the noodles, which go mushy. Cool and freeze in portions for up to three months. Add fresh noodles when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth keeps in the fridge for three days and improves over time. Skim any fat from the surface before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "simmer-stock", "term": "Simmer", "definition": "To cook liquid at a temperature just below boiling, with small bubbles breaking the surface intermittently. A simmer extracts flavour gently without making stock cloudy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken noodle soup begins with a whole chicken in a pot of cold water. Two hours of gentle simmering draws out a golden, deeply savoury broth. The chicken meat comes off the bone tender and ready to shred. After that, the rest of the soup comes together in fifteen minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "each", "prepNote": "about 1.5 kg", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "2 halved for the stock, 1 sliced for the soup", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "2 halved for the stock, 1 sliced for the soup", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "noodles-egg", "amount": 100, "unit": "g", "prepNote": "medium width", "isOptional": false, "groupLabel": "To finish" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the broth" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Place the {{chicken-whole}} whole chicken in a large stockpot. Add the halved onion, 2 halved carrots, 2 halved celery sticks, {{bay-leaves}} of bay, and {{thyme}} of thyme. Cover with 2.5 litres of cold water." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring slowly to a " },
+                  { "type": "text", "text": "simmer", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "simmer-stock" } }] },
+                  { "type": "text", "text": " over a medium heat. Skim the grey foam from the surface as it appears. Once the foam has cleared, reduce the heat and simmer very gently for 1 hour 30 minutes to 2 hours." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Lift the chicken out of the pot and set aside to cool slightly. Strain the broth through a fine-mesh sieve into a clean pot; discard the spent vegetables." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the soup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pull the chicken meat from the carcass and shred into bite-sized pieces. Discard skin and bones." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring the strained broth to a gentle simmer. Add the sliced carrot and sliced celery. Cook for 8 minutes until tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{noodles-egg}} of egg noodles and the shredded chicken. Cook for 3 to 4 minutes until the noodles are tender. Taste and season with salt." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls and scatter plenty of flat-leaf parsley over the top." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "The water boiled hard instead of simmering. Boiling breaks up fat and impurities and pushes them into the liquid.",
+              "fix": "Keep the heat very low from the moment the foam clears. A slow simmer produces a clear, golden broth. A rolling boil produces a murky one."
+            },
+            {
+              "symptom": "Broth tastes thin",
+              "cause": "Not enough chicken for the volume of water, or simmered too briefly.",
+              "fix": "Use a whole chicken, not just a carcass. Simmer for at least 90 minutes. If the broth still seems weak, simmer it uncovered for 15 minutes after straining to reduce and concentrate."
+            },
+            {
+              "symptom": "Noodles are gluey and have absorbed all the broth",
+              "cause": "The noodles were cooked in the soup and then the soup sat for too long.",
+              "fix": "Add noodles to the soup only just before serving. For leftovers, cook fresh noodles separately and add them when reheating."
+            },
+            {
+              "symptom": "Chicken meat is dry",
+              "cause": "The breast dried out during the long simmer.",
+              "fix": "This is normal: the breast will always be drier than the thigh in a long simmer. Use more thigh meat in the soup and reserve the breast for a separate dish where its texture matters more."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chicken noodle soup is one of those dishes where the reputation and the reality align. A real home-made version, built on a long-simmered whole chicken, delivers something from a tin or a carton cannot approach: a broth that is golden and clear and tastes of the bird. It appears in every cooking tradition in some form, from Jewish penicillin in New York to Vietnamese pho. The British version is simpler than most, which is mostly why it works." }
+        ]
+      }
+    ]
+  }
+}

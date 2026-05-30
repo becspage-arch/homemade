@@ -500,3 +500,40 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 06:27:20
+
+Generated: 2026-05-30T06:27:20.554Z
+
+Processed: 5061
+PASS: 5061
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 28 |
+| historical-century-in-body | 8 |
+| grade-level-strict | 6 |
+
+
+---
+
+## Run at 06:30:28
+
+Generated: 2026-05-30T06:30:28.911Z
+
+Processed: 5061
+PASS: 5061
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

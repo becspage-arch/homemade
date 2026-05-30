@@ -1,0 +1,199 @@
+{
+  "slug": "french-lentil-soup",
+  "title": "French lentil soup",
+  "subtitle": "Puy lentils with smoked ham and thyme",
+  "excerpt": "Puy lentils simmered with smoked ham hock, thyme, and a classic mirepoix of onion, carrot, and celery. Unlike red lentil soups, Puy lentils hold their shape, giving the soup a textured, satisfying quality. A complete meal in a bowl.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Soupe aux lentilles is a staple of French home cooking, particularly in the Auvergne and Puy-en-Velay regions where Puy lentils are grown. The combination with smoked pork is standard throughout France.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to three months. The lentils hold their texture better than red lentil soups on reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. A very useful batch-cook soup.",
+    "makeAheadNotes": "Improves over two days in the fridge as the flavours meld.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "mealPrep", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "puy-lentils", "term": "Puy lentils", "definition": "Small, dark green lentils grown in the volcanic soils around Le Puy-en-Velay in the Auvergne region of France. They hold their shape when cooked, unlike red lentils which dissolve. Protected designation of origin; sold as Lentilles Vertes du Puy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key difference between this soup and a standard lentil soup is the lentil. " },
+          { "type": "text", "text": "Puy lentils", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "puy-lentils" } }] },
+          { "type": "text", "text": " hold their shape when cooked rather than dissolving into porridge. The result is a soup with a textured, almost stew-like quality: each lentil intact, surrounded by a thick, flavourful broth. Smoked ham hock gives it depth; the thyme and bay are essential. Serve with good bread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lardons", "amount": 150, "unit": "g", "prepNote": "smoked, or use 1 small smoked ham hock", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled and finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "puy-lentils", "amount": 250, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "chopped, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the bacon and vegetables" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat a large saucepan over a medium heat. Add the {{lardons}} of smoked lardons and cook for 5 minutes until the fat has rendered. Add the {{onion}} onion, {{carrot}} carrots, and {{celery}} celery. Cook for 8 minutes until softened." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of garlic, {{thyme-dried}} of dried thyme, {{bay-leaves}} bay leaves, and {{tomato-puree}} of tomato purée. Cook for 1 minute." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add lentils and simmer" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{puy-lentils}} of rinsed Puy lentils and pour in {{stock-chicken}} of hot stock. Bring to a simmer and cook uncovered for 35 to 40 minutes until the lentils are completely tender but still holding their shape." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Remove the bay leaves. Stir in {{red-wine-vinegar}} of red wine vinegar. Taste and season ,  the lardons and stock may provide enough salt." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Scatter flat-leaf parsley over each portion if using." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Lentils are still firm after 40 minutes",
+              "cause": "Old lentils, or water was added to the pot that contained salt (salt toughens lentils).",
+              "fix": "Buy Puy lentils from a shop with good turnover. Do not salt the water the lentils cook in; add salt only after the lentils are fully tender."
+            },
+            {
+              "symptom": "Soup is too thick",
+              "cause": "Puy lentils release starch as they cook.",
+              "fix": "Add hot water or stock 100 ml at a time until the consistency is right. A thick, porridge-like result is too far; the lentils should sit in a generous amount of broth."
+            },
+            {
+              "symptom": "Broth tastes thin despite the long cooking",
+              "cause": "The lardons were added without enough initial browning, or the stock was low-quality.",
+              "fix": "Use the best stock you can. Make sure the lardons fry properly and the fat renders before the vegetables go in. The red wine vinegar added at the end is essential: without it the broth tastes flat."
+            },
+            {
+              "symptom": "Lentils have dissolved rather than holding their shape",
+              "cause": "The soup boiled vigorously rather than simmering, or the lentils were old.",
+              "fix": "Maintain a gentle simmer, not a rolling boil. Very old lentils disintegrate more readily; buy fresh stock."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Puy lentils have been grown in the volcanic soils around Le Puy-en-Velay in the Auvergne since at least the 13th century. They have held protected designation of origin status since 1996. In French home cooking, lentils simmered with smoked pork and winter vegetables are a standard cold-weather meal, closely related to the petite lentilles du Puy salad with mustard vinaigrette that appears on every French bistro menu. The soup version is less well known in Britain than the red lentil variant, but the texture ,  and the flavour ,  are considerably better." }
+        ]
+      }
+    ]
+  }
+}

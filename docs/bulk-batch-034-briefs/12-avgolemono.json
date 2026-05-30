@@ -1,0 +1,200 @@
+{
+  "slug": "avgolemono",
+  "title": "Avgolemono",
+  "subtitle": "The Greek egg and lemon soup that becomes satin in the bowl",
+  "excerpt": "Chicken broth thickened with egg yolks and lemon juice, finished with rice. Avgolemono is silky, bright, and restorative. The technique of tempering the eggs into the hot broth is what gives it its texture.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The avgolemono technique (avga = eggs, lemoni = lemon) is a foundational Greek and Levantine culinary method. This recipe follows the standard Greek home-cooking approach using a simmered chicken broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth can be made ahead, but the egg-lemon finish must be done at the last minute. The soup does not reheat well once the eggs have been added.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "lightAndFresh"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "temper-eggs", "term": "Temper", "definition": "To gradually raise the temperature of eggs by whisking hot liquid into them slowly before adding to a pot, preventing the eggs from scrambling when they hit the heat." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avgolemono turns a clear chicken broth into something smooth and satiny, with a bright lemon flavour that stops just short of sharp. The technique is straightforward once you understand it: whisk eggs with lemon juice, then add hot broth slowly to the egg mixture to warm it before combining everything in the pot. That warming step, called tempering, is what prevents scrambled egg in your soup." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": "good quality, home-made if possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "large", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "each", "prepNote": "juice only (about 60 ml)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "The quality of the broth",
+          "body": "This soup has very few ingredients. A home-made chicken broth, or a very good ready-made one, makes a significant difference. The egg-lemon finish rounds and enriches whatever broth you use, but it cannot create depth that isn't there."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the rice in the broth" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring {{stock-chicken}} of chicken stock to a simmer in a large saucepan. Add {{long-grain-rice}} of rice. Cook for 15 to 18 minutes until the rice is completely tender. Reduce the heat to the lowest setting: the broth should be hot but not boiling." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Temper the eggs and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "In a bowl, whisk the {{eggs}} eggs with the juice of {{lemon}} lemons until well combined." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Slowly ladle about 300 ml of the hot broth into the egg mixture, whisking constantly as you pour. Go slowly: the goal is to warm the eggs gradually so they don't scramble. This is " },
+                  { "type": "text", "text": "tempering", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "temper-eggs" } }] },
+                  { "type": "text", "text": "." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pour the warmed egg mixture back into the pot of soup, stirring steadily. The soup will thicken and become cloudy-pale. Do not bring it to the boil again: the eggs will curdle." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste and season with salt and pepper. Ladle into bowls and scatter flat-leaf parsley over each portion." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is stringy and scrambled-egg texture",
+              "cause": "The egg mixture was added to broth that was still at a boil, or too quickly.",
+              "fix": "Turn the heat to its lowest setting before adding the egg mixture. Add it slowly, in a thin stream, while stirring. Never let the soup boil after the eggs are in."
+            },
+            {
+              "symptom": "Soup is too thin",
+              "cause": "Not enough eggs for the volume of broth.",
+              "fix": "For extra body, whisk the yolks from a fourth egg into the lemon mixture. Whole eggs give a lighter result; extra yolks give more richness and thickness."
+            },
+            {
+              "symptom": "Lemon flavour is too sharp",
+              "cause": "The lemons were very acidic, or too much juice was used.",
+              "fix": "Start with 1.5 lemons rather than 2 and taste as you go. The egg yolks should balance the sharpness; if the soup still tastes very acidic, a small pinch of sugar helps."
+            },
+            {
+              "symptom": "Rice has dissolved and thickened the broth too much",
+              "cause": "The rice was overcooked before the eggs were added.",
+              "fix": "Cook the rice until just tender, about 15 minutes. Some thickening from starch is expected and welcome; full dissolution is too far."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Avgolemono is the soup Greeks make when someone is unwell, in the same way that Jewish cooks make chicken soup. The egg-lemon method is centuries old in the eastern Mediterranean and appears in Greek cooking, Sephardic Jewish cooking, and across the Levant. The same technique also produces a sauce when used with meat or fish." }
+        ]
+      }
+    ]
+  }
+}

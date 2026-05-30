@@ -1,0 +1,219 @@
+{
+  "slug": "roasted-red-pepper-soup",
+  "title": "Roasted red pepper soup",
+  "subtitle": "Smoky, sweet, and vivid orange",
+  "excerpt": "Red peppers roasted until charred and sweet, blended with tomatoes, garlic, and smoked paprika. A vivid, deeply flavoured soup that can be made in under an hour from start to finish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roasted red pepper soup draws on Spanish and Mediterranean cooking traditions where charring peppers over flame or in the oven to remove skins and intensify flavour is standard practice.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze in portions for up to three months. Reheat gently. The flavour is excellent from frozen.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use two roasting tins for the peppers.",
+    "makeAheadNotes": "Make up to three days ahead. The flavour deepens overnight.",
+    "dietaryFlags": [],
+    "cuisine": "mediterranean",
+    "mealType": "lunch",
+    "mood": ["lightAndFresh", "weeknight", "summery"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "char-pepper", "term": "Char", "definition": "To cook the surface of food, particularly peppers and aubergines, over direct heat or in a very hot oven until the skin is blackened and blistered. The charred skin is removed to reveal tender, smoky flesh underneath." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roasting red peppers until the skins blacken and blister removes the tough skin and concentrates the sweetness into something much more intense than the raw pepper. That concentrated base, blended with tinned tomatoes and a little smoked paprika, makes a soup with a depth of flavour that is difficult to achieve any other way. The technique takes confidence the first time but becomes automatic." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pepper-red", "amount": 4, "unit": "each", "prepNote": "halved and deseeded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 4, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "unpeeled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-paprika", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 700, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 60, "unit": "g", "prepNote": "or crème fraîche, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 10, "unit": "g", "prepNote": "leaves only, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the peppers and tomatoes" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the oven to 220°C conventional. Place the halved {{pepper-red}} peppers (skin side up), halved {{tomato}} tomatoes, and {{garlic}} unpeeled garlic cloves on a large roasting tin. Drizzle with oil, season with salt." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Roast for 30 to 35 minutes until the pepper skins are " },
+                  { "type": "text", "text": "charred", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "char-pepper" } }] },
+                  { "type": "text", "text": " and blistered. Transfer the peppers to a bowl, cover with a plate or cling film, and leave to steam for 10 minutes. Peel off the skins once cool enough to handle." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Squeeze the garlic cloves out of their skins." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and blend the soup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat a glug of oil in a saucepan over a medium-low heat. Add the {{onion}} onion and cook for 8 minutes until soft. Add {{smoked-paprika}} of smoked paprika and cook for 30 seconds." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the peeled roasted peppers, roasted tomatoes, squeezed garlic, {{tinned-tomatoes}} of tinned tomatoes, and {{stock-vegetable}} of hot stock. Simmer for 10 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Blend in batches until smooth. Pass through a sieve if you want an extra-smooth result. Taste and season." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a spoonful of soured cream and a few basil leaves if using." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pepper skins won't come off easily",
+              "cause": "The peppers were not steamed in a covered bowl long enough after roasting.",
+              "fix": "Leave them covered for the full 10 minutes. The steam softens the bond between skin and flesh. The skin should then peel away in sheets."
+            },
+            {
+              "symptom": "Soup is too sweet",
+              "cause": "The peppers were very ripe, or the tinned tomatoes were sweet.",
+              "fix": "Add a small splash of sherry vinegar or red wine vinegar. The smoked paprika helps too: use a slightly larger pinch."
+            },
+            {
+              "symptom": "Colour is brownish rather than vivid orange-red",
+              "cause": "The roasted tomatoes added too much colour, or the soup cooked too long.",
+              "fix": "Use fewer tomatoes and more peppers to brighten the colour. Blend quickly and don't reduce the soup after blending."
+            },
+            {
+              "symptom": "Smoky flavour is too dominant",
+              "cause": "Too much smoked paprika.",
+              "fix": "Use sweet paprika in place of smoked for a milder version. The roasted pepper itself gives plenty of depth."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The technique of charring peppers before cooking with them is Spanish in origin: pimientos del piquillo, the small, charred Spanish peppers sold in jars, use exactly this method. The soup version became a British deli and gastropub staple in the 1990s and has stayed there. It is one of those dishes that looks much more complex than it is, which makes it a reliable dinner party starter." }
+        ]
+      }
+    ]
+  }
+}

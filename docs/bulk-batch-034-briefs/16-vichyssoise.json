@@ -1,0 +1,205 @@
+{
+  "slug": "vichyssoise",
+  "title": "Vichyssoise",
+  "subtitle": "The chilled French leek and potato soup",
+  "excerpt": "Leeks and potatoes simmered in chicken stock, blended until satin-smooth, enriched with cream, and served ice-cold. Vichyssoise is one of the few soups that requires nothing more than good stock, patience, and enough time in the fridge.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Created by French chef Louis Diat at the Ritz-Carlton New York in 1917, based on a leek and potato soup from his childhood in Vichy, France. The chilled version is his innovation; the underlying soup is a standard of French home cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Doubles well. Make the day before serving.",
+    "makeAheadNotes": "Make a day ahead and keep chilled. Flavour deepens overnight. Taste and adjust seasoning just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["lightAndFresh", "summery"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "cold-seasoning", "term": "Seasoning when cold", "definition": "Cold food requires more seasoning than warm food. The same soup that tastes well-balanced at serving temperature will often seem flat and under-salted once fully chilled. Always taste again just before serving and adjust." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Vichyssoise is a leek and potato soup served cold. The technique is straightforward: sweat the leeks gently without any browning, simmer with potato and stock until very tender, blend until completely smooth, stir in cream, and chill for at least two hours. The difficulty is in the detail ,  no colour on the leeks, no lumps in the texture, and enough seasoning to account for the fact that cold " },
+          { "type": "text", "text": "dulls the palate", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-seasoning" } }] },
+          { "type": "text", "text": ". A jug blender is essential: a stick blender does not produce the fine, satin texture that makes this soup work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 4, "unit": "each", "prepNote": "white and pale green parts only, washed and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 400, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 900, "unit": "ml", "prepNote": "hot, good quality", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": "plus a little extra to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 20, "unit": "g", "prepNote": "finely snipped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the leeks and onion" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a low heat. Add the {{leek}} leeks and {{onion}} onion with a generous pinch of salt. Cook very gently for 12 to 15 minutes, stirring often, until completely soft. The leeks must not colour at all: keep the heat low." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and blend" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{potato}} of diced potato and pour in {{stock-chicken}} of hot stock. Bring to a simmer and cook for 18 to 20 minutes until the potato is completely tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Transfer to a jug blender in batches, filling no more than halfway each time. Hold the lid firmly with a folded tea towel. Blend each batch for at least 60 seconds until completely smooth. Pass through a fine-mesh sieve for a silkier result." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Enrich and chill" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Stir {{double-cream}} of cream into the blended soup. Season well with salt and white pepper. Chill for at least 2 hours, or overnight." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste again before serving and add more salt if needed ,  cold dulls the flavour. If the soup has thickened, thin with a little cold stock. Ladle into chilled bowls, add a swirl of cream, and scatter the {{chives}} of chives over the top." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is gluey or starchy",
+              "cause": "Floury potatoes release starch if blended for too long at high speed.",
+              "fix": "Blend in 30-second pulses rather than continuously. Stop as soon as the texture is smooth. Over-blending breaks down the starch cells and turns the soup gluey."
+            },
+            {
+              "symptom": "Soup has a faint green tinge",
+              "cause": "The leeks coloured slightly during sweating, or some dark green leek tops were included.",
+              "fix": "Use white and pale green parts only. Keep the heat very low and stir regularly. A pale cream colour is the target."
+            },
+            {
+              "symptom": "Too thick when cold",
+              "cause": "Cold thickens the cream and starch. The soup always firms up in the fridge.",
+              "fix": "Thin with a little cold chicken stock or milk just before serving. Adjust consistency at the chilled stage, not when hot."
+            },
+            {
+              "symptom": "Tastes flat or bland from the fridge",
+              "cause": "Cold dulls the perception of salt. A well-seasoned hot soup will often seem under-seasoned after chilling.",
+              "fix": "Taste again just before serving. Add salt and a little squeeze of lemon juice. Both sharpen the flavour without changing the character of the soup."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Vichyssoise was created by Louis Diat, a French chef working at the Ritz-Carlton in New York, in 1917. He based it on a hot leek and potato soup he remembered his grandmother making near Vichy in central France, and chilled it as a summer refinement for New York diners. Despite having a French name and French parentage, vichyssoise is an American invention. It has been a fixture of hotel dining rooms and dinner party menus on both sides of the Atlantic ever since." }
+        ]
+      }
+    ]
+  }
+}

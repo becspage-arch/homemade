@@ -1,0 +1,217 @@
+{
+  "slug": "butternut-squash-soup",
+  "title": "Butternut squash soup",
+  "subtitle": "Roasted, sweet, and gently spiced",
+  "excerpt": "Roasting the squash concentrates its sweetness before it goes into the pot. Blended with a little cream and a warm spice base of cumin and ginger, this is an autumn and winter staple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Method draws on standard British home cooking practice for roasted vegetable soups, widely published from the 1990s onward in British cookery books and magazines.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding cream. Cool completely and freeze in portions for up to three months. Reheat from frozen in a saucepan over low heat, adding cream once hot.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use two roasting tins for the squash and a large stockpot for the finished soup.",
+    "makeAheadNotes": "Make up to three days ahead without cream. Refrigerate and add cream when reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight", "cosy"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "roast-squash", "term": "Roast", "definition": "To cook in a hot oven uncovered, allowing the surface to caramelise and concentrate in flavour as moisture evaporates." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Butternut squash soup made without roasting first is fine. Butternut squash soup made with roasted squash is noticeably better. The hot oven draws out the squash's moisture, concentrates the sugars, and develops a slightly caramelised exterior that reads in the finished bowl as a deeper, more complex sweetness. It takes an extra 30 minutes, but those are hands-off minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "butternut-squash", "amount": 1, "unit": "each", "prepNote": "about 1 kg, peeled, deseeded and cut into 3 cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 900, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 80, "unit": "ml", "prepNote": "plus extra to swirl", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the squash" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the oven to 200°C conventional. Spread the squash chunks across a large roasting tin in a single layer. Toss with a glug of oil and a generous pinch of salt. " },
+                  { "type": "text", "text": "Roast", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "roast-squash" } }] },
+                  { "type": "text", "text": " for 30 to 35 minutes, turning once halfway, until golden at the edges and completely tender." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soup base" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "While the squash roasts, melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} onion and a pinch of salt. Cook for 8 minutes until soft." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of garlic, {{ginger-root}} of ginger, and {{cumin-ground}} of ground cumin. Cook for 1 minute, stirring." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the roasted squash to the pan. Pour over {{stock-vegetable}} of hot vegetable stock. Simmer for 5 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Blend until completely smooth with a stick blender. Stir in {{double-cream}} of cream. Taste and season well." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls and add a thin swirl of cream. Toasted pumpkin seeds are a good finishing touch." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Squash is watery after roasting",
+              "cause": "The pieces were too close together and steamed instead of roasting.",
+              "fix": "Spread the squash in a single layer with space between pieces. Use two tins if needed. Crowd the tin and you steam; space them out and you roast."
+            },
+            {
+              "symptom": "Soup is too sweet",
+              "cause": "The squash was very ripe, or over-roasted.",
+              "fix": "Add a small squeeze of lemon juice and a little extra salt to balance. A pinch more cumin also helps cut through the sweetness."
+            },
+            {
+              "symptom": "Texture is stringy after blending",
+              "cause": "The squash was not tender enough before blending.",
+              "fix": "Roast for another 5 to 10 minutes until completely soft, then blend. A high-powered blender gives a smoother result than a stick blender for very fibrous squash."
+            },
+            {
+              "symptom": "Colour is pale orange rather than deep",
+              "cause": "The squash was not roasted long enough to develop caramelisation.",
+              "fix": "Return the tray to the oven for another 10 minutes until the squash shows golden-brown patches on the cut surfaces."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Butternut squash reached British supermarkets in the 1980s and became a soup standard in the 1990s. It blends to a very smooth purée and its sweetness suits most palates. The same recipe works as a weeknight supper or a dinner-party starter, depending on how carefully the bowl is finished." }
+        ]
+      }
+    ]
+  }
+}

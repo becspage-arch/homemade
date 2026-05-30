@@ -1,0 +1,218 @@
+{
+  "slug": "parsnip-and-curry-soup",
+  "title": "Parsnip and curry soup",
+  "subtitle": "Sweet, warming, and deeply spiced",
+  "excerpt": "Roasted parsnips blended with a curry-spiced base, a little apple, and vegetable stock. The roasting concentrates the natural sweetness of the parsnips and gives the soup a depth that boiled parsnips cannot match.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Curried parsnip soup is a British invention with no exact Indian precedent ,  part of the post-1970s tradition of applying Indian spicing to European root vegetables. A gastropub and dinner-party standard from the 1990s onwards.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to three months. Thin with a little hot stock when reheating as it thickens on freezing.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use two roasting tins for the parsnips.",
+    "makeAheadNotes": "Make up to two days ahead. The spice flavour deepens overnight.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bloom-spice-fat", "term": "Blooming spices", "definition": "Cooking dried spices briefly in hot fat before adding any liquid. The heat activates aromatic compounds and gives a more intense, rounded flavour than adding the spices with stock or water." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roasting is the step that makes this soup. Raw parsnips boiled directly in stock produce a pleasant but flat result; parsnips roasted at 200°C until their edges caramelise carry a sweetness and depth that survives blending. The curry powder is " },
+          { "type": "text", "text": "bloomed", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bloom-spice-fat" } }] },
+          { "type": "text", "text": " in butter before the stock goes in, which rounds out the spice and removes any raw, dusty edge. Apple is optional but adds a brightness that lifts the whole soup." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "parsnip", "amount": 800, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 15, "unit": "g", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tsp", "prepNote": "medium", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple", "amount": 1, "unit": "each", "prepNote": "peeled, cored and diced", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "creme-fraiche", "amount": 60, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the parsnips" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the oven to 200°C conventional. Spread the {{parsnip}} of parsnip chunks across a large roasting tin in a single layer. Drizzle with oil, season with salt, and toss to coat. Roast for 25 to 30 minutes until golden at the edges and tender throughout." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} onion and cook for 8 minutes until soft. Add the {{garlic}} of garlic and {{ginger-fresh}} of grated ginger and cook for 1 minute." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{curry-powder}} of curry powder and stir for 1 minute until fragrant. If using, add the {{apple}} of diced apple and stir for 30 seconds." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and blend" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the roasted parsnips to the pan. Pour in {{stock-vegetable}} of hot stock. Simmer for 10 minutes to bring all the flavours together." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Blend until smooth with a stick blender. Taste and season. Thin with a little more stock if needed." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls and add a spoonful of crème fraîche if using." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Spice tastes raw or dusty",
+              "cause": "The curry powder was not bloomed in fat long enough before liquid was added.",
+              "fix": "Cook the curry powder for at least 1 full minute in the butter before adding anything else. The kitchen should smell fragrant and the spice colour should deepen slightly."
+            },
+            {
+              "symptom": "Soup is too sweet",
+              "cause": "Parsnips are naturally sweet, especially when roasted, and the apple adds more.",
+              "fix": "Omit the apple, or add a squeeze of lemon juice to the finished soup. A small pinch of ground cumin or extra ginger helps balance sweetness."
+            },
+            {
+              "symptom": "Texture is not smooth",
+              "cause": "Larger parsnips have a woody core that does not blend well.",
+              "fix": "Remove the fibrous core from any parsnip thicker than about 3 cm before roasting. A jug blender gives a finer result than a stick blender."
+            },
+            {
+              "symptom": "Too thick after blending",
+              "cause": "Parsnips are starchy and produce a naturally thick soup.",
+              "fix": "Add hot stock a ladleful at a time until the consistency is right. A thick, velvety texture is the aim; too thin and the flavour dilutes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Curried parsnip soup has no Indian precedent. It is a British invention from the post-war period when curry powder became widely available in British supermarkets and cooks began using it as a general seasoning for root vegetables. By the 1990s it was a fixture of British gastropub menus ,  reliable, warming, and easy to make in large quantities. Despite its workaday reputation, when made with properly roasted parsnips and freshly ground spices, it is a very good soup." }
+        ]
+      }
+    ]
+  }
+}

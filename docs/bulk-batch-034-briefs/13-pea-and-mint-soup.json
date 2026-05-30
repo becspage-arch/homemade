@@ -1,0 +1,218 @@
+{
+  "slug": "pea-and-mint-soup",
+  "title": "Pea and mint soup",
+  "subtitle": "Fresh, bright, and ready in fifteen minutes",
+  "excerpt": "Frozen peas blended with mint, a little stock, and a swirl of crème fraîche. One of the quickest soups there is, good hot or cold, and an excellent use for frozen peas.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard British spring soup, widely published from the 1980s onward. Frozen peas as a year-round substitute for fresh peas became a British domestic staple in the 1960s and has been used in soups ever since.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the crème fraîche. The soup keeps frozen for up to three months. Defrost and reheat gently, stirring in crème fraîche when hot.",
+    "batchable": true,
+    "batchNotes": "Makes and freezes beautifully in large quantities.",
+    "makeAheadNotes": "Keeps in the fridge for two days. The mint colour fades slightly but the flavour stays bright.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["lightAndFresh", "weeknight", "summery"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "blanch-peas", "term": "Blanch", "definition": "To plunge food briefly into boiling water, then transfer it immediately into cold water to stop the cooking. Preserves colour and texture, particularly in green vegetables." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pea and mint soup is fifteen minutes from start to finish. Frozen peas are already " },
+          { "type": "text", "text": "blanched", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blanch-peas" } }] },
+          { "type": "text", "text": " and need very little cooking: a brief simmer in stock, then into the blender with a handful of fresh mint. The key to keeping the colour vivid is speed: overcook the peas and the soup turns khaki." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peas-frozen", "amount": 700, "unit": "g", "prepNote": "straight from the freezer", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 800, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mint", "amount": 20, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "creme-fraiche", "amount": 80, "unit": "g", "prepNote": "plus extra to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the base" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a saucepan over a medium-low heat. Add the {{onion}} onion and cook for 6 minutes until soft." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of crushed garlic and cook for 1 minute. Pour in {{stock-vegetable}} of hot stock and bring to a simmer." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{peas-frozen}} of frozen peas straight from the freezer. Return to a simmer and cook for exactly 3 minutes. Do not overcook." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Transfer the soup to a jug blender in batches. Add the mint leaves. Blend until completely smooth." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Return to the pan over a low heat. Stir in {{creme-fraiche}} of crème fraîche and the juice of {{lemon}} lemon. Taste and season with salt." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a small spoonful of crème fraîche to each bowl and a mint leaf on top." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is khaki rather than vivid green",
+              "cause": "The peas were cooked for too long, destroying the chlorophyll.",
+              "fix": "Three minutes for frozen peas is enough. If the soup has gone dull, try adding a handful of fresh raw spinach leaves into the blender with the cooked peas: they boost the colour back."
+            },
+            {
+              "symptom": "Soup tastes starchy",
+              "cause": "Old or cheap frozen peas with a lot of starch.",
+              "fix": "Use a brand of frozen peas with a high sugar content (the packaging sometimes states 'garden peas' or 'petits pois'). The freshness of the peas matters for flavour."
+            },
+            {
+              "symptom": "Texture is not smooth",
+              "cause": "A stick blender does not produce as fine a result as a jug blender for pea soup.",
+              "fix": "Use a jug blender and blend for at least 60 seconds. Pass the blended soup through a sieve for an extremely smooth result."
+            },
+            {
+              "symptom": "Mint flavour is too strong or medicinal",
+              "cause": "Too much mint added to the blender.",
+              "fix": "Start with 15 g rather than 20 g. You can always add a little more to the jug and blend again; you can't take it out."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Serve cold in summer as a chilled soup starter: make it, chill it for at least two hours, then thin with a little extra stock and serve with a spoonful of crème fraîche. Watercress can replace half the peas for a more peppery version." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pea soup is one of the oldest in the British canon. Elizabethan recipes made it with fresh garden peas. The frozen version is a modern convenience. Frozen peas are picked and frozen within hours, which makes them sweeter and fresher than peas left in the pod for days." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "slug": "hot-and-sour-soup",
+  "title": "Hot and sour soup",
+  "subtitle": "The Chinese classic with tofu, bamboo, and egg",
+  "excerpt": "A clear, deeply savoury chicken broth thickened with cornflour and sharpened with rice vinegar, finished with silken tofu, bamboo shoots, and ribbons of egg. Hot and sour soup is one of the great Chinese restaurant dishes, and straightforward to make at home.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Hot and sour soup (suān là tāng) is associated with Sichuan and Beijing cooking traditions. The home version using readily available ingredients follows the approach common in British Chinese restaurants and home-cooking books from the 1990s onwards.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten immediately. The egg sets and the tofu breaks down if the soup is reheated.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "lunch",
+    "mood": ["weeknight", "lightAndFresh"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "egg-ribbon", "term": "Egg ribbons", "definition": "A technique of slowly pouring beaten egg into a hot, gently stirred soup in a thin stream. The egg sets into thin, silky ribbons as it hits the hot liquid. Stirring the soup in one direction before adding the egg keeps the ribbons long and even." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The balance in hot and sour soup is between acid (rice vinegar) and heat (white pepper), with a deeply savoury broth underneath. The soup is thickened with cornflour ,  just enough to give it body without becoming gluey ,  and finished with " },
+          { "type": "text", "text": "egg ribbons", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "egg-ribbon" } }] },
+          { "type": "text", "text": " stirred in at the last moment. Use silken tofu: it breaks into soft, delicate pieces that are quite different from firm tofu. Adjust the vinegar to taste before serving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rice-vinegar", "amount": 4, "unit": "tbsp", "prepNote": "plus more to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": "or white pepper to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 15, "unit": "g", "prepNote": "peeled and finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bamboo-shoots", "amount": 200, "unit": "g", "prepNote": "tinned, drained and cut into strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 150, "unit": "g", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tofu-silken", "amount": 200, "unit": "g", "prepNote": "drained and cut into small cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cornflour", "amount": 3, "unit": "tbsp", "prepNote": "mixed with 4 tbsp cold water", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 3, "unit": "each", "prepNote": "finely sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the broth" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring {{stock-chicken}} of chicken stock to a simmer in a large pot. Add {{soy-sauce}} of soy sauce, {{rice-vinegar}} of rice vinegar, {{chilli-flakes}} of chilli flakes or white pepper, and {{ginger-fresh}} of grated ginger. Stir to combine." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{bamboo-shoots}} of bamboo shoots and {{chestnut-mushrooms}} of sliced mushrooms. Simmer for 5 minutes. Add the {{tofu-silken}} of silken tofu cubes and stir very gently to avoid breaking them up." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Thicken and add the eggs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Give the {{cornflour}} of cornflour slurry a stir and pour it slowly into the simmering soup while stirring. The soup will thicken within 30 seconds. If it seems too thick, add a little water; too thin, add another teaspoon of cornflour mixed with water." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Stir the soup slowly in one direction to create a gentle current. Pour {{eggs}} of beaten egg in a very thin stream into the moving soup ,  the egg will set immediately into silky ribbons. Stop stirring at once." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste and adjust: more rice vinegar for more sour, more white pepper or chilli for more heat. Drizzle {{sesame-oil}} of sesame oil over the surface. Ladle into bowls and scatter {{spring-onion}} of spring onion over each bowl." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Egg has clumped rather than forming ribbons",
+              "cause": "The egg was poured in too quickly, or the soup was not moving.",
+              "fix": "Pour the beaten egg in a very thin, slow stream while stirring the soup. A steady circular stir creates the current that separates the egg into ribbons. Do not pour all the egg at once."
+            },
+            {
+              "symptom": "Soup is gluey",
+              "cause": "Too much cornflour, or the cornflour was not dispersed before adding.",
+              "fix": "Always mix cornflour to a smooth slurry with cold water before adding. Add it gradually and stop when the soup just coats the back of a spoon."
+            },
+            {
+              "symptom": "Soup is not sour enough",
+              "cause": "Rice vinegar brands vary considerably in strength.",
+              "fix": "Taste and add more rice vinegar a tablespoon at a time. The sourness should be forward and sharp. A small splash of black Chinese vinegar (if available) adds depth."
+            },
+            {
+              "symptom": "Tofu has broken into mush",
+              "cause": "Silken tofu is very fragile and breaks if stirred vigorously.",
+              "fix": "Add the tofu last and stir very gently with a large spoon. When ladling, take care to scoop around the tofu rather than breaking it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Suān là tāng (literally 'sour spicy soup') is a staple of northern Chinese and Sichuan cooking, where white pepper provides the heat rather than chilli. It appears on the menu of virtually every Chinese restaurant in Britain, usually adapted to local tastes with a milder heat level and more bamboo shoots. The home version is close to the restaurant version: the key is getting the balance of sour and hot right before serving. In Sichuan the soup is much spicier and often uses wood ear mushrooms." }
+        ]
+      }
+    ]
+  }
+}

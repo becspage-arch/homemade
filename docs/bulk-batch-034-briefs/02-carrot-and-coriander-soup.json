@@ -1,0 +1,211 @@
+{
+  "slug": "carrot-and-coriander-soup",
+  "title": "Carrot and coriander soup",
+  "subtitle": "Bright, gently spiced, and ready in half an hour",
+  "excerpt": "Roasted carrots blended with ground coriander and a hint of ginger make a vivid orange soup that works as lunch or a starter. Naturally vegan, it keeps well in the freezer.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British home-cooking method, widely documented across post-1945 British cookery publications. Ground coriander as a carrot soup spice is a convention established in British kitchen writing from the 1970s onward.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze in portions for up to three months. Defrost overnight in the fridge. Reheat gently in a saucepan, thinning with a little stock if needed.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Use a large stockpot and blend in two batches with a stick blender.",
+    "makeAheadNotes": "Makes 3 days ahead. Keeps well in the fridge; flavour deepens overnight.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight", "lightAndFresh"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sweat-veg", "term": "Sweat", "definition": "To cook vegetables in fat over a low heat until softened and translucent, without allowing them to colour." },
+    { "slug": "bloom-spice", "term": "Bloom", "definition": "To fry ground or whole spices briefly in hot fat before adding liquid, which intensifies their flavour and removes any raw edge." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Carrot and coriander soup is one of the brightest bowls you can put together from a midweek shopping bag. The ground coriander goes in early, fried briefly in butter to knock off its raw edge, which gives the finished soup a warm depth behind the carrot's natural sweetness. It takes about 45 minutes start to finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 15, "unit": "g", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-seeds", "amount": 2, "unit": "tsp", "prepNote": "ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 6, "unit": "each", "prepNote": "peeled and roughly chopped (about 700 g)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "leaves and soft stems, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 60, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan or casserole over a medium-low heat. Add the {{onion}} onion with a pinch of salt and " },
+                  { "type": "text", "text": "sweat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sweat-veg" } }] },
+                  { "type": "text", "text": " for 8 minutes until soft." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of crushed garlic and {{ginger-root}} of ginger. Cook for 1 minute." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{coriander-seeds}} of ground coriander and " },
+                  { "type": "text", "text": "bloom", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bloom-spice" } }] },
+                  { "type": "text", "text": " for 30 seconds, stirring constantly, until fragrant." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and blend" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{carrot}} carrots and pour over {{stock-vegetable}} of hot vegetable stock. Bring to a simmer, cover, and cook for 25 minutes until the carrots are completely tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Remove from the heat and blend until smooth with a stick blender. Taste, adjust salt, and reheat gently if needed." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a spoonful of soured cream if using and scatter fresh coriander leaves over the top." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup tastes bitter",
+              "cause": "The ground coriander was cooked too long in the fat before the liquid was added, or it was old and past its best.",
+              "fix": "Bloom spices for no more than 30 to 40 seconds over medium heat. Use ground coriander within six months of opening for the best flavour."
+            },
+            {
+              "symptom": "Soup is dull orange, not vibrant",
+              "cause": "The carrots were old, or the soup was overcooked, which dulls the colour.",
+              "fix": "Use fresh, bright-coloured carrots. Don't cook for longer than needed: the carrots need to be tender but not mushy."
+            },
+            {
+              "symptom": "Texture is not smooth after blending",
+              "cause": "The carrots were not tender enough before blending.",
+              "fix": "Cook for another 5 minutes and blend again. The carrot must be fully soft before the stick blender will give a completely smooth result."
+            },
+            {
+              "symptom": "Soup is too thin",
+              "cause": "Too much stock for the quantity of carrots.",
+              "fix": "Simmer uncovered for 5 to 10 minutes to reduce slightly before blending, or use slightly less stock next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Carrot and coriander soup became a fixture of British cafe and supermarket cooking in the 1980s and has stayed there. It is one of the clearest expressions of the shift in British cooking toward using spice as flavour rather than heat. The combination works because the earthy warmth of ground coriander meets the sweetness of the carrot exactly where both are strongest." }
+        ]
+      }
+    ]
+  }
+}

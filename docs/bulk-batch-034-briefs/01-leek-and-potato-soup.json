@@ -1,0 +1,259 @@
+{
+  "slug": "leek-and-potato-soup",
+  "title": "Leek and potato soup",
+  "subtitle": "Silky, mild, and deeply satisfying",
+  "excerpt": "A pale green soup built on slowly sweated leeks and floury potatoes, blended until smooth and finished with a swirl of cream. Ready in 40 minutes and freezes well.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Potato and leek soup entry, basic white soup method.\n\nEliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg. White soup and vegetable puree techniques.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding cream. Cool completely, pour into freezer bags or containers, and freeze for up to three months. Reheat from frozen over a low heat, adding the cream once it is hot through.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a large stockpot. The blending takes a little longer in batches.",
+    "makeAheadNotes": "Make up to three days ahead, refrigerate without cream. Add cream when reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sweat", "term": "Sweat", "definition": "To cook vegetables gently in fat over a low heat until soft and translucent, releasing their moisture without browning." },
+    { "slug": "puree", "term": "Purée", "definition": "To blend cooked food to a completely smooth consistency, usually with a stick blender or jug blender." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leek and potato soup is one of the simplest soups there is, and one of the most satisfying. The leeks give it a mild sweetness and a pale celadon colour; the potatoes give body and a silky texture when blended. It comes together in about 40 minutes and tastes better the next day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 3, "unit": "each", "prepNote": "white and pale green parts, washed and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "floury variety such as Maris Piper, peeled and cut into 2 cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "plus extra to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 10, "unit": "g", "prepNote": "finely snipped, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A deep casserole or saucepan works well here. You need the stick blender to reach comfortably to the bottom, so a wide, tall pot is better than a shallow frying pan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the alliums" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large casserole over a low heat. Add the {{onion}} onion and a good pinch of salt. " },
+                  { "type": "text", "text": "Sweat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sweat" } }] },
+                  { "type": "text", "text": " for 8 minutes, stirring occasionally, until soft and translucent." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of crushed garlic and {{leek}} leeks. Cook for a further 5 minutes, stirring, until the leeks collapse and soften." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the potatoes and stock" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Tip in the {{potato}} of potato chunks and pour over {{stock-vegetable}} of hot vegetable stock. Bring to a simmer." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Cover and cook over a medium-low heat for 20 minutes, until the potatoes are completely tender when pressed with a spoon." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Remove from the heat. Use a stick blender to " },
+                  { "type": "text", "text": "purée", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "puree" } }] },
+                  { "type": "text", "text": " until completely smooth. If using a jug blender, let the soup cool slightly first and work in batches." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Stir in {{double-cream}} of cream. Taste and adjust salt. Reheat gently without boiling." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a thin swirl of cream and a scatter of snipped chives." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is grainy or watery",
+              "cause": "The potato variety was waxy rather than floury, giving it less starch to thicken the blend.",
+              "fix": "Use Maris Piper, King Edward, or another floury variety. Waxy potatoes (Charlotte, Jersey Royal) hold their shape rather than breaking down into a creamy purée."
+            },
+            {
+              "symptom": "Soup is too thick after blending",
+              "cause": "The potatoes absorbed more liquid than expected, or the stock reduced during cooking.",
+              "fix": "Add hot stock or water, 100 ml at a time, until it reaches the consistency you want. Taste and re-season after each addition."
+            },
+            {
+              "symptom": "Soup tastes flat",
+              "cause": "Underseasoned at the start, or the stock was weak.",
+              "fix": "Add salt gradually, tasting as you go. A small squeeze of lemon juice lifts it. If the stock was weak, a teaspoon of white wine vinegar has the same effect."
+            },
+            {
+              "symptom": "Leeks are stringy in the final soup",
+              "cause": "The dark green tops were included, or the leeks were not cooked long enough before blending.",
+              "fix": "Use only the white and pale green parts. Make sure the leeks are completely tender before blending."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For vichyssoise, chill the finished soup and serve cold with extra cream and chives. For a lighter version, swap the cream for a splash of whole milk. Adding a knob of butter stirred in at the end just before serving gives a glossy, richer result." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead and freezing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The soup keeps in the fridge for three days in a sealed container. Freeze before adding the cream: pour into bags or boxes, label, and freeze for up to three months. Defrost overnight in the fridge or from frozen in a saucepan over low heat, then add cream once hot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leek and potato soup is the quiet workhorse of British home cooking. British cookbooks from the 1860s onward describe the same basic formula: leeks, potatoes, stock, and cream. It appears on greasy-spoon menus and in Michelin kitchens alike. Vichyssoise, the chilled French version, was invented in New York in the early twentieth century but borrowed its ingredients directly from the British original." }
+        ]
+      }
+    ]
+  }
+}

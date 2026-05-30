@@ -1,0 +1,208 @@
+{
+  "slug": "italian-wedding-soup",
+  "title": "Italian wedding soup",
+  "subtitle": "Tiny meatballs, pasta, and greens in a clear broth",
+  "excerpt": "Small pork and Parmesan meatballs simmered in a rich chicken broth with tiny pasta and wilted spinach. Italian wedding soup has nothing to do with weddings ,  it refers to the marriage of meat and greens in the broth. A complete and deeply satisfying bowl.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Minestra maritata (married soup) is a dish of southern Italy, particularly Campania and Puglia, where it traditionally uses many different meats and wild greens. The Italian-American version with meatballs and acini di pepe pasta is what is widely known outside Italy.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the meatballs raw on a tray, then bag once solid. Freeze the soup base separately. Combine and cook from frozen. Do not freeze with pasta added.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the meatballs up to a day ahead and refrigerate. Add pasta only at serving.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "panade-binder", "term": "Panade", "definition": "Breadcrumbs soaked in milk or liquid used to bind meatballs and meatloaf. The soaked breadcrumbs keep the meat moist during cooking and stop the meatballs from becoming tough and rubbery when they hit the hot broth." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The name comes from minestra maritata ,  married soup ,  referring to the combination of meat and greens in the broth, not to weddings. The key to good meatballs in soup is size and tenderness: make them small (about 2 cm) so they cook through quickly, and use a " },
+          { "type": "text", "text": "panade", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "panade-binder" } }] },
+          { "type": "text", "text": " of soaked breadcrumbs to keep them soft. The broth must be properly flavoured ,  this soup lives or dies by the quality of the stock." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "parmesan", "amount": 30, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 30, "unit": "g", "prepNote": "soaked in 3 tbsp milk for 5 minutes", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "stock-chicken", "amount": 1400, "unit": "ml", "prepNote": "very good quality, home-made if possible", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "pasta-dried", "amount": 100, "unit": "g", "prepNote": "or any small pasta", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "spinach", "amount": 100, "unit": "g", "prepNote": "baby spinach", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "parmesan", "amount": 30, "unit": "g", "prepNote": "grated, to serve", "isOptional": false, "groupLabel": "Soup" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the meatballs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Combine {{pork-mince}} of pork mince with {{parmesan}} of grated Parmesan, the soaked breadcrumbs (squeezed dry), {{garlic}} of crushed garlic, {{parsley-flat}} of chopped parsley, and {{eggs}} beaten egg in a bowl. Season with salt and pepper. Mix until just combined ,  do not overwork." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Roll into small balls about 2 cm across (you will get roughly 30). Lay on a plate and refrigerate while you heat the stock." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the soup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring {{stock-chicken}} of chicken stock to a gentle simmer in a large pot. Taste and season it ,  the broth is the backbone of the soup and must be well-flavoured." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Drop the meatballs gently into the simmering stock. Cook for 8 minutes until cooked through. They will float when done." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add {{pasta-dried}} of pasta and cook until al dente, according to packet instructions. Add {{spinach}} of baby spinach and stir until wilted ,  about 30 seconds." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls, making sure each bowl has a good share of meatballs, pasta, and greens. Finish with a generous spoonful of grated Parmesan." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meatballs are falling apart in the stock",
+              "cause": "Not enough binder, or the mixture was too loose.",
+              "fix": "Make sure the breadcrumbs were soaked and then squeezed dry before adding. If the mixture feels very loose, add another tablespoon of breadcrumbs. Chill the rolled meatballs for 20 minutes before cooking ,  cold meatballs hold together better."
+            },
+            {
+              "symptom": "Meatballs are tough and rubbery",
+              "cause": "The mince was overworked, squeezing out moisture and toughening the protein.",
+              "fix": "Mix the meatball ingredients until just combined ,  less than a minute. Handle lightly when rolling."
+            },
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "The meatballs were added to boiling stock rather than gently simmering stock.",
+              "fix": "The stock should be at a gentle simmer, not a rolling boil. Rapid boiling agitates the proteins released from the meatballs and clouds the broth."
+            },
+            {
+              "symptom": "Soup seems underseasoned",
+              "cause": "Stock-based clear soups need thorough seasoning ,  clear broths show every lack.",
+              "fix": "Season the stock before adding the meatballs. Taste again after the pasta is cooked. The Parmesan helps, but salt must be right before it goes on."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Minestra maritata is a soup from southern Italy, mainly Naples and Puglia. The original is made with several cuts of pork and wild greens. The version most people know is Italian-American: small meatballs and tiny pasta in a clear broth. It is called wedding soup in English from a translation mistake. Maritata means married, not wedding. The Italian-American version is now better known than the original." }
+        ]
+      }
+    ]
+  }
+}

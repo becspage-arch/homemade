@@ -1,0 +1,418 @@
+{
+  "slug": "pho-ga",
+  "tutorialId": "cmpryrg2b00001ov42gvq7kzp",
+  "capturedAt": "2026-05-30T06:26:15.971Z",
+  "preFix": {
+    "title": "Pho ga",
+    "subtitle": "Vietnamese chicken noodle soup with star anise and ginger",
+    "excerpt": "A clear, fragrant chicken broth flavoured with charred ginger, star anise, and cinnamon, served over rice noodles with shredded poached chicken. Pho ga is lighter and faster than the beef version and can be made in under two hours.",
+    "sourceNotes": "Pho (pronounced 'fuh') originated in northern Vietnam in the early 20th century. Pho ga (chicken pho) developed as a variant of the original beef pho bo. Method synthesised from standard Vietnamese home-cooking approaches adapted for a British kitchen.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The broth is everything in pho. What makes it different from a standard chicken soup is the ",
+              "type": "text"
+            },
+            {
+              "text": "charring",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpryjzs30000w4v4ffbx3nwz"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " of the ginger and onion before they go into the pot, and the warm spices ,  star anise, cinnamon, and cloves ,  that give the broth its distinctive sweetness. The broth needs at least 90 minutes to develop properly; the rest is assembly. Serve with the traditional table condiments: bean sprouts, lime, fresh chilli, and hoisin for dipping the chicken.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you need",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "ingredientsList",
+          "attrs": {
+            "items": [
+              {
+                "name": "Whole chicken",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": "about 1.5 kg",
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f4ix002srkv4tu3m9jsa",
+                "ingredientSlug": "chicken-whole"
+              },
+              {
+                "name": "Fresh ginger",
+                "unit": "g",
+                "amount": 60,
+                "prepNote": "unpeeled, halved lengthways",
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmpc0j6rh000by4v4j7spuu93",
+                "ingredientSlug": "ginger-fresh"
+              },
+              {
+                "name": "Onion",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": "halved, skin on",
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f59k0042rkv4afimm5ox",
+                "ingredientSlug": "onion"
+              },
+              {
+                "name": "Star anise",
+                "unit": "each",
+                "amount": 3,
+                "prepNote": null,
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f80y008yrkv4pv3scqak",
+                "ingredientSlug": "star-anise"
+              },
+              {
+                "name": "Cinnamon stick",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": null,
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f7vx008prkv43d6s905g",
+                "ingredientSlug": "cinnamon-stick"
+              },
+              {
+                "name": "Cloves",
+                "unit": "each",
+                "amount": 3,
+                "prepNote": null,
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f7yr008urkv4o6jhnfo3",
+                "ingredientSlug": "cloves"
+              },
+              {
+                "name": "Fish sauce",
+                "unit": "tbsp",
+                "amount": 2,
+                "prepNote": null,
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49f8m800a0rkv458s8fsmb",
+                "ingredientSlug": "fish-sauce"
+              },
+              {
+                "name": "Caster sugar",
+                "unit": "tsp",
+                "amount": 1,
+                "prepNote": null,
+                "groupLabel": "Broth",
+                "isOptional": false,
+                "ingredientId": "cmp49fau900dvrkv4ce3mot41",
+                "ingredientSlug": "caster-sugar"
+              },
+              {
+                "name": "Rice noodles",
+                "unit": "g",
+                "amount": 250,
+                "prepNote": "medium width, soaked in cold water for 20 minutes",
+                "groupLabel": "To serve",
+                "isOptional": false,
+                "ingredientId": "cmp49fa1c00cirkv47x9gsdum",
+                "ingredientSlug": "noodles-rice"
+              },
+              {
+                "name": "Spring onion",
+                "unit": "each",
+                "amount": 4,
+                "prepNote": "finely sliced",
+                "groupLabel": "To serve",
+                "isOptional": false,
+                "ingredientId": "cmp49f5ap0044rkv4ho0qxvkx",
+                "ingredientSlug": "spring-onion"
+              },
+              {
+                "name": "Coriander",
+                "unit": "g",
+                "amount": 20,
+                "prepNote": "leaves only",
+                "groupLabel": "To serve",
+                "isOptional": false,
+                "ingredientId": "cmp49f77i007hrkv4d03fexog",
+                "ingredientSlug": "coriander"
+              },
+              {
+                "name": "Bean sprouts",
+                "unit": "g",
+                "amount": 100,
+                "prepNote": null,
+                "groupLabel": "To serve",
+                "isOptional": true,
+                "ingredientId": "cmpryqv600000tcv46seemcx6",
+                "ingredientSlug": "bean-sprouts"
+              },
+              {
+                "name": "Lime",
+                "unit": "each",
+                "amount": 2,
+                "prepNote": "cut into wedges",
+                "groupLabel": "To serve",
+                "isOptional": false,
+                "ingredientId": "cmp49f6jj0069rkv4svvwg8jx",
+                "ingredientSlug": "lime"
+              },
+              {
+                "name": "Red chilli",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": "finely sliced",
+                "groupLabel": "To serve",
+                "isOptional": true,
+                "ingredientId": "cmp49f5qd004vrkv49t50r4rx",
+                "ingredientSlug": "chilli-red"
+              }
+            ],
+            "defaultServings": 4
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Char the aromatics and make the broth",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Hold the {{ginger-fresh}} of ginger halves and {{onion}} of onion halves directly over a gas flame using tongs, turning occasionally, until the cut faces are heavily charred ,  about 3 to 4 minutes each. Alternatively, place under a very hot grill for 8 to 10 minutes. The blackening is correct; it gives the broth its characteristic depth.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Place the {{chicken-whole}} of whole chicken in a large pot with the charred ginger and onion. Add {{star-anise}} of star anise, {{cinnamon-stick}} of cinnamon, and {{cloves}} of cloves. Cover with cold water (about 2.5 litres). Bring to a boil, skimming off any foam from the surface.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Reduce the heat to a gentle simmer. Cook for 60 to 75 minutes until the chicken is completely cooked through. Lift the chicken out and set aside to cool.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Strain the broth through a fine-mesh sieve into a clean pot. Discard the solids. Season with {{fish-sauce}} of fish sauce and {{sugar}} of sugar. Taste and adjust ,  it should be savoury, lightly sweet, and clean.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Shred the chicken and assemble",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Once the chicken is cool enough to handle, shred the meat from the bones into strips, discarding the skin and bones.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Cook the soaked {{rice-noodles-flat}} of rice noodles in a pot of boiling water for 2 to 3 minutes until just tender. Drain and divide among four deep bowls.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Arrange shredded chicken on top of the noodles. Bring the broth to a rolling boil and ladle over each bowl to reheat the chicken. Top with {{spring-onion}} of spring onion and {{coriander}} of coriander. Serve with lime wedges, bean sprouts, and chilli on the side.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "attrs": {
+            "items": [
+              {
+                "fix": "Once skimmed, maintain a very gentle simmer ,  the surface should barely tremble. Skim the broth once or twice during the 90-minute cook.",
+                "cause": "The broth was allowed to boil rather than simmer, agitating the proteins.",
+                "symptom": "Broth is cloudy rather than clear"
+              },
+              {
+                "fix": "The charring of ginger and onion should be significant ,  heavily blackened, not just lightly toasted. Use whole spices, not ground. Stale star anise has almost no flavour.",
+                "cause": "The aromatics were not charred enough, or the spices are stale.",
+                "symptom": "Broth lacks the characteristic pho aroma"
+              },
+              {
+                "fix": "A gentle simmer produces more tender, moister chicken. Once cooked, leave the chicken to cool in the broth if time allows ,  it reabsorbs moisture as it cools.",
+                "cause": "The chicken was allowed to boil rather than poach gently.",
+                "symptom": "Chicken is dry or stringy"
+              },
+              {
+                "fix": "Taste and add fish sauce gradually ,  it both seasons and adds depth. The sugar rounds the spices. A squeeze of lime in the bowl at serving brightens the whole thing.",
+                "cause": "Fish sauce and sugar not adjusted correctly, or insufficient seasoning.",
+                "symptom": "Broth tastes flat"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Where this dish lives",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Pho originated in northern Vietnam, probably in the early 20th century in the Red River Delta, and is now the national dish. The beef version (pho bo) is the older form; pho ga (chicken) developed as a more affordable variant and is now eaten as widely. Pho spread globally with the Vietnamese diaspora following the 1975 war, and Vietnamese restaurants in Britain made it available from the 1980s. The dish has since become one of the most replicated soups in the world outside its country of origin.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": 4,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "placeholder-string",
+      "message": "body contains unresolved placeholder {{ginger-fresh}} — must be substituted before publish",
+      "snippet": "Hold the {{ginger-fresh}} of ginger halves and {{onion}} of onion halves directly over a gas flame u"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "historical-century-in-body",
+      "message": "historical century reference \"20th century\" in body — move to sourceNotes or introduce with a person (e.g. \"the 17th-century herbalist X\")",
+      "path": "body > paragraph[10]",
+      "snippet": "20th century"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[10]",
+      "snippet": "Pho originated in northern Vietnam, probably in the early 20th century in the Red River Delta, and is now the national dish. The beef versio"
+    }
+  ]
+}

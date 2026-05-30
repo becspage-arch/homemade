@@ -1,0 +1,256 @@
+{
+  "slug": "french-onion-soup",
+  "title": "French onion soup",
+  "subtitle": "Deep brown, richly savoured, with a gruyère croûte",
+  "excerpt": "Slowly caramelised onions in a dark beef broth, ladled over a bread croûte buried under melted Gruyère. A classic of the French bistro, built almost entirely from patience.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), English translation. Soupe à l'oignon method and broth technique.\n\nEliza Acton, Modern Cookery for Private Families (1845) ,  Project Gutenberg. Brown onion soup with bread.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the soup base without the bread or cheese. Cool completely and freeze for up to three months. Make the croûtes fresh when serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The soup base improves over two days in the fridge. Rewarm and grill the croûtes just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "cosy", "dateNight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "caramelise", "term": "Caramelise", "definition": "To cook onions or other sugary food slowly over heat until the natural sugars break down and turn dark brown, producing a deep sweet flavour." },
+    { "slug": "deglaze-fos", "term": "Deglaze", "definition": "To add liquid (wine, stock, or water) to a hot pan to dissolve the browned bits stuck to the base, incorporating their flavour into the sauce or soup." },
+    { "slug": "croute", "term": "Croûte", "definition": "A thick slice of bread, often toasted or baked, that forms the base for a grilled cheese topping in soups such as this one." }
+  ],
+  "techniqueSlugs": ["caramelising-onions"],
+  "criticalTechniques": ["caramelising-onions"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "French onion soup asks for patience above everything else. The onions need a full hour in the pot before they are ready: collapsing, darkening, then turning a deep mahogany brown that sweetens and concentrates into something almost meaty. Rush that stage and you have onion soup; wait for it and you have something entirely different." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "croûte", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "croute" } }] },
+          { "type": "text", "text": " goes on last, under the grill: a thick slice of toast holding a thick layer of Gruyère that melts down into the broth at the edges. Eat it immediately, before the bread softens completely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 6, "unit": "each", "prepNote": "halved and thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1200, "unit": "ml", "prepNote": "good quality", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baguette", "amount": 1, "unit": "each", "prepNote": "cut into 8 thick slices", "isOptional": false, "groupLabel": "For the croûtes" },
+            { "ingredientSlug": "gruyere", "amount": 150, "unit": "g", "prepNote": "coarsely grated", "isOptional": false, "groupLabel": "For the croûtes" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a wide, heavy-based pan so the onions spread out and colour evenly. Ovenproof soup bowls make the grilling easier, but any deep bowls will work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Caramelise the onions" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large, heavy-based pan over a medium heat. Add {{onion}} onions and a large pinch of salt. Stir to coat in the butter." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Cook over a medium-low heat, stirring every 5 to 8 minutes, for 50 to 60 minutes. The onions will first soften and give off liquid (do not rush this stage with higher heat), then slowly " },
+                  { "type": "text", "text": "caramelise", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramelise" } }] },
+                  { "type": "text", "text": " to a deep golden brown. The base of the pan will colour and develop dark patches: that is fine and is part of the flavour." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of sliced garlic, {{thyme}} of thyme, and {{bay-leaves}} of bay. Cook for 2 more minutes." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the stock and simmer" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pour in {{stock-beef}} of beef stock. Scrape the base of the pan with a spoon to " },
+                  { "type": "text", "text": "deglaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze-fos" } }] },
+                  { "type": "text", "text": " all the dark, sticky bits. Bring to a gentle simmer." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Simmer uncovered for 15 minutes. Fish out the thyme stalks and bay leaves. Taste and adjust salt." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the croûtes and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the grill to its highest setting. Arrange the baguette slices on a baking sheet and toast under the grill for 2 minutes per side until golden." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle the hot soup into ovenproof bowls. Float 2 bread slices on top of each bowl, then pile {{gruyere}} of grated Gruyère generously over the bread. The cheese should cover the bread and hang over the edges." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Place the bowls under the grill for 3 to 4 minutes until the cheese is bubbling and beginning to brown in patches. Serve immediately, warning the bowls are very hot." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Onions are not dark enough after an hour",
+              "cause": "Heat was too low, or the pan was too crowded and the onions steamed rather than fried.",
+              "fix": "Increase the heat slightly and cook uncovered, stirring more frequently. The base of the pan should catch and colour: that is normal and wanted. Scrape and stir it in."
+            },
+            {
+              "symptom": "Soup tastes too sweet",
+              "cause": "The onions are very sweet varieties, or were caramelised more than needed.",
+              "fix": "Add a small splash of red wine vinegar or a teaspoon of Worcestershire sauce to the finished broth. Both cut through the sweetness."
+            },
+            {
+              "symptom": "Cheese slides off the bread into the soup",
+              "cause": "The bread was not toasted firmly enough first, or the cheese was added too thickly on one side.",
+              "fix": "Toast the bread until properly crisp before grilling with the cheese. Pile the cheese in the centre and press it lightly so it adheres."
+            },
+            {
+              "symptom": "Bowls are not ovenproof",
+              "cause": "Standard bowls crack under the grill heat.",
+              "fix": "Use deep ceramic bowls labelled oven-safe, or assemble the croûtes on a separate baking tray and slide them onto the soup just before serving."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "French onion soup is the food of Les Halles, the old Paris market district, where it was eaten by porters in the small hours after a night's work. The recipe in Escoffier is spare: onions, broth, bread, cheese. Nothing has needed adding since. It appears in every French bistro in the world because it is one of those dishes that delivers something a kitchen can't fake: the long labour of a slowly caramelised pan is visible in every spoonful." }
+        ]
+      }
+    ]
+  }
+}

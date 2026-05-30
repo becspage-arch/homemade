@@ -1,0 +1,196 @@
+{
+  "slug": "cream-of-cauliflower-soup",
+  "title": "Cream of cauliflower soup",
+  "subtitle": "Silky, mild, and very good with a little blue cheese",
+  "excerpt": "Cauliflower sweated with butter and onion, simmered in stock, and blended with cream until very smooth. A mild, velvety soup that is easy to make and difficult to improve on. Good on its own or finished with crumbled Stilton.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cream of cauliflower soup is a standard of British and French home cooking. No single canonical source; technique drawn from standard sweating and blending methods common across both traditions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the cream. Reheat gently and stir in cream when hot. Keeps for up to three months.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a large stockpot.",
+    "makeAheadNotes": "Make up to two days ahead without cream. Reheat and add cream just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sweat-veg-lid", "term": "Sweating", "definition": "Cooking vegetables gently in fat with a lid on, or over a low heat, until soft but not coloured. The moisture released steams the vegetables from within. Used as the base-building step in many soups." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cauliflower is an excellent blending vegetable: it breaks down easily, produces a silky texture, and has a mild flavour that carries cream well. The key is the initial " },
+          { "type": "text", "text": "sweating", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sweat-veg-lid" } }] },
+          { "type": "text", "text": " stage: cook the onion and cauliflower in butter until both are completely soft before any stock goes in. This gives the soup its base flavour. The cream is added only at the end, after blending, to keep the texture light." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cauliflower", "amount": 1, "unit": "each", "prepNote": "about 800 g, broken into florets", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 800, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "plus extra to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": "freshly grated", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "stilton", "amount": 60, "unit": "g", "prepNote": "crumbled, to serve (optional)", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the vegetables" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} onion with a generous pinch of salt and cook for 6 minutes until soft. Add the {{garlic}} of garlic and cook for 1 minute." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{cauliflower}} of cauliflower florets and stir to coat in the butter. Cover and cook for 8 minutes, stirring once or twice, until the cauliflower begins to soften." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and blend" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pour in {{stock-vegetable}} of hot stock. Bring to a simmer and cook uncovered for 15 minutes until the cauliflower is completely tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Blend until smooth. Stir in {{double-cream}} of cream. Season with salt and, if using, {{nutmeg}} of freshly grated nutmeg." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a swirl of cream and, if using, scatter {{stilton}} of crumbled Stilton over each bowl." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is thin and watery",
+              "cause": "Too much stock for the volume of cauliflower, or the cauliflower was a small head.",
+              "fix": "Start with 700 ml of stock and add more only after blending. A thick, creamy consistency is the goal. Simmer uncovered for a few extra minutes to reduce if too thin."
+            },
+            {
+              "symptom": "Texture is grainy",
+              "cause": "The cauliflower was not cooked tender enough before blending.",
+              "fix": "Simmer until a floret falls apart when pressed with a spoon. Under-cooked cauliflower leaves a slightly grainy texture in the blended soup."
+            },
+            {
+              "symptom": "Soup is grey-tinged rather than cream-coloured",
+              "cause": "The cauliflower or onion took on some colour during sweating.",
+              "fix": "Keep the heat low throughout. No browning at any stage. A white, ivory result needs gentle cooking from start to finish."
+            },
+            {
+              "symptom": "Flavour is very mild and flat",
+              "cause": "Cauliflower is a mild vegetable; the soup needs seasoning at every stage.",
+              "fix": "Season with salt at the sweating stage, taste again after blending, and again after adding the cream. Nutmeg is a traditional lift. Stilton crumbled in at the end adds a strong counterpoint."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cream of cauliflower soup sits in the same family as cream of broccoli and cream of leek: simple British puréed soups built on a buttered vegetable base. The Stilton option turns it into a version of the classic British pairing of cauliflower and strong cheese. Both are at home on a weekday table or at the start of a dinner, with bread and good butter alongside." }
+        ]
+      }
+    ]
+  }
+}
