@@ -1,0 +1,166 @@
+{
+  "slug": "four-shaft-turned-twill",
+  "title": "Four-shaft turned twill",
+  "subtitle": "Threading and treadling a turned twill on a four-shaft loom to produce a reversible cloth with diagonal ribs that rotate across the width",
+  "excerpt": "Turned twill uses a standard straight-draw threading and a rotating treadling sequence to produce diagonal ribs that change direction at regular intervals across the cloth. The result is a visually complex surface from a simple four-shaft setup, equally attractive on both sides of the cloth.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Four-shaft turned twill threading and treadling synthesised from general four-shaft weave structure references. Turned twill is a standard structure in weaving textbooks including Ashford and Tovey.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "twill",
+      "term": "Twill",
+      "definition": "A weave structure in which the weft interlaces with the warp in a stepping diagonal pattern, producing diagonal ribs on the cloth surface."
+    },
+    {
+      "slug": "turned-twill",
+      "term": "Turned twill",
+      "definition": "A twill variation in which the diagonal rib direction reverses at regular intervals, either across the width (by changing the threading) or along the length (by changing the treadling). On a four-shaft loom, the treadling reversal creates a herringbone-like pattern."
+    },
+    {
+      "slug": "treadling",
+      "term": "Treadling",
+      "definition": "The sequence in which treadles are pressed during weaving. The treadling sequence determines the structure of the cloth, independently of the threading."
+    },
+    {
+      "slug": "straight-draw",
+      "term": "Straight draw",
+      "definition": "A threading sequence in which successive warp ends are threaded through heddles 1, 2, 3, 4, 1, 2, 3, 4, repeating across the full warp width. Straight draw is the default threading for most four-shaft structures."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "turned twill four shaft loom",
+    "herringbone twill weaving",
+    "four shaft twill reversal",
+    "reversible twill floor loom"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard " },
+          {
+            "type": "text",
+            "text": "twill",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twill" } }]
+          },
+          { "type": "text", "text": " runs its diagonal in one direction across the cloth. A " },
+          {
+            "type": "text",
+            "text": "turned twill",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turned-twill" } }]
+          },
+          { "type": "text", "text": " reverses that diagonal at intervals, creating a V-shaped or chevron pattern from the same " },
+          {
+            "type": "text",
+            "text": "straight-draw",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "straight-draw" } }]
+          },
+          { "type": "text", "text": " threading by simply reversing the " },
+          {
+            "type": "text",
+            "text": "treadling",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treadling" } }]
+          },
+          { "type": "text", "text": " sequence after a set number of picks. This makes it accessible on any four-shaft loom without re-threading: only the order of treadle presses changes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Threading and tie-up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread the loom in a straight draw: shaft 1, shaft 2, shaft 3, shaft 4, repeating across the full warp width. Use a standard 2/2 twill tie-up on the treadles: treadle 1 lifts shafts 1 and 2, treadle 2 lifts shafts 2 and 3, treadle 3 lifts shafts 3 and 4, treadle 4 lifts shafts 4 and 1. This tie-up produces a 2/2 twill in which two warp ends are raised and two are lowered on each pick." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Wind and dress the warp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind a smooth yarn warp in a straight draw threading. For a balanced 2/2 twill, sett the warp at the same density as you would for plain weave in the same yarn: twill is more open than plain weave and a slightly closer sett than plain weave is often needed for a firm, balanced cloth. A good starting point for DK wool is 8 ends per cm. Dress and beam the loom as usual, then thread strictly in the sequence 1-2-3-4 repeating." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Weave the forward twill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treadle the forward sequence: 1, 2, 3, 4, 1, 2, 3, 4. Each pick moves one step to the right in the threading repeat, producing a right-diagonal rib. Weave this sequence for the desired interval: 8-12 picks per direction produces a clear V-point; 20+ picks produces a long diagonal before the reversal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Reverse the treadling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the turning point, reverse the treadling sequence without changing the threading: treadle 4, 3, 2, 1, 4, 3, 2, 1. This moves the diagonal step to the left, producing a mirror-image rib. The boundary between the forward and reverse sections creates the characteristic V-point of the turned twill. Continue reversing at the same interval throughout the cloth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Assess and adjust the sett" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After weaving 10 cm, cut a short sample and press it. A balanced 2/2 twill has equal diagonal ribs on both faces of the cloth: the warp ribs on the front match the weft ribs on the back. If the cloth is warp-faced (warp ribs dominate), open the sett by one end per cm. If it is weft-faced (weft ribs dominate), close the sett. Adjust before committing to the full length." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The V-point of the turned twill is not sharp or visible",
+              "cause": "The treadling reversal was not made at the correct sequence position",
+              "fix": "The reversal must happen at a treadle position that mirrors the last forward pick: if the last forward pick was treadle 3, the first reverse pick should be treadle 2. Always reverse from the immediately preceding pick."
+            },
+            {
+              "problem": "The diagonal rib runs in the same direction on both faces rather than mirroring",
+              "cause": "The tie-up is wrong for a 2/2 balanced twill",
+              "fix": "Check the tie-up: treadle 1 must lift shafts 1 and 2 only, treadle 2 shafts 2 and 3 only, treadle 3 shafts 3 and 4 only, treadle 4 shafts 4 and 1 only. Correct any crossed treadle cords."
+            },
+            {
+              "problem": "The cloth is warp-faced and the rib is invisible from the weft side",
+              "cause": "The sett is too close for the yarn weight",
+              "fix": "Re-sley the reed one dent wider and re-weave the sample. Continue opening the sett in small increments until both sides of the cloth show equal ribs."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
