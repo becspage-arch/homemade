@@ -1,0 +1,507 @@
+{
+  "slug": "crater-glaze-surface-texture",
+  "title": "Crater glaze surface texture",
+  "subtitle": "Using gas-producing additives to create a pitted, volcanic glaze surface at cone 6",
+  "excerpt": "Add silicon carbide grit or lithium carbonate to a base glaze to produce gas bubbles during firing; the gas release creates pitting and craters in the fired glaze surface. Cone 6 (1220 degrees C). Barium carbonate is toxic; this tutorial uses the safer lithium carbonate alternative. Mandatory respirator and gloves for all raw material handling.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "mid-fire-glaze-pre-mixed"
+  ],
+  "recipeTools": [
+    {
+      "slug": "pottery-brush-mop",
+      "isOptional": false
+    },
+    {
+      "slug": "banding-wheel",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-sponge",
+      "isOptional": false
+    },
+    {
+      "slug": "kiln-shelf",
+      "isOptional": false
+    },
+    {
+      "slug": "kiln-post",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "The first kiln firing (cone 06, approx 1000 degrees C) that hardens greenware into porous bisqueware"
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "Pyrometric measure of heat-work in a kiln. Cone 06 approx 1000 degrees C, cone 6 approx 1220 degrees C, cone 10 approx 1280 degrees C"
+    },
+    {
+      "slug": "glaze-firing",
+      "term": "Glaze firing",
+      "definition": "The second kiln firing that melts the glaze into a glassy coating and vitrifies the clay body; for cone 6 stoneware this occurs at approximately 1220 degrees C"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only: no sweeping, no dry sanding indoors."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Handle raw oxides and glaze additives with gloves and a respirator. Never use near food preparation. This tutorial uses lithium carbonate as the gas-producing additive rather than barium carbonate. Barium carbonate is acutely toxic; lithium carbonate is a safer alternative for the same gas-release effect, though it is not entirely without hazard: wear gloves and a P100 respirator when measuring and mixing lithium carbonate. Never substitute barium carbonate without significantly enhanced containment measures."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ensure adequate ventilation when firing: a downdraft vent or open window with an extractor. Wear welder's shade-5 glasses when peephole-watching at high temperatures. Do not open a hot kiln below 80 degrees C. Keep a Class A fire extinguisher within reach."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A crater glaze surface is created by incorporating a gas-releasing additive into a base glaze. As the kiln reaches peak temperature and the glaze is molten, the additive decomposes and releases gas bubbles that rise through the liquid glaze. When the kiln cools, the glaze surface captures the burst bubble marks as pits, craters, and an overall textured, volcanic appearance. The effect is unpredictable in exact detail but reliably textured. Silicon carbide grit and lithium carbonate are the safest practical additives for cone 6 (1220 degrees C). This tutorial uses lithium carbonate for the primary crater effect. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glaze-firing",
+                  "label": "glaze firing"
+                }
+              }
+            ],
+            "text": "glaze firing"
+          },
+          {
+            "type": "text",
+            "text": " to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cone",
+                  "label": "cone"
+                }
+              }
+            ],
+            "text": "cone"
+          },
+          {
+            "type": "text",
+            "text": " 6 (1220 degrees C) is required for the effect to develop."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            {
+              "name": "Bisque-fired smooth stoneware piece",
+              "quantity": "one piece",
+              "slug": "stoneware-smooth",
+              "isOptional": false
+            },
+            {
+              "name": "Mid-fire base glaze, pre-mixed (a pale or neutral base shows the crater texture most clearly)",
+              "quantity": "enough for two to three brush coats",
+              "slug": "mid-fire-glaze-pre-mixed",
+              "isOptional": false
+            },
+            {
+              "name": "Lithium carbonate powder (gas-producing additive, safer alternative to barium carbonate)",
+              "quantity": "3 to 5 g per 100 ml of glaze",
+              "slug": null,
+              "isOptional": false
+            },
+            {
+              "name": "Silicon carbide grit 60-mesh (alternative gas-producing additive)",
+              "quantity": "2 to 4 g per 100 ml of glaze",
+              "slug": null,
+              "isOptional": true
+            }
+          ],
+          "tools": [
+            {
+              "name": "Mop brush",
+              "slug": "pottery-brush-mop",
+              "isOptional": false
+            },
+            {
+              "name": "Banding wheel",
+              "slug": "banding-wheel",
+              "isOptional": false
+            },
+            {
+              "name": "Pottery sponge",
+              "slug": "pottery-sponge",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln shelf",
+              "slug": "kiln-shelf",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln posts",
+              "slug": "kiln-post",
+              "isOptional": false
+            },
+            {
+              "name": "Respiratory protection: P100 respirator (mandatory)",
+              "slug": null,
+              "isOptional": false
+            },
+            {
+              "name": "Nitrile gloves (mandatory for mixing)",
+              "slug": null,
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How crater glazes work"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lithium carbonate begins to decompose above approximately 700 degrees C, releasing carbon dioxide gas. When this decomposition occurs in a glaze that has already melted into a liquid, the gas forms bubbles that rise through the molten glaze. At peak temperature (approximately 1220 degrees C for cone 6), the glaze is sufficiently fluid that the bubbles break the surface and form craters. As the kiln cools and the glaze stiffens, the craters are frozen in place. The quantity of lithium carbonate and the viscosity of the base glaze control how large and numerous the craters are: a thin, fluid base glaze with more additive produces larger craters; a thick, stiff glaze with less additive produces finer pitting. Test firings are essential before applying the technique to finished pieces."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing the crater glaze"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put on gloves and the P100 respirator before opening the lithium carbonate. Decant 100 ml of the pre-mixed base glaze into a clean container."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Weigh 3 g of lithium carbonate powder and add it to the 100 ml of glaze. Stir thoroughly until no dry powder remains. The glaze will appear slightly thicker or cloudier than before addition; this is normal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Silicon carbide alternative: weigh 2 g of 60-mesh grit and add it instead of, or alongside, the lithium carbonate. Silicon carbide releases gas at high temperature and gives a coarser, more uneven crater surface. Stir before each brush load as the grit sinks quickly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Label the mixed crater glaze container clearly. Clean the mixing area with a damp cloth and dispose of the cloth or rinse it in the sink. Remove gloves only after the powder container is closed and wiped."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Test tile first"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before applying the crater glaze to a finished piece, always fire a test tile. Cut a flat tile from the same clay body, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisque",
+                  "label": "bisque"
+                }
+              }
+            ],
+            "text": "bisque"
+          },
+          {
+            "type": "text",
+            "text": " fire it, apply two coats of the mixed crater glaze, and fire to cone 6 (1220 degrees C). Examine the tile after firing: if no craters appear, increase the additive by 1 to 2 g per 100 ml. If the craters are very large or the glaze surface is rough and uneven where bubbles burst through, reduce the additive. This calibration step is the difference between a controlled technique and an unpredictable result on finished work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Applying to the piece"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wipe the bisqueware with a clean damp sponge and allow to dry for ten minutes. Apply two to three coats of the crater glaze with the mop brush, allowing each coat to dry before the next. Stir the glaze before each coat as the additives settle quickly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply an even coat thickness: thick areas produce deep, open craters; thin areas produce fine pitting. A consistent two-coat application gives the most predictable result."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Clean the foot-ring of any glaze. Place the piece on a dedicated kiln shelf with kiln posts: crater glazes can run slightly as the craters burst, and should not be loaded near other pieces. Leave at least 50 mm clearance between the piece and any adjacent work."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fire to cone 6 (1220 degrees C). Allow the kiln to cool fully before opening."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Safety note on food use"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crater glaze surfaces are textured and may not be fully smooth after firing. Pieces intended for food use should have the interior glazed with a standard non-crater food-safe glaze. Apply the crater glaze to the exterior only of any food-contact piece."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Colour over craters: dry-brush a contrasting glaze or iron oxide wash over the fired surface and re-fire to add colour inside the pits."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Partial coverage: apply crater glaze in a band across the middle and standard glaze above and below to show both surface types side by side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "No craters formed after firing",
+              "cause": "Too little additive in the glaze, or the base glaze was too stiff to allow bubbles to reach the surface",
+              "fix": "Increase lithium carbonate to 5 g per 100 ml. Use a more fluid base glaze. Always test-fire before applying to finished work."
+            },
+            {
+              "problem": "Glaze ran and pooled at the base of the piece",
+              "cause": "Additive increased the fluidity of the base glaze significantly; the applied coat was too thick",
+              "fix": "Reduce the coat thickness to one to two thin layers. Apply wax resist to the lower 10 mm of the form to protect the foot-ring area."
+            },
+            {
+              "problem": "Craters very large and rough, not smooth-edged",
+              "cause": "Too much silicon carbide or lithium carbonate; base glaze was too fluid and the craters did not heal at the edges during cooling",
+              "fix": "Reduce the additive to 2 g per 100 ml and test again. A stiffer base glaze will produce smaller craters with smoother edges."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "slug": "firing-test-tiles-systematic-approach",
+  "title": "Firing Test Tiles: A Systematic Approach",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "INTERMEDIATE",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "glossaryTerms": [
+    {
+      "term": "Test tile",
+      "definition": "A small flat or stepped piece of clay used to test how a glaze behaves at a specific temperature. Tiles are cheaper than pots and stack efficiently in the kiln.",
+      "slug": "test-tile"
+    },
+    {
+      "term": "Glaze matrix",
+      "definition": "A grid of test combinations where one variable (such as base glaze) is tested against a second variable (such as oxide addition or layered overglaze), with each cell recording the outcome.",
+      "slug": "glaze-matrix"
+    },
+    {
+      "term": "Cone 6",
+      "definition": "A pyrometric cone that deforms at approximately 1220 degrees C. The standard cone for mid-fire stoneware in an electric kiln.",
+      "slug": "cone-6"
+    },
+    {
+      "term": "Glaze application thickness",
+      "definition": "The depth of the dry glaze coat on bisqueware, typically measured by scratching the surface and inspecting the layer. Most brush-on and dipping glazes perform best at 1-2 mm dry thickness.",
+      "slug": "glaze-application-thickness"
+    },
+    {
+      "term": "Crawling",
+      "definition": "A glaze defect where the melted glaze pulls back from parts of the surface during firing, leaving bare clay patches. Often caused by over-thick application or dusty bisqueware.",
+      "slug": "crawling"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A systematic set of "
+          },
+          {
+            "type": "text",
+            "text": "test tiles",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "test-tile"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the fastest way to build a reliable glaze reference. Instead of guessing how glazes interact, fire a "
+          },
+          {
+            "type": "text",
+            "text": "glaze matrix",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glaze-matrix"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": a grid of numbered tiles covering every combination you want to know. Fire them in one cone 6 (1220 degrees C) load, record outcomes in a firing log, and you have a reference that never lies. This tutorial covers making the tiles, planning a matrix, applying glazes, and logging results."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "warning",
+          "title": "Studio safety",
+          "body": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            {
+              "name": "Stoneware smooth clay (for making tiles)",
+              "quantity": "500 g",
+              "slug": "stoneware-smooth",
+              "isOptional": false
+            },
+            {
+              "name": "Base glazes (2-4 to test)",
+              "quantity": "whatever is in the studio",
+              "slug": null,
+              "isOptional": false
+            },
+            {
+              "name": "Oxide or stain additions (cobalt, iron, copper)",
+              "quantity": "small amounts",
+              "slug": null,
+              "isOptional": true
+            },
+            {
+              "name": "Wax resist (for tile feet)",
+              "quantity": "small amount",
+              "slug": null,
+              "isOptional": false
+            },
+            {
+              "name": "Underglaze or iron oxide pencil (for numbering)",
+              "quantity": "one colour",
+              "slug": null,
+              "isOptional": false
+            }
+          ],
+          "tools": [
+            {
+              "name": "Pottery rolling pin",
+              "slug": "pottery-rolling-pin",
+              "isOptional": false
+            },
+            {
+              "name": "Needle tool",
+              "slug": "needle-tool",
+              "isOptional": false
+            },
+            {
+              "name": "Fettling knife",
+              "slug": "fettling-knife",
+              "isOptional": false
+            },
+            {
+              "name": "Pottery brush (liner, for glaze application)",
+              "slug": "pottery-brush-liner",
+              "isOptional": false
+            },
+            {
+              "name": "Pottery brush (mop, for kiln wash)",
+              "slug": "pottery-brush-mop",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln shelf",
+              "slug": "kiln-shelf",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln post",
+              "slug": "kiln-post",
+              "isOptional": false
+            },
+            {
+              "name": "Scoring tool",
+              "slug": "scoring-tool",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparation"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Decide on your matrix before making any tiles. A simple starting matrix tests 4 base glazes against 3 treatments (single layer, double layer, layered with a second glaze) - that gives 12 cells. Sketch a grid on paper, assign a number to each cell, and write the matrix in your firing log before you touch any clay. Knowing exactly how many tiles you need prevents waste."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Consider "
+          },
+          {
+            "type": "text",
+            "text": "glaze application thickness",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glaze-application-thickness"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " as a variable worth recording from the start. A tile that shows the same glaze applied at 1 mm versus 2 mm tells you more than two tiles with different glazes. Mark 'thin' and 'thick' directly on the tile with an underglaze pencil."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Steps"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll out a slab of stoneware smooth clay to 8 mm thickness using the rolling pin with guide sticks. Cut tiles to 8 x 5 cm using the fettling knife and a ruler. Make two or three extras to allow for breakage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pierce a hole at one corner of each tile using the needle tool while the clay is soft - this lets you hang fired tiles on a ring or string for storage. The hole should be 4-5 mm from the edge and large enough (at least 4 mm diameter) that it does not close up during drying and shrinkage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Score a horizontal line across the bottom quarter of each tile using the scoring tool. This divides the face into two zones: the larger upper zone for the glaze test, and a narrow lower strip left unglazed to show the raw fired clay body. The bare strip also helps you monitor "
+                  },
+                  {
+                    "type": "text",
+                    "text": "crawling",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "crawling"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " - if glaze pulls back past the scored line, the coat was too thick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Let tiles dry completely, then bisque fire to cone 06 (1000 degrees C) in a normal bisque load. After bisque, number each tile on the back with an underglaze pencil according to your matrix. The number survives the glaze firing and stays readable after use."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply wax resist to the bottom 5 mm of each tile's back face so the tile sits cleanly on the kiln shelf without sticking. Allow the wax to dry for 20 minutes before applying glaze to the front."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply glazes following your matrix. Use the liner brush for controlled, even coats. For a two-coat cell, let the first coat dry to touch (3-5 minutes) before adding the second. For a layered two-glaze cell, apply glaze A first and let it dry fully before applying glaze B over the top half only, so both the interaction zone and the base glaze alone are visible on the same tile."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Record the glaze number, glaze name, application method, and number of coats in the firing log for each tile number. Do this immediately after glazing while the information is in front of you - not after the firing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Load tiles on the kiln shelf standing upright against the back wall or propped against posts if necessary - tiles take up less floor space standing than lying flat. Leave 2-3 cm between tiles. Fire to "
+                  },
+                  {
+                    "type": "text",
+                    "text": "cone 6",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "cone-6"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " (1220 degrees C) using the studio's standard mid-fire programme."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After firing, photograph the complete tile set against a neutral background before separating them. Write observations in the firing log: colour, surface quality (matte / satin / glossy), flow, crawling, and any surprises. Staple or tape a printed photograph of the tile set to the firing log page."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What success looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each tile is clearly numbered, the matrix is recorded in the log, and every fired tile matches its entry. The log gives you a predict-then-verify record: you see what you expected and what surprised you. Over three or four firings, the log becomes a reliable guide to how your specific glazes behave in your specific kiln."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Glaze ran down and fused tile to shelf",
+              "cause": "Glaze applied too thickly or wax resist did not cover enough of the tile foot",
+              "fix": "Keep glaze at least 8 mm from the base, and extend the wax resist zone to cover the full back foot."
+            },
+            {
+              "problem": "Numbers burned off - tile is unidentifiable after firing",
+              "cause": "Underglaze pencil was covered by glaze on the back face",
+              "fix": "Number only the unglazed back face and keep the number in the bare strip area at the bottom, not the glazed zone."
+            },
+            {
+              "problem": "Crawling on several tiles in the same firing",
+              "cause": "Bisqueware had dust on the surface before glazing",
+              "fix": "Wipe bisqueware tiles with a damp sponge and let fully dry before applying glaze."
+            },
+            {
+              "problem": "Two-glaze layered cell looks identical to single-glaze cell",
+              "cause": "The base glaze is opaque and the layered overglaze is thin - the base has completely covered the interaction",
+              "fix": "Apply a thicker coat of overglaze, or test clear glaze over opaque rather than opaque over opaque."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

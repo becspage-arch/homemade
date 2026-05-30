@@ -1,0 +1,356 @@
+{
+  "slug": "bisque-firing-common-problems",
+  "title": "Bisque Firing: Common Problems",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "BEGINNER",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "glossaryTerms": [
+    {
+      "term": "Bisque firing",
+      "definition": "The first kiln firing, taken to roughly cone 06-04 (1000-1060 degrees C), that converts raw clay into a porous, hard ceramic. Bisqueware accepts glaze.",
+      "slug": "bisque-firing"
+    },
+    {
+      "term": "Quartz inversion",
+      "definition": "A crystal-structure change that occurs in silica at 573 degrees C during heating and cooling. Rapid temperature change through this point can crack clay.",
+      "slug": "quartz-inversion"
+    },
+    {
+      "term": "Bone dry",
+      "definition": "The state of unfired clay when all free water has evaporated. The clay is pale, cool to the touch, and no longer shrinks. It must reach this state before going into the kiln.",
+      "slug": "bone-dry"
+    },
+    {
+      "term": "Kiln furniture",
+      "definition": "Refractory shelves, posts, and props used to support and stack pottery inside the kiln.",
+      "slug": "kiln-furniture"
+    },
+    {
+      "term": "Bloating",
+      "definition": "A defect in fired clay where gas trapped inside the body causes blisters or swollen bubbles. Usually caused by firing too fast or by organic material burning out too rapidly.",
+      "slug": "bloating"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The first kiln firing, the "
+          },
+          {
+            "type": "text",
+            "text": "bisque firing",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisque-firing"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", converts fragile raw clay into stable ceramic that can be handled, glazed, and fired again. Most beginners lose their first few pieces not to poor making skills but to avoidable bisque problems: cracking from moisture, "
+          },
+          {
+            "type": "text",
+            "text": "bloating",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bloating"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " from fast firing, and contaminated kiln shelves from loading errors. This tutorial explains what causes each failure, how to spot it, and what to do differently next time. No special equipment is required beyond access to a kiln and a basic understanding of how to load it safely."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "warning",
+          "title": "Studio safety",
+          "body": "Silica dust is the chronic studio hazard. Silicosis is irreversible. Mix wet whenever possible. Wear a P100 respirator any time raw glaze powders are open. Wet-clean only."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            {
+              "name": "Stoneware smooth clay pieces (bone-dry)",
+              "quantity": "as many as fit in kiln load",
+              "slug": "stoneware-smooth",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln wash (zirconium or alumina-based)",
+              "quantity": "enough to coat shelves",
+              "slug": null,
+              "isOptional": false
+            }
+          ],
+          "tools": [
+            {
+              "name": "Kiln shelf",
+              "slug": "kiln-shelf",
+              "isOptional": false
+            },
+            {
+              "name": "Kiln post",
+              "slug": "kiln-post",
+              "isOptional": false
+            },
+            {
+              "name": "Pottery brush (mop, for applying kiln wash)",
+              "slug": "pottery-brush-mop",
+              "isOptional": false
+            },
+            {
+              "name": "Needle tool (for checking dryness)",
+              "slug": "needle-tool",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparation"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check that every piece is completely "
+          },
+          {
+            "type": "text",
+            "text": "bone dry",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bone-dry"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before loading. Press the piece against your inner wrist or cheek: if it feels even slightly cool, moisture is still present. Pale, uniform colour and no cool sensation are the two reliable tests. Pieces that feel cool to the cheek should go back on the shelf for at least another 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check the "
+          },
+          {
+            "type": "text",
+            "text": "kiln furniture",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kiln-furniture"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before loading. Shelves should be coated with kiln wash on the top surface. Any bare patches in the kiln wash on a previously-used shelf should be touched up before a glaze firing - though for bisque, the risk is lower since raw clay does not stick the way glaze does. Set posts vertically and ensure shelves sit level."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Problem 1: Cracking from moisture"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Moisture crack is the most common bisque failure. The tell-tale signs are long, clean cracks that often follow the join lines of coil builds or slab seams, or cracks that radiate from the base of thrown forms. The cause is trapped water turning to steam as the kiln heats up. Steam expands rapidly and, if the clay cannot release it fast enough, the pressure splits the wall."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prevention is straightforward: never load wet or even slightly damp work. If in doubt, place the piece in the kiln for an hour at 80-100 degrees C with the lid propped open 5 cm before beginning the full programme. This candling period drives off any residual moisture before the fast heat begins."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Problem 2: Bloating at the quartz inversion"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bloating presents as raised bubbles or blistered patches on the surface of fired pieces, or in severe cases as a split or burst wall. The cause is usually firing too quickly through the "
+          },
+          {
+            "type": "text",
+            "text": "quartz inversion",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "quartz-inversion"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " at 573 degrees C. At this temperature, silica crystals abruptly change structure and the clay body expands slightly. If the ramp rate is too fast, the outer surface heats ahead of the interior, and the stress differential causes blistering or cracking."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A safe bisque programme holds or slows the ramp rate between 500 and 620 degrees C. A ramp of 60-80 degrees C per hour through this zone is cautious and effective. Check the programmed firing schedule on the kiln controller and add a slow segment if this range is not already covered. The cooling phase requires the same care: do not open the kiln until the temperature reads below 120 degrees C, and do not rush the cooling from 620 degrees C downward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Problem 3: Kiln furniture touching glaze"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is not strictly a bisque problem - bisqueware has no glaze - but the loading habit that causes it starts here. Glazed pieces fired with their walls or rims touching a kiln shelf or post will fuse to the furniture and break when extracted. The cause is loading pieces too close to shelves and posts, or stacking bisqueware so tightly that when you later re-load the same shelf with glazed work, you repeat the habit without thinking."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The rule for glaze firings: leave at least 5 mm of clear space between any glazed surface and any kiln furniture. Wipe the bottom 5 mm of each glazed piece clean of glaze before it goes in. For bisque loads, the same spacing habit is worth practising even though the stakes are lower - it trains the eye for when it matters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What success looks like"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A well-bisqued piece is pale (earthier than raw clay), slightly chalky to the touch, and rings with a clear note when tapped. There are no cracks, blisters, or surface distortion. The piece absorbs a drop of water within a second or two, showing it is porous and ready to take glaze."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Long crack along a coil join or slab seam",
+              "cause": "Residual moisture at the join turned to steam during firing",
+              "fix": "Extend drying time and use the cheek test before loading. A candling period (lid propped at 100 degrees C for one hour) also helps."
+            },
+            {
+              "problem": "Raised blisters or bubbles on the surface",
+              "cause": "Firing ramp through 573 degrees C was too fast",
+              "fix": "Reduce the ramp rate to 60-80 degrees C per hour between 500 and 620 degrees C in the kiln programme."
+            },
+            {
+              "problem": "Piece rings with a dull thud, not a clear note",
+              "cause": "Bisque temperature was too low - clay is not fully sintered",
+              "fix": "Check the target cone: bisque for stoneware should reach cone 06 (1000 degrees C) minimum."
+            },
+            {
+              "problem": "Piece stuck to shelf after firing",
+              "cause": "Kiln wash missing or worn away from that area of the shelf",
+              "fix": "Recoat the bare patch with fresh kiln wash before the next firing."
+            },
+            {
+              "problem": "Hairline crack in the base of a thrown piece",
+              "cause": "Base was left too thick relative to the walls, creating uneven drying and a stress point",
+              "fix": "Compress the base thoroughly at throwing stage and keep wall and base thickness consistent - aim for 6-8 mm throughout."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
