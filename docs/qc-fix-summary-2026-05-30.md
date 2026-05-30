@@ -1513,3 +1513,55 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 17:22:07
+
+Generated: 2026-05-30T17:22:07.233Z
+
+Processed: 40
+PASS: 40
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 5 |
+
+
+---
+
+## Run at 17:23:29
+
+Generated: 2026-05-30T17:23:29.469Z
+
+Processed: 40
+PASS: 40
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 17:25:39
+
+Generated: 2026-05-30T17:25:39.239Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

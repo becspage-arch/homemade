@@ -1,16 +1,10 @@
 {
-  "generatedAt": "2026-05-30T16:15:24.617Z",
-  "totalScanned": 5591,
+  "generatedAt": "2026-05-30T17:26:36.177Z",
+  "totalScanned": 5618,
   "passCount": 0,
-  "blockCount": 154,
+  "blockCount": 142,
   "warnOnlyCount": 0,
   "perCategory": {
-    "natural-home": {
-      "total": 14,
-      "pass": 0,
-      "block": 14,
-      "warnOnly": 0
-    },
     "sustainability": {
       "total": 39,
       "pass": 0,
@@ -41,6 +35,12 @@
       "block": 7,
       "warnOnly": 0
     },
+    "natural-home": {
+      "total": 2,
+      "pass": 0,
+      "block": 2,
+      "warnOnly": 0
+    },
     "pottery-ceramics": {
       "total": 11,
       "pass": 0,
@@ -49,35 +49,10 @@
     }
   },
   "perRuleKind": {
-    "hero-missing": 12,
-    "grade-level-strict": 169,
-    "voice-violation": 149
+    "voice-violation": 136,
+    "grade-level-strict": 168
   },
   "verdicts": [
-    {
-      "slug": "apothecary-soy-candle-herbal",
-      "tutorialId": "cmpsguvvk0000wkv4ktqcesdw",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:09:27.863Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "This candle uses a tall apothecary-style glass jar to show off layers of dried herbs and botanicals fixed against the inside of the glass. T"
-        }
-      ]
-    },
     {
       "slug": "battery-capacity-degradation",
       "tutorialId": "cmprmms7p0002rov4a9rprkvo",
@@ -210,35 +185,6 @@
           "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[8]",
           "snippet": "If overstocked, reduce animal numbers, bring in supplementary hay or silage, or move animals to a different area. A severely poached paddock"
-        }
-      ]
-    },
-    {
-      "slug": "carrot-cold-process-soap",
-      "tutorialId": "cmpseafk40000t8v40jmldoc3",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T14:01:52.102Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[7] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[14] > text"
         }
       ]
     },
@@ -873,23 +819,6 @@
       ]
     },
     {
-      "slug": "mango-body-butter",
-      "tutorialId": "cmpshli700000ckv4tc7yyvb4",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:29:59.922Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "mcs-installer-selection",
       "tutorialId": "cmprmmg8x0000jwv4e2epeal8",
       "type": "TECHNIQUE",
@@ -1270,29 +1199,6 @@
       ]
     },
     {
-      "slug": "papaya-cold-process-soap",
-      "tutorialId": "cmpsfb21e0000ckv42dyqn6xl",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T14:28:09.366Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[5] > text"
-        }
-      ]
-    },
-    {
       "slug": "paper-clay-pressed-flower-frame",
       "tutorialId": "cmprht7xm0000zov4kbqnem2l",
       "type": "PATTERN",
@@ -1457,23 +1363,6 @@
       ]
     },
     {
-      "slug": "pressed-flower-soy-candle",
-      "tutorialId": "cmpsguszq00009kv4mx30p10c",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:09:23.467Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "preventing-egg-eating-by-hens",
       "tutorialId": "cmps6ipft0002d8v44c21xm0h",
       "type": "TECHNIQUE",
@@ -1496,35 +1385,6 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[3] > listItem[3] > paragraph[0]",
           "snippet": "Overcrowding or boredom: hens with insufficient space and enrichment explore and peck at anything in the box."
-        }
-      ]
-    },
-    {
-      "slug": "pumice-gardeners-scrub-bar",
-      "tutorialId": "cmpsejyem0000zgv4ulvve2oz",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T14:01:55.264Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[5] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[12] > text"
         }
       ]
     },
@@ -1651,35 +1511,6 @@
           "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Rabbit sore hocks: recognition and management go here."
-        }
-      ]
-    },
-    {
-      "slug": "red-clay-cold-process-soap",
-      "tutorialId": "cmpsfazsh000058v40wfqbtdw",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T14:28:05.018Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[5] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[10] > text"
         }
       ]
     },
@@ -1927,69 +1758,6 @@
       ]
     },
     {
-      "slug": "soy-candle-amber-sandalwood",
-      "tutorialId": "cmpshlfwq0000o4v4ctoodl0b",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:29:55.689Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[6] > text"
-        }
-      ]
-    },
-    {
-      "slug": "soy-candle-black-fig-tea",
-      "tutorialId": "cmpshl6wn00009ov44jadjiio",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:29:44.059Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "soy-candle-patchouli-orange",
-      "tutorialId": "cmpshla7z0000u8v4ws5mrgqo",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:29:48.075Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[6] > text"
-        }
-      ]
-    },
-    {
       "slug": "soy-candle-rose-geranium",
       "tutorialId": "cmps3uic20001b8v4s2zs1xw2",
       "type": "RECIPE",
@@ -2005,35 +1773,6 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "True rose essential oil is one of the most expensive in aromatherapy and performs poorly in candle wax -- most of its character evaporates d"
-        }
-      ]
-    },
-    {
-      "slug": "soy-candle-white-musk",
-      "tutorialId": "cmpshldjx0000acv40541gzm5",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T15:29:51.864Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[6] > text"
         }
       ]
     },
@@ -3874,35 +3613,6 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[12]",
           "snippet": "Written for homemade.education as a way in to the money section of the Mindset library."
-        }
-      ]
-    },
-    {
-      "slug": "white-kaolin-cold-process-soap",
-      "tutorialId": "cmpsfaxjn0000rsv4fpkql3kx",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T14:28:00.318Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[5] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[12] > text"
         }
       ]
     },
