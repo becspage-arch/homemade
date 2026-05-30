@@ -1,0 +1,189 @@
+{
+  "slug": "replacing-an-immersion-heater-element",
+  "tutorialId": "cmpsr0i630001owv42mgmftqg",
+  "capturedAt": "2026-05-30T19:37:54.791Z",
+  "preFix": {
+    "title": "Replacing an immersion heater element",
+    "subtitle": "Remove a failed heating element and fit a new one in a vented hot water cylinder",
+    "excerpt": "How to replace a failed immersion heater element in a vented copper hot water cylinder, covering how to isolate the electrical supply and drain the cylinder to the element boss level, unscrew the old element, fit a new one, and restore supply.",
+    "sourceNotes": "BS 1566: copper indirect cylinders for domestic purposes. CIPHE Plumbers Handbook. IET Wiring Regulations BS 7671 (18th edition). Cassell's Cyclopaedia of Mechanics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A failed immersion element either trips the MCB repeatedly or stops heating the cylinder. To confirm failure, check resistance across the element terminals with the multimeter. A sound 3 kW element reads about 19 ohms. An open-circuit reading means the wire has burned through. The replacement must match the boss thread and reach the correct depth in the cylinder. Measure the old element before ordering.",
+              "type": "text"
+            },
+            {
+              "text": "boss",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpsr0i3x0000owv45ncxst8g"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " thread and reach the correct depth in the cylinder, measure the length of the old element before ordering.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you will need: materials",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Replacement immersion heater element (matching thread size, length, and wattage). Fibre sealing washer for the element thread (usually supplied with the element). PTFE paste or Boss White thread sealant. A large flat-bladed immersion heater spanner (the boss requires a spanner in the region of 80 mm across flats), hire or borrow if not owned.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, isolate the electrical supply",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Switch off the immersion heater at the wall timer or isolator switch, then switch off the MCB for the immersion circuit at the consumer unit. Lock the MCB off or post a warning notice. Use the voltage tester confirmed live on the proving unit, then test all terminals at the immersion heater connection box, both line and neutral must read dead before proceeding. Do not work on the electrical connections until the circuit is confirmed dead.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, drain the cylinder to below the element boss",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Connect a hose to the drain cock on the cylinder (usually a small brass valve near the base) and run it to a drain or outside. Open the drain cock. Open the lowest hot tap in the house to break the siphon. For a top-entry element, the cylinder must be fully drained; for a side-entry element, drain only to below the boss level. When water stops flowing, close the cold feed valve above the cylinder.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, remove the old element and fit the new one",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Disconnect the wires from the element terminals and note or photograph their positions. Unscrew the element from the boss using the immersion heater spanner, turning anti-clockwise. Some elements are very tight from scale build-up; firm steady pressure on a long-handled spanner is more effective than sharp force. Remove the old fibre washer and any scale from the boss thread. Apply PTFE paste to the new element thread, fit the new fibre washer, and screw the new element in clockwise by hand until it seats, then tighten with the spanner. Do not overtighten; the fibre washer compresses progressively, firm and snug is correct.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, refill, restore supply, and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Open the cold feed valve and allow the cylinder to refill. Open the hot taps in the house to purge air until water runs steadily. Close all taps. Check the element boss for any weeping. Reconnect the electrical supply wires in the same positions as the original, close the connection box, and switch the MCB back on. The element should begin heating; check with the multimeter that the circuit is drawing current.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Drain the cylinder again to below the boss level. Remove the element and check that the washer is flat and unbroken. Refit and tighten more firmly.",
+                "cause": "The fibre washer was not seated correctly, or the element was not tightened sufficiently.",
+                "symptom": "Water weeps from the element boss after refilling"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Switch off and test dead. Check all wire connections match the original layout. Confirm the new element is not short-circuiting by testing resistance across the terminals — it should read approximately 19 ohms for a 3 kW element.",
+                "cause": "A wiring connection is incorrect, or the new element is faulty.",
+                "symptom": "MCB trips immediately when the circuit is restored"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[2] > text"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > heading[9] > text"
+    }
+  ]
+}

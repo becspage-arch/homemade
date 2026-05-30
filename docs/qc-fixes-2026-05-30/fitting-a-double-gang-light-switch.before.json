@@ -1,0 +1,190 @@
+{
+  "slug": "fitting-a-double-gang-light-switch",
+  "tutorialId": "cmpsr0u7k0001p8v4wiieisj1",
+  "capturedAt": "2026-05-30T19:37:50.340Z",
+  "preFix": {
+    "title": "Fitting a double-gang light switch",
+    "subtitle": "Replace a single switch plate with a double-gang to control two lighting circuits",
+    "excerpt": "How to replace a single-gang light switch with a double-gang plate to control two separate lighting circuits from the same wall position, covering how to identify the cables, connect to the new plate, and check the back box depth.",
+    "sourceNotes": "IET Wiring Regulations BS 7671 (18th edition). IET On-Site Guide. Cassell's Cyclopaedia of Mechanics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A ",
+              "type": "text"
+            },
+            {
+              "text": "double-gang switch",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpsr0u5o0000p8v4uiejwrm5"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " requires two switch cables at the back box, one for each circuit. If only one cable is present at the existing single-gang position, the second circuit cable must be run from the lighting circuit, which is a separate job. This guide covers the straightforward case where both cables are already present but previously terminated on a single plate with the two switches wired in parallel.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you will need: materials",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Double-gang light switch plate (1-gang or 2-way per rocker as required). 35 mm deep metal or plastic back box to replace a shallow existing box (if the existing box is 25 mm deep). Green-and-yellow sleeving for bare earth conductors. Small flat-blade screwdriver for terminal screws.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, isolate and test dead",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Switch off the MCB for the lighting circuit at the consumer unit. Lock it off or post a warning notice. Use the proving unit to confirm the voltage tester is working on a known live source. Test the existing switch terminals with the two-pole voltage tester: all terminals must read zero volts between live, neutral, and earth before touching any wires.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, remove the old switch and check the back box",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Unscrew the old switch plate and pull it forward carefully. Note the terminal positions and which cable connects to which switch terminal before removing any wires, photograph if useful. Measure the depth of the existing back box. If it is 25 mm or less and you are adding a second cable, replace it with a 35 mm box. For a metal box in a masonry wall, the existing fixing screws and knockout holes usually align with the new box.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, connect the new switch",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "On a standard switch loop, the cable feeding each switch contains a red (or brown) live feed, a red (or brown) switch wire, and a bare earth. The live feed connects to the common (COM) terminal; the switch wire connects to the L1 terminal. Apply green-and-yellow sleeving to any bare earth conductors before fitting. Connect the first circuit cable to the left-hand switch terminals and the second circuit cable to the right-hand switch terminals of the double-gang plate. Fold the cables neatly into the back box; do not trap any cable under the switch plate edge.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, restore supply and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Fit the double-gang plate with its two fixing screws. Restore the MCB and test each switch in turn. If either circuit does not switch correctly, switch off and check that the live and switch wires are in the correct terminals on that gang.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Switch off, test dead, and swap the two conductors on the non-working gang between the COM and L1 terminals.",
+                "cause": "The switch wire and live feed are transposed at the second gang — the common and L1 terminals are swapped.",
+                "symptom": "One switch works but the other does not switch its light"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Remove the plate, fold all cables into a figure-eight loop and push them flat against the back of the box, then refit the plate.",
+                "cause": "A cable behind the plate is not folded flat and is pushing the plate forward.",
+                "symptom": "Switch plate sits proud of the wall on one side"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[4] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "A double-gang switch requires two switch cables at the back box, one for each circuit. If only one cable is present at the existing single-g"
+    }
+  ]
+}

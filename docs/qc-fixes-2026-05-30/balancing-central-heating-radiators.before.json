@@ -1,0 +1,200 @@
+{
+  "slug": "balancing-central-heating-radiators",
+  "tutorialId": "cmpsr0o8g0000uov4cxokjxg0",
+  "capturedAt": "2026-05-30T19:37:49.462Z",
+  "preFix": {
+    "title": "Balancing central heating radiators",
+    "subtitle": "Adjust lockshield valves to distribute heat evenly across a central heating circuit",
+    "excerpt": "How to balance a domestic central heating system so that all radiators reach their working temperature at the same rate, by measuring the flow-to-return temperature difference at each radiator and adjusting the lockshield valves accordingly.",
+    "sourceNotes": "CIBSE Guide B: Heating, Ventilating, Air Conditioning and Refrigeration. Heating and Ventilating Contractors Association (HVCA) guide to balancing. Cassell's Cyclopaedia of Mechanics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An unbalanced system has one clear sign: radiators near the boiler get very hot while those furthest away stay cooler. Balancing adjusts the ",
+              "type": "text"
+            },
+            {
+              "text": "lockshield valves",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpe8rtgq0001l4v4bx2nq1sx"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " to reduce flow to the nearest radiators and send more water to those at the far end. The aim is an even ",
+              "type": "text"
+            },
+            {
+              "text": "delta-T",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpf6lz2w000030v4iep69vxh"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " across every radiator.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you will need: materials",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A digital thermometer with a clip-on pipe probe (or two, one per radiator). Pen and paper to record each radiator position and lockshield turn count.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, bleed all radiators and open all valves",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Bleed every radiator to remove trapped air. Open all TRVs and manual valves fully. Remove the lockshield caps from all radiators and open every lockshield valve fully by turning anti-clockwise until it will turn no further. Note the number of turns to fully open for each radiator. Run the heating system at full temperature for 20 minutes.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, measure temperatures at each radiator",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Clip one probe to the flow pipe at each radiator (the pipe that enters the TRV or manual valve side) and one to the return pipe (the lockshield side). Record both temperatures for each radiator. The radiators closest to the boiler will show the smallest delta-T; those furthest away will show the largest. Work your way around every radiator in the house and note the results.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, adjust lockshield valves",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Start with the radiator closest to the boiler (the one with the smallest delta-T). Close its lockshield valve fully, then open it by half a turn. Wait five minutes and measure the delta-T again. Continue opening or closing the lockshield in quarter-turn increments, waiting five minutes between adjustments, until the delta-T is 11°C to 12°C. Move to the next nearest radiator and repeat. Work outward from the boiler to the furthest radiators; the furthest will probably need their lockshield valves left fully open.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, re-check and refit caps",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "After adjusting all radiators, run the system for another 30 minutes and take a final set of readings. Minor drift from the target delta-T on any radiator is acceptable; aim for all radiators within 2°C of the target. Record the final lockshield turns-from-closed for each radiator in case you need to re-balance after system changes. Refit the lockshield caps.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the TRV pin is not stuck by pressing the pin manually; it should spring back. Bleed the radiator. If it is still cold after these checks, the issue is a system blockage rather than a balancing problem.",
+                "cause": "The radiator has a stuck or faulty TRV, trapped air, or a blockage in its pipework.",
+                "symptom": "One radiator remains cold or barely warm even with its lockshield fully open"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Open all lockshield valves by a further half turn and re-check temperatures. A higher system flow rate with a slightly wider delta-T is preferable to a noisy pump.",
+                "cause": "The lockshield valves have been closed too much, restricting total system flow below the pump's design minimum.",
+                "symptom": "System makes noise or pump runs loudly after balancing"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[10] > text",
+      "snippet": "Target"
+    }
+  ]
+}

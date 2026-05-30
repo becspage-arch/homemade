@@ -1,0 +1,405 @@
+{
+  "slug": "pandoro",
+  "title": "Pandoro",
+  "subtitle": "Italian Christmas star bread with a deep golden, buttery crumb",
+  "excerpt": "Pandoro is the Veronese Christmas bread: a star-shaped, buttery loaf with a fine, layered crumb and a faint vanilla fragrance. Where panettone relies on soaked fruit, pandoro is plain (just flour, butter, eggs, and sugar) and the star shape comes from the mould. It involves a three-stage dough over two days, but the method is methodical rather than difficult. The finished loaf is dusted with vanilla icing sugar at the table.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "ADVANCED",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pandoro is associated with Verona and was commercially registered in 1894 by Domenico Melegatti. The home baking tradition predates this; enriched star-shaped breads appear in Veneto Christmas records from the eighteenth century. The three-stage dough technique (a preliminary sponge, an enriched main dough, and a final butter incorporation) is described in Italian baking literature from the early twentieth century. The star-shaped mould (stampo da pandoro) is purpose-made and produces the bread's distinctive eight-pointed cross-section.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 pandoro (1 kg finished loaf, serves 8–10)",
+    "prepMinutes": 60,
+    "cookMinutes": 45,
+    "restingMinutes": 720,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 1 month. Thaw at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The bread keeps for 4 days wrapped in cling film. The flavour improves on day 2.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "italian",
+    "mealType": "dessert",
+    "mood": [
+      "weekendBake",
+      "entertaining"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 52,
+      "saltPercent": 1.1,
+      "yeastPercent": 2.2,
+      "levainPercent": null,
+      "bulkFermentMinutes": 480,
+      "proofMinutes": 240,
+      "retardingMinutes": 120,
+      "levainBuildMinutes": 60,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 175,
+      "bakeTemperatureNote": "fan oven; start at 185 degrees C for the first 10 minutes, then reduce",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "SPONGE"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sponge-pre-ferment",
+      "term": "Sponge pre-ferment",
+      "definition": "A preliminary mixture of flour, water or milk, yeast, and sometimes sugar that ferments for 30 minutes to several hours before the main dough is built around it. The sponge develops flavour and gives the yeast a headstart, resulting in a more complex taste and better rise in enriched doughs where sugar and fat would otherwise inhibit the yeast."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build the sponge and first dough",
+      "body": "Mix the sponge and leave to ferment for 1 hour, then build the first dough. This begins a slow overnight ferment.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Incorporate butter and final proof",
+      "body": "Incorporate the cold butter into the risen dough in stages, shape, and leave for the long final proof before baking.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pandoro rewards patience. The dough goes through a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sponge-pre-ferment",
+                  "term": "Sponge pre-ferment"
+                }
+              }
+            ],
+            "text": "sponge pre-ferment"
+          },
+          {
+            "type": "text",
+            "text": " on the first day and a long, cold butter incorporation on the second. The butter must be added cold, in small pieces, and beaten in thoroughly before the next piece goes in. Rush this and the butter pools rather than becoming part of the dough."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Equipment note",
+          "body": "A pandoro mould (stampo da pandoro) is purpose-made, with eight star-shaped points. Without it, the bread bakes in a tall cylindrical tin as a round loaf; the crumb is identical but the star shape is absent. A 1-litre deep round tin or a large panettone mould works as a substitute."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            {
+              "ingredientSlug": "00-flour",
+              "amount": 450,
+              "unit": "g",
+              "prepNote": "divided: 75 g for the sponge, 375 g for the main dough",
+              "isOptional": false,
+              "groupLabel": "Sponge (day 1)"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Sponge (day 1)"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sponge (day 1)"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sponge (day 1)"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "large",
+              "isOptional": false,
+              "groupLabel": "Main dough"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main dough"
+            },
+            {
+              "ingredientSlug": "vanilla-bean-paste",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main dough"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "cold, cubed small",
+              "isOptional": false,
+              "groupLabel": "Main dough"
+            },
+            {
+              "ingredientSlug": "icing-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "mixed with 0.5 tsp vanilla extract for dusting",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1; Build the sponge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix 75 g flour, 10 g yeast, 10 g sugar, and 60 ml warm milk to a thick paste. Cover and leave for 1 hour until bubbly and doubled."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1; Build the main dough"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip the sponge into a large bowl. Add 375 g flour, 3 eggs, 120 g sugar, 5 g salt, and 1 tsp vanilla bean paste. Mix to a rough dough and knead for 10 minutes until smooth and elastic. Cover with cling film and leave at room temperature overnight (8 to 10 hours) until doubled or just past."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 2; Incorporate the butter"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the cold dough from the bowl. Add one piece of the 200 g cold cubed butter and work it in with your hands, pressing and folding until absorbed. Add the next piece. Continue until all the butter is incorporated; about 15 minutes total. The dough will be glossy and slightly tacky. Chill for 30 minutes; this firms the butter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold and shape"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a lightly buttered surface, fold the dough like a letter; one third over the centre, the other third over that. Turn 90 degrees and fold again. Repeat this fold twice more with 30-minute rests in the fridge between each fold. Then shape into a tight ball and lower into a well-buttered pandoro mould or 1-litre round tin, seam-side down."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Final prove, 3 to 5 hours"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover loosely and leave at warm room temperature. The dough should rise until it just crowns above the rim of the mould; this takes 3 to 5 hours depending on the room temperature. Do not rush; under-proved pandoro is dense."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 185 degrees C fan. Bake for 10 minutes, then reduce to 175 degrees C and continue for 30 to 35 minutes more, until the top is deep golden and a skewer through the centre comes out clean. The internal temperature should read 92 to 94 degrees C. Cool in the mould for 10 minutes, then turn out onto a rack. Dust generously with vanilla icing sugar before serving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Butter pooled into greasy streaks rather than blending in",
+              "solution": "The butter was added too quickly or the dough was warm when it was incorporated. Cold butter and a cold dough are both important. If the dough feels warm, chill for 20 minutes before continuing."
+            },
+            {
+              "problem": "Pandoro is dense with no open crumb",
+              "solution": "The overnight ferment may have been too short, or the final prove was insufficient. The dough must crown clearly above the mould rim before baking. An extra hour in the final prove is rarely harmful."
+            },
+            {
+              "problem": "Loaf collapsed after baking",
+              "solution": "The final prove went too far — the gluten over-relaxed and could not hold the structure in the oven. Bake when the dough is just cresting the mould, not when it has risen well past it."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

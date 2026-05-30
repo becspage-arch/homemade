@@ -1,0 +1,208 @@
+{
+  "slug": "fitting-a-weatherproof-garden-socket-on-a-spur",
+  "tutorialId": "cmpsr12ha0001uov4am1ju7lc",
+  "capturedAt": "2026-05-30T19:37:50.922Z",
+  "preFix": {
+    "title": "Fitting a weatherproof garden socket on a spur",
+    "subtitle": "Run a fused spur from an indoor ring main to an IP66-rated outdoor socket",
+    "excerpt": "How to extend a domestic ring main circuit via a fused connection unit (FCU) to a weatherproof IP66-rated outdoor socket, covering the FCU connection, cable routing, outdoor back box fitting, and RCD protection requirements.",
+    "sourceNotes": "IET Wiring Regulations BS 7671 (18th edition) Chapter 7 (special locations) and Part 4. Building Regulations Part P. IET On-Site Guide. Cassell's Cyclopaedia of Mechanics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Installing an outdoor socket is notifiable work under Part P of the Building Regulations in England and Wales. Either a registered competent person must do the work, or you must notify building control and arrange a test and inspection. Check the requirement for your area before starting.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The spur runs from a ",
+              "type": "text"
+            },
+            {
+              "text": "fused connection unit",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprxyvly00001gv45u9mkui7"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " at the indoor end to an ",
+              "type": "text"
+            },
+            {
+              "text": "IP66",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpsr12fb0000uov4cbu7rwqy"
+                  }
+                }
+              ]
+            },
+            {
+              "text": "-rated socket at the outdoor end. The outdoor circuit must have 30 mA RCD protection, usually provided by a modern consumer unit; confirm this before starting.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you will need: materials",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Switched fused connection unit (FCU), 13 A, surface or flush mounting. IP66-rated single outdoor socket with integral gasket and cover. Twin-and-earth cable, 2.5 mm², sufficient length to run from the FCU to the outdoor socket. Appropriate outdoor conduit or armoured cable if the cable runs are surface-mounted outside or buried. 30 mA RCD protection (confirm existing consumer unit provides this for the ring circuit). Green-and-yellow earth sleeving.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, identify and isolate the ring circuit",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Switch off the MCB for the ring main circuit at the consumer unit. Test dead at the nearest socket on the ring with the two-pole tester, using the proving unit to confirm the tester is working. Confirm the consumer unit provides 30 mA RCD protection for this circuit; look for an RCBO or a combined RCD protecting the relevant MCB. If the ring circuit is not RCD-protected, the outdoor socket must be fitted on a new dedicated circuit or via an RCBO, do not proceed on an unprotected circuit.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, install the FCU at the indoor connection point",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Choose an accessible ring socket close to the intended cable route. Remove that socket and check it is on the ring (two sets of cables present, not one spur already). Connect the FCU into the ring: the ring conductors connect to the ring terminals of the FCU, and the spur cable connects to the load terminals. Apply green-and-yellow sleeving to the bare earth conductors. Fit the FCU in the back box. The switched FCU provides isolation of the garden socket circuit from inside the house.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, route the cable and fit the outdoor socket",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Route the spur cable from the FCU through the wall to the outdoor position. Cables buried in the ground must be armoured or run in conduit at a minimum depth of 450 mm (500 mm under driveways). Cables run on the surface of external walls must be in UV-resistant conduit. Mount the outdoor back box and connect the cable to the IP66 socket, applying earth sleeving to the bare earth. Ensure the gasket on the socket face is fully seated before tightening the cover screws.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, restore supply and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Restore the MCB. Test the outdoor socket with a socket tester to confirm correct polarity and earth continuity. Test that the RCD protecting the circuit trips within the required time by pressing the test button on the RCD or RCBO.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Isolate and test dead. Check that live, neutral, and earth conductors are connected to their correct terminals at both the FCU and the outdoor socket. Inspect the cable for any damage caused during installation.",
+                "cause": "A wiring error has introduced an earth leakage path, or the outdoor cable insulation is damaged.",
+                "symptom": "RCD trips as soon as the outdoor socket is energised"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Isolate, test dead, open the relevant accessory (FCU or socket), and swap the brown and blue conductors at their terminals.",
+                "cause": "The brown and blue conductors are transposed at one end of the spur cable.",
+                "symptom": "Socket tester shows reverse polarity at the outdoor socket"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "excerpt"
+    }
+  ]
+}

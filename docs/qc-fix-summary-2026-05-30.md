@@ -1565,3 +1565,121 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 17:40:31
+
+Generated: 2026-05-30T17:40:31.576Z
+
+Processed: 80
+PASS: 78
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 34 |
+| historical-century-in-body | 8 |
+| body-missing-method | 7 |
+| em-dash-in-content | 6 |
+| academic-register-word | 1 |
+
+## Still BLOCKED (sample 20)
+
+- album-cover-decoration: grade-level-strict
+- neri-formation-aid-preparation: grade-level-strict
+
+---
+
+## Run at 18:25:05
+
+Generated: 2026-05-30T18:25:05.195Z
+
+Processed: 118
+PASS: 78
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| grade-level-strict | 19 |
+| historical-century-in-body | 16 |
+| placeholder-string | 2 |
+
+## Still BLOCKED (sample 20)
+
+- apple-sauce: hero-missing
+- boulangere-potatoes: hero-missing
+- braised-red-cabbage: hero-missing
+- bread-sauce: hero-missing
+- brined-roast-turkey: hero-missing
+- cauliflower-cheese: hero-missing
+- chestnut-and-sausagemeat-stuffing: hero-missing
+- goose-fat-roast-potatoes: hero-missing
+- hasselback-potatoes: hero-missing
+- honey-roast-carrots-and-parsnips: hero-missing
+- horseradish-cream: hero-missing
+- mint-sauce: hero-missing
+- onion-gravy: hero-missing
+- pigs-in-blankets: hero-missing
+- red-wine-gravy: hero-missing
+- roast-beef-rib-on-the-bone: hero-missing
+- roast-beef-sirloin: hero-missing
+- roast-carrots: hero-missing
+- roast-chicken: hero-missing
+- roast-duck-legs: hero-missing
+
+---
+
+## Run at 19:37:55
+
+Generated: 2026-05-30T19:37:55.481Z
+
+Processed: 41
+PASS: 31
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 39 |
+| grade-level-strict | 37 |
+| voice-violation | 8 |
+
+## Still BLOCKED (sample 20)
+
+- disguising-woodworm-exit-holes-after-treatment: voice-violation, grade-level-strict
+- fitting-a-thermostatic-bath-filler-tap: grade-level-strict
+- fitting-electric-underfloor-heating-mat-under-tiles: voice-violation, grade-level-strict
+- making-a-simple-timber-balustrade-infill-panel: grade-level-strict
+- re-gilding-a-decorative-picture-frame: grade-level-strict
+- re-rushing-a-traditional-drop-in-chair-seat: grade-level-strict
+- repairing-a-delaminating-concrete-floor-screed: voice-violation, grade-level-strict
+- repairing-a-leather-scuff-with-heat-activated-compound: grade-level-strict
+- replacing-an-immersion-heater-element: voice-violation, grade-level-strict
+- silencing-water-hammer-in-domestic-pipes: grade-level-strict
+
+---
+
+## Run at 19:42:50
+
+Generated: 2026-05-30T19:42:50.025Z
+
+Processed: 70
+PASS: 70
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

@@ -357,3 +357,58 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - stripping-paint-from-a-wooden-chair-with-a-heat-gun hero-missing — applied: hero-fill-deferred-to-standalone-script
 - treating-active-woodworm-in-furniture hero-missing — applied: hero-fill-deferred-to-standalone-script
 - wiring-a-13a-plug hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- album-cover-decoration grade-level-strict — applied: 
+- neri-formation-aid-preparation grade-level-strict — applied: 
+
+- apple-sauce hero-missing — applied: hero-fill-deferred-to-standalone-script
+- boulangere-potatoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- braised-red-cabbage hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bread-sauce hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brined-roast-turkey hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cauliflower-cheese hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chestnut-and-sausagemeat-stuffing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- goose-fat-roast-potatoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hasselback-potatoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- honey-roast-carrots-and-parsnips hero-missing — applied: hero-fill-deferred-to-standalone-script
+- horseradish-cream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mint-sauce hero-missing — applied: hero-fill-deferred-to-standalone-script
+- onion-gravy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pigs-in-blankets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- red-wine-gravy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-beef-rib-on-the-bone hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-beef-sirloin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-carrots hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-duck-legs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-duck-with-orange hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-gammon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-leg-of-lamb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-parsnips hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-pheasant hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-pork-belly hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- roast-pork-loin-with-crackling hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-potatoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-rack-of-lamb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-shoulder-of-pork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-spatchcock-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-turkey hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-turkey-crown hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-venison-haunch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sage-and-onion-stuffing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-roast-beef-brisket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-roast-shoulder-of-lamb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-roast-shoulder-of-pork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- toad-in-the-hole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yorkshire-puddings hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- disguising-woodworm-exit-holes-after-treatment voice-violation,grade-level-strict — applied: 
+- fitting-a-thermostatic-bath-filler-tap grade-level-strict — applied: 
+- fitting-electric-underfloor-heating-mat-under-tiles voice-violation,grade-level-strict — applied: 
+- making-a-simple-timber-balustrade-infill-panel grade-level-strict — applied: 
+- re-gilding-a-decorative-picture-frame grade-level-strict — applied: 
+- re-rushing-a-traditional-drop-in-chair-seat grade-level-strict — applied: body-rewrite:1
+- repairing-a-delaminating-concrete-floor-screed voice-violation,grade-level-strict — applied: 
+- repairing-a-leather-scuff-with-heat-activated-compound grade-level-strict — applied: 
+- replacing-an-immersion-heater-element voice-violation,grade-level-strict — applied: 
+- silencing-water-hammer-in-domestic-pipes grade-level-strict — applied: 

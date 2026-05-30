@@ -1,10 +1,22 @@
 {
-  "generatedAt": "2026-05-30T17:26:36.177Z",
-  "totalScanned": 5618,
+  "generatedAt": "2026-05-30T19:06:24.492Z",
+  "totalScanned": 5663,
   "passCount": 0,
-  "blockCount": 142,
+  "blockCount": 184,
   "warnOnlyCount": 0,
   "perCategory": {
+    "paper-word": {
+      "total": 7,
+      "pass": 0,
+      "block": 7,
+      "warnOnly": 0
+    },
+    "cooking": {
+      "total": 40,
+      "pass": 0,
+      "block": 40,
+      "warnOnly": 0
+    },
     "sustainability": {
       "total": 39,
       "pass": 0,
@@ -15,12 +27,6 @@
       "total": 13,
       "pass": 0,
       "block": 13,
-      "warnOnly": 0
-    },
-    "paper-word": {
-      "total": 5,
-      "pass": 0,
-      "block": 5,
       "warnOnly": 0
     },
     "mindset": {
@@ -49,10 +55,47 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 136,
-    "grade-level-strict": 168
+    "grade-level-strict": 171,
+    "hero-missing": 40,
+    "voice-violation": 148
   },
   "verdicts": [
+    {
+      "slug": "album-cover-decoration",
+      "tutorialId": "cmpsmuv3m0001hsv4x6vo0wt3",
+      "type": "PATTERN",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T17:40:25.680Z",
+      "publishedAt": "2026-05-30T17:36:52.962Z",
+      "heroMediaId": "cmpsmwzm40000lwv4v00r7vz3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[20] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Decorating a scrapbook album cover go here."
+        }
+      ]
+    },
+    {
+      "slug": "apple-sauce",
+      "tutorialId": "cmpagllt10000aov4fojgzu8r",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:50.686Z",
+      "publishedAt": "2026-05-30T18:24:04.363Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
     {
       "slug": "battery-capacity-degradation",
       "tutorialId": "cmprmms7p0002rov4a9rprkvo",
@@ -107,6 +150,81 @@
           "message": "paragraph reads at grade 15.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Assessing the feasibility of a private borehole water supply go here."
+        }
+      ]
+    },
+    {
+      "slug": "boulangere-potatoes",
+      "tutorialId": "cmpagnzwa0000cgv4nf4118ph",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:48:19.086Z",
+      "publishedAt": "2026-05-30T18:23:26.299Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[10] > text",
+          "snippet": "fall"
+        }
+      ]
+    },
+    {
+      "slug": "braised-red-cabbage",
+      "tutorialId": "cmpaglwzx0000v4v47os64mxi",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:51.397Z",
+      "publishedAt": "2026-05-30T18:22:38.995Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "bread-sauce",
+      "tutorialId": "cmp89vrhc0000j4v40w5f1s2m",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:48:21.745Z",
+      "publishedAt": "2026-05-30T18:23:55.106Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "brined-roast-turkey",
+      "tutorialId": "cmpdr35vf000114v4zq6kapih",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:51.947Z",
+      "publishedAt": "2026-05-30T18:23:06.618Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -185,6 +303,40 @@
           "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[8]",
           "snippet": "If overstocked, reduce animal numbers, bring in supplementary hay or silage, or move animals to a different area. A severely poached paddock"
+        }
+      ]
+    },
+    {
+      "slug": "cauliflower-cheese",
+      "tutorialId": "cmp73t2yn0000pkv4qzdzrufl",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:52.652Z",
+      "publishedAt": "2026-05-30T18:22:35.051Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "chestnut-and-sausagemeat-stuffing",
+      "tutorialId": "cmpagtqsa000018v4m3g8a1is",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:52.943Z",
+      "publishedAt": "2026-05-30T18:23:50.404Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -573,6 +725,30 @@
       ]
     },
     {
+      "slug": "goose-fat-roast-potatoes",
+      "tutorialId": "cmpdr3ngl000294v47sgqh0d6",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:53.929Z",
+      "publishedAt": "2026-05-30T18:22:23.349Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Marks and Spencer\" — generic equivalent is \"(any supermarket)\"",
+          "path": "body > paragraph[10] > text",
+          "snippet": "Marks and Spencer"
+        }
+      ]
+    },
+    {
       "slug": "hand-lettered-headers",
       "tutorialId": "cmprkk0el0003fov4nm8snhlc",
       "type": "TECHNIQUE",
@@ -595,6 +771,23 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[13]",
           "snippet": "Foundational lettering is the most demanding technique because the pen angle must be held consistently throughout. It rewards practice and p"
+        }
+      ]
+    },
+    {
+      "slug": "hasselback-potatoes",
+      "tutorialId": "cmpagnxaj00002wv45vkhod6v",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:50:38.840Z",
+      "publishedAt": "2026-05-30T18:23:22.323Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -653,6 +846,40 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[10]",
           "snippet": "Underfloor heating systems often hold enough water to prevent short-cycling without a buffer. Some manufacturers specify a minimum circuit v"
+        }
+      ]
+    },
+    {
+      "slug": "honey-roast-carrots-and-parsnips",
+      "tutorialId": "cmpaglzml0001tcv4hzp3bwyq",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:50:43.906Z",
+      "publishedAt": "2026-05-30T18:23:38.099Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "horseradish-cream",
+      "tutorialId": "cmpagmfqg000040v4j7tusso6",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:54.839Z",
+      "publishedAt": "2026-05-30T18:24:09.029Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -857,6 +1084,23 @@
       ]
     },
     {
+      "slug": "mint-sauce",
+      "tutorialId": "cmpagk52m0000vkv4ed3mosvw",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:51:48.208Z",
+      "publishedAt": "2026-05-30T18:23:59.469Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "natural-cleaning-products-diy",
       "tutorialId": "cmpra0p860000zsv4obtkdrga",
       "type": "TECHNIQUE",
@@ -917,6 +1161,31 @@
           "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
           "path": "body > ingredientsList[3] > item[4] > prepNote",
           "snippet": "Anchor"
+        }
+      ]
+    },
+    {
+      "slug": "neri-formation-aid-preparation",
+      "tutorialId": "cmpsmoxuk0000lsv4froa64g2",
+      "type": "TECHNIQUE",
+      "categorySlug": "paper-word",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T17:40:29.616Z",
+      "publishedAt": "2026-05-30T17:32:16.584Z",
+      "heroMediaId": "cmpsmy8vq0012fwv44kiztb5p",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[11] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "Neri preparation is the step that makes nagashizuki sheet forming possible. It produces the even, strong, long-fibre sheets that define trad"
         }
       ]
     },
@@ -1133,6 +1402,29 @@
       ]
     },
     {
+      "slug": "onion-gravy",
+      "tutorialId": "cmpagiupp0001t8v4qy14adqg",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:52:04.924Z",
+      "publishedAt": "2026-05-30T18:22:27.366Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[5] > listItem[0] > paragraph[0] > text"
+        }
+      ]
+    },
+    {
       "slug": "over-rafter-insulation-board",
       "tutorialId": "cmps8y2s900004wv4a4z8z0e3",
       "type": "TECHNIQUE",
@@ -1257,6 +1549,23 @@
           "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Switching to peat-free and plastic-reduced gardening supplies go here."
+        }
+      ]
+    },
+    {
+      "slug": "pigs-in-blankets",
+      "tutorialId": "cmpagtlj60000ugv4vizk0imn",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:56.496Z",
+      "publishedAt": "2026-05-30T18:24:13.387Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1515,6 +1824,23 @@
       ]
     },
     {
+      "slug": "red-wine-gravy",
+      "tutorialId": "cmpago2hx0000j0v4rngnxgyc",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:52:55.892Z",
+      "publishedAt": "2026-05-30T18:22:31.186Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "reducing-packaging-when-ordering-online",
       "tutorialId": "cmprmo29y0001ywv4n0g1la1t",
       "type": "TECHNIQUE",
@@ -1567,6 +1893,369 @@
       ]
     },
     {
+      "slug": "roast-beef-rib-on-the-bone",
+      "tutorialId": "cmpdr2j2y000128v4vklopji7",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:05.335Z",
+      "publishedAt": "2026-05-30T18:24:25.771Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-beef-sirloin",
+      "tutorialId": "cmp5nk8u90001p8v4hfm18dnt",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:05.482Z",
+      "publishedAt": "2026-05-30T18:21:56.326Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-carrots",
+      "tutorialId": "cmpbehy5c0000ogv45mqxlcdd",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:57.743Z",
+      "publishedAt": "2026-05-30T18:23:34.219Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-chicken",
+      "tutorialId": "cmpdr2ovl0000x0v40wh29yvu",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:58.025Z",
+      "publishedAt": "2026-05-30T18:22:00.095Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > troubleshooter[12] > item[0] > fix",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[16] > text"
+        }
+      ]
+    },
+    {
+      "slug": "roast-duck-legs",
+      "tutorialId": "cmpsok6wb0000n0v408r6liml",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:58.337Z",
+      "publishedAt": "2026-05-30T18:24:34.259Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-duck-with-orange",
+      "tutorialId": "cmp8a7j6g0000gwv485oz2suw",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:58.653Z",
+      "publishedAt": "2026-05-30T18:22:58.794Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-gammon",
+      "tutorialId": "cmpsoikdd0002t4v4kowq0bym",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T18:23:18.423Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-leg-of-lamb",
+      "tutorialId": "cmp73vcsz00008ov49nqiv07n",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:59.229Z",
+      "publishedAt": "2026-05-30T18:22:04.009Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-parsnips",
+      "tutorialId": "cmp5nvp6t0000lov4t3ga2fw7",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:59.523Z",
+      "publishedAt": "2026-05-30T18:23:30.207Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-pheasant",
+      "tutorialId": "cmpdr3bhq0002hcv44fzc4re3",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:24:59.801Z",
+      "publishedAt": "2026-05-30T18:23:10.502Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > troubleshooter[8] > item[0] > fix",
+          "snippet": "Target"
+        }
+      ]
+    },
+    {
+      "slug": "roast-pork-belly",
+      "tutorialId": "cmp89vheq00006cv43x7aa8l4",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:00.096Z",
+      "publishedAt": "2026-05-30T18:22:50.975Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[13]",
+          "snippet": "Roast pork belly became popular in British restaurants in the 1990s and 2000s as chefs discovered what Asian and Italian cooks had always kn"
+        }
+      ]
+    },
+    {
+      "slug": "roast-pork-loin-with-crackling",
+      "tutorialId": "cmp73vfr80001wkv4gl1mryli",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:00.410Z",
+      "publishedAt": "2026-05-30T18:22:07.977Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-potatoes",
+      "tutorialId": "cmp73viow0000tgv4frx05tuv",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:00.718Z",
+      "publishedAt": "2026-05-30T18:22:15.704Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-rack-of-lamb",
+      "tutorialId": "cmpagsdxs0000tov482nb6til",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:08.882Z",
+      "publishedAt": "2026-05-30T18:22:46.920Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Thermapen\" — generic equivalent is \"instant-read thermometer\"",
+          "path": "body > troubleshooter[8] > item[1] > fix",
+          "snippet": "Thermapen"
+        }
+      ]
+    },
+    {
+      "slug": "roast-shoulder-of-pork",
+      "tutorialId": "cmpdr2rov0001vkv4pg8lfy39",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:09.039Z",
+      "publishedAt": "2026-05-30T18:22:54.847Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-spatchcock-chicken",
+      "tutorialId": "cmpagti4f0000ekv4zr9dn8l3",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:01.585Z",
+      "publishedAt": "2026-05-30T18:24:21.821Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-turkey",
+      "tutorialId": "cmp8a7gnt0000dsv430stmz4v",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:01.879Z",
+      "publishedAt": "2026-05-30T18:23:02.718Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-turkey-crown",
+      "tutorialId": "cmpsok3jl000034v456l7mbpf",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:02.226Z",
+      "publishedAt": "2026-05-30T18:24:29.918Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "roast-venison-haunch",
+      "tutorialId": "cmpdr3kiz0002lsv42gbenyg6",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:09.674Z",
+      "publishedAt": "2026-05-30T18:23:14.457Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        }
+      ]
+    },
+    {
       "slug": "routing-unwanted-homewares-to-charities",
       "tutorialId": "cmps8mfws0000s8v4jlf5gwmb",
       "type": "TECHNIQUE",
@@ -1614,6 +2303,23 @@
           "message": "paragraph reads at grade 15.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Removing batteries from electronics before disposal go here."
+        }
+      ]
+    },
+    {
+      "slug": "sage-and-onion-stuffing",
+      "tutorialId": "cmpagluec0000rsv4v3chqrb5",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-29T08:53:18.615Z",
+      "publishedAt": "2026-05-30T18:23:43.748Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1684,6 +2390,71 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[9] > listItem[1] > paragraph[0]",
           "snippet": "The loft is very dry with good cross-ventilation and moisture buffering has no practical benefit."
+        }
+      ]
+    },
+    {
+      "slug": "slow-roast-beef-brisket",
+      "tutorialId": "cmpsoju1s0000xov4c0twy923",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:03.230Z",
+      "publishedAt": "2026-05-30T18:24:17.611Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "slow-roast-shoulder-of-lamb",
+      "tutorialId": "cmpbejglz000078v4vjib18sa",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:03.548Z",
+      "publishedAt": "2026-05-30T18:22:42.886Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"molasses\" — prefer \"treacle\"",
+          "path": "body > paragraph[10] > text",
+          "snippet": "molasses"
+        }
+      ]
+    },
+    {
+      "slug": "slow-roast-shoulder-of-pork",
+      "tutorialId": "cmpsoka790000h0v4wrnnz77m",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:03.851Z",
+      "publishedAt": "2026-05-30T18:24:38.547Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "sourceNotes",
+          "snippet": "fall"
         }
       ]
     },
@@ -3137,6 +3908,29 @@
       ]
     },
     {
+      "slug": "toad-in-the-hole",
+      "tutorialId": "cmp4bbzut0001a4v43wxyjmc5",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:04.431Z",
+      "publishedAt": "2026-05-30T18:22:19.569Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[9] > listItem[2] > paragraph[0] > text"
+        }
+      ]
+    },
+    {
       "slug": "touched-out-the-science-and-the-soft-answer",
       "tutorialId": "cmpqclipc0000a4v4j8iwbg80",
       "type": "PRACTICE",
@@ -3805,6 +4599,23 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Composting wood chips: breaking down high-carbon woody material go here."
+        }
+      ]
+    },
+    {
+      "slug": "yorkshire-puddings",
+      "tutorialId": "cmp6lf1jf0000nov4cz8f87ek",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T18:25:04.900Z",
+      "publishedAt": "2026-05-30T18:22:11.848Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
