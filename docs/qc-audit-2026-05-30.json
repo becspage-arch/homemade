@@ -1,44 +1,20 @@
 {
-  "generatedAt": "2026-05-30T21:16:12.925Z",
-  "totalScanned": 5799,
+  "generatedAt": "2026-05-30T22:51:18.336Z",
+  "totalScanned": 5862,
   "passCount": 0,
-  "blockCount": 177,
+  "blockCount": 145,
   "warnOnlyCount": 0,
   "perCategory": {
-    "cooking": {
-      "total": 40,
+    "sustainability": {
+      "total": 54,
       "pass": 0,
-      "block": 40,
-      "warnOnly": 0
-    },
-    "natural-home": {
-      "total": 3,
-      "pass": 0,
-      "block": 3,
-      "warnOnly": 0
-    },
-    "fibre-arts": {
-      "total": 1,
-      "pass": 0,
-      "block": 1,
+      "block": 54,
       "warnOnly": 0
     },
     "mindset": {
       "total": 65,
       "pass": 0,
       "block": 65,
-      "warnOnly": 0
-    },
-    "paper-word": {
-      "total": 5,
-      "pass": 0,
-      "block": 5,
-      "warnOnly": 0
-    },
-    "sustainability": {
-      "total": 30,
-      "pass": 0,
-      "block": 30,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -54,179 +30,105 @@
       "warnOnly": 0
     },
     "pottery-ceramics": {
-      "total": 11,
+      "total": 3,
       "pass": 0,
-      "block": 11,
+      "block": 3,
+      "warnOnly": 0
+    },
+    "cooking": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
       "warnOnly": 0
     }
   },
   "perRuleKind": {
-    "hero-missing": 40,
-    "voice-violation": 132,
-    "grade-level-strict": 157
+    "grade-level-strict": 176,
+    "voice-violation": 113,
+    "body-missing-method": 10
   },
   "verdicts": [
     {
-      "slug": "apple-sauce",
-      "tutorialId": "cmpagllt10000aov4fojgzu8r",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:50.686Z",
-      "publishedAt": "2026-05-30T18:24:04.363Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "boulangere-potatoes",
-      "tutorialId": "cmpagnzwa0000cgv4nf4118ph",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:19.086Z",
-      "publishedAt": "2026-05-30T18:23:26.299Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > paragraph[10] > text",
-          "snippet": "fall"
-        }
-      ]
-    },
-    {
-      "slug": "braised-red-cabbage",
-      "tutorialId": "cmpaglwzx0000v4v47os64mxi",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:51.397Z",
-      "publishedAt": "2026-05-30T18:22:38.995Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "bread-sauce",
-      "tutorialId": "cmp89vrhc0000j4v40w5f1s2m",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:21.745Z",
-      "publishedAt": "2026-05-30T18:23:55.106Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "brined-roast-turkey",
-      "tutorialId": "cmpdr35vf000114v4zq6kapih",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:51.947Z",
-      "publishedAt": "2026-05-30T18:23:06.618Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "cauliflower-cheese",
-      "tutorialId": "cmp73t2yn0000pkv4qzdzrufl",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:52.652Z",
-      "publishedAt": "2026-05-30T18:22:35.051Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "chestnut-and-sausagemeat-stuffing",
-      "tutorialId": "cmpagtqsa000018v4m3g8a1is",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:52.943Z",
-      "publishedAt": "2026-05-30T18:23:50.404Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "clary-sage-bergamot-solid-perfume",
-      "tutorialId": "cmpsu4ybs000174v4ayh9fqwy",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T21:15:00.209Z",
-      "publishedAt": "2026-05-30T21:00:41.023Z",
-      "heroMediaId": "cmpsumtdu000210v4499n39xm",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
-          "path": "body > [0] > [0]",
-          "snippet": "anhydrous"
-        }
-      ]
-    },
-    {
-      "slug": "dyeing-with-dahlia-petals",
-      "tutorialId": "cmpstd0u00000qov4jhl8d3vj",
+      "slug": "compost-tea-making",
+      "tutorialId": "cmpsxq3ba0001iov4nza3ari2",
       "type": "TECHNIQUE",
-      "categorySlug": "fibre-arts",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T20:42:28.967Z",
-      "publishedAt": "2026-05-30T20:38:57.885Z",
-      "heroMediaId": "cmpstg3kz0008mwv4ze4axn1t",
+      "voiceRetrofittedAt": "2026-05-30T22:49:38.396Z",
+      "publishedAt": "2026-05-30T22:41:06.106Z",
+      "heroMediaId": "cmpsxwlda000s3wv4205cdfrb",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[7] > listItem[0] > paragraph[0]",
-          "snippet": "Alum: warm yellow to golden orange, depending on dahlia variety and petal freshness."
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[2] > listItem[3] > paragraph[0]",
+          "snippet": "Strain the liquid through a piece of fabric and apply within 2 to 4 hours: microbial populations decline rapidly once aeration stops."
+        }
+      ]
+    },
+    {
+      "slug": "domestic-wind-turbine-feasibility",
+      "tutorialId": "cmpsxok970000h8v4bkt54ynl",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T22:49:46.830Z",
+      "publishedAt": "2026-05-30T22:39:54.741Z",
+      "heroMediaId": "cmpsxwlxi000u3wv4fa47zr9d",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[8] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[11] > troubleshooterItem[0] > paragraph[0]",
+          "snippet": "NOABL is a coarse model that does not account for local topography or vegetation. Commission a calibrated anemometer site survey before comm"
+        }
+      ]
+    },
+    {
+      "slug": "energy-performance-certificate-reading",
+      "tutorialId": "cmpsxop3t00007gv4mggnlh8t",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T22:49:51.609Z",
+      "publishedAt": "2026-05-30T22:40:01.026Z",
+      "heroMediaId": "cmpsxwpf2000y3wv4lsu7hvf6",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[1] > paragraph[0]",
+          "snippet": "The correct U-value of walls that have already been insulated outside the standard assumption for the building age."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[3] > paragraph[0]",
+          "snippet": "Whether an improvement is feasible for the specific building type. Cavity wall insulation, for example, is not suitable for all cavity wall "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[9] > troubleshooterItem[1] > paragraph[0]",
+          "snippet": "The assessor may have recorded the wall type incorrectly. Challenge the assessment by contacting the Energy Performance of Buildings Registe"
         }
       ]
     },
@@ -250,21 +152,33 @@
       ]
     },
     {
-      "slug": "foundational-spacing",
-      "tutorialId": "cmprkj6ja00034cv4bp2bzdhi",
+      "slug": "extending-appliance-lifespan",
+      "tutorialId": "cmpsxqhdb00016gv44zb2j1oj",
       "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:53.739Z",
-      "publishedAt": "2026-05-29T23:44:02.504Z",
-      "heroMediaId": "cmprko4bi000ssgv4t6vzahqg",
+      "voiceRetrofittedAt": "2026-05-30T22:49:52.550Z",
+      "publishedAt": "2026-05-30T22:41:24.324Z",
+      "heroMediaId": "cmpsxwqkd00103wv4hf4u6qaa",
       "findings": [
         {
           "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[21] > body",
-          "snippet": "Certain letters have projecting arms or diagonal strokes that reduce the apparent space on one or both sides. 'f', 'r', 't', 'v', 'w', and '"
+          "message": "paragraph reads at grade 13.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Maintenance routines that extend domestic appliance lifespan go here."
         }
       ]
     },
@@ -284,73 +198,6 @@
           "message": "paragraph reads at grade 12.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "I allow giving to feel expansive and fearless, knowing every act of generosity multiplies my wealth."
-        }
-      ]
-    },
-    {
-      "slug": "goose-fat-roast-potatoes",
-      "tutorialId": "cmpdr3ngl000294v47sgqh0d6",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:53.929Z",
-      "publishedAt": "2026-05-30T18:22:23.349Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Marks and Spencer\" — generic equivalent is \"(any supermarket)\"",
-          "path": "body > paragraph[10] > text",
-          "snippet": "Marks and Spencer"
-        }
-      ]
-    },
-    {
-      "slug": "hand-lettered-headers",
-      "tutorialId": "cmprkk0el0003fov4nm8snhlc",
-      "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:54.106Z",
-      "publishedAt": "2026-05-29T23:44:41.214Z",
-      "heroMediaId": "cmprko5n4000usgv4temah3w3",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > orderedList[8] > listItem[2] > paragraph[0] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "Foundational lettering is the most demanding technique because the pen angle must be held consistently throughout. It rewards practice and p"
-        }
-      ]
-    },
-    {
-      "slug": "hasselback-potatoes",
-      "tutorialId": "cmpagnxaj00002wv45vkhod6v",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:38.840Z",
-      "publishedAt": "2026-05-30T18:23:22.323Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -413,36 +260,81 @@
       ]
     },
     {
-      "slug": "honey-roast-carrots-and-parsnips",
-      "tutorialId": "cmpaglzml0001tcv4hzp3bwyq",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "heat-pump-leaving-temperature-optimisation",
+      "tutorialId": "cmpsxof3s0000awv4r0ieb9j4",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:43.906Z",
-      "publishedAt": "2026-05-30T18:23:38.099Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": "2026-05-30T22:50:09.339Z",
+      "publishedAt": "2026-05-30T22:39:48.068Z",
+      "heroMediaId": "cmpsxx2650008zsv47kqp80m5",
       "findings": [
         {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[8] > text",
+          "snippet": "fall"
+        },
+        {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "The design heat loss of the house and the emitter output at the proposed flow temperature. Radiator manufacturers publish output data at dif"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "A house with original-size radiators that has not been upgraded may not sustain comfort below 50 degrees Celsius. In that case, check the ra"
         }
       ]
     },
     {
-      "slug": "horseradish-cream",
-      "tutorialId": "cmpagmfqg000040v4j7tusso6",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "heat-pump-refrigerant-signs",
+      "tutorialId": "cmpsxpyly0002dcv4ogipg4l8",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:54.839Z",
-      "publishedAt": "2026-05-30T18:24:09.029Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": "2026-05-30T22:50:09.674Z",
+      "publishedAt": "2026-05-30T22:41:00.007Z",
+      "heroMediaId": "cmpsxx2u0000azsv4mj58lqey",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "The refrigerant circuit in a heat pump is a sealed system. It does not consume refrigerant in normal operation; a low charge after installat"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[3] > paragraph[0]",
+          "snippet": "Hissing or bubbling sounds from the outdoor unit or internal connections: refrigerant leaking from a connection can produce a hissing noise."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Recognising refrigerant problems in an air-source heat pump go here."
         }
       ]
     },
@@ -583,6 +475,75 @@
       ]
     },
     {
+      "slug": "library-of-things-membership",
+      "tutorialId": "cmpsxphul0000qov4rtyt9cje",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:38.278Z",
+      "heroMediaId": "cmpsxx7l8000mzsv43ou9dcfr",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "Borrowing makes sense for tools used once or twice per year: tile cutters, cement mixers, extension ladders, sack trolleys, wallpaper steame"
+        }
+      ]
+    },
+    {
+      "slug": "lime-mortar-repointing-airtightness",
+      "tutorialId": "cmpsxo0m200003gv4yu7pwcl7",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:39:29.275Z",
+      "heroMediaId": "cmpsxx88m000ozsv43xtak95v",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Failed mortar joints are among the most overlooked sources of heat loss in pre-1919 brick houses. A joint that has eroded 10 mm back from th"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "A full repointing of a failed front elevation (average Victorian terrace: 35 m² of brickwork) typically reduces whole-house airtightness lea"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[9]",
+          "snippet": "For a listed building, the local planning authority may specify the exact mortar mix and finishing profile. Flush or slightly recessed joint"
+        }
+      ]
+    },
+    {
       "slug": "making-a-simple-leather-notebook-cover",
       "tutorialId": "cmprc21oh0001r8v4tsuw560l",
       "type": "PATTERN",
@@ -672,19 +633,33 @@
       ]
     },
     {
-      "slug": "mint-sauce",
-      "tutorialId": "cmpagk52m0000vkv4ed3mosvw",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "municipal-compost-vs-home-composting",
+      "tutorialId": "cmpsxq0x90001xgv4rhkw5kdu",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:51:48.208Z",
-      "publishedAt": "2026-05-30T18:23:59.469Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:41:03.009Z",
+      "heroMediaId": "cmpsxxau6000uzsv4potdlj17",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[0] > paragraph[0]",
+          "snippet": "Home heap: raw vegetable and fruit peelings, plastic-free tea bags, coffee grounds, egg shells, raw garden waste (not woody), paper and card"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
+          "snippet": "Neither system reliably handles: heavily waxed card, compostable plastic packaging. Most UK councils do not accept compostable plastics; che"
         }
       ]
     },
@@ -710,70 +685,6 @@
           "message": "paragraph reads at grade 14.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Making effective cleaning products from vinegar, bicarbonate, and castile soap go here."
-        }
-      ]
-    },
-    {
-      "slug": "natural-perfume-oil-roller",
-      "tutorialId": "cmprrxqp40001kkv417zlpd3e",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:13:50.678Z",
-      "publishedAt": "2026-05-30T03:11:19.130Z",
-      "heroMediaId": "cmprs0k3z001k8kv4jym4p7mj",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "clinical-vocab: clinical/Latin vocabulary \"maceration\" in body prose without glossary tooltip — use \"soaked in liquid\" or use a tooltip",
-          "path": "body > [1] > [0]",
-          "snippet": "maceration"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"flavor\" — prefer \"flavour\"",
-          "path": "sourceNotes",
-          "snippet": "flavor"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > ingredientsList[3] > item[4] > prepNote",
-          "snippet": "Anchor"
-        }
-      ]
-    },
-    {
-      "slug": "neri-formation-aid-preparation",
-      "tutorialId": "cmpsmoxuk0000lsv4froa64g2",
-      "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T17:40:29.616Z",
-      "publishedAt": "2026-05-30T17:32:16.584Z",
-      "heroMediaId": "cmpsmy8vq0012fwv44kiztb5p",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[11] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Neri preparation is the step that makes nagashizuki sheet forming possible. It produces the even, strong, long-fibre sheets that define trad"
         }
       ]
     },
@@ -990,25 +901,28 @@
       ]
     },
     {
-      "slug": "onion-gravy",
-      "tutorialId": "cmpagiupp0001t8v4qy14adqg",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "outdoor-tap-installation",
+      "tutorialId": "cmpsxpcom0000x0v4r0c4kiql",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:04.924Z",
-      "publishedAt": "2026-05-30T18:22:27.366Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:31.583Z",
+      "heroMediaId": "cmpsxxd8m000yzsv4c8oovdoo",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[0] > paragraph[0]",
+          "snippet": "Under the Water Supply (Water Fittings) Regulations 1999, you must notify your water supplier before connecting a new tap or fitting to the "
         },
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > orderedList[5] > listItem[0] > paragraph[0] > text"
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[1]",
+          "snippet": "An outdoor tap reduces the time and effort of garden watering and can be connected to a hose for a water butt top-up during dry periods. The"
         }
       ]
     },
@@ -1049,6 +963,39 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Over-rafter rigid board insulation for a pitched roof go here."
+        }
+      ]
+    },
+    {
+      "slug": "packaging-audit-at-home",
+      "tutorialId": "cmpsxpp2b000098v4oe7zaj0q",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:47.629Z",
+      "heroMediaId": "cmpsxxdvj0010zsv4wujec7xt",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "Most local authorities recycle rigid plastic bottles and pots, glass, metal cans, and cardboard at the kerbside. Soft plastic film (bread ba"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[9] > troubleshooterItem[0] > paragraph[0]",
+          "snippet": "Loose produce is usually cheaper per kg than pre-packed, and buying a larger format (1 kg yoghurt instead of four 250 g pots) reduces cost p"
         }
       ]
     },
@@ -1104,6 +1051,44 @@
       ]
     },
     {
+      "slug": "party-wall-heat-loss-assessment",
+      "tutorialId": "cmpsxnwxy0000w8v4lt4fhqe1",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:39:24.528Z",
+      "heroMediaId": "cmpsxxetr0012zsv4rrbzjdem",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[4]",
+          "snippet": "Heat loss through a party wall follows the same formula as any other element: Q = U x A x (T_inside minus T_other_side). The difficulty is k"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "A thermal bridge scan of the party wall on a cold day (external temperature below 5 degrees Celsius, heating running for at least two hours)"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "If the loss exceeds 1,000 kWh per year (roughly 60 pounds at gas rates), internal lining of the party wall with 50 mm of mineral wool betwee"
+        }
+      ]
+    },
+    {
       "slug": "peat-free-garden-supply-swaps",
       "tutorialId": "cmps8mi9h0002i8v4rw5w8aly",
       "type": "TECHNIQUE",
@@ -1141,19 +1126,21 @@
       ]
     },
     {
-      "slug": "pigs-in-blankets",
-      "tutorialId": "cmpagtlj60000ugv4vizk0imn",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "pipe-boxing-insulation-unheated-spaces",
+      "tutorialId": "cmpsxo9y40000c8v48dgd5jkt",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:56.496Z",
-      "publishedAt": "2026-05-30T18:24:13.387Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:39:41.384Z",
+      "heroMediaId": "cmpsxxgfc0016zsv4kj7tllrs",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[4] > paragraph[0]",
+          "snippet": "For pipes that pass through walls into the heated zone, extend the lagging 50 mm into the wall penetration so there is no bare pipe exposed "
         }
       ]
     },
@@ -1286,6 +1273,30 @@
       ]
     },
     {
+      "slug": "pv-optimiser-vs-string-inverter",
+      "tutorialId": "cmpsxptuk000158v4nhohc1jv",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:53.838Z",
+      "heroMediaId": "cmpsxxh6g0018zsv43f6ua42h",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "Modern string inverters include shade-tolerant algorithms and some have multiple MPPT inputs. A dual-MPPT inverter can split the array into "
+        }
+      ]
+    },
+    {
       "slug": "rabbit-abscesses",
       "tutorialId": "cmps6sdnv0002qov4vl0pnhnb",
       "type": "TECHNIQUE",
@@ -1412,6 +1423,23 @@
       ]
     },
     {
+      "slug": "rainwater-only-irrigation-off-grid",
+      "tutorialId": "cmpsxqaco000188v49d6qep2t",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:41:15.226Z",
+      "heroMediaId": "cmpsxxiiy001czsv4dbld6wa6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
       "slug": "re-gilding-a-decorative-picture-frame",
       "tutorialId": "cmpsr1yhq0002ukv44c2aueug",
       "type": "TECHNIQUE",
@@ -1450,23 +1478,6 @@
       ]
     },
     {
-      "slug": "red-wine-gravy",
-      "tutorialId": "cmpago2hx0000j0v4rngnxgyc",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:55.892Z",
-      "publishedAt": "2026-05-30T18:22:31.186Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "reducing-packaging-when-ordering-online",
       "tutorialId": "cmprmo29y0001ywv4n0g1la1t",
       "type": "TECHNIQUE",
@@ -1496,6 +1507,23 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[2] > listItem[2] > paragraph[0]",
           "snippet": "Avoid express or next-day delivery when you do not need it. Express dispatch prioritises speed over consolidation, so items from the same re"
+        }
+      ]
+    },
+    {
+      "slug": "refurbishing-secondhand-furniture",
+      "tutorialId": "cmpsxpre50000qov4gdz10j0s",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:50.649Z",
+      "heroMediaId": "cmpsxxkds001gzsv4k0ylcv01",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -1594,196 +1622,6 @@
       ]
     },
     {
-      "slug": "roast-beef-rib-on-the-bone",
-      "tutorialId": "cmpdr2j2y000128v4vklopji7",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:05.335Z",
-      "publishedAt": "2026-05-30T18:24:25.771Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-beef-sirloin",
-      "tutorialId": "cmp5nk8u90001p8v4hfm18dnt",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:05.482Z",
-      "publishedAt": "2026-05-30T18:21:56.326Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-carrots",
-      "tutorialId": "cmpbehy5c0000ogv45mqxlcdd",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:57.743Z",
-      "publishedAt": "2026-05-30T18:23:34.219Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-chicken",
-      "tutorialId": "cmpdr2ovl0000x0v40wh29yvu",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:58.025Z",
-      "publishedAt": "2026-05-30T18:22:00.095Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > troubleshooter[12] > item[0] > fix",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[16] > text"
-        }
-      ]
-    },
-    {
-      "slug": "roast-duck-legs",
-      "tutorialId": "cmpsok6wb0000n0v408r6liml",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:58.337Z",
-      "publishedAt": "2026-05-30T18:24:34.259Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-duck-with-orange",
-      "tutorialId": "cmp8a7j6g0000gwv485oz2suw",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:58.653Z",
-      "publishedAt": "2026-05-30T18:22:58.794Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-gammon",
-      "tutorialId": "cmpsoikdd0002t4v4kowq0bym",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T18:23:18.423Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-leg-of-lamb",
-      "tutorialId": "cmp73vcsz00008ov49nqiv07n",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:59.229Z",
-      "publishedAt": "2026-05-30T18:22:04.009Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-parsnips",
-      "tutorialId": "cmp5nvp6t0000lov4t3ga2fw7",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:59.523Z",
-      "publishedAt": "2026-05-30T18:23:30.207Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-pheasant",
-      "tutorialId": "cmpdr3bhq0002hcv44fzc4re3",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:24:59.801Z",
-      "publishedAt": "2026-05-30T18:23:10.502Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > troubleshooter[8] > item[0] > fix",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
       "slug": "roast-pork-belly",
       "tutorialId": "cmp89vheq00006cv43x7aa8l4",
       "type": "RECIPE",
@@ -1791,13 +1629,8 @@
       "status": "BLOCK",
       "voiceRetrofittedAt": "2026-05-30T18:25:00.096Z",
       "publishedAt": "2026-05-30T18:22:50.975Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpsxxvho0022zsv4e8ut1v6c",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
@@ -1808,151 +1641,21 @@
       ]
     },
     {
-      "slug": "roast-pork-loin-with-crackling",
-      "tutorialId": "cmp73vfr80001wkv4gl1mryli",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "roof-window-flashing-draught-sealing",
+      "tutorialId": "cmpsxocgo000058v45cdxpxnt",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:00.410Z",
-      "publishedAt": "2026-05-30T18:22:07.977Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:39:44.640Z",
+      "heroMediaId": "cmpsxy69k002kzsv4sbvg575w",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-potatoes",
-      "tutorialId": "cmp73viow0000tgv4frx05tuv",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:00.718Z",
-      "publishedAt": "2026-05-30T18:22:15.704Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-rack-of-lamb",
-      "tutorialId": "cmpagsdxs0000tov482nb6til",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:08.882Z",
-      "publishedAt": "2026-05-30T18:22:46.920Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Thermapen\" — generic equivalent is \"instant-read thermometer\"",
-          "path": "body > troubleshooter[8] > item[1] > fix",
-          "snippet": "Thermapen"
-        }
-      ]
-    },
-    {
-      "slug": "roast-shoulder-of-pork",
-      "tutorialId": "cmpdr2rov0001vkv4pg8lfy39",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:09.039Z",
-      "publishedAt": "2026-05-30T18:22:54.847Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-spatchcock-chicken",
-      "tutorialId": "cmpagti4f0000ekv4zr9dn8l3",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:01.585Z",
-      "publishedAt": "2026-05-30T18:24:21.821Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-turkey",
-      "tutorialId": "cmp8a7gnt0000dsv430stmz4v",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:01.879Z",
-      "publishedAt": "2026-05-30T18:23:02.718Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-turkey-crown",
-      "tutorialId": "cmpsok3jl000034v456l7mbpf",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:02.226Z",
-      "publishedAt": "2026-05-30T18:24:29.918Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "roast-venison-haunch",
-      "tutorialId": "cmpdr3kiz0002lsv42gbenyg6",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:09.674Z",
-      "publishedAt": "2026-05-30T18:23:14.457Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0]",
+          "snippet": "In the loft, pull back the existing insulation from around the window to expose the frame flange and the gap between frame and insulation."
         }
       ]
     },
@@ -2008,44 +1711,21 @@
       ]
     },
     {
-      "slug": "sage-and-onion-stuffing",
-      "tutorialId": "cmpagluec0000rsv4v3chqrb5",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:18.615Z",
-      "publishedAt": "2026-05-30T18:23:43.748Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "saggar-firing-basics",
-      "tutorialId": "cmprhosd90000ykv4oz2yv56c",
+      "slug": "seaweed-as-compost-activator",
+      "tutorialId": "cmpsxp34g0000ncv4gpj296pg",
       "type": "TECHNIQUE",
-      "categorySlug": "pottery-ceramics",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:34.360Z",
-      "publishedAt": "2026-05-29T22:24:25.227Z",
-      "heroMediaId": "cmprhq3kj001itkv49qf8m8pg",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:19.197Z",
+      "heroMediaId": "cmpsxy81j002ozsv4lu1icco9",
       "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[2] > paragraph[0]",
-          "snippet": "Combustible packing materials: coarse sawdust, coarse salt, dried seaweed, or copper carbonate."
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[4]",
+          "snippet": "Collecting beached seaweed for personal use is generally allowed under common law in England and Wales. Check local bylaws before collecting"
         }
       ]
     },
@@ -2114,67 +1794,132 @@
       ]
     },
     {
-      "slug": "slow-roast-beef-brisket",
-      "tutorialId": "cmpsoju1s0000xov4c0twy923",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "sizing-a-water-butt",
+      "tutorialId": "cmpsxpa4c0000i0v42xnnstol",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:03.230Z",
-      "publishedAt": "2026-05-30T18:24:17.611Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:28.265Z",
+      "heroMediaId": "cmpsxy8z5002qzsv47apdp0br",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
     {
-      "slug": "slow-roast-shoulder-of-lamb",
-      "tutorialId": "cmpbejglz000078v4vjib18sa",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "small-wind-battery-hybrid-sizing",
+      "tutorialId": "cmpsxqcp50002ucv4k2rxe2yc",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:03.548Z",
-      "publishedAt": "2026-05-30T18:22:42.886Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:41:18.270Z",
+      "heroMediaId": "cmpsxyeqb002yzsv4cssd2yz2",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         },
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"molasses\" — prefer \"treacle\"",
-          "path": "body > paragraph[10] > text",
-          "snippet": "molasses"
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[9] > troubleshooterItem[1] > paragraph[0]",
+          "snippet": "The charge controller may have a battery protection ceiling that prevents charging above a set state of charge. In LFP systems, a 90 to 95 p"
         }
       ]
     },
     {
-      "slug": "slow-roast-shoulder-of-pork",
-      "tutorialId": "cmpsoka790000h0v4wrnnz77m",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
+      "slug": "smart-meter-half-hourly-data",
+      "tutorialId": "cmpsxohqc0000b4v4ax2s49db",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:03.851Z",
-      "publishedAt": "2026-05-30T18:24:38.547Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:39:51.472Z",
+      "heroMediaId": "cmpsxyfen0030zsv4jfh87rd4",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "Once you know your half-hourly consumption shape, you can assess whether an Agile, Go, or other time-of-use tariff suits your household. If "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "SMETS1 meters (installed before 2018) may not have enabled half-hourly data sharing. Contact your supplier; most SMETS1 meters have been rem"
+        }
+      ]
+    },
+    {
+      "slug": "solar-heated-outdoor-shower",
+      "tutorialId": "cmpsxq7yq0001pwv4pwxcg0gh",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:41:12.135Z",
+      "heroMediaId": "cmpsxygly0032zsv4e4ivk63r",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[5]",
+          "snippet": "A 100 to 200 litre insulated tank mounted above the shower head, fed from a south-facing flat plate or polypipe collector below it, creates "
+        }
+      ]
+    },
+    {
+      "slug": "solar-pv-battery-management-schedules",
+      "tutorialId": "cmpsxpw8a0000b4v4xp3bbctu",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:56.911Z",
+      "heroMediaId": "cmpsxyhd40034zsv4ceks3khe",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         },
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "sourceNotes",
-          "snippet": "fall"
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[6] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A home solar battery can draw from three charge sources: solar generation, cheap overnight grid electricity, and export avoidance. Getting t"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[9] > troubleshooterItem[1] > paragraph[0]",
+          "snippet": "Check that the inverter time zone and daylight saving setting is correct: the charge window times are local, and a one-hour offset will caus"
         }
       ]
     },
@@ -2245,44 +1990,6 @@
           "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[7]",
           "snippet": "Before bringing in replacement animals, clean and disinfect all housing, feeders, drinkers, and handling equipment. The order matters: remov"
-        }
-      ]
-    },
-    {
-      "slug": "soy-candle-rose-geranium",
-      "tutorialId": "cmps3uic20001b8v4s2zs1xw2",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:43.718Z",
-      "heroMediaId": "cmps3wfcl001yfwv4vb5zjqx5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "True rose essential oil is one of the most expensive in aromatherapy and performs poorly in candle wax -- most of its character evaporates d"
-        }
-      ]
-    },
-    {
-      "slug": "spencerian-minuscule-ovals",
-      "tutorialId": "cmprkirp70000j8v42ufwc3oo",
-      "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:57.251Z",
-      "publishedAt": "2026-05-29T23:43:43.272Z",
-      "heroMediaId": "cmprkoveo001qsgv49dgytbd2",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[19] > listItem[1] > paragraph[0]",
-          "snippet": "Write o, o, o with a connecting hairline between each: the exit hairline of one oval connects directly into the entry of the next."
         }
       ]
     },
@@ -3444,213 +3151,6 @@
       ]
     },
     {
-      "slug": "throwing-a-cylindrical-candle-holder",
-      "tutorialId": "cmprso3gk000078v4gjd6y73y",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:37.275Z",
-      "publishedAt": "2026-05-30T03:31:48.716Z",
-      "heroMediaId": "cmprsxpwo001ybkv4rrqkodlg",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[6] > listItem[4] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[18] > listItem[1] > paragraph[0]",
-          "snippet": "Textured exterior: press a wooden stamp or fabric into the leather-hard wall before trimming to add surface interest."
-        }
-      ]
-    },
-    {
-      "slug": "throwing-a-set-of-matching-soup-bowls",
-      "tutorialId": "cmprhoal50000qkv4mjgqt6lg",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:35.936Z",
-      "publishedAt": "2026-05-29T22:24:02.182Z",
-      "heroMediaId": "cmprhti5v002kf0v42mgz3bvp",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[1] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > heading[3] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[6] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[14]",
-          "snippet": "Cone 6 stoneware with a food-safe glaze is microwave-safe and dishwasher-safe once the glaze is verified as non-crazing."
-        }
-      ]
-    },
-    {
-      "slug": "throwing-a-small-teapot-stoneware",
-      "tutorialId": "cmprsvmue0000x0v46nbu2wex",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:37.577Z",
-      "publishedAt": "2026-05-30T03:37:40.426Z",
-      "heroMediaId": "cmprsxqs30020bkv4mj0g6akb",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[22] > listItem[3] > paragraph[0]",
-          "snippet": "Two-glaze decoration: glaze the body in one colour and the lid in a contrasting colour to distinguish them visually."
-        }
-      ]
-    },
-    {
-      "slug": "throwing-a-stoneware-casserole-dish",
-      "tutorialId": "cmprso6av0000wgv4l3vu92ds",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:37.896Z",
-      "publishedAt": "2026-05-30T03:31:52.394Z",
-      "heroMediaId": "cmprsxrse0022bkv49ha59u82",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[16] > listItem[3] > paragraph[0]",
-          "snippet": "Fire the lid propped slightly open or separately on its own shelf to avoid any risk of glaze binding the flange to the gallery during the fi"
-        }
-      ]
-    },
-    {
-      "slug": "throwing-a-teapot-lid-stoneware",
-      "tutorialId": "cmps4i7hf0000m8v47xoia32b",
-      "type": "TECHNIQUE",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T09:24:30.822Z",
-      "publishedAt": "2026-05-30T09:03:09.387Z",
-      "heroMediaId": "cmps594ko0020rwv48areye76",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[6] > listItem[4] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[10] > listItem[2] > paragraph[0]",
-          "snippet": "Allow both the lid and the teapot body to dry to bone-dry together on a level surface before bisque firing."
-        }
-      ]
-    },
-    {
-      "slug": "throwing-matched-nested-bowl-set",
-      "tutorialId": "cmprso90e0000t0v4v94xvuyo",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T03:39:38.210Z",
-      "publishedAt": "2026-05-30T03:31:55.909Z",
-      "heroMediaId": "cmprsxtee0024bkv4e87j9uy7",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[3] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[6] > listItem[2] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[6] > listItem[5] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[18] > listItem[2] > paragraph[0]",
-          "snippet": "Serving and prep set: throw the three largest bowls as deep mixing bowls and the two smallest as prep bowls with a pouring lip added at leat"
-        }
-      ]
-    },
-    {
-      "slug": "toad-in-the-hole",
-      "tutorialId": "cmp4bbzut0001a4v43wxyjmc5",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:04.431Z",
-      "publishedAt": "2026-05-30T18:22:19.569Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > orderedList[9] > listItem[2] > paragraph[0] > text"
-        }
-      ]
-    },
-    {
       "slug": "touched-out-the-science-and-the-soft-answer",
       "tutorialId": "cmpqclipc0000a4v4j8iwbg80",
       "type": "PRACTICE",
@@ -3787,27 +3287,19 @@
       ]
     },
     {
-      "slug": "uncial-hand",
-      "tutorialId": "cmprjx6cx000074v4iv2woyws",
+      "slug": "using-compost-in-raised-beds",
+      "tutorialId": "cmpsxouab000034v4uiywt7mj",
       "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:57.988Z",
-      "publishedAt": "2026-05-29T23:46:15.193Z",
-      "heroMediaId": "cmprkp1pg001ysgv4huzw63ai",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T22:40:07.734Z",
+      "heroMediaId": "cmpsxyj240038zsv40029pfdz",
       "findings": [
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "sourceNotes"
-        },
-        {
           "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[5]",
-          "snippet": "Rule guidelines at a body height of 4 nib widths (measure the nib width by making a staircase of horizontal strokes). Uncial is written betw"
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -4259,31 +3751,6 @@
       ]
     },
     {
-      "slug": "wood-ash-glaze-surface-decoration",
-      "tutorialId": "cmprhovc50002z8v4mzqgxnqj",
-      "type": "TECHNIQUE",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:36.574Z",
-      "publishedAt": "2026-05-29T22:24:29.083Z",
-      "heroMediaId": "cmprhttcl0032f0v4pvuukvwk",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[3] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[3]",
-          "snippet": "Wood ash application suits functional stoneware where a natural, irregular surface is desirable. Results are not uniform. Each piece fires d"
-        }
-      ]
-    },
-    {
       "slug": "wood-chip-composting-technique",
       "tutorialId": "cmprves6v0000z4v48zunt7m3",
       "type": "TECHNIQUE",
@@ -4319,23 +3786,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Composting wood chips: breaking down high-carbon woody material go here."
-        }
-      ]
-    },
-    {
-      "slug": "yorkshire-puddings",
-      "tutorialId": "cmp6lf1jf0000nov4cz8f87ek",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T18:25:04.900Z",
-      "publishedAt": "2026-05-30T18:22:11.848Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },

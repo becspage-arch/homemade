@@ -2514,3 +2514,37 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - clary-sage-bergamot-solid-perfume: voice-violation
+
+---
+
+## Run at 21:19:15
+
+Generated: 2026-05-30T21:19:15.418Z
+
+Processed: 148
+PASS: 148
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+
+---
+
+## Run at 22:10:52
+
+Generated: 2026-05-30T22:10:52.072Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
