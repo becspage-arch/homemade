@@ -645,3 +645,26 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 09:08:22
+
+Generated: 2026-05-30T09:08:22.290Z
+
+Processed: 73
+PASS: 71
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 6 |
+
+## Still BLOCKED (sample 20)
+
+- air-dry-clay-leaf-impression-bowl: hero-missing
+- air-dry-clay-spoon-rest: hero-missing

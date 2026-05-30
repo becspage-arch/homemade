@@ -279,3 +279,6 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - rose-sachet  — applied: body-rewrite:2,dry-run
 - solid-conditioner-bar  — applied: body-rewrite:2,dry-run
 - soy-candle-rose-geranium  — applied: body-rewrite:3,dry-run
+
+- air-dry-clay-leaf-impression-bowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- air-dry-clay-spoon-rest hero-missing — applied: hero-fill-deferred-to-standalone-script

@@ -1,0 +1,173 @@
+{
+  "slug": "honeycomb-sponge-toffee",
+  "tutorialId": "cmps0197p0000oov41l3144d4",
+  "capturedAt": "2026-05-30T07:08:17.249Z",
+  "preFix": {
+    "title": "Honeycomb",
+    "subtitle": "Crunchy aerated toffee, ready in 20 minutes",
+    "excerpt": "Honeycomb (also called sponge toffee or cinder toffee) is made by cooking sugar and golden syrup to a high temperature, then adding bicarbonate of soda at the last moment. The soda reacts with the hot sugar to produce a dramatic foam that sets as it cools into a brittle, aerated toffee with a caramel flavour and a distinctive crunch that dissolves on the tongue.",
+    "sourceNotes": "Honeycomb, cinder toffee, and sponge toffee are regional British names for the same confection. Related preparations appear in British confectionery books from the early twentieth century, where they are described as parlour sweets and fairground confections. The chemical mechanism, bicarbonate of soda releasing carbon dioxide into molten sugar, is consistent across all versions. The addition of the bicarbonate must be done at the correct sugar temperature, around 150 degrees C, for the foam to form properly.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The temperature of the sugar is the key variable. Below 145 degrees C the mixture will not foam sufficiently and the honeycomb will be dense. Above 155 degrees C it may burn before the soda is incorporated. The target is 150 degrees C exactly. Have the bicarbonate of soda measured and ready, the tin lined and placed on a heat-proof surface, and the whisk in hand before the sugar reaches temperature: from 150 degrees C to foam to tin needs to happen in about 15 seconds.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Ingredients",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "ingredientsList",
+          "attrs": {
+            "items": [
+              {
+                "name": "Caster sugar",
+                "unit": "g",
+                "amount": 200,
+                "prepNote": null,
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49fau900dvrkv4ce3mot41",
+                "ingredientSlug": "caster-sugar"
+              },
+              {
+                "name": "Golden syrup",
+                "unit": "tbsp",
+                "amount": 4,
+                "prepNote": null,
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49faxw00e1rkv49ri4h15s",
+                "ingredientSlug": "golden-syrup"
+              },
+              {
+                "name": "Bicarbonate of soda",
+                "unit": "tsp",
+                "amount": 1.5,
+                "prepNote": "sifted",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f92300atrkv49mmzby24",
+                "ingredientSlug": "bicarbonate-of-soda"
+              }
+            ],
+            "defaultServings": null
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Cook the sugar",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Line a 20 cm square tin with baking paper and set it on a heat-proof surface nearby. Combine 200 g caster sugar and 4 tablespoons of golden syrup in a medium saucepan over a medium heat. Stir once to combine, then leave without stirring until the mixture reaches 150 degrees C on a sugar thermometer. The mixture will darken to a deep amber colour as it approaches temperature. Do not stir during cooking.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Add the soda and set",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Remove the pan from the heat immediately at 150 degrees C. Add 1.5 tsp sifted bicarbonate of soda all at once and whisk vigorously for 3 to 4 seconds: the mixture will foam dramatically and roughly double in volume. Pour immediately into the prepared tin without spreading it; spreading will deflate the foam. Leave to cool and set completely at room temperature for 30 minutes. Break into pieces with the back of a wooden spoon.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Troubleshooter",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "attrs": {
+            "items": [
+              {
+                "problem": "The honeycomb is dense and barely aerated",
+                "solution": "The sugar was not at 150 degrees C when the soda was added, or the soda was not fresh. Test with a sugar thermometer rather than guessing from colour. Use fresh bicarbonate of soda."
+              },
+              {
+                "problem": "The honeycomb became sticky the next day",
+                "solution": "Humidity softens it quickly. Store in an airtight tin with a piece of kitchen paper to absorb moisture. Eat within 5 days."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": "about 400 g (16 to 20 pieces)",
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[0] > text",
+      "snippet": "Target"
+    }
+  ]
+}
