@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-05-30T13:12:49.392Z",
-  "totalScanned": 5539,
+  "generatedAt": "2026-05-30T14:34:20.341Z",
+  "totalScanned": 5584,
   "passCount": 0,
-  "blockCount": 180,
+  "blockCount": 167,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
-      "total": 48,
+      "total": 45,
       "pass": 0,
-      "block": 48,
+      "block": 45,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -18,15 +18,9 @@
       "warnOnly": 0
     },
     "natural-home": {
-      "total": 5,
+      "total": 10,
       "pass": 0,
-      "block": 5,
-      "warnOnly": 0
-    },
-    "home-repair": {
-      "total": 12,
-      "pass": 0,
-      "block": 12,
+      "block": 10,
       "warnOnly": 0
     },
     "paper-word": {
@@ -36,54 +30,42 @@
       "warnOnly": 0
     },
     "pottery-ceramics": {
-      "total": 20,
+      "total": 18,
       "pass": 0,
-      "block": 20,
+      "block": 18,
       "warnOnly": 0
     },
     "fibre-arts": {
-      "total": 2,
+      "total": 1,
       "pass": 0,
-      "block": 2,
+      "block": 1,
       "warnOnly": 0
     },
     "mindset": {
-      "total": 72,
+      "total": 65,
       "pass": 0,
-      "block": 72,
+      "block": 65,
+      "warnOnly": 0
+    },
+    "home-repair": {
+      "total": 8,
+      "pass": 0,
+      "block": 8,
       "warnOnly": 0
     },
     "wood-natural-craft": {
-      "total": 2,
+      "total": 1,
       "pass": 0,
-      "block": 2,
+      "block": 1,
       "warnOnly": 0
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 217,
-    "voice-violation": 136
+    "voice-violation": 145,
+    "grade-level-strict": 197,
+    "hero-missing": 5
   },
   "verdicts": [
-    {
-      "slug": "air-sealing-electrical-back-boxes",
-      "tutorialId": "cmps8y0a900008gv4nm9ixcv9",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:05.596Z",
-      "publishedAt": "2026-05-30T11:07:25.022Z",
-      "heroMediaId": "cmps8yx790000x0v4x9gzeta0",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
-          "snippet": "Electrical socket membrane seals, sometimes sold as 'back-box insulation covers' or 'socket draught-sealing membranes'. These are pre-cut fo"
-        }
-      ]
-    },
     {
       "slug": "battery-capacity-degradation",
       "tutorialId": "cmprmms7p0002rov4a9rprkvo",
@@ -220,6 +202,35 @@
       ]
     },
     {
+      "slug": "carrot-cold-process-soap",
+      "tutorialId": "cmpseafk40000t8v40jmldoc3",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T14:01:52.102Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[7] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[14] > text"
+        }
+      ]
+    },
+    {
       "slug": "choosing-sheep-breeds-for-a-small-flock",
       "tutorialId": "cmps6ivfh00025gv4sx8mxm5k",
       "type": "READING",
@@ -351,25 +362,6 @@
       ]
     },
     {
-      "slug": "conditioning-and-feeding-a-leather-sofa",
-      "tutorialId": "cmpsa4rx50001ewv418b5jei4",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:50:06.828Z",
-      "publishedAt": "2026-05-30T11:40:40.398Z",
-      "heroMediaId": "cmpsahecn000a1kv4ov79fg6d",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[17] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Conditioning and feeding a leather sofa go here."
-        }
-      ]
-    },
-    {
       "slug": "cotton-rag-preparation",
       "tutorialId": "cmprkj9i00001ocv4gnbfj3ew",
       "type": "TECHNIQUE",
@@ -474,25 +466,6 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[2] > listItem[1] > paragraph[0]",
           "snippet": "Remove the end-cap from each lateral line and flush for 30 seconds to clear sediment from the line body before addressing the emitters."
-        }
-      ]
-    },
-    {
-      "slug": "dyeing-silk-with-iron-modifier",
-      "tutorialId": "cmprq1e390000gcv424uvgtbf",
-      "type": "TECHNIQUE",
-      "categorySlug": "fibre-arts",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T02:19:17.786Z",
-      "publishedAt": "2026-05-30T02:18:10.180Z",
-      "heroMediaId": "cmprq3l3o0006hsv489wflo8f",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[20]",
-          "snippet": "Side-by-side comparison: use the same dye bath and the same iron modifier on a small skein of wool and a small piece of silk simultaneously."
         }
       ]
     },
@@ -887,44 +860,6 @@
       ]
     },
     {
-      "slug": "insulated-compost-bin-winter",
-      "tutorialId": "cmprmvy2k0000ggv4d3bofau2",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:27.498Z",
-      "publishedAt": "2026-05-30T00:49:57.287Z",
-      "heroMediaId": "cmprmwutp000y94v470acdrcx",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[3] > paragraph[0]",
-          "snippet": "Hinged front panel or removable front boards: one panel of the four sides must be openable for turning and extracting compost."
-        }
-      ]
-    },
-    {
-      "slug": "internal-wooden-window-shutters",
-      "tutorialId": "cmprmvv8l0000p4v4jwaagc2w",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:27.813Z",
-      "publishedAt": "2026-05-30T00:49:53.616Z",
-      "heroMediaId": "cmprmwvh5001094v46elbavvl",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[4] > paragraph[0]",
-          "snippet": "Primer and paint: the panel should be painted on both sides before installation to stabilise moisture content and prevent warping."
-        }
-      ]
-    },
-    {
       "slug": "introducing-a-new-pig-to-an-existing-group",
       "tutorialId": "cmps6jkij0002msv4fffis70a",
       "type": "TECHNIQUE",
@@ -1038,32 +973,6 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Making a simple leather notebook cover go here."
-        }
-      ]
-    },
-    {
-      "slug": "making-a-simple-press-mould-bisque",
-      "tutorialId": "cmps4gpvi00030cv4hd4klr1l",
-      "type": "TECHNIQUE",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T09:24:27.913Z",
-      "publishedAt": "2026-05-30T09:01:59.921Z",
-      "heroMediaId": "cmps58cs0000orwv4cyj1p6a4",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[8] > listItem[1] > paragraph[0]",
-          "snippet": "Skipping the draft angle: vertical or inward-sloping walls trap the pressed piece and make it impossible to remove cleanly."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[8] > listItem[2] > paragraph[0]",
-          "snippet": "Not re-dusting between pressings: the cornflour absorbs into the mould surface over time and must be reapplied every two or three presses."
         }
       ]
     },
@@ -1474,6 +1383,29 @@
       ]
     },
     {
+      "slug": "papaya-cold-process-soap",
+      "tutorialId": "cmpsfb21e0000ckv42dyqn6xl",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T14:28:09.366Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[5] > text"
+        }
+      ]
+    },
+    {
       "slug": "paper-clay-christmas-ornament-set",
       "tutorialId": "cmprhtahg0000osv4xlboghrl",
       "type": "PATTERN",
@@ -1792,25 +1724,6 @@
       ]
     },
     {
-      "slug": "preparing-floor-self-levelling-compound",
-      "tutorialId": "cmprc4pt70001u4v4yi4z303l",
-      "type": "TECHNIQUE",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T19:49:10.287Z",
-      "publishedAt": "2026-05-29T19:48:50.720Z",
-      "heroMediaId": "cmprc6lfu000si4v45wvzylfg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[17] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Preparing a floor with self-levelling compound go here."
-        }
-      ]
-    },
-    {
       "slug": "preventing-egg-eating-by-hens",
       "tutorialId": "cmps6ipft0002d8v44c21xm0h",
       "type": "TECHNIQUE",
@@ -1833,6 +1746,35 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[3] > listItem[3] > paragraph[0]",
           "snippet": "Overcrowding or boredom: hens with insufficient space and enrichment explore and peck at anything in the box."
+        }
+      ]
+    },
+    {
+      "slug": "pumice-gardeners-scrub-bar",
+      "tutorialId": "cmpsejyem0000zgv4ulvve2oz",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T14:01:55.264Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[12] > text"
         }
       ]
     },
@@ -1982,6 +1924,35 @@
       ]
     },
     {
+      "slug": "red-clay-cold-process-soap",
+      "tutorialId": "cmpsfazsh000058v40wfqbtdw",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T14:28:05.018Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[10] > text"
+        }
+      ]
+    },
+    {
       "slug": "reducing-packaging-when-ordering-online",
       "tutorialId": "cmprmo29y0001ywv4n0g1la1t",
       "type": "TECHNIQUE",
@@ -2011,25 +1982,6 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[2] > listItem[2] > paragraph[0]",
           "snippet": "Avoid express or next-day delivery when you do not need it. Express dispatch prioritises speed over consolidation, so items from the same re"
-        }
-      ]
-    },
-    {
-      "slug": "removing-and-replacing-vinyl-floor-tiles",
-      "tutorialId": "cmprlutrw0001ckv46w3at9la",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:25:00.858Z",
-      "publishedAt": "2026-05-30T00:21:05.456Z",
-      "heroMediaId": "cmprlz54s001s6cv4jr1uaacq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Removing and replacing vinyl floor tiles go here."
         }
       ]
     },
@@ -2079,25 +2031,6 @@
       ]
     },
     {
-      "slug": "replacing-a-worn-radiator-compression-valve",
-      "tutorialId": "cmprc0vdg0001rov4f23m9qvq",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T19:49:12.372Z",
-      "publishedAt": "2026-05-29T19:45:51.303Z",
-      "heroMediaId": "cmprc6rpk001ai4v43li6994o",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Replacing a worn radiator compression valve go here."
-        }
-      ]
-    },
-    {
       "slug": "rich-heel-balm",
       "tutorialId": "cmps3u2zj0000hcv4tz4u93wd",
       "type": "RECIPE",
@@ -2113,25 +2046,6 @@
           "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "The key to an effective heel balm is an occlusive base that stays on the skin long enough for the moisturising ingredients to penetrate. She"
-        }
-      ]
-    },
-    {
-      "slug": "riven-ash-garden-fork-handle",
-      "tutorialId": "cmpr4a1680000i0v4dz3hjae1",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T02:08:22.384Z",
-      "publishedAt": "2026-05-29T16:09:01.789Z",
-      "heroMediaId": "cmpr4txqr001makv4xx9r3pm9",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
-          "snippet": "Hazel for border tools: hazel coppice handles suit lighter tools; not recommended for spades under heavy digging pressure."
         }
       ]
     },
@@ -2279,32 +2193,6 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[9] > listItem[1] > paragraph[0]",
           "snippet": "The loft is very dry with good cross-ventilation and moisture buffering has no practical benefit."
-        }
-      ]
-    },
-    {
-      "slug": "slab-built-geometric-planter-with-feet",
-      "tutorialId": "cmprhlyjb0000wgv44vtmlv89",
-      "type": "PATTERN",
-      "categorySlug": "pottery-ceramics",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T22:29:34.970Z",
-      "publishedAt": "2026-05-29T22:25:57.178Z",
-      "heroMediaId": "cmprht3wb0024f0v4yefaqf3w",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[18] > listItem[0] > paragraph[0]",
-          "snippet": "Score a geometric pattern into the side panels at the leather-hard stage using the needle tool before assembly."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[18] > listItem[2] > paragraph[0]",
-          "snippet": "Finish with a wash of watered-down acrylic paint in white or terracotta before the clear seal coat for a coloured surface."
         }
       ]
     },
@@ -2570,44 +2458,6 @@
       ]
     },
     {
-      "slug": "tapping-for-chronic-pain",
-      "tutorialId": "cmpr13vzm00002gv4ydqkqdl4",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:04.196Z",
-      "publishedAt": "2026-05-29T14:40:16.282Z",
-      "heroMediaId": "cmpr16zdr001iu8v4o9c4grmy",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-fear-of-judgment",
-      "tutorialId": "cmpr13z2j0000ncv4jk0xwz17",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:04.706Z",
-      "publishedAt": "2026-05-29T14:40:20.278Z",
-      "heroMediaId": "cmpr170yh001ku8v4xqt13ua6",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
       "slug": "tapping-for-fear-of-owning-property",
       "tutorialId": "cmpavm9ui0000tsv4w3nl8gz1",
       "type": "PRACTICE",
@@ -2736,44 +2586,6 @@
       ]
     },
     {
-      "slug": "tapping-for-i-should-be-over-it",
-      "tutorialId": "cmpr1480j000070v41z5pa8d0",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:05.459Z",
-      "publishedAt": "2026-05-29T14:40:31.865Z",
-      "heroMediaId": "cmpr173xz001ou8v4x9q2exc4",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-imposter-syndrome",
-      "tutorialId": "cmpr144sh0000vsv4m8rznxv6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:05.843Z",
-      "publishedAt": "2026-05-29T14:40:27.692Z",
-      "heroMediaId": "cmpr17591001qu8v4u1jatpiz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
       "slug": "tapping-for-investing-isnt-for-me",
       "tutorialId": "cmpcj72n80000d4v4kaitli6s",
       "type": "PRACTICE",
@@ -2808,25 +2620,6 @@
           "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
           "snippet": "Even though I keep pulling back from enjoyment before it fully arrives, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-mum-guilt",
-      "tutorialId": "cmp9bjtk1000020v47ytbnj5n",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:06.495Z",
-      "publishedAt": "2026-05-29T14:40:36.238Z",
-      "heroMediaId": "cmpr176qh001su8v4ggn0q0vz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
         }
       ]
     },
@@ -3726,25 +3519,6 @@
       ]
     },
     {
-      "slug": "three-habits-wealthy-me-already-has-journal",
-      "tutorialId": "cmpbodwf80000dov43i5ywoun",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:52.065Z",
-      "publishedAt": "2026-05-18T20:47:35.761Z",
-      "heroMediaId": "cmpmgm4lc011o2gv4cmj2952t",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "Write the specific qualities: calm, orderly, intentional, unhurried. What else?"
-        }
-      ]
-    },
-    {
       "slug": "throwing-a-cylindrical-candle-holder",
       "tutorialId": "cmprso3gk000078v4gjd6y73y",
       "type": "PATTERN",
@@ -4409,6 +4183,35 @@
       ]
     },
     {
+      "slug": "white-kaolin-cold-process-soap",
+      "tutorialId": "cmpsfaxjn0000rsv4fpkql3kx",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T14:28:00.318Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[12] > text"
+        }
+      ]
+    },
+    {
       "slug": "why-anxiety-hits-in-perimenopause",
       "tutorialId": "cmpr0u3360000ncv4k3f89pyq",
       "type": "READING",
@@ -4450,25 +4253,6 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[13]",
           "snippet": "The avoidance-rumination cycle is well documented in cognitive-behavioural therapy and in anxiety research. The specific debt-avoidance patt"
-        }
-      ]
-    },
-    {
-      "slug": "why-inheritance-and-tax-fear-slows-down-wealth-planning",
-      "tutorialId": "cmpc7rumi00004cv45kji9zbw",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.643Z",
-      "publishedAt": "2026-05-19T05:50:19.297Z",
-      "heroMediaId": "cmpmgsgu501a42gv46tbjtfpg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[3]",
-          "snippet": "Inheritance and tax anxiety has several distinct components and most people are running two or three at once."
         }
       ]
     },

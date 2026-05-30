@@ -1462,3 +1462,20 @@ SKIPPED: 0
 | Rule kind | Count |
 |---|---:|
 | grade-level-strict | 4 |
+
+
+---
+
+## Run at 14:08:18
+
+Generated: 2026-05-30T14:08:18.235Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
