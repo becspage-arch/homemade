@@ -1,0 +1,198 @@
+{
+  "slug": "silencing-water-hammer-in-domestic-pipes",
+  "title": "Silencing water hammer in domestic pipes",
+  "subtitle": "Diagnose and cure banging or thumping pipes that follow valve closure",
+  "excerpt": "How to identify the source of water hammer in a domestic plumbing system and cure it, covering the fitting of a water hammer arrestor, the slowing of a fast-closing ball valve, and the clipping of loose pipework.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "CIBSE Guide G (public health engineering). CIPHE Plumbers Handbook. Cassell's Cyclopaedia of Mechanics.",
+  "recipeTools": [
+    {
+      "slug": "pipe-cutter-15-22mm",
+      "isOptional": false
+    },
+    {
+      "slug": "adjustable-spanner-200mm",
+      "isOptional": false
+    },
+    {
+      "slug": "water-pump-pliers",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "water-hammer",
+      "term": "Water hammer",
+      "definition": "A pressure shockwave in a pipe caused by a column of moving water being stopped abruptly by the closure of a valve. The sudden deceleration produces a pressure spike that travels back through the pipework as a bang or series of bangs. Solenoid valves (washing machines, dishwashers, cistern fill valves) are the most common cause because they close in milliseconds, far faster than a manually operated tap."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "banging pipes",
+    "water hammer cure",
+    "noisy water pipes"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Diagnosing "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "water-hammer"
+                }
+              }
+            ],
+            "text": "water hammer"
+          },
+          {
+            "type": "text",
+            "text": " is straightforward: the bang happens immediately after an appliance or cistern stops filling, not during filling. Washing machines and dishwashers on the end of their fill cycle, and toilet cisterns reaching their high-water shutoff, are the most common causes. Loose pipework makes the noise louder and more alarming than it otherwise would be. Address both the pressure source and any pipe movement for the most complete cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need: materials"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water hammer arrestor (a small sealed piston-in-cylinder device that absorbs the pressure spike; available with ½-inch BSP male or female connection, or inline with compression fittings). Pipe clips (if pipework is inadequately clipped). Compression fittings or push-fit fittings to connect the arrestor. If the source is a toilet cistern ball valve: a slow-close or silent-fill replacement valve."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, identify the source appliance"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Run each appliance one at a time and listen for the bang. Starting the washing machine fill cycle is the quickest test; hold the programme at the beginning of the fill stage. A toilet cistern can be tested by flushing once and listening for the bang as the cistern reaches full. Once the culprit appliance is identified, trace the supply pipe from the appliance back to the nearest accessible branch or tee in the pipework."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, fit a water hammer arrestor"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Isolate the supply to the appliance at its service valve. Cut into the 15 mm supply pipe close to the solenoid valve with the pipe cutter. Fit an inline arrestor using compression fittings on both sides of the cut, or fit a tee fitting and screw in a BSP-threaded arrestor to the branch. The arrestor must be installed as close to the solenoid valve as possible, on the supply side. Restore supply and run the appliance through its fill cycle to test."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, clip any loose pipework"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Even after fitting an arrestor, loose pipework will still rattle when the pressure wave hits. Check all pipework along the run from the appliance back to the main stack, or as far as is accessible, and fit pipe clips at 600 mm centres on 15 mm pipe, 900 mm on 22 mm pipe. Clips should grip the pipe firmly without deforming it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Toilet cistern ball valve alternative"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the source is a cistern ball valve that closes noisily, replacing the existing valve with a modern slow-close or equilibrium valve is the simplest fix. These valves close gradually over the last part of their travel, eliminating the sudden shutoff. They are a direct thread-for-thread replacement in most cisterns."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bang persists after fitting the arrestor",
+              "cause": "The arrestor is too far from the solenoid valve, so the pressure wave has already reflected before the arrestor can absorb it.",
+              "fix": "Move the arrestor to the closest accessible position upstream of the solenoid valve, ideally within 300 mm."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Pipes bang during flow, not only when an appliance shuts off",
+              "cause": "This is not water hammer but pipe vibration from turbulent flow at a partially closed valve or a loose washer in a tap.",
+              "fix": "Check all service valves and isolators on the suspect run: any that are only partially open will generate turbulence. Also check for a worn or loose jumper washer in any manual tap on the circuit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

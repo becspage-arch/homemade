@@ -1,0 +1,164 @@
+{
+  "slug": "understanding-earthing-and-bonding-in-a-home",
+  "title": "Understanding earthing and bonding in a home",
+  "subtitle": "What earthing and equipotential bonding do, where to find them, and when to act",
+  "excerpt": "A plain-language explanation of how protective earthing and main equipotential bonding work in a domestic electrical installation, how to locate the main earth terminal and bonding conductors, and what visible signs indicate a bonding problem.",
+  "type": "READING",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET Wiring Regulations BS 7671 (18th edition) Part 4 and 5. IET Guidance Note 8: earthing and bonding. Cassell's Cyclopaedia of Mechanics.",
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "main-equipotential-bonding",
+      "term": "Main equipotential bonding",
+      "definition": "The connection of all main metallic services entering a property — gas, water, oil, structural steel — to the main earthing terminal of the consumer unit by a conductor of sufficient cross-sectional area (typically 10 mm²). The purpose is to bring all exposed metallic services to the same electrical potential, so that a fault on any one service cannot create a dangerous voltage difference between it and any other metallic surface a person might touch simultaneously."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "earthing explained",
+    "bonding explained",
+    "electrical earthing home"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Earthing and bonding serve different purposes in a home's electrical installation. Earthing creates a fault-current path so that a fuse or MCB can operate and disconnect the supply. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "main-equipotential-bonding"
+                }
+              }
+            ],
+            "text": "Main equipotential bonding"
+          },
+          {
+            "type": "text",
+            "text": " reduces shock risk by keeping all metallic services at the same voltage, even before a fault is detected."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What earthing does"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every circuit has a protective conductor, the green-and-yellow wire, running to each outlet, switch, and fitting. If a live conductor touches a metallic casing, the earth conductor carries the fault current back and trips the MCB or fuse. Without a working earth, the casing stays live and will shock anyone who touches it. The earth connection at the consumer unit links to the supply neutral or a buried earth electrode."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What bonding does"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Main bonding connects metallic services, the gas pipe, water pipe, and others, to the main earthing terminal at the consumer unit. The bonding clamp should be visible on the gas pipe near the meter and on the water pipe near where it enters the building. If a supply fault raises the earth potential, the bonding conductors ensure all metallic services rise to the same potential at the same time. This removes any voltage difference between surfaces a person might touch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Supplementary bonding in bathrooms"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Older rules required supplementary bonding in bathrooms to link the pipework, bath, and radiator. Current regulations do not require this where all bathroom circuits have RCD protection at the consumer unit. In older homes without RCDs, these small green-and-yellow wires, clamped to baths, pipes, and radiators, should stay in place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to check and when to act"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check that bonding conductors are present and clamped within 600 mm of the gas meter and within 600 mm of where the water pipe enters the building. Clamps must be tight, labelled 'Safety Electrical Connection, Do Not Remove', and connected to the main earthing terminal. If a conductor is absent, corroded, or a clamp is loose, call a registered electrician."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Mild tingling when touching a tap or metal pipe in the kitchen or bathroom",
+              "cause": "A potential difference exists between the piping and the building earth, suggesting a loose or absent bonding conductor, or a fault on a connected appliance.",
+              "fix": "Stop using the affected tap or appliance immediately. Check that the bonding conductor clamp on the water supply pipe is tight and connected. If the sensation persists after checking the clamp, call a registered electrician before using the fitting again."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bonding clamp is present but the conductor disappears into the wall and cannot be traced to the consumer unit",
+              "cause": "The installation predates modern earthing requirements or the conductor has been cut during renovation work.",
+              "fix": "Commission an electrical installation condition report (EICR) from a registered electrician to assess the earthing and bonding as part of a full installation check."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

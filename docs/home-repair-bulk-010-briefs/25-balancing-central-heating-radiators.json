@@ -1,0 +1,215 @@
+{
+  "slug": "balancing-central-heating-radiators",
+  "title": "Balancing central heating radiators",
+  "subtitle": "Adjust lockshield valves to distribute heat evenly across a central heating circuit",
+  "excerpt": "How to balance a domestic central heating system so that all radiators reach their working temperature at the same rate, by measuring the flow-to-return temperature difference at each radiator and adjusting the lockshield valves accordingly.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "CIBSE Guide B: Heating, Ventilating, Air Conditioning and Refrigeration. Heating and Ventilating Contractors Association (HVCA) guide to balancing. Cassell's Cyclopaedia of Mechanics.",
+  "recipeTools": [
+    {
+      "slug": "adjustable-spanner-200mm",
+      "isOptional": false
+    },
+    {
+      "slug": "multimeter-digital",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lockshield-valve",
+      "term": "Lockshield valve",
+      "definition": "The capped valve on one end of a radiator — typically the return end — used to set the flow rate through that radiator during system balancing. Unlike the user-adjustable TRV or manual valve at the other end, the lockshield valve is set once and left, protected by a plastic cap. Its position is measured by counting the turns from fully closed."
+    },
+    {
+      "slug": "delta-t",
+      "term": "Delta-T",
+      "definition": "The temperature difference between the flow and return pipes at a radiator, used to assess whether the radiator is correctly balanced. A correctly balanced radiator on a conventional boiler system should show a delta-T of approximately 11°C to 12°C between flow and return. A smaller delta-T means the radiator is receiving too much flow (lockshield needs closing); a larger delta-T means it is starved of flow (lockshield needs opening)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "radiator balancing",
+    "central heating balancing",
+    "lockshield valve adjustment"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An unbalanced system has one clear sign: radiators near the boiler get very hot while those furthest away stay cooler. Balancing adjusts the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lockshield-valve"
+                }
+              }
+            ],
+            "text": "lockshield valves"
+          },
+          {
+            "type": "text",
+            "text": " to reduce flow to the nearest radiators and send more water to those at the far end. The aim is an even "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "delta-t"
+                }
+              }
+            ],
+            "text": "delta-T"
+          },
+          {
+            "type": "text",
+            "text": " across every radiator."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need: materials"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A digital thermometer with a clip-on pipe probe (or two, one per radiator). Pen and paper to record each radiator position and lockshield turn count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, bleed all radiators and open all valves"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bleed every radiator to remove trapped air. Open all TRVs and manual valves fully. Remove the lockshield caps from all radiators and open every lockshield valve fully by turning anti-clockwise until it will turn no further. Note the number of turns to fully open for each radiator. Run the heating system at full temperature for 20 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, measure temperatures at each radiator"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Clip one probe to the flow pipe at each radiator (the pipe that enters the TRV or manual valve side) and one to the return pipe (the lockshield side). Record both temperatures for each radiator. The radiators closest to the boiler will show the smallest delta-T; those furthest away will show the largest. Work your way around every radiator in the house and note the results."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, adjust lockshield valves"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start with the radiator closest to the boiler (the one with the smallest delta-T). Close its lockshield valve fully, then open it by half a turn. Wait five minutes and measure the delta-T again. Continue opening or closing the lockshield in quarter-turn increments, waiting five minutes between adjustments, until the delta-T is 11°C to 12°C. Move to the next nearest radiator and repeat. Work outward from the boiler to the furthest radiators; the furthest will probably need their lockshield valves left fully open."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, re-check and refit caps"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After adjusting all radiators, run the system for another 30 minutes and take a final set of readings. Minor drift from the target delta-T on any radiator is acceptable; aim for all radiators within 2°C of the target. Record the final lockshield turns-from-closed for each radiator in case you need to re-balance after system changes. Refit the lockshield caps."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "One radiator remains cold or barely warm even with its lockshield fully open",
+              "cause": "The radiator has a stuck or faulty TRV, trapped air, or a blockage in its pipework.",
+              "fix": "Check the TRV pin is not stuck by pressing the pin manually; it should spring back. Bleed the radiator. If it is still cold after these checks, the issue is a system blockage rather than a balancing problem."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "System makes noise or pump runs loudly after balancing",
+              "cause": "The lockshield valves have been closed too much, restricting total system flow below the pump's design minimum.",
+              "fix": "Open all lockshield valves by a further half turn and re-check temperatures. A higher system flow rate with a slightly wider delta-T is preferable to a noisy pump."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -22,16 +22,12 @@ const __dirname = dirname(__filename)
 
 async function main() {
   const { prisma } = await import('../src/index.js')
-  try {
-    const updated = await prisma.category.update({
-      where: { id: 'cmp8mecuz0009d4v4pbifz6ki' },
-      data: { lastAutopilotRunAt: new Date() },
-      select: { id: true, slug: true, lastAutopilotRunAt: true },
-    })
-    console.log('CLAIMED:' + JSON.stringify(updated))
-  } catch (e: any) {
-    console.error('ERR:' + e.message)
-    process.exit(1)
-  }
+  const updated = await prisma.category.update({
+    where: { id: 'cmp8mecuz0009d4v4pbifz6ki' },
+    data: { lastAutopilotRunAt: new Date() },
+    select: { slug: true, lastAutopilotRunAt: true },
+  })
+  console.log('Claimed: ' + updated.slug + ' at ' + updated.lastAutopilotRunAt?.toISOString())
+  await prisma.$disconnect()
 }
-main()
+main().catch(e => { console.error(e); process.exit(1) })
