@@ -1,0 +1,233 @@
+{
+  "slug": "air-source-heat-pump-summer-cooling",
+  "tutorialId": "cmprmmn0g0000wwv4ap2xzz0g",
+  "capturedAt": "2026-05-30T00:51:22.543Z",
+  "preFix": {
+    "title": "Using a reversible air source heat pump for summer cooling",
+    "subtitle": "Whether your ASHP can cool, what's involved, and the performance to expect",
+    "excerpt": "Many air source heat pumps sold in the UK are reversible: they can run in cooling mode in summer, pushing heat out of the house rather than in. Cooling mode is not a default UK heat pump feature, but is available on most modern units. This covers how to confirm if your ASHP is reversible, how cooling mode works, and what performance to expect.",
+    "sourceNotes": "BSRIA guidance on reversible heat pumps. Daikin, Mitsubishi, and Samsung published product specifications for UK residential ASHP models. CIBSE Guide A on summer overheating risk in UK homes.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A reversible ASHP runs in reverse in summer: the indoor unit absorbs heat from the room and the outdoor unit expels it outside. The same ",
+              "type": "text"
+            },
+            {
+              "text": "COP",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3axw000s4ov4jr8ltx6d"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " principle applies: a cooling COP of 2.5 to 4 is typical at UK summer temperatures, removing 2.5 to 4 kWh of heat per kWh of electricity.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Is your ASHP reversible?",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Check the model number on the outdoor unit or in the commissioning paperwork. Reversible models from Mitsubishi Electric, Daikin, Samsung, and Panasonic usually have 'R' or 'Cooling' in the model code. A datasheet with a Cooling Capacity in kW means it is reversible. One showing only Heating Capacity is heating-only. Heating-only units are common in the UK because reversible units cost more and cooling was not part of the traditional UK build spec.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What's needed to enable cooling",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Controller setup: the heat pump controller must be configured for cooling mode. On most systems this requires a setting change in the installer menu. Some systems require the original installer to enable it.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Emitter system: underfloor heating circuits can act as radiant cooling surfaces in summer. The flow temperature in cooling mode is typically 16 to 18°C (compared with 35 to 45°C in heating mode). Radiators are less effective as cooling surfaces because natural convection is less efficient in cooling mode. Fan coil units work in both directions and are efficient for both heating and cooling.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Condensation management: when the emitters run below the room dew point, moisture condenses on the floor or pipes. The control system needs a dew point sensor or humidity control to prevent condensation. This is the main reason cooling via underfloor heating needs professional commissioning.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Hot water in summer: in cooling mode, the heat extracted from the house can be used to heat the hot water cylinder (free cooling, or 'heat recovery' mode on some units). This is the most energy-efficient use of the cooling function and avoids hot water costs in summer.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Performance in the UK context",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The UK has around 3 to 6 days per year above 30°C and perhaps 15 to 25 days above 25°C, depending on location. A well-insulated UK house (post-2000 build or deeply retrofitted) rarely exceeds 28°C internal without active cooling. The case for cooling is strongest in older houses with limited thermal mass, south-facing glazed extensions, and poor cross-ventilation. Running the ASHP in cooling mode on the hottest days of the year costs roughly 0.5 to 2 kWh/hr of electricity, about 14 to 54p/hr at 27p/kWh. This is a modest cost for a large thermal improvement.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Seasonal ",
+              "type": "text"
+            },
+            {
+              "text": "SCOP",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3aym000t4ov4uzgojeyu"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and carbon impact",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Cooling mode uses electricity at a COP of 2.5 to 4, removing 2.5 to 4 times as much heat as it consumes. At UK grid carbon intensity of around 150 g/kWh, cooling at COP 3 emits around 50 g CO2e per kWh of heat removed. A dedicated air conditioner at the same COP has the same carbon cost. The reversible ASHP adds no extra carbon over a stand-alone cooling unit.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When to call a professional",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Enabling cooling mode requires changes to the installer-level menu settings. For underfloor systems, a dew point sensor must also be fitted. Both are installer tasks. Bypassing dew point protection risks condensation damage to floors and subfloor structures.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "A reversible ASHP runs in reverse in summer: the indoor unit absorbs heat from the room and the outdoor unit expels it outside. The same COP"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[2]",
+      "snippet": "Check the model number on the outdoor unit or in the commissioning paperwork. Reversible models from Mitsubishi Electric, Daikin, Samsung, a"
+    }
+  ]
+}

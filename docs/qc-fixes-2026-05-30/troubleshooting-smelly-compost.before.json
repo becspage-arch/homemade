@@ -1,0 +1,116 @@
+{
+  "slug": "troubleshooting-smelly-compost",
+  "tutorialId": "cmprmndud0000agv4u0vpclcc",
+  "capturedAt": "2026-05-30T00:51:33.307Z",
+  "preFix": {
+    "title": "Diagnosing and fixing compost heap odours",
+    "subtitle": "Four distinct smells, four distinct causes, four fixes",
+    "excerpt": "A compost heap should smell faintly earthy. Any other smell is a diagnostic signal. Ammonia, sulphur, sour vinegar, and putrid rotting meat each point to a different imbalance. This covers how to identify each odour, what it means, and what to do.",
+    "sourceNotes": "HDRA/Garden Organic composting troubleshooting guides. RHS composting advice. WRAP household food waste composting research.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Compost odours are diagnostic tools. Each smell corresponds to a specific chemical process in the heap. Knowing which process is running tells you exactly which input or condition to change. Piling more material on top to mask the smell addresses none of the causes.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Add browns immediately: torn cardboard, dry leaves, or straw. Mix or layer through the heap. Aim for equal volumes of carbon material to the excess nitrogen material. The ammonia smell will reduce within 24 to 48 hours as the carbon absorbs it.",
+                "cause": "Excess nitrogen: too many greens with no carbon to balance them. Common after adding a large quantity of fresh grass clippings, chicken manure, or kitchen scraps without carbon. The C:N ratio has dropped below 15:1.",
+                "symptom": "Ammonia smell (sharp, eye-watering, like cleaning products)"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Turn the heap to introduce air. If it is very wet and compacted, spread the material out on a sheet of cardboard or plastic for 30 to 60 minutes to release moisture before re-piling. Add dry straw or scrunched paper to improve structure. The smell disappears within 1 to 3 days of aerating.",
+                "cause": "Anaerobic conditions: the heap is too wet and compacted, and oxygen is absent. Anaerobic bacteria produce hydrogen sulphide (the rotten egg compound) instead of the aerobic bacteria that produce only CO2 and water.",
+                "symptom": "Rotten egg or sulphur smell (like bad drains)"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Add lime or wood ash in a thin layer (no more than 50 g per 30-litre layer) to raise the pH. Turn to aerate. Improve drainage by raising the base of the bin off the ground or drilling drainage holes. Reduce the proportion of citrus and fruit waste going forward.",
+                "cause": "Acidic fermentation: the heap is too wet and cold, and acid-forming bacteria are outcompeting aerobic decomposers. Common in autumn heaps, enclosed plastic bins with poor drainage, or when too much citrus peel or acidic fruit has been added.",
+                "symptom": "Sour or vinegary smell (like cider vinegar or wet hay)"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Remove the contaminating material if it can be located and is still concentrated (within the first week). Cover with a thick layer of dry cardboard and soil to suppress flies. If the bin is a plastic Dalek that cannot hot-compost reliably, do not add cooked food or meat again. If the smell persists for more than 2 weeks after removal and covering, empty the bin and restart.",
+                "cause": "Cooked food, meat, fish, or dairy has been added. These materials ferment rapidly and produce volatile compounds that attract rats and flies as well as smell. Hot composting at 55°C+ resolves it, but most home bins do not reach that temperature reliably.",
+                "symptom": "Putrid or rotten meat smell (sweet-rotten, stomach-turning)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The ",
+              "type": "text"
+            },
+            {
+              "text": "C:N ratio",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3b7400154ov4bwox1wne"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and smell prevention",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most domestic compost heap smells come from an imbalanced C:N ratio. Ammonia means too much nitrogen; sulphur and sourness often follow from too much nitrogen with no air, which creates the anaerobic conditions where acid and sulphide bacteria thrive. Keeping a supply of dry carbon material beside the bin and adding it each time fresh kitchen scraps are added prevents the majority of odour problems before they start.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[3]",
+      "snippet": "Most domestic compost heap smells come from an imbalanced C:N ratio. Ammonia means too much nitrogen; sulphur and sourness often follow from"
+    }
+  ]
+}

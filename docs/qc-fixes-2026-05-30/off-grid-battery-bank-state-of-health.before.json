@@ -1,0 +1,177 @@
+{
+  "slug": "off-grid-battery-bank-state-of-health",
+  "tutorialId": "cmprmw6440000vsv4dakknfnz",
+  "capturedAt": "2026-05-30T00:51:29.143Z",
+  "preFix": {
+    "title": "Monitoring and maintaining an off-grid battery bank",
+    "subtitle": "State of health checks, equalisation cycles, and the signs a lead-acid bank needs replacing",
+    "excerpt": "An off-grid battery bank is typically the single most expensive component in a small solar system, and it degrades faster than any other component if poorly managed. Monitoring state of health monthly and running an equalisation charge twice a year on lead-acid banks extends service life by 2 to 4 years. This covers the checks, the equalisation process, and the decision point for replacement.",
+    "sourceNotes": "BatteryUniversity.com lead-acid and LiFePO4 care protocols. Victron Energy battery care application notes. Rolls Battery technical manual for deep-cycle lead-acid. BSRIA off-grid system maintenance guidance.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Lead-acid deep-cycle batteries fail through three routes: sulphation (sulphate deposits on plates from partial charging), acid stratification (acid layers unevenly when sitting at partial charge), and plate shedding (active material falls off plates after many deep cycles). ",
+              "type": "text"
+            },
+            {
+              "text": "Equalisation charging",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmofjw0000q4v4d3zw6qa0"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " addresses the first two. The third is irreversible. It determines end of life.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Monthly state of health check",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Rest voltage: with the bank disconnected from both charge source and load for at least 2 hours, measure the terminal voltage with a multimeter. For a flooded 12V lead-acid bank: 12.7V+ = 100% charged; 12.4V = 75%; 12.2V = 50%; below 12.0V = discharged. Sealed AGM banks read 0.2 to 0.3V higher at the same state of charge.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Electrolyte specific gravity (flooded lead-acid only): use a hydrometer to measure the specific gravity of each cell. Fully charged: 1.265 to 1.280. Discharged: 1.120 to 1.150. A variation of more than 0.025 between cells in the same battery indicates a failing cell. Top up with distilled water if the electrolyte level is below the plates; never use tap water.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Effective capacity test (quarterly): under a known load (a resistive heater or lamp of measured wattage), discharge the bank from 100% ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "state of health",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmprmms5w0000rov4s0k7cus4"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " to 50% while measuring the time taken. A bank rated at 200 Ah that discharges from 100% to 50% in 4 hours at a 25A load has an effective capacity of 100 Ah (as rated). If it takes only 2.5 hours, effective capacity is 62.5 Ah, a SoH of 63%, approaching replacement range.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Equalisation charging (flooded lead-acid)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Run an equalisation charge every 6 months, or immediately after a period of extended partial discharge (e.g. several cloudy weeks in winter). Set the charge controller to the equalisation voltage (typically 15.5 to 16.2V for a 12V flooded bank; check the battery manufacturer's specification). Leave the battery tops open and ensure ventilation: equalisation produces hydrogen gas. Run for 2 to 8 hours until the electrolyte is actively gassing (bubbling) uniformly across all cells and specific gravity readings have stabilised. Do not apply equalisation to sealed AGM or gel batteries; it will damage them. Never equalise lithium (LFP) batteries.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Replacement decision",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Replace a lead-acid bank when effective capacity falls below 70% of rated, or when any individual cell shows a specific gravity 0.05 below the rest (indicating a dead cell dragging the bank). Do not replace individual batteries in an aged bank. New batteries mixed with old will be dragged down by the weaker cells. Replace all at once. A flooded lead-acid deep-cycle bank in a well-managed small system (not regularly discharged below 50% SoC, equalised twice yearly) typically lasts 5 to 8 years. LiFePO4 (lithium iron phosphate) banks require no equalisation, have no hydrometer check, and typically last 2,000 to 4,000 cycles to 80% SoH, meaning 8 to 15 years at 1 cycle per day.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "Lead-acid deep-cycle batteries fail through three routes: sulphation (sulphate deposits on plates from partial charging), acid stratificatio"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[4]",
+      "snippet": "Run an equalisation charge every 6 months, or immediately after a period of extended partial discharge (e.g. several cloudy weeks in winter)"
+    }
+  ]
+}

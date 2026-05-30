@@ -1387,3 +1387,34 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 23:48:58
+
+Generated: 2026-05-29T23:48:58.725Z
+
+Processed: 111
+PASS: 104
+STILL_BLOCKED: 7
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 43 |
+| historical-century-in-body | 9 |
+| body-missing-method | 8 |
+| academic-register-word | 1 |
+
+## Still BLOCKED (sample 20)
+
+- abaca-fibre-papermaking: grade-level-strict
+- cotton-rag-preparation: grade-level-strict
+- foundational-spacing: grade-level-strict
+- hand-lettered-headers: grade-level-strict
+- photo-mounting-options: grade-level-strict
+- spencerian-minuscule-ovals: grade-level-strict
+- uncial-hand: grade-level-strict

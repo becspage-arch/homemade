@@ -1,0 +1,206 @@
+{
+  "slug": "hot-water-cylinder-timing-optimisation",
+  "tutorialId": "cmprmngfs0001r8v4belbrvg4",
+  "capturedAt": "2026-05-30T00:51:27.295Z",
+  "preFix": {
+    "title": "Optimising hot water cylinder heating schedules",
+    "subtitle": "Cut standing losses and avoid unnecessary reheat cycles by setting the correct boost times",
+    "excerpt": "An unvented or vented hot water cylinder that heats twice a day when once is enough wastes 1.5 to 3 kWh daily. Matching the heating schedule to actual demand reduces standing heat losses and cuts bills significantly. This covers how to audit usage patterns and set a minimal heating schedule.",
+    "sourceNotes": "EST/Energy Saving Trust hot water cylinder guidance. CIBSE guidance TM66 domestic hot water heat losses. Ofgem energy consumption statistics 2024.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A 120-litre unvented cylinder with a factory-fitted 35 mm foam jacket loses approximately 1.5 kWh per day in ",
+              "type": "text"
+            },
+            {
+              "text": "standing heat loss",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmngej0000r8v47ajtzt12"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " when held at 60°C. An old cylinder with a thin or missing jacket loses 3 to 5 kWh per day. Every unnecessary heating cycle also adds energy cost. Most households use hot water in two main windows: morning (showers, handwashing) and early evening (washing up, baths). A cylinder that heats during both windows but sits idle the rest of the time needs only one or two short heating periods timed precisely around demand.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Auditing current demand",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Note the times of all hot water draw-offs in a typical day: showers, baths, dishwasher, handwashing, washing machine. Most households have 2 to 3 concentrated windows.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Note the boiler or immersion current schedule. Most programmer timers show the set heating periods. Write them down.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Compare: if the cylinder heats when no hot water is drawn for 3+ hours after, the stored heat loses more energy than needed. That heat cycle is avoidable.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Setting a minimal schedule",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Morning window: set the cylinder to heat 30 to 45 minutes before first use (shower/bath). A gas boiler with a 120-litre cylinder typically recovers from 50°C to 65°C in 20 to 35 minutes depending on boiler output.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Evening window: if evening showers or a bath are likely, add a 20 to 30-minute heating window timed 45 minutes before use.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "If the household only uses hot water in the morning: one heating window of 30 to 45 minutes is sufficient. Switch off the afternoon or evening heating period entirely.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Legionella: the cylinder must reach 60°C at least once per day to prevent Legionella bacteria growth. Do not reduce the set temperature below 60°C; only reduce the frequency of heating if one cycle still reaches 60°C.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Heat pump and solar thermal cylinders",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Heat pump hot water cylinders (either standalone heat pump water heaters or cylinders fed by an ASHP) benefit most from a single overnight heating window when electricity is cheapest. The heat pump charges the tank to 55 to 60°C overnight; the stored heat covers all demand the following day. The standing loss from one overnight charge is less than two daytime cycles. Solar thermal cylinders require no timing adjustment (they heat when sun is available), but an immersion heater top-up should be timed for early morning to reduce storage time before use.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[6]",
+      "snippet": "Heat pump hot water cylinders (either standalone heat pump water heaters or cylinders fed by an ASHP) benefit most from a single overnight h"
+    }
+  ]
+}

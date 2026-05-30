@@ -1,0 +1,238 @@
+{
+  "slug": "battery-capacity-degradation",
+  "tutorialId": "cmprmms7p0002rov4a9rprkvo",
+  "capturedAt": "2026-05-30T00:51:23.137Z",
+  "preFix": {
+    "title": "Understanding home battery degradation and state of health",
+    "subtitle": "What cycle life means, how to track capacity fade, and when a battery needs replacing",
+    "excerpt": "Home battery systems lose usable capacity over time through cycling, temperature, and calendar ageing. A battery warranted to 70% of nominal capacity at 10 years should retain around 90% by year 5 under typical use. This explains how to track degradation from the BMS, what accelerates it, and what 'end of life' means in practice.",
+    "sourceNotes": "CATL and Pylontech published cycle-life data for LFP cells. Warwick Manufacturing Group research on domestic battery degradation. BEIS battery storage review 2024.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A ",
+              "type": "text"
+            },
+            {
+              "text": "battery storage",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3awk000q4ov4iopxgwu7"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " system loses capacity through two routes: cycling (charge-discharge wear) and calendar ageing (chemical decay over time, even when idle). Most modern domestic batteries use lithium iron phosphate (LFP) chemistry. LFP degrades more slowly than older NMC cells and is the main chemistry for residential systems in 2025.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What warranties actually say",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A typical domestic battery warranty reads: '10 years or 4,000 cycles at 70% of nominal capacity, whichever comes first.' This means the manufacturer guarantees the battery will still deliver at least 70% of its new capacity after 10 years of use with up to 4,000 full charge-discharge cycles. A 10 kWh battery at 70% ",
+              "type": "text"
+            },
+            {
+              "text": "state of health",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmms5w0000rov4s0k7cus4"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " delivers 7 kWh usable. The battery is still functional; it is just smaller.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For daily use (one cycle per day), 4,000 cycles = 11 years. Most domestic systems do not complete one full cycle per day because partial cycling is common. Partial cycles count as fractions: two 50% cycles count as one full cycle. At 0.7 full cycles per day on average, 4,000 cycles = 15.7 years. The ",
+              "type": "text"
+            },
+            {
+              "text": "cycle life",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmms6m0001rov4rcgeikr7"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " is rarely the binding constraint for a typical home use pattern; the 10-year calendar term is more commonly the warranty boundary.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Tracking degradation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The battery management system (BMS) reports state of health in the monitoring app for most modern systems. On GivEnergy, the app shows SoH under 'Battery Statistics'. On SolarEdge Energy Bank, it is in the 'Battery Info' panel. On Pylontech via third-party inverters, check the inverter's BMS readout. Record the SoH figure at installation and annually thereafter. A straight-line decline from 100% to 70% over 10 years is typical; a curve that drops to 90% in year 2 and then flattens is common for LFP cells.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "type": "info"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "What accelerates degradation: deep cycling below 10% state of charge repeatedly; frequent high-rate fast charging; sustained storage at high temperatures (above 35°C consistently); consistently charging to 100% and discharging to 0% rather than operating in the 20 to 80% range. Most battery management systems apply soft limits to prevent the worst-case conditions automatically.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "End of life and replacement",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A battery at end of warranty is not broken; it just has less capacity. A 10 kWh battery at 70% SoH is a working 7 kWh battery. It keeps providing value until its smaller capacity no longer justifies the standing costs. Some manufacturers offer module replacement (cells only, not the full system) at roughly 40 to 60% of new-system cost. This can be cost-effective after 10 to 12 years of use.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Common variations",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Lead-acid off-grid systems: much faster degradation. A well-maintained flooded lead-acid battery bank lasts 5 to 7 years at 500 to 1,200 cycles at 50% depth of discharge. Equalisation charging once per month extends life. See the off-grid battery monitoring tutorial.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "EV battery second life: some EV batteries (SoH 70 to 80%) are repurposed as home storage systems at lower cost than new LFP cells. Second-life EV packs are less consistent than new cells; the warranty terms vary widely.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "A battery storage system loses capacity through two routes: cycling (charge-discharge wear) and calendar ageing (chemical decay over time, e"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[2]",
+      "snippet": "A typical domestic battery warranty reads: '10 years or 4,000 cycles at 70% of nominal capacity, whichever comes first.' This means the manu"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 16.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > infoPanel[6] > paragraph[0]",
+      "snippet": "What accelerates degradation: deep cycling below 10% state of charge repeatedly; frequent high-rate fast charging; sustained storage at high"
+    }
+  ]
+}

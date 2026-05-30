@@ -1,0 +1,167 @@
+{
+  "slug": "clothing-care-to-extend-garment-life",
+  "tutorialId": "cmprmvbro0001usv4yvec7xl1",
+  "capturedAt": "2026-05-30T00:51:24.074Z",
+  "preFix": {
+    "title": "Washing and care habits that extend garment life",
+    "subtitle": "Cooler temperatures, gentler cycles, and drying choices that keep fabric longer",
+    "excerpt": "The average UK garment is worn 7 times before disposal. The single biggest driver of premature fabric degradation is overwashing at high temperatures with excess detergent. Washing at 30°C instead of 60°C, selecting the gentle cycle, and drying flat rather than tumble-drying extends the functional life of most garments by 2 to 4 years. This covers the evidence and the practical changes that have most impact.",
+    "sourceNotes": "WRAP Valuing Our Clothes report 2012 and 2020 update. Which? washing machine performance testing at 30°C vs 40°C vs 60°C. Textile Exchange fibre performance research.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Garments degrade in the wash three ways. Heat weakens fibres, shrinks fabric, and damages elastic. Friction causes fibre loss and ",
+              "type": "text"
+            },
+            {
+              "text": "pilling",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmvbqa0000usv4kge91fid"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". Excess soap stiffens fibres and bleach degrades them. Most garments need far less heat and spin than they get.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The changes with the most impact",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Wash at 30°C. Which? testing shows modern biological detergents at 30°C remove food and body soil stains as effectively as 40°C for standard loads. The lower temperature has a measurable effect on fabric life: fibres in a 30°C cycle absorb 20 to 30% less mechanical stress than at 60°C because the heat weakens fibre-to-fibre bonds before agitation.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Use the gentle or delicate cycle for knitwear, stretchy fabrics, and anything with a logo print or embellishment. The reduced spin speed (600 to 800 rpm versus 1200 to 1600 rpm on cotton) makes a larger difference than temperature for pilling and shape retention.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Use the correct detergent dose. The dose marked on the bottle is for a full load of heavily soiled items. For a half-load of lightly used clothes, use half to two-thirds of the recommended dose. Excess detergent does not improve cleaning. It leaves residue in fibres that causes stiffness and attracts more dirt.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Dry flat or on a hanger rather than tumble drying. Tumble dryer heat (typically 70 to 85°C drum temperature) is significantly more damaging than a 40°C wash cycle. Cotton shrinks; elastane (Lycra) degrades; printed designs crack. If tumble drying is necessary, use the low-heat setting and remove garments slightly damp to finish air-drying.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Turn garments inside out before washing to protect surface fibres, dyes, and prints from direct agitation and detergent contact.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Washing frequency",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most outer garments (trousers, jumpers, jackets) do not need washing after every wear. Airing on a hanger for 24 hours after wearing removes most odour-causing bacteria and refreshes fabric. A T-shirt worn against the skin for a day is correctly washed after one wear; a jumper worn over a T-shirt is not. Reducing wash frequency from weekly to every 2 to 3 wears for outer layers extends garment life by the same factor as temperature reduction.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[0] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[2] > listItem[4] > paragraph[0]",
+      "snippet": "Turn garments inside out before washing to protect surface fibres, dyes, and prints from direct agitation and detergent contact."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "slug": "smart-ev-charging-night-rate",
+  "tutorialId": "cmprmmpll0000f0v4wc7a16hs",
+  "capturedAt": "2026-05-30T00:51:31.356Z",
+  "preFix": {
+    "title": "Setting up smart EV charging on a cheap-rate electricity tariff",
+    "subtitle": "Scheduling charging windows, calculating the saving, and avoiding peak demand",
+    "excerpt": "An EV charged overnight at Economy 7 or an Agile off-peak rate saves 15 to 25p per kWh compared with peak charging. Smart overnight scheduling cuts charging costs significantly versus unscheduled peak charging.",
+    "sourceNotes": "Ofgem EV tariff comparison data (2025/26). Octopus Agile and Economy 7 published rates. Zappi and Ohme charger scheduling documentation.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most EV chargers have a built-in scheduling function accessible via app or display panel. Setting a charge window in the off-peak hours is the largest ongoing saving for an EV driver with a home charger. At 2025/26 rates, the gap between Economy 7 off-peak (around 12p/kWh) and peak rate (around 27p/kWh) is 15p per kWh. A car using 25 kWh per full charge saves around 375p per session from scheduling alone.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Charger scheduling methods",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "In-car scheduling: most modern EVs (Tesla, Renault, Nissan, Volkswagen Group) have a built-in charge timer. Set the start and end time on the vehicle infotainment. The charger is not involved; it supplies power on demand and the car manages the session.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Charger-side scheduling: the EVSE (electric vehicle supply equipment) can be programmed via app to start and stop at specified times regardless of vehicle settings. Myenergi Zappi, Ohme, and Wallbox all offer app-based scheduling. This method works for vehicles without native timer support.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Smart tariff integration: Octopus Intelligent Go talks directly to compatible EVs (Tesla, Volkswagen, BMW) and picks the cheapest overnight window each night. No manual scheduling is needed. The smart period runs from 23:30 to 5:30 at a flat off-peak rate.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The annual saving calculation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A household driving 10,000 miles/year in an efficient EV (4 miles per kWh) needs 2,500 kWh/year. With 90% charger efficiency, they import 2,778 kWh at the home charger. Charging on Economy 7 instead of peak saves 15p per kWh on that full annual import. On Agile off-peak (average 5p/kWh), the saving versus peak (27p) is 22p per kWh on the same usage.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Grid demand and peak avoidance",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At scale, large numbers of EVs charging at the same time (18:00 to 20:00) would stress the local grid. Smart scheduling and demand flexibility programmes (where suppliers pay customers to shift charging) are the grid operators' preferred solution. Octopus Saving Sessions and National Grid Demand Flexibility Service pay roughly 5 to 30p per kWh of demand shifted. An EV and a home battery together represent significant flexible load. For solar PV households, the ",
+              "type": "text"
+            },
+            {
+              "text": "Smart Export Guarantee",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwjoxu0001dcv41ii53tez"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " export rate may exceed the off-peak import saving at certain times. Check this before locking in a fixed charge window.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Practical setup steps",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check whether your electricity supply meter is Economy 7 capable (it has two registers). If not, contact your supplier to request a meter exchange. There is typically no charge for switching to a two-rate meter.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Confirm the off-peak window for your specific meter and supplier. Economy 7 windows vary: some start at midnight GMT, some at 1:00 am, some at midnight BST/GMT regardless of clock change. Check your energy bill or call the supplier to confirm.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Set the charge start time 30 minutes after the off-peak window begins, to allow for meter timing tolerances. Set the end time 30 minutes before the off-peak window ends.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "If the EV battery is very low and you need to drive early, set an override or 'arrive home charged' target rather than using standard scheduling. Most apps offer this as a 'ready by' function.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > orderedList[8] > listItem[3] > paragraph[0] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > bulletList[2] > listItem[1] > paragraph[0]",
+      "snippet": "Charger-side scheduling: the EVSE (electric vehicle supply equipment) can be programmed via app to start and stop at specified times regardl"
+    }
+  ]
+}

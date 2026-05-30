@@ -1,0 +1,152 @@
+{
+  "slug": "electronics-refurbishment-and-upgrade",
+  "tutorialId": "cmprmo4wl0000ukv4yodav9ip",
+  "capturedAt": "2026-05-30T00:51:25.235Z",
+  "preFix": {
+    "title": "Refurbishing and upgrading electronics to extend their life",
+    "subtitle": "RAM, SSD, and battery upgrades that defer disposal by 3 to 5 years",
+    "excerpt": "Manufacturing a laptop requires 1,200 to 1,800 kWh of energy. Replacing an SSD or battery extends the useful life by 3 to 5 years for the cost of a single part. This covers the upgrades worth doing, where to source parts, and how to assess whether a device is worth the effort.",
+    "sourceNotes": "iFixit repairability database and repair guides. Greenpeace Guide to Greener Electronics. WEEE Directive embedded energy statistics. BatteryUniversity.com battery health metrics.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Electronics have high embodied energy. Manufacturing a mid-range laptop produces around 300 to 400 kg CO2e (roughly 1,500 to 2,000 km of petrol car driving). Every extra year of use spreads that footprint further. The upgrades below are doable by a first-time hardware upgrader, provided the device scores 6 or above on the ",
+              "type": "text"
+            },
+            {
+              "text": "iFixit repairability scale",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpf6ngaa0000hkv4vw6mf16g"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ".",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Upgrades worth doing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "SSD replacement (for laptops with a spinning hard drive): a 2.5\" SATA SSD (1 TB) is an inexpensive part. Boot time reduces from 45 to 90 seconds to 10 to 15 seconds; overall responsiveness improves more than any RAM upgrade on a spinning-disk laptop. Most laptops made 2010 to 2018 accept a direct 2.5\" SATA swap without modification.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "RAM addition (for laptops with soldered SSD): if the device already has an SSD but feels slow, adding RAM is the next step. Check the maximum RAM supported via the manufacturer's service manual. 16 GB total is sufficient for most uses; 8 GB is the minimum for Windows 11 without significant page-file thrashing. DDR4 SODIMMs are widely available at low cost.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Battery replacement: a laptop battery that holds less than 60% of its original capacity makes the device impractical to use away from a wall. Replacement batteries are available for most laptops made within the last 8 years at low cost. iFixit and LaptopBattery.co.uk list compatible parts by model number. For smartphones, iFixit and The Phone Works (UK) supply battery kits with tools.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Operating system: a Windows 10 laptop too old for Windows 11 can run a lightweight Linux distribution (Ubuntu, Linux Mint, or Fedora) at much lower hardware demands. A 10-year-old laptop with 8 GB RAM and an SSD running Linux Mint handles web, office, and media use well.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When not to bother",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Laptops with soldered RAM and a soldered NVMe SSD (most ultrabooks made after 2019) cannot be upgraded at component level. The only user-accessible repairs are battery and screen. For these, check the iFixit score first: a score of 4 or below means professional repair is the only realistic route. Devices over 10 years old where the CPU is the bottleneck (rather than storage or RAM) generally do not benefit from component upgrades: the CPU cannot be replaced in consumer laptops.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > bulletList[2] > listItem[3] > paragraph[0]",
+      "snippet": "Operating system: a Windows 10 laptop too old for Windows 11 can run a lightweight Linux distribution (Ubuntu, Linux Mint, or Fedora) at muc"
+    }
+  ]
+}

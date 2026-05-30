@@ -1,0 +1,199 @@
+{
+  "slug": "water-leak-at-mains-entry-detection",
+  "tutorialId": "cmprmnlr10000wkv4gh5xgmj4",
+  "capturedAt": "2026-05-30T00:51:33.927Z",
+  "preFix": {
+    "title": "Detecting a water leak at the mains entry point",
+    "subtitle": "How to check whether your supply pipe is losing water between the street main and the meter",
+    "excerpt": "An underground supply pipe leak can go unnoticed for months. A 2 mm pinhole in a 25 mm mains pipe at 3 bar pressure loses around 100 litres per day. The meter-isolation test takes 5 minutes and costs nothing. This covers the test method, how to read the result, and what happens next if a leak is confirmed.",
+    "sourceNotes": "Water UK supply pipe leakage guidance for homeowners. Thames Water and Severn Trent customer guidance on supply pipe responsibility. CIPHE guidance on mains entry testing.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In England and Wales, the homeowner is responsible for the ",
+              "type": "text"
+            },
+            {
+              "text": "supply pipe",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpqwl3ie000218v4lfpm5ivv"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " from the property boundary (or sometimes from the water company's main) to the internal stopcock. A slow underground leak on this section appears as high water bills and damp patches in the garden or under flooring at the building entry point. Most water companies offer a free or subsidised supply pipe repair if a leak is confirmed.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The meter isolation test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Locate the water meter (external meter box in the pavement or garden, usually near the property boundary). Most have a digital or dial display and a test button.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Turn off the internal stopcock fully (clockwise). No water should be able to flow inside the house.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Read the meter and note the reading precisely, including the red decimal digits. Wait 15 to 30 minutes without using any water, flushing the toilet, or operating any appliance.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Read the meter again. If the reading has changed, water is passing through the meter with the internal stopcock closed. The leak is on the supply pipe between the meter and the stopcock.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "If the reading has not changed: either there is no supply pipe leak, or the meter is positioned downstream of the supply pipe (less common). Open the stopcock. The leak, if any, is inside the property.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "If a supply pipe leak is confirmed",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Contact your water company. In England, most water companies offer a free first-time supply pipe repair under the Leak Allowance scheme. Some companies offer a reduced rate on the following year's bill while the repair is scheduled. Check the company's website for its specific terms.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "If you arrange your own repair: costs vary with run length and access. The work does not need Building Regulations approval but any excavation must not undermine the building's foundations.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check for a leak allowance before paying the bill. If the leak ran for several months, some water companies will reduce the bill retrospectively when you send a repair receipt.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "In England and Wales, the homeowner is responsible for the supply pipe from the property boundary (or sometimes from the water company's mai"
+    }
+  ]
+}

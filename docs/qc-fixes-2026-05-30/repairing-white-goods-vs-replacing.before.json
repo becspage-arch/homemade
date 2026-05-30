@@ -1,0 +1,194 @@
+{
+  "slug": "repairing-white-goods-vs-replacing",
+  "tutorialId": "cmprmnzkj0001bwv4w0kgvxu6",
+  "capturedAt": "2026-05-30T00:51:30.740Z",
+  "preFix": {
+    "title": "Repairing versus replacing a white goods appliance",
+    "subtitle": "The 50% rule, parts availability, and where to find repair cost estimates before deciding",
+    "excerpt": "The engineering case for repair versus replacement is clearer than it appears. An appliance under 8 years old with an available part and a repair cost under 50% of replacement value is almost always worth repairing. This covers the decision framework, the resources for finding spares and fault codes, and the realistic repair costs for common faults.",
+    "sourceNotes": "Which? repair vs replace appliance guidance. Right to Repair regulations (UK SI 2021/741 and related instruments). Repair Café UK network data on common appliance faults.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Manufacturing a new washing machine requires approximately 400 to 600 kWh of embedded energy. Operating it for one year at average UK usage (220 cycles at 1.0 kWh per cycle) consumes 220 kWh. Repairing an existing appliance recovers 1.5 to 2.5 years of embedded energy for the cost of one part and one hour of labour. The environmental and financial case for repair is strong for any appliance under 8 to 10 years old with a repairable fault.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The 50% rule",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "If the repair cost (parts plus labour) is under 50% of the cost of an equivalent replacement, repair. If it is over 50%, the decision depends on age: a 3-year-old machine at 60% repair cost is still worth repairing; a 12-year-old machine at 60% repair cost is approaching end of life and replacement is likely more economic over the following 2 to 3 years. The 50% threshold is a reasonable starting point, not a hard rule.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Common faults and typical repair costs",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Washing machine door seal: low-cost part, 1 hour labour (or DIY). Very common fault, always worth repairing.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Washing machine carbon brushes: a cheap part, 30 minutes labour. A brushes fault stops the drum spinning; often diagnosed from an E08 or similar drum error code. Very cheap to fix.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Dishwasher pump or spray arm: moderate-cost part, 1 hour labour. Usually diagnosed from poor wash results or standing water. Parts widely available under Right to Repair.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Fridge or freezer thermostat or defrost timer: low-cost part, 30 to 45 minutes. Symptoms: fridge not cold enough, or iced up at the back. Straightforward to diagnose and fix.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Washing machine drum bearing: moderate-to-high cost part, 3 to 4 hours labour. High labour makes professional repair marginal on older machines. DIY repair is cost-effective for the mechanically capable.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Finding fault codes and parts",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most modern appliances display an error code when they fail. Enter the model number and error code on eSpares or RepairAid to identify the fault and the right replacement part. The ",
+              "type": "text"
+            },
+            {
+              "text": "Right to Repair regulations",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmprmnzjd0000bwv4fx0ssu4o"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " require manufacturers to supply parts to professional repairers within 15 working days for appliances sold after March 2021. Most major brands (Bosch, Whirlpool, Miele, Hoover) also sell spares directly or through authorised distributors.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Hoover\" — generic equivalent is \"vacuum cleaner\"",
+      "path": "body > paragraph[6] > text",
+      "snippet": "Hoover"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[2]",
+      "snippet": "If the repair cost (parts plus labour) is under 50% of the cost of an equivalent replacement, repair. If it is over 50%, the decision depend"
+    }
+  ]
+}

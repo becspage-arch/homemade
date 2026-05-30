@@ -1,0 +1,155 @@
+{
+  "slug": "greywater-treatment-for-off-grid",
+  "tutorialId": "cmprmocyz0001y0v4c9okp3bu",
+  "capturedAt": "2026-05-30T00:51:26.498Z",
+  "preFix": {
+    "title": "Greywater treatment for off-grid toilet flushing",
+    "subtitle": "A constructed wetland or multi-stage filter that makes bath water safe to reuse for WC flushing",
+    "excerpt": "Reusing bath and shower water for WC flushing saves 30 to 50 litres per person per day, around 40% of toilet flushing demand. A simple three-stage treatment system (settlement, reed bed or coarse filter, chlorination or UV) produces water safe for non-potable reuse. This covers the system components, the treatment stages, and the legal requirement to label the supply separately.",
+    "sourceNotes": "CIRIA C609 Rainwater and greywater use in buildings (2004). Environment Agency guidance on domestic greywater reuse. WRAS advisory notice on labelling non-potable water systems.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Simple garden greywater diversion (to flower beds within 24 hours) is low-risk and needs no treatment. Greywater for WC flushing is different: it is stored and may be contacted when cleaning the toilet. The system must suppress bacterial growth reliably. The two approaches are a constructed reed bed (biological) and a multi-stage mechanical filter with UV or chlorine disinfection.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Three-stage treatment sequence",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Settlement: ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "Greywater",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpba3bc1001c4ov4qqs5enax"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " flows from the bath or shower outlet into a settlement tank (50 to 100 litres) where hair, soap particles, and heavy solids sink to the bottom. The settled overflow passes to stage two. Clean the settlement tank monthly.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Biological treatment or mechanical filtration: a constructed ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "reed bed",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmprmocxt0000y0v4sxql1wcv"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " (0.5 m² per person served) reduces BOD by 70 to 90%. A mechanical filter with activated carbon removes soaps, odour, and small particles. The mechanical route is faster and more compact; the reed bed needs more space but has near-zero running costs.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Disinfection: UV lamp (8 to 15W) or low-dose chlorination (sodium hypochlorite dosing pump). UV requires clear water with low turbidity to be effective (hence settlement and filtration first). Chlorine works in turbid water but requires careful dosing. The treated water goes to a final storage tank (the header tank for the WC cistern). This tank should be covered and turned over within 48 hours.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Legal and labelling requirements",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "WRAS requirements for non-potable reuse: all non-potable supply pipework must be labelled at every connection point and access point with 'GREYWATER: NOT FOR DRINKING' in green. All cisterns and storage tanks on the treated circuit must be labelled the same way. Pipework must not be capable of cross-connection with the mains supply. In practice: use different pipe colours (MDPE lilac or black for non-potable versus blue for mains), separate labelled valves, and a visible air gap between any mains backup supply and the greywater tank.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > orderedList[2] > listItem[1] > paragraph[0] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[4]",
+      "snippet": "WRAS requirements for non-potable reuse: all non-potable supply pipework must be labelled at every connection point and access point with 'G"
+    }
+  ]
+}

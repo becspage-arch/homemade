@@ -658,3 +658,11 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - rabbit-hutch-and-run-siting hero-missing — applied: hero-fill-deferred-to-standalone-script
 - rabbit-weaning-and-doe-rebreeding hero-missing — applied: hero-fill-deferred-to-standalone-script
 - swarm-prevention-in-spring hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- abaca-fibre-papermaking grade-level-strict — applied: 
+- cotton-rag-preparation grade-level-strict — applied: 
+- foundational-spacing grade-level-strict — applied: 
+- hand-lettered-headers grade-level-strict — applied: 
+- photo-mounting-options grade-level-strict — applied: 
+- spencerian-minuscule-ovals grade-level-strict — applied: 
+- uncial-hand grade-level-strict — applied: 
