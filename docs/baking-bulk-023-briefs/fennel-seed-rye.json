@@ -1,0 +1,195 @@
+{
+  "slug": "fennel-seed-rye",
+  "title": "Fennel seed rye loaf",
+  "subtitle": "A dense, aromatic dark loaf with fennel and caraway",
+  "excerpt": "Rye flour and fennel seeds make a close-crumbed, aromatic loaf that keeps well and improves with a day's rest. Rye has less gluten than wheat, which gives the bread its dense, moist texture rather than the open, springy crumb of a wheat loaf. The bake takes about 3 hours in total from mixing.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rye breads with fennel and caraway are well-documented in Central European baking, particularly in Germany and Austria, where the combination appears in nineteenth-century agricultural and household manuals. The Danish rugbrød tradition and the German Roggenbrot are the closest relatives. Fennel seeds pair with rye in several regional Italian and Scandinavian breads as well.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (approximately 700 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 130,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice thinly and freeze. Rye bread freezes well and can be toasted directly from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Rye bread slices better after resting for 12 to 24 hours wrapped at room temperature. The starch needs time to set after baking.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 350,
+      "hydrationPercent": 74,
+      "saltPercent": 2,
+      "yeastPercent": 1.4,
+      "levainPercent": null,
+      "bulkFermentMinutes": 75,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; reduce to 190 degrees C after 15 minutes",
+      "steamMethod": "water tray on the oven floor for the first 15 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-gluten",
+      "term": "Rye and gluten",
+      "definition": "Rye flour contains some gluten-forming proteins but far less than wheat. It also contains pentosan gums, which absorb large amounts of water and create a sticky, cohesive dough that behaves differently from wheat dough: it does not develop the elastic webbing of a wheat dough, so rye breads are shaped in tins rather than freeform. The pentosans also contribute to the long shelf life of rye bread."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rye dough does not behave like wheat dough. Because of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rye-gluten", "term": "Rye and gluten" } }],
+            "text": "rye and gluten"
+          },
+          { "type": "text", "text": ", it is sticky and slack rather than smooth and elastic. Do not try to knead it in the usual sense: stir it with a wooden spoon or your hand until it comes together as a thick, cohesive paste, then scrape it into the tin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Toast the fennel and caraway seeds briefly in a dry pan before adding them. A minute over moderate heat releases their essential oils and gives a deeper, rounder flavour in the finished loaf." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "rye-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 260, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fennel-seeds", "amount": 2, "unit": "tsp", "prepNote": "lightly toasted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caraway-seeds", "amount": 1, "unit": "tsp", "prepNote": "lightly toasted", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the seeds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the fennel and caraway seeds in a dry frying pan over medium heat for 60 to 90 seconds, until fragrant. Tip onto a plate to cool." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 250 g rye flour, 100 g strong white flour, 5 g yeast and 7 g salt. Mix in the 260 ml tepid water, 15 g honey and toasted seeds. Stir vigorously with a wooden spoon for 2 minutes until a thick, slightly sticky dough forms. There is no kneading step." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, about 75 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover and leave at room temperature for 70 to 80 minutes until the dough has risen by about a third and the surface is dotted with small bubbles. Rye does not double the way wheat dough does; the rise is more modest." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Load the tin and proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease a 900 g loaf tin and dust with rye flour. Scrape the dough in with a wet spatula and smooth the top. Scatter extra fennel seeds on top if you like. Cover and leave for 40 to 50 minutes until the surface has risen slightly above the rim and cracks are just starting to form at the edges." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220 degrees C fan with a water tray on the bottom shelf. Bake for 15 minutes, then reduce to 190 degrees C and remove the water tray. Continue for 28 to 32 minutes until the top is dark and firm, and an internal probe reads 98 degrees C. The crust will be very firm; this is correct. Leave in the tin for 10 minutes, then cool on a rack. Do not slice for at least 12 hours; the crumb needs to set." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Loaf is gummy even after a full bake",
+              "solution": "Rye bread must be left at least 12 hours, ideally 24 hours, before slicing. The crumb sets as the starch cools and recrystallises. Cutting too soon produces a gummy, sticky texture regardless of how well it was baked."
+            },
+            {
+              "problem": "Very little rise compared to a wheat loaf",
+              "solution": "This is normal for high-rye breads. Rye gluten does not form the same elastic network as wheat. The rise comes mostly from yeast gas expansion trapped in the pentosan gums. A modest rise is the expected result."
+            },
+            {
+              "problem": "Crust cracks dramatically on top",
+              "solution": "This happens when the top dries out before the interior has finished rising. Score the top with a wet knife just before loading into the oven, which allows controlled expansion. A slightly longer proof also helps."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

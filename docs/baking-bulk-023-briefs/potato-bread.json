@@ -1,0 +1,183 @@
+{
+  "slug": "potato-bread",
+  "title": "Potato bread",
+  "subtitle": "A soft, close-crumbed loaf that stays fresh for days",
+  "excerpt": "Mashed potato added to the dough gives this loaf an unusually tender crumb and keeps it fresh a day longer than a standard white tin loaf. The starch from the potato slows retrogradation, making it an excellent daily bread. Preparation is about 25 minutes, plus two rises.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Potato bread has roots in both Irish and American baking traditions. In Ireland, versions made with boiled potato and wheat flour appear in regional cookbooks from the nineteenth century, notably in Ulster where potato was a staple crop. Mrs Beeton's 'Book of Household Management' (1861, Project Gutenberg #10136) documents similar enriched loaves using potato water to activate yeast. The recipe here draws on the British and Irish traditions.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (approximately 850 g)",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 110,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 3 months. The crumb holds up well to toasting from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook and mash the potato the day before and refrigerate it. Bring to room temperature before mixing into the dough.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weekendBake", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 65,
+      "saltPercent": 2,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 210,
+      "bakeTemperatureNote": "fan oven; lower to 190 degrees C after 15 minutes",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "potato-masher", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "potato-in-bread",
+      "term": "Potato in bread dough",
+      "definition": "Mashed potato adds gelatinised starch to bread dough. The starch granules absorb and hold water more effectively than flour starch alone, which keeps the crumb moist and delays the staling process. Potato also contributes a small amount of natural sugar, which feeds yeast activity and aids browning in the oven. Use floury varieties such as Maris Piper or King Edward, which mash smoothly without gluey patches."
+    }
+  ],
+  "techniqueSlugs": ["kneading-bread-dough"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The secret to this loaf is in what happens to " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "potato-in-bread", "term": "Potato in bread dough" } }],
+            "text": "potato in bread dough"
+          },
+          { "type": "text", "text": ". The gelatinised starch holds moisture in a way that flour starch cannot, so the crumb stays soft a day longer than a standard loaf. Use a floury variety such as Maris Piper or King Edward, mashed completely smooth." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Save the potato cooking water if you can. It contains dissolved starch and minerals that improve the dough's flavour and yeast activity slightly. Let it cool to room temperature before using as part of the liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 200, "unit": "g", "prepNote": "peeled and boiled until soft, then mashed smooth", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 9, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 15, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 200, "unit": "ml", "prepNote": "tepid; use cooled potato water if available", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 450 g flour, 7 g yeast and 9 g salt in a large bowl. Add the 200 g mashed potato, 15 g softened butter and 200 ml tepid water. Mix to a dough; the mashed potato makes it slightly stickier than a plain dough. Turn onto the work surface and knead for 8 to 10 minutes until smooth and elastic. Add flour only by the teaspoon if the dough is unworkably sticky; the potato moisture should be enough once the gluten develops." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, about 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place in a lightly oiled bowl, cover and leave at room temperature until roughly doubled in size, about 60 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease a 900 g loaf tin. Knock back the dough and shape into a cylinder to fit the tin. Place seam-side down. Cover and proof for 40 to 50 minutes until the dough rises above the rim and the poke test returns slowly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 210 degrees C fan with a small water tray on the bottom shelf. Load the tin and bake for 15 minutes, then reduce to 190 degrees C, remove the water tray and bake for a further 18 to 22 minutes until deep golden on top, the loaf has pulled away from the tin sides, and it sounds hollow when tapped on the base. Cool on a wire rack for at least 30 minutes before cutting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Dough is unworkably sticky",
+              "solution": "The potato had too much moisture. If boiling the potato rather than steaming it, drain thoroughly and return to the hot pan to dry for 2 minutes before mashing. Let the mash cool completely before using."
+            },
+            {
+              "problem": "Dense, barely risen loaf",
+              "solution": "The potato was hot when added to the dough, killing the yeast. The mash must be at room temperature, no warmer than 30 degrees C, when it goes into the mix."
+            },
+            {
+              "problem": "Gummy interior despite correct bake time",
+              "solution": "Potato loaves hold moisture well but need to reach 95 degrees C at the centre. If you have an instant-read thermometer, probe the centre through the base of the loaf before removing from the oven."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

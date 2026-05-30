@@ -1,0 +1,162 @@
+{
+  "slug": "sfenj",
+  "title": "Sfenj",
+  "subtitle": "Moroccan yeasted ring doughnuts, deep-fried and dipped in honey or sugar",
+  "excerpt": "Sfenj are Moroccan ring doughnuts made from a loose, sticky yeasted dough that is proved, then shaped into rings by hand and fried in hot oil until deep golden and hollow-sounding. The dough is wetter than most European dough, which is what gives the interior its characteristic open, slightly chewy crumb. They are sold on skewers at market stalls and eaten hot, dipped in honey or rolled in granulated sugar. The total time, including proving, is about 2 hours.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sfenj are documented across Moroccan and Algerian culinary sources as a street food staple. Paula Wolfert describes them in 'Couscous and Other Good Food from Morocco' (1973) and Anissa Helou covers the broader North African doughnut tradition in 'Feast: Food of the Islamic World' (2018). The technique of shaping doughnuts directly in wet hands and lowering them into oil is consistent across all primary sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "10 to 12 sfenj",
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sfenj are best eaten immediately while hot. The proved dough can be held at room temperature for up to 30 minutes before frying if needed.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "moroccan",
+    "mealType": "breakfast",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": 60,
+      "saltPercent": 1.7,
+      "yeastPercent": 1.7,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "deep-fried at 175 to 180 degrees C; no oven required",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yeasted-frying",
+      "term": "Yeasted frying",
+      "definition": "Frying a proved yeasted dough rather than baking it. The heat of the oil sets the outer crust quickly while the yeast gases trapped inside expand, creating a hollow, open interior. The dough must be fully proved before frying: underproved dough produces a dense, doughy centre because the yeast gases have not yet expanded enough to form the interior structure. The oil temperature must be maintained at 175 to 180 degrees C: too hot and the outside browns before the centre cooks; too cool and the dough absorbs oil rather than frying cleanly."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dough for sfenj is deliberately wet and sticky. Resist the urge to add more flour when mixing: the high hydration is what gives the finished doughnut its open, chewy crumb. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yeasted-frying", "term": "Yeasted frying" } }],
+            "text": "Frying a fully proved yeasted dough"
+          },
+          { "type": "text", "text": " produces the hollow interior: the dough must be proved long enough for the yeast gases to expand before it goes into the oil." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shape the rings in oiled, wet hands: dip your hands in water, take a ball of dough, push your thumb through the centre and stretch it into a ring about 8 cm across, then lower it gently into the oil. Do not worry about perfect uniformity; uneven thickness is characteristic." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 180, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 1, "unit": "litre", "prepNote": "for deep-frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 4, "unit": "tbsp", "prepNote": "for serving", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "granulated-sugar", "amount": 4, "unit": "tbsp", "prepNote": "for serving, as an alternative to honey", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and prove" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 300 g flour, 5 g yeast and 5 g salt in a large bowl. Add the 180 ml tepid water and mix to a very soft, sticky dough; it will be wetter than a standard bread dough. Wet your hand and work the dough in the bowl for 3 to 4 minutes by folding it over itself repeatedly until it becomes smooth and slightly elastic. It will remain sticky throughout. Cover and leave at room temperature for 1 hour until risen and puffy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and fry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the 1 litre sunflower oil in a deep saucepan to 175 to 180 degrees C. Line a plate with kitchen paper. Wet your hands generously. Scoop a piece of dough about the size of a small egg, push a wet thumb through the centre, and stretch into a ring roughly 8 cm across. Lower gently into the oil. Fry 2 or 3 at a time for 3 to 4 minutes each side until deep golden brown and the ring sounds hollow when tapped with the back of a slotted spoon. Lift out and drain on the kitchen paper. Serve immediately with honey for dipping or rolled in granulated sugar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Interior is doughy and dense rather than open and chewy",
+              "solution": "The dough was not proved for long enough before frying, or the oil was too hot so the outside set before the inside cooked through. Give the full 1-hour prove and keep the oil at 175 to 180 degrees C."
+            },
+            {
+              "problem": "Sfenj absorbed a lot of oil and feel greasy",
+              "solution": "The oil was too cool when the sfenj went in. Below 170 degrees C, the dough absorbs oil rather than frying crisp. Wait until the oil is fully at temperature before frying and drain thoroughly on kitchen paper immediately on removal."
+            },
+            {
+              "problem": "Dough fell apart when trying to shape the ring",
+              "solution": "Wetter hands help. This is a very soft dough and it requires well-oiled or wet hands throughout shaping. Do not try to shape it on a dry surface."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

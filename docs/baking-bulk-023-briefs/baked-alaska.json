@@ -1,0 +1,188 @@
+{
+  "slug": "baked-alaska",
+  "title": "Baked Alaska",
+  "subtitle": "Ice cream on a sponge base, coated in Italian meringue and browned in a hot oven",
+  "excerpt": "A baked Alaska is a sponge base covered with ice cream, encased entirely in Italian meringue, and put briefly into a very hot oven or under a blowtorch so the meringue colours while the ice cream stays frozen. The Italian meringue is stable and insulating; the key is working fast and making sure the ice cream is rock solid before assembly. It is a showpiece that requires organisation rather than skill.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Baked Alaska was created at Delmonico's restaurant in New York City in the 1860s, inspired by a French dish called omelette norvegienne. It became a British dinner-party staple in the 1960s and 1970s. The Italian meringue insulation technique is documented in Escoffier's 'Le Guide Culinaire' (1903) and in later British editions of Mrs Beeton. The recipe here uses a standard all-in-one sponge base for simplicity.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "serves 6 to 8",
+    "prepMinutes": 40,
+    "cookMinutes": 5,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sponge base can be baked up to 2 days ahead and stored wrapped at room temperature. The assembled ice-cream dome (without meringue) can be frozen overnight before finishing.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 80,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven for sponge; increase to 240 degrees C fan to colour the meringue for 3 to 4 minutes, or use a cook's blowtorch instead",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "hand-mixer", "isOptional": true },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "kitchen-torch", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "italian-meringue",
+      "term": "Italian meringue",
+      "definition": "A meringue made by pouring a hot sugar syrup (115 to 118 degrees C) in a thin, steady stream into egg whites that are already being whisked. The heat from the syrup cooks the whites without baking them, producing a stable, glossy meringue that holds its shape far longer than French or Swiss meringue. It is the meringue used for baked Alaska because it acts as insulation, protecting the ice cream from the heat of the oven while the surface browns."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The success of a baked Alaska rests almost entirely on the meringue. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "italian-meringue", "term": "Italian meringue" } }],
+            "text": "Italian meringue"
+          },
+          { "type": "text", "text": " is the only type that will insulate the ice cream properly. French meringue (raw whites and sugar whisked cold) is too unstable and too porous. The Italian meringue must cover the ice cream in a layer at least 2 cm thick, reaching all the way to the sponge base with no gaps." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The ice cream must be frozen solid before the meringue goes on. If it is at all soft, return the assembled dome to the freezer for 30 minutes before coating. Once coated, work fast: the meringue goes on, then straight into the oven or under the blowtorch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "for the sponge" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "for the sponge" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "for the sponge" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": "for the sponge" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "for the sponge" },
+            { "ingredientSlug": "vanilla-ice-cream", "amount": 500, "unit": "g", "prepNote": "or flavour of choice", "isOptional": false, "groupLabel": "for the filling" },
+            { "ingredientSlug": "egg-whites", "amount": 4, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": "for the Italian meringue" },
+            { "ingredientSlug": "caster-sugar", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "for the Italian meringue" },
+            { "ingredientSlug": "water", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "for the Italian meringue" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake the sponge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180 degrees C fan. Grease and line a 20 cm round cake tin. Beat together the 80 g butter, 80 g caster sugar, 80 g self-raising flour, 2 eggs and 1 tsp vanilla until smooth. Pour into the tin and bake for 18 to 22 minutes until risen and golden, and a skewer inserted in the centre comes out clean. Cool completely on a rack." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the ice-cream dome" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Line a bowl slightly smaller than the sponge with cling film. Pack in the 500 g ice cream, pressing out air pockets. Freeze for at least 2 hours until rock solid. Place the sponge on a baking-paper-lined baking tray. Invert the ice-cream dome onto the centre of the sponge and peel off the cling film. Return to the freezer while you make the meringue." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Italian meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put the 200 g caster sugar and 60 ml water in a small pan. Heat without stirring to 115 to 118 degrees C. While the syrup heats, whisk the 4 egg whites to soft peaks. With the mixer running at full speed, pour the hot syrup down the side of the bowl in a thin, steady stream. Continue whisking for 5 to 7 minutes until the meringue is thick, glossy and at room temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Coat and brown" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the assembled base from the freezer. Working quickly, spread the meringue all over the ice cream and sponge in a layer at least 2 cm thick, sealing it to the paper at the base with no gaps. To bake: put in the oven at 240 degrees C fan for 3 to 4 minutes until the peaks are deep golden brown. To blowtorch: work the flame in short bursts across the surface until the meringue colours. Serve immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Ice cream melted during assembly",
+              "solution": "The ice cream was too soft before the meringue went on, or the kitchen was very warm. Return the ice-cream dome to the freezer for 30 minutes after placing it on the sponge and again after applying the meringue if needed. Speed is the other requirement: meringue on and into the oven or under the torch in under 2 minutes."
+            },
+            {
+              "problem": "Meringue weeps or collapses",
+              "solution": "French or Swiss meringue was used instead of Italian meringue, or the Italian meringue syrup did not reach 115 degrees C. A sugar thermometer is necessary here; guessing the temperature is unreliable."
+            },
+            {
+              "problem": "Meringue browns unevenly",
+              "solution": "With a blowtorch, keep the flame moving and maintain the same distance throughout. With the oven, rotate the tray once midway through the 3 to 4 minute bake."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

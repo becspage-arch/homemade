@@ -1445,3 +1445,20 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - tapping-for-chronic-pain: grade-level-strict
+
+---
+
+## Run at 13:50:19
+
+Generated: 2026-05-30T13:50:19.992Z
+
+Processed: 5242
+PASS: 5242
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 4 |

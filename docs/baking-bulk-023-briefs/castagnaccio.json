@@ -1,0 +1,161 @@
+{
+  "slug": "castagnaccio",
+  "title": "Castagnaccio",
+  "subtitle": "Tuscan chestnut flour cake with rosemary, pine nuts and raisins",
+  "excerpt": "Castagnaccio is a traditional Tuscan autumn cake made from chestnut flour, water and olive oil with no eggs, no butter and no refined sugar. Chestnut flour is naturally sweet; rosemary and raisins are the other flavours. The batter is very thin and bakes to a dense, fudgy slab with a cracked surface. Preparation takes 10 minutes; the bake is 35 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Castagnaccio has been documented in Tuscany since at least the sixteenth century, when chestnut flour was a staple grain for the rural poor across central Italy. Pellegrino Artusi includes a version in 'La Scienza in Cucina e l'Arte di Mangiar Bene' (1891), noting that it is eaten through the autumn chestnut harvest. The recipe is consistent across Tuscan sources: chestnut flour, water, olive oil, rosemary and pine nuts, with raisins an optional but common addition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round cake (26 cm), serves 8 to 10",
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten the day it is made. The texture hardens noticeably on the second day.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "italian",
+    "mealType": "dessert",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "fan oven",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chestnut-flour",
+      "term": "Chestnut flour",
+      "definition": "Flour ground from dried chestnuts, naturally sweet and with no gluten. Batters made from chestnut flour are much thinner than those made from wheat flour and rely on the starch in the flour to set during baking rather than a gluten network, so the finished cake is dense, moist and fragile. Chestnut flour burns easily because of its natural sugars: the surface should crack and turn dark brown without scorching. Store in the freezer once opened as the natural oils go rancid quickly."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This cake behaves very differently from a standard sponge. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chestnut-flour", "term": "Chestnut flour" } }],
+            "text": "Chestnut flour"
+          },
+          { "type": "text", "text": " contains no gluten, so the batter is thin, almost like a crepe batter, and the cake sets by starch gelatinisation rather than gluten development. The surface cracks as it bakes; a deeply cracked, dark brown top is the correct result." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The olive oil should be a good one: it is a primary flavour here, not just a cooking medium. Soak the raisins in warm water for 10 minutes before using to plump them; dry raisins shrivel further during the bake." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "chestnut-flour", "amount": 300, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 350, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 50, "unit": "ml", "prepNote": "plus extra for the tin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "raisins", "amount": 60, "unit": "g", "prepNote": "soaked in warm water for 10 minutes, then drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pine-nuts", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": "leaves stripped and roughly chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 190 degrees C fan. Oil a 26 cm round cake tin generously, including the sides. Sift the 300 g chestnut flour into a bowl and stir in the 3 g salt. Pour in the 350 ml water and 50 ml olive oil gradually, whisking to a smooth, thin batter with no lumps. It should be the consistency of single cream." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add toppings and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour the batter into the prepared tin. Scatter over the drained raisins, 40 g pine nuts and the chopped rosemary. Drizzle 1 teaspoon of olive oil over the surface. Bake for 32 to 38 minutes until the surface is dark brown and deeply cracked, the edges are firm, and the centre gives only very slightly when pressed. The cake will feel quite firm when fully baked. Cool in the tin for 15 minutes, then on a rack. Serve at room temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Batter has lumps even after whisking",
+              "solution": "Chestnut flour clumps easily. Sift the flour before measuring and add the water very gradually at first, whisking thoroughly between additions, then pour in the remainder once the initial paste is smooth."
+            },
+            {
+              "problem": "Centre is still liquid when the surface is very dark",
+              "solution": "The tin was too deep or the batter too thick. Castagnaccio should be 1 to 1.5 cm deep in the tin; spread it into a wider tin if needed. The bake time is correct for this depth; a deeper layer needs more time and the surface will scorch."
+            },
+            {
+              "problem": "Very bitter or burnt taste",
+              "solution": "The chestnut flour was old or rancid, or the cake was overbaked. Chestnut flour has a short shelf life once opened; store in the freezer and use within 3 months. The surface should be dark brown, not black."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

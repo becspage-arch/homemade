@@ -1,0 +1,209 @@
+{
+  "slug": "herb-and-olive-loaf",
+  "title": "Herb and olive loaf",
+  "subtitle": "A Mediterranean-inspired freeform loaf with rosemary, thyme and kalamata olives",
+  "excerpt": "This freeform white loaf is studded with kalamata olives and fragrant with rosemary and thyme. It sits well with cheese, soup or cold meats. The dough is mixed and shaped with wet hands rather than flour-dusted palms, keeping the olives from being crushed during folding.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Olive breads are common across Southern Europe, particularly in Italy, France and Greece, where table olives and locally grown herbs have been baked into loaves for centuries. The freeform baking method here draws on the same no-knead, stretch-and-fold technique documented in modern British and American bread baking guides.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 freeform loaf (approximately 700 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 130,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 2 months. The olive oil in the dough means this loaf freezes slightly better than plain white bread.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be mixed the evening before and refrigerated overnight for a slow, cold first rise. Bring to room temperature for 30 minutes before shaping.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "mediterranean",
+    "mealType": "side",
+    "mood": ["weekendBake", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 72,
+      "saltPercent": 2,
+      "yeastPercent": 0.8,
+      "levainPercent": null,
+      "bulkFermentMinutes": 90,
+      "proofMinutes": 40,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 230,
+      "bakeTemperatureNote": "fan oven; reduce to 210 degrees C after 10 minutes",
+      "steamMethod": "Dutch oven or covered roasting dish for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": true },
+    { "slug": "pizza-stone", "isOptional": true },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stretch-and-fold",
+      "term": "Stretch and fold",
+      "definition": "A bread-making technique that builds gluten without traditional kneading. Wet your hand, lift one side of the dough, stretch it upward and fold it over the top. Rotate the bowl a quarter turn and repeat four times in total. A set of four folds counts as one round. The technique is used during bulk fermentation at 30-minute intervals. It works with slack, high-hydration doughs that would stick to a work surface."
+    }
+  ],
+  "techniqueSlugs": ["stretch-and-fold", "shaping-freeform-loaf"],
+  "criticalTechniques": ["stretch-and-fold"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dough for this loaf is wetter than a standard tin loaf, which gives an open crumb and allows the olives to sit in the dough without sinking. Work with wet hands, not floured ones, when incorporating the olives and herbs. Flour would tighten the dough and crush the olives." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drain and dry the olives before adding them. Brine-wet olives streak the dough with purple and add more salt than the recipe accounts for. Pat them dry between sheets of kitchen paper." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 288, "unit": "ml", "prepNote": "tepid", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 25, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olives-kalamata", "amount": 120, "unit": "g", "prepNote": "pitted, drained and patted dry", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "tbsp", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 1, "unit": "tsp", "prepNote": "leaves only", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 400 g flour, 3 g yeast and 8 g salt. Pour in the 288 ml tepid water and 25 ml olive oil and mix to a rough, shaggy dough. Cover and leave for 30 minutes; the flour will hydrate and the dough will firm slightly without kneading." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add olives and herbs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wet your hands. Scatter the 120 g drained olives, 1 tbsp rosemary and 1 tsp thyme over the dough. Using wet hands, work them in with a series of gentle folds, turning the bowl as you go. The olives will distribute over two or three sets of folds without being mashed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment with stretch-and-fold sets, 90 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the dough to ferment for 90 minutes total. During the first 60 minutes, perform two sets of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stretch-and-fold", "term": "Stretch and fold" } }],
+            "text": "stretch and fold"
+          },
+          { "type": "text", "text": " at 30-minute intervals. The dough should feel noticeably more structured after each set." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tip the dough onto a lightly floured surface and shape it gently into a round or an oval. Do not degas aggressively; this dough benefits from a lighter touch than a sandwich loaf. Transfer seam-side down to a lightly oiled baking tray or a floured proofing basket if you have one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Proof, about 40 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover and leave for 35 to 45 minutes until the loaf looks puffed and the surface springs back slowly when pressed. Heat the oven to 230 degrees C fan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Score the loaf with two or three diagonal cuts. If using a Dutch oven, preheat it in the oven and lower the loaf in using the baking paper as a sling. Bake covered for 20 minutes, then remove the lid and bake for a further 12 to 15 minutes until the crust is deep brown and blistered, and the base sounds hollow. Without a Dutch oven, bake on a hot tray or stone with a water tray below, and the timing stays the same. Cool on a rack for 30 minutes before cutting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Olives weep purple brine during baking and discolour the crumb",
+              "solution": "The olives were not dried thoroughly. Pat them dry between sheets of kitchen paper before adding to the dough, and make sure they are not soaking in residual brine."
+            },
+            {
+              "problem": "Loaf spreads flat rather than holding its shape",
+              "solution": "The dough was too wet or over-fermented. Reduce water by 10 ml on the next attempt, or ensure the bulk ferment is not extended past the point where the dough has more than doubled."
+            },
+            {
+              "problem": "Herb flavour is faint after baking",
+              "solution": "Fresh herbs lose intensity during a long ferment. Add them during the shaping step rather than early in the process, or use 1 tsp dried rosemary in addition to fresh herbs."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "slug": "multigrain-seeded-loaf",
+  "title": "Multigrain seeded loaf",
+  "subtitle": "A hearty everyday loaf packed with sunflower, linseed and pumpkin seeds",
+  "excerpt": "A robust, slightly chewy loaf that earns its place as a daily sandwich bread. Sunflower, linseed and pumpkin seeds give a nutty flavour and an open crumb. The dough takes about 20 minutes to mix and knead, then proofs twice before a 35-minute bake.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Multigrain seeded loaves became a British supermarket staple in the 1980s, building on the Continental tradition of seeded rye and wheat breads documented in German and Scandinavian baking manuals from the early twentieth century. The method here follows standard British tin-loaf technique, adapted for the added seed weight.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (approximately 900 g)",
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooled loaf and freeze flat in a sealed bag for up to 3 months. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made the night before and left to bulk ferment in the fridge overnight. Bring back to room temperature before shaping.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weekendBake", "freezerFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 70,
+      "saltPercent": 2,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 50,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; drop to 200 degrees C after 10 minutes",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "bench-scraper", "isOptional": true },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "windowpane-test",
+      "term": "Windowpane test",
+      "definition": "A way of checking that bread dough has developed sufficient gluten. Stretch a small piece of dough between your fingers: if it thins to a near-transparent membrane without tearing, the gluten is ready. If it tears before you can stretch it, knead for another two or three minutes and test again."
+    }
+  ],
+  "techniqueSlugs": ["kneading-bread-dough", "shaping-tin-loaf"],
+  "criticalTechniques": ["kneading-bread-dough"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is the kind of loaf that holds its shape under a generous spread of butter and keeps for three days without drying out. The seeds do two things: they add flavour and they slow the starch retrogradation slightly, which keeps the crumb tender longer than a plain white loaf." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak the seeds for at least 30 minutes before adding them to the dough. Dry seeds pull water from the surrounding dough and tighten the crumb; soaked seeds stay soft and distribute without disrupting the gluten structure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "wholemeal-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 350, "unit": "ml", "prepNote": "tepid (around 25 degrees C)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-seeds", "amount": 40, "unit": "g", "prepNote": "soaked in water for 30 minutes, then drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "flaxseed", "amount": 20, "unit": "g", "prepNote": "soaked in water for 30 minutes, then drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pumpkin-seeds", "amount": 30, "unit": "g", "prepNote": "soaked in water for 30 minutes, then drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the seeds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover the sunflower, linseed and pumpkin seeds with cold water and leave for 30 minutes. Drain thoroughly in a sieve before using." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 400 g strong white flour, 100 g wholemeal flour, 5 g instant dried yeast and 10 g salt in a large bowl. Add the 350 ml tepid water and 15 ml olive oil. Mix to a shaggy dough, then turn onto the work surface and knead for 8 to 10 minutes until the dough is smooth and passes the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "windowpane-test", "term": "Windowpane test" } }],
+            "text": "windowpane test"
+          },
+          { "type": "text", "text": ". Press the drained seeds into the dough and knead briefly until distributed evenly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, about 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the dough in a lightly oiled bowl, cover and leave at room temperature until it has roughly doubled in size, about 60 minutes. The timing depends on the room temperature; a warmer kitchen shortens it." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Knock back the dough gently. Shape it into a cylinder roughly the same length as your greased 900 g loaf tin. Lower it in seam-side down." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Proof, about 50 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cover loosely and leave to proof until the dough has risen above the tin rim by about 2 cm. Press a floured finger gently into the side of the dough: it should spring back slowly and not quite fill the indent. If it springs back immediately it needs more time; if the indent stays the dough is overproofed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220 degrees C fan. Place a small roasting tray on the bottom shelf. Slash the top of the loaf once down the centre with a sharp knife or lame. Slide the tin into the oven and immediately pour a small cup of hot water into the roasting tray to generate steam. Bake for 10 minutes, then reduce the heat to 200 degrees C and remove the water tray. Continue for 25 minutes, until the top is deep brown, the sides have pulled away from the tin, and the loaf sounds hollow when tapped on the base. An internal thermometer should read 95 to 97 degrees C. Cool on a wire rack for at least 45 minutes before slicing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The seeds sink to the bottom of the loaf",
+              "solution": "The seeds were too wet when added, or the dough was too slack. Drain the seeds thoroughly and pat dry before kneading them in. A slightly stiffer dough (reduce water by 10 ml) holds seeds better."
+            },
+            {
+              "problem": "Dense, tight crumb",
+              "solution": "The dough was underproofed or insufficiently kneaded. Seed-enriched doughs need a full knead to develop the gluten that supports the added weight. Use the windowpane test before the first rise rather than relying on time alone."
+            },
+            {
+              "problem": "Loaf tears along the sides rather than the score",
+              "solution": "The score was too shallow or the oven spring was very strong. Use a lame or a razor blade rather than a kitchen knife, and cut at a 45-degree angle to at least 1 cm deep. Score immediately before loading into the oven."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

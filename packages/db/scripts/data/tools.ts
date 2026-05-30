@@ -153,6 +153,7 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'square-cake-tin', name: 'Square cake tin, 20 cm', category: 'tin', aliases: ['brownie pan'], isPurchasable: true, typicalPriceGbp: 1800, notes: 'For brownies, traybakes, fudge.' },
   { slug: 'rectangular-baking-tin', name: 'Rectangular baking tin', category: 'tin', aliases: ['traybake tin'], isPurchasable: true, typicalPriceGbp: 2000, notes: '~30×20 cm. For lasagne, traybakes, flapjacks.' },
   { slug: 'tart-tin', name: 'Tart tin, 23 cm', category: 'tin', aliases: ['flan tin'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Loose-bottomed, fluted edge.' },
+  { slug: 'cream-horn-moulds', name: 'Cream horn moulds', category: 'tin', aliases: ['cream horn cones', 'horn moulds'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Conical stainless steel moulds for winding puff pastry strips to make cream horns. Set of 12.' },
   { slug: 'pie-dish', name: 'Pie dish', category: 'tin', aliases: ['pie plate'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'Enamelled or ceramic. ~23 cm.' },
   { slug: 'bun-tin', name: 'Bun tin, 12-hole', category: 'tin', aliases: ['patty tin', 'fairy cake tin'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'Shallow 12-hole tin for mince pies, jam tarts, and fairy cakes. Shallower than a muffin tin.' },
   { slug: 'muffin-tin', name: 'Muffin tin, 12-hole', category: 'tin', aliases: ['cupcake tin'], isPurchasable: true, typicalPriceGbp: 1500 },

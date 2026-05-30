@@ -1,0 +1,197 @@
+{
+  "slug": "five-grain-loaf",
+  "title": "Five-grain loaf",
+  "subtitle": "A hearty tin loaf from a blend of five grains",
+  "excerpt": "Strong white, wholemeal, rye and spelt flours combined with scalded rolled oats make a loaf that is more interesting than plain white bread but simpler to make than a sourdough. The oat soaker adds moisture and tenderness. The whole process takes about 3 hours from mixing to cooling.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Multigrain and mixed-grain loaves appear across British and Continental baking traditions from the mid-twentieth century onwards, as interest in wholegrain nutrition grew. The combination of rye and spelt with wheat appears in German health-bread guides from the 1950s. The oat soaker technique is common in Scottish and Scandinavian baking.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (approximately 850 g)",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 110,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 3 months. Toast directly from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can bulk-ferment overnight in the fridge. Shape the next morning and bring to room temperature for 30 minutes before the final proof.",
+    "dietaryFlags": ["vegetarian", "vegan"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weekendBake", "freezerFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 70,
+      "saltPercent": 2,
+      "yeastPercent": 1.1,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 50,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven; reduce to 200 degrees C after 10 minutes",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "grain-soaker",
+      "term": "Grain soaker",
+      "definition": "Adding boiling water to whole or rolled grains before incorporating them into bread dough. The hot water gelatinises the starch in the grain, making it tender in the finished loaf rather than gritty. It also allows the grain to absorb a fixed amount of water upfront so it does not steal moisture from the gluten network during fermentation."
+    }
+  ],
+  "techniqueSlugs": ["kneading-bread-dough"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The oats need a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-soaker", "term": "Grain soaker" } }],
+            "text": "grain soaker"
+          },
+          { "type": "text", "text": " before they go into the dough. Pour boiling water over them and leave for at least 20 minutes. Skip this step and the oats will draw moisture from the gluten network during baking, creating a dry, crumbly crumb." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rye and spelt flours both absorb water more slowly than strong white flour. Give the dough a full 10-minute knead to develop the gluten. The dough will feel slightly stickier than an all-white loaf; this is normal and correct." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "rolled-oats", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 80, "unit": "ml", "prepNote": "boiling, for the oat soaker", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "wholemeal-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rye-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spelt-flour", "amount": 25, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 235, "unit": "ml", "prepNote": "tepid, for the dough", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 9, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soak the oats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put 40 g rolled oats in a small bowl and pour over 80 ml boiling water. Stir once and leave for 20 to 25 minutes until the liquid is absorbed and the mixture has cooled to room temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 350 g strong white flour, 50 g wholemeal flour, 25 g rye flour, 25 g spelt flour, 5 g yeast and 9 g salt in a large bowl. Add the soaked oats, 235 ml tepid water and 15 ml olive oil. Mix to a rough dough, then turn onto the work surface and knead for 10 minutes until smooth. The dough will be slightly stickier than a plain white dough; resist adding extra flour unless it is unworkably wet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, about 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place in a lightly oiled bowl, cover and leave at room temperature until roughly doubled in size, about 60 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease a 900 g loaf tin. Knock back the dough, shape into a cylinder and lower into the tin seam-side down. Cover and proof for 45 to 55 minutes until the dough has risen above the rim. Press a floured finger gently into the side: the dent should spring back slowly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220 degrees C fan with a water tray on the bottom shelf. Bake for 10 minutes, then reduce to 200 degrees C and remove the water tray. Continue for 25 minutes until the top is deep brown, the sides have pulled from the tin, and the base sounds hollow when tapped. An internal probe should read 95 to 97 degrees C. Cool on a wire rack for at least 30 minutes before slicing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Loaf is dense and barely rose",
+              "solution": "Wholegrain and rye flours are heavier than white flour and slightly inhibit the yeast. Check the yeast is fresh and that the dough reached room temperature during the bulk ferment. A cool kitchen extends the rise time rather than preventing it entirely."
+            },
+            {
+              "problem": "Gritty texture from the oats",
+              "solution": "The oats were not soaked for long enough. A full 20 minutes in genuinely boiling water is needed to gelatinise the starch. Quick oats work better than whole rolled oats in this recipe if texture is a recurring issue."
+            },
+            {
+              "problem": "Loaf stales faster than expected",
+              "solution": "Rye and wholemeal flours retain moisture less well than white flour once the loaf is cut. Store wrapped at room temperature and slice as needed, or freeze the second half once it is cooled."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

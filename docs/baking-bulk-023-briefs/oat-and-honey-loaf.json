@@ -1,0 +1,195 @@
+{
+  "slug": "oat-and-honey-loaf",
+  "title": "Oat and honey loaf",
+  "subtitle": "A soft, slightly sweet sandwich loaf with a tender oat crumb",
+  "excerpt": "Rolled oats and honey give this white loaf a gentle sweetness and a softer crumb than a plain tin loaf. The oats are scalded with boiling water before they go into the dough, which keeps them tender rather than gritty. The whole process from mixing to bake is about 2 hours 30 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Oat breads are documented across the British Isles from at least the seventeenth century, when oats were a more common grain than wheat in Scotland and northern England. The honey loaf tradition, combining grain, honey and fat in an enriched dough, appears in Mrs Rundell's 'A New System of Domestic Cookery' (1806) and in later Scottish baking guides.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf (approximately 800 g)",
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 110,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice, wrap and freeze for up to 3 months. Thaw at room temperature or toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can cold-proof overnight. Shape and place in the tin before refrigerating; bake cold from the fridge the following morning, adding 5 minutes to the bake time.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": ["weekendBake"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 68,
+      "saltPercent": 2,
+      "yeastPercent": 1.0,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 45,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 210,
+      "bakeTemperatureNote": "fan oven; reduce to 190 degrees C after 15 minutes",
+      "steamMethod": "water tray on the oven floor for the first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "scald-oats",
+      "term": "Scalding oats",
+      "definition": "Pouring boiling water over rolled oats and letting them absorb it before adding to bread dough. The heat softens the oat bran, which would otherwise absorb water unevenly from the dough, creating dry patches in the crumb. Scalded oats also release a small amount of starch, which helps the loaf stay tender for longer."
+    }
+  ],
+  "techniqueSlugs": ["kneading-bread-dough"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The oats need to be " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scald-oats", "term": "Scalding oats" } }],
+            "text": "scalded"
+          },
+          { "type": "text", "text": " before they go into the dough. This step is not optional: raw oats pull moisture unevenly and create a gritty texture in the finished loaf. Pour boiling water over the oats and leave them for 20 minutes until they have absorbed the liquid and cooled to lukewarm." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The honey adds flavour and keeps the crumb moist for an extra day compared to a plain loaf. Use a mild honey, such as acacia or clover, rather than a strong heather variety, which can overpower the bread." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "rolled-oats", "amount": 80, "unit": "g", "prepNote": "plus extra for topping", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 200, "unit": "ml", "prepNote": "boiling, for scalding", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "strong-bread-flour", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 9, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 25, "unit": "g", "prepNote": "mild, such as acacia or clover", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 110, "unit": "ml", "prepNote": "tepid, added to the dough", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Scald the oats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put 80 g rolled oats in a bowl and pour over 200 ml boiling water. Stir once and leave for 20 to 25 minutes until the oats have absorbed the water and the mixture is lukewarm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and knead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the 450 g flour, 7 g instant dried yeast and 9 g salt in a large bowl. Add the scalded oats, 25 g honey, 20 g softened butter and 110 ml tepid water. Mix to a rough dough, then turn onto the work surface and knead for 8 to 10 minutes until smooth and elastic. The dough will be slightly tacky; resist adding more flour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bulk ferment, about 60 minutes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place in a lightly oiled bowl, cover and leave at room temperature until doubled in size, about 60 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and proof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Grease a 900 g loaf tin. Knock back the dough, shape into a cylinder and place in the tin seam-side down. Brush the top lightly with water and scatter over a small handful of rolled oats. Cover loosely and leave to proof for 40 to 50 minutes until the dough has risen above the tin rim and the surface feels pillowy but still springs back when pressed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 210 degrees C fan. Place a small tray of hot water on the bottom shelf. Bake for 15 minutes, then reduce to 190 degrees C and remove the water tray. Bake for a further 18 to 20 minutes until the top is deep golden brown, the sides have pulled clear of the tin, and the base sounds hollow when tapped. An internal probe should read 95 degrees C. Cool on a wire rack for at least 30 minutes before slicing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Loaf is heavy and barely rose",
+              "solution": "The scalded oats were too hot when added to the dough, which killed the yeast. The oat mixture must cool to lukewarm, around 25 to 30 degrees C, before mixing in the other ingredients."
+            },
+            {
+              "problem": "Gritty texture in the finished loaf",
+              "solution": "The oats were not scalded for long enough or the water was not boiling. Rolled oats need a full 20 minutes in genuinely hot water to soften. Old-fashioned oats work slightly better than quick oats for this recipe."
+            },
+            {
+              "problem": "Top browns too quickly",
+              "solution": "Lay a sheet of foil loosely over the tin after the first 15 minutes. The honey in the dough accelerates browning; covering prevents scorching while the inside finishes cooking."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
