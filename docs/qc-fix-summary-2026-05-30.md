@@ -668,3 +668,43 @@ SKIPPED: 0
 
 - air-dry-clay-leaf-impression-bowl: hero-missing
 - air-dry-clay-spoon-rest: hero-missing
+
+---
+
+## Run at 09:24:31
+
+Generated: 2026-05-30T09:24:31.632Z
+
+Processed: 106
+PASS: 103
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 32 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- crater-glaze-surface-texture: grade-level-strict
+- making-a-simple-press-mould-bisque: grade-level-strict
+- throwing-a-teapot-lid-stoneware: grade-level-strict
+
+---
+
+## Run at 10:06:41
+
+Generated: 2026-05-30T10:06:41.774Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

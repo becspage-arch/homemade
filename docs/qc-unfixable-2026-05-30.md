@@ -282,3 +282,7 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 
 - air-dry-clay-leaf-impression-bowl hero-missing — applied: hero-fill-deferred-to-standalone-script
 - air-dry-clay-spoon-rest hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- crater-glaze-surface-texture grade-level-strict — applied: 
+- making-a-simple-press-mould-bisque grade-level-strict — applied: 
+- throwing-a-teapot-lid-stoneware grade-level-strict — applied: 
