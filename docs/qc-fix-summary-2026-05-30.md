@@ -107,3 +107,64 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 02:06:40
+
+Generated: 2026-05-30T02:06:40.102Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 02:09:44
+
+Generated: 2026-05-30T02:09:44.592Z
+
+Processed: 5018
+PASS: 4920
+STILL_BLOCKED: 98
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 321 |
+| body-missing-method | 25 |
+| voice-violation | 12 |
+| body-missing-orientation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- composting-toilet-annual-maintenance: grade-level-strict
+- expansion-continues-with-ease-affirmation: grade-level-strict
+- external-wall-insulation-etics-installation: grade-level-strict
+- five-senses-scan-three-minutes: grade-level-strict
+- giving-feels-expansive-and-fearless-affirmation: grade-level-strict
+- heat-battery-for-solar-storage: voice-violation, grade-level-strict
+- i-steward-wealth-with-purpose-and-joy: grade-level-strict
+- lamb-pneumonia-recognition-and-response: grade-level-strict
+- long-exhale-breath-for-perimenopause-anxiety: grade-level-strict
+- managing-a-legacy-feed-in-tariff: grade-level-strict
+- my-anxiety-is-information-not-identity: grade-level-strict
+- natural-cleaning-products-diy: voice-violation, grade-level-strict
+- new-moon-full-moon-two-monthly-anchors: grade-level-strict
+- off-grid-load-calculation-worksheet: voice-violation, grade-level-strict
+- paper-clay-christmas-ornament-set: grade-level-strict
+- paper-clay-pressed-flower-frame: grade-level-strict
+- polymer-clay-faux-agate-pendant: grade-level-strict
+- polymer-clay-miniature-cacti-trio: grade-level-strict
+- pyrography-christmas-tree-ornaments: grade-level-strict
+- reclaiming-homemaker-as-feminist-identity: grade-level-strict

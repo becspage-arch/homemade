@@ -1,26 +1,14 @@
 {
-  "generatedAt": "2026-05-30T01:07:50.928Z",
-  "totalScanned": 5016,
+  "generatedAt": "2026-05-30T02:07:58.363Z",
+  "totalScanned": 5056,
   "passCount": 0,
-  "blockCount": 161,
+  "blockCount": 152,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
       "total": 28,
       "pass": 0,
       "block": 28,
-      "warnOnly": 0
-    },
-    "wood-natural-craft": {
-      "total": 27,
-      "pass": 0,
-      "block": 27,
-      "warnOnly": 0
-    },
-    "mindset": {
-      "total": 78,
-      "pass": 0,
-      "block": 78,
       "warnOnly": 0
     },
     "paper-word": {
@@ -33,6 +21,18 @@
       "total": 12,
       "pass": 0,
       "block": 12,
+      "warnOnly": 0
+    },
+    "mindset": {
+      "total": 77,
+      "pass": 0,
+      "block": 77,
+      "warnOnly": 0
+    },
+    "wood-natural-craft": {
+      "total": 19,
+      "pass": 0,
+      "block": 19,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -50,9 +50,8 @@
   },
   "perRuleKind": {
     "grade-level-strict": 153,
-    "voice-violation": 93,
-    "body-missing-method": 25,
-    "body-missing-orientation": 1
+    "voice-violation": 84,
+    "body-missing-method": 17
   },
   "verdicts": [
     {
@@ -96,29 +95,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Understanding home battery degradation and state of health go here."
-        }
-      ]
-    },
-    {
-      "slug": "bridle-joint-technique",
-      "tutorialId": "cmpr4blyk0002j0v47epvct9r",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:10:15.394Z",
-      "heroMediaId": "cmpr4sw340004akv4yy1t4xx7",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
         }
       ]
     },
@@ -171,166 +147,6 @@
           "message": "paragraph reads at grade 16.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Building Regulations Part L notification for retrofit insulation go here."
-        }
-      ]
-    },
-    {
-      "slug": "cancel-one-thing-this-week-with-kindness",
-      "tutorialId": "cmppsol9j0000f0v4fh8l2tsh",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:46.463Z",
-      "publishedAt": "2026-05-29T14:38:32.322Z",
-      "heroMediaId": "cmpr167rj0002u8v47y8yct4k",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-orientation",
-          "message": "No orientation paragraph (first paragraph empty or under 12 words)"
-        }
-      ]
-    },
-    {
-      "slug": "carved-birch-spice-spoon",
-      "tutorialId": "cmpr49d8k00008cv4xepvlsmg",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:30.768Z",
-      "heroMediaId": "cmpr4sygp0008akv4475pzthd",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[13] > text",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
-      "slug": "carved-cherry-tasting-spoon",
-      "tutorialId": "cmpr497th00005cv4810gtcna",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:23.746Z",
-      "heroMediaId": "cmpr4szhp000aakv4cdx5jeet",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "carved-lime-broth-ladle",
-      "tutorialId": "cmpr494vi00008kv47neeexin",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:19.930Z",
-      "heroMediaId": "cmpr4t16j000cakv47fwm1sb3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[17] > text",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
-      "slug": "carved-sycamore-spatula-spoon",
-      "tutorialId": "cmpr49aka0000z4v441fjrtna",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:27.303Z",
-      "heroMediaId": "cmpr4t2cv000eakv4f6za3jv9",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "carving-a-kuksa-interior",
-      "tutorialId": "cmpr4qehd0000ckv4dacg7j57",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:21:45.528Z",
-      "heroMediaId": "cmpr4t3vd000gakv43ihlxin5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[10] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[12] > text",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
-      "slug": "cleft-ash-spade-handle",
-      "tutorialId": "cmpr4aiis0000z0v44m3ndbcg",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:24.269Z",
-      "heroMediaId": "cmpr4t7tz000makv4o1tmwj6v",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[9] > text",
-          "snippet": "Target"
         }
       ]
     },
@@ -432,36 +248,6 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Cutting and mitreing coving internal corners go here."
-        }
-      ]
-    },
-    {
-      "slug": "drawknife-on-chair-backs",
-      "tutorialId": "cmpr4qs730000ogv484zih3or",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:22:03.302Z",
-      "heroMediaId": "cmpr4ta60000qakv4aybtvcx1",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[11] > text",
-          "snippet": "Target"
         }
       ]
     },
