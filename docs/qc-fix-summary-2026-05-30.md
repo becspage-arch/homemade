@@ -843,3 +843,605 @@ SKIPPED: 0
 - re-webbing-a-drop-in-chair-seat: hero-missing
 - repairing-a-leather-tear-with-saddle-stitch: hero-missing
 - repairing-a-loose-chair-joint-with-hide-glue: hero-missing
+
+---
+
+## Run at 12:08:22
+
+Generated: 2026-05-30T12:08:22.475Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 12:12:40
+
+Generated: 2026-05-30T12:12:40.751Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 12:18:15
+
+Generated: 2026-05-30T12:18:15.604Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| medical-disclaimer-nonstandard | 1 |
+
+
+---
+
+## Run at 12:18:26
+
+Generated: 2026-05-30T12:18:26.044Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 1 |
+
+
+---
+
+## Run at 12:18:57
+
+Generated: 2026-05-30T12:18:57.904Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 1 |
+
+
+---
+
+## Run at 12:22:14
+
+Generated: 2026-05-30T12:22:14.143Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- air-sealing-electrical-back-boxes: grade-level-strict
+
+---
+
+## Run at 12:27:06
+
+Generated: 2026-05-30T12:27:06.745Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 1 |
+
+
+---
+
+## Run at 12:27:11
+
+Generated: 2026-05-30T12:27:11.970Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 1 |
+| grade-level-strict | 1 |
+
+
+---
+
+## Run at 12:27:15
+
+Generated: 2026-05-30T12:27:15.450Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 1 |
+
+
+---
+
+## Run at 12:27:18
+
+Generated: 2026-05-30T12:27:18.882Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- insulated-compost-bin-winter: grade-level-strict
+
+---
+
+## Run at 12:27:22
+
+Generated: 2026-05-30T12:27:22.378Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- internal-wooden-window-shutters: grade-level-strict
+
+---
+
+## Run at 12:27:25
+
+Generated: 2026-05-30T12:27:25.769Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- riven-ash-garden-fork-handle: grade-level-strict
+
+---
+
+## Run at 12:27:29
+
+Generated: 2026-05-30T12:27:29.201Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 6 |
+
+## Still BLOCKED (sample 20)
+
+- slab-built-geometric-planter-with-feet: grade-level-strict
+
+---
+
+## Run at 12:28:01
+
+Generated: 2026-05-30T12:28:01.364Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- reclaiming-homemaker-as-feminist-identity: grade-level-strict
+
+---
+
+## Run at 12:28:04
+
+Generated: 2026-05-30T12:28:04.837Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- tapping-for-we-cant-talk-anymore: grade-level-strict
+
+---
+
+## Run at 12:28:10
+
+Generated: 2026-05-30T12:28:10.238Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- tapping-to-see-myself-as-someone-who-has-it: grade-level-strict
+
+---
+
+## Run at 12:28:13
+
+Generated: 2026-05-30T12:28:13.807Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- three-habits-wealthy-me-already-has-journal: grade-level-strict
+
+---
+
+## Run at 12:28:17
+
+Generated: 2026-05-30T12:28:17.372Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- why-inheritance-and-tax-fear-slows-down-wealth-planning: grade-level-strict
+
+---
+
+## Run at 12:28:21
+
+Generated: 2026-05-30T12:28:21.053Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- air-sealing-electrical-back-boxes: grade-level-strict
+
+---
+
+## Run at 12:28:24
+
+Generated: 2026-05-30T12:28:24.753Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- conditioning-and-feeding-a-leather-sofa: grade-level-strict
+
+---
+
+## Run at 12:28:28
+
+Generated: 2026-05-30T12:28:28.467Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- five-senses-scan-three-minutes: grade-level-strict
+
+---
+
+## Run at 12:28:32
+
+Generated: 2026-05-30T12:28:32.018Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- laying-luxury-vinyl-tile-click-flooring: grade-level-strict
+
+---
+
+## Run at 12:28:35
+
+Generated: 2026-05-30T12:28:35.633Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 6 |
+
+## Still BLOCKED (sample 20)
+
+- making-a-simple-press-mould-bisque: grade-level-strict
+
+---
+
+## Run at 12:28:39
+
+Generated: 2026-05-30T12:28:39.597Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- preparing-floor-self-levelling-compound: grade-level-strict
+
+---
+
+## Run at 12:28:42
+
+Generated: 2026-05-30T12:28:42.984Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- re-webbing-a-sagging-sofa-base: grade-level-strict
+
+---
+
+## Run at 12:28:46
+
+Generated: 2026-05-30T12:28:46.640Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- removing-and-replacing-vinyl-floor-tiles: grade-level-strict
+
+---
+
+## Run at 12:28:50
+
+Generated: 2026-05-30T12:28:50.344Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- replacing-a-worn-radiator-compression-valve: grade-level-strict
+
+---
+
+## Run at 12:28:53
+
+Generated: 2026-05-30T12:28:53.714Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 1 |
+
+
+---
+
+## Run at 12:28:57
+
+Generated: 2026-05-30T12:28:57.671Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- tapping-for-always-behind: grade-level-strict
+
+---
+
+## Run at 12:29:02
+
+Generated: 2026-05-30T12:29:02.135Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- tapping-for-chronic-pain: grade-level-strict

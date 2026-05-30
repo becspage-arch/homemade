@@ -1,0 +1,247 @@
+{
+  "slug": "replacing-a-light-switch-with-a-dimmer",
+  "tutorialId": "cmps9y399000118v4nkiv9fir",
+  "capturedAt": "2026-05-30T11:50:12.552Z",
+  "preFix": {
+    "title": "Replacing a light switch with a dimmer",
+    "subtitle": "Swap a one-gang on/off light switch for a trailing-edge dimmer on an existing lighting circuit",
+    "excerpt": "How to replace a standard one-gang light switch with a trailing-edge LED dimmer on an existing lighting circuit, covering safe isolation, identifying the switch wiring, connecting the dimmer terminals, and setting the dimmer range for the load.",
+    "sourceNotes": "Cassell's Cyclopaedia of Mechanics. BS 7671 (IET Wiring Regulations, 18th Edition). IET On-Site Guide.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Replacing a one-gang switch with a ",
+              "type": "text"
+            },
+            {
+              "text": "trailing-edge dimmer",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpf46pv10001sov4lqqgq1x3"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " is Part P exempt work in England (like-for-like replacement on an existing circuit). The critical differences from a standard switch are the extra earth terminal on the dimmer body and the minimum-load setting for LED lamps. The ",
+              "type": "text"
+            },
+            {
+              "text": "switch wire",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps9y37p000018v4cd2gjr2x"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " connects to L1 and the supply live connects to L on the dimmer.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you will need: materials",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A trailing-edge LED dimmer rated for the total wattage of the load (check the combined wattage of all the lamps on the circuit). Dimmers have a minimum load (often 10 W or 25 W): running fewer lamps than the minimum causes flickering. Check that all lamps are marked as dimmable. The dimmer must fit the existing single-gang back box: most dimmers occupy a deeper back box (35 mm minimum) than a standard switch.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1, isolate the circuit safely",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Test the two-pole voltage tester against the proving unit to confirm it is working. At the consumer unit, switch off the MCB for the lighting circuit and fit the lock-off device. At the switch position, test between each conductor with the tester: all readings must be zero. Test the tester against the proving unit again to confirm it is still working. Only then is the switch safe to open.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2, remove the old switch",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Undo the two retaining screws and pull the switch faceplate away from the back box. Identify the terminals: a one-gang switch has a common terminal (COM or L) and a switched terminal (SW or L1). In older wiring, two black or red conductors enter the switch; in modern wiring, a brown and a blue-with-brown-sleeve. Photograph the terminal connections before releasing any core. Release both cores, note the earth conductor condition.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3, wire the new dimmer",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The dimmer has three terminals: L (supply live, incoming from ceiling), L1 (switched live, going to ceiling), and earth. Connect the supply live (the one that was on COM) to the dimmer's L terminal. Connect the switch wire (the one that was on SW) to the dimmer's L1 terminal. Connect the earth conductor to the earth terminal on the dimmer body. Green-and-yellow sleeving must be fitted on any bare earth. Fold the cables into the back box and fit the dimmer faceplate with its retaining screws.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4, set the dimmer range and test",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most LED dimmers have a small adjustment trimmer on the back of the faceplate, accessible through a small hole. Remove the lock-off device and switch the MCB back on. Switch on the dimmer and adjust the trimmer for minimum brightness: the lamps should dim down without flickering and without going out before the dimmer knob reaches its lowest position. If the lamps flicker, adjust the trimmer by a quarter-turn and test again.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Variations",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A two-gang dimmer replaces a two-gang switch to control two separate circuits from one faceplate. Each gang has its own set of L and L1 terminals. Some dimmers have a wireless receiver module built in: the wiring is the same but the dimmer can also be controlled from a remote or smart-home app.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Care",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "If lamps flicker after fitting a dimmer, check that every lamp on the circuit is marked as dimmable. A single non-dimmable lamp in a fitting causes the whole circuit to flicker. If the dimmer runs warm to the touch, the total load is close to its rated maximum: check the wattage sum of all lamps and ensure they are below the dimmer's rating.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Adjust the minimum load trimmer upward a quarter-turn. If the flickering is intermittent, one lamp is non-dimmable: replace all lamps with dimmable LED versions.",
+                "cause": "The minimum load trimmer is set too low; or one or more lamps are not rated as dimmable.",
+                "symptom": "Lamps flicker at low settings after fitting the dimmer"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Switch off the MCB and fit the lock-off device. Open the dimmer and check that no bare conductor is touching the back box. Confirm that the earth wire is on the earth terminal and not on L or L1. Correct and reinstate.",
+                "cause": "A short circuit at the new dimmer's terminal connections; or the wrong terminal has been used.",
+                "symptom": "MCB trips when the dimmer is switched on"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "Replacing a one-gang switch with a trailing-edge dimmer is Part P exempt work in England (like-for-like replacement on an existing circuit)."
+    }
+  ]
+}

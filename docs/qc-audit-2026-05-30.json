@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-05-30T11:08:06.340Z",
-  "totalScanned": 5506,
+  "generatedAt": "2026-05-30T12:38:06.782Z",
+  "totalScanned": 5539,
   "passCount": 0,
-  "blockCount": 217,
+  "blockCount": 180,
   "warnOnlyCount": 0,
   "perCategory": {
-    "natural-home": {
-      "total": 13,
-      "pass": 0,
-      "block": 13,
-      "warnOnly": 0
-    },
-    "home-repair": {
-      "total": 20,
-      "pass": 0,
-      "block": 20,
-      "warnOnly": 0
-    },
     "sustainability": {
-      "total": 62,
+      "total": 48,
       "pass": 0,
-      "block": 62,
+      "block": 48,
       "warnOnly": 0
     },
     "animals-smallholding": {
       "total": 13,
       "pass": 0,
       "block": 13,
+      "warnOnly": 0
+    },
+    "natural-home": {
+      "total": 5,
+      "pass": 0,
+      "block": 5,
+      "warnOnly": 0
+    },
+    "home-repair": {
+      "total": 12,
+      "pass": 0,
+      "block": 12,
       "warnOnly": 0
     },
     "paper-word": {
@@ -48,15 +48,9 @@
       "warnOnly": 0
     },
     "mindset": {
-      "total": 77,
+      "total": 72,
       "pass": 0,
-      "block": 77,
-      "warnOnly": 0
-    },
-    "cooking": {
-      "total": 2,
-      "pass": 0,
-      "block": 2,
+      "block": 72,
       "warnOnly": 0
     },
     "wood-natural-craft": {
@@ -67,77 +61,26 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 136,
-    "grade-level-strict": 243,
-    "hero-missing": 42,
-    "body-missing-method": 30,
-    "medical-disclaimer-nonstandard": 1,
-    "placeholder-string": 2
+    "grade-level-strict": 217,
+    "voice-violation": 136
   },
   "verdicts": [
     {
-      "slug": "aftershave-balm",
-      "tutorialId": "cmps3u0ii0000s0v48aj9m2rc",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:20.614Z",
-      "heroMediaId": "cmps3viml0002fwv4x7w28a80",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "This balm uses witch hazel distillate as the post-shave base: it tightens pores, eases razor redness, and its mild alcohol keeps the product"
-        }
-      ]
-    },
-    {
-      "slug": "applying-masonry-waterproofing-cream",
-      "tutorialId": "cmps8xdf70002bcv4mzbx7f8k",
+      "slug": "air-sealing-electrical-back-boxes",
+      "tutorialId": "cmps8y0a900008gv4nm9ixcv9",
       "type": "PATTERN",
-      "categorySlug": "home-repair",
+      "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:06:55.399Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "avocado-conditioning-hair-mask",
-      "tutorialId": "cmps3th3l0001qcv4pegzf7g6",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:43:55.463Z",
-      "heroMediaId": "cmps3vkz10008fwv4wvkh3u5p",
+      "voiceRetrofittedAt": "2026-05-30T11:09:05.596Z",
+      "publishedAt": "2026-05-30T11:07:25.022Z",
+      "heroMediaId": "cmps8yx790000x0v4x9gzeta0",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "This mask targets dry, brittle, or colour-treated hair. Avocado oil (cosmetic) is one of the few carrier oils that penetrates the hair shaft"
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Electrical socket membrane seals, sometimes sold as 'back-box insulation covers' or 'socket draught-sealing membranes'. These are pre-cut fo"
         }
       ]
     },
@@ -167,93 +110,20 @@
       ]
     },
     {
-      "slug": "beeswax-container-candle-vanilla",
-      "tutorialId": "cmps3ud6o0000n8v41ju2utff",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:37.038Z",
-      "heroMediaId": "cmps3vm18000afwv4d3eof1rk",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Beeswax is the premium candle material: it burns longer and cleaner than soy wax, emits a very faint honey scent even unscented, and sets to"
-        }
-      ]
-    },
-    {
-      "slug": "black-soldier-fly-larvae-in-compost",
-      "tutorialId": "cmps8ll1i0001k4v40m982t9q",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:45.403Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[4]",
-          "snippet": "A very large BSFL population (the bin appears more larvae than compost) indicates the heap is receiving far more food waste than carbon mate"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "BSFL are active in the UK from June to September in most years. They do not survive UK winters outdoors; populations collapse naturally as t"
-        }
-      ]
-    },
-    {
       "slug": "borehole-water-supply-feasibility",
       "tutorialId": "cmps8lxwb0002ywv48vkstvdp",
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:06.278Z",
       "publishedAt": "2026-05-30T10:58:02.057Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8yzja0004x0v4pmw7wz4z",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[2]",
-          "snippet": "The British Geological Survey provides a free online BGS Borehole Index and aquifer mapping tool. Enter the postcode and check whether produ"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[4]",
-          "snippet": "In England, abstracting under 20 m³ per day from a groundwater source does not require an abstraction licence, but confirm the exemption wit"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 15.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "BLOCK",
@@ -261,6 +131,13 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[8]",
           "snippet": "Test the water for nitrates, coliform bacteria, and hardness before installing a pump for domestic use. Nitrate levels above 50 mg/litre occ"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 15.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Assessing the feasibility of a private borehole water supply go here."
         }
       ]
     },
@@ -317,23 +194,6 @@
       ]
     },
     {
-      "slug": "burn-relief-salve",
-      "tutorialId": "cmps3txyc0000f8v4eqbv1go2",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:17.298Z",
-      "heroMediaId": "cmps3vo8h000efwv4pcj4fu21",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "medical-disclaimer-nonstandard",
-          "message": "body contains medical-disclaimer-style text but does NOT include the locked phrase \"Not medical advice. Consult a medical professional for ongoing or serious symptoms.\" — normalise"
-        }
-      ]
-    },
-    {
       "slug": "calculating-stocking-rates",
       "tutorialId": "cmps6k8990003c0v4yyah0ezv",
       "type": "READING",
@@ -386,25 +246,6 @@
       ]
     },
     {
-      "slug": "citronella-bug-repellent-balm",
-      "tutorialId": "cmps3tswy00011wv4zj8t509l",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:10.776Z",
-      "heroMediaId": "cmps3vqg8000kfwv4qn8g3soi",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "This balm uses citronella essential oil alongside eucalyptus, both of which have documented repellent activity against mosquitoes. The beesw"
-        }
-      ]
-    },
-    {
       "slug": "colloidal-oat-melt-pour-soap",
       "tutorialId": "cmps3uz4k0000sgv404v0qady",
       "type": "RECIPE",
@@ -436,19 +277,15 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:06.549Z",
       "publishedAt": "2026-05-30T10:57:35.165Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8z0bh0006x0v4536ivaof",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 15.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -481,50 +318,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[10] > listItem[1] > paragraph[0]",
-          "snippet": "Does the society have a Power Purchase Agreement that fixes electricity sale price, or does it sell at market rate?"
-        }
-      ]
-    },
-    {
-      "slug": "compost-leachate-collection-and-use",
-      "tutorialId": "cmps8lrkg0000vov4ewim70oh",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:53.851Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "compost-maturity-tests",
-      "tutorialId": "cmps8lisr00027cv4s293x8dn",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:42.496Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Visual assessment alone is unreliable for compost maturity. Material can look dark and crumbly but still contain phytotoxins that inhibit ge"
+          "message": "paragraph reads at grade 15.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Joining a community energy co-operative go here."
         }
       ]
     },
@@ -551,6 +347,25 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[3] > listItem[4] > paragraph[0]",
           "snippet": "Clean the bowl and seat with a mild non-antibacterial cleaner. Antibacterial cleaners can kill the microorganisms in the composting chamber "
+        }
+      ]
+    },
+    {
+      "slug": "conditioning-and-feeding-a-leather-sofa",
+      "tutorialId": "cmpsa4rx50001ewv418b5jei4",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T11:50:06.828Z",
+      "publishedAt": "2026-05-30T11:40:40.398Z",
+      "heroMediaId": "cmpsahecn000a1kv4ov79fg6d",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[17] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Conditioning and feeding a leather sofa go here."
         }
       ]
     },
@@ -624,55 +439,22 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:07.039Z",
       "publishedAt": "2026-05-30T10:58:10.177Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8z45r000ex0v4z7uua5dk",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "EU Ecodesign labelling requires manufacturers to state rated water consumption per cycle from A (most efficient) to G. The rated water use f"
-        }
-      ]
-    },
-    {
-      "slug": "draught-lobby-porch-glazing",
-      "tutorialId": "cmps8kuqy0002l8v4jmvxwjts",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:11.319Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Timber-framed with double-glazed units is the most thermally effective option and can match the house character. uPVC is lower-maintenance a"
+          "message": "paragraph reads at grade 14.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Dishwasher vs handwashing: the water and energy comparison go here."
         }
       ]
     },
@@ -682,15 +464,10 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:07.478Z",
       "publishedAt": "2026-05-30T10:58:13.124Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8z76f000kx0v4i3s6w1bo",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
@@ -847,140 +624,21 @@
       ]
     },
     {
-      "slug": "fitting-a-fireplace-tiled-hearth",
-      "tutorialId": "cmps8opxm0003osv4ald0lts0",
+      "slug": "fitting-a-thermostatic-radiator-valve",
+      "tutorialId": "cmpe8rtik0002l4v4iftkxfhl",
       "type": "PATTERN",
       "categorySlug": "home-repair",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:00:11.711Z",
-      "heroMediaId": null,
+      "voiceRetrofittedAt": "2026-05-30T11:50:08.128Z",
+      "publishedAt": "2026-05-30T11:25:19.250Z",
+      "heroMediaId": "cmpsahm21000m1kv4qb7v9uff",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-a-staircase-carpet-runner-with-gripper-rods",
-      "tutorialId": "cmps8xgna000318v4dzd8u0wd",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:06:59.579Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-acoustic-wall-panels-on-timber-battens",
-      "tutorialId": "cmps8on1900031ov4yr8fqbc3",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:00:07.954Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-dot-and-dab-insulated-plasterboard",
-      "tutorialId": "cmps8oe3u0002mwv4zm6t1m28",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:59:56.382Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-plywood-subfloor-over-timber-joists",
-      "tutorialId": "cmps8xnp700023wv4j24lxpkf",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:07:08.712Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-tongue-and-groove-mdf-wall-panelling",
-      "tutorialId": "cmps8xjvs000320v49c5fe011",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:07:03.734Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[19] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a thermostatic radiator valve go here."
         }
       ]
     },
@@ -1000,47 +658,6 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Fitting under-cabinet LED strip lighting go here."
-        }
-      ]
-    },
-    {
-      "slug": "five-senses-scan-three-minutes",
-      "tutorialId": "cmpr0qqyh0000q8v4kx0a33bb",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:43:49.863Z",
-      "publishedAt": "2026-05-29T14:38:44.207Z",
-      "heroMediaId": "cmpr16ag80008u8v4qlgn6h23",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "This technique is used in mindfulness and therapy. Script by homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "fixing-squeaky-floorboards-from-above",
-      "tutorialId": "cmps8oxsx000158v4vgox2z5m",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:00:21.908Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -1122,30 +739,6 @@
       ]
     },
     {
-      "slug": "ground-source-heat-pump-slinky-loop",
-      "tutorialId": "cmps8l1lc0003dgv4klqz81bk",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:20.198Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[7] > listItem[3] > paragraph[0]",
-          "snippet": "Lay the slinky coils, overlapping each ring by approximately half the coil diameter (typically 500 mm overlap on a 1,000 mm diameter coil). "
-        }
-      ]
-    },
-    {
       "slug": "hand-lettered-headers",
       "tutorialId": "cmprkk0el0003fov4nm8snhlc",
       "type": "TECHNIQUE",
@@ -1202,20 +795,10 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:09.907Z",
       "publishedAt": "2026-05-30T10:57:14.265Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8z90j000ox0v4q4n2o7c6",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -1259,88 +842,6 @@
       ]
     },
     {
-      "slug": "home-composting-vs-food-waste-collection",
-      "tutorialId": "cmps8mb6g0001kkv4mgszxyt5",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:58:19.276Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[6] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Cooked food, meat, and dairy attract vermin, encourage flies, and introduce pathogens that most domestic compost heaps do not reach temperat"
-        }
-      ]
-    },
-    {
-      "slug": "home-water-filtration-options",
-      "tutorialId": "cmps8m1q70002mkv455ob13n0",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:58:07.026Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[2] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[5] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "UK tap water consistently meets the statutory quality standards set by the Drinking Water Inspectorate. The case for filtering mains water i"
-        }
-      ]
-    },
-    {
       "slug": "i-steward-wealth-with-purpose-and-joy",
       "tutorialId": "cmpc7mwbt0000psv4mhhqw3ls",
       "type": "PRACTICE",
@@ -1356,35 +857,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "I joyfully steward wealth that blesses my family, my community, and future generations."
-        }
-      ]
-    },
-    {
-      "slug": "injecting-a-chemical-damp-proof-course",
-      "tutorialId": "cmps8xqwy0003w8v4479f46tq",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:07:12.884Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[14]",
-          "snippet": "Cavity walls are more complex. The outer leaf must be injected; if the cavity contains blown-in insulation, that insulation may be carrying "
         }
       ]
     },
@@ -1415,30 +887,6 @@
       ]
     },
     {
-      "slug": "installing-an-airtight-loft-hatch-cover",
-      "tutorialId": "cmps8kamp0000ckv4266bu8ze",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:56:45.230Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[5] > listItem[0] > paragraph[0]",
-          "snippet": "Manufactured airtight loft hatch cover box, sized to the existing hatch opening (common standard is 562 x 726 mm; measure before ordering)"
-        }
-      ]
-    },
-    {
       "slug": "insulated-compost-bin-winter",
       "tutorialId": "cmprmvy2k0000ggv4d3bofau2",
       "type": "PATTERN",
@@ -1454,30 +902,6 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[4] > listItem[3] > paragraph[0]",
           "snippet": "Hinged front panel or removable front boards: one panel of the four sides must be openable for turning and extracting compost."
-        }
-      ]
-    },
-    {
-      "slug": "integral-garage-ceiling-insulation",
-      "tutorialId": "cmps8kjk800026wv4mjqt0cba",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:56:56.816Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "An integral garage with a living room above is one of the most common cold-floor situations in UK homes built between 1960 and 2000. The flo"
         }
       ]
     },
@@ -1560,60 +984,20 @@
       ]
     },
     {
-      "slug": "laying-luxury-vinyl-tile-click-flooring",
-      "tutorialId": "cmps8osos0001jkv4bmy6g2pe",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T11:00:15.280Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Click LVT is a floating floor that clicks together without adhesive and can be laid over most existing floor surfaces that are flat and dry."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[14]",
-          "snippet": "Rigid-core LVT (SPC: stone plastic composite) handles more sub-floor variation than standard LVT and is suitable for bathrooms and kitchens."
-        }
-      ]
-    },
-    {
       "slug": "legionella-cycle-heat-pump-hot-water",
       "tutorialId": "cmps8l6ea0003pcv462gcc36s",
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:11.232Z",
       "publishedAt": "2026-05-30T10:57:26.424Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8ze010010x0v4jrqd1635",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -1625,60 +1009,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[2]",
-          "snippet": "HSE L8 applies to employers and those responsible for premises with systems at risk. For a private dwelling, there is no legal obligation un"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Most controllers show the last successful DHW disinfection cycle in the status log. Check this log after the first few cycles to confirm the"
-        }
-      ]
-    },
-    {
-      "slug": "lentil-and-bacon-soup",
-      "tutorialId": "cmp88znea0000x8v4jvwmypyh",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:03:00.108Z",
-      "publishedAt": "2026-05-30T06:05:21.551Z",
-      "heroMediaId": "cmprytrkp0016ecv41iy86ejw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{lardons}} — must be substituted before publish",
-          "snippet": "Heat a large saucepan over a medium heat. Add the {{lardons}} of smoked lardons and fry for 5 minute"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Smoked pork with pulses is a combination found from the French cassoulet tradition through to British pea soup with ham hock. Lentil and bac"
-        }
-      ]
-    },
-    {
-      "slug": "long-exhale-breath-for-perimenopause-anxiety",
-      "tutorialId": "cmpr0rdmk000048v4pewfk1ov",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T14:39:15.565Z",
-      "heroMediaId": "cmpr16iqs000ou8v4er83av5h",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "Extended exhale breathing draws on the vagal brake. A long, slow exhale activates the body's calming system. This is public-domain physiolog"
+          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Legionella protection on heat pump hot water cylinders go here."
         }
       ]
     },
@@ -1761,25 +1094,6 @@
       ]
     },
     {
-      "slug": "mattress-freshener-spray",
-      "tutorialId": "cmps3sie60000t4v4ibkdbmm9",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:43:10.478Z",
-      "heroMediaId": "cmps3w3pq0014fwv44nai25je",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "Keep at room temperature, away from direct sunlight. Use within one month. Discard if the spray develops cloudiness or a stale, flat smell -"
-        }
-      ]
-    },
-    {
       "slug": "mcs-installer-selection",
       "tutorialId": "cmprmmg8x0000jwv4e2epeal8",
       "type": "TECHNIQUE",
@@ -1818,63 +1132,6 @@
       ]
     },
     {
-      "slug": "mvhr-commissioning-and-filter-schedule",
-      "tutorialId": "cmps8l3yp0001hcv4uyzk0c4a",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:23.270Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[3] > listItem[1] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > orderedList[3] > listItem[2] > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Condensation on windows in a well-insulated house that has MVHR is usually a sign that the extract rate has dropped due to blocked filters o"
-        }
-      ]
-    },
-    {
-      "slug": "my-anxiety-is-information-not-identity",
-      "tutorialId": "cmpcyjqfn00001kv4hzyzq5e6",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:44:20.682Z",
-      "publishedAt": "2026-05-29T14:39:24.348Z",
-      "heroMediaId": "cmpr16k8v000su8v4b3a64bln",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[1]",
-          "snippet": "This affirmation is for restoring the gap between the experience and the experiencer."
-        }
-      ]
-    },
-    {
       "slug": "natural-cleaning-products-diy",
       "tutorialId": "cmpra0p860000zsv4obtkdrga",
       "type": "TECHNIQUE",
@@ -1896,25 +1153,6 @@
           "message": "paragraph reads at grade 14.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Making effective cleaning products from vinegar, bicarbonate, and castile soap go here."
-        }
-      ]
-    },
-    {
-      "slug": "natural-deodorant-spray",
-      "tutorialId": "cmps3tvf900016sv4emarqm91",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:14.021Z",
-      "heroMediaId": "cmps3w57h0018fwv40th59tct",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "This spray uses witch hazel distillate as the base: its mild alcohol content gives it partial preservative properties and its astringency he"
         }
       ]
     },
@@ -2014,19 +1252,21 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:11.603Z",
       "publishedAt": "2026-05-30T10:58:36.220Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zfq20014x0v4ap14nmul",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0] > text"
         },
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.9 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -2045,16 +1285,16 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "message": "paragraph reads at grade 12.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
-          "snippet": "Moderate mobile signal (one or two bars): an external directional antenna on a 4G router usually gives reliable connectivity. Test with a ho"
+          "snippet": "Moderate mobile signal: an external directional antenna on a 4G router usually gives reliable connectivity. Test with a hotspot before buyin"
         },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "The UK Gigabit Voucher Scheme (BDUK) provides vouchers of up to 4,500 pounds for rural homes that cannot receive 24 Mbps or faster broadband"
+          "message": "paragraph reads at grade 14.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Internet connectivity options for off-grid and remote properties go here."
         }
       ]
     },
@@ -2089,19 +1329,15 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:11.913Z",
       "publishedAt": "2026-05-30T10:58:40.067Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zgs00016x0v4i8u8a5a8",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -2109,12 +1345,6 @@
           "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
           "path": "body > bulletList[2] > listItem[3] > paragraph[0] > text",
           "snippet": "stove"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[4] > text"
         },
         {
           "severity": "BLOCK",
@@ -2136,6 +1366,13 @@
           "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[3] > paragraph[0]",
           "snippet": "Unoccupied property clauses: many policies cut cover after 30 or 60 consecutive days empty. Second homes and holiday lets need specific empt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Insuring an off-grid or non-standard construction property go here."
         }
       ]
     },
@@ -2167,6 +1404,46 @@
           "message": "paragraph reads at grade 14.4 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[6] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Winterising an off-grid rainwater harvesting system go here."
+        }
+      ]
+    },
+    {
+      "slug": "over-rafter-insulation-board",
+      "tutorialId": "cmps8y2s900004wv4a4z8z0e3",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T11:09:12.272Z",
+      "publishedAt": "2026-05-30T11:07:28.262Z",
+      "heroMediaId": "cmps8zhfp0018x0v4qhlc4h9l",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > bulletList[2] > listItem[1] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "Over-rafter work needs scaffolding and a roofer to lift and relay the tiles. Notify Building Regulations for a much energy upgrade under Par"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Over-rafter rigid board insulation for a pitched roof go here."
         }
       ]
     },
@@ -2272,19 +1549,15 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:12.561Z",
       "publishedAt": "2026-05-30T10:58:28.450Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8ziae001ax0v4n1fjc4g9",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -2301,32 +1574,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
-          "snippet": "Labels: cut white yoghurt pot lids or thick milk containers into strips; these last multiple seasons, can be washed and reused, and replace "
-        }
-      ]
-    },
-    {
-      "slug": "peat-free-seed-raising-compost-blend",
-      "tutorialId": "cmps8lglc00028kv4knyqcw9r",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:39.631Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
+          "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Switching to peat-free and plastic-reduced gardening supplies go here."
         }
       ]
     },
@@ -2487,6 +1737,32 @@
           "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[18] > listItem[3] > paragraph[0]",
           "snippet": "Larger scale: scale the wall former up to 80 mm per side for a more substantial house suitable as a centrepiece in a fairy garden planter."
+        }
+      ]
+    },
+    {
+      "slug": "pond-for-surface-water-management",
+      "tutorialId": "cmps8ya7l0003s4v4bse0ta56",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T11:09:12.854Z",
+      "publishedAt": "2026-05-30T11:07:37.893Z",
+      "heroMediaId": "cmps8zjyy001ex0v4vbz5hbjt",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "Avoid locations directly under deciduous trees: leaf fall adds nutrients and promotes algae."
         }
       ]
     },
@@ -2706,73 +1982,6 @@
       ]
     },
     {
-      "slug": "rainwater-for-laundry",
-      "tutorialId": "cmps8m8pw0002dov41sm131e4",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:58:16.087Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Supplying a washing machine from collected roof water is a water-saving measure that works year-round, not just in summer. Washing machines "
-        }
-      ]
-    },
-    {
-      "slug": "re-webbing-a-sagging-sofa-base",
-      "tutorialId": "cmprc1tsz00005wv4e68d7j2w",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T19:49:11.001Z",
-      "publishedAt": "2026-05-29T19:46:35.921Z",
-      "heroMediaId": "cmprc6nme000yi4v4mprlerer",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A sofa that sags in the seat or springs have worked loose is often a webbing failure rather than a spring or foam problem. Replacing the int"
-        }
-      ]
-    },
-    {
-      "slug": "reclaiming-homemaker-as-feminist-identity",
-      "tutorialId": "cmpdswh7p0000pgv499q7jwn1",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:50.308Z",
-      "publishedAt": "2026-05-20T08:29:33.325Z",
-      "heroMediaId": "cmpmg88jw00is2gv44iw3szkk",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A reading on what happens when we treat running a home as a consolation prize. The cultural messaging that homemaking is lesser work is so p"
-        }
-      ]
-    },
-    {
       "slug": "reducing-packaging-when-ordering-online",
       "tutorialId": "cmprmo29y0001ywv4n0g1la1t",
       "type": "TECHNIQUE",
@@ -2821,6 +2030,32 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Removing and replacing vinyl floor tiles go here."
+        }
+      ]
+    },
+    {
+      "slug": "replacing-a-double-socket-faceplate",
+      "tutorialId": "cmps9sbfg0001isv47o0pnz8j",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T11:50:12.062Z",
+      "publishedAt": "2026-05-30T11:30:59.147Z",
+      "heroMediaId": "cmpsai5d3001q1kv4nhy1ui5w",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Replacing a socket faceplate like-for-like on an existing circuit is Part P exempt work in England under Schedule 4 of the Building Regulati"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[19] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Replacing a double socket faceplate go here."
         }
       ]
     },
@@ -2901,24 +2136,6 @@
       ]
     },
     {
-      "slug": "roasted-red-pepper-soup",
-      "tutorialId": "cmpry26dh0001h8v4qthbvebp",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:03:03.042Z",
-      "publishedAt": "2026-05-30T06:05:25.442Z",
-      "heroMediaId": "cmprytzmr001qecv4ckpoxf10",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{pepper-red}} — must be substituted before publish",
-          "snippet": "Heat the oven to 220°C conventional. Place the halved {{pepper-red}} peppers (skin side up), halved "
-        }
-      ]
-    },
-    {
       "slug": "rose-sachet",
       "tutorialId": "cmps3t9q40001rkv4lqnd3b2a",
       "type": "RECIPE",
@@ -2943,26 +2160,55 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:13.352Z",
       "publishedAt": "2026-05-30T10:58:25.399Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zmlt001kx0v4i7x2q807",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[4] > paragraph[0]",
+          "snippet": "Building materials: try salvage dealers or SALVO. Community RePaint handles paint. Habitat for Humanity ReStores accept building materials i"
         },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[2] > listItem[4] > paragraph[0]",
-          "snippet": "Building materials (tiles, timber, doors, bricks): try salvage dealers or SALVO (salvage.net). Community RePaint handles paint. Habitat for "
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Routing unwanted furniture and homewares to charities and reuse schemes go here."
+        }
+      ]
+    },
+    {
+      "slug": "safe-battery-removal-before-disposal",
+      "tutorialId": "cmps8yco100007gv4mehl5tcz",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T11:09:13.602Z",
+      "publishedAt": "2026-05-30T11:07:41.065Z",
+      "heroMediaId": "cmps8znbq001mx0v4l3t61oxp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 15.5 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "The fire risk from lithium batteries in waste streams is well-documented. The UK saw over 1,200 fires in waste facilities attributed to lith"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 15.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Removing batteries from electronics before disposal go here."
         }
       ]
     },
@@ -3082,35 +2328,6 @@
       ]
     },
     {
-      "slug": "solar-pv-flat-roof-tilt-angle",
-      "tutorialId": "cmps8l8n30003z4v45rjnnwci",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:29.333Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Where H is the shadow height of the tilted panel (H = panel height x sin(tilt angle)) and solar elevation at the winter solstice = 90 - lati"
-        }
-      ]
-    },
-    {
       "slug": "solar-pv-inverter-fault-diagnosis",
       "tutorialId": "cmprmm8z50000ccv40jkvd2rc",
       "type": "TECHNIQUE",
@@ -3155,42 +2372,6 @@
       ]
     },
     {
-      "slug": "solar-thermal-drainback-system",
-      "tutorialId": "cmps8kzb50003cwv4gupk1off",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:17.236Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "The collector and all pipework between the collector and the drainback tank must drain under gravity when the pump stops. This requires a mi"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Choose drainback if: you want low maintenance over 15 to 20 years, pipework can run on a consistent downward slope, and you can absorb a sma"
-        }
-      ]
-    },
-    {
       "slug": "solid-brick-garage-internal-insulation",
       "tutorialId": "cmprmvsiq0000acv4lv3o1y2k",
       "type": "PATTERN",
@@ -3206,25 +2387,6 @@
           "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > infoPanel[1] > paragraph[0]",
           "snippet": "Building Regulations: converting a garage to a habitable room requires Building Regulations approval. Using it as a hobby workshop, home gym"
-        }
-      ]
-    },
-    {
-      "slug": "solid-conditioner-bar",
-      "tutorialId": "cmps3u5gp00019gv4m6z5w5cr",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:27.038Z",
-      "heroMediaId": "cmps3wbxz001sfwv4kptqzsfw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A solid conditioner bar works differently from a bottle of liquid conditioner. Rather than rinsing quickly through the hair, the oil-heavy f"
         }
       ]
     },
@@ -3317,20 +2479,10 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:14.074Z",
       "publishedAt": "2026-05-30T10:57:03.004Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zpqq001sx0v46wfxioc8",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -3362,25 +2514,6 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[10]",
           "snippet": "Drawn from bereavement research. No single source. Framing by homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-always-behind",
-      "tutorialId": "cmpr13syz0000s4v41q2m3wma",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:03.602Z",
-      "publishedAt": "2026-05-29T14:40:12.372Z",
-      "heroMediaId": "cmpr16xv2001gu8v4suoay1g2",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
         }
       ]
     },
@@ -4887,23 +4020,6 @@
       ]
     },
     {
-      "slug": "turning-a-cold-compost-heap",
-      "tutorialId": "cmps8ln790001yov441f7l1jq",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:48.201Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "twin-lamb-disease-recognition-and-response",
       "tutorialId": "cmps6bl9y0003msv42rgdhcvi",
       "type": "TECHNIQUE",
@@ -4974,54 +4090,6 @@
       ]
     },
     {
-      "slug": "underfloor-heating-manifold-commissioning",
-      "tutorialId": "cmps8lav600031cv4ct65vnxz",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:32.214Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[8] > text",
-          "snippet": "Target"
-        }
-      ]
-    },
-    {
-      "slug": "urine-as-nitrogen-activator-in-compost",
-      "tutorialId": "cmps8lpd00001g4v418tpqp09",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:51.000Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "using-refill-shops-and-zero-waste-stores",
       "tutorialId": "cmpra0s8g0000iov4z2actix9",
       "type": "TECHNIQUE",
@@ -5066,33 +4134,16 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:14.428Z",
       "publishedAt": "2026-05-30T10:56:48.410Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zuqx0020x0v4o7ljmsia",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
           "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
           "path": "body > paragraph[4] > text",
           "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "A warm roof specification brings the loft within the heated envelope, eliminates the need to lag tanks, and makes the space usable year-roun"
         },
         {
           "severity": "BLOCK",
@@ -5109,19 +4160,15 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:14.703Z",
       "publishedAt": "2026-05-30T10:58:31.280Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zvju0022x0v4sz9f7g9u",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 16.8 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -5132,16 +4179,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Conventional glossy wrapping paper usually fails the scrunch test because the finish that gives it its appearance is a plastic laminate. It "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[8] > listItem[1] > paragraph[0]",
-          "snippet": "Plastic tape on kraft paper: a small piece of plastic tape makes otherwise-recyclable paper difficult to process cleanly. Use paper tape or "
+          "message": "paragraph reads at grade 16.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Replacing disposable gift wrapping with reusable and recyclable alternatives go here."
         }
       ]
     },
@@ -5206,56 +4246,6 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[16] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Waterproofing a shower area with tanking membrane go here."
-        }
-      ]
-    },
-    {
-      "slug": "wet-room-insulation-moisture-management",
-      "tutorialId": "cmps8km0m0002jcv4x7u8j7ib",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T10:57:00.000Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > paragraph[5] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A wet room generates high relative humidity for short periods. Insulating the external walls of that room is good for thermal performance bu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Neither strategy reduces moisture-related risk without adequate extraction. Approved Document F requires a minimum 15 l/s extract rate in ba"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "Before insulating any pre-1919 wet room, run a hygrothermal analysis (WUFI or equivalent). Wall material, humidity, and insulation type inte"
         }
       ]
     },
@@ -5507,15 +4497,10 @@
       "type": "PATTERN",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T11:09:15.066Z",
       "publishedAt": "2026-05-30T10:57:05.809Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmps8zy570026x0v42bnhu29k",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -5527,7 +4512,7 @@
           "kind": "grade-level-strict",
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[2] > listItem[1] > paragraph[0]",
-          "snippet": "Low-modulus silicone or polyurethane sealant in a colour matching the frame or wall"
+          "snippet": "Low-modulus silicone or polyurethane sealant in a colour matching the frame or wall."
         },
         {
           "severity": "BLOCK",
