@@ -412,3 +412,7 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - repairing-a-leather-scuff-with-heat-activated-compound grade-level-strict — applied: 
 - replacing-an-immersion-heater-element voice-violation,grade-level-strict — applied: 
 - silencing-water-hammer-in-domestic-pipes grade-level-strict — applied: 
+
+- dyeing-with-dahlia-petals grade-level-strict — applied: 
+
+- clary-sage-bergamot-solid-perfume voice-violation — applied: 

@@ -1,14 +1,26 @@
 {
-  "generatedAt": "2026-05-30T20:26:28.621Z",
-  "totalScanned": 5742,
+  "generatedAt": "2026-05-30T21:16:12.925Z",
+  "totalScanned": 5799,
   "passCount": 0,
-  "blockCount": 175,
+  "blockCount": 177,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
       "total": 40,
       "pass": 0,
       "block": 40,
+      "warnOnly": 0
+    },
+    "natural-home": {
+      "total": 3,
+      "pass": 0,
+      "block": 3,
+      "warnOnly": 0
+    },
+    "fibre-arts": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
       "warnOnly": 0
     },
     "mindset": {
@@ -41,12 +53,6 @@
       "block": 11,
       "warnOnly": 0
     },
-    "natural-home": {
-      "total": 2,
-      "pass": 0,
-      "block": 2,
-      "warnOnly": 0
-    },
     "pottery-ceramics": {
       "total": 11,
       "pass": 0,
@@ -56,8 +62,8 @@
   },
   "perRuleKind": {
     "hero-missing": 40,
-    "voice-violation": 131,
-    "grade-level-strict": 156
+    "voice-violation": 132,
+    "grade-level-strict": 157
   },
   "verdicts": [
     {
@@ -183,6 +189,44 @@
           "severity": "BLOCK",
           "kind": "hero-missing",
           "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "clary-sage-bergamot-solid-perfume",
+      "tutorialId": "cmpsu4ybs000174v4ayh9fqwy",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T21:15:00.209Z",
+      "publishedAt": "2026-05-30T21:00:41.023Z",
+      "heroMediaId": "cmpsumtdu000210v4499n39xm",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
+      "slug": "dyeing-with-dahlia-petals",
+      "tutorialId": "cmpstd0u00000qov4jhl8d3vj",
+      "type": "TECHNIQUE",
+      "categorySlug": "fibre-arts",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T20:42:28.967Z",
+      "publishedAt": "2026-05-30T20:38:57.885Z",
+      "heroMediaId": "cmpstg3kz0008mwv4ze4axn1t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[7] > listItem[0] > paragraph[0]",
+          "snippet": "Alum: warm yellow to golden orange, depending on dahlia variety and petal freshness."
         }
       ]
     },

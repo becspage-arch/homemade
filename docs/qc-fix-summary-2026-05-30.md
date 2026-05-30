@@ -2451,3 +2451,66 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 20:42:33
+
+Generated: 2026-05-30T20:42:33.520Z
+
+Processed: 110
+PASS: 109
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 18 |
+| body-missing-method | 4 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- dyeing-with-dahlia-petals: grade-level-strict
+
+---
+
+## Run at 21:07:05
+
+Generated: 2026-05-30T21:07:05.134Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:15:08
+
+Generated: 2026-05-30T21:15:08.195Z
+
+Processed: 255
+PASS: 254
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 2 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- clary-sage-bergamot-solid-perfume: voice-violation
