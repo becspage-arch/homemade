@@ -1,14 +1,20 @@
 {
-  "generatedAt": "2026-05-30T02:07:58.363Z",
-  "totalScanned": 5056,
+  "generatedAt": "2026-05-30T04:08:59.939Z",
+  "totalScanned": 5187,
   "passCount": 0,
-  "blockCount": 152,
+  "blockCount": 156,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
       "total": 28,
       "pass": 0,
       "block": 28,
+      "warnOnly": 0
+    },
+    "animals-smallholding": {
+      "total": 11,
+      "pass": 0,
+      "block": 11,
       "warnOnly": 0
     },
     "paper-word": {
@@ -23,35 +29,42 @@
       "block": 12,
       "warnOnly": 0
     },
+    "fibre-arts": {
+      "total": 2,
+      "pass": 0,
+      "block": 2,
+      "warnOnly": 0
+    },
     "mindset": {
       "total": 77,
       "pass": 0,
       "block": 77,
       "warnOnly": 0
     },
-    "wood-natural-craft": {
-      "total": 19,
+    "natural-home": {
+      "total": 1,
       "pass": 0,
-      "block": 19,
+      "block": 1,
       "warnOnly": 0
     },
-    "animals-smallholding": {
+    "pottery-ceramics": {
+      "total": 17,
+      "pass": 0,
+      "block": 17,
+      "warnOnly": 0
+    },
+    "wood-natural-craft": {
       "total": 2,
       "pass": 0,
       "block": 2,
       "warnOnly": 0
-    },
-    "pottery-ceramics": {
-      "total": 8,
-      "pass": 0,
-      "block": 8,
-      "warnOnly": 0
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 153,
-    "voice-violation": 84,
-    "body-missing-method": 17
+    "grade-level-strict": 166,
+    "voice-violation": 100,
+    "body-missing-method": 6,
+    "em-dash-in-content": 1
   },
   "verdicts": [
     {
@@ -147,6 +160,25 @@
           "message": "paragraph reads at grade 16.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Building Regulations Part L notification for retrofit insulation go here."
+        }
+      ]
+    },
+    {
+      "slug": "cockerel-management-and-flock-dynamics",
+      "tutorialId": "cmprtuvoz0003ikv4xxft4ywd",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:05:04.867Z",
+      "heroMediaId": "cmprtxn0u0000ggv4ud39c7ke",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[11]",
+          "snippet": "A cockerel that attacks the keeper should be caught and carried under the arm, breast facing outward, for ten minutes each day until the beh"
         }
       ]
     },
@@ -248,6 +280,44 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Cutting and mitreing coving internal corners go here."
+        }
+      ]
+    },
+    {
+      "slug": "dyeing-silk-with-iron-modifier",
+      "tutorialId": "cmprq1e390000gcv424uvgtbf",
+      "type": "TECHNIQUE",
+      "categorySlug": "fibre-arts",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T02:19:17.786Z",
+      "publishedAt": "2026-05-30T02:18:10.180Z",
+      "heroMediaId": "cmprq3l3o0006hsv489wflo8f",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[20]",
+          "snippet": "Side-by-side comparison: use the same dye bath and the same iron modifier on a small skein of wool and a small piece of silk simultaneously."
+        }
+      ]
+    },
+    {
+      "slug": "dyeing-with-ivy-berries",
+      "tutorialId": "cmprq12r40000lkv4azn0hxjr",
+      "type": "TECHNIQUE",
+      "categorySlug": "fibre-arts",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T02:19:18.438Z",
+      "publishedAt": "2026-05-30T02:17:55.471Z",
+      "heroMediaId": "cmprq3o6p000ahsv4iq68kzq5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[17]",
+          "snippet": "No mordant: on un-mordanted wool, ivy berries give a pale, washed-out grey with very low fastness. The alum mordant makes a meaningful diffe"
         }
       ]
     },
@@ -398,6 +468,46 @@
       ]
     },
     {
+      "slug": "fostering-a-lamb-onto-a-ewe",
+      "tutorialId": "cmprtvdgw0002c8v4t1qac1s8",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:05:27.905Z",
+      "heroMediaId": "cmprtxns50002ggv48lygbb1l",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"colostrum\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[2] > text",
+          "snippet": "colostrum"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"colostrum\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > blockquote[9] > text",
+          "snippet": "colostrum"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "The two situations that call for fostering are a triplet or quad ewe with more lambs than she can rear, and an orphan lamb that needs a moth"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > blockquote[9]",
+          "snippet": "A ewe that has been milked by hand and bottle-fed the lamb can still accept the lamb on the teat once the scent-matching method is working. "
+        }
+      ]
+    },
+    {
       "slug": "foundational-spacing",
       "tutorialId": "cmprkj6ja00034cv4bp2bzdhi",
       "type": "TECHNIQUE",
@@ -436,43 +546,19 @@
       ]
     },
     {
-      "slug": "green-birch-coat-pegs",
-      "tutorialId": "cmpr4qjrc00008kv4ie3wuo5r",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
+      "slug": "goat-kid-disbudding",
+      "tutorialId": "cmprtvro40001bov4l4k2otcq",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:21:52.371Z",
-      "heroMediaId": "cmpr4tc2t000sakv42rxp4wbq",
+      "publishedAt": "2026-05-30T04:05:46.312Z",
+      "heroMediaId": "cmprtxp0l0004ggv4qm1s4dd7",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "green-hazel-bean-pole-arch",
-      "tutorialId": "cmpr4a6pa0001ucv4jap38qgn",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:08.964Z",
-      "heroMediaId": "cmpr4td4t000uakv4sxr9df10",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[15] > listItem[0] > paragraph[0]",
-          "snippet": "Wigwam: six poles pushed into a circle 600 mm diameter, bent in and lashed at a single apex, for a compact climbing structure for peas or sw"
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -720,6 +806,23 @@
       ]
     },
     {
+      "slug": "managing-outdoor-pigs-in-winter-mud",
+      "tutorialId": "cmprtw6ve0001o8v45045jbmo",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:06:06.014Z",
+      "heroMediaId": "cmprtxpre0006ggv4an7hntit",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        }
+      ]
+    },
+    {
       "slug": "mcs-installer-selection",
       "tutorialId": "cmprmmg8x0000jwv4e2epeal8",
       "type": "TECHNIQUE",
@@ -798,6 +901,45 @@
           "message": "paragraph reads at grade 14.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Making effective cleaning products from vinegar, bicarbonate, and castile soap go here."
+        }
+      ]
+    },
+    {
+      "slug": "natural-perfume-oil-roller",
+      "tutorialId": "cmprrxqp40001kkv417zlpd3e",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:13:50.678Z",
+      "publishedAt": "2026-05-30T03:11:19.130Z",
+      "heroMediaId": "cmprs0k3z001k8kv4jym4p7mj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"maceration\" in body prose without glossary tooltip — use \"soaked in liquid\" or use a tooltip",
+          "path": "body > [1] > [0]",
+          "snippet": "maceration"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"flavor\" — prefer \"flavour\"",
+          "path": "sourceNotes",
+          "snippet": "flavor"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > ingredientsList[3] > item[4] > prepNote",
+          "snippet": "Anchor"
         }
       ]
     },
@@ -954,6 +1096,32 @@
       ]
     },
     {
+      "slug": "paper-clay-fairy-door-miniature",
+      "tutorialId": "cmprsv0ek00002ov4ifjumt9c",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:34.759Z",
+      "publishedAt": "2026-05-30T03:37:11.343Z",
+      "heroMediaId": "cmprswxzw000ubkv4mkkn94hp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[2] > paragraph[0]",
+          "snippet": "Miniature window: cut a small opening in the upper panel before drying and back it with a thin sheet of translucent plastic after painting."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[3] > paragraph[0]",
+          "snippet": "Scale up to 150 mm tall for a more prominent garden display, increasing all hardware proportions accordingly."
+        }
+      ]
+    },
+    {
       "slug": "paper-clay-pressed-flower-frame",
       "tutorialId": "cmprht7xm0000zov4kbqnem2l",
       "type": "PATTERN",
@@ -998,19 +1166,21 @@
       ]
     },
     {
-      "slug": "pole-lathe-turned-bobbin",
-      "tutorialId": "cmpr4qpr00000s4v44mi7owm8",
+      "slug": "pinch-pot-cactus-planter-trio",
+      "tutorialId": "cmprsm0uy0001z8v4bczcv46n",
       "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
+      "categorySlug": "pottery-ceramics",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:22:00.138Z",
-      "heroMediaId": "cmpr4tozr001aakv49npon09f",
+      "voiceRetrofittedAt": "2026-05-30T03:39:35.325Z",
+      "publishedAt": "2026-05-30T03:30:12.042Z",
+      "heroMediaId": "cmprsx4mp0014bkv46qzqkwfi",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Grouped set on a tray: make five or six pots in varied sizes using the same three shapes and arrange them on a wooden tray or piece of slate"
         }
       ]
     },
@@ -1041,6 +1211,51 @@
       ]
     },
     {
+      "slug": "polymer-clay-faux-druzy-crystal-pendant",
+      "tutorialId": "cmprsvh0h0001c8v4f0pgzbck",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:35.722Z",
+      "publishedAt": "2026-05-30T03:37:32.885Z",
+      "heroMediaId": "cmprsx86s0018bkv4sy370dvb",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
+          "snippet": "Geode slice: cut the pendant into a smooth half-circle outline and create a banded agate rim in concentric layers of coloured clay around th"
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-faux-labradorite-pendant",
+      "tutorialId": "cmprsw9be000128v4btmykthi",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:36.027Z",
+      "publishedAt": "2026-05-30T03:38:09.564Z",
+      "heroMediaId": "cmprsx96x001abkv49hw9x5iw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Gold flash version: substitute a gold or bronze metallic sheet layer for the blue-green pearl to approximate golden labradorite."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[13] > listItem[2] > paragraph[0]",
+          "snippet": "Matched earring set: cut two smaller oval slices from the same layered block to produce a pendant-and-earring set with consistent patterning"
+        }
+      ]
+    },
+    {
       "slug": "polymer-clay-miniature-cacti-trio",
       "tutorialId": "cmprhn09f0000s8v4jhw9hxrl",
       "type": "PATTERN",
@@ -1063,6 +1278,31 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
           "snippet": "Make succulent-style pieces with flat, layered petal forms radiating from a central point as an alternative to cacti."
+        }
+      ]
+    },
+    {
+      "slug": "polymer-clay-miniature-fairy-garden-house",
+      "tutorialId": "cmprsv83300021wv47xgox2p2",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:36.477Z",
+      "publishedAt": "2026-05-30T03:37:21.316Z",
+      "heroMediaId": "cmprsxcri001gbkv4183jo3qw",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[12] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[18] > listItem[3] > paragraph[0]",
+          "snippet": "Larger scale: scale the wall former up to 80 mm per side for a more substantial house suitable as a centrepiece in a fairy garden planter."
         }
       ]
     },
@@ -1091,7 +1331,7 @@
       "type": "PATTERN",
       "categorySlug": "wood-natural-craft",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T02:08:13.458Z",
       "publishedAt": "2026-05-29T16:22:37.031Z",
       "heroMediaId": "cmpr4tr2w001cakv4tfohy886",
       "findings": [
@@ -1105,57 +1345,14 @@
       ]
     },
     {
-      "slug": "pyrography-on-curved-surfaces",
-      "tutorialId": "cmpr4bwdj00015gv4w3pnwgbl",
+      "slug": "rabbit-sore-hocks",
+      "tutorialId": "cmprtwicb0002y8v4fqjnclnt",
       "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
+      "categorySlug": "animals-smallholding",
       "status": "BLOCK",
       "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:10:28.890Z",
-      "heroMediaId": "cmpr4tsd1001eakv4kfgx37ae",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > paragraph[2] > text",
-          "snippet": "Anchor"
-        }
-      ]
-    },
-    {
-      "slug": "pyrography-round-slice-decoration",
-      "tutorialId": "cmpr4brjq0001l8v4dqcek7sm",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:10:22.630Z",
-      "heroMediaId": "cmpr4ttbk001gakv4p0hnmfew",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A wood round slice is one of the best surfaces for learning pyrography: the concentric annual rings provide a natural design grid, and the f"
-        }
-      ]
-    },
-    {
-      "slug": "pyrography-tip-maintenance",
-      "tutorialId": "cmpr4rc950000k0v4dsciihov",
-      "type": "TECHNIQUE",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:22:29.298Z",
-      "heroMediaId": "cmpr4tu9z001iakv4vlnqn9pa",
+      "publishedAt": "2026-05-30T04:06:20.879Z",
+      "heroMediaId": "cmprtxrcg000aggv4o2se0bsu",
       "findings": [
         {
           "severity": "BLOCK",
@@ -1164,10 +1361,17 @@
         },
         {
           "severity": "BLOCK",
+          "kind": "em-dash-in-content",
+          "message": "subtitle contains em or en dash — must be zero anywhere in user-facing copy",
+          "path": "subtitle",
+          "snippet": "Pododermatitis in meat rabbits — early signs, housing causes, and treatment."
+        },
+        {
+          "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A burning tip accumulates carbon residue and metal oxidation during use. A clean tip glides across the wood surface at low heat; a dirty tip"
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > blockquote[7]",
+          "snippet": "A rabbit with open, infected hock wounds needs a vet. Staphylococcal infections in the hock can spread to bone (osteomyelitis) in rabbits, w"
         }
       ]
     },
@@ -1206,6 +1410,32 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "A reading on what happens when we treat running a home as a consolation prize. The cultural messaging that homemaking is lesser work is so p"
+        }
+      ]
+    },
+    {
+      "slug": "recognising-american-foulbrood",
+      "tutorialId": "cmprtuhj50003qkv4dplitald",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:04:46.509Z",
+      "heroMediaId": "cmprtxsac000cggv4a8ehmhnu",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+          "path": "body > paragraph[11] > text",
+          "snippet": "standstill"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "Close the hive immediately and do not move the bees or equipment. Do not attempt to unite the colony with another or take honey. Contact you"
         }
       ]
     },
@@ -1305,38 +1535,16 @@
       "type": "PATTERN",
       "categorySlug": "wood-natural-craft",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T02:08:22.384Z",
       "publishedAt": "2026-05-29T16:09:01.789Z",
       "heroMediaId": "cmpr4txqr001makv4xx9r3pm9",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
           "snippet": "Hazel for border tools: hazel coppice handles suit lighter tools; not recommended for spades under heavy digging pressure."
-        }
-      ]
-    },
-    {
-      "slug": "rush-coiled-mat-oval",
-      "tutorialId": "cmpr4asom0002nkv43qtmvfd2",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:37.447Z",
-      "heroMediaId": "cmpr4tyrm001oakv4nk4w7kwx",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
@@ -1362,6 +1570,54 @@
           "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[5] > listItem[2] > paragraph[0]",
           "snippet": "Combustible packing materials: coarse sawdust, coarse salt, dried seaweed, or copper carbonate."
+        }
+      ]
+    },
+    {
+      "slug": "setting-up-a-bait-hive",
+      "tutorialId": "cmprtubxm0004akv4pcujvnaq",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:04:39.263Z",
+      "heroMediaId": "cmprtxu6y000gggv4371mh8om",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > blockquote[14] > text",
+          "snippet": "varroa"
+        }
+      ]
+    },
+    {
+      "slug": "setting-up-a-dairy-goat-milking-routine",
+      "tutorialId": "cmprtvoyy0003mcv48uosqoj9",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:05:42.809Z",
+      "heroMediaId": "cmprtxuv6000iggv407j8yqfr",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[8]",
+          "snippet": "Rinse milking equipment in cold water first (not hot, which denatures protein and makes cleaning harder), then wash with hot water and dairy"
         }
       ]
     },
@@ -1515,6 +1771,51 @@
           "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > infoPanel[1] > paragraph[0]",
           "snippet": "Building Regulations: converting a garage to a habitable room requires Building Regulations approval. Using it as a hobby workshop, home gym"
+        }
+      ]
+    },
+    {
+      "slug": "sourcing-and-settling-point-of-lay-hens",
+      "tutorialId": "cmprtv7re00013gv4cuct7rpc",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T04:05:20.510Z",
+      "heroMediaId": "cmprtxvko000kggv432j3xh1y",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"pullet\" — domain jargon — register in glossaryTerms[] with a definition, or write \"young hen\" in plain English",
+          "path": "excerpt",
+          "snippet": "pullet"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"pullet\" — domain jargon — register in glossaryTerms[] with a definition, or write \"young hen\" in plain English",
+          "path": "body > heading[3] > text",
+          "snippet": "pullet"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"pullet\" — domain jargon — register in glossaryTerms[] with a definition, or write \"young hen\" in plain English",
+          "path": "body > paragraph[4] > text",
+          "snippet": "pullet"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"pullet\" — domain jargon — register in glossaryTerms[] with a definition, or write \"young hen\" in plain English",
+          "path": "body > blockquote[9] > text",
+          "snippet": "pullet"
         }
       ]
     },
@@ -1780,7 +2081,7 @@
       "type": "PRACTICE",
       "categorySlug": "mindset",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:27:51.728Z",
+      "voiceRetrofittedAt": "2026-05-30T02:08:53.310Z",
       "publishedAt": "2026-05-29T14:40:24.103Z",
       "heroMediaId": "cmpr172fs001mu8v4kg4gxkiq",
       "findings": [
@@ -2283,7 +2584,7 @@
       "type": "PRACTICE",
       "categorySlug": "mindset",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:22:01.542Z",
+      "voiceRetrofittedAt": "2026-05-30T02:09:03.329Z",
       "publishedAt": "2026-05-17T21:19:35.057Z",
       "heroMediaId": "cmpmge27o00qw2gv4148eylpy",
       "findings": [
@@ -2470,7 +2771,7 @@
       "type": "PRACTICE",
       "categorySlug": "mindset",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:22:01.568Z",
+      "voiceRetrofittedAt": "2026-05-30T02:09:05.791Z",
       "publishedAt": "2026-05-17T21:50:31.397Z",
       "heroMediaId": "cmpmgerrn00rw2gv4p67rxbiz",
       "findings": [
@@ -2848,6 +3149,32 @@
       ]
     },
     {
+      "slug": "throwing-a-cylindrical-candle-holder",
+      "tutorialId": "cmprso3gk000078v4gjd6y73y",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:37.275Z",
+      "publishedAt": "2026-05-30T03:31:48.716Z",
+      "heroMediaId": "cmprsxpwo001ybkv4rrqkodlg",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[6] > listItem[4] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[18] > listItem[1] > paragraph[0]",
+          "snippet": "Textured exterior: press a wooden stamp or fabric into the leather-hard wall before trimming to add surface interest."
+        }
+      ]
+    },
+    {
       "slug": "throwing-a-set-of-matching-soup-bowls",
       "tutorialId": "cmprhoal50000qkv4mjgqt6lg",
       "type": "PATTERN",
@@ -2891,6 +3218,84 @@
           "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[14]",
           "snippet": "Cone 6 stoneware with a food-safe glaze is microwave-safe and dishwasher-safe once the glaze is verified as non-crazing."
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-small-teapot-stoneware",
+      "tutorialId": "cmprsvmue0000x0v46nbu2wex",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:37.577Z",
+      "publishedAt": "2026-05-30T03:37:40.426Z",
+      "heroMediaId": "cmprsxqs30020bkv4mj0g6akb",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[22] > listItem[3] > paragraph[0]",
+          "snippet": "Two-glaze decoration: glaze the body in one colour and the lid in a contrasting colour to distinguish them visually."
+        }
+      ]
+    },
+    {
+      "slug": "throwing-a-stoneware-casserole-dish",
+      "tutorialId": "cmprso6av0000wgv4l3vu92ds",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:37.896Z",
+      "publishedAt": "2026-05-30T03:31:52.394Z",
+      "heroMediaId": "cmprsxrse0022bkv49ha59u82",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[16] > listItem[3] > paragraph[0]",
+          "snippet": "Fire the lid propped slightly open or separately on its own shelf to avoid any risk of glaze binding the flange to the gallery during the fi"
+        }
+      ]
+    },
+    {
+      "slug": "throwing-matched-nested-bowl-set",
+      "tutorialId": "cmprso90e0000t0v4v94xvuyo",
+      "type": "PATTERN",
+      "categorySlug": "pottery-ceramics",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T03:39:38.210Z",
+      "publishedAt": "2026-05-30T03:31:55.909Z",
+      "heroMediaId": "cmprsxtee0024bkv4e87j9uy7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[3] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[6] > listItem[2] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > orderedList[6] > listItem[5] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[18] > listItem[2] > paragraph[0]",
+          "snippet": "Serving and prep set: throw the three largest bowls as deep mixing bowls and the two smallest as prep bowls with a pouring lip added at leat"
         }
       ]
     },
@@ -3012,30 +3417,6 @@
           "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Using refill shops and zero-waste stores effectively go here."
-        }
-      ]
-    },
-    {
-      "slug": "walnut-small-charcuterie-board",
-      "tutorialId": "cmpr4bgzj00025wv4yxro1bp1",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:10:08.948Z",
-      "heroMediaId": "cmpr4u2qz001uakv4nwqesmna",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Walnut is one of the best hardwoods for a serving board: it has a fine closed grain that resists moisture absorption, a natural oil in the f"
         }
       ]
     },
@@ -3263,105 +3644,6 @@
       ]
     },
     {
-      "slug": "whittled-ash-dibber-short",
-      "tutorialId": "cmpr49kue0000ucv46sv6728y",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:40.628Z",
-      "heroMediaId": "cmpr4u40p001wakv43qetacq0",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "whittled-birch-darning-mushroom",
-      "tutorialId": "cmpr49qb90000l8v4byagvbz6",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:47.713Z",
-      "heroMediaId": "cmpr4u5aj001yakv40vkid2v8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[15] > listItem[2] > paragraph[0]",
-          "snippet": "Flat-bottomed version: leave the base of the dome flat rather than curved for setting on a table; some darners prefer it stable while thread"
-        }
-      ]
-    },
-    {
-      "slug": "whittled-hazel-peg-dolls",
-      "tutorialId": "cmpr4rkro00013sv4yqj46xgq",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:22:40.342Z",
-      "heroMediaId": "cmpr4u6ce0020akv4nzfk543t",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "whittled-lime-leaf-pendant",
-      "tutorialId": "cmpr49nkl0000vcv4ddccynf5",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:44.156Z",
-      "heroMediaId": "cmpr4u7b70022akv4kzsqfeqn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[4] > listItem[3] > paragraph[0]",
-          "snippet": "Sandpaper, 320 grit (optional): for final surface refinement before oiling."
-        }
-      ]
-    },
-    {
-      "slug": "whittled-sycamore-butter-curler",
-      "tutorialId": "cmpr49t2w000080v4vkcnza2p",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:08:51.300Z",
-      "heroMediaId": "cmpr4u86i0024akv4isbvtk72",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
       "slug": "why-anxiety-hits-in-perimenopause",
       "tutorialId": "cmpr0u3360000ncv4k3f89pyq",
       "type": "READING",
@@ -3441,74 +3723,6 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[11]",
           "snippet": "Drawn from Gottman relationship research and attachment theory. No single source. By homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "willow-egg-basket",
-      "tutorialId": "cmpr4an330000tsv47fxnycy8",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:30.187Z",
-      "heroMediaId": "cmpr4ua550026akv4uoegw6l0",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "willow-hanging-basket-liner",
-      "tutorialId": "cmpr4ax7x00006ov46mg46v6j",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:43.321Z",
-      "heroMediaId": "cmpr4ufym0008zov4ix3tvmpx",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "willow-herb-trug",
-      "tutorialId": "cmpr4b3o90000zcv4llwlqfya",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:51.680Z",
-      "heroMediaId": "cmpr4ugnf000azov4f4683rn3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "willow-market-basket-lidded",
-      "tutorialId": "cmpr4apxz0000sgv4tthwp6vi",
-      "type": "PATTERN",
-      "categorySlug": "wood-natural-craft",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T16:09:33.889Z",
-      "heroMediaId": "cmpr4uhak000czov4gnh62a9c",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "PATTERN tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },

@@ -303,3 +303,19 @@ SKIPPED: 0
 - throwing-a-small-teapot-stoneware: grade-level-strict
 - throwing-a-stoneware-casserole-dish: grade-level-strict
 - throwing-matched-nested-bowl-set: grade-level-strict
+
+---
+
+## Run at 04:07:15
+
+Generated: 2026-05-30T04:07:15.484Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

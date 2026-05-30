@@ -1,0 +1,196 @@
+# qc-unfixable 2026-05-30
+
+Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will retry these on its next fire (after the 24-hour exclusion window).
+
+- abaca-fibre-papermaking grade-level-strict — applied: 
+
+- cutting-and-mitreing-coving-internal-corners grade-level-strict — applied: 
+- filling-expansion-gaps-in-laminate-flooring grade-level-strict — applied: 
+- fitting-under-cabinet-led-strip-lighting grade-level-strict — applied: 
+- making-a-simple-leather-notebook-cover grade-level-strict — applied: 
+- making-good-after-removing-ceramic-wall-tiles grade-level-strict — applied: 
+- painting-exterior-render-masonry grade-level-strict — applied: 
+- preparing-floor-self-levelling-compound grade-level-strict — applied: 
+- re-webbing-a-sagging-sofa-base grade-level-strict — applied: 
+- removing-and-replacing-vinyl-floor-tiles grade-level-strict — applied: 
+- replacing-a-shower-pump grade-level-strict — applied: 
+- replacing-a-worn-radiator-compression-valve grade-level-strict — applied: 
+- waterproofing-a-shower-area-with-tanking-membrane grade-level-strict — applied: 
+
+- air-source-heat-pump-summer-cooling grade-level-strict — applied: 
+- battery-capacity-degradation voice-violation,grade-level-strict — applied: 
+- building-regs-part-l-retrofit-notification voice-violation,grade-level-strict — applied: 
+- composting-diseased-plant-material grade-level-strict — applied: 
+- cotton-rag-preparation grade-level-strict — applied: 
+- electronics-refurbishment-and-upgrade voice-violation,grade-level-strict — applied: 
+- foundational-spacing grade-level-strict — applied: 
+- hand-lettered-headers grade-level-strict — applied: 
+- home-battery-economy-7-charging grade-level-strict — applied: 
+- insulated-compost-bin-winter grade-level-strict — applied: 
+- internal-wooden-window-shutters grade-level-strict — applied: 
+- mcs-installer-selection voice-violation,grade-level-strict — applied: 
+- off-grid-battery-bank-state-of-health grade-level-strict — applied: 
+- off-grid-rainwater-system-winterisation voice-violation,grade-level-strict — applied: 
+- photo-mounting-options grade-level-strict — applied: 
+- reducing-packaging-when-ordering-online grade-level-strict — applied: 
+- sheep-wool-loft-insulation grade-level-strict — applied: 
+- solar-pv-dc-cable-sizing grade-level-strict — applied: 
+- solar-pv-inverter-fault-diagnosis grade-level-strict — applied: 
+- solid-brick-garage-internal-insulation grade-level-strict — applied: 
+- spencerian-minuscule-ovals grade-level-strict — applied: 
+- trickle-vent-draught-sealing grade-level-strict — applied: 
+- uncial-hand grade-level-strict — applied: 
+- water-softener-vs-salt-free-conditioner voice-violation,grade-level-strict — applied: 
+- window-reveal-insulation-ewi-junction grade-level-strict — applied: 
+
+- composting-toilet-annual-maintenance grade-level-strict — applied: 
+- expansion-continues-with-ease-affirmation grade-level-strict — applied: 
+- external-wall-insulation-etics-installation grade-level-strict — applied: 
+- five-senses-scan-three-minutes grade-level-strict — applied: 
+- giving-feels-expansive-and-fearless-affirmation grade-level-strict — applied: 
+- heat-battery-for-solar-storage voice-violation,grade-level-strict — applied: 
+- i-steward-wealth-with-purpose-and-joy grade-level-strict — applied: 
+- lamb-pneumonia-recognition-and-response grade-level-strict — applied: 
+- long-exhale-breath-for-perimenopause-anxiety grade-level-strict — applied: 
+- managing-a-legacy-feed-in-tariff grade-level-strict — applied: 
+- my-anxiety-is-information-not-identity grade-level-strict — applied: 
+- natural-cleaning-products-diy voice-violation,grade-level-strict — applied: 
+- new-moon-full-moon-two-monthly-anchors grade-level-strict — applied: 
+- off-grid-load-calculation-worksheet voice-violation,grade-level-strict — applied: 
+- paper-clay-christmas-ornament-set grade-level-strict — applied: 
+- paper-clay-pressed-flower-frame grade-level-strict — applied: 
+- polymer-clay-faux-agate-pendant grade-level-strict — applied: 
+- polymer-clay-miniature-cacti-trio grade-level-strict — applied: 
+- pyrography-christmas-tree-ornaments grade-level-strict — applied: 
+- reclaiming-homemaker-as-feminist-identity grade-level-strict — applied: 
+- riven-ash-garden-fork-handle grade-level-strict — applied: 
+- saggar-firing-basics grade-level-strict — applied: 
+- slab-built-geometric-planter-with-feet grade-level-strict — applied: 
+- solar-pv-string-vs-microinverter-choice grade-level-strict — applied: 
+- sourcing-replacement-stock-after-a-disease-outbreak grade-level-strict — applied: 
+- sudden-vs-anticipated-loss grade-level-strict — applied: 
+- tapping-for-always-behind grade-level-strict — applied: 
+- tapping-for-bold-action-without-fear grade-level-strict — applied: 
+- tapping-for-calm-mornings grade-level-strict — applied: 
+- tapping-for-chronic-pain grade-level-strict — applied: 
+- tapping-for-fear-of-judgment grade-level-strict — applied: 
+- tapping-for-fear-of-owning-property grade-level-strict — applied: 
+- tapping-for-fear-of-repeating-family-patterns grade-level-strict — applied: 
+- tapping-for-financial-admin-dread grade-level-strict — applied: 
+- tapping-for-hosting-anxiety grade-level-strict — applied: 
+- tapping-for-i-am-a-natural-investor grade-level-strict — applied: 
+- tapping-for-i-feel-guilty-asking-for-more grade-level-strict — applied: 
+- tapping-for-i-should-be-over-it grade-level-strict — applied: 
+- tapping-for-imposter-syndrome grade-level-strict — applied: 
+- tapping-for-investing-isnt-for-me grade-level-strict — applied: 
+- tapping-for-is-it-selfish-to-enjoy-this grade-level-strict — applied: 
+- tapping-for-mum-guilt grade-level-strict — applied: 
+- tapping-for-never-enough-hours grade-level-strict — applied: 
+- tapping-for-perimenopause-mood-swings grade-level-strict — applied: 
+- tapping-for-permission-to-play grade-level-strict — applied: 
+- tapping-for-safety-in-stillness grade-level-strict — applied: 
+- tapping-for-self-forgiveness grade-level-strict — applied: 
+- tapping-for-spiritual-but-not-religious grade-level-strict — applied: 
+- tapping-for-the-ageing-body grade-level-strict — applied: 
+- tapping-for-the-family-money-story-i-inherited grade-level-strict — applied: 
+- tapping-for-the-fear-of-being-seen-with-money grade-level-strict — applied: 
+- tapping-for-the-money-fight-that-keeps-returning grade-level-strict — applied: 
+- tapping-for-the-new-family-story grade-level-strict — applied: 
+- tapping-for-the-parent-money-tangle grade-level-strict — applied: 
+- tapping-for-the-wait-for-apology-trap grade-level-strict — applied: 
+- tapping-for-trust-in-perfect-timing grade-level-strict — applied: 
+- tapping-for-turning-40 grade-level-strict — applied: 
+- tapping-for-we-cant-talk-anymore grade-level-strict — applied: 
+- tapping-to-allow-myself-to-be-the-wealthy-one grade-level-strict — applied: 
+- tapping-to-anchor-calm-as-the-default grade-level-strict — applied: 
+- tapping-to-anchor-trust-in-multi-million-investments grade-level-strict — applied: 
+- tapping-to-attract-the-right-advisors-and-deals grade-level-strict — applied: 
+- tapping-to-begin-the-30-day-sleep-reset grade-level-strict — applied: 
+- tapping-to-celebrate-her grade-level-strict — applied: 
+- tapping-to-celebrate-new-opportunities grade-level-strict — applied: 
+- tapping-to-claim-calm-sleeper-identity grade-level-strict — applied: 
+- tapping-to-come-back-to-now grade-level-strict — applied: 
+- tapping-to-fall-asleep-in-belonging grade-level-strict — applied: 
+- tapping-to-give-freely-without-fear grade-level-strict — applied: 
+- tapping-to-live-in-daily-overflow grade-level-strict — applied: 
+- tapping-to-lock-in-ease-with-receiving-and-spending grade-level-strict — applied: 
+- tapping-to-release-guilt-about-wanting-wealth grade-level-strict — applied: 
+- tapping-to-see-myself-as-someone-who-has-it grade-level-strict — applied: 
+- the-first-thing-my-savings-will-buy-journal grade-level-strict — applied: 
+- the-legacy-alignment-activation grade-level-strict — applied: 
+- the-overflow-and-circulation-activation grade-level-strict — applied: 
+- the-overflow-and-circulation-ritual grade-level-strict — applied: 
+- the-perfect-advisors-find-me-easily grade-level-strict — applied: 
+- the-slow-leak-what-drains-your-energy grade-level-strict — applied: 
+- three-habits-wealthy-me-already-has-journal grade-level-strict — applied: 
+- throwing-a-set-of-matching-soup-bowls grade-level-strict — applied: 
+- touched-out-the-science-and-the-soft-answer grade-level-strict — applied: 
+- two-voices-on-the-same-budget-activity grade-level-strict — applied: 
+- using-refill-shops-and-zero-waste-stores voice-violation,grade-level-strict — applied: 
+- what-body-neutrality-actually-means grade-level-strict — applied: 
+- what-does-safe-with-money-feel-like-in-my-body-journal grade-level-strict — applied: 
+- what-does-the-sleepless-version-of-me-deserve-to-hear-journal grade-level-strict — applied: 
+- what-forgiveness-is-what-it-isnt grade-level-strict — applied: 
+- what-is-available-to-her-is-available-to-me grade-level-strict — applied: 
+- when-the-sleepless-years-leave-a-mark grade-level-strict — applied: 
+- when-womens-friendships-disappear-in-midlife grade-level-strict — applied: 
+- where-to-start-with-money-work grade-level-strict — applied: 
+- why-anxiety-hits-in-perimenopause grade-level-strict — applied: 
+- why-debt-obsession-grows-in-the-dark grade-level-strict — applied: 
+- why-inheritance-and-tax-fear-slows-down-wealth-planning grade-level-strict — applied: 
+- why-we-fight-about-the-same-things grade-level-strict — applied: 
+- wood-ash-glaze-surface-decoration grade-level-strict — applied: 
+- zero-waste-bathroom-swaps-practical grade-level-strict — applied: 
+
+- chain-plying-on-a-drop-spindle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- colour-sampling-with-mordants hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drum-carder-batts-from-raw-locks hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dyeing-silk-with-iron-modifier hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- dyeing-with-acorns-and-oak-bark hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dyeing-with-ivy-berries hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- dyeing-with-meadowsweet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- finger-weaving-chevron-band hero-missing — applied: hero-fill-deferred-to-standalone-script
+- four-shaft-birds-eye-twill hero-missing — applied: hero-fill-deferred-to-standalone-script
+- four-shaft-undulating-twill hero-missing — applied: hero-fill-deferred-to-standalone-script
+- four-shaft-waffle-weave hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hooked-rug-portrait-panel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-bottle-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-hammock hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-window-valance hero-missing — applied: hero-fill-deferred-to-standalone-script
+- macrame-wreath-frame-hanger hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-skein-on-niddy-noddy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-badger hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-elephant hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-pig hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-squirrel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nuno-felted-scarf-on-gauze hero-missing — applied: hero-fill-deferred-to-standalone-script
+- proddy-rug-basics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- resist-dyeing-with-wax-batik-on-wool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rigid-heddle-tencel-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-cashmere-fibre hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-from-combed-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-merino-for-lace hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-portland-breed-fleece hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spinning-soay-wool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tapestry-rya-pile-insert hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-baby-shoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-bath-mat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-kindle-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-needle-book hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-pot-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-scarf-with-silk-stripe-inlay hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wet-felted-wreath hero-missing — applied: hero-fill-deferred-to-standalone-script
+- woven-scarf-leno-lace-inserts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- woven-tote-bag-frame-loom hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- natural-perfume-oil-roller voice-violation — applied: 
+
+- paper-clay-fairy-door-miniature grade-level-strict — applied: 
+- pinch-pot-cactus-planter-trio grade-level-strict — applied: 
+- polymer-clay-faux-druzy-crystal-pendant grade-level-strict — applied: 
+- polymer-clay-faux-labradorite-pendant grade-level-strict — applied: 
+- polymer-clay-miniature-fairy-garden-house grade-level-strict — applied: 
+- throwing-a-cylindrical-candle-holder grade-level-strict — applied: 
+- throwing-a-small-teapot-stoneware grade-level-strict — applied: 
+- throwing-a-stoneware-casserole-dish grade-level-strict — applied: 
+- throwing-matched-nested-bowl-set grade-level-strict — applied: 
