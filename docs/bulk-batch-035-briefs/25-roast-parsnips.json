@@ -1,0 +1,122 @@
+{
+  "slug": "roast-parsnips",
+  "title": "Roast parsnips",
+  "subtitle": "Caramelised edges, soft centres",
+  "excerpt": "Parsnips par-boiled until nearly tender, then roasted in hot fat until the edges are dark and sweet. The natural sugars caramelise where they catch the heat.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard British roast parsnip method. Par-boiling ensures the centres cook through before the edges burn.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Par-boil up to 4 hours ahead and leave to steam-dry. Roast when needed.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "festive", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "colander", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "par-boiling", "term": "Par-boiling", "definition": "Partially cooking vegetables in boiling salted water before roasting, so the centres are nearly tender before they go into the oven." },
+    { "slug": "caramelising", "term": "Caramelising", "definition": "The browning of natural sugars under heat, which produces the sweet, dark, slightly bitter flavour on the edges of roasted root vegetables." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Parsnips have a high natural sugar content. This makes the edges catch and caramelise quickly in a hot oven while the centres take longer to cook through. Par-boiling solves this: the centres are soft before roasting begins, so the exterior can colour without the middle staying raw." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "parsnip", "amount": 8, "unit": "each", "prepNote": "peeled, halved lengthways, large ones quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "duck-fat", "amount": 4, "unit": "tbsp", "prepNote": "or vegetable oil", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Par-boil and roast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Heat the oven to 200 degrees C fan. " },
+            { "type": "text", "text": "Par-boil", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "par-boiling" } }] },
+            { "type": "text", "text": " the parsnips in well-salted boiling water for 5 minutes until just starting to soften at the edges. Drain and leave to steam-dry in the colander for 5 minutes." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the duck fat or oil in the roasting tin in the oven for 5 minutes until shimmering. Add the parsnips and turn them in the hot fat. Add the thyme sprigs if using." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Roast for 30 to 35 minutes, turning once, until the edges are deeply " },
+            { "type": "text", "text": "caramelised", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramelising" } }] },
+            { "type": "text", "text": ". If using honey, drizzle it over the parsnips for the last 10 minutes of cooking." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The parsnips are catching and burning on the edges before the centres are tender", "cause": "Par-boiling was skipped or insufficient.", "fix": "Always par-boil for a minimum of 5 minutes. The centre must be half-cooked before the parsnip goes into a hot oven." },
+            { "symptom": "The honey glaze is blackening and bitter", "cause": "Honey was added too early in the cooking.", "fix": "Add honey only in the last 10 minutes. Any earlier and the sugars will burn before the parsnips are done." },
+            { "symptom": "The parsnips are soft and pale, not caramelised", "cause": "The fat was not hot enough when the parsnips went in, or the oven temperature was too low.", "fix": "Heat the fat until shimmering before adding the parsnips. A cold or warm fat will steam rather than roast them." },
+            { "symptom": "The parsnips are sticking to the tin", "cause": "Turned too early before the caramelised edge has set.", "fix": "Leave for at least 20 minutes before the first turn. They release cleanly once a crust has formed." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add a teaspoon of ground cumin or coriander to the fat before adding the parsnips for a spiced version. Maple syrup in place of honey gives a deeper, less floral sweetness. For the combined version with carrots, see the honey-roast carrots and parsnips recipe." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roast parsnips are a British winter vegetable staple, on the Christmas table and Sunday roasts throughout the autumn and winter months. Parsnips were a significant food crop in Britain before the potato arrived from the Americas. Their relegation to a side vegetable came with the potato's rise in the seventeenth and eighteenth centuries." }]
+      }
+    ]
+  }
+}

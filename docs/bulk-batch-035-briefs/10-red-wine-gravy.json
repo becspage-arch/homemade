@@ -1,0 +1,132 @@
+{
+  "slug": "red-wine-gravy",
+  "title": "Red wine gravy",
+  "subtitle": "Built on roast pan drippings",
+  "excerpt": "A proper roast gravy made from the sticky brown residue left in the roasting pan, deglazed with red wine and enriched with beef or chicken stock. Ready in 10 minutes while the joint rests.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Brown gravies and pan sauces.\n\nEliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg. Roast gravy methods.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 300 ml",
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "comfortFood", "dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "deglazing", "term": "Deglazing", "definition": "Adding liquid to a hot pan to dissolve the brown, sticky residue left from cooking, incorporating it into a sauce or gravy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Red wine gravy is made from the roasting tin, not from a separate pan. The brown residue stuck to the base of the tin after roasting meat is pure flavour. Wine loosens it; stock builds it into a proper gravy." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Make it while the joint rests. The timing is natural: 10 minutes for the gravy, 30 minutes for the rest." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot; or chicken stock for poultry", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Trivet vegetables"
+        },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "If you roasted the joint on a bed of onion, carrot, and celery, leave them in the tin while you make the gravy. They add extra flavour and body, and you strain them out at the end." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy in the roasting tin" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once the joint is removed to rest, pour off most of the fat from the tin, leaving behind about 2 tablespoons and all the brown sediment." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the tin over two hob burners on medium heat. Stir in the flour and cook for 1 minute, scraping up any sticky bits." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Pour in the red wine and " },
+            { "type": "text", "text": "deglaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglazing" } }] },
+            { "type": "text", "text": " the tin, scraping up all the brown residue. Let it bubble and reduce by half, about 2 minutes." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the hot stock and add the thyme if using. Bring to a simmer and cook for 6 to 8 minutes, stirring occasionally, until the gravy has thickened slightly and tastes rounded." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the Worcestershire sauce if using. Taste and adjust seasoning. Strain through a fine-mesh sieve into a warm jug." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Gravy tastes flat", "cause": "The roasting tin had no real residue, or the stock was weak.", "fix": "Add a splash of Worcestershire sauce or a small knob of butter stirred in at the end. A good roast should produce a well-coloured residue." },
+            { "symptom": "Gravy is lumpy", "cause": "The flour formed lumps before the liquid was added.", "fix": "Stir the flour into the fat first and cook for a full minute before adding any liquid. Add the wine gradually, stirring." },
+            { "symptom": "Gravy is too thin", "cause": "Not enough reduction, or too much stock added.", "fix": "Simmer uncovered for a few more minutes. The gravy should coat a spoon." },
+            { "symptom": "Gravy tastes too alcoholic", "cause": "The wine was not reduced enough before the stock went in.", "fix": "Reduce the wine by at least half before adding stock. The alcohol should cook out completely." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a port gravy to serve with game or duck, replace the red wine with port and reduce by two thirds before adding the stock. For a lighter chicken gravy, use white wine and chicken stock in the same method." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The pan-dripping gravy is older than the Sunday roast itself. Victorian cookery writer Mrs Beeton describes it as the natural consequence of good roasting: the dripping is the flavour, and the cook who discards it is discarding the best part of the meal. It survives as standard practice because it works, and because it is the only sauce that has the exact flavour of the meat it accompanies." }]
+      }
+    ]
+  }
+}

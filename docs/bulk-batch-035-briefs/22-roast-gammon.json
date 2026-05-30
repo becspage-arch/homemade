@@ -1,0 +1,136 @@
+{
+  "slug": "roast-gammon",
+  "title": "Roast gammon",
+  "subtitle": "Boiled then glazed, the Boxing Day staple",
+  "excerpt": "A gammon joint simmered in cider for two hours then glazed with honey and mustard and roasted until the coating caramelises. Served hot or cold, it is one of the most useful roasting joints.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Boiled and glazed ham entries.\n\nEliza Acton, Modern Cookery for Private Families (1845). Ham and gammon methods.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 150,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze sliced cold gammon for up to three months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Can be simmered up to 2 days ahead, refrigerated whole, and glazed and roasted on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["festive", "comfortFood", "sundayLunch"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven for the glazing stage only",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "roasting-pan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "glazing", "term": "Glazing", "definition": "Coating the surface of meat with a sweet or sticky liquid that sets and caramelises in the oven, forming a shiny, flavourful crust." },
+    { "slug": "simmering", "term": "Simmering", "definition": "Maintaining a liquid just below boiling point, with small bubbles breaking the surface gently but not vigorously. Used for gentle, even cooking of large cuts." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Gammon is cured pork leg sold raw. The two-stage method here first removes excess salt by simmering, then builds a sticky, burnished exterior by glazing in the oven. It is one of the best roasts to make ahead: the simmer can happen two days before, and the glazing takes just 30 minutes on the day." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "gammon-joint", "amount": 2000, "unit": "g", "prepNote": "unsmoked or smoked, rind on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cider-dry", "amount": 1000, "unit": "ml", "prepNote": "or water", "isOptional": false, "groupLabel": "For simmering" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": "For simmering" },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For simmering" },
+            { "ingredientSlug": "peppercorns-black", "amount": 10, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For simmering" },
+            { "ingredientSlug": "honey", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the glaze" },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the glaze" },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the glaze" },
+            { "ingredientSlug": "cloves", "amount": 20, "unit": "each", "prepNote": "whole, for studding", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer the gammon" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the gammon in a large saucepan. Cover with cold water and bring to the boil. Drain and discard this first water, which removes excess surface salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Return the gammon to the pan with the cider, onion, bay leaves, and peppercorns. Cover with cold water if the cider does not cover the joint. " },
+            { "type": "text", "text": "Simmer", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "simmering" } }] },
+            { "type": "text", "text": " gently for 1 hour 30 minutes (45 minutes per kg). The joint is done when a skewer passes through with no resistance." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the joint and allow it to cool for 20 minutes. Remove the rind by peeling it away, leaving as much of the fat layer as possible. Score the fat in a diamond pattern." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze and roast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200 degrees C fan. Mix the honey, mustard, and sugar into a thick paste. Press a whole clove into each diamond of the scored fat if using." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Brush half the " },
+            { "type": "text", "text": "glaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "glazing" } }] },
+            { "type": "text", "text": " over the fat. Roast for 15 minutes. Remove, apply the remaining glaze, and return for a further 15 minutes until the exterior is deep amber and caramelised. Rest for 20 minutes before carving." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The gammon is very salty even after the initial water change", "cause": "A heavily cured joint, or the first water was not discarded.", "fix": "Always discard the first water. If still very salty, soak the joint in cold water for up to 12 hours before cooking." },
+            { "symptom": "The glaze is sliding off the fat during roasting", "cause": "The fat was too moist, or the glaze was too thin.", "fix": "Pat the scored fat dry before applying the glaze. A thick paste of honey, mustard, and sugar sticks better than a liquid glaze." },
+            { "symptom": "The glaze is burnt to the base of the tin and smoking", "cause": "Drips of glaze falling onto the hot tin are burning.", "fix": "Line the tin with foil and add 100 ml of water to the base. The drips will not burn in the liquid." },
+            { "symptom": "The fat layer is very pale despite glazing", "cause": "The glaze was applied too thick in one go.", "fix": "Apply in two stages: a thin coat first, allow it to set for 10 minutes, then a second coat for the final 15 minutes." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Replace the honey-mustard glaze with dark marmalade and ginger for a sharper, more intense result. Simmer in ginger beer instead of cider for a subtle spice background. Cold gammon served with piccalilli is as good a use of leftovers as there is in British cooking." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Boiled and glazed ham has been a British festive centrepiece since before the Victorian era. Victorian cookery writer Mrs Beeton described it as a joint for company and celebration. The Boxing Day cold ham sandwich is one of the most dependable uses of Christmas leftovers and, in many households, the meal people look forward to more than Christmas dinner itself." }]
+      }
+    ]
+  }
+}

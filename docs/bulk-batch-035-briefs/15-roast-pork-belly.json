@@ -1,0 +1,145 @@
+{
+  "slug": "roast-pork-belly",
+  "title": "Roast pork belly",
+  "subtitle": "Slow-roasted with shattering crackling",
+  "excerpt": "Pork belly scored, dried overnight, then roasted low and slow before a blast of heat produces crackling that shatters. Rich, unctuous meat underneath.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard British roast pork belly technique with two-stage oven method for crackling.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 195,
+    "restingMinutes": 20,
+    "chillingMinutes": 720,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Score and season the night before, leaving the skin dry and uncovered in the fridge. This is not optional for good crackling.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "comfortFood"],
+    "temperatureCelsius": 230,
+    "temperatureNote": "fan oven for the final blast; 160 degrees C fan for the long cook",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "crackling", "term": "Crackling", "definition": "The crisp, blistered skin on a roast pork joint, formed when the scored, dried skin is exposed to high heat and steam escapes through the cuts." },
+    { "slug": "resting-meat", "term": "Resting", "definition": "Leaving cooked meat to stand before carving, allowing the juices to redistribute evenly through the muscle fibres." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pork belly is one of the most reliably satisfying Sunday roasts. The high fat content means it can be cooked for three hours at low heat without drying out. The crackling requires one piece of preparation that cannot be rushed: drying the skin uncovered in the fridge overnight." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "The drying step"
+        },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Good crackling comes from dry skin. Pat the pork dry after scoring, salt it generously, and leave it uncovered in the fridge for at least 8 hours. A damp skin steams rather than crisps." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pork-belly", "amount": 1600, "unit": "g", "prepNote": "bone-in or boneless, skin scored at 1 cm intervals", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 3, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fennel-seeds", "amount": 1, "unit": "tsp", "prepNote": "lightly crushed", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cider-dry", "amount": 200, "unit": "ml", "prepNote": "or stock-chicken", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the night before" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score the skin at 1 cm intervals if the butcher has not already done so, cutting through the skin but not deep into the fat. Pat completely dry with kitchen paper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub the salt and crushed fennel seeds (if using) generously over the skin, pressing into the score cuts. Leave uncovered in the fridge overnight." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow-roast and blast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 160 degrees C fan. Scatter the onion, garlic, and thyme in the base of a deep roasting tin. Pour in the cider. Sit the pork belly on top, skin side up." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast uncovered for 2 hours 45 minutes. The fat will have rendered and the meat will be tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Raise the oven to 230 degrees C fan and roast for a further 20 to 25 minutes until the " },
+            { "type": "text", "text": "crackling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crackling" } }] },
+            { "type": "text", "text": " is completely blistered and shattering." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Transfer to a board and " },
+            { "type": "text", "text": "rest", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }] },
+            { "type": "text", "text": " for 20 minutes. The crackling will continue to crisp as it rests." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Crackling is chewy and soft rather than crisp", "cause": "The skin was not dry enough, or the high-heat blast was not long enough.", "fix": "Ensure the skin is bone-dry before it goes in the oven. If the crackling is still soft after the blast, transfer the pork to a tray, remove the crackling in a sheet, and grill it on high for 5 minutes watching carefully." },
+            { "symptom": "The crackling is dark in patches but raw-looking in others", "cause": "The scores were not cut deep enough to the skin, leaving thick uncut sections.", "fix": "Score the skin properly: the cuts need to reach through the skin layer. A Stanley blade works better than most kitchen knives." },
+            { "symptom": "The meat has dried out during the long cook", "cause": "The tin was too shallow with no liquid, or the oven temperature was too high.", "fix": "Always add liquid to the base of the tin. The steam helps keep the underside of the pork moist while the skin crisps above." },
+            { "symptom": "The base of the tin has burnt", "cause": "The liquid boiled away during the long cook.", "fix": "Check at the 90-minute mark and add more cider or stock if the base is drying out." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A rub of five-spice and garlic instead of fennel gives a Chinese-influenced version. For a simpler finish, omit the fennel and use just salt. The cooking liquid in the base makes an excellent gravy: strain it, skim the fat, and reduce by half on the hob." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roast pork belly became popular in British restaurants in the 1990s and 2000s as chefs discovered what Asian and Italian cooks had always known: that the belly is a better roasting cut than the loin. It produces more flavour, more fat, and more satisfying crackling than any other pork joint." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "slug": "boulangere-potatoes",
+  "title": "Boulangere potatoes",
+  "subtitle": "Thinly sliced, slow-baked in stock",
+  "excerpt": "Potatoes sliced thin and layered with onions, then baked in stock until absorbed and the top is golden. The classic alternative to dauphinoise without the cream.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "French technique, pommes boulangere, adopted into British cooking. Originally baked under a joint of meat so the potatoes cooked in its drippings. Eliza Acton referenced similar methods.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 6 hours ahead, cover, and refrigerate. Add 15 minutes to the baking time from cold.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "dinnerParty", "comfortFood"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": true },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "sweating", "term": "Sweating", "definition": "Cooking onions or other vegetables gently in fat over low heat until they soften and release their moisture, without browning." },
+    { "slug": "gratinating", "term": "Gratinating", "definition": "The process of browning the top layer of a layered baked dish, typically achieved by high heat or a grill at the end of cooking." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Boulangere potatoes are the leaner, equally satisfying sibling of dauphinoise. The stock soaks into the potato slices as it reduces, leaving them tender and flavourful rather than rich. The top layer crisps and browns in the oven while the layers underneath stay moist." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "Maris Piper or King Edward, peeled and very thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 500, "unit": "ml", "prepNote": "hot; or stock-beef for a richer result", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the layers" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Heat the oven to 180 degrees C fan. Melt half the butter in a medium saucepan over a low heat. Add the onions and garlic and " },
+            { "type": "text", "text": "sweat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sweating" } }] },
+            { "type": "text", "text": " gently for 10 minutes until softened." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Butter a large deep pie dish or gratin dish. Layer the potato slices and softened onions in alternate layers, seasoning each potato layer with salt and tucking in the thyme sprigs. The top layer should be potato slices only, arranged neatly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour over the hot stock until it just reaches the top layer of potatoes. Dot the remaining butter across the top." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and brown" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Bake uncovered for 1 hour to 1 hour 15 minutes until the stock has been absorbed and the top is deeply golden and " },
+            { "type": "text", "text": "gratinated", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gratinating" } }] },
+            { "type": "text", "text": ". The potatoes should be completely tender when a sharp knife is inserted." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The potatoes are still firm in the middle after 75 minutes", "cause": "The slices were cut too thick, or the stock did not reach the middle layers.", "fix": "Slice the potatoes no thicker than 3 mm. Ensure the stock level reaches the top layer before going into the oven. Continue baking and check every 10 minutes." },
+            { "symptom": "The top is very brown but the middle is underdone", "cause": "The oven was too hot.", "fix": "Cover with foil and continue baking at a lower temperature. Remove the foil for the last 10 minutes to re-crisp the top." },
+            { "symptom": "The dish is dry and the stock has evaporated too fast", "cause": "The dish was too wide, or the stock was not enough.", "fix": "The dish should be deep rather than wide. Add an extra 100 ml of hot stock if the top layer looks dry before 30 minutes." },
+            { "symptom": "The onions are still raw-tasting", "cause": "They were not softened before layering.", "fix": "The sweating step is important: raw onion slices will not soften evenly within the potato baking time." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Place a lamb joint directly on top of the potato dish for the last hour of roasting: the lamb drippings fall into the potatoes as both cook. Add shredded leeks to the onion layers for a milder flavour. A handful of grated Parmesan on top before baking adds a savoury crust." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Boulangere potatoes are named after the baker's oven tradition, where cooks would bring their potato dishes to bake in the residual heat after the bread was done. The method came to Britain through French influence. It remains a useful alternative to cream-based potato gratins." }]
+      }
+    ]
+  }
+}

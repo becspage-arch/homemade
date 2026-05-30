@@ -1,0 +1,146 @@
+{
+  "slug": "roast-turkey",
+  "title": "Roast turkey",
+  "subtitle": "The Christmas centrepiece, properly done",
+  "excerpt": "A whole turkey roasted with a butter under the breast skin and covered in foil for most of the cooking, then uncovered for the last 30 minutes to bronze. Reliable method for a juicy bird.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard British foil-tent roast turkey method. Widely described in British cooking literature from the 1950s onward.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 240,
+    "restingMinutes": 45,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Prepare the herb butter and stuff the neck cavity up to 24 hours ahead. Keep the turkey uncovered in the fridge to dry the skin.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["festive", "sundayLunch"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "kitchen-twine", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "basting", "term": "Basting", "definition": "Spooning the pan juices or melted fat over the bird during roasting to keep the surface moist and promote even browning." },
+    { "slug": "resting-meat", "term": "Resting", "definition": "Leaving the cooked turkey to stand before carving, allowing the juices to settle back into the meat. A large turkey needs at least 45 minutes." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A properly roasted turkey is a moist, bronzed bird that carves cleanly. The main risk is a dry breast, which comes from overcooking or not protecting the breast for the first part of the cooking. The foil-tent method here keeps the breast juicy until the final bronzing." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Thawing a frozen turkey"
+        },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A 5 kg frozen turkey needs 3 full days in the fridge to defrost safely. A 7 kg bird needs 4 days. Never defrost on the worktop." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "turkey-whole", "amount": 5, "unit": "kg", "prepNote": "fresh or fully defrosted, giblets removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "For the herb butter" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": "leaves stripped and chopped", "isOptional": false, "groupLabel": "For the herb butter" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the herb butter" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "quartered, for the cavity", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "halved, for the cavity", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the turkey" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the turkey from the fridge 2 hours before cooking. Heat the oven to 190 degrees C fan." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the softened butter with the chopped thyme, crushed garlic, and salt. Use your fingers to carefully loosen the skin over the breast and push the herb butter underneath, spreading it across the breast meat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the quartered onion and halved lemon inside the cavity. Tie the legs together with kitchen twine. Place the turkey breast-side up in a large roasting tin." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast and bronze" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Cover the turkey loosely with a double layer of foil. Roast for 3 hours for a 5 kg bird, " },
+            { "type": "text", "text": "basting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "basting" } }] },
+            { "type": "text", "text": " every 45 minutes. Calculate 30 minutes per kg for birds over 5 kg." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the foil for the last 30 minutes to bronze the skin. Check that the internal temperature in the thickest part of the thigh reads 75 degrees C with a thermometer, with no pink juices running from the joint." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Transfer to a warm board. " },
+            { "type": "text", "text": "Rest", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }] },
+            { "type": "text", "text": " for at least 45 minutes, covered loosely with foil. The turkey will stay hot for well over an hour, and the rest is essential for juicy meat." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The turkey breast is dry even though the thermometer read 75 degrees C", "cause": "The probe was placed in the breast rather than the thigh, and the breast overcooked while the thigh reached temperature.", "fix": "Always check the thigh. The breast cooks faster; 75 degrees C in the thigh means the breast will be at 80 degrees C or above. Reduce cooking time next year and rely on the resting period." },
+            { "symptom": "The skin is pale after removing the foil", "cause": "Not enough time uncovered, or the oven temperature is too low.", "fix": "30 minutes uncovered at 190 degrees C fan should be enough. If still pale, raise to 210 degrees C for the final 15 minutes." },
+            { "symptom": "The pan juices have cooked to a dark mass and cannot be used for gravy", "cause": "The turkey was not basted often enough and the juices reduced too far.", "fix": "Add 200 ml of hot stock to the tin and stir up the sticky bits for gravy. The dark residue is flavour." },
+            { "symptom": "The legs are underdone but the breast is perfect", "cause": "The bird was unusually cold at the start, or the legs were very large.", "fix": "Remove the breasts from the carcass and put them to rest. Return the legs to the oven for another 20 minutes. This is a carving advantage, not a failure." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a spiced butter, add 1 teaspoon each of smoked paprika and ground cumin to the herb butter. A clementine and sage butter works well for Christmas. For a brined turkey, which produces a consistently moister result, see the brined roast turkey recipe." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roast turkey became the British Christmas centrepiece in the Victorian era, replacing the goose in middle-class households who wanted a bird that would feed more people. Victorian novelist Charles Dickens and cookery writer Mrs Beeton both cemented it as the proper Christmas meal. The turkey's dominance at the British Christmas table has never seriously been challenged since." }]
+      }
+    ]
+  }
+}

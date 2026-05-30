@@ -1,0 +1,122 @@
+{
+  "slug": "roast-duck-legs",
+  "title": "Roast duck legs",
+  "subtitle": "Slow-roasted until the fat renders and the skin shatters",
+  "excerpt": "Duck legs roasted slowly at 160 degrees C until the fat has fully rendered, then blasted at high heat for a crackling skin. Richer and more relaxed than roasting a whole duck.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Slow-roast duck leg method. Widely used in British restaurants and home cooking as an alternative to whole duck.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 105,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Extra legs can be roasted on a second tray at the same time. The rendered duck fat can be strained and stored for roast potatoes.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "dinnerParty"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven for the final blast; 160 degrees C fan for the long roast",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "rendering", "term": "Rendering", "definition": "The gradual melting of the thick fat layer under the duck skin during slow roasting. The fat must fully render before the high-heat blast, or the skin will be soft rather than crisp." },
+    { "slug": "resting-meat", "term": "Resting", "definition": "Leaving the duck legs to stand for 10 minutes after removing from the oven so the juices redistribute through the meat before serving." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Duck legs are an easier and more forgiving roast than a whole duck. The legs have more fat and collagen than the breast and can tolerate longer cooking without drying out. The method is the same as for pork belly: slow heat to render the fat, then a blast to crisp the skin." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "duck-legs", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "lightly crushed", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "orange", "amount": 1, "unit": "each", "prepNote": "sliced, to scatter in the tin", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Render the fat slowly, then blast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 160 degrees C fan. Pat the duck legs completely dry. Use a skewer or fork to prick the skin all over, especially in the thicker parts of the thigh and around the joint, to help the fat escape. Season generously with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Place skin-side up in a roasting tin with the thyme, garlic, and orange slices (if using) scattered around. Roast for 1 hour 30 minutes until the fat has fully " },
+            { "type": "text", "text": "rendered", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rendering" } }] },
+            { "type": "text", "text": " and the skin has turned from pale pink to golden." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Raise the oven to 220 degrees C fan. Roast for a further 15 to 20 minutes until the skin is deeply golden, crisp, and beginning to blister." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "" },
+            { "type": "text", "text": "Rest", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }] },
+            { "type": "text", "text": " for 10 minutes before serving. Strain and save the rendered fat for roasting potatoes." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The skin is still soft and fatty after the blast", "cause": "The slow-roast stage was not long enough for the fat to render, or the skin was not pricked.", "fix": "The skin must be well-pricked before cooking to allow the fat to escape. Add 20 more minutes at 160 degrees C before the blast if the fat layer is still visible and thick." },
+            { "symptom": "The legs have dried out and the meat is stringy", "cause": "Overcooked at too high a temperature throughout.", "fix": "The 160 degrees C slow roast is the key stage: it should be long and low. If the oven temperature crept up, the legs will dry out. 75 degrees C in the thigh is the minimum temperature needed." },
+            { "symptom": "The fat in the base of the tin is smoking badly during the blast", "cause": "Too much fat has collected in the tin and is burning at 220 degrees C.", "fix": "Pour off most of the rendered fat before raising the temperature. Leave just enough to cover the base of the tin." },
+            { "symptom": "The orange slices have burnt and are acrid", "cause": "The sugars in the orange caramelised and then burnt during the blast.", "fix": "Remove the orange slices before raising the temperature to 220 degrees C." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Marinate the duck legs in soy sauce, five-spice, and garlic before roasting for an Asian-influenced version. A cherry sauce made from the pan drippings works well. The rendered duck fat from the tin is some of the best roasting fat available." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Duck legs became widely available in British supermarkets in the 1990s as a more affordable alternative to whole duck. They are used in confit (the French method of slow-cooking in their own fat) and in this simpler oven-roast method. For households that want duck on a Sunday without the expense and logistics of a whole bird, individual legs are the practical choice." }]
+      }
+    ]
+  }
+}

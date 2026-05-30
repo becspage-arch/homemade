@@ -1,0 +1,148 @@
+{
+  "slug": "brined-roast-turkey",
+  "title": "Brined roast turkey",
+  "subtitle": "Wet brine for a juicier, more evenly seasoned bird",
+  "excerpt": "Turkey submerged in a salt, sugar, and spice brine for 24 hours before roasting. The brine seasons the meat deeply and helps it retain moisture, producing a noticeably juicier result.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Wet-brining technique popularised in British cookery writing in the 2000s and 2010s. Based on American Thanksgiving brine methods adapted for UK birds.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 210,
+    "restingMinutes": 45,
+    "chillingMinutes": 1440,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The brine can be made 3 days ahead and stored in the fridge. The bird needs a full 24 hours in the brine.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["festive"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "brining", "term": "Brining", "definition": "Submerging meat in a salt-and-water solution before cooking. The salt penetrates the muscle fibres, seasons the meat deeply, and helps it retain moisture during roasting." },
+    { "slug": "basting", "term": "Basting", "definition": "Spooning the pan juices or melted fat over the bird during roasting to keep the surface moist and promote even browning." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brining a turkey adds one day to the preparation but produces a noticeably better result: the meat is seasoned all the way through, not just on the surface, and it retains more moisture during the long roasting time. The difference is most obvious in the breast, which is the hardest part to keep moist." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Space requirement"
+        },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "You need a large stockpot or clean bucket that will hold the turkey fully submerged. Clear a shelf in the fridge before starting. The bird must stay cold throughout the brine." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            { "ingredientSlug": "turkey-whole", "amount": 5, "unit": "kg", "prepNote": "fresh or fully defrosted, giblets removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "bay-leaves", "amount": 4, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "peppercorns-black", "amount": 20, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "thyme", "amount": 6, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": "For the brine" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened, for roasting", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the brine and submerge the turkey" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Dissolve the salt and sugar in 2 litres of boiling water in the stockpot. Add the bay leaves, peppercorns, thyme, and garlic. Top up with cold water to make 5 litres total. Allow to cool completely." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Lower the turkey into the cold " },
+            { "type": "text", "text": "brine", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brining" } }] },
+            { "type": "text", "text": " breast-side down. Weight it down with a plate if it tries to float. Refrigerate for 24 hours." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the turkey and rinse under cold running water. Pat completely dry with kitchen paper and leave uncovered in the fridge for at least 2 hours to dry the skin. Do not skip this step: wet skin will not bronze." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the turkey" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 190 degrees C fan. Remove the turkey from the fridge 2 hours before cooking. Rub the softened butter all over the skin. Place breast-side up in a large roasting tin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Roast covered with foil for 2 hours 30 minutes, " },
+            { "type": "text", "text": "basting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "basting" } }] },
+            { "type": "text", "text": " every 45 minutes. Remove the foil for the last 30 minutes to bronze the skin. Check that the thigh reads 75 degrees C and the juices run clear. Rest for 45 minutes before carving." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The skin will not bronze after removing the foil", "cause": "The skin was still damp from the brine rinse, or the drying step was skipped.", "fix": "Pat the skin dry again before it goes into the oven. Brined birds must be thoroughly dried. Raise the oven to 210 degrees C for the final 15 minutes if needed." },
+            { "symptom": "The gravy is too salty", "cause": "The brined bird released salt into the pan juices during cooking.", "fix": "This is normal. Use the pan juices sparingly in gravy, or dilute with unsalted stock. Taste before seasoning." },
+            { "symptom": "The brine will not fit in the fridge", "cause": "The stockpot is too large.", "fix": "A clean plastic storage bucket with a lid works. Keep it in the coldest part of the house if the fridge is full. Below 5 degrees C is safe." },
+            { "symptom": "The breast is still firmer than expected despite brining", "cause": "The turkey was overcooked, or the brine time was less than 18 hours.", "fix": "The brine helps but overcooking above 80 degrees C in the breast will still produce dry meat. Baste thoroughly and rely on the foil tent for most of the cooking." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add 2 tablespoons of dark treacle to the brine for a darker skin and faintly smoky flavour. Fresh orange peel and star anise in the brine gives a festive spice character. For a dry brine instead, rub the turkey with 4 teaspoons of flaked salt mixed with the aromatics and leave uncovered in the fridge for 48 hours." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Wet brining is an American technique that entered British cookery writing in the early 2000s. Food writers adopted it from US Thanksgiving recipes as a way to produce a more reliable Christmas turkey. It has since become a standard recommendation in British cooking, though the majority of home cooks still roast without it." }]
+      }
+    ]
+  }
+}

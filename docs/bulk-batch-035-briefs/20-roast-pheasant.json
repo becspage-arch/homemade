@@ -1,0 +1,132 @@
+{
+  "slug": "roast-pheasant",
+  "title": "Roast pheasant",
+  "subtitle": "Barded with bacon, 35 minutes high heat",
+  "excerpt": "Pheasant is a lean bird that dries quickly. Laying streaky bacon across the breast protects the meat while the fat bastes it from above. Ready in 35 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Roast pheasant with lardons.\n\nEliza Acton, Modern Cookery for Private Families (1845). Roasting of game birds.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "barding", "term": "Barding", "definition": "Laying strips of fatty bacon over a lean bird or roast before cooking. The fat melts and bastes the meat from above, keeping it moist throughout the roasting time." },
+    { "slug": "resting-meat", "term": "Resting", "definition": "Leaving cooked meat to stand before carving, allowing the juices to redistribute evenly through the muscle fibres rather than running onto the board." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pheasant is lean and benefits from careful treatment. The breast dries out faster than chicken, so the bacon barding is not decorative: it is the technique that makes the recipe work. A hen pheasant is plumper than a cock and usually better for roasting." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "pheasant", "amount": 1, "unit": "each", "prepNote": "oven-ready, about 1 kg", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "streaky-bacon", "amount": 6, "unit": "g", "prepNote": "6 rashers, to cover the breast", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 150, "unit": "ml", "prepNote": "for the base of the tin", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare and bard" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200 degrees C fan. Remove the pheasant from the fridge 30 minutes before cooking. Pat dry with kitchen paper. Rub the softened butter all over the bird and season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Tuck the thyme and bay leaves inside the cavity. " },
+            { "type": "text", "text": "Bard", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "barding" } }] },
+            { "type": "text", "text": " the breast by draping the bacon rashers in overlapping layers across the top of the bird, covering the breast completely." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast and rest" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the pheasant breast-side up in a roasting tin. Pour the stock around the base. Roast for 30 minutes, then remove the bacon to the side of the tin and return to the oven for a further 5 minutes to colour the breast." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "The pheasant is done when the juices run clear at the thigh. " },
+            { "type": "text", "text": "Rest", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }] },
+            { "type": "text", "text": " for 10 minutes before carving. Serve the crisp bacon alongside." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The breast is dry and stringy despite the bacon", "cause": "Overcooked. Pheasant is done at lower temperatures than chicken.", "fix": "35 minutes total is enough for a 1 kg bird. Use a thermometer: 72 degrees C in the thigh is the target. Pull it out then." },
+            { "symptom": "The bacon has stuck to the breast and torn the skin", "cause": "Bacon was too thin or cooked on without enough butter underneath.", "fix": "Butter the breast first, then lay the bacon loosely. It should lift away cleanly after 30 minutes of cooking." },
+            { "symptom": "The pan juices have reduced to nothing during cooking", "cause": "Not enough stock in the base, or the tin was too small.", "fix": "Always add stock to the base. A generous 150 ml will give enough pan juices for a simple sauce after straining." },
+            { "symptom": "Shot pellets in the meat", "cause": "Wild game bird with embedded lead shot from shooting.", "fix": "This is normal with wild pheasant. Warn guests to check their meat carefully before eating. Farmed pheasants are usually shot-free." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stuff the cavity with a halved apple and a few juniper berries for an autumnal flavour. A cream sauce made from the pan juices with a splash of calvados makes an elegant alternative to gravy. Two pheasants feeds four people; scale the roasting time by just 5 minutes for two birds." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pheasant season runs from October to February in the UK. It is a staple of country-house cooking, described by Victorian cookery writer Mrs Beeton as requiring careful attention to avoid dryness. The bird fell out of fashion in urban British cooking in the mid-twentieth century. It has only partially recovered, mainly through farmers market game sales and restaurant game menus." }]
+      }
+    ]
+  }
+}

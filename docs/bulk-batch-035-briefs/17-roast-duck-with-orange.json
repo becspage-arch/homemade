@@ -1,0 +1,137 @@
+{
+  "slug": "roast-duck-with-orange",
+  "title": "Roast duck with orange",
+  "subtitle": "Rendered skin, bitter orange pan sauce",
+  "excerpt": "A whole duck roasted until the skin is amber and crisp, served with a sharp orange sauce built from the pan drippings. The classic combination since French influence entered British cookery.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Roast duck with bigarade sauce.\n\nEliza Acton, Modern Cookery for Private Families (1845). Roast duck and orange sauce.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "sundayLunch"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true },
+    { "slug": "fine-mesh-sieve", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rendering", "term": "Rendering", "definition": "The process by which fat melts out of the skin during cooking. Duck has a thick fat layer that must render fully for crisp skin." },
+    { "slug": "deglazing", "term": "Deglazing", "definition": "Adding liquid to a hot pan to dissolve the brown, sticky residue left from cooking, incorporating it into a sauce or gravy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Duck roasting has two goals: rendered, crisp skin and a finished internal temperature above 75 degrees C in the leg. The thick fat layer means it needs longer at a moderate heat than chicken. Pricking the skin before it goes in helps the fat escape." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "duck-whole", "amount": 1, "unit": "each", "prepNote": "about 2 kg, giblets removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "orange", "amount": 2, "unit": "each", "prepNote": "1 quartered for the cavity, 1 juiced for the sauce", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "port", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare and roast the duck" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200 degrees C fan. Prick the duck skin all over with a skewer or fork, especially on the thighs and breast, to help the fat render. Season inside and out with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stuff the cavity loosely with the quartered orange and thyme sprigs. Place the duck breast-side up on a rack in a deep roasting tin. The rack is important: it keeps the duck out of the rendered fat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Roast for 2 hours, pouring off the rendered fat into a heatproof jug halfway through. The duck skin needs this " },
+            { "type": "text", "text": "rendering", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rendering" } }] },
+            { "type": "text", "text": " time to become crisp. The skin should be amber-brown and the legs should feel loose." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the orange sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer the duck to a board to rest. Pour off all but 1 tablespoon of fat from the roasting tin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Set the tin over medium heat and " },
+            { "type": "text", "text": "deglaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglazing" } }] },
+            { "type": "text", "text": " with the port, scraping up any sticky brown bits. Add the orange juice, red wine vinegar, brown sugar, and hot stock. Bring to a simmer and reduce for 5 minutes until slightly syrupy. Strain through a fine-mesh sieve into a warm jug." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The skin is soft and pale even after 2 hours", "cause": "The duck was not pricked enough, or was not raised on a rack so it sat in its own fat.", "fix": "Always use a rack. Prick the skin thoroughly before roasting, especially in the thick areas of the thigh. If still pale, raise the temperature to 220 degrees C for the final 20 minutes." },
+            { "symptom": "The sauce tastes too sweet", "cause": "The orange used was sweet-skinned, or too much sugar was added.", "fix": "Add a splash more red wine vinegar and taste again. The sauce should be sweet-sharp." },
+            { "symptom": "The sauce is too thin", "cause": "Not enough reduction time.", "fix": "Simmer uncovered for a few more minutes. The sauce should lightly coat a spoon." },
+            { "symptom": "The leg meat is pink and underdone even when the breast looks cooked", "cause": "The breast cooks faster than the legs. The legs need more time.", "fix": "The internal temperature of the thigh should reach 75 degrees C. If the breast is cooked but the legs are not, cover the breast with foil and continue roasting for another 15 minutes." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use blood oranges in winter for a more intense, less sweet sauce. For a simpler version without the sauce, just roast the duck with salt and serve with the natural pan juices. A cherry sauce using the same deglazing method works well in late summer." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Duck with orange sauce entered British cookery from France, where it is known as canard a l'orange or duck bigarade. Victorian cookery writer Mrs Beeton included a version in 1861, calling for the bitter Seville orange. The dish fell in and out of fashion through the twentieth century, became briefly associated with 1970s dinner party excess, and has since settled as a reliable classic." }]
+      }
+    ]
+  }
+}

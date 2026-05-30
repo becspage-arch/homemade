@@ -1,0 +1,130 @@
+{
+  "slug": "onion-gravy",
+  "title": "Onion gravy",
+  "subtitle": "Slow-caramelised onions, the sausage-and-mash companion",
+  "excerpt": "A deep, sticky gravy built on slowly caramelised onions, beef stock, and a splash of stout. The classic companion for sausages, mash, and roast meats.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Onion sauce entries.\n\nEliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg. Brown sauces and gravies.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 350 ml",
+    "prepMinutes": 10,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in small containers for up to three months. Reheat gently on the hob, adding a splash of stock if it has thickened too much.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a wider, heavier pan for larger batches so the onions caramelise evenly.",
+    "makeAheadNotes": "Make up to three days ahead and reheat gently. It improves overnight as the flavours deepen.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "sundayLunch"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "caramelising-onions", "term": "Caramelising onions", "definition": "Cooking sliced onions over low heat for a long time, allowing their natural sugars to break down and brown, producing a sweet, jammy result." },
+    { "slug": "deglazing", "term": "Deglazing", "definition": "Adding liquid to a hot pan to dissolve the brown, sticky residue left from cooking, incorporating it into a sauce or gravy." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Onion gravy takes time but not skill. The onions need 30 to 40 minutes over low heat to properly caramelise, and there is no shortcut that replicates the depth of flavour that slow cooking builds. A wider, heavier pan makes the job faster and more even." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 4, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml", "prepNote": "or stout", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 1, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Caramelise the onions" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a wide, heavy saucepan over a medium-low heat. Add the onions and a pinch of salt. " }, { "type": "text", "text": "Caramelise", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramelising-onions" } }] }, { "type": "text", "text": " them, stirring every few minutes, for 30 to 40 minutes until very soft, deep golden, and jammy." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the flour and cook for 2 minutes, stirring constantly, until it smells biscuity." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Pour in the red wine and stir to " },
+            { "type": "text", "text": "deglaze", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglazing" } }] },
+            { "type": "text", "text": " the pan. Let it bubble for 2 minutes." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the hot beef stock. Add the Worcestershire sauce, bay leaf, and thyme sprigs. Bring to a simmer and cook uncovered for 15 minutes until the gravy has thickened and is deeply savoury." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaf and thyme. Taste and adjust salt. If the gravy is too thick, add a splash more stock; too thin, simmer for a few more minutes." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Onions are golden in 10 minutes and the gravy lacks depth", "cause": "The heat was too high; the onions browned before they caramelised.", "fix": "True caramelisation takes 30 to 40 minutes over low heat. A quick brown is not the same thing." },
+            { "symptom": "Gravy is too thin", "cause": "Not enough reduction after the stock was added.", "fix": "Simmer uncovered for longer. The gravy should coat the back of a spoon." },
+            { "symptom": "Gravy is grainy or floury tasting", "cause": "The flour was not cooked long enough before the liquid went in.", "fix": "Cook the flour with the onions for a full 2 minutes, stirring, until it smells nutty." },
+            { "symptom": "Gravy is too sweet", "cause": "The onions were cooked with sugar, or the stock was sweet.", "fix": "Add a splash more Worcestershire sauce or a small splash of red wine vinegar to balance." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a red wine gravy built on roast pan drippings rather than caramelised onions, skip the onion stage and see the red wine gravy recipe. For a vegetarian version, use vegetable stock and replace the Worcestershire sauce with a splash of soy sauce." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Onion gravy is the companion to bangers and mash more than to the Sunday joint, but it works with both. It is a working-class staple that became a comfort food across all income levels. It is cheap to make. Slowly cooked onions also produce one of the most satisfying smells in a kitchen." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "apple-sauce",
+  "title": "Apple sauce",
+  "subtitle": "Bramley apples, collapsed and sweetened",
+  "excerpt": "Bramley apples cooked with butter and sugar until they collapse into a smooth, tart sauce. The standard accompaniment for roast pork and goose.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Apple sauce for roast pork and goose.\n\nEliza Acton, Modern Cookery for Private Families (1845). Apple sauce.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 300 ml",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in small portions for up to three months.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Use a wider pan so the apples cook down evenly.",
+    "makeAheadNotes": "Make up to 3 days ahead and refrigerate. Serve at room temperature or gently reheated.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "festive"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "reducing", "term": "Reducing", "definition": "Cooking a liquid or puree over heat without a lid to allow water to evaporate and concentrate the flavour and consistency." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bramley apples collapse when cooked because of their high acid and water content: no mashing is required. The sugar balances the tartness but should not eliminate it. A well-made apple sauce is noticeably sharp, which is what makes it cut through the fat of roast pork." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "apple-bramley", "amount": 3, "unit": "each", "prepNote": "peeled, cored, and roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 2, "unit": "tbsp", "prepNote": "or to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon-juice", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the chopped apple, butter, and 2 tablespoons of water in a medium saucepan. Cover and cook over medium-low heat for 8 to 10 minutes, stirring occasionally, until the apple has completely collapsed into a rough puree." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the lid. Add the sugar and stir well. Taste: the sauce should be noticeably tart but not mouth-puckering. Add more sugar if needed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "If the sauce is very watery, cook uncovered for a further 2 minutes to " },
+            { "type": "text", "text": "reduce", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "reducing" } }] },
+            { "type": "text", "text": " it slightly. It should be the consistency of a loose puree, not thin like juice. Add lemon juice if more acidity is wanted. Serve warm or at room temperature." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The apples have not collapsed after 10 minutes", "cause": "The lid was off, or the heat was too low.", "fix": "Cover the pan and increase the heat to medium. Bramley apples should collapse quickly once hot; 10 minutes covered should be enough." },
+            { "symptom": "The sauce is too sweet and no longer tart", "cause": "Too much sugar added, or the apples were not full-strength Bramleys.", "fix": "Add more lemon juice to restore acidity. Apple sauce should always have a clear tart edge." },
+            { "symptom": "The sauce is very watery and runny", "cause": "Bramleys have high water content; too much steam condensed back into the pan.", "fix": "Cook uncovered over medium heat for 3 to 4 minutes, stirring frequently, until it thickens to a soft puree consistency." },
+            { "symptom": "The sauce has turned brown", "cause": "Oxidation from the apple flesh being cut and exposed to air before cooking.", "fix": "Add the lemon juice at the start, before cooking, to slow discolouration. The sauce should be pale gold or cream in colour." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add a cinnamon stick to the pan during cooking and remove before serving for a spiced version. A tablespoon of Calvados or brandy stirred in at the end adds depth for a dinner-party version. For a coarser sauce with more texture, do not cook until completely smooth: some chunks of apple improve the sauce with roast pork." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Apple sauce is the oldest British condiment in regular Sunday use. Victorian cookery writers Mrs Beeton and Eliza Acton both describe it as the natural accompaniment to roast pork and goose. The Bramley apple is the best variety for this sauce. Bred in Nottinghamshire in the nineteenth century, it is now the dominant British cooking apple. Its high acid content means it collapses completely when cooked, and stays notably tart even after sweetening." }]
+      }
+    ]
+  }
+}
