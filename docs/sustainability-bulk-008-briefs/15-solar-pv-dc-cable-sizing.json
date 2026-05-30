@@ -1,0 +1,164 @@
+{
+  "slug": "solar-pv-dc-cable-sizing",
+  "title": "Sizing DC cables for a solar PV string run",
+  "subtitle": "Calculating voltage drop and selecting cable cross-section for the panel-to-inverter run",
+  "excerpt": "DC cable between solar panels and inverter must be sized to limit voltage drop to under 1% per polarity. A 20 m cable run from roof to inverter at 10 A maximum string current needs 4 mm² cable minimum. This explains the calculation for standard UK residential strings.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "IEC 62930 solar PV cable standards. MCS 012 installation standard for DC cabling. Nexans and Prysmian solar cable specifications.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["solar PV cable sizing", "DC cable voltage drop solar", "PV cable cross-section"],
+  "glossaryTerms": [
+    {
+      "slug": "voltage-drop",
+      "term": "Voltage drop",
+      "definition": "The reduction in electrical potential along a conductor due to its resistance. Excessive voltage drop reduces power delivered to the inverter and wastes energy as heat."
+    },
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight to direct current (DC) electricity."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "Solar PV"
+          },
+          {
+            "type": "text",
+            "text": " DC cables carry current from the panel string to the inverter at voltages typically between 250 V and 600 V for a residential string. Undersized cables cause "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "voltage-drop" } }],
+            "text": "voltage drop"
+          },
+          {
+            "type": "text",
+            "text": " that reduces inverter input voltage and wastes energy as resistive heat. Oversized cables waste money. MCS 012 requires DC voltage drop to be under 1% per polarity (i.e., 1% on the positive cable and 1% on the negative cable separately, giving a maximum of 2% total across the string run)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The cable sizing calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Voltage drop per cable run (one polarity): V_drop = (2 x cable length in metres x maximum string current in amps x resistivity) / (cross-section in mm²). The resistivity of copper at 90°C (worst-case operating temperature) is 0.024 ohm·mm²/m. The factor of 2 accounts for current flowing out and back, but since MCS requires 1% per polarity, use the one-way cable length."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rearranged to give the minimum cable cross-section: A_min = (cable length x Imp x 0.024) / (0.01 x Vmp). Where Imp = maximum power current of the string (sum of module Imp values in series = Imp of a single module), Vmp = maximum power voltage of the string (sum of module Vmp values)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: 12-panel string, 20 m run" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Panels: 12 x 400 Wp, Vmp = 34.5 V each, Imp = 11.6 A each. String Vmp = 12 x 34.5 = 414 V. String Imp = 11.6 A. Cable run (one polarity, one way): 20 m. Minimum 1% voltage drop on positive cable: maximum drop = 0.01 x 414 = 4.14 V. Required minimum cross-section: A = (20 x 11.6 x 0.024) / 4.14 = 5.57 / 4.14 = 1.35 mm². The nearest standard cable size above 1.35 mm² is 2.5 mm², but current-carrying capacity must also be checked at the full string current of 11.6 A. At 90°C ambient-temperature de-rating, 2.5 mm² solar cable carries around 20 A, which is sufficient. However, installers typically specify 4 mm² as standard for runs over 15 m as additional margin against temperature de-rating on a hot south-facing roof cable."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Standard cable sizes used in UK residential PV installations: 4 mm² for most string runs up to 40 m; 6 mm² for runs of 40 to 70 m; 10 mm² for very long runs (over 70 m) or high-current microinverter trunk cables. Using 4 mm² throughout a typical domestic installation is correct practice. Uprating to 6 mm² as a precaution is not normally cost-effective."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Solar-specific cable requirements" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Outdoor-rated DC cable: use IEC 62930 or EN 50618 rated solar PV cable (sometimes marked TUV 2PfG 1169). Standard building wiring is not rated for the temperature range, UV exposure, and DC voltage of a rooftop string." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "MC4 connectors: the industry standard connector for solar PV. Compatible MC4 connectors from different manufacturers may be used together if both are rated to the same current. Mixing incompatible connectors voids the connector warranty and risks loose joints." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cable protection: DC cables on the roof should be clipped to the racking, not left loose where they can abrade against tiles or trap moisture. Cable bundled tightly together generates more heat; maintain a 50 mm gap between positive and negative cable runs where possible." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DC cable sizing is part of the installer's design documents and must go to the DNO. When reviewing a quote, ask for the cable schedule (cross-sections, run lengths, voltage drop figures) and check that the positive cable voltage drop is under 1%."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

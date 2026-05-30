@@ -1,0 +1,270 @@
+{
+  "slug": "internal-wooden-window-shutters",
+  "title": "Making and fitting hinged internal window shutters",
+  "subtitle": "A plywood panel system that reduces overnight window heat loss by up to 60%",
+  "excerpt": "A single double-glazed window with a U-value of 1.6 W/m²·K loses around three times as much heat as a well-insulated wall. A hinged internal shutter panel closed overnight can reduce that to the equivalent of triple glazing or better. This covers a simple plywood shutter system for standard casement windows.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AECB guidance on window shutters as thermal covers. BRE digest 378 on heat loss through windows. Historic England technical guidance on shutters in traditional buildings.",
+  "approximateCostGbp": 80,
+  "paybackYears": 4,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "panel-saw", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "paintbrush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Rate of heat transfer through a building element in W/m²·K. Lower means less heat lost."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard A-rated double-glazed window has a whole-window "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of around 1.4 to 1.8 W/m²·K. The same window with a closed timber shutter panel on the inside drops to an effective U-value of 0.8 to 1.0 W/m²·K due to the air gap trapped between glass and shutter. A 10 mm gap of still air adds approximately R = 0.17 m²·K/W to the assembly; a 25 mm gap of still air adds R = 0.18 m²·K/W (diminishing returns above 25 mm as convection starts in the gap). The shutter does not need to be insulated to help: the sealed air gap provides most of the benefit."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Saving estimate: a Victorian terrace in Bristol with 8 double-glazed windows of 1.2 m² each (total glazed area 9.6 m²) has window U-value 1.6 W/m²·K. Annual window heat loss approximately 1,300 kWh. Shutters on all 8 windows closed 12 hours/day would save around 650 kWh/year (half the hours), roughly £39/year at 6p/kWh gas equivalent. Payback on £80 per window in materials: approximately 4 years."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you start cutting. Eye protection for every saw cut. Support the panel when cutting to avoid kickback. Keep fingers away from the cut line."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials for one casement window" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "9 mm birch-faced plywood: one sheet per large window. 9 mm provides a reasonable stiffness-to-weight ratio. Heavier panels are awkward to open daily." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Piano hinge (continuous hinge): full height of the panel. Two 1.2 m sections screwed to the frame reveal and the panel edge. Continuous hinge prevents panel sag over time." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Magnetic catch or turn-button latch: to hold the panel closed against the window reveal." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Compression foam draught strip: 10 mm x 10 mm self-adhesive, applied around the reveal perimeter where the panel closes. This seals the air gap and makes it still air rather than slowly-circulating air, increasing the thermal benefit." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Primer and paint: the panel should be painted on both sides before installation to stabilise moisture content and prevent warping." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Construction and fitting" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Measure the window reveal depth (the flat internal face around the window). The shutter needs 15 to 20 mm of reveal to seat the piano hinge and still leave clearance for the panel to fold back against the wall." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cut panels to width: for a single casement (one opening leaf), one panel per window is simplest. For a wider window with two opening leaves or a fixed frame, a bi-fold pair of narrower panels allows both sides to swing clear." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Prime and paint both faces and all edges. Allow to dry fully before fitting. Unprimed plywood at a cold window will absorb moisture from the room air and cup within weeks." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Screw one leaf of the piano hinge to the reveal face. Hold the panel in position and screw the other hinge leaf to the panel edge. Check vertical with a spirit level." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Apply draught strip around the three sides of the reveal where the panel will close (top, opposite side, sill). The panel compresses the strip when shut, sealing the gap." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Fit the magnetic catch or turn button at mid-height and near the sill. Two catch points prevent the panel bowing in the middle." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Listed buildings and conservation areas: the shutter is internal and reversible, so it is generally outside the scope of listed building consent. Check with the local authority if uncertain." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Shallow reveals: if the reveal is under 10 mm deep, the hinge cannot be fixed. Options are a magnetic wall-mounted system (panel folds flat against the wall beside the window) or a slide-in panel that sits in a channel above and below the window." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Large windows: a 2 m x 1.5 m window panel in 9 mm ply is heavy. Consider 6 mm ply for large panels, or split into bi-fold sections." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: panels painted both sides before fitting, draught strip on the reveal perimeter, continuous piano hinge, magnetic catches at two points. The panel closes with a positive seal, traps a still-air gap, and the window feels markedly warmer to stand near in the morning."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: panel painted only on the room face, moisture absorbed from the cold window side, panel warps and no longer closes flat within one winter. No draught strip, so the air gap circulates rather than sitting still, and the thermal benefit is halved."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

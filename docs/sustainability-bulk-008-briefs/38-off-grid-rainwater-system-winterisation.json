@@ -1,0 +1,131 @@
+{
+  "slug": "off-grid-rainwater-system-winterisation",
+  "title": "Winterising an off-grid rainwater harvesting system",
+  "subtitle": "Draining tanks, lagging exposed pipes, and protecting pumps before the first frost",
+  "excerpt": "A rainwater harvesting system left unprotected through winter will crack pipes, damage pump seals, and split storage tanks if water freezes in them. Winterisation takes 2 to 3 hours and protects equipment that would be expensive to replace. This covers the sequence: when to start, what to drain, what to lag, and how to restore the system in spring.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM61 rainwater harvesting system maintenance guidance. Rainwater Harvesting Association UK seasonal maintenance advice. RainWater Concepts UK installation and maintenance manuals.",
+  "approximateCostGbp": 25,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "submersible-pump", "isOptional": false },
+    { "slug": "pipe-lagging", "isOptional": false }
+  ],
+  "aliases": ["winterising water butt", "protecting rainwater tank from frost", "off-grid water system winter"],
+  "glossaryTerms": [
+    {
+      "slug": "silt-trap",
+      "term": "Silt trap",
+      "definition": "A removable basket or chamber at the tank inlet that collects sediment, leaf debris, and organic matter before it enters the storage tank. Requires cleaning 1 to 2 times per year."
+    }
+  ],
+  "techniqueSlugs": ["rainwater-harvesting-for-garden-use", "off-grid-battery-bank-state-of-health"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Drain pipes and open drain valves",
+      "body": "Open all drain valves on exposed supply pipes between the tank and any external tap or hose connection. Let pipes drain fully. Any pipe that cannot gravity-drain needs to be blown clear or removed. Standing water in a horizontal pipe at 0°C expands 9% as it freezes, enough to split a standard plastic compression fitting.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 3,
+      "title": "Remove and store the pump",
+      "body": "If the system uses a surface or submersible pressure pump rather than gravity-fed delivery, remove it from the tank, drain the pump body completely, and store in a frost-free location. Pump seals fail when water trapped inside them freezes. Most submersible pumps can be lifted out in 5 to 10 minutes via the draw cord.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 180,
+      "title": "Spring commissioning",
+      "body": "In late February or early March when frost risk is low, clean the silt trap, reconnect the pump, open fill valves, and run a first flush cycle to clear winter accumulation. Check all pipe joints for cracks from any freeze events before putting the system back into regular use.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An off-grid rainwater system typically consists of a storage tank (above-ground IBC, below-ground poly tank, or surface-mounted butts), a first-flush diverter or "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "silt-trap" } }],
+            "text": "silt trap"
+          },
+          {
+            "type": "text",
+            "text": ", a pump or gravity outlet, and supply pipes. The parts most at risk of freeze damage are: exposed supply pipes, pump bodies, filter housings, and the first-flush diverter. Buried tanks are rarely at risk; frost rarely penetrates 600 mm in the UK. The work focuses on above-ground components."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to winterise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In the UK, the risk of sustained frost (sustained air temperatures below -2°C for more than 6 hours) begins in November in the north and December in the south. Start winterisation in mid-October to be safe. Do not wait for the first frost to be forecast. By then the work becomes urgent rather than planned. A system on an exposed site (hilltop, north-facing wall, open moorland) winterises 4 to 6 weeks earlier than a sheltered garden in a valley or urban area."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to lag and what to drain" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Lag (insulate): pipes that cannot be drained (e.g. a permanently connected supply line to an outbuilding or polytunnel) with 25 mm pipe lagging foam. Secure joints with waterproof tape. Lag any filter housing that will remain in place." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Drain: all removable pipe sections between the tank and outdoor taps. Disconnect at the tank outlet and tilt the pipe to drain, then store in a shed or garage." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Partially drain or top up: above-ground IBC tanks and butts should be partially drained to leave air space (at least 10 to 15% empty). A completely full plastic tank has no room to accommodate ice expansion at the surface; a tank with headspace copes with surface freezing without pressure damage." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

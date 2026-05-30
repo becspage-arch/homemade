@@ -1,0 +1,318 @@
+{
+  "slug": "sheep-wool-loft-insulation",
+  "title": "Sheep wool insulation for loft top-up",
+  "subtitle": "How it compares to mineral wool and when it's worth choosing",
+  "excerpt": "Sheep wool batts and rolls perform similarly to mineral wool in the loft at comparable depths, but handle moisture differently and need no PPE during installation. This covers the comparison, the installation sequence, and where sheep wool outperforms its synthetic equivalent.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust loft-insulation guidance. AECB design guides on natural insulation materials. Thermafleece and Black Mountain Insulation published lambda and performance data (open specification sheets).",
+  "approximateCostGbp": 320,
+  "paybackYears": 5,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false }
+  ],
+  "aliases": ["sheep wool loft insulation", "natural wool insulation loft"],
+  "glossaryTerms": [
+    {
+      "slug": "lambda-value",
+      "term": "Lambda value",
+      "definition": "Thermal conductivity of a material in W/m·K. Lower means better insulating per mm thickness."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Rate of heat transfer through a building element in W/m²·K. Lower means less heat lost."
+    },
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Glass or rock wool insulation spun into batts or rolls. The standard loft insulation material in the UK."
+    }
+  ],
+  "techniqueSlugs": ["loft-insulation-top-up-mineral-wool"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sheep wool insulation works on the same physics as mineral wool: it traps still air in a fibrous matrix. The lambda values are comparable, with sheep wool typically coming in at 0.036 to 0.040 W/m·K versus 0.036 to 0.044 W/m·K for mineral wool batts depending on product density. To achieve the current best-practice loft target of 0.16 W/m²·K (the Part L1B retrofit standard), you need 270 to 300 mm of either material."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where the two materials differ" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The main difference is moisture handling. Sheep wool absorbs moisture from humid air and releases it without losing much insulating value. Mineral wool also copes when damp, but sheep wool buffers harder. This helps in lofts where bathroom or kitchen extract ducts vent into the roof space rather than directly out through the eaves."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The bigger practical difference is handling. Mineral wool fibres irritate skin, eyes, and lungs, so mineral wool installation requires long sleeves, gloves, dust mask (FFP2 minimum for batts), and eye protection. Sheep wool requires none of those precautions, though gloves are sensible when cutting through stapled-together rolls. For a homeowner doing a one-off top-up rather than a trades person doing it daily, the lower PPE burden is a real benefit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Embodied carbon: the published figures vary widely by processing method. A conventionally-processed sheep wool batt uses around 5 to 10 kg CO2e/m² for 100 mm depth; mineral wool sits around 8 to 15 kg CO2e/m². The range for sheep wool overlaps mineral wool at the less-processed end and beats it at the better-processed end. Neither product's embodied carbon is recovered during operational life: at 270 mm depth, loft insulation typically achieves carbon payback (embodied vs saved) in under two years regardless of material."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Saving figures (270 mm top-up from 100 mm existing, 1970s semi, UK average occupancy): approximately 1,400 kWh/year heating saved, around £84/year at 2025/26 cap gas rate of 6p/kWh. Payback on sheep wool at a 20% premium over mineral wool adds roughly one year: 5 years versus 4 years. The 1,400 kWh figure comes from the Energy Saving Trust typical loft top-up estimates."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to choose sheep wool" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "You are doing the work yourself and want to avoid the PPE requirement." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The loft has humidity from extract ducting and you want a material that handles moisture well." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The embodied carbon comparison is a decision factor and you want the lower end of the range." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The project uses natural materials throughout (lime plaster, timber boarding) and you want the insulation to match." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When mineral wool is the right choice" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cost is the primary constraint. Sheep wool is typically 20 to 30% more expensive per m² of equivalent performance." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The loft is very dry with good cross-ventilation and moisture buffering has no practical benefit." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "You are using a grant scheme (ECO4, Great British Insulation Scheme) that specifies approved products: most listed products are mineral wool." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The installation sequence is identical to mineral wool. If existing insulation is between the joists at 100 mm, add a second layer running perpendicular to the joists at 170 to 200 mm depth to reach 270 to 300 mm total. The perpendicular second layer bridges the thermal bridge at the joist tops."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Clear access path to the water tank and any eaves vents before starting. Roll or batt sheep wool cuts easily with scissors or a sharp knife against a straightedge." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Lay the second layer perpendicular to the joists, butting rolls tightly. At eaves, maintain a 50 mm clear path for ventilation: do not block the eaves gap with insulation." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lag any pipes or tanks now exposed to cold air above the insulation. The header tank and cold feed pipes sit in cold air once insulation is moved to floor level. See "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "loft-water-tank-relocation-and-lagging", "label": "loft water tank relocation and lagging" } }],
+                    "text": "loft water tank relocation and lagging"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the full procedure."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Seal the loft hatch with draught-strip and add insulation to the hatch board. The hatch is the weakest point after the joists are filled." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The U-value calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a flat loft with no existing insulation, a single 270 mm layer of sheep wool at lambda 0.038 gives U = lambda / thickness = 0.038 / 0.270 = 0.14 W/m²·K. Adding surface resistances (Rsi + Rse = 0.17) brings the whole-element "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " to around 0.13 to 0.14 W/m²·K, comfortably below the Part L1B target of 0.16 W/m²·K. The same calculation for a top-up from 100 mm existing: R_existing = 0.10 / 0.038 = 2.6; add 170 mm second layer at same "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lambda-value" } }],
+            "text": "lambda"
+          },
+          {
+            "type": "text",
+            "text": " = 4.5; total R = 7.1; U = 0.14 W/m²·K."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: second layer perpendicular to joists at 170 to 200 mm, rolls butted tight with no gaps, eaves kept clear, loft hatch insulated and draught-sealed, pipes above the insulation lagged. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mineral-wool" } }],
+            "text": "mineral wool"
+          },
+          {
+            "type": "text",
+            "text": " or sheep wool comparison matters less than the installation quality."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: boards run one way so joists bridge through the insulation. Eaves blocked, tank unlagged, hatch bare. A poorly installed 270 mm loft can perform worse than a well-installed 200 mm one."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

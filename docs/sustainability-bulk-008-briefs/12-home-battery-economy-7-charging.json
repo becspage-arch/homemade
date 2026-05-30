@@ -1,0 +1,232 @@
+{
+  "slug": "home-battery-economy-7-charging",
+  "title": "Charging a home battery on Economy 7 and discharging at peak",
+  "subtitle": "Calculating whether time-of-use arbitrage makes financial sense for your system",
+  "excerpt": "Economy 7 off-peak electricity at 12p/kWh versus peak rate at 27p/kWh is a 55% price difference. A 10 kWh home battery charged overnight and discharged during peak hours saves the price difference on every kWh arbitraged, minus round-trip efficiency losses. This shows the calculation and the break-even analysis.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofgem tariff comparison data (2025/26). Battery round-trip efficiency specifications from Pylontech and CATL published data sheets. Energy Saving Trust battery storage guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["economy 7 battery charging", "time-of-use battery arbitrage", "home battery night rate"],
+  "glossaryTerms": [
+    {
+      "slug": "battery-storage",
+      "term": "Battery storage",
+      "definition": "A domestic rechargeable battery system that stores electricity for use at a different time from when it was generated or imported."
+    },
+    {
+      "slug": "round-trip-efficiency",
+      "term": "Round-trip efficiency",
+      "definition": "The ratio of energy discharged from a battery to energy used to charge it. A 90% round-trip efficiency means 10% of the energy is lost to heat during the charge/discharge cycle."
+    }
+  ],
+  "techniqueSlugs": ["standalone-home-battery-decision-guide", "solar-battery-storage-sizing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Economy 7 gives 7 hours of cheaper electricity. This is usually midnight to 7 am, but the window varies by supplier and meter type. At 2025/26 rates, the standard unit rate is around 27p/kWh and the Economy 7 off-peak rate around 12p/kWh. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-storage" } }],
+            "text": "battery storage"
+          },
+          {
+            "type": "text",
+            "text": " system charged at 12p and discharged at 27p saves the 15p price difference on each arbitraged kWh, minus losses from the battery's "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "round-trip-efficiency" } }],
+            "text": "round-trip efficiency"
+          },
+          {
+            "type": "text",
+            "text": " (typically 90 to 95% for modern lithium systems)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The basic arbitrage calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a 10 kWh battery with 90% round-trip efficiency, fully cycled daily from Economy 7 to peak:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Import 11.1 kWh at 12p/kWh to charge to 10 kWh usable (11.1 kWh because 1/0.9 = 1.11). Import cost: 133p." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Discharge 10 kWh at peak, displacing 10 kWh that would otherwise be imported at 27p. Value: 270p." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Daily saving per cycle: 270p minus 133p = 137p." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Annual saving (365 daily cycles): 137p × 365 = around 50,000p." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A 10 kWh battery system is a large capital outlay. Arbitrage saving from Economy 7 alone gives a payback of 16 to 24 years. This exceeds the battery warranty period (10 years for most lithium systems). Arbitrage alone does not make a standalone battery financially viable in 2025. The economics improve when combined with solar export timing, EV charging, and time-of-use tariffs with bigger spreads than Economy 7."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When arbitrage does make sense" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tariffs with bigger spreads than Economy 7 change the calculation. Agile Octopus and similar smart tariffs can offer off-peak rates of 5p/kWh or lower, against peak rates of 30 to 40p/kWh. At a 35p/kWh spread with 90% efficiency, the same 10 kWh cycle saves around 311p per day. This gives a payback of 7 to 11 years, within the battery warranty period on a well-managed system."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The strongest case is a household already on Economy 7 for storage heaters or an immersion heater at night. Adding a battery and using the arbitrage on top cuts the payback period. No extra standing charge, because you are already on the tariff."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practical setup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "In the battery management system (BMS) or inverter schedule, set the charge window to match your Economy 7 window. Most hybrid inverters (Solaredge, GivEnergy, Victron) have a timed charge schedule." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Set the discharge start time to after the Economy 7 window ends. Do not allow the battery to discharge back to the grid during the off-peak window (the SEG export rate is 5 to 15p/kWh, lower than the off-peak import rate)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Set a reserve: keep 10 to 20% state of charge as a reserve for outages. Fully cycling to 0% every day degrades lithium batteries faster." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Monitor after the first week: compare the import meter reading during the Economy 7 window with the discharge meter reading in peak hours. If the battery is not completing a full charge in the 7-hour window, the charge current limit may need adjusting." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Solar + battery: if the system also has solar, the charge schedule prioritises solar charging during the day. Economy 7 charging fills the remaining capacity overnight. Arbitrage saving is lower because some battery capacity is reserved for solar." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Three-phase supply: most domestic battery systems are single-phase. A three-phase house needs a three-phase compatible battery (rarer, more expensive) or accepts that the battery only offsets one phase." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "greywater-treatment-for-off-grid",
+  "title": "Greywater treatment for off-grid toilet flushing",
+  "subtitle": "A constructed wetland or multi-stage filter that makes bath water safe to reuse for WC flushing",
+  "excerpt": "Reusing bath and shower water for WC flushing saves 30 to 50 litres per person per day, around 40% of toilet flushing demand. A simple three-stage treatment system (settlement, reed bed or coarse filter, chlorination or UV) produces water safe for non-potable reuse. This covers the system components, the treatment stages, and the legal requirement to label the supply separately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIRIA C609 Rainwater and greywater use in buildings (2004). Environment Agency guidance on domestic greywater reuse. WRAS advisory notice on labelling non-potable water systems.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["greywater recycling system", "bath water for toilet", "off-grid greywater WC"],
+  "glossaryTerms": [
+    {
+      "slug": "greywater",
+      "term": "Greywater",
+      "definition": "Wastewater from baths, showers, and washbasins (but not toilets or kitchen sinks). It contains soap, skin particles, and low-level organic matter but no faecal contamination."
+    },
+    {
+      "slug": "reed-bed",
+      "term": "Reed bed",
+      "definition": "A constructed wetland planted with common reed (Phragmites australis) through which wastewater flows. The root zone supports bacteria that break down organic matter and remove nutrients."
+    }
+  ],
+  "techniqueSlugs": ["bath-to-garden-greywater-pipe", "composting-toilet-installation"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Simple garden greywater diversion (to flower beds within 24 hours) is low-risk and needs no treatment. Greywater for WC flushing is different: it is stored and may be contacted when cleaning the toilet. The system must suppress bacterial growth reliably. The two approaches are a constructed reed bed (biological) and a multi-stage mechanical filter with UV or chlorine disinfection."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Three-stage treatment sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Settlement: "
+                },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greywater" } }],
+                  "text": "Greywater"
+                },
+                {
+                  "type": "text",
+                  "text": " flows from the bath or shower outlet into a settlement tank (50 to 100 litres) where hair, soap particles, and heavy solids sink to the bottom. The settled overflow passes to stage two. Clean the settlement tank monthly."
+                }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Biological treatment or mechanical filtration: a constructed "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "reed-bed" } }],
+                    "text": "reed bed"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (0.5 m² per person served) reduces BOD by 70 to 90%. A mechanical filter with activated carbon removes soaps, odour, and small particles. The mechanical route is faster and more compact; the reed bed needs more space but has near-zero running costs."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Disinfection: UV lamp (8 to 15W) or low-dose chlorination (sodium hypochlorite dosing pump). UV requires clear water with low turbidity to be effective (hence settlement and filtration first). Chlorine works in turbid water but requires careful dosing. The treated water goes to a final storage tank (the header tank for the WC cistern). This tank should be covered and turned over within 48 hours." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Legal and labelling requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "WRAS requirements for non-potable reuse: all non-potable supply pipework must be labelled at every connection point and access point with 'GREYWATER: NOT FOR DRINKING' in green. All cisterns and storage tanks on the treated circuit must be labelled the same way. Pipework must not be capable of cross-connection with the mains supply. In practice: use different pipe colours (MDPE lilac or black for non-potable versus blue for mains), separate labelled valves, and a visible air gap between any mains backup supply and the greywater tank."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

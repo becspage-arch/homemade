@@ -1,0 +1,234 @@
+{
+  "slug": "vermicomposting-in-a-flat",
+  "title": "Setting up a worm bin for kitchen scraps in a flat",
+  "subtitle": "A compact stacking system that processes food waste indoors without outdoor space",
+  "excerpt": "A three-tray stacking worm bin processes around 1 to 2 kg of kitchen scraps per week in a space the size of a kitchen cabinet. It produces worm castings (rich compost) and worm tea (liquid fertiliser). This covers bin selection, bedding, feeding, and troubleshooting for a flat with no outdoor space.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Vermiculture literature including Mary Appelhof 'Worms Eat My Garbage' (public domain US extension adaptation). University of California Cooperative Extension vermicomposting factsheets.",
+  "approximateCostGbp": 60,
+  "paybackYears": null,
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "wormery",
+      "term": "Wormery",
+      "definition": "A contained vermicomposting system, typically with stacked trays, that uses brandling worms (Eisenia fetida) to convert food waste to castings."
+    },
+    {
+      "slug": "leachate",
+      "term": "Leachate",
+      "definition": "The liquid that drains from a worm bin or compost heap. When diluted 10:1 with water, it can be used as a liquid plant feed."
+    }
+  ],
+  "techniqueSlugs": ["wormery-from-a-stacking-bin", "vermicomposting-troubleshooting"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 7,
+      "title": "First feed check",
+      "body": "Lift the bedding and check the worms are active and feeding. The scraps should have reduced in volume by at least 30%. If worms are clustered at the lid or trying to escape, the conditions are wrong: check pH, moisture, and ventilation.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 60,
+      "title": "Start the second tray",
+      "body": "When the first tray is around two-thirds full of castings, place the second tray directly on top. Worms will migrate upward into the new bedding and fresh food. Drain leachate from the sump.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 120,
+      "title": "Harvest first tray of castings",
+      "body": "The bottom tray should now be mostly castings with few worms. Move its contents to a planting area or pot. Wash the empty tray and add fresh bedding to start a new cycle.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brandling worms (Eisenia fetida) are the working animal of a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wormery" } }],
+            "text": "wormery"
+          },
+          {
+            "type": "text",
+            "text": ". They are not the same species as garden earthworms; they are smaller, faster-breeding, and process organic matter at the surface rather than in the soil. A colony of 500 to 1,000 worms (roughly 500 g by weight) processes around 1 to 2 kg of food scraps per week at room temperature. In a flat, a three-tray stacking system kept at 15 to 25°C runs quietly and produces excellent compost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Equipment" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Stacking worm bin: a commercial unit with 3 to 4 trays and a sump tray for leachate. The Can-O-Worms and Worm Factory are widely available in the UK. Both include starter bedding instructions." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Brandling worms: a starter culture of 500 g is standard. Order from a composting supplier or get them from a wormery owner. Do not use earthworms from the garden." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Initial setup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Bedding: tear damp corrugated cardboard (not shiny) into strips and half-fill the first working tray. The cardboard must be moist (wring it out: it should barely drip). This is the worms' bedding and initial carbon source." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Add worms: tip the starter culture onto the bedding. The worms will move into the cardboard within a few minutes when exposed to light." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "First feed: add a small amount of kitchen scraps (200 to 300 g) on one side of the tray. Do not feed again until this batch is at least half consumed, typically 3 to 5 days." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to feed and what not to" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Excellent: vegetable peelings, fruit scraps, tea bags (staple-free), coffee grounds, damp cardboard and paper, bread (sparingly). These are the primary feeds." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Sparingly: cooked food (without sauce or salt), egg shells (crushed, they help pH balance), citrus peel (small amounts only; large quantities acidify the bin)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Never: meat, fish, dairy, oily food (odour and flies), onion and garlic in quantity (toxic to worms at high concentration), salty food." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using leachate and castings in a flat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leachate" } }],
+            "text": "leachate"
+          },
+          {
+            "type": "text",
+            "text": " collects in the sump tray below the working trays. Dilute 10:1 with water and use as liquid feed for houseplants or balcony pots. Drain the sump weekly. Worm castings from the bottom tray go onto houseplants, herbs on the windowsill, or can be given to a community garden."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Worms clustering at the lid or escaping",
+              "cause": "Bin conditions are wrong: too acidic, too wet, or overheating",
+              "fix": "Check pH with a soil test strip (should be 6 to 7). Add crushed egg shells to raise pH. Reduce feeding rate and add dry cardboard if too wet. Move to a cooler spot if above 25°C."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Fruit flies in the bin",
+              "cause": "Exposed food scraps and fruit pieces",
+              "fix": "Bury food scraps under a layer of cardboard before each addition. Freeze fruit scraps for 48 hours before adding to kill fly eggs. A sheet of damp newspaper on top of the food suppresses adults."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bin smells bad",
+              "cause": "Overfeeding or anaerobic conditions from too much moisture or compaction",
+              "fix": "Remove recent additions. Add dry torn cardboard and mix through to aerate. Wait 3 to 5 days before feeding again. Check sump is not overflowing back into the working tray."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

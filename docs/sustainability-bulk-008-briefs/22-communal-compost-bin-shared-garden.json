@@ -1,0 +1,192 @@
+{
+  "slug": "communal-compost-bin-shared-garden",
+  "title": "Managing a shared compost system in a communal garden",
+  "subtitle": "Practical rules, training, and maintenance for multi-household composting",
+  "excerpt": "A communal compost bin serving 4 to 10 households generates enough material to run a hot heap year-round and produces compost that can be split among contributors. The main challenge is maintaining input quality. This covers setup, the rules that prevent contamination, and who does what.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP communal composting guidance. Garden Organic community composting factsheets. Transition Town community allotment composting case studies.",
+  "approximateCostGbp": 120,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": true }
+  ],
+  "aliases": ["communal composting", "shared garden compost", "block composting scheme"],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "A composting method that reaches 55 to 70°C through active microbial decomposition, killing most pathogens and weed seeds within days."
+    },
+    {
+      "slug": "browns-and-greens",
+      "term": "Browns and greens",
+      "definition": "Informal terms for high-carbon (brown: dry leaves, cardboard, straw) and high-nitrogen (green: fresh grass, kitchen scraps) composting materials."
+    }
+  ],
+  "techniqueSlugs": ["three-bin-hot-compost-system", "turning-a-hot-compost-heap"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A communal compost system works well when the input rules are clear and consistently followed, and breaks down quickly when they are not. The most common failure is cooked food, meat, and dairy going into a bin that cannot reach the temperature to process them safely. The second most common failure is not enough carbon (browns) being added to balance the household kitchen-scrap greens. Both are solvable with straightforward rules and an accessible carbon source kept beside the bin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setup" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Bin choice: a 600-litre or larger wooden bay or plastic Dalek bin for 4 to 6 households; a two-bay or three-bay wooden system for 6 to 10 households. The volume needs to be sufficient to generate heat from multiple households' waste." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Carbon stock: a covered bin, cage, or box of dry materials next to the compost bin. Cardboard torn into A5-sized pieces, dry leaves, straw, or wood pellets. Each household adds an equal volume of carbon for each volume of kitchen scraps they add." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Small kitchen caddy for each household: a 5-litre caddy with compostable liners allows scraps to be collected before a trip to the communal bin. This is the single most effective setup for consistent contributions." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The rules that work" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "No cooked food, meat, fish, dairy, or oily food. Post a laminated A5 sign on the bin lid with the accepted and not-accepted list. Keep it short: yes to raw fruit and veg peelings, tea and coffee, cardboard, paper, garden waste. No to anything else." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Add equal volume of "
+                },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "browns-and-greens" } }],
+                  "text": "browns"
+                },
+                {
+                  "type": "text",
+                  "text": " for every bucket of kitchen scraps. Post a reminder on the carbon bin: 'Take one scoop for every scoop of food scraps you add.'"
+                }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "One turning per month, on a rota. Assign a household to each month of the year. The task takes 20 to 30 minutes and is a known cost." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Compost split: when the bin or bay produces a harvest, split the finished compost equally among active households. This is a positive reinforcement for following the rules." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems and solutions" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bin smells and attracts flies",
+              "cause": "Cooked food or meat added, or kitchen scraps exposed without carbon covering",
+              "fix": "Remove contaminating material. Add a thick layer of dry cardboard. Install a pest-proof lid if the bin is open-topped. Revisit the rules with the group."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Bin never seems to reduce in volume",
+              "cause": "Too many greens, not enough carbon; bin too wet; no turning",
+              "fix": "Add a full bag of dry leaves or torn cardboard. Mix through. Start the monthly turning rota."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "One or two households not contributing carbon",
+              "cause": "Rules not clear or carbon stock inconveniently placed",
+              "fix": "Move the carbon bin closer to the compost bin. Simplify the sign. Consider individual household buckets of carbon rather than a shared bin."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Achieving " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot composting" },
+        { "type": "text", "text": " at communal scale" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "6 to 10 households generate enough kitchen waste to fill a 1 m³ bay in 4 to 6 weeks. At that volume, with the correct carbon balance and moisture, the heap will naturally reach thermophilic temperatures (50 to 65°C). The communal scale is actually an advantage: single-household heaps often lack the critical mass to sustain heat; a multi-household heap sustains it easily."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

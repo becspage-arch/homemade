@@ -1,0 +1,172 @@
+{
+  "slug": "stopcock-maintenance-and-lubrication",
+  "title": "Maintaining and lubricating the mains stopcock",
+  "subtitle": "How to find, test, and free a seized stopcock before a leak makes it urgent",
+  "excerpt": "A seized stopcock that cannot be turned in an emergency causes water damage that takes days to dry out. Stopcocks seize because the gland packing and brass valve body corrode when unused for years. A 10-minute annual check and occasional re-lubrication keeps them operational. This covers location, testing, lubrication, and when to replace.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIPHE (Chartered Institute of Plumbing) best practice guidance. Water UK consumer guidance on stopcocks. Builderscrack/Which? plumbing maintenance guides.",
+  "approximateCostGbp": 5,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "adjustable-spanner", "isOptional": false }
+  ],
+  "aliases": ["seized stopcock", "stopcock won't turn", "mains water shutoff"],
+  "glossaryTerms": [
+    {
+      "slug": "gland-packing",
+      "term": "Gland packing",
+      "definition": "The compressed fibre or PTFE material inside a stopcock or gate valve that creates a water-tight seal around the valve spindle. Gland packing dries and hardens with age, causing the spindle to seize."
+    }
+  ],
+  "techniqueSlugs": ["water-leak-at-mains-entry-detection", "identifying-your-water-shutoffs"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Locate and test the stopcock",
+      "body": "Find the internal stopcock (usually under the kitchen sink or in a ground-floor utility cupboard). Turn it fully off (clockwise) and then fully on (anticlockwise). If it turns smoothly, no further action needed today. If it is stiff or immovable, proceed to the lubrication step.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 365,
+      "title": "Annual stopcock check",
+      "body": "Turn the stopcock off and on again once per year. This keeps the valve body from seizing through disuse. Note any new stiffness. Increasing resistance over 2 to 3 annual checks means the valve is approaching replacement age.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The internal mains stopcock is the single most important valve in the house in a water emergency. A burst pipe or failed appliance valve can discharge 400 to 600 litres per hour. The difference between 5 minutes to shut off and 30 minutes to find a plumber is the difference between a mop and a replacement floor. Testing and lubricating the stopcock takes 10 minutes and costs nothing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding the stopcock" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Standard location: under the kitchen sink, on the cold supply pipe where it enters the house from the external wall or floor. It is usually a brass valve with a flat-head or crosshead spindle." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Alternative locations: utility room, airing cupboard, under the stairs, or in a ground-floor toilet cupboard. In flats, it may be inside the flat (check the kitchen cupboard near the external wall) or in a shared riser cupboard on the landing." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "External boundary stopcock: there is also a stopcock in the pavement outside the property boundary (water company owned, operated with a long key). This is the backup shutoff if the internal one fails completely." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lubricating a stiff or seized stopcock" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Apply a small amount of petroleum jelly (Vaseline) or silicone grease around the spindle where it enters the valve body. Do not use WD-40 or mineral oil, which are not safe for potable water systems." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Use an adjustable spanner or pliers to turn the spindle slowly if it will not move by hand. Apply light force only; do not wrench it. If it snaps, the house is without water until a plumber installs a new valve." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gland-packing" } }],
+                    "text": "gland packing"
+                  },
+                  {
+                    "type": "text",
+                    "text": " nut is accessible (a hexagonal nut around the spindle above the valve body), slackening it by a quarter turn sometimes frees a seized spindle. Retighten after turning." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "After freeing: turn the valve fully off and fully on three to five times to work the lubricant through the mechanism. Leave in the open (fully anticlockwise) position." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to replace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brass stopcocks last 20 to 40 years in normal service. Replace when: the valve leaks from the gland even after retightening; the spindle head is stripped and cannot be operated; the body shows pinhole corrosion; or the valve has seized completely and cannot be freed without excessive force. The work requires shutting off at the external boundary stopcock. Either do this yourself or have a plumber do the replacement."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

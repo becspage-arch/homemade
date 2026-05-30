@@ -1,0 +1,205 @@
+{
+  "slug": "flat-roof-solar-panel-ballasted-mounting",
+  "title": "Mounting solar panels on a flat roof with ballasted racking",
+  "subtitle": "Site assessment, structural checks, and what to specify at tender",
+  "excerpt": "Flat roofs accept solar panels without roof penetrations when ballasted racking is used. The system sits on rubber pads, held down by ballast weight rather than fixings. This covers the structural requirements, ballast calculation, orientation options, and what the installer survey needs to confirm.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS Planning Standards MCS 012 and MCS 020 (installation standards). BS 6399-2 wind loading on flat roofs. Schletter and K2 systems ballasted mounting design guides (open specifications).",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["flat roof solar mounting", "ballasted solar racking", "solar panels flat roof"],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight to direct current (DC) electricity, fed through an inverter to produce mains-compatible alternating current (AC)."
+    },
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme. UK certification required for solar PV installers for SEG payment eligibility."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof", "solar-pv-shading-assessment"],
+  "criticalTechniques": ["solar-pv-shading-assessment"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ballasted "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " system uses poured-concrete or precast blocks to weigh down the racking without penetrating the roof membrane. This preserves the waterproofing, avoids any risk of leak at fixing points, and allows the system to be repositioned or removed without structural work. The trade-off is weight: a well-designed ballasted system adds 15 to 30 kg/m² to the roof load, which must be within the roof structure's capacity."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Structural check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The critical question before any other design work is whether the roof structure can carry the additional load. A typical domestic flat roof over a single-storey rear extension has a structural capacity of around 75 kg/m² on a clean roof. With roofing layers, the available capacity may be 30 to 50 kg/m². A ballasted system at 30 kg/m² sits within this in most cases, but a structural engineer's assessment is recommended before installation, particularly for older flat roofs with timber joists at 600 mm centres."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Orientation and tilt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat roofs allow panels to be tilted to any azimuth. South is optimal for UK latitude (50 to 58° N), with a tilt of 30 to 35° maximising annual yield. However, a flat roof with panels at 35° tilt creates significant uplift in wind and shading between rows if spacing is not calculated correctly. The minimum row spacing to avoid inter-row shading is approximately 2.5 times the vertical panel height (for a 1.7 m panel at 30° tilt, the vertical height is 0.85 m, so spacing should be at least 2.1 m between rows). Tighter spacing increases shading and reduces yield."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "East-west orientation (back-to-back panel pairs at 10 to 15° tilt) increases roof coverage and reduces the row spacing needed. It also spreads generation more evenly across the day. A 10 kWp east-west system typically achieves 85 to 92% of south-facing yield while fitting more panels per m²."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ballast calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ballast calculation is a wind-uplift calculation. The required ballast mass per racking table depends on: roof edge distance (panels within 2 m of the roof edge need more ballast), local wind zone (coastal vs inland), roof height above ground, and panel area. An exposed coastal site needs more ballast than an inland sheltered site at the same height. The racking manufacturer provides a design tool that inputs these variables and outputs the ballast weight per mount point. Installers must use a BS 6399-2 compliant wind calculation; this is checked as part of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }],
+            "text": "MCS"
+          },
+          {
+            "type": "text",
+            "text": " registration."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Planning permission: flat roof solar PV may require planning permission if the panels project more than 200 mm above the existing roof profile, or if the property is listed or in a conservation area. Standard permitted development rights allow panels on flat roofs as long as they meet the 200 mm projection limit and do not face a highway. Confirm with the local authority before installation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to specify at tender" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Structural engineer's sign-off that the roof can carry the proposed load. Get this independently, not from the installer." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Wind loading calculation per BS 6399-2, with ballast specification per mount point." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Rubber pads: EPDM or similar, at least 6 mm thick, to protect the roof membrane from abrasion under the racking feet." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Access maintenance plan: a flat roof system needs periodic inspection. Specify a fixed maintenance route (non-slip walkway pads or a maintenance path) to avoid roof membrane damage during annual inspections." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Green roof combination: a sedum green roof and solar PV can coexist on the same flat roof. The green roof increases thermal mass, reduces rainwater runoff, and keeps the area around the panels cooler (improving panel efficiency slightly). The combined load must be within structural capacity." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Inverted (warm) roof: a flat roof with the insulation above the waterproof membrane. Ballasted systems on inverted roofs need larger, softer rubber pads to distribute load without compressing the insulation boards." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

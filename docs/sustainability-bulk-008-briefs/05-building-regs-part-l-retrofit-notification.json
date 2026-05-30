@@ -1,0 +1,254 @@
+{
+  "slug": "building-regs-part-l-retrofit-notification",
+  "title": "Building Regulations Part L notification for retrofit insulation",
+  "subtitle": "What triggers Building Control involvement and what does not",
+  "excerpt": "Most domestic insulation work does not require Building Regulations approval. A handful of work types do: insulating more than 25% of a thermal element in some notifiable situations, and installing certain controlled services. This explains the notifiable boundary and what to do when a project crosses it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Building Regulations Approved Document L1B (England, 2022 edition). Planning Portal guidance on controlled work. LABC technical guidance notes on thermal elements. AECB competent person scheme for EWI contractors.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["Part L notification", "Building Regulations insulation", "building control insulation retrofit"],
+  "glossaryTerms": [
+    {
+      "slug": "part-l",
+      "term": "Part L",
+      "definition": "Building Regulations Part L (Fuel and Power Conservation) sets U-value and energy-efficiency standards for new-build and significant retrofit work in England and Wales."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Rate of heat transfer through a building element in W/m²·K. Lower means less heat lost."
+    },
+    {
+      "slug": "epc",
+      "term": "EPC",
+      "definition": "Energy Performance Certificate. A graded assessment of a property's energy efficiency, required on sale or let."
+    }
+  ],
+  "techniqueSlugs": ["reading-and-understanding-your-epc"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most domestic insulation retrofits do not need Building Regulations approval. Loft insulation, draught-stripping, secondary glazing, and floor insulation are all exempt. The boundary shifts when a project is a 'major renovation' or involves notifiable work. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-l" } }],
+            "text": "Part L"
+          },
+          {
+            "type": "text",
+            "text": "1B covers fuel and power conservation in existing homes and sets the thresholds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Work that does NOT require notification" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Adding loft insulation on top of what is there already. No structural work needed." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Draught-stripping doors, windows, skirting boards, floor gaps, and loft hatches." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Secondary glazing added to existing windows (the window frame itself is unchanged)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Pipe and cylinder lagging." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Fitting insulation below suspended timber floors (fitting does not change the floor structure)." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Work that DOES require notification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The main notifiable trigger under Part L1B: renovating more than 50% of a thermal element (roof, floor, or wall) at once. The element must then meet the Part L1B target "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " if the improvement is feasible and pays back within 15 years."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Replacing more than 50% of the flat roof covering: the new work is notifiable under Part L1B, and the roof U-value must meet 0.18 W/m²·K or better." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Replacing a complete ground floor: if the whole floor is lifted and relaid, it is notifiable and must meet 0.22 W/m²·K." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "External wall cladding replacement on the whole wall: if all render or cladding is being replaced, Part L1B requires insulation to 0.30 W/m²·K or better. This applies where the improvement is cost-effective (payback under 15 years)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Window and door replacements: notifiable as 'controlled fittings' and must meet U-value targets for the glass and whole window. Self-certified by FENSA or Certass." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Boiler replacement: notifiable, self-certified by Gas Safe. The new boiler must have a SEDBUK rating of 92% or better for gas." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: Victorian terrace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An owner of an 1890 terraced house in Bristol plans three projects: (1) strip and re-tile the entire rear slope of the existing pitched roof, (2) install EWI on the rear elevation, (3) add loft insulation top-up. Projects (1) and (2) are notifiable because more than 50% of a thermal element is being worked on. Project (3) is not notifiable. For (1), the contractor self-certifies the new flat-roofed rafter insulation meets 0.18 W/m²·K; for (2), an EWI contractor registered with BBA/KIWA certifies the system and submits to Building Control."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scotland, Wales, and Northern Ireland" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scotland has its own building standards (Section 6, Energy). The notifiable thresholds are broadly similar to England but the U-value targets differ slightly. Wales uses the same approved documents as England. Northern Ireland has its own Technical Booklet F1. The principle is the same in all four: modest DIY insulation is exempt; major renovation of a thermal element is notifiable and must achieve the element-specific U-value target."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The EPC and notification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Notifiable work that improves a thermal element should be reflected in an updated "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epc" } }],
+            "text": "EPC"
+          },
+          {
+            "type": "text",
+            "text": ". After major retrofit, get a new EPC from a DEA assessor once the work is done. Give the Building Control completion certificate to the assessor for reference."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Contractors on Gas Safe, FENSA, and NAPIT schemes can self-certify. For work outside these schemes, apply to Building Control before starting."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

@@ -1,0 +1,200 @@
+{
+  "slug": "solar-pv-inverter-fault-diagnosis",
+  "title": "Diagnosing solar PV inverter faults",
+  "subtitle": "Reading LED codes, monitoring dashboards, and knowing when to call an installer",
+  "excerpt": "Most solar PV faults are visible in the inverter's LED indicators or monitoring app within hours of occurring. A systematic fault-finding approach identifies whether the problem is in the DC string, the inverter itself, or the grid connection. This covers the five most common inverter fault types and what to check for each.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "IEC 62109 fault code standards for solar inverters. Fronius and SMA inverter service manuals (open documentation). Energy Networks Association G98/G99 grid connection standards.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "aliases": ["inverter fault diagnosis", "solar PV fault finding", "solar inverter LED codes"],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight to direct current (DC) electricity, fed through an inverter to produce mains-compatible alternating current (AC)."
+    },
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "The device that converts DC from solar panels to mains-frequency AC. It also handles grid connection compliance and safety disconnection."
+    },
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme. UK certification required for solar PV installers to register systems for SEG payments and BUS grants."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-system-monitoring"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A string "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inverter" } }],
+            "text": "inverter"
+          },
+          {
+            "type": "text",
+            "text": " that is not generating shows one of five states: night, near-zero generation from cloud, a DC fault (panels or cabling), an AC fault (grid or mains voltage), or hardware failure. The monitoring app usually identifies which within minutes of checking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First check: is it actually a fault?" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Time of day: inverters are inactive before civil sunrise and after civil sunset. Any zero-generation reading at these times is normal." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Weather: a heavily overcast UK winter day may generate 2 to 5% of summer output. 50 to 100 W from a 4 kWp system is normal in thick cloud." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Seasonal pattern: a system generating 30% of its summer output in December is performing correctly for a south-facing 30° pitch in the UK. Compare with the manufacturer's expected production table, not with summer readings." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fault type 1: grid fault / overvoltage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Inverters disconnect if mains voltage exceeds 253 V or drops below 216 V (G98/G99 compliance). If a grid-fault code appears, check the mains voltage on the inverter display. A persistent overvoltage above 250 V means solar export has pushed local voltage above the limit. This is common where many PV systems share a low-voltage feeder. Report it to the Distribution Network Operator (DNO). The DNO is obliged to investigate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fault type 2: isolation fault (insulation monitoring)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An isolation fault means the inverter's built-in insulation monitoring has detected a resistance path between the DC conductors and earth that is below the safe threshold. This is most commonly caused by moisture ingress into a junction box, a damaged panel connector, or a chafed DC cable. Isolation faults require a qualified electrician or "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }],
+            "text": "MCS"
+          },
+          {
+            "type": "text",
+            "text": "-registered PV installer to diagnose. Do not attempt to trace on the roof yourself."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fault type 3: low DC voltage / no string voltage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the inverter shows lower DC voltage than expected in daylight, one or more panels is not contributing. Common causes: shading from new obstructions (aerials, dishes, tree growth, bird damage), a disconnected MC4 connector, or a failed bypass diode. Systems with module-level monitoring will show the specific panel in the app. Without module-level monitoring, inspect all panels from ground level first and call an installer if the cause is not clear."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fault type 4: inverter overtemperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wall-mounted inverters in unventilated utility rooms or airing cupboards can shut down on overtemperature on hot sunny days. The inverter should have 150 mm of clear air above and below the heat sink fins, and should not be enclosed in a cupboard. Check the installation: if the inverter is boxed in, fit a ventilation panel or relocate it. Overtemperature codes (typically F03 or similar, depending on brand) are self-clearing once the inverter cools; no reset is needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fault type 5: inverter hardware failure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Inverters typically have a 5 to 12 year warranty. Capacitor degradation is the most common hardware failure mode in older string inverters. Signs are reduced output at a given irradiance compared with earlier years, or complete failure. A failed inverter requires replacement; most "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " installation companies can quote replacement costs for a fitted and commissioned string inverter. Keep the same brand where possible, as the monitoring app setup carries over without any reconfiguration."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Always call an MCS-registered installer for: any DC-side fault, any roof-level inspection, any isolation fault, inverter replacement, and any fault that persists after the grid-voltage check. DC circuits at the PV array voltage (typically 350 to 600 V in a residential string) are lethal; they cannot be isolated by switching off the mains. Only a trained installer should work on DC circuits."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

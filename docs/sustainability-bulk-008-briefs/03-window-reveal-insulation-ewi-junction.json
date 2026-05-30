@@ -1,0 +1,262 @@
+{
+  "slug": "window-reveal-insulation-ewi-junction",
+  "title": "Insulating window reveals and jambs at an EWI junction",
+  "subtitle": "Closing the cold bridge between external wall insulation and window frames",
+  "excerpt": "The junction where external wall insulation meets a window frame is the most common detail failure in EWI retrofits. Cold bridges at reveals and sills increase heat loss, create condensation risk, and can crack render. This explains how to detail the reveal correctly and what to specify at tender.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE IP 1/06 on thermal bridges at windows. English Heritage/Historic England guidance on thermal improvement of traditional buildings. AECB EWI specification notes.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "aliases": ["EWI window reveal", "external wall insulation window junction", "window jamb insulation EWI"],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A path through a building element with significantly higher heat conductivity than the surrounding material, creating a local cold spot and increased heat loss."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Rate of heat transfer through a building element in W/m²·K. Lower means less heat lost."
+    },
+    {
+      "slug": "psi-value",
+      "term": "Psi value",
+      "definition": "Linear thermal transmittance in W/m·K. Quantifies the heat loss per metre run at a junction or edge detail."
+    }
+  ],
+  "techniqueSlugs": ["external-wall-insulation-etics-installation", "thermal-bridging-explained"],
+  "criticalTechniques": ["external-wall-insulation-etics-installation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When external wall insulation boards go onto a solid masonry wall, they cannot simply stop at the window frame. The frame sits inside the wall at a depth of 50 to 150 mm, leaving a bare masonry reveal on each side. If the EWI board butts against the frame edge without insulating that reveal, the reveal becomes a cold-bridge that cuts into the wall improvement."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three reveal insulation options" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Option 1 is to insulate the reveal with thin boards (typically 20 to 40 mm PIR or phenolic foam) bonded to the masonry face of the reveal. This closes the cold bridge but leaves the window in its original position. It reduces the visible aperture by the thickness of the board on each side. A 900 mm window in a 50 mm reveal with 30 mm insulation on each side becomes 840 mm visible width."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Option 2 is to reposition the window outward during the EWI installation so it sits flush with or near the outer face of the new insulation layer. This eliminates the reveal entirely, creates a cleaner junction, and is typically done during a window replacement programme that coincides with EWI. It requires a larger lintol pocket and new fixing arrangement."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Option 3 is to accept the cold bridge but quantify it using the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "psi-value" } }],
+            "text": "psi value"
+          },
+          {
+            "type": "text",
+            "text": " at the junction. This is sometimes used in the energy calculation to show the whole-wall "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " improvement is still significant even with the cold bridge. It is not best practice but is sometimes the only option in listed buildings where window repositioning is not permitted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The cold-bridge heat loss figure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A bare masonry reveal (220 mm solid brick) with no insulation has an effective psi value of around 0.30 to 0.50 W/m·K depending on geometry. A house with 12 windows and an average reveal perimeter of 6 m per window has 72 m of junction. At psi = 0.40, the junction loses 72 x 0.40 x (interior minus exterior temperature) watts continuously. At a 12°C average temperature difference (a UK winter average), that is 350 W of continuous heat loss from the junctions alone, equivalent to around 1,500 to 2,000 kWh/year. Adding 30 mm PIR on the reveals reduces psi to approximately 0.15, cutting that junction loss by more than half."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The SAP calculation for EWI should include junction psi values. If a contractor's quote does not mention linear thermal bridges at window reveals, ask them to include it. An EWI installation that ignores junction losses may achieve a lower EPC band improvement than the wall-area calculation suggests."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to specify at tender" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Specify minimum 20 mm PIR or phenolic board on all reveals and sills, bonded with EWI adhesive. Thin-coat insulation boards at 20 mm achieve lambda around 0.022, giving a reasonable reveal R-value on a 50 mm reveal." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Junction between wall board and reveal board: specify a mesh-reinforced starter angle bead at all corners. The bead protects the render edge and covers the EPS-to-PIR junction." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Sill: a new sloping drip-edge sill capping must project at least 40 mm beyond the new finished render face to shed water. An undersized sill after EWI is a common source of water ingress and render crack." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Window head: fit an EWI starter track at the base of the lintel with weep holes. This lets any moisture drain out rather than soaking into the insulation board above." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Listed buildings: listed building consent is typically required for EWI on listed or locally listed properties. The consent may restrict reveal insulation depth if it changes the window set-back significantly. A heritage specialist should be involved before tendering." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Flats with shared walls: the EWI contractor needs party wall agreement if the installation extends to the party wall external face." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Solid brick versus stone: flint, rubble limestone, and Cotswold stone have different surface profiles. Adhesive quantities differ; a dry-brush test on a 1 m² patch before full installation identifies substrate suitability. See "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "external-wall-insulation-etics-installation", "label": "EWI installation" } }],
+                    "text": "EWI installation"
+                  },
+                  {
+                    "type": "text",
+                    "text": " for the substrate assessment sequence."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: reveals insulated to at least 20 mm PIR, corners beaded and mesh-reinforced, sill capping projecting 40 mm, head flashed with weep holes. The finished appearance has a consistent 20 to 30 mm shadow line around windows where the reveal meets the frame."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: wall boards stop at the masonry reveals. Condensation on interior reveals within one winter, render cracks at corners within two. The EPC gain is real but lower than expected because the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridges"
+          },
+          {
+            "type": "text",
+            "text": " at reveals are eating 20 to 30% of the modelled saving."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

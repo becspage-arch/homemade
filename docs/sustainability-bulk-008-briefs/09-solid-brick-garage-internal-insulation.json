@@ -1,0 +1,229 @@
+{
+  "slug": "solid-brick-garage-internal-insulation",
+  "title": "Insulating a solid brick garage internally",
+  "subtitle": "Converting an attached or detached garage to a warm, usable space",
+  "excerpt": "An uninsulated brick garage attached to a house is a cold flank that chills the adjoining rooms. Insulating it internally with a frame-and-board system reduces heat loss significantly. This covers the build-up for walls, concrete floor, and flat roof.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBA-certified insulated dry-lining systems for internal wall insulation. Celotex and Kingspan PIR board specifications. CIBSE guidance on condensation risk at internal wall insulation.",
+  "approximateCostGbp": 900,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane placed on the warm side of insulation to limit moisture diffusion into the insulation from the interior."
+    },
+    {
+      "slug": "cold-bridge",
+      "term": "Cold bridge",
+      "definition": "A path through a building element with higher conductivity than the insulation layer, creating a local cold spot."
+    },
+    {
+      "slug": "dew-point",
+      "term": "Dew point",
+      "definition": "The temperature at which water vapour in air condenses to liquid water. In insulation design, the dew point must sit outside the insulation layer to avoid interstitial condensation."
+    }
+  ],
+  "techniqueSlugs": ["internal-wall-insulation-dew-point", "vapour-control-layers-explained"],
+  "criticalTechniques": ["internal-wall-insulation-dew-point"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A single-skin brick garage wall has a U-value around 2.2 to 2.5 W/m²K, roughly the same as a single-glazed window. An attached garage shares one or two walls with the house; those walls are losing heat from the house into the garage cavity, and from the garage into the outside air. Adding 75 mm of internal insulation to the three external garage walls can bring each wall from 2.4 to around 0.45 W/m²K, cutting wall heat loss by more than 80%."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Building Regulations: converting a garage to a habitable room (bedroom, living room, study) requires Building Regulations approval (structural, thermal, fire safety). Using it as a hobby workshop, home gym, or storage extension of the house does not. This tutorial covers the insulation work relevant to both uses; the structural and fire-safety elements required for a habitable-room conversion are outside this scope."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you start cutting or drilling. Eye protection for every cut. Gloves when handling cut board edges. If drilling into the garage wall reveals any wiring, stop and identify the circuit before continuing."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and build-up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The simplest internal insulation system for a garage wall is a timber batten frame at 400 or 600 mm centres, mineral wool or PIR board between battens, a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": " (foil-backed PIR acts as this if joints are taped), and a plasterboard or OSB lining. A condensation-risk calculation confirms the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dew-point" } }],
+            "text": "dew point"
+          },
+          {
+            "type": "text",
+            "text": " sits outside the insulation layer when the VCL is on the warm side. For a heated garage, 75 mm PIR board (lambda 0.022, R = 3.4) is the minimum. For a heated workshop, 100 mm gives a wall R-value of 4.5."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wall installation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Fix 75 x 50 mm timber battens to the garage walls at 400 mm centres using frame fixings and plugs. Check plumb with a spirit level. Leave a 10 mm gap at the bottom batten to the floor to prevent moisture wicking into the timber." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cut PIR boards to 370 mm wide and fit between battens. Add foam sealant at all board edges. The foil face of the board should face the room (warm side)." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Tape all foil joints with aluminium foil tape. This forms the continuous VCL across the wall face." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Fix 12.5 mm plasterboard or 18 mm OSB over the battens with 60 mm screws at 400 mm centres. OSB is better for a workshop (takes shelving fixings anywhere). Plasterboard is better for a heated study or converted habitable room." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Floor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A concrete garage floor is always cold unless insulated. Lay a DPM first (1200-gauge polythene, lapped 150 mm at joints, turned up 75 mm at walls), then 50 mm PIR board, then 18 mm or 22 mm flooring-grade OSB or chipboard. The floor rises by 70 to 75 mm; check this against the door threshold and the house floor level before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The cold bridge at the wall base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-bridge" } }],
+            "text": "cold bridge"
+          },
+          {
+            "type": "text",
+            "text": " in a garage conversion is the concrete floor-to-wall junction. The slab extends to the wall face; the wall insulation stops 100 mm above the floor. The solution is to run the floor PIR board up 100 mm at the wall base before the vertical wall insulation starts, creating a continuous insulation layer at the base junction. This adds complexity at the skirting detail but eliminates the cold-stripe condensation line that appears at floor level on an improperly detailed conversion."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: VCL continuous and taped at all joints, floor junction detailed to eliminate the base cold bridge, door threshold checked before floor raise, lining fixed securely. The garage space holds heat noticeably and the house rooms adjoining the converted garage are warmer."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: VCL gaps at batten positions where foil is not sealed around them, moisture behind the lining, mould on the plasterboard within two winters. Or: floor raised without checking the door threshold, door no longer seals at the base."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

@@ -1,0 +1,210 @@
+{
+  "slug": "composting-diseased-plant-material",
+  "title": "Which diseased plant material is safe to compost",
+  "subtitle": "The temperature and disease type criteria that determine what can and cannot go in a heap",
+  "excerpt": "Hot composting above 55°C for at least three consecutive days kills most plant pathogens and weed seeds. Cold composting does not. This covers the disease-by-disease assessment of what to compost, what to bin, and how hot composting changes the risk picture.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Horticulture disease pathogen survival research. RHS advisory notes on composting diseased material. Cornell Composting Science studies on pathogen kill temperatures.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "aliases": ["composting diseased plants", "diseased material in compost", "club root compost"],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "A composting method that reaches 55 to 70°C through active microbial decomposition, killing most pathogens and weed seeds within days."
+    },
+    {
+      "slug": "cold-compost",
+      "term": "Cold compost",
+      "definition": "A passive composting method where material decomposes slowly at near-ambient temperatures, typically over 6 to 18 months. Does not reliably kill pathogens."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "The ratio of carbon to nitrogen in composting materials. The optimal range for active decomposition is 25:1 to 30:1."
+    }
+  ],
+  "techniqueSlugs": ["hot-composting-temperature-monitoring", "turning-a-hot-compost-heap"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The decision to compost diseased plant material depends on two things: the type of pathogen and the composting method. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }],
+            "text": "Hot composting"
+          },
+          {
+            "type": "text",
+            "text": " at 55°C for three or more consecutive days kills most fungal spores, bacterial blights, and viral particles. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-compost" } }],
+            "text": "Cold composting"
+          },
+          {
+            "type": "text",
+            "text": " does not; it distributes the pathogen through the finished compost and returns it to the garden."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safe in hot composting, not cold" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Blight-affected tomato and potato foliage (Phytophthora infestans): hot composting above 60°C kills the pathogen. Cold composting does not; infected material in a cold heap should be binned or burned." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Powdery mildew: fungal spores on courgette, cucumber, squash leaves. Hot composting kills spores. Cold composting may not; the spores are relatively heat-resistant but typically destroyed at 55°C. Mildew on plants at end of season is normally composted without difficulty in an active heap." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Rust (various species): as for powdery mildew. Hot composting is safe; cold composting is a risk in a garden where the same host plant is grown next year." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Soft rots (Botrytis, bacterial soft rot): most soft-rot pathogens are among the first to be killed by heat. Hot composting is safe. Cold composting is safe if the heap is active enough to exclude the pathogen from the finished compost by time." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Never compost, regardless of method" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Club root (Plasmodiophora brassicae): the resting spores survive in soil for 20 or more years and resist composting temperatures. Material from club-root-affected brassicas should be double-bagged and landfilled, never composted or dug in." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Verticillium and Fusarium wilt (e.g. affected potato stems, aster wilt): the mycelium and chlamydospores are heat-resistant and may survive hot composting. Dispose via household waste." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Honey fungus (Armillaria): rhizomorphs and mycelium must not be composted. Bag and landfill." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Onion white rot (Sclerotium cepivorum): sclerotia survive for 20 or more years and are not reliably killed by composting." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Confirming hot composting temperature" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To be confident that diseased material is safe to compost, the heap must reach 55°C at the centre and maintain that temperature for at least 3 days before turning. After turning, it must reach 55°C again at the new centre. Check with a compost thermometer at 300 mm depth (not at the surface) to confirm the core temperature."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heap that reaches 55°C but falls back to ambient after one day has not held temperature long enough. Add more greens (fresh grass clippings, kitchen scraps) to restart the heating cycle. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": " must be in the 25:1 to 30:1 range for sustained thermophilic activity. See the hot composting temperature monitoring tutorial for the detailed procedure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Placement in the heap" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add diseased material to the core of the heap, not the outside layer. The core reaches the highest temperature and maintains it longest. Material at the heap edges may never reach 55°C even in an active hot heap. For club root and white rot (which should not be composted), this instruction is irrelevant; for blight material going into a hot heap, place it at least 200 mm from the outside surface."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}

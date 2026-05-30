@@ -1,0 +1,262 @@
+{
+  "slug": "insulated-compost-bin-winter",
+  "title": "Building an insulated compost bin for year-round hot composting",
+  "subtitle": "A plywood and polystyrene box system that maintains core temperature through winter",
+  "excerpt": "A hot compost heap loses temperature rapidly in winter as heat conducts through the bin walls. An insulated bin with 50 mm polystyrene board lining reduces heat loss enough to sustain 40 to 50°C through UK winters down to -5°C. This covers the build for a 1 m³ insulated bin.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "New Farmer Network hot composting guides. WRAP composting best practice guidance. University of Bath sustainable building research on insulated low-cost compost systems.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "panel-saw", "isOptional": false },
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "A composting method that reaches 55 to 70°C through active microbial decomposition, killing most pathogens and weed seeds within days."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "The ratio of carbon to nitrogen in composting materials. The optimal range for active decomposition is 25:1 to 30:1."
+    }
+  ],
+  "techniqueSlugs": ["hot-composting-temperature-monitoring", "turning-a-hot-compost-heap"],
+  "criticalTechniques": ["hot-composting-temperature-monitoring"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 3,
+      "title": "Take first temperature reading",
+      "body": "The heap should reach 40 to 60°C within 3 days of building. Check with the thermometer at 300 mm depth in the centre. If the temperature is below 40°C, the heap needs more greens or moisture.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "First turn",
+      "body": "Turn the heap, moving outside material to the centre. The insulated bin needs to be emptied and refilled from the base. Temperature should recover to 50°C or above within 2 days of turning.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 56,
+      "title": "Check for maturity",
+      "body": "Hot compost matures in 6 to 8 weeks in a well-insulated bin. Check for earthy smell, dark colour, and unrecognisable original materials. If still patchy, allow another 2 to 4 weeks.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard wooden compost bin loses heat rapidly in winter. The 20 to 30 mm board walls conduct heat from a 60°C heap into a 0°C air mass at a rate that drops the heap temperature below the thermophilic threshold (40°C) within days. An insulated bin with 50 mm polystyrene board inside the outer walls dramatically reduces that loss. The heap stays in the 40 to 60°C range through cold weather, processing material much faster than a cold heap and, critically, killing pathogens and weed seeds through winter as well as summer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you start cutting. Eye protection for every saw cut. Gloves for handling cut plywood edges. Polystyrene generates static and loose beads during cutting; cut outside and sweep beads before they enter water drains."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials for a 1 m³ insulated bin" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "18 mm exterior-grade plywood: two sheets for outer walls. Cut to four 1000 x 1000 mm panels." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "50 mm EPS (expanded polystyrene) board: inner lining, all four walls and the lid. Cut to 900 x 900 mm (to fit inside the plywood outer) with a knife against a straightedge." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "75 x 50 mm pressure-treated softwood: four corner posts at 1050 mm tall. The plywood panels screw to these." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Hinged front panel or removable front boards: one panel of the four sides must be openable for turning and extracting compost." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Lid: 18 mm plywood panel 1050 x 1050 mm with 50 mm polystyrene bonded to the underside. Weigh down with two bricks; do not hinge (the lid needs to lift off for turning)." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Construction" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Set the four corner posts vertically on a level surface 1000 mm apart (outside measurement). Screw the plywood outer panels to the posts with 50 mm screws at 200 mm centres." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cut EPS boards to 900 x 900 mm and press inside the plywood walls. No adhesive needed; the composting pressure holds them in place. If the fit is loose, cut one 50 mm strip from each side and wedge into the gap." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Front panel: fit removable boards (three 1000 x 300 mm planks sliding in front channels) or a hinged plywood panel. The front must open fully for access during turning." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Base: no base board needed. The compost contacts the ground, allowing earthworm access and drainage. Level the ground under the bin position." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Lid: bond 50 mm EPS to the underside of the plywood lid with construction adhesive or PVA. Allow to cure before placing on the bin." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Loading and temperature expectations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the heap with a 3:1 ratio of browns to greens by volume, at the correct moisture level (wrung-out sponge). The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": " should be in the 25:1 to 30:1 range. In a well-made heap in an insulated bin, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }],
+            "text": "hot compost"
+          },
+          {
+            "type": "text",
+            "text": " core should reach 40 to 60°C within 3 days even in a 0°C ambient temperature. In a standard uninsulated bin at 0°C outside temperature, the same heap typically stays at 20 to 30°C, which is warm enough for slow composting but not for pathogen kill."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: EPS boards snugly fit, lid sits flat with no gaps, front access works smoothly. The thermometer reads 50°C or above in December and January. Compost ready in 8 to 10 weeks year-round."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: EPS boards loose with air gaps at corners, lid too light and gets blown off, front panel difficult to remove. Heat escapes, heap drops to 25°C in cold weather, processing slows to cold-compost rate. The insulated build was more work than a standard bin for little additional benefit."
+          }
+        ]
+      }
+    ]
+  },
+  "status": "DRAFT"
+}
