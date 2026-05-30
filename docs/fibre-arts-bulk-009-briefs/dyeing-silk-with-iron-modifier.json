@@ -1,0 +1,228 @@
+{
+  "slug": "dyeing-silk-with-iron-modifier",
+  "title": "Dyeing silk with an iron modifier",
+  "subtitle": "Using an iron after-bath to shift and darken plant-dye colours on silk, and why silk responds differently from wool",
+  "excerpt": "Silk takes plant dyes without a mordant due to its natural protein affinity, but an alum pre-mordant significantly improves colour fastness. An iron after-bath shifts warm yellow or orange dyes toward muted olive and khaki on wool, but on silk the shift is often more pronounced and greener. This tutorial covers alum pre-mordanting for silk, a weld or chamomile dye bath, and an iron after-bath to demonstrate the colour shift on each fibre.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Iron modifier effects on silk versus wool are documented in Jenny Dean's 'Wild Colour' and in UK natural dye guild instruction. Alum mordanting of silk is consistent with standard protein-fibre dye practice. Observation-led.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false },
+    { "slug": "dyeing-apron", "isOptional": false },
+    { "slug": "mordant-jar", "isOptional": false },
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mordant",
+      "term": "Mordant",
+      "definition": "A mineral or plant compound used to fix natural dye to fibre. Alum (potassium aluminium sulphate) is the standard mordant for silk as well as wool. Silk can take some dyes without a mordant, but alum improves colour depth and washfastness significantly."
+    },
+    {
+      "slug": "iron-modifier",
+      "term": "Iron modifier",
+      "definition": "An iron sulphate solution added after the main dye bath to shift and darken the colour. Iron bonds with tannin-rich or flavonoid-rich dyes and shifts warm yellows toward muted green and khaki. The effect on silk is typically stronger and greener than the same modifier applied to wool."
+    },
+    {
+      "slug": "weight-of-fibre",
+      "term": "Weight of fibre (WOF)",
+      "definition": "The dry weight of the fibre before dyeing, used as the reference unit for calculating mordant and dye quantities. An alum mordant at 15% WOF on 50 g of silk means 7.5 g of alum potash."
+    },
+    {
+      "slug": "protein-fibre",
+      "term": "Protein fibre",
+      "definition": "A natural fibre composed of protein, including wool, silk, alpaca, and mohair. Protein fibres have a natural chemical affinity for plant dyes and most mordants. Both wool and silk are protein fibres, but silk's protein structure (fibroin) differs from wool's (keratin), which explains why they respond differently to iron modifiers and high heat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "iron modifier silk",
+    "silk natural dyeing iron",
+    "iron after-bath silk",
+    "saddle silk natural dye",
+    "iron saddening natural dye"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Silk is a " },
+          { "type": "text", "text": "protein fibre", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "protein-fibre" } }] },
+          { "type": "text", "text": " with a natural affinity for plant dyes, meaning it can take colour without a " },
+          { "type": "text", "text": "mordant", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }] },
+          { "type": "text", "text": ". However, alum mordanting at 15% " },
+          { "type": "text", "text": "weight of fibre", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weight-of-fibre" } }] },
+          { "type": "text", "text": " (WOF) substantially improves both colour depth and washfastness, and is recommended for any piece where durability matters. An " },
+          { "type": "text", "text": "iron modifier", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "iron-modifier" } }] },
+          { "type": "text", "text": " after-bath applied to a yellow or amber dye on wool gives a muted olive or khaki shift. On silk dyed with the same plant source, the iron shift is typically more pronounced and greener. This tutorial uses weld or chamomile as the dye plant to demonstrate the shift clearly, since both give a warm yellow on alum-mordanted fibre that the iron modifier can push strongly toward green-grey." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety",
+          "body": "Work outdoors or with an extractor fan. Dedicated pots only. Gloves, apron, closed-toe shoes. Keep children and pets out of the dye area."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials and tools",
+          "items": [
+            { "name": "Silk fabric or yarn, dry weight", "qty": "50 g" },
+            { "name": "Alum potash (potassium aluminium sulphate)", "qty": "7.5 g (15% WOF)" },
+            { "name": "Dried weld or dried chamomile flowers", "qty": "75 g" },
+            { "name": "Iron sulphate (for after-bath modifier)", "qty": "1 to 2 g (2 to 4% WOF)" },
+            { "name": "Water", "qty": "8 litres" },
+            { "name": "Stainless steel dye pot (dedicated)", "qty": "1" },
+            { "name": "Small pot for iron modifier bath (dedicated)", "qty": "1" },
+            { "name": "Long rubber gloves", "qty": "1 pair" },
+            { "name": "Dedicated dyeing apron", "qty": "1" },
+            { "name": "Digital scales", "qty": "1" },
+            { "name": "Thermometer", "qty": "1" },
+            { "name": "Long-handled spoon (dedicated)", "qty": "1" },
+            { "name": "Straining cloth or muslin", "qty": "1" },
+            { "name": "10-litre bucket for rinsing", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Pre-wet the silk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak the dry silk in warm water for 20 minutes until fully saturated. Silk is more delicate than wool: avoid hot water during pre-wetting and handle the wet fabric gently. Do not wring or twist." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Mordant bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 7.5 g of alum potash in a cup of hot water, then add to the dye pot with 3 litres of water and stir. Lower the pre-wetted silk into the pot. Heat gently to 75°C over 25 minutes, stirring gently. Hold at 70 to 75°C for 40 minutes. Silk is sensitive to high temperatures: avoid exceeding 80°C or the fabric may lose its lustre. Remove from heat and allow the silk to cool in the mordant liquor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Dye-plant preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place the dried weld or chamomile in a pot with 3 litres of cold water. Bring slowly to a simmer at 80°C and hold for 30 minutes. Strain the plant material through muslin and return the warm-yellow dye liquor to the dye pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Dye bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lower the mordanted silk into the strained dye liquor. Heat to 70°C and hold at 70°C for 40 minutes, stirring gently every 10 minutes. Do not exceed 80°C. The silk will take on a warm yellow tone. Remove from heat and cool in the dye bath for 20 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Iron modifier after-bath" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dissolve 1 to 2 g of iron sulphate in a cup of hot water. Add to a small pot with 2 litres of warm water (50 to 60°C) and stir. Lift the dyed silk from the main dye bath and transfer directly to the iron modifier bath. Hold the silk in the iron bath at 50 to 60°C for 10 to 15 minutes, turning gently. The warm yellow shifts toward a muted olive-green or khaki-green. On silk, this shift is typically more pronounced than the same modifier applied to wool dyed in the same bath." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour spent iron mordant bath down a foul drain only. Never pour into a storm drain, a stream, a garden soak-away, or any watercourse. Iron sulphate in accumulated quantities is harmful to aquatic life." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Rinse and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rinse the silk in water close to the iron bath temperature, then in progressively cooler water until the water runs clear. Squeeze gently in a clean towel. Hang in a shaded spot to dry. Do not tumble-dry silk. Iron lightly on a cool setting if needed once fully dry." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum mordant without iron modifier: weld gives a clear warm yellow on silk; chamomile gives a softer pale gold-yellow. Both are noticeably brighter in tone than the same dyes on wool." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Alum mordant with iron modifier: weld on silk shifts to a deep muted olive-green. Chamomile on silk shifts to a softer khaki-green with a grey cast. The greener, more dramatic shift on silk compared to wool is due to the different protein structure of silk fibroin, which binds the iron-dye complex differently from wool keratin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Side-by-side comparison: use the same dye bath and the same iron modifier on a small skein of wool and a small piece of silk simultaneously. The difference in colour response is a useful permanent reference for future dye planning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The silk lost its sheen and looks dull after dyeing",
+              "cause": "The dye bath temperature exceeded 80°C, damaging the silk protein structure",
+              "fix": "Keep the temperature at or below 75°C throughout the mordant and dye baths. Use a thermometer rather than estimating by eye. Lower heat settings and longer soak times are preferable to high-heat short sessions for silk."
+            },
+            {
+              "problem": "The iron modifier turned the silk an unpleasant dark grey-black rather than olive-green",
+              "cause": "The iron sulphate concentration was too high, or the modifier bath contact time was too long",
+              "fix": "Use no more than 2% WOF iron sulphate (1 g per 50 g of fibre). Limit the modifier bath to 10 minutes maximum for silk. Iron over-modifies silk more aggressively than wool; less is more here."
+            },
+            {
+              "problem": "The silk came out the same colour as wool dyed in the same bath, with no more dramatic green shift",
+              "cause": "The iron sulphate dose was too low, or the contact time was too short",
+              "fix": "Increase the iron dose to 2 g (4% WOF) for the silk modifier bath. Ensure the modifier bath holds at 55 to 60°C for the full 15 minutes. The difference between silk and wool response is most apparent at moderate iron doses; at very low doses both fibres show only a subtle shift."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

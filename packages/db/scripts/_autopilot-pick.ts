@@ -1,17 +1,11 @@
 import { config as loadEnv } from 'dotenv'
-import { existsSync } from 'node:fs'
-import { resolve, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
-const __dirname = dirname(fileURLToPath(import.meta.url))
-let dir = __dirname
-for (let depth = 0; depth < 12; depth++) {
-  const candidate = resolve(dir, '.env.credentials')
-  if (existsSync(candidate)) { loadEnv({ path: candidate, override: true }); break }
-  const parent = dirname(dir); if (parent === dir) break; dir = parent
-}
+loadEnv({ path: '../../.env.credentials' })
+loadEnv()
+
+import { prisma } from '../src'
+
 async function main() {
-  const { prisma } = await import('../src/index.js')
-  const rows = await prisma.category.findMany({
+  const cats = await prisma.category.findMany({
     select: {
       id: true,
       slug: true,
@@ -19,20 +13,24 @@ async function main() {
       targetTutorialCount: true,
       lastAutopilotRunAt: true,
       launchOrder: true,
-      _count: { select: { tutorials: { where: { status: 'PUBLISHED' } } } }
     },
-    orderBy: [{ lastAutopilotRunAt: 'asc' }, { launchOrder: 'asc' }]
-  })
-  for (const r of rows) {
-    const pub = r._count.tutorials
-    console.log(
-      r.slug.padEnd(25) +
-      ' status=' + (r.pipelineStatus || 'null').padEnd(12) +
-      ' pub=' + String(pub).padStart(5) +
-      ' target=' + String(r.targetTutorialCount ?? '-').padStart(6) +
-      ' lastRun=' + (r.lastAutopilotRunAt?.toISOString() ?? 'never')
-    )
+    orderBy: [
+      { lastAutopilotRunAt: 'asc' },
+      { launchOrder: 'asc' },
+    ],
+  });
+
+  for (const c of cats) {
+    process.stdout.write(
+      `${c.slug.padEnd(28)} | ${String(c.pipelineStatus).padEnd(12)} | lastRun: ${c.lastAutopilotRunAt?.toISOString() ?? 'null'}\n`
+    );
   }
-  await prisma.$disconnect()
+
+  const ready = cats.filter(c => c.pipelineStatus === 'READY');
+  process.stdout.write(`\nREADY count: ${ready.length}\n`);
+  if (ready.length > 0) {
+    process.stdout.write(`TOP PICK: ${ready[0].slug} (${ready[0].id}) lastRun: ${ready[0].lastAutopilotRunAt?.toISOString() ?? 'null'}\n`);
+  }
 }
-main().catch((e) => { console.error(e); process.exit(1) })
+
+main().catch(console.error).finally(() => prisma.$disconnect());

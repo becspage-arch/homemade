@@ -1,0 +1,279 @@
+{
+  "slug": "four-shaft-waffle-weave",
+  "title": "Four-shaft waffle weave sampler",
+  "subtitle": "A 30 × 30 cm sampler in 8/2 cotton, sett at 16 EPI (6.3 ends/cm), woven in waffle weave on four shafts",
+  "excerpt": "Waffle weave builds a cellular, honeycomb-like surface by lifting alternating shafts to create ridges and depressions. This 30 × 30 cm sampler in 8/2 cotton makes a washcloth-sized piece and is the clearest way to learn the structure.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from standard four-shaft weaving references and public-domain weave structure documentation.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "weaving-heddles", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "warp", "term": "Warp", "definition": "The set of threads stretched lengthwise on the loom under tension, through which the weft is interlaced." },
+    { "slug": "weft", "term": "Weft", "definition": "The thread carried horizontally across the warp on each pick (row) of weaving." },
+    { "slug": "sett", "term": "Sett", "definition": "The number of warp threads per unit of width, stated in ends per inch (EPI) or ends per centimetre." },
+    { "slug": "heddle", "term": "Heddle", "definition": "A looped wire or cord on a shaft that holds a warp thread and raises or lowers it when the shaft moves." },
+    { "slug": "threading", "term": "Threading", "definition": "The sequence in which warp threads are drawn through the heddles on each shaft, determining the weave structure." },
+    { "slug": "treadling", "term": "Treadling", "definition": "The sequence in which the weaver presses the treadles to raise specific shafts and form each shed." },
+    { "slug": "shed", "term": "Shed", "definition": "The V-shaped opening between raised and lowered warp threads through which the shuttle passes." },
+    { "slug": "pick", "term": "Pick", "definition": "A single pass of the weft through the shed." },
+    { "slug": "hemstitch", "term": "Hemstitch", "definition": "A finishing stitch worked along the woven edge while the cloth is still on the loom, securing the weft threads in groups." },
+    { "slug": "wet-finishing", "term": "Wet finishing", "definition": "Washing and pressing the woven cloth off the loom to set the fibres, even out the weave, and achieve the intended hand." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["waffle weave", "waffle cloth", "honeycomb weave sampler", "4-shaft waffle"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before the draft and threading instructions, here is a plain-English description of what is happening structurally. In waffle weave, the loom lifts different combinations of shafts on each pick so that some warp threads sit high and others sit low. This creates vertical and horizontal ridges around square depressions, giving the cloth a cellular surface that looks and feels like a waffle iron pattern. The ridges make the fabric more absorbent than plain weave at the same sett, which is why waffle cloth is a traditional choice for washcloths and kitchen cloths."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This sampler produces a 30 × 30 cm finished piece in 8/2 cotton, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }],
+            "text": "sett"
+          },
+          {
+            "type": "text",
+            "text": " at 16 EPI (6.3 ends/cm). Allow 15% take-up in the width and 12% shrinkage in the length after "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wet-finishing" } }],
+            "text": "wet finishing"
+          },
+          {
+            "type": "text",
+            "text": ": warp to a length of roughly 55 cm (including loom waste) and a width of 35 cm in the reed. Use 8/2 mercerised cotton in a single colour or two alternating colours for the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }],
+            "text": "warp"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }],
+            "text": "weft"
+          },
+          {
+            "type": "text",
+            "text": ". The total warp thread count at 35 cm × 6.3 ends/cm is approximately 220 ends."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "8/2 mercerised cotton, warp colour", "amount": "200", "unit": "g" },
+            { "name": "8/2 mercerised cotton, weft colour", "amount": "150", "unit": "g" },
+            { "name": "Four-shaft floor loom with 40 cm weaving width minimum", "amount": "1", "unit": "unit" },
+            { "name": "10-dent reed (used at 2 ends per dent for 20 EPI base, then adjusted to 16 EPI)", "amount": "1", "unit": "unit" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The draft" }]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Four-shaft waffle weave",
+            "loomType": "four-shaft",
+            "threading": [1,2,3,4,3,2,1,2,3,4,3,2,1,2,3,4,3,2,1,2,3,4,3,2],
+            "tieUp": [[0,1,1,1],[1,0,1,1],[1,1,0,1],[1,1,1,0]],
+            "treadling": [1,2,3,4,1,2,3,4,1,2,3,4]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading the draft: the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading" } }],
+            "text": "threading"
+          },
+          {
+            "type": "text",
+            "text": " is a point draw: 1, 2, 3, 4, 3, 2, repeating across the full warp width. The tie-up lifts three shafts on each treadle, leaving one shaft down. Treadle 1 leaves shaft 1 down; treadle 2 leaves shaft 2 down; and so on. This is sometimes called an \"opposites\" tie-up, because each treadle depresses the shaft that corresponds to it and lifts the other three. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treadling" } }],
+            "text": "treadling"
+          },
+          {
+            "type": "text",
+            "text": " follows the sequence 1, 2, 3, 4 in a straight repeat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warping and threading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wind 220 ends on the warping board to a length of 55 cm. Beam the warp with smooth, even tension, inserting lease sticks to preserve the thread order. Thread each end through the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }],
+            "text": "heddle"
+          },
+          {
+            "type": "text",
+            "text": " on the correct shaft following the 1-2-3-4-3-2 point draw, working from right to left. Sley the reed at 16 EPI: for a 10-dent reed, sley 1 end per dent in most dents and 2 ends per dent in every sixth dent, distributing across the 35 cm width. Tie onto the front apron rod in small bouts and tension evenly before weaving the header."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave 2 cm of plain weave (treadles 1+3 alternating with 2+4 if your tie-up allows, or tie up separately) as a header. This spreads the warp to the correct width and gives the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hemstitch" } }],
+            "text": "hemstitch"
+          },
+          {
+            "type": "text",
+            "text": " a firm base."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving the pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the first "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shed" } }],
+            "text": "shed"
+          },
+          {
+            "type": "text",
+            "text": " by pressing treadle 1 (shafts 2, 3, 4 rise; shaft 1 stays down). Pass the shuttle through. Beat gently: waffle weave should be beaten to a square "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pick" } }],
+            "text": "pick"
+          },
+          {
+            "type": "text",
+            "text": " count matching the sett, roughly 6.3 picks per cm. Treadle sequence: 1, 2, 3, 4, repeat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cell pattern becomes visible after 3 to 4 repeats of the treadling sequence. If the cloth looks flat rather than cellular, the beat is too heavy: ease off. The cells form because each treadle leaves a different shaft's threads at the bottom of the shed, allowing the weft to dip into the resulting gap on each pass."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continue weaving until the piece measures 35 cm on the loom (this will finish at approximately 30 cm after shrinkage). Weave 1 cm of plain weave to close the piece and work a hemstitch in groups of 4 warp ends."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut the cloth from the loom leaving at least 10 cm of warp fringe. If a fringed finish is not intended, fold the fringe to the back and slip-stitch. Wet finish by hand-washing in warm water (around 30 °C) with a small amount of washing-up liquid. Squeeze gently: do not wring. Rinse thoroughly, then roll in a clean towel to remove excess water. Lay flat to dry and press with a damp cloth and a medium iron while still slightly damp. The cloth will contract and the cellular surface will become more pronounced."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Cells are barely visible",
+              "solution": "The beat is too heavy. Reduce beating force so the picks sit at the same density as the sett. Waffle weave needs a balanced, not a packed, beat."
+            },
+            {
+              "problem": "Warp threads bunching on the same shaft",
+              "solution": "Check the threading sequence. A threading error (two consecutive ends on the same shaft) collapses the cell structure locally. Re-thread the affected dents."
+            },
+            {
+              "problem": "Cloth is narrower than planned at the fell",
+              "solution": "The weft is being pulled too tightly into the shed. Use a wider arc when laying the weft and pack slightly looser before beating."
+            },
+            {
+              "problem": "Cells open up after wet finishing",
+              "solution": "This is expected: wet finishing relaxes the threads and the cells become more defined. If they are too open, the sett is too loose; try one more end per centimetre next time."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
