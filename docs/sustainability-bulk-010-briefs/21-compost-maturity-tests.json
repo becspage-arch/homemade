@@ -1,0 +1,160 @@
+{
+  "slug": "compost-maturity-tests",
+  "title": "Testing whether compost is ready to use",
+  "subtitle": "The cress test, stability test, and sensory checks for finished compost",
+  "excerpt": "Compost that looks finished may still be releasing ammonia, consuming oxygen, or decomposing at a rate that damages plant roots. These are the three low-cost tests for maturity: the cress germination test, the self-heating test, and the basic sensory check, with what to do if the compost fails each one.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "USCC (US Composting Council) Test Methods for the Examination of Composting and Compost (TMECC) for the cress germination test and maturity definitions. Garden Organic 'Composting' factsheets. RHS compost advisory guidance. BSI PAS 100:2011 for specification of composted materials.",
+  "approximateCostGbp": 2,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cress-germination-test",
+      "term": "Cress germination test",
+      "definition": "A bioassay for compost maturity in which garden cress seeds are sown in the test compost and compared to seeds sown in standard compost or cocoitr. A germination rate of 90% or above compared to the control indicates safe maturity."
+    },
+    {
+      "slug": "phytotoxins",
+      "term": "Phytotoxins",
+      "definition": "Compounds in immature compost that inhibit seed germination and root growth. Commonly include ammonia, organic acids, and ethylene produced during decomposition. They are broken down as compost matures."
+    }
+  ],
+  "techniqueSlugs": ["assessing-finished-compost-quality", "testing-whether-compost-is-ready-to-use"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Visual assessment alone is unreliable for compost maturity. Material can look dark and crumbly but still contain "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "phytotoxins" } }],
+            "text": "phytotoxins"
+          },
+          {
+            "type": "text",
+            "text": " that inhibit germination and root growth. Three simple tests give a reliable picture of whether compost is safe to use: the sensory check, the self-heating test, and the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cress-germination-test" } }],
+            "text": "cress germination test"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 1: sensory check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Finished compost smells like fresh earth. It does not smell of ammonia, sulphur, or rot. Squeeze a handful: it should hold its shape, feel slightly moist, and release no heat. The colour should be dark brown to black throughout, with no orange or green-brown raw material zones. Visible white fungal threads are fine and indicate active biology."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 2: self-heating test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take a 500 ml sample of compost and seal it in a plastic bag or insulated container at room temperature. After 3 days, insert a compost thermometer. If the temperature is above 35°C, the compost is still actively decomposing and not ready to use. A mature compost should be within 2 to 3°C of the ambient temperature after 3 days sealed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test 3: cress germination test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill two small pots: one with the test compost and one with commercial compost or coir as the control." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sow 10 cress seeds in each pot at the surface, water lightly, and place in the same light and temperature conditions." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count germinated seeds after 5 days. A mature compost passes if the germination percentage in the test pot is 90% or more of the control pot's rate. If 9 seeds germinated in the control, the test compost passes at 8 seeds." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do if the compost fails" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the self-heating test shows active decomposition, return the compost to the heap and leave for another 4 to 8 weeks. Turn the heap once to mix in any fresh material from the edges and re-test."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the cress test fails (below 90% germination), but the sensory check and self-heating test both pass, the compost may have a pH issue. Test pH with a cheap indicator strip: if below 5.5 or above 8.5, lime can correct low pH; water thoroughly to leach excess salts if pH is high."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Uses matched to maturity level" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fully mature (passes all three tests): safe for seed sowing, seedling potting, mulching around young plants" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stable but not fully mature (passes sensory and heating tests, fails cress): safe as a soil conditioner dug into bare ground in autumn. Not safe for direct seed contact or pot use." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Actively decomposing (fails heating test): dig into heavy clay well ahead of planting only. Never use directly on roots or seeds." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

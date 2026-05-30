@@ -1,0 +1,184 @@
+{
+  "slug": "wet-room-insulation-moisture-management",
+  "title": "Insulating a wet room without trapping moisture",
+  "subtitle": "Vapour-open vs vapour-closed insulation strategies for bathrooms and shower rooms",
+  "excerpt": "Insulating a wet room requires careful thought about moisture management. The wrong specification traps moisture in the wall structure and causes mould, timber rot, or masonry damage. This is the decision framework for choosing between vapour-open and vapour-closed systems, with worked examples for a tiled shower wall and an external bathroom wall.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE IP 14/88 Assessing condensation risk in walls with internal insulation. AECB guidance on moisture-safe internal wall insulation. BSI PD 6693 Hygrothermal performance of buildings. Approved Document F (ventilation) for wet-room extraction requirements.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-open",
+      "term": "Vapour-open",
+      "definition": "A material or system with relatively high vapour permeability, allowing moisture vapour to diffuse through it. Wood fibre and mineral wool are vapour-open insulation materials."
+    },
+    {
+      "slug": "vapour-closed",
+      "term": "Vapour-closed",
+      "definition": "A material or system with low vapour permeability, restricting moisture movement. PIR board and closed-cell spray foam are vapour-closed; they block vapour rather than allowing it to pass."
+    },
+    {
+      "slug": "interstitial-condensation",
+      "term": "Interstitial condensation",
+      "definition": "Condensation forming within the thickness of a building element when warm moist air migrates through the construction and meets a surface at or below the dew point."
+    },
+    {
+      "slug": "relative-humidity",
+      "term": "Relative humidity",
+      "definition": "The percentage of water vapour present in air compared to the maximum it can hold at that temperature. Bathrooms typically reach 80 to 95% RH during and after bathing; reducing this requires adequate mechanical ventilation."
+    }
+  ],
+  "techniqueSlugs": ["internal-wall-insulation-dew-point", "vapour-control-layers-explained"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A wet room generates high "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "relative-humidity" } }],
+            "text": "relative humidity"
+          },
+          {
+            "type": "text",
+            "text": " for short periods. Insulating the external walls of that room is good for thermal performance but creates a risk: if the wall detail traps moisture, the result is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interstitial-condensation" } }],
+            "text": "interstitial condensation"
+          },
+          {
+            "type": "text",
+            "text": ", mould growth behind the tiles, and in timber-frame construction, structural rot. The choice is not whether to insulate but which system to use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The two valid strategies" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Strategy 1: "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-closed" } }],
+            "text": "vapour-closed"
+          },
+          {
+            "type": "text",
+            "text": " on the warm side, nothing on the cold side. A completely impermeable membrane (tank-grade polyethylene or PIR foil boards) on the room side of the wall prevents vapour entering the construction at all. It relies on the membrane being truly continuous and all joints being taped. Used in new-build wet rooms with screed floors and tile-backer board wet rooms."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Strategy 2: "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-open" } }],
+            "text": "vapour-open"
+          },
+          {
+            "type": "text",
+            "text": " throughout. A breathable insulation (wood fibre board, mineral wool slab) that allows any moisture that enters to pass through and exit at the external face. This requires the external face of the wall to be more permeable than the internal face. Works well on solid masonry walls with an external brick face and a lime render system on the outside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What does not work" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A vapour-closed insulation layer (PIR) installed without a continuous membrane on the warm side. Any penetration, tile anchor, socket box, or service hole allows warm moist air to reach the cold back of the PIR, where it condenses. This is the most common failure mode when wet rooms are insulated using a kitchen or living-room detail without adaptation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: tiled shower wall on external masonry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 215 mm solid brick external wall being re-tiled. The proposed spec: 50 mm of wood fibre board fixed to the brick with lime-based adhesive, then a tanking membrane on the face, then a render coat, then tiles. The wood fibre is vapour-open: any moisture that gets behind the tanking layer can dry back through the wood fibre into the brick. The brick exterior, if lime-pointed rather than cement-pointed, can also dry to outside. This spec is correct for a pre-1919 solid-wall house."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: cavity wall with plasterboard lining" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 1975 cavity wall bathroom being re-boarded. The cavity is already filled with blown mineral wool. The proposed spec: remove the existing plasterboard, install 25 mm PIR tile backer board directly to the block inner leaf, apply a full tanking membrane across the face with taped joints, tile directly. The tanking membrane is the vapour barrier; nothing penetrates it except pre-planned socket penetrations with sealed back-boxes. This spec works because the vapour-closed layer is truly continuous."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ventilation is not optional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Neither strategy reduces moisture-related risk without adequate extraction. Approved Document F requires a minimum 15 l/s extract rate in bathrooms without openable windows, 8 l/s where there is a window. A 100 mm fan running for 15 minutes after bathing (using the standard run-on timer) removes the bulk of shower moisture before it has time to diffuse into the walls. Insulating a wet room without checking and if necessary upgrading the extraction rate is incomplete work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before insulating any pre-1919 wet room, run a hygrothermal analysis (WUFI or equivalent). Wall material, humidity, and insulation type interact in ways that simple rules miss. A specialist energy assessor can run this for a few hundred pounds."
+          }
+        ]
+      }
+    ]
+  }
+}

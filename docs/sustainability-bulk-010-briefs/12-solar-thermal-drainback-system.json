@@ -1,0 +1,155 @@
+{
+  "slug": "solar-thermal-drainback-system",
+  "title": "How a drainback solar thermal system works",
+  "subtitle": "The freeze-safe alternative to glycol-pressurised solar hot water",
+  "excerpt": "A drainback solar thermal system empties the collector pipework when the pump stops, eliminating the risk of frost damage and glycol degradation. It is more reliable and lower-maintenance than a pressurised glycol system over a 20-year horizon. This explains how drainback systems work, what they cost, and how they compare to the pressurised alternative.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar Energy UK (previously RECC) guidance on solar thermal systems. Solartwin drainback system technical documentation (publicly available). CIBSE TM66 Solar Energy in Buildings. EST 'Solar water heating' guidance.",
+  "approximateCostGbp": 5500,
+  "paybackYears": 18,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "drainback-system",
+      "term": "Drainback system",
+      "definition": "A solar thermal system where the water in the collector and connecting pipework drains into a dedicated drainback tank whenever the pump stops. The collector is empty when no heat is being collected, eliminating freeze risk and preventing overheating stagnation."
+    },
+    {
+      "slug": "glycol-circuit",
+      "term": "Glycol circuit",
+      "definition": "A solar thermal system that uses an antifreeze mixture of water and propylene glycol in the collector circuit, separated from the domestic hot water by a heat exchanger. The glycol prevents freezing but degrades over 5 to 10 years and requires testing and replacement."
+    },
+    {
+      "slug": "stagnation",
+      "term": "Stagnation",
+      "definition": "The condition where a solar thermal collector absorbs solar energy but the fluid inside cannot move (pump stopped, hot water cylinder full, power cut). In pressurised systems, stagnation can overheat and degrade the glycol. In drainback systems, stagnation is prevented by design as the collector empties when the pump stops."
+    }
+  ],
+  "techniqueSlugs": ["solar-thermal-hot-water", "choosing-between-solar-pv-and-solar-thermal"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two main solar thermal system types are pressurised "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "glycol-circuit" } }],
+            "text": "glycol circuits"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drainback-system" } }],
+            "text": "drainback systems"
+          },
+          {
+            "type": "text",
+            "text": ". Both solve the freeze problem, but in different ways. Glycol systems add antifreeze to the fluid; drainback systems remove the fluid from the collector when the pump stops. Each approach has distinct maintenance implications over the life of the installation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How drainback works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When the controller detects that the collector temperature is higher than the cylinder, the pump starts. Water fills the collector and pipework from the drainback tank in the roof. When the pump stops, gravity or a slight downward slope to the pipework drains the collector back to the tank. The collector sits empty and there is no fluid in it to freeze, boil, or degrade. The drainback tank is typically 20 to 30 litres, sited in a frost-free space, and insulated."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Advantages over glycol" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No glycol to test, refill, or replace every 5 to 10 years. The maintenance interval for a drainback system is primarily the pump and controller, not the fluid." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stagnation" } }], "text": "Stagnation" }, { "type": "text", "text": " cannot occur because the collector is empty when the pump stops. Glycol stagnation in high summer can reach 200°C in the collector, rapidly degrading the fluid and pressurising the system." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The working fluid is plain water, which transfers heat more efficiently than glycol solutions." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Constraints and requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The collector and all pipework between the collector and the drainback tank must drain under gravity when the pump stops. This requires a minimum 3-degree slope on all horizontal runs toward the tank. Flat or upward-sloping horizontal pipe sections prevent full drainage and remove the freeze-protection benefit. Drainback systems therefore suit roof installations where the collector is above the drainback tank, with a straight, downward-sloping pipework run. Flat-roof or below-ridge installations may not drain adequately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cost comparison" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A drainback system for a two-person household (2 m² evacuated-tube collector, drainback tank, controller, pump, installation) costs around 3,500 to 5,500 pounds installed. A comparable glycol system costs 3,000 to 4,500 pounds. The drainback premium is 500 to 1,000 pounds; over 20 years with three glycol service calls at 150 to 300 pounds each, the life-cycle cost difference disappears. Both systems save roughly 1,200 to 1,500 kWh per year on domestic hot water in the UK Midlands."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing between the two" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose drainback if: you want low maintenance over 15 to 20 years, pipework can run on a consistent downward slope, and you can absorb a small upfront premium."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose glycol if: the pipework layout cannot slope to drain, or if upfront cost is the deciding factor. Both apply on many split-level houses and complex rooflines."
+          }
+        ]
+      }
+    ]
+  }
+}

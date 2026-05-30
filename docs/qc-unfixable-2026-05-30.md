@@ -297,3 +297,32 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - rabbit-myxomatosis-and-rhd-vaccination voice-violation,grade-level-strict — applied: 
 - rabbit-snuffles-management grade-level-strict — applied: 
 - twin-lamb-disease-recognition-and-response grade-level-strict — applied: 
+
+- air-sealing-electrical-back-boxes grade-level-strict — applied: 
+- applying-masonry-waterproofing-cream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- borehole-water-supply-feasibility voice-violation,grade-level-strict — applied: 
+- community-energy-co-op-joining voice-violation,grade-level-strict — applied: 
+- dishwasher-vs-handwashing-water-efficiency voice-violation,grade-level-strict — applied: 
+- drip-emitter-maintenance grade-level-strict — applied: 
+- fitting-a-fireplace-tiled-hearth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-staircase-carpet-runner-with-gripper-rods hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-acoustic-wall-panels-on-timber-battens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-dot-and-dab-insulated-plasterboard hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-plywood-subfloor-over-timber-joists hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-tongue-and-groove-mdf-wall-panelling hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fixing-squeaky-floorboards-from-above hero-missing — applied: hero-fill-deferred-to-standalone-script
+- heat-pump-buffer-vessel-sizing grade-level-strict — applied: 
+- injecting-a-chemical-damp-proof-course hero-missing — applied: hero-fill-deferred-to-standalone-script
+- laying-luxury-vinyl-tile-click-flooring hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- legionella-cycle-heat-pump-hot-water voice-violation,grade-level-strict — applied: 
+- off-grid-internet-connectivity-options voice-violation,grade-level-strict — applied: 
+- off-grid-property-insurance-guide voice-violation,grade-level-strict — applied: 
+- over-rafter-insulation-board grade-level-strict — applied: 
+- peat-free-garden-supply-swaps voice-violation,grade-level-strict — applied: 
+- pond-for-surface-water-management grade-level-strict — applied: 
+- routing-unwanted-homewares-to-charities grade-level-strict — applied: 
+- safe-battery-removal-before-disposal voice-violation,grade-level-strict — applied: 
+- spray-foam-removal-and-remediation grade-level-strict — applied: 
+- warm-loft-vs-cold-loft-decision grade-level-strict — applied: 
+- waste-free-gift-wrapping-alternatives voice-violation,grade-level-strict — applied: 
+- window-frame-perimeter-draught-sealing grade-level-strict — applied: 

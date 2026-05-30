@@ -1,0 +1,184 @@
+{
+  "slug": "mvhr-commissioning-and-filter-schedule",
+  "title": "Commissioning and maintaining an MVHR system",
+  "subtitle": "Airflow balancing, filter replacement intervals, and the annual service checklist",
+  "excerpt": "A mechanical ventilation with heat recovery system delivers fresh air and removes stale air while recovering 80 to 90% of the heat in the outgoing air stream. An incorrectly commissioned or poorly maintained system wastes energy, delivers inadequate ventilation, or circulates dirty air. This is the commissioning sequence and annual maintenance schedule.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Approved Document F (ventilation, 2021 edition) on mechanical ventilation requirements. Paul Novus and Zehnder ComfoAir installer commissioning guides (publicly available). NHBC Standards chapter 3.2 on MVHR in new dwellings. Passivhaus Institute guidance on MVHR commissioning.",
+  "approximateCostGbp": 3500,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mvhr",
+      "term": "MVHR",
+      "definition": "Mechanical Ventilation with Heat Recovery. A whole-house ventilation system that uses a heat exchanger to transfer warmth from outgoing stale air to incoming fresh air, delivering fresh air throughout the house while retaining most of the heat."
+    },
+    {
+      "slug": "heat-recovery-efficiency",
+      "term": "Heat recovery efficiency",
+      "definition": "The percentage of heat in the outgoing airstream that is transferred to the incoming airstream. Expressed as a fraction from 0 to 100%. Most MVHR units achieve 85 to 93% under standard test conditions; real-world efficiency depends on flow balance and duct insulation."
+    },
+    {
+      "slug": "summer-bypass",
+      "term": "Summer bypass",
+      "definition": "A mode in which the MVHR heat exchanger is bypassed, allowing cool night air to enter without being warmed by the outgoing stream. Used in summer to flush heat out of the building at night."
+    }
+  ],
+  "techniqueSlugs": ["mvhr-decision-guide", "ventilation-after-draughtproofing", "insulation-and-ventilation-together"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mvhr" } }],
+            "text": "MVHR"
+          },
+          {
+            "type": "text",
+            "text": " unit is only as good as its commissioning. Supply and extract flows must be balanced: equal volumes, with supply to habitable rooms and extract from wet rooms. An unbalanced system causes draughts and reduces "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-recovery-efficiency" } }],
+            "text": "heat recovery efficiency"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Commissioning: balancing the airflows" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Approved Document F specifies minimum extract rates for wet rooms: 13 l/s continuous for bathrooms (or 15 l/s boost), 13 l/s for kitchens (or 60 l/s boost). Supply rates to habitable rooms should total to within 10% of the total extract rate."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the unit to its normal continuous rate. Using a balometer or an anemometer with a flow hood, measure the supply rate at each supply valve. Record the result." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the extract rate at each extract valve. Compare to the target flow for each room based on Approved Document F minimums." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Adjust the dampers on the supply and extract valves until each room is within 10% of its target. On most systems, the valves have a recessed adjustment slot accessible with a flat screwdriver." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm total supply equals total extract within 10%. If the unit has a bypass, confirm the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "summer-bypass" } }], "text": "summer bypass" }, { "type": "text", "text": " opens and closes correctly at the controller's threshold temperature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filter replacement schedule" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most MVHR units carry two filter sets: a coarse G4 filter on the outdoor air inlet and a finer F7 filter on the supply air. The G4 filter removes insects and large particles; the F7 removes fine particles and some pollen. Filter replacement interval depends on air quality, duct condition, and whether a pollen filter is fitted:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Urban location, no pets: replace G4 every 6 months, F7 every 12 months" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rural or agricultural area: replace G4 every 3 months, F7 every 6 months" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Household with cats or dogs: replace G4 every 3 months regardless of location" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual service checklist" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replace filters and record the date" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Inspect the heat exchanger core visually for dust or mould" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the condensate drain from the unit is clear and flowing freely" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check all supply and extract valves are unobstructed" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Test the summer bypass operation from the controller" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure airflow at two or three key valves to confirm system balance has not drifted" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs of a poorly maintained system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Condensation on windows in a well-insulated house that has MVHR is usually a sign that the extract rate has dropped due to blocked filters or a closed valve. A musty smell at supply valves indicates mould in the heat exchanger or ductwork, often caused by a blocked condensate drain. Both problems are easily resolved with filter replacement and drain clearing; both indicate the service interval has been exceeded."
+          }
+        ]
+      }
+    ]
+  }
+}

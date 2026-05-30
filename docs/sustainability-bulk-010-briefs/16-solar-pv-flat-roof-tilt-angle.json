@@ -1,0 +1,161 @@
+{
+  "slug": "solar-pv-flat-roof-tilt-angle",
+  "title": "Optimal tilt angle and row spacing for flat roof solar panels",
+  "subtitle": "Calculating the angle that maximises output while avoiding inter-row shading",
+  "excerpt": "Flat roof solar panels mounted on tilt frames sacrifice some output compared to an optimally pitched roof, but the angle and spacing can be calculated to get within 10 to 15% of the optimal. This is the tilt angle calculation for a UK latitude and the row spacing formula to avoid self-shading in winter.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "PVGIS EU Solar Irradiance tool (European Commission, open access). Solar Trade Association UK installer guidance. Renewable Energy Consumer Code flat-roof guidance. BRE Digital solar PV yield assessment.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "tilt-angle",
+      "term": "Tilt angle",
+      "definition": "The angle between the plane of a solar panel and the horizontal. An angle of 0 degrees is flat; 90 degrees is vertical. At UK latitudes, annual yield is maximised at around 35 to 40 degrees for a south-facing array."
+    },
+    {
+      "slug": "inter-row-shading",
+      "term": "Inter-row shading",
+      "definition": "Shading cast by one row of solar panels onto the row behind it at low sun angles in winter. Avoiding inter-row shading requires a minimum row spacing that depends on the panel tilt angle and the winter sun elevation at the site's latitude."
+    },
+    {
+      "slug": "performance-ratio",
+      "term": "Performance ratio",
+      "definition": "The ratio of actual system output to the theoretical maximum under standard test conditions. A flat-roof system typically achieves a performance ratio of 0.75 to 0.85, compared to 0.80 to 0.90 for a well-installed pitched-roof system."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof", "flat-roof-solar-panel-ballasted-mounting", "solar-pv-shading-assessment"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A flat roof gives full control over panel orientation and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tilt-angle" } }],
+            "text": "tilt angle"
+          },
+          {
+            "type": "text",
+            "text": ". That is the advantage. The constraint is that tilted panels cast shadows on the panels behind them in winter, so rows must be spaced further apart than on a pitched roof. The trade-off is between optimal tilt for yield versus closer spacing for maximum installed capacity per square metre. This calculation gives the numbers for a UK location."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Optimal tilt angle for UK latitudes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At 51°N (London), the sun at solar noon on the winter solstice is only 15.5 degrees above the horizon. Annual yield is maximised at a tilt of approximately 35 to 38 degrees. At 54°N (Manchester), the optimal tilt is 37 to 40 degrees. At 56°N (Edinburgh), 40 to 43 degrees. However, the yield difference between 30 and 40 degrees is only 3 to 5% per annum. Specifying 30 degrees instead of 38 degrees allows closer row spacing and more panels in the same area, which can compensate for the reduced yield per panel."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Row spacing to avoid inter-row shading" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inter-row-shading" } }],
+            "text": "Inter-row shading"
+          },
+          {
+            "type": "text",
+            "text": " occurs when the panel in front casts a shadow on the panel behind. The shadow is longest at the winter solstice when the sun is lowest. The formula for minimum row spacing:"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "S = H / tan(solar elevation at solstice)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Where H is the shadow height of the tilted panel (H = panel height x sin(tilt angle)) and solar elevation at the winter solstice = 90 - latitude - 23.5 degrees."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: London, 30-degree tilt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Location: 51.5°N. Winter solstice solar elevation: 90 - 51.5 - 23.5 = 15 degrees. Panel dimensions: 1.75 m long. Shadow height H = 1.75 x sin(30) = 0.875 m. Minimum row spacing S = 0.875 / tan(15) = 0.875 / 0.268 = 3.27 m from front edge of one row to front edge of the next. If panels are mounted back-to-back in 1.75 m rows, the gap between rows is 3.27 - 1.75 = 1.52 m."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: same site, 15-degree tilt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "H = 1.75 x sin(15) = 0.453 m. Minimum row spacing = 0.453 / tan(15) = 1.69 m from front edge to front edge. Gap between rows: 1.69 - 1.75 = negative, meaning the panels can overlap horizontally. In practice, use a 1.8 m row spacing with 15-degree tilt on a 6,000 m² flat roof to maximise installed capacity, accepting the 3 to 5% yield reduction per panel compared to 30-degree tilt."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Performance ratio impact" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Even with correct spacing, flat roof systems have a lower "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "performance-ratio" } }],
+            "text": "performance ratio"
+          },
+          {
+            "type": "text",
+            "text": " than pitched roof systems. Dust builds up on low-tilt panels because rain does not wash them as well. Allow for a 5 to 8% yield reduction for self-cleaning effects when estimating annual output."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "off-grid-internet-connectivity-options",
+  "title": "Internet connectivity options for off-grid and remote properties",
+  "subtitle": "Comparing satellite broadband, fixed wireless, 4G and 5G router options, and what each costs and delivers",
+  "excerpt": "Rural and off-grid properties that cannot receive fibre or ADSL have three realistic internet options: satellite broadband (low-Earth orbit services), fixed wireless access from a local provider, and 4G or 5G mobile router. Each has a different cost profile, latency, and power consumption. This is the comparison and selection guide based on UK rural coverage.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofcom Connected Nations UK report (2024). SpaceX Starlink residential specifications. OneWeb and Eutelsat broadband comparison. UK Wireless Internet Service Provider Association (WISPA) guidance. BDUK (Building Digital UK) rural connectivity programme documentation.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "low-earth-orbit-satellite",
+      "term": "Low-Earth orbit satellite",
+      "definition": "A satellite network operating at 550 to 600 km altitude rather than the 35,786 km of geostationary satellites. The much shorter signal path reduces latency from 600ms (geostationary) to 20 to 40ms, making LEO satellite internet usable for video calls and most internet applications."
+    },
+    {
+      "slug": "fixed-wireless-access",
+      "term": "Fixed wireless access",
+      "definition": "A point-to-point or point-to-multipoint radio link from a local wireless internet service provider (WISP) mast to an antenna at the customer's property. Speeds of 20 to 100 Mbps are typical; availability depends on line-of-sight to the mast."
+    }
+  ],
+  "techniqueSlugs": ["solar-battery-system-sizing", "off-grid-power-demand-audit"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As of 2025, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "low-earth-orbit-satellite" } }],
+            "text": "low-Earth orbit satellite"
+          },
+          {
+            "type": "text",
+            "text": " broadband has changed the options for remote properties. Previously the choice was between slow satellite (high latency, expensive) and a 4G dongle. Now there is a service that matches urban broadband in most conditions, and cheaper but coverage-dependent alternatives."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option comparison" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "LEO satellite (Starlink residential as of 2025): hardware kit around 350 pounds; monthly subscription around 75 to 99 pounds. Typical speeds 100 to 300 Mbps download, 20 to 50 Mbps upload. Latency 20 to 40ms. Works anywhere with a clear view of a 100-degree cone of sky. Power consumption: the dish uses 50 to 75W continuously. A full day of internet use costs roughly 1.5 to 2 kWh." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fixed wireless access (WISP): hardware from free to 200 pounds depending on provider; monthly subscription 30 to 60 pounds. Speeds 20 to 100 Mbps. Latency 5 to 15ms. Requires line of sight to the provider's mast, typically within 10 to 15 km. Check coverage using the WISPA member finder or the BDUK coverage checker. This is the lowest-power option. A point-to-point radio link uses 5 to 15W." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "4G or 5G mobile router: hardware 60 to 200 pounds; SIM plan 15 to 40 pounds per month on a data-only SIM. Speeds variable: 10 to 100 Mbps on 4G, up to 300 Mbps on 5G where coverage exists. Latency 30 to 60ms. Requires mobile signal. Check each operator's outdoor coverage maps (not indoor maps) for your grid reference. An external directional antenna (10 to 40 pounds) improves signal in marginal areas. Router uses 5 to 20W." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Power budget for off-grid systems" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a solar-battery off-grid installation, the internet connection's continuous power draw matters. A Starlink dish at 65W average running 24 hours per day consumes 1.56 kWh per day, equivalent to a chest freezer. A 4G router with external antenna at 15W consumes 0.36 kWh per day. On a 2 to 3 kWp solar array with 10 kWh of battery storage, the difference between these choices affects what other loads are viable in winter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Decision guide" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No mobile signal and no WISP coverage: LEO satellite is the only viable option. Budget for the additional solar capacity the dish demands." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "WISP coverage available: "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fixed-wireless-access" } }],
+            "text": "fixed wireless access"
+          },
+          {
+            "type": "text",
+            "text": " is the best value for an off-grid system. It has the lowest monthly cost, the lowest power draw, and better latency than satellite." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Moderate mobile signal (one or two bars): an external directional antenna on a 4G router usually gives reliable connectivity. Test with a hotspot before buying a router and SIM contract." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Government subsidy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UK Gigabit Voucher Scheme (BDUK) provides vouchers of up to 4,500 pounds for rural homes that cannot receive 24 Mbps or faster broadband. The voucher can be applied to a group scheme (several neighbouring properties) to extend an existing fibre or WISP connection to your area. Check eligibility at the BDUK website before committing to a monthly satellite subscription."
+          }
+        ]
+      }
+    ]
+  }
+}

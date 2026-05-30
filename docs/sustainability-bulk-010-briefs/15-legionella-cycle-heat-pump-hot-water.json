@@ -1,0 +1,147 @@
+{
+  "slug": "legionella-cycle-heat-pump-hot-water",
+  "title": "Legionella protection on heat pump hot water cylinders",
+  "subtitle": "Why heat pumps run a weekly high-temperature cycle and how to set it correctly",
+  "excerpt": "Heat pumps operate most efficiently with low flow temperatures, but Legionella bacteria multiply in water stored between 20 and 45°C. A weekly pasteurisation cycle at 60°C kills the bacteria without running the heat pump at inefficient temperatures all the time. This explains the risk, the required cycle settings, and how to configure your controller.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HSE L8 Approved Code of Practice: Legionnaires' disease: the control of legionella bacteria in water systems (2013). CIBSE TM13 Minimising the risk of Legionnaires' disease. Heat Pump Association Technical Note on DHW temperatures and legionella control. Viessmann and Vaillant heat pump installation manuals (publicly available).",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "legionella",
+      "term": "Legionella",
+      "definition": "A genus of bacteria, principally Legionella pneumophila, that causes Legionnaires' disease when inhaled in water droplets. The bacteria multiply most actively at temperatures between 20 and 45°C and are killed rapidly at 60°C or above."
+    },
+    {
+      "slug": "pasteurisation-cycle",
+      "term": "Pasteurisation cycle",
+      "definition": "A timed heating event, typically weekly, in which the hot water cylinder is raised to 60°C and held for one hour to kill any Legionella bacteria present. Also called an anti-legionella cycle, thermal disinfection cycle, or hygienic function."
+    },
+    {
+      "slug": "immersion-heater",
+      "term": "Immersion heater",
+      "definition": "An electric resistance element fitted inside a hot water cylinder. On heat pump installations, the immersion heater is typically used only for the weekly pasteurisation cycle and for emergency backup, not for routine hot water heating."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-hot-water-cylinder-sizing", "insulating-a-hot-water-cylinder"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heat pump runs at best efficiency with flow temperatures of 35 to 45°C. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "legionella" } }],
+            "text": "Legionella"
+          },
+          {
+            "type": "text",
+            "text": " bacteria multiply in stored water at these same temperatures. The solution is to operate the cylinder at normal heat pump temperatures for most of the week, and raise it to 60°C once a week for a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pasteurisation-cycle" } }],
+            "text": "pasteurisation cycle"
+          },
+          {
+            "type": "text",
+            "text": ". This weekly cycle is built into most modern heat pump controllers and should be enabled on every domestic installation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Who the requirement applies to" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "HSE L8 applies to employers and those responsible for premises with systems at risk. For a private dwelling, there is no legal obligation under L8, but the guidance still represents good practice. MCS installation requirements for heat pumps in domestic properties include setting the DHW cylinder to deliver hot water at 60°C to the taps, either via the heat pump or via an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "immersion-heater" } }],
+            "text": "immersion heater"
+          },
+          {
+            "type": "text",
+            "text": " cycle. Check your installation certificate for the confirmed setting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the cycle works in practice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For daily use, the heat pump heats the cylinder to its normal set point (50 to 55°C). Once a week, the controller triggers the immersion heater to raise the cylinder to 60°C and hold it for one hour. Many systems use the immersion specifically for this cycle because the heat pump cannot always reach 60°C efficiently."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Energy cost of the cycle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raising a 200-litre cylinder from 50°C to 60°C requires approximately 2.3 kWh. At 27p/kWh, this costs around 62p per cycle, or 32 pounds per year. This is the energy penalty for the legionella protection function. Scheduling the cycle on an Economy 7 rate at 12p/kWh reduces the cost to around 14 pounds per year."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the cycle on common UK controllers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mitsubishi Ecodan: DHW settings, Legionella Prevention. Set the day (Friday is recommended) and time. Vaillant arotherm: DHW settings, Thermal disinfection. Set the day and 60°C target. Daikin Altherma: Domestic hot water, Disinfection function. Enable and set a weekly schedule."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Confirming the cycle ran" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most controllers show the last successful DHW disinfection cycle in the status log. Check this log after the first few cycles to confirm the cylinder is reaching 60°C within the programmed window. If it is not reaching temperature, the immersion heater element may be scaled or faulty, or the cylinder is oversized relative to the heat pump's capacity to pre-heat it."
+          }
+        ]
+      }
+    ]
+  }
+}

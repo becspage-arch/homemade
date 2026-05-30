@@ -1,0 +1,160 @@
+{
+  "slug": "over-rafter-insulation-board",
+  "title": "Over-rafter rigid board insulation for a pitched roof",
+  "subtitle": "Adding PIR board above the rafters to upgrade an under-insulated sloped ceiling",
+  "excerpt": "Where between-rafter insulation alone cannot meet the required thermal performance, rigid PIR board laid over the rafters from the outside gives additional resistance without reducing room height. This is the decision guide and installation sequence for an over-rafter upgrade, typically done when re-roofing or replacing sarking.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "TRADA Timber Frame Construction (5th edition) section on over-rafter insulation. gov.uk Approved Document L1B (2022) for sloped ceiling U-value targets. PIR Insulation Association technical guidance on over-rafter installation. AECB Warm Roof details.",
+  "approximateCostGbp": 4500,
+  "paybackYears": 12,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "circular-saw", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sarking",
+      "term": "Sarking",
+      "definition": "The membrane or boarding layer immediately below the tiles or slates on a pitched roof. It acts as a secondary weather barrier if tiles are displaced, and provides a surface for the tile battens. Over-rafter insulation boards sit on top of the sarking membrane or replace it."
+    },
+    {
+      "slug": "thermal-resistance",
+      "term": "Thermal resistance",
+      "definition": "The ability of a material or construction to resist heat flow. Expressed as R-value in m²K/W. Adding insulation layers in series gives additive R-values; 100 mm of PIR adds approximately 4.5 m²K/W."
+    },
+    {
+      "slug": "counter-batten",
+      "term": "Counter-batten",
+      "definition": "A batten fixed over the top of insulation boards to provide a ventilated cavity between the insulation face and the tile batten, and to give a fixing surface for the battens. Counter-battens run parallel to the rafters."
+    }
+  ],
+  "techniqueSlugs": ["loft-conversion-insulation-options", "insulating-below-rafters-warm-roof"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Over-rafter insulation is the preferred method for upgrading a sloped ceiling when access from inside is difficult or when the rafter depth is too shallow to carry the required insulation. With 100 mm of PIR between the rafters and 80 mm of PIR board over the top, the combined "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-resistance" } }],
+            "text": "thermal resistance"
+          },
+          {
+            "type": "text",
+            "text": " gives a U-value around 0.13 W/m²K, below the 0.18 Part L1B target. The work happens at roof level and requires lifting the tiles. Combine it with a re-roofing job if possible to control cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When this approach is appropriate" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Re-roofing is already planned: adding boards at this stage costs only the insulation and extra batten length. The labour is already in the programme." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The rafters are 75 mm deep or less and cannot hold enough between-rafter insulation to reach the target U-value" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The ceiling has exposed rafters or tongue-and-groove boarding that cannot be lowered by below-rafter boards" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The construction stack" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From outside in: tiles on battens, battens on "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "counter-batten" } }],
+            "text": "counter-battens"
+          },
+          {
+            "type": "text",
+            "text": ", counter-battens on PIR board, a breathable membrane, then PIR on "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sarking" } }],
+            "text": "sarking"
+          },
+          {
+            "type": "text",
+            "text": " or directly on the rafter tops. The membrane laps so condensation on the cool face of the PIR drains to the eaves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Board thickness and fixing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard over-rafter board thicknesses are 60, 80, 100, and 120 mm. The boards are fixed with structural screws long enough to pass through the board and at least 50 mm into the rafter. The fixing length calculation: board thickness plus rafter depth plus 50 mm minimum penetration. For 100 mm PIR over 100 mm rafters, use 250 mm screws at 600 mm centres. Use washers under the screw head to prevent the head pulling through the foil facing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thermal bridging at the rafter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The structural screws create a thermal bridge through the over-rafter layer. This is manageable: the screws are small in cross-section and spaced widely. The bigger bridge is the rafter itself. Continuous over-rafter insulation wraps the rafters and eliminates the rafter bridge that ruins the performance of between-rafter-only installations. This is the main thermal advantage of the over-rafter layer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Over-rafter work needs scaffolding and a roofer to lift and relay the tiles. Notify Building Regulations for a significant energy upgrade under Part L1B. For spans over 4 m, get the screw specification from the insulation manufacturer or a structural engineer."
+          }
+        ]
+      }
+    ]
+  }
+}

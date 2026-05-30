@@ -757,3 +757,47 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 11:09:15
+
+Generated: 2026-05-30T11:09:15.277Z
+
+Processed: 50
+PASS: 22
+STILL_BLOCKED: 28
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 116 |
+| body-missing-method | 32 |
+| hero-missing | 30 |
+| voice-violation | 20 |
+
+## Still BLOCKED (sample 20)
+
+- air-sealing-electrical-back-boxes: grade-level-strict
+- applying-masonry-waterproofing-cream: hero-missing
+- borehole-water-supply-feasibility: voice-violation, grade-level-strict
+- community-energy-co-op-joining: voice-violation, grade-level-strict
+- dishwasher-vs-handwashing-water-efficiency: voice-violation, grade-level-strict
+- drip-emitter-maintenance: grade-level-strict
+- fitting-a-fireplace-tiled-hearth: hero-missing
+- fitting-a-staircase-carpet-runner-with-gripper-rods: hero-missing
+- fitting-acoustic-wall-panels-on-timber-battens: hero-missing
+- fitting-dot-and-dab-insulated-plasterboard: hero-missing
+- fitting-plywood-subfloor-over-timber-joists: hero-missing
+- fitting-tongue-and-groove-mdf-wall-panelling: hero-missing
+- fixing-squeaky-floorboards-from-above: hero-missing
+- heat-pump-buffer-vessel-sizing: grade-level-strict
+- injecting-a-chemical-damp-proof-course: hero-missing
+- laying-luxury-vinyl-tile-click-flooring: hero-missing, grade-level-strict
+- legionella-cycle-heat-pump-hot-water: voice-violation, grade-level-strict
+- off-grid-internet-connectivity-options: voice-violation, grade-level-strict
+- off-grid-property-insurance-guide: voice-violation, grade-level-strict
+- over-rafter-insulation-board: grade-level-strict

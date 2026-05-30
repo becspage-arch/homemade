@@ -1,0 +1,180 @@
+{
+  "slug": "rocket-mass-heater-construction",
+  "title": "Building a rocket mass heater bench",
+  "subtitle": "Constructing a high-efficiency wood-burning mass heater with a horizontal flue bench for slow radiant heat release",
+  "excerpt": "A rocket mass heater burns small-diameter wood in a J-tube combustion chamber at over 1000°C, then routes the exhaust gases through a horizontal thermal mass bench before exiting through a low flue. The bench absorbs heat from the gases and releases it over 12 to 24 hours. Fuel consumption is 80 to 90% lower than a conventional log stove for equivalent heat output. This is the construction sequence for a cob-bench rocket mass heater in an outbuilding or workshop.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ianto Evans and Leslie Jackson 'Rocket Mass Heaters' (3rd ed, 2014). Erica Wisner rocket mass heater workshop notes. Peter van den Berg combustion research on J-tube geometry. Building Research Establishment (BRE) solid fuel appliance guidance for non-habitable outbuildings.",
+  "approximateCostGbp": 400,
+  "paybackYears": 3,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "angle-grinder", "isOptional": false },
+    { "slug": "brick-trowel", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "j-tube-combustion-chamber",
+      "term": "J-tube combustion chamber",
+      "definition": "The core of a rocket mass heater: a J-shaped channel where wood is fed horizontally into the short arm, combustion occurs in the vertical riser, and superheated gases exit upward. The geometry creates a natural draught and secondary combustion that burns gases that a conventional stove exhausts unburned."
+    },
+    {
+      "slug": "thermal-mass-bench",
+      "term": "Thermal mass bench",
+      "definition": "A horizontal structure, usually built from cob (clay, sand, and straw mixture) or brick with a cob render, through which the rocket heater exhaust is routed. The mass absorbs combustion heat and releases it slowly over many hours after the fire is extinguished."
+    },
+    {
+      "slug": "cob",
+      "term": "Cob",
+      "definition": "A natural building material made from subsoil clay, sand, and straw or other fibrous material, mixed and formed wet. Used in rocket mass heater construction for thermal mass and because it can be moulded around complex flue geometry."
+    }
+  ],
+  "techniqueSlugs": ["understanding-solid-fuel-heating-options", "lime-render-application"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    { "stepNumber": 1, "offsetDays": 0, "title": "Base slab and J-tube", "body": "Lay the base slab and build the J-tube combustion chamber from refractory brick.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 2, "offsetDays": 1, "title": "Riser and barrel install", "body": "Install the insulated riser and the first barrel section. Test-fire to check draught establishes correctly.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 3, "offsetDays": 2, "title": "Bench frame and flue", "body": "Build the bench frame and lay the horizontal flue run through it in cob or brick.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 4, "offsetDays": 4, "title": "Pack cob bench", "body": "Pack cob over the bench structure and allow to begin drying.", "surfaceAs": "RAIL_CARD", "requiresUserAction": true },
+    { "stepNumber": 5, "offsetDays": 5, "title": "Drying period", "body": "Do not fire the heater during this period. The cob bench cracks as it dries; fill cracks with slip clay.", "surfaceAs": "RAIL_CARD", "requiresUserAction": false },
+    { "stepNumber": 6, "offsetDays": 14, "title": "First firing and final render", "body": "Fire the heater to full temperature for the first time. Apply the final cob render coat once the bench is fully dry.", "surfaceAs": "HERO", "requiresUserAction": true }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "j-tube-combustion-chamber" } }],
+            "text": "J-tube combustion chamber"
+          },
+          {
+            "type": "text",
+            "text": " achieves near-complete combustion by routing unburned gases into the high-temperature riser before they exit. This differs from a log stove, which exhausts gases that are still combustible. The exhaust from a well-built rocket heater is predominantly water vapour and CO2, with almost no smoke. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-mass-bench" } }],
+            "text": "thermal mass bench"
+          },
+          {
+            "type": "text",
+            "text": " means you fire the heater for two to three hours per day and the bench radiates warmth for the following 18 to 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Regulatory position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In England, a rocket mass heater in a non-habitable outbuilding (workshop, barn, garden room) is generally not subject to Building Regulations Part J. Part J covers combustion appliances in habitable spaces. This heater is site-built, not a manufactured appliance. Planning consent may be needed if the flue exits through the roofline or if the building is in a conservation area. In a habitable dwelling, a HETAS assessor must review the installation. This guide covers outbuildings only."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "J-tube geometry" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Feed tube (horizontal arm): internal diameter 150 mm, length 300 to 400 mm. This is where wood is stacked vertically and feeds by gravity." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combustion chamber (elbow): the same 150 mm internal diameter; the bend radius should be tight (a 90° elbow, not a gradual curve) to concentrate heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Riser: internal diameter 150 mm, height 1,200 mm (8x the feed tube diameter). The riser must be insulated on the outside (ceramic blanket or perlite concrete surround) to maintain the temperature needed for secondary combustion. Do not reduce the riser height; doing so kills the draught." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Barrel: a 200-litre steel drum inverted over the riser acts as the heat exchanger. Exhaust gases rise up the riser, hit the barrel lid, and are forced down between the riser and the barrel wall. They exit at the bottom of the barrel into the bench flue run." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building the bench" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay a concrete or compacted rubble base. The bench will weigh 500 to 1,000 kg when complete; an unreinforced concrete slab at 100 mm thickness on a compacted hardcore base is adequate for most workshop floors." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Build the J-tube and riser from refractory brick (class K23 or equivalent, rated to 1260°C). Use refractory mortar. Standard sand-cement mortar will crack from thermal cycling." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Route the exhaust from the barrel base through a horizontal flue at bench height. The flue should be 200 mm diameter steel pipe embedded in the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cob" } }],
+            "text": "cob"
+          },
+          {
+            "type": "text",
+            "text": " mass. Keep the horizontal run level or no more than 1:100 rising gradient toward the exit flue. A falling flue traps condensate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pack the bench with cob: a 300 mm wall thickness around the flue pipe is the minimum for effective heat retention. A bench 400 mm tall, 450 mm wide, and 2,400 mm long stores approximately 12 to 18 hours of radiant heat from a single two-hour firing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Exit flue: the final exit flue goes vertically through the roof. It should be at least 300 mm above the ridge of the building. Minimum exit diameter is 150 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Smoke backdrafts into the room at the feed tube opening" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The riser is cold and not yet drawing. This is normal for the first five minutes of a cold start. Use newspaper to pre-warm the riser by holding a lit roll of paper up inside the barrel exit port. Once the draught establishes, the backdraft stops. If it persists beyond five minutes, the riser height or insulation is inadequate — check it is at least 8x the feed tube diameter and that the outside of the riser is insulated along its full height." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "The bench does not get warm after three firings" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The cob is still wet from construction. A freshly built cob bench absorbs heat for the first two to four weeks of use as it dries from the inside. Fire daily and the retained heat will increase each week as moisture leaves. Do not fire longer or hotter to compensate: this causes cracking faster than the cob can handle it." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

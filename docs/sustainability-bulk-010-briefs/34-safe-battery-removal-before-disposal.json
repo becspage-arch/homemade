@@ -1,0 +1,131 @@
+{
+  "slug": "safe-battery-removal-before-disposal",
+  "title": "Removing batteries from electronics before disposal",
+  "subtitle": "Why batteries need separating, how to find them, and where to take each type",
+  "excerpt": "A lithium battery in a landfill can start a fire that burns undetected for months. A battery in a recycling bin contaminates the paper stream. Removing batteries before disposing of electronics is not difficult once you know what to look for and how to separate common types. This is the identification and removal guide for the batteries found in typical household devices.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA 'Waste batteries' regulations guidance. Material Focus 'Batteries in waste streams' report (2023). RECELL Centre lithium battery recycling guidance. Which? electronics disposal guide. Environment Agency hazardous waste regulations.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "screwdriver", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lithium-battery",
+      "term": "Lithium battery",
+      "definition": "A rechargeable or single-use battery using lithium chemistry. Found in laptops, smartphones, tablets, cordless tools, e-bikes, and many small electronics. Lithium batteries can undergo thermal runaway if damaged or crushed, producing fire that is difficult to extinguish."
+    },
+    {
+      "slug": "battery-directive",
+      "term": "Battery Directive",
+      "definition": "EU (and retained UK) legislation requiring that batteries are not disposed of in general household waste or landfill. Retailers and collection points must accept used batteries for recycling free of charge."
+    }
+  ],
+  "techniqueSlugs": ["electronic-waste-recycling", "electronics-refurbishment-and-upgrade"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fire risk from "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lithium-battery" } }],
+            "text": "lithium batteries"
+          },
+          {
+            "type": "text",
+            "text": " in waste streams is well-documented. The UK saw over 1,200 fires in waste facilities attributed to lithium batteries in 2022. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-directive" } }],
+            "text": "Battery Directive"
+          },
+          {
+            "type": "text",
+            "text": " requires battery separation by law. In practice, enforcement targets retailers and facilities, not individuals. The practical reason to separate batteries: they go to recycling streams that actually recover the materials."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding batteries in common devices" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Smartphones and tablets: lithium polymer battery glued to the case in most post-2015 devices. Access via the back cover (screws or heat-softened adhesive). iFixit provides free disassembly guides for most models." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Laptops: lithium battery usually accessible from the base. Screws covered by rubber feet. Most models have a removable battery under a panel; ultrathin laptops have the battery glued to the keyboard assembly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vapes and e-cigarettes: lithium cell in the body. These are regulated as waste electrical equipment; they must not go in general recycling or landfill. Many supermarkets now have vape collection points." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hearing aids: zinc-air button cells. Easily removed from the device; many pharmacies collect them." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Small appliances (electric toothbrushes, shavers, timers): the lithium cell is usually glued inside the handle. Use a narrow flat screwdriver to open the seam." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety when removing lithium cells" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not pierce, bend, or cut a lithium battery. If the battery is swollen, it may vent. Do not remove it. Place the device in a fireproof container in the open air and contact your local household hazardous waste facility. A healthy battery that you can see and grip is safe to handle. Do not force connectors or pry with metal tools near the terminals."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to take batteries for recycling" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "All major supermarkets and DIY stores have a free battery collection point at the entrance or checkout" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Local household waste recycling centres (tips) accept all battery types" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Larger lithium batteries (laptop, e-bike) go to the electrical equipment section at the recycling centre. Do not put them in the small battery box." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

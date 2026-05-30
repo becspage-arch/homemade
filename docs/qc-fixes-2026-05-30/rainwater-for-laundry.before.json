@@ -1,0 +1,174 @@
+{
+  "slug": "rainwater-for-laundry",
+  "tutorialId": "cmps8m8pw0002dov41sm131e4",
+  "capturedAt": "2026-05-30T11:09:13.113Z",
+  "preFix": {
+    "title": "Using stored rainwater to supply a washing machine",
+    "subtitle": "How to route collected roof water to a washing machine cold fill, and what treatment it needs",
+    "excerpt": "A washing machine uses 40 to 60 litres per cycle. Supplying this from stored roof water rather than mains supply can save 15,000 litres per year for a household doing four loads per week. This is the pipework and treatment specification for routing water butt or underground tank water to the cold-fill connection of a standard domestic washing machine.",
+    "sourceNotes": "CIBSE TM21 Rainwater and grey water use in buildings (2019). Water Regulations Advisory Scheme (WRAS) guidance on non-potable water in dwellings. BS 8515:2009+A1:2013 on rainwater harvesting. Environment Agency 'Harvesting rainwater for domestic uses' guidance.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Supplying a washing machine from collected roof water is a water-saving measure that works year-round, not just in summer. Washing machines are one of the largest domestic water consumers, and they use water that needs no drinkability: they use a cold-fill connection that goes straight into the drum. ",
+              "type": "text"
+            },
+            {
+              "text": "Non-potable",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8m8mf0000dov4q79c4g1p"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " roof water is entirely adequate for laundry.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The regulatory requirement",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The Water Supply (Water Fittings) Regulations 1999 require that any non-potable water connection in a building with a mains supply includes a ",
+              "type": "text"
+            },
+            {
+              "text": "backflow prevention",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpdgf2600001l0v4tjik32ts"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " device rated to the appropriate level. For a washing machine cold-fill, a Type AA air gap in the tank design and a double check valve on the supply line meets the requirement. Use lilac pipe or labels every 300 mm to mark the non-potable supply. Notify your water supplier before installation.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Pressure: the main technical challenge",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Standard domestic washing machines require 0.5 to 10 bar at the cold-fill inlet; 1 bar is the practical minimum. A water butt at ground level has a head pressure of roughly 0.2 to 0.5 bar at best. An underground tank has zero usable head. A ",
+              "type": "text"
+            },
+            {
+              "text": "pressure booster pump",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8m8no0001dov4he2ro1gz"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " rated to 2 bar is needed in all practical domestic installations. Small submersible or inline booster pumps rated for water butt or cistern use are available for 80 to 200 pounds.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Filtration and treatment",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Roof water for laundry needs a 100-micron pre-filter to remove debris and a 30-micron secondary filter before the pump. UV treatment is not required for laundry, as the wash process disinfects. Use UV if the same store also feeds toilet flushing for immunocompromised household members.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Mains backup",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Install a mains backup solenoid valve that opens when the tank level drops below a set minimum. This keeps the machine running during dry spells or tank maintenance. The backup must include a Type AA or Type AB air gap; a simple T-junction is not acceptable.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[0]",
+      "snippet": "Supplying a washing machine from collected roof water is a water-saving measure that works year-round, not just in summer. Washing machines "
+    }
+  ]
+}

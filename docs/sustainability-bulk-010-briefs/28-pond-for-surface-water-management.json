@@ -1,0 +1,191 @@
+{
+  "slug": "pond-for-surface-water-management",
+  "title": "Building a small pond for surface water management",
+  "subtitle": "A flexible-liner wildlife pond that also slows and infiltrates roof and driveway runoff",
+  "excerpt": "A 2 to 4 m² flexible-liner pond at the lowest point of a garden can absorb roof water from one downpipe, reduce fast runoff from impermeable surfaces, and create a wildlife habitat. This is the site selection, excavation, liner installation, and overflow design for a combined wildlife and surface-water management pond.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIRIA SuDS Manual (C753, 2015) on ponds and swales for surface water management. Royal Horticultural Society 'Wildlife pond' guidance. The Wildlife Trusts pond creation factsheets. DEFRA 'Sustainable drainage: non-statutory technical standards' (2015).",
+  "approximateCostGbp": 250,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "spade", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flexible-liner",
+      "term": "Flexible liner",
+      "definition": "A butyl rubber or EPDM sheet laid into an excavated pond shape to retain water. Butyl rubber is more durable and puncture-resistant; EPDM is more flexible and suitable for complex shapes."
+    },
+    {
+      "slug": "overflow-route",
+      "term": "Overflow route",
+      "definition": "A defined path for water to leave a pond when it reaches maximum level during a storm event. Without an overflow route, water spreads uncontrolled. A notched edge, overflow pipe, or a downstream swale or soakaway constitutes an overflow route."
+    },
+    {
+      "slug": "sustainable-drainage",
+      "term": "Sustainable drainage",
+      "definition": "Systems (SuDS) that manage surface water by mimicking natural processes: infiltration, storage, and gradual release. Ponds, swales, and permeable paving are all SuDS components. They reduce the peak rate of water entering drains during storm events."
+    }
+  ],
+  "techniqueSlugs": ["fitting-a-water-butt-to-a-downpipe", "swale-and-rain-garden-design", "rain-garden-for-driveway-runoff"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Dig and line the pond",
+      "body": "Excavate, install the liner, and connect the inflow. Fill with water initially from tap or water butt.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 14,
+      "title": "Add aquatic plants",
+      "body": "Once the water has settled and cleared, plant marginals and submerged oxygenators.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 90,
+      "title": "First season check",
+      "body": "Check water level, overflow route, and liner edges for erosion. Note any wildlife activity.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": false
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small garden pond creates habitat for frogs, newts, insects, and birds, and stores heavy rainfall that would otherwise run off into the drain. A 2 m² pond 600 mm deep holds 1.2 m³ of water, enough to absorb runoff from around 25 to 30 m² of roof in a moderate rain event. With an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "overflow-route" } }],
+            "text": "overflow route"
+          },
+          {
+            "type": "text",
+            "text": " to a soakaway or lawn, it becomes part of a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sustainable-drainage" } }],
+            "text": "sustainable drainage"
+          },
+          {
+            "type": "text",
+            "text": " network."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Site selection" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Choose the lowest point in the garden, downhill from the downpipe or driveway being managed" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Minimum 3 m from any building foundation (pond water saturates the surrounding soil)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid locations directly under deciduous trees: leaf fall adds nutrients and promotes algae" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Partial shade is fine. Full sun promotes evaporation and algae. Full shade reduces wildlife value." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Excavation and liner sizing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the pond outline on the ground. A kidney or irregular shape fits better into a garden edge than a rectangle and creates more marginal planting opportunities." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Excavate in zones: a shallow marginal shelf 200 mm deep around part of the perimeter, a mid-zone at 400 mm, and a deep zone at 600 to 700 mm. The graduated depth reduces algae by creating different temperature zones." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Calculate liner size: length = maximum pond length plus twice the maximum depth plus 500 mm overhang. Same calculation for width. For a 2.5 x 2 m pond, 700 mm deep: liner = (2.5 + 1.4 + 0.5) x (2 + 1.4 + 0.5) = 4.4 x 3.9 m." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install 50 mm of sharp sand or fibrous underlay (sold as pond liner underlay) over the entire excavated surface before the liner. Remove any protruding stones." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drape the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flexible-liner" } }], "text": "flexible liner" }, { "type": "text", "text": " over the excavation. Add water weight gradually to pull the liner into shape; fold pleats at the corners as neatly as you can rather than fighting the wrinkles." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim the liner leaving 300 mm overlap at the edge. Peg the edge down with large flat stones or turf." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Inflow and overflow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Route a downpipe via a first-flush diverter into the pond at the shallow marginal end. Place a stone diffuser under the inlet to slow the incoming flow and prevent scouring the liner. Route the overflow notch or standpipe to a lawn area, a soakaway, or a secondary water butt 150 mm lower in the garden. The overflow must be lower than the liner edge to prevent the liner lifting during a storm."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pond level drops by 25 mm per week in summer" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "This is normal evaporation in warm weather: a 2 m² pond loses 50 litres per week at peak summer. Top up with water butt water, not tap water, to avoid chlorine affecting aquatic life." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Green water algae within weeks of filling" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Normal in a new pond. Add submerged oxygenating plants (hornwort, water crowfoot) which outcompete algae for nutrients. Avoid fertilisers near the pond. Green water usually clears within 4 to 6 weeks once plants establish." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

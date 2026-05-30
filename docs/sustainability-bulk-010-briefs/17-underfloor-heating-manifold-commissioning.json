@@ -1,0 +1,155 @@
+{
+  "slug": "underfloor-heating-manifold-commissioning",
+  "title": "Commissioning an underfloor heating manifold",
+  "subtitle": "Balancing flow rates across heating loops so every room reaches temperature",
+  "excerpt": "An underfloor heating manifold distributes hot water to multiple floor loops. Without commissioning, some loops run too hot and others stay cold, wasting energy and leaving rooms at uneven temperatures. This is the commissioning sequence: flushing, pressure testing, filling, flow balancing, and setting the thermostatic actuators.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Wunda Group and Heatmiser UFH commissioning guides (publicly available). Polypipe Underfloor Heating installation and commissioning manual. CIBSE AM15 Heat Pumps (2013) on UFH flow temperature requirements. BS EN 1264-3 on hydronic surface embedded heating and cooling systems.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "manifold",
+      "term": "Manifold",
+      "definition": "A distribution header that splits a single hot water supply into multiple underfloor heating loops, each serving one room or zone. It contains isolation valves, flow meters, and actuators for each loop."
+    },
+    {
+      "slug": "flow-balancing",
+      "term": "Flow balancing",
+      "definition": "The process of adjusting the flow restrictor valve on each heating loop so that each loop receives the design flow rate. Without balancing, short loops receive more flow than long loops, creating uneven room temperatures."
+    },
+    {
+      "slug": "mixing-valve",
+      "term": "Mixing valve",
+      "definition": "A thermostatic valve or motorised valve that mixes the high-temperature boiler or heat pump output with cooler return water to deliver the correct low flow temperature to the underfloor heating loops, typically 35 to 45°C."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-underfloor-heating-compatibility", "underfloor-heating-heat-pump-compatibility"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "manifold" } }],
+            "text": "manifold"
+          },
+          {
+            "type": "text",
+            "text": " distributes hot water to each floor loop in the house. Without "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flow-balancing" } }],
+            "text": "flow balancing"
+          },
+          {
+            "type": "text",
+            "text": ", the short loops in a small bathroom take all the available flow, run hot, and cycle the thermostatic actuator on and off. The long loops in a large living room receive minimal flow and never reach temperature. Balancing takes two to three hours but resolves most UFH performance complaints."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before commissioning: flush and pressure test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect a filling loop to the manifold inlet and a drain hose to the drain valve. Open all loop valves on the manifold. Flush each loop individually with clean water until it runs clear." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close all drain valves and fill the system. Pressurise to 4 bar using the filling loop. Leave for 30 minutes and check for pressure drop. A pressure drop of more than 0.1 bar indicates a leak. Inspect all loop joints and manifold connections before proceeding." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce pressure to 1 to 1.5 bar working pressure before starting the heat source." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Flow rate targets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculate the design flow rate for each loop: Q (l/min) = heat output (W) / (70 x temperature difference in °C). For a 10°C temperature drop across the loop and 500 W of heat required for a room: Q = 500 / (70 x 10) = 0.71 l/min. Standard UFH loops typically require 0.5 to 1.5 l/min per loop. The manifold flow meters show the actual rate; the target is the design rate for each room."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Balancing the loops" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open all loop return valves to maximum. Start the pump and record the flow rate shown on each manifold flow meter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify the loop with the longest pipe run (it will have the lowest flow rate). Set this loop's valve to fully open: it becomes the index circuit. Do not throttle the index circuit." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Throttle all other loops' return valves until each matches the required flow rate. Short loops with excess flow are throttled down; long loops with insufficient flow remain fully open." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Re-check all loop flow rates after adjusting, as throttling one loop changes pressure distribution across the others." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the mixing valve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mixing-valve" } }],
+            "text": "mixing valve"
+          },
+          {
+            "type": "text",
+            "text": " to deliver 45°C to the manifold supply header when connected to a heat pump. If connected to a boiler, use 50°C initially and reduce to 45°C once the system is running well. The target temperature for the floor surface is 25 to 29°C for occupied areas, 33°C maximum for bathrooms. Measure the floor surface temperature with an infrared thermometer after 24 hours of operation and adjust the mixing valve accordingly."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "slug": "heat-pump-buffer-vessel-sizing",
+  "title": "Sizing a buffer vessel for an air source heat pump",
+  "subtitle": "Why buffer tanks are needed and how to calculate the right volume",
+  "excerpt": "Most air source heat pumps need a buffer vessel between the heat pump and the heating circuit to prevent short-cycling. An undersized or missing buffer wastes electricity through repeated start-stop cycles and shortens compressor life. This is the calculation for minimum buffer volume based on heat pump output and minimum run time.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Pump Association UK design guidance. Dimplex and Mitsubishi installer technical documentation (publicly available). MCS MIS 3005 heat pump installation specification guidance. CIBSE AM15 Heat Pumps.",
+  "approximateCostGbp": 800,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "buffer-vessel",
+      "term": "Buffer vessel",
+      "definition": "An insulated tank of water connected between the heat pump and the heating distribution system. It acts as a hydraulic separator and thermal store, giving the heat pump enough water volume to run for a minimum continuous period without short-cycling."
+    },
+    {
+      "slug": "short-cycling",
+      "term": "Short-cycling",
+      "definition": "When a heat pump starts, reaches its target temperature in the small water volume of the radiator circuit, and stops again within a few minutes. Repeated short cycles reduce efficiency and accelerate compressor wear."
+    },
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance. The ratio of heat energy delivered to electrical energy consumed. A heat pump with COP 3 delivers 3 kWh of heat for each 1 kWh of electricity used. Short-cycling reduces average COP by increasing the proportion of time spent in compressor start-up mode."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-cop-scop-explained", "heat-pump-installation-what-to-expect"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heat pump is most efficient when it runs continuously at a low modulating output. It is least efficient when it starts, heats a small volume of water quickly, and stops. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "short-cycling" } }],
+            "text": "Short-cycling"
+          },
+          {
+            "type": "text",
+            "text": " reduces "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": " and puts stress on the compressor. A correctly sized "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "buffer-vessel" } }],
+            "text": "buffer vessel"
+          },
+          {
+            "type": "text",
+            "text": " gives the heat pump enough water volume to run for a minimum of 6 to 10 minutes per cycle even on a warm day when the heating demand is low."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The minimum run time calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The formula for minimum buffer volume:"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "V (litres) = (Q x t) / (4.18 x dT)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Q = heat pump output in kW at minimum modulation. t = minimum run time in seconds. 4.18 = specific heat capacity of water (kJ/kg·K). dT = temperature rise across the buffer in °C; use 5°C for a thermal store buffer or 10°C for a hydraulic separator only."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 6 kW air source heat pump with a minimum modulation of 2 kW. Target run time: 6 minutes (360 seconds). Temperature differential across the buffer: 5°C."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "V = (2 x 360) / (4.18 x 5) = 720 / 20.9 = 34 litres."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The minimum buffer volume is 34 litres. In practice, specify 50 to 80 litres to give headroom and to use standard vessel sizes available from heating suppliers. For a 10 kW heat pump at 3 kW minimum modulation and a 10-minute target run time, the calculation gives 71 litres; a 100-litre vessel is appropriate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When is a buffer not needed?" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Underfloor heating systems often hold enough water to prevent short-cycling without a buffer. Some manufacturers specify a minimum circuit volume; check the product data. Calculate your circuit volume and compare before deciding to skip the buffer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Buffer placement and plumbing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The buffer sits between the heat pump and the heating circuit, with the heat pump flow connecting to the top of the buffer and the return connecting to the bottom. The heating circuit takes its flow from the top and returns to the bottom on the opposite side. This four-port plumbing arrangement prevents mixing and ensures maximum temperature differential. The buffer should be within 3 m of the heat pump to minimise heat loss in the connecting pipework."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Buffer sizing is confirmed by the heat pump installer as part of the MCS system design. Incorrect sizing is one of the most common causes of poor heat pump performance in UK retrofits. If a system is short-cycling, a heating engineer with heat pump experience can measure the cycle duration and diagnose whether an undersized buffer is the cause."
+          }
+        ]
+      }
+    ]
+  }
+}

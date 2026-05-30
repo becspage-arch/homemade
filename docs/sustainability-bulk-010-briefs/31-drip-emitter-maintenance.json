@@ -1,0 +1,128 @@
+{
+  "slug": "drip-emitter-maintenance",
+  "title": "Maintaining and cleaning drip irrigation emitters",
+  "subtitle": "Clearing blocked emitters, testing output, and winterising drip lines",
+  "excerpt": "Drip emitters block with mineral deposits, algae, and debris within one to two seasons of installation. A blocked emitter delivers no water to the plant it serves while the rest of the system runs normally. This is the annual maintenance routine for cleaning emitters, flushing the line, testing flow, and protecting the system over winter.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Irrigation Association (UK chapter) drip system maintenance guidance. RHS garden irrigation factsheets. WRAP 'Water-efficient irrigation' guidance. Manufacturer technical notes from Netafim and Drip-Works on emitter maintenance.",
+  "approximateCostGbp": 10,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drip-emitter",
+      "term": "Drip emitter",
+      "definition": "A small plastic fitting inserted into or attached to drip irrigation pipe that delivers a controlled low flow rate of water (typically 1 to 4 litres per hour) directly to the root zone of a plant."
+    },
+    {
+      "slug": "end-cap",
+      "term": "End-cap",
+      "definition": "A sealed fitting at the far end of a drip irrigation line or header pipe. Removing the end-cap allows the pipe to be flushed with pressure before the emitters, clearing accumulated sediment."
+    }
+  ],
+  "techniqueSlugs": ["drip-irrigation-from-a-water-butt", "soaker-hose-layout-and-installation"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drip-emitter" } }],
+            "text": "drip emitter"
+          },
+          {
+            "type": "text",
+            "text": " has a very small internal orifice (often 0.5 to 1 mm diameter) and it blocks easily. In hard-water areas, calcium carbonate deposits form inside the emitter body within one or two seasons. In roof-collected water systems, algae and organic matter accumulate in the line. The result is a plant that receives no water while the others do, often unnoticed until it wilts. Annual cleaning prevents this."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual maintenance sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the system and walk each line. Watch for dry patches: a plant that shows no drip 10 minutes into an irrigation cycle has a blocked emitter or a cut line. Mark blocked emitters." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "end-cap" } }], "text": "end-cap" }, { "type": "text", "text": " from each lateral line and flush for 30 seconds to clear sediment from the line body before addressing the emitters." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull or unscrew blocked emitters. Soak in diluted white vinegar (1 part vinegar, 1 part water) for 30 minutes to remove scale. Rinse with clean water. Test flow under a tap: 1 to 4 litres per hour. Hold over a jug for one minute to check." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replace emitters that do not resume normal flow after soaking. Emitters typically cost 10 to 50p each; keep a small stock." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check filters at the system inlet (usually a Y-strainer or in-line mesh filter). Remove, backflush under a tap, and reinstall. A clogged inlet filter reduces pressure across the whole system and makes even unblocked emitters underperform." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winterising the system" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Before the first frost, close the water supply to the system and open all end-caps to drain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pressure-compensating emitters in exposed positions: remove and store indoors. All other emitters can stay in place when the line is drained." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a mains-connected system, turn the timer off at the controller to prevent automated cycles running in frost. A frozen controller valve is a common winter failure." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Emitters dripping at all times, even when valve is closed" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The inlet valve solenoid diaphragm has a small tear. The system is draining under gravity from the elevated line. Replace the solenoid diaphragm (inexpensive part, usually available from the manufacturer)." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Low flow from all emitters simultaneously" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The inlet filter is partially blocked or the water butt level is too low for adequate head pressure. A gravity-fed system from a water butt needs at least 600 mm head above the highest emitter." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

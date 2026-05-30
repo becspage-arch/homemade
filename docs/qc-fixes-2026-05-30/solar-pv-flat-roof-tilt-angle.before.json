@@ -1,0 +1,209 @@
+{
+  "slug": "solar-pv-flat-roof-tilt-angle",
+  "tutorialId": "cmps8l8n30003z4v45rjnnwci",
+  "capturedAt": "2026-05-30T11:09:13.845Z",
+  "preFix": {
+    "title": "Optimal tilt angle and row spacing for flat roof solar panels",
+    "subtitle": "Calculating the angle that maximises output while avoiding inter-row shading",
+    "excerpt": "Flat roof solar panels mounted on tilt frames sacrifice some output compared to an optimally pitched roof, but the angle and spacing can be calculated to get within 10 to 15% of the optimal. This is the tilt angle calculation for a UK latitude and the row spacing formula to avoid self-shading in winter.",
+    "sourceNotes": "PVGIS EU Solar Irradiance tool (European Commission, open access). Solar Trade Association UK installer guidance. Renewable Energy Consumer Code flat-roof guidance. BRE Digital solar PV yield assessment.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A flat roof gives full control over panel orientation and ",
+              "type": "text"
+            },
+            {
+              "text": "tilt angle",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8l8ki0000z4v4gz9gksra"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ". That is the advantage. The constraint is that tilted panels cast shadows on the panels behind them in winter, so rows must be spaced further apart than on a pitched roof. The trade-off is between optimal tilt for yield versus closer spacing for maximum installed capacity per square metre. This calculation gives the numbers for a UK location.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Optimal tilt angle for UK latitudes",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "At 51°N (London), the sun at solar noon on the winter solstice is only 15.5 degrees above the horizon. Annual yield is maximised at a tilt of approximately 35 to 38 degrees. At 54°N (Manchester), the optimal tilt is 37 to 40 degrees. At 56°N (Edinburgh), 40 to 43 degrees. However, the yield difference between 30 and 40 degrees is only 3 to 5% per annum. Specifying 30 degrees instead of 38 degrees allows closer row spacing and more panels in the same area, which can compensate for the reduced yield per panel.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Row spacing to avoid inter-row shading",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Inter-row shading",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8l8l80001z4v4hkiq5gyi"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " occurs when the panel in front casts a shadow on the panel behind. The shadow is longest at the winter solstice when the sun is lowest. The formula for minimum row spacing:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "S = H / tan(solar elevation at solstice)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Where H is the shadow height of the tilted panel (H = panel height x sin(tilt angle)) and solar elevation at the winter solstice = 90 - latitude - 23.5 degrees.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Worked example: London, 30-degree tilt",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Location: 51.5°N. Winter solstice solar elevation: 90 - 51.5 - 23.5 = 15 degrees. Panel dimensions: 1.75 m long. Shadow height H = 1.75 x sin(30) = 0.875 m. Minimum row spacing S = 0.875 / tan(15) = 0.875 / 0.268 = 3.27 m from front edge of one row to front edge of the next. If panels are mounted back-to-back in 1.75 m rows, the gap between rows is 3.27 - 1.75 = 1.52 m.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Worked example: same site, 15-degree tilt",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "H = 1.75 x sin(15) = 0.453 m. Minimum row spacing = 0.453 / tan(15) = 1.69 m from front edge to front edge. Gap between rows: 1.69 - 1.75 = negative, meaning the panels can overlap horizontally. In practice, use a 1.8 m row spacing with 15-degree tilt on a 6,000 m² flat roof to maximise installed capacity, accepting the 3 to 5% yield reduction per panel compared to 30-degree tilt.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Performance ratio impact",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Even with correct spacing, flat roof systems have a lower ",
+              "type": "text"
+            },
+            {
+              "text": "performance ratio",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8l8ly0002z4v4wxawh53f"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " than pitched roof systems. Dust builds up on low-tilt panels because rain does not wash them as well. Allow for a 5 to 8% yield reduction for self-cleaning effects when estimating annual output.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "body-missing-method",
+      "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[6]",
+      "snippet": "Where H is the shadow height of the tilted panel (H = panel height x sin(tilt angle)) and solar elevation at the winter solstice = 90 - lati"
+    }
+  ]
+}

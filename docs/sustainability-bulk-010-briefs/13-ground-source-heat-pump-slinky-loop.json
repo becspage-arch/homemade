@@ -1,0 +1,178 @@
+{
+  "slug": "ground-source-heat-pump-slinky-loop",
+  "title": "Ground source heat pump: horizontal slinky ground loop",
+  "subtitle": "How a horizontal loop array works, what area it needs, and what the groundwork involves",
+  "excerpt": "A horizontal slinky ground loop is the most common way to install a ground source heat pump when there is sufficient garden area. Coiled HDPE pipe laid in trenches at 1 to 1.2 m depth extracts heat from the soil. This is the sizing calculation, trench layout, and installation sequence.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "ADVANCED",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ground Source Heat Pump Association (GSHPA) horizontal ground array guidance. MCS MIS 3005 GSHP system design requirements. CIBSE AM15 Heat Pumps (2013). Kensa Heat Pumps installer technical guides (publicly available).",
+  "approximateCostGbp": 15000,
+  "paybackYears": 20,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "slinky-loop",
+      "term": "Slinky loop",
+      "definition": "A horizontal ground loop configuration where HDPE pipe is coiled in overlapping rings and laid flat in a trench. The coiling increases pipe length per metre of trench, improving heat extraction per square metre of garden area compared to a straight horizontal loop."
+    },
+    {
+      "slug": "specific-heat-extraction",
+      "term": "Specific heat extraction",
+      "definition": "The rate of heat that can be sustainably extracted from the ground per metre of trench or borehole, expressed in W/m. For a slinky loop in loamy soil in the UK, typical values are 20 to 35 W/m of trench."
+    },
+    {
+      "slug": "brine-circuit",
+      "term": "Brine circuit",
+      "definition": "The antifreeze-water mixture that circulates through the ground loop. Unlike air source heat pumps which use refrigerant in the outdoor unit, ground source systems use a diluted antifreeze solution (typically 25% propylene glycol) to extract heat from the ground and carry it to the heat pump."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-cop-scop-explained", "ashp-vs-gshp"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ground source heat pump draws heat from the soil at 1 to 1.2 m depth, where the temperature stays between 8 and 12°C year-round in the UK. The ground loop is the collector: a coiled HDPE pipe carrying "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brine-circuit" } }],
+            "text": "brine"
+          },
+          {
+            "type": "text",
+            "text": " that absorbs heat from the soil and carries it to the heat pump. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slinky-loop" } }],
+            "text": "slinky loop"
+          },
+          {
+            "type": "text",
+            "text": " coils the pipe in overlapping rings to fit more heat-exchange surface into each metre of trench. It requires more land than a borehole but is significantly cheaper to install."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Area requirement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The rule of thumb for a slinky loop is 2.5 to 3 times the floor area of the house in garden area, with a minimum separation of 5 to 6 m between trench centrelines to allow the soil to recover heat between heating seasons. For a 100 m² house requiring a 10 kW heat pump, estimate 250 to 300 m² of suitable garden. The garden cannot be used for trees or deep-rooted planting over the trenches after installation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Required trench length = heat pump output (kW) / "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "specific-heat-extraction" } }],
+            "text": "specific heat extraction"
+          },
+          {
+            "type": "text",
+            "text": " (kW/m)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a 10 kW heat pump and a loamy soil with 25 W/m (0.025 kW/m) specific extraction: 10 / 0.025 = 400 m of trench. At 5 m trench separation, this requires 400 m of total trench length with 5 to 6 m between trench centrelines, fitting in approximately 80 x 30 m of garden area."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The groundwork" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Call LINESEARCH or use the Dial Before You Dig service to locate buried services. Mark out the trench lines and check for underground cables, pipes, and drainage. Allow at least 600 mm clearance from any buried service." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Excavate trenches to 1.2 m depth and 400 to 600 mm wide. Use a mini-digger; hand digging 400 m of trench is impractical. Stack the spoil alongside the trench." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay 100 mm of sharp sand or pea gravel in the trench bottom. Sand improves thermal conductance between the pipe and the surrounding soil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the slinky coils, overlapping each ring by approximately half the coil diameter (typically 500 mm overlap on a 1,000 mm diameter coil). Secure coils with cable ties to temporary stakes at 2 m intervals to prevent them lifting during backfilling." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Backfill with the original soil, tamping in 200 mm layers. Avoid large stones in contact with the pipe. In clay soils, a sand envelope around the pipe is advisable to prevent root damage during compaction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect all loop runs to a manifold in an insulated manifold chamber outside the building. Use compression or push-fit HDPE fittings rated for the antifreeze solution used." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Commissioning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pressure-test all connections to 6 bar before backfilling. Flush the loop with clean water to remove air and debris, then charge with the specified brine concentration. Record the brine concentration with a refractometer; check it annually as glycol degrades and the freeze protection reduces over time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ground loop design, sizing, and commissioning must be done by an MCS-registered installer to qualify for the Boiler Upgrade Scheme grant. Groundwork excavation can be done by a groundworks contractor under the installer's supervision. Planning permission is not required for ground loops."
+          }
+        ]
+      }
+    ]
+  }
+}

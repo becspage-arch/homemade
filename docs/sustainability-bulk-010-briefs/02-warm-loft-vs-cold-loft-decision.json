@@ -1,0 +1,206 @@
+{
+  "slug": "warm-loft-vs-cold-loft-decision",
+  "title": "Warm loft or cold loft: which to insulate",
+  "subtitle": "Choosing between ceiling-level and rafter-level insulation for a loft space",
+  "excerpt": "A cold loft is insulated at ceiling level, leaving the roof structure cold. A warm loft is insulated at rafter level, making the whole loft space usable. The decision affects cost, U-value, and whether your tanks and pipework need lagging. This is the calculation and decision framework.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022 edition) on loft insulation targets. Energy Saving Trust 'Loft insulation' guidance. CIBSE Guide A Environmental Design (2015) for condensation risk analysis. BRE Report BR 443 Conventions for U-value calculations.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cold-loft",
+      "term": "Cold loft",
+      "definition": "A loft where insulation is laid at ceiling joist level. The roof structure above is cold, roof tanks and pipework must be insulated, and the loft space is unheated and unusable for habitable purposes."
+    },
+    {
+      "slug": "warm-loft",
+      "term": "Warm loft",
+      "definition": "A loft where insulation is applied between and/or over the rafters, bringing the roof structure within the thermal envelope. The space below the insulated roof is warm and can be used as habitable space."
+    },
+    {
+      "slug": "interstitial-condensation",
+      "term": "Interstitial condensation",
+      "definition": "Condensation that forms within the thickness of a building element rather than on its surface. Occurs when warm moist air migrates through a construction and meets a cold surface below the dew point."
+    }
+  ],
+  "techniqueSlugs": ["calculating-loft-insulation-depth", "loft-conversion-insulation-options"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most existing lofts are "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-loft" } }],
+            "text": "cold lofts"
+          },
+          {
+            "type": "text",
+            "text": ": mineral wool or rigid board laid across the ceiling joists, the roof void above left unheated. Converting to a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warm-loft" } }],
+            "text": "warm loft"
+          },
+          {
+            "type": "text",
+            "text": " insulates instead at rafter level and brings the whole roof within the heated envelope. The right choice depends on what you want to do with the space, how your roof is constructed, and what your tanks and pipework situation is."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The key inputs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rafter depth: rafters of 100 mm or less cannot hold full warm-roof insulation depth without a counter-batten below" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roof type: pitched with open span, lean-to, chalet bungalow with habitable rooms already in the roof" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cold water storage: tanks in the loft void need lagging in a cold loft; they come inside the thermal envelope in a warm loft" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Intended use of the space: storage only, or habitable room" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Budget: warm roof costs three to five times more than a ceiling-level top-up" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cold loft: the case for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cold loft is cheaper, faster, and simpler. The target is 270 mm of mineral wool at ceiling level, current Building Regs Part L1B guidance for an existing dwelling in England and Wales. Material cost for a standard three-bedroom semi runs around 200 to 400 pounds DIY, or 400 to 700 pounds installed. Payback is typically 3 to 5 years. Tanks and pipework in the void must be lagged once the ceiling insulation is in place, because the void will now get colder in winter; allow an extra 50 to 100 pounds for lagging."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The limitation: boarding over 270 mm of mineral wool requires raised loft legs to keep boards clear of the insulation. Any compression defeats the depth. A mat pressed to 50 mm performs like 50 mm of wool, not 270 mm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warm loft: the case for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A warm roof specification brings the loft within the heated envelope, eliminates the need to lag tanks, and makes the space usable year-round without frost risk. The minimum specification for a new habitable loft conversion in England under Part L1B is 0.18 W/m²K for the sloped ceiling, typically requiring 150 mm of PIR between and over the rafters. Typical contractor cost for a four-rafter-bay room is 4,000 to 7,000 pounds, depending on complexity. Payback in energy terms alone is long (15 to 20 years), but the space gain changes the economic calculation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The structural constraint: 100 mm rafters cannot hold 150 mm of PIR without the board projecting below rafter soffit. The usual solution is 100 mm between rafters plus 50 mm counter-batten below, bringing the total to the required thermal resistance. This drops the ceiling height by 50 mm. In a tight loft that may be the deciding factor."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Condensation risk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Both approaches carry "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interstitial-condensation" } }],
+            "text": "interstitial condensation"
+          },
+          {
+            "type": "text",
+            "text": " risk if detailed incorrectly. A cold loft needs ridge and eaves ventilation to remove moisture from the ceiling. A warm loft needs a breathable membrane above the insulation or a vapour control layer on the warm side. Ask your roofer to confirm the membrane specification matches the insulation product."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Decision table" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose cold loft if: the space is storage only, budget is under 1,000 pounds, rafters are 100 mm or shallower, and tanks are in the loft."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose warm loft if: you want a usable room, the roof is due for replacement, rafters are 150 mm or deeper, and there are no tanks in the loft."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm roof work needs a Building Regulations application when creating a habitable room. Structural calculations and fire-resistance specs both need sign-off. Cold loft insulation does not need consent unless it disturbs the existing structure."
+          }
+        ]
+      }
+    ]
+  }
+}

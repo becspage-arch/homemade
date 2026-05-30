@@ -1,0 +1,136 @@
+{
+  "slug": "rainwater-for-laundry",
+  "title": "Using stored rainwater to supply a washing machine",
+  "subtitle": "How to route collected roof water to a washing machine cold fill, and what treatment it needs",
+  "excerpt": "A washing machine uses 40 to 60 litres per cycle. Supplying this from stored roof water rather than mains supply can save 15,000 litres per year for a household doing four loads per week. This is the pipework and treatment specification for routing water butt or underground tank water to the cold-fill connection of a standard domestic washing machine.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM21 Rainwater and grey water use in buildings (2019). Water Regulations Advisory Scheme (WRAS) guidance on non-potable water in dwellings. BS 8515:2009+A1:2013 on rainwater harvesting. Environment Agency 'Harvesting rainwater for domestic uses' guidance.",
+  "approximateCostGbp": 600,
+  "paybackYears": 8,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "non-potable-supply",
+      "term": "Non-potable supply",
+      "definition": "A water supply not treated to drinking water standard. Rainwater from roof harvesting is non-potable and must be clearly distinguished from the mains supply by coloured (typically lilac) pipework and labelling to prevent cross-connection."
+    },
+    {
+      "slug": "backflow-prevention",
+      "term": "Backflow prevention",
+      "definition": "A device or design measure that prevents water from flowing backwards into the mains supply from a non-potable source. Required by Water Regulations 1999 wherever a non-potable supply is connected in the same building as mains water."
+    },
+    {
+      "slug": "pressure-booster-pump",
+      "term": "Pressure booster pump",
+      "definition": "A small pump that raises the pressure of water from a storage tank to match the mains pressure required by the appliance. Washing machines require a minimum 1 bar pressure at the inlet; gravity feed from a water butt rarely exceeds 0.3 bar."
+    }
+  ],
+  "techniqueSlugs": ["rainwater-harvesting-underground-tank", "fitting-a-water-butt-to-a-downpipe", "understanding-house-water-pressure"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Supplying a washing machine from collected roof water is a water-saving measure that works year-round, not just in summer. Washing machines are one of the largest domestic water consumers, and they use water that needs no drinkability: they use a cold-fill connection that goes straight into the drum. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "non-potable-supply" } }],
+            "text": "Non-potable"
+          },
+          {
+            "type": "text",
+            "text": " roof water is entirely adequate for laundry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The regulatory requirement" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Water Supply (Water Fittings) Regulations 1999 require that any non-potable water connection in a building with a mains supply includes a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backflow-prevention" } }],
+            "text": "backflow prevention"
+          },
+          {
+            "type": "text",
+            "text": " device rated to the appropriate level. For a washing machine cold-fill, a Type AA air gap in the tank design and a double check valve on the supply line meets the requirement. Use lilac pipe or labels every 300 mm to mark the non-potable supply. Notify your water supplier before installation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressure: the main technical challenge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard domestic washing machines require 0.5 to 10 bar at the cold-fill inlet; 1 bar is the practical minimum. A water butt at ground level has a head pressure of roughly 0.2 to 0.5 bar at best. An underground tank has zero usable head. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pressure-booster-pump" } }],
+            "text": "pressure booster pump"
+          },
+          {
+            "type": "text",
+            "text": " rated to 2 bar is needed in all practical domestic installations. Small submersible or inline booster pumps rated for water butt or cistern use are available for 80 to 200 pounds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filtration and treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Roof water for laundry needs a 100-micron pre-filter to remove debris and a 30-micron secondary filter before the pump. UV treatment is not required for laundry, as the wash process disinfects. Use UV if the same store also feeds toilet flushing for immunocompromised household members."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mains backup" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Install a mains backup solenoid valve that opens when the tank level drops below a set minimum. This keeps the machine running during dry spells or tank maintenance. The backup must include a Type AA or Type AB air gap; a simple T-junction is not acceptable."
+          }
+        ]
+      }
+    ]
+  }
+}

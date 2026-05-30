@@ -1,0 +1,197 @@
+{
+  "slug": "johnson-su-bioreactor-build",
+  "title": "Building a Johnson-Su bioreactor",
+  "subtitle": "A fungal-dominant 12-month compost pile that produces a soil biology inoculant",
+  "excerpt": "The Johnson-Su bioreactor is a 1 to 1.5 m³ compost pile built around vertical aeration pipes and left undisturbed for at least 12 months. Unlike a hot compost heap, it is never turned. The long, undisturbed maturation produces a fungal-dominant, biologically diverse compost that is applied as a diluted inoculant rather than a bulk soil amendment.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Johnson D and Rhea S, 'Enhancing Microbial Biology in Soil' (New Mexico State University technical bulletin, 2019, open access). David Johnson original methodology papers and public presentations. Regenerative Agriculture Foundation resources. Gabe Brown and David Johnson collaborations on soil biology.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fungal-dominant-compost",
+      "term": "Fungal-dominant compost",
+      "definition": "Finished compost with a higher ratio of fungal biomass to bacterial biomass, typically around 1:1 or greater. Bacterial-dominant composts are produced by turned, hot heaps; fungal-dominant composts come from undisturbed, longer-maturation systems with high carbon inputs."
+    },
+    {
+      "slug": "soil-inoculant",
+      "term": "Soil inoculant",
+      "definition": "A diluted biological preparation applied to seeds, roots, or soil to introduce beneficial microorganisms. The Johnson-Su compost is used at rates of 2 to 5 kg per hectare or as a seed coating, rather than the tonnes per hectare used with conventional compost."
+    },
+    {
+      "slug": "aeration-pipe",
+      "term": "Aeration pipe",
+      "definition": "A vertical perforated pipe inserted through the height of the compost pile to allow passive air exchange from the centre of the mass. Used in the Johnson-Su design to prevent anaerobic zones from developing during the 12-month undisturbed maturation."
+    }
+  ],
+  "techniqueSlugs": ["three-bin-hot-compost-system", "understanding-the-cn-ratio"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build the pile",
+      "body": "Assemble the frame, insert aeration pipes, and fill the pile in one session. Water to field capacity before leaving.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 90,
+      "title": "Three-month moisture check",
+      "body": "Check that the pile surface has not dried out. Water if necessary to restore moisture. Do not turn.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 180,
+      "title": "Six-month check",
+      "body": "Check pile height and moisture. Some settling is normal. Top up with more material if volume has reduced by more than 30%.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 365,
+      "title": "Bioreactor ready to harvest",
+      "body": "After 12 months undisturbed, the bioreactor compost is ready to harvest. The material will look dark brown, earthen, and will have visible fungal hyphae.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Johnson-Su bioreactor produces biologically diverse, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fungal-dominant-compost" } }],
+            "text": "fungal-dominant compost"
+          },
+          {
+            "type": "text",
+            "text": " from garden waste. Unlike a hot compost heap, the bioreactor is filled once and left for 12 months or more. The result is used as a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soil-inoculant" } }],
+            "text": "soil inoculant"
+          },
+          {
+            "type": "text",
+            "text": " rather than a bulk soil amendment. Use a small amount mixed into seed compost, as a seed coating, or diluted in water for direct soil application."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A cylindrical cage of 1.2 m diameter and 1.5 m height, made from stock fencing, hardware cloth, or similar. This creates approximately 1.7 m³ of internal volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Four 150 mm diameter perforated plastic pipes, 1.6 m long, to act as vertical " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "aeration-pipe" } }], "text": "aeration pipes" }, { "type": "text", "text": " through the pile" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A diverse mix of carbon-rich materials: wood chips, shredded cardboard, straw, dried leaves" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nitrogen sources: food scraps, fresh grass clippings, manure, spent coffee grounds" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A cover to exclude heavy rain (a piece of corrugated plastic sheeting or a tarp staked loosely over the top)" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Build sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erect the cage on a level surface directly on soil. The bare soil base allows earthworms to enter from below; a concrete or paved base prevents this and reduces biological diversity." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stand the four aeration pipes vertically inside the cage, equally spaced around the interior circle radius of about 300 mm from the centre." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill in alternating layers of carbon (100 to 150 mm) and nitrogen (50 mm) materials. Aim for a C:N ratio of approximately 25 to 30:1. Water each layer as you go, to reach the moisture level of a wrung-out sponge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cap the pile with a 100 mm layer of wood chip or straw to reduce moisture loss. Fit the cover loosely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave completely undisturbed. Do not turn. Check moisture every 3 months: the pile should feel damp throughout but not waterlogged. Water via the aeration pipes if the centre has dried out." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Harvesting and using the bioreactor compost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 12 months, dismantle the cage and assess the material. Finished Johnson-Su compost is dark brown to black, earthen-smelling, with visible fungal hyphae (white threads) throughout. Any undecomposed woody material can be restarted in a new pile. Mix the finished compost with seed-raising compost at 5 to 20% by volume for transplant use, or water it in as an extract at 1 part compost to 10 parts water for direct soil application."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pile drying out in the centre" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Pour water slowly through the aeration pipes to reach the centre of the pile. Check that the cover is directing rainwater inward rather than away. If the pile is in a very exposed location, move the cage to a shadier position." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pile smells unpleasant after 6 months" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Anaerobic zones have developed. This is unusual if the aeration pipes are clear. Check that the pipes have not collapsed or been clogged with material. Use a stick to clear blockages and add a handful of wood chip through each pipe." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
