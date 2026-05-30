@@ -1,0 +1,453 @@
+{
+  "slug": "caterpillar-stitch-binding",
+  "title": "Caterpillar stitch binding",
+  "subtitle": "A chain-link exposed-spine technique with a ridge of visible links",
+  "excerpt": "The caterpillar stitch uses a chain-link pattern that runs the full length of the spine, creating a bead-like ridge between every pair of signatures. It is structurally close to the Coptic family but the linking move differs: each stitch crosses between two adjacent signatures rather than looping only at the head and tail.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Keith Smith, Non-Adhesive Binding (1990): exposition of chain-link exposed-spine structures; cross-reference with Coptic-stitch tradition documented in Douglas Cockerell, Bookbinding and the Care of Books (1901), Internet Archive. Structural description drawn from these sources; the caterpillar name and the full-length linking pattern are synthesised from observed bookbinding practice.",
+  "recipeTools": [
+    {
+      "slug": "bookbinding-awl",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-thread-linen",
+      "isOptional": false
+    },
+    {
+      "slug": "beeswax-block",
+      "isOptional": false
+    },
+    {
+      "slug": "bone-folder",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "cutting-mat-a3",
+      "isOptional": false
+    },
+    {
+      "slug": "metal-ruler-30cm",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-board-2mm",
+      "isOptional": true
+    },
+    {
+      "slug": "pva-acid-free",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A group of sheets folded together to form one section of a book. The folded edge is sewn; the open edge is trimmed after binding. A four-sheet signature contains four folded sheets, giving eight leaves and sixteen pages."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole in a signature (or board) through which the needle passes during sewing. The spacing and number of stations determines the stitch pattern and the holding strength of the binding."
+    },
+    {
+      "slug": "caterpillar-link",
+      "term": "Caterpillar link",
+      "definition": "The visible linking stitch in a caterpillar binding that crosses between two adjacent signatures on the outside of the spine. A row of these links runs head to tail, creating the ridge that gives the stitch its name."
+    },
+    {
+      "slug": "kettle-stitch",
+      "term": "Kettle stitch",
+      "definition": "A linking stitch worked at the head or tail of a signature that catches the previous signature's thread before the sewing continues. It prevents the text block from separating along the spine."
+    },
+    {
+      "slug": "text-block",
+      "term": "Text block",
+      "definition": "The sewn stack of signatures that forms the body of the book before the covers are attached. A well-sewn text block is the foundation of a durable binding."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "caterpillar stitch",
+    "chain-link exposed spine",
+    "full-link binding"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The caterpillar stitch is a chain-link binding whose links run the full length of the spine rather than appearing only at the head and tail. Named for the bead-like ridge of stitches visible on the outside of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "signature"
+                }
+              }
+            ],
+            "text": "signature"
+          },
+          {
+            "type": "text",
+            "text": " junctions, the caterpillar sits in the same structural family as Coptic-stitch binding. The difference is that the linking move happens at every "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sewing-station"
+                }
+              }
+            ],
+            "text": "sewing station"
+          },
+          {
+            "type": "text",
+            "text": ", not only at the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kettle-stitch"
+                }
+              }
+            ],
+            "text": "kettle stitch"
+          },
+          {
+            "type": "text",
+            "text": " points. The result is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "text-block"
+                }
+              }
+            ],
+            "text": "text block"
+          },
+          {
+            "type": "text",
+            "text": " that lies flat open and shows the binding structure as part of its aesthetic. No adhesive is required, though soft boards can be attached if a cover is wanted."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Bookbinding awl",
+              "qty": "1",
+              "substitutions": "A sharp pricking awl works equally well"
+            },
+            {
+              "name": "Bookbinding needle",
+              "qty": "1",
+              "substitutions": "Any large blunt tapestry needle"
+            },
+            {
+              "name": "Bookbinding thread, linen (waxed)",
+              "qty": "approx. 8× the spine length per signature",
+              "substitutions": "Unwaxed linen thread waxed on a beeswax block"
+            },
+            {
+              "name": "Beeswax block",
+              "qty": "1"
+            },
+            {
+              "name": "Bone folder",
+              "qty": "1"
+            },
+            {
+              "name": "Craft knife and No. 11 blades",
+              "qty": "1 knife, several blades"
+            },
+            {
+              "name": "Self-healing cutting mat, A3",
+              "qty": "1"
+            },
+            {
+              "name": "Metal ruler, 30 cm",
+              "qty": "1"
+            },
+            {
+              "name": "Text paper, 90 gsm, grain short, folded into 4-sheet signatures",
+              "qty": "5 or more signatures",
+              "substitutions": "Any 80–100 gsm cartridge paper, grain parallel to the spine"
+            },
+            {
+              "name": "Bookbinding board, 2 mm (optional, for soft-cover boards)",
+              "qty": "2 pieces",
+              "substitutions": "A single cover signature of heavier paper (180–200 gsm) works for a limp cover"
+            },
+            {
+              "name": "PVA, acid-free (optional, for covering boards)",
+              "qty": "small amount"
+            }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "safety",
+          "body": "Sharp blades are safer than blunt ones: blunt blades skid. Change the blade at the first sign of dulling. Always cut on a self-healing cutting mat. Always cut against a metal ruler held firmly with the non-cutting hand behind the line of cut, never in front of it. Cut away from the body. Keep the hand holding the ruler at least two finger-widths back from the blade's path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The move"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fold each signature and press the fold with a bone folder. For 90 gsm paper, a 4-sheet signature gives a fold of reasonable thickness: eight leaves, sixteen pages per signature."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark the sewing stations on the spine of one signature. Use five stations for an A5 book: two at 10 mm from head and tail (these are the kettle stations), and three evenly spaced between them. Transfer the spacing to all remaining signatures by stacking and marking through with the awl, or by using the first as a template."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pierce the sewing stations in every signature from the outside spine inward. Hold the signature in a piercing jig or cradle it in one hand. The awl point enters the fold on the spine and exits inside the signature. Keep the holes centred on the spine fold."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread the needle with a length of waxed linen thread approximately eight times the spine length. Run the thread twice over the beeswax block before starting."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sew the first signature. Enter from inside (head kettle station), exit through the spine, leaving a 60 mm tail. Sew down to the tail kettle station, entering and exiting each station in order. Tie a half-hitch around the tail station exit thread to secure the first signature, leaving the tail loose for a finishing knot later."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the second signature on top of the first, spine to spine. Enter the tail kettle station from outside. Sew from tail toward head. At each interior station, after exiting the spine of the second signature, pass the needle under the corresponding thread loop on the first signature spine. This is the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "caterpillar-link"
+                        }
+                      }
+                    ],
+                    "text": "caterpillar link"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Re-enter the same hole in the second signature before continuing to the next station. Pull each link snug but not tight; the thread should lie flat on the spine without distorting the paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At the head kettle station of the second signature, work a kettle stitch: loop the thread behind the kettle-station exit thread of the first signature and pull through to lock. Add the third signature in the same direction (tail to head). Repeat the caterpillar link at every interior station and a kettle stitch at each end."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue adding signatures. The direction of sewing alternates: signature 1 head-to-tail, signature 2 tail-to-head, signature 3 head-to-tail. This zigzag path keeps the thread tension balanced across the spine."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After the last signature, tie off with two half-hitches around the nearest kettle-station thread. Trim both tails to 5 mm and tuck them inside the signature fold."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If adding soft boards: score the 2 mm bookbinding board to the same height as the signature stack and to a width of one spine thickness plus the text-block cover area. Attach the first and last boards by sewing through pre-pierced holes alongside the first and last signatures, using the same caterpillar link pattern. The boards become structural members of the binding."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "problem": "Links are uneven: some tight, some loopy",
+              "cause": "Inconsistent tension when pulling the link through. The link is easy to overtighten.",
+              "fix": "After passing the needle under the previous signature's thread, pull the link until the thread is flush with the spine surface. Do not pull further. A consistent pull force matters more than pulling hard."
+            },
+            {
+              "problem": "Holes tear or enlarge during sewing",
+              "cause": "The awl hole is too small for the thread, or the needle is being forced through at an angle.",
+              "fix": "Re-pierce with a slightly larger awl before threading. Enter and exit holes straight on. Angled needle entry tears the paper fibres at the hole edge."
+            },
+            {
+              "problem": "The spine ridge looks irregular",
+              "cause": "Sewing stations are not consistently placed across all signatures.",
+              "fix": "Use the first signature as a marking template for all subsequent signatures. Stacking several signatures together and piercing through all at once keeps the holes aligned."
+            },
+            {
+              "problem": "Thread snaps mid-sewing",
+              "cause": "The thread is frayed or the beeswax coating is uneven, causing a weak spot.",
+              "fix": "Wax the thread before starting and again mid-spool if it begins to fray. When thread breaks during sewing, tie the new length onto the old tail with a reef knot inside the signature fold, trim the tail short, and continue."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where it leads"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the caterpillar link feels secure, the step to a full Coptic-stitch binding with hardboard covers is straightforward. The sewing logic is the same. The boards add one challenge: drilling accurate stations in stiff material and attaching the first and last signature to the board rather than to another signature."
+          }
+        ]
+      }
+    ]
+  }
+}

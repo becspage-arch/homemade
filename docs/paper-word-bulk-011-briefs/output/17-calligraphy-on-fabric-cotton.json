@@ -1,0 +1,332 @@
+{
+  "slug": "calligraphy-on-fabric-cotton",
+  "title": "Writing on fabric with calligraphy ink",
+  "subtitle": "Broad-edge letterforms on pre-washed cotton and linen",
+  "excerpt": "Writing calligraphy on fabric with a dip pen requires a different setup from writing on paper: the fabric must be stretched taut, a soft mat placed underneath to prevent the nib catching on the weave, and a fabric-specific ink used rather than standard iron-gall. A broader nib than you would use on paper gives better coverage on the woven surface. The resulting letterforms suit Foundational and Italic best; Copperplate is not recommended on fabric.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from calligraphy ink chemistry documented in Edward Johnston, Writing and Illuminating and Lettering (1906): public domain, Internet Archive. The specific technique of writing on fabric with a dip pen is not documented in the primary historic sources; this entry draws on general gum-arabic ink binder chemistry, nib behaviour, and practical studio experience of the fabric surface.",
+  "recipeTools": [
+    {
+      "slug": "nib-mitchell-roundhand-3",
+      "isOptional": false
+    },
+    {
+      "slug": "straight-pen-holder",
+      "isOptional": false
+    },
+    {
+      "slug": "fabric-calligraphy-ink",
+      "isOptional": false
+    },
+    {
+      "slug": "tracing-paper",
+      "isOptional": false
+    },
+    {
+      "slug": "cartridge-paper-130",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fabric-sizing",
+      "term": "Fabric sizing",
+      "definition": "A starch or resin coating applied to fabric during manufacture to give it body and a smooth surface. Sizing must be removed by washing before writing on fabric, as it repels water-based inks and prevents the ink from bonding to the fibres."
+    },
+    {
+      "slug": "heat-setting",
+      "term": "Heat-setting",
+      "definition": "The process of applying dry heat through a pressing cloth to fabric ink after it has dried, locking the pigment or dye into the fabric fibres and making it washfast. Fabric calligraphy ink that has not been heat-set will fade or wash out."
+    },
+    {
+      "slug": "nib-drag",
+      "term": "Nib drag",
+      "definition": "The resistance a nib encounters when moving across a textured or fibrous surface. Fabric creates more nib drag than paper; writing speed must be reduced and a softer mat placed underneath the fabric to prevent the nib catching and tearing the weave."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calligraphy on fabric sits at the intersection of two crafts, with the mechanics of both affecting the result. The letterforms come from broad-edge calligraphy; the surface behaviour comes from the weave, thread count, and finish of the fabric. Most of what goes wrong (ink that beads, nibs that catch, letterforms that feather) can be traced to a mismatch between these two elements. The setup steps below remove most of those mismatches before the nib ever touches the cloth."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Pre-washed cotton or linen fabric, tightly woven",
+              "qty": "piece to fit the work",
+              "substitutions": "Calico, closely woven cotton quilting fabric, or tight-woven linen. Avoid loosely woven or stretchy fabrics; the nib catches on loose threads"
+            },
+            {
+              "name": "Fabric calligraphy ink (heat-fix)",
+              "qty": "small bottle",
+              "substitutions": "No direct substitute: standard iron-gall ink is not formulated for fabric and may damage some fibres over time"
+            },
+            {
+              "name": "Mitchell Roundhand nib, 2 or 3",
+              "qty": "1-2",
+              "substitutions": "A slightly broader nib than you would use on paper for the same letter size; the weave demands more coverage"
+            },
+            {
+              "name": "Straight pen holder",
+              "qty": "1",
+              "substitutions": null
+            },
+            {
+              "name": "Craft foam mat (2-3 mm thick)",
+              "qty": "1 piece",
+              "substitutions": "A folded piece of felt, a mouse mat, or several sheets of cartridge paper as an undermat"
+            },
+            {
+              "name": "Masking tape",
+              "qty": "1 roll",
+              "substitutions": "Painter's tape; use to stretch the fabric taut to a board before writing"
+            },
+            {
+              "name": "Board (MDF or plywood, smooth)",
+              "qty": "1",
+              "substitutions": "A chopping board works; needs to be large enough to hold the fabric flat"
+            },
+            {
+              "name": "Tracing paper",
+              "qty": "several sheets",
+              "substitutions": "For transferring guide-line positions from a paper plan to the fabric surface"
+            }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Before you buy fabric",
+          "body": "Test a scrap piece of the fabric before committing a whole length. Wash it, dry it, iron it flat, then write one word with your fabric ink and nib. If the ink feathers or the nib catches badly on the weave, choose a different fabric. Tightly woven fabrics (percale cotton, densely woven linen) accept the nib far more smoothly than loosely woven or textured surfaces."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The move"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wash the fabric to remove "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "fabric-sizing"
+                        }
+                      }
+                    ],
+                    "text": "fabric sizing"
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Machine wash on a warm cycle (40°C) with ordinary detergent, then dry and iron flat. Size is a starch or resin treatment applied during manufacturing; it gives fabric its crisp, fresh appearance in the shop. It also repels water-based inks. A 60°C wash gives more complete removal. The fabric will feel softer and slightly more relaxed after washing; this is the state you want for calligraphy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stretch the fabric taut to a board. Lay the craft foam mat on the board, then lay the fabric over it and pull gently from each side to remove any sag. Tape all four edges with masking tape pressed firmly to the board. The fabric should be flat but not drum-tight: over-tensioning distorts the weave and narrows the warp threads, which changes how the nib behaves. The foam mat underneath is critical: it provides just enough give that the nib passes smoothly over the thread intersections rather than catching between them."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Plan the layout on paper first. Rule guide lines on a sheet of cartridge paper at the same size as the fabric piece, write out the text on paper to confirm the spacing and letter size, then use the paper plan as a position guide for the fabric. Trace the guide-line positions lightly onto the fabric with a water-soluble or air-erasable marker: these fade within hours or wash out, leaving no trace behind the calligraphy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Load the fabric calligraphy ink into the nib using a small brush loaded from the underside of the nib, exactly as you would with paper calligraphy. The fabric ink is slightly more viscous than standard iron-gall ink. If it feels too thick at the nib, add one or two drops of water to the ink on the palette, not to the bottle. The nib should release ink with light contact against the fabric surface without pressing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Write at a slower speed than on paper. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "nib-drag"
+                        }
+                      }
+                    ],
+                    "text": "Nib drag"
+                  },
+                  {
+                    "type": "text",
+                    "text": " on fabric is noticeably higher than on cartridge paper. Moving the nib too fast causes it to bounce over the thread intersections and produce broken letterforms. Slow, deliberate strokes allow the ink to absorb into the fibres at each point of contact. Foundational and Italic work well at this pace. Copperplate is not recommended: the pointed nib tip catches between warp and weft threads and produces a torn or skipped hairline."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Allow the ink to dry completely before removing the tape. Fabric ink on fabric takes longer to dry than the same ink on paper: allow at least 30 minutes. If the fabric is disturbed while damp, the ink can spread slightly at the edges of the letterforms."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat-set the dried ink. Place a clean pressing cloth over the fabric. Iron at the medium setting (suitable for cotton), dry, no steam. Hold the iron in place for 2 to 3 minutes, moving it slowly across the work. Allow to cool before touching the inked surface. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "heat-setting"
+                        }
+                      }
+                    ],
+                    "text": "Heat-setting"
+                  },
+                  {
+                    "type": "text",
+                    "text": " bonds the ink pigment to the fibres. Without this step the calligraphy will fade in the first wash."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Fabric calligraphy has fewer failure modes than paper calligraphy. Most are harder to fix once the ink is on the cloth.",
+          "items": [
+            {
+              "symptom": "The ink beads on the surface rather than absorbing",
+              "cause": "Fabric sizing was not fully removed in washing. The size is repelling the water-based ink.",
+              "fix": "Wash the fabric again at 60°C. Iron flat before retesting. If beading still occurs, consider whether the fabric has a synthetic coating that resists washing out."
+            },
+            {
+              "symptom": "The nib catches and tears the weave",
+              "cause": "The foam mat is too thin or absent, the fabric is too loosely woven, or the nib is too fine for the thread count.",
+              "fix": "Increase the mat thickness to at least 3 mm. Switch to a broader nib. If the weave is very loose, this fabric may not be suitable for nib calligraphy regardless of the mat."
+            },
+            {
+              "symptom": "Letterforms feather at the edges",
+              "cause": "The ink is too thin, or the fabric threads are pulling the ink along their length away from the letterform.",
+              "fix": "Increase ink viscosity with gum arabic: add two drops of liquid gum arabic to the ink on the palette and stir. The thicker ink stays where the nib places it rather than wicking along the fibres."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where it leads"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the setup is working, the technique extends to many uses: calligraphed cloth napkins, a name on a handmade book cloth cover, or Italic text on a linen panel. The same rules apply to paper-backed book cloth. The cloth surface accepts the nib well. The paper backing gives the firm support that the foam mat provides on raw cloth."
+          }
+        ]
+      }
+    ]
+  }
+}

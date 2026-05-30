@@ -1,0 +1,461 @@
+{
+  "slug": "board-reattachment-book-repair",
+  "title": "Reattaching a loose board",
+  "subtitle": "Two methods for a detached cover board where the cloth hinge is still present",
+  "excerpt": "A loose board is the most common bookbinding repair. When the inner hinge paper fails, the board pulls away from the text block while the outer cloth covering stays intact. Two methods cover the range of detachment: a Japanese tissue hinge for boards that are barely loose, and a linen-thread tipping for boards that have fully separated.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Repair principles consistent with guidance in Douglas Cockerell, Bookbinding and the Care of Books (1901), Internet Archive: chapter on rebinding and repairs. The Japanese tissue hinge method draws on conservation-sector practice using kozo tissue and wheat-starch paste. Note: Carolyn Horton, Cleaning and Preserving Bindings (1969, ALA) is in copyright; structural description only is drawn here.",
+  "recipeTools": [
+    {
+      "slug": "paste-brush-bookbinding",
+      "isOptional": false
+    },
+    {
+      "slug": "bone-folder",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-awl",
+      "isOptional": true
+    },
+    {
+      "slug": "bookbinding-needle",
+      "isOptional": true
+    },
+    {
+      "slug": "bookbinding-thread-linen",
+      "isOptional": true
+    },
+    {
+      "slug": "beeswax-block",
+      "isOptional": true
+    },
+    {
+      "slug": "washi-kozo",
+      "isOptional": false
+    },
+    {
+      "slug": "pva-acid-free",
+      "isOptional": false
+    },
+    {
+      "slug": "wheat-paste",
+      "isOptional": false
+    },
+    {
+      "slug": "blotting-paper",
+      "isOptional": false
+    },
+    {
+      "slug": "cartridge-paper-130",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "joint-hinge",
+      "term": "Joint (hinge)",
+      "definition": "The flexible strip connecting the cover board to the spine. On a cased book, the joint is a groove pressed into the cloth covering at the spine edge of each board. The inner side of the joint is typically lined with the endpaper. When this lining fails, the board detaches."
+    },
+    {
+      "slug": "kozo-tissue",
+      "term": "Kozo tissue",
+      "definition": "A thin, very strong paper made from the long fibres of the paper-mulberry plant. In conservation bookbinding, narrow strips of kozo tissue are applied with paste to reinforce a failing inner joint. The long fibres bridge the joint and restore flexibility while remaining reversible."
+    },
+    {
+      "slug": "mixture-paste",
+      "term": "Mixture paste",
+      "definition": "A blend of wheat-paste and PVA, typically in a ratio of 2:1 paste to PVA. The paste slows the open time so the repair can be positioned; the PVA increases tack and final strength. Used in conservation repair work."
+    },
+    {
+      "slug": "red-rot",
+      "term": "Red rot",
+      "definition": "Advanced acid deterioration of leather where the surface crumbles to a red-brown powder. A book with red rot should not be home-repaired; the leather fibres have lost structural integrity and a professional conservator is needed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "loose board repair",
+    "book hinge repair",
+    "detached board"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A detached board is the standard presenting complaint in book repair. The outer cloth covering of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "joint-hinge"
+                }
+              }
+            ],
+            "text": "joint"
+          },
+          {
+            "type": "text",
+            "text": " remains intact but the inner hinge paper (the part of the endpaper pasted to the board) has failed. The board hangs loose when the book is opened. Two methods address different degrees of detachment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before attempting either repair, check for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "red-rot"
+                }
+              }
+            ],
+            "text": "red rot"
+          },
+          {
+            "type": "text",
+            "text": " on the leather covering and for spine separation (the entire spine cloth pulling away from the spine of the text block). Either condition requires professional assessment. Home repair is appropriate only for boards that are detached at the inner hinge but where the outer covering cloth is sound."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Washi kozo (for the Japanese tissue hinge method)",
+              "qty": "one sheet; cut strips 15 mm wide",
+              "substitutions": "Any long-fibre Japanese tissue; even facial tissue works in an emergency for a temporary repair"
+            },
+            {
+              "name": "Wheat-paste (cooked)",
+              "qty": "a small amount"
+            },
+            {
+              "name": "PVA, acid-free",
+              "qty": "a small amount"
+            },
+            {
+              "name": "Paste brush (50 mm flat)",
+              "qty": "1"
+            },
+            {
+              "name": "Bone folder",
+              "qty": "1"
+            },
+            {
+              "name": "Blotting paper",
+              "qty": "a few sheets"
+            },
+            {
+              "name": "Flat weights or books for pressing",
+              "qty": "enough to apply even pressure to the inner joint"
+            },
+            {
+              "name": "Bookbinding awl, needle, and linen thread with beeswax (for linen-thread tipping method)",
+              "qty": "as needed"
+            },
+            {
+              "name": "Cartridge paper, 130 gsm for inner lining strip (optional)",
+              "qty": "cut to the height of the board, 30 mm wide"
+            }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "safety",
+          "body": "Bookbinding adhesives: PVA and wheat-paste are safe for indoor use without special ventilation. Clean brushes with warm water immediately after use. Never burn book glues; heat releases acrid fumes."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The move"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method 1: Japanese tissue hinge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use this method when the board is barely detached: the joint groove is slightly open, the board flexes a little but has not fully come away from the text block. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kozo-tissue"
+                }
+              }
+            ],
+            "text": "kozo tissue"
+          },
+          {
+            "type": "text",
+            "text": " strip is inserted through the joint gap and pasted against the inner face of the board and the spine of the text block."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a strip of kozo tissue 15 mm wide and the full height of the board. Tear the long edges rather than cutting them: a torn edge feathers and blends into the surface; a cut edge produces a visible ridge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "mixture-paste"
+                        }
+                      }
+                    ],
+                    "text": "mixture paste"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": 2 parts wheat-paste to 1 part PVA, stirred smooth. Apply a thin coat to one face of the tissue strip with a fine brush or the tip of the paste brush."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Open the book to expose the inner face of the detached board. Using the bone folder, ease the loose board gently open to expose the joint gap. Hold the gap open with one hand and slip the pasted tissue strip into the gap with the other, pasted face against the spine of the text block."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Using the bone folder, press the tissue down firmly against the spine, working from head to tail. Fold the remaining half of the tissue strip onto the inner face of the board. Apply a little extra paste to this face if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Close the board gently. Insert a strip of blotting paper along the inner joint to absorb any paste squeeze-out. Leave the book closed under flat weights with blotting paper on both sides of the repaired board for at least two hours. Replace the damp blotting paper with dry after one hour."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method 2: Linen-thread tipping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use this method when the board has fully separated: the joint cloth is still sound but there is no longer any adhesive connection between the board and the text block. A strip of linen is sewn along the spine of the text block and the board is glued to it."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wax a length of linen thread on the beeswax block. Cut a narrow strip of linen cloth (or use a double strand of waxed linen thread) to the height of the text block spine. Sew this strip to the outermost folded edge of the text block using a running stitch, working head to tail. The strip should extend 5-8 mm beyond the spine fold on each side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply a thin coat of PVA to the outer face of the linen strip. Align the detached board to the text block at the correct position: the board head and tail should align with the text block head and tail. Press the board against the linen strip and hold for one minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insert blotting paper along both inner joint faces. Close the book and press under flat weights. Leave for at least two hours. The PVA needs to cure while the board is held in the correct position."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Once the PVA is fully cured, paste a narrow paper strip over the inner face of the joint with diluted PVA for a neater finish. A 30 mm wide strip of 130 gsm cartridge paper bridges the joint and protects the repair from daily handling."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "problem": "Tissue hinge leaves a ridge visible under the endpaper",
+              "cause": "The tissue strip was too thick, or the edges were cut cleanly rather than torn.",
+              "fix": "Always tear the long edges of the kozo strip to feather them. For a second coat, apply an additional very thin strip of tissue over the first, letting it overlap slightly. The feathered overlap blends flush."
+            },
+            {
+              "problem": "Board does not realign correctly after Method 1",
+              "cause": "The tissue was pasted in before the board was confirmed at the correct position.",
+              "fix": "Re-dampen the tissue with a little water to soften the paste, ease the board into position, and re-press. Kozo tissue with wheat-paste is reversible while damp."
+            },
+            {
+              "problem": "Method 2 linen strip pulls away from the spine after drying",
+              "cause": "PVA was applied to the linen strip too thinly, or the strip was not held against the board long enough for the PVA to tack.",
+              "fix": "Sand the repair off the board face gently, apply fresh PVA to the linen, re-press, and clamp for longer. A small bulldog clip at each end of the board holds the position while the PVA sets."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where it leads"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A board that has become detached a second time after home repair indicates that the whole joint cloth (the outer covering) has failed. The next level of repair is a full reback: removing the old spine cloth, re-lining the spine, reattaching both boards with a new cloth hinge, and recasing. This is an advanced repair and is covered in separate tutorials."
+          }
+        ]
+      }
+    ]
+  }
+}

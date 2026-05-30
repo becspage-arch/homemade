@@ -10,17 +10,19 @@ async function main() {
   const adapter = new PrismaPg({ connectionString })
   const prisma = new PrismaClient({ adapter })
 
-  // Get all published cooking tutorial slugs
+  // Get all published paper-word tutorial slugs + sub-category
   const tutorials = await prisma.tutorial.findMany({
     where: {
-      category: { slug: 'cooking' },
+      category: { slug: 'paper-word' },
       status: 'PUBLISHED',
     },
-    select: { slug: true },
-    orderBy: { slug: 'asc' },
+    select: { slug: true, subCategory: { select: { slug: true } } },
+    orderBy: [{ subCategory: { slug: 'asc' } }, { slug: 'asc' }],
   })
 
-  console.log('PUBLISHED_SLUGS:', tutorials.map(t => t.slug).join('\n'))
+  for (const t of tutorials) {
+    console.log(`${t.subCategory?.slug ?? 'none'}\t${t.slug}`)
+  }
   console.log('COUNT:', tutorials.length)
   await prisma.$disconnect()
 }

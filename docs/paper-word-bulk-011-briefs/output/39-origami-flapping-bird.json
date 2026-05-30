@@ -1,0 +1,354 @@
+{
+  "slug": "origami-flapping-bird",
+  "title": "Traditional flapping bird",
+  "subtitle": "A kinetic origami bird whose wings move when you pull the tail",
+  "excerpt": "The traditional flapping bird is among the most satisfying of the classic public-domain origami models: pull the tail and neck apart gently and the wings rise. All folds are valley or mountain folds from a preliminary base.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional Japanese flapping bird model, public domain. Documented in late-Meiji kindergarten origami primers (pre-1928) available in the Internet Archive origami history collection. The model predates any named modern designer. The flapping-wing mechanism is present in published Japanese paperfolding sources from the early 20th century.",
+  "recipeTools": [
+    { "slug": "origami-washi", "isOptional": false },
+    { "slug": "kami-15cm", "isOptional": true },
+    { "slug": "origami-bone-folder-mini", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "valley-fold",
+      "term": "Valley fold",
+      "definition": "A fold where the paper is brought toward you along the fold line, creating a V-shaped valley when the fold is seen from the side. Shown in diagrams as a dashed line."
+    },
+    {
+      "slug": "mountain-fold",
+      "term": "Mountain fold",
+      "definition": "A fold where the paper is taken away from you along the fold line, creating an inverted V (a mountain peak) when the fold is seen from the side. Shown in diagrams as a dash-dot line."
+    },
+    {
+      "slug": "preliminary-base",
+      "term": "Preliminary base",
+      "definition": "Also called the square base. The starting form for many origami models, made by folding a square in half along both diagonals and both midlines, then collapsing to a four-pointed flat diamond shape."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The flapping bird is a kinetic model: hold the tail point in one hand and the neck point in the other, pull gently outward, and the wings rise. It is one of the oldest surviving Japanese origami models, documented in late-Meiji era paperfolding primers well before any named modern designer gave origami its contemporary form. The bird uses only "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "valley-fold" } }],
+            "text": "valley folds"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mountain-fold" } }],
+            "text": "mountain folds"
+          },
+          {
+            "type": "text",
+            "text": ". No inside reverse fold or petal fold is required for this version."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a 15 cm square of origami washi or kami paper. Heavier paper (cartridge at 90 gsm, cut square) works but produces less crisp creases and a stiffer wing action. Colour one side if you want the classic crane-like bird with a coloured back and white underside."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Origami washi or kami paper, 15 cm square",
+              "qty": "1 sheet",
+              "substitutions": "Cartridge paper, 90 gsm, cut to a square works at a larger size (21 cm or above). The thinner the paper, the crisper the folds and the better the wing action."
+            },
+            {
+              "name": "Mini bone folder (optional)",
+              "qty": "1",
+              "substitutions": "Not required, but a mini bone folder sharpens the crease lines for a neater finished bird."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the preliminary base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "preliminary-base" } }],
+            "text": "preliminary base"
+          },
+          {
+            "type": "text",
+            "text": " is the starting point. Fold the square in half along the diagonal (corner to corner), white side up. Unfold. Fold along the other diagonal. Unfold. Fold in half along the horizontal midline. Unfold. Fold in half along the vertical midline. These four crease lines are now set. Push the two side corners toward each other along the diagonal creases and the square collapses into a smaller diamond-shaped flat form. Flatten the diamond so the open points face downward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fold sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fold diagram below shows each step from the top-down view of the paper."
+          }
+        ]
+      },
+      {
+        "type": "origamiFoldDiagram",
+        "attrs": {
+          "definition": {
+            "title": "Flapping bird fold sequence",
+            "stepCount": 8,
+            "steps": [
+              {
+                "stepNumber": 1,
+                "caption": "Start with the preliminary base, open points at the bottom. Fold the lower right edge of the top layer to align with the vertical centre line.",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [50, 50] }
+                ]
+              },
+              {
+                "stepNumber": 2,
+                "caption": "Fold the lower left edge of the top layer to align with the vertical centre line. You have a kite shape on this side.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 100], "to": [50, 50] }
+                ]
+              },
+              {
+                "stepNumber": 3,
+                "caption": "Turn the model over. Repeat steps 1 and 2 on the back side; fold the lower right and left edges to the vertical centre line.",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [50, 50] },
+                  { "kind": "valley", "from": [0, 100], "to": [50, 50] }
+                ]
+              },
+              {
+                "stepNumber": 4,
+                "caption": "The model now has four narrow flaps. Fold the bottom point of the top layer straight up to the top point. Crease sharply.",
+                "folds": [
+                  { "kind": "valley", "from": [50, 100], "to": [50, 0] }
+                ]
+              },
+              {
+                "stepNumber": 5,
+                "caption": "Turn over and repeat; fold the bottom point of the back layer straight up to meet the top point.",
+                "folds": [
+                  { "kind": "valley", "from": [50, 100], "to": [50, 0] }
+                ]
+              },
+              {
+                "stepNumber": 6,
+                "caption": "Fold the lower right flap to the left, as if turning a page. Then fold the lower left flap to the right on the back. The model now has two long narrow points at the bottom.",
+                "folds": [
+                  { "kind": "valley", "from": [75, 50], "to": [25, 50] }
+                ]
+              },
+              {
+                "stepNumber": 7,
+                "caption": "Take the right lower point and fold it upward at a shallow angle (about 20 degrees from vertical) to form the head. This is a mountain fold at the tip of the right point; bend the last centimetre of the point down and back to create the beak.",
+                "folds": [
+                  { "kind": "valley", "from": [50, 80], "to": [75, 30] },
+                  { "kind": "mountain", "from": [75, 30], "to": [80, 20] }
+                ]
+              },
+              {
+                "stepNumber": 8,
+                "caption": "Spread the wings: hold the tail point in one hand and the neck point in the other. Pull gently outward. The wings rise.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 50], "to": [50, 20] },
+                  { "kind": "valley", "from": [100, 50], "to": [50, 20] }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step in words" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "From the preliminary base with open points at the bottom, fold the lower-right edge of the top layer to the vertical centreline. Crease firmly." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold the lower-left edge of the top layer to the vertical centreline. You have a kite form on this face." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Turn the model over and repeat steps 1 and 2 on the back face." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold the bottom point of the top layer straight up to the top point. Crease sharply along the full length of the fold." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Turn over and repeat step 4 on the back face." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "The model has two long narrow lower points and two upper points. Fold the right lower point to the left (like turning a page), then fold the left back point to the right on the back. Two long narrow points now project downward from the base of the bird body." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Take one lower point and fold it upward at roughly a 20-degree angle from the body to form the neck. The other lower point is the tail. The two upper triangular points are the wings." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold the tip of the neck point down and back on itself (a mountain fold at the tip) to form the beak. Crease sharply." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Hold the tail and the neck. Pull gently outward. The wings rise. Repeat with a short, gentle rhythm." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gently round the body by pressing the inside of the model open with one finger while holding the neck. This gives the bird a more three-dimensional shape and helps the wings move freely. A flat body produces a stiff wing action."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The flapping action eventually loosens the crease at the tail and neck joints. Paper birds made from thin kami may need re-creasing after many pulls. Washi paper holds the crease significantly longer. Store flat, not under pressure, to preserve the body shape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Duo origami paper (coloured on both sides in contrasting colours) shows the colour contrast between the wing backs and undersides when the wings are spread. A 20 cm sheet gives a larger bird with a more satisfying wing movement."
+          }
+        ]
+      }
+    ]
+  }
+}

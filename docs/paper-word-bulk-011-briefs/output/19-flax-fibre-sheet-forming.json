@@ -1,0 +1,397 @@
+{
+  "slug": "flax-fibre-sheet-forming",
+  "title": "Flax-fibre handmade paper",
+  "subtitle": "Cooking and beating bast fibre to pull a linen-quality sheet",
+  "excerpt": "European paper before wood-pulp arrived was made predominantly from linen rag, which is retting flax. Working with raw flax straw rather than pre-processed rag means doing the full cook-and-beat sequence yourself before the sheet can be pulled. The resulting paper is stronger and more textile-like than cotton-linter paper, and drains more slowly from the mould.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Old Papermaking (1923): public domain. Hunter's documentation of early European paper production, including the predominance of linen rag as the raw fibre before wood-pulp, provides the historical context. Technical details of fibre cooking and sheet formation draw on general bast-fibre papermaking practice documented in public-domain sources and synthesised from widely available studio method.",
+  "recipeTools": [
+    {
+      "slug": "papermaking-blender",
+      "isOptional": false
+    },
+    {
+      "slug": "papermaking-vat",
+      "isOptional": false
+    },
+    {
+      "slug": "paper-mould-deckle-a4",
+      "isOptional": false
+    },
+    {
+      "slug": "papermaking-sponge",
+      "isOptional": false
+    },
+    {
+      "slug": "soda-ash",
+      "isOptional": false
+    },
+    {
+      "slug": "flax-straw",
+      "isOptional": false
+    },
+    {
+      "slug": "formation-aid-peo",
+      "isOptional": true
+    },
+    {
+      "slug": "papermaking-press-boards",
+      "isOptional": false
+    },
+    {
+      "slug": "papermaking-vat",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bast-fibre",
+      "term": "Bast fibre",
+      "definition": "The long, strong cellulose fibres extracted from the inner bark (bast) of certain plants, including flax, hemp, kozo, and gampi. Bast fibres produce paper with a high tensile strength and a distinctive texture compared to shorter wood-pulp fibres."
+    },
+    {
+      "slug": "retting",
+      "term": "Retting",
+      "definition": "The soaking of plant stalks in water for an extended period to loosen the outer woody sheath and allow the inner bast fibre to be separated. Flax is traditionally retted in slow-flowing water or dew-retted on the ground; modern studio practice uses warm water in a bucket."
+    },
+    {
+      "slug": "beating-paper",
+      "term": "Beating",
+      "definition": "The mechanical process of cutting and bruising paper fibres in water to produce a pulp slurry. In a dedicated blender, the duration and speed of beating determines the fibre length and therefore the texture and translucency of the finished sheet: shorter beating produces rougher paper; longer beating produces smoother paper."
+    },
+    {
+      "slug": "couching",
+      "term": "Couching",
+      "definition": "The act of transferring a freshly pulled sheet of paper from the mould onto a damp felt by pressing the mould face-down onto the felt and rocking it from one edge to the other. The sheet releases from the mould and adheres to the felt."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For most of the first millennium of European papermaking, paper was made from linen rag. This was worn-out linen cloth collected from households, cut and soaked, then beaten into pulp. Linen is a flax product. It has long "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bast-fibre"
+                }
+              }
+            ],
+            "text": "bast fibre"
+          },
+          {
+            "type": "text",
+            "text": " in the flax plant that gave early European paper its strength and durability. Working from raw flax straw rather than pre-processed cotton linter means doing the full cook-and-beat preparation yourself. The extra time produces a sheet with more character than cotton linter. It is stronger, more translucent where the fibres have been well beaten, and its surface records the weave of the couching felt."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Flax straw (dried)",
+              "qty": "100-150 g dry weight",
+              "substitutions": "Pre-prepared linen rag cut small; or cotton linter sheets if flax straw is unavailable (the cook step is omitted for cotton linter)"
+            },
+            {
+              "name": "Soda ash (sodium carbonate)",
+              "qty": "15-20% of dry fibre weight",
+              "substitutions": "Washing soda from a supermarket works; it is the same compound"
+            },
+            {
+              "name": "Stainless-steel pot, 5-8 litre",
+              "qty": "1 (dedicated to fibre work, not food)",
+              "substitutions": "Enamel pot; do not use aluminium, which reacts with alkaline solutions"
+            },
+            {
+              "name": "Papermaking blender (dedicated)",
+              "qty": "1",
+              "substitutions": null
+            },
+            {
+              "name": "Papermaking vat (wider than the mould)",
+              "qty": "1",
+              "substitutions": "A large plastic storage box; a washing-up bowl for small sheets"
+            },
+            {
+              "name": "Paper mould + deckle, A4",
+              "qty": "1",
+              "substitutions": "A5 mould + deckle for smaller practice sheets"
+            },
+            {
+              "name": "Papermaking sponge",
+              "qty": "1",
+              "substitutions": "Any soft sponge; used for blotting the couched sheet"
+            },
+            {
+              "name": "Press boards (two sheets plywood, 8 mm)",
+              "qty": "1 pair",
+              "substitutions": null
+            },
+            {
+              "name": "Felts (for couching)",
+              "qty": "several",
+              "substitutions": "Wool blanket scraps; smooth, lint-free fabric works for lightly textured sheets"
+            },
+            {
+              "name": "Formation aid (PEO)",
+              "qty": "small amount (optional)",
+              "substitutions": "Only needed for flax; not needed for cotton linter. Makes the long fibres easier to distribute evenly"
+            }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "body": "Keep the blender unplugged when loading it with fibre or rinsing it out. Drain the vat before reaching in to adjust anything. Soda ash is strongly alkaline: wear rubber gloves when measuring and dissolving it, and work in a ventilated space. Rinse cooked fibre thoroughly before blending: alkaline fibre in a blender splashes.",
+          "type": "safety"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The move"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak the flax straw overnight in cold water. The straw needs to absorb water so the bast fibre softens before cooking. Use a bucket large enough to submerge the straw fully; weigh it down if it floats. The soaking step begins the process of "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "retting"
+                        }
+                      }
+                    ],
+                    "text": "retting"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (loosening the fibre from the woody stalk). After overnight soaking the straw is noticeably more flexible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the soaked fibre in the soda-ash solution. Dissolve the soda ash in cold water in the dedicated pot (use 15 to 20% of the dry fibre weight in soda ash; for 100 g of flax, dissolve 15 to 20 g of soda ash in 3 litres of water). Add the soaked straw. Bring to a gentle simmer and maintain for 2 to 4 hours, stirring occasionally. The bast fibres are ready when you can pull a stem between your fingers and the woody outer sheath strips away, leaving a soft, silky fibre bundle. Undercooked fibre produces harsh, rough paper; overcooked fibre loses strength."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rinse the cooked fibre thoroughly in several changes of cold water until the rinse water runs clear. The water coming off freshly cooked fibre is strongly alkaline (dark brown or amber); this alkali must be removed before blending, both to protect the blender and to avoid a pH that causes the finished sheet to degrade over time. Five to six rinses with fresh water is typical."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat the rinsed fibre in the dedicated blender with plenty of water. Fill the blender container about two-thirds full of water, then add a small handful of fibre. Blend in 30-second bursts. For rougher, more textile-like paper, blend for 2 to 3 minutes total. For smoother paper, blend for 5 to 8 minutes. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "beating-paper"
+                        }
+                      }
+                    ],
+                    "text": "Beating"
+                  },
+                  {
+                    "type": "text",
+                    "text": " cuts and bruises the fibres; longer beating produces shorter fibres that interlock more densely on the sheet. The blended slurry should look like thin porridge. Pour the slurry into the vat and repeat with the remaining fibre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fill the vat with water to a depth of 15 to 20 cm and stir in the pulp slurry. The vat concentration should be dilute: you want roughly 0.5 to 1% fibre in the water. Flax fibres are long and have a tendency to clump and drain slowly compared to cotton linter. If you have formation aid (PEO), add a small quantity to the vat (a few drops in a litre of water, then stir this solution into the vat): the PEO makes the slurry more even and improves sheet formation on the first pull."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull the sheet. Hold the mould mesh-side-up with the deckle placed on top. Dip the mould-and-deckle assembly into the vat at a low angle, then level it out as it rises, scooping a layer of slurry from below. Hold the mould level above the vat and allow the water to drain through the mesh; this takes longer with flax than with cotton (30 to 60 seconds rather than 10 to 20). Tilt the mould slightly as the water clears to encourage even drainage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Couch the sheet. Lay a damp felt on a flat surface. Remove the deckle from the mould. Turn the mould face-down onto the felt in a smooth, controlled rocking motion: one edge first, then press flat, then lift away from the far edge. The wet sheet should release from the mould mesh and transfer to the felt. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "couching"
+                        }
+                      }
+                    ],
+                    "text": "Couching"
+                  },
+                  {
+                    "type": "text",
+                    "text": " failures (the sheet lifting back with the mould) usually mean the felt was too dry or the sheet too dry from extended draining."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press and dry. Sandwich the sheet between felts, cover with a press board, and place a heavy weight on top for at least 4 hours. Change the felts once during pressing as they absorb moisture. After pressing, move the sheet (still on its felt or a drying board) to air-dry flat. Flax paper takes longer to dry than cotton linter because of the longer fibres and denser sheet structure. Allow a full day in a warm, ventilated space."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Flax-fibre papermaking is less forgiving of under-preparation than cotton linter. Most failures come from the cook and rinse stages.",
+          "items": [
+            {
+              "symptom": "The pulled sheet is full of large clumps and poorly formed",
+              "cause": "The fibre was not beaten long enough, or the vat concentration was too high.",
+              "fix": "Return the slurry from the vat to the blender and beat for another 3 minutes. Check the vat concentration: it should look pale grey-green in good light, not white or opaque."
+            },
+            {
+              "symptom": "The finished sheet is brittle and tears easily",
+              "cause": "The fibre was overcooked in the soda-ash solution, breaking down the cellulose chains.",
+              "fix": "Next batch: reduce the cook time and check the fibre after 2 hours. The fibre should still be elastic when pulled, not crumbly. Alternatively, use less soda ash: 15% rather than 20%."
+            },
+            {
+              "symptom": "The sheet won't release from the mould during couching",
+              "cause": "The mould mesh has a residue of dried fibre from a previous session blocking the drainage.",
+              "fix": "Rinse the mould in clean warm water immediately after each session. Soak a clogged mould in warm water for 10 minutes, then brush gently with a soft brush."
+            },
+            {
+              "symptom": "The rinse water is still strongly alkaline after five rinses",
+              "cause": "The initial soda-ash concentration was too high, or the cook time was very long.",
+              "fix": "Continue rinsing. Test with a pH strip: the rinse water should be pH 7 to 8 before blending. A small amount of residual alkalinity is acceptable and actually beneficial for long-term paper preservation."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where it leads"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flax-fibre paper is one of the strongest sheets you can make by hand. The same cook-and-beat method applies to hemp bast fibre and to abaca (Manila hemp), both of which produce sheets with similar strength. The next step from here is surface-sizing the dried sheet with dilute gelatin size, which reduces ink absorbency and brings the surface closer to the sizing of a commercial writing paper."
+          }
+        ]
+      }
+    ]
+  }
+}

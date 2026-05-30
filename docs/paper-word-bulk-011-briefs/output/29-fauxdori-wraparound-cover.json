@@ -1,0 +1,277 @@
+{
+  "slug": "fauxdori-wraparound-cover",
+  "title": "Fauxdori wraparound notebook cover",
+  "subtitle": "Cutting and punching a single rectangle of leather to hold removable pamphlet-stitch inserts",
+  "excerpt": "A fauxdori is a DIY version of the refillable traveller's notebook form: a single rectangle of vegetable-tanned leather with punched spine holes and threaded elastic loops that hold one or more removable pamphlet-stitch inserts. No stitching on the cover itself.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The refillable traveller's notebook form was popularised commercially in the early 2000s. The construction principle (a leather panel folded around a spine with elastic inserts) is derived from general leatherwork geometry and is straightforward enough to synthesise from first principles. No pre-1928 source applies.",
+  "recipeTools": [
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "leather-burnisher", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": true },
+    { "slug": "veg-tan-leather-thin", "isOptional": false },
+    { "slug": "round-elastic-cord", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "veg-tan-leather",
+      "term": "Vegetable-tanned leather",
+      "definition": "Leather tanned with plant-derived tannins rather than chromium salts. It is firm, accepts tooling and burnishing, develops a patina with use, and can be punched cleanly. The standard material for journal covers."
+    },
+    {
+      "slug": "deckle-edge-fold",
+      "term": "Foredge",
+      "definition": "The outer edge of a book or notebook: the edge opposite the spine. In a fauxdori the foredge of the cover is the open folded edge of the leather panel."
+    },
+    {
+      "slug": "pamphlet-stitch-insert",
+      "term": "Pamphlet stitch",
+      "definition": "A simple three- or five-hole stitch that holds a small stack of folded pages together through the centre fold. Each pamphlet-stitch insert in a fauxdori is an independent, replaceable booklet."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A fauxdori cover is one rectangle of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "veg-tan-leather" } }],
+            "text": "vegetable-tanned leather"
+          },
+          {
+            "type": "text",
+            "text": ", cut to size, punched with three holes along the spine fold, and strung with round elastic cord that holds "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pamphlet-stitch-insert" } }],
+            "text": "pamphlet-stitch"
+          },
+          {
+            "type": "text",
+            "text": " inserts in place. The cover wraps around the inserts; closing it folds the leather over the spine and protects the inserts. No stitching on the cover: the whole construction is cutting, punching, and threading elastic. The cover improves with use as the leather softens and takes a patina."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "title": "Cutting tools",
+          "body": "Sharp blades are safer than blunt ones: a blunt blade skids. Change the blade at the first sign of dulling. Always cut against a metal ruler held firmly with the non-cutting hand at least two finger-widths back from the blade's path. Cut away from the body. Use a self-healing cutting mat throughout."
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Veg-tan leather, 1.2-1.5 mm thickness",
+              "qty": "One piece at least 200 mm x 300 mm for an A5-insert cover",
+              "substitutions": "Chrome-tanned leather is softer and may be used but does not burnish as cleanly and takes a less defined patina. Thicker leather (above 2 mm) is too stiff to fold without cracking at the spine."
+            },
+            {
+              "name": "Round elastic cord, 2-3 mm diameter",
+              "qty": "Approximately 60 cm per insert",
+              "substitutions": "Narrower elastic (1.5 mm) also works but provides less tension to hold inserts firmly."
+            },
+            {
+              "name": "Craft knife and metal ruler",
+              "qty": "1 each",
+              "substitutions": null
+            },
+            {
+              "name": "Bookbinding awl",
+              "qty": "1",
+              "substitutions": "A leather hole punch set to the smallest hole size; or a sharp spike tool."
+            },
+            {
+              "name": "Leather burnisher",
+              "qty": "1",
+              "substitutions": "The back of a smooth teaspoon works for edge burnishing if no burnisher is available."
+            },
+            {
+              "name": "A5 pamphlet-stitch inserts",
+              "qty": "1-3 to fit in the cover",
+              "substitutions": "Standard A5 notebooks trimmed to fit also work in the cover."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Measuring and cutting the cover" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cover is a single flat rectangle. For A5 inserts (148 mm wide x 210 mm tall), the leather should be cut to approximately:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Width: twice the insert width plus a spine allowance of 6-10 mm and an optional overlap of 10 mm at the front. For one insert: (148 x 2) + 8 + 10 = 314 mm. Round up to 315 mm." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Height: insert height plus 4 mm (2 mm top and bottom). For A5 inserts: 214 mm. Round to 215 mm." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lay the leather grain-side down on the cutting mat. Mark the rectangle with a pencil or wing divider on the rough side. Cut along the marks against the metal ruler. Work slowly and apply firm, consistent pressure: leather cuts cleanly in one or two passes with a sharp blade. Do not saw back and forth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Marking the spine fold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Find the spine centre of the cut leather. For the A5 cover above, measure 157.5 mm from one short edge (the front cover edge) and mark a line down the full height of the leather. Mark a second line 8 mm further in (the spine width). The fold will fall between these two lines. Score very lightly along each mark with the awl tip and the ruler: this gives the fold lines a crisp edge when you flex the leather into position."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Punching the spine holes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark three holes along the centre of the spine strip: one at the midpoint of the spine height, one 25 mm above, and one 25 mm below. Hold the leather over the cutting mat and punch through the full thickness with the bookbinding awl. Rotate the awl slightly as you push through to keep the hole clean and round. The holes should be just large enough to pass two strands of elastic through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Threading the elastic" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut a length of elastic cord approximately 60 cm long. Thread one end through the top hole from the outside (grain side) of the cover to the inside. Bring it down the inside of the cover to the middle hole and push it back through to the outside. Then bring it down the outside to the bottom hole and push it through to the inside again. Tie the two ends of the elastic on the inside in a flat knot. The elastic now runs in a Z-shape through the three holes, with a loop on the outside at each end."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slip a pamphlet-stitch insert onto the elastic loop: open the insert to its centre fold, hold the spine of the insert against the elastic at the middle hole, and stretch the two outer loops over the top and bottom of the insert's spine. The elastic holds the insert in place by tension. Add subsequent inserts the same way, each on its own elastic length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing the edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The raw cut edge of veg-tan leather can be left square (it will round naturally with use), or it can be burnished now for a smoother finish. Dampen the cut edge lightly with water and immediately rub the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "veg-tan-leather" } }],
+            "text": "leather burnisher"
+          },
+          {
+            "type": "text",
+            "text": " back and forth along the edge with firm pressure. The friction polishes the cut fibres together. Work one edge at a time. The finished edge takes a few minutes to dry and then has a harder, more defined profile."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Veg-tan leather darkens and softens with handling. The natural oils in the hands condition the leather gradually; no other treatment is necessary for a cover in regular use. If the leather becomes very dry and stiff (common with infrequently used covers stored in a dry environment), apply a small amount of leather conditioner to the grain side with a soft cloth, leave for an hour, and buff off the excess. Replace the elastic when it no longer holds the inserts firmly: a standard length of elastic cord lasts one to two years of daily use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The same construction scales for passport-size inserts (90 mm x 125 mm) or A6 inserts (105 mm x 148 mm). A fourth elastic loop through a central hole in the spine can hold a folded map or a pocket insert flat against the inside back cover. The foredge can be closed with a wrap of elastic cord looped around a toggle button punched through the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deckle-edge-fold" } }],
+            "text": "foredge"
+          },
+          {
+            "type": "text",
+            "text": " edge of the back cover."
+          }
+        ]
+      }
+    ]
+  }
+}

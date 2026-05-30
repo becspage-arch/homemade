@@ -1,0 +1,429 @@
+{
+  "slug": "origami-tulip-and-stem",
+  "title": "Origami tulip and stem",
+  "subtitle": "A two-part model: an inflated tulip head and a rolled stem",
+  "excerpt": "The origami tulip is a two-part public-domain model from the Froebel kindergarten tradition. The flower head is made from a square using the balloon base, inflated by blowing gently into the base hole. The stem is folded from a small rectangle.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional origami tulip model, public domain. Documented in the Froebel kindergarten origami tradition (pre-1928) and in late-Meiji Japanese origami primers available via the Internet Archive origami history collection. The tulip balloon base is among the simplest closed 3D origami flower forms and appears in pre-1928 published sources. The construction here uses only valley and mountain folds from the balloon base, without squash or petal folds.",
+  "recipeTools": [
+    { "slug": "origami-washi", "isOptional": false },
+    { "slug": "kami-15cm", "isOptional": true },
+    { "slug": "origami-bone-folder-mini", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "balloon-base",
+      "term": "Balloon base",
+      "definition": "A four-sided inflatable origami base made by folding a square into a triangle, then folding each lower corner of the triangle up to the apex, giving a diamond shape with a small opening at the base through which the model is blown to inflate."
+    },
+    {
+      "slug": "inflate",
+      "term": "Inflate",
+      "definition": "To blow gently into the small opening at the base of a balloon-base model, expanding the paper into a rounded three-dimensional form. The paper opens from inside as the breath separates the layers."
+    },
+    {
+      "slug": "locking-fold",
+      "term": "Locking fold",
+      "definition": "A fold that tucks one flap of paper into a pocket formed by an adjacent layer, securing the shape without adhesive."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The origami tulip is a two-part model: a rounded flower head that inflates from the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "balloon-base" } }],
+            "text": "balloon base"
+          },
+          {
+            "type": "text",
+            "text": ", and a narrow rolled stem. Both use only valley and mountain folds. The balloon base requires no squash folds or petal folds, making it suitable for the v1 fold renderer. It appears in Froebel kindergarten paperfolding material from the late nineteenth century."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use two squares: a 15 cm square for the flower (red, pink, or any strong colour) and a 10 cm square or a 10 cm x 15 cm rectangle for the stem (green). The stem can also be cut from a strip of 90 gsm cartridge paper."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            {
+              "name": "Origami washi or kami paper, 15 cm square",
+              "qty": "1 sheet, for the flower head",
+              "substitutions": "Kami paper (coloured one side, white the other) gives the classic tulip look. Use a solid, saturated colour; the round form reads better with a single strong colour."
+            },
+            {
+              "name": "Origami paper or cartridge paper, approx. 10 cm x 10–15 cm",
+              "qty": "1 sheet, for the stem",
+              "substitutions": "Green kami paper or cartridge paper, 90 gsm, cut to size. A thin wooden skewer inside the rolled stem adds rigidity if the tulip will be displayed upright."
+            },
+            {
+              "name": "Mini bone folder (optional)",
+              "qty": "1"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the flower head: balloon base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fold diagram below shows the sequence. Steps 1 to 7 produce the inflated flower head."
+          }
+        ]
+      },
+      {
+        "type": "origamiFoldDiagram",
+        "attrs": {
+          "definition": {
+            "title": "Tulip flower head; balloon base",
+            "stepCount": 7,
+            "steps": [
+              {
+                "stepNumber": 1,
+                "caption": "Start with a square, coloured side down. Fold in half diagonally: bring the bottom-left corner to the top-right corner. Crease sharply.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 100], "to": [100, 0] }
+                ]
+              },
+              {
+                "stepNumber": 2,
+                "caption": "Fold the resulting triangle in half: bring the right corner to the left corner. Crease. Open this fold. You have a triangle with a vertical crease at its centre.",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [0, 100] }
+                ]
+              },
+              {
+                "stepNumber": 3,
+                "caption": "Open back to the first triangle (from step 1). The long edge of the triangle is at the bottom. Fold the lower-right corner of the long edge up to meet the apex (top point). Crease firmly.",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [50, 0] }
+                ]
+              },
+              {
+                "stepNumber": 4,
+                "caption": "Fold the lower-left corner of the long edge up to meet the apex. Crease firmly. You now have a diamond shape with the open points at the top.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 100], "to": [50, 0] }
+                ]
+              },
+              {
+                "stepNumber": 5,
+                "caption": "Turn the model over. Fold the lower-right and lower-left corners up to the top point on this side too (repeat steps 3 and 4 on the back face).",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [50, 0] },
+                  { "kind": "valley", "from": [0, 100], "to": [50, 0] }
+                ]
+              },
+              {
+                "stepNumber": 6,
+                "caption": "On the top face, fold the lower-right flap up to about two-thirds of the way to the top point. Crease. Fold it up again to lock the flap against the body; this is the locking fold. Repeat on the lower-left flap, and on both flaps on the back face.",
+                "folds": [
+                  { "kind": "valley", "from": [100, 100], "to": [75, 33] },
+                  { "kind": "valley", "from": [0, 100], "to": [25, 33] }
+                ]
+              },
+              {
+                "stepNumber": 7,
+                "caption": "Hold the model with the small opening at the bottom. Blow gently into the opening to inflate. Press the four top petals outward and downward slightly to open the flower shape.",
+                "folds": [
+                  { "kind": "valley", "from": [50, 0], "to": [25, 20] },
+                  { "kind": "valley", "from": [50, 0], "to": [75, 20] }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step in words: flower head" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Lay the square coloured side down. Fold diagonally in half: bring the bottom-left corner up to meet the top-right corner. Crease sharply. This is a valley fold." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold the triangle in half once more: bring the right corner to meet the left corner. Crease, then open back to the single triangle." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "The long edge of the triangle is at the bottom. Fold the bottom-right corner up to the apex (top point) along a valley fold. Crease firmly." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold the bottom-left corner up to the apex. Crease firmly. The model is now a diamond with four layers; two flaps on the front face and two flaps indicated on the back." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Turn the model over. Fold both lower corners up to the apex on this back face, repeating steps 3 and 4. You now have a symmetrical diamond with all flaps folded to the top point." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "On the front face, fold the lower-right flap upward to roughly two-thirds of the distance to the top. Then fold it upward again to bring the tip as close to the top as it will reach; this is the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "locking-fold" } }],
+                    "text": "locking fold"
+                  },
+                  { "type": "text", "text": ". The folded tip tucks under the flap above it. Repeat on the lower-left flap on the front face, then repeat both folds on the back face." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Hold the model with the small opening at the base. Blow gently into the opening to "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inflate" } }],
+                    "text": "inflate"
+                  },
+                  { "type": "text", "text": " it. Use your fingers to gently round and separate the four top petals." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the stem" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fold diagram below shows the stem construction."
+          }
+        ]
+      },
+      {
+        "type": "origamiFoldDiagram",
+        "attrs": {
+          "definition": {
+            "title": "Tulip stem",
+            "stepCount": 4,
+            "steps": [
+              {
+                "stepNumber": 1,
+                "caption": "Start with a rectangle of green paper. Fold in half lengthways: bring the long top edge down to the long bottom edge. Crease.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 0], "to": [100, 0] }
+                ]
+              },
+              {
+                "stepNumber": 2,
+                "caption": "Fold in half lengthways again: bring the top folded edge down to the bottom edge. You have a narrow strip four layers thick.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 0], "to": [100, 0] }
+                ]
+              },
+              {
+                "stepNumber": 3,
+                "caption": "Starting from one short end, roll the strip tightly into a cylinder. The tighter the roll, the more rigid the stem.",
+                "folds": [
+                  { "kind": "valley", "from": [0, 50], "to": [100, 50] }
+                ]
+              },
+              {
+                "stepNumber": 4,
+                "caption": "Tuck the trailing end of the strip into the open end of the cylinder to lock the roll. Slide the stem into the opening at the base of the flower head.",
+                "folds": [
+                  { "kind": "mountain", "from": [100, 50], "to": [50, 50] }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step-by-step in words: stem" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Lay the green rectangle with the longer dimension running left to right. Fold in half lengthways: bring the top long edge down to meet the bottom edge. Crease." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Fold in half lengthways again: the strip is now four layers thick and quite narrow." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Beginning at one short end, roll the strip tightly into a narrow cylinder. Hold the roll firmly as you go." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Tuck the trailing loose end of the strip into the end of the cylinder to lock the roll in place. The locked cylinder is the stem." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Slide the stem into the small opening at the base of the inflated tulip head. The stem holds by friction. A small drop of PVA inside the flower base secures it permanently." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gently press the four top petals outward and slightly downward to open the flower. The finished tulip sits well displayed in a small glass or held in a hand. The stem holds the flower upright; for a standing arrangement, a few drops of PVA where the stem meets the flower head prevents the head from tilting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The inflated tulip head is fragile; a hard knock deflates it and creases the petals. Store upright or in a box with no weight on top. The stem can be replaced if damaged; slide the old one out and roll a new one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 20 cm square gives a larger tulip head; the locking folds in step 6 need to be proportionally sized; fold to roughly two-thirds of the diamond height, then fold again to lock. Foil-backed origami paper holds the inflated shape more firmly than plain kami; the foil layer resists the tendency to spring back after inflation."
+          }
+        ]
+      }
+    ]
+  }
+}
