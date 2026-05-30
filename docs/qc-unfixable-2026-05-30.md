@@ -326,3 +326,34 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - warm-loft-vs-cold-loft-decision grade-level-strict — applied: 
 - waste-free-gift-wrapping-alternatives voice-violation,grade-level-strict — applied: 
 - window-frame-perimeter-draught-sealing grade-level-strict — applied: 
+
+- applying-french-polish-to-a-small-piece-of-furniture hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bleeding-a-radiator hero-missing — applied: hero-fill-deferred-to-standalone-script
+- building-a-simple-tool-cabinet-with-a-plywood-back hero-missing — applied: hero-fill-deferred-to-standalone-script
+- clearing-a-blocked-bath-or-basin-waste-trap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- conditioning-and-feeding-a-leather-sofa hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- cutting-and-fitting-new-stair-treads hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-door-lining-to-a-new-door-opening hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-dust-cover-to-the-underside-of-a-chair hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-thermostatic-radiator-valve hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-wall-batten-shelf-to-masonry-or-stud hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-window-board-with-scribed-return-ends hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-architrave-to-a-door-opening hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-skirting-board-with-coped-internal-corners hero-missing — applied: hero-fill-deferred-to-standalone-script
+- insulating-cold-water-pipes-with-foam-lagging hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-box-shelving-unit-with-rebated-back hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-a-small-timber-step-stool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- re-covering-a-drop-in-seat-pad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- re-webbing-a-drop-in-chair-seat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repairing-a-leather-tear-with-saddle-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repairing-a-loose-chair-joint-with-hide-glue hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-ceiling-rose-and-pendant-fitting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-double-socket-faceplate hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-kitchen-mixer-tap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-light-switch-with-a-dimmer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-tap-washer-in-a-dripping-pillar-tap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-a-toilet-seat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- replacing-seat-cushion-foam-in-a-sofa hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stripping-paint-from-a-wooden-chair-with-a-heat-gun hero-missing — applied: hero-fill-deferred-to-standalone-script
+- treating-active-woodworm-in-furniture hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wiring-a-13a-plug hero-missing — applied: hero-fill-deferred-to-standalone-script

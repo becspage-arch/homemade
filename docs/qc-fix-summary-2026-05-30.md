@@ -801,3 +801,45 @@ SKIPPED: 0
 - off-grid-internet-connectivity-options: voice-violation, grade-level-strict
 - off-grid-property-insurance-guide: voice-violation, grade-level-strict
 - over-rafter-insulation-board: grade-level-strict
+
+---
+
+## Run at 11:50:14
+
+Generated: 2026-05-30T11:50:14.690Z
+
+Processed: 82
+PASS: 52
+STILL_BLOCKED: 30
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 90 |
+| body-missing-method | 30 |
+| grade-level-strict | 12 |
+
+## Still BLOCKED (sample 20)
+
+- applying-french-polish-to-a-small-piece-of-furniture: hero-missing
+- bleeding-a-radiator: hero-missing
+- building-a-simple-tool-cabinet-with-a-plywood-back: hero-missing
+- clearing-a-blocked-bath-or-basin-waste-trap: hero-missing
+- conditioning-and-feeding-a-leather-sofa: hero-missing, grade-level-strict
+- cutting-and-fitting-new-stair-treads: hero-missing
+- fitting-a-door-lining-to-a-new-door-opening: hero-missing
+- fitting-a-dust-cover-to-the-underside-of-a-chair: hero-missing
+- fitting-a-thermostatic-radiator-valve: hero-missing, grade-level-strict
+- fitting-a-wall-batten-shelf-to-masonry-or-stud: hero-missing
+- fitting-a-window-board-with-scribed-return-ends: hero-missing
+- fitting-architrave-to-a-door-opening: hero-missing
+- fitting-skirting-board-with-coped-internal-corners: hero-missing
+- insulating-cold-water-pipes-with-foam-lagging: hero-missing
+- making-a-box-shelving-unit-with-rebated-back: hero-missing
+- making-a-small-timber-step-stool: hero-missing
+- re-covering-a-drop-in-seat-pad: hero-missing
+- re-webbing-a-drop-in-chair-seat: hero-missing
+- repairing-a-leather-tear-with-saddle-stitch: hero-missing
+- repairing-a-loose-chair-joint-with-hide-glue: hero-missing

@@ -1,0 +1,162 @@
+{
+  "slug": "replacing-a-double-socket-faceplate",
+  "title": "Replacing a double socket faceplate",
+  "subtitle": "Swap a cracked or worn 13 A double socket faceplate like-for-like on an existing ring or spur circuit",
+  "excerpt": "How to replace a damaged double 13 A socket outlet faceplate on an existing ring main or spur circuit, covering the live-dead-live isolation procedure, disconnecting the old faceplate, wiring the new faceplate, and testing before reinstatement.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics. BS 7671 (IET Wiring Regulations, 18th Edition). IET On-Site Guide.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "socket-tester", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "live-dead-live-test",
+      "term": "Live-dead-live test",
+      "definition": "The safe isolation procedure before working on an electrical circuit: (1) Test the voltage tester against a known live source to confirm it is working. (2) Turn off the MCB and test the circuit to confirm it is dead. (3) Test the voltage tester against the known live source again to confirm the tester is still working. Only then is the circuit safe to work on."
+    },
+    {
+      "slug": "ring-main-spur",
+      "term": "Ring main and spur",
+      "definition": "The standard UK domestic socket wiring arrangement. The ring main is a continuous loop of 2.5 mm twin-and-earth cable that starts and ends at the consumer unit, connecting all sockets on a circuit. A spur is a branch off the ring to a single additional socket. A spur socket has one set of cables; a ring-main socket has two sets."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["replace socket outlet", "socket faceplate replacement", "fix broken socket"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Replacing a socket faceplate like-for-like on an existing circuit is Part P exempt work in England under Schedule 4 of the Building Regulations. It requires following the full " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "live-dead-live-test"}}], "text": "live-dead-live isolation procedure" },
+          { "type": "text", "text": " before touching any connection. A " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "ring-main-spur"}}], "text": "ring-main socket" },
+          { "type": "text", "text": " has two cable sets in the back box; a spur socket has one. Both are wired identically but have different numbers of connections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you will need: materials"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A new double 13 A socket faceplate (standard, switched, or USB-A/C combination) to fit the existing single-gang back box. Check the back box depth: standard is 25 mm. A 35 mm box accepts most faceplates. Earth sleeving (green and yellow): a short length cut from any offcut of earth conductor. Warning label if the work is notifiable in your area." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 1, isolate the circuit safely"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Test the two-pole voltage tester against the proving unit to confirm it is working. At the consumer unit, identify and switch off the MCB for the circuit. Fit the lock-off device on the MCB. Return to the socket and test between live and neutral, live and earth, and neutral and earth with the two-pole tester: all three must read zero. Test the tester against the proving unit again to confirm it is still live and working. Only then is the circuit safe to work on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 2, remove the old faceplate"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Undo the two faceplate retaining screws (top and bottom centre). Pull the faceplate gently away from the back box: the cables inside will hold it close. Note which cable core goes to which terminal before disconnecting anything. The terminals are marked L (brown or red), N (blue or black), and E (earth, bare or green-and-yellow). Photograph the terminal connections before loosening any screw, then release each core and remove the old faceplate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 3, prepare the cores for the new faceplate"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Check that each conductor core has 10 to 12 mm of insulation stripped from the end. Re-strip with the wire strippers if the old ends are kinked or corroded. Any bare earth conductor must have green-and-yellow sleeving fitted before connection. On older red-and-black wiring, the red core goes to L and the black core goes to N. On modern brown-and-blue wiring (post-2004), brown goes to L and blue goes to N." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 4, wire the new faceplate"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect each core to the matching terminal on the new faceplate. Tighten each terminal screw until the core is firmly gripped and cannot be pulled out with a gentle tug. On a ring-main socket, both live cores go into the L terminal, both neutral cores into N, and both earth cores into E: the terminals accept two conductors. Fold the cables neatly into the back box and offer up the faceplate. Drive the two retaining screws until the faceplate sits flush against the wall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 5, reinstate and test"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off device and switch the MCB back on. Plug the socket tester into the new socket: the correct-wiring indication shows all three LEDs in the correct pattern (varies by tester model; check the reference card). Test both outlets. If the socket tester shows a fault, turn the MCB off, refit the lock-off, and recheck the terminal connections against the photograph taken at step 2." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Variations"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A USB socket faceplate fits the same back box and is wired identically. The USB module is powered from the mains terminals on the back of the faceplate. A surface-mounted back box (white plastic) replaces a flush box where chasing into the wall is not possible; the faceplate fitting is the same." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Care"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Do not use a socket if the faceplate is cracked, the shutter mechanisms do not spring back after the plug is removed, or there is any sign of burning or arcing at the terminals. A socket in this condition is a shock and fire risk and must be replaced promptly." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Socket tester shows reversed live and neutral after fitting",
+              "cause": "The live and neutral cores were connected to the wrong terminals on the new faceplate.",
+              "fix": "Turn off the MCB, fit the lock-off device, and re-confirm the circuit is dead with the two-pole tester. Open the faceplate and swap the live and neutral cores to the correct terminals. Test again after reinstatement."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips immediately when switched back on after refitting",
+              "cause": "A conductor core is touching the metal back box, or two bare cores are bridging across terminals.",
+              "fix": "Turn off the MCB, fit the lock-off device, and open the faceplate. Check that no bare conductor is touching the back box wall. Check that earth sleeving is fitted on all bare earth cores. Refold the cables so they sit clear of the metal box sides."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

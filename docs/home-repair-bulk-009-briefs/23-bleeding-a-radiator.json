@@ -1,0 +1,146 @@
+{
+  "slug": "bleeding-a-radiator",
+  "title": "Bleeding a radiator",
+  "subtitle": "Release trapped air from a radiator that is cold at the top to restore full heat output",
+  "excerpt": "How to bleed a central-heating radiator that is cold at the top and warm at the bottom, covering locating the bleed valve, opening it to release trapped air, and re-pressurising a sealed system after bleeding.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual. Heating and Cooling of Buildings (public domain engineering references). Cassell's Cyclopaedia of Mechanics.",
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "radiator-bleed-valve",
+      "term": "Bleed valve",
+      "definition": "A small square-headed or slotted valve at the top corner of a radiator that allows trapped air to escape. A bleed key (a small square-drive key) or a flat-head screwdriver fits the head. Opening the valve by a quarter-turn allows air to escape; the valve is closed as soon as water appears."
+    },
+    {
+      "slug": "sealed-system-pressure",
+      "term": "Sealed system pressure",
+      "definition": "The water pressure in a sealed (pressurised) central-heating system, read on the pressure gauge on the boiler. Normal cold-fill pressure is 1.0 to 1.5 bar. Bleeding a radiator releases water along with the air and lowers the system pressure; the system must be re-pressurised to the correct level afterwards via the filling loop."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["bleed radiator", "radiator cold at top", "air lock radiator"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A radiator that is warm at the bottom but cold at the top has trapped air sitting above the water. The air comes from dissolved gases in the system water that collect at the high points. Opening the " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "radiator-bleed-valve"}}], "text": "bleed valve" },
+          { "type": "text", "text": " allows the air to escape and water to fill the full height of the radiator. On a " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "sealed-system-pressure"}}], "text": "sealed system" },
+          { "type": "text", "text": ", check the boiler pressure before and after: bleeding lowers the pressure and the system must be refilled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you will need: materials"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A radiator bleed key (a 5p-piece-sized square-drive key, available from any hardware shop). If the bleed valve has a slotted head, a flat-head screwdriver from the set. An old cloth or small container to catch the dribble of water when the air has escaped." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 1, turn off the heating and note the boiler pressure"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the heating off and allow the system to cool for 30 minutes. Hot water under pressure will spray from the bleed valve if the radiator is still very hot. Note the reading on the boiler pressure gauge: on a sealed system, a normal cold-fill reading is 1.0 to 1.5 bar. If it reads below 1.0 bar before bleeding, the system was already low and will need refilling after bleeding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 2, locate and open the bleed valve"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The bleed valve is at the top corner of the radiator, usually on the side opposite the thermostat head. Hold the cloth below the valve to catch drips. Insert the bleed key and turn it one quarter-turn anticlockwise only. A hissing sound means air is escaping. Hold the key in position and do not let go: the valve must be closed quickly when water appears. The moment a dribble of water appears at the valve hole, turn the key clockwise to close the valve." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 3, re-pressurise a sealed system"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Check the boiler pressure gauge. If it has dropped below 1.0 bar after bleeding, the system must be refilled via the filling loop. The filling loop is a braided hose under the boiler with two isolating valves. Open both valves slowly until the pressure gauge climbs to 1.2 to 1.5 bar, then close both valves. Bleed each radiator in the house in turn (start from the lowest floor, working upward) before refilling; multiple bleeds in one session will lower the pressure more than one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 4, turn the heating back on and check"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the heating back on and run the system up to full temperature. Check the bled radiator: it should now be uniformly warm from bottom to top. Check the boiler pressure again when the system is hot (hot water expands and raises the pressure by 0.3 to 0.5 bar above the cold reading): if the hot pressure reads above 2.5 bar, the system is overpressured and a small amount of water must be released via the pressure-relief drain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Variations"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On an open-vented system (the loft has a small feed-and-expansion tank rather than a pressure gauge), bleeding does not need refilling afterwards. The header tank tops the system up on its own. On a heat pump system, bleed the radiators with the pump running in heating mode. The circulating pump keeps air moving toward the bleed valves at the top of each radiator." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Care"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If one or two radiators need bleeding more than once a year, the system has an ongoing source of air: a loose fitting, a corroding component, or a failing automatic air vent. Dose the system with a central-heating inhibitor annually to slow corrosion. Black water (magnetite sludge) at the bleed valve indicates heavy corrosion inside the system; a power flush by a heating engineer is needed." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "No air comes from the bleed valve and no water appears",
+              "cause": "The bleed valve is blocked with corrosion or scale from the system water.",
+              "fix": "Try turning the key a little further anticlockwise (up to one full turn). If nothing comes, the valve is seized. Replace the bleed valve: they unscrew from the radiator top corner once the radiator is drained."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler pressure drops below 0.5 bar after bleeding",
+              "cause": "Multiple radiators were bled in sequence without refilling between sessions, or the system was already low before bleeding started.",
+              "fix": "Refill via the filling loop until the cold pressure reads 1.2 to 1.5 bar. If the boiler shows a low-pressure fault code (usually F1 or similar), filling to the correct pressure will clear the fault. If the system loses pressure again within a few weeks, there is a leak or a faulty pressure-relief valve."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

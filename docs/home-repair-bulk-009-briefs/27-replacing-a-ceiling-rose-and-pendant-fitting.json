@@ -1,0 +1,150 @@
+{
+  "slug": "replacing-a-ceiling-rose-and-pendant-fitting",
+  "title": "Replacing a ceiling rose and pendant fitting",
+  "subtitle": "Remove an old ceiling rose and hang a new pendant or close-mounted fitting on an existing lighting circuit",
+  "excerpt": "How to replace a ceiling rose and pendant light fitting on a loop-in lighting circuit, covering safe isolation, identifying the loop-in wiring, disconnecting the old rose, and connecting the new fitting.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics. BS 7671 (IET Wiring Regulations, 18th Edition). IET On-Site Guide.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "loop-in-ceiling-rose",
+      "term": "Loop-in wiring",
+      "definition": "The standard UK domestic lighting circuit arrangement where the supply cables loop through each ceiling rose in sequence. A loop-in rose has three sets of terminals: a neutral block (all neutrals connected), a live-in block (supply and switch return), and a switch-live block (live out to the lamp and in from the switch). Multiple cables enter a loop-in rose; a switch-drop rose has just one cable."
+    },
+    {
+      "slug": "lamp-holder-pendant",
+      "term": "Pendant lampholder",
+      "definition": "A B22 (bayonet) or E27 (Edison screw) lampholder suspended from a ceiling rose on a textile flex. The pendant lampholder carries only the lamp weight and must be supported by the ceiling rose, not by the flex terminals. Most ceiling roses have a strain-relief grip that holds the outer sheath of the flex."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["ceiling light replacement", "pendant light fitting", "ceiling rose replacement"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A ceiling rose on a " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "loop-in-ceiling-rose"}}], "text": "loop-in lighting circuit" },
+          { "type": "text", "text": " can have two or three cables entering it (the loop cables) plus the " },
+          { "type": "text", "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "lamp-holder-pendant"}}], "text": "pendant flex" },
+          { "type": "text", "text": " to the lamp. Replacing the rose with a close-mounted fitting (a batten holder or surface-mounted shade) uses the same terminals but a different mounting plate. Always photograph the existing wiring before removing any connections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you will need: materials"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The new ceiling rose or close-mounted fitting. Pendant flex: 0.5 mm two-core braided flex cut to the required drop length. A B22 or E27 lampholder to match the new fitting. If replacing with a close-mounted fitting that terminates the conductors directly (no rose): Wago or similar push-in connectors for the loop connections if the fitting has fewer terminals than the number of conductors." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 1, isolate the circuit and confirm dead"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Test the two-pole voltage tester against the proving unit. At the consumer unit, switch off the MCB for the lighting circuit and fit the lock-off device. Turn the light switch on at the wall before going to the ceiling: with the switch on, the switched-live conductor at the rose is active if the circuit is live. Confirm all conductors at the rose read zero with the two-pole tester. Test the tester against the proving unit a second time before touching any conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 2, remove the old rose"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the rose cover and lower it. Photograph all terminal connections before releasing any conductor. Release the pendant flex from the strain-relief grip and disconnect the brown and blue flex cores from the switch-live terminal block. Release each circuit conductor from its terminal and label each one (live-in, neutral-in, switch-live, switch-return) with small pieces of tape. Unscrew the rose base from the ceiling and lower it with the cables." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 3, prepare and mount the new rose base"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the new rose base to the ceiling fixing point. Thread each circuit conductor into the base and connect them to the matching terminals in the new rose: loop-in neutrals to the neutral block, supply live and switch-return to the live block, switch-live to the switch-live block. Tighten each terminal until the conductor cannot be pulled free. If the new fitting has a different terminal layout from the old rose, use the photograph from step 2 to reconnect correctly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Step 4, connect the pendant flex and reinstate"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Feed the pendant flex through the strain-relief grip in the rose. Connect the brown flex core to the switch-live terminal and the blue core to the neutral terminal. Pull the flex back so the grip holds the outer sheath and the cores have no tension at the terminals. Fit the lampholder to the free end of the flex. Remove the lock-off device, switch the MCB back on, and test the light." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Variations"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A close-mounted shade or batten holder connects the circuit conductors to the fitting's terminals directly, without a pendant flex. The fitting must be fixed to a ceiling mounting point rated for its weight. Heavy fittings (over 3 kg) require a separate mechanical fixing into the ceiling joist, not just into the rose mounting box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Care"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Check that the lamp wattage does not exceed the fitting's maximum rating, marked on the fitting body. Fitting a 60 W lamp in a fitting rated at 40 W overheats the lampholder and the flex over time. Replace any pendant flex that has become stiff, cracked, or discoloured at the lamp end." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light does not come on after the MCB is switched back on",
+              "cause": "The switch-live and neutral cores of the pendant flex are reversed at the lampholder, or the lamp is not seated fully in the lampholder.",
+              "fix": "Switch off the MCB and fit the lock-off device. Open the lampholder and swap the two flex cores. Check the lamp is fully engaged in its B22 or E27 fitting. Reinstate and test."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips when the light switch is turned on",
+              "cause": "A conductor core is in the wrong terminal, causing a short circuit; or a conductor is touching the metal canopy of the fitting.",
+              "fix": "Switch off the MCB and fit the lock-off device. Open the rose and check each conductor against the photograph. Confirm no bare conductor is touching any metal part. Reinstate and test."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
