@@ -1,0 +1,286 @@
+{
+  "slug": "wiring-a-switched-fused-spur",
+  "title": "Wiring a switched fused spur",
+  "subtitle": "Connect a switched fused connection unit to supply a fixed appliance",
+  "excerpt": "How to wire a switched fused connection unit (FCU) from an existing ring main socket or junction box to provide a fused, switched supply to a fixed appliance such as an extractor fan, electric towel rail, or under-counter appliance, including isolating the circuit, making the connections, and testing.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET Wiring Regulations (BS 7671:2018 + A2:2022). Electrical Safety First guidance. MK Electric FCU installation notes.",
+  "recipeTools": [
+    {
+      "slug": "voltage-tester-2-pole",
+      "isOptional": false
+    },
+    {
+      "slug": "proving-unit",
+      "isOptional": false
+    },
+    {
+      "slug": "electricians-screwdriver-set",
+      "isOptional": false
+    },
+    {
+      "slug": "wire-strippers",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill-18v",
+      "isOptional": false
+    },
+    {
+      "slug": "socket-tester",
+      "isOptional": false
+    },
+    {
+      "slug": "multimeter-digital",
+      "isOptional": true
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "fused spur wiring",
+    "fused connection unit",
+    "switched fused spur",
+    "FCU wiring"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fused-connection-unit",
+      "term": "Fused connection unit (FCU)",
+      "definition": "A wall-mounted electrical outlet with a built-in fuse (typically 3A or 13A) and an on/off switch, designed to supply a fixed appliance permanently rather than a plug socket. The FCU provides appliance-level protection via the fuse and allows the appliance to be switched off without unplugging or using the consumer unit."
+    },
+    {
+      "slug": "spur-fused",
+      "term": "Fused spur",
+      "definition": "A branch from a ring main or radial circuit that is protected by its own fuse, usually by means of a fused connection unit at the origin. The fuse in the FCU provides protection for the spur cable and the appliance it feeds. A fused spur does not count against the number of unfused spurs allowed on a ring circuit."
+    },
+    {
+      "slug": "cable-flex",
+      "term": "Flexible cable (flex)",
+      "definition": "A multi-stranded insulated cable used to connect a fixed appliance to its supply point. Unlike fixed wiring which uses single-stranded conductors, flex uses many fine strands to withstand repeated movement. The appliance flex is connected to the 'load' side terminals of an FCU; the fixed ring cable connects to the 'feed' side."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "fused-connection-unit"
+                }
+              }
+            ],
+            "text": "fused connection unit"
+          },
+          {
+            "type": "text",
+            "text": " (FCU) is the correct way to connect a fixed appliance: extractor fan, electric towel rail, or similar: from the ring main. It provides appliance-level isolation and fuse protection without creating an exposed plug that can be accidentally unplugged. The FCU has two sets of terminals: 'feed' (connected to the supply cable from the ring) and 'load' (connected to the appliance flex or fixed appliance cable). This is notifiable work under Part P."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, plan the installation and choose the fuse size"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Identify the appliance wattage and calculate the fuse size: watts ÷ 240 = current draw in amps. Select the next standard fuse size above this figure: 3A (for up to 720 W), 5A (up to 1200 W), or 13A (up to 3120 W). An extractor fan (30-100 W) takes a 3A fuse; an electric towel rail (60-150 W) takes a 3A fuse. The FCU goes on the ring or "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "spur-fused"
+                }
+              }
+            ],
+            "text": "fused spur"
+          },
+          {
+            "type": "text",
+            "text": " position, not on an existing spur outlet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, isolate the circuit: live-dead-live"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Confirm the supply is live at the origin socket using the two-pole tester and proving unit. Switch off the MCB. Prove dead at the socket. Confirm the tester is still functional on the proving unit. Lock off the MCB. All three steps must be completed in order."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, run the supply cable to the FCU"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Run 2.5 mm² twin-and-earth cable from the origin socket or junction box to the FCU position. Follow permitted cable zones in walls (vertically or horizontally from switches and sockets). The FCU should be positioned where it is accessible for switching and fuse replacement. Fix the FCU back box in the wall."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, connect the FCU"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the FCU, connect the supply cable from the ring to the 'feed' terminals: brown to L feed, blue to N feed, green-yellow earth to earth. Connect the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cable-flex"
+                }
+              }
+            ],
+            "text": "appliance cable or flex"
+          },
+          {
+            "type": "text",
+            "text": " to the 'load' terminals: brown to L load, blue to N load, earth to earth. Fit the correct fuse cartridge into the FCU fuse carrier. At the origin socket, connect the supply cable to the ring terminals: brown to L, blue to N, earth to E, alongside the existing ring cables."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 5, test the installation"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Restore the MCB. Confirm the origin socket is correctly wired with the socket tester. Switch the FCU on and confirm the appliance operates. Switch the FCU off and confirm the appliance stops. Check the FCU switch indicator light (where fitted) is extinguished when switched off. Notify the installation under Part P and retain the certificate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An unswitched FCU is used where an appliance must not be accidentally switched off: a refrigerator, freezer, or burglar alarm panel. The fuse provides protection without the switch. A flex outlet plate is a further alternative where the appliance flex terminates at the wall and is locked into the outlet; this is used for appliances where the flex cannot be disconnected from the appliance end."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Appliance does not operate when FCU is switched on",
+              "cause": "Fuse blown; load terminals not correctly connected; appliance fault.",
+              "fix": "Isolate the circuit. Remove the fuse carrier and check the fuse with the multimeter on continuity — replace if blown. Check the load terminal connections. If the fuse blows again immediately on restoration, the appliance has a fault."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips when the FCU circuit is switched on",
+              "cause": "Short circuit in the supply cable; feed and load terminals crossed.",
+              "fix": "Isolate and check all connections — specifically that feed cable is at feed terminals and appliance cable is at load terminals. Inspect the cable run for any damage."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "FCU switch feels stiff or sparks when operated",
+              "cause": "FCU switch rated for resistive load only, but inductive appliance (motor) fitted.",
+              "fix": "Replace the FCU with one rated for the appliance type. Extractor fans have inductive (motor) loads — use an FCU specifically rated for motor loads, not a standard resistive-rated unit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

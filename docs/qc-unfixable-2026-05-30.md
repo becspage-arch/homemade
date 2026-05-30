@@ -220,3 +220,17 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - triple-glazing-vs-secondary-glazing voice-violation,grade-level-strict — applied: 
 - velux-window-insulation-sealing grade-level-strict — applied: 
 - wood-chip-composting-technique voice-violation,grade-level-strict — applied: 
+
+- broccoli-and-stilton-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butternut-squash-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carrot-and-coriander-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chicken-noodle-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cock-a-leekie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-carbon-monoxide-detector grade-level-strict — applied: 
+- french-onion-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- leek-and-potato-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lentil-and-bacon-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- minestrone hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mulligatawny hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pea-and-ham-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roasted-red-pepper-soup hero-missing — applied: hero-fill-deferred-to-standalone-script

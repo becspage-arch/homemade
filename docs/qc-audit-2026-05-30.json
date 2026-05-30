@@ -1,14 +1,20 @@
 {
-  "generatedAt": "2026-05-30T05:27:55.125Z",
-  "totalScanned": 5224,
+  "generatedAt": "2026-05-30T06:05:43.174Z",
+  "totalScanned": 5267,
   "passCount": 0,
-  "blockCount": 147,
+  "blockCount": 162,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
       "total": 30,
       "pass": 0,
       "block": 30,
+      "warnOnly": 0
+    },
+    "cooking": {
+      "total": 14,
+      "pass": 0,
+      "block": 14,
       "warnOnly": 0
     },
     "paper-word": {
@@ -30,9 +36,9 @@
       "warnOnly": 0
     },
     "home-repair": {
-      "total": 9,
+      "total": 10,
       "pass": 0,
-      "block": 9,
+      "block": 10,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -61,8 +67,10 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 98,
-    "grade-level-strict": 166
+    "voice-violation": 99,
+    "grade-level-strict": 167,
+    "hero-missing": 14,
+    "placeholder-string": 2
   },
   "verdicts": [
     {
@@ -87,6 +95,23 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Understanding home battery degradation and state of health go here."
+        }
+      ]
+    },
+    {
+      "slug": "broccoli-and-stilton-soup",
+      "tutorialId": "cmp88yz1u0000isv4c79wln1j",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:53.760Z",
+      "publishedAt": "2026-05-30T06:02:02.835Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -139,6 +164,103 @@
           "message": "paragraph reads at grade 16.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Building Regulations Part L notification for retrofit insulation go here."
+        }
+      ]
+    },
+    {
+      "slug": "butternut-squash-soup",
+      "tutorialId": "cmp5nprqh0000lgv4iuia94lt",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:54.361Z",
+      "publishedAt": "2026-05-30T06:01:58.725Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "carrot-and-coriander-soup",
+      "tutorialId": "cmp88yqx90000r8v46vf6wxni",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:54.730Z",
+      "publishedAt": "2026-05-30T05:55:42.088Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "celeriac-and-apple-soup",
+      "tutorialId": "cmp5nq7i80000rov41zegh1bi",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-27T11:44:28.637Z",
+      "publishedAt": "2026-05-30T06:03:03.229Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "placeholder-string",
+          "message": "body contains unresolved placeholder {{celeriac}} — must be substituted before publish",
+          "snippet": "Heat the oven to 200°C conventional. Spread the {{celeriac}} of celeriac chunks on a roasting tin, d"
+        }
+      ]
+    },
+    {
+      "slug": "chicken-noodle-soup",
+      "tutorialId": "cmp88zbbh0000y4v41k9o6i3m",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:55.414Z",
+      "publishedAt": "2026-05-30T06:02:13.831Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "cock-a-leekie",
+      "tutorialId": "cmpagqmlg0000rsv4ohrysy2b",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:56.407Z",
+      "publishedAt": "2026-05-30T06:02:21.091Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -196,6 +318,29 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[22] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Preparing Cotton Rags for Papermaking go here."
+        }
+      ]
+    },
+    {
+      "slug": "cream-of-cauliflower-soup",
+      "tutorialId": "cmpry2ikr0001ukv4e9x4ok79",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-05-30T06:02:59.582Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "placeholder-string",
+          "message": "body contains unresolved placeholder {{unsalted-butter}} — must be substituted before publish",
+          "snippet": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} oni"
         }
       ]
     },
@@ -327,6 +472,25 @@
       ]
     },
     {
+      "slug": "fitting-a-carbon-monoxide-detector",
+      "tutorialId": "cmprxyt1j0003pwv4qpwfa06e",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:57.165Z",
+      "publishedAt": "2026-05-30T06:00:06.526Z",
+      "heroMediaId": "cmpry1ji9000k20v4ab86b52p",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a carbon monoxide detector go here."
+        }
+      ]
+    },
+    {
       "slug": "fitting-under-cabinet-led-strip-lighting",
       "tutorialId": "cmprlwszv0002u0v4z48xen6h",
       "type": "PATTERN",
@@ -419,6 +583,23 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > infoPanel[21] > body",
           "snippet": "Certain letters have projecting arms or diagonal strokes that reduce the apparent space on one or both sides. 'f', 'r', 't', 'v', 'w', and '"
+        }
+      ]
+    },
+    {
+      "slug": "french-onion-soup",
+      "tutorialId": "cmp5nsbu60000wov4pybi9grw",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:58.524Z",
+      "publishedAt": "2026-05-30T06:01:54.933Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -595,6 +776,40 @@
       ]
     },
     {
+      "slug": "leek-and-potato-soup",
+      "tutorialId": "cmp5rde6w0000i0v4g1tkcrd3",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:02:59.716Z",
+      "publishedAt": "2026-05-30T05:51:54.595Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "lentil-and-bacon-soup",
+      "tutorialId": "cmp88znea0000x8v4jvwmypyh",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:03:00.108Z",
+      "publishedAt": "2026-05-30T06:02:39.852Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
       "slug": "long-exhale-breath-for-perimenopause-anxiety",
       "tutorialId": "cmpr0rdmk000048v4pewfk1ov",
       "type": "PRACTICE",
@@ -700,6 +915,40 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
           "snippet": "Payment in full required before installation starts. Industry standard is a deposit on contract signing, staged payments during installation"
+        }
+      ]
+    },
+    {
+      "slug": "minestrone",
+      "tutorialId": "cmp5pvf1i00006ov4dch6lni5",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:03:00.829Z",
+      "publishedAt": "2026-05-30T06:02:06.456Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+        }
+      ]
+    },
+    {
+      "slug": "mulligatawny",
+      "tutorialId": "cmpb7n6x300005kv4irnn83f3",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:03:01.249Z",
+      "publishedAt": "2026-05-30T06:02:17.505Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -986,6 +1235,23 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
           "snippet": "Make a set of three graduating frames in different sizes using the same botanical arrangement for a wall grouping."
+        }
+      ]
+    },
+    {
+      "slug": "pea-and-ham-soup",
+      "tutorialId": "cmpry076x0001bsv4o42fso8l",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:03:01.983Z",
+      "publishedAt": "2026-05-30T06:02:10.083Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1381,6 +1647,23 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[17] > listItem[2] > paragraph[0]",
           "snippet": "Hazel for border tools: hazel coppice handles suit lighter tools; not recommended for spades under heavy digging pressure."
+        }
+      ]
+    },
+    {
+      "slug": "roasted-red-pepper-soup",
+      "tutorialId": "cmpry26dh0001h8v4qthbvebp",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T06:03:03.042Z",
+      "publishedAt": "2026-05-30T06:02:43.770Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },

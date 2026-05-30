@@ -1,0 +1,289 @@
+{
+  "slug": "adding-a-socket-on-a-spur-from-a-ring-circuit",
+  "title": "Adding a socket on a spur from a ring circuit",
+  "subtitle": "Connect a new single socket to an existing ring main via a fused spur or unfused spur",
+  "excerpt": "How to add a single socket outlet as a spur from an existing ring main circuit, including establishing that the circuit can take a spur, isolating and proving the circuit dead using the live-dead-live procedure, connecting a junction box or back-of-socket spur, and testing the new socket with a socket tester.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET Wiring Regulations (BS 7671:2018 + A2:2022). Collins Complete DIY Manual. Electrical Safety First consumer guidance on adding sockets.",
+  "recipeTools": [
+    {
+      "slug": "voltage-tester-2-pole",
+      "isOptional": false
+    },
+    {
+      "slug": "proving-unit",
+      "isOptional": false
+    },
+    {
+      "slug": "voltage-tester-pen",
+      "isOptional": true
+    },
+    {
+      "slug": "electricians-screwdriver-set",
+      "isOptional": false
+    },
+    {
+      "slug": "wire-strippers",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill-18v",
+      "isOptional": false
+    },
+    {
+      "slug": "socket-tester",
+      "isOptional": false
+    },
+    {
+      "slug": "combination-square-300mm",
+      "isOptional": false
+    },
+    {
+      "slug": "carpenters-pencil",
+      "isOptional": false
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "add socket spur ring main",
+    "spur socket ring circuit",
+    "new socket from existing socket",
+    "ring main spur wiring"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ring-circuit",
+      "term": "Ring circuit (ring main)",
+      "definition": "A circuit wiring method standard in UK domestic properties in which the live, neutral, and earth cables form a complete ring from the consumer unit, visiting each socket in turn, and returning to the consumer unit. The ring topology allows the circuit to carry greater load than a radial circuit of the same cable size."
+    },
+    {
+      "slug": "spur-socket",
+      "term": "Spur",
+      "definition": "A branch connection taken from an existing socket or junction box on a ring circuit to supply a new socket or fused outlet. A spur must be connected only to a socket that is itself on the ring — not to another spur socket. Each socket on the ring may supply only one spur."
+    },
+    {
+      "slug": "live-dead-live",
+      "term": "Live-dead-live test",
+      "definition": "The procedure for proving that a circuit has been safely isolated before working on it. Step one: confirm the circuit is live using the two-pole voltage tester against the proving unit. Step two: switch off the breaker and confirm the circuit is dead using the same tester. Step three: confirm the tester still reads live on the proving unit. All three steps are mandatory; skipping any step is not safe practice."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adding a socket from a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ring-circuit"
+                }
+              }
+            ],
+            "text": "ring circuit"
+          },
+          {
+            "type": "text",
+            "text": " as a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "spur-socket"
+                }
+              }
+            ],
+            "text": "spur"
+          },
+          {
+            "type": "text",
+            "text": " is notifiable work under Part P of the Building Regulations. It must be carried out by a registered electrician or self-certified by the homeowner and notified to local building control. Before starting, confirm the chosen socket is on the ring (two cables entering, or one cable at a dedicated socket) and has not already been used as a spur origin. A socket with three cables is already at capacity."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, isolate and perform the live-dead-live test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Perform the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "live-dead-live"
+                }
+              }
+            ],
+            "text": "live-dead-live test"
+          },
+          {
+            "type": "text",
+            "text": ": confirm the circuit is live at the spur origin socket using the two-pole voltage tester, check the proving unit to confirm the tester is working, switch off the MCB at the consumer unit, then confirm the circuit is dead at the socket. Lock off or tape the MCB. Confirm the tester is still functional against the proving unit. Do not proceed until all three steps are complete."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, run the spur cable"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Route 2.5 mm² twin-and-earth cable from the existing socket to the new socket position. Where the cable runs in a wall, it must be in a zone either vertically above or beside a switch or socket, or protected in a conduit, to comply with BS 7671. Clip the cable at 400 mm intervals or chase it into the wall. Leave enough cable at each end to make the connections without straining the joints."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, connect the spur cable at the origin socket"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the faceplate from the existing socket. Strip and prepare the spur cable conductors: brown (live) to the L terminal, blue (neutral) to the N terminal, and the earth (green-and-yellow sleeved) to the earth terminal. The socket terminals each receive two cables: the existing ring cables and the new spur cable. Ensure both conductors are securely clamped in each terminal: no strands should be loose."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, connect the new socket and test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the new socket: single cable, brown to L, blue to N, earth to E. Fit the socket into its back box. Restore the MCB supply. Verify the tester is functional against the proving unit, then use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "live-dead-live"
+                }
+              }
+            ],
+            "text": "socket tester"
+          },
+          {
+            "type": "text",
+            "text": " at the new socket: all three LEDs should indicate correct wiring. Test the ring/spur origin socket equally. Notify the installation to local building control and obtain a completion certificate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A fused connection unit (FCU) in the spur, rather than a straight spur to a socket, is required when the new circuit serves a fixed appliance (extractor fan, under-counter fridge, electric towel rail). The FCU provides additional protection and allows the appliance to be isolated without switching off the MCB. An FCU in the spur counts as a fused spur and the downstream sockets are not counted against the ring load."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Socket tester shows wiring fault at the new socket",
+              "cause": "Conductors connected to wrong terminals; loose connection allowing intermittent contact.",
+              "fix": "Isolate using the live-dead-live procedure. Recheck all connections: brown to L, blue to N, green-yellow to E. Ensure all strands are fully captured in the terminal screws."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips as soon as the circuit is switched on after the work",
+              "cause": "Short circuit at the new socket — live and neutral conductors touching; or conductor strand making contact with the back box.",
+              "fix": "Isolate and inspect all connections. Ensure no bare copper is exposed beyond the terminal. Check that the earth conductor is sleeved in green-yellow from the cable sheath to the terminal."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The original socket from which the spur was taken has become loose or intermittent",
+              "cause": "Three cables in the original socket terminal — overloaded with three conductors per terminal; or the additional cable weight has strained the faceplate fixing.",
+              "fix": "Relocate the spur origin to a different socket on the ring, or move the spur origin to a purpose-made junction box rather than the socket terminals."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

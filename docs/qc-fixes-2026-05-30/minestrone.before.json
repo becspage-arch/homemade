@@ -1,0 +1,432 @@
+{
+  "slug": "minestrone",
+  "tutorialId": "cmp5pvf1i00006ov4dch6lni5",
+  "capturedAt": "2026-05-30T06:03:00.766Z",
+  "preFix": {
+    "title": "Minestrone",
+    "subtitle": "A big pot of vegetables, beans, and pasta",
+    "excerpt": "The Italian vegetable soup in its essential form: whatever is in season, simmered in a good tomato broth with cannellini beans and a handful of small pasta. Serves a crowd and keeps for days.",
+    "sourceNotes": "Classic Italian home cooking, documented across multiple pre-1928 Italian and British cookery texts. Pellegrino Artusi, Science in the Kitchen and the Art of Eating Well (1891), Italian edition ,  minestrone section. The basic formula is unchanged.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Minestrone is not a fixed recipe. It is a method: whatever vegetables are in season, simmered in a tomato broth with beans and a little pasta. The version here uses the core Italian vegetables, but it adapts readily to what is on hand. The rule is a good soffritto at the start, patience with the simmer, and Parmesan at the table.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What you need",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "ingredientsList",
+          "attrs": {
+            "items": [
+              {
+                "name": "Onion",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": "finely chopped",
+                "groupLabel": "Soffritto",
+                "isOptional": false,
+                "ingredientId": "cmp49f59k0042rkv4afimm5ox",
+                "ingredientSlug": "onion"
+              },
+              {
+                "name": "Celery",
+                "unit": "each",
+                "amount": 2,
+                "prepNote": "finely chopped",
+                "groupLabel": "Soffritto",
+                "isOptional": false,
+                "ingredientId": "cmp49f5e9004arkv40g1q6rs7",
+                "ingredientSlug": "celery"
+              },
+              {
+                "name": "Carrot",
+                "unit": "each",
+                "amount": 2,
+                "prepNote": "peeled and finely chopped",
+                "groupLabel": "Soffritto",
+                "isOptional": false,
+                "ingredientId": "cmp49f5dq0049rkv4hknkvpff",
+                "ingredientSlug": "carrot"
+              },
+              {
+                "name": "Garlic",
+                "unit": "clove",
+                "amount": 3,
+                "prepNote": "crushed",
+                "groupLabel": "Soffritto",
+                "isOptional": false,
+                "ingredientId": "cmp49f5bt0046rkv4vhu2h5ze",
+                "ingredientSlug": "garlic"
+              },
+              {
+                "name": "Tomato purée",
+                "unit": "tbsp",
+                "amount": 2,
+                "prepNote": null,
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f5ma004orkv4iqpgxj8s",
+                "ingredientSlug": "tomato-puree"
+              },
+              {
+                "name": "Tinned tomatoes",
+                "unit": "g",
+                "amount": 400,
+                "prepNote": null,
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f5l5004mrkv45szfml90",
+                "ingredientSlug": "tinned-tomatoes"
+              },
+              {
+                "name": "Vegetable stock",
+                "unit": "ml",
+                "amount": 1500,
+                "prepNote": "hot",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f8y800amrkv47h7vu437",
+                "ingredientSlug": "stock-vegetable"
+              },
+              {
+                "name": "Cannellini beans",
+                "unit": "g",
+                "amount": 400,
+                "prepNote": "tinned, drained and rinsed",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f9m400bsrkv41v3byv5g",
+                "ingredientSlug": "cannellini-beans"
+              },
+              {
+                "name": "Potato",
+                "unit": "each",
+                "amount": 2,
+                "prepNote": "peeled and cut into 1 cm cubes",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f5fz004drkv4xvm4u4jd",
+                "ingredientSlug": "potato"
+              },
+              {
+                "name": "Courgette",
+                "unit": "each",
+                "amount": 1,
+                "prepNote": "cut into 1 cm cubes",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f5nf004qrkv494a7g1cb",
+                "ingredientSlug": "courgette"
+              },
+              {
+                "name": "Green beans",
+                "unit": "g",
+                "amount": 100,
+                "prepNote": "cut into 2 cm pieces",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f698005rrkv4t73wumub",
+                "ingredientSlug": "green-beans"
+              },
+              {
+                "name": "Dried pasta",
+                "unit": "g",
+                "amount": 80,
+                "prepNote": "small shapes such as ditalini or broken spaghetti",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f9yr00cerkv4xl9sqim6",
+                "ingredientSlug": "pasta-dried"
+              },
+              {
+                "name": "Flat-leaf parsley",
+                "unit": "g",
+                "amount": 15,
+                "prepNote": "roughly chopped, to serve",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f76f007frkv44kvkeyn2",
+                "ingredientSlug": "parsley-flat"
+              },
+              {
+                "name": "Parmesan",
+                "unit": "g",
+                "amount": 50,
+                "prepNote": "grated, to serve",
+                "groupLabel": null,
+                "isOptional": false,
+                "ingredientId": "cmp49f3m10016rkv4gg1si06t",
+                "ingredientSlug": "parmesan"
+              }
+            ],
+            "defaultServings": 6
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Build the soffritto",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Heat a glug of olive oil in a large stockpot over a medium-low heat. Add the {{onion}} onion, {{celery}} celery, and {{carrot}} carrots with a good pinch of salt. Cook for 12 minutes, stirring occasionally, until the ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "soffritto",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmp55wfu90000hgv4765pypf3"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": " is soft and sweet.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Add the {{garlic}} of crushed garlic and {{tomato-puree}} of tomato purée. Cook for 2 minutes.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Add vegetables and simmer",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Pour in {{tinned-tomatoes}} of tinned tomatoes and {{stock-vegetable}} of hot vegetable stock. Add the {{potato}} of potato cubes. Bring to a simmer and cook for 10 minutes.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Add the {{cannellini-beans}} of cannellini beans, {{courgette}} courgette, and {{green-beans}} of green beans. Simmer for a further 10 minutes.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Add {{pasta-dried}} of small pasta. Cook until the pasta is ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "al dente",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmprxtdqu0000n8v4vq1pou28"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": ", about 8 minutes depending on shape. Taste and adjust salt.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Ladle into deep bowls. Scatter flat-leaf parsley over the top and pass grated Parmesan at the table.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "attrs": {
+            "items": [
+              {
+                "fix": "Cook pasta separately and add it to the bowl before ladling the soup, or use only enough pasta for the current serving. Freeze the base before adding pasta.",
+                "cause": "The pasta absorbed liquid and kept cooking as the soup cooled.",
+                "symptom": "Pasta is overcooked and mushy when reheating"
+              },
+              {
+                "fix": "Simmer uncovered for another 10 to 15 minutes, or mash a few cannellini beans against the side of the pot and stir them in to thicken.",
+                "cause": "Too much stock for the quantity of vegetables, or not enough time to reduce.",
+                "symptom": "Soup is watery"
+              },
+              {
+                "fix": "Add denser vegetables (potato, carrot) first, then softer ones (courgette, green beans) later, as in this recipe. The ten-minute stagger matters.",
+                "cause": "All vegetables were added at the same time.",
+                "symptom": "Vegetables are all the same texture (mushy)"
+              },
+              {
+                "fix": "A Parmesan rind added to the pot while simmering gives the soup a savoury depth. Remove the rind before serving.",
+                "cause": "The soffritto was not cooked long enough, or the stock was weak.",
+                "symptom": "Soup lacks depth"
+              }
+            ]
+          }
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Variations",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Ribollita is a Tuscan variant where stale bread is added to the soup and it is reheated ('reboiled') the next day, by which point it has thickened to a porridge consistency. Soupe au pistou is the French cousin: swap the Parmesan for a large spoonful of basil pistou stirred in at the end.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Where this dish lives",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Minestrone, 'big soup' in Italian, is the domestic cooking of Italy rather than the restaurant cooking. Every Italian family has a version, and no two are the same. The only invariable element is the soffritto. Everything else bends to what is in season, what is in the larder, and what the cook feels like.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": 6,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "hero-missing",
+      "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "placeholder-string",
+      "message": "body contains unresolved placeholder {{onion}} — must be substituted before publish",
+      "snippet": "Heat a glug of olive oil in a large stockpot over a medium-low heat. Add the {{onion}} onion, {{cele"
+    }
+  ]
+}

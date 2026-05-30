@@ -446,3 +446,57 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 06:03:04
+
+Generated: 2026-05-30T06:03:04.171Z
+
+Processed: 76
+PASS: 63
+STILL_BLOCKED: 13
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 39 |
+| hero-missing | 36 |
+| grade-level-strict | 16 |
+| placeholder-string | 12 |
+| historical-century-in-body | 2 |
+
+## Still BLOCKED (sample 20)
+
+- broccoli-and-stilton-soup: hero-missing
+- butternut-squash-soup: hero-missing
+- carrot-and-coriander-soup: hero-missing
+- chicken-noodle-soup: hero-missing
+- cock-a-leekie: hero-missing
+- fitting-a-carbon-monoxide-detector: grade-level-strict
+- french-onion-soup: hero-missing
+- leek-and-potato-soup: hero-missing
+- lentil-and-bacon-soup: hero-missing
+- minestrone: hero-missing
+- mulligatawny: hero-missing
+- pea-and-ham-soup: hero-missing
+- roasted-red-pepper-soup: hero-missing
+
+---
+
+## Run at 06:06:11
+
+Generated: 2026-05-30T06:06:11.102Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
