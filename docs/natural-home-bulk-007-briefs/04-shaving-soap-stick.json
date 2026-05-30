@@ -1,0 +1,227 @@
+{
+  "slug": "shaving-soap-stick",
+  "title": "Shaving soap stick",
+  "subtitle": "A firm triple-milled style shaving soap in stick form, with stearic acid and coconut oil for dense lather",
+  "excerpt": "This shaving soap uses a higher stearic acid content than an everyday bar, producing a firm, slow-dissolving soap that builds a dense, slick lather when wet. Loaded onto a badger or synthetic shaving brush and worked in circles over the face, it gives a close shave. Fragrance is optional.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: coconut oil 0.190, stearic acid 0.148, castor oil 0.128. 3% superfat applied for a less conditioning bar that rinses cleaner. Reference: Kevin Dunn, Caveman Chemistry (2003), chapter on soap formulation. Stearic acid role in shaving soap density: Bramble Berry technical reference (2022). IFRA guidelines for fragrance in rinse-off products: IFRA standard (2021).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 shaving sticks (each roughly 50 g)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 4320,
+    "chillingMinutes": 0,
+    "totalMinutes": 4380,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale by running revised weights through a lye calculator. Shaving soap requires exact lye calculation; do not estimate.",
+    "makeAheadNotes": "Shaving soap benefits from a longer cure than everyday bars. Allow 6 weeks minimum, and ideally 8 to 12 weeks, for the lather to become fully creamy.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 1095,
+    "shelfLifeNotes": "Shaving sticks keep three years in a cool dry place. The high stearic acid content resists rancidity well. Discard if the soap develops a rancid or paint-like smell, or orange oily spots."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "silicone-tube-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fats and lye that produces soap. The SAP value of each fat gives the grams of lye needed to fully saponify one gram of that fat."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified. Shaving soaps use a lower superfat (2 to 4%) than skin soaps so the lather is less oily and rinses cleanly."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the soap batter emulsifies to a thick custard. Shaving soap often moves through trace quickly due to the stearic acid content."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A shaving soap stick made by the cold-process method. The formula uses stearic acid as a significant component of the fat phase, which gives the finished bar its firmness and the lather its density. Coconut oil contributes cleansing power and quick lather. The low 3% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " keeps the lather light rather than oily. The stick format works with a shaving brush or rubbed directly on wet stubble. Allow a full 6 to 8 weeks of cure before the first use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "stearic-acid", "amount": 150, "unit": "g", "isOptional": false, "prepNote": "50% of fat phase; gives hardness and a dense, slow-dissolving lather" },
+            { "ingredientSlug": "coconut-oil", "amount": 120, "unit": "g", "isOptional": false, "prepNote": "40% of fat phase" },
+            { "ingredientSlug": "castor-oil", "amount": 30, "unit": "g", "isOptional": false, "prepNote": "10% of fat phase; holds the lather stable" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 41, "unit": "g", "isOptional": false, "prepNote": "3% superfat applied; weighed precisely" },
+            { "ingredientSlug": "distilled-water", "amount": 99, "unit": "ml", "isOptional": false, "prepNote": "33% of fat weight as lye solution water" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Safety and setup" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear safety goggles and chemical-resistant protective gloves in a ventilated space throughout. Stearic acid has a melting point of around 70 degrees C; the fat phase needs to be kept warm during mixing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the sodium hydroxide to the distilled water in a steady stream, stirring with a stainless-steel spoon. Never add water to lye. The solution heats sharply and releases fumes; do not lean over the pitcher. Cool to 55 degrees C (slightly higher than for a standard soap, to keep the stearic acid fluid when the lye is added)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the fats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the stearic acid and coconut oil together over a water bath. Add the castor oil once both are liquid. Keep the fat blend at around 55 to 60 degrees C while waiting for the lye to cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "With both phases at around 55 degrees C, pour the lye solution into the fats in a thin stream and stick-blend in short pulses. Stearic-acid-heavy batches move through "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " quickly. Once the batter reaches a medium trace, pour or spoon into the tube mould immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fill the tube mould and tap it on the bench to remove air pockets. Stand upright and leave at room temperature for 3 days before unmoulding; the high stearic content means a longer setting time than a standard bar. Push the stick out from the base and leave on a rack. Cure for 6 to 8 weeks. The "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " process completes during the cure; the lather improves noticeably after the full curing period."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet the shaving brush well, shake off excess water, and work the brush across the top of the stick in circles until the bristles are loaded with soap. Transfer to the face and work up a lather with the same circular motion. Alternatively, rub the stick directly across wet stubble three or four passes, then work up the lather with the brush. A small amount of soap generates a full lather; the stick lasts considerably longer than a bowl of shaving cream of the same weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store on a dry surface between uses; standing it upright in a small container works well. In the bathroom, the stick dries fully between shaves, giving a long working life. A cool dark cupboard is better than a humid bathroom shelf for long-term storage. Keeps three years. Discard if the stick develops a sharp or paint-like smell, or orange oily patches."
+          }
+        ]
+      }
+    ]
+  }
+}

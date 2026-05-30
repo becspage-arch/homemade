@@ -1,0 +1,255 @@
+{
+  "slug": "spirulina-cold-process-soap",
+  "title": "Spirulina cold-process soap",
+  "subtitle": "A deep green bar made with spirulina powder, olive oil, and coconut oil at 5% superfat",
+  "excerpt": "Spirulina gives this cold-process bar its striking forest-green colour naturally. The base is a standard olive-coconut blend at 72% and 28% respectively, with castor oil for lather. The colour deepens slightly during the gel phase and stabilises as the bar hardens over six weeks.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128. 5% superfat applied. Reference: Susan Miller Cavitch, The Soapmaker's Companion (1997), lye calculation chapters. Spirulina as a natural soap colourant: Bramble Berry soapmaking reference library (2023), natural colourant guide.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 to 10 bars (500 g oil batch)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale by running the revised oil weights through a lye calculator before making any change to the lye weight. Do not simply multiply.",
+    "makeAheadNotes": "Cold-process soap needs 48 hours in the mould before unmoulding, then a 4 to 6-week cure on a rack.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark cupboard on an open soap dish. Discard if bars develop orange oily spots (DOS) or a sharp rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and lye (sodium hydroxide) that produces soap. Each oil has a SAP value giving the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified in a finished bar. A 5% superfat means 5% of the oil weight is not converted to soap, leaving a mild, conditioning bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point in cold-process making when the oil and lye solution emulsify to the consistency of warm custard. Drizzled soap on the surface holds its shape briefly."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This bar uses spirulina powder as a natural colourant, producing a deep forest green that softens to sage as the bar hardens. The oil blend is olive oil at 72% for conditioning, coconut oil at 28% for lather and hardness, and a small castor oil addition for stable, creamy foam. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " the bar is mild and suitable for normal to dry skin. Expect a 4 to 6-week cure before the bar reaches its full hardness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 360, "unit": "g", "isOptional": false, "prepNote": "72% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 140, "unit": "g", "isOptional": false, "prepNote": "28% of oil weight" },
+            { "ingredientSlug": "castor-oil", "amount": 20, "unit": "g", "isOptional": false, "prepNote": "additional for lather" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 68, "unit": "g", "isOptional": false, "prepNote": "lye, weighed precisely; 5% superfat applied" },
+            { "ingredientSlug": "distilled-water", "amount": 175, "unit": "ml", "isOptional": false, "prepNote": "33% of oil weight as lye solution water" },
+            { "ingredientSlug": "spirulina-powder", "amount": 5, "unit": "g", "isOptional": false, "prepNote": "1 teaspoon; dispersed in a small amount of oil before adding" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the workspace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a ventilated space. Put on safety goggles and nitrile or other chemical-resistant protective gloves before handling lye. Set out all equipment and weigh all ingredients before starting. Lye work cannot be paused once begun."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the distilled water into the HDPE pitcher. Add the sodium hydroxide to the water in a steady stream, stirring continuously with a stainless-steel spoon. Never add water to lye. The solution reaches around 90 degrees C in seconds and releases fumes; do not lean over the pitcher. Set the pitcher aside to cool to 38 to 42 degrees C, which takes around 30 to 40 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gently melt the coconut oil if solid. Weigh all oils into a stainless-steel or silicone bowl and let them cool to 38 to 42 degrees C. Disperse the spirulina powder in a tablespoon of olive oil taken from the weighed batch, stirring until smooth, and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When both the lye solution and the oils are at 38 to 42 degrees C, pour the lye solution into the oils in a thin stream, stirring. Use the stick blender in short pulses to bring the mixture to light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Light trace looks like thin custard; the surface holds a drizzle for a few seconds. Add the spirulina paste and stir thoroughly. The colour distributes evenly at this stage; stick-blend for a further 10 seconds to confirm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour and insulate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould. Tap the mould on the bench twice to release air pockets. Cover with a piece of cardboard and wrap in an old towel to encourage the gel phase, which deepens the green colour. Leave undisturbed for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould and cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 48 hours the soap should be firm enough to unmould. Press the bottom of the silicone mould to release the loaf. If the loaf is still soft, leave for another 24 hours. Cut into bars of roughly 2.5 cm thickness with a wire cutter or a sharp knife. "
+          },
+          {
+            "type": "text",
+            "text": "Saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " continues during the cure; wear gloves when handling freshly unmoulded bars."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place bars on a rack so air circulates around each one. Cure in a cool, dry place away from direct light. At 4 weeks the soap is ready to use; at 6 weeks it has lost most of its free water and the bar is noticeably harder and lasts longer in use."
+          }
+        ]
+      },
+      {
+        "type": "projectSchedule",
+        "attrs": {
+          "steps": [
+            { "day": 0, "label": "Make day", "note": "Mix, pour into mould, insulate." },
+            { "day": 2, "label": "Unmould and cut", "note": "Firm enough to release. Cut into bars." },
+            { "day": 14, "label": "Turn bars", "note": "Rotate bars to even the cure on all sides." },
+            { "day": 28, "label": "Ready to use", "note": "Test a sliver for pH and lather. Should feel mild on the skin." },
+            { "day": 42, "label": "Cure complete", "note": "Bar is at full hardness. Package or store." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open soap dish or a wooden rack so air can circulate. A cool, dark cupboard is better than a bathroom shelf for long-term storage. Fully cured bars keep two years. Discard any bar that develops orange oily spots (DOS, from rancid superfat oil) or a sharp smell unlike the fresh soap scent. Spirulina colour may fade slightly in direct light over time; store away from windows."
+          }
+        ]
+      }
+    ]
+  }
+}

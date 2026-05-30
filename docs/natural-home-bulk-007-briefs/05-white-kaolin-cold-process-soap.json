@@ -1,0 +1,215 @@
+{
+  "slug": "white-kaolin-cold-process-soap",
+  "title": "White kaolin cold-process soap",
+  "subtitle": "A mild everyday bar with white kaolin clay for a silky lather, olive oil, and oat milk",
+  "excerpt": "White kaolin clay gives this cold-process bar a silky, creamy feel in use. The oil base is olive oil at 65%, coconut oil at 25%, and sweet almond oil at 10% for a conditioning result. A small amount of oat milk replaces part of the water, adding a fine texture to the lather.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, sweet almond oil 0.136. 5% superfat applied. White kaolin in soapmaking: Bramble Berry technical reference (2022). Oat milk as partial water substitute: Susan Miller Cavitch, The Soapmaker's Companion (1997). Kaolin clay's buffering and texture-improving properties: INCI reference for Kaolinum (EU Cosmetics Regulation, Annex II/III).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 to 10 bars (500 g oil batch)",
+    "prepMinutes": 65,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2945,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale by running revised oil weights through a lye calculator. Oat milk proportions scale directly.",
+    "makeAheadNotes": "Make the oat milk fresh on soap-making day or the day before. Keep refrigerated. Bring to room temperature before mixing with lye.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Cured bars keep two years in a cool dark place. Discard any bar showing orange oily spots (DOS) or an off smell. The pale colour is permanent; no fading with light."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and lye that produces soap. Each oil has a SAP value giving the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which the soap batter emulsifies to a thick custard. Clay and additives are stirred in at light trace."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of unsaponified oil in the finished bar, adding a conditioning quality to the soap."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "White kaolin clay adds a silky, slipping quality to the lather that most plain soap bars lack. It doesn't dry the skin and doesn't accelerate "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " the way some other clays do, making it a good choice for a first clay soap. The oil blend favours olive oil for its conditioning character, with coconut oil for lather and sweet almond oil for a lighter feel than a pure olive-coconut base. Oat milk replaces part of the water to add texture to the lather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 325, "unit": "g", "isOptional": false, "prepNote": "65% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 125, "unit": "g", "isOptional": false, "prepNote": "25% of oil weight" },
+            { "ingredientSlug": "sweet-almond-oil", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 67, "unit": "g", "isOptional": false, "prepNote": "5% superfat applied; weighed precisely" },
+            { "ingredientSlug": "distilled-water", "amount": 110, "unit": "ml", "isOptional": false, "prepNote": "for the lye solution" },
+            { "ingredientSlug": "oat-milk", "amount": 55, "unit": "ml", "isOptional": false, "prepNote": "added to the lye solution once cooled; total liquid = 165 ml" },
+            { "ingredientSlug": "kaolin-clay", "amount": 15, "unit": "g", "isOptional": false, "prepNote": "1 tablespoon; dispersed in a small amount of oil before adding" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Safety and preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a ventilated space. Wear safety goggles and chemical-resistant protective gloves throughout. Weigh all ingredients and set out the clay before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the 110 ml of distilled water into the HDPE pitcher. Add the sodium hydroxide to the water in a steady stream, stirring continuously. Never add water to lye. Cool to 38 to 42 degrees C. Once fully cooled, stir in the 55 ml of oat milk gently; adding oat milk to hot lye causes scorching."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils and clay" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil, combine with the olive and sweet almond oils, and cool to 38 to 42 degrees C. Disperse the kaolin clay in a tablespoon of olive oil taken from the weighed batch, stirring until smooth, and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye-oat milk blend into the oils in a thin stream and stick-blend to light trace. Stir in the clay paste and mix thoroughly by hand. The batter should now be at a medium trace. Pour into the mould."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mould, unmould, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover and wrap in a towel. Leave for 48 hours, then unmould and cut into bars 2.5 cm thick. "
+          },
+          {
+            "type": "text",
+            "text": "Saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " continues during the cure. Place bars on a rack and cure for 4 to 6 weeks. The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " oils soften the bar's feel noticeably after the full curing time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open soap dish. A cool dark cupboard is better than a bathroom shelf for bars waiting to be used. Keeps two years. Discard if orange oily spots appear or the bar smells rancid."
+          }
+        ]
+      }
+    ]
+  }
+}
