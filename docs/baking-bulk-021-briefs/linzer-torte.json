@@ -1,0 +1,154 @@
+{
+  "slug": "linzer-torte",
+  "title": "Linzer torte",
+  "subtitle": "Austrian almond pastry with raspberry jam lattice",
+  "excerpt": "The Linzer torte is an Austrian almond pastry tart with a lattice top, filled with thick raspberry jam. The pastry is made with ground almonds and warm spice, which makes it more crumbly and fragrant than standard shortcrust. One of the oldest documented cakes in European culinary history.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Linzer torte is one of the oldest recorded cake recipes in European culinary history, with a documented recipe from 1696 held in the Vienna Museum. It originated in the Austrian city of Linz. The defining features are a spiced almond shortcrust (made with ground almonds, cinnamon, and sometimes clove or lemon), a generous layer of redcurrant or raspberry jam, and a distinctive lattice top. This recipe follows the established Austrian domestic tradition.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 35,
+    "restingMinutes": 60,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "The baked and cooled torte freezes well for up to 2 months. Thaw at room temperature overnight.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The Linzer torte improves with 1 to 2 days of resting after baking; the pastry softens slightly and absorbs flavour from the jam. Store at room temperature, loosely covered.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "european",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan oven; bake for 30 to 35 minutes until the lattice is deep golden",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "linzer-pastry-fragility",
+      "term": "Almond shortcrust",
+      "definition": "The high proportion of ground almonds replaces some of the flour, which reduces gluten development and makes the pastry very short and crumbly. It needs to rest and chill before rolling, and should be rolled between sheets of baking paper rather than on a floured surface. If the dough breaks when you try to lift it, simply press it back together; it will bake fine. The lattice strips can also be made by rolling ropes of dough by hand if rolling thin strips proves difficult."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Linzer pastry is more forgiving than it looks. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "linzer-pastry-fragility", "term": "Almond shortcrust" } }],
+            "text": "almond shortcrust"
+          },
+          { "type": "text", "text": " patches and repairs easily because the finished texture should be crumbly. Use a generous amount of jam: a thin layer gets lost in the baked pastry. The torte is better the day after baking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "almond-flour", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zested", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "raspberry-jam", "amount": 300, "unit": "g", "prepNote": "good quality, thick", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "almonds-flaked", "amount": 20, "unit": "g", "prepNote": "to scatter over the top", "isOptional": true, "groupLabel": "Filling" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rub 150 g cold butter into 200 g plain flour, 100 g almond flour, 100 g icing sugar, 1 tsp cinnamon, and lemon zest until the mixture resembles coarse crumbs. Add 1 egg and mix to a soft, slightly sticky dough. If too crumbly, add 1 tsp cold water. Wrap and refrigerate for 30 minutes. Press two-thirds of the pastry into a greased 23 cm tart tin, covering the base and sides evenly. Refrigerate for 15 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and add lattice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 180 degrees C fan. Spread 300 g raspberry jam evenly over the chilled pastry base. Roll out the remaining pastry between two sheets of baking paper to about 3 mm and cut into strips about 1.5 cm wide. Arrange in a lattice pattern over the jam, pressing the ends onto the edge of the tart case. Scatter flaked almonds over if using. Bake for 30 to 35 minutes until the pastry lattice is deep golden. Cool in the tin for 20 minutes before releasing. Dust with icing sugar before serving if you like." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Pastry lattice breaks when transferring",
+              "solution": "The pastry was too warm. Chill the cut strips briefly on a sheet of baking paper in the fridge for 10 minutes before applying. Alternatively, roll finger-sized ropes of dough and press those onto the top instead of flat strips."
+            },
+            {
+              "problem": "Jam bubbles over the lattice during baking",
+              "solution": "The jam layer was too thick, or the tart tin was too full. A good rule: the jam should come no higher than two-thirds of the depth of the pastry wall. Use a thick-set, not runny, jam."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

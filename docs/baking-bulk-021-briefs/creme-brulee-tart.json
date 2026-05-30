@@ -1,0 +1,167 @@
+{
+  "slug": "creme-brulee-tart",
+  "title": "Creme brulee tart",
+  "subtitle": "Vanilla custard tart with a caramelised sugar top",
+  "excerpt": "A crisp blind-baked pastry shell filled with baked vanilla custard, then finished with a layer of sugar caramelised under a kitchen torch. The custard is firmer than a standard creme brulee, which lets it be sliced clean. The bruleed crust shatters at the tap of a spoon.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Creme brulee has French origins and appears in culinary literature at least as far back as the seventeenth century, with the term appearing in Massialot's court cookery manuscript. The tart format, which contains a firmer custard in a pastry shell finished with a bruleed top, is a common modern restaurant and home-baking adaptation of the classic individual ramekin preparation. This recipe synthesises the standard French patisserie approach.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 35,
+    "cookMinutes": 50,
+    "restingMinutes": 120,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The tart shell can be blind-baked a day ahead and kept covered at room temperature. The filled and baked tart keeps refrigerated for up to 2 days without the brulee. Brulee immediately before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 160,
+      "bakeTemperatureNote": "shell blind-baked at 190 degrees C fan; custard baked at 140 degrees C fan to set without curdling",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "kitchen-torch", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brulee-tart-custard-temperature",
+      "term": "Custard bake temperature",
+      "definition": "Creme brulee custard sets between 75 and 82 degrees C. In the tart, bake at 140 degrees C fan and check after 30 minutes. The custard is ready when the edges are set but the centre still has a slight wobble when the tin is gently shaken. If you wait until the centre is fully set in the oven it will overcook and become grainy once cool. The custard firms as it chills."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The tart format makes creme brulee sliceable. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brulee-tart-custard-temperature", "term": "Custard bake temperature" } }],
+            "text": "low oven temperature for the custard"
+          },
+          { "type": "text", "text": " is the key: 140 degrees C prevents the eggs from scrambling. Brulee the top only just before serving; sugar left bruleed too long will weep as the caramel draws moisture from the air." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "yolk only", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "double-cream", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Custard" },
+            { "ingredientSlug": "egg-yolks", "amount": 5, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Custard" },
+            { "ingredientSlug": "caster-sugar", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Custard" },
+            { "ingredientSlug": "vanilla-paste", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Custard" },
+            { "ingredientSlug": "granulated-sugar", "amount": 4, "unit": "tbsp", "prepNote": "for the brulee top", "isOptional": false, "groupLabel": "Custard" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and blind-bake the shell" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rub 100 g cold butter into 200 g flour and 30 g icing sugar to fine crumbs. Add 1 egg yolk and 1 to 2 tbsp cold water to form a firm dough. Wrap and refrigerate for 30 minutes. Heat the oven to 190 degrees C fan. Roll the pastry to 3 mm and line a greased 23 cm tart tin. Chill for 15 minutes. Line with baking paper, fill with baking weights (or rice or dried beans), and blind-bake for 15 minutes. Remove the paper and weights and bake for a further 8 to 10 minutes until the base is golden and dry. Reduce the oven to 140 degrees C fan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and bake the custard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whisk 5 egg yolks with 80 g caster sugar and 1 tsp vanilla paste until smooth. Heat 400 ml double cream in a saucepan until just below a boil. Pour the hot cream slowly into the egg mixture, whisking constantly. Strain through a sieve into a jug. Pour into the baked tart shell. Bake at 140 degrees C fan for 30 to 35 minutes until the edges are set and the centre still wobbles slightly. Remove from the oven and cool completely, then refrigerate for at least 1 hour." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brulee and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Just before serving, scatter 4 tbsp granulated sugar evenly over the cold custard surface. Use a kitchen torch to caramelise the sugar in a sweeping motion until amber and glossy. Leave for 2 minutes for the crust to harden before slicing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Custard is grainy or curdled",
+              "solution": "The custard overcooked. At 140 degrees C it should not curdle, but if the oven runs hot it can. An oven thermometer is worthwhile. Once curdled, the custard cannot be rescued in the tart."
+            },
+            {
+              "problem": "Brulee sugar weeps and becomes sticky rather than cracking",
+              "solution": "The sugar was caramelised too far ahead. The caramel absorbs moisture from the air and loses its crunch within 30 to 45 minutes. Brulee immediately before serving."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

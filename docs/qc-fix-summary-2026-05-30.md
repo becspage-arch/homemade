@@ -168,3 +168,44 @@ SKIPPED: 0
 - polymer-clay-miniature-cacti-trio: grade-level-strict
 - pyrography-christmas-tree-ornaments: grade-level-strict
 - reclaiming-homemaker-as-feminist-identity: grade-level-strict
+
+---
+
+## Run at 02:11:13
+
+Generated: 2026-05-30T02:11:13.214Z
+
+Processed: 5018
+PASS: 4920
+STILL_BLOCKED: 98
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 315 |
+| voice-violation | 12 |
+
+## Still BLOCKED (sample 20)
+
+- composting-toilet-annual-maintenance: 
+- expansion-continues-with-ease-affirmation: 
+- external-wall-insulation-etics-installation: 
+- five-senses-scan-three-minutes: 
+- giving-feels-expansive-and-fearless-affirmation: 
+- heat-battery-for-solar-storage: 
+- i-steward-wealth-with-purpose-and-joy: 
+- lamb-pneumonia-recognition-and-response: 
+- long-exhale-breath-for-perimenopause-anxiety: 
+- managing-a-legacy-feed-in-tariff: 
+- my-anxiety-is-information-not-identity: 
+- natural-cleaning-products-diy: 
+- new-moon-full-moon-two-monthly-anchors: 
+- off-grid-load-calculation-worksheet: 
+- paper-clay-christmas-ornament-set: 
+- paper-clay-pressed-flower-frame: 
+- polymer-clay-faux-agate-pendant: 
+- polymer-clay-miniature-cacti-trio: 
+- pyrography-christmas-tree-ornaments: 
+- reclaiming-homemaker-as-feminist-identity: 

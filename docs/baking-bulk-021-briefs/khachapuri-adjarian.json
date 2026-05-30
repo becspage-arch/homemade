@@ -1,0 +1,176 @@
+{
+  "slug": "khachapuri-adjarian",
+  "title": "Adjarian khachapuri",
+  "subtitle": "Georgian cheese bread boat topped with an egg",
+  "excerpt": "The Adjarian version of khachapuri: a yeasted bread shaped into a boat, filled with a mix of cheese and egg yolk, and finished in the oven until the filling is just set. Serve immediately, stirring the molten filling through the bread as you eat.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Khachapuri is Georgia's national bread. The Adjarian version (Adjaruli khachapuri) comes from the Black Sea coastal region and is distinguished by its boat shape and the whole egg cracked into the filling at the end of baking. The bread is a staple of Georgian bakeries and domestic kitchens alike. This recipe follows the Adjarian domestic tradition: a slightly enriched yeasted dough filled with a mixture of suluguni and mozzarella, with an egg finished in the oven.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made 24 hours ahead and refrigerated. The filling can be mixed in advance and kept covered in the fridge. Assemble and bake just before serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "european",
+    "mealType": "lunch",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 62,
+      "saltPercent": 1.8,
+      "yeastPercent": 1.2,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, high heat; the bread bakes in 20 to 25 minutes on a preheated tray or baking stone",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "khachapuri-boat-shape",
+      "term": "Khachapuri boat",
+      "definition": "Shape the dough into an oval and roll or press it flat to about 5 mm. Fold the long sides up over the filling, pressing firmly to hold them in place, then twist and pinch the ends to form a pointed prow at each end. The finished shape holds the filling contained during baking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adjarian khachapuri is the most theatrical of Georgia's regional cheese breads. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "khachapuri-boat-shape", "term": "Khachapuri boat" } }],
+            "text": "boat shape"
+          },
+          { "type": "text", "text": " holds the molten cheese filling while the bread bakes. At the table, an egg yolk is dropped into the hot centre and stirred through the cheese with a piece torn from the sides. It is a dish made to be eaten immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "salt-table", "amount": 9, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "whole-milk", "amount": 200, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "water", "amount": 110, "unit": "ml", "prepNote": "lukewarm", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "mozzarella", "amount": 250, "unit": "g", "prepNote": "grated or crumbled", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "feta", "amount": 150, "unit": "g", "prepNote": "crumbled", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "1 for filling, 1 for the egg on top", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "to finish", "isOptional": false, "groupLabel": "To finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine 500 g flour, 6 g yeast and 9 g salt in a large bowl. Add 200 ml warm milk, 110 ml lukewarm water and 40 g softened butter. Mix to a soft dough and knead for 8 minutes until smooth. The dough should be slightly tacky but not sticky. Cover and prove at room temperature for 1 hour until doubled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix 250 g grated mozzarella and 150 g crumbled feta together in a bowl with 1 egg. The mixture should hold together loosely. Taste and adjust for salt; feta varies in saltiness." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and fill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 220 degrees C fan. Divide the proved dough into 2 equal pieces. On a lightly floured surface, roll or press each piece into an oval about 30 cm long and 5 mm thick. Place on a lined baking tray. Mound half the cheese filling in the centre of each oval, leaving a 4 cm border on the long sides. Fold the long edges up over the filling and press firmly to seal. Twist and pinch each end into a pointed prow. The finished shape should look like a boat. Domestic ovens drift by 20 degrees C or more; an oven thermometer confirms the right temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bake for 18 to 20 minutes until the bread is deep golden and the filling is bubbling. Remove from the oven. Make a small well in the centre of each boat and crack in 1 egg. Return to the oven for 3 to 5 minutes until the white is just set and the yolk is still runny. Add a knob of butter to each boat and serve immediately." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The sides of the boat uncurl during baking",
+              "solution": "The seam was not pressed firmly enough, or the dough was too wet. Press the long edges together hard and make sure the ends are pinched tightly. A short chill in the fridge for 10 minutes before baking firms up the shape."
+            },
+            {
+              "problem": "Egg yolk sets solid in the last few minutes",
+              "solution": "The oven was too hot or the bread went in for too long after the egg was added. 3 minutes is usually enough at 220 degrees C. Watch closely once the egg goes in."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

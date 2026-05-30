@@ -1,0 +1,177 @@
+{
+  "slug": "sachertorte",
+  "title": "Sachertorte",
+  "subtitle": "Viennese chocolate cake with apricot jam and dark chocolate glaze",
+  "excerpt": "The Sachertorte: a dense, fine-crumbed chocolate cake split and filled with apricot jam, then sealed under a mirror-smooth dark chocolate glaze. Vienna takes this recipe seriously. The cake is not sweet; the glaze is not ganache. Both are worth understanding before you bake it.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The Sachertorte was created in Vienna in 1832 by Franz Sacher, a sixteen-year-old apprentice chef, for Prince Metternich. The original recipe is documented in the Hotel Sacher archives. The recipe entered the public domain through decades of legal dispute between the Hotel Sacher and the Demel patisserie, which produced its own version without the internal jam layer. The version here is the Hotel Sacher original interpretation: one horizontal split, one layer of apricot jam, and a firm (not ganache) chocolate glaze. Sourced from Viennese culinary records and public-domain accounts of the historical recipe.",
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze ungrazed sponge layers. Wrap tightly and freeze for up to 1 month. Thaw at room temperature for 2 hours, then glaze.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The glazed cake is best made a day ahead and kept at room temperature under a dome. The glaze firms and the jam settles.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "european",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 140,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 170,
+      "bakeTemperatureNote": "conventional oven, not fan; fan dries the crust before the centre sets. Bake for 50 to 55 minutes. Domestic ovens drift by 20 degrees C or more; an oven thermometer is worth the investment.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-23", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "cooling-rack", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sachertorte-glaze",
+      "term": "Sachertorte glaze",
+      "definition": "The authentic Sachertorte glaze is not ganache. It is a sugar-based chocolate glaze made by boiling sugar and water to a specific temperature before adding melted chocolate. The result is firm and slightly matte when set, not the soft, shiny finish of a cream-based ganache. Pour it at the right temperature (around 35 to 37 degrees C) for a smooth coat that levels before setting."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Sachertorte is not a rich, fudgy cake. It is intentionally dense and close-grained, designed to carry a firm " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sachertorte-glaze", "term": "Sachertorte glaze" } }],
+            "text": "chocolate glaze"
+          },
+          { "type": "text", "text": " and a single layer of apricot jam. The cake is three elements in balance: the chocolate sponge, the sharp fruit jam, and the firm, not-too-sweet glaze. None of the three should dominate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "70%, melted and cooled", "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "unsalted-butter", "amount": 130, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "icing-sugar", "amount": 130, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "prepNote": "separated", "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "plain-flour", "amount": 140, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "caster-sugar", "amount": 120, "unit": "g", "prepNote": "for the meringue", "isOptional": false, "groupLabel": "Sponge" },
+            { "ingredientSlug": "apricot-jam", "amount": 200, "unit": "g", "prepNote": "warmed and sieved", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "70%, melted", "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "caster-sugar", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "water", "amount": 125, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sponge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat the oven to 170 degrees C conventional (not fan). Grease and flour a 23 cm round tin. Beat 130 g softened butter with 130 g icing sugar until pale and fluffy. Beat in 6 egg yolks one at a time. Stir in 150 g cooled melted chocolate. Sift in 140 g flour and fold in gently until no dry streaks remain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the meringue and combine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a clean bowl, whisk 6 egg whites to soft peaks. Add 120 g caster sugar gradually, whisking to a firm, glossy meringue. Fold one large spoonful of meringue into the chocolate batter to loosen it, then fold in the rest in three additions. Work gently to keep the air in. Pour into the prepared tin and smooth the top. Bake for 50 to 55 minutes; a skewer in the centre should come out with only a few moist crumbs. The top will spring back when pressed lightly. Cool in the tin for 10 minutes, then turn out onto a rack and cool completely." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill with apricot jam" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slice the cooled cake horizontally through the middle. Warm 200 g apricot jam and pass through a sieve. Spread a thin layer over the cut face of the bottom half and press the top back on. Brush the remaining warm jam all over the top and sides of the cake. Leave to set for 30 minutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine 200 g caster sugar and 125 ml water in a small saucepan. Bring to the boil, stirring until the sugar dissolves. Boil without stirring for 5 minutes until the syrup reaches 105 degrees C on a sugar thermometer. Remove from the heat. Add 200 g melted dark chocolate and stir gently until combined. Leave to cool to 35 to 37 degrees C; at this temperature it pours smoothly and levels before setting. Pour over the top of the cake and smooth down the sides with a palette knife. Leave to set at room temperature for at least 2 hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Glaze sets before it covers the cake evenly",
+              "solution": "The glaze cooled too far before pouring. It needs to be at 35 to 37 degrees C: warm but not hot. If it sets in the bowl, reheat gently over a bain-marie and cool back down."
+            },
+            {
+              "problem": "Sponge is domed in the centre",
+              "solution": "The oven was too hot. Conventional oven at 170 degrees C is intentionally low for this cake. A domed sponge can be gently pressed flat with a weight while still warm, or levelled with a knife before glazing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
