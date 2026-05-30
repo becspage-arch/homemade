@@ -1,0 +1,223 @@
+{
+  "slug": "soya-milk-cold-process-soap",
+  "title": "Soya milk cold-process soap",
+  "subtitle": "A creamy, conditioning bar made with soya milk in place of distilled water at 5% superfat",
+  "excerpt": "Soya milk replaces distilled water in this cold-process bar, adding proteins and sugars that produce a richer lather and a warm ivory colour. The oil blend is olive, coconut, and castor, with the lye solution mixed into chilled soya milk to manage the temperature spike. Cure time is 6 weeks for a mild, hard bar.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128. 5% superfat; 33% lye discount. Soya milk in cold-process soap: the proteins interact with sodium hydroxide to produce a golden to ivory bar; the sugars accelerate trace and can cause overheating. Milk-soap technique: Cavitch, The Soapmaker's Companion (1997), milk soap chapter. Soya milk substitution for dairy milk: same temperature precautions apply; chill or partially freeze the milk before adding lye.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~125 g each after cure)",
+    "prepMinutes": 75,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2955,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Recalculate lye weight through a lye calculator for any change to oil weight. Milk soaps are more sensitive to overheating than water soaps; keep batch size at 500 g oil or below until you know how the milk reacts in your environment.",
+    "makeAheadNotes": "48 hours in the mould before unmoulding; 6 weeks on a curing rack for a fully hard, mild bar.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark place. Store on an open rack. Discard if bars develop orange oily specks (DOS) or smell sharp or rancid."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value: the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified in the finished bar. A 5% superfat leaves free conditioning oil in the bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The moment in cold-process soap making when the batter thickens to a warm-custard consistency. The signal that the oils and lye have emulsified and the soap is ready to pour."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soya milk carries proteins and sugars into the soap batter. The proteins contribute to a creamier lather; the sugars cause the "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " reaction to run hotter and accelerate "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". The way around this is to chill the soya milk to a slush before dissolving the lye: the near-frozen liquid slows the heat spike from around 90°C to a manageable 50 to 60°C, giving you time to work. The finished bar is ivory to golden in colour, with a creamy, stable lather. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " it is mild and suitable for normal to dry skin. Yield is 8 bars of around 125 g each."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 335, "unit": "g", "isOptional": false, "prepNote": "67% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 140, "unit": "g", "isOptional": false, "prepNote": "28% of oil weight; melted if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight; improves lather" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 70, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat" },
+            { "ingredientSlug": "soya-milk", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "Unsweetened, plain soya milk; chilled in the freezer until slushy before use" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Chill the soya milk" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the measured soya milk in the freezer until it is slushy, around 45 to 60 minutes. It should be semi-solid but still pourable. This is the key step in milk soap making: the near-frozen temperature controls the lye reaction and prevents the milk from scorching or turning orange."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles. Work in a ventilated space. Pour the slushy soya milk into the HDPE pitcher. Add the sodium hydroxide in a very slow, thin stream, stirring continuously. Never rush the addition; with milk, the reaction is faster and hotter than with water alone. The mixture turns yellow to orange as the lye reacts with the milk proteins. This is expected. Let the lye solution cool to 38 to 42°C before mixing with the oils."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and cool the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive oil and castor oil into a stainless-steel bowl. Melt the coconut oil and add it to the bowl. Cool the oil blend to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and pour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a steady stream. Use the stick blender in short bursts. Milk soaps move to "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": " faster than plain-water soaps; stop blending as soon as the batter is at light trace. Pour immediately into the silicone loaf mould and wrap in a towel. Leave undisturbed for 48 hours. Do not insulate in a warm place; milk soaps benefit from a cooler setting to prevent overheating."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould, cut, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 48 hours. Wear gloves. Cut into bars and place on a curing rack. Turn the bars at 2 and 4 weeks. Six weeks gives the hardest, mildest bar; the ivory to golden colour mellows as moisture evaporates."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store on an open rack in a cool, dry place. Cured bars keep two years. The golden colour fades slightly over time; this is normal. Discard if bars develop orange oily spots (DOS) or a sharp, rancid smell."
+          }
+        ]
+      }
+    ]
+  }
+}

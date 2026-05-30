@@ -1,0 +1,188 @@
+{
+  "slug": "rose-geranium-cold-process-soap",
+  "title": "Rose geranium cold-process soap",
+  "subtitle": "A floral bar with sweet almond oil, olive oil, and rose geranium essential oil",
+  "excerpt": "Sweet almond oil at 15% of the oil weight gives this cold-process bar a soft, skin-conditioning lather. Rose geranium essential oil, added at light trace, produces a warm, rosy-herbal scent that holds through the 6-week cure. The bar is uncoloured, a pale cream, finished with dried rose petals pressed into the top for decoration.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128, sweet almond oil 0.136. 5% superfat; 33% lye discount. Rose geranium (Pelargonium graveolens) EO in cold-process soap: scent retention is moderate; tested usage rate 2.4% of oil weight. Sweet almond oil SAP value reference: AOCS lipid library. Cavitch, The Soapmaker's Companion (1997).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~125 g each after cure)",
+    "prepMinutes": 70,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2950,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Recalculate lye for any change to oil weights using a lye calculator. Note that sweet almond oil has a SAP value of 0.136, slightly higher than olive oil.",
+    "makeAheadNotes": "48 hours in the mould; 4 to 6 weeks on a curing rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark place on an open rack. Discard if bars develop orange oily spots (DOS) or smell sharp and rancid. Note: sweet almond oil has a shorter shelf life than olive oil; bars containing sweet almond oil are more susceptible to DOS if stored in warm or damp conditions."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The portion of oil left unsaponified in the finished bar, expressed as a percentage of the total oil weight. A 5% superfat leaves free conditioning oil in the bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The moment in cold-process soap making when the batter thickens to a warm-custard consistency and holds a surface drizzle briefly. The point at which essential oils and additives are stirred in before pouring."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rose geranium essential oil sits at 2.4% of the oil weight in this bar, which is within the recommended usage for a rinse-off product and gives a warm, rosy-herbal scent that softens but holds through the 6-week cure. Sweet almond oil at 15% contributes linoleic acid and a lathering quality that is less hard-scrubbing than a pure coconut oil bar. The oil base is 52% olive for conditioning, 28% coconut for lather and hardness, 15% sweet almond for skin feel, and 5% castor for lather stability. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " the bar is mild. This contains tree nuts (sweet almond oil); patch test before use if nut sensitivity is a concern."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 260, "unit": "g", "isOptional": false, "prepNote": "52% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 140, "unit": "g", "isOptional": false, "prepNote": "28% of oil weight; melted if solid" },
+            { "ingredientSlug": "sweet-almond-oil", "amount": 75, "unit": "g", "isOptional": false, "prepNote": "15% of oil weight; contains tree nuts" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 71, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat across the blended oil SAP values" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "For the lye solution" },
+            { "ingredientSlug": "essential-oil-rose-geranium", "amount": 12, "unit": "g", "isOptional": false, "prepNote": "2.4% of oil weight; added at light trace" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles. Work in a ventilated space. Pour the distilled water into the HDPE pitcher. Add the sodium hydroxide in a slow, steady stream, stirring with a stainless-steel spoon. Never add water to lye. Leave to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Measure and cool the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive oil, sweet almond oil, and castor oil into a stainless-steel bowl. Melt the coconut oil and add it to the bowl. Cool the blended oils to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace and add the essential oil" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a steady stream. Blend in short 5-second bursts until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Stir in the rose geranium essential oil and blend for a further 3 seconds. Pour into the silicone loaf mould, tap once, and wrap in a towel. Leave for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould, cut, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 48 hours. Wear gloves. Cut into bars with the wire cutter. Cure on a rack for 4 to 6 weeks, turning the bars every 2 weeks. The scent softens and blends during cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open rack in a cool dark place. Bars keep two years. Bars containing sweet almond oil are more susceptible to dreaded orange spots (DOS, rancid superfat) than olive-oil-only bars; store in a cool, dry environment. Discard immediately if DOS appears or if the bar smells sharp and paint-like."
+          }
+        ]
+      }
+    ]
+  }
+}

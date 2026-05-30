@@ -1,0 +1,210 @@
+{
+  "slug": "bentonite-detox-cold-process-soap",
+  "title": "Bentonite detox cold-process soap",
+  "subtitle": "A clay bar with olive oil, coconut oil, and activated bentonite at 5% superfat",
+  "excerpt": "Bentonite clay gives this cold-process bar a smooth, silky feel on the skin and a pale warm-grey colour. The clay is dispersed in a portion of the oil before adding to the batter at trace, which prevents clumping and keeps the bar smooth throughout the mould. A 500 g oil batch produces 8 firm bars after the 6-week cure.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128. 5% superfat; 33% lye discount. Bentonite clay in soap: Cavitch, The Soapmaker's Companion (1997), clay additions chapter. Clay-in-oil dispersion method to prevent clumping: Bramble Berry soapmaking reference library (2023).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~125 g each after cure)",
+    "prepMinutes": 70,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2950,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale by recalculating lye weight for the new oil total using a lye calculator. Do not adjust the lye figure by hand.",
+    "makeAheadNotes": "48 hours in the mould before unmoulding; 4 to 6 weeks on a curing rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark place on an open rack. Discard if bars develop orange oily specks (DOS) or a sharp rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of the oil weight left unsaponified in the finished bar. At 5% superfat, 5% of the oil stays as free conditioning oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The moment when the soap batter thickens to a warm-custard consistency and a drizzle on the surface holds briefly before sinking. The signal to pour into the mould."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bentonite clay adds a silky, slip-on-skin quality to a cold-process bar and produces a pale warm-grey colour. The clay in this bar is dispersed in a tablespoon of oil before being stirred into the batter at "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": "; mixing it directly into the batter causes clumps. The base is 67% olive oil, 28% coconut oil, and 5% castor oil, which gives a conditioning lather with good hardness and stable bubbles. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " and 33% lye discount, the bar is mild and suitable for daily use. Yield is 8 bars of around 125 g each after cure. The scent is left unscented in this formulation; add up to 12 g of a chosen essential oil at trace if wanted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 335, "unit": "g", "isOptional": false, "prepNote": "67% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 140, "unit": "g", "isOptional": false, "prepNote": "28% of oil weight; melted if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 70, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "Used for the lye solution; chilled to room temperature before use" },
+            { "ingredientSlug": "bentonite-clay", "amount": 15, "unit": "g", "isOptional": false, "prepNote": "3% of oil weight; dispersed in 1 tablespoon of oil before adding at trace" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles. Work in a ventilated space. Pour the distilled water into the HDPE pitcher. Weigh the sodium hydroxide and add it to the water in a slow, steady stream, stirring with a stainless-steel spoon. Never add water to lye. The solution heats sharply; set aside to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the clay dispersion" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scoop 1 tablespoon of olive oil from the weighed batch into a small cup. Stir in the bentonite clay until you have a smooth, lump-free paste. Set aside. This step prevents the clay from clumping when it meets the full batter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and cool the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive oil (minus the tablespoon used for clay) and castor oil into a stainless-steel bowl. Melt the coconut oil and weigh into the same bowl. Cool the oil blend to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a slow stream. Blend with the stick blender in short 5-second bursts until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Scrape in the clay-oil paste and blend for 5 more seconds until fully incorporated. Pour immediately into the silicone loaf mould, tap the mould once to settle the batter, and wrap in a towel. Leave undisturbed for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould, cut, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 48 hours. Wear gloves; the bar is caustic until fully cured. Cut into bars using the wire cutter or a sharp knife. Place on a curing rack with space between each bar and leave for 4 to 6 weeks, turning every 2 weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open rack or soap dish in a cool, dry place. Full shelf life is two years. Discard any bar that develops orange oily spots (DOS, rancid superfat oil) or smells sharp and chemical."
+          }
+        ]
+      }
+    ]
+  }
+}

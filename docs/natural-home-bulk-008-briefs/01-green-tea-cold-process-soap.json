@@ -1,0 +1,305 @@
+{
+  "slug": "green-tea-cold-process-soap",
+  "title": "Green tea cold-process soap",
+  "subtitle": "A pale green bar made with a matcha infusion, olive oil, coconut oil, and castor oil at 5% superfat",
+  "excerpt": "Matcha powder tints this cold-process bar a soft, muted green that deepens during the gel phase and settles to a sage hue as the bar hardens. The oil blend is 67% olive, 28% coconut, and 5% castor, brewed against a green tea infusion in place of distilled water. Six weeks of curing gives a mild, conditioning bar.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values used: olive oil 0.134, coconut oil 0.190, castor oil 0.128. 5% superfat applied; lye discount 33% of oil weight. Reference: Susan Miller Cavitch, The Soapmaker's Companion (1997), lye calculation and oil-property chapters. Green tea as a soap liquid: the catechins in brewed tea have no known negative interaction with lye, but the sugars accelerate trace; chill the infusion before use. Matcha as a natural colourant: Bramble Berry natural colourant guide (2023).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~125 g each after cure loss)",
+    "prepMinutes": 75,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2955,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any change to oil weight through a lye calculator before adjusting the lye figure. Never scale the lye proportionally without recalculating.",
+    "makeAheadNotes": "Bars need 48 hours in the mould before unmoulding, then a minimum of 4 weeks on a curing rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark place. Store on an open rack so air circulates around each bar. Discard if bars develop orange oily specks (DOS, dreaded orange spots, a sign of rancid superfat) or a sharp paint-like smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and lye (sodium hydroxide) that produces soap and glycerine. Each oil has a SAP value: the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified in the finished bar. At 5% superfat, 5% of the oil weight remains as free oil, giving a mild and conditioning bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The moment when the soap batter thickens enough that a drizzle on the surface holds its shape briefly before sinking. The signal that the oils and lye solution have emulsified."
+    },
+    {
+      "slug": "gel-phase",
+      "term": "Gel phase",
+      "definition": "A translucent, jelly-like stage the soap batter passes through in the mould as the saponification reaction generates heat. Soap that gels tends to have a denser, smoother surface and deeper colour than soap that does not."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Green tea replaces distilled water in this cold-process bar, contributing catechins and a very slight tint that the matcha powder deepens to a pale sage green. The sugars in brewed tea accelerate "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ", so the infusion goes into the freezer before use, and the soap batter is poured at light trace before it thickens further. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " and 33% lye discount, the bar is conditioning without being soft. Cure time is 4 to 6 weeks; the bar mellows and hardens throughout that window. Yield is 8 bars of around 125 g each after cure shrinkage."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before starting, put on protective gloves and goggles. The lye handling and safety steps come before any mixing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 335, "unit": "g", "isOptional": false, "prepNote": "67% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 140, "unit": "g", "isOptional": false, "prepNote": "28% of oil weight; solid below 25°C, melt gently" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight; improves lather and foam stability" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 70, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "Brewed as a strong green tea infusion (1 tablespoon loose-leaf per 200 ml); chilled to near freezing before use" },
+            { "ingredientSlug": "matcha-powder", "amount": 5, "unit": "g", "isOptional": false, "prepNote": "1 teaspoon; dissolved in 1 tablespoon of oil from the recipe before adding at trace" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the green tea infusion" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brew a strong green tea using 1 tablespoon of loose-leaf green tea per 200 ml of just-boiled water. Steep for 5 minutes, strain, and leave to cool. Once cool, put the infusion in the freezer until it is slushy but not fully frozen. The near-frozen temperature slows the accelerated trace caused by the tea sugars."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a well-ventilated space. Put on protective gloves and goggles before opening the lye container. Weigh the sodium hydroxide into a small container. Pour the chilled green tea infusion into the HDPE lye pitcher. Add the lye to the liquid in a steady stream, stirring with a stainless-steel spoon. Never add the liquid to the lye. The solution will heat to 70 to 80°C and give off steam. Set the pitcher somewhere safe to cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and measure the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive oil into a stainless-steel or HDPE bowl. Melt the coconut oil gently if solid (microwave in 20-second bursts, or in a saucepan over low heat) and weigh into the same bowl. Add the castor oil. Let the oil blend cool to 38 to 42°C. The lye solution should be at a similar temperature before mixing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dissolve the matcha" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take 1 tablespoon of the measured oil from the bowl and stir in the matcha powder until smooth. This prevents the powder clumping when it hits the full batter. Set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oil blend in a slow, steady stream. Use the stick blender in short 5-second bursts, stirring between each, until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ": the consistency of thin custard. Stir in the matcha oil mixture quickly and blend for a further 5 seconds. Work fast; the tea sugars mean this batter moves toward medium trace quickly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour and insulate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the batter into the silicone loaf mould. Tap the mould on the work surface once to settle the batter and release air pockets. Wrap the mould in a towel and leave undisturbed in a warm place for 24 to 48 hours. The heat generated during "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " will drive the soap through the "
+          },
+          {
+            "type": "text",
+            "text": "gel phase",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gel-phase" } }]
+          },
+          {
+            "type": "text",
+            "text": ", deepening the green. Insulating encourages a full gel and a denser bar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould and cut" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 48 hours, turn the mould out. The soap should be firm but not bone-hard. If it is soft or sticky, leave in the mould for another 24 hours. Cut into bars using the wire cutter or a sharp knife. Wear gloves for the first week after cutting; the bar is still caustic until fully cured."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arrange the bars on a rack with space between each. Leave in a cool, dry room out of direct sunlight. Turn the bars every two weeks so all sides cure evenly. The bars are safe to use after 4 weeks; 6 weeks gives a harder, milder bar. The sage-green colour settles and lightens slightly as the bar dries."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure milestones" }]
+      },
+      {
+        "type": "projectSchedule",
+        "attrs": {
+          "steps": [
+            { "day": 1, "label": "Unmould and cut", "note": "Firm enough to unmould. Still caustic; wear gloves." },
+            { "day": 14, "label": "Turn the bars", "note": "Flip each bar so the underside cures. The green will have deepened and begun settling." },
+            { "day": 28, "label": "Four-week check", "note": "Test a sliver on a patch of skin. The bar is mild and ready to use from this point." },
+            { "day": 42, "label": "Cure complete", "note": "Fully cured bar. Hard, mild, and stable for two years in a cool dark place." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open soap dish or rack that lets air circulate. A closed container traps moisture and shortens shelf life. In a cool dark cupboard, fully cured bars keep two years. Discard any bar that develops orange oily spots (DOS) or smells sharp and paint-like. Both are signs of rancid superfat oil."
+          }
+        ]
+      }
+    ]
+  }
+}

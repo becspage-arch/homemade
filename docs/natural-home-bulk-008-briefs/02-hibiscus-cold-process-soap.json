@@ -1,0 +1,216 @@
+{
+  "slug": "hibiscus-cold-process-soap",
+  "title": "Hibiscus cold-process soap",
+  "subtitle": "A naturally tinted bar made with a hibiscus infusion, shea butter, and a soft floral scent",
+  "excerpt": "A strong hibiscus infusion replaces distilled water in this cold-process bar, giving a warm terracotta to deep rose colour that depends on the pH of the finished soap. Shea butter sits at 10% for a conditioning lather. Rose geranium essential oil adds a floral note. The bar settles to a mild, stable colour over 6 weeks.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128, shea butter 0.128. 5% superfat; 33% lye discount. Hibiscus as a natural soap colourant: the anthocyanins are pH-sensitive and shift from red-pink in acidic conditions to brown-olive in alkaline conditions (soap is alkaline, so the final colour is typically warm terracotta or mauve, not bright pink). Reference: Cavitch, The Soapmaker's Companion (1997). Hibiscus anthocyanin pH behaviour: Bridle and Timberlake, Food Chemistry 58 (1997).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~120 g each after cure)",
+    "prepMinutes": 75,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2955,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale by recalculating lye through a lye calculator. Do not scale the lye weight proportionally without running the new oil weights through the calculation.",
+    "makeAheadNotes": "Bars need 48 hours in the mould and 4 to 6 weeks on a curing rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Fully cured bars keep two years in a cool dark place. Store on an open rack. Discard if the bar develops orange oily spots (DOS) or a sharp rancid smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false },
+    { "slug": "soap-cutter-wire", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value giving the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of oil left unsaponified in the finished bar. A 5% superfat leaves conditioning free oil in the bar."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The stage in cold-process making when the batter thickens to the consistency of warm custard and a drizzle on the surface holds briefly. The signal to pour into the mould."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hibiscus is a natural colourant for cold-process soap, but the result is not the bright pink of hibiscus tea. Soap batter is alkaline, and the anthocyanins in hibiscus are pH-sensitive: they shift from red-pink in an acidic environment to warm terracotta or muted mauve in an alkaline one. The colour deepens during the "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " reaction and settles over the 6-week cure. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " with shea butter at 10% of the oil weight, the finished bar is conditioning. Rose geranium essential oil gives a soft floral note that holds through cure. Yield is 8 bars of around 120 g each."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 280, "unit": "g", "isOptional": false, "prepNote": "56% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 160, "unit": "g", "isOptional": false, "prepNote": "32% of oil weight; melted if solid" },
+            { "ingredientSlug": "shea-butter", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight; melted with the coconut oil" },
+            { "ingredientSlug": "castor-oil", "amount": 10, "unit": "g", "isOptional": false, "prepNote": "2% of oil weight; supports stable lather" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 69, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat" },
+            { "ingredientSlug": "hibiscus-dried", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "Brewed as a very strong infusion: 30 g dried hibiscus per 200 ml boiling water, steeped 15 minutes, strained; chilled to near-freezing before use" },
+            { "ingredientSlug": "essential-oil-rose-geranium", "amount": 12, "unit": "g", "isOptional": true, "prepNote": "About 2.4% of oil weight; added at trace" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brew the hibiscus infusion" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steep 30 g of dried hibiscus in 200 ml of just-boiled water for 15 minutes. The infusion should be a deep crimson. Strain through a fine sieve, pressing the flowers to extract all the colour. Chill the infusion in the freezer until slushy. The cold temperature controls the lye reaction speed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles. Work in a ventilated space. Pour the chilled hibiscus infusion into the HDPE pitcher. Add the weighed sodium hydroxide in a steady stream, stirring continuously. Never add liquid to lye. The solution will heat and give off steam; the infusion turns brown at this stage. Set aside to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt and cool the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weigh the olive oil and castor oil into a bowl. Melt the coconut oil and shea butter together over low heat, then weigh into the same bowl. Let the oil blend cool to 38 to 42°C, matching the lye solution temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace and pour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a steady stream. Blend with the stick blender in short bursts until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Stir in the rose geranium essential oil. Pour immediately into the silicone loaf mould, tap to settle, and wrap in a towel to insulate. Leave undisturbed for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould, cut, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould after 48 hours. Wear gloves; the bar is still caustic. Cut into bars and arrange on a curing rack with space between each. Turn the bars every two weeks. The colour shifts over the cure: the warm terracotta or mauve tone settles and lightens as moisture leaves the bar. Fully cured at 6 weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store on an open rack or soap dish in a cool, dry place. The bars keep two years fully cured. Discard any bar that develops orange oily spots (dreaded orange spots, DOS, caused by rancid superfat oil) or smells sharp or paint-like."
+          }
+        ]
+      }
+    ]
+  }
+}
