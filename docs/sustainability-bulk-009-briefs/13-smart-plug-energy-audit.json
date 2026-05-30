@@ -1,0 +1,130 @@
+{
+  "slug": "smart-plug-energy-audit",
+  "title": "Using smart plugs to map household energy draws",
+  "subtitle": "A systematic approach to measuring which appliances use the most electricity",
+  "excerpt": "A whole-house energy monitor tells you how much electricity the house is using. A smart plug tells you which appliance is using it. For a typical UK household with a dozen plug-in appliances, a week with two or three smart plugs identifies the largest consumers and quantifies the savings from replacing or adjusting them.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust UK household appliance energy use guidance. DECC (now BEIS) Household Energy Use in England study. Which? appliance energy testing data. Smart Energy GB guidance on monitoring consumption.",
+  "approximateCostGbp": 40,
+  "paybackYears": 1,
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 7,
+      "title": "Review the first week of readings",
+      "body": "After the first week of monitoring, review the kWh figures from each plug. Sort by total energy consumed. The highest-consuming appliances are the ones where change will have the most impact.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A smart plug with energy monitoring costs 8-15 pounds and shows real-time wattage and cumulative kWh in a phone app. Two or three used in rotation over a month will tell you more about where your electricity goes than a year of smart meter bills. The goal is not to monitor everything forever. It is to find the three to five highest-consuming items, make changes, and check the saving." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to measure first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Start with items that are on for long periods rather than items with high peak wattage. A 2000 W kettle that runs for 3 minutes uses 0.1 kWh. A 60 W fish tank pump running for 8 hours uses 0.48 kWh. Duration, not peak wattage, determines total energy cost." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor the fridge and fridge-freezer for 48 hours. These cycle on and off; the smart plug shows average consumption including compressor-off time. A well-maintained 10-year-old fridge-freezer typically uses 350-600 kWh per year; a modern A-rated unit uses 100-200 kWh per year. The potential saving from replacement is 150-400 kWh annually." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor the chest freezer if you have one. A chest freezer in an unheated garage uses 200-500 kWh per year depending on its age and condition. If it holds mostly air for much of the year, the question is whether its contents justify the running cost." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor the television setup (TV plus box plus soundbar) during an evening. Modern LED TVs draw 50-120 W while streaming; their set-top boxes often draw 15-25 W continuously, even in standby. At 27p/kWh, a box drawing 20 W for 20 hours per day costs 53 pounds per year." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor electric heaters in rooms that are heated independently of the central heating. A 2 kW electric convector running for 4 hours costs 2.16 pounds per day at 27p/kWh, or 540 pounds over a six-month heating season." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor the home office setup over a working day. A desktop PC, monitor, and printer in active use draw 100-400 W. On standby all night, they may draw 10-40 W. A managed power strip that cuts standby power when the PC goes to sleep can save 80-200 kWh per year." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The monitoring week" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plug the smart plug into the first appliance socket and reset its kWh counter to zero. Run for exactly 7 days. Note the kWh reading and the appliance." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move to the next appliance. Continue down the priority list above, spending a full week on each main consumer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After three to four weeks of monitoring, rank the appliances by annual kWh (weekly reading multiplied by 52). Focus your attention on the top three." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Translating the readings into decisions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Annual kWh x 0.27 = annual cost in pounds at 2025/26 rates. If an ageing fridge-freezer uses 480 kWh per year and a replacement uses 150 kWh per year, the saving is 330 kWh, roughly 89 pounds per year. A replacement might cost 400-600 pounds. Payback: 4-7 years, within the expected life of the new appliance." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not replace appliances that are still working. Manufacturing a new appliance has a real carbon cost: a fridge-freezer carries roughly 300-500 kg CO2e to produce. If the running-cost saving justifies replacement on financial grounds, the carbon case usually follows within a few years at UK grid intensity." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Smart plug shows inconsistent readings for the same appliance on different days",
+              "cause": "The appliance load varies with use pattern: a washing machine draws very differently on a boil wash vs a cold cycle",
+              "fix": "Log the specific programme and load used each time. Compare like-for-like runs rather than averaging across all cycles."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Smart plug total across all monitored appliances is less than the smart meter whole-house total",
+              "cause": "Large fixed loads (oven, shower, immersion heater, EV charger) are not captured by smart plugs",
+              "fix": "Use the smart meter data to estimate the fixed loads. Subtract all smart-plug totals from the meter total for the same period. The remainder is your unmonitored hardwired loads."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "whole-house-circuit-energy-monitoring",
+  "title": "Installing a whole-house circuit energy monitor",
+  "subtitle": "CT clamp installation for real-time consumption tracking by circuit",
+  "excerpt": "A current transformer (CT) clamp monitor clips around the main feed cable at the consumer unit and shows real-time household consumption in watts and cumulative kWh. More advanced systems add per-circuit CT clamps to identify individual loads. Installation takes under two hours and the data pay for the hardware cost within months by identifying waste.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "IET Wiring Regulations BS 7671 (18th edition) for consumer unit access requirements. BEIS smart meter rollout data on CT clamp alternatives. Energy Saving Trust monitoring guidance. OpenEnergyMonitor documentation (emonTx, emonPi, open-source licensed) for CT clamp installation patterns.",
+  "approximateCostGbp": 80,
+  "paybackYears": 1,
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false },
+    { "slug": "screwdriver", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 7,
+      "title": "Review first week of baseline data",
+      "body": "After installing the monitor, review the first seven days of consumption data. Identify the overnight baseload (consumption between midnight and 5am) and the peak consumption periods. The baseload reveals always-on loads; the peaks reveal which times of day are most intensive.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 30,
+      "title": "Compare month-one consumption vs previous year",
+      "body": "Compare the first monitored month's total kWh against the same month in the previous year (from your electricity bill). Any significant increase since last year that cannot be attributed to a new appliance is worth investigating.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A smart meter in-home display shows how much the house is using right now. A CT clamp energy monitor does the same but stores the data over time. With multiple CT clamps fitted, it can break consumption down by circuit. It can also link to home automation systems. The two work together: the smart meter is for billing; the CT clamp is for diagnosis." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a CT clamp monitor tells you" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Baseload: the overnight consumption when all lights are off and no active appliances are running. A typical UK home's baseload is 100-400 W. Higher than 400 W suggests always-on appliances (chest freezer, fish tank heater, standby devices, heating pump) worth reviewing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Load shape: when consumption peaks and why. Evening peaks are normal (cooking, TV, showers). Mid-night peaks suggest immersion heater timing; dawn peaks suggest electric showers or heated floors on timers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spikes: a sudden jump in baseload can mean a fridge stuck on, a water heater element that won't turn off, or a new device left in standby." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation sequence for a single-CT whole-house monitor" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "CT clamp installation does not require isolating the consumer unit. The clamp goes around the outside of the insulated cable and does not contact any live conductor. However, you are working adjacent to live busbars in the consumer unit. Do not touch any internal components of the consumer unit during installation. If in doubt, ask a qualified electrician to fit the CT clamp." }]
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Locate the main supply cable entering the consumer unit. On a single-phase UK installation, this is typically a 25-35 mm² cable. The CT clamp clips around this cable. Access is usually through the consumer unit door." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clip the CT clamp around the meter tails (the live feed cable, not the neutral) inside the consumer unit. The clamp has an arrow indicating current direction; orient it correctly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Route the CT clamp lead to the monitoring unit. The lead is a low-voltage signal cable; route it clear of the consumer unit and to a convenient location for the display." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect to the monitoring unit and power it from a standard socket. Follow the product-specific setup to calibrate the voltage reference and set the supply frequency (50 Hz for UK)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Verify by turning known loads on and off. A 2 kW kettle should show approximately 2 kW on the monitor. A 100 W lamp should show approximately 100 W." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Per-circuit monitoring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Systems with multiple CT clamps allow per-circuit monitoring. The most useful circuits to watch are the electric oven, EV charger, immersion heater, and underfloor heating. Each one shows when it runs and how much it uses, so you can set timers to shift loads to cheaper-rate periods." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Monitor shows negative consumption when solar PV is exporting",
+              "cause": "The CT clamp is on the meter tails and is reading both import and export; the sign convention shows negative when net flow is outward",
+              "fix": "This is correct operation for a single-CT system. A separate CT on the solar PV circuit gives explicit generation data alongside the net-consumption reading from the main CT."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Monitor readings are consistently about 20% lower than the smart meter billing data",
+              "cause": "CT clamp is sized for a larger cable than the actual meter tails diameter, reducing the inductive coupling and the signal accuracy",
+              "fix": "Select a CT clamp correctly sized for the cable diameter. Alternatively, use the smart meter as the billing reference and accept the CT reading as a relative-comparison tool only."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

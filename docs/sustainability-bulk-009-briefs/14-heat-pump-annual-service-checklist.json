@@ -1,0 +1,155 @@
+{
+  "slug": "heat-pump-annual-service-checklist",
+  "title": "Heat pump annual service: DIY checks and what to ask the engineer",
+  "subtitle": "Maintaining an air-source heat pump for reliable performance and warranty compliance",
+  "excerpt": "An air-source heat pump needs an annual service to maintain performance and comply with most manufacturer warranties. Parts of the check are accessible to a careful householder: cleaning the air intake filter, checking the refrigerant circuit visually, verifying the flow temperatures. This outlines what you can do yourself and what the engineer covers.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS 021 heat pump service requirements for domestic systems. HIES Consumer Code for heat pump maintenance obligations. Manufacturer service documentation (Vaillant, Mitsubishi, Daikin publicly available service guidance). CIBSE AM12 Heat Pumps for Existing Buildings for operational guidance.",
+  "approximateCostGbp": 150,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance. The ratio of heat output to electrical energy input for a heat pump. A COP of 3 means 3 kWh of heat produced for every 1 kWh of electricity consumed."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The annual average COP of a heat pump, accounting for lower efficiency in cold weather. A realistic UK SCOP for a well-installed ASHP is 2.8-3.5."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-cop-scop-explained"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "An air-source heat pump operating at a ",
+          "marks": []
+        }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " of 3.0 produces 3 kWh of heat from every 1 kWh of electricity. A poorly maintained heat pump running at SCOP 2.0 uses 50% more electricity to deliver the same heat. The annual service is the mechanism for keeping the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": " in the design range. For a system with an annual electricity consumption of 3,000 kWh, the difference between SCOP 3.0 and SCOP 2.0 is 1,500 kWh per year, roughly 405 pounds at 2025/26 rates.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you can check yourself (monthly or quarterly)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outdoor unit air intake: check that the coil-face grille is clear of leaves, debris, and ice. A blocked intake reduces airflow and drops performance. In autumn, check weekly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clearance around the unit: the outdoor unit needs 300-600 mm of clear space on the air-intake face (typically the front) and at least 200 mm on all other sides. Check that garden growth has not closed in around the unit over summer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Condensate drain: the outdoor unit produces condensate water in heating mode. Check that the drain hole or tray is clear and not blocked with debris." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flow temperature vs room temperature: on a cold day, check that the heat pump is achieving its design flow temperature (typically 35-45°C for an underfloor system, 45-55°C for a radiator system). Check the controller display or the app. A flow temperature significantly below design on a cold day indicates a sizing or commissioning problem." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The annual engineer service (what to ask for)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "F-gas leak check on the refrigerant circuit: heat pumps use refrigerant under pressure. A slow refrigerant leak reduces cooling capacity and eventually causes compressor failure. F-Gas Regulation requires that any detected leak above the threshold be reported and repaired by a qualified engineer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compressor current check: the engineer measures the current the compressor draws and checks it against spec. Higher current than expected means wear or low refrigerant." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "System pressure check: the heating circuit (water side) should hold pressure at 1.0-1.5 bar when cold. A system requiring regular top-up has a slow leak in the pipework or the expansion vessel is failing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flow temperature curve review: the engineer checks the controller settings against the actual house heat-loss requirement. A flow temperature curve set too high wastes electricity; set too low, the house does not reach target temperature on the coldest day." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plate heat exchanger condition: in hard-water areas, scale builds up on the heat-transfer surface. If hot water takes longer to reheat than it used to, ask the engineer to check and advise on descaling." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tracking your SCOP" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Keep a simple log: at the start and end of each heating season, note the electricity consumed by the heat pump (from the dedicated meter or smart plug if accessible) and the heat delivered (from the heat meter, if fitted). SCOP = heat delivered (kWh) divided by electricity consumed (kWh). A declining SCOP across successive seasons indicates degradation or a settings drift." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heat pump runs continuously but house does not reach target temperature",
+              "cause": "Heat loss has increased (draught, failed insulation), the heat pump flow temperature curve is set too low, or an emitter circuit (radiator or underfloor loop) is partially blocked",
+              "fix": "Check the flow temperature on the controller. Increase the weather-compensation curve by one step and monitor for 24 hours. If the house still does not reach temperature, call the engineer."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heat pump shows icing on the outdoor unit coil and does not defrost automatically",
+              "cause": "Defrost cycle is not activating, or the outdoor temperature sensor is faulty",
+              "fix": "This is an engineer call. Ice accumulation past the normal defrost cycle prevents airflow and damages the compressor."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

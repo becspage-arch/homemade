@@ -1,0 +1,104 @@
+{
+  "slug": "rainwater-collection-legal-framework",
+  "title": "Rainwater collection in the UK: what is and is not permitted",
+  "subtitle": "The legal status of rainwater harvesting, permitted uses, and the abstraction licence question",
+  "excerpt": "Collecting rainwater from building roofs in the UK is unregulated and does not require a licence or planning permission for typical residential installations. Drinking it without treatment is a different matter. This clarifies the legal position in England, Wales, and Scotland, the permitted uses for collected rainwater, the water quality issues for drinking, and when any formal approval is actually needed.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency guidance on water abstraction licences (rainwater from buildings is excluded). Drinking Water Inspectorate (DWI) guidance on private water supplies. BS 8515:2009 rainwater harvesting system design and installation standard. Water Industry Act 1991 provisions on domestic supply. SEPA (Scotland) guidance on water framework and small abstractions.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipeTools": [],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "There is no legal restriction in England, Wales, or Scotland on collecting rainwater from a roof for non-potable domestic use. Abstraction licensing under the Water Resources Act 1991 covers water taken from ground or surface sources. It does not cover rainwater caught from a building roof before it reaches the ground. A householder fitting a water butt or an underground tank does not need to notify any authority or hold any licence." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Permitted uses without restriction" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Garden irrigation (ornamental and vegetable beds, lawns)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toilet flushing. This needs a dual-supply plumbing system and backflow prevention. Permitted under BS 8515." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outdoor vehicle washing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Washing machine supply (permitted by BS 8515 but requires backflow prevention to prevent siphonage back to the mains supply)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drinking collected rainwater" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rainwater collected from a residential roof is not safe to drink without treatment. UK roofs collect bird droppings, atmospheric pollutants, moss, and lichens. The water typically contains faecal coliforms and Legionella, and may contain heavy metals depending on the roof type and location. The Drinking Water Inspectorate does not classify roof-collected rainwater as a safe private supply without treatment." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "To treat collected rainwater for drinking: filtration to 1 micron followed by UV sterilisation meets WHO and DWI microbiological standards. Annual water testing for microbial content (E. coli, coliform count) and heavy metals is required for any formal private supply. This is a substantial additional installation; for most households, mains water for drinking and rainwater for non-potable uses is the practical division." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water company byelaws" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Some older water company byelaws restricted diverting water from drainage. National law has largely replaced them. No UK water company enforces limits on home rainwater butts or tanks. The Environment Agency's guidance also excludes roof-collected water from the need for a licence. If a water company objects, contact Ofwat." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Scotland and Wales" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Scotland: SEPA's position matches the Environment Agency's. Collecting rainwater from a building roof for domestic non-potable use does not need a SEPA licence. Wales: the same Water Resources Act 1991 provisions as England apply. No licence is needed for roof-collection installations." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Building insurer has raised a concern about the rainwater harvesting installation",
+              "cause": "Some home insurers treat internal plumbing modifications (toilet flushing systems) as a material change requiring notification",
+              "fix": "Notify your home insurer if you connect collected rainwater to internal plumbing (toilet, washing machine). Garden irrigation and outdoor use from a water butt is universally uncontroversial and does not require insurer notification."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

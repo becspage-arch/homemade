@@ -319,3 +319,114 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 04:10:39
+
+Generated: 2026-05-30T04:10:39.772Z
+
+Processed: 5001
+PASS: 4992
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 18 |
+| body-missing-method | 18 |
+| em-dash-in-content | 3 |
+
+## Still BLOCKED (sample 20)
+
+- cockerel-management-and-flock-dynamics: 
+- fostering-a-lamb-onto-a-ewe: 
+- goat-kid-disbudding: 
+- managing-outdoor-pigs-in-winter-mud: 
+- rabbit-sore-hocks: 
+- recognising-american-foulbrood: 
+- setting-up-a-bait-hive: 
+- setting-up-a-dairy-goat-milking-routine: 
+- sourcing-and-settling-point-of-lay-hens: 
+
+---
+
+## Run at 04:12:14
+
+Generated: 2026-05-30T04:12:14.427Z
+
+Processed: 5001
+PASS: 5000
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 8 |
+| body-missing-method | 6 |
+| voice-violation | 2 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- rabbit-sore-hocks: voice-violation, grade-level-strict
+
+---
+
+## Run at 04:14:30
+
+Generated: 2026-05-30T04:14:30.559Z
+
+Processed: 4992
+PASS: 4992
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 04:51:02
+
+Generated: 2026-05-30T04:51:02.607Z
+
+Processed: 109
+PASS: 94
+STILL_BLOCKED: 15
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 100 |
+| body-missing-method | 9 |
+| voice-violation | 8 |
+| body-missing-orientation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- compost-tea-and-liquid-feeds: grade-level-strict
+- draught-sealing-recessed-downlights: grade-level-strict
+- flat-roof-cold-deck-remediation: voice-violation, grade-level-strict
+- glass-jar-sterilisation-and-reuse: grade-level-strict
+- heat-interface-unit-maintenance: grade-level-strict
+- heat-pump-annual-service-checklist: grade-level-strict
+- passive-stack-ventilation-maintenance: grade-level-strict
+- permeable-paving-for-drives-and-paths: grade-level-strict
+- portable-power-station-sizing: voice-violation, grade-level-strict
+- rainwater-collection-legal-framework: grade-level-strict
+- rainwater-tank-volume-calculator: grade-level-strict
+- soakaway-trench-for-downpipe-runoff: grade-level-strict
+- triple-glazing-vs-secondary-glazing: voice-violation, grade-level-strict
+- velux-window-insulation-sealing: grade-level-strict
+- wood-chip-composting-technique: voice-violation, grade-level-strict

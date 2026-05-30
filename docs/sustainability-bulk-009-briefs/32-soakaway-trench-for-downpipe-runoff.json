@@ -1,0 +1,168 @@
+{
+  "slug": "soakaway-trench-for-downpipe-runoff",
+  "title": "Building a soakaway trench for downpipe runoff",
+  "subtitle": "Digging and filling a French drain to disperse roof water into the ground rather than the sewer",
+  "excerpt": "A soakaway trench receives water from a downpipe diverter and disperses it slowly into the surrounding soil, keeping it out of the combined sewer. For a standard UK semi-detached roof, a trench 2-3 m long, 500 mm wide, and 700 mm deep filled with clean aggregate is sufficient for all but the heaviest rain events. This covers the percolation test, minimum Building Regulations setbacks, materials, and construction sequence.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Building Regulations Approved Document H (Drainage and Waste Disposal) for soakaway setbacks and design. BS EN 752 drainage outside buildings. CIRIA Report C609 soakaway design manual. Environment Agency surface water runoff guidance.",
+  "approximateCostGbp": 120,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "spade", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "percolation-test",
+      "term": "Percolation test",
+      "definition": "A site test that measures how quickly water drains from a test pit into the surrounding soil. The result determines whether a soakaway is viable and how large it needs to be."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 1,
+      "title": "Check soakaway performance after first rain",
+      "body": "After the first significant rain event (10 mm or more), check that the trench is accepting water and the level is dropping within 24 hours. Standing water that does not drain within 48 hours indicates the soil percolation rate is lower than the test predicted, or the trench volume is insufficient for the catchment.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most UK roofs drain to the combined sewer via downpipes. During heavy rain, this contributes to sewer surcharge and overflow. A soakaway trench intercepts the downpipe and disperses the water into the ground on site, reducing the peak load on the sewer. The technique is most effective on sandy or loamy soils; clay soils with low permeability may not drain fast enough to make a trench viable." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: percolation test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "percolation-test" } }],
+            "text": "Percolation test"
+          },
+          {
+            "type": "text",
+            "text": " method: dig a 300 mm square, 300 mm deep test pit at the proposed soakaway location. Fill with water and let it drain completely (this saturates the surrounding soil). Fill again to 300 mm depth and time how long it takes to drop from 75% full to 25% full.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rate above 1 minute per 25 mm drop: suitable for soakaway." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rate 1-10 minutes per 25 mm drop: moderate drainage; soakaway viable with increased trench volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rate above 10 minutes per 25 mm drop: poor drainage (likely clay). Soakaway is not viable; consider directing runoff to a rain garden or a permeable surface instead." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building Regulations setbacks" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Approved Document H requires soakaways to be positioned at least 5 m from any building foundation and at least 2.5 m from any boundary. This is a Building Regulations requirement, not guidance. Do not build a soakaway closer than these distances." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trench dimensions and materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trench size: for a standard roof of 30-50 m2 catchment, a trench 2.5 m long, 500 mm wide, and 700 mm deep is adequate for moderate percolation soils." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aggregate fill: 20-40 mm clean single-size gravel (no fines). This provides approximately 30-35% void space for water storage while the soil drains." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Geotextile membrane: wrap the aggregate fill in a permeable geotextile. This stops soil migrating into the voids over time." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Construction sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark and check for underground services (gas, electric, water, telecoms) before digging. Call Linesearch Before U Dig (LSBUD) or use the free service check from your local distribution network operator." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dig the trench to the required dimensions. The base should slope gently along the length (1:100) away from the building to encourage uniform dispersal." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Line the trench with geotextile, overlapping the sides to allow folding over the top of the aggregate later." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install an inlet pipe from the downpipe diverter, connecting into the upper 200 mm of the trench. Use a 100 mm perforated pipe running the length of the trench on the aggregate, or a simple inlet drop to the aggregate surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill with aggregate to 150 mm below ground level. Fold the geotextile over the top, then cover with the excavated soil and reinstate the surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a rainwater diverter on the downpipe. Most diverters have a built-in overflow back to the downpipe so that if the trench is saturated, water returns to the normal drain path." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Water backing up in the inlet pipe and overflowing at the surface",
+              "cause": "Trench is at capacity during a heavy rain event, or the aggregate voids have silted up over time",
+              "fix": "Check the diverter overflow is routing back to the sewer correctly. If the trench is silting up (common after several years), excavate, remove the aggregate, wash it, inspect the geotextile membrane for silt clogging, and reinstate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

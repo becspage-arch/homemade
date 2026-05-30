@@ -1,0 +1,172 @@
+{
+  "slug": "solar-pv-annual-maintenance-checklist",
+  "title": "Solar PV annual maintenance: what to check and when",
+  "subtitle": "A year-round maintenance schedule for a domestic rooftop PV system",
+  "excerpt": "A domestic solar PV system needs very little maintenance, but specific checks once or twice a year prevent the small issues that reduce output over a decade. Dirty panels lose 5-15% of generation in dry dusty periods; a failing isolator can cause overheating; a bird nest under panels can block airflow and shade cells. This is the annual maintenance schedule.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS technical standards for domestic PV systems (MCS 012). Solar Energy UK maintenance guidance for residential systems. HIES Consumer Code for solar PV maintenance. BSRIA guidance on PV performance monitoring.",
+  "approximateCostGbp": 50,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false },
+    { "slug": "multimeter", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "The electrical device in a solar PV system that converts the direct current (DC) produced by the panels into the alternating current (AC) used by household appliances and the grid."
+    },
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic: a technology that converts sunlight directly into electricity using semiconductor cells, typically silicon, arranged in panels."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-system-monitoring"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A well-installed domestic ", "marks": [] },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " system will generate electricity with minimal intervention for 25 years. But 'minimal intervention' is not zero. The checks below take two to three hours per year and cost nothing beyond a soft brush and a data connection to the monitoring app. Missing them means losing 5-20% of annual generation and potentially missing a fault that worsens over time.", "marks": [] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spring check (March-April)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Review the winter generation data. In your monitoring app, compare December to February generation against expected output for your array size. A 4 kWp south-facing array in southern England generates roughly 600-800 kWh over that period. A shortfall of more than 15% versus last year needs investigation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Visual roof inspection from the ground. Using binoculars, check for: cracked or discoloured panel cells (dark patches); bird nesting material visible at the panel edges; displaced mounting brackets or loose flashing around the cable entry points; panels that have shifted on their mountings." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Panel cleaning if visibly dirty. After a dry winter with high dust, panels may have a visible coating of grime. Clean with clean water and a soft brush or a long-handled window-cleaning pole. Avoid pressure washers near the frame edges and junction boxes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the inverter display or monitoring app for fault codes. Any code that has persisted since winter should be investigated. Clear faults from the display record and confirm that generation resumes normally after the reset." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Summer check (June-July)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compare current-month generation with the same month last year (or against your location's average for that month). A 4 kWp south-facing array in southern England should generate 500-600 kWh in June. A shortfall against last year, without a change in weather pattern, suggests a fault." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check for shading changes: new roof extensions on neighbouring properties, trees that have grown taller, or satellite dishes repositioned. Even partial shading on one cell in a string of panels can reduce the output of the whole string by 20-30%." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Inspect the ",
+              "marks": []
+            }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inverter" } }],
+                "text": "inverter"
+              },
+              {
+                "type": "text",
+                "text": " visually. The inverter should be in a dry, ventilated location. Check that ventilation slots are clear of dust and cobwebs. Feel the case: it should be warm but not hot to the touch in operation. A very hot inverter indicates a cooling problem.",
+                "marks": []
+              }
+            ]}]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual electrical check (every 12 months, or arrange with a qualified electrician every 3-5 years)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the AC isolator in the consumer unit is operating correctly. The isolator should open cleanly and the system should shut down when activated. Isolators have a service life of 15-20 years; failures are rare but can cause dangerous arcing if left undetected." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the DC isolator (roof-side). The DC isolator is typically in the loft or near the cable entry point. It should operate freely and the contacts should show no heat discolouration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Review the generation meter reading against the metered Smart Export Guarantee payments. The meter reading and the payments from the export tariff provider should align within 10%. Significant discrepancies indicate either a meter fault or a billing error." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Never work on DC wiring yourself. The DC cables between panels and inverter carry up to 600 V and are live whenever daylight falls on the panels, regardless of whether the AC circuit is isolated. Any fault in the DC cabling, panel junction boxes, or DC isolator must be investigated by a qualified electrician with solar PV training." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Inverter shows a grid fault code and will not export",
+              "cause": "The grid voltage at the connection point is outside the inverter's permissible range (G99 or G100 compliance window), or the inverter has lost synchronisation after a power cut",
+              "fix": "Isolate the AC circuit for 5 minutes and restore. If the fault recurs daily, report to your District Network Operator: sustained high or low grid voltage is a grid quality issue, not an inverter fault."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "One string of panels produces consistently less than the other",
+              "cause": "A single panel in the underperforming string has a failed bypass diode, cracked cell, or corrosion at the junction box",
+              "fix": "Compare string-level data from the monitoring app. Engage an MCS-accredited engineer to perform IV-curve tracing on the underperforming string to identify the faulty panel."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Monitoring shows output has declined gradually over three years",
+              "cause": "Normal panel degradation is 0.3-0.5% per year; a 3-year decline of 5% or more suggests accelerated degradation or panel soiling",
+              "fix": "Check for heavy soiling first. If cleaning does not restore output, commission an IV-curve test to determine whether the degradation is within or beyond the panel manufacturer's warranty specification."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

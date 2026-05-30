@@ -1,0 +1,164 @@
+{
+  "slug": "small-scale-biogas-from-food-waste",
+  "title": "Producing biogas from food waste at home",
+  "subtitle": "How anaerobic digestion works at small scale, what a HomeBiogas-type system produces, and the practical UK limitations",
+  "excerpt": "A small domestic biogas digester converts food scraps into combustible gas (roughly 60% methane) and a liquid fertiliser. A standard HomeBiogas 2.0 unit processes up to 6 litres of food waste per day and produces enough gas to cook one to two meals. This is the process, the UK-specific practicalities (temperature requirements, outdoor siting rules, gas usage limitations), and a realistic output expectation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HomeBiogas technical documentation (public). Anaerobic Digestion and Bioresources Association (ADBA) guidance on small-scale AD. WRAP guidance on food waste treatment options. Environment Agency guidance on anaerobic digestion exemptions under the Environmental Permitting (England and Wales) Regulations 2016.",
+  "approximateCostGbp": 600,
+  "paybackYears": null,
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "anaerobic-digestion",
+      "term": "Anaerobic digestion",
+      "definition": "A biological process in which microorganisms break down organic material in the absence of oxygen, producing biogas (a mixture of methane and CO2) and digestate (a liquid fertiliser)."
+    },
+    {
+      "slug": "digestate",
+      "term": "Digestate",
+      "definition": "The liquid byproduct of anaerobic digestion. Rich in ammonia nitrogen and dissolved nutrients. Must be diluted before application to soil."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anaerobic-digestion" } }],
+            "text": "Anaerobic digestion"
+          },
+          {
+            "type": "text",
+            "text": " at domestic scale uses the same biology as large industrial AD plants but in a 200-litre to 1500-litre vessel. Methanogenic bacteria break down food waste over a retention time of 15-30 days, producing a biogas that collects in the headspace and is piped to a burner. The remainder drains out as liquid digestate.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a small unit produces" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gas production: approximately 200-300 litres of biogas per kilogram of food waste input. At 60% methane, the energy content is roughly equivalent to 120-180 litres of natural gas, or 0.4-0.6 kWh per kilogram of input." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Practical output from a HomeBiogas 2.0 fed 3-4 kg of scraps per day: enough gas for 30-40 minutes of burner time, sufficient to cook one to two meals." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Digestate: approximately 1-2 litres per day. Must be diluted 1:20 to 1:50 with water before applying to plants. High in ammonia; avoid direct application to foliage.", "marks": [] }]
+          }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Temperature requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mesophilic anaerobic bacteria (the population in a domestic digester) are active between 15 and 40 degrees C. Below 15 degrees C, gas production slows significantly; below 10 degrees C, it stops. This limits the UK outdoor operating season to April through October in most regions. A south-facing position and an insulating cover extend the season. Siting the unit in a heated outbuilding, greenhouse, or polytunnel enables year-round operation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Permitted inputs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Suitable: cooked and uncooked vegetable scraps, fruit waste, coffee grounds, bread, rice, pasta, grain-based foods, dairy, cooked meat in small quantities." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid: citrus in large quantities (inhibits methanogenic bacteria), raw meat in large quantities (pathogen risk in digestate), onions in quantity, cooking oils in significant volumes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best inputs for gas yield: protein-rich scraps (bread, cooked meat, dairy) produce more gas per kilogram than raw vegetables." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "UK regulatory position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Small domestic biogas units for home use are not subject to the Environmental Permitting (England and Wales) Regulations 2016 when processing only household food waste and using the biogas and digestate on the same property. No Environment Agency permit or exemption registration is needed for this use. Planning permission is not typically required for a ground-mounted unit under 2.5 m in height placed in a rear garden; check local permitted development rights if in any doubt." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Biogas is flammable at concentrations of 5-15% in air. Domestic units must be sited outdoors or in a well-ventilated outbuilding; not in an enclosed space, garage, or kitchen. Do not smoke near the unit. The gas stored in the bag is under very low pressure but can ignite. Follow the manufacturer's instructions on leak detection and pipe fitting." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the digestate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "digestate" } }],
+            "text": "Digestate"
+          },
+          {
+            "type": "text",
+            "text": " from a domestic unit fed typical household food waste contains high concentrations of ammonium nitrogen and dissolved minerals. Dilute at 1:40 with water before applying to beds or containers as a liquid feed. Undiluted digestate will burn foliage and can damage soil biology. Diluted digestate is effective as a weekly feed during the growing season.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Gas production has stopped after a week of operation",
+              "cause": "Temperature has dropped below 15 degrees C, the digester was overfed and the pH became too acidic, or the unit was set up from scratch without an active microbial starter culture",
+              "fix": "Check the temperature inside the digester (should read at least 15 degrees C at the liquid surface). If temperature is adequate, the digester may need a restart with a fresh starter (the manufacturer supplies a biological activator packet for this). If the digester smells strongly of vinegar, it is over-acidic; stop feeding for 5-7 days to allow the methanogenic bacteria to recover."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Gas bag is not inflating",
+              "cause": "Either the gas outlet line is blocked or clamped, the input food was not broken down enough, or the microbial population is not yet established",
+              "fix": "Check all connections and that the outlet valve is open. Break food into small pieces before feeding. In the first 4-6 weeks of a new unit, gas production is erratic as the microbial population establishes; this is normal."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

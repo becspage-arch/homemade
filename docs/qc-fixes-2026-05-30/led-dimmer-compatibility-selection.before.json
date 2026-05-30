@@ -1,0 +1,263 @@
+{
+  "slug": "led-dimmer-compatibility-selection",
+  "tutorialId": "cmprveczt00006kv4gfre00ud",
+  "capturedAt": "2026-05-30T04:50:57.756Z",
+  "preFix": {
+    "title": "LED dimmer compatibility: choosing the right dimmer for LED circuits",
+    "subtitle": "Avoiding flicker, buzzing, and premature lamp failure by matching dimmers to LED driver types",
+    "excerpt": "Most older dimmers were designed for incandescent bulbs drawing 40-100 W. An LED bulb drawing 5-8 W presents a very different electrical load. Mismatched dimmers cause LED flicker, buzzing, and early failure. This explains the three LED dimmer types and how to select the right one for a given circuit.",
+    "sourceNotes": "BEAMA (British Electrotechnical and Allied Manufacturers' Association) LED compatibility guidance. Lighting Industry Association (LIA) technical guidance on LED dimming. IET Wiring Regulations (BS 7671, 18th edition) for electrical installation requirements. Which? magazine LED dimmer compatibility testing.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An LED lamp contains a driver circuit that converts the mains AC supply to the DC voltage the LED chip needs. That driver circuit is sensitive to how the mains voltage is modified by a dimmer. A trailing-edge dimmer modifies voltage in a way that works with most LED drivers. A leading-edge dimmer, the type in most UK homes installed before 2010, works against the LED driver and causes the problems householders see: flickering at low settings, buzzing from the lamp, and a minimum brightness threshold below which the lamp turns off.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The three dimmer types",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Leading-edge (LE) dimmers",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Standard in UK homes pre-2010. Designed for resistive loads (incandescent) and transformer-based halogen. Minimum load typically 40-60 W. LED lamps draw 5-8 W each, so a four-lamp circuit draws only 20-32 W, well below the LE dimmer's minimum. Below minimum load: flicker, buzzing, and lamp damage. Do not use leading-edge dimmers with LED lamps unless the lamp is specifically rated for LE dimming (rare).",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Trailing-edge (TE) dimmers",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The current standard for LED circuits. Minimum load typically 10-15 W, which a two-lamp circuit of modern LED lamps satisfies easily. Switches off cleanly at low settings rather than flickering. Compatible with most LED drivers rated as 'dimmable'. Visually identical to leading-edge dimmers; check the type on the specification sheet or box.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 3
+          },
+          "content": [
+            {
+              "text": "Universal or auto-adaptive dimmers",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Automatically detect the load type and switch between leading and trailing edge accordingly. More expensive (12-25 pounds per switch vs 5-15 pounds for a TE dimmer). Useful in mixed installations where some circuits have LED and others still have halogen, or in rented properties where future occupants may fit either lamp type.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "How to check an existing installation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Test for flicker: hold a phone camera in video mode pointing at the lamp. Flicker from a mismatched dimmer is often invisible to the naked eye but appears clearly in phone video as a rolling band. No band means no problematic flicker.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check the minimum load: add up the total wattage of all lamps on the dimmed circuit. If the total is below the dimmer's minimum load specification (usually printed on the inside of the faceplate), flicker is inevitable.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Replace the dimmer if it is an LE type: isolate the circuit at the consumer unit, remove the old dimmer, and fit a trailing-edge dimmer of the same gang configuration. Most UK dimmers fit standard 25 mm back boxes.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "infoPanel",
+          "attrs": {
+            "variant": "warning"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Isolate the circuit at the consumer unit before removing a dimmer. Test the circuit dead with a known-good voltage tester before touching any terminals. Dimmer replacement is minor electrical work but involves working at mains voltage. If you are not comfortable working on mains wiring, this is a job for a qualified electrician.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The LED lamp must also be dimmable",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A trailing-edge dimmer with a non-dimmable LED lamp still flickers. The lamp driver must be rated as dimmable. Most dimmable LED lamps are labelled 'dimmable' on the box. Non-dimmable lamps are slightly cheaper; check the label before buying if the circuit is dimmed.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The energy saving from dimming",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "An LED lamp dimmed to 50% of full brightness uses approximately 60-70% of its full-load power, not 50%. LED drivers are not linearly efficient at low loads. Nonetheless, dimming to 50% in the evening rather than using full brightness saves 30-40% of the circuit energy. For a living-room circuit with four 8 W lamps running for 4 hours per evening, dimming to 50% saves roughly 20 kWh per year, about 5 pounds. The saving from replacing an old incandescent circuit with LEDs is far larger: 4 x 60 W incandescent at 27p/kWh for 4 hours per day for a year costs 95 pounds. 4 x 8 W LED on the same schedule costs 13 pounds.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the dimmer manufacturer's compatibility list for the specific lamp model. Compatibility lists are available on manufacturer websites. Alternatively, try a different lamp brand.",
+                "cause": "The specific lamp driver is incompatible with that dimmer brand/model; not all TE dimmers work with all LED drivers",
+                "symptom": "LED lamp flickers even with a trailing-edge dimmer installed"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "This is usually a symptom of a borderline-compatible combination. Replace either the dimmer or the lamps.",
+                "cause": "The magnetic field in the dimmer's inductor is resonating at an audible frequency with this specific lamp load",
+                "symptom": "Dimmer buzzes when lamps are at low setting"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "excerpt"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > paragraph[3] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[9] > listItem[1] > paragraph[0]",
+      "snippet": "Check the minimum load: add up the total wattage of all lamps on the dimmed circuit. If the total is below the dimmer's minimum load specifi"
+    }
+  ]
+}

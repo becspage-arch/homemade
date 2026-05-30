@@ -1,0 +1,172 @@
+{
+  "slug": "whole-house-retrofit-sequencing",
+  "title": "Planning the order of retrofit measures",
+  "subtitle": "Why sequence matters and how to avoid undoing your own insulation work",
+  "excerpt": "Retrofit measures interact. Cavity wall insulation installed before a heat pump upgrade can make the heat pump harder to size correctly. Loft insulation before a new roof adds years to the payback. This is the recommended sequence for a whole-house retrofit, and why each order matters.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "PAS 2035 whole-house retrofit methodology (2019, updated 2023): the standard requires an 'improvement option evaluation' before any measures are specified. Energy Saving Trust retrofit guidance. AECB whole-house retrofit design guides. Centre for Alternative Technology 'Zero Carbon Britain' technical notes.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance: the rate of heat flow through a building element per unit area per degree of temperature difference, in W/m²·K. Lower is better."
+    },
+    {
+      "slug": "pas-2035",
+      "term": "PAS 2035",
+      "definition": "The British Standard for whole-house retrofit. Required for all publicly-funded retrofit projects. Mandates an improvement option evaluation, fabric-first sequencing, and sign-off by a qualified retrofit coordinator."
+    },
+    {
+      "slug": "epc",
+      "term": "EPC",
+      "definition": "Energy Performance Certificate. A standardised assessment of a building's energy efficiency, graded A to G. Required at sale or let in England, Scotland, and Wales."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The wrong retrofit sequence wastes money and sometimes undoes completed work. PAS 2035, the British Standard for whole-house retrofit, exists specifically because ad-hoc measure-by-measure improvements consistently produce worse outcomes than a planned sequence. The most expensive example: a heat pump installed before the insulation fabric is improved, sized for the old heat loss. After cavity wall and loft insulation go in, the heat pump is oversized and runs inefficiently at part load. It must be replaced or re-commissioned, at cost." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The recommended sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fabric air-tightness first: draught-proofing all gaps, sealing service penetrations, fitting draught-excluders to the loft hatch. These are low-cost interventions with fast payback, and they do not interact negatively with anything that follows. Do them before any other measure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Fabric insulation second: loft insulation, then cavity wall or solid wall insulation, then floor insulation. The loft comes first because it is the cheapest measure per unit of heat saved. Improving it reduces demand on the heating system, which informs the next step. Wall insulation before floor is the standard order because walls are the larger heat-loss surface in most UK house types. Each measure lowers the ", "marks": [] },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+              { "type": "text", "text": " of the building fabric.", "marks": [] }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ventilation review third: every significant air-tightness improvement needs a ventilation check. Moisture and CO2 build up in tightly sealed houses without mechanical ventilation. At minimum, check that every room has trickle vents or an openable window. Consider MVHR if the house reaches 3 air changes per hour or tighter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heating system sizing fourth: once the fabric work is done, calculate the heat loss for the improved house before choosing a new boiler or heat pump. A heat pump sized for a well-insulated house runs at a lower flow temperature and smaller capacity. This makes it more efficient." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Renewables last: solar PV and solar thermal sized after the heating system is correct. The energy demand is now known, and the system can be sized against actual measured consumption rather than estimated pre-retrofit figures." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common sequencing errors and their costs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "New boiler before insulation: the boiler is sized for the current heat loss, which is higher than after insulation. Once insulation goes in, the boiler short-cycles: it fires briefly, then switches off. This reduces efficiency and shortens component life." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft insulation before a roof replacement: if the roof needs replacing within ten years, all the loft insulation must come out to allow access and then be reinstalled. Add the cost of reinstallation to the true cost of the loft insulation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cavity wall insulation before a wall-removal extension: the cavity is filled where the extension will sit, and the filled cavity must be cut and sealed at the new building line. This adds cost and creates a potential moisture bridge at the cut." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Solar PV before a roof replacement: the panels must be removed, the roof replaced, and the panels reinstalled. Removal and reinstallation of a 12-panel array typically costs 800-1,500 pounds." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The EPC as a planning tool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epc" } }],
+            "text": "EPC"
+          },
+          {
+            "type": "text",
+            "text": " assessment lists every recommended measure with an estimated improvement score and a rough cost band. The measures are not sequenced on the certificate but the data is available. If you commission a full energy assessment from a qualified assessor rather than relying on the desktop EPC, they will calculate the interaction between measures and advise a sequence. This is the core of ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pas-2035" } }],
+            "text": "PAS 2035"
+          },
+          {
+            "type": "text",
+            "text": ": the improvement option evaluation. For a whole-house retrofit budget over 5,000 pounds, this assessment is worth commissioning. It typically costs 300-500 pounds and saves multiples of that by avoiding sequencing errors.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A word on the Boiler Upgrade Scheme" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The Boiler Upgrade Scheme (BUS) grant of 7,500 pounds toward a heat pump is conditional on certain insulation requirements. If your loft or cavity wall insulation does not meet the BUS minimum standards, the grant may be reduced or refused. The sequence implication: do the insulation before applying for BUS, both to maximise the grant and to ensure the heat pump is correctly sized for the improved fabric." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "New heat pump was installed but energy bills have not reduced",
+              "cause": "Fabric improvements have not been made; the heat pump is running at the same heat loss as the old boiler, but heat pumps are less efficient than boilers at high flow temperatures needed for a poorly insulated house",
+              "fix": "Improve the fabric first: loft insulation top-up, cavity wall insulation if applicable. Then commission a heat loss recalculation and adjust the heat pump's flow temperature curve to the new fabric level."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Damp smell appeared after draught-proofing was completed",
+              "cause": "The house was previously self-ventilating through its draughts; sealing them has reduced fresh-air exchange below what the occupancy produces as moisture",
+              "fix": "Open trickle vents on all external windows. If the building has no trickle vents, fit background ventilators to two or three external walls. This is not a reason to remove the draught-proofing."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "slug": "cellar-wall-internal-insulation",
+  "title": "Insulating a cellar wall from the inside",
+  "subtitle": "Damp membrane and rigid board insulation for a below-grade basement or cellar",
+  "excerpt": "An uninsulated cellar wall loses heat year-round and often suffers from penetrating damp. Installing a cavity drain membrane followed by rigid board insulation and a timber or metal stud lining transforms an unusable space and cuts heat loss through the below-grade walls by 60-75%. This is the sequence for a dry cellar conversion.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document C (Site preparation and resistance to contaminants and moisture) for below-grade wall damp control. PCA (Property Care Association) guidance on waterproofing below-ground structures. Building Research Establishment information paper IP 1/93 on basement insulation.",
+  "approximateCostGbp": 1800,
+  "paybackYears": 14,
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "silicone-sealant-gun", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane, typically polyethylene sheet or foil-backed board, installed on the warm side of insulation to retard the passage of water vapour and reduce interstitial condensation risk."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid insulation board. Higher performance per millimetre than mineral wool: lambda ~0.022 W/m·K, so 25 mm of PIR delivers roughly the same resistance as 55 mm of mineral wool batts."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "Thermal transmittance: the rate of heat flow through a building element per unit area per degree of temperature difference, in W/m²·K. Lower is better."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 14,
+      "title": "Check for water ingress after the first rain",
+      "body": "After the first significant rain following membrane installation, check all perimeter sumps and drainage channels for water. Any water collecting in a sump that was not there before indicates a new ingress path through the slab or wall joint that needs grouting.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 90,
+      "title": "Inspect for condensation at stud-to-membrane junction",
+      "body": "After three months of use, check the lower section of the plasterboard lining for any damp patches. A small amount of surface condensation on the first cold autumn is normal as the thermal mass equilibrates. Persistent damp patches indicate a ventilation deficiency in the space.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A cellar or basement with uninsulated brick or stone walls below ground level is one of the hardest heat-loss surfaces to address with external insulation. The wall is below grade, so the outside face is inaccessible. Internal insulation is the only option. The complication: below-grade walls in UK housing stock are rarely dry. Before insulation can go in, any active damp must be controlled." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The standard approach for a usable cellar (rather than a storage-only space) is: cavity drain membrane, perimeter channel, sump and pump if needed, then rigid board insulation behind a stud partition. Total installed cost for a 3 m x 4 m cellar with 2.5 m walls: 1,500-2,200 pounds depending on the moisture level. Heat-loss saving through the below-grade walls: 60-75% of current loss, roughly 400-700 kWh per year at an annual average temperature difference of 8°C." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Below-grade waterproofing work is notifiable under Building Regulations Part C. A Type C (cavity drain) system should be designed by a PCA-registered waterproofing specialist. The insulation and lining work can be DIY, but the membrane system design must be signed off professionally if the cellar will be used as habitable space." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assess the moisture level first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape a 300 mm x 300 mm square of polythene to the wall for 24 hours. If moisture collects on the back face (wall side), the wall has active penetrating damp. If moisture collects on the front face (room side), the problem is condensation from the room air." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the floor slab. Active water seeping up through floor cracks requires a tanked membrane system or a drainage channel at the wall-floor junction before any wall insulation is applied." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The insulation sequence (dry or treated walls)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install cavity drain membrane to all below-grade walls. Stud-nail the membrane to the wall at 300 mm centres using specifically designed fixing discs. The studs go through the membrane into the masonry; the dimples face outward, creating a drainage plane." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install perimeter drainage channel at the wall-floor junction. This connects to a sump at the lowest point. For a cellar where the water table does not rise above floor level, gravity outlet through the wall at low level may be sufficient instead of a pump." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix 50-75 mm ",
+              "marks": []
+            }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+                "text": "PIR board"
+              },
+              {
+                "type": "text",
+                "text": " directly against the cavity drain membrane using long galvanised screws through the membrane into plugs in the masonry. The PIR acts as a thermal break between the cold masonry and the finished surface. 75 mm PIR achieves a ",
+                "marks": []
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+                "text": "U-value"
+              },
+              {
+                "type": "text",
+                "text": " of approximately 0.3 W/m²·K for the wall assembly.",
+                "marks": []
+              }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Erect a metal stud partition 25 mm in front of the PIR. This creates an air gap and a services cavity, and provides a flat surface for plasterboard. Fix the bottom track to the floor slab, not to the wall." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a ",
+              "marks": []
+            }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              {
+                "type": "text",
+                "text": " behind the plasterboard before fixing. A sheet of 1000-gauge polythene across the stud faces, taped at all joints and edges.",
+                "marks": []
+              }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix moisture-resistant plasterboard to the studs. Skim or paint as desired." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done well: the membrane covers all below-grade surfaces without gaps. The perimeter channel connects cleanly to the sump outlet. The PIR covers the full wall height, and the room is warm and dry in winter. The sump runs silently and only activates after prolonged wet weather." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done badly: insulation applied to a damp wall traps moisture behind the boards. Mould appears within two years. The insulation has removed the evaporative drying that previously kept the wall in balance, so the wall ends up worse than before." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Sump pump runs continuously after installation",
+              "cause": "Active groundwater ingress exceeds what the membrane drainage channel was designed for, or the outlet is blocked",
+              "fix": "Clear any blockage from the outlet first. If the pump is handling genuine groundwater rather than condensation, the system design needs review by the waterproofing contractor."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Plasterboard shows damp patches at the base",
+              "cause": "Partition bottom track is holding water against the floor, or the gap between the stud base and the drainage channel is insufficient",
+              "fix": "Introduce 25 mm of drainage gap between the partition base and the floor; the partition should never sit in water."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

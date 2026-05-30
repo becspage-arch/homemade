@@ -1,0 +1,145 @@
+{
+  "slug": "rainwater-tank-volume-calculator",
+  "title": "Calculating the right rainwater harvesting tank size",
+  "subtitle": "Working out roof catchment area, annual yield, and tank capacity for garden water storage",
+  "excerpt": "An undersized rainwater tank fills quickly after rain and overflows the rest; an oversized one wastes money and space. The right tank size balances catchment yield against peak summer demand. This explains the calculation method: roof area, local rainfall data, runoff coefficient, and garden water need give a target volume. Most UK gardens benefit from 500-2000 litres depending on plot size.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency (EA) rainwater harvesting guidance. CIBSE (Chartered Institution of Building Services Engineers) TM61 guidance on rainwater harvesting. SEPA (Scottish Environment Protection Agency) guidance on private water supplies. Met Office UK rainfall statistics (public domain).",
+  "approximateCostGbp": 150,
+  "paybackYears": 5,
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "runoff-coefficient",
+      "term": "Runoff coefficient",
+      "definition": "The proportion of rainfall that reaches the tank after losses from evaporation, first-flush discharge, and surface absorption. A value of 0.85 applies to pitched roof tiles; 0.95 to metal or flat roofing."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sizing a rainwater tank for the garden needs three inputs: the roof area draining to the downpipe, the average annual rainfall, and the garden water demand during dry periods. These give you the tank volume needed to cover the driest stretch of the year." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: measure the catchment area" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The catchment area is the plan area of the roof draining to the downpipe, not the slope area. For a pitched roof, measure the horizontal footprint of the section draining to the intended downpipe. For a 5 m x 4 m section of pitched roof, the catchment area is 20 m2 regardless of pitch angle." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: estimate annual yield" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Annual yield (litres) = catchment area (m2) x annual rainfall (mm) x ", "marks": [] }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "runoff-coefficient" } }], "text": "runoff coefficient" }, { "type": "text", "text": ".", "marks": [] }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK annual rainfall: approximately 600 mm in south-east England, 900 mm in the Midlands and Wales, 1200-1400 mm in Scotland and the South-West. Use the Met Office regional average for your location." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Runoff coefficient: 0.85 for clay or concrete tiles; 0.95 for metal or flat EPDM roofing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Example: 20 m2 roof in London (600 mm/year, tiles): 20 x 600 x 0.85 = 10,200 litres per year." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: calculate peak summer demand" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Garden water demand peaks during dry spells in June, July, and August. In a typical dry summer, a vegetable plot needs 20-30 mm of water per week; an ornamental garden 10-15 mm. Convert to litres by multiplying by the bed area." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 20 m2 vegetable plot needing 25 mm/week = 500 litres/week. A 4-week dry spell requires 2000 litres." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The tank should hold at least the demand for the expected dry spell. Recharge happens with any rain event over 3 mm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tank options by volume" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "200-litre slimline butt: fits against a 600 mm wall, suitable for a small container garden or occasional watering can use. Covers 3-4 days of peak demand for a small plot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "500-1000 litre round butt or raised tank: covers 7-14 days of moderate garden demand. Two linked 500-litre butts give flexible placement." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "1000-litre IBC (intermediate bulk container): second-hand IBCs are cost-effective for large gardens. Raise on a pallet for gravity pressure. Screen the inlet to exclude debris and light (to prevent algal growth)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First-flush diverter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The first 1-2 mm of rainfall from a roof carries the highest load of bird droppings, moss spores, and particulates. A first-flush diverter fills a small tube with the first water from each rain event and discards it, then routes subsequent, cleaner water to the tank. For garden irrigation this is a useful but not essential addition." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Tank fills quickly but runs out within days of dry weather starting",
+              "cause": "Tank is undersized relative to peak garden demand, or the catchment area is small",
+              "fix": "Link a second tank in series to increase storage. Alternatively, prioritise which beds receive rainwater (vegetable plots over lawn) and use mains for the rest."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Water in the tank has a strong algal smell",
+              "cause": "Tank has not been fully covered from light; algae are growing in the water",
+              "fix": "Fit a fully opaque lid if not already present, and screen any overflow pipe. Drain and clean the tank with a dilute bleach solution (10 ml per 10 litres of water), rinse twice, before refilling."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

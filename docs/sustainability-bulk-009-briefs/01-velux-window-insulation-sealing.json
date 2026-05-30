@@ -1,0 +1,267 @@
+{
+  "slug": "velux-window-insulation-sealing",
+  "title": "Insulating and draught-sealing a roof window reveal",
+  "subtitle": "Closing the cold bridge around a Velux or other roof-light installation",
+  "excerpt": "The timber reveal around a roof window is one of the most common cold bridges in a loft conversion. Uninsulated, it can account for 10-20% of heat lost through the roof slope. This is the sequence for adding rigid insulation board to the reveal, sealing the junction with the frame, and checking the result with a smoke pencil.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022 edition) for minimum U-value targets on roof-light reveals in existing dwellings. Energy Saving Trust guidance on roof window insulation. Velux installation technical guides (publicly available) for reveal depth and lining dimensions.",
+  "approximateCostGbp": 60,
+  "paybackYears": 3,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "straightedge", "isOptional": false },
+    { "slug": "silicone-sealant-gun", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised path of relatively high thermal conductance through an otherwise well-insulated building envelope, causing a cold spot, surface condensation risk, and elevated heat loss."
+    },
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid insulation board. Higher performance per millimetre than mineral wool: lambda ~0.022 W/m·K, so 25 mm of PIR delivers roughly the same resistance as 55 mm of mineral wool batts."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane, typically polyethylene sheet or foil-backed board, installed on the warm side of insulation to retard the passage of water vapour and reduce interstitial condensation risk."
+    }
+  ],
+  "techniqueSlugs": ["draught-stripping-a-front-door"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A roof window installed in the 1990s or 2000s often has a bare timber reveal: the sloped frame between the window and the ceiling. Even with 200 mm of roof insulation above the rafters, that timber surround loses heat fast. On a cold night the surface can sit 4-5°C below the ceiling, leaving a condensation line at the frame edge and raising heat loss from the room."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fix takes a Saturday morning. Total material cost is around 50-70 pounds for a standard 780 x 980 mm roof window. The saving depends on the reveal area and the room's total heat loss, but for a typical 2 m² reveal in a bathroom or landing, expect to recover 80-120 kWh per year (around 5-8 pounds at 2025/26 cap rates) and to eliminate the condensation stripe that promotes mould growth on the reveal surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why the reveal is a cold bridge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The rafter-level insulation stops at the window frame. The timber reveal acts as a ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": ": heat flows sideways through the wood and out through the single-glazed or double-glazed unit at the top. On a cold night, the inner face of the reveal drops toward the dew point of the room air, condensation forms, and over years the joint between the reveal lining and the window frame accumulates mould. Adding 25-40 mm of ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " to the reveal raises the inner surface temperature by 3-5°C and closes the bridge.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the reveal depth on all four sides: head, cill, and both cheeks. Reveals are rarely square; take the shallowest dimension as your board thickness limit." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Check whether the existing reveal has a ", "marks": [] },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+              { "type": "text", "text": ". Pre-2000 installations often have bare plasterboard. If so, add a foil-faced PIR board (the foil acts as a vapour check) or tape foil over the board surface.", "marks": [] }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Note the reveal finish. Painted MDF or plasterboard is easy to re-skim or re-paint after boarding. Tiled cills need more care around the tile edges." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Note the roof window make and model. The frame has a lining rebate, and the new boards must leave the opening mechanism clear." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foil-faced PIR board, 25 mm thick: one 1200 x 2400 mm sheet cuts the four panels for a standard 780 x 980 mm window with waste." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Expanding foam adhesive or dry-wall adhesive dabs: for bonding PIR to existing reveal face." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Low-expansion foam or silicone sealant: for sealing perimeter joints between PIR and window frame." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "6 mm plasterboard, pre-cut to panel size: optional skim-coat surface over PIR." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aluminium foil tape: 50 mm wide, for taping joints between PIR panels and at the reveal-to-frame perimeter." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Eye protection and a dust mask (FFP2) when cutting PIR. The isocyanurate foam is irritating. Cut with a stanley knife against a straightedge on a stable surface; avoid a saw, which generates fine dust. Work gloves for handling the foil-faced edges." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure each reveal panel. Take at least three width readings along the length; use the minimum. Mark the measurements on the PIR sheet face." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the panels. Score with the stanley knife against the straightedge, then snap the board cleanly. Two or three passes give a clean edge. Cut the head panel first; its width sets the cheek panel lengths." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dry-fit every panel before applying adhesive. Check each sits flush with the window frame rebate and does not obstruct the opening mechanism." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply adhesive dabs (four to six per panel at 300 mm centres) and press each panel firmly. For a sloped head reveal, tape the panel in place for 30 minutes while the adhesive grabs." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seal all joints. Run a bead of low-expansion foam along the joint between each PIR panel and the window frame. Tape every PIR-to-PIR joint and the frame perimeter with aluminium foil tape, lapping 50 mm either side. The tape seals both air infiltration and vapour movement." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Finish the surface. Bond 6 mm plasterboard over the PIR with adhesive dabs if you want a skimmed finish. Alternatively, apply two coats of plaster render directly to foil-faced PIR using bonding adhesive primer first. For a painted finish, prime with a universal primer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the result. On the next cold day (outside below 5°C), run a smoke pencil around the reveal perimeter and over the taped joints. Any smoke disturbance shows a remaining air path; reseal with foam or tape." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the reveal is less than 30 mm deep, spray foam of 20-25 mm can substitute for cut PIR board. Use a low-expansion polyurethane product; high-expansion foam will bow the lining. Cut flush once cured." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a tiled cill, use a silicone bead at the junction between the PIR edge and the tile rather than foam. Foam expands into the tile grout and is difficult to remove cleanly." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Listed buildings and conservation areas: the inside of a roof window reveal is generally internal work and not subject to planning permission. Check with your local authority if the building is listed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well vs done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done well: all four reveal panels are bonded flat with no gaps at the corners, every joint is taped, the window operates freely, and the reveal surface is at air temperature rather than below the dew point. A smoke pencil test shows no movement." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Done badly: panels cut too wide bow off the wall, joints left open allow air to bypass the insulation layer, and the foam at the frame junction is left rough and uneven. If the window cannot open fully, the PIR is too thick for the reveal depth." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Condensation still appears after treatment",
+              "cause": "Air infiltration path remains at the frame-to-PIR joint, or the room ventilation is inadequate for the occupancy load",
+              "fix": "Re-run the smoke pencil test around the full reveal perimeter on a cold day. Reseal any moving-smoke locations. Check that the room has a working trickle vent or opening light."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "PIR panel won't stay flat on the sloped head reveal",
+              "cause": "Adhesive dabs have not set before load is applied, or the board is too large to hold its own weight",
+              "fix": "Tape the panel temporarily with masking tape while adhesive sets (typically 30-60 minutes). On steep slopes, cut the head panel into two pieces to reduce the area each adhesive zone must support."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Plasterboard skim is cracking at the joint between new and old reveal",
+              "cause": "The new boarding plane is proud of the existing reveal surface, creating a stress point at the junction",
+              "fix": "Fill the step with filler, add scrim tape across the joint, and skim in two coats rather than one."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
