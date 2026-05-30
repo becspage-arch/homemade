@@ -1,0 +1,84 @@
+{
+  "slug": "rabbit-gut-health-and-caecotrophs",
+  "title": "Rabbit gut health and caecotrophs",
+  "subtitle": "What caecotrophs are, why they matter, and the dietary and management changes that keep the rabbit digestive system working properly.",
+  "excerpt": "Rabbits produce two types of droppings: the dry, round, familiar faecal pellets, and caecotrophs (soft, dark, mucus-coated pellets eaten directly from the anus as they are produced). Caecotrophs are essential nutrition, not a hygiene problem. Understanding the whole digestive cycle informs better feeding and housing decisions and helps identify early signs of gut stasis.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "rabbits",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The British Rabbit Council nutrition factsheets. Rabbit Welfare Association and Fund, dietary guidance notes. Cornell Small Farms rabbit husbandry guide.",
+  "glossaryTerms": [
+    { "slug": "caecotroph", "term": "Caecotroph", "definition": "A soft, nutrient-rich pellet produced in the caecum of a rabbit and eaten directly from the anus. Also called a night dropping or cecotrope. Caecotrophs contain B vitamins, amino acids, and fermentation products from the caecal fermentation process. A healthy rabbit eats them all before they hit the floor; uneaten caecotrophs on the cage floor indicate a problem." },
+    { "slug": "gut-stasis", "term": "Gut stasis", "definition": "A slowing or complete cessation of peristalsis in the rabbit digestive tract, causing a blockage or severe discomfort. A rabbit that stops eating, produces no droppings, or produces only tiny dry pellets for more than 6 hours may be going into stasis. A vet emergency." },
+    { "slug": "hindgut-fermentation", "term": "Hindgut fermentation", "definition": "The process by which the rabbit's caecum — a large blind-end pouch attached to the large intestine — uses microbial populations to break down fibrous plant material that the small intestine could not digest. The fermented output becomes caecotrophs. High-fibre diets maintain the microbial balance; high-sugar and high-starch diets disrupt it." }
+  ],
+  "techniqueSlugs": ["rabbit-nutrition-and-feeding", "gi-stasis-in-rabbits"],
+  "criticalTechniques": [],
+  "aliases": ["rabbit caecotrophs", "rabbit cecotropes", "rabbit digestive health"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A rabbit's digestive system does not work like a dog's or a cat's. After food passes through the small intestine, the fibrous material is sorted: large particles pass through and become dry droppings; finer particles go into the caecum for " },
+          { "type": "text", "text": "hindgut fermentation", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hindgut-fermentation" } }] },
+          { "type": "text", "text": ". The fermented output (" },
+          { "type": "text", "text": "caecotrophs", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caecotroph" } }] },
+          { "type": "text", "text": ") is eaten directly from the anus, typically in the early hours of the morning when the rabbit is quiet. You will rarely see this happening; you are more likely to notice uneaten caecotrophs in the hutch and wonder what they are." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What uneaten caecotrophs mean" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A healthy rabbit eats every caecotroph it produces. Finding them regularly in the hutch means either the rabbit cannot reach its anus (obesity, dental pain, arthritic spine) or it is producing more than it needs because the diet has too much starch and too little hay." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Overweight rabbit: reduce pellet quantity. Hay should be the majority of the diet, not pellets." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Too many carbohydrates: excess fruit, bread, or carrots cause the gut to overproduce soft droppings." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pain or mobility problem: a rabbit that winces when trying to bend to its flank may need a vet check. Dental problems cause this frequently in older rabbits." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The right diet for gut health" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unlimited good-quality hay is the foundation. Hay provides the long-fibre particles the gut needs to keep moving and to maintain the correct particle-size ratio entering the caecum. A rabbit on mainly pellets and limited hay will have a disrupted gut flora and chronic caecotroph production. See " },
+          { "type": "text", "text": "rabbit nutrition and feeding", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "rabbit-nutrition-and-feeding", "label": "rabbit nutrition and feeding" } }] },
+          { "type": "text", "text": " for quantities and species." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to be concerned" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Normal dry droppings are uniform round or slightly oval pellets, 8-12 mm, dry to the touch, and consistent in size. Dropping size decreases or drops stop appearing when the gut is slowing. A rabbit in early " },
+          { "type": "text", "text": "gut stasis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gut-stasis" } }] },
+          { "type": "text", "text": " may produce tiny, hard pellets or stop producing altogether. It will also stop eating, sit hunched, and may press its abdomen to the floor. This is a vet call within hours, not a wait-and-see situation. See " },
+          { "type": "text", "text": "GI stasis in rabbits", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "gi-stasis-in-rabbits", "label": "GI stasis in rabbits" } }] },
+          { "type": "text", "text": " for the emergency steps." }
+        ]
+      }
+    ]
+  }
+}

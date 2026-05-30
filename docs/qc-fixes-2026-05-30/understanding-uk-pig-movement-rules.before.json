@@ -1,0 +1,208 @@
+{
+  "slug": "understanding-uk-pig-movement-rules",
+  "tutorialId": "cmps6rrg8000108v47latawj4",
+  "capturedAt": "2026-05-30T10:09:54.688Z",
+  "preFix": {
+    "title": "Understanding UK pig movement rules",
+    "subtitle": "The paperwork, the standstills, and what happens before any pig leaves your holding.",
+    "excerpt": "Moving pigs in the UK is regulated more strictly than any other livestock. Every move requires an eAML2 form, triggers a 20-day standstill on the destination holding, and must be licensed if it involves a public road. Knowing these rules before your first pigs arrive is considerably easier than learning them during a move.",
+    "sourceNotes": "DEFRA, Pig Movement Rules (gov.uk, updated 2024). APHA, eAML2 guidance for pig keepers. Animal Health and Welfare (Scotland) Act 2006 equivalent provisions.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Every pig keeper in Great Britain must have a ",
+              "type": "text"
+            },
+            {
+              "text": "CPH number",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba2plx001pgkv4v4emurjq"
+                  }
+                }
+              ]
+            },
+            {
+              "text": ", register with APHA, and complete ",
+              "type": "text"
+            },
+            {
+              "text": "eAML2",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpdgdrn0000078v4fzhi2eda"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " documentation for every pig that arrives or leaves. This applies from two weaners in a back garden to a farm with 200 pigs.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Getting set up before the first pig arrives",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Apply for your CPH number through the Rural Payments Agency before acquiring any pigs. This is free and typically takes a few days. Once you have the CPH, register as a pig keeper with APHA and create an eAML2 account at eaml2.org.uk. The seller's eAML2 form must be completed before the pigs are loaded; you will need to supply your CPH and postcode.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The 20-day standstill",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The ",
+              "type": "text"
+            },
+            {
+              "text": "20-day standstill",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps6rrc8000008v494gthoy8"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " is the most significant practical restriction for a small pig keeper. When your weaners arrive, the clock starts. For 20 days after that arrival, you cannot move any pig off your holding (to market, to the abattoir, or anywhere else). This is not the 20-day period before the abattoir date; it is 20 days from the last pig arrival at your holding.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For a keeper buying weaners in spring and finishing them in autumn, the standstill rarely causes problems as the pigs stay for 5-6 months. It matters when you acquire replacement weaners while previous pigs are still on the holding: the standstill resets and any abattoir slot must be at least 20 days after the last arrival.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Moving pigs off the holding",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Before pigs leave for slaughter or sale, complete an eAML2 form with the origin (your CPH), destination (the abattoir's holding number), number of pigs, and transport details. Print or display it digitally; it must accompany the pigs. The driver may need a vehicle movement licence from their local authority if crossing a public road.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "attrs": {
+            "tone": "info"
+          },
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Keep a holding register: a written record of every pig that arrives or leaves the holding, with dates, numbers, origin, and destination. APHA may inspect it at any time. The register must be kept for at least 3 years. eAML2 provides a downloadable movement history that can serve as the basis for this record.",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+      "path": "excerpt",
+      "snippet": "standstill"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+      "path": "body > heading[3] > text",
+      "snippet": "standstill"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+      "path": "body > paragraph[4] > text",
+      "snippet": "standstill"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "unflagged-jargon: \"standstill\" — domain jargon in animal husbandry context — register in glossaryTerms[]",
+      "path": "body > paragraph[5] > text",
+      "snippet": "standstill"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "body > blockquote[8] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[5]",
+      "snippet": "For a keeper buying weaners in spring and finishing them in autumn, the standstill rarely causes problems as the pigs stay for 5-6 months. I"
+    }
+  ]
+}

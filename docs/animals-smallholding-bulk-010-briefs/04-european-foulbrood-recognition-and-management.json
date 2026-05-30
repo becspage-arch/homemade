@@ -1,0 +1,139 @@
+{
+  "slug": "european-foulbrood-recognition-and-management",
+  "title": "European foulbrood: recognition and management",
+  "subtitle": "The signs, the cause, and what you can do when larvae are dying in the cells.",
+  "excerpt": "European foulbrood is a bacterial infection of honey bee larvae caused by Melissococcus plutonius. It tends to appear in spring and early summer when the brood exceeds the colony's ability to keep larvae fed. Knowing what you are looking at is the first step; understanding the management options is the second.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit advisory leaflet EFB (2023), nationalbeeunit.com. BBKA technical data sheet on European foulbrood, 2022. NBU Best Practice Guideline No. 8: European Foulbrood.",
+  "glossaryTerms": [
+    { "slug": "efb", "term": "EFB", "definition": "European foulbrood, a bacterial disease of honey bee larvae caused by Melissococcus plutonius. A notifiable disease in the UK; suspected cases must be reported to the regional bee inspector via BeeBase." },
+    { "slug": "melissococcus-plutonius", "term": "Melissococcus plutonius", "definition": "The bacterium responsible for European foulbrood. Unlike AFB, it does not produce spores, but it persists in wax and old comb. Larvae are infected through contaminated food." },
+    { "slug": "stress-colony", "term": "Stress colony", "definition": "A colony under nutritional or population pressure, with too little nurse-bee coverage to feed all larvae adequately. The primary conditions under which EFB establishes and spreads." }
+  ],
+  "techniqueSlugs": ["varroa-mite-count", "shook-swarm-method-for-bees"],
+  "criticalTechniques": [],
+  "aliases": ["European foulbrood bees", "EFB bees"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In spring and early summer, when a colony is building fast and the brood nest has expanded beyond what the nurse bees can comfortably service, the conditions for European foulbrood are in place. The disease is caused by " },
+          { "type": "text", "text": "Melissococcus plutonius", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "melissococcus-plutonius" } }] },
+          { "type": "text", "text": ", which infects young larvae through contaminated food. It is a notifiable disease in the UK. If you suspect it, call your regional bee inspector via BeeBase." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What it looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "EFB", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "efb" } }] },
+          { "type": "text", "text": " kills larvae at the unsealed stage, while they are still curled in the cell. Look for:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Larvae that have twisted or turned to face the cell entrance, rather than lying curled in the normal C-shape." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Discolouration from yellow to brown. Healthy larvae are pearlescent white." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A sour or vinegary smell from affected frames. The smell of American foulbrood is much sharper and more putrid." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sunken or perforated cappings, where larvae died just before or after sealing." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mild cases show a scattering of affected larvae. In a heavy outbreak the brood pattern breaks down across the frame, with empty, dying, and discoloured cells mixed throughout." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Why it happens" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "EFB is almost always a disease of the " },
+          { "type": "text", "text": "stress colony", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stress-colony" } }] },
+          { "type": "text", "text": ". When the brood population expands faster than the nurse-bee workforce can sustain feeding, larvae are underfed and susceptible. The bacterium is present at low levels in most apiaries; it is the colony's nutritional state that determines whether an outbreak develops." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Early-season forage dearths, late frosts, or extended cold wet weather that keeps foragers grounded all increase risk. Colonies on thin wood or in damp, draughty sites are more vulnerable than those in well-insulated hives." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to do" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Report suspected EFB to your regional bee inspector via BeeBase before doing anything else. The inspector will confirm the diagnosis (EFB can be confused with sacbrood or chilled brood) and advise on treatment. Do not treat without confirmation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shook swarm" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For established cases, the inspector usually recommends a " },
+          { "type": "text", "text": "shook swarm", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "shook-swarm-method-for-bees", "label": "shook swarm" } }] },
+          { "type": "text", "text": " onto clean foundation. All contaminated comb is removed and destroyed; the bees are shaken into a new box on fresh wax. The colony is then fed syrup to draw the foundation quickly. Most colonies with a strong adult population recover well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Antibiotic treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Oxytetracycline is licensed for EFB in the UK and may be prescribed by the inspector or a vet. It controls the bacterial load but does not remove contaminated comb. Without addressing the underlying stress, reinfection in a subsequent spring is common." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Telling EFB apart from American foulbrood" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Key distinctions" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "AFB larvae die after capping; their remains become a rubbery, brown-black mass that strings when a matchstick is inserted. EFB larvae die while still unsealed (or just as they are capped) and their remains are softer, yellower, and do not string to a matchstick. The smell of AFB is strongly putrid; EFB smells sour but less extreme. When in any doubt, call the inspector rather than self-diagnosing. AFB requires immediate action and destruction of infected material." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reducing recurrence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Colonies that have had EFB once are at higher risk in subsequent springs. Keeping the varroa load low (run a " },
+          { "type": "text", "text": "varroa mite count", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "varroa-mite-count", "label": "varroa mite count" } }] },
+          { "type": "text", "text": " each spring before the build-up peaks) removes one source of colony stress. Maintaining adequate forage within flying distance and retiring old comb on a 3-year cycle limits the bacterial reservoir in the hive." }
+        ]
+      }
+    ]
+  }
+}

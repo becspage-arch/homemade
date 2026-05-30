@@ -1,0 +1,183 @@
+{
+  "slug": "calculating-stocking-rates",
+  "tutorialId": "cmps6k8990003c0v4yyah0ezv",
+  "capturedAt": "2026-05-30T10:09:47.174Z",
+  "preFix": {
+    "title": "Calculating stocking rates for a field",
+    "subtitle": "How many animals a given area of grazing can support, and how to read the signs that you have exceeded it.",
+    "excerpt": "Overstocking degrades pasture faster than any other single factor. Understanding the relationship between livestock units, grass production, and land area is the foundation of any grazing management system. This tutorial explains how to estimate the carrying capacity of a field and recognise the early signs that a stocking rate needs reducing.",
+    "sourceNotes": "AHDB Beef and Lamb, Grazing Management factsheets. SAC Consulting Scotland, Grass and Grazing management guidance. Cobbett, Cottage Economy (1822), chapter on pasture management.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The standard measure for comparing grazing pressure across species is the ",
+              "type": "text"
+            },
+            {
+              "text": "livestock unit",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps6k82n0000c0v40yxhruic"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " (LSU). One LSU is one dairy cow; everything else scales from there. Calculating your total LSU on a given area of land and comparing it against the expected grass production gives you a rough ",
+              "type": "text"
+            },
+            {
+              "text": "carrying capacity",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps6k8450001c0v4xr100plm"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " figure.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "LSU equivalents for common smallholding species",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Approximate LSU values: 1 dairy cow = 1.0 LSU; 1 beef cattle (store) = 0.75 LSU; 1 horse = 0.8 LSU; 1 ewe with lambs = 0.2 LSU; 1 ewe without lamb = 0.1 LSU; 1 dry goat = 0.1 LSU; 1 weaner pig (30-80 kg) = 0.15 LSU; 1 breeding sow = 0.5 LSU. These are approximations; actual intake varies by breed, condition, and season.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Typical carrying capacities",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "On productive improved lowland pasture in southern England, 2-2.5 LSU per acre is sustainable in the growing season. On unimproved permanent pasture in the north or west, 0.5-1 LSU per acre is more realistic. Clay-heavy land in wet areas may sustain less. These figures are for the growing season only; winter stocking typically needs to be 30-50% lower to avoid poaching damage.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Reading the signs of overstocking",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The earliest sign of overstocking is sward height: grass grazed below 3-4 cm consistently cannot recover fast enough to maintain production. ",
+              "type": "text"
+            },
+            {
+              "text": "Poaching",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps6k85g0002c0v42obea2jd"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " on wet ground is the next sign, followed by an increase in dock, rush, and thistle (weeds that establish in damaged sward). If animals are losing condition on apparently adequate pasture, the carrying capacity has been exceeded.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "What to do when you are overstocked",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "If overstocked, reduce animal numbers, bring in supplementary hay or silage, or move animals to a different area. A severely poached paddock needs rest until June of the following year, then reseeding or top-dressing. Adding fertiliser to a damaged sward before the grass has recovered achieves nothing.",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "unflagged-jargon: \"weaner\" — domain jargon — register in glossaryTerms[] with a definition",
+      "path": "body > paragraph[2] > text",
+      "snippet": "weaner"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[6]",
+      "snippet": "The earliest sign of overstocking is sward height: grass grazed below 3-4 cm consistently cannot recover fast enough to maintain production."
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[8]",
+      "snippet": "If overstocked, reduce animal numbers, bring in supplementary hay or silage, or move animals to a different area. A severely poached paddock"
+    }
+  ]
+}

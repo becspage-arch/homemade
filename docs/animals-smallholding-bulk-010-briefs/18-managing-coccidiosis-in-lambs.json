@@ -1,0 +1,94 @@
+{
+  "slug": "managing-coccidiosis-in-lambs",
+  "title": "Managing coccidiosis in lambs",
+  "subtitle": "Identifying the signs of coccidiosis, treating affected lambs, and reducing contamination pressure on the rest of the group.",
+  "excerpt": "Coccidiosis is a protozoan infection of the intestinal lining that kills lambs at 3 to 8 weeks of age, most often in housed or confined flocks where oocyst build-up is high. Watery, sometimes bloody, scours are the warning sign. Early treatment and good hygiene management prevent the losses from becoming serious.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb factsheet: Coccidiosis in Sheep (2022). DEFRA Code of Welfare for Sheep (2023). APHA disease surveillance reports.",
+  "glossaryTerms": [
+    { "slug": "coccidiosis", "term": "Coccidiosis", "definition": "A parasitic intestinal disease of lambs and kids caused by Eimeria protozoa. Oocysts shed in faeces contaminate bedding and pasture; lambs ingest them while suckling or grazing. Causes watery or bloody scours and, in heavy infections, death from dehydration and intestinal damage." },
+    { "slug": "oocyst", "term": "Oocyst", "definition": "The environmental stage of the Eimeria lifecycle — a thick-walled resistant stage shed in faeces that survives on pasture and in bedding for months. Lambs ingest oocysts when grazing or licking contaminated surfaces." },
+    { "slug": "diclazuril", "term": "Diclazuril", "definition": "A licensed oral coccidiostat given to lambs at 1-4 mg per kg bodyweight to treat and prevent coccidiosis. Administer at the onset of signs in an affected group; treat all lambs in the pen, not just the visibly sick ones." }
+  ],
+  "techniqueSlugs": ["drenching-sheep-with-an-oral-wormer"],
+  "criticalTechniques": [],
+  "aliases": ["lamb scours coccidiosis", "coccidiosis treatment lambs"],
+  "recipeTools": [
+    { "slug": "drenching-gun", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Coccidiosis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coccidiosis" } }] },
+          { "type": "text", "text": " in lambs peaks at three to eight weeks of age, when maternal immunity begins to wane and the lamb is ingesting solid matter. The disease is almost always a problem of housing or penning, where " },
+          { "type": "text", "text": "oocysts", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oocyst" } }] },
+          { "type": "text", "text": " accumulate in warm wet bedding and are swallowed by lambs seeking food or warmth. Outdoor systems with rotating pasture suffer far less than housed systems with static bedding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recognising the signs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Watch for: watery dark-brown or bloody scours (not the yellow scour of E. coli or the grey scour of rotavirus); a tucked-up abdomen and dull demeanour; lambs losing condition despite feeding. Affected lambs may continue suckling but pass loose faeces immediately. In a group of 10 or more, the first case will be followed by others within 24-48 hours if not treated." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treat the affected lamb and all other lambs in the same pen with " },
+          { "type": "text", "text": "diclazuril", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "diclazuril" } }] },
+          { "type": "text", "text": " at the dose rate on the bottle. Use a " },
+          { "type": "text", "text": "drenching gun", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "drenching-sheep-with-an-oral-wormer", "label": "drenching gun" } }] },
+          { "type": "text", "text": " and give the dose over the back of the tongue. A single treatment stops new oocyst development; do not retreat within 28 days unless a new outbreak occurs. Severely scouring lambs may also need oral electrolyte solution to correct dehydration; give in a separate feed, not with milk." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying whether coccidiosis is the cause" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Differential diagnosis" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "E. coli scour: yellowy white, lambs under 5 days old. Rotavirus: grey-white watery scour, 5-14 days old. Cryptosporidium: pale watery scour, 3-14 days old. Coccidiosis: dark, sometimes bloody scour, 3-8 weeks old. When in doubt, submit a faecal sample to your vet — the treatment is different for each and overcalling coccidiosis will not address the underlying cause if it is something else." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reducing contamination pressure" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Change bedding frequently and remove contaminated straw from pens where lambs have been scouring." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move lambs onto fresh pasture as early as weather permits. The outdoor dilution effect on oocysts is the single most effective control." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid creep feeders and water troughs that lambs can contaminate with their feet." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not introduce unrelated groups into a pen that has had a coccidiosis outbreak without a full clean and dry period." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Herds with recurring problems each spring may benefit from prophylactic diclazuril at housing or at three weeks of age. Discuss this with your vet; prophylaxis is appropriate when the history justifies it, not as a routine." }]
+      }
+    ]
+  }
+}

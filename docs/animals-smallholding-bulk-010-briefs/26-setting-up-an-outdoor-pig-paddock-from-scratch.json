@@ -1,0 +1,84 @@
+{
+  "slug": "setting-up-an-outdoor-pig-paddock-from-scratch",
+  "title": "Setting up an outdoor pig paddock from scratch",
+  "subtitle": "Electric fencing, shelter, water, and the sequence of steps before the weaners arrive.",
+  "excerpt": "Pigs require electric fencing that they have been trained to respect, a dry weatherproof shelter, clean water at all times, and a holding that meets welfare regulations. Getting this right before the pigs arrive is far easier than fixing problems while managing two curious, strong weaners.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 240,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Practice for the Welfare of Pigs, 2003. AHDB Pork, Outdoor Pig Setup guidance. Carla Emery, Encyclopedia of Country Living, pig chapters.",
+  "glossaryTerms": [
+    { "slug": "pig-arc-setup", "term": "Pig arc", "definition": "A galvanised steel A-frame shelter for outdoor pigs, typically sized for two to three weaners. The standard housing unit for a smallholding pig-keeping system. Tip-resistant, hose-clean, and weatherproof." },
+    { "slug": "electric-training", "term": "Electric fence training", "definition": "The process of introducing pigs to an electric fence in a confined space before they are moved to their final paddock. Pigs trained on a fence at nose height will stay in an electrified paddock reliably; untrained pigs pushed through a fence will push through it again." }
+  ],
+  "techniqueSlugs": ["setting-up-electric-fencing-for-pigs", "outdoor-pig-paddock-rotation"],
+  "criticalTechniques": ["setting-up-electric-fencing-for-pigs"],
+  "aliases": ["outdoor pig setup", "pig paddock setup", "setting up for pigs"],
+  "recipeTools": [
+    { "slug": "pig-arc", "isOptional": false },
+    { "slug": "electric-fence-energiser", "isOptional": false },
+    { "slug": "electric-fence-stake", "isOptional": false },
+    { "slug": "livestock-water-trough", "isOptional": false }
+  ],
+  "projectSchedule": [
+    { "stepNumber": 1, "offsetDays": 0, "title": "Set up the arc and electric fence", "surfaceAs": "HERO", "body": "Position the pig arc on the highest, driest part of the paddock with the entrance facing away from the prevailing wind. Set the electric fence in a perimeter at the size needed for the number of pigs. Run two strands: one at nose height (20-25 cm off the ground) and one at shoulder height (35-40 cm). Test the fence for voltage before pigs arrive." },
+    { "stepNumber": 2, "offsetDays": 1, "title": "Electric fence training in a small pen", "surfaceAs": "RAIL_CARD", "body": "Confine the new weaners in a small pen inside the main paddock, roughly 3 m x 3 m, with the electric fence forming one wall. Pigs learn the fence quickly; most contact the wire within the first 30 minutes and respect it thereafter. Leave them in the training pen for 24 hours." },
+    { "stepNumber": 3, "offsetDays": 2, "title": "Release into the full paddock", "surfaceAs": "RAIL_CARD", "body": "Open the training pen gate and allow the pigs to explore the full paddock. Watch their interaction with the fence boundary for the first hour. Pigs that received a good nose-level shock in the training pen will test the fence with their snout and pull back. Pigs that went straight through the fence in training need another 24 hours in the pen." },
+    { "stepNumber": 4, "offsetDays": 7, "title": "First paddock check and bedding top-up", "surfaceAs": "RAIL_CARD", "body": "Check the fencing integrity, water supply, and arc bedding. Top up straw in the arc as needed. Assess how much of the paddock the pigs have rooted and whether rotation will be needed before slaughter." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The setup for outdoor pigs takes a day to complete but must be right before the weaners arrive. A poorly positioned arc, an untested fence, or a water supply needing daily topping-up all become headaches the moment the pigs are in the paddock." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Registering as a pig keeper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before any pig arrives, ensure you have a CPH number from the Rural Payments Agency, are registered with APHA as a pig keeper, and have an eAML2 account. These take a few days to arrange. Do not accept pigs until the paperwork is in place; the movement document requires your CPH before the seller can complete it." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Positioning the arc" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Position the " },
+          { "type": "text", "text": "pig arc", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-arc-setup" } }] },
+          { "type": "text", "text": " on the driest, highest-drained ground in the paddock. The arc entrance should face broadly south, away from the prevailing wind. Bed it with a 15 cm base of straw before the pigs arrive; they will organise the bedding themselves once in. If the ground is soft clay, position the arc on a base of hardcore or gravel if possible." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Electric fence setup and training" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the fence at two heights: nose level (20-25 cm) and shoulder height (35-40 cm). Test with a fence tester before the pigs arrive; minimum 3,000 volts in the field for reliable deterrence. " },
+          { "type": "text", "text": "Electric fence training", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "electric-training" } }] },
+          { "type": "text", "text": " in a small holding pen for 24 hours before releasing into the full paddock makes the difference between pigs that respect the fence for the whole season and pigs that push through it on day one." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs drink 5-8 litres of water per day, more in summer. A ball-valve water trough plumbed to a mains supply is far more reliable than a manually filled container. Position it on firmer ground or a concrete block to keep the area around the trough from turning into a mud wallow (pigs will stand in any water container given the chance). Check daily regardless." }]
+      }
+    ]
+  }
+}

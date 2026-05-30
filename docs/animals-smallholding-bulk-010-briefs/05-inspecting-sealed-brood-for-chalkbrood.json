@@ -1,0 +1,106 @@
+{
+  "slug": "inspecting-sealed-brood-for-chalkbrood",
+  "title": "Inspecting sealed brood for chalkbrood",
+  "subtitle": "Recognising the chalky mummies, understanding when to intervene, and when to leave the colony to clean itself up.",
+  "excerpt": "Chalkbrood is a fungal disease caused by Ascosphaera apis that turns sealed bee larvae into hard chalk-like pellets. It is common in cool, damp springs and most colonies clear it without assistance. This tutorial covers the recognition cues, the threshold for concern, and what the beekeeper can do, which is less than you might expect.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit advisory leaflet on Chalkbrood (2023), nationalbeeunit.com. BBKA examination syllabus, Module 2: Honey Bee Diseases. Frank Pearson, Bee-keeping for All (1923), Internet Archive.",
+  "glossaryTerms": [
+    { "slug": "chalkbrood", "term": "Chalkbrood", "definition": "A fungal disease of honey bee larvae caused by Ascosphaera apis. Infected larvae die and dry to hard chalk-white or grey-black pellets called mummies, which the adult bees remove from the hive as part of hygienic behaviour." },
+    { "slug": "hygienic-behaviour", "term": "Hygienic behaviour", "definition": "The instinct in some bee lines to detect, uncap, and remove diseased or dead brood quickly, before pathogens can spread. Colonies with strong hygienic behaviour clear chalkbrood mummies fast and are less susceptible to diseases requiring an extended larval stage." }
+  ],
+  "techniqueSlugs": ["inspecting-a-beehive-in-summer", "spring-colony-assessment"],
+  "criticalTechniques": [],
+  "aliases": ["chalk brood bees", "chalkbrood mummies"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Chalkbrood is the most visually obvious disease a beekeeper encounters in spring. The " },
+          { "type": "text", "text": "chalkbrood", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chalkbrood" } }] },
+          { "type": "text", "text": " mummies are hard, pale pellets (white if only the male fungal cells are present, black if the female cells have developed), and the adult bees carry them to the hive entrance or scatter them on the landing board. Finding a handful of mummies on an inspection in April or May is normal. Finding hundreds, or frames so badly affected that the brood pattern has broken down significantly, requires attention." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to inspect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The first inspection of the year after brood rearing resumes, typically mid-March to early April, is when chalkbrood is most commonly found. Damp winters, late frosts, and colonies in shaded or poorly-ventilated sites all create the conditions the fungus prefers. Open the hive only when the temperature is above 15 degrees C and the air is still." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you are looking for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On the landing board: white or mottled chalk-coloured pellets roughly the shape of a larva, 5-7 mm long. On the comb: cells with a chalky pellet visible through the uncapped opening, or sunken cappings with a small hole where the workers have begun removing the mummy. A brood frame with mild chalkbrood shows a scatter of affected cells among healthy capped brood. A heavily affected frame may show large patches of empty, mummy-containing, and normal capped cells mixed together." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessing severity" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Severity guide" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Light: fewer than 50 mummies visible on landing board, scattered chalk cells on one or two frames. No action needed — the colony will clear this with warming weather." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Moderate: 50-200 mummies, multiple frames affected, brood pattern showing gaps. Improve ventilation, consider moving to a sunnier site. Monitor weekly." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Heavy: brood pattern severely disrupted across most frames, mummies throughout the hive. This colony is stressed. Check for other causes (varroa, poor nutrition, damp site) and consider requeening with a hygienic-trait line." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you can do" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "There is no chemical treatment for chalkbrood licensed in the UK. The beekeeper's tools are environmental and genetic. Colonies with strong " },
+          { "type": "text", "text": "hygienic behaviour", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hygienic-behaviour" } }] },
+          { "type": "text", "text": " clear chalkbrood fast; colonies from lines not selected for this trait may carry a persistent low-level infection through the year." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Improve ventilation: open the varroa inspection tray all the way, raise the hive off the ground if it sits directly on concrete or damp grass." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move to a sunnier site if the current location is shaded for most of the morning." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the brood nest to match the adult population if the colony has spread onto more frames than the bees can keep warm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the colony has persistent heavy chalkbrood season after season, requeen from a hygienic-trait line. The BBKA recommends locally-mated hygienic queens as the most practical long-term control." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the inspection" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Note the number of mummies on the landing board and the number of frames affected. Check the same colony at your " },
+          { "type": "text", "text": "next inspection", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "inspecting-a-beehive-in-summer", "label": "next inspection" } }] },
+          { "type": "text", "text": " two weeks later. A colony clearing chalkbrood unaided will show fewer mummies and a stronger brood pattern by then. One still showing heavy infections after two weeks of settled warm weather needs the environmental and genetic interventions above." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "twin-lamb-disease-recognition-and-response",
+  "title": "Twin lamb disease: recognition and response",
+  "subtitle": "Pregnancy toxaemia in ewes carrying multiple lambs in the last six weeks.",
+  "excerpt": "Twin lamb disease, also called pregnancy toxaemia, is the most common metabolic emergency in the final weeks of pregnancy in ewes carrying twins or triplets. It is preventable with correct nutrition and fast to treat if caught early. Missed or treated too late, it is fatal.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Twin Lamb Disease factsheet (ahdb.org.uk). SAC Consulting Scotland, Metabolic Disease in Sheep guidance. DEFRA Code of Practice for the Welfare of Sheep, 2020.",
+  "glossaryTerms": [
+    { "slug": "pregnancy-toxaemia", "term": "Pregnancy toxaemia", "definition": "A metabolic disease of late-pregnancy ewes caused by insufficient blood glucose to supply both the ewe and her developing lambs. The ewe mobilises body fat rapidly, producing ketone bodies that are toxic at high levels. Also called twin lamb disease or ketosis." },
+    { "slug": "propylene-glycol", "term": "Propylene glycol", "definition": "A viscous liquid used as an oral energy supplement in ewes with pregnancy toxaemia. Rapidly converted to glucose by the liver. Drenched at 100-120 ml twice daily at the outset of treatment." },
+    { "slug": "ketones", "term": "Ketones", "definition": "Acidic compounds produced when the body breaks down fat for energy in the absence of sufficient glucose. High blood ketone levels cause the sweet acetone smell on the breath characteristic of pregnancy toxaemia and reduce nervous system function." }
+  ],
+  "techniqueSlugs": ["checking-ewe-condition-in-late-pregnancy", "preparing-a-lambing-kit"],
+  "criticalTechniques": [],
+  "aliases": ["pregnancy toxaemia sheep", "ketosis in ewes", "twin lamb treatment"],
+  "recipeTools": [
+    { "slug": "drenching-gun", "isOptional": false },
+    { "slug": "shepherds-crook", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the last six weeks of pregnancy, a ewe carrying two or three lambs requires a rapidly increasing energy supply to sustain foetal growth. If feed is inadequate, or if she is off her food for even a day or two from stress, sudden weather change, or overcrowding, her blood glucose drops and she begins mobilising body fat. " },
+          { "type": "text", "text": "Pregnancy toxaemia", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pregnancy-toxaemia" } }] },
+          { "type": "text", "text": " follows. The build-up of " },
+          { "type": "text", "text": "ketones", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ketones" } }] },
+          { "type": "text", "text": " in the bloodstream is what makes the condition fatal without fast intervention." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The signs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Early signs are easy to miss and require daily observation of each ewe in late pregnancy. Look for a ewe that is separating from the flock, standing with her head down, showing less interest in feed than the previous day, and grinding her teeth. Her breath may smell sweetly acidic, the ketone smell. As the condition progresses she becomes unsteady on her feet, loses the ability to get up from lying, and eventually goes down." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A ewe found lying down and unable to rise in the last two weeks before her lambing date should be assumed to have pregnancy toxaemia until proven otherwise. She may also have hypocalcaemia (milk fever), which presents similarly; both conditions can be present at the same time." }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Immediate response" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drench with " },
+          { "type": "text", "text": "propylene glycol", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "propylene-glycol" } }] },
+          { "type": "text", "text": " at the rate on the label (typically 100-120 ml twice daily) immediately. This is the first-line treatment before a vet arrives. Move the ewe to a warm, dry pen with ad lib hay and water, preferably close enough for you to check her frequently. Call a vet the same day for a ewe that cannot rise; injectable glucose, steroid, and vitamin treatments are more effective than oral drenching alone at this stage." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prevention" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pregnancy toxaemia is almost entirely preventable with correct feeding in the last six weeks. Twin-bearing ewes need increasing concentrate alongside good hay or silage from six weeks before lambing. Condition-score each ewe at scanning: an underweight ewe carrying twins needs more supplementation than one in good condition. Avoid sudden feed changes and manage group size to prevent competition at the trough." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prognosis" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A ewe treated within 24 hours, still standing and eating, has a good chance of recovery if she lambs normally. A ewe found down and unable to rise has a poor prognosis; inducing early lambing to remove the foetal glucose demand is sometimes the only way to save her." }]
+      }
+    ]
+  }
+}

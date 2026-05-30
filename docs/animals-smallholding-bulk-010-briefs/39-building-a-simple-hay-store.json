@@ -1,0 +1,97 @@
+{
+  "slug": "building-a-simple-hay-store",
+  "title": "Building a simple hay store",
+  "subtitle": "A covered, ventilated structure for keeping hay dry and usable through winter.",
+  "excerpt": "Hay stored incorrectly loses nutritional value, grows mould, and becomes a fire risk. A simple three-sided open-fronted hay store with a raised floor and ventilated sides solves all three problems. This project guide covers the design decisions, materials, and build sequence for a small-scale hay store suited to one to four large round bales or a stack of small squares.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "timeMinutes": 480,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HSE, hay and straw storage fire safety guidance. AHDB, forage storage factsheets. Farmers Weekly, hay storage construction practical guides.",
+  "glossaryTerms": [
+    { "slug": "hay-stack-ventilation", "term": "Hay stack ventilation", "definition": "The airflow through and around stored hay that carries away moisture. Freshly baled hay continues to respire, releasing heat and moisture; without ventilation, this can cause mould growth and, in extreme cases, spontaneous combustion in the heart of a large stack. Pallets or railway sleepers used as a raised floor allow air to circulate underneath." },
+    { "slug": "hay-spoilage", "term": "Hay spoilage", "definition": "The degradation of hay by mould, rain penetration, and bacterial activity, which reduces dry matter content, palatability, and nutritional value. Spoiled outer layers on round bales stored outdoors without cover can account for 15-30% dry matter loss." }
+  ],
+  "techniqueSlugs": ["calculating-stocking-rates"],
+  "criticalTechniques": [],
+  "aliases": ["hay store build", "round bale storage shelter", "hay storage shed smallholding"],
+  "recipeTools": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Prepare the base",
+      "body": "Level and compact a hard-standing area using road planings or compacted hardcore. The base should extend 30 cm beyond the footprint of the store on all sides to keep the bottom course of bales clear of ground water. Lay pressure-treated railway sleepers or concrete blocks as a raised floor, leaving gaps between them for air circulation."
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Erect the frame",
+      "body": "Set four pressure-treated 100 x 100 mm posts in concrete at the corners, 2.4 m long (or 3 m for round bale height). Two rear posts and two front posts, with the front posts slightly taller to give the roof a fall towards the rear. Brace the frame with horizontal rails at 1.2 m and at the top. Allow concrete to cure for 2 days before loading the structure."
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 4,
+      "title": "Clad the sides and rear",
+      "body": "Fix corrugated metal sheeting or treated board cladding to the rear and both side walls, leaving a 50 mm gap at the bottom rail for air entry. The front should remain open to allow easy loading with a tractor or manual stack. Fit a corrugated or box-profile metal roof with a minimum 10-degree pitch and 30 cm overhang on all sides."
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 5,
+      "title": "Finish and check",
+      "body": "Check that no sharp edges protrude where animals or handlers will be working. Fit a simple bar or chain across the open front at hay-bale height to prevent bales rolling out. Inspect the roof fixings and ensure all corrugations are sealed at the ridge. Allow the structure to air before loading hay."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two most common causes of " },
+          { "type": "text", "text": "hay spoilage", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hay-spoilage" } }] },
+          { "type": "text", "text": " in small-scale storage are rain penetration from above and moisture rising from the ground below. A simple roof and a raised floor address both." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning and planning permission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "In England and Wales, agricultural buildings under 465 m2 on a holding over 5 hectares may be permitted development. Smaller holdings usually need planning permission. Check with your local authority first; a small open-fronted hay store is usually approved without issue." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Size and capacity" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A store 3.6 m wide by 4.8 m deep holds four large round bales (1.2 m diameter) two-deep, or approximately 100 small square bales in a three-high stack. Size to your winter feed requirement, plus 20% contingency for a hard season. Round bales stored two-high require a minimum internal height of 3 m; small square bales can be stacked to 2.4 m with care." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ventilation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Good " },
+          { "type": "text", "text": "hay stack ventilation", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hay-stack-ventilation" } }] },
+          { "type": "text", "text": " requires air entry at the base and exit at the roof level. Gaps in the side cladding at the base and a ridge ventilator or open eaves provide a natural stack effect. A tightly sealed store traps moisture and is more prone to heating in the core of a large bale stack." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fire safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not store machinery, fuel, or electrical equipment in or adjacent to a hay store. Freshly baled hay that was baled damp can self-combust; check bale temperature in the first three weeks by probing with a steel rod and feeling for heat. A new stack that runs hot should be opened up and monitored. Site the store at least 6 m from other buildings where possible." }]
+      }
+    ]
+  }
+}

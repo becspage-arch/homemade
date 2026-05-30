@@ -1,0 +1,69 @@
+{
+  "slug": "pig-health-records-uk-law",
+  "title": "Pig health records under UK law",
+  "subtitle": "What records you must keep, what APHA may inspect, and how to organise them without bureaucratic overhead.",
+  "excerpt": "Keeping pigs in the UK requires written health and movement records. APHA inspectors can request these at any time. The record-keeping burden for a small holding of two to six pigs is modest, but the consequences of not keeping them correctly are not. This tutorial covers what is legally required and a simple system for staying on top of it.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pig (Records, Identification and Movement) Order 2011 (SI 2011/2154). APHA, Pig Keepers' Records guidance (gov.uk). DEFRA Pigs welfare guidance.",
+  "glossaryTerms": [
+    { "slug": "pig-holding-register", "term": "Holding register", "definition": "A written record of all pig arrivals and departures from a holding, including dates, numbers, origin CPH, destination CPH, and movement document references. Must be kept for at least 3 years and be available for APHA inspection." },
+    { "slug": "veterinary-medicine-record", "term": "Veterinary medicine record", "definition": "A record of every veterinary medicine given to pigs on the holding, including the product name, dosage, date, batch number, and withdrawal period. Required under the Veterinary Medicines Regulations 2013." }
+  ],
+  "techniqueSlugs": ["understanding-uk-pig-movement-rules", "daily-feeding-and-checking-pigs"],
+  "criticalTechniques": [],
+  "aliases": ["pig records APHA", "pig keeping records UK", "pig veterinary records"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "UK pig keepers are required by law to maintain a " },
+          { "type": "text", "text": "holding register", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-holding-register" } }] },
+          { "type": "text", "text": " and a " },
+          { "type": "text", "text": "veterinary medicine record", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "veterinary-medicine-record" } }] },
+          { "type": "text", "text": ". These requirements apply to everyone who keeps pigs, from a two-acre smallholding to a commercial unit. APHA inspectors can request them without advance notice. Failure to produce complete records is an offence." }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The holding register" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The holding register records every pig movement onto and off the holding. For each entry note: the date, the number of pigs moved, whether they arrived or departed, the origin or destination CPH number, the eAML2 movement document reference number, and the number of pigs remaining on the holding after the movement. A simple exercise book or a spreadsheet works; APHA provides a template. Retain for at least 3 years." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The medicine records" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For each medicine given to a pig, record: the date, product name, batch number (from the label), number of pigs treated, their identification, dose, route of administration (injection, oral), and withdrawal period. If the medicine is prescription-only, record the prescribing vet. Most pig wormers and vaccines are prescription-only. Keep these records for at least 5 years." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs moved off the holding to an abattoir or sale must be marked with the holding's unique identifier. The standard method is a slap mark using an approved ink stamp on the shoulder, or ear tags. The abattoir will advise on the marking method they require. Pigs slaughtered on-farm for personal consumption do not require formal identification." }]
+      },
+      {
+        "type": "blockquote",
+        "attrs": { "tone": "info" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A practical system for a small holding: keep one binder with three sections (movements, medicines, vet correspondence). File movement documents from eAML2 as you print them. Write medicine entries on the day of administration. An APHA inspector finding a tidy, complete binder is a much better visit than one finding gaps." }] }
+        ]
+      }
+    ]
+  }
+}
