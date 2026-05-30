@@ -537,3 +537,44 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 07:08:21
+
+Generated: 2026-05-30T07:08:21.909Z
+
+Processed: 51
+PASS: 20
+STILL_BLOCKED: 31
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 93 |
+
+## Still BLOCKED (sample 20)
+
+- baklava-walnut: hero-missing
+- birds-nest-baklava: hero-missing
+- brittle-almond: hero-missing
+- caramel-soft: hero-missing
+- cathead-biscuits: hero-missing
+- classic-ring-doughnuts: hero-missing
+- cookie-bars: hero-missing
+- cornish-biscuits: hero-missing
+- courgette-and-lemon-loaf: hero-missing
+- damper: hero-missing
+- dream-bars: hero-missing
+- easter-biscuits: hero-missing
+- fairy-cakes: hero-missing
+- genoise: hero-missing
+- gougeres: hero-missing
+- honeycomb-sponge-toffee: hero-missing
+- key-lime-pie: hero-missing
+- kunafa-with-cheese: hero-missing
+- marshmallows-homemade: hero-missing
+- mince-pie-tray-slice: hero-missing
