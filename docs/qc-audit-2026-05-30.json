@@ -1,32 +1,14 @@
 {
-  "generatedAt": "2026-05-30T19:06:24.492Z",
-  "totalScanned": 5663,
+  "generatedAt": "2026-05-30T20:26:28.621Z",
+  "totalScanned": 5742,
   "passCount": 0,
-  "blockCount": 184,
+  "blockCount": 175,
   "warnOnlyCount": 0,
   "perCategory": {
-    "paper-word": {
-      "total": 7,
-      "pass": 0,
-      "block": 7,
-      "warnOnly": 0
-    },
     "cooking": {
       "total": 40,
       "pass": 0,
       "block": 40,
-      "warnOnly": 0
-    },
-    "sustainability": {
-      "total": 39,
-      "pass": 0,
-      "block": 39,
-      "warnOnly": 0
-    },
-    "animals-smallholding": {
-      "total": 13,
-      "pass": 0,
-      "block": 13,
       "warnOnly": 0
     },
     "mindset": {
@@ -35,10 +17,28 @@
       "block": 65,
       "warnOnly": 0
     },
-    "home-repair": {
-      "total": 7,
+    "paper-word": {
+      "total": 5,
       "pass": 0,
-      "block": 7,
+      "block": 5,
+      "warnOnly": 0
+    },
+    "sustainability": {
+      "total": 30,
+      "pass": 0,
+      "block": 30,
+      "warnOnly": 0
+    },
+    "animals-smallholding": {
+      "total": 11,
+      "pass": 0,
+      "block": 11,
+      "warnOnly": 0
+    },
+    "home-repair": {
+      "total": 11,
+      "pass": 0,
+      "block": 11,
       "warnOnly": 0
     },
     "natural-home": {
@@ -55,30 +55,11 @@
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 171,
     "hero-missing": 40,
-    "voice-violation": 148
+    "voice-violation": 131,
+    "grade-level-strict": 156
   },
   "verdicts": [
-    {
-      "slug": "album-cover-decoration",
-      "tutorialId": "cmpsmuv3m0001hsv4x6vo0wt3",
-      "type": "PATTERN",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T17:40:25.680Z",
-      "publishedAt": "2026-05-30T17:36:52.962Z",
-      "heroMediaId": "cmpsmwzm40000lwv4v00r7vz3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[20] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Decorating a scrapbook album cover go here."
-        }
-      ]
-    },
     {
       "slug": "apple-sauce",
       "tutorialId": "cmpagllt10000aov4fojgzu8r",
@@ -93,63 +74,6 @@
           "severity": "BLOCK",
           "kind": "hero-missing",
           "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "battery-capacity-degradation",
-      "tutorialId": "cmprmms7p0002rov4a9rprkvo",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:23.150Z",
-      "publishedAt": "2026-05-30T00:42:49.801Z",
-      "heroMediaId": "cmprmwguh000694v464695ffg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Understanding home battery degradation and state of health go here."
-        }
-      ]
-    },
-    {
-      "slug": "borehole-water-supply-feasibility",
-      "tutorialId": "cmps8lxwb0002ywv48vkstvdp",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:06.278Z",
-      "publishedAt": "2026-05-30T10:58:02.057Z",
-      "heroMediaId": "cmps8yzja0004x0v4pmw7wz4z",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 15.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "Test the water for nitrates, coliform bacteria, and hardness before installing a pump for domestic use. Nitrate levels above 50 mg/litre occ"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 15.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Assessing the feasibility of a private borehole water supply go here."
         }
       ]
     },
@@ -229,84 +153,6 @@
       ]
     },
     {
-      "slug": "building-regs-part-l-retrofit-notification",
-      "tutorialId": "cmprmv4yb00003gv44mu7r7f8",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:23.610Z",
-      "publishedAt": "2026-05-30T00:49:19.553Z",
-      "heroMediaId": "cmprmwi49000894v4x6n9uh4q",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 16.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[15] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > bulletList[2] > listItem[1] > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[9] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Most domestic insulation retrofits do not need Building Regulations approval. Loft insulation, draught-stripping, secondary glazing, and flo"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 16.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Building Regulations Part L notification for retrofit insulation go here."
-        }
-      ]
-    },
-    {
-      "slug": "calculating-stocking-rates",
-      "tutorialId": "cmps6k8990003c0v4yyah0ezv",
-      "type": "READING",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T10:09:47.285Z",
-      "publishedAt": "2026-05-30T10:00:42.946Z",
-      "heroMediaId": "cmps6uqvy0004h0v4pxcln1un",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"weaner\" — domain jargon — register in glossaryTerms[] with a definition",
-          "path": "body > paragraph[2] > text",
-          "snippet": "weaner"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "If overstocked, reduce animal numbers, bring in supplementary hay or silage, or move animals to a different area. A severely poached paddock"
-        }
-      ]
-    },
-    {
       "slug": "cauliflower-cheese",
       "tutorialId": "cmp73t2yn0000pkv4qzdzrufl",
       "type": "RECIPE",
@@ -341,192 +187,6 @@
       ]
     },
     {
-      "slug": "choosing-sheep-breeds-for-a-small-flock",
-      "tutorialId": "cmps6ivfh00025gv4sx8mxm5k",
-      "type": "READING",
-      "categorySlug": "animals-smallholding",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T10:09:47.867Z",
-      "publishedAt": "2026-05-30T09:59:39.665Z",
-      "heroMediaId": "cmps6utmx000ch0v4qrh2yp12",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Jacob\" — generic equivalent is \"cream cracker\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Jacob"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "The amount of lambing assistance a breed typically requires is a major selection criterion. Lleyn, Kerry Hill, and Cambridge ewes are known "
-        }
-      ]
-    },
-    {
-      "slug": "community-energy-co-op-joining",
-      "tutorialId": "cmps8ld590003jov4lj7x367z",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:06.549Z",
-      "publishedAt": "2026-05-30T10:57:35.165Z",
-      "heroMediaId": "cmps8z0bh0006x0v4536ivaof",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 15.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[4] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Community energy co-operatives fund solar, wind, or hydro through shares sold to local people. The co-operative owns the asset, earns revenu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Main risks: lower generation than forecast, lower electricity prices with no Power Purchase Agreement, and management problems. A 2022 surve"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "Community Energy England has a searchable map of schemes. Community Energy Scotland and Wales have equivalent registers. New share offers ap"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 15.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Joining a community energy co-operative go here."
-        }
-      ]
-    },
-    {
-      "slug": "composting-toilet-annual-maintenance",
-      "tutorialId": "cmpra16pt0001tov4psdijf11",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T18:54:00.575Z",
-      "publishedAt": "2026-05-29T18:50:06.773Z",
-      "heroMediaId": "cmpra5ad3000iacv4aq2h417w",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
-          "path": "body > orderedList[3] > listItem[1] > paragraph[0] > text",
-          "snippet": "nitrile"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[3] > listItem[4] > paragraph[0]",
-          "snippet": "Clean the bowl and seat with a mild non-antibacterial cleaner. Antibacterial cleaners can kill the microorganisms in the composting chamber "
-        }
-      ]
-    },
-    {
-      "slug": "cotton-rag-preparation",
-      "tutorialId": "cmprkj9i00001ocv4gnbfj3ew",
-      "type": "TECHNIQUE",
-      "categorySlug": "paper-word",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T23:48:52.920Z",
-      "publishedAt": "2026-05-29T23:44:06.348Z",
-      "heroMediaId": "cmprkntkt000esgv4e7ry102d",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[7] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[22] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Preparing Cotton Rags for Papermaking go here."
-        }
-      ]
-    },
-    {
-      "slug": "dishwasher-vs-handwashing-water-efficiency",
-      "tutorialId": "cmps8m45s0002dgv4zjqqinas",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:09:07.039Z",
-      "publishedAt": "2026-05-30T10:58:10.177Z",
-      "heroMediaId": "cmps8z45r000ex0v4z7uua5dk",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 14.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 14.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Dishwasher vs handwashing: the water and energy comparison go here."
-        }
-      ]
-    },
-    {
-      "slug": "electronics-refurbishment-and-upgrade",
-      "tutorialId": "cmprmo4wl0000ukv4yodav9ip",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:51:25.248Z",
-      "publishedAt": "2026-05-30T00:43:52.898Z",
-      "heroMediaId": "cmprmwphk000m94v4z3rbik1z",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 13.1 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[6] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[6] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Refurbishing and upgrading electronics to extend their life go here."
-        }
-      ]
-    },
-    {
       "slug": "expansion-continues-with-ease-affirmation",
       "tutorialId": "cmpccjduu00008sv4c282epce",
       "type": "PRACTICE",
@@ -542,147 +202,6 @@
           "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "I allow expansion to continue with ease, generosity, and alignment."
-        }
-      ]
-    },
-    {
-      "slug": "external-wall-insulation-etics-installation",
-      "tutorialId": "cmpr8j5dm000210v4ld8w2o8y",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T18:31:52.295Z",
-      "publishedAt": "2026-05-29T18:08:05.612Z",
-      "heroMediaId": "cmpr9ifdp0004l0v489kzgfg5",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "sourceNotes",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > orderedList[11] > listItem[4] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 13.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[1] > paragraph[0]",
-          "snippet": "EWI installation requires scaffolding, specialist adhesives and renders, and mechanical fixings that must be specified for the substrate. Th"
-        }
-      ]
-    },
-    {
-      "slug": "fitting-a-carbon-monoxide-detector",
-      "tutorialId": "cmprxyt1j0003pwv4qpwfa06e",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:57.165Z",
-      "publishedAt": "2026-05-30T06:00:06.526Z",
-      "heroMediaId": "cmpry1ji9000k20v4ab86b52p",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Fitting a carbon monoxide detector go here."
-        }
-      ]
-    },
-    {
-      "slug": "fitting-a-thermostatic-radiator-valve",
-      "tutorialId": "cmpe8rtik0002l4v4iftkxfhl",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T11:50:08.128Z",
-      "publishedAt": "2026-05-30T11:25:19.250Z",
-      "heroMediaId": "cmpsahm21000m1kv4qb7v9uff",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[19] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Fitting a thermostatic radiator valve go here."
-        }
-      ]
-    },
-    {
-      "slug": "fitting-under-cabinet-led-strip-lighting",
-      "tutorialId": "cmprlwszv0002u0v4z48xen6h",
-      "type": "PATTERN",
-      "categorySlug": "home-repair",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T00:24:56.531Z",
-      "publishedAt": "2026-05-30T00:22:37.756Z",
-      "heroMediaId": "cmprlyokq00106cv4ohban0u6",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Fitting under-cabinet LED strip lighting go here."
-        }
-      ]
-    },
-    {
-      "slug": "flat-roof-cold-deck-remediation",
-      "tutorialId": "cmprvdfen0000eov4hdlednzn",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T04:50:56.089Z",
-      "publishedAt": "2026-05-30T04:47:29.836Z",
-      "heroMediaId": "cmprvgr81000cvsv4qdt5tsdm",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "voice-violation",
-          "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
-          "path": "body > orderedList[21] > listItem[0] > paragraph[0] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > paragraph[17] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[1]",
-          "snippet": "A saturated cold-deck flat roof is simultaneously a structural problem, a heat-loss problem, and a damp problem. The roof covering may look "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[21] > listItem[0] > paragraph[0]",
-          "snippet": "Step-by-step instructions for Recognising and remediating a failing cold-deck flat roof go here."
         }
       ]
     },
@@ -1042,6 +561,31 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Making a simple leather notebook cover go here."
+        }
+      ]
+    },
+    {
+      "slug": "making-a-simple-timber-balustrade-infill-panel",
+      "tutorialId": "cmpsqzx4w0001u4v4ce3t123e",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:52.312Z",
+      "publishedAt": "2026-05-30T19:32:47.348Z",
+      "heroMediaId": "cmpsr5m3o0016jsv45drx8cyg",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Making a simple timber balustrade infill panel go here."
         }
       ]
     },
@@ -1824,6 +1368,44 @@
       ]
     },
     {
+      "slug": "re-gilding-a-decorative-picture-frame",
+      "tutorialId": "cmpsr1yhq0002ukv44c2aueug",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:53.156Z",
+      "publishedAt": "2026-05-30T19:34:22.416Z",
+      "heroMediaId": "cmpsr5vik001ijsv4bpb1wkk8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Re-gilding a decorative picture frame go here."
+        }
+      ]
+    },
+    {
+      "slug": "re-rushing-a-traditional-drop-in-chair-seat",
+      "tutorialId": "cmpsr1pcw000110v4mq41ihnz",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:53.574Z",
+      "publishedAt": "2026-05-30T19:34:10.578Z",
+      "heroMediaId": "cmpsr5wcc001kjsv46ei7s7gg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Re-rushing a traditional drop-in chair seat go here."
+        }
+      ]
+    },
+    {
       "slug": "red-wine-gravy",
       "tutorialId": "cmpago2hx0000j0v4rngnxgyc",
       "type": "RECIPE",
@@ -1874,6 +1456,50 @@
       ]
     },
     {
+      "slug": "repairing-a-delaminating-concrete-floor-screed",
+      "tutorialId": "cmpsqzgel0002kkv4ramyfpmm",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:53.900Z",
+      "publishedAt": "2026-05-30T19:32:25.664Z",
+      "heroMediaId": "cmpsr5ypg001qjsv47wj0it5g",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[15] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Repairing a delaminating concrete floor screed go here."
+        }
+      ]
+    },
+    {
+      "slug": "repairing-a-leather-scuff-with-heat-activated-compound",
+      "tutorialId": "cmpsr1iyw0001nwv4xem6byk1",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:54.195Z",
+      "publishedAt": "2026-05-30T19:34:02.298Z",
+      "heroMediaId": "cmpsr5zfq001sjsv4wrpnlhlk",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Repairing a leather scuff with heat-activated compound go here."
+        }
+      ]
+    },
+    {
       "slug": "replacing-a-double-socket-faceplate",
       "tutorialId": "cmps9sbfg0001isv47o0pnz8j",
       "type": "PATTERN",
@@ -1889,6 +1515,37 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[19] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Replacing a double socket faceplate go here."
+        }
+      ]
+    },
+    {
+      "slug": "replacing-an-immersion-heater-element",
+      "tutorialId": "cmpsr0i630001owv42mgmftqg",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:54.910Z",
+      "publishedAt": "2026-05-30T19:33:14.599Z",
+      "heroMediaId": "cmpsr62mp0020jsv4my1prfrr",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.1 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[9] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Replacing an immersion heater element go here."
         }
       ]
     },
@@ -2390,6 +2047,25 @@
           "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[9] > listItem[1] > paragraph[0]",
           "snippet": "The loft is very dry with good cross-ventilation and moisture buffering has no practical benefit."
+        }
+      ]
+    },
+    {
+      "slug": "silencing-water-hammer-in-domestic-pipes",
+      "tutorialId": "cmpsr0r5w00000ov481q5sfsc",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-05-30T19:37:55.099Z",
+      "publishedAt": "2026-05-30T19:33:26.257Z",
+      "heroMediaId": "cmpsr63az0022jsv4qo9gvd3r",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Silencing water hammer in domestic pipes go here."
         }
       ]
     },

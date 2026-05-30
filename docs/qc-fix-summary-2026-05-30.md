@@ -1683,3 +1683,771 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 20:06:53
+
+Generated: 2026-05-30T20:06:53.614Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:23
+
+Generated: 2026-05-30T20:17:23.505Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:28
+
+Generated: 2026-05-30T20:17:28.487Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:31
+
+Generated: 2026-05-30T20:17:31.434Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:35
+
+Generated: 2026-05-30T20:17:35.203Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:38
+
+Generated: 2026-05-30T20:17:38.005Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:40
+
+Generated: 2026-05-30T20:17:40.813Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:43
+
+Generated: 2026-05-30T20:17:43.686Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:48
+
+Generated: 2026-05-30T20:17:48.417Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:51
+
+Generated: 2026-05-30T20:17:51.656Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:54
+
+Generated: 2026-05-30T20:17:54.614Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:17:57
+
+Generated: 2026-05-30T20:17:57.410Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:02
+
+Generated: 2026-05-30T20:18:02.289Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:05
+
+Generated: 2026-05-30T20:18:05.361Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:08
+
+Generated: 2026-05-30T20:18:08.074Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:10
+
+Generated: 2026-05-30T20:18:10.978Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:13
+
+Generated: 2026-05-30T20:18:13.743Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:16
+
+Generated: 2026-05-30T20:18:16.569Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:19
+
+Generated: 2026-05-30T20:18:19.504Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:22
+
+Generated: 2026-05-30T20:18:22.435Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:41
+
+Generated: 2026-05-30T20:18:41.328Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:44
+
+Generated: 2026-05-30T20:18:44.581Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:47
+
+Generated: 2026-05-30T20:18:47.903Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:51
+
+Generated: 2026-05-30T20:18:51.412Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:54
+
+Generated: 2026-05-30T20:18:54.733Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:18:58
+
+Generated: 2026-05-30T20:18:58.110Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:02
+
+Generated: 2026-05-30T20:19:02.203Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 4 |
+
+## Still BLOCKED (sample 20)
+
+- external-wall-insulation-etics-installation: voice-violation
+
+---
+
+## Run at 20:19:05
+
+Generated: 2026-05-30T20:19:05.484Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:09
+
+Generated: 2026-05-30T20:19:09.021Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- borehole-water-supply-feasibility: voice-violation
+
+---
+
+## Run at 20:19:12
+
+Generated: 2026-05-30T20:19:12.446Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:15
+
+Generated: 2026-05-30T20:19:15.763Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:19
+
+Generated: 2026-05-30T20:19:19.067Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:31
+
+Generated: 2026-05-30T20:19:31.051Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:34
+
+Generated: 2026-05-30T20:19:34.456Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:37
+
+Generated: 2026-05-30T20:19:37.722Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:40
+
+Generated: 2026-05-30T20:19:40.990Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:44
+
+Generated: 2026-05-30T20:19:44.521Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:47
+
+Generated: 2026-05-30T20:19:47.964Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:19:51
+
+Generated: 2026-05-30T20:19:51.520Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:20:01
+
+Generated: 2026-05-30T20:20:01.329Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- external-wall-insulation-etics-installation: voice-violation
+
+---
+
+## Run at 20:20:04
+
+Generated: 2026-05-30T20:20:04.836Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- borehole-water-supply-feasibility: voice-violation
+
+---
+
+## Run at 20:21:56
+
+Generated: 2026-05-30T20:21:56.927Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- external-wall-insulation-etics-installation: voice-violation
+
+---
+
+## Run at 20:22:00
+
+Generated: 2026-05-30T20:22:00.442Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:25:21
+
+Generated: 2026-05-30T20:25:21.844Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
