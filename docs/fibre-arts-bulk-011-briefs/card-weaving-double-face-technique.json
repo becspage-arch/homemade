@@ -1,0 +1,512 @@
+{
+  "slug": "card-weaving-double-face-technique",
+  "title": "Card-weaving double-face technique",
+  "subtitle": "Producing reversible patterns with two warp colours on four-hole cards",
+  "excerpt": "Double-face card weaving uses two contrasting warp colours threaded one per pair of holes on each card. Turning the cards forward brings one colour to the surface; turning backward brings the other. Patterning comes entirely from which cards turn which direction on each row.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "- Collingwood, Peter. The Techniques of Tablet Weaving. Faber and Faber, 1982. In copyright; cited as the standard reference for double-face card weaving. Content written around this source, not derived from it.\n- General tablet-weaving mechanics are in the public domain via multiple pre-1928 sources.",
+  "recipeTools": [
+    {
+      "slug": "tablet-weaving-cards",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "warping-board",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tablet-weaving",
+      "term": "Tablet weaving",
+      "definition": "A weaving method using cards (tablets) with holes threaded with warp ends; rotating the cards creates the shed."
+    },
+    {
+      "slug": "warp",
+      "term": "Warp",
+      "definition": "The lengthwise threads passing through the holes in the weaving cards."
+    },
+    {
+      "slug": "weft",
+      "term": "Weft",
+      "definition": "The thread passed through the shed to hold the warp rows together."
+    },
+    {
+      "slug": "shed",
+      "term": "Shed",
+      "definition": "The opening formed when cards are rotated, through which the weft passes."
+    },
+    {
+      "slug": "double-face",
+      "term": "Double-face",
+      "definition": "A card-weaving structure where one warp colour appears on the front face and the other on the back, reversing with the turning direction."
+    },
+    {
+      "slug": "card-turning-sequence",
+      "term": "Card-turning sequence",
+      "definition": "The written or charted record of how many positions each card turns, and in which direction, for each row of the weaving."
+    },
+    {
+      "slug": "twist-buildup",
+      "term": "Twist build-up",
+      "definition": "The accumulation of twist in the warp that occurs when cards are turned consistently in one direction, eventually requiring a reversal or untwisting pause."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Double-face "
+          },
+          {
+            "type": "text",
+            "text": "tablet weaving",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tablet-weaving"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is one of the most rewarding advanced card-weaving structures. Because the two "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " colours invert between face and back, every pattern appears in reverse colour on the opposite side. The structure produces a dense, firm band with two fully finished faces."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            "Four-hole weaving cards (tablets), one per warp unit",
+            "Two contrasting warp yarn colours (wool or cotton, approximately 2-ply)",
+            "Weft thread (the same yarn as the warp or finer)",
+            "Scissors",
+            "Tape measure",
+            "A card-turning sequence chart (drafted before you begin)",
+            "Warp board or two posts for measuring the warp (optional but helpful)"
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Threading the cards"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each card has four holes labelled A, B, C, D. In "
+          },
+          {
+            "type": "text",
+            "text": "double-face",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "double-face"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " threading, colour 1 goes through holes A and D; colour 2 goes through holes B and C. This pairing means a quarter-turn of the card moves either two colour-1 "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " ends or two colour-2 ends to the top of the "
+          },
+          {
+            "type": "text",
+            "text": "shed",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shed"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", controlling which colour shows on the face."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 1: Cut warp threads to the planned band length plus 40 cm for finishing. For each card, cut two lengths of colour 1 and two of colour 2."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 2: Thread hole A with colour 1, hole B with colour 2, hole C with colour 2, hole D with colour 1. Pull all four threads through from the same face of the card (S-threading). Some patterns alternate S and Z threading per card; this is noted on the draft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 3: Thread all cards before securing. Line the cards up flat and align all threads so the card faces point the same direction."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 4: Tie one end of the warp bundle to a fixed post or your belt (backstrap style). Keep the cards at an even tension before beginning."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading a double-face draft"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "double-face",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "double-face"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " draft is a grid. Each column represents one card; each row is one pick. A filled square means turn that card forward (away from you) one quarter-turn. An empty square means turn backward. The pattern on the face of the band is the inverse of the draft grid itself, with colour 1 showing on forward turns and colour 2 on backward."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After each quarter-turn on all cards, open the "
+          },
+          {
+            "type": "text",
+            "text": "shed",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shed"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and pass the "
+          },
+          {
+            "type": "text",
+            "text": "weft",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " through. Beat firmly with a fingernail or a small bone pick so each row of "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " completely covers the previous "
+          },
+          {
+            "type": "text",
+            "text": "weft",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Managing twist build-up"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turning all cards consistently in one direction causes "
+          },
+          {
+            "type": "text",
+            "text": "twist build-up",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "twist-buildup"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in the "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " behind the cards. There are two practical approaches:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Plan the pattern so forward and backward turns are roughly balanced over the length of the band. When the draft has equal turns in both directions the twist cancels itself."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Where the pattern requires many consecutive forward turns, stop every 6-8 rows and slide the cards back along the warp to let the accumulated twist distribute. Alternatively, use a short section of background pattern in the opposite direction to untwist."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The card-turning sequence"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Write your "
+          },
+          {
+            "type": "text",
+            "text": "card-turning sequence",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "card-turning-sequence"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " on paper before you begin. Mark each row with a horizontal line; each column is one card. Use F for forward and B for backward. Tick off each row as you complete it. For a first project, choose a simple motif of no more than 8 cards and a 12-row repeat so the draft is easy to hold in memory after a few repeats."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Colour 2 appears on the face when colour 1 should be there",
+              "solution": "The card is threaded with the S/Z direction reversed, or the card is upside down relative to the others. Remove the card, rethread with holes A and D holding colour 1, and confirm all cards face the same direction."
+            },
+            {
+              "problem": "The band is curling badly to one side",
+              "solution": "Twist build-up is pulling the warp. Slide the cards back to release tension in the warp, or reverse the turning direction for several rows using background-colour turns to counteract the accumulated twist."
+            },
+            {
+              "problem": "The weft is showing on the face",
+              "solution": "You are not beating firmly enough, or the warp sett is too loose for the yarn weight. Use a slightly heavier warp yarn, or beat each row twice, the second beat immediately after passing the weft."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

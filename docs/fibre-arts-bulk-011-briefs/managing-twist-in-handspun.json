@@ -1,0 +1,391 @@
+{
+  "slug": "managing-twist-in-handspun",
+  "title": "Managing twist in handspun yarn",
+  "subtitle": "Reading, adjusting, and setting the twist for balanced handspun",
+  "excerpt": "Twist angle determines whether a handspun yarn is balanced, under-twisted, or over-twisted. This technique covers how to read twist visually, measure it with twists per centimetre, run the wraps-per-inch test, and use plying plus wet-finishing to correct imbalance. Practical guidance for getting consistent results across a full project.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from published handspinning technique references covering twist measurement, twist angle, wraps-per-inch methodology, and wet-finishing. TPI and WPI methods are standard published practice in handspinning instruction. No single public domain text.",
+  "recipeTools": [
+    {
+      "slug": "spinning-wheel-castle",
+      "isOptional": false
+    },
+    {
+      "slug": "niddy-noddy",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "bobbin",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "twist-angle",
+      "term": "Twist angle",
+      "definition": "The angle at which fibres spiral around the yarn axis. A higher angle means more twist; a lower angle means less. A balanced 2-ply typically shows a twist angle of around 30 degrees."
+    },
+    {
+      "slug": "twists-per-centimetre",
+      "term": "Twists per centimetre",
+      "definition": "A count of how many full twist rotations occur in one centimetre of yarn. Used to compare and replicate twist levels across bobbins or batches."
+    },
+    {
+      "slug": "wraps-per-inch",
+      "term": "Wraps per inch",
+      "definition": "A measurement of yarn thickness: the number of times a yarn wraps around a ruler or WPI gauge in one inch. Used to estimate yarn weight category."
+    },
+    {
+      "slug": "plying",
+      "term": "Plying",
+      "definition": "Twisting two or more singles together in the opposite direction to their spinning twist, producing a balanced, stable yarn."
+    },
+    {
+      "slug": "twist-setting",
+      "term": "Twist setting",
+      "definition": "The process of soaking or steaming a finished skein to relax the fibres and lock in the twist angle, preventing the yarn from coiling or biasing."
+    },
+    {
+      "slug": "skein",
+      "term": "Skein",
+      "definition": "A length of yarn wound into a loose coil and tied, ready for washing, dyeing, or storing."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Twist is the structural element that holds a spun yarn together. Too little and the yarn sheds fibre and pills; too much and it kinks on itself and biases knitted fabric. A balanced yarn sits between these extremes: the fibres are locked in place but the overall structure hangs straight without coiling. This technique covers how to read your twist by eye and by measurement, what the wraps-per-inch test tells you, why plying is the primary correction tool, and how to set the twist so the skein stays balanced."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "tools": [
+            {
+              "slug": "spinning-wheel",
+              "name": "Spinning wheel",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "niddy-noddy",
+              "name": "Niddy-noddy",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "tape-measure-soft",
+              "name": "Soft tape measure",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "bobbin",
+              "name": "Bobbin",
+              "quantity": "2",
+              "isOptional": false
+            }
+          ],
+          "materials": []
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Spinning wheel safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Keep loose hair and clothing back from the drive band and flyer. Tie back hair and roll up sleeves before sitting at the wheel."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading twist angle visually"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold a length of singles horizontally against a pale background. The "
+          },
+          {
+            "type": "text",
+            "text": "twist angle",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "twist-angle"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the angle at which the fibre spirals run relative to the horizontal axis of the yarn. A low angle, close to horizontal, indicates low twist: the yarn will be soft and fuzzy but prone to pilling. A steep angle, approaching 45 degrees, indicates high twist: the yarn will be strong and hard-wearing but may over-ply when two singles are combined. For most knitting yarn, a 20-30 degree twist angle in the singles produces a balanced 2-ply after plying at a matching level."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Measuring twists per centimetre"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To measure "
+          },
+          {
+            "type": "text",
+            "text": "twists per centimetre",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "twists-per-centimetre"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", hold a 5 cm length of singles under light tension, mark the span, then count the full twist spirals in that span and divide by 5. Or hold one end still and count how many rotations it takes to untwist the yarn fully. Write down the number so you can match it on a second bobbin and in future batches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The wraps-per-inch test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "wraps-per-inch",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wraps-per-inch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " test measures yarn diameter relative to a standard reference. Wrap the singles snugly around a ruler, without gaps and without overlapping, for exactly one inch (2.5 cm). Count the number of wraps. Standard handknitting weight categories: lace (40+ wraps per 2.5 cm), fingering/sock (30-38), DK (20-25), aran (16-18), chunky (10-12). For a balanced 2-ply, the singles should wrap at roughly twice the count of your planned finished yarn weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Why under-twisted yarn sheds fibre"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under-twisted yarn lacks the mechanical grip between fibres that prevents surface abrasion from pulling them free. When knitting needles catch the surface during working, or when the finished fabric rubs against clothing or skin, loosely held fibres migrate out of the yarn structure. The result is pilling and a thin, worn-looking surface. The fix is to add more twist at the wheel, either by treadling faster relative to drafting speed or by winding on a higher ratio setting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Why over-twisted yarn kinks and biases"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An over-twisted singles stores excess rotational energy. When the tension holding the yarn straight is released, that energy expresses itself as kinking: the yarn corkscrews back on itself. In knitting, this unresolved twist causes the stitches to lean to one side, producing fabric that biases diagonally rather than sitting square. The fix is usually plying: combining two over-twisted Z-spun singles with S-ply twist neutralises the excess energy. Wet-finishing the plied skein under gentle tension removes any remaining bias."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting the twist: soak, snap-dry, and hang with weight"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wind the finished plied yarn onto the niddy-noddy and tie the "
+          },
+          {
+            "type": "text",
+            "text": "skein",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "skein"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in four places. Soak in warm water for 20 minutes to relax the fibres fully. Remove from the water, press dry in a folded towel without wringing, and then hang the skein from one end with a light weight (approximately 100-150 g per 100 g of skein) attached to the bottom loop. This is "
+          },
+          {
+            "type": "text",
+            "text": "twist setting",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "twist-setting"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": as the skein dries under gentle tension, the ply twist relaxes into a stable position and the fibres lock in place at that angle. Remove the weight before the skein is fully dry to avoid over-stretching."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After drying, test balance by lifting the "
+          },
+          {
+            "type": "text",
+            "text": "plying",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "plying"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " point of the skein (the midpoint) and allowing it to hang freely. A balanced skein hangs straight or with a very slight gentle swing. A skein that immediately twists on itself still has residual twist imbalance and may need re-soaking under a slightly heavier weight, or re-plying with more or less ply twist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The skein still coils after wet-finishing.",
+              "solution": "The ply twist is not matching the singles twist. Unwind a short length, check whether the skein coils Z or S direction, and adjust the ply. A skein that coils Z-wise after S-ply finishing has too little ply twist; one that coils S-wise has too much."
+            },
+            {
+              "problem": "The twist angle looks different on the second bobbin compared to the first.",
+              "solution": "Drive ratio and treadle speed probably drifted between sessions. Check your ratio setting before each spinning session and do a short test length before committing. Matching the twist angle number you measured on the first bobbin gives more consistent results than relying on the feel."
+            },
+            {
+              "problem": "The finished fabric biases even though the skein tested balanced.",
+              "solution": "Some bias from a skein that appears balanced can come from inconsistent twist levels across the bobbin rather than overall imbalance. Wetting the finished knitted piece and blocking it under tension usually corrects residual bias in the fabric."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

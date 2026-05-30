@@ -1,0 +1,418 @@
+{
+  "slug": "spinning-zwartbles-wool",
+  "title": "Spinning Zwartbles wool",
+  "subtitle": "A dense dark fleece that takes colour beautifully",
+  "excerpt": "Zwartbles is a Dutch breed common in the UK with a very dark brown-black fleece and a medium-fine staple of 8-12 cm. Its micron count of approximately 28-32 makes it well suited to DK and aran weight handspun. The dark colour absorbs light differently from white wool, giving the finished yarn a subtle depth and making it an excellent base for overdyeing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from British breed spinning references, Zwartbles Sheep Association UK breed notes, and published fleece-to-yarn guides covering dark-fleeced breeds. Micron and staple length figures are representative published ranges. No single public domain text.",
+  "recipeTools": [
+    {
+      "slug": "spinning-wheel-castle",
+      "isOptional": false
+    },
+    {
+      "slug": "wool-combs",
+      "isOptional": true
+    },
+    {
+      "slug": "drum-carder",
+      "isOptional": true
+    },
+    {
+      "slug": "niddy-noddy",
+      "isOptional": false
+    },
+    {
+      "slug": "swift",
+      "isOptional": false
+    },
+    {
+      "slug": "lazy-kate",
+      "isOptional": false
+    },
+    {
+      "slug": "bobbin",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "staple-length",
+      "term": "Staple length",
+      "definition": "The length of a single lock of fleece measured from tip to cut end. It determines which prep method and drafting style will work best."
+    },
+    {
+      "slug": "micron-count",
+      "term": "Micron count",
+      "definition": "The diameter of a wool fibre in micrometres. Lower numbers mean finer, softer fibre; higher numbers mean coarser fibre."
+    },
+    {
+      "slug": "worsted-draw",
+      "term": "Worsted draw",
+      "definition": "A drafting technique where fibres are held parallel and drawn out ahead of the twist, producing a smooth, dense yarn with good stitch definition."
+    },
+    {
+      "slug": "scouring",
+      "term": "Scouring",
+      "definition": "The process of washing raw fleece to remove lanolin, dirt, and vegetable matter before spinning or dyeing."
+    },
+    {
+      "slug": "plying",
+      "term": "Plying",
+      "definition": "Twisting two or more singles together in the opposite direction to their spinning twist, producing a balanced, stable yarn."
+    },
+    {
+      "slug": "twist-setting",
+      "term": "Twist setting",
+      "definition": "The process of soaking or steaming a finished skein to relax the fibres and lock in the twist angle, preventing the yarn from coiling or biasing."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Zwartbles is a Dutch breed established in the Netherlands and now widely kept in the UK. Its name means black-and-white, referring to its characteristic dark fleece with white facial markings. The raw fleece is a very dark brown-black with a "
+          },
+          {
+            "type": "text",
+            "text": "staple length",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "staple-length"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of 8-12 cm and a "
+          },
+          {
+            "type": "text",
+            "text": "micron count",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "micron-count"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of approximately 28-32, placing it in the medium-fine category. This makes it one of the more interesting darker British-available breeds for handspinning: fine enough for garment yarn, with a staple long enough to comb as well as card."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "tools": [
+            {
+              "slug": "spinning-wheel",
+              "name": "Spinning wheel",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "hand-combs",
+              "name": "Hand combs",
+              "quantity": "1 pair",
+              "isOptional": true
+            },
+            {
+              "slug": "drum-carder",
+              "name": "Drum carder",
+              "quantity": "1",
+              "isOptional": true
+            },
+            {
+              "slug": "niddy-noddy",
+              "name": "Niddy-noddy",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "swift",
+              "name": "Swift",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "lazy-kate",
+              "name": "Lazy kate",
+              "quantity": "1",
+              "isOptional": false
+            },
+            {
+              "slug": "bobbin",
+              "name": "Bobbin",
+              "quantity": "3",
+              "isOptional": false
+            }
+          ],
+          "materials": []
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Spinning wheel safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Keep loose hair and clothing back from the drive band and flyer. Tie back hair and roll up sleeves before sitting at the wheel."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Scouring the fleece"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Zwartbles fleece is notably greasy: it typically carries a higher lanolin load than many British Down breeds. "
+          },
+          {
+            "type": "text",
+            "text": "Scouring",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scouring"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " requires hot water (at least 60°C) and a degreasing detergent such as washing soda or a purpose-made wool scouring product. Work in small batches: place the locks loosely in a mesh bag, lower gently into the hot soapy water, and leave for 15-20 minutes without agitating. Agitation at this stage can cause felting in the raw fleece. Lift out, transfer to a clean bowl of water at the same temperature to rinse, then press dry in a towel and spread on a mesh rack to air-dry. Two scours may be needed for heavily greased fleece."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Combing versus carding"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Because the staple of Zwartbles runs to 12 cm at the longer end, the fleece combs well, and combing is the preferred preparation for a smooth, dark yarn. Hand combs align the fibres in parallel and remove any short fibres (noils), producing a sliver that spins into a dense, semi-lustrous yarn. The resulting yarn shows the dark colour cleanly, with minimal cloudiness from fibre scatter."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Drum carding produces a batt of randomly oriented fibres with more air between them. This works well for a softer, loftier result, but the combed preparation is better if you want the depth of the dark colour to read clearly in the finished yarn. For shorter or more VM-laden locks, carding is the practical choice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Spinning worsted draw"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "worsted draw",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "worsted-draw"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " suits the combed Zwartbles preparation well. Hold the sliver in your back hand with the fibres pointing forward, pinch ahead of the twist with your front hand, and draw the back hand away from the orifice as the wheel takes up twist. Keep your pinch firm enough that the twist cannot creep into the drafting zone. The result is a smooth singles with good stitch definition, suitable for DK to aran weight depending on how finely you draft."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dark fibre absorbs light, so uneven twist or thickness is less visible than it would be in pale yarn. This makes Zwartbles a forgiving breed for spinners moving from beginner to intermediate work. The trade-off is that it is also harder to spot when your twist angle is consistent. Hold a short length of singles against a pale background from time to time to check."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Plying and setting the twist"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 2-ply is the most practical finish for Zwartbles DK or aran. Spin both singles Z-twist (clockwise viewed from the orifice end), then "
+          },
+          {
+            "type": "text",
+            "text": "ply",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "plying"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " them S-twist (anticlockwise) from the lazy kate. Hold both singles under light, even tension and let the wheel draw in the ply steadily. The dark colour makes it harder to see the ply angle, so check regularly by letting a few centimetres fold back on themselves: a balanced 2-ply will hang straight without corkscrewing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After winding the plied yarn onto the niddy-noddy and tying the skein in four places, soak the skein in warm water for 20 minutes. Press dry in a towel, then hang the skein with a light weight attached to the bottom to set the ply twist as it dries. This is "
+          },
+          {
+            "type": "text",
+            "text": "twist setting",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "twist-setting"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "; it relaxes the fibres and prevents the finished skein from kinking in the knitting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Overdyeing Zwartbles yarn"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dark brown-black base absorbs dye differently from white or pale undyed wool. Acid dyes applied over the natural colour produce rich, deep tones rather than the clear shades the same dye makes on white wool: turquoise overdyed becomes teal-black, violet becomes near-black with a purple sheen. This is not a flaw; it is a characteristic that some dyers specifically seek. If you want to predict the result, test a small sample skein before committing the full batch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The washed fleece still feels greasy or sticky.",
+              "solution": "The water was probably not hot enough, or the fleece was in contact with water that cooled too quickly. Re-scour in fresh hot water. Increasing the proportion of detergent or adding a small amount of washing soda helps cut lanolin on particularly greasy fleeces."
+            },
+            {
+              "problem": "The singles look uneven but the uneven sections are hard to see on the wheel.",
+              "solution": "Hold a length of singles horizontally against a light-coloured surface as you check your work. The pale contrast makes the twist angle and diameter variations visible. Consistent drafting speed matters more than wheel speed; slow down and focus on a steady draw."
+            },
+            {
+              "problem": "The finished 2-ply is still twisting and kinking after washing.",
+              "solution": "The ply twist was insufficient to balance the singles twist. Re-soak the skein, add a slightly heavier weight when hanging to dry, and allow more time. If the problem persists, unravel a length and re-ply with more S-twist before setting again."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

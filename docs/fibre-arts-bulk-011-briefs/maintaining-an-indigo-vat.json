@@ -1,0 +1,462 @@
+{
+  "slug": "maintaining-an-indigo-vat",
+  "title": "Maintaining an indigo vat",
+  "subtitle": "Keeping a fermentation or chemical vat active and dyeing with it over weeks",
+  "excerpt": "An indigo vat is a living chemistry system that needs regular attention to stay productive. This entry covers the daily and weekly care routine: feeding the reduction chemistry, reading vat health, reviving a struggling vat, and closing it down safely for storage. It assumes the vat has already been established.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "- Catharine Ellis, Woad, Weld and Woad: fermentation vat management and troubleshooting\n- Jenny Balfour-Paul, Indigo: vat chemistry, pH management, redox indicators\n- Michel Garcia workshop notes (widely cited in natural-dyeing literature): 1-2-3 vat maintenance, revival techniques\n- General practice: sodium hydrosulphite chemical vat maintenance and safe storage",
+  "recipeTools": [
+    {
+      "slug": "dye-pot-stainless",
+      "isOptional": false
+    },
+    {
+      "slug": "dye-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "ph-strips",
+      "isOptional": false
+    },
+    {
+      "slug": "stainless-steel-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "dyeing-gloves-long",
+      "isOptional": false
+    },
+    {
+      "slug": "apron",
+      "isOptional": false
+    },
+    {
+      "slug": "kilner-jar",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "reduction",
+      "term": "Reduction",
+      "definition": "A chemical reaction that removes oxygen from the dye molecule, converting insoluble indigo into its soluble leuco form, which can enter the fibre and bond there."
+    },
+    {
+      "slug": "leuco-indigo",
+      "term": "Leuco indigo",
+      "definition": "The soluble, oxygen-depleted form of indigo that forms inside a healthy vat; it is yellow-green in solution and turns blue on exposure to air."
+    },
+    {
+      "slug": "oxidation",
+      "term": "Oxidation",
+      "definition": "Exposure to oxygen, which converts leuco indigo back to insoluble blue indigo and fixes the colour in the fibre after it is lifted from the vat."
+    },
+    {
+      "slug": "ph",
+      "term": "pH",
+      "definition": "A measure of acidity or alkalinity on a scale of 0-14; indigo vats require an alkaline environment (pH 9-11) to maintain reduction."
+    },
+    {
+      "slug": "reducing-agent",
+      "term": "Reducing agent",
+      "definition": "A substance that removes oxygen from the vat, keeping indigo in its soluble leuco form; common examples are sodium hydrosulphite (chemical vat) and plant sugars (fermentation vat)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An indigo vat is not a static dye bath: it is an active chemistry environment that needs feeding and monitoring to stay usable over days or weeks. The indigo molecule must be kept in its soluble "
+          },
+          {
+            "type": "text",
+            "text": "leuco indigo",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "leuco-indigo"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " form for dyeing to work. Every time you open the vat and dip fibre, oxygen enters and pushes the chemistry toward "
+          },
+          {
+            "type": "text",
+            "text": "oxidation",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "oxidation"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Regular additions of "
+          },
+          {
+            "type": "text",
+            "text": "reducing agent",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reducing-agent"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and alkali replenish what is used and keep the vat in balance. This entry covers vat care after the initial setup; setting up a new vat is covered in the indigo-vat-dyeing-basics entry."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Mordant safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Sodium hydrosulphite is a strong reducing agent. Wear gloves and work in a ventilated space. Do not mix with acids."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard"
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading vat health"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A healthy vat shows three signs: a metallic bronze sheen on the surface (the \"flower\"), a yellow-green colour in the liquor below, and "
+          },
+          {
+            "type": "text",
+            "text": "reduction",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reduction"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " activity. To check reduction, lift a small amount of liquor into a jar and watch it turn blue within 30-60 seconds in open air. If it stays yellow-green for more than 2 minutes, the vat is over-reduced. If it turns grey-green rather than clear blue, the indigo stock may be running low."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check "
+          },
+          {
+            "type": "text",
+            "text": "pH",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ph"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " at each session using pH strips: the optimal range for most vats is 9-11. Below 9, reduction slows and the vat becomes sluggish. Above 11, the alkali can damage protein fibres."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Daily feeding routine"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 1: Warm the vat gently to 30-35°C (fermentation vat) or 50°C (chemical vat). Do not boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 2: Check pH. If below 9, add a small amount of soda ash dissolved in warm water, stir gently from the bottom, and recheck after 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 3: Add reducing agent if needed. For a chemical vat, dissolve 1-2 g sodium hydrosulphite per litre of vat volume in a small amount of warm water and add it gently; stir from below the surface to minimise air incorporation. For a fermentation vat, add a spoonful of bran or fruit sugars to feed the bacteria."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 4: Allow the vat to rest undisturbed for 15-20 minutes after feeding before dyeing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 5: Dye as normal, working gently to minimise surface disturbance. Oxidise dipped fibre fully in air (at least 10-15 minutes) before re-entering the vat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reviving a sick vat"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Too oxidised (blue flecks, no metallic sheen, fibre comes out grey): add more reducing agent and alkali. Warm the vat to working temperature and rest for 30 minutes before testing again."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Too cold (fermentation vat only): move to a warmer location. A fermentation vat below 20°C becomes very slow. Warming to 25-30°C over a few hours will typically restore activity without additional feeding."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Too alkaline (pH above 11, fibre feels tacky after dipping): add a small amount of weak acid (a splash of white wine vinegar diluted in water) to bring pH down, recheck, and stop at pH 10. Over-alkaline conditions can strip dye already deposited on the fibre."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Closing down and restarting"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To store a vat for more than 3-4 days: add a final dose of reducing agent, then seal the container tightly to keep out air. A fermentation vat stores best at 15-20°C; a chemical vat can stay at room temperature. Label the container clearly as dye liquor and not for food use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To restart: warm slowly to working temperature, check pH, add a moderate feeding dose of reducing agent, and run the oxygen test before dyeing. A rested vat may take 30-60 minutes to return to full activity."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "problem": "Vat turns fibre greenish-grey, not blue"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The fibre is leaving the vat already partially oxidised by air trapped on its surface, or the vat chemistry is exhausted. Check that you are entering and withdrawing fibre slowly and smoothly. If the vat oxygen test shows no colour change at all, the indigo stock may be depleted: add more pre-reduced indigo paste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "problem": "Uneven colour: dark patches and pale areas on the same skein"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Air pockets trapped in the fibre prevent even dye contact. Open the skein fully before dipping, press it gently below the surface, and turn it during the dip. Pre-wet fibre thoroughly before entering the vat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "problem": "Colour fades severely after washing"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Each dip builds one thin layer of oxidised indigo. A single dip gives only a pale result; 4-8 dips with full oxidation between each gives a washfast medium blue. If the vat was over-reduced at time of dyeing, the indigo may not have bonded properly: more dips on a correctly balanced vat are the remedy."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Wastewater disposal"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An exhausted indigo vat (chemical type, sodium hydrosulphite) should be allowed to fully oxidise by leaving the container open to air until the liquor turns blue and the reducing chemistry is spent. The spent, oxidised liquor can then go down a foul drain. Do not dispose of active (yellow-green) vat liquor down surface water drains. A fermentation vat can be composted in small volumes once fully spent."
+          }
+        ]
+      }
+    ]
+  }
+}

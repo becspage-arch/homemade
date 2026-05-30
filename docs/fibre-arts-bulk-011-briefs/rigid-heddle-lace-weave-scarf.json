@@ -1,0 +1,747 @@
+{
+  "slug": "rigid-heddle-lace-weave-scarf",
+  "title": "Rigid heddle lace weave scarf",
+  "subtitle": "Open-work fabric using a pickup stick to lift alternate warp threads",
+  "excerpt": "A 20 cm x 150 cm scarf woven on a rigid heddle loom. The lace effect comes from a pickup stick that lifts selected warp threads to create regular eyelets across the cloth. The four-pick sequence repeats throughout, making this a very manageable first pickup-stick project.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "- Rigid heddle lace pickup technique is a standard method documented in numerous public domain and contemporary weaving guides. No specific source quotation used.",
+  "recipeTools": [
+    {
+      "slug": "rigid-heddle-loom",
+      "isOptional": false
+    },
+    {
+      "slug": "weaving-pick-up-stick",
+      "isOptional": false
+    },
+    {
+      "slug": "stick-shuttle",
+      "isOptional": false
+    },
+    {
+      "slug": "reed-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "warping-board",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "warp",
+      "term": "Warp",
+      "definition": "The threads strung lengthways through the heddle, under tension on the loom."
+    },
+    {
+      "slug": "weft",
+      "term": "Weft",
+      "definition": "The thread passed across the warp on each row (pick) of weaving."
+    },
+    {
+      "slug": "epi",
+      "term": "EPI",
+      "definition": "Ends per inch: the number of warp threads per inch, used to calculate the sett."
+    },
+    {
+      "slug": "rigid-heddle",
+      "term": "Rigid heddle",
+      "definition": "A combined reed and heddle with slots and holes; raising and lowering it creates the two sheds for plain weave."
+    },
+    {
+      "slug": "pickup-stick",
+      "term": "Pickup stick",
+      "definition": "A flat stick threaded through specific warp ends to create an additional shed beyond the two plain-weave sheds."
+    },
+    {
+      "slug": "eyelet",
+      "term": "Eyelet",
+      "definition": "A small open hole in the woven cloth created when a warp thread is lifted out of sequence, leaving a gap in the weave."
+    },
+    {
+      "slug": "selvedge",
+      "term": "Selvedge",
+      "definition": "The finished side edge of the cloth, formed where the weft turns at the outermost warp thread."
+    },
+    {
+      "slug": "wet-finishing",
+      "term": "Wet finishing",
+      "definition": "Washing and blocking a woven cloth after it comes off the loom; opens the weave structure and sets the final dimensions."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This scarf is 20 cm wide and 150 cm long after "
+          },
+          {
+            "type": "text",
+            "text": "wet finishing",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wet-finishing"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". It is woven on a rigid heddle loom set at 8 "
+          },
+          {
+            "type": "text",
+            "text": "EPI",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "epi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " (approximately 3 ends per cm) using 8/2 Tencel or fine cotton. A "
+          },
+          {
+            "type": "text",
+            "text": "pickup stick",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pickup-stick"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " threaded through every other down-position warp thread creates a third shed, which when combined with the plain weave rows produces a regular grid of "
+          },
+          {
+            "type": "text",
+            "text": "eyelets",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eyelet"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " across the cloth."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            "Rigid heddle loom, minimum 25 cm wide",
+            "8-dent (8 EPI) rigid heddle reed",
+            "8/2 Tencel (preferred) or 8/2 cotton in one colour",
+            "Warp: approximately 200 m for 20 cm width x 180 cm working warp length",
+            "Weft: approximately 150 m (slightly more than the warp amount)",
+            "Reed hook",
+            "Stick shuttle",
+            "Pickup stick (should span the full warp width)",
+            "Scissors",
+            "Tape measure"
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Warp sett and calculations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use an 8-dent "
+          },
+          {
+            "type": "text",
+            "text": "rigid heddle",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rigid-heddle"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " reed for 8 "
+          },
+          {
+            "type": "text",
+            "text": "EPI",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "epi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". For a 20 cm finished width, wind on roughly 22 cm of warp (allowing 1 cm either side for "
+          },
+          {
+            "type": "text",
+            "text": "selvedge",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "selvedge"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " draw-in). At 8 EPI that is approximately 70 "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " ends. For the warp length, add 50 cm to the planned weaving length for loom waste: wind 200 cm total."
+          }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Rigid heddle lace: pickup stick pattern",
+            "loomType": "rigid-heddle",
+            "threading": [
+              1,
+              2,
+              1,
+              2,
+              1,
+              2,
+              1,
+              2
+            ],
+            "tieUp": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "treadling": [
+              1,
+              3,
+              2,
+              3
+            ]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The draft above shows the four-pick lace repeat. Shaft 1 is the heddle up position; shaft 2 is the heddle down position; shaft 3 is the "
+          },
+          {
+            "type": "text",
+            "text": "pickup stick",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pickup-stick"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " shed (held open by turning the pickup stick on its side). Picks 1 and 3 are plain weave; picks 2 and 4 use the pickup stick shed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Warping and threading"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 1: Wind the warp on a warping board or peg system to 200 cm, maintaining consistent tension. Tie the warp in choke ties every 30 cm before removing from the board."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 2: Thread the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "rigid heddle",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "rigid-heddle"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " using a reed hook: thread one end through each hole, one end through each slot, alternating across the full width. Even-numbered ends go in slots; odd-numbered ends go in holes, or vice versa. Keep the threading consistent throughout."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 3: Wind the warp onto the back beam under tension, using warp sticks between layers to keep the threads from embedding into each other."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 4: To set up the pickup stick: lower the heddle to the down position. This brings the slot threads down and leaves the hole threads in the neutral position. Use the pickup stick to pick up every other slot thread from below, alternating: pick up one, skip one, across the full width. Push the pickup stick to the back of the loom behind the heddle."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weaving the pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The four-pick lace repeat creates one row of "
+          },
+          {
+            "type": "text",
+            "text": "eyelets",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eyelet"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " every four "
+          },
+          {
+            "type": "text",
+            "text": "weft",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " rows."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick 1: Raise the heddle (up position). Pass the weft left to right. This is a plain weave pick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick 2: Lower the heddle and bring the pickup stick forward to the heddle, turning it on its side to open the pickup shed. Pass the weft right to left through the combined slot+pickup shed. Return the pickup stick to the back."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick 3: Lower the heddle (down position). Pass the weft left to right. Plain weave pick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick 4: Raise the heddle and bring the pickup stick forward again. Pass the weft right to left. Return the pickup stick."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat picks 1-4 for the full length of the scarf. Beat each pick with the "
+          },
+          {
+            "type": "text",
+            "text": "rigid heddle",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rigid-heddle"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " itself by pushing it forward gently after each pick. Avoid over-beating; the lace rows need a little space to show the "
+          },
+          {
+            "type": "text",
+            "text": "eyelets",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eyelet"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " clearly. Aim for a square weave where the "
+          },
+          {
+            "type": "text",
+            "text": "weft",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weft"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " rows match the "
+          },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warp"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " sett (8 picks per inch, or 3 per cm)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 1: Remove the scarf from the loom. Tie the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "warp",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "warp"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " ends in pairs with overhand knots close to the last woven row to prevent the weave from unravelling during washing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 2: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Wet finishing",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "wet-finishing"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ": hand wash in cool water with a small amount of gentle detergent. Squeeze gently; do not wring. Roll in a towel to remove excess water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 3: Pin the scarf to blocking mats at the planned dimensions (20 cm x 150 cm) while still damp. Allow to dry fully before unpinning. The wet finishing relaxes the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "eyelets",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "eyelet"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " open and gives the cloth its final drape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Step 4: Trim the fringe to an even length, or trim it off and hem by hand if a fringeless finish is preferred."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The eyelets are not showing clearly",
+              "solution": "The weft is packed too tightly. Reduce beating pressure on the plain-weave picks (picks 1 and 3). The lace picks need a little vertical space on either side to open up after wet finishing."
+            },
+            {
+              "problem": "The pickup stick is hard to bring forward consistently",
+              "solution": "The pickup stick may be too short (not spanning the full warp width) or too thick for the warp spacing. Use a stick that is slightly longer than the warp width so it does not slip, and ideally no thicker than 6 mm."
+            },
+            {
+              "problem": "The selvedge is drawing in significantly",
+              "solution": "Arc the weft more generously before beating. A good rule: after passing the weft, angle it at roughly 45 degrees in the shed before pressing the heddle forward. This gives the weft enough length to travel over and under without squeezing the edges."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

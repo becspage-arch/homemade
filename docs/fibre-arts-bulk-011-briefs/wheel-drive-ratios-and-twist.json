@@ -1,0 +1,331 @@
+{
+  "slug": "wheel-drive-ratios-and-twist",
+  "title": "Wheel drive ratios and twist",
+  "subtitle": "How your wheel's ratio setting controls the yarn's twist angle",
+  "excerpt": "A spinning wheel's drive ratio is the relationship between how far the drive wheel turns per treadle stroke and how far the flyer turns. A higher ratio means more twist inserted per treadle revolution. This reading explains how to calculate and choose a ratio for different yarn weights, covering single-drive and double-drive systems and the three main tension modes.",
+  "type": "READING",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from published handspinning references covering wheel mechanics. Drive ratio calculation method and tension system descriptions are standard content in spinning instruction books. The worked Saxony example uses representative published wheel dimensions. No single public domain text.",
+  "recipeTools": [
+    {
+      "slug": "spinning-wheel-castle",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drive-ratio",
+      "term": "Drive ratio",
+      "definition": "The number of times the flyer or bobbin rotates for each single revolution of the drive wheel. A 10:1 ratio means the flyer turns ten times per wheel revolution."
+    },
+    {
+      "slug": "whorl",
+      "term": "Whorl",
+      "definition": "The grooved pulley on the flyer or bobbin axle that the drive band sits in. The diameter of the whorl determines the drive ratio."
+    },
+    {
+      "slug": "drive-band",
+      "term": "Drive band",
+      "definition": "The continuous cord or band that runs between the drive wheel and the whorl(s), transferring rotation from the treadle to the flyer and bobbin."
+    },
+    {
+      "slug": "scotch-tension",
+      "term": "Scotch tension",
+      "definition": "A single-drive tension system where the drive band turns only the flyer; a separate brake band on the bobbin creates drag that draws the yarn onto the bobbin."
+    },
+    {
+      "slug": "double-drive",
+      "term": "Double drive",
+      "definition": "A tension system where the drive band runs in a figure-of-eight around two whorls: one on the flyer and one on the bobbin. Both are driven by the same band."
+    },
+    {
+      "slug": "irish-tension",
+      "term": "Irish tension",
+      "definition": "Also called bobbin-lead. The drive band turns the bobbin; a brake band on the flyer creates drag. The bobbin winds on faster than the flyer rotates, drawing in yarn."
+    },
+    {
+      "slug": "flyer",
+      "term": "Flyer",
+      "definition": "The U-shaped arm that rotates around the bobbin on a spinning wheel, guiding the yarn onto the bobbin with each revolution."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Spinning wheel safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Keep loose hair and clothing back from the drive band and flyer. Tie back hair and roll up sleeves before sitting at the wheel."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every time you press the treadle of a spinning wheel, the drive wheel turns part of a revolution. That motion travels via the "
+          },
+          {
+            "type": "text",
+            "text": "drive band",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "drive-band"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " to the "
+          },
+          {
+            "type": "text",
+            "text": "whorl",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "whorl"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " on the "
+          },
+          {
+            "type": "text",
+            "text": "flyer",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "flyer"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", spinning the flyer at a speed determined by the size difference between the drive wheel and the whorl. This size difference is the "
+          },
+          {
+            "type": "text",
+            "text": "drive ratio",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "drive-ratio"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", and it directly controls how much twist is inserted into the yarn per treadle stroke."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating the drive ratio"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Drive ratio is calculated by dividing the circumference of the drive wheel by the circumference of the whorl. Since circumference is proportional to diameter, you can also divide the drive wheel diameter by the whorl diameter and get the same result."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example: a Saxony wheel with a drive wheel of 60 cm diameter and a flyer whorl of 7.5 cm diameter has a ratio of 60 / 7.5 = 8:1. Each complete revolution of the drive wheel turns the flyer eight full rotations. If you insert two treadle strokes per second (a moderate rhythm), the flyer turns 16 times per second. For every centimetre of yarn you allow to feed onto the bobbin, 16 twists are inserted at that rate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ratios for different yarn weights"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower ratios insert less twist per treadle revolution: suitable for thick, coarse yarns that require a slow, low-twist draft. Higher ratios insert more twist: needed for fine singles and sock-weight yarn. Typical ranges as a starting guide: coarse rug yarn 3:1 to 5:1; chunky knitting yarn 5:1 to 7:1; DK to aran 7:1 to 10:1; fingering and sock weight 10:1 to 14:1; lace weight 14:1 and above."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most spinning wheels come with a range of whorl sizes that can be swapped to change the ratio. Some wheels use a sliding mechanism or a series of steps on a stepped whorl. The correct ratio is not a fixed number for a yarn weight: it is a starting point, adjusted by treadle speed and drafting speed until the twist angle in the singles looks right."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Single-drive and double-drive systems"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a "
+          },
+          {
+            "type": "text",
+            "text": "Scotch tension",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scotch-tension"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " wheel (the most common single-drive type in the UK), the drive band powers only the flyer whorl. A separate brake band, usually a thin cord with a spring, wraps around the bobbin axle and adds drag to slow the bobbin relative to the flyer. The difference in speed between the flyer and the bobbin is what draws the yarn onto the bobbin. You adjust take-up rate by tightening or loosening the brake band rather than by changing the drive ratio."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a "
+          },
+          {
+            "type": "text",
+            "text": "double-drive",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "double-drive"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " wheel, the drive band runs in a figure-of-eight around both the flyer whorl and a bobbin whorl. The two whorls are slightly different in size so the bobbin is always driven at a slightly different speed from the flyer, creating continuous take-up. Take-up rate is adjusted by moving the mother-of-all (the sliding bracket that carries the flyer assembly) toward or away from the drive wheel to change band tension."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In "
+          },
+          {
+            "type": "text",
+            "text": "Irish tension",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "irish-tension"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " (also called bobbin-lead), the drive band powers the bobbin whorl and a brake band slows the flyer. This is less common but preferred by some spinners for thick, art yarns because the take-up is faster relative to the twist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How ratio and treadle speed interact"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Twist per centimetre is a product of two factors: the drive ratio and the ratio between treadle speed and drafting speed. You can achieve the same twist level with a low ratio and fast treadling as with a high ratio and slow treadling. Experienced spinners usually choose a ratio that suits the fibre and then adjust treadle rhythm. Beginners often find it easier to work with a slower, lower ratio rather than trying to control very fast twist insertion."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you change the ratio mid-project, check your twist angle on a test length before continuing. A change in ratio without a compensating change in treadle or drafting speed will produce yarn with a different twist level from the earlier sections of the same skein."
+          }
+        ]
+      }
+    ]
+  }
+}
