@@ -578,3 +578,70 @@ SKIPPED: 0
 - kunafa-with-cheese: hero-missing
 - marshmallows-homemade: hero-missing
 - mince-pie-tray-slice: hero-missing
+
+---
+
+## Run at 08:03:59
+
+Generated: 2026-05-30T08:03:59.032Z
+
+Processed: 5093
+PASS: 5093
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 8 |
+
+
+---
+
+## Run at 08:46:33
+
+Generated: 2026-05-30T08:46:33.421Z
+
+Processed: 80
+PASS: 68
+STILL_BLOCKED: 12
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 36 |
+| medical-disclaimer-nonstandard | 3 |
+
+## Still BLOCKED (sample 20)
+
+- aftershave-balm: 
+- avocado-conditioning-hair-mask: 
+- beeswax-container-candle-vanilla: 
+- burn-relief-salve: 
+- citronella-bug-repellent-balm: 
+- colloidal-oat-melt-pour-soap: 
+- mattress-freshener-spray: 
+- natural-deodorant-spray: 
+- rich-heel-balm: 
+- rose-sachet: 
+- solid-conditioner-bar: 
+- soy-candle-rose-geranium: 
+
+---
+
+## Run at 08:46:42
+
+Generated: 2026-05-30T08:46:42.757Z
+
+Processed: 68
+PASS: 68
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

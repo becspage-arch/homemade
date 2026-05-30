@@ -1,16 +1,10 @@
 {
-  "generatedAt": "2026-05-30T06:07:08.922Z",
-  "totalScanned": 5270,
+  "generatedAt": "2026-05-30T08:12:01.093Z",
+  "totalScanned": 5347,
   "passCount": 0,
-  "blockCount": 168,
+  "blockCount": 150,
   "warnOnlyCount": 0,
   "perCategory": {
-    "cooking": {
-      "total": 20,
-      "pass": 0,
-      "block": 20,
-      "warnOnly": 0
-    },
     "sustainability": {
       "total": 30,
       "pass": 0,
@@ -47,6 +41,12 @@
       "block": 3,
       "warnOnly": 0
     },
+    "cooking": {
+      "total": 2,
+      "pass": 0,
+      "block": 2,
+      "warnOnly": 0
+    },
     "natural-home": {
       "total": 1,
       "pass": 0,
@@ -67,36 +67,11 @@
     }
   },
   "perRuleKind": {
-    "hero-missing": 20,
-    "placeholder-string": 10,
-    "voice-violation": 100,
-    "grade-level-strict": 169,
-    "historical-century-in-body": 1
+    "voice-violation": 98,
+    "grade-level-strict": 168,
+    "placeholder-string": 2
   },
   "verdicts": [
-    {
-      "slug": "avgolemono",
-      "tutorialId": "cmpry5egm0001z0v4dje0eng2",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T06:05:14.219Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{stock-chicken}} — must be substituted before publish",
-          "snippet": "Bring {{stock-chicken}} of chicken stock to a simmer in a large saucepan. Add {{long-grain-rice}} of"
-        }
-      ]
-    },
     {
       "slug": "battery-capacity-degradation",
       "tutorialId": "cmprmms7p0002rov4a9rprkvo",
@@ -119,23 +94,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Understanding home battery degradation and state of health go here."
-        }
-      ]
-    },
-    {
-      "slug": "broccoli-and-stilton-soup",
-      "tutorialId": "cmp88yz1u0000isv4c79wln1j",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:53.760Z",
-      "publishedAt": "2026-05-30T06:02:02.835Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -188,103 +146,6 @@
           "message": "paragraph reads at grade 16.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Building Regulations Part L notification for retrofit insulation go here."
-        }
-      ]
-    },
-    {
-      "slug": "butternut-squash-soup",
-      "tutorialId": "cmp5nprqh0000lgv4iuia94lt",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:54.361Z",
-      "publishedAt": "2026-05-30T06:01:58.725Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "carrot-and-coriander-soup",
-      "tutorialId": "cmp88yqx90000r8v46vf6wxni",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:54.730Z",
-      "publishedAt": "2026-05-30T05:55:42.088Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "celeriac-and-apple-soup",
-      "tutorialId": "cmp5nq7i80000rov41zegh1bi",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-27T11:44:28.637Z",
-      "publishedAt": "2026-05-30T06:05:46.171Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{celeriac}} — must be substituted before publish",
-          "snippet": "Heat the oven to 200°C conventional. Spread the {{celeriac}} of celeriac chunks on a roasting tin, d"
-        }
-      ]
-    },
-    {
-      "slug": "chicken-noodle-soup",
-      "tutorialId": "cmp88zbbh0000y4v41k9o6i3m",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:55.414Z",
-      "publishedAt": "2026-05-30T06:02:13.831Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "cock-a-leekie",
-      "tutorialId": "cmpagqmlg0000rsv4ohrysy2b",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:56.407Z",
-      "publishedAt": "2026-05-30T06:02:21.091Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -342,52 +203,6 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[22] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Preparing Cotton Rags for Papermaking go here."
-        }
-      ]
-    },
-    {
-      "slug": "cream-of-cauliflower-soup",
-      "tutorialId": "cmpry2ikr0001ukv4e9x4ok79",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T06:05:42.519Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{unsalted-butter}} — must be substituted before publish",
-          "snippet": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} oni"
-        }
-      ]
-    },
-    {
-      "slug": "cream-of-mushroom-soup",
-      "tutorialId": "cmp5rdi0w0000a8v4cn4xzaim",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:49:30.143Z",
-      "publishedAt": "2026-05-30T06:05:10.237Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{mushrooms-porcini-dried}} — must be substituted before publish",
-          "snippet": "Pour boiling water over the {{mushrooms-porcini-dried}} of dried porcini and leave to soak for 20 mi"
         }
       ]
     },
@@ -634,23 +449,6 @@
       ]
     },
     {
-      "slug": "french-onion-soup",
-      "tutorialId": "cmp5nsbu60000wov4pybi9grw",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:58.524Z",
-      "publishedAt": "2026-05-30T06:01:54.933Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "giving-feels-expansive-and-fearless-affirmation",
       "tutorialId": "cmpbufihg000050v4syx6gixt",
       "type": "PRACTICE",
@@ -823,23 +621,6 @@
       ]
     },
     {
-      "slug": "leek-and-potato-soup",
-      "tutorialId": "cmp5rde6w0000i0v4g1tkcrd3",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:02:59.716Z",
-      "publishedAt": "2026-05-30T05:51:54.595Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
       "slug": "lentil-and-bacon-soup",
       "tutorialId": "cmp88znea0000x8v4jvwmypyh",
       "type": "RECIPE",
@@ -847,13 +628,8 @@
       "status": "BLOCK",
       "voiceRetrofittedAt": "2026-05-30T06:03:00.108Z",
       "publishedAt": "2026-05-30T06:05:21.551Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmprytrkp0016ecv41iy86ejw",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "BLOCK",
           "kind": "placeholder-string",
@@ -975,40 +751,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
           "snippet": "Payment in full required before installation starts. Industry standard is a deposit on contract signing, staged payments during installation"
-        }
-      ]
-    },
-    {
-      "slug": "minestrone",
-      "tutorialId": "cmp5pvf1i00006ov4dch6lni5",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:03:00.829Z",
-      "publishedAt": "2026-05-30T06:02:06.456Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "mulligatawny",
-      "tutorialId": "cmpb7n6x300005kv4irnn83f3",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:03:01.249Z",
-      "publishedAt": "2026-05-30T06:02:17.505Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
@@ -1295,76 +1037,6 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[13] > listItem[1] > paragraph[0]",
           "snippet": "Make a set of three graduating frames in different sizes using the same botanical arrangement for a wall grouping."
-        }
-      ]
-    },
-    {
-      "slug": "parsnip-and-curry-soup",
-      "tutorialId": "cmpry5x6900017ov4h0932kl4",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T06:05:38.470Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{parsnip}} — must be substituted before publish",
-          "snippet": "Heat the oven to 200°C conventional. Spread the {{parsnip}} of parsnip chunks across a large roastin"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[12]",
-          "snippet": "Curried parsnip soup has no Indian precedent. It is a British invention from the post-war period when curry powder became widely available i"
-        }
-      ]
-    },
-    {
-      "slug": "pea-and-ham-soup",
-      "tutorialId": "cmpry076x0001bsv4o42fso8l",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T06:03:01.983Z",
-      "publishedAt": "2026-05-30T06:02:10.083Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        }
-      ]
-    },
-    {
-      "slug": "pea-and-mint-soup",
-      "tutorialId": "cmp88zgnu00006kv4993q6rdj",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:18.563Z",
-      "publishedAt": "2026-05-30T06:06:10.983Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{unsalted-butter}} — must be substituted before publish",
-          "snippet": "Melt {{unsalted-butter}} of butter in a saucepan over a medium-low heat. Add the {{onion}} onion and"
         }
       ]
     },
@@ -1771,13 +1443,8 @@
       "status": "BLOCK",
       "voiceRetrofittedAt": "2026-05-30T06:03:03.042Z",
       "publishedAt": "2026-05-30T06:05:25.442Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmprytzmr001qecv4ckpoxf10",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "BLOCK",
           "kind": "placeholder-string",
@@ -3619,36 +3286,6 @@
       ]
     },
     {
-      "slug": "vichyssoise",
-      "tutorialId": "cmp73wmmj000184v4rylxvu3c",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:14.105Z",
-      "publishedAt": "2026-05-30T06:05:29.370Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > troubleshooter[10] > item[1] > fix",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{unsalted-butter}} — must be substituted before publish",
-          "snippet": "Melt {{unsalted-butter}} of butter in a large saucepan over a low heat. Add the {{leek}} leeks and {"
-        }
-      ]
-    },
-    {
       "slug": "water-softener-vs-salt-free-conditioner",
       "tutorialId": "cmprmnv180001xkv49683tora",
       "type": "TECHNIQUE",
@@ -3677,36 +3314,6 @@
           "message": "paragraph reads at grade 14.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Water softeners versus salt-free conditioners go here."
-        }
-      ]
-    },
-    {
-      "slug": "watercress-soup",
-      "tutorialId": "cmpry5tre0001osv4s30ilhs4",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T06:05:34.043Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{unsalted-butter}} — must be substituted before publish",
-          "snippet": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} oni"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "historical-century-in-body",
-          "message": "historical century reference \"19th century\" in body — move to sourceNotes or introduce with a person (e.g. \"the 17th-century herbalist X\")",
-          "path": "body > paragraph[10]",
-          "snippet": "19th century"
         }
       ]
     },

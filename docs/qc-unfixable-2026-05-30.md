@@ -266,3 +266,16 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - swedish-lussekatter hero-missing — applied: hero-fill-deferred-to-standalone-script
 - sweet-potato-pie hero-missing — applied: hero-fill-deferred-to-standalone-script
 - treacle-scones hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- aftershave-balm  — applied: body-rewrite:3,dry-run
+- avocado-conditioning-hair-mask  — applied: body-rewrite:3,dry-run
+- beeswax-container-candle-vanilla  — applied: body-rewrite:4,dry-run
+- burn-relief-salve  — applied: medical-disclaimer,dry-run
+- citronella-bug-repellent-balm  — applied: dry-run
+- colloidal-oat-melt-pour-soap  — applied: body-rewrite:2,dry-run
+- mattress-freshener-spray  — applied: body-rewrite:1,dry-run
+- natural-deodorant-spray  — applied: dry-run
+- rich-heel-balm  — applied: body-rewrite:1,dry-run
+- rose-sachet  — applied: body-rewrite:2,dry-run
+- solid-conditioner-bar  — applied: body-rewrite:2,dry-run
+- soy-candle-rose-geranium  — applied: body-rewrite:3,dry-run

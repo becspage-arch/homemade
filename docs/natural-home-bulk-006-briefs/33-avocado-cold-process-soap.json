@@ -1,0 +1,317 @@
+{
+  "slug": "avocado-cold-process-soap",
+  "title": "Avocado cold-process soap",
+  "subtitle": "A conditioning bar with avocado oil, olive oil, and coconut oil at 5% superfat",
+  "excerpt": "Avocado oil contributes oleic acid for conditioning; coconut oil adds lather and hardness; olive oil builds a creamy, stable bar. The 5% superfat leaves free oils in the finished bar for skin nourishment. Cure for four to six weeks before use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values (sodium hydroxide per gram of oil) used in calculations: olive oil 0.134, coconut oil 0.190, avocado oil 0.133, castor oil 0.128. 5% superfat applied. Reference: The Handcrafter's Companion, Anne L. Watson. Avocado oil in cold-process soap: conditioning and lather effects are well-documented in soap-making literature.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 to 10 bars (500 g oil batch)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 0,
+    "totalMinutes": 2940,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale proportionally. Always run the revised oil weights through a lye calculator before scaling -- do not simply multiply the lye weight.",
+    "makeAheadNotes": "Cold-process soap requires a 48-hour rest in the mould before unmoulding, then a 4 to 6-week cure on a rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 365,
+    "shelfLifeNotes": "Cured bars keep for one year at room temperature on an open soap dish. Discard if bars develop a rancid smell or orange oily spots (dreaded orange spots, or DOS -- a sign of rancidity from poor storage or too-soft oils)."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "isOptional": false
+    },
+    {
+      "slug": "safety-goggles",
+      "isOptional": false
+    },
+    {
+      "slug": "nitrile-gloves",
+      "isOptional": false
+    },
+    {
+      "slug": "lye-pitcher-hdpe",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "isOptional": false
+    },
+    {
+      "slug": "soap-cutter-wire",
+      "isOptional": false
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false
+    },
+    {
+      "slug": "stick-blender",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sodium-hydroxide",
+      "term": "Sodium hydroxide (NaOH)",
+      "definition": "The alkali that reacts with oils in cold-process soap making (saponification). Always add lye to water, never water to lye. Wear goggles, gloves, and ensure ventilation during the lye-water mixing step."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold-process soap is made by mixing a carefully calculated amount of "
+          },
+          {
+            "type": "text",
+            "text": "sodium hydroxide",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sodium-hydroxide"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " (lye) dissolved in water with a blend of oils. The two phases react (saponify) to form soap. The 5% superfat in this recipe means 5% of the oils remain unsaponified in the finished bar, providing extra skin conditioning. Avocado oil adds oleic acid and a gentle, non-stripping lather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Safety"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lye is caustic: it causes chemical burns on contact with skin and eyes. Always wear safety goggles and nitrile gloves throughout. Work in a ventilated area -- the lye-water mixture releases heat and fumes when first mixed. Add the lye to the water, never the reverse. Keep children and pets out of the workspace during the lye steps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 250,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "any grade"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "refined, for soap"
+            },
+            {
+              "ingredientSlug": "avocado-oil",
+              "amount": 70,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "cold-pressed cosmetic"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 30,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "binds lather"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 71,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "99% purity cosmetic-grade NaOH; calculated at 5% superfat"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 175,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "35% of oil weight"
+            },
+            {
+              "ingredientSlug": "essential-oil-rose-geranium",
+              "amount": 14,
+              "unit": "g",
+              "isOptional": true,
+              "prepNote": "about 2.8% of oil weight; add at light trace"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the lye solution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wearing goggles and gloves, weigh 175 g of distilled water into the HDPE lye pitcher. Weigh the sodium hydroxide separately. Add the lye slowly to the water (not water to lye), stirring as you add. The mixture will heat to around 80 to 90°C and release fumes; do not breathe over the pitcher. Set aside to cool to 40 to 50°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the oils"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil in a heatproof container. Combine with the olive oil, avocado oil, and castor oil. Monitor the temperature; allow to cool to 40 to 50°C. Aim to have both the oils and the lye solution at a similar temperature (within 10°C of each other) when you combine them."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine and reach trace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution slowly into the oil phase, stirring as you pour. Use a stick blender in short bursts alternating with hand stirring until the mixture reaches light trace -- a consistency like thin custard where a drizzle of soap off the blender leaves a faint trail on the surface before sinking. Add the essential oil at light trace and stir through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mould and unmould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould. Cover with a piece of cardboard and wrap in a towel to insulate it (this encourages a full gel phase). Leave undisturbed for 48 hours. Unmould and slice into bars. Place cut-side up on a rack in a ventilated space to cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cure time"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cure for a minimum of four weeks, ideally six. During cure, the remaining lye neutralises completely and the water evaporates, producing a harder, milder bar. Test with pH paper at four weeks -- finished soap reads 9 to 10. Do not use before four weeks."
+          }
+        ]
+      }
+    ]
+  }
+}
