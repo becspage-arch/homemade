@@ -194,3 +194,29 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - throwing-a-small-teapot-stoneware grade-level-strict — applied: 
 - throwing-a-stoneware-casserole-dish grade-level-strict — applied: 
 - throwing-matched-nested-bowl-set grade-level-strict — applied: 
+
+- cockerel-management-and-flock-dynamics  — applied: body-rewrite:9,dry-run
+- fostering-a-lamb-onto-a-ewe  — applied: body-rewrite:6,dry-run
+- goat-kid-disbudding  — applied: method-scaffold,dry-run
+- managing-outdoor-pigs-in-winter-mud  — applied: method-scaffold,dry-run
+- rabbit-sore-hocks  — applied: em-dash-subtitle,method-scaffold,body-rewrite:5,dry-run
+- recognising-american-foulbrood  — applied: body-rewrite:8,dry-run
+- setting-up-a-bait-hive  — applied: method-scaffold,dry-run
+- setting-up-a-dairy-goat-milking-routine  — applied: method-scaffold,body-rewrite:5,dry-run
+- sourcing-and-settling-point-of-lay-hens  — applied: method-scaffold,dry-run
+
+- compost-tea-and-liquid-feeds grade-level-strict — applied: 
+- draught-sealing-recessed-downlights grade-level-strict — applied: 
+- flat-roof-cold-deck-remediation voice-violation,grade-level-strict — applied: 
+- glass-jar-sterilisation-and-reuse grade-level-strict — applied: 
+- heat-interface-unit-maintenance grade-level-strict — applied: 
+- heat-pump-annual-service-checklist grade-level-strict — applied: 
+- passive-stack-ventilation-maintenance grade-level-strict — applied: 
+- permeable-paving-for-drives-and-paths grade-level-strict — applied: 
+- portable-power-station-sizing voice-violation,grade-level-strict — applied: 
+- rainwater-collection-legal-framework grade-level-strict — applied: 
+- rainwater-tank-volume-calculator grade-level-strict — applied: 
+- soakaway-trench-for-downpipe-runoff grade-level-strict — applied: 
+- triple-glazing-vs-secondary-glazing voice-violation,grade-level-strict — applied: 
+- velux-window-insulation-sealing grade-level-strict — applied: 
+- wood-chip-composting-technique voice-violation,grade-level-strict — applied: 

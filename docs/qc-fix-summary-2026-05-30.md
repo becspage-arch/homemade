@@ -430,3 +430,19 @@ SKIPPED: 0
 - triple-glazing-vs-secondary-glazing: voice-violation, grade-level-strict
 - velux-window-insulation-sealing: grade-level-strict
 - wood-chip-composting-technique: voice-violation, grade-level-strict
+
+---
+
+## Run at 05:07:21
+
+Generated: 2026-05-30T05:07:21.243Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
