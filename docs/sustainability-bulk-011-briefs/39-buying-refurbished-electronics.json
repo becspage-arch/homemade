@@ -1,0 +1,116 @@
+{
+  "slug": "buying-refurbished-electronics",
+  "title": "Buying refurbished electronics: what to check",
+  "subtitle": "How to assess a refurbished phone, laptop, or tablet and extend its working life by 3 to 5 years",
+  "excerpt": "A refurbished laptop costs 40 to 60 percent of the new price and, if the battery is in good health and the manufacturer still supports the operating system, will give the same working life as new. The electronics market grades refurbished products inconsistently: Grade A from one seller is Grade B from another. This guide covers what to test before buying and what determines whether a device is worth the purchase.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP Electrical Product Sustainability Survey 2022. European Right to Repair Regulation (EU 2021/341) and UK equivalent consultation. Which? Guide to buying refurbished laptops and phones (2024).",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "right-to-repair",
+      "term": "Right to repair",
+      "definition": "The principle (and increasingly, regulation) that manufacturers must make spare parts, repair manuals, and diagnostic tools available so consumers and independent repairers can fix products rather than replace them."
+    },
+    {
+      "slug": "circular-economy",
+      "term": "Circular economy",
+      "definition": "An economic model that prioritises keeping products and materials in use for as long as possible through reuse, repair, and sharing, rather than a linear take-make-dispose pattern."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Making a laptop generates 300 to 400 kg of CO2 equivalent; around 80 percent of this is in production, not in use. Buying refurbished and extending a laptop's life from 4 to 7 years cuts the per-year carbon cost by nearly half. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "circular-economy" } }],
+            "text": "circular economy"
+          },
+          { "type": "text", "text": " case for refurbished electronics is about manufacturing carbon, not electricity use. A laptop in daily use consumes 15 to 40 kWh per year, a minor fraction of its lifetime carbon footprint." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Understanding refurbished grades" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "There is no standardised grading system for refurbished electronics. Common interpretations: Grade A or Excellent means no visible scratches or dents and the device functions fully. Grade B or Good means light scratches visible but no screen marks and full function. Grade C or Fair means visible scratches and possibly minor cosmetic damage. Always read the seller's specific grading description, not just the letter. A reputable refurbisher provides a warranty of at least 12 months; 24 months is available from some certified suppliers." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to check before buying" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Battery health: on Windows laptops, run a battery report (Win+R, type powercfg /batteryreport, open the html file). A battery at 80 percent or above of design capacity is acceptable; below 70 percent means replacement is needed within 1 to 2 years. On iPhones and iPads, check Settings then Battery then Battery Health. On Android, ask the seller for the battery cycle count or health report." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "OS update support: check the manufacturer's published end-of-support date. Apple provides iOS updates for approximately 5 to 6 years from launch. Windows provides security updates for 10 years from launch. A device losing OS support within 2 years carries a security and usability risk regardless of its physical condition." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repairability: the iFixit Repairability Score rates devices from 1 to 10 based on how accessible the battery, screen, and storage are for replacement. A score above 6 indicates repairs are feasible without specialist tools. Devices scoring below 4 are difficult to repair if components fail." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to buy" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Manufacturer-certified programmes offer the highest confidence. The manufacturer has tested and replaced failed parts and gives the same warranty as new. Look for independent refurbishers in the" },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "right-to-repair" } }],
+            "text": "right to repair"
+          },
+          { "type": "text", "text": " trade body. REPIC and the WEEE Forum are two such bodies. Private sales carry no warranty and require all checks at the point of collection." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Battery drains much faster than the listed health percentage suggests" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Battery health percentages are estimates based on full charge cycles. A battery can show 80 percent health but have a specific cell weakness that shows under load. Run the battery from 100 to 0 percent under normal use and note how many hours it lasts. If this is significantly below the manufacturer's stated battery life at 80 percent health, the battery is underperforming its rating and should be replaced." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Device heats up significantly more than expected under normal use" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Thermal throttling in older devices is often caused by dust blocking the heat sink vents or dried thermal paste on the CPU. An independent repairer can clean the vents and replace the thermal paste for 30 to 60 pounds, which often brings an old device back to normal operating temperature and prevents premature component failure." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

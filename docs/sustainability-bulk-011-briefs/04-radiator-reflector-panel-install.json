@@ -1,0 +1,137 @@
+{
+  "slug": "radiator-reflector-panel-install",
+  "title": "Fitting a reflector panel behind a radiator",
+  "subtitle": "A simple foil-backed board that redirects radiated heat away from the external wall and into the room",
+  "excerpt": "A radiator on an external wall radiates roughly 20 to 30 percent of its output into the wall behind it, where that heat conducts through to the outside. A 6 mm foil-faced insulation board fitted in the gap between radiator and wall reflects that energy back into the room. This is a one-hour job that costs under 15 pounds per radiator and has a payback under a year.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on radiator reflector panels and their measured saving range. EST 'Heating your home: how to save energy' (2024). BRE Information Paper IP 17/84 on radiation from hot-water radiators.",
+  "approximateCostGbp": 15,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "straightedge", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    }
+  ],
+  "techniqueSlugs": ["rigid-insulation-behind-a-radiator"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A foil-backed radiator panel on an uninsulated external wall saves 7 to 12 pounds per radiator per year, with payback inside twelve months. The mechanism is straightforward: a radiator on an external wall radiates in all directions, including toward the cold masonry behind it. That rearward radiation heats the wall face rather than the room, and the warmed wall conducts heat outward. A reflective surface behind the radiator redirects that rearward radiation back into the room." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where it works and where it does not" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The saving is meaningful for a radiator on an uninsulated solid wall or a cavity wall with no cavity fill. On a cavity-filled wall with a U-value of 0.5 W/m²·K or better, the saving falls to 2 to 4 pounds per year, which still pays back inside two years but the priority is lower. The reflector panel does nothing for a radiator on an internal partition wall: there is no external heat loss path to intercept. Check the gap between the back of the radiator and the wall before buying. A minimum of 6 mm is needed; a radiator mounted close to plasterboard dry-lining may not have room." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foil-faced expanded polystyrene (EPS) or foil-faced PIR board, 5 to 8 mm thick, cut to the height and width of the radiator. Most suppliers sell pre-cut panels sized to standard UK radiator widths." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Double-sided foam tape, 5 mm, to fix the panel to the wall" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stanley knife and steel straightedge for cutting the panel to size if not pre-cut" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the radiator off and allow it to cool. A hot radiator will bond the tape before you can position the panel correctly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the width of the radiator and its height. Cut the panel to match or use a pre-cut panel. The panel should cover as much of the wall area behind the radiator as possible without protruding above or below." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Peel and stick four strips of double-sided foam tape to the wall side of the panel, near the corners. Press the panel firmly against the wall behind the radiator, foil face outward. Hold for thirty seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The panel sits in the gap between the radiator and the wall. It does not need to touch the radiator or the wall plasterboard. Clearance of 5 to 10 mm on each side is correct." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking the result" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After the radiator has been running for one hour, hold your hand just above the reflective panel face (on the room side). You should feel warm air rising from the top of the panel as convection currents carry the redirected radiant heat away from the wall face. On the wall surface above the radiator, the plasterboard should feel cooler than it did before the panel was fitted. A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " check with a thermal imaging camera before and after confirms whether the wall temperature has dropped." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Panel falls off the wall" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Foam tape does not adhere to dusty or damp plasterboard. Clean and dry the wall face before fitting. Use heavy-duty foam tape rated for temperatures up to 80 degrees Celsius." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "No clearance behind radiator" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Some low-profile radiators are mounted very close to the wall. In this case, use the thinnest available reflective film (1 to 2 mm self-adhesive foil sheet) instead of a board, which can be slid behind the radiator without removing it." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

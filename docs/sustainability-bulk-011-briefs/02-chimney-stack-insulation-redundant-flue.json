@@ -1,0 +1,190 @@
+{
+  "slug": "chimney-stack-insulation-redundant-flue",
+  "title": "Insulating a redundant chimney flue",
+  "subtitle": "Sealing and insulating a disused chimney to stop stack heat loss and cold downdraught",
+  "excerpt": "An open, unused chimney flue loses 40 to 100 kWh per year through convection: warm room air rises up the flue and cold air falls back down. A sealed, insulated flue loses almost nothing. This is the sequence for capping a redundant stack at the pot, fitting a breathable pot cover, and insulating the breast where it passes through the house.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on chimney balloon and cap fitting. gov.uk Planning Portal on permitted development for chimney works. HETAS guidance on sealing redundant flues.",
+  "approximateCostGbp": 120,
+  "paybackYears": 3,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "silicone-sealant-gun", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A low-permeability membrane fitted on the warm side of insulation to slow vapour diffusion and reduce the risk of condensation forming within the construction."
+    }
+  ],
+  "techniqueSlugs": ["chimney-balloon-fitting"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 0,
+      "title": "Inspect flue condition",
+      "body": "Check the flue is structurally sound and free from bird's nests before sealing. A nest blocks the flue and traps moisture."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 1,
+      "title": "Fit pot cover and seal breast",
+      "body": "Cap the chimney pot with a breathable cowl and seal the breast from inside. The breathable cap allows moisture to escape while preventing convection."
+    },
+    {
+      "stepNumber": 3,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 7,
+      "title": "Check for condensation",
+      "body": "One week after sealing, inspect the breast and the loft zone for damp. A correctly fitted breathable cap has no condensation; a solid cap concentrates moisture."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A redundant fireplace with an open chimney flue loses 40 to 100 kWh of heating per year through warm-air convection: the flue acts as a partial natural ventilation duct, drawing heated room air upward and admitting cold air in return. A correctly sealed and insulated flue eliminates that loss for around 120 pounds and pays back in 3 years at 2025/26 gas rates. The critical rule is breathability: the cap at the top must allow moisture to diffuse out of the masonry without admitting wind. A solid cap traps moisture and causes the breast to damp out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Inspecting the flue" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Working at height" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Chimney pot work requires roof access. Set the ladder at 75 degrees (1 out for every 4 up). Three-point contact at all times. Do not work on a pitched roof in wind above 25 mph. For chimney stacks more than one metre above the ridge, hire a roofer." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Inspect the flue from below with a torch before ordering materials. Lower a rope weight to check for blockages. If the flue shows evidence of a bird's nest (twigs, droppings, eggs), the nest must be removed before sealing. A blocked flue sealed on top concentrates moisture and causes spalling. Once clear, confirm the flue is the right type: a clay-lined flue sealed at the pot is straightforward; an unlined rubble-filled stack over 150 years old may have mortar fall-out that requires specialist advice." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you will need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Breathable chimney pot cowl, stainless steel, sized to the pot diameter. Measure the external diameter before ordering. Common sizes are 185 mm, 225 mm, and 260 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Silicone sealant, grey, for bedding the cowl on the pot" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chimney balloon, sized to the flue liner diameter, to seal the throat from inside the breast (this prevents cold downdraught while repairs are made at the top)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "100 mm mineral wool batts to pack around the breast where it passes through an unheated loft, to reduce the conduction path through the masonry stack" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Airtightness tape to seal the " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " around the breast in the loft" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the chimney balloon inside the breast at the throat level, just above the damper or register plate. Inflate it until it is firm against the flue walls. This stops cold air falling while you work on the pot. Tie the inflation tube to a note on the fireplace surround so the balloon is not forgotten." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the roof, run a bead of grey silicone around the top external face of the chimney pot. Seat the breathable cowl on the pot and press down firmly so the silicone squeezes into the gap between pot and cowl. Check the cowl is centred and level." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In the loft, locate the chimney stack where it passes through the loft floor level. Pack mineral wool batts between the stack and the surrounding insulation, filling any air gap that allows cold air to circulate around the exposed masonry. This addresses the " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+                "text": "thermal bridge"
+              },
+              { "type": "text", "text": " at the stack junction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After seven days, inspect the breast internally for any sign of dampness. A breathable cowl allows the masonry moisture to stabilise. If the breast shows wet patches, the cowl may not be breathable enough or there is a rain-entry path; check the pointing around the chimney stack at roof level." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning permission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Capping a chimney pot with a cowl is permitted development in England for most house types. In a conservation area or on a listed building, check with the local planning authority before fitting any cap. Removing the chimney stack entirely (not covered here) usually requires planning permission." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Damp patch appears on breast after sealing" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The cowl is likely solid rather than breathable. Replace with a ventilated or breathable version. In the short term, remove the balloon and allow the flue to dry out before re-sealing." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Cold draught persists after balloon fitted" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The balloon is undersized or the flue is non-rectangular and the balloon is not sealing fully. Check the inflation pressure and the fit against all four flue walls." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

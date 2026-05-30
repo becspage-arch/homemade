@@ -1,0 +1,126 @@
+{
+  "slug": "immersion-heater-timer-replacement",
+  "title": "Replacing an immersion heater timer",
+  "subtitle": "Swapping a mechanical cylinder timer for a programmable or smart controller",
+  "excerpt": "An uncontrolled immersion heater uses 3 to 5 kWh every time it heats a 120-litre cylinder. A mechanical timer set to one heating window per day wastes energy re-heating water that has partly cooled. A programmable timer allows two shorter heating windows matched to when hot water is actually used. This is the replacement sequence for a standard fused spur immersion timer.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part G3 on hot water cylinder storage. NICEIC guidance on immersion heater wiring requirements. EST guidance on hot water cylinder controls.",
+  "approximateCostGbp": 35,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "screwdriver", "isOptional": false },
+    { "slug": "multimeter", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. The unit of energy used on electricity and gas bills. 1 kWh equals the energy consumed by a 1,000 W appliance running for one hour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Mains electrical safety" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Before you touch the timer or its wiring, isolate the immersion heater circuit at the consumer unit. Lock off the breaker or tape it with a warning label. Test with a known-good voltage tester that all conductors at the timer are dead before disconnecting. Immersion heater circuits carry 230 V at up to 13 A: treating them as live until proven otherwise is the only safe approach." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 3 kW immersion heater running for 90 minutes uses 4.5 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          { "type": "text", "text": ": 1.22 pounds at 27p/kWh. A household that heats the cylinder once a day unnecessarily on days when they are away, or that re-heats a cylinder that is already at 60 degrees because the old mechanical timer fired twice, spends 150 to 300 pounds per year on avoidable immersion costs. A 35-pound programmable timer pays back in weeks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before starting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Identify the type of timer you have. Most UK installations use a surface-mounted fused spur timer with a standard 86 mm back-box, or a DIN-rail timer in a consumer unit or separate enclosure. The replacement timer must match the back-box dimensions. Photograph the existing wiring before disconnecting. There are typically three conductors: live, neutral, and earth. There may also be a switch-live to the immersion element if the timer controls both supply and element." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Isolate the circuit at the consumer unit. Use a voltage tester to confirm all wires at the timer enclosure are dead." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the existing timer face and photograph the wiring connections. Note which terminals carry which conductors: supply live, switched live, neutral, and earth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the new timer to the same conductors on the same terminals. The new timer's wiring diagram should map directly onto the old configuration. If the new timer has additional terminals (for a boost or holiday override function), these can be left unconnected for a basic installation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the time on the new timer. Programme two heating windows: one in the morning (30 to 45 minutes before the main hot water use period) and one in the early evening if a second use period applies. Avoid programming heating windows that span periods of low use." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Restore power and check that the timer switches the immersion on and off at the programmed times. Listen for the click of the element relay and confirm with a clamp meter that current is flowing only during the programmed windows." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Smart immersion controllers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A smart immersion controller connects to the home Wi-Fi and integrates with the energy tariff. It heats the cylinder during cheap overnight periods and diverts solar PV export when available. Common models include Mixergy and Octopus Intelligent. These units cost 250 to 500 pounds but can save 100 to 200 pounds per year in a household with solar PV and a time-of-use tariff. The wiring installation is the same as a standard timer replacement; the additional setup involves connecting to the home Wi-Fi and linking to the energy supplier account." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Timer does not switch on at programmed time" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the timer clock is set correctly, including AM/PM on 12-hour models. Confirm the programming pins or digital entries are set for on rather than off at the target time." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Immersion heater does not heat despite timer running" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The immersion element may have failed independently of the timer. Test the element with a multimeter for continuity: a resistance of 10 to 30 ohms indicates a working element; infinite resistance or zero ohms indicates a failed element." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

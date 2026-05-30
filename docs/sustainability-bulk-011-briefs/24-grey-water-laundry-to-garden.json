@@ -1,0 +1,111 @@
+{
+  "slug": "grey-water-laundry-to-garden",
+  "title": "Using laundry grey water in the garden",
+  "subtitle": "Safely redirecting washing machine discharge to outdoor use and the limits of grey water reuse",
+  "excerpt": "A washing machine uses 40 to 80 litres per cycle. That water, once used, is greywater: lightly contaminated with detergent and suspended solids but safe for irrigation of non-edible plants if managed correctly. This guide covers the simple bucket-diversion approach, the safety rules for plant and soil compatibility, and the detergent criteria that matter.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency guidance on greywater reuse (2011). CIRIA C687 on domestic greywater quality. RHS guidance on using greywater in the garden.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "greywater",
+      "term": "Greywater",
+      "definition": "Wastewater from baths, showers, basins, and washing machines that has not been contaminated with toilet waste. Suitable for non-potable reuse with appropriate management."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "greywater" } }],
+            "text": "greywater"
+          },
+          { "type": "text", "text": " from a washing machine for garden irrigation reduces mains water demand by 40 to 80 litres per wash. At 5 washes per week, that is 200 to 400 litres per week during the growing season: a significant contribution in a dry summer. The main constraints are the detergent type (sodium-based detergents affect soil structure) and the use restriction (greywater must not contact edible parts of food plants)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which detergents are safe" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Standard laundry powder contains sodium (as sodium carbonate or sodium silicate) that accumulates in the soil and can raise pH and damage soil structure over time. Liquid detergents and those labelled as 'plant-based' or 'biodegradable' typically use potassium rather than sodium as the carrier salt. Potassium is an essential plant nutrient and does not damage soil structure. For regular grey water reuse, switch to a low-sodium liquid detergent. Avoid any cycle with fabric softener for grey water diversion. Fabric softener contains cationic surfactants that are harmful to soil organisms and plants at the concentrations found in wash water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Simple diversion approach" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "During the wash cycle, the machine pumps water out via a flexible hose at the back. The rinse water is the cleanest part of the wash cycle. To capture it, wait until the main wash drains, then divert the drain hose over a large bucket for the final rinse only." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use the collected water within 24 hours. Greywater begins to smell as bacteria decompose the organic matter in the detergent; after 24 hours it is classified as blackwater-risk by the Environment Agency guidance and should not be used on gardens." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply to the root zone of non-edible plants (shrubs, trees, lawn) using a watering can or hose. Do not spray overhead: keeping greywater off foliage reduces any risk from residual bacteria." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Never use greywater on root vegetables, salad leaves, strawberries, or any crop where the edible part contacts the soil." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Permanent diversion systems" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A permanent grey water diversion kit (40 to 100 pounds) fits a three-way valve at the waste pipe from the machine, routing water to a purpose-made garden storage tank or directly to a drip irrigation system. These systems typically include a filtration screen and a 24-hour timer to prevent greywater sitting in the tank too long. They require planning. The tank must be positioned lower than the washing machine drain. The kit must not contravene the Water Supply (Water Fittings) Regulations. The irrigation route must avoid food crops. A plumber can advise on the connection legality in your specific installation." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Plants yellowing after grey water use" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The detergent likely has high sodium content. Revert to mains water for two to three months to allow sodium to leach through the soil, then switch to a low-sodium liquid detergent before resuming grey water use." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Strong smell from collected grey water" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The water has been stored more than 24 hours, or the main wash cycle water (not the rinse) was collected. Discard it. Use only the rinse cycle water and apply immediately." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

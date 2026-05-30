@@ -1,0 +1,131 @@
+{
+  "slug": "energy-performance-certificate-reading",
+  "title": "Understanding your Energy Performance Certificate",
+  "subtitle": "Reading the EPC ratings, interpreting the improvement recommendations, and prioritising the works",
+  "excerpt": "An Energy Performance Certificate rates a property from A (most efficient) to G (least efficient) and lists up to ten recommended improvements. The EPC also shows the current and potential ratings in CO2 terms and fuel cost estimates. This guide explains what the numbers mean, how to interpret the improvement list, and which recommendations typically offer the best payback.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk EPC guidance for homeowners. MHCLG (Ministry of Housing) domestic EPC methodology (RdSAP 10.2). Ofgem fuel cost assumptions in EPC calculations.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "epc",
+      "term": "EPC",
+      "definition": "Energy Performance Certificate. A government-required assessment rating a property's energy efficiency from A to G, including estimated fuel costs and improvement recommendations."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a square metre of a building element per degree of temperature difference. Measured in W/m²·K. Lower is better."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "epc" } }],
+            "text": "EPC"
+          },
+          { "type": "text", "text": " is legally required when a property is sold or let in England, Wales, and Scotland. The typical UK home rates D or E. Any property rated E or below will be unable to be let on a new tenancy from 2028 (the government's current minimum energy efficiency standard target for the private rental sector). For owner-occupiers, the EPC is the cheapest starting point for a retrofit plan: the survey is bundled into the sale cost and is valid for ten years. You can download your current EPC for free from the government's EPC register at epc.opendatacommunities.org." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The rating system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The overall EPC rating (A to G) translates a Score Adjusted for Age (SAP) number into a band. SAP 92 and above is A; SAP 69 to 80 is C; SAP 39 to 54 is E. The SAP calculation uses a standard occupancy and standard heating pattern, not your actual behaviour, so the fuel cost estimate on the EPC is indicative, not precise. A Victorian terrace currently burning 18,000 kWh of gas per year may show an EPC fuel cost estimate of 12,000 kWh because the SAP calculation assumes a standard family occupancy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the improvement list" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The EPC lists up to ten improvements ranked by their contribution to the SAP score. Each improvement shows: the estimated installed cost (a wide range, typically 1,000 to 15,000 pounds), the estimated fuel bill saving per year, and the impact on the rating. The saving figures use the same SAP standard assumptions and will be different from your real bill saving, but they are useful for relative ranking. Look at the improvements that move the rating by the most points for the lowest cost. Loft insulation (if absent) typically costs 300 pounds and moves the rating by 3 to 5 points. Solid wall insulation costs 8,000 to 15,000 pounds and moves the rating by 6 to 10 points." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the EPC does not tell you" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The actual condition of the construction elements. An EPC assessor may record 'cavity wall' based on the year of construction, even if the cavity is already insulated or damaged." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The correct " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+                "text": "U-value"
+              },
+              { "type": "text", "text": " of walls that have already been insulated outside the standard assumption for the building age." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Condensation risk or moisture issues in the construction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whether an improvement is feasible for the specific building type. Cavity wall insulation, for example, is not suitable for all cavity wall constructions." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use the EPC in a retrofit plan" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Treat the EPC improvement list as a starting point, not a specification. For any improvement costing more than 1,000 pounds, commission an independent survey to confirm feasibility before committing. For cavity wall insulation in a pre-2000 house, have a cavity inspection carried out (200 to 400 pounds) to check the cavity is suitable. For solid wall insulation, get a condensation risk analysis (often included in a wall insulation survey). The EPC rate and the improvement list are indicative; the work programme needs actual survey data." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "EPC was done years ago and building work has since been done" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Commissioning a new EPC (100 to 150 pounds) after a major improvement captures the updated rating and gives a current improvement list. This is required if you are letting the property." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "EPC recommends cavity wall insulation but house has solid walls" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The assessor may have recorded the wall type incorrectly. Challenge the assessment by contacting the Energy Performance of Buildings Register and requesting a re-assessment." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

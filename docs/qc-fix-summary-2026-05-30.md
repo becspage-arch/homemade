@@ -2548,3 +2548,73 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 22:52:19
+
+Generated: 2026-05-30T22:52:19.837Z
+
+Processed: 5469
+PASS: 5456
+STILL_BLOCKED: 13
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 95 |
+| body-missing-method | 16 |
+| voice-violation | 12 |
+
+## Still BLOCKED (sample 20)
+
+- compost-tea-making: grade-level-strict
+- domestic-wind-turbine-feasibility: grade-level-strict
+- energy-performance-certificate-reading: grade-level-strict
+- extending-appliance-lifespan: voice-violation, grade-level-strict
+- heat-pump-leaving-temperature-optimisation: grade-level-strict
+- heat-pump-refrigerant-signs: voice-violation, grade-level-strict
+- municipal-compost-vs-home-composting: voice-violation, grade-level-strict
+- outdoor-tap-installation: grade-level-strict
+- packaging-audit-at-home: grade-level-strict
+- pv-optimiser-vs-string-inverter: grade-level-strict
+- rainwater-only-irrigation-off-grid: voice-violation, grade-level-strict
+- refurbishing-secondhand-furniture: voice-violation, grade-level-strict
+- solar-pv-battery-management-schedules: voice-violation, grade-level-strict
+
+---
+
+## Run at 22:55:00
+
+Generated: 2026-05-30T22:55:00.831Z
+
+Processed: 5469
+PASS: 5456
+STILL_BLOCKED: 13
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 60 |
+| voice-violation | 18 |
+
+## Still BLOCKED (sample 20)
+
+- compost-tea-making: grade-level-strict
+- domestic-wind-turbine-feasibility: grade-level-strict
+- energy-performance-certificate-reading: grade-level-strict
+- extending-appliance-lifespan: voice-violation, grade-level-strict
+- heat-pump-leaving-temperature-optimisation: grade-level-strict
+- heat-pump-refrigerant-signs: voice-violation, grade-level-strict
+- municipal-compost-vs-home-composting: voice-violation, grade-level-strict
+- outdoor-tap-installation: grade-level-strict
+- packaging-audit-at-home: grade-level-strict
+- pv-optimiser-vs-string-inverter: grade-level-strict
+- rainwater-only-irrigation-off-grid: voice-violation, grade-level-strict
+- refurbishing-secondhand-furniture: voice-violation, grade-level-strict
+- solar-pv-battery-management-schedules: voice-violation, grade-level-strict

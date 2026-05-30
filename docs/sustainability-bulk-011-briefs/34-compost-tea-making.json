@@ -1,0 +1,111 @@
+{
+  "slug": "compost-tea-making",
+  "title": "Making and using aerated compost tea",
+  "subtitle": "Bubbling finished compost in water to produce a liquid microbial feed for vegetables and fruiting plants",
+  "excerpt": "Aerated compost tea (ACT) is made by suspending finished compost in water and running an aquarium pump through it for 24 to 48 hours. The resulting liquid is applied directly to the soil as a microbial inoculant and dilute nutrient feed. For households that already produce finished compost, the additional input is an aquarium air pump (around 8 pounds) and 5 minutes of preparation. The evidence for crop yield improvements is mixed, but application is faster than top-dressing mulch for container plants.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "RHS Advisory note on compost teas and liquid feeds. ADAS research on microbial inoculants in horticulture (2021). Soil Association guidance on compost use in organic growing.",
+  "approximateCostGbp": 10,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "microbial-inoculant",
+      "term": "Microbial inoculant",
+      "definition": "A preparation containing beneficial soil micro-organisms (bacteria, fungi) added to soil or growing media to supplement or restore microbial activity."
+    },
+    {
+      "slug": "carbon-to-nitrogen-ratio",
+      "term": "Carbon-to-nitrogen ratio (C:N)",
+      "definition": "The ratio of carbon to nitrogen in an organic material, which governs how quickly it decomposes and whether it feeds or starves soil nitrogen during breakdown."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Aerated compost tea is not the same as the brown liquid that drains from a compost heap (leachate). Leachate may contain pathogens from anaerobic breakdown and is not recommended for use on edible plants. ACT is made under aerobic conditions and inoculates the soil with the aerobic " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "microbial-inoculant" } }],
+            "text": "microbial inoculants"
+          },
+          { "type": "text", "text": " present in finished compost, diluted across a larger volume of water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the tea" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill a 10-litre bucket with rainwater or tap water left to stand for 24 hours to off-gas chlorine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add 1 to 2 handfuls of finished, dark brown compost. Optionally add 1 tablespoon of unsulphured black treacle as a microbial food source." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run an aquarium airstone and pump through the water for 24 to 48 hours. The liquid should smell earthy, not sulphurous. A sulphurous smell indicates anaerobic conditions: discard and start again with more aeration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strain the liquid through a piece of fabric and apply within 2 to 4 hours: microbial populations decline rapidly once aeration stops." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Application" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply directly to the soil surface at the base of plants, not as a foliar spray on edible crops (foliar application of compost-derived liquids on edible parts carries a food safety risk). For container plants, apply 200 to 500 ml per 30 cm pot. For raised beds, apply at 2 to 5 litres per square metre. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carbon-to-nitrogen-ratio" } }],
+            "text": "carbon-to-nitrogen ratio"
+          },
+          { "type": "text", "text": " of finished compost tea is typically 15:1 to 20:1, providing a modest amount of available nitrogen and phosphorus alongside the microbial benefit. Do not expect the same visible greening response as from a balanced liquid fertiliser." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Tea smells of rotten eggs after 24 hours" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Anaerobic conditions have developed. The airstone may be too small for the bucket volume, or the molasses quantity too high, consuming oxygen faster than the pump replaces it. Discard the batch, rinse the bucket, and restart with a larger airstone or less molasses. Do not apply anaerobic compost tea to edible plant soil." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "No visible plant response after two weeks of application" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Aerated compost tea is a microbial inoculant, not a concentrated fertiliser. Visible greening from nitrogen supply takes 2 to 3 weeks in soil organisms and may not be visible at all if the soil already has adequate microbial populations. If plants need an immediate nutrient boost, apply a dilute seaweed extract or balanced liquid feed alongside the compost tea: the two are compatible." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

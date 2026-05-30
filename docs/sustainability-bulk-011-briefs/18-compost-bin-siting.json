@@ -1,0 +1,116 @@
+{
+  "slug": "compost-bin-siting",
+  "title": "Siting a compost bin for year-round use",
+  "subtitle": "Choosing the right location for shade, drainage, access, and worm activity",
+  "excerpt": "Where you put the compost bin affects how active it is in summer, how waterlogged it gets in winter, and whether you actually use it. A well-sited bin is used more, runs warmer, and produces finished compost faster than the same bin in a poor position. This guide covers the assessment criteria before you fix the bin in place.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "RHS guidance on composting site selection. Garden Organic composting guide. WRAP (Waste and Resources Action Programme) home composting guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot composting",
+      "definition": "A managed composting process that maintains temperatures of 55 to 70 degrees Celsius through active turning and balanced carbon-to-nitrogen ratio, decomposing material in 4 to 12 weeks."
+    },
+    {
+      "slug": "cold-compost",
+      "term": "Cold composting",
+      "definition": "Slow, unmanaged composting that proceeds at ambient temperatures, typically taking 12 to 24 months to produce finished compost."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most compost bins are put in the most convenient out-of-the-way corner of the garden: often deep shade, often compacted soil, often too far from the kitchen to use consistently. The result is a bin that is underused, too wet, and produces " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-compost" } }],
+            "text": "cold compost"
+          },
+          { "type": "text", "text": " over 24 months instead of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }],
+            "text": "hot compost"
+          },
+          { "type": "text", "text": " over 6 to 12 months. Siting takes ten minutes; it is worth the time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shade versus sun" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Partial shade is the optimum. Full sun in July and August dries a small compost bin too fast: the outer 100 mm of material desiccates and microbial activity stops. Full shade means the bin never warms above ambient in spring, slowing startup. A position that receives morning sun but is shaded in the afternoon is ideal. North of a fence or hedge that casts afternoon shade is a common good location. Avoid north-facing positions in Scotland and northern England where winter sun angle means the bin receives no direct light at all." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Soil contact and drainage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The bin should sit directly on soil or turf, not on concrete or paving. Soil contact allows worms to enter from below and allows excess moisture to drain naturally. If the only available site is paved, use a bin on a wire mesh base (15 mm mesh hardware cloth) so worms can still reach the material from the gaps. On clay soil with poor drainage, raise the bin 50 mm on bricks at the corners to improve drainage from the base." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Access and distance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The single largest predictor of compost bin use is how far it is from the kitchen door. A bin more than 20 m from the door sees significantly less use in wet weather (studies from the WRAP Home Composting Evaluation Project found that bins placed within 10 m of the back door were used 40 percent more frequently than bins placed at the bottom of the garden). If space is limited, a close bin in partial shade beats a well-sited bin that is never used. A covered path or a pair of wellington boots near the door reduce the friction further." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Legal and neighbour considerations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A household compost bin in a private garden does not require planning permission. Siting the bin adjacent to the boundary between properties is legal but may cause friction if the bin is not well-managed. A well-maintained compost bin on a soil base in partial shade produces no offensive odour. The problems arise when the bin is overfilled, waterlogged, or receiving cooked food (which attracts rodents and produces anaerobic odour). These are management problems, not siting problems, but a bin near the boundary makes neighbours more likely to notice them." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Material drying out faster than it decomposes" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The bin is in full sun. Move it to a shadier position or water the contents and cover with a lid or board to retain moisture." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Worms never appear in the bin" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The bin may be on concrete or the base may be saturated. Worms avoid cold, wet, compacted bases. Move the bin to a soil base and check moisture levels." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

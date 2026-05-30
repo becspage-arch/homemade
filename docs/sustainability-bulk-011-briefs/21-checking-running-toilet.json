@@ -1,0 +1,138 @@
+{
+  "slug": "checking-running-toilet",
+  "title": "Checking for and fixing a continuously running toilet",
+  "subtitle": "Detecting a cistern that leaks into the pan silently and replacing the float valve or flapper",
+  "excerpt": "A toilet that runs continuously or fills intermittently between flushes wastes 200 to 700 litres of water per day: 73,000 to 255,000 litres per year, at a water cost of 75 to 260 pounds on a metered supply. The leak is often inaudible. The fix is almost always a 5-pound float valve or 3-pound flapper seal, taking 30 minutes.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Waterwise UK household water use statistics. Thames Water leaking loo campaign data. CIPHE (Chartered Institute of Plumbing and Heating Engineering) guidance on cistern maintenance.",
+  "approximateCostGbp": 10,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "screwdriver", "isOptional": false },
+    { "slug": "multimeter", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "water-butt",
+      "term": "Water butt",
+      "definition": "A container for collecting rainwater from a roof downpipe for garden use. Typical capacity 100 to 500 litres."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Waterwise UK estimates that 5 to 8 percent of UK toilets are leaking at any given time, most of them silently. Water runs from the cistern past the flap valve and into the pan without a visible drip. Over a year, a single leaking toilet wastes enough water to fill a small swimming pool. On a metered supply, the cost is 75 to 260 pounds per year. The dye test takes 30 seconds and identifies the leak." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The dye test" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After flushing, wait for the cistern to fully refill and the water to stop moving." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drop a dye tablet (available free from some water companies, or use a few drops of food colouring) into the cistern. Do not flush." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wait 15 to 30 minutes without flushing. If coloured water appears in the pan without a flush, the flap valve is not seating correctly and water is passing from the cistern to the pan." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Diagnosing the fault" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two common faults cause a running cistern. First, a worn flap valve (also called a flapper or syphon diaphragm): the rubber deteriorates over 5 to 10 years and no longer seals against the valve seat. Second, a misadjusted float valve: the float rises too high, allowing water to reach the overflow pipe before shutting off, so water continuously trickles into the pan via the overflow. Distinguish them: if the cistern refills occasionally without a flush, the flap valve is failing. If the overflow (usually a pipe going through the wall or floor) runs continuously, the float valve needs adjustment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Replacing the flap valve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn off the water supply to the cistern (the isolating valve on the pipe behind or below the toilet). Flush to empty the cistern." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the cistern lid. On a close-coupled toilet, unclip or unscrew the lid. On a high-level cistern, the lid lifts off." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify the flush mechanism. Modern toilets use a drop valve (a cylindrical unit that lifts when the flush lever is pressed) or a syphon (an older design with a rubber diaphragm). Remove the flush mechanism by unscrewing its collar or unclipping it from the cistern base." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replace the worn seal or diaphragm with a matching replacement. Universal replacement syphon diaphragms cost 2 to 5 pounds. Drop valve seals cost 3 to 8 pounds. Bring the old part to a plumbing merchant to confirm the match." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reassemble and turn the water supply back on. Flush once and wait 15 minutes. Repeat the dye test to confirm the leak is resolved." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting the float valve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the overflow is running, the fill level is set too high. The water level in the cistern should be 25 mm below the overflow pipe outlet. On a ball float arm, bend the arm downward slightly (or adjust the locking nut if it has one) to lower the shutoff point. On a modern fill valve, there is an adjustment screw or clip on the valve body: turn it to reduce the fill height. Check the water level after each adjustment. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-butt" } }],
+            "text": "water butt"
+          },
+          { "type": "text", "text": " analogy: the overflow is the safety drain; the float valve should shut off the supply well before water reaches the drain." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Dye test clear but toilet still refills occasionally" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The refill is a normal pressure response if it happens only once or twice per day. If it happens every 15 to 30 minutes, the flap valve is leaking slowly enough that the dye dilutes before showing. Replace the flap valve regardless." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "New flap valve also leaks" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the valve seat at the base of the cistern for limescale deposits. A scaled seat prevents the new seal from bedding down. Clean with limescale remover and a cloth; do not use abrasive tools." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

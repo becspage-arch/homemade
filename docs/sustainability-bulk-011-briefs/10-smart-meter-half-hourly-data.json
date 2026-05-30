@@ -1,0 +1,105 @@
+{
+  "slug": "smart-meter-half-hourly-data",
+  "title": "Reading your smart meter half-hourly data",
+  "subtitle": "How to download and interpret HH consumption data to find your baseload and identify energy waste",
+  "excerpt": "Every SMETS2 smart meter records electricity consumption in 30-minute intervals. That data is accessible through your supplier's app or website, or directly via the DCC (Data Communications Company) portal. Half-hourly data reveals your standby baseload, shows which appliances are running at night, and lets you set an accurate time-of-use tariff schedule.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Smart Meter Implementation Programme (SMIP) guidance. Ofgem smart meter rollout documentation. DCC (Data Communications Company) consumer data access guide.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. The unit of energy used on electricity and gas bills. 1 kWh equals the energy consumed by a 1,000 W appliance running for one hour."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The average UK household uses 3,200 to 4,500 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          { "type": "text", "text": " of electricity per year. Around 400 to 800 kWh of that is standby power: appliances left on overnight in sleep or idle mode. Half-hourly data shows you exactly which 30-minute periods are high and low, letting you pinpoint the source of unexpected consumption without buying a separate energy monitor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to access your half-hourly data" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If you have a SMETS2 smart meter (installed after 2018 in most cases), your data is available in three ways. First, your energy supplier's app typically shows a daily bar chart; some suppliers also offer a half-hourly view within the app. Second, the Bright, Hildebrand, or n3rgy apps connect directly to the DCC and pull your half-hourly data with your permission, showing a 48-column daily chart going back 13 months. Third, you can download a CSV of your half-hourly data from your supplier account and open it in any spreadsheet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to look for" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Look at consumption between midnight and 06:00. In a house with only standby devices running, this should be 0.1 to 0.3 kWh per half-hour. If you see 0.5 kWh or more consistently overnight, something is drawing 1,000 W or more at night. Common culprits are: an old chest freezer (150 to 300 W), a fish tank heater and pump (100 to 200 W), an electric oil-filled radiator left on low, or a pool pump (if applicable). A single 15-year-old upright freezer running continuously uses 600 to 800 kWh per year at 2025/26 rates, costing 162 to 216 pounds: replacing it with an A-rated model saves 200 to 400 kWh per year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up a time-of-use tariff" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once you know your half-hourly consumption shape, you can assess whether an Agile, Go, or other time-of-use tariff suits your household. If your overnight baseload is below 0.1 kWh per half-hour and you can shift dishwasher and washing machine runs to off-peak periods, the saving is typically 40 to 100 pounds per year. Off-peak periods are typically 00:30 to 04:30 on Economy 7, or the cheapest slots on Agile, at 10 to 12p/kWh versus peak rates of 35 to 40p/kWh. The half-hourly data gives you the actual volume to shift, so the calculation is specific rather than generic." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "SMETS1 meters (installed before 2018) may not have enabled half-hourly data sharing. Contact your supplier; most SMETS1 meters have been remotely enrolled onto the DCC network since 2022 and should now be accessible. If you have a gas smart meter, half-hourly gas data is also available and useful for tracking boiler cycling and hot water use. The same analysis applies: overnight gas consumption on a non-heating-season night reveals whether the hot water cylinder is losing more than expected." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Supplier app shows only daily totals, not half-hourly" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Not all supplier apps expose the half-hourly view. Use the Bright or Hildebrand app instead: they connect to the DCC directly with your permission." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Data missing for periods or showing zero" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Smart meter communication loss is common in areas with poor cellular signal. The meter records locally and uploads in batches; gaps usually fill in within 24 to 48 hours." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

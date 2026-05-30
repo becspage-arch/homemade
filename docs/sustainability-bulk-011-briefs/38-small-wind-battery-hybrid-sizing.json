@@ -1,0 +1,119 @@
+{
+  "slug": "small-wind-battery-hybrid-sizing",
+  "title": "Sizing a small wind turbine and battery bank for an outbuilding",
+  "subtitle": "Matching a 400 W to 1 kW turbine to a battery bank for lighting and tools in a field shelter, workshop, or barn",
+  "excerpt": "A 500 W small wind turbine at an exposed UK rural site generates 600 to 900 kWh per year. Paired with a 100 Ah 48 V lithium battery bank, this system runs LED lighting and 12 V tool charging for a typical smallholding outbuilding without a grid connection. The capital cost is 2,000 to 4,000 pounds. Planning permission is not required for most building-mounted turbines below 3.8 m hub height.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust Microwind Technical Note (2014). NOABL (Numerical Objective Analysis of Boundary Layer) UK wind speed database. Town and Country Planning (Permitted Development) Order 2015 thresholds for small wind turbines.",
+  "approximateCostGbp": 3000,
+  "paybackYears": 8,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "multimeter", "isOptional": false },
+    { "slug": "energy-monitor", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dump-load",
+      "term": "Dump load",
+      "definition": "A resistive load (usually a water or air heater) connected to a wind turbine charge controller that absorbs excess energy when the battery is full, preventing the turbine from over-spinning and damaging the generator."
+    },
+    {
+      "slug": "charge-controller",
+      "term": "Charge controller",
+      "definition": "An electronic device between a renewable energy source and a battery bank that regulates the charging voltage and current, protecting the battery from overcharge and deep discharge."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Small wind turbines (under 5 kW rated power) for off-grid use follow different economics from grid-connected rooftop turbines. A 2014 microwind assessment found that most urban sites had insufficient wind to justify installation. Mean wind speed at most urban sites was below 4 m/s. Rural and coastal sites at elevation averaged 5 to 7 m/s and delivered 70 to 90 percent of manufacturer yield estimates. Check the mean annual wind speed at the proposed hub height in the NOABL database before buying equipment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Turbine yield calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A turbine's rated power is stated at a specific wind speed (typically 11 to 12 m/s); UK sites rarely sustain this speed. Annual energy output depends on the site's wind speed distribution. A 500 W turbine at a site with 5.5 m/s mean wind speed typically produces 600 to 800 kWh per year. At 6.5 m/s, the same turbine produces 900 to 1,100 kWh per year. Manufacturer software can model this from the NOABL wind speed figure and the proposed hub height." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Battery sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Size the battery bank to store 3 to 5 days of consumption, accounting for periods of low wind. For an outbuilding running 150 W of LED lighting for 6 hours per day plus occasional tool charging (50 Wh average per day), daily consumption is around 950 Wh. Three days autonomy requires 2,850 Wh usable capacity. In a 48 V system, this is 60 Ah usable; a 100 Ah lithium iron phosphate (LFP) battery at 80 percent depth of discharge provides 80 Ah usable, giving adequate margin. LFP batteries are preferred for outdoor use: they tolerate wider temperature ranges than lead-acid and do not require equalisation charging." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Charge controller and dump load" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wind turbine " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "charge-controller" } }],
+            "text": "charge controllers"
+          },
+          { "type": "text", "text": " must be matched to the turbine's maximum output current. A 500 W turbine at 48 V produces up to 10.4 A, so a 15 A rated wind controller provides adequate headroom. Wind controllers require a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dump-load" } }],
+            "text": "dump load"
+          },
+          { "type": "text", "text": " connected at all times. Unlike a solar panel, a wind turbine cannot be disconnected from the battery when full: the unloaded turbine over-spins and the generator overheats. The dump load is typically a resistive immersion heater rated at 80 to 100 percent of the turbine's rated power; the heat warms a water cylinder or space heater, making surplus energy useful." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning permission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In England, a building-mounted wind turbine below 3 m rotor diameter and 3.8 m hub height is typically permitted development for domestic buildings. Conditions apply, including no turbine within 5 km of a scheduled monument. Standalone mast-mounted turbines require planning permission above 11.1 m hub height. Always check with the local planning authority first." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Battery barely charges despite the turbine spinning continuously" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the actual wind speed at hub height using an anemometer over 7 to 14 days. A turbine at 4 m/s mean wind speed produces roughly 20 to 30 percent of its output at 6 m/s. The NOABL figure and the hub-height figure can differ significantly if there are obstructions within 10 rotor diameters. Raising the turbine mast by 5 to 10 metres often doubles energy yield at sites with surrounding trees or buildings." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Dump load runs continuously but battery stays at 60 to 70 percent" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The charge controller may have a battery protection ceiling that prevents charging above a set state of charge. In LFP systems, a 90 to 95 percent ceiling is typical and correct. If the battery ceiling is correctly set and the dump load is always on in high wind, the turbine is producing more energy than the battery can accept at the charge rate: this is normal operation and the surplus is usefully dissipated in the dump load heater." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

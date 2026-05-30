@@ -1,0 +1,107 @@
+{
+  "slug": "sizing-a-water-butt",
+  "title": "Sizing a water storage system for garden demand",
+  "subtitle": "Calculating the catchment area, storage volume, and demand balance for a domestic water butt",
+  "excerpt": "A correctly sized water butt balances roof catchment area against garden demand so the butt stays full during the growing season without overflowing wastefully in winter. A butt that is too small empties in June; one that is too large overflows all winter. This is the calculation for a single or linked water butt system.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIRIA C698 on rainwater harvesting design. Waterwise UK guidance on water butt sizing. Met Office UK rainfall statistics by region.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rainwater-harvesting",
+      "term": "Rainwater harvesting",
+      "definition": "Collecting and storing rainfall from roof surfaces for non-potable uses such as garden irrigation, toilet flushing, or laundry."
+    },
+    {
+      "slug": "water-butt",
+      "term": "Water butt",
+      "definition": "A container for collecting rainwater from a roof downpipe for garden use. Typical capacity 100 to 500 litres."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard 210-litre " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "water-butt" } }],
+            "text": "water butt"
+          },
+          { "type": "text", "text": " connected to the downpipe from a 30 m² roof section fills completely from 7 mm of rainfall. In most UK locations, 7 mm falls several times per month even in July, so a single 210-litre butt refills faster than a typical garden can use it. The sizing question is whether the butt is large enough to buffer the dry spells when demand exceeds catch, not whether it fills up." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The catchment calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Usable " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rainwater-harvesting" } }],
+            "text": "rainwater harvesting"
+          },
+          { "type": "text", "text": " volume = Roof plan area (m²) x Monthly rainfall (mm) x Runoff coefficient. Roof plan area is the footprint of the roof section draining to the downpipe (measure the external wall dimensions of that section). Monthly rainfall: the Met Office UK rainfall average for July (the critical design month) is 55 mm in East Anglia, 75 mm in the Midlands, and 100 mm in Wales and the south-west. Runoff coefficient for a tile or slate roof is 0.85 (15 percent lost to wetting, evaporation, and overflow). For a felt flat roof, use 0.75." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A house in Leicester (East Midlands rainfall 70 mm July average) with a rear extension roof of 20 m². Monthly July yield = 20 x 70 x 0.85 = 1,190 litres. Garden demand: 2 x 10-litre watering cans per day on watering days, 3 days per week for a 20 m² vegetable plot = 60 litres per week, 240 litres for a 4-week dry spell. A single 250-litre butt holds enough for a 4-week watering drought before needing the mains. If the vegetable plot is larger (50 m²), demand doubles to 120 litres per week, and two linked 250-litre butts provide the same drought buffer. If the plot is mostly lawn and never needs watering, the limiting factor is not the butt size but the winter overflow: a large butt fills and overflows harmlessly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Linking multiple butts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two butts can be linked with a 25 mm hose connector at the base of the first butt to the base of the second. Water level equalises between the two. A linked 500-litre system on one downpipe provides twice the drought buffer of a single butt. For larger systems (1,000 litres and above), a slimline cistern or an underground tank provides more storage per pound than surface-mounted butts, and avoids the freeze risk that splits a plastic butt in a hard winter." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Butt empties mid-June every year" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Either demand exceeds catch or the butt is undersized. Calculate demand in litres per week and compare to the monthly yield; add a second butt if the gap is more than 100 litres per week." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Butt overflows immediately after rain even in summer" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The butt was already full: drainage rate from garden use is slower than the input rate. Use the butt before heavy rain is forecast, or add a second linked butt to increase storage." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

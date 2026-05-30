@@ -1,0 +1,158 @@
+{
+  "slug": "insulating-an-outhouse-extension",
+  "title": "Insulating a single-skin brick outhouse",
+  "subtitle": "Internal lining for an attached outbuilding used as a utility room or home office",
+  "excerpt": "A single-skin brick outhouse attached to the main house has a wall U-value of around 3.0 W/m²·K and no ceiling insulation. Turning it into a usable utility room or office requires internal wall lining and a ceiling insulation layer. This guide covers the assessment, the internal lining sequence, and the junction details that prevent moisture bridging at the main house connection.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for thermal elements in extensions. BRE Good Building Guide 44 on conversion of outbuildings. Energy Saving Trust guidance on solid wall internal insulation.",
+  "approximateCostGbp": 800,
+  "paybackYears": 8,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a square metre of a building element per degree of temperature difference. Measured in W/m²·K. Lower is better."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A low-permeability membrane fitted on the warm side of insulation to slow vapour diffusion and reduce the risk of condensation forming within the construction."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1970s brick outhouse measuring 2.5 m by 2 m with single-skin walls and a single-layer flat felt roof loses around 1,200 kWh of space-heating energy per year when heated to 18 degrees Celsius in a typical UK winter. Internally lining all four walls with 50 mm mineral wool between 47 x 47 mm battens and a foil-backed plasterboard finish, plus 100 mm mineral wool above the ceiling, reduces that loss to around 400 kWh per year. At 2025/26 cap rates, the saving is roughly 48 pounds per year on a gas system. Material cost for the job is 700 to 900 pounds DIY; payback is 8 to 10 years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessment first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before insulating, check the single-skin wall for rising damp and penetrating damp. Single-skin walls with no damp-proof course (DPC) will have moisture issues that insulation will concentrate and worsen. Look for tide marks at floor level (rising damp) and efflorescence on the face (penetrating damp from failed pointing or a defective roof). Fix the source of moisture before lining; internal insulation over a wet wall causes mould and interstitial condensation within eighteen months." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Internal wall lining" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Safety: cutting and drilling" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Eye protection and gloves for all cutting. Long sleeves and FFP2 dust mask when handling mineral wool batts. Cool shower after working with mineral wool; wash work clothes separately." }]
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix 47 x 47 mm timber battens vertically to the wall face at 400 mm centres using frame fixings into the masonry. First batten 25 mm from each corner; subsequent battens at 400 mm centres. Check each batten for plumb before fixing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut 50 mm mineral wool batts to fit between the battens (cut them 5 mm wider than the gap so they friction-fit without gaps). Fit them so the batt faces are flush with the batten faces." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " membrane over the entire face of the battens and insulation, stapling it to each batten at 200 mm centres. Lap all joints 150 mm and tape with airtightness tape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix 12.5 mm standard plasterboard over the vapour control layer, screwing into the battens at 200 mm centres. Tape and fill the joints." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Junction with the main house" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The junction between the outhouse internal lining and the main house wall is a potential " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": ". The internal lining of the outhouse should return around the junction onto the main house wall by at least 150 mm, or the edge of the insulation layer should be sealed with continuous foam strip before the plasterboard is fixed. Without this return, the junction zone is a cold strip that will attract condensation and mould in a heated space." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ceiling insulation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit 100 mm mineral wool between the ceiling joists from above before closing the ceiling. If access from above is limited, use 100 mm PIR rigid boards cut to fit between the joists, pushed up from below before the plasterboard ceiling is fixed. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": " of 100 mm mineral wool ceiling is approximately 0.35 W/m²·K, compared to 3.0 W/m²·K for an uninsulated flat roof. The ceiling improvement contributes more to total heat loss reduction than any single wall face." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Mould appears on the lined wall after six months" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The vapour control layer has a gap or the wall was damp before lining. Check for missing tape at joints. If the wall was damp at installation, the insulation must be removed to dry the wall before re-fitting." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Battens pulling away from wall" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Single-skin brick has variable mortar joint hardness. Use longer frame fixings (100 to 120 mm) and fix into brick rather than mortar joints wherever possible." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

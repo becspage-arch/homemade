@@ -1,0 +1,120 @@
+{
+  "slug": "domestic-wind-turbine-feasibility",
+  "title": "Assessing whether a small domestic wind turbine is viable",
+  "subtitle": "Wind speed, planning constraints, and realistic output for a pole or roof-mounted turbine",
+  "excerpt": "Small domestic wind turbines rated at 1 to 6 kW generate between 500 and 4,000 kWh per year depending on site wind speed. In most UK suburban and urban locations, the annual generation falls below 1,000 kWh due to turbulence and low mean wind speed, making the economics marginal. This guide walks through the feasibility assessment before spending on installation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on domestic wind turbines. gov.uk Planning Portal on permitted development for micro-wind. NOABL wind speed database (gov.uk). Microgeneration Certification Scheme (MCS) product performance data.",
+  "approximateCostGbp": 3000,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "kwh",
+      "term": "kWh",
+      "definition": "Kilowatt-hour. The unit of energy used on electricity and gas bills. 1 kWh equals the energy consumed by a 1,000 W appliance running for one hour."
+    },
+    {
+      "slug": "kwp",
+      "term": "kWp",
+      "definition": "Kilowatt-peak. The rated output of a generator (wind or solar) under reference conditions. Actual output depends on site conditions."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 6 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwp" } }],
+            "text": "kWp"
+          },
+          { "type": "text", "text": " pole-mounted turbine at a site with an annual mean wind speed of 6 m/s generates 7,000 to 10,000 " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kwh" } }],
+            "text": "kWh"
+          },
+          { "type": "text", "text": " per year. At a site with a mean of 4 m/s (most suburban gardens), the same turbine generates 1,500 to 3,000 kWh. Wind power output scales with the cube of wind speed: doubling wind speed gives eight times the power. The difference between a 6 m/s and a 4 m/s site is a factor of 3 to 6 in annual generation." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Check the NOABL wind speed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The NOABL (Numerical Objective Analysis Boundary Layer) database at gov.uk provides a modelled annual mean wind speed for any UK postcode at 10 m, 25 m, and 45 m above ground. Look up your postcode. If the NOABL figure at 10 m (a standard pole-mounted turbine height) is below 5 m/s, a small turbine is unlikely to pay back in under 25 years at current electricity prices. A figure above 6 m/s suggests a viable site, subject to the obstacles check below." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Obstacles and turbulence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Any obstruction within 300 m of the turbine (buildings, trees, a hedgerow) creates turbulence that reduces output and increases mechanical stress. The turbine must be sited at least twice the height of the nearest obstacle. For example, a 5 m tree requires the hub to be at least 10 m high and at least 10 m away. In a suburban garden with mature trees on the boundary, these criteria are almost never met for a roof-mounted turbine, and rarely met for a pole-mounted turbine. Roof-mounted turbines on a standard house are additionally subject to vibration that transfers to the structure and is difficult to mitigate without specialist mounting brackets." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: Planning requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roof-mounted turbines up to 1 m blade diameter and 1 kW rated output are permitted development on a house in England, provided the turbine is not on a building in a conservation area and the hub does not extend more than 3 m above the ridge. A pole-mounted turbine up to 11.1 m hub height is permitted development if the swept area is no more than 3.8 m² and no other turbine is installed on the property. In Scotland and Wales the thresholds differ; consult the relevant planning guidance. Any installation exceeding the permitted development thresholds requires planning permission." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A rural farmhouse in Northumberland with a 0.5 ha paddock. NOABL 10 m wind speed: 6.8 m/s. No trees within 150 m on the prevailing wind direction. A 2.5 kWp pole-mounted turbine at 10 m height could generate 4,500 to 6,000 kWh per year. At 27p/kWh retail electricity, self-consumed generation saves 1,215 to 1,620 pounds per year. Install cost: 15,000 to 25,000 pounds including planning, groundworks, and grid connection. Payback: 10 to 20 years. That is a marginal but viable case. Contrast with the suburban house in Sheffield: NOABL 10 m wind speed 4.1 m/s, houses within 50 m on all sides. Estimated generation: 500 to 800 kWh per year. Install cost: 5,000 to 8,000 pounds. Payback: over 40 years." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When not to proceed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the NOABL speed is below 5 m/s, the site has significant obstacles, or the property is in an urban or suburban area, a small wind turbine will not pay back on energy grounds within a reasonable ownership period. In almost all such cases, additional solar PV panels are a better investment. A 1 kWp PV expansion costs 1,200 to 1,500 pounds and generates around 850 kWh per year in the UK south. Payback is 6 to 10 years." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "NOABL shows good wind speed but neighbours have had problems" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "NOABL is a coarse model that does not account for local topography or vegetation. Commission a calibrated anemometer site survey (typically 2,000 to 4,000 pounds) before committing to installation at any wind speed below 7 m/s." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

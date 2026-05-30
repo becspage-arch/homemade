@@ -1,0 +1,155 @@
+{
+  "slug": "party-wall-heat-loss-assessment",
+  "title": "Assessing heat loss through a party wall",
+  "subtitle": "Measuring the temperature differential across a shared wall and deciding when treatment is worthwhile",
+  "excerpt": "Party walls between semi-detached and terraced houses lose less heat than external walls but are not zero-loss surfaces, particularly where the neighbouring property is unoccupied, commercial, or maintained at a lower temperature. This guide covers how to measure the actual temperature differential, calculate the approximate heat loss rate, and decide whether internal lining is cost-effective.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B (2022) for heat-loss calculation methodology. BRE Report BR 443 on conventions for U-value calculations. Energy Saving Trust guidance on solid wall heat loss rates. CIBSE Guide A Chapter 3 on building heat loss.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a square metre of a building element per degree of temperature difference. Measured in W/m²·K. Lower is better."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A party wall between two heated homes loses far less heat than an external wall because the temperature difference across it is much smaller. But it is not zero. When the neighbour is away for weeks or the adjoining space is unheated storage, the temperature difference rises and the heat loss becomes significant. Measuring the actual conditions lets you put a number on the loss and decide whether lining the wall makes financial sense." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The internal temperature of your room on the party wall side (measure with a room thermometer)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The surface temperature of the party wall on your side. Use a contact thermometer or a thermal imaging camera with an infrared setting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whether the neighbour occupies and heats their property, and at roughly what temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The approximate wall area in m² (length times height of the shared face, minus doors and windows)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat loss through a party wall follows the same formula as any other element: Q = U x A x (T_inside minus T_other_side). The difficulty is knowing T_other_side, the temperature on the neighbour's side of the wall. When the neighbour is in residence and heating normally, T_other_side might be 18 to 20 degrees Celsius, making (T_inside minus T_other_side) close to zero and the loss negligible. When the property next door is vacant in winter, T_other_side might be 5 to 8 degrees Celsius, making the loss significant." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1930s semi in Sheffield has a party wall 8 m long and 2.4 m high: 19.2 m² excluding the chimney breast. The wall is 215 mm solid brick. Estimated " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": " for 215 mm solid brick is 2.1 W/m²·K. The house is heated to 20 degrees Celsius. Scenario A: neighbour at 18 degrees Celsius. Temperature difference = 2 K. Q = 2.1 x 19.2 x 2 = 81 W. Over an 8-month heating season at 14 hours per day, that is 81 x 14 x 243 / 1000 = 275 kWh per year, worth around 17 pounds at gas rates. Scenario B: the neighbour is vacant in winter and the party wall surface reaches 8 degrees Celsius. Temperature difference = 12 K. Q = 2.1 x 19.2 x 12 = 483 W: 1,641 kWh per year, worth around 99 pounds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using a thermal imaging camera" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " scan of the party wall on a cold day (external temperature below 5 degrees Celsius, heating running for at least two hours) shows whether the loss is evenly distributed or concentrated at joist ends, floor zones, or chimney breasts. Joist ends built into a party wall carry conducted heat from your floor to the neighbour's side: these show as cold spots on your internal wall surface. A scan that shows even temperature across the wall confirms a straightforward calculation. Concentrated cold spots shift the priority to targeted draught-sealing and spot-treatment rather than full-wall lining." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When treatment is worthwhile" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the loss exceeds 1,000 kWh per year (roughly 60 pounds at gas rates), internal lining of the party wall with 50 mm of mineral wool between battens and a plasterboard finish costs around 800 to 1,500 pounds for a standard room and reduces the loss by 70 to 80 percent. Payback at scenario B rates is 10 to 15 years. For most owner-occupiers with a normally-heated neighbour, the payback does not justify the cost or the lost floor area. The case improves significantly if the wall faces an unheated adjoining space (a commercial unit, a garage conversion, a consistently unheated terrace) and the calculation confirms losses above 1,500 kWh per year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Done well, the assessment produces a number in kWh per year with stated assumptions, a check for thermal bridging at joist ends and floor zones, and a clear decision on whether treatment is worth doing. Done badly, the party wall is lined without proper calculation. The result is 100 mm of lost floor area around the whole room perimeter for a saving that would have taken 40 years to pay back." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Party wall feels cold but neighbour is in" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check for joist ends or floor zone thermal bridging. A cold strip at floor level often indicates an uninsulated floor void. Address the floor void before considering wall lining." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Neighbour unoccupied for extended period" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Re-run the calculation using a vacant-property interior temperature of 5 to 8 degrees Celsius. If the loss exceeds 1,000 kWh per year, lining becomes worth evaluating." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

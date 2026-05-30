@@ -1,0 +1,115 @@
+{
+  "slug": "pipe-boxing-insulation-unheated-spaces",
+  "title": "Insulating boxed pipes in unheated spaces",
+  "subtitle": "Preventing heat loss and freeze risk from hot-water pipes that run through garages, outbuildings, and crawl spaces",
+  "excerpt": "Hot-water pipes routed through unheated spaces lose heat continuously when the heating is running. A 15 mm copper pipe carrying 60-degree water through an unheated garage loses around 15 W per metre length. Fitting pre-formed foam lagging reduces that loss by 75 to 85 percent and prevents freeze damage. This is the selection and installation guide for standard domestic pipework.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1 for pipe insulation requirements in new-build. CIBSE TM65 on heat gains from pipework. EST guidance on hot water cylinder and pipe insulation.",
+  "approximateCostGbp": 25,
+  "paybackYears": 1,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "stanley-knife", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "pipe-lagging", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a square metre of a building element per degree of temperature difference. Measured in W/m²·K. Lower is better."
+    }
+  ],
+  "techniqueSlugs": ["pipe-lagging-hot-water-cylinder-and-pipes"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pre-formed foam pipe lagging is the fastest return in domestic insulation: a 5 m run of 15 mm copper pipe through an unheated garage loses around 75 W continuously while the heating runs. Over an 8-month UK heating season at 14 hours per day, that is 300 kWh: around 18 pounds at 2025/26 gas rates. Lagging costs 5 to 10 pounds for 5 m of pre-slit foam tube. The saving pays back in under a year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the right lagging" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pre-formed foam lagging is available in bore sizes matching standard copper pipe (15 mm, 22 mm, and 28 mm) and wall thicknesses of 9 mm, 13 mm, and 25 mm. For an unheated space, use 25 mm wall thickness: it reduces heat loss by 80 to 85 percent compared to bare pipe. The bare pipe has an effective " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+          { "type": "text", "text": " of around 5 W/m²·K; 25 mm lagging reduces this to under 1 W/m²·K. For a slightly heated space (a utility room at 10 to 12 degrees Celsius), 13 mm wall thickness is adequate. The lagging bore must match the pipe outside diameter, not the nominal bore: a nominal 15 mm copper pipe has an outside diameter of 15 mm, so use 15 mm bore lagging." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the full length of exposed pipe in the unheated zone. Buy lagging in 1 m or 2 m lengths, slightly more than you need to allow for mitred joints at bends." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-slit foam lagging has a lengthwise slit. Open the slit and press the lagging over the pipe. If the pipe is horizontal and accessible, run the slit face upward; if vertical, the slit can face any direction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At bends, cut the lagging at a 45-degree mitre on each side of the bend. Fit both pieces and seal the joint with self-adhesive foam tape. A gap at a mitre joint is a significant heat loss point: the exposed copper at a 90-degree elbow loses as much heat as 150 mm of bare pipe." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape the slit and all end joints with self-adhesive foam tape at 200 mm intervals. In a garage that may see below-zero temperatures, tape every 100 mm and seal all joints fully. The freeze protection is only as good as the continuous insulation layer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For pipes that pass through walls into the heated zone, extend the lagging 50 mm into the wall penetration so there is no bare pipe exposed at the transition." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Freeze protection threshold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foam lagging alone does not prevent freezing in a sustained period below minus 5 degrees Celsius if the heating is off. At very low temperatures (minus 10 degrees Celsius for 24 hours or more), pipe trace heating tape is the only reliable solution. For typical UK winters, 25 mm foam lagging in a domestic garage is adequate provided the heating runs for at least 6 hours per day. In Scotland, Wales, and northern England above 200 m elevation, trace heating tape is worth considering for any pipe that is exposed in an unheated space for more than 5 m." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Lagging wet on the outside in humid conditions" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Condensation on the outer surface of cold-water supply pipes is normal in summer. For hot pipes, external condensation indicates the lagging is damaged or too thin. Inspect for gaps and replace with 25 mm wall thickness." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Lagging sliding off vertical pipe sections" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Use cable ties at 300 mm intervals on vertical runs in addition to tape. In areas with rapid temperature changes (near an external door), use self-adhesive lagging that bonds to the pipe surface." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "rainwater-only-irrigation-off-grid",
+  "title": "Designing a rainwater-only irrigation system for a kitchen garden",
+  "subtitle": "Calculating catchment, storage, and drip-line capacity to irrigate 20 to 40 square metres without mains water",
+  "excerpt": "A 50 square metre roof collects approximately 35,000 litres of rain per year in most of the UK. A kitchen garden of 20 to 30 square metres needs 80 to 120 litres of irrigation per square metre per growing season, or 1,600 to 3,600 litres in total. The arithmetic works in most UK regions: the shortfall only appears in eastern England in very dry summers, where a 1,000-litre storage reserve bridging the typical summer dry period is sufficient.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM46 on rainwater harvesting systems in the UK. WRAP irrigation water requirements for vegetable gardens. Met Office regional rainfall averages 1991 to 2020.",
+  "approximateCostGbp": 350,
+  "paybackYears": 3,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "catchment-area",
+      "term": "Catchment area",
+      "definition": "The horizontal footprint of a roof surface that collects rainfall and drains it to a downpipe. A pitched roof's catchment area is its plan area, not its sloped surface area."
+    },
+    {
+      "slug": "first-flush-diverter",
+      "term": "First flush diverter",
+      "definition": "A device fitted to a downpipe that diverts the first 10 to 20 litres of rainfall from each storm event away from the storage tank, preventing contaminated water from bird droppings and leaf debris entering the storage."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The UK receives 600 to 1,200 mm of rainfall per year: 600 to 700 mm in eastern England, 800 to 1,000 mm in the Midlands and North, and 1,000 to 1,500 mm in Scotland and the South West. This guide uses 700 mm as a conservative baseline for eastern England and 900 mm as a central estimate for the rest of the UK." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: calculate catchment yield" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure the plan area of the roof draining to the downpipe serving your storage tank. This is the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "catchment-area" } }],
+            "text": "catchment area"
+          },
+          { "type": "text", "text": " in square metres. Multiply by the annual rainfall in metres and by a runoff coefficient of 0.85 (accounting for evaporation and roof absorption). Example: 50 m2 x 0.7 m x 0.85 = 29,750 litres per year, or around 2,500 litres per month averaged across the year. In reality, distribution is uneven: October to March delivers 55 to 65 percent of annual rainfall; July and August are the driest months and coincide with peak irrigation demand." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: estimate irrigation demand" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Vegetable gardens need irrigation mainly from May to September. Typical demand is 80 to 120 litres per square metre per growing season for outdoor vegetables depending on crop mix. A 25 m2 plot at 100 litres/m2 needs 2,500 litres across 5 months. Spread unevenly, the peak demand month (July or August in eastern England) may reach 600 to 800 litres while catchment that month is only 40 to 60 mm (2,000 to 3,000 litres from a 50 m2 roof): the balance stays positive in most regions. At 30 m2 catchment in eastern England, summer months become deficit months; storage buffers this shortfall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: size the storage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Size the storage to cover 4 to 6 weeks of peak demand. For a 25 m2 plot irrigated at 100 litres/m2/season, peak monthly demand is around 600 litres: a 1,000-litre tank (two 500-litre butts or one IBC) provides a 6-week buffer at peak rates. Larger storage is rarely beneficial: the summer deficit is short, and a larger tank takes months to fill in autumn, sitting empty through winter." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First flush diversion and water quality" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "first-flush-diverter" } }],
+            "text": "first flush diverter"
+          },
+          { "type": "text", "text": " on the downpipe to keep roof debris out of the storage. Rainwater from a roof is safe to use on vegetables watered at the root (not sprayed directly on leaves or fruit). It should not be drunk without treatment. A mesh screen on the tank inlet prevents mosquito breeding." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Tank empties completely during a dry spell in July" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Prioritise crops by water need: courgettes, climbing beans, and tomatoes are high demand; root vegetables and brassicas are lower demand. Water high-demand crops from the tank; allow lower-demand crops to go 7 to 10 days between watering. Drip irrigation from the tank uses 30 to 50 percent less water than overhead watering for the same crop area." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Green algae building up inside the storage tank" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Algae grow in tanks exposed to light. Cover the tank with an opaque lid or wrap it in shade cloth. Most algae in a storage tank are harmless to plants but clog drip irrigation emitters. Fit a 100 micron filter at the tank outlet to catch debris before it reaches drip lines." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

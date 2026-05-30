@@ -1,0 +1,133 @@
+{
+  "slug": "solar-heated-outdoor-shower",
+  "title": "Building a solar-heated outdoor shower",
+  "subtitle": "Using a black-coiled hose or flat-plate solar thermal collector to provide warm water without connecting to the boiler",
+  "excerpt": "A black polyethylene coil left in direct sun for 3 to 4 hours reaches 35 to 45 degrees Celsius on a UK summer day, providing enough warm water for a 3 to 5 minute shower. A more permanent flat-plate collector stores 20 to 50 litres and can sustain multiple showers per day in summer. Both approaches use no grid energy and add no load to the boiler.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Centre for Alternative Technology (CAT) off-grid water heating guidance. Energy Saving Trust solar thermal hot water factsheet. Health and Safety Executive guidance on Legionella risk in small water systems (ACoP L8).",
+  "approximateCostGbp": 120,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "pipe-cutter", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "silicone-sealant-gun", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-thermal",
+      "term": "Solar thermal",
+      "definition": "Technology that uses solar radiation to heat a fluid directly, rather than converting sunlight to electricity. Flat-plate collectors and evacuated tube collectors are the two main types for domestic use."
+    },
+    {
+      "slug": "thermosiphon",
+      "term": "Thermosiphon",
+      "definition": "A passive circulation system in which warm water rises naturally to a storage tank positioned above the collector, without needing a pump, as long as the tank is higher than the collector."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Legionella risk in outdoor water systems" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Legionella bacteria multiply rapidly in stagnant water held at 20 to 45 degrees Celsius. An outdoor shower used daily in summer presents minimal risk because water does not remain stagnant. If the shower will be unused for more than 5 to 7 days in warm weather, drain the storage tank and pipes fully. Do not use stored outdoor shower water as a drinking source." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest approach to a solar outdoor shower requires no permanent pipework: a 50-litre black polyethylene water bag or 20 to 30 metres of black polypipe coiled on a south-facing surface. Both absorb " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-thermal" } }],
+            "text": "solar thermal"
+          },
+          { "type": "text", "text": " energy directly. A coil of 25 mm polypipe 30 metres long holds approximately 15 litres and reaches 35 to 45 degrees Celsius after 3 to 4 hours of full sun: enough for one 3 to 4 minute shower at low flow." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option 1: coiled hose system (simplest)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Coil 20 to 30 metres of black 25 mm polypipe on a south-facing timber frame or lean-to roof, securing with cable clips. Leave both ends accessible at the bottom." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the inlet to a garden tap or water butt via a ball valve. Run the outlet down through a standard shower rose or hose nozzle. The pressure head of the water column above the shower head drives flow: 1 to 2 metres of head gives a gentle but usable flow rate of 3 to 4 litres per minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the inlet ball valve to fill the coil in the morning. Allow 3 to 4 hours in direct sun before using. After showering, close the inlet valve and drain the coil completely if not used again within 24 hours." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option 2: raised storage tank with thermosiphon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 100 to 200 litre insulated tank mounted above the shower head, fed from a south-facing flat plate or polypipe collector below it, creates a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermosiphon" } }],
+            "text": "thermosiphon"
+          },
+          { "type": "text", "text": " loop: warm water rises naturally from the collector to the tank without a pump. The tank must be positioned at least 500 mm above the top of the collector for thermosiphon to work reliably. An insulated 150-litre tank fed by a 2 square metre flat-plate collector stores enough hot water for 4 to 6 showers on a summer day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drainage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An outdoor shower discharges greywater. On a garden lawn or planted area this is acceptable if biodegradable soap-based products are used. If conventional shampoo or shower gel is used, run the drainage to a soakaway or to the foul drain. Do not discharge to a watercourse: this requires an exemption under the Environmental Permitting Regulations 2010." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Water does not reach a comfortable temperature even in full sun" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Black polypipe coils lose heat rapidly in wind. Mount the coil behind a clear polycarbonate glazing sheet to create a greenhouse effect: the glazing traps absorbed heat and reduces convective losses. Water temperature increases by 10 to 15 degrees C with glazing compared to an exposed coil in similar conditions." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Flow rate too low for a satisfying shower" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Every 1 metre of height above the shower head provides approximately 0.1 bar of pressure. At 1 metre of head, flow through a 25 mm pipe is roughly 4 to 5 litres per minute. Raise the storage tank outlet or coil exit to 2 to 3 metres above the shower head to increase flow. Alternatively connect to the mains supply via a ball valve and use the coil as a preheater rather than the sole source." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

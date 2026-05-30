@@ -1,0 +1,152 @@
+{
+  "slug": "lime-mortar-repointing-airtightness",
+  "title": "Repointing lime-mortar joints for airtightness",
+  "subtitle": "Filling failed mortar joints in pre-war brick to reduce uncontrolled air infiltration",
+  "excerpt": "In Victorian and Edwardian terraces, eroded lime mortar joints allow air infiltration at a rate that can exceed 10 air changes per hour under wind pressure. Repointing with a compatible lime-based mortar closes these gaps, reduces infiltration, and protects the brickwork from water damage. This guide covers the assessment, mortar mix specification, raking depth, and application technique.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Historic England guidance on pointing historic brick buildings (2015). BRE Report BR 210 on mortar specification for masonry repair. gov.uk Planning Practice Guidance for listed buildings and conservation areas.",
+  "approximateCostGbp": 400,
+  "paybackYears": 6,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "airtightness",
+      "term": "Airtightness",
+      "definition": "The resistance of a building envelope to uncontrolled air leakage. Measured as air changes per hour at 50 Pa pressure difference."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Failed mortar joints are among the most overlooked sources of heat loss in pre-1919 brick houses. A joint that has eroded 10 mm back from the face creates a direct path for wind-driven air into the wall cavity and wall head, and a localised " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }], "text": "thermal bridge" },
+          { "type": "text", "text": " in the masonry envelope. Field measurements on Victorian terraces with failed pointing show infiltration rates of 8 to 12 air changes per hour at 50 Pa pressure: three to five times the current Building Regulations threshold of 3 m³/h/m² at 50 Pa. Repointing with a compatible lime mortar closes these paths, reduces draughts, and protects the brickwork from freeze-thaw damage." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessing the joints" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Walk the external face in raking light (low sun from the side reveals recessed joints clearly). Use a penknife to probe suspect joints: if the blade goes in more than 8 mm without resistance, the joint has failed. Count the proportion of failed joints across a 1 m² sample area. If more than one in five joints is failed, full repointing of the elevation is justified. If only isolated patches are failed, spot repointing at those zones is sufficient." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Mortar compatibility rule" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Never use modern OPC (ordinary Portland cement) mortar on pre-1919 brickwork. OPC mortar is harder than the historic brick; differential movement cracks the brick rather than the joint, and the cracks are far more expensive to repair. Use NHL 2 or NHL 3.5 hydraulic lime mortar, or a mixed lime putty and sharp sand mortar at 1:2.5 to 1:3 by volume." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparation and raking out" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rake out failed mortar to a depth of 15 to 20 mm using a cold chisel and club hammer or an electric mortar rake. Do not rake more than 3 mm into sound mortar: you are removing the failed surface, not all the mortar." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush out the raked joints with a stiff brush to remove dust and loose particles. Dampen the joint with clean water so the existing masonry does not draw moisture out of the fresh mortar before it sets." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix NHL 3.5 lime mortar at 1 part lime to 2.5 parts sharp sand by volume. Add water gradually to a stiff, not sloppy, consistency: the mix should hold its shape when squeezed but not crumble. Lime mortar has a pot life of around 45 minutes in warm weather." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the mortar firmly into the joint with a pointing trowel, working from the back of the raked channel to the face. Compact it as you go to eliminate voids. Overfill the joint slightly proud of the brick face, then strike it back flush or slightly recessed (6 mm weatherstruck or flush finish, matching the original profile)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep the freshly pointed area damp for three days by misting with water and covering with hessian if the weather is sunny or windy. Lime mortar sets slowly: do not allow it to dry out in the first three days or it will powder." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The effect on airtightness" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A full repointing of a failed front elevation (average Victorian terrace: 35 m² of brickwork) typically reduces whole-house " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "airtightness" } }],
+            "text": "airtightness"
+          },
+          { "type": "text", "text": " leakage by 15 to 25 percent, measured by blower door test before and after. That translates to a heating energy saving of 200 to 400 kWh per year in a draughty Victorian terrace, worth 12 to 24 pounds at 2025/26 gas rates. At 400 pounds for materials and labour for a DIY job on a single elevation, payback is 6 to 10 years. A contractor-repointed full terrace costs 1,500 to 3,000 pounds; the payback extends but the brickwork protection benefit is independent of energy saving." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a listed building, the local planning authority may specify the exact mortar mix and finishing profile. Flush or slightly recessed joints are usually acceptable; deep-recessed bucket-handle joints are not. In Scotland, lime putty is used in place of NHL mortar for traditional wet-climate work; consult Historic Environment Scotland guidance. Stone-built properties use the same NHL 2 to 3.5 lime range but the joint profile follows the stone face rather than the brick course." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Mortar powdering or crumbling within days" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The mix dried too fast. Dampen the joint immediately and cover with hessian. If it continues to powder, the mix ratio had too much lime and not enough sand." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Mortar shrinking away from brick edges" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The joint was too dry when filled. Dampen both brick faces before applying the next section of mortar." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Bricks cracking at joint edges after winter" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "OPC mortar was used. OPC expands differently from the brick under temperature cycling. Rake out all OPC mortar and replace with NHL lime." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

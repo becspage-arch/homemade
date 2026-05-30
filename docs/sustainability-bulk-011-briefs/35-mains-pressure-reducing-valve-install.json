@@ -1,0 +1,136 @@
+{
+  "slug": "mains-pressure-reducing-valve-install",
+  "title": "Installing a mains pressure reducing valve",
+  "subtitle": "Cutting a PRV into the rising main to protect pipework and appliances from high supply pressure",
+  "excerpt": "Mains water pressure in UK homes typically runs between 1 and 3.5 bar. Above 3 bar, appliances wear faster, washing machine hoses fail earlier, and shower controls become difficult to regulate. A pressure reducing valve (PRV) fitted after the main stopcock limits the supply to a set pressure, typically 2.5 bar. The valve costs 25 to 60 pounds and installation takes 2 to 3 hours.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAS (Water Regulations Advisory Scheme) guidance on pressure reducing valves and system protection. CIBSE Guide G: public health engineering (domestic water systems chapter). Water Industry Act 1991 on supply pressure obligations.",
+  "approximateCostGbp": 45,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "pipe-cutter", "isOptional": false },
+    { "slug": "screwdriver", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dynamic-pressure",
+      "term": "Dynamic pressure",
+      "definition": "The water pressure measured when flow is occurring, as opposed to static pressure which is the pressure when all outlets are closed and no flow is happening."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "title": "Turn off the mains stopcock before cutting the pipe" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "The rising main is under mains pressure. Turn off the mains stopcock before making any cuts. Open a cold tap to drain pressure from the pipe and confirm the water has stopped flowing before using the pipe cutter." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pressure reducing valve (PRV) contains a spring-loaded diaphragm that throttles flow to maintain a set outlet pressure regardless of inlet variation. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dynamic-pressure" } }],
+            "text": "dynamic pressure"
+          },
+          { "type": "text", "text": " at the PRV outlet stays close to the set point even when multiple outlets are open at once. The UK mains obligation is to supply at a minimum of 1 bar at the boundary; actual delivered pressure ranges from 1.5 to over 5 bar. Use a pressure gauge tap attachment (around 10 pounds) to measure your supply pressure before deciding whether a PRV is needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Is a PRV needed?" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Below 2 bar: a PRV is not beneficial. At this pressure the supply is near the minimum and reducing it further cuts flow rate to showers and taps." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "2 to 3 bar: marginal benefit. A PRV may help if washing machine hoses are ageing or the shower pressure is difficult to regulate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Above 3 bar: a PRV is recommended. WRAS guidance cites 3 bar as the design maximum for domestic plumbing fittings and appliances." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the PRV on the rising main immediately after the mains stopcock, before any branch connections to the house. This protects all downstream pipework and appliances. If you have a cold-water storage cistern, the PRV should be fitted on the rising main below the cistern ballvalve connection, not on the cistern outlet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn off the mains stopcock. Open a cold tap to drain the pipe pressure and confirm flow has stopped." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the PRV body length plus the two compression union connections (typically 150 to 200 mm total). Mark and cut that length out of the rising main with a pipe cutter. Deburr the pipe ends." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the arrow on the PRV body: it must point in the direction of flow (toward the house). Fit compression union connectors on both ends of the PRV. Hand-tighten then tighten a further one and a half turns with a wrench." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the mains stopcock on slowly. Check all joints for drips. If the PRV has an adjustment screw, the factory default is typically 3 bar; adjust to 2.5 bar by turning the screw anticlockwise and checking with a pressure gauge at a nearby tap." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pressure downstream of the PRV is unchanged" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The PRV may be installed backwards (flow direction reversed), or the adjustment spring may be seized. Check the flow arrow on the body, then try adjusting the set screw through its full range. If pressure does not change, the PRV diaphragm may be perforated: replace the unit." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Hot water flow reduced significantly after PRV installation" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "On a combination boiler, the hot water flow is powered by mains pressure. If the PRV set point is below 2 bar, the boiler may not reach its minimum operating pressure and will restrict hot water output. Reset the PRV to 2.5 bar minimum for combination boiler installations." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

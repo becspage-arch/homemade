@@ -1,0 +1,155 @@
+{
+  "slug": "heat-pump-leaving-temperature-optimisation",
+  "title": "Setting the correct heat pump flow temperature",
+  "subtitle": "Choosing the lowest flow temperature that keeps rooms warm enough to cut running costs by 10 to 30 percent",
+  "excerpt": "A heat pump's efficiency falls sharply as the flow temperature rises. At 55 degrees Celsius flow temperature the COP is typically 2.5; at 40 degrees it rises to 3.5 or better. Reducing the flow temperature by 5 degrees Celsius while keeping the house comfortable saves 10 to 15 percent on running costs. This is the method for finding the lowest workable flow temperature for a given heating circuit.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BEIS heat pump trial data (Electrification of Heat Demonstration Project 2022). Manufacturer COP curves for air-source heat pumps (Daikin, Mitsubishi, Vaillant). CIBSE AM14 on heat pump system design. Energy Saving Trust heat pump guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance. The ratio of heat output to electrical energy input. A heat pump with a COP of 3.0 produces 3 kWh of heat for every 1 kWh of electricity used."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The average COP over a full heating season, accounting for varying outdoor temperatures and defrost cycles."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature of water leaving the heat pump or boiler and entering the heating circuit. Lower flow temperatures mean higher heat pump efficiency."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most air-source heat pumps are commissioned at 50 to 55 degrees Celsius " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flow-temperature" } }],
+            "text": "flow temperature"
+          },
+          { "type": "text", "text": " to guarantee rooms reach temperature. That is a safe default but often 10 to 15 degrees higher than needed. Reducing the flow temperature from 55 to 40 degrees Celsius improves the" },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }],
+            "text": "SCOP"
+          },
+          { "type": "text", "text": " from around 2.5 to 3.5. This cuts electricity use by 30 percent for the same heat output, or around 300 to 600 kWh per year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The current flow temperature setting on the heat pump controller or weather compensation curve." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whether you have thermostatic radiator valves (TRVs) or underfloor heating (UFH) throughout. UFH runs well at 35 to 40 degrees; radiators need 40 to 50 degrees depending on their sizing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The design heat loss of the house and the emitter output at the proposed flow temperature. Radiator manufacturers publish output data at different mean water temperatures." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The outdoor temperature during any trial period. The test must be carried out when outdoor temperature is near design temperature, typically below 3 degrees Celsius." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1980s detached house in Derby, 120 m² floor area, has an air-source heat pump installed with flow temperature set to 55 degrees Celsius. The radiators are doubled in every room (installed during the heat pump changeover). At outdoor temperature of 0 degrees Celsius, the house maintains 21 degrees Celsius comfortably. Trial: reduce flow temperature to 50 degrees Celsius. Wait 24 hours. Check all rooms at 07:00 (coldest part of the morning). All rooms above 19 degrees Celsius: trial successful. Reduce to 45 degrees Celsius. Repeat. At 42 degrees Celsius flow temperature, one bedroom drops to 18 degrees Celsius: this is the lower boundary. Set flow temperature to 44 degrees Celsius as the working target." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weather compensation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A weather compensation curve automatically reduces flow temperature as outdoor temperature rises. At 10 degrees Celsius outside, the heat pump may run at 38 degrees flow; at minus 5 degrees Celsius, it runs at 50 degrees. Setting a weather compensation curve rather than a fixed flow temperature improves " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          { "type": "text", "text": " across the full season. The method is the same: set the maximum flow temperature (design day condition) and the minimum (mild weather), then let the controller interpolate. Most modern heat pump controllers have a weather compensation setting accessible through the service menu. Consult the manufacturer manual for the exact parameter code." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A house with original-size radiators that has not been upgraded may not sustain comfort below 50 degrees Celsius. In that case, check the radiator output at the design outdoor temperature against the room heat loss. If the gap is large, the radiators need upgrading before the flow temperature can fall. A listed building with planning restrictions on radiator visibility may require electric underfloor heating mats in individual rooms rather than flow temperature reduction." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Flow temperature adjustment is within the scope of a homeowner using the heat pump controller. Changing the weather compensation parameters on some controllers requires a service engineer access code. Ask your MCS-certified installer for the code or request a commissioning visit. If the heat pump is cycling frequently or showing fault codes after flow temperature reduction, call the installer. Rapid cycling at low flow temperature usually means an oversized heat pump or a flow rate problem, not a setting error." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "One room consistently cold after reducing flow temperature" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The radiator in that room is undersized for the heat loss at the new flow temperature. Add a second radiator or a fan-assisted radiator in that room before reducing the system-wide flow temperature." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Heat pump runs continuously but rooms are still cold" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The heat pump is undersized for the design heat loss at the lower flow temperature. Increase the flow temperature by 5 degrees and reassess; the heat pump may need replacing or supplementing with a second unit." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

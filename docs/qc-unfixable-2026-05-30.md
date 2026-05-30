@@ -416,3 +416,17 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - dyeing-with-dahlia-petals grade-level-strict — applied: 
 
 - clary-sage-bergamot-solid-perfume voice-violation — applied: 
+
+- compost-tea-making grade-level-strict — applied: 
+- domestic-wind-turbine-feasibility grade-level-strict — applied: 
+- energy-performance-certificate-reading grade-level-strict — applied: 
+- extending-appliance-lifespan voice-violation,grade-level-strict — applied: 
+- heat-pump-leaving-temperature-optimisation grade-level-strict — applied: 
+- heat-pump-refrigerant-signs voice-violation,grade-level-strict — applied: 
+- municipal-compost-vs-home-composting voice-violation,grade-level-strict — applied: 
+- outdoor-tap-installation grade-level-strict — applied: 
+- packaging-audit-at-home grade-level-strict — applied: 
+- pv-optimiser-vs-string-inverter grade-level-strict — applied: 
+- rainwater-only-irrigation-off-grid voice-violation,grade-level-strict — applied: 
+- refurbishing-secondhand-furniture voice-violation,grade-level-strict — applied: 
+- solar-pv-battery-management-schedules voice-violation,grade-level-strict — applied: 
