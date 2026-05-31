@@ -252,3 +252,19 @@ SKIPPED: 0
 - tapping-for-permission-to-play: grade-level-strict
 - tapping-for-safety-in-stillness: grade-level-strict
 - tapping-for-self-forgiveness: grade-level-strict
+
+---
+
+## Run at 13:05:41
+
+Generated: 2026-05-31T13:05:41.029Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

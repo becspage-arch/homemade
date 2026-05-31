@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-05-31T12:50:36.034Z",
+  "generatedAt": "2026-05-31T13:17:27.534Z",
   "totalScanned": 5862,
   "passCount": 0,
-  "blockCount": 54,
+  "blockCount": 44,
   "warnOnlyCount": 0,
   "perCategory": {
     "mindset": {
-      "total": 54,
+      "total": 44,
       "pass": 0,
-      "block": 54,
+      "block": 44,
       "warnOnly": 0
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 58,
-    "voice-violation": 29
+    "grade-level-strict": 48,
+    "voice-violation": 28
   },
   "verdicts": [
     {
@@ -71,51 +71,6 @@
           "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "I joyfully steward wealth that blesses my family, my community, and future generations."
-        }
-      ]
-    },
-    {
-      "slug": "new-moon-full-moon-two-monthly-anchors",
-      "tutorialId": "cmpr13bii0000c8v4d5izwv5p",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:44:23.865Z",
-      "publishedAt": "2026-05-29T14:39:49.745Z",
-      "heroMediaId": "cmpr16rdd0014u8v4iwft63vo",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "sourceNotes",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[12]",
-          "snippet": "By homemade.education. The lunar cycle as a marker appears across many cultural traditions. This version is secular."
-        }
-      ]
-    },
-    {
-      "slug": "sudden-vs-anticipated-loss",
-      "tutorialId": "cmpr0seym0000e0v4okzejynn",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:01.417Z",
-      "publishedAt": "2026-05-29T14:40:08.744Z",
-      "heroMediaId": "cmpr16w8s001eu8v4uzkshq4z",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "Drawn from bereavement research. No single source. Framing by homemade.education."
         }
       ]
     },
@@ -357,44 +312,6 @@
       ]
     },
     {
-      "slug": "tapping-for-perimenopause-mood-swings",
-      "tutorialId": "cmpr14eip000068v40ithey5z",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:06.899Z",
-      "publishedAt": "2026-05-29T14:40:40.297Z",
-      "heroMediaId": "cmpr1786y001uu8v4jefn4ych",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education. Framing draws on perimenopause research."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-for-permission-to-play",
-      "tutorialId": "cmpr14j1g00005sv4cgz7fa9h",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:07.249Z",
-      "publishedAt": "2026-05-29T14:40:46.153Z",
-      "heroMediaId": "cmpr179px001wu8v4z8m04dfu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
       "slug": "tapping-for-safety-in-stillness",
       "tutorialId": "cmpa83atu00000ov4onqx2cfm",
       "type": "PRACTICE",
@@ -625,25 +542,6 @@
       ]
     },
     {
-      "slug": "tapping-for-turning-40",
-      "tutorialId": "cmpcyl5zb0000fov4e9052qhn",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:09.555Z",
-      "publishedAt": "2026-05-29T14:40:54.148Z",
-      "heroMediaId": "cmpr17cql0020u8v4gvkb7ofe",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
-        }
-      ]
-    },
-    {
       "slug": "tapping-for-we-cant-talk-anymore",
       "tutorialId": "cmpehygya0000g4v4k81mq2jg",
       "type": "PRACTICE",
@@ -763,25 +661,6 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
           "snippet": "Even though I once felt alone in big financial decisions, I deeply and completely accept myself."
-        }
-      ]
-    },
-    {
-      "slug": "tapping-to-begin-the-30-day-sleep-reset",
-      "tutorialId": "cmpr14scg00008wv4phcizmxt",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:45:10.380Z",
-      "publishedAt": "2026-05-29T14:40:58.218Z",
-      "heroMediaId": "cmpr17e9u0022u8v4nyvqlopq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Gary Craig developed EFT in the 1990s. Script original to homemade.education."
         }
       ]
     },
@@ -1191,82 +1070,6 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > pullQuote[3] > paragraph[0]",
           "snippet": "The perfect advisors, opportunities, and partnerships align with my vision of generational wealth. They find me easily."
-        }
-      ]
-    },
-    {
-      "slug": "what-body-neutrality-actually-means",
-      "tutorialId": "cmpr1ydav0000icv4v3g70yzi",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T15:07:29.037Z",
-      "publishedAt": "2026-05-29T15:03:58.400Z",
-      "heroMediaId": "cmpr1zpk2000ibcv43c2u5dsw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Drawn from body image research and clinical writing on body dissatisfaction. No single source. By homemade.education."
-        }
-      ]
-    },
-    {
-      "slug": "what-is-available-to-her-is-available-to-me",
-      "tutorialId": "cmpaa4nzz000008v4vz9qi7t7",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:27.136Z",
-      "publishedAt": "2026-05-19T14:47:50.673Z",
-      "heroMediaId": "cmpmgpdj801622gv4psj7ues8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "If the Allow won't land, name the specific woman whose win triggered the feeling. Say the Release with her name in it: \"I am ready to releas"
-        }
-      ]
-    },
-    {
-      "slug": "where-to-start-with-money-work",
-      "tutorialId": "cmpcj9vk3000060v48vb52moo",
-      "type": "READING",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:31.138Z",
-      "publishedAt": "2026-05-19T11:12:16.109Z",
-      "heroMediaId": "cmpmgrpxs01962gv4hg9ubfcg",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[12]",
-          "snippet": "Written for homemade.education as a way in to the money section of the Mindset library."
-        }
-      ]
-    },
-    {
-      "slug": "why-we-fight-about-the-same-things",
-      "tutorialId": "cmpr1ywwl000010v4g43zy5xb",
-      "type": "PRACTICE",
-      "categorySlug": "mindset",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T15:07:34.798Z",
-      "publishedAt": "2026-05-29T15:04:23.805Z",
-      "heroMediaId": "cmpr1ztu6000qbcv422fz67fp",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[11]",
-          "snippet": "Drawn from Gottman relationship research and attachment theory. No single source. By homemade.education."
         }
       ]
     }
