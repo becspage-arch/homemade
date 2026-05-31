@@ -288,32 +288,65 @@ function bodyTextFor(body: unknown): { totalWords: number; firstParaText: string
   return out
 }
 
+/**
+ * Block types whose descendant text is "verbatim" — quoted directly from
+ * Rebecca's books (affirmations, energy statements, tapping scripts).
+ * Verbatim text is exempt from voice-style rules (grade-level, em-dash,
+ * banned-phrase, century-in-body, academic-register). Structural rules
+ * (hero present, sections required, ingredient completeness) still apply.
+ *
+ * Rationale: per feedback_verbatim_energy_statements.md, verbatim text
+ * from Rebecca's books MUST NOT be re-registered. The QC voice rules
+ * exist to catch authored prose that needs rewriting; running them on
+ * verbatim content produces false-positive BLOCKs that no fix routine
+ * can resolve (the text is, by policy, sacred).
+ *
+ * `pullQuote` is the universal signal — verbatim text should always be
+ * wrapped in pullQuote per the mindset author prompt.
+ *
+ * For mindset PRACTICE tutorials, `bulletList` content is ALSO verbatim
+ * (tapping scripts are authored as bulletList of listItem statements,
+ * each a verbatim setup statement or tapping-point line).
+ */
+function isVerbatimAncestor(type: string, tutorialType: string, categorySlug: string): boolean {
+  if (type === 'pullQuote') return true
+  if (categorySlug === 'mindset' && tutorialType === 'PRACTICE' && type === 'bulletList') return true
+  return false
+}
+
 function walkProseParagraphs(
   body: unknown,
-): Array<{ text: string; path: string; isBody: boolean }> {
-  const out: Array<{ text: string; path: string; isBody: boolean }> = []
+  tutorialType: string,
+  categorySlug: string,
+): Array<{ text: string; path: string; isBody: boolean; isVerbatim: boolean }> {
+  const out: Array<{ text: string; path: string; isBody: boolean; isVerbatim: boolean }> = []
   const root = body as TipTapNode | null
   if (!root || !Array.isArray(root.content)) return out
   for (let i = 0; i < root.content.length; i++) {
     const n = root.content[i]!
+    const topVerbatim = isVerbatimAncestor(n.type ?? '', tutorialType, categorySlug)
     if (n.type === 'paragraph' || n.type === 'blockquote') {
       const text = extractText(n)
-      if (text) out.push({ text, path: `body > ${n.type}[${i}]`, isBody: true })
+      if (text) out.push({ text, path: `body > ${n.type}[${i}]`, isBody: true, isVerbatim: false })
     } else if (n.type === 'infoPanel' && n.attrs && typeof n.attrs.body === 'string') {
-      out.push({ text: n.attrs.body, path: `body > infoPanel[${i}] > body`, isBody: true })
+      out.push({ text: n.attrs.body, path: `body > infoPanel[${i}] > body`, isBody: true, isVerbatim: false })
     } else if (Array.isArray(n.content)) {
-      // Walk into lists, etc.
-      function deep(node: TipTapNode, p: string): void {
+      // Walk into lists, pullQuotes, etc. Track whether any ancestor is a
+      // verbatim block so the per-paragraph rules can skip them.
+      function deep(node: TipTapNode, p: string, verbatim: boolean): void {
         if (!node) return
+        const here = verbatim || isVerbatimAncestor(node.type ?? '', tutorialType, categorySlug)
         if (node.type === 'paragraph' || node.type === 'blockquote') {
           const t = extractText(node)
-          if (t) out.push({ text: t, path: p, isBody: true })
+          if (t) out.push({ text: t, path: p, isBody: true, isVerbatim: here })
         }
         if (Array.isArray(node.content)) {
-          node.content.forEach((c, j) => deep(c, `${p} > ${c.type ?? 'node'}[${j}]`))
+          node.content.forEach((c, j) => deep(c, `${p} > ${c.type ?? 'node'}[${j}]`, here))
         }
       }
-      n.content.forEach((c, j) => deep(c, `body > ${n.type ?? 'node'}[${i}] > ${c.type ?? 'node'}[${j}]`))
+      n.content.forEach((c, j) =>
+        deep(c, `body > ${n.type ?? 'node'}[${i}] > ${c.type ?? 'node'}[${j}]`, topVerbatim),
+      )
     }
   }
   return out
@@ -438,7 +471,24 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
         ? { servings: t.servings ?? undefined, yieldDescription: t.yieldDescription ?? undefined }
         : undefined,
   })
+  // Verbatim text (pullQuote always; bulletList in mindset PRACTICE tapping
+  // scripts) is exempt from voice-style rules. We drop voice-check findings
+  // whose path indicates a verbatim ancestor — structural findings (missing
+  // node type, servings-yield, glossary coverage, etc.) keep firing because
+  // their paths target structure, not verbatim text content.
+  const isVerbatimPath = (path: string | undefined): boolean => {
+    if (!path) return false
+    if (path.includes('pullQuote')) return true
+    if (
+      t.category.slug === 'mindset' &&
+      t.type === 'PRACTICE' &&
+      path.includes('bulletList')
+    )
+      return true
+    return false
+  }
   for (const err of voiceReport.errors) {
+    if (isVerbatimPath(err.path)) continue
     findings.push({
       severity: 'BLOCK',
       kind: 'voice-violation',
@@ -449,6 +499,7 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
   }
   // We surface voice WARN as QC-WARN (no auto-fix needed).
   for (const warn of voiceReport.warnings) {
+    if (isVerbatimPath(warn.path)) continue
     findings.push({
       severity: 'WARN',
       kind: 'voice-violation',
@@ -509,8 +560,9 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
 
   // ─── Banned "honest" family (BLOCK; redundant with voice-check but always
   // checked so the QC fix queue sees them consistently) ────────────────────
-  const bodyParas = walkProseParagraphs(t.body)
+  const bodyParas = walkProseParagraphs(t.body, t.type, t.category.slug)
   for (const p of bodyParas) {
+    if (p.isVerbatim) continue
     if (BANNED_HONEST_RE.test(p.text)) {
       findings.push({
         severity: 'BLOCK',
@@ -538,7 +590,10 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
   }
 
   // ─── Stricter QC rules on body prose (BLOCK) ──────────────────────────────
+  // Verbatim paragraphs (pullQuote content + mindset PRACTICE bullet-list
+  // tapping scripts) are exempt — see isVerbatimAncestor / walkProseParagraphs.
   for (const p of bodyParas) {
+    if (p.isVerbatim) continue
     // Century-in-body.
     if (CENTURY_DIGIT_RE.test(p.text) || CENTURY_WORD_RE.test(p.text)) {
       const m = CENTURY_DIGIT_RE.exec(p.text) ?? CENTURY_WORD_RE.exec(p.text)
