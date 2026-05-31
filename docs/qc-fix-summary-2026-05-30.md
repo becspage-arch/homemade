@@ -2618,3 +2618,19 @@ SKIPPED: 0
 - rainwater-only-irrigation-off-grid: voice-violation, grade-level-strict
 - refurbishing-secondhand-furniture: voice-violation, grade-level-strict
 - solar-pv-battery-management-schedules: voice-violation, grade-level-strict
+
+---
+
+## Run at 23:09:08
+
+Generated: 2026-05-30T23:09:08.570Z
+
+Processed: 71
+PASS: 71
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

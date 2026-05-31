@@ -194,3 +194,61 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 01:09:55
+
+Generated: 2026-05-31T01:09:55.837Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 01:13:50
+
+Generated: 2026-05-31T01:13:50.286Z
+
+Processed: 1001
+PASS: 936
+STILL_BLOCKED: 65
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 207 |
+
+## Still BLOCKED (sample 20)
+
+- expansion-continues-with-ease-affirmation: grade-level-strict
+- giving-feels-expansive-and-fearless-affirmation: grade-level-strict
+- i-steward-wealth-with-purpose-and-joy: grade-level-strict
+- new-moon-full-moon-two-monthly-anchors: grade-level-strict
+- sudden-vs-anticipated-loss: grade-level-strict
+- tapping-for-bold-action-without-fear: grade-level-strict
+- tapping-for-calm-mornings: grade-level-strict
+- tapping-for-fear-of-owning-property: grade-level-strict
+- tapping-for-fear-of-repeating-family-patterns: grade-level-strict
+- tapping-for-financial-admin-dread: grade-level-strict
+- tapping-for-hosting-anxiety: grade-level-strict
+- tapping-for-i-am-a-natural-investor: grade-level-strict
+- tapping-for-i-feel-guilty-asking-for-more: grade-level-strict
+- tapping-for-investing-isnt-for-me: grade-level-strict
+- tapping-for-is-it-selfish-to-enjoy-this: grade-level-strict
+- tapping-for-never-enough-hours: grade-level-strict
+- tapping-for-perimenopause-mood-swings: grade-level-strict
+- tapping-for-permission-to-play: grade-level-strict
+- tapping-for-safety-in-stillness: grade-level-strict
+- tapping-for-self-forgiveness: grade-level-strict

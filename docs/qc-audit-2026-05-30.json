@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-05-30T22:51:18.336Z",
+  "generatedAt": "2026-05-30T23:10:29.349Z",
   "totalScanned": 5862,
   "passCount": 0,
-  "blockCount": 145,
+  "blockCount": 134,
   "warnOnlyCount": 0,
   "perCategory": {
     "sustainability": {
-      "total": 54,
+      "total": 43,
       "pass": 0,
-      "block": 54,
+      "block": 43,
       "warnOnly": 0
     },
     "mindset": {
@@ -43,9 +43,8 @@
     }
   },
   "perRuleKind": {
-    "grade-level-strict": 176,
-    "voice-violation": 113,
-    "body-missing-method": 10
+    "grade-level-strict": 162,
+    "voice-violation": 115
   },
   "verdicts": [
     {
@@ -475,75 +474,6 @@
       ]
     },
     {
-      "slug": "library-of-things-membership",
-      "tutorialId": "cmpsxphul0000qov4rtyt9cje",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:40:38.278Z",
-      "heroMediaId": "cmpsxx7l8000mzsv43ou9dcfr",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > bulletList[4] > listItem[2] > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[2]",
-          "snippet": "Borrowing makes sense for tools used once or twice per year: tile cutters, cement mixers, extension ladders, sack trolleys, wallpaper steame"
-        }
-      ]
-    },
-    {
-      "slug": "lime-mortar-repointing-airtightness",
-      "tutorialId": "cmpsxo0m200003gv4yu7pwcl7",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:39:29.275Z",
-      "heroMediaId": "cmpsxx88m000ozsv43xtak95v",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "Failed mortar joints are among the most overlooked sources of heat loss in pre-1919 brick houses. A joint that has eroded 10 mm back from th"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "A full repointing of a failed front elevation (average Victorian terrace: 35 m² of brickwork) typically reduces whole-house airtightness lea"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[9]",
-          "snippet": "For a listed building, the local planning authority may specify the exact mortar mix and finishing profile. Flush or slightly recessed joint"
-        }
-      ]
-    },
-    {
       "slug": "making-a-simple-leather-notebook-cover",
       "tutorialId": "cmprc21oh0001r8v4tsuw560l",
       "type": "PATTERN",
@@ -638,21 +568,15 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:50:40.186Z",
       "publishedAt": "2026-05-30T22:41:03.009Z",
       "heroMediaId": "cmpsxxau6000uzsv4potdlj17",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > bulletList[6] > listItem[0] > paragraph[0]",
-          "snippet": "Home heap: raw vegetable and fruit peelings, plastic-free tea bags, coffee grounds, egg shells, raw garden waste (not woody), paper and card"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "BLOCK",
@@ -660,6 +584,13 @@
           "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
           "snippet": "Neither system reliably handles: heavily waxed card, compostable plastic packaging. Most UK councils do not accept compostable plastics; che"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Municipal food-waste collection versus home composting go here."
         }
       ]
     },
@@ -906,16 +837,15 @@
       "type": "PATTERN",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:50:48.491Z",
       "publishedAt": "2026-05-30T22:40:31.583Z",
       "heroMediaId": "cmpsxxd8m000yzsv4c8oovdoo",
       "findings": [
         {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > infoPanel[0] > paragraph[0]",
-          "snippet": "Under the Water Supply (Water Fittings) Regulations 1999, you must notify your water supplier before connecting a new tap or fitting to the "
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[3] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "BLOCK",
@@ -923,6 +853,13 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[1]",
           "snippet": "An outdoor tap reduces the time and effort of garden watering and can be connected to a hose for a water butt top-up during dry periods. The"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
+          "snippet": "Outside tap kit: includes the tap, double-check valve, isolating valve, wall plate elbow, copper pipe, and compression fittings."
         }
       ]
     },
@@ -972,7 +909,7 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:50:49.445Z",
       "publishedAt": "2026-05-30T22:40:47.629Z",
       "heroMediaId": "cmpsxxdvj0010zsv4wujec7xt",
       "findings": [
@@ -986,16 +923,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Most local authorities recycle rigid plastic bottles and pots, glass, metal cans, and cardboard at the kerbside. Soft plastic film (bread ba"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 13.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "message": "paragraph reads at grade 14.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > troubleshooter[9] > troubleshooterItem[0] > paragraph[0]",
-          "snippet": "Loose produce is usually cheaper per kg than pre-packed, and buying a larger format (1 kg yoghurt instead of four 250 g pots) reduces cost p"
+          "snippet": "Loose produce is usually cheaper per kg than pre-packed, and buying a larger format reduces cost per unit. The expensive substitutes are typ"
         }
       ]
     },
@@ -1051,44 +981,6 @@
       ]
     },
     {
-      "slug": "party-wall-heat-loss-assessment",
-      "tutorialId": "cmpsxnwxy0000w8v4lt4fhqe1",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:39:24.528Z",
-      "heroMediaId": "cmpsxxetr0012zsv4rrbzjdem",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[4]",
-          "snippet": "Heat loss through a party wall follows the same formula as any other element: Q = U x A x (T_inside minus T_other_side). The difficulty is k"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "A thermal bridge scan of the party wall on a cold day (external temperature below 5 degrees Celsius, heating running for at least two hours)"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[10]",
-          "snippet": "If the loss exceeds 1,000 kWh per year (roughly 60 pounds at gas rates), internal lining of the party wall with 50 mm of mineral wool betwee"
-        }
-      ]
-    },
-    {
       "slug": "peat-free-garden-supply-swaps",
       "tutorialId": "cmps8mi9h0002i8v4rw5w8aly",
       "type": "TECHNIQUE",
@@ -1122,25 +1014,6 @@
           "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Switching to peat-free and plastic-reduced gardening supplies go here."
-        }
-      ]
-    },
-    {
-      "slug": "pipe-boxing-insulation-unheated-spaces",
-      "tutorialId": "cmpsxo9y40000c8v48dgd5jkt",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:39:41.384Z",
-      "heroMediaId": "cmpsxxgfc0016zsv4kj7tllrs",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[4] > listItem[4] > paragraph[0]",
-          "snippet": "For pipes that pass through walls into the heated zone, extend the lagging 50 mm into the wall penetration so there is no bare pipe exposed "
         }
       ]
     },
@@ -1278,15 +1151,10 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:51:06.454Z",
       "publishedAt": "2026-05-30T22:40:53.838Z",
       "heroMediaId": "cmpsxxh6g0018zsv43f6ua42h",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
@@ -1428,14 +1296,22 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:51:08.777Z",
       "publishedAt": "2026-05-30T22:41:15.226Z",
       "heroMediaId": "cmpsxxiiy001czsv4dbld6wa6",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 15.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 15.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Designing a rainwater-only irrigation system for a kitchen garden go here."
         }
       ]
     },
@@ -1516,14 +1392,22 @@
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:51:11.278Z",
       "publishedAt": "2026-05-30T22:40:50.649Z",
       "heroMediaId": "cmpsxxkds001gzsv4k0ylcv01",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 15.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 15.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Assessing and refurbishing second-hand furniture go here."
         }
       ]
     },
@@ -1641,25 +1525,6 @@
       ]
     },
     {
-      "slug": "roof-window-flashing-draught-sealing",
-      "tutorialId": "cmpsxocgo000058v45cdxpxnt",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:39:44.640Z",
-      "heroMediaId": "cmpsxy69k002kzsv4sbvg575w",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > orderedList[4] > listItem[0] > paragraph[0]",
-          "snippet": "In the loft, pull back the existing insulation from around the window to expose the frame flange and the gap between frame and insulation."
-        }
-      ]
-    },
-    {
       "slug": "routing-unwanted-homewares-to-charities",
       "tutorialId": "cmps8mfws0000s8v4jlf5gwmb",
       "type": "TECHNIQUE",
@@ -1707,25 +1572,6 @@
           "message": "paragraph reads at grade 15.5 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Removing batteries from electronics before disposal go here."
-        }
-      ]
-    },
-    {
-      "slug": "seaweed-as-compost-activator",
-      "tutorialId": "cmpsxp34g0000ncv4gpj296pg",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:40:19.197Z",
-      "heroMediaId": "cmpsxy81j002ozsv4lu1icco9",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[4]",
-          "snippet": "Collecting beached seaweed for personal use is generally allowed under common law in England and Wales. Check local bylaws before collecting"
         }
       ]
     },
@@ -1794,111 +1640,20 @@
       ]
     },
     {
-      "slug": "sizing-a-water-butt",
-      "tutorialId": "cmpsxpa4c0000i0v42xnnstol",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:40:28.265Z",
-      "heroMediaId": "cmpsxy8z5002qzsv47apdp0br",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        }
-      ]
-    },
-    {
-      "slug": "small-wind-battery-hybrid-sizing",
-      "tutorialId": "cmpsxqcp50002ucv4k2rxe2yc",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:41:18.270Z",
-      "heroMediaId": "cmpsxyeqb002yzsv4cssd2yz2",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > troubleshooter[9] > troubleshooterItem[1] > paragraph[0]",
-          "snippet": "The charge controller may have a battery protection ceiling that prevents charging above a set state of charge. In LFP systems, a 90 to 95 p"
-        }
-      ]
-    },
-    {
-      "slug": "smart-meter-half-hourly-data",
-      "tutorialId": "cmpsxohqc0000b4v4ax2s49db",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:39:51.472Z",
-      "heroMediaId": "cmpsxyfen0030zsv4jfh87rd4",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[6]",
-          "snippet": "Once you know your half-hourly consumption shape, you can assess whether an Agile, Go, or other time-of-use tariff suits your household. If "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[8]",
-          "snippet": "SMETS1 meters (installed before 2018) may not have enabled half-hourly data sharing. Contact your supplier; most SMETS1 meters have been rem"
-        }
-      ]
-    },
-    {
-      "slug": "solar-heated-outdoor-shower",
-      "tutorialId": "cmpsxq7yq0001pwv4pwxcg0gh",
-      "type": "PATTERN",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:41:12.135Z",
-      "heroMediaId": "cmpsxygly0032zsv4e4ivk63r",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[5]",
-          "snippet": "A 100 to 200 litre insulated tank mounted above the shower head, fed from a south-facing flat plate or polypipe collector below it, creates "
-        }
-      ]
-    },
-    {
       "slug": "solar-pv-battery-management-schedules",
       "tutorialId": "cmpsxpw8a0000b4v4xp3bbctu",
       "type": "TECHNIQUE",
       "categorySlug": "sustainability",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-05-30T22:51:31.266Z",
       "publishedAt": "2026-05-30T22:40:56.911Z",
       "heroMediaId": "cmpsxyhd40034zsv4ceks3khe",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
-        },
-        {
-          "severity": "WARN",
           "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
+          "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
         },
         {
           "severity": "WARN",
@@ -1910,16 +1665,9 @@
         {
           "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[0]",
-          "snippet": "A home solar battery can draw from three charge sources: solar generation, cheap overnight grid electricity, and export avoidance. Getting t"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 13.0 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > troubleshooter[9] > troubleshooterItem[1] > paragraph[0]",
-          "snippet": "Check that the inverter time zone and daylight saving setting is correct: the charge window times are local, and a one-hour offset will caus"
+          "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Programming battery charge schedules for home solar systems go here."
         }
       ]
     },
@@ -3283,23 +3031,6 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > bulletList[3] > listItem[0] > paragraph[0]",
           "snippet": "One shared real financial document: the monthly budget, a bank-account summary, a savings statement, the credit-card bill. Not hypothetical "
-        }
-      ]
-    },
-    {
-      "slug": "using-compost-in-raised-beds",
-      "tutorialId": "cmpsxouab000034v4uiywt7mj",
-      "type": "TECHNIQUE",
-      "categorySlug": "sustainability",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T22:40:07.734Z",
-      "heroMediaId": "cmpsxyj240038zsv40029pfdz",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "body-missing-method",
-          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
         }
       ]
     },
