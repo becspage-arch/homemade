@@ -1,0 +1,215 @@
+{
+  "slug": "solar-pv-battery-management-schedules",
+  "tutorialId": "cmpsxpw8a0000b4v4xp3bbctu",
+  "capturedAt": "2026-05-31T00:14:37.204Z",
+  "preFix": {
+    "title": "Programming battery charge schedules for home solar systems",
+    "subtitle": "Setting charge windows, minimum state of charge, and export limits to maximise self-consumption on a time-of-use tariff",
+    "excerpt": "A home battery charged exclusively from solar in summer typically reaches 80 to 90 percent self-consumption. In winter, the same system without scheduled grid charging may sit at 10 to 20 percent charge by evening peak, buying electricity at the highest tariff rate. A programmed charge window and minimum state-of-charge floor changes the annual saving by 80 to 200 pounds on a 5 kWh battery system.",
+    "sourceNotes": "Ofgem Smart Export Guarantee guidance and time-of-use tariff obligations (2024). Givenergy, Solis, and SolarEdge battery management documentation (2024). Centre for Sustainable Energy solar battery FAQ.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A home solar battery can draw from three charge sources: solar generation, cheap overnight grid electricity. And export avoidance. Getting that balance right affects both the economics and the carbon impact of your electricity. The battery management schedule is the tool that controls this balance.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Understanding state of charge settings",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Every battery management app shows state of charge as a percentage. Most lithium iron phosphate batteries should not regularly discharge below 10 to 15 percent SoC: this is the minimum SoC floor. Sometimes called depth of discharge limit. Setting the floor at 20 percent sacrifices 1 kWh of usable capacity on a 5 kWh battery but extends cell lifespan from an estimated 3,000 cycles to 4,000 to 5,000 cycles. For a battery cycled once daily, this extends usable life by 2 to 5 years.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Summer versus winter scheduling",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In summer, solar generation typically exceeds household consumption during the middle of the day. The battery fills from solar by 11:00 to 13:00 and surplus is exported at the SEG rate. No grid charging window is needed: set the battery to solar-charge only. In winter, a 4 kWp system in the UK generates 500 to 1,000 kWh across the six months, compared to 2,000 to 2,500 kWh in summer. The battery rarely charges above 40 to 60 percent from solar alone on a typical winter day.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Setting a grid charge window",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "On a time-of-use tariff the cheap overnight rate makes grid charging the battery worthwhile in winter. Set the charge window to the cheap-rate hours with a target SoC of 70 to 80 percent. The battery then powers the morning and afternoon without drawing from the grid at peak rate. Saving 0.2 to 0.4 pounds per day across the winter period. In the transition months. Check the forecast: a sunny day does not need overnight grid charging; a cloudy week does. Most apps allow weather-forecast integration to automate this decision.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Monitoring self-consumption",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Use an energy monitor to track self-consumption: what share of your electricity came from solar or battery versus the grid. Without scheduled charging, a system might reach 60 percent self-consumption annually. With correct scheduling the same system typically achieves 75 to 85 percent. Check the split monthly: if you are importing more than 40 percent of consumption in summer. The charge settings need reviewing.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "attrs": {
+            "title": "Troubleshooter"
+          },
+          "content": [
+            {
+              "type": "troubleshooterItem",
+              "attrs": {
+                "symptom": "Battery does not fill from solar even on clear sunny days"
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check the maximum charge rate setting: some batteries are configured to charge at a lower rate by default. Also check whether an import limit is active: some inverters have an export limit that also caps charge rate to avoid overloading the supply fuse. Consult the inverter monitoring app for active throttle events.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "troubleshooterItem",
+              "attrs": {
+                "symptom": "Overnight charge window not activating at the expected time"
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check that the inverter time zone and daylight saving setting is correct: the charge window times are local. And a one-hour offset will cause the window to miss the cheap-rate period entirely. Verify the tariff start time directly with the supplier. Cheap-rate periods can shift by 30 minutes between tariff versions and seasons.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for Programming battery charge schedules for home solar systems go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "voice-violation",
+      "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+      "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[6] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+      "snippet": "Step-by-step instructions for Programming battery charge schedules for home solar systems go here."
+    }
+  ]
+}

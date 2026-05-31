@@ -1,0 +1,275 @@
+{
+  "slug": "off-grid-load-calculation-worksheet",
+  "tutorialId": "cmpra13sg0001zgv4muhm4ith",
+  "capturedAt": "2026-05-31T00:14:30.860Z",
+  "preFix": {
+    "title": "Calculating off-grid electrical load requirements",
+    "subtitle": "Sizing a battery bank and solar array from your actual daily consumption",
+    "excerpt": "An off-grid electrical system must be sized to cover the worst-case daily energy demand, not the average, because a battery bank running short on a January week of low sun and high demand is the design failure condition. A systematic load calculation worksheet identifies each appliance, its wattage, and its daily hours of use, to produce a realistic daily energy demand figure that drives the battery and solar array sizing.",
+    "sourceNotes": "Victron Energy off-grid system design guide 2024. Rolls Battery off-grid sizing documentation. Paul Wheaton, Off-Grid Solar (2019). Renewable UK off-grid residential case studies.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Sizing an off-grid system for average demand gives a system that runs short in bad weather. The right approach is to size for peak demand over 2 to 3 days of low sun in a row. In a UK location, this means planning for winter conditions with a run of overcast days.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1: list all loads",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For each item, write down three things: the wattage, how many hours it runs per day in winter. And whether it can be switched off in bad weather.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Common off-grid loads and approximate wattages:.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "LED lighting: 5 to 15 W; 4 to 6 hours/day = 20 to 90 Wh/day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Laptop: 45 to 65 W; 8 hours/day = 360 to 520 Wh/day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Refrigerator: 35 to 50 W average running; continuous = 840 to 1200 Wh/day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Phone charging: 5 to 18 W; 2 hours/day = 10 to 36 Wh/day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Water pump: 60 W; 0.5 hours/day = 30 Wh/day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2: total daily demand",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Sum the Wh/day figures for all loads. Add a 15% inefficiency margin for inverter and wiring losses. This gives the design daily demand in Wh. A simple off-grid cabin with essential-only loads typically runs at 1,500 to 2,500 Wh/day.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3: battery bank sizing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Battery capacity = Daily demand × Autonomy days ÷ Max depth of discharge.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For a UK cabin with 2 kWh/day demand, 3 days of autonomy. And lithium iron phosphate batteries at 80% DoD: capacity = 2.0 × 3 ÷ 0.80 = 7.5 kWh.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 4: solar array sizing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Array size = Daily demand ÷ peak sun hours ÷ System efficiency.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For 2 kWh/day in Yorkshire. Winter 2.0 peak sun hours: 2.0 ÷ 2.0 ÷ 0.8 = 1.25 kWp minimum. In practice, size at 1.5× minimum to allow for panel degradation and sub-optimal orientation. At 400 W per panel, that is 5 panels.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for Calculating off-grid electrical load requirements go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "voice-violation",
+      "message": "grade-level: paragraph reads at grade 16.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+      "path": "body > orderedList[14] > listItem[0] > paragraph[0] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 16.6 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[14] > listItem[0] > paragraph[0]",
+      "snippet": "Step-by-step instructions for Calculating off-grid electrical load requirements go here."
+    }
+  ]
+}

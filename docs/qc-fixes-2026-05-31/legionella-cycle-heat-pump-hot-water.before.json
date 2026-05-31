@@ -1,0 +1,194 @@
+{
+  "slug": "legionella-cycle-heat-pump-hot-water",
+  "tutorialId": "cmps8l6ea0003pcv462gcc36s",
+  "capturedAt": "2026-05-31T00:14:28.521Z",
+  "preFix": {
+    "title": "Legionella protection on heat pump hot water cylinders",
+    "subtitle": "Why heat pumps run a weekly high-temperature cycle and how to set it correctly",
+    "excerpt": "Heat pumps operate most efficiently with low flow temperatures, but Legionella bacteria multiply in water stored between 20 and 45°C. A weekly pasteurisation cycle at 60°C kills the bacteria without running the heat pump at inefficient temperatures all the time. This explains the risk, the required cycle settings, and how to configure your controller.",
+    "sourceNotes": "HSE L8 Approved Code of Practice: Legionnaires' disease: the control of legionella bacteria in water systems (2013). CIBSE TM13 Minimising the risk of Legionnaires' disease. Heat Pump Association Technical Note on DHW temperatures and legionella control. Viessmann and Vaillant heat pump installation manuals (publicly available).",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A heat pump runs at best efficiency with flow temperatures of 35 to 45°C. Legionella bacteria multiply in stored water at these same temperatures. The solution is to operate the cylinder at normal heat pump temperatures for most of the week. And raise it to 60°C once a week for a pasteurisation cycle. This weekly cycle is built into most modern heat pump controllers and should be enabled on every domestic installation.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Who the requirement applies to",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "HSE L8 applies to employers and those responsible for premises with systems at risk. For a private dwelling, there is no legal obligation under L8, but the guidance still represents good practice. MCS installation requirements for heat pumps in domestic properties include setting the DHW cylinder to deliver hot water at 60°C to the taps. Either via the heat pump or via an immersion heater cycle. Check your installation certificate for the confirmed setting.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "How the cycle works in practice",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "For daily use, the heat pump heats the cylinder to its normal set point. Once a week. The controller triggers the immersion heater to raise the cylinder to 60°C and hold it for one hour. Many systems use the immersion specifically for this cycle because the heat pump cannot always reach 60°C efficiently.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Energy cost of the cycle",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Raising a 200-litre cylinder from 50°C to 60°C requires about 2.3 kWh. At 27p/kWh, this costs around 62p per cycle, or 32 pounds per year. This is the energy penalty for the legionella protection function. Scheduling the cycle on an Economy 7 rate at 12p/kWh reduces the cost to around 14 pounds per year.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Setting the cycle on common UK controllers",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Mitsubishi Ecodan: DHW settings, Legionella Prevention. Set the day and time. Vaillant arotherm: DHW settings, Thermal disinfection. Set the day and 60°C target. Daikin Altherma: Domestic hot water, Disinfection function. Enable and set a weekly schedule.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Confirming the cycle ran",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Most controllers show the last successful DHW disinfection cycle in the status log. Check this log after the first few cycles to confirm the cylinder is reaching 60°C within the programmed window. If it is not reaching temperature, the immersion heater element may be scaled or faulty. Or the cylinder is oversized relative to the heat pump's capacity to pre-heat it.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for Legionella protection on heat pump hot water cylinders go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "voice-violation",
+      "message": "grade-level: paragraph reads at grade 12.2 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+      "path": "body > orderedList[12] > listItem[0] > paragraph[0] > text"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[8] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.2 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+      "snippet": "Step-by-step instructions for Legionella protection on heat pump hot water cylinders go here."
+    }
+  ]
+}

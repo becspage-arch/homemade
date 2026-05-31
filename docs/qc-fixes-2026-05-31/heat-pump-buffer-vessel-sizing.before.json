@@ -1,0 +1,281 @@
+{
+  "slug": "heat-pump-buffer-vessel-sizing",
+  "tutorialId": "cmps8kx0i0002yov4gocfktv9",
+  "capturedAt": "2026-05-31T00:14:26.329Z",
+  "preFix": {
+    "title": "Sizing a buffer vessel for an air source heat pump",
+    "subtitle": "Why buffer tanks are needed and how to calculate the right volume",
+    "excerpt": "Most air source heat pumps need a buffer vessel between the heat pump and the heating circuit to prevent short-cycling. An undersized or missing buffer wastes electricity through repeated start-stop cycles and shortens compressor life. This is the calculation for minimum buffer volume based on heat pump output and minimum run time.",
+    "sourceNotes": "Heat Pump Association UK design guidance. Dimplex and Mitsubishi installer technical documentation (publicly available). MCS MIS 3005 heat pump installation specification guidance. CIBSE AM15 Heat Pumps.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A heat pump is most efficient when it runs continuously at a low modulating output. It is least efficient when it starts, heats a small volume of water quickly, and stops. ",
+              "type": "text"
+            },
+            {
+              "text": "Short-cycling",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8kwyb0001yov4kdy6s1p5"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " reduces ",
+              "type": "text"
+            },
+            {
+              "text": "COP",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpba3axw000s4ov4jr8ltx6d"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " and puts stress on the compressor. A correctly sized ",
+              "type": "text"
+            },
+            {
+              "text": "buffer vessel",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmps8kwxi0000yov4j94zsy66"
+                  }
+                }
+              ]
+            },
+            {
+              "text": " gives the heat pump enough water volume to run for a minimum of 6 to 10 minutes per cycle even on a warm day when the heating demand is low.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The minimum run time calculation",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The formula for minimum buffer volume:.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "V = /.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Q = heat pump output in kW at minimum modulation. t = minimum run time in seconds. 4.18 = specific heat capacity of water. dT = temperature rise across the buffer in °C. Use 5°C for a thermal store buffer or 10°C for a hydraulic separator only.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Worked example",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A 6 kW air source heat pump with a minimum modulation of 2 kW. Target run time: 6 minutes. Temperature differential across the buffer: 5°C.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "V = / = 720 / 20.9 = 34 litres.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The minimum buffer volume is 34 litres. In practice. Specify 50 to 80 litres to give headroom and to use standard vessel sizes available from heating suppliers. For a 10 kW heat pump at 3 kW minimum modulation and a 10-minute target run time. The calculation gives 71 litres; a 100-litre vessel is appropriate.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When is a buffer not needed?",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Underfloor heating systems often hold enough water to prevent short-cycling without a buffer. Some manufacturers specify a minimum circuit volume; check the product data. Calculate your circuit volume and compare before deciding to skip the buffer.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Buffer placement and plumbing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "The buffer sits between the heat pump and the heating circuit. With the heat pump flow connecting to the top of the buffer and the return connecting to the bottom. The heating circuit takes its flow from the top and returns to the bottom on the opposite side. This four-port plumbing arrangement prevents mixing and ensures maximum temperature differential. The buffer should be within 3 m of the heat pump to minimise heat loss in the connecting pipework.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When to call a professional",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Buffer sizing is confirmed by the heat pump installer as part of the MCS system design. Incorrect sizing is one of the most common causes of poor heat pump performance in UK retrofits. If a system is short-cycling. A heating engineer with heat pump experience can measure the cycle duration and diagnose whether an undersized buffer is the cause.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for Sizing a buffer vessel for an air source heat pump go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[6] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+      "path": "body > paragraph[8] > text",
+      "snippet": "Target"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[10]",
+      "snippet": "Underfloor heating systems often hold enough water to prevent short-cycling without a buffer. Some manufacturers specify a minimum circuit v"
+    }
+  ]
+}

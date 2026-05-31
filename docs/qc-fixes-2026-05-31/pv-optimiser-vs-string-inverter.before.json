@@ -1,0 +1,202 @@
+{
+  "slug": "pv-optimiser-vs-string-inverter",
+  "tutorialId": "cmpsxptuk000158v4nhohc1jv",
+  "capturedAt": "2026-05-31T00:14:33.692Z",
+  "preFix": {
+    "title": "PV power optimisers and string inverters: which to choose",
+    "subtitle": "How shading, module mismatch, and roof orientation affect the case for optimisers, micro-inverters, or a central string inverter",
+    "excerpt": "A standard string inverter matches its output to the weakest module in the string: a single shaded panel can reduce the output of the whole array by 8 to 35 percent depending on the shade tolerance of the inverter. Power optimisers and micro-inverters decouple each panel so the rest of the string continues at full power. For unshaded south-facing roofs the extra cost rarely pays back. For roofs with chimneys, dormers, or mixed orientations, optimisers typically recover 5 to 15 percent of annual yield.",
+    "sourceNotes": "CREST (Centre for Renewable Energy Systems Technology) Loughborough shading loss modelling. Solar Energy UK technical briefing on module-level power electronics (2024). European Commission PVGIS tool documentation.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A string inverter uses a single maximum power point tracking circuit for the whole array. If one panel in a string of 10 is shaded to 20 percent of its rated output. The inverter adjusts down toward that panel. On a perfectly unshaded south-facing roof this behaviour is irrelevant. On any roof with a chimney stack, dormer, adjacent tree. Or two non-identical orientations, it is the largest single source of underperformance.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "How string inverters handle shade",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Modern string inverters include shade-tolerant algorithms and some have multiple MPPT inputs. A dual-MPPT inverter can split the array into two independent strings. It handles orientation mismatch but not localised shading within a single string. CREST modelling shows a single 20-percent-shaded panel in a 10-panel string can reduce total output by 8 to 35 percent depending on the inverter's shade algorithm. The wide range reflects differences in bypass diode configuration and inverter shade algorithm.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Power optimisers",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A power optimiser is a DC-to-DC converter fitted behind each panel. Allowing each module to track its own maximum power point before the DC passes to the central string inverter. extra cost per optimiser is 30 to 70 pounds. A 10-panel system adds 300 to 700 pounds to installation cost. For an unshaded roof, the yield improvement is 1 to 3 percent: too small to justify the cost. For a partially shaded or split-orientation roof, optimisers recover 5 to 15 percent of annual yield. On a 4 kWp system generating 3,400 kWh per year. That is 170 to 510 extra kWh, worth 46 to 138 pounds at 27p/kWh. Payback on optimiser cost is 2 to 15 years depending on the severity of the shading.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Micro-inverters",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A micro-inverter replaces both the central inverter and the optimiser. Each panel has its own AC-conversion unit. Advantages match optimisers for shading, plus per-panel monitoring and no single-point inverter failure. Disadvantages: 50 to 100 pounds more per panel than a string inverter. More complex AC wiring on the roof, harder to service. They are most justified on roofs with severe shading where a central inverter consistently underperforms. Or where wall-mounted inverter space is limited.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When the extra cost is not justified",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "On an unshaded. South-facing roof with all panels at the same pitch and orientation. The total premium for optimisers or micro-inverters will not recover through yield improvement over a 25-year system life. Model the shaded and unshaded scenarios in the PVGIS tool before agreeing to the extra cost. Most installers will run this model free of charge.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "attrs": {
+            "title": "Troubleshooter"
+          },
+          "content": [
+            {
+              "type": "troubleshooterItem",
+              "attrs": {
+                "symptom": "Output is 15 to 20 percent below the modelled figure"
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Check for soiling: bird droppings, moss, or dust on the panels reduce output by 5 to 15 percent. If the panels are clean, check that the PVGIS model used the correct tilt, azimuth, and postcode. If the model is correct and the panels are clean. Request the inverter event log; repeated clipping events indicate inverter undersizing or a wiring fault.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "troubleshooterItem",
+              "attrs": {
+                "symptom": "One panel shows consistently lower output on per-panel monitoring"
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Inspect that panel for localised shading at the time of lowest output. If no shade is visible, the panel may have a failed bypass diode or cell defect. This fault is only visible via per-panel monitoring from optimisers or micro-inverters. A string inverter will not flag an individual panel.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for PV power optimisers and string inverters: which to choose go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > paragraph[2]",
+      "snippet": "Modern string inverters include shade-tolerant algorithms and some have multiple MPPT inputs. A dual-MPPT inverter can split the array into "
+    }
+  ]
+}

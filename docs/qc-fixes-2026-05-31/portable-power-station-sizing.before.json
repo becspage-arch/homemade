@@ -1,0 +1,375 @@
+{
+  "slug": "portable-power-station-sizing",
+  "tutorialId": "cmprvg68m0001e0v4o5xmjnxi",
+  "capturedAt": "2026-05-31T00:14:33.392Z",
+  "preFix": {
+    "title": "Sizing a portable power station for off-grid and emergency use",
+    "subtitle": "Calculating the capacity and output needed for common household loads, camping, and power cuts",
+    "excerpt": "A portable power station is a large-capacity lithium battery with AC and DC outputs. Getting the size right means knowing what you want to run, for how long, and how you plan to recharge it. A unit sized for running a CPAP machine overnight is a different specification from one intended to keep a fridge cold through a 12-hour power cut. This explains the calculation, the key specs to compare, and what solar input panels pair with each capacity range.",
+    "sourceNotes": "IEC 62133 standards for lithium battery safety (referenced for context). Ofgem guidance on domestic energy storage (not directly applicable but contextual). Energy Saving Trust EV charging guidance (lithium chemistry context). NICEIC guidance on battery storage systems for general context.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Watt-hours is the only number that determines how long a portable power station can run a given load. Manufacturers also quote continuous output wattage and peak surge wattage. Both matter: the capacity determines how long; the output determines what.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 1: measure or estimate your load",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Find the wattage of each device you intend to run. It is printed on the appliance label or in the product manual. If the device is already owned, use a plug-in energy monitor for a direct wattage reading.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Laptop charging: 45-100 W.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "CPAP machine: 30-60 W.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Small fridge: 15-25 W average draw.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Electric blanket: 80-140 W.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Full-size fridge-freezer: 100-200 W average draw; surge on compressor start can reach 600-800 W.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 2: calculate required capacity",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Required Wh = x. Multiply by 1.15 to account for inverter conversion losses.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "CPAP overnight: 400 Wh x 1.15 = 460 Wh minimum. A 500 Wh unit covers this comfortably.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Small fridge through a 12-hour power cut: 240 Wh x 1.15 = 276 Wh. A 300 Wh unit is adequate.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Laptop plus phone charging: 400 Wh + 60 Wh = 460 Wh plus margin. A 600 Wh unit covers this.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Step 3: check continuous output rating",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A power station must be able to deliver the peak wattage of everything running simultaneously. Plus the surge wattage of any motors starting. If the load exceeds the continuous output rating, the unit will shut down or trigger its overcurrent protection. A 300 Wh unit with a 300 W continuous output cannot run a full-size fridge. Even though the average draw is only 150 W.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Solar panel pairing",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "UK average peak solar hours: 2-4 hours per day.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Daily recharge from solar = panel wattage x peak hours x 0.8. A 100 W panel on a good UK summer day yields about 240 Wh. On a cloudy winter day. 40-80 Wh.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "To keep a 300 Wh unit topped up through daily use: a 100 W folding panel is adequate in summer. Two 100 W panels recommended for year-round use.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Temperature and battery care",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "Lithium-ion and lithium iron phosphate batteries lose capacity in cold conditions. At 0 degrees C. Available capacity is about 80% of the rated figure; at -10 degrees C it drops to 60-70%. For winter camping or outdoor use, keep the unit insulated or inside the tent. LFP chemistry tolerates cold better than lithium-ion and has a longer cycle life.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "troubleshooter",
+          "content": [
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the compressor surge wattage (usually 2-3x the running wattage). If it exceeds the unit's peak output, the fridge cannot be run on this unit. A larger unit or a fridge with a lower-surge inverter compressor is needed.",
+                "cause": "Motor surge on compressor start exceeds the unit's continuous or peak output rating",
+                "symptom": "Unit shuts off immediately when the fridge compressor starts"
+              }
+            },
+            {
+              "type": "troubleshooterRow",
+              "attrs": {
+                "fix": "Check the unit's maximum solar input specification (in watts). The panel must not exceed this figure. Even partial shading of one cell reduces the whole panel's output significantly; full, direct sun exposure is required.",
+                "cause": "Panel wattage is below the unit's maximum solar input rate, or the panel is partially shaded",
+                "symptom": "Unit charges slowly from the solar panel"
+              }
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for Sizing a portable power station for off-grid and emergency use go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "BEGINNER"
+  },
+  "initialFindings": [
+    {
+      "severity": "BLOCK",
+      "kind": "voice-violation",
+      "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+      "path": "body > orderedList[15] > listItem[0] > paragraph[0] > text"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[15] > listItem[0] > paragraph[0]",
+      "snippet": "Step-by-step instructions for Sizing a portable power station for off-grid and emergency use go here."
+    }
+  ]
+}

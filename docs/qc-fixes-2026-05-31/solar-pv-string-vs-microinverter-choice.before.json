@@ -1,0 +1,274 @@
+{
+  "slug": "solar-pv-string-vs-microinverter-choice",
+  "tutorialId": "cmpr9ytny0003l8v4susiu8lm",
+  "capturedAt": "2026-05-31T00:14:37.586Z",
+  "preFix": {
+    "title": "String inverters versus microinverters for a home solar PV system",
+    "subtitle": "Choosing the inverter architecture that matches your roof and budget",
+    "excerpt": "A string inverter converts the DC output of all panels in a series string together. A microinverter sits behind each panel and converts it individually. The choice affects performance under partial shading, installation cost, monitoring granularity, and long-term maintenance. For a simple unshaded south-facing roof, string is cheaper and fine. For any shaded, split-pitch, or multi-orientation roof, microinverters or power optimisers prevent the partial-shade penalty from collapsing the whole array's output.",
+    "sourceNotes": "Solar Trade Association (STA) Best Practice Guide for domestic PV 2024. Enphase IQ8 and SolarEdge HD-Wave inverter technical documentation. BEIS Feed-In Tariff and SEG guidance 2024.",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "In a string inverter system, all panels are wired in series. Their voltages add together; their current is limited by the weakest panel. If one panel produces 90% of its rated output due to shading. The current of the entire string drops. On a roof with a chimney stack, a dormer. Or overhanging tree branches. This penalty can be substantial. A 20% shading on two panels in a 12-panel string can reduce total output by 40% or more during shadow-passing hours.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When string inverters are sufficient",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "All panels face the same direction within 30° of each other.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "The roof face is unshaded by adjacent chimneys, dormers, trees. Or neighbouring buildings between 9 am and 3 pm throughout the year.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Budget is the main constraint. String inverters cost much less than microinverters. For a 12-panel array, microinverters add a much premium to the total cost.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "When microinverters or ",
+              "type": "text"
+            },
+            {
+              "text": "power optimiser",
+              "type": "text",
+              "marks": [
+                {
+                  "type": "glossaryTooltip",
+                  "attrs": {
+                    "termId": "cmpr9ytmk0002l8v4n1lcidge"
+                  }
+                }
+              ]
+            },
+            {
+              "text": "s are worth the premium",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Panels split across two roof faces at different orientations, common on L-shaped houses. Each face can be on its own microinverter string and track its own peak.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Any intermittent shading from a chimney, satellite dish, or tree. Even a shadow path crossing one panel for two hours per day on a 12-panel south-facing array can reduce annual yield by 400 to 600 kWh without panel-level ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "MPPT",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "glossaryTooltip",
+                          "attrs": {
+                            "termId": "cmpq7usn00000i8v4hfpc2lc8"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "text": ".",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Panel-level monitoring is required, for example, where the owner wants to detect a failing panel quickly. String inverters report total string output. The failure of one panel shows up only as a small overall dip.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "The power optimiser middle ground",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "A power optimiser gives panel-level MPPT while using a single central inverter for AC conversion. The SolarEdge system is the main UK example. The cost premium is about half that of microinverters. The central inverter is still a single point of failure. With microinverters, a failed unit affects only one panel.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Worked comparison: a Victorian semi in Bristol",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "text": "South-facing roof, 12 panels, chimney stack shading 2 panels for 3 hours per day on clear days. String inverter annual yield estimate: 3,400 kWh. With microinverters: 3,800 kWh. Difference: 400 kWh per year. The extra yield pays back the microinverter premium in about 11 years. The chimney can be treated as a permanent feature. The microinverter investment pays for itself before the expected 20-year inverter life is reached.",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "text": "Method",
+              "type": "text",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "type": "orderedList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Step-by-step instructions for String inverters versus microinverters for a home solar PV system go here.",
+                      "type": "text",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "servings": null,
+    "yieldDescription": null,
+    "difficulty": "INTERMEDIATE"
+  },
+  "initialFindings": [
+    {
+      "severity": "WARN",
+      "kind": "voice-violation",
+      "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+      "path": "excerpt"
+    },
+    {
+      "severity": "BLOCK",
+      "kind": "grade-level-strict",
+      "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+      "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+      "snippet": "Step-by-step instructions for String inverters versus microinverters for a home solar PV system go here."
+    }
+  ]
+}
