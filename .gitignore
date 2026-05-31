@@ -41,6 +41,11 @@ Thumbs.db
 docs/hero-fill-progress.json
 docs/tricolon-fixup-progress.json
 
+# qc-fix pre-fix body snapshots — written by the qc-fix-batch cron each
+# fire. Recovery state only; recoverable from Tutorial.revisedFrom in the
+# DB. Daily directories pile up and would bloat the repo.
+docs/qc-fixes-*/
+
 # Caches
 .cache/
 .eslintcache
