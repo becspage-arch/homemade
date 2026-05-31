@@ -141,3 +141,49 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - why-anxiety-hits-in-perimenopause grade-level-strict — applied: 
 - why-debt-obsession-grows-in-the-dark grade-level-strict — applied: 
 - why-we-fight-about-the-same-things grade-level-strict — applied: 
+
+## qc-fix-batch 2026-05-31 14:01 UTC — mindset BLOCK batch (44 slugs), NOT auto-fixed: all rule-misfire / verbatim-protected (see halt signal RULE_MISFIRE_VERBATIM)
+- expansion-continues-with-ease-affirmation grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- giving-feels-expansive-and-fearless-affirmation grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- i-steward-wealth-with-purpose-and-joy grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-bold-action-without-fear grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-calm-mornings voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title)
+- tapping-for-fear-of-owning-property grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-fear-of-repeating-family-patterns grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-financial-admin-dread grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-hosting-anxiety grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; grade 11.2 EFT-attribution line
+- tapping-for-i-am-a-natural-investor grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-i-feel-guilty-asking-for-more grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-investing-isnt-for-me grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-is-it-selfish-to-enjoy-this grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-never-enough-hours grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-safety-in-stillness voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title)
+- tapping-for-self-forgiveness grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-spiritual-but-not-religious grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-ageing-body grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-family-money-story-i-inherited grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-fear-of-being-seen-with-money grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-money-fight-that-keeps-returning grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-new-family-story grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-parent-money-tangle grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-the-wait-for-apology-trap grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; grade 11.2 EFT-attribution line
+- tapping-for-trust-in-perfect-timing grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-for-we-cant-talk-anymore grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-allow-myself-to-be-the-wealthy-one grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-anchor-calm-as-the-default voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title); false-pos brand "Anchor"(verb anchor)
+- tapping-to-anchor-trust-in-multi-million-investments voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos brand "Anchor"(verb anchor)
+- tapping-to-attract-the-right-advisors-and-deals grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-celebrate-her grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-celebrate-new-opportunities voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; tricolon in ritual text
+- tapping-to-claim-calm-sleeper-identity voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title); false-pos brand "Anchor"(verb anchor); tricolon in ritual text
+- tapping-to-come-back-to-now voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title)
+- tapping-to-fall-asleep-in-belonging voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos americanism "fall"(verb/book-title)
+- tapping-to-give-freely-without-fear grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-live-in-daily-overflow voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; tricolon in ritual text
+- tapping-to-lock-in-ease-with-receiving-and-spending grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-release-guilt-about-wanting-wealth grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- tapping-to-see-myself-as-someone-who-has-it grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
+- the-legacy-alignment-activation voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos brand "Anchor"(verb anchor); tricolon in ritual text
+- the-overflow-and-circulation-activation voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos brand "Anchor"(verb anchor)
+- the-overflow-and-circulation-ritual voice-violation,grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script; false-pos brand "Anchor"(verb anchor)
+- the-perfect-advisors-find-me-easily grade-level-strict — RULE-MISFIRE: grade-level on verbatim affirmation/EFT-script
