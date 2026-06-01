@@ -1,0 +1,256 @@
+{
+  "slug": "walkaway-split-for-swarm-prevention",
+  "title": "The walkaway split",
+  "subtitle": "Splitting a hive without finding the queen.",
+  "excerpt": "The walkaway split is the simplest swarm-control method for a beekeeper who hasn't yet marked their queen. You divide the colony into two, leave one half on the original stand, and let the queenless box raise its own queen from open larvae. No queen hunting required.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBKA swarm control guidance (2023), bbka.org.uk. National Bee Unit Beekeeper's Toolkit, nationalbeeunit.com. Hooper, T., Guide to Bees and Honey (1976), a standard UK practical reference.",
+  "glossaryTerms": [
+    {
+      "slug": "walkaway-split",
+      "term": "Walkaway split",
+      "definition": "A colony division where the queenless half is left to raise its own queen from existing open larvae. The beekeeper walks away without identifying which box has the queen."
+    },
+    {
+      "slug": "open-brood",
+      "term": "Open brood",
+      "definition": "Eggs and young larvae that have not yet been capped. Necessary for the queenless half of a split to raise emergency queen cells."
+    },
+    {
+      "slug": "queen-cell",
+      "term": "Queen cell",
+      "definition": "A large peanut-shaped wax cell used to rear a new queen. Swarm cells appear on the lower frame edge; emergency cells are built over existing worker larvae."
+    }
+  ],
+  "techniqueSlugs": [
+    "lighting-a-bee-smoker",
+    "reading-the-brood-frame"
+  ],
+  "criticalTechniques": [
+    "lighting-a-bee-smoker"
+  ],
+  "aliases": ["walkaway split bees", "queenless split"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "smoker-fuel", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "nuc-box", "isOptional": false },
+    { "slug": "national-frame", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "By late April in most UK apiaries the colony is building towards swarming. Brood boxes are filling with bees, the queen is at her spring peak, and somewhere on the lower edge of a frame the first swarm cell may already be forming. The " },
+          {
+            "type": "text",
+            "text": "walkaway split",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "walkaway-split" } }]
+          },
+          { "type": "text", "text": " uses that momentum: you divide the colony into two, move one box to a new stand, and let the bees sort out the queen situation themselves." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The method works because any box with " },
+          {
+            "type": "text",
+            "text": "open brood",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "open-brood" } }]
+          },
+          { "type": "text", "text": " less than three days old can produce a new queen. You don't need to find the existing queen, you don't need to cage her, and you don't need to be confident about what you're looking at on each frame. A careful split of brood and bees is all the technique requires." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to do this" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mid-April to mid-May in southern England; late April to early June further north. Do this when the brood box is full of bees and you can see visible " },
+          {
+            "type": "text",
+            "text": "queen cells",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "queen-cell" } }]
+          },
+          { "type": "text", "text": " or the colony looks close to swarming: bees clustered on the front in warm weather, or a queen you haven't found in two recent visits." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Do this on a warm still day with a good nectar flow, ideally in the afternoon when foragers are out. Cold or windy days are harder on queenless bees." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A nucleus box or a full brood box. A nuc is enough for a four-to-five frame split." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spare frames of drawn comb or fresh foundation to fill gaps." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A second hive stand, at least three metres from the original and ideally two metres from any other hive." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Smoker, suit, gloves, hive tool." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The split" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Light the " },
+          {
+            "type": "text",
+            "text": "smoker",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "lighting-a-bee-smoker", "label": "smoker" } }]
+          },
+          { "type": "text", "text": " and open the hive. Smoke the entrance lightly, lift the crown board, and give two or three puffs across the top of the frames. Wait thirty seconds." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work through the frames systematically, " },
+          {
+            "type": "text",
+            "text": "reading the brood frame",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reading-the-brood-frame", "label": "reading the brood frame" } }]
+          },
+          { "type": "text", "text": " as you go. You are looking for frames that carry open brood: eggs or larvae that are still uncapped. Identify at least two such frames. You do not need to find the queen." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Transfer to the nuc box: two frames of open brood (with the bees on them), one frame of sealed brood, one frame of honey and pollen. Fill the remaining space with a drawn comb or a frame of foundation." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Move the nuc box to the second stand immediately. Shake an additional frame of bees (not brood) into the nuc to bring its numbers up, then close it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the original hive undisturbed on its stand. The flying bees from both boxes will drift to the original site over the next few hours, which evens up the populations. The original hive has the advantage of location; the nuc has open brood to raise a queen." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "The box with the queen will not build queen cells. The queenless box will. After five to seven days you can open the nuc and see emergency queen cells drawn over larvae, usually on the face of the comb rather than the lower edge. Do not disturb those cells." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the split" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the nuc alone for seven days. Then open and check: you should see two or more capped queen cells. Select the best-placed one (large, on the face of the frame, not on the edge where it can be knocked). If more than one is capped, knock down the surplus or leave two and let the first queen to emerge deal with the rest." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The new queen emerges around day fourteen. She takes mating flights over the following week and starts laying around day twenty-three from the split. Do not open the nuc during the mating period. A virgin queen disturbed during or just after a mating flight is easily lost." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At day twenty-eight, check for eggs. If you find a patch of worker brood, the queen has mated and the nuc is established. If you find only drone brood in a scattered pattern, the queen is a drone layer and you need to unite the nuc back with the original or introduce a mated queen." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you might find" }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "No queen cells in the nuc at day seven",
+              "cause": "The frames transferred had no eggs or young larvae"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Check whether the larvae on the transferred frames were all capped by the time you checked. If so, the bees had nothing to work with. Transfer a frame of fresh open brood from the original hive and check again in four days." }]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Both boxes quiet, no sign of swarm preparations",
+              "cause": "The original queen was in the nuc"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "The original box without a queen will show the activity difference within three days. If the original box looks more active at the entrance, the queen is there; if the nuc does, she went with it. Either way the split has worked. The queenless box will raise its own queen." }]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Bees building across both boxes within a day",
+              "cause": "Boxes placed too close together"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "If the nuc is within two metres of the original, foragers returning to their old position will boost the original colony and leave the nuc light on bees. Move the nuc further away early on the second morning before flying has begun." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

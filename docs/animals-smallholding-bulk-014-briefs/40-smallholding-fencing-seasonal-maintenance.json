@@ -1,0 +1,360 @@
+{
+  "slug": "smallholding-fencing-seasonal-maintenance",
+  "title": "Seasonal fencing maintenance on a smallholding",
+  "subtitle": "A calendar for checking and repairing fencing before it fails.",
+  "excerpt": "A fence that has been standing through a winter will have taken some damage: frost-lifted posts, wire loosened by debris, gates that no longer close squarely. Three maintenance walks per year, late winter, summer, and autumn, catch problems before an escape or an injury, and are less expensive than emergency repairs.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB fencing guidance for livestock, ahdb.org.uk. Emery, C., Encyclopedia of Country Living (updated edition). Institute of Auctioneers and Appraisers in Scotland (IAAS) fencing standards.",
+  "glossaryTerms": [
+    {
+      "slug": "stock-proof",
+      "term": "Stock-proof",
+      "definition": "A fence that prevents the specific livestock species it is intended to contain. What is stock-proof for cattle is not necessarily stock-proof for sheep or goats."
+    },
+    {
+      "slug": "fence-staple",
+      "term": "Fence staple",
+      "definition": "A U-shaped metal nail used to fix wire to timber fence posts. Staples work loose over time and should be checked and re-driven as part of annual fence maintenance."
+    }
+  ],
+  "techniqueSlugs": [
+    "setting-up-electric-fencing-on-a-smallholding",
+    "electric-fence-troubleshooting"
+  ],
+  "criticalTechniques": [],
+  "aliases": [
+    "fence maintenance smallholding",
+    "checking livestock fencing"
+  ],
+  "recipeTools": [
+    {
+      "slug": "fencing-pliers",
+      "isOptional": false
+    },
+    {
+      "slug": "post-rammer",
+      "isOptional": false
+    },
+    {
+      "slug": "electric-fence-energiser",
+      "isOptional": true
+    },
+    {
+      "slug": "wire-cutter",
+      "isOptional": false
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A fencing walk takes an hour per kilometre at a slow inspection pace. Walk every field boundary and internal division fence three times a year; twice a year is the realistic minimum on a busy holding. Keep a notepad and mark problems as you find them so you can return with the right materials."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Late winter walk (February to March)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The winter walk catches frost damage and debris accumulation before the spring season begins. Check:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Post heave, frost lifts timber posts if the ground freezes to depth. Any post that has risen should be re-driven back to the correct depth and compacted."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wire tension, wire contracts in cold weather and loosens when it warms. Re-tension any wire that has noticeably drooped."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": ""
+                  },
+                  {
+                    "type": "text",
+                    "text": "Fence staples",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "fence-staple"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ", tap back any that have worked loose. Loose staples are a leg-injury risk."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Storm debris, branches lying on or against the fence. Remove these before livestock are turned out onto the new season's grass."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Summer walk (June to July)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The summer walk catches damage from animal pressure through the grazing season. Check:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rubbing posts, cattle and pigs rub against timber posts and can work them loose. A post that rocks needs re-driving or replacing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Electric fencing, check voltage with a tester. The "
+                  },
+                  {
+                    "type": "text",
+                    "text": "electric fence troubleshooting",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "electric-fence-troubleshooting",
+                          "label": "electric fence troubleshooting"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " tutorial covers fault-finding for voltage loss."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gate hinges and latches, the most common cause of escape."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Autumn walk (October to November)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check the boundary fences before livestock are moved in from summer grazing to winter quarters. Any "
+          },
+          {
+            "type": "text",
+            "text": "stock-proof",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stock-proof"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " deficiencies in a field about to receive a wintering group should be repaired before they go in, not after they've used the weak point to explore the neighbours' field."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Keep a stock of repair materials: a few spare timber posts, a roll of stock fencing, a coil of barbed wire, a bag of fence staples, and a reel of polywire for temporary repairs. An escape at 6 p.m. on a Saturday is much easier to manage if you can fix the breach temporarily on the spot."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Electric fencing maintenance"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Electric fence maintenance is covered in the "
+          },
+          {
+            "type": "text",
+            "text": "setting up electric fencing",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "setting-up-electric-fencing-on-a-smallholding",
+                  "label": "setting up electric fencing"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "electric fence troubleshooting",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "electric-fence-troubleshooting",
+                  "label": "electric fence troubleshooting"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " tutorials. At each walk, check that the earth stake is fully driven, connections are clean, and any plants touching the wire are cleared."
+          }
+        ]
+      }
+    ]
+  }
+}

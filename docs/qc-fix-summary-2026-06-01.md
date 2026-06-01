@@ -583,3 +583,36 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 16:27:43
+
+Generated: 2026-06-01T16:27:43.586Z
+
+Processed: 40
+PASS: 30
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 48 |
+| body-missing-method | 26 |
+| voice-violation | 6 |
+
+## Still BLOCKED (sample 20)
+
+- gilt-selection-for-breeding: grade-level-strict
+- goat-kid-weaning-and-growth-checks: grade-level-strict
+- legal-predator-control-on-a-smallholding: grade-level-strict
+- livestock-insurance-basics-for-smallholders: grade-level-strict
+- managing-rabbit-aggression-in-a-colony: voice-violation, grade-level-strict
+- outdoor-pig-water-supply-in-winter: grade-level-strict
+- rabbit-buck-management-and-conditioning: grade-level-strict
+- rabbit-vaccination-schedule-uk: voice-violation, grade-level-strict
+- smallholding-fencing-seasonal-maintenance: voice-violation, grade-level-strict
+- understanding-varroa-lifecycle: grade-level-strict

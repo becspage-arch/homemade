@@ -125,3 +125,14 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - rabbit-pasteurellosis-management voice-violation,grade-level-strict — applied: 
 - reading-and-completing-livestock-movement-forms voice-violation,grade-level-strict — applied: 
 - treating-aspergillosis-in-chicks voice-violation,grade-level-strict — applied: 
+
+- gilt-selection-for-breeding grade-level-strict — applied: 
+- goat-kid-weaning-and-growth-checks grade-level-strict — applied: 
+- legal-predator-control-on-a-smallholding grade-level-strict — applied: 
+- livestock-insurance-basics-for-smallholders grade-level-strict — applied: 
+- managing-rabbit-aggression-in-a-colony voice-violation,grade-level-strict — applied: 
+- outdoor-pig-water-supply-in-winter grade-level-strict — applied: 
+- rabbit-buck-management-and-conditioning grade-level-strict — applied: 
+- rabbit-vaccination-schedule-uk voice-violation,grade-level-strict — applied: 
+- smallholding-fencing-seasonal-maintenance voice-violation,grade-level-strict — applied: 
+- understanding-varroa-lifecycle grade-level-strict — applied: 

@@ -1,0 +1,378 @@
+{
+  "slug": "hive-record-keeping-for-beekeepers",
+  "title": "Hive record keeping",
+  "subtitle": "What to note after every inspection, and why.",
+  "excerpt": "An apiary record doesn't need to be elaborate. A card per hive, updated at each visit, tells you whether the queen is laying, what the colony needs next, and what to carry to the next inspection. Without it you're relying on memory between inspections that may be ten days apart.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBKA Annual Record Card format, bbka.org.uk. National Bee Unit Beekeeper's Toolkit, nationalbeeunit.com. Regional bee inspector field guidance (England and Wales).",
+  "glossaryTerms": [
+    {
+      "slug": "apiary-log",
+      "term": "Apiary log",
+      "definition": "A written record of each hive inspection: what was found, what was done, and what to check next visit."
+    },
+    {
+      "slug": "laying-pattern",
+      "term": "Laying pattern",
+      "definition": "The arrangement of eggs and brood across the comb. A solid patch of worker brood with few empty cells indicates a healthy, well-mated queen."
+    }
+  ],
+  "techniqueSlugs": [
+    "reading-the-brood-frame"
+  ],
+  "criticalTechniques": [],
+  "aliases": [
+    "beehive records",
+    "apiary records",
+    "hive inspection notes"
+  ],
+  "recipeTools": [
+    {
+      "slug": "bee-suit",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-smoker",
+      "isOptional": false
+    },
+    {
+      "slug": "smoker-fuel",
+      "isOptional": false
+    },
+    {
+      "slug": "hive-tool-j",
+      "isOptional": false
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beekeeping decisions are made on the strength of what you found last time. Without a written record, each inspection starts from memory of what you thought you saw ten days ago. An "
+          },
+          {
+            "type": "text",
+            "text": "apiary log",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "apiary-log"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " resolves that. It takes five minutes to fill in after closing the hive, and it saves a much longer period of confusion the next time you open it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What a useful record contains"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seven items cover every important colony state. Record these after each inspection, not from memory the following day."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Date and weather. Temperature, wind, whether rain was threatening. This tells you whether the inspection was representative or done under duress."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Queen status: seen / not seen, eggs present (Y/N), "
+                  },
+                  {
+                    "type": "text",
+                    "text": "laying pattern",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "laying-pattern"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " (solid / patchy / empty). If you marked the queen, note when."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brood space: how many frames of brood, how many of honey and pollen, whether the box feels congested. Congestion is the precursor to swarming."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Queen cells: none found / one or two / multiple (sealed or open). Note their position, lower edge means swarm cells; face of comb means emergency or supersedure."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Food stores: adequate / light / heavy. In late summer and autumn, note whether you've fed and how much."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Temperament: calm / nervous / defensive. A colony that was calm last week and is defensive this week may have a new queen, a robbing pressure, or a disease issue."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "What you did: added a super, removed a queen cell, gave fondant, treated for varroa. And what to check next time."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Format and kit"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The BBKA sells a standard record card sized to fit a trouser pocket. A folded index card in a zip-lock bag works just as well. Whatever you use, keep it at the hive, writing it up from memory at the kitchen table introduces error."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pencil writes through condensation and light rain. Biro smears. Write in pencil, in the apiary, before you close up."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Some beekeepers photograph each frame. Phone cameras work well in good light and the photo timestamps itself. The limitation is that photos don't tell you what to do next, they need a note alongside them. A photo archive and a written record together are better than either alone."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading records between apiaries"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you keep bees at two or more sites, label each card with the hive number and site name. When inspections fall close together, it's easy to confuse which colony got which treatment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The record also matters when your regional bee inspector visits. The inspector is entitled to examine your hives without notice to check for notifiable diseases. Being able to show a record of recent inspections and treatments demonstrates active management, which the inspector will note."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to update"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fill the card before you close the hive, not after you've taken off the gloves. The sequence is: close crown board, fit roof, then write the card while you're still in front of the hive. This catches things you'd otherwise forget."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In the off-season (November to February) there's no inspection record to fill. Instead, note hive weight checks or hefting results, any fondant given, any OMF varroa counts from the insert, and any dead-out."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The next-action note"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most useful line on any record card is the last one: \"Check for: ___\". This is what you're looking for at the next inspection. Without it, you open the hive and start again from scratch. With it, you go in with a specific question. That saves time and is easier on the bees."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "reading the brood frame",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "reading-the-brood-frame",
+                  "label": "reading the brood frame"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " tutorial covers what to look for on each frame; this record is how you track what you found."
+          }
+        ]
+      }
+    ]
+  }
+}
