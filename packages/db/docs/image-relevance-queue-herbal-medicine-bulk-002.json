@@ -1,0 +1,680 @@
+{
+  "generatedAt": "2026-06-01T19:51:18.744Z",
+  "totalCandidates": 33,
+  "enqueued": 33,
+  "filter": {
+    "category": "herbal-medicine",
+    "sources": [
+      "unsplash",
+      "pexels",
+      "wikimedia",
+      "pixabay",
+      "flux-schnell"
+    ],
+    "stratify": false
+  },
+  "entries": [
+    {
+      "mediaId": "cmpvmimrc00002gv4zllcsrwi",
+      "tutorialId": "cmpvmejhs0002a8v4k8kleq4u",
+      "tutorialSlug": "ashwagandha-warm-milk",
+      "tutorialTitle": "Ashwagandha warm milk",
+      "tutorialSubtitle": "An stress-supporting herb bedtime preparation",
+      "tutorialExcerpt": "Ashwagandha root powder simmered in warm whole milk with a little honey. The traditional Ayurvedic preparation for stress recovery and adrenal fatigue. A calming, mildly sedating drink best taken before bed.",
+      "category": "herbal-medicine",
+      "subCategory": "nervous-system",
+      "keyIngredients": [
+        "dried ashwagandha root",
+        "whole milk",
+        "honey"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/10050657/pexels-photo-10050657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmimrc00002gv4zllcsrwi-d46beed088144b76.jpg",
+      "promptHints": "TUTORIAL\n  Title: Ashwagandha warm milk\n  Subtitle: An stress-supporting herb bedtime preparation\n  Excerpt: Ashwagandha root powder simmered in warm whole milk with a little honey. The traditional Ayurvedic preparation for stress recovery and adrenal fatigue. A calming, mildly sedating drink best taken before bed.\n  Category: herbal-medicine / nervous-system\n  Key ingredients: dried ashwagandha root, whole milk, honey\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmio9500022gv4jubc1fze",
+      "tutorialId": "cmpvmemml0001rwv4wmfyrl9r",
+      "tutorialSlug": "burdock-root-decoction-spring-cleanse",
+      "tutorialTitle": "Burdock root decoction",
+      "tutorialSubtitle": "An traditional cleansing herb herbal decoction for spring skin and lymphatic support",
+      "tutorialExcerpt": "Dried burdock root simmered for 15-20 minutes. A traditional traditional cleansing herb herb taken in spring for sluggish skin, mild acne-prone complexion, and general stagnation after winter.",
+      "category": "herbal-medicine",
+      "subCategory": "immune-support",
+      "keyIngredients": [
+        "dried burdock root",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1756830209413-1db5b1f71c39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxCdXJkb2NrJTIwcm9vdCUyMGRlY29jdGlvbiUyMGRyaWVkJTIwYnVyZG9jayUyMHJvb3R8ZW58MXwwfHx8MTc4MDM0MzQ0MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmio9500022gv4jubc1fze-b01bd6397da279aa.jpg",
+      "promptHints": "TUTORIAL\n  Title: Burdock root decoction\n  Subtitle: An traditional cleansing herb herbal decoction for spring skin and lymphatic support\n  Excerpt: Dried burdock root simmered for 15-20 minutes. A traditional traditional cleansing herb herb taken in spring for sluggish skin, mild acne-prone complexion, and general stagnation after winter.\n  Category: herbal-medicine / immune-support\n  Key ingredients: dried burdock root, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmip9e00042gv4qeut2e85",
+      "tutorialId": "cmpb7q90x00004wv4gdq67l9s",
+      "tutorialSlug": "calendula-infused-oil",
+      "tutorialTitle": "Calendula infused oil",
+      "tutorialSubtitle": "A base oil for skin preparations",
+      "tutorialExcerpt": "Dried calendula flowers soaked in olive oil at 60-65°C for 4 hours. A wound-supportive base oil used as a skin treatment on its own or as the base for salves, balms, and creams.",
+      "category": "herbal-medicine",
+      "subCategory": "skin",
+      "keyIngredients": [
+        "dried calendula flowers",
+        "olive oil"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1656699330796-490f14c6d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxDYWxlbmR1bGElMjBpbmZ1c2VkJTIwb2lsJTIwZHJpZWQlMjBjYWxlbmR1bGElMjBmbG93ZXJzfGVufDF8MHx8fDE3ODAzNDM0NDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmip9e00042gv4qeut2e85-b4e5bf54dd667968.jpg",
+      "promptHints": "TUTORIAL\n  Title: Calendula infused oil\n  Subtitle: A base oil for skin preparations\n  Excerpt: Dried calendula flowers soaked in olive oil at 60-65°C for 4 hours. A wound-supportive base oil used as a skin treatment on its own or as the base for salves, balms, and creams.\n  Category: herbal-medicine / skin\n  Key ingredients: dried calendula flowers, olive oil\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmiq0s00062gv4vugu24eu",
+      "tutorialId": "cmpvmet1y0001fov4ff365arx",
+      "tutorialSlug": "cayenne-warming-oil-for-joints",
+      "tutorialTitle": "Cayenne warming oil for joints",
+      "tutorialSubtitle": "A skin-warming herb topical oil for mild aching joints",
+      "tutorialExcerpt": "A simple infused oil of dried cayenne pepper in olive oil, used as an external skin-warming herb rub for mild arthritic aching, cold stiff joints, and muscular tension. Warm to the touch from the capsaicin.",
+      "category": "herbal-medicine",
+      "subCategory": "musculoskeletal",
+      "keyIngredients": [
+        "dried cayenne pepper",
+        "olive oil"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1526346698789-22fd84314424?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxDYXllbm5lJTIwd2FybWluZyUyMG9pbCUyMGZvciUyMGpvaW50cyUyMGRyaWVkJTIwY2F5ZW5uZSUyMHBlcHBlcnxlbnwxfDB8fHwxNzgwMzQzNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmiq0s00062gv4vugu24eu-0f94e8d301d270fc.jpg",
+      "promptHints": "TUTORIAL\n  Title: Cayenne warming oil for joints\n  Subtitle: A skin-warming herb topical oil for mild aching joints\n  Excerpt: A simple infused oil of dried cayenne pepper in olive oil, used as an external skin-warming herb rub for mild arthritic aching, cold stiff joints, and muscular tension. Warm to the touch from the capsaicin.\n  Category: herbal-medicine / musculoskeletal\n  Key ingredients: dried cayenne pepper, olive oil\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmiqrf00082gv4d8miz94n",
+      "tutorialId": "cmpvmew780000ywv4yoalr5kp",
+      "tutorialSlug": "chickweed-compress-for-itching",
+      "tutorialTitle": "Chickweed compress for itching",
+      "tutorialSubtitle": "A cooling external application for mild itch",
+      "tutorialExcerpt": "A strong infusion of dried chickweed, cooled and applied as a compress to mildly itchy skin. One of the safest and most accessible cooling skin herbs in the western tradition.",
+      "category": "herbal-medicine",
+      "subCategory": "skin",
+      "keyIngredients": [
+        "dried chickweed",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1595414902794-39c4438cb0b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxDaGlja3dlZWQlMjBjb21wcmVzcyUyMGZvciUyMGl0Y2hpbmclMjBkcmllZCUyMGNoaWNrd2VlZHxlbnwxfDB8fHwxNzgwMzQzNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmiqrf00082gv4d8miz94n-dd6b2d00f6e400aa.jpg",
+      "promptHints": "TUTORIAL\n  Title: Chickweed compress for itching\n  Subtitle: A cooling external application for mild itch\n  Excerpt: A strong infusion of dried chickweed, cooled and applied as a compress to mildly itchy skin. One of the safest and most accessible cooling skin herbs in the western tradition.\n  Category: herbal-medicine / skin\n  Key ingredients: dried chickweed, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmirst000a2gv4cjzk49zj",
+      "tutorialId": "cmpvmezd50001i8v46yc7qsno",
+      "tutorialSlug": "cleavers-lymphatic-infusion",
+      "tutorialTitle": "Cleavers spring infusion",
+      "tutorialSubtitle": "A lymphatic tonic for early spring",
+      "tutorialExcerpt": "Fresh or dried cleavers herb, cold-steeped in water. A traditional spring lymphatic tonic used in European folk medicine to support lymphatic flow after winter stagnation.",
+      "category": "herbal-medicine",
+      "subCategory": "immune-support",
+      "keyIngredients": [
+        "dried cleavers",
+        "water"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/34717619/pexels-photo-34717619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmirst000a2gv4cjzk49zj-6ad199e3c2092946.jpg",
+      "promptHints": "TUTORIAL\n  Title: Cleavers spring infusion\n  Subtitle: A lymphatic tonic for early spring\n  Excerpt: Fresh or dried cleavers herb, cold-steeped in water. A traditional spring lymphatic tonic used in European folk medicine to support lymphatic flow after winter stagnation.\n  Category: herbal-medicine / immune-support\n  Key ingredients: dried cleavers, water\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmista000c2gv4bk59w966",
+      "tutorialId": "cmpvmf2hp0001fwv4dwmv255d",
+      "tutorialSlug": "comfrey-leaf-compress-for-bruises",
+      "tutorialTitle": "Comfrey leaf compress for bruises",
+      "tutorialSubtitle": "An external wound-supportive compress for soft-tissue injury",
+      "tutorialExcerpt": "Dried comfrey leaf steeped as a strong infusion, cooled, and applied as a compress to unbroken bruised skin. External use only. Traditionally used for closed bruises and minor soft-tissue injury.",
+      "category": "herbal-medicine",
+      "subCategory": "skin",
+      "keyIngredients": [
+        "dried comfrey leaf",
+        "water"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/37016689/pexels-photo-37016689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmista000c2gv4bk59w966-b4984f10c4d7f41a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Comfrey leaf compress for bruises\n  Subtitle: An external wound-supportive compress for soft-tissue injury\n  Excerpt: Dried comfrey leaf steeped as a strong infusion, cooled, and applied as a compress to unbroken bruised skin. External use only. Traditionally used for closed bruises and minor soft-tissue injury.\n  Category: herbal-medicine / skin\n  Key ingredients: dried comfrey leaf, water\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmitl2000e2gv4uop5osjk",
+      "tutorialId": "cmpvmf5jn0001tgv4f2n68c50",
+      "tutorialSlug": "comfrey-leaf-poultice-for-muscle-strain",
+      "tutorialTitle": "Comfrey leaf poultice for muscle strain",
+      "tutorialSubtitle": "An external wound-supportive poultice for minor soft-tissue injury",
+      "tutorialExcerpt": "Fresh or rehydrated dried comfrey leaf mashed into a paste and wrapped in muslin. Applied externally to an unbroken, strained muscle or minor soft-tissue injury.",
+      "category": "herbal-medicine",
+      "subCategory": "musculoskeletal",
+      "keyIngredients": [
+        "dried comfrey leaf",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1726978731245-16206a5d2f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxDb21mcmV5JTIwbGVhZiUyMHBvdWx0aWNlJTIwZm9yJTIwbXVzY2xlJTIwc3RyYWluJTIwZHJpZWQlMjBjb21mcmV5JTIwbGVhZnxlbnwxfDB8fHwxNzgwMzQzNDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmitl2000e2gv4uop5osjk-67fdc2b6f82b984e.jpg",
+      "promptHints": "TUTORIAL\n  Title: Comfrey leaf poultice for muscle strain\n  Subtitle: An external wound-supportive poultice for minor soft-tissue injury\n  Excerpt: Fresh or rehydrated dried comfrey leaf mashed into a paste and wrapped in muslin. Applied externally to an unbroken, strained muscle or minor soft-tissue injury.\n  Category: herbal-medicine / musculoskeletal\n  Key ingredients: dried comfrey leaf, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmiunx000g2gv4fpvw24qb",
+      "tutorialId": "cmpvmfcl40000f4v43tpzud0l",
+      "tutorialSlug": "dandelion-root-decoction",
+      "tutorialTitle": "Dandelion root decoction",
+      "tutorialSubtitle": "A digestive bitter before meals",
+      "tutorialExcerpt": "Dried dandelion root simmered for 15 minutes and drunk before meals. The classic western digestive bitter preparation, traditionally taken to stimulate bile flow and support fat digestion.",
+      "category": "herbal-medicine",
+      "subCategory": "digestive",
+      "keyIngredients": [
+        "dried dandelion root",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1611072852766-94c5cd01d2f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwzfHxEYW5kZWxpb24lMjByb290JTIwZGVjb2N0aW9uJTIwZHJpZWQlMjBkYW5kZWxpb24lMjByb290fGVufDF8MHx8fDE3ODAzNDM0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmiunx000g2gv4fpvw24qb-b7763a31b34bf304.jpg",
+      "promptHints": "TUTORIAL\n  Title: Dandelion root decoction\n  Subtitle: A digestive bitter before meals\n  Excerpt: Dried dandelion root simmered for 15 minutes and drunk before meals. The classic western digestive bitter preparation, traditionally taken to stimulate bile flow and support fat digestion.\n  Category: herbal-medicine / digestive\n  Key ingredients: dried dandelion root, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmiwcb000i2gv43g42ea3c",
+      "tutorialId": "cmpvmfhyp0001zcv4h8o4rdyt",
+      "tutorialSlug": "garlic-and-thyme-oxymel",
+      "tutorialTitle": "Garlic and thyme oxymel",
+      "tutorialSubtitle": "A honey-vinegar respiratory syrup",
+      "tutorialExcerpt": "Garlic and thyme soaked in raw honey and apple cider vinegar. An oxymel (honey-vinegar preparation) traditionally used at the onset of a cold for its antimicrobial and expectorant action.",
+      "category": "herbal-medicine",
+      "subCategory": "respiratory",
+      "keyIngredients": [
+        "garlic",
+        "thyme",
+        "honey"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/4113901/pexels-photo-4113901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmiwcb000i2gv43g42ea3c-b73064a4766bafad.jpg",
+      "promptHints": "TUTORIAL\n  Title: Garlic and thyme oxymel\n  Subtitle: A honey-vinegar respiratory syrup\n  Excerpt: Garlic and thyme soaked in raw honey and apple cider vinegar. An oxymel (honey-vinegar preparation) traditionally used at the onset of a cold for its antimicrobial and expectorant action.\n  Category: herbal-medicine / respiratory\n  Key ingredients: garlic, thyme, honey\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmix74000k2gv4vqyuf5ww",
+      "tutorialId": "cmpvmfl910001hgv4uyhyvc1b",
+      "tutorialSlug": "gotu-kola-infusion-for-focus",
+      "tutorialTitle": "Gotu kola infusion for mental clarity",
+      "tutorialSubtitle": "A nerve-calming herb infusion for focus and cognitive tiredness",
+      "tutorialExcerpt": "An infusion of dried gotu kola leaf. Traditionally used in Ayurveda and western herbal practice for mental fatigue, difficulty concentrating, and cognitive tiredness. Calming without being sedating.",
+      "category": "herbal-medicine",
+      "subCategory": "mental-emotional",
+      "keyIngredients": [
+        "dried gotu kola leaf",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1750437527283-2958f14e15ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxHb3R1JTIwa29sYSUyMGluZnVzaW9uJTIwZm9yJTIwbWVudGFsJTIwY2xhcml0eSUyMGRyaWVkJTIwZ290dSUyMGtvbGElMjBsZWFmfGVufDF8MHx8fDE3ODAzNDM0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmix74000k2gv4vqyuf5ww-7a63ffdee1880ea6.jpg",
+      "promptHints": "TUTORIAL\n  Title: Gotu kola infusion for mental clarity\n  Subtitle: A nerve-calming herb infusion for focus and cognitive tiredness\n  Excerpt: An infusion of dried gotu kola leaf. Traditionally used in Ayurveda and western herbal practice for mental fatigue, difficulty concentrating, and cognitive tiredness. Calming without being sedating.\n  Category: herbal-medicine / mental-emotional\n  Key ingredients: dried gotu kola leaf, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmixqa000m2gv44dq0tzt9",
+      "tutorialId": "cmpvmfq4f00029ov400uocqew",
+      "tutorialSlug": "hawthorn-profile",
+      "tutorialTitle": "Hawthorn",
+      "tutorialSubtitle": "The cardiac tonic of the hedgerow",
+      "tutorialExcerpt": "Crataegus monogyna: the heart herb of western and Chinese herbal medicine, traditionally used to support healthy circulation and mild cardiovascular function. Strong study evidence supports its use for mild cardiac insufficiency.",
+      "category": "herbal-medicine",
+      "subCategory": "materia-medica",
+      "keyIngredients": [],
+      "imageUrl": "https://images.unsplash.com/photo-1652217992125-f4610ffaba3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxIYXd0aG9ybnxlbnwxfDB8fHwxNzgwMzQzNDU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmixqa000m2gv44dq0tzt9-82b68e55b60310fe.jpg",
+      "promptHints": "TUTORIAL\n  Title: Hawthorn\n  Subtitle: The cardiac tonic of the hedgerow\n  Excerpt: Crataegus monogyna: the heart herb of western and Chinese herbal medicine, traditionally used to support healthy circulation and mild cardiovascular function. Strong study evidence supports its use for mild cardiac insufficiency.\n  Category: herbal-medicine / materia-medica\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmiyit000o2gv4rwx2fk1s",
+      "tutorialId": "cmpvmftls00011gv4fo6w56j1",
+      "tutorialSlug": "holy-basil-adaptogen-tea",
+      "tutorialTitle": "Holy basil adaptogen tea",
+      "tutorialSubtitle": "A warming stress-supporting herb infusion for seasonal immunity",
+      "tutorialExcerpt": "An infusion of dried holy basil (tulsi) leaf. An Ayurvedic and western herbal stress-supporting herb traditionally taken through the colder months to support general resilience.",
+      "category": "herbal-medicine",
+      "subCategory": "immune-support",
+      "keyIngredients": [
+        "dried holy basil leaf",
+        "water",
+        "honey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1603122458739-8f881c6a968b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxIb2x5JTIwYmFzaWwlMjBhZGFwdG9nZW4lMjB0ZWElMjBkcmllZCUyMGhvbHklMjBiYXNpbCUyMGxlYWZ8ZW58MXwwfHx8MTc4MDM0MzQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmiyit000o2gv4rwx2fk1s-993e77a73b838a1a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Holy basil adaptogen tea\n  Subtitle: A warming stress-supporting herb infusion for seasonal immunity\n  Excerpt: An infusion of dried holy basil (tulsi) leaf. An Ayurvedic and western herbal stress-supporting herb traditionally taken through the colder months to support general resilience.\n  Category: herbal-medicine / immune-support\n  Key ingredients: dried holy basil leaf, water, honey\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmizkg000q2gv4490osp7o",
+      "tutorialId": "cmpvmfx4n0001wwv468t7ynjj",
+      "tutorialSlug": "hops-and-valerian-sleep-tea",
+      "tutorialTitle": "Hops and valerian sleep tea",
+      "tutorialSubtitle": "A sedative blend for difficulty falling asleep",
+      "tutorialExcerpt": "A blend of dried hops flowers and valerian root steeped as an infusion before bed. A traditional European sleep preparation. Both herbs are sedatives; the combination is used for difficulty falling asleep with a restless, over-active mind.",
+      "category": "herbal-medicine",
+      "subCategory": "nervous-system",
+      "keyIngredients": [
+        "dried hops flowers",
+        "dried valerian root",
+        "water"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/32606571/pexels-photo-32606571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmizkg000q2gv4490osp7o-db112d4e382a250a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Hops and valerian sleep tea\n  Subtitle: A sedative blend for difficulty falling asleep\n  Excerpt: A blend of dried hops flowers and valerian root steeped as an infusion before bed. A traditional European sleep preparation. Both herbs are sedatives; the combination is used for difficulty falling asleep with a restless, over-active mind.\n  Category: herbal-medicine / nervous-system\n  Key ingredients: dried hops flowers, dried valerian root, water\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj0aq000s2gv4mhzlou4d",
+      "tutorialId": "cmpvmg2mp0001dov4n4vfya5c",
+      "tutorialSlug": "lemon-balm-tincture",
+      "tutorialTitle": "Lemon balm tincture",
+      "tutorialSubtitle": "A nerve-calming herb herbal tincture for tension and digestive nerves",
+      "tutorialExcerpt": "Dried lemon balm leaf soaked in 40% vodka for 4-6 weeks. A gentle nerve-calming herb herbal tincture for mild tension, nervous stomach, and restlessness. Suitable for daytime use at low dose without drowsiness.",
+      "category": "herbal-medicine",
+      "subCategory": "nervous-system",
+      "keyIngredients": [
+        "dried lemon balm leaves",
+        "vodka (40% abv)"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1622576454275-729fbf6aa6eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxMZW1vbiUyMGJhbG0lMjB0aW5jdHVyZSUyMGRyaWVkJTIwbGVtb24lMjBiYWxtJTIwbGVhdmVzfGVufDF8MHx8fDE3ODAzNDM0NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj0aq000s2gv4mhzlou4d-a623d6d5ea7d451a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Lemon balm tincture\n  Subtitle: A nerve-calming herb herbal tincture for tension and digestive nerves\n  Excerpt: Dried lemon balm leaf soaked in 40% vodka for 4-6 weeks. A gentle nerve-calming herb herbal tincture for mild tension, nervous stomach, and restlessness. Suitable for daytime use at low dose without drowsiness.\n  Category: herbal-medicine / nervous-system\n  Key ingredients: dried lemon balm leaves, vodka (40% abv)\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj19r000u2gv41vpdi838",
+      "tutorialId": "cmpvmg5x90001xgv4g3gbzsc0",
+      "tutorialSlug": "licorice-root-decoction-for-gastritis",
+      "tutorialTitle": "Liquorice root decoction for gastritis",
+      "tutorialSubtitle": "A short-course soothing herb for stomach irritation",
+      "tutorialExcerpt": "Dried liquorice root simmered for 10 minutes and drunk after meals. A soothing herb preparation traditionally used for gastric irritation and acid reflux. Short course only: 4 weeks maximum.",
+      "category": "herbal-medicine",
+      "subCategory": "digestive",
+      "keyIngredients": [
+        "dried liquorice root",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1758116951989-0e64e4907c33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxMaXF1b3JpY2UlMjByb290JTIwZGVjb2N0aW9uJTIwZm9yJTIwZ2FzdHJpdGlzJTIwZHJpZWQlMjBsaXF1b3JpY2UlMjByb290fGVufDF8MHx8fDE3ODAzNDM0NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj19r000u2gv41vpdi838-a520fb98a185893a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Liquorice root decoction for gastritis\n  Subtitle: A short-course soothing herb for stomach irritation\n  Excerpt: Dried liquorice root simmered for 10 minutes and drunk after meals. A soothing herb preparation traditionally used for gastric irritation and acid reflux. Short course only: 4 weeks maximum.\n  Category: herbal-medicine / digestive\n  Key ingredients: dried liquorice root, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj27s000w2gv441hm7b2y",
+      "tutorialId": "cmpvmg95g0001dsv48wjptkeq",
+      "tutorialSlug": "marshmallow-leaf-infusion-for-cough",
+      "tutorialTitle": "Marshmallow leaf infusion for cough",
+      "tutorialSubtitle": "A cold-steep soothing herb for a tickling cough",
+      "tutorialExcerpt": "Dried marshmallow leaf cold-steeped in water to draw out its soothing gel. Drunk warm for a dry, persistent tickling cough. The cold infusion preserves more soothing gel than a hot steep.",
+      "category": "herbal-medicine",
+      "subCategory": "respiratory",
+      "keyIngredients": [
+        "dried marshmallow root",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1660283695620-8761949945d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxNYXJzaG1hbGxvdyUyMGxlYWYlMjBpbmZ1c2lvbiUyMGZvciUyMGNvdWdoJTIwZHJpZWQlMjBtYXJzaG1hbGxvdyUyMHJvb3R8ZW58MXwwfHx8MTc4MDM0MzQ2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj27s000w2gv441hm7b2y-b4920a152e228750.jpg",
+      "promptHints": "TUTORIAL\n  Title: Marshmallow leaf infusion for cough\n  Subtitle: A cold-steep soothing herb for a tickling cough\n  Excerpt: Dried marshmallow leaf cold-steeped in water to draw out its soothing gel. Drunk warm for a dry, persistent tickling cough. The cold infusion preserves more soothing gel than a hot steep.\n  Category: herbal-medicine / respiratory\n  Key ingredients: dried marshmallow root, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj3zf000y2gv4j7gcrgg6",
+      "tutorialId": "cmpvmgchm000290v4g80wdcwf",
+      "tutorialSlug": "milk-thistle-seed-decoction",
+      "tutorialTitle": "Milk thistle seed decoction",
+      "tutorialSubtitle": "A hepatic herbal decoction for liver support",
+      "tutorialExcerpt": "Freshly crushed milk thistle seeds simmered for 20 minutes. The traditional preparation for liver support after illness, medication, or sustained alcohol use. The silymarin in the seed is the clinically active active compounds.",
+      "category": "herbal-medicine",
+      "subCategory": "immune-support",
+      "keyIngredients": [
+        "dried milk thistle seeds",
+        "water"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/4805640/pexels-photo-4805640.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj3zf000y2gv4j7gcrgg6-0980b509a36f4cf1.jpg",
+      "promptHints": "TUTORIAL\n  Title: Milk thistle seed decoction\n  Subtitle: A hepatic herbal decoction for liver support\n  Excerpt: Freshly crushed milk thistle seeds simmered for 20 minutes. The traditional preparation for liver support after illness, medication, or sustained alcohol use. The silymarin in the seed is the clinically active active compounds.\n  Category: herbal-medicine / immune-support\n  Key ingredients: dried milk thistle seeds, water\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj4pf00102gv4t7vyc1se",
+      "tutorialId": "cmpvmgfr40001ywv4zdmo3w34",
+      "tutorialSlug": "motherwort-tincture",
+      "tutorialTitle": "Motherwort tincture",
+      "tutorialSubtitle": "A cardiac nerve-calming herb herbal tincture for palpitations",
+      "tutorialExcerpt": "Dried motherwort aerial parts soaked in 40% vodka for 4-6 weeks. Used in western herbal practice for mild, stress-related palpitations and nervous heart sensations in an otherwise healthy reader. Not for use in pregnancy.",
+      "category": "herbal-medicine",
+      "subCategory": "womens-health",
+      "keyIngredients": [
+        "dried motherwort",
+        "vodka (40% abv)"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1720745467589-7c70b906bcbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxNb3RoZXJ3b3J0JTIwdGluY3R1cmUlMjBkcmllZCUyMG1vdGhlcndvcnR8ZW58MXwwfHx8MTc4MDM0MzQ2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj4pf00102gv4t7vyc1se-6873e8d40d71a98b.jpg",
+      "promptHints": "TUTORIAL\n  Title: Motherwort tincture\n  Subtitle: A cardiac nerve-calming herb herbal tincture for palpitations\n  Excerpt: Dried motherwort aerial parts soaked in 40% vodka for 4-6 weeks. Used in western herbal practice for mild, stress-related palpitations and nervous heart sensations in an otherwise healthy reader. Not for use in pregnancy.\n  Category: herbal-medicine / womens-health\n  Key ingredients: dried motherwort, vodka (40% abv)\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj5gn00122gv447ik12xh",
+      "tutorialId": "cmpvmgj090000vgv4rzdoixsg",
+      "tutorialSlug": "oregano-infusion-for-chest-cold",
+      "tutorialTitle": "Oregano infusion for a chest cold",
+      "tutorialSubtitle": "An expectorant cup for productive cough",
+      "tutorialExcerpt": "A hot infusion of dried oregano, steeped covered and drunk warm. Traditionally taken for a productive cough with chest congestion during a cold.",
+      "category": "herbal-medicine",
+      "subCategory": "respiratory",
+      "keyIngredients": [
+        "dried oregano",
+        "water",
+        "honey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1595414902794-39c4438cb0b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxPcmVnYW5vJTIwaW5mdXNpb24lMjBmb3IlMjBhJTIwY2hlc3QlMjBjb2xkJTIwZHJpZWQlMjBvcmVnYW5vfGVufDF8MHx8fDE3ODAzNDM0NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj5gn00122gv447ik12xh-c8390645e13363e1.jpg",
+      "promptHints": "TUTORIAL\n  Title: Oregano infusion for a chest cold\n  Subtitle: An expectorant cup for productive cough\n  Excerpt: A hot infusion of dried oregano, steeped covered and drunk warm. Traditionally taken for a productive cough with chest congestion during a cold.\n  Category: herbal-medicine / respiratory\n  Key ingredients: dried oregano, water, honey\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj6lp00142gv4hoi8634u",
+      "tutorialId": "cmpvmgocu0002iwv4iq5v2xc9",
+      "tutorialSlug": "passionflower-tincture-for-anxiety",
+      "tutorialTitle": "Passionflower tincture for mild anxiety",
+      "tutorialSubtitle": "A 4-6 week folk-method herbal tincture",
+      "tutorialExcerpt": "Dried passionflower aerial parts soaked in 40% vodka for 4-6 weeks. A nerve-calming herb herbal tincture traditionally used for mild anxiety and difficulty unwinding. Long soaking draws the flavonoids and alkaloids into the spirit.",
+      "category": "herbal-medicine",
+      "subCategory": "nervous-system",
+      "keyIngredients": [
+        "dried passionflower",
+        "vodka (40% abv)"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1691755989171-996cbf6e1b43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxQYXNzaW9uZmxvd2VyJTIwdGluY3R1cmUlMjBmb3IlMjBtaWxkJTIwYW54aWV0eSUyMGRyaWVkJTIwcGFzc2lvbmZsb3dlcnxlbnwxfDB8fHwxNzgwMzQzNDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj6lp00142gv4hoi8634u-f8975b0a3d194a88.jpg",
+      "promptHints": "TUTORIAL\n  Title: Passionflower tincture for mild anxiety\n  Subtitle: A 4-6 week folk-method herbal tincture\n  Excerpt: Dried passionflower aerial parts soaked in 40% vodka for 4-6 weeks. A nerve-calming herb herbal tincture traditionally used for mild anxiety and difficulty unwinding. Long soaking draws the flavonoids and alkaloids into the spirit.\n  Category: herbal-medicine / nervous-system\n  Key ingredients: dried passionflower, vodka (40% abv)\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj7bz00162gv49c919u2x",
+      "tutorialId": "cmpvmgrk90000ywv4gmvzekq0",
+      "tutorialSlug": "plantain-fresh-poultice",
+      "tutorialTitle": "Plantain fresh poultice",
+      "tutorialSubtitle": "A first-aid poultice for insect stings and minor grazes",
+      "tutorialExcerpt": "Fresh broadleaf plantain leaves mashed between the palms and pressed onto a minor insect sting, graze, or skin irritation. The oldest and most immediate herbal first-aid preparation in the British countryside.",
+      "category": "herbal-medicine",
+      "subCategory": "skin",
+      "keyIngredients": [
+        "dried plantain leaf"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1726978731245-16206a5d2f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxQbGFudGFpbiUyMGZyZXNoJTIwcG91bHRpY2UlMjBkcmllZCUyMHBsYW50YWluJTIwbGVhZnxlbnwxfDB8fHwxNzgwMzQzNDY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj7bz00162gv49c919u2x-d5d0b2fe7b7c29fe.jpg",
+      "promptHints": "TUTORIAL\n  Title: Plantain fresh poultice\n  Subtitle: A first-aid poultice for insect stings and minor grazes\n  Excerpt: Fresh broadleaf plantain leaves mashed between the palms and pressed onto a minor insect sting, graze, or skin irritation. The oldest and most immediate herbal first-aid preparation in the British countryside.\n  Category: herbal-medicine / skin\n  Key ingredients: dried plantain leaf\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj80100182gv4mmodsy2e",
+      "tutorialId": "cmpvmgutm0000w4v4zq41vevk",
+      "tutorialSlug": "plantain-leaf-cough-syrup",
+      "tutorialTitle": "Plantain leaf cough syrup",
+      "tutorialSubtitle": "A soothing syrup for irritable dry cough",
+      "tutorialExcerpt": "A strong infusion of dried plantain leaf combined with honey to make a soothing herb cough syrup. Traditionally prepared for dry, irritating coughs and sore, inflamed throats.",
+      "category": "herbal-medicine",
+      "subCategory": "respiratory",
+      "keyIngredients": [
+        "dried plantain leaf",
+        "water",
+        "honey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1726978731245-16206a5d2f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxQbGFudGFpbiUyMGxlYWYlMjBjb3VnaCUyMHN5cnVwJTIwZHJpZWQlMjBwbGFudGFpbiUyMGxlYWZ8ZW58MXwwfHx8MTc4MDM0MzQ2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj80100182gv4mmodsy2e-894fbf7d28ce6f74.jpg",
+      "promptHints": "TUTORIAL\n  Title: Plantain leaf cough syrup\n  Subtitle: A soothing syrup for irritable dry cough\n  Excerpt: A strong infusion of dried plantain leaf combined with honey to make a soothing herb cough syrup. Traditionally prepared for dry, irritating coughs and sore, inflamed throats.\n  Category: herbal-medicine / respiratory\n  Key ingredients: dried plantain leaf, water, honey\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj8o5001a2gv46r27ur81",
+      "tutorialId": "cmpvmh0650002iwv4hcskht5u",
+      "tutorialSlug": "raspberry-leaf-tea",
+      "tutorialTitle": "Raspberry leaf tea",
+      "tutorialSubtitle": "A uterine tonic for the third trimester",
+      "tutorialExcerpt": "A simple infusion of dried raspberry leaf. Traditionally introduced in the third trimester of pregnancy (from approximately 32 weeks) to support uterine tone in preparation for labour. Stage-specific: not for the first or second trimester.",
+      "category": "herbal-medicine",
+      "subCategory": "womens-health",
+      "keyIngredients": [
+        "dried raspberry leaf",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1643398933617-08d3faccc8a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxSYXNwYmVycnklMjBsZWFmJTIwdGVhJTIwZHJpZWQlMjByYXNwYmVycnklMjBsZWFmfGVufDF8MHx8fDE3ODAzNDM0Njl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj8o5001a2gv46r27ur81-5c581ed8708f080d.jpg",
+      "promptHints": "TUTORIAL\n  Title: Raspberry leaf tea\n  Subtitle: A uterine tonic for the third trimester\n  Excerpt: A simple infusion of dried raspberry leaf. Traditionally introduced in the third trimester of pregnancy (from approximately 32 weeks) to support uterine tone in preparation for labour. Stage-specific: not for the first or second trimester.\n  Category: herbal-medicine / womens-health\n  Key ingredients: dried raspberry leaf, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmj9gu001c2gv4dsn2xl9h",
+      "tutorialId": "cmpvmh3bv0001rwv4yu9ols52",
+      "tutorialSlug": "rosemary-analgesic-bath",
+      "tutorialTitle": "Rosemary analgesic bath",
+      "tutorialSubtitle": "A warming bath for muscular aching and stiffness",
+      "tutorialExcerpt": "A concentrated rosemary infusion strained and added to a warm bath. Traditionally used for muscular aching, poor circulation in the limbs, and general stiffness after exertion.",
+      "category": "herbal-medicine",
+      "subCategory": "musculoskeletal",
+      "keyIngredients": [
+        "rosemary",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1582745741856-1a5d68158ba3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxSb3NlbWFyeSUyMGFuYWxnZXNpYyUyMGJhdGglMjByb3NlbWFyeXxlbnwxfDB8fHwxNzgwMzQzNDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmj9gu001c2gv4dsn2xl9h-5d18b42a581f19e5.jpg",
+      "promptHints": "TUTORIAL\n  Title: Rosemary analgesic bath\n  Subtitle: A warming bath for muscular aching and stiffness\n  Excerpt: A concentrated rosemary infusion strained and added to a warm bath. Traditionally used for muscular aching, poor circulation in the limbs, and general stiffness after exertion.\n  Category: herbal-medicine / musculoskeletal\n  Key ingredients: rosemary, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjacr001e2gv4206fi24m",
+      "tutorialId": "cmpvmh6hj0000iwv48x5d51eb",
+      "tutorialSlug": "rosemary-digestif-tea",
+      "tutorialTitle": "Rosemary digestif tea",
+      "tutorialSubtitle": "A wind-easing herb infusion after a rich meal",
+      "tutorialExcerpt": "A simple infusion of dried rosemary leaf, traditionally taken after a heavy or fatty meal to ease sluggish digestion. Short steep, covered, to retain the aromatic oil.",
+      "category": "herbal-medicine",
+      "subCategory": "digestive",
+      "keyIngredients": [
+        "rosemary",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1582745741856-1a5d68158ba3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxSb3NlbWFyeSUyMGRpZ2VzdGlmJTIwdGVhJTIwcm9zZW1hcnl8ZW58MXwwfHx8MTc4MDM0MzQ3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjacr001e2gv4206fi24m-2f20ce00c351da98.jpg",
+      "promptHints": "TUTORIAL\n  Title: Rosemary digestif tea\n  Subtitle: A wind-easing herb infusion after a rich meal\n  Excerpt: A simple infusion of dried rosemary leaf, traditionally taken after a heavy or fatty meal to ease sluggish digestion. Short steep, covered, to retain the aromatic oil.\n  Category: herbal-medicine / digestive\n  Key ingredients: rosemary, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjb1v001g2gv4bedg98jl",
+      "tutorialId": "cmpvmh9w1000108v4b3jyrm17",
+      "tutorialSlug": "sage-tea-for-hot-flushes",
+      "tutorialTitle": "Sage tea for hot flushes",
+      "tutorialSubtitle": "A mildly oestrogenic infusion for perimenopausal hot flushes",
+      "tutorialExcerpt": "A simple infusion of dried sage leaf. Traditionally used for perimenopausal hot flushes and excessive sweating. Sage has mild oestrogenic activity; the infusion is taken cold or at room temperature for best effect.",
+      "category": "herbal-medicine",
+      "subCategory": "womens-health",
+      "keyIngredients": [
+        "dried sage",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1606841634219-d7dbdd97b1ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxTYWdlJTIwdGVhJTIwZm9yJTIwaG90JTIwZmx1c2hlcyUyMGRyaWVkJTIwc2FnZXxlbnwxfDB8fHwxNzgwMzQzNDcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjb1v001g2gv4bedg98jl-fa463b4174c5decd.jpg",
+      "promptHints": "TUTORIAL\n  Title: Sage tea for hot flushes\n  Subtitle: A mildly oestrogenic infusion for perimenopausal hot flushes\n  Excerpt: A simple infusion of dried sage leaf. Traditionally used for perimenopausal hot flushes and excessive sweating. Sage has mild oestrogenic activity; the infusion is taken cold or at room temperature for best effect.\n  Category: herbal-medicine / womens-health\n  Key ingredients: dried sage, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjbw4001i2gv4oyumed0v",
+      "tutorialId": "cmpvmhd60000098v4wwvyi4gu",
+      "tutorialSlug": "slippery-elm-gruel",
+      "tutorialTitle": "Slippery elm gruel",
+      "tutorialSubtitle": "A soothing soothing herb for irritable bowel and gastritis",
+      "tutorialExcerpt": "Slippery elm bark powder stirred into warm water to make a gel-forming gruel. The classic North American Eclectic preparation for gastric irritation, acid reflux, and irritable bowel. No cooking needed.",
+      "category": "herbal-medicine",
+      "subCategory": "digestive",
+      "keyIngredients": [
+        "slippery elm bark powder",
+        "water",
+        "honey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1704650312022-ed1a76dbed1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxTbGlwcGVyeSUyMGVsbSUyMGdydWVsJTIwc2xpcHBlcnklMjBlbG0lMjBiYXJrJTIwcG93ZGVyfGVufDF8MHx8fDE3ODAzNDM0NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjbw4001i2gv4oyumed0v-e8c2773b44aa7d36.jpg",
+      "promptHints": "TUTORIAL\n  Title: Slippery elm gruel\n  Subtitle: A soothing soothing herb for irritable bowel and gastritis\n  Excerpt: Slippery elm bark powder stirred into warm water to make a gel-forming gruel. The classic North American Eclectic preparation for gastric irritation, acid reflux, and irritable bowel. No cooking needed.\n  Category: herbal-medicine / digestive\n  Key ingredients: slippery elm bark powder, water, honey\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjcrb001k2gv4mzxznjao",
+      "tutorialId": "cmpvmhgwh00023wv4ju6s422o",
+      "tutorialSlug": "sourcing-dried-herbs-quality-guide",
+      "tutorialTitle": "Sourcing dried herbs",
+      "tutorialSubtitle": "What to look for in a reputable supplier",
+      "tutorialExcerpt": "A practical guide to buying dried herbs: what quality looks like, the difference between cut-and-sifted and powder, what to check on a supplier's label, and why sourcing matters for safety.",
+      "category": "herbal-medicine",
+      "subCategory": "foundations",
+      "keyIngredients": [],
+      "imageUrl": "https://images.unsplash.com/photo-1566792720002-d52fdf3d050a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxTb3VyY2luZyUyMGRyaWVkJTIwaGVyYnN8ZW58MXwwfHx8MTc4MDM0MzQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjcrb001k2gv4mzxznjao-d51f20ca70499ae1.jpg",
+      "promptHints": "TUTORIAL\n  Title: Sourcing dried herbs\n  Subtitle: What to look for in a reputable supplier\n  Excerpt: A practical guide to buying dried herbs: what quality looks like, the difference between cut-and-sifted and powder, what to check on a supplier's label, and why sourcing matters for safety.\n  Category: herbal-medicine / foundations\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjdke001m2gv43vyqhi3z",
+      "tutorialId": "cmpvmhktb0000jkv42fxbeq8d",
+      "tutorialSlug": "thyme-steam-inhalation",
+      "tutorialTitle": "Thyme steam inhalation",
+      "tutorialSubtitle": "Antimicrobial steam for nasal congestion",
+      "tutorialExcerpt": "Dried thyme steeped in a bowl of just-boiled water, inhaled as steam under a towel. Traditionally used for nasal congestion and upper respiratory infections.",
+      "category": "herbal-medicine",
+      "subCategory": "respiratory",
+      "keyIngredients": [
+        "thyme",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1628612281748-d3971192f3e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxUaHltZSUyMHN0ZWFtJTIwaW5oYWxhdGlvbiUyMHRoeW1lfGVufDF8MHx8fDE3ODAzNDM0NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjdke001m2gv43vyqhi3z-301cdda24402736f.jpg",
+      "promptHints": "TUTORIAL\n  Title: Thyme steam inhalation\n  Subtitle: Antimicrobial steam for nasal congestion\n  Excerpt: Dried thyme steeped in a bowl of just-boiled water, inhaled as steam under a towel. Traditionally used for nasal congestion and upper respiratory infections.\n  Category: herbal-medicine / respiratory\n  Key ingredients: thyme, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjemc001o2gv4t0uehj1q",
+      "tutorialId": "cmpvme9bc0001u8v4ga9w4mh8",
+      "tutorialSlug": "turmeric-golden-milk",
+      "tutorialTitle": "Turmeric golden milk",
+      "tutorialSubtitle": "A warming blend for after meals",
+      "tutorialExcerpt": "Ground turmeric simmered in whole milk with black pepper and a little fat to improve absorption. A traditional Ayurvedic preparation that the western kitchen has adopted as a warming digestive drink.",
+      "category": "herbal-medicine",
+      "subCategory": "digestive",
+      "keyIngredients": [
+        "whole milk",
+        "ground turmeric",
+        "black pepper"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/18705171/pexels-photo-18705171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjemc001o2gv4t0uehj1q-839bedc647753f8a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Turmeric golden milk\n  Subtitle: A warming blend for after meals\n  Excerpt: Ground turmeric simmered in whole milk with black pepper and a little fat to improve absorption. A traditional Ayurvedic preparation that the western kitchen has adopted as a warming digestive drink.\n  Category: herbal-medicine / digestive\n  Key ingredients: whole milk, ground turmeric, black pepper\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjfa6001q2gv4gv1kt3gy",
+      "tutorialId": "cmpvmhvq80000jkv4dyjgq2hm",
+      "tutorialSlug": "vervain-infusion-for-tension",
+      "tutorialTitle": "Vervain infusion for nervous tension",
+      "tutorialSubtitle": "A nerve-calming herb infusion for over-driven, tense states",
+      "tutorialExcerpt": "An infusion of dried vervain herb, steeped covered and drunk warm. A nerve-calming herb traditionally used for the over-stretched, over-busy reader who cannot stop and wind down.",
+      "category": "herbal-medicine",
+      "subCategory": "nervous-system",
+      "keyIngredients": [
+        "dried vervain",
+        "water",
+        "honey"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1728310738651-80a3e5abca40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxWZXJ2YWluJTIwaW5mdXNpb24lMjBmb3IlMjBuZXJ2b3VzJTIwdGVuc2lvbiUyMGRyaWVkJTIwdmVydmFpbnxlbnwxfDB8fHwxNzgwMzQzNDc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjfa6001q2gv4gv1kt3gy-6446c8c1a3573fb5.jpg",
+      "promptHints": "TUTORIAL\n  Title: Vervain infusion for nervous tension\n  Subtitle: A nerve-calming herb infusion for over-driven, tense states\n  Excerpt: An infusion of dried vervain herb, steeped covered and drunk warm. A nerve-calming herb traditionally used for the over-stretched, over-busy reader who cannot stop and wind down.\n  Category: herbal-medicine / nervous-system\n  Key ingredients: dried vervain, water, honey\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmpvmjfxo001s2gv4jxym11ni",
+      "tutorialId": "cmpvmhzzn0001j8v4fi3hih16",
+      "tutorialSlug": "yarrow-compress-for-minor-cuts",
+      "tutorialTitle": "Yarrow compress for minor cuts",
+      "tutorialSubtitle": "A styptic compress for minor bleeding",
+      "tutorialExcerpt": "A strong infusion of dried yarrow herb, slightly cooled, applied as a compress to a minor cut or graze to slow bleeding and support skin closure. The traditional wound application from the western herbal canon.",
+      "category": "herbal-medicine",
+      "subCategory": "skin",
+      "keyIngredients": [
+        "dried yarrow",
+        "water"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1771453786395-f91128f15d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxZYXJyb3clMjBjb21wcmVzcyUyMGZvciUyMG1pbm9yJTIwY3V0cyUyMGRyaWVkJTIweWFycm93fGVufDF8MHx8fDE3ODAzNDM0Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmpvmjfxo001s2gv4jxym11ni-96eeda806b011ac9.jpg",
+      "promptHints": "TUTORIAL\n  Title: Yarrow compress for minor cuts\n  Subtitle: A styptic compress for minor bleeding\n  Excerpt: A strong infusion of dried yarrow herb, slightly cooled, applied as a compress to a minor cut or graze to slow bleeding and support skin closure. The traditional wound application from the western herbal canon.\n  Category: herbal-medicine / skin\n  Key ingredients: dried yarrow, water\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    }
+  ]
+}

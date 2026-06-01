@@ -700,66 +700,42 @@ SKIPPED: 0
 
 ---
 
-## Run at 17:46:34
+## Run at 17:49:06
 
-Generated: 2026-06-01T17:46:34.482Z
+Generated: 2026-06-01T17:49:06.563Z
 
-Processed: 1
-PASS: 1
-STILL_BLOCKED: 0
+Processed: 70
+PASS: 62
+STILL_BLOCKED: 8
 SKIPPED: 0
 
 ## Initial BLOCK rule kinds (before fix)
 
 | Rule kind | Count |
 |---|---:|
-| voice-violation | 3 |
+| body-missing-method | 38 |
+| grade-level-strict | 30 |
+| voice-violation | 6 |
 
+## Still BLOCKED (sample 20)
 
----
-
-## Run at 18:03:04
-
-Generated: 2026-06-01T18:03:04.749Z
-
-Processed: 1
-PASS: 1
-STILL_BLOCKED: 0
-SKIPPED: 0
-
-## Initial BLOCK rule kinds (before fix)
-
-| Rule kind | Count |
-|---|---:|
-| voice-violation | 1 |
-
+- applying-polyurethane-varnish-to-bare-wood-furniture: grade-level-strict
+- applying-shellac-sanding-sealer-before-varnishing-or-painting: voice-violation, grade-level-strict
+- cleaning-and-conditioning-a-leather-jacket: grade-level-strict
+- fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets: grade-level-strict
+- fitting-a-programmable-room-thermostat: grade-level-strict
+- hanging-lining-paper-before-decorating: voice-violation, grade-level-strict
+- repairing-a-continuously-running-wc-cistern: voice-violation, grade-level-strict
+- repairing-a-hollow-sounding-floor-tile: grade-level-strict
 
 ---
 
-## Run at 18:03:04
+## Run at 18:06:50
 
-Generated: 2026-06-01T18:03:04.943Z
+Generated: 2026-06-01T18:06:50.493Z
 
-Processed: 1
-PASS: 1
-STILL_BLOCKED: 0
-SKIPPED: 0
-
-## Initial BLOCK rule kinds (before fix)
-
-| Rule kind | Count |
-|---|---:|
-| voice-violation | 1 |
-
-
----
-
-## Run at 18:03:05
-
-Generated: 2026-06-01T18:03:05.182Z
-
-Processed: 1
-PASS: 0
+Processed: 74
+PASS: 73
 STILL_BLOCKED: 1
 SKIPPED: 0
 
@@ -767,20 +743,20 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
-| voice-violation | 3 |
+| content-type-opening-mismatch | 3 |
 
 ## Still BLOCKED (sample 20)
 
-- pregnancy-and-herbal-medicine: voice-violation
+- air-fryer-buffalo-wings: content-type-opening-mismatch
 
 ---
 
-## Run at 18:05:02
+## Run at 19:07:57
 
-Generated: 2026-06-01T18:05:02.790Z
+Generated: 2026-06-01T19:07:57.599Z
 
-Processed: 1
-PASS: 1
+Processed: 73
+PASS: 73
 STILL_BLOCKED: 0
 SKIPPED: 0
 
@@ -788,4 +764,41 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
-| voice-violation | 1 |
+
+
+---
+
+## Run at 19:51:33
+
+Generated: 2026-06-01T19:51:33.431Z
+
+Processed: 33
+PASS: 23
+STILL_BLOCKED: 10
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 45 |
+| medical-disclaimer-nonstandard | 32 |
+| opening-pattern-missing-hook | 18 |
+| historical-century-in-body | 7 |
+| voice-violation | 6 |
+| prose-prep-steps | 5 |
+| content-type-opening-mismatch | 3 |
+| soft-medical-claim | 2 |
+
+## Still BLOCKED (sample 20)
+
+- ashwagandha-warm-milk: grade-level-strict
+- cleavers-lymphatic-infusion: voice-violation, grade-level-strict
+- garlic-and-thyme-oxymel: grade-level-strict
+- hawthorn-profile: voice-violation
+- lemon-balm-tincture: grade-level-strict
+- milk-thistle-seed-decoction: grade-level-strict
+- motherwort-tincture: grade-level-strict
+- rosemary-digestif-tea: voice-violation, grade-level-strict
+- sage-tea-for-hot-flushes: grade-level-strict
+- sourcing-dried-herbs-quality-guide: grade-level-strict
