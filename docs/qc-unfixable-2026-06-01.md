@@ -33,3 +33,44 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - book-repair-lifting-endpaper grade-level-strict — applied: 
 - illuminated-border-design grade-level-strict — applied: 
 - maintaining-copperplate-slant grade-level-strict — applied: 
+
+- almond-cake-flourless hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amaretti-soft hero-missing — applied: hero-fill-deferred-to-standalone-script
+- american-biscuits-plain hero-missing — applied: hero-fill-deferred-to-standalone-script
+- apple-and-blackberry-pie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- apple-cake-german hero-missing — applied: hero-fill-deferred-to-standalone-script
+- apple-pie-double-crust hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bakewell-raspberry-frangipane hero-missing — applied: hero-fill-deferred-to-standalone-script
+- banana-bread-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- biscotti-chocolate-hazelnut hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brandy-snaps hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brownies-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- buttermilk-scones hero-missing — applied: hero-fill-deferred-to-standalone-script
+- caramel-shortbread-millionaires hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carrot-and-walnut-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cherry-pie-lattice hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-and-guinness-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-sandwich-with-buttercream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- churros-chocolate-sauce hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coffee-cake-american hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cornbread-southern hero-missing — applied: hero-fill-deferred-to-standalone-script
+- custard-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dinner-rolls hero-missing — applied: hero-fill-deferred-to-standalone-script
+- eccles-cakes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- eclairs-chocolate hero-missing — applied: hero-fill-deferred-to-standalone-script
+- flapjacks-golden-syrup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- focaccia-plain hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gingerbread-biscuits hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gougeres-gruyere hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granary-style-malted-loaf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- langue-de-chat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-tart-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- milk-bread-buns hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mince-pies-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- new-york-cheesecake-sour-cream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- palmiers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pizza-dough hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sausage-rolls-classic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spelt-sourdough hero-missing — applied: hero-fill-deferred-to-standalone-script
+- treacle-tart-lattice hero-missing — applied: hero-fill-deferred-to-standalone-script
+- welsh-bara-brith hero-missing — applied: hero-fill-deferred-to-standalone-script
