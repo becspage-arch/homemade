@@ -845,3 +845,19 @@ SKIPPED: 0
 - air-fryer-chicken-breasts: opening-pattern-missing-hook, content-type-opening-mismatch
 - air-fryer-chicken-drumsticks: opening-pattern-missing-hook, content-type-opening-mismatch
 - air-fryer-chicken-nuggets: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 21:07:33
+
+Generated: 2026-06-01T21:07:33.046Z
+
+Processed: 51
+PASS: 51
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

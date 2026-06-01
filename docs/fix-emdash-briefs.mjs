@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
-const BRIEF_DIR = 'docs/baking-bulk-024-briefs'
+const BRIEF_DIR = process.argv[2] || 'docs/baking-bulk-024-briefs'
 
 // Fix em-dashes in a string
 function fixDashes(str) {
