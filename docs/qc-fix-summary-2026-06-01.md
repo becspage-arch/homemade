@@ -468,3 +468,19 @@ SKIPPED: 0
 - mating-rabbits-and-managing-gestation: grade-level-strict
 - rabbit-respiratory-infections-early-signs: voice-violation, grade-level-strict
 - rabbit-winter-management-outdoor-colony: voice-violation, grade-level-strict
+
+---
+
+## Run at 13:08:41
+
+Generated: 2026-06-01T13:08:41.609Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
