@@ -136,3 +136,9 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - rabbit-vaccination-schedule-uk voice-violation,grade-level-strict — applied: 
 - smallholding-fencing-seasonal-maintenance voice-violation,grade-level-strict — applied: 
 - understanding-varroa-lifecycle grade-level-strict — applied: 
+
+- echinacea-tincture grade-level-strict — applied: 
+
+- elderflower-cold-infusion grade-level-strict — applied: 
+
+- lavender-profile voice-violation,grade-level-strict — applied: 

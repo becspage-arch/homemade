@@ -616,3 +616,84 @@ SKIPPED: 0
 - rabbit-vaccination-schedule-uk: voice-violation, grade-level-strict
 - smallholding-fencing-seasonal-maintenance: voice-violation, grade-level-strict
 - understanding-varroa-lifecycle: grade-level-strict
+
+---
+
+## Run at 17:07:58
+
+Generated: 2026-06-01T17:07:58.256Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 17:11:22
+
+Generated: 2026-06-01T17:11:22.850Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- echinacea-tincture: grade-level-strict
+
+---
+
+## Run at 17:11:36
+
+Generated: 2026-06-01T17:11:36.373Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- elderflower-cold-infusion: grade-level-strict
+
+---
+
+## Run at 17:11:36
+
+Generated: 2026-06-01T17:11:36.474Z
+
+Processed: 1
+PASS: 0
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| voice-violation | 3 |
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- lavender-profile: voice-violation, grade-level-strict

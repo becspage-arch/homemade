@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-01T16:06:51.633Z",
-  "totalScanned": 6320,
+  "generatedAt": "2026-06-01T17:19:33.604Z",
+  "totalScanned": 6360,
   "passCount": 0,
-  "blockCount": 26,
+  "blockCount": 36,
   "warnOnlyCount": 0,
   "perCategory": {
     "fibre-arts": {
@@ -18,9 +18,9 @@
       "warnOnly": 0
     },
     "animals-smallholding": {
-      "total": 13,
+      "total": 23,
       "pass": 0,
-      "block": 13,
+      "block": 23,
       "warnOnly": 0
     },
     "sustainability": {
@@ -32,8 +32,8 @@
   },
   "perRuleKind": {
     "body-missing-method": 1,
-    "grade-level-strict": 29,
-    "voice-violation": 27
+    "grade-level-strict": 41,
+    "voice-violation": 42
   },
   "verdicts": [
     {
@@ -76,6 +76,50 @@
           "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
           "path": "body > [0] > [0]",
           "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
+      "slug": "gilt-selection-for-breeding",
+      "tutorialId": "cmpvf6mrv0001l4v4pt3u8z56",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:36.138Z",
+      "publishedAt": "2026-06-01T16:25:23.646Z",
+      "heroMediaId": "cmpvf89kv000gskv4df1ndyt0",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[11] > paragraph[0]",
+          "snippet": "On a small holding where you will farrow a sow without a dedicated farrowing attendant. Temperament is the most important selection criterio"
+        }
+      ]
+    },
+    {
+      "slug": "goat-kid-weaning-and-growth-checks",
+      "tutorialId": "cmpvf5gn20001l4v4vfvkhuc2",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:36.699Z",
+      "publishedAt": "2026-06-01T16:24:29.043Z",
+      "heroMediaId": "cmpvf8be9000kskv4dqhc3vox",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[11] > paragraph[0]",
+          "snippet": "Coccidiosis is the most common post-weaning illness in kid goats. The stress of separation compromises immunity, and coccidial oocysts alrea"
         }
       ]
     },
@@ -157,6 +201,71 @@
       ]
     },
     {
+      "slug": "legal-predator-control-on-a-smallholding",
+      "tutorialId": "cmpvf75yn0002ugv4ih9f8obe",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:37.987Z",
+      "publishedAt": "2026-06-01T16:25:48.490Z",
+      "heroMediaId": "cmpvf8gxl000wskv4rjgffev8",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > bulletList[8] > listItem[3] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[9] > paragraph[0]",
+          "snippet": "The most effective predator control for a small holding is physical: fox-proof fencing or netting. Pop-hole openers with reliable timers. An"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Legal predator control on a smallholding go here."
+        }
+      ]
+    },
+    {
+      "slug": "livestock-insurance-basics-for-smallholders",
+      "tutorialId": "cmpvf717000015cv4zjut0321",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:38.402Z",
+      "publishedAt": "2026-06-01T16:25:42.336Z",
+      "heroMediaId": "cmpvf8hz2000yskv4s22zufph",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Pre-existing conditions, any disease the animal had before the policy start."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "APHA compulsory slaughter: this is covered by state compensation, not your policy."
+        }
+      ]
+    },
+    {
       "slug": "loft-insulation-joists-vs-rafter-level",
       "tutorialId": "cmpv449ki0000b4v4qmb6ylnl",
       "type": "TECHNIQUE",
@@ -205,6 +314,43 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Managing finisher pig growth and condition go here."
+        }
+      ]
+    },
+    {
+      "slug": "managing-rabbit-aggression-in-a-colony",
+      "tutorialId": "cmpvf5z5g0002skv4crtiakzw",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:39.144Z",
+      "publishedAt": "2026-06-01T16:24:53.033Z",
+      "heroMediaId": "cmpvf8nbz0016skv4m7e7b5k6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[2] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[7] > listItem[2] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Managing aggression in a rabbit colony go here."
         }
       ]
     },
@@ -318,6 +464,25 @@
       ]
     },
     {
+      "slug": "outdoor-pig-water-supply-in-winter",
+      "tutorialId": "cmpvf6pvf0001msv4zoxlxxoc",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:39.807Z",
+      "publishedAt": "2026-06-01T16:25:27.661Z",
+      "heroMediaId": "cmpvf8qli001cskv4bk2zsts8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[9] > paragraph[0]",
+          "snippet": "Pigs also get some water from their feed, particularly wet feeding. A pig receiving a wet feed ration in winter is less likely to suffer fro"
+        }
+      ]
+    },
+    {
       "slug": "patchouli-bergamot-linen-spray",
       "tutorialId": "cmpv02spj00009wv4i1acoyg8",
       "type": "RECIPE",
@@ -333,6 +498,25 @@
           "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "Patchouli lingers in fabric longer than most essential oils. With bergamot, the blend is warm and slightly citrusy with an earthy base. The "
+        }
+      ]
+    },
+    {
+      "slug": "rabbit-buck-management-and-conditioning",
+      "tutorialId": "cmpvf688300029kv4q6kcoou1",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:40.699Z",
+      "publishedAt": "2026-06-01T16:25:04.789Z",
+      "heroMediaId": "cmpvf8top001kskv4b9jvofd3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Managing and conditioning a breeding buck go here."
         }
       ]
     },
@@ -483,6 +667,31 @@
       ]
     },
     {
+      "slug": "rabbit-vaccination-schedule-uk",
+      "tutorialId": "cmpvf64zk0000rov44diy1sgj",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:41.548Z",
+      "publishedAt": "2026-06-01T16:25:00.587Z",
+      "heroMediaId": "cmpvf8vrv001oskv4aopkp36a",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Rabbit vaccination schedule for UK rabbits go here."
+        }
+      ]
+    },
+    {
       "slug": "rabbit-winter-management-outdoor-colony",
       "tutorialId": "cmpv7jy3900020wv49rbmuq8q",
       "type": "TECHNIQUE",
@@ -560,6 +769,37 @@
           "kind": "voice-violation",
           "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
           "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "smallholding-fencing-seasonal-maintenance",
+      "tutorialId": "cmpvf7j6m0002akv4sjr4fnce",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:42.224Z",
+      "publishedAt": "2026-06-01T16:26:05.647Z",
+      "heroMediaId": "cmpvf8xu9001uskv4g77iwzvj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Seasonal fencing maintenance on a smallholding go here."
         }
       ]
     },
@@ -708,6 +948,67 @@
           "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Sizing and installing an underground rainwater harvesting tank go here."
+        }
+      ]
+    },
+    {
+      "slug": "understanding-varroa-lifecycle",
+      "tutorialId": "cmpvf4hsd0001qwv43vwbrriu",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:27:42.644Z",
+      "publishedAt": "2026-06-01T16:23:43.872Z",
+      "heroMediaId": "cmpvf90760020skv4j82oekep",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "title",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "excerpt",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "sourceNotes",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[0] > text",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[2] > text",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[10] > text",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "The varroa mite count using an alcohol wash or sugar roll gives a more reliable proportion of phoretic mites in the adult bee sample. The al"
         }
       ]
     },
