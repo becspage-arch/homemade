@@ -1,0 +1,72 @@
+{
+  "slug": "four-shaft-huck-lace",
+  "title": "Four-shaft huck lace",
+  "subtitle": "Weaving the traditional Swedish lace structure in cotton or linen on a four-shaft loom",
+  "excerpt": "Huck lace is a traditional Scandinavian lace weave that produces a fabric with both texture and visual openness by alternating tabby and float sheds. This entry covers the threading, tie-up, and treadling for a standard four-shaft huck sample, with guidance on sett and yarn choice.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Huck lace is documented in Stickney, Handweaving (1924, public domain, Internet Archive), and described in Harriet Tidball, Handweaving Patterns from Finland (1966, in-copyright, substance only referenced). The structure originates in Scandinavian table-linen weaving traditions of the 17th and 18th centuries.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "threading", "term": "Threading", "definition": "The pattern by which each warp thread is assigned to a specific shaft. In huck lace, the threading uses both ground and pattern shafts in a fixed alternation." },
+    { "slug": "float", "term": "Float", "definition": "A thread that passes over two or more opposing threads without interlacing. In huck lace, warp floats and weft floats create the open lace holes at the block intersections." },
+    { "slug": "weft", "term": "Weft", "definition": "The thread passed across the width of the loom through each shed. In huck lace, each weft pick either weaves tabby or creates a float that opens a lace hole." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["huck lace weave", "Swedish huck weaving", "four-shaft lace table linen"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Huck lace is a traditional Scandinavian structure used in table linen and towelling for centuries. It alternates tabby picks with pattern picks that create controlled " },
+          { "type": "text", "text": "float", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float" } }] },
+          { "type": "text", "text": " points at both the " },
+          { "type": "text", "text": "weft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }] },
+          { "type": "text", "text": " level and the warp level. The cloth has a pebbly surface in ground areas and open holes at the block corners. A fine linen or cotton at an open " },
+          { "type": "text", "text": "threading", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading" } }] },
+          { "type": "text", "text": " sett shows the lace most clearly." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Fine linen or cotton warp yarn (16/2 or 20/2)", "qty": "warp length as needed" },
+            { "name": "Same or slightly finer weft yarn", "qty": "as needed" },
+            { "name": "Four-shaft floor loom with at least four treadles", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Threading" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Standard four-shaft huck threading unit: 1-2-1-3 repeated across the warp. Shaft 1 is the ground shaft appearing in every unit. Shafts 2 and 3 carry the pattern threads for the two blocks; shaft 4 is used for the tie-down picks. Sett at approximately 60 to 65% of the balanced plain-weave sett for the same yarn to allow the lace holes to open." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Tie-up and treadling" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Tie: treadle 1 to shafts 1 and 3 (tabby A), treadle 2 to shafts 2 and 4 (tabby B), treadle 3 to shaft 2 (pattern A float), treadle 4 to shaft 3 (pattern B float). Treadle sequence for one pattern repeat: 1, 3, 2, 3, 1, 3, 2, 3 (block A open), then 1, 4, 2, 4, 1, 4, 2, 4 (block B open). Alternate tabby treadles between each pattern treadle." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Huck lace in linen will become more defined after wet-finishing. Wash in warm water, pull gently to size while damp, and press firmly from the reverse side with a hot iron while still slightly damp. The lace holes will open more clearly after pressing than in the loom state." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The lace holes are not visible in the finished sample", "cause": "The sett is too close or the yarn is too thick for the float length", "fix": "Resample at a 20 to 30% more open sett. Huck lace is very sensitive to sett; the standard advice is to start with a sett 35% more open than the balanced weave sett for the yarn." },
+            { "problem": "The tabby picks do not beat to the same level as the pattern picks", "cause": "Pattern picks and tabby picks require different amounts of weft per inch due to the float structure", "fix": "Beat pattern picks slightly less firmly than tabby picks to compensate. The floats need less weft to fill the same width because they travel over rather than under warp threads." }
+          ]
+        }
+      }
+    ]
+  }
+}

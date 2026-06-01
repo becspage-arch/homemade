@@ -1,0 +1,69 @@
+{
+  "slug": "spinning-suffolk-wool",
+  "title": "Spinning Suffolk wool",
+  "subtitle": "A popular UK meat-breed fleece with medium staple, good for sturdy aran or worsted-weight yarn",
+  "excerpt": "Suffolk is one of the most common British farm breeds, with a medium-staple fleece well suited to sturdy aran and worsted-weight yarns. This entry covers scouring, carding, and spinning Suffolk into a balanced two-ply useful for outerwear knitting and weaving.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from British breed spinning practice. Suffolk is documented in the National Sheep Association breed guide; its fibre properties are widely described in British handspinning guild resources.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "lazy-kate", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rolag", "term": "Rolag", "definition": "A soft roll of carded fleece in which the fibres lie in mixed directions, produced by rolling the fleece off the hand-carder. The air-filled structure gives a woollen-spun yarn its characteristic loft." },
+    { "slug": "woollen-draw", "term": "Woollen draw", "definition": "A spinning method in which twist is allowed to enter the drafting zone while the back hand drafts outward from the supply, producing a lofty, elastic yarn from carded fibre." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["Suffolk fleece spinning", "spinning UK farm breed wool", "spinning aran weight Suffolk"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Suffolk fleece is practical and durable: medium staple (7 to 10 cm), a micron count around 26 to 30, and a crimp that holds twist reliably. It is not the softest wool against the skin but it is among the most durable, and a Suffolk two-ply makes a very serviceable outerwear yarn. Carding to " },
+          { "type": "text", "text": "rolags", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rolag" } }] },
+          { "type": "text", "text": " and spinning by " },
+          { "type": "text", "text": "woollen draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "woollen-draw" } }] },
+          { "type": "text", "text": " gives an aran-weight yarn with good elasticity; combing and worsted draw gives a smoother, denser result suited to woven fabric." }
+        ]
+      },
+      { "type": "infoPanel", "attrs": { "tone": "warning", "title": "Wheel safety", "body": "Keep loose hair and clothing away from the drive band and flyer. Tie hair back before sitting at the wheel." } },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Washed Suffolk fleece or commercially carded Suffolk batts", "qty": "100 g" },
+            { "name": "Hand-carders (for raw fleece)", "qty": "1 pair" },
+            { "name": "Spinning wheel (any style)", "qty": "1" },
+            { "name": "Niddy-noddy for winding off", "qty": "1" },
+            { "name": "Lazy kate for plying", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Fibre preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Suffolk fleece needs thorough scouring: the breed produces significant lanolin and vegetable matter. Scour in hot (not boiling) water with wool wash, handle gently, and rinse thoroughly before drying. Once dry, card the fleece in small amounts on the hand-carders to produce rolags. Remove any remaining vegetable matter by picking it out as you card." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Spinning the singles" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to a medium flyer ratio (6:1 to 8:1). Spin from the end of each rolag using the woollen draw, drafting outward from the wheel with your back hand while the front hand controls the twist entry. Suffolk accepts a good amount of twist; spin firmly enough that the singles do not drift apart under tension. Spin to aran or bulky weight." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two bobbins together from the lazy kate in the reverse direction. Two-ply Suffolk at aran weight is a resilient, hard-wearing yarn. Set the twist by soaking the hank in warm water and hanging it to dry under light tension. The finished yarn will not bloom as much as merino but will be robust." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The fleece contains a lot of vegetable matter even after carding", "cause": "Suffolk fleece picked up VM on the field and not all was removed in scouring", "fix": "Pick additional VM from the rolags before spinning. A light hand-carding session after the first pass removes most of what remains." },
+            { "problem": "The singles drift apart when the bobbin is under tension", "cause": "Insufficient twist for the grist and fibre type", "fix": "Suffolk at aran weight needs more twist than merino at the same grist. Increase treadle speed relative to drafting speed." }
+          ]
+        }
+      }
+    ]
+  }
+}

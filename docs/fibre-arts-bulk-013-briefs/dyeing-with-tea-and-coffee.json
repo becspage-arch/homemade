@@ -1,0 +1,74 @@
+{
+  "slug": "dyeing-with-tea-and-coffee",
+  "title": "Dyeing with tea and coffee",
+  "subtitle": "A warm beige to rich brown from kitchen tea and coffee on natural fibres",
+  "excerpt": "Strong brewed tea and coffee produce soft beige to warm brown tones on wool, silk, and cotton without mordanting. The tannin content of both acts as a natural mordant; the result is gentle and earth-toned, well suited to ageing or antiquing new fabric and yarn.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "natural-dyeing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tea and coffee as natural dyes synthesised from widely documented folk dyeing practice. Both are described in general British natural dye resources as mordant-free background dyes suitable for toning or antiquing textiles.",
+  "recipeTools": [
+    { "slug": "dye-pot-stainless", "isOptional": false },
+    { "slug": "dye-thermometer", "isOptional": false },
+    { "slug": "dyeing-gloves-long", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "tannin", "term": "Tannin", "definition": "A group of astringent plant compounds that bond to protein fibres (wool, silk) and to cotton pre-treated with a protein or mordant. Tea and coffee contain significant tannin, which allows them to dye protein fibres without a separate mordant." },
+    { "slug": "mordant", "term": "Mordant", "definition": "A metallic salt that forms a bond between the fibre and the dye. Tea and coffee are mordant-free dyes because their tannin content provides the bonding chemistry directly." },
+    { "slug": "dye-bath", "term": "Dye bath", "definition": "The pot of water containing the dissolved dye material. For tea and coffee dyeing, the dye bath is simply a very strong brew." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["tea dyeing wool", "coffee staining fabric", "tannin dye tea coffee"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tea and coffee contain " },
+          { "type": "text", "text": "tannin", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tannin" } }] },
+          { "type": "text", "text": " in sufficient quantity to dye protein fibres (wool, silk) without a separate " },
+          { "type": "text", "text": "mordant", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mordant" } }] },
+          { "type": "text", "text": ". The " },
+          { "type": "text", "text": "dye bath", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dye-bath" } }] },
+          { "type": "text", "text": " is simply a very strong brew: the deeper and more concentrated the tea or coffee, the stronger the colour result. The palette is limited to a gentle range from cream through warm beige to soft brown, but this is exactly the palette needed for ageing or toning new wool that looks too bright." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Strong black tea (10 to 15 tea bags per litre of water) or strong brewed coffee", "qty": "as needed to cover fibre" },
+            { "name": "Pre-wetted wool, silk, or cotton", "qty": "as needed" },
+            { "name": "Stainless steel pot or dedicated glass bowl", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 1: Brew the dye bath" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Brew the tea or coffee very strongly: at least 10 to 15 tea bags per litre of water, steeped for 15 minutes in boiling water, or a quadruple-strength cafetiere of coffee. Strain out the leaves or bags. The deeper the brew colour, the deeper the resulting dye will be." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 2: Dye the fibre" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Allow the dye bath to cool to about 60 degrees Celsius before adding the pre-wetted fibre. Immerse the fibre and hold at 60 degrees Celsius for 30 to 45 minutes, stirring occasionally. The colour builds slowly. For a stronger result, leave the fibre in the dye bath overnight as it cools." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 3: Rinse and dry" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Remove the fibre and rinse in cool water until the water runs clear. Dry in shade. The colour will be slightly lighter once fully dry than when wet. Tea-dyed natural fibres have a warmth that new, bright white yarn loses when aged naturally." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Variations" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For cotton or linen, a brief soak in strong tea followed by a small alum mordant bath improves the depth and fastness of the colour significantly. The tannin in the tea bonds to the cotton; the alum then fixes additional dye colour on top of the tannin bond." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Wastewater disposal" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Spent tea and coffee dye baths can be poured on the garden or composted. No special disposal is needed." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The colour is very pale even after a long soak", "cause": "The dye bath was not strong enough", "fix": "Use twice as many tea bags as you think necessary. Tea dyeing builds slowly; a strong initial bath is the most important variable." },
+            { "problem": "The colour washes out after the first wash", "cause": "Cotton and linen do not bond well to tannin alone without a mordant", "fix": "For cotton, use an alum pre-mordant (or the soy milk mordant method) before the tea bath. Wool bonds well to tea tannin without a separate mordant." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "four-shaft-ms-and-os",
+  "title": "Four-shaft M's and O's",
+  "subtitle": "Weaving the American colonial alternating block structure in cotton or linen",
+  "excerpt": "M's and O's is a traditional American colonial block weave that produces a distinctive textured surface of alternating warp and weft floats in a geometric grid. This entry covers the threading, tie-up, and treadling for a standard four-shaft M's and O's sample.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "M's and O's documented in Mary Atwater, The Shuttle-Craft Book of American Hand-Weaving (1928, in-copyright, substance only referenced), and in general Coverlet and colonial weaving documentation. The structure was widely used in 18th and 19th-century American household weaving.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "threading", "term": "Threading", "definition": "The pattern by which each warp thread is assigned to a specific shaft. In M's and O's, the threading follows a simple repeating unit using all four shafts." },
+    { "slug": "float", "term": "Float", "definition": "A thread that passes over two or more opposing threads without interlacing. In M's and O's, alternating blocks of warp floats and weft floats create the grid-like texture." },
+    { "slug": "sett", "term": "Sett", "definition": "The number of warp threads per unit of width. M's and O's works at a slightly more open sett than plain weave to allow the float blocks to show clearly." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["M's and O's weave", "colonial block weave four-shaft", "American block texture weaving"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "M's and O's is named for the visual alternation of blocks that resemble the letters M and O when viewed from the right side of the cloth. The structure uses all four shafts to produce two independent block sequences: one block shows warp " },
+          { "type": "text", "text": "floats", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float" } }] },
+          { "type": "text", "text": " where the other shows weft floats, creating a visual contrast without colour changes. The " },
+          { "type": "text", "text": "threading", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading" } }] },
+          { "type": "text", "text": " uses a simple four-thread unit that is straightforward to set up; the " },
+          { "type": "text", "text": "sett", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }] },
+          { "type": "text", "text": " is only slightly more open than plain weave." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Cotton or linen warp yarn (8/2 or 10/2)", "qty": "warp length as needed" },
+            { "name": "Same weight weft yarn", "qty": "as needed" },
+            { "name": "Four-shaft floor loom", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Threading" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Thread on a straight draw: 1-2-3-4, repeated across the full warp width. Thread at a sett slightly more open than plain weave for the yarn: if 8/2 cotton plain weaves at 24 epi, set M's and O's at 18 to 20 epi." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Tie-up and treadling" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Tie: treadle 1 to shafts 1 and 2, treadle 2 to shafts 3 and 4, treadle 3 to shafts 1 and 4, treadle 4 to shafts 2 and 3. Treadle sequence for the full pattern: 1, 2, 1, 2, 3, 4, 3, 4 (repeat). Treadles 1 and 2 produce blocks of warp floats; treadles 3 and 4 produce blocks of weft floats. Each group of four picks forms one complete M-and-O unit." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Remove the cloth from the loom and secure the ends with hemstitching. Wet-finish in warm water, press flat while damp, and allow to dry. The alternating block texture becomes more pronounced after pressing." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The block texture is not visible in the finished cloth", "cause": "The sett is too close, preventing the float blocks from showing", "fix": "Resample at a more open sett. The float length is only two threads, so the sett needs to be open enough for these short floats to stand clear of the ground." },
+            { "problem": "The selvedges draw in on one side but not the other", "cause": "Uneven tension on the warp or uneven beat applied across the width", "fix": "Check warp beam tension for even tension across all threads. Use a temple to hold the cloth to the correct width as you weave." }
+          ]
+        }
+      }
+    ]
+  }
+}

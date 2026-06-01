@@ -1,0 +1,70 @@
+{
+  "slug": "spinning-organic-cotton-on-supported-spindle",
+  "title": "Spinning organic cotton on a supported spindle",
+  "subtitle": "Working short-staple cotton fibre into a fine, even singles on a supported spindle",
+  "excerpt": "Cotton is one of the most challenging plant fibres to spin because the staple length is very short (1 to 3 cm) and the fibres have no crimp to grip each other. This entry covers preparing cotton and spinning it into a smooth, even singles on a supported Tahkli or Akha spindle.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional Indian and West African cotton-spinning practice. Cotton spinning on supported spindles (Tahkli, Akha, Punjabi charkha) is documented in the Indian handspun textile tradition and described in open cotton-spinning guild guides.",
+  "recipeTools": [
+    { "slug": "supported-spindle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "supported-spindle", "term": "Supported spindle", "definition": "A type of hand spindle that rests in a bowl or on a surface during spinning, taking the weight off the yarn as it spins. Essential for short-staple fibres like cotton that cannot support the spindle weight in a drop-spindle setup." },
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of individual fibres in a fibre supply. Cotton staple is very short, typically 1 to 3 cm, requiring a completely different drafting technique than wool." },
+    { "slug": "long-draw", "term": "Long draw", "definition": "A spinning technique in which the fibre supply is drafted outward a long distance from the twist insertion point before the twist is allowed to run in. Not directly applicable to short-staple cotton but useful as a comparison point for understanding the supported cotton drafting method." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["spinning cotton on Tahkli", "supported spindle cotton spinning", "handspinning organic cotton"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cotton spins very differently from wool. It has no crimp and a very short " },
+          { "type": "text", "text": "staple length", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": ": the fibres must be twisted together extremely rapidly before they drift apart. A " },
+          { "type": "text", "text": "supported spindle", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "supported-spindle" } }] },
+          { "type": "text", "text": " resting in a bowl solves the weight problem that makes cotton impossible on a drop spindle: the spindle is spun by rolling between the fingers rather than by dropping, and the twist is inserted directly into the small pinch of fibre held just above the spindle tip. There is no " },
+          { "type": "text", "text": "long draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "long-draw" } }] },
+          { "type": "text", "text": " in cotton spinning; the entire drafting distance is measured in centimetres, not in hand-spans." }
+        ]
+      },
+      { "type": "infoPanel", "attrs": { "tone": "warning", "title": "Dust precautions", "body": "Cotton fibre releases fine dust when handled at scale. Work in a ventilated space if spinning large quantities." } },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Organic cotton lint, prepared punis, or combed sliver", "qty": "20 g" },
+            { "name": "Tahkli or Akha supported spindle", "qty": "1" },
+            { "name": "Spinning bowl", "qty": "1" },
+            { "name": "Niddy-noddy", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "If working from raw cotton lint, prepare punis by rolling small portions of the lint around a thin rod (a knitting needle works well) to produce a short, dense roll of parallel fibres. If working from combed sliver, pull off a small length and pre-draft it to a thin, even strip no wider than 1 cm." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Spinning" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the Tahkli spindle in the bowl. Attach a short leader of cotton thread to the spindle tip. Pull a small pinch of cotton from the puni or sliver, hold it between the thumb and first finger of the left hand about 1.5 cm above the spindle tip, and set the spindle spinning clockwise with a roll between the right thumb and first finger. The twist runs immediately up into the cotton pinch. As the twist enters, pinch firmly and draft the left hand back 1 to 2 cm, allowing a short length of spun yarn to form. Keep the spinning spindle rolling and draft forward again. The rhythm is rapid: spin, pinch, draft, spin, pinch, draft." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Winding off and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Wind the spun singles onto the niddy-noddy regularly to keep the spindle from becoming top-heavy. Cotton does not bloom like wool; set the twist by washing the skein in warm water and hanging to dry under light tension. The finished singles can be plied or used as a single-ply warp or weft thread." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The cotton drifts apart before twist can enter", "cause": "Drafting too fast or holding too loosely above the spindle tip", "fix": "Pinch very firmly and draft only 1 cm at a time. Cotton has almost no inter-fibre grip; the pinch must trap the fibres while the twist locks them." },
+            { "problem": "The yarn is extremely thick and lumpy", "cause": "Too much fibre in the pinch or insufficient spindle speed", "fix": "Use a smaller pinch of cotton and spin the spindle faster before each draft. Cotton spinning at its finest is a micro-scale operation." }
+          ]
+        }
+      }
+    ]
+  }
+}

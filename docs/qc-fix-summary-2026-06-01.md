@@ -221,3 +221,63 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 06:21:39
+
+Generated: 2026-06-01T06:21:39.497Z
+
+Processed: 80
+PASS: 80
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 12 |
+| grade-level-strict | 4 |
+
+
+---
+
+## Run at 07:15:48
+
+Generated: 2026-06-01T07:15:48.438Z
+
+Processed: 56
+PASS: 55
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 4 |
+| body-missing-method | 4 |
+
+## Still BLOCKED (sample 20)
+
+- four-shaft-bronson-lace: grade-level-strict
+
+---
+
+## Run at 07:36:14
+
+Generated: 2026-06-01T07:36:14.054Z
+
+Processed: 79
+PASS: 79
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 8 |
+| body-missing-method | 7 |

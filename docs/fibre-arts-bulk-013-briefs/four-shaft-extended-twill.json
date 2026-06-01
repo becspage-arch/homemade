@@ -1,0 +1,74 @@
+{
+  "slug": "four-shaft-extended-twill",
+  "title": "Four-shaft extended twill",
+  "subtitle": "Weaving a longer-float twill variation for a smoother, more lustrous cloth surface",
+  "excerpt": "Extended twill uses longer warp or weft floats than a standard 2/2 twill, producing a smoother, more reflective surface. This entry covers the threading and treadling for a 3/1 extended twill and a 1/3 extended twill on a four-shaft loom, and when each version is appropriate.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Extended twill variations documented in Mary E. Black, The Key to Weaving (1945, in-copyright, substance only referenced), and in Hooper, Hand-Loom Weaving (1910, public domain, Internet Archive). The 3/1 and 1/3 twill structures are standard entries in British and Scandinavian weaving manuals.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "twill", "term": "Twill", "definition": "A weave structure in which the weft passes over or under two or more warp threads before interlacing, advancing one thread on each successive pick to produce a diagonal rib on the cloth surface." },
+    { "slug": "float", "term": "Float", "definition": "A warp or weft thread that passes over two or more opposing threads without interlacing. In extended twill, the floats are longer than in a standard 2/2 twill, giving the cloth a smoother surface." },
+    { "slug": "sett", "term": "Sett", "definition": "The number of warp threads per unit of width. Extended twill can be woven at the same sett as standard twill for the same yarn; the surface texture changes but the structure is equally stable." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["extended twill weave", "3/1 twill four-shaft", "unbalanced twill loom weaving"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Standard four-shaft " },
+          { "type": "text", "text": "twill", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twill" } }] },
+          { "type": "text", "text": " uses a 2/2 structure: each weft thread passes over two warp threads and under two. Extended twill shifts that balance: a 3/1 twill passes the weft over three and under one, producing a weft-dominant surface with longer " },
+          { "type": "text", "text": "floats", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float" } }] },
+          { "type": "text", "text": " on the face. A 1/3 twill is the reverse, warp-dominant. Both produce a more lustrous surface than 2/2, because the longer floats reflect light more smoothly. The " },
+          { "type": "text", "text": "sett", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }] },
+          { "type": "text", "text": " is the same as for standard twill at the same yarn grist." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth warp yarn (cotton or silk at 10/2 or finer, or wool worsted top)", "qty": "warp length as needed" },
+            { "name": "Same or slightly finer weft yarn", "qty": "as needed" },
+            { "name": "Four-shaft floor loom", "qty": "1" },
+            { "name": "Boat shuttle", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Threading" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Thread on a straight draw: 1-2-3-4, repeated across the full warp. This is the same threading as standard 2/2 twill; the extended structure is produced entirely in the tie-up and treadling." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Tie-up and treadling for 3/1 twill (weft-dominant)" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Tie: treadle 1 to shaft 4, treadle 2 to shaft 3, treadle 3 to shaft 2, treadle 4 to shaft 1. Treadle in sequence: 1, 2, 3, 4, 1, 2, 3, 4. Each treadle lifts one shaft only, so the weft passes over three warp threads and under one. The face of the cloth is weft-dominant." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Tie-up and treadling for 1/3 twill (warp-dominant)" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Tie: treadle 1 to shafts 2, 3, and 4; treadle 2 to shafts 1, 3, and 4; treadle 3 to shafts 1, 2, and 4; treadle 4 to shafts 1, 2, and 3. Treadle in the same sequence. Each treadle lifts three shafts, so the weft passes under three warp threads and over one. The face of the cloth is warp-dominant." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to use each version" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Use 3/1 twill when the weft colour or texture is the feature: the face of the cloth shows primarily weft. Use 1/3 twill when the warp colour or lustre is the feature: the face shows primarily warp. Both versions produce a strong diagonal line at 45 degrees to the selvedge." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The long floats catch on rings or fingernails in the finished cloth", "cause": "Extended floats always carry some snag risk compared to 2/2 twill", "fix": "Use extended twill for household textiles (table runners, scarves) and bags rather than items that will be worn close to the body or snagged by daily use." },
+            { "problem": "The diagonal line is not clear in the finished sample", "cause": "The treadle sequence was not consistent or a treadle was missed", "fix": "Stick to the four-treadle sequence without variation. Missing one treadle breaks the diagonal and introduces an unintended tabby pick." }
+          ]
+        }
+      }
+    ]
+  }
+}

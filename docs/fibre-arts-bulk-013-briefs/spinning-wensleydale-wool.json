@@ -1,0 +1,73 @@
+{
+  "slug": "spinning-wensleydale-wool",
+  "title": "Spinning Wensleydale wool",
+  "subtitle": "Working the exceptionally long, lustrous locks of the Yorkshire Dales longwool breed",
+  "excerpt": "Wensleydale is a Yorkshire Dales longwool breed with a silky, wavy fleece and a staple length of up to 35 cm. This entry covers preparing the locks, choosing the right draft, and spinning a smooth, lustrous singles or two-ply yarn suited to lace or fine worsted work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from British longwool spinning practice. Wensleydale is a heritage breed native to the Yorkshire Dales; its fibre properties are described in the Rare Breeds Survival Trust breed profiles. Technical spinning guidance synthesised from open breed documentation.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "flicker-brush", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "lazy-kate", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual fleece lock from the cut end to the tip, measured after washing. Wensleydale staple typically runs 20 to 35 cm, among the longest of the British longwool breeds." },
+    { "slug": "worsted-draw", "term": "Worsted draw", "definition": "A spinning method in which fibres are drawn from a combed or combed-lock preparation with the hand held close to the orifice, producing a smooth, dense, low-loft yarn." },
+    { "slug": "lustre", "term": "Lustre", "definition": "The reflective sheen present in longwool fleeces such as Wensleydale and Teeswater. It comes from the smooth, wide cuticle scales that cover the fibre surface, which reflect light like a flat mirror rather than scattering it." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["Wensleydale fleece spinning", "longwool spinning Wensleydale", "spinning lustrous Yorkshire wool"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Wensleydale is the longest of the British longwool breeds, with a fleece that hangs in long, distinct, wavy curls. The " },
+          { "type": "text", "text": "lustre", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lustre" } }] },
+          { "type": "text", "text": " rivals silk; the " },
+          { "type": "text", "text": "staple length", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " demands a " },
+          { "type": "text", "text": "worsted draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worsted-draw" } }] },
+          { "type": "text", "text": " and a flicker-brush preparation rather than hand-carding, which would break the lock structure and destroy the sheen. Wensleydale spins into a fine, smooth, very strong yarn well suited to lace weight or fine worsted." }
+        ]
+      },
+      { "type": "infoPanel", "attrs": { "tone": "warning", "title": "Wheel safety", "body": "Keep loose hair and clothing away from the drive band and flyer. Tie hair back before sitting at the wheel." } },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Washed Wensleydale fleece locks or commercially prepared Wensleydale top", "qty": "100 g" },
+            { "name": "Spinning wheel (castle or Saxony)", "qty": "1" },
+            { "name": "Flicker brush (for raw locks)", "qty": "1" },
+            { "name": "Niddy-noddy for winding off", "qty": "1" },
+            { "name": "Lazy kate for plying", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Fibre preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "If working with raw locks, hold each lock by the cut end and give the tip a few passes with the flicker brush to open the tips without disturbing the lock structure. Do not hand-card Wensleydale; carding breaks the long staple and destroys the lustre. If working from commercially combed top, pre-draft gently by pulling the top to about twice its original diameter before beginning to spin." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Spinning the singles" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to a medium-fast flyer ratio (around 10:1 to 12:1) with light uptake tension. Spin using the worsted draw with a short backward draft, holding the fibre supply close to the orifice. Wensleydale needs a little more twist per inch than shorter wools to hold together, but not as much as a very fine merino. Aim for a consistent lace-to-fingering weight singles." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two bobbins together by feeding them from the lazy kate onto the wheel in the opposite direction to the singles twist. Use a slow treadle speed and a low twist count. The finished two-ply should be smooth, round, and intensely lustrous. Wind off onto the niddy-noddy, tie the hank in four places, and set the twist in lukewarm water for 20 minutes. Hang to dry under a light weight." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The yarn has a dull surface despite the lustrous fibre", "cause": "The singles were over-twisted or the fibre was prepared by hand-carding", "fix": "Use less treadle speed relative to drafting speed. Prepare only with the flicker brush or by gently pre-drafting combed top." },
+            { "problem": "The singles break repeatedly during spinning", "cause": "Too little twist, or the draft zone is too long for the staple length", "fix": "The twist must penetrate the full draft zone. Increase treadle speed slightly relative to backward draft speed, or shorten the draft zone." }
+          ]
+        }
+      }
+    ]
+  }
+}

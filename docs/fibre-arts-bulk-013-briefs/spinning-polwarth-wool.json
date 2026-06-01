@@ -1,0 +1,72 @@
+{
+  "slug": "spinning-polwarth-wool",
+  "title": "Spinning Polwarth wool",
+  "subtitle": "A fine, silky merino-cross fibre suited to both worsted and semi-worsted drafts",
+  "excerpt": "Polwarth is a fine cross-bred sheep developed in Australia from Merino and Lincoln stock, producing a long-stapled, lustrous fibre with exceptional softness. This entry covers its preparation and spinning into a smooth, even yarn at fingering to DK weight.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from breed spinning practice. Polwarth fibre properties documented in open Australian wool breed databases and spinning guild resources. Spinning technique synthesised from worsted and semi-worsted methods applicable to long-stapled fine wools.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "lazy-kate", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "worsted-draw", "term": "Worsted draw", "definition": "A spinning method in which fibres are drawn from a combed preparation with the hand held close to the orifice, producing a smooth, dense, low-loft yarn." },
+    { "slug": "semi-worsted-draft", "term": "Semi-worsted draft", "definition": "A drafting method that combines elements of worsted and woollen spinning: fibres are drawn backward from a combed preparation before twist enters, giving a slightly airier, more elastic yarn than the fully worsted method." },
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual fleece lock from the cut end to the tip. Polwarth staple typically runs 10 to 15 cm." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["Polwarth fleece spinning", "spinning fine cross-bred wool", "Australian breed wool spinning"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Polwarth sits between the very finest merino and a longwool in character: it has a " },
+          { "type": "text", "text": "staple length", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " (10 to 15 cm) longer than most merino but finer than any longwool breed. The fibre diameter is typically 24 to 28 micron, fine enough to wear against the skin but with more sheen and drape than ultrafine merino. It responds well to both a " },
+          { "type": "text", "text": "worsted draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worsted-draw" } }] },
+          { "type": "text", "text": " (for a smooth, dense yarn) and a " },
+          { "type": "text", "text": "semi-worsted draft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "semi-worsted-draft" } }] },
+          { "type": "text", "text": " (for a slightly airier, more elastic result)." }
+        ]
+      },
+      { "type": "infoPanel", "attrs": { "tone": "warning", "title": "Wheel safety", "body": "Keep loose hair and clothing away from the drive band and flyer. Tie hair back before sitting at the wheel." } },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Polwarth roving or combed top", "qty": "100 g" },
+            { "name": "Spinning wheel (any style)", "qty": "1" },
+            { "name": "Hand combs (optional, for re-combing locks)", "qty": "1 pair" },
+            { "name": "Niddy-noddy for winding off", "qty": "1" },
+            { "name": "Lazy kate for plying", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Fibre preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Commercially prepared Polwarth top needs only light pre-drafting: pull the top to about one and a half times its original diameter before spinning. If working with raw locks, comb rather than card; Polwarth has enough length for hand combs and carding would produce an airier, less lustrous yarn." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Spinning the singles" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to a medium flyer ratio (8:1 to 10:1) with moderate uptake tension. Polwarth accepts a slightly shorter backward draft than a longwool because the staple length, while long for a fine fibre, is shorter than Teeswater or Wensleydale. Spin to a consistent fingering or DK weight. The finished singles should be smooth, even, and springy." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two or three bobbins from the lazy kate in the reverse direction. Polwarth two-ply produces a balanced, round yarn with excellent stitch definition. Set the twist in lukewarm water, hang to dry under light tension, and the skein will bloom slightly, giving the finished yarn a pleasing, soft sheen." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The singles are uneven in grist (thick and thin)", "cause": "Inconsistent pre-drafting or the roving was not pre-drafted enough", "fix": "Pre-draft the top more thoroughly before spinning. Polwarth is forgiving but still benefits from a consistent input diameter." },
+            { "problem": "The finished yarn is too dense and lacks spring", "cause": "Too much twist for the grist, or the worsted draw was overly compressed", "fix": "Reduce treadle speed relative to drafting speed, or try a semi-worsted draft for the next sample." }
+          ]
+        }
+      }
+    ]
+  }
+}

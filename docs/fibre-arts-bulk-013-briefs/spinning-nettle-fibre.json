@@ -1,0 +1,71 @@
+{
+  "slug": "spinning-nettle-fibre",
+  "title": "Spinning nettle fibre",
+  "subtitle": "Preparing and spinning bast fibre from stinging nettles into a strong linen-like singles",
+  "excerpt": "Stinging nettles (Urtica dioica) produce a strong bast fibre comparable to flax linen. This entry covers retting, drying, and hand-processing nettle stalks to produce a spinnable fibre, then spinning it into a smooth, strong singles on the wheel using a wet-drawn method.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "ADVANCED",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from historical and contemporary nettle fibre practice. Nettle as a textile fibre is documented in European folk textile traditions (particularly German and Himalayan); technical processing guidance synthesised from open ethnobotanical and craft sources.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "retting", "term": "Retting", "definition": "The process of controlled decomposition that breaks down the pectin binding a bast fibre to the plant stem. Nettle is water-retted: the stalks are submerged in water for 7 to 14 days until the fibre can be separated from the woody core." },
+    { "slug": "bast-fibre", "term": "Bast fibre", "definition": "A plant fibre extracted from the stem of a plant, including flax, hemp, ramie, and nettles. Bast fibres are strong, low-stretch, and produce linen-like yarns when spun." },
+    { "slug": "wet-draw", "term": "Wet draw", "definition": "A spinning technique for bast fibres in which the drafting fingers are kept slightly damp, allowing the fibre bundles to slip past each other more smoothly and producing a finer, more even singles." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["spinning nettles", "nettle linen spinning", "Urtica dioica fibre spinning"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nettle fibre is a " },
+          { "type": "text", "text": "bast fibre", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bast-fibre" } }] },
+          { "type": "text", "text": " with a long tradition in European and Himalayan textile practice. After " },
+          { "type": "text", "text": "retting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "retting" } }] },
+          { "type": "text", "text": " and processing, the long fibre bundles are similar to a coarse flax top and spin in the same way, using a " },
+          { "type": "text", "text": "wet draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wet-draw" } }] },
+          { "type": "text", "text": " to produce a strong, smooth, slightly lustrous singles. The finished yarn is not soft against the skin but is excellent for bags, rope, and woven fabric that needs strength and durability." }
+        ]
+      },
+      { "type": "infoPanel", "attrs": { "tone": "warning", "title": "Handling precautions", "body": "Wear thick gloves when harvesting nettles. The stalks can still irritate after retting. Work in a ventilated space." } },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Fresh nettle stalks, harvested before flowering", "qty": "a large bundle (about 1 kg fresh for 30 to 50 g processed fibre)" },
+            { "name": "Deep bucket or trough for retting", "qty": "1" },
+            { "name": "Thick rubber gloves for harvesting", "qty": "1 pair" },
+            { "name": "Spinning wheel with flax flyer or standard flyer", "qty": "1" },
+            { "name": "Water bowl for wet-draw spinning", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Harvesting and retting" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Harvest nettle stalks in early to mid-summer before they set seed, cutting them close to the base. Submerge the stalks in a bucket of water and weight them down. Ret for 7 to 14 days, changing the water every 2 to 3 days. The stalks are ready when the outer bark peels away easily from the woody core without tearing the fibre bundles." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Processing the fibre" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Remove the retted stalks from the water and lay them to dry in sun or in a warm, ventilated space until completely dry and brittle. Break the woody stem by rolling each stalk under your foot or between two smooth boards (scotching). Shake and pull apart the broken core to free the long fibre bundles (hackling). Comb the bundles with a metal-toothed hatchel or a stiff-bristled brush to align the fibres and remove short bits." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Spinning with wet draw" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to a fast flyer ratio (12:1 or faster) with light uptake tension. Keep a small bowl of water beside you and wet your drafting fingers at intervals. Draw the fibre bundles outward from the distaff or the supply with a smooth, sustained backward draft. The water allows the stiff fibre bundles to slip past each other, producing a finer and more even singles than a dry draw." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The fibre breaks repeatedly during spinning", "cause": "Retting was incomplete and the fibre bundles are still bonded to the woody core", "fix": "Ret the stalks for a further 3 to 5 days. Well-retted nettle fibre pulls away from the core in long, continuous ribbons without breaking." },
+            { "problem": "The finished yarn is very coarse and hairy", "cause": "The hackling stage was not thorough enough", "fix": "Comb the fibre bundles more thoroughly before spinning to remove the short, broken ends. Two passes through a fine-toothed hatchel will produce a much smoother supply." }
+          ]
+        }
+      }
+    ]
+  }
+}
