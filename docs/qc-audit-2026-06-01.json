@@ -1,10 +1,45 @@
 {
-  "generatedAt": "2026-06-01T07:05:59.852Z",
-  "totalScanned": 6084,
+  "generatedAt": "2026-06-01T08:08:55.777Z",
+  "totalScanned": 6124,
   "passCount": 0,
-  "blockCount": 0,
+  "blockCount": 1,
   "warnOnlyCount": 0,
-  "perCategory": {},
-  "perRuleKind": {},
-  "verdicts": []
+  "perCategory": {
+    "fibre-arts": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "body-missing-method": 1,
+    "grade-level-strict": 1
+  },
+  "verdicts": [
+    {
+      "slug": "four-shaft-bronson-lace",
+      "tutorialId": "cmpuvg0j60000cwv4wiu81b03",
+      "type": "TECHNIQUE",
+      "categorySlug": "fibre-arts",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T07:15:46.327Z",
+      "publishedAt": "2026-06-01T07:31:27.129Z",
+      "heroMediaId": "cmpuw8uhs000cskv4qadnli4j",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "body-missing-method",
+          "message": "TECHNIQUE tutorial has no Method/Steps section and no orderedList — sequential instructions missing"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Bronson lace is a spot-and-net structure in which some groups of warp threads interweave in a lace-like net pattern while others form solid "
+        }
+      ]
+    }
+  ]
 }

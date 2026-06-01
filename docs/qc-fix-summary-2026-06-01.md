@@ -281,3 +281,20 @@ SKIPPED: 0
 |---|---:|
 | grade-level-strict | 8 |
 | body-missing-method | 7 |
+
+
+---
+
+## Run at 08:07:24
+
+Generated: 2026-06-01T08:07:24.575Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
