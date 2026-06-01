@@ -484,3 +484,52 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 14:06:11
+
+Generated: 2026-06-01T14:06:11.889Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 15:03:30
+
+Generated: 2026-06-01T15:03:30.133Z
+
+Processed: 40
+PASS: 31
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 42 |
+| body-missing-method | 28 |
+| voice-violation | 10 |
+
+## Still BLOCKED (sample 20)
+
+- managing-finisher-pigs-growth-and-condition: grade-level-strict
+- milking-equipment-cleaning-and-sterilising: grade-level-strict
+- notifiable-livestock-disease-reporting: grade-level-strict
+- rabbit-coccidiosis-in-kits: voice-violation, grade-level-strict
+- rabbit-deep-litter-colony-bedding: voice-violation, grade-level-strict
+- rabbit-ear-infection-recognition-and-treatment: grade-level-strict
+- rabbit-pasteurellosis-management: voice-violation, grade-level-strict
+- reading-and-completing-livestock-movement-forms: voice-violation, grade-level-strict
+- treating-aspergillosis-in-chicks: voice-violation, grade-level-strict

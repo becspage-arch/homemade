@@ -1,0 +1,230 @@
+{
+  "slug": "setting-up-a-chicken-coop-from-scratch",
+  "title": "Setting up a chicken coop from scratch",
+  "subtitle": "Site, build, and first-day setup for a small laying flock.",
+  "excerpt": "A well-placed, well-fitted coop makes daily management straightforward and keeps the flock healthy. A poorly placed one creates muddy approaches, cold wet birds, and difficult cleaning. The decisions made at setup (site, orientation, perch height, nest box count, ventilation) persist for years.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Practice for the Welfare of Laying Hens (2018), housing requirements. Lewis Wright, The Practical Poultry Keeper (1867), Internet Archive, coop design principles. BHWT practical housing guide, bhwt.org.uk.",
+  "glossaryTerms": [
+    {
+      "slug": "pop-hole",
+      "term": "Pop hole",
+      "definition": "The small opening at the base of a coop that chickens use to enter and exit. Typically 25 to 30 cm square; an automatic pop hole opener closes it at dusk and opens at dawn."
+    }
+  ],
+  "techniqueSlugs": [
+    "fitting-electric-poultry-netting"
+  ],
+  "criticalTechniques": [],
+  "aliases": [
+    "chicken house setup",
+    "building a chicken coop",
+    "first chicken setup"
+  ],
+  "recipeTools": [
+    {
+      "slug": "coop-perch",
+      "isOptional": false
+    },
+    {
+      "slug": "chicken-drinker-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "electric-poultry-netting",
+      "isOptional": true
+    },
+    {
+      "slug": "electric-fence-energiser",
+      "isOptional": true
+    }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Site and coop",
+      "body": "Choose site: partial shade, well-drained, not along a known fox route. Position coop with the entrance away from prevailing wind. Fit perches and nest boxes.",
+      "surfaceAs": "HERO"
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Fit run and fencing",
+      "body": "Install the run or poultry netting. Check fence voltage if electric. Add feeders and drinkers inside the run.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 3,
+      "title": "First birds arrive",
+      "body": "Introduce birds at dusk. Place food and water inside the coop on day one; move to the run on day two.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 14,
+      "title": "Two-week check",
+      "body": "Check that all birds are using the perch overnight, not huddling on the floor. If floor-huddling persists, the perch is too high or too narrow.",
+      "surfaceAs": "RAIL_CARD"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small laying flock needs a weatherproof coop with adequate perch space, one nest box per three hens, a good-sized run or electric netting for range, and a daily water-and-feed routine. Getting the setup right at the start avoids rebuilding from a muddy, unhealthy baseline."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Choosing the site"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Partial shade is ideal, south-facing, with a tree or fence providing afternoon shade. Avoid a frost hollow, a spot that floods, or a position directly against the fence line that foxes patrol at night. The ground under a fixed run will be scratched bare and poached within two months of use; if possible, choose a site where you can move the coop or rotate the run access."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The coop"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Allow 0.25 square metres of floor space per bird minimum; 0.4 square metres is more comfortable. Ventilation openings at the top of the wall (not at bird level) prevent ammonia and moisture build-up without creating draughts. Nest boxes should be darkened, lower than the perch, and accessible from outside for egg collection without opening the main door. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pop-hole"
+                }
+              }
+            ],
+            "text": "pop hole"
+          },
+          {
+            "type": "text",
+            "text": " with an automatic opener is one of the best labour-saving investments for a small flock, it opens at dawn and closes at dusk reliably regardless of your work schedule."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Perches"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Allow 25 to 30 cm of perch space per bird. Round-edged timber 40 to 50 mm in diameter suits most breeds; a flat roost bar causes bumblefoot through pressure concentration. The perch should be the highest roosting point in the coop (hens always sleep as high as possible) and at least 60 cm above the floor. Multiple levels cause pecking-order battles; a single high perch for all birds is cleaner."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fencing and run"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a free-range flock with electric netting, see the tutorial on "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "fitting-electric-poultry-netting",
+                  "label": "fitting electric poultry netting"
+                }
+              }
+            ],
+            "text": "fitting electric poultry netting"
+          },
+          {
+            "type": "text",
+            "text": ". For a fixed run, hardware cloth (19 mm welded mesh) is more secure than chicken wire, which foxes can tear through. Bury the bottom edge 30 cm into the ground or lay it flat outward under turf to deter digging."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "First day with new birds"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place food and water inside the coop on day one so the birds learn where home is. Keep them inside until mid-morning on day two, then allow range access. At dusk on day one, any bird that has not gone inside on its own must be gently lifted in and the door closed. After two or three nights, all birds will go in at dusk without prompting."
+          }
+        ]
+      }
+    ]
+  }
+}

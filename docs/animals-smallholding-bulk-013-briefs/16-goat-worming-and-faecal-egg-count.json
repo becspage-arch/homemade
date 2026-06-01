@@ -1,0 +1,191 @@
+{
+  "slug": "goat-worming-and-faecal-egg-count",
+  "title": "Worming goats and running a faecal egg count",
+  "subtitle": "Targeted treatment instead of routine dosing.",
+  "excerpt": "Goats are more susceptible to gastrointestinal worms than sheep and metabolise wormers differently, making them harder to dose and faster to develop resistance. A faecal egg count before treatment tells you which animals actually need worming and how effective the treatment was. Routine dosing without egg count data is the fastest route to wormer resistance.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef & Lamb, SCOPS (Sustainable Control of Parasites in Sheep) guidance adapted for goats, scops.org.uk. DEFRA Code of Practice for Goat Welfare (2012). Moredun Research Institute, parasite control factsheets for small ruminants.",
+  "glossaryTerms": [
+    {
+      "slug": "faecal-egg-count",
+      "term": "Faecal egg count (FEC)",
+      "definition": "A laboratory test that counts parasite eggs per gram of faeces to assess worm burden. Results above 250 to 500 epg (eggs per gram) in mature goats are typically treatment thresholds, though clinical condition and production status also factor into the decision."
+    },
+    {
+      "slug": "wormer-resistance",
+      "term": "Wormer resistance",
+      "definition": "The ability of a worm population to survive a dose of anthelmintic that would previously have killed it. Resistance develops when susceptible worms are eliminated and resistant individuals reproduce. Testing efficacy by counting eggs 14 days after treatment detects resistance early."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "goat worm treatment",
+    "worming goats UK",
+    "goat faecal egg count"
+  ],
+  "recipeTools": [
+    {
+      "slug": "drenching-gun",
+      "isOptional": false
+    },
+    {
+      "slug": "shepherds-crook",
+      "isOptional": true
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Goats build less immunity to gut worms than sheep. They need targeted treatment, not routine dosing. The key differences: goats process most wormers faster, so doses must be higher; resistance builds more quickly; and the most damaging species (barber's pole worm) is hard to spot from condition alone."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Running a faecal egg count"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Collect fresh faeces from the ground within 30 seconds of defecation (or carefully from the rectum) from five or more animals in the group. Store in sealed bags in the fridge and send to a laboratory that offers a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "faecal-egg-count"
+                }
+              }
+            ],
+            "text": "faecal egg count"
+          },
+          {
+            "type": "text",
+            "text": " service within 24 hours. Many agricultural vets and some online services offer this at a modest cost per pooled sample. A pooled sample from five animals gives a reasonable representation of flock burden."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Interpreting the result"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pooled result above 500 epg in mature goats outside lactation warrants treatment when combined with a condition score below 3. In does around kidding, the threshold drops to 200 epg because their immunity is suppressed. The egg count tells you whether to treat, not which drug to use. A larval development test identifies the species and the right drug class."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dosing goats correctly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Goats need 1.5 to 2 times the sheep dose for most wormers. This is off-label in the UK; talk to your vet before the first treatment. Dose to the weight of the heaviest animal in the group, not the average. Under-dosing drives "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wormer-resistance"
+                }
+              }
+            ],
+            "text": "wormer resistance"
+          },
+          {
+            "type": "text",
+            "text": ". Use a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "drenching-a-sheep",
+                  "label": "drenching gun"
+                }
+              }
+            ],
+            "text": "drenching gun"
+          },
+          {
+            "type": "text",
+            "text": " and deliver the full dose over the back of the tongue, not into the cheek pouch where it can be spat out."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Post-treatment egg count reduction test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recount from the same animals 14 days after treatment. A reduction below 95% indicates suspected resistance; below 80% confirms it. If resistance is detected, switch drug class (if you used benzimidazoles, switch to macrolides with vet guidance) and do not use the failed drug in that flock again."
+          }
+        ]
+      }
+    ]
+  }
+}

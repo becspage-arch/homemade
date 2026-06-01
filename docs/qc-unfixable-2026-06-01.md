@@ -115,3 +115,13 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - mating-rabbits-and-managing-gestation grade-level-strict — applied: 
 - rabbit-respiratory-infections-early-signs voice-violation,grade-level-strict — applied: 
 - rabbit-winter-management-outdoor-colony voice-violation,grade-level-strict — applied: 
+
+- managing-finisher-pigs-growth-and-condition grade-level-strict — applied: 
+- milking-equipment-cleaning-and-sterilising grade-level-strict — applied: 
+- notifiable-livestock-disease-reporting grade-level-strict — applied: 
+- rabbit-coccidiosis-in-kits voice-violation,grade-level-strict — applied: 
+- rabbit-deep-litter-colony-bedding voice-violation,grade-level-strict — applied: 
+- rabbit-ear-infection-recognition-and-treatment grade-level-strict — applied: 
+- rabbit-pasteurellosis-management voice-violation,grade-level-strict — applied: 
+- reading-and-completing-livestock-movement-forms voice-violation,grade-level-strict — applied: 
+- treating-aspergillosis-in-chicks voice-violation,grade-level-strict — applied: 
