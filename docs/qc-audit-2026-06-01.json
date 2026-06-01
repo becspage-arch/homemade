@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-01T22:07:54.950Z",
-  "totalScanned": 6439,
+  "generatedAt": "2026-06-01T23:08:00.961Z",
+  "totalScanned": 6476,
   "passCount": 0,
-  "blockCount": 2462,
+  "blockCount": 2495,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
-      "total": 1167,
+      "total": 1166,
       "pass": 0,
-      "block": 1167,
+      "block": 1166,
       "warnOnly": 0
     },
     "natural-home": {
@@ -18,9 +18,9 @@
       "warnOnly": 0
     },
     "baking": {
-      "total": 885,
+      "total": 919,
       "pass": 0,
-      "block": 885,
+      "block": 919,
       "warnOnly": 0
     },
     "home-repair": {
@@ -61,11 +61,11 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 796,
-    "opening-pattern-missing-hook": 2104,
-    "content-type-opening-mismatch": 2398,
+    "voice-violation": 802,
+    "opening-pattern-missing-hook": 2133,
+    "content-type-opening-mismatch": 2431,
     "grade-level-strict": 75,
-    "prose-prep-steps": 84,
+    "prose-prep-steps": 83,
     "body-missing-method": 1
   },
   "verdicts": [
@@ -3119,6 +3119,32 @@
       ]
     },
     {
+      "slug": "apple-upside-down-cake",
+      "tutorialId": "cmpvt60sr0000k8v4nsggc7nu",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:33.993Z",
+      "publishedAt": "2026-06-01T22:56:49.771Z",
+      "heroMediaId": "cmpvt75lb0000l4v4olszt0ji",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Apple upside-down cake is a lightly spiced sponge baked over a layer of fresh apple slices caramelised in butter and brown sugar. Turned out"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Apple upside-down cake is a lightly spiced sponge baked over a layer of fresh apple slices caramelised in butter and brown sugar. Turned out"
+        }
+      ]
+    },
+    {
       "slug": "applesauce-cake",
       "tutorialId": "cmpsr6swx0000swv4w9t95f6h",
       "type": "RECIPE",
@@ -4908,6 +4934,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Banoffee pie has three layers: a pressed digestive biscuit base, dulce de leche, and banana topped with whipped cream. No baking. Eight slic"
+        }
+      ]
+    },
+    {
+      "slug": "bap",
+      "tutorialId": "cmpvspcpa0000v4v4uroo1iai",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:34.298Z",
+      "publishedAt": "2026-06-01T22:43:52.031Z",
+      "heroMediaId": "cmpvt76eu0002l4v4odw0bbx8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A bap is a large, soft, flour-dusted roll with a tender crumb and an almost imperceptible crust. Traditionally a Scottish breakfast roll, it"
         }
       ]
     },
@@ -8675,6 +8720,38 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Bread and butter pudding is the British answer to a dry loaf. You butter the slices on one side. Layer them in a dish, pour over a custard o"
+        }
+      ]
+    },
+    {
+      "slug": "bread-rolls-white",
+      "tutorialId": "cmpvsq4b80000y4v4a44939no",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:34.595Z",
+      "publishedAt": "2026-06-01T22:44:27.832Z",
+      "heroMediaId": "cmpvt77fy0004l4v4grj6p0bu",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[8] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Plain white rolls with a thin, crisp crust and a light, open crumb. These are the bread-roll baseline: no enrichment, no flavouring, just fl"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Plain white rolls with a thin, crisp crust and a light, open crumb. These are the bread-roll baseline: no enrichment, no flavouring, just fl"
         }
       ]
     },
@@ -12817,6 +12894,32 @@
       ]
     },
     {
+      "slug": "chestnut-cake",
+      "tutorialId": "cmpvsss5n0000gsv4l2gqsarc",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:34.905Z",
+      "publishedAt": "2026-06-01T22:46:32.050Z",
+      "heroMediaId": "cmpvt78210006l4v4bvkj0sps",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Chestnut cake is a flat, rustic Italian cake made from chestnut flour, olive oil, and water, topped with rosemary and fennel seeds. The batt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Chestnut cake is a flat, rustic Italian cake made from chestnut flour, olive oil, and water, topped with rosemary and fennel seeds. The batt"
+        }
+      ]
+    },
+    {
       "slug": "chiacchiere-carnival",
       "tutorialId": "cmprphe010001d4v4wekixq27",
       "type": "RECIPE",
@@ -12950,32 +13053,25 @@
       "slug": "chicken-and-mushroom-pie",
       "tutorialId": "cmp73tbru0001wov45iqulily",
       "type": "RECIPE",
-      "categorySlug": "cooking",
+      "categorySlug": "baking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:50.707Z",
-      "publishedAt": "2026-05-28T16:49:26.688Z",
-      "heroMediaId": "cmppxmvmo000mhgv4vm99yw5d",
+      "voiceRetrofittedAt": "2026-06-01T22:58:35.210Z",
+      "publishedAt": "2026-06-01T22:47:40.067Z",
+      "heroMediaId": "cmpvt78mw0008l4v4upo6h3uj",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "prose-prep-steps",
-          "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
-          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
-          "snippet": "Press the edges to seal, trim, and crimp."
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Chicken and mushroom pie uses a simple white sauce as its base: butter, flour, stock, cream. The chicken and mushrooms are cooked first, the"
+          "snippet": "Chicken and mushroom pie has a short pastry lid over a filling of poached chicken and mushrooms in a cream sauce. The pastry is baked until "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Chicken and mushroom pie uses a simple white sauce as its base: butter, flour, stock, cream. The chicken and mushrooms are cooked first, the"
+          "snippet": "Chicken and mushroom pie has a short pastry lid over a filling of poached chicken and mushrooms in a cream sauce. The pastry is baked until "
         }
       ]
     },
@@ -15480,6 +15576,38 @@
       ]
     },
     {
+      "slug": "ciabatta-rustic",
+      "tutorialId": "cmpvsqe9b0000bkv4xjxndsxp",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:35.502Z",
+      "publishedAt": "2026-06-01T22:44:40.729Z",
+      "heroMediaId": "cmpvt799o000al4v4pu338a2a",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[12] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Ciabatta is a high-hydration Italian bread with a thin, floury crust and a wide-open, chewy crumb full of irregular holes. The wet dough is "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Ciabatta is a high-hydration Italian bread with a thin, floury crust and a wide-open, chewy crumb full of irregular holes. The wet dough is "
+        }
+      ]
+    },
+    {
       "slug": "cigarettes-russes",
       "tutorialId": "cmpazxqh7000014v43u7imglx",
       "type": "RECIPE",
@@ -16377,6 +16505,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Clootie dumpling is one of the oldest forms of British pudding. The cloot is a square of clean cotton or muslin dusted with flour. The dumpl"
+        }
+      ]
+    },
+    {
+      "slug": "clotted-cream-fudge",
+      "tutorialId": "cmpvsvi1t0000r8v40w779pje",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:35.768Z",
+      "publishedAt": "2026-06-01T22:48:38.927Z",
+      "heroMediaId": "cmpvt7a91000cl4v495k5kgmn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Clotted cream fudge uses clotted cream instead of condensed milk, giving a deeper, more buttery flavour and a slightly smoother, creamier se"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Clotted cream fudge uses clotted cream instead of condensed milk, giving a deeper, more buttery flavour and a slightly smoother, creamier se"
         }
       ]
     },
@@ -18036,6 +18190,32 @@
       ]
     },
     {
+      "slug": "cornish-pasty-traditional",
+      "tutorialId": "cmpvsubhj00006ov4qczg8bsf",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:36.142Z",
+      "publishedAt": "2026-06-01T22:47:43.762Z",
+      "heroMediaId": "cmpvt7bhv000el4v4gz6678j4",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A Cornish pasty is a D-shaped pastry case crimped along the top, filled with raw skirt steak, potato, swede, and onion, and baked until the "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A Cornish pasty is a D-shaped pastry case crimped along the top, filled with raw skirt steak, potato, swede, and onion, and baked until the "
+        }
+      ]
+    },
+    {
       "slug": "cornish-saffron-cake",
       "tutorialId": "cmpa9tcac00002wv485trh0s3",
       "type": "RECIPE",
@@ -18573,6 +18753,32 @@
       ]
     },
     {
+      "slug": "cranberry-and-orange-scones",
+      "tutorialId": "cmpvsutk00000cgv44ejv4ego",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:36.421Z",
+      "publishedAt": "2026-06-01T22:48:07.182Z",
+      "heroMediaId": "cmpvt7c2c000gl4v45yfo8fxo",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Cranberry and orange scones have dried cranberries and orange zest worked through a standard scone dough, with a brushed orange-juice glaze "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Cranberry and orange scones have dried cranberries and orange zest worked through a standard scone dough, with a brushed orange-juice glaze "
+        }
+      ]
+    },
+    {
       "slug": "cranberry-orange-scones",
       "tutorialId": "cmprphoyn0001fgv49c0w5qhw",
       "type": "RECIPE",
@@ -18732,6 +18938,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Choux pastry is cooked twice: once on the hob as you beat flour into boiling water and butter to form a paste, and once in the oven where st"
+        }
+      ]
+    },
+    {
+      "slug": "cream-puffs-small",
+      "tutorialId": "cmpvstbhd0000pkv4yjmsdqvb",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:36.741Z",
+      "publishedAt": "2026-06-01T22:46:57.101Z",
+      "heroMediaId": "cmpvt7cpo000il4v44liuq313",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Cream puffs are small choux buns, baked hollow, split and filled with whipped cream or pastry cream. The choux is the same formula as eclair"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Cream puffs are small choux buns, baked hollow, split and filled with whipped cream or pastry cream. The choux is the same formula as eclair"
         }
       ]
     },
@@ -19447,6 +19679,38 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A crumpet is a griddle cake built from a pourable batter rather than a dough. The batter ferments with yeast for an hour, then baking powder"
+        }
+      ]
+    },
+    {
+      "slug": "crusty-rolls",
+      "tutorialId": "cmpvsq8800000wsv4vf010v56",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:37.071Z",
+      "publishedAt": "2026-06-01T22:44:32.908Z",
+      "heroMediaId": "cmpvt7dod000kl4v4t6fvgp5v",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > heading[8] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Crusty rolls are a lean, high-hydration dough baked with steam to produce a shell-like crust that shatters when you press it and a light, op"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Crusty rolls are a lean, high-hydration dough baked with steam to produce a shell-like crust that shatters when you press it and a light, op"
         }
       ]
     },
@@ -32898,6 +33162,32 @@
       ]
     },
     {
+      "slug": "langues-de-chat-biscuit",
+      "tutorialId": "cmpvstwai00000gv42j5ugd8f",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:37.460Z",
+      "publishedAt": "2026-06-01T22:47:24.070Z",
+      "heroMediaId": "cmpvt7fgp000ol4v495x4ah5d",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Langues de chat are slim, pale, crisp biscuits piped into finger shapes and baked until the edges are golden and the centres are just set. T"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Langues de chat are slim, pale, crisp biscuits piped into finger shapes and baked until the edges are golden and the centres are just set. T"
+        }
+      ]
+    },
+    {
       "slug": "lapin-a-la-moutarde",
       "tutorialId": "cmpb4ejet0000dkv4uxmqr4a3",
       "type": "RECIPE",
@@ -35328,6 +35618,32 @@
       ]
     },
     {
+      "slug": "macarons-french",
+      "tutorialId": "cmpvstoiy0000m8v44q3b5u3t",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:37.741Z",
+      "publishedAt": "2026-06-01T22:47:14.003Z",
+      "heroMediaId": "cmpvt7g4e000ql4v46wbr3dy3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "French macarons are small, round almond meringue biscuits sandwiched with ganache or buttercream. The shells should have a smooth, domed top"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "French macarons are small, round almond meringue biscuits sandwiched with ganache or buttercream. The shells should have a smooth, domed top"
+        }
+      ]
+    },
+    {
       "slug": "macarons-french-vanilla",
       "tutorialId": "cmp99by4s000200v44duzriw8",
       "type": "RECIPE",
@@ -35499,6 +35815,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The hump is the sign of a correctly made madeleine. Two things create it: cold batter and a hot tin. Make the batter and refrigerate it for "
+        }
+      ]
+    },
+    {
+      "slug": "madeleines-french",
+      "tutorialId": "cmpvt696c00003gv45edt9u97",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:38.018Z",
+      "publishedAt": "2026-06-01T22:57:00.633Z",
+      "heroMediaId": "cmpvt7goy000sl4v4qd1vcxav",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Madeleines are small French shell-shaped cakes baked in a ribbed tin, made from a genoise-style batter with melted brown butter and lemon ze"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Madeleines are small French shell-shaped cakes baked in a ribbed tin, made from a genoise-style batter with melted brown butter and lemon ze"
         }
       ]
     },
@@ -36225,6 +36567,32 @@
       ]
     },
     {
+      "slug": "maple-pecan-tart",
+      "tutorialId": "cmpvsuh0r0000r0v4m2b614fk",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:38.301Z",
+      "publishedAt": "2026-06-01T22:47:50.938Z",
+      "heroMediaId": "cmpvt7i5c000ul4v4f80kfqvh",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A maple pecan tart has a short pastry case filled with a custard of maple syrup, eggs, and butter, with pecans arranged in the top layer. Wh"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A maple pecan tart has a short pastry case filled with a custard of maple syrup, eggs, and butter, with pecans arranged in the top layer. Wh"
+        }
+      ]
+    },
+    {
       "slug": "maqluba",
       "tutorialId": "cmpb3zvlf0000e4v4s0gznwzo",
       "type": "RECIPE",
@@ -36409,6 +36777,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Home pizza comes down to two things: a cold-proofed dough and an extremely hot oven. The cold proof develops flavour and makes the dough ext"
+        }
+      ]
+    },
+    {
+      "slug": "marmalade-cake",
+      "tutorialId": "cmpvt63ln00001kv4jxi6hwnl",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:38.596Z",
+      "publishedAt": "2026-06-01T22:56:53.417Z",
+      "heroMediaId": "cmpvt7j0p000wl4v41jtcrvw9",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Marmalade cake uses thick-cut orange marmalade both inside the batter and brushed on the hot loaf as a glaze. The marmalade in the batter ke"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Marmalade cake uses thick-cut orange marmalade both inside the batter and brushed on the hot loaf as a glaze. The marmalade in the batter ke"
         }
       ]
     },
@@ -37065,6 +37459,32 @@
       ]
     },
     {
+      "slug": "melting-moments",
+      "tutorialId": "cmpvt6bwc0000t8v40o6a0l7w",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:38.877Z",
+      "publishedAt": "2026-06-01T22:57:04.166Z",
+      "heroMediaId": "cmpvt7jkl000yl4v4lq3qgi4z",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Melting moments are round, crumbly biscuits with a very short texture, made from butter, cornflour, and a little flour, rolled in desiccated"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Melting moments are round, crumbly biscuits with a very short texture, made from butter, cornflour, and a little flour, rolled in desiccated"
+        }
+      ]
+    },
+    {
       "slug": "melting-moments-australian",
       "tutorialId": "cmprpisdq0001asv4wq8h7ais",
       "type": "RECIPE",
@@ -37438,6 +37858,32 @@
       ]
     },
     {
+      "slug": "milk-roll",
+      "tutorialId": "cmpvspov60000b0v4wnhad2f0",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:39.387Z",
+      "publishedAt": "2026-06-01T22:44:07.811Z",
+      "heroMediaId": "cmpvt7k7u0010l4v4gw1vrz3e",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A soft white roll made with milk instead of water, giving a tender crumb and a pale, pillowy crust. Good with butter and cheese or split for"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A soft white roll made with milk instead of water, giving a tender crumb and a pale, pillowy crust. Good with butter and cheese or split for"
+        }
+      ]
+    },
+    {
       "slug": "milk-thistle-seed-decoction",
       "tutorialId": "cmpvmgchm000290v4g80wdcwf",
       "type": "REMEDY",
@@ -37505,6 +37951,32 @@
           "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[8]",
           "snippet": "Stainless steel pails and equipment sterilise completely and last indefinitely. Plastic equipment scratches with use, and those scratches ha"
+        }
+      ]
+    },
+    {
+      "slug": "mille-feuille",
+      "tutorialId": "cmpvsth4u0000d0v4b1uugs49",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:39.701Z",
+      "publishedAt": "2026-06-01T22:47:04.428Z",
+      "heroMediaId": "cmpvt7kxi0012l4v4am0irru8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Mille-feuille is three layers of baked puff pastry sandwiched with pastry cream and finished with a white fondant icing feathered with choco"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Mille-feuille is three layers of baked puff pastry sandwiched with pastry cream and finished with a white fondant icing feathered with choco"
         }
       ]
     },
@@ -40553,6 +41025,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "This cake starts by boiling two whole oranges until the skin is completely tender, then blending them, skin and all. A whole boiled orange g"
+        }
+      ]
+    },
+    {
+      "slug": "orange-drizzle-cake",
+      "tutorialId": "cmpvsshz0000000v41aa47m49",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:39.994Z",
+      "publishedAt": "2026-06-01T22:46:18.855Z",
+      "heroMediaId": "cmpvt7ln90014l4v4w65qhcfu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Orange drizzle cake is a loaf sponge made with orange zest and saturated while still hot with a sharp orange juice and sugar syrup. The syru"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Orange drizzle cake is a loaf sponge made with orange zest and saturated while still hot with a sharp orange juice and sugar syrup. The syru"
         }
       ]
     },
@@ -46036,6 +46534,32 @@
       ]
     },
     {
+      "slug": "pork-and-apple-pie",
+      "tutorialId": "cmpvsue9b0000icv489u54jxb",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:40.386Z",
+      "publishedAt": "2026-06-01T22:47:47.353Z",
+      "heroMediaId": "cmpvt7nfr0018l4v4lelx3uv8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pork and apple pie is a deep double-crust shortcrust pie filled with well-seasoned pork mince, sharp apple, onion, and sage. The filling is "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Pork and apple pie is a deep double-crust shortcrust pie filled with well-seasoned pork mince, sharp apple, onion, and sage. The filling is "
+        }
+      ]
+    },
+    {
       "slug": "pork-chops-with-cider-and-apples",
       "tutorialId": "cmpagqu5u00003ov4jhnlzlzm",
       "type": "RECIPE",
@@ -46136,6 +46660,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A pork pie is defined by three things: the seasoning of the filling, the crispness of the pastry case, and the jelly that fills the gap betw"
+        }
+      ]
+    },
+    {
+      "slug": "pork-pie-hot-water-crust",
+      "tutorialId": "cmp87m0ib0000skv41p39y744",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:40.698Z",
+      "publishedAt": "2026-06-01T22:47:54.789Z",
+      "heroMediaId": "cmpvt7o07001al4v4b7tjd1m3",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A traditional pork pie uses hot water crust pastry, which is made with boiling water and lard, and is firm enough to stand without a tin. Th"
         }
       ]
     },
@@ -46336,6 +46879,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The secret to this loaf is in what happens to potato in bread dough. The gelatinised starch holds moisture in a way that flour starch cannot"
+        }
+      ]
+    },
+    {
+      "slug": "potato-bread-irish",
+      "tutorialId": "cmpvss35o0000p0v4g0qwb2te",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:41.002Z",
+      "publishedAt": "2026-06-01T22:45:59.656Z",
+      "heroMediaId": "cmpvt7ot1001cl4v4o4937tee",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Irish potato bread is a soft, flat griddle bread made from mashed potato and a small amount of flour, pan-fried until golden. It is a staple"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Irish potato bread is a soft, flat griddle bread made from mashed potato and a small amount of flour, pan-fried until golden. It is a staple"
         }
       ]
     },
@@ -46907,6 +47476,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "French praline is a two-ingredient confection: almonds and caramel. The method is the dry caramel method, which requires attention but no sp"
+        }
+      ]
+    },
+    {
+      "slug": "praline-french",
+      "tutorialId": "cmpvsva5k00007sv4yy5kxlei",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:41.284Z",
+      "publishedAt": "2026-06-01T22:48:28.603Z",
+      "heroMediaId": "cmpvt7phr001el4v484fjy8rf",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "French praline is made by cooking whole nuts in sugar syrup until the sugar caramelises and coats the nuts, then pouring the mixture out to "
         }
       ]
     },
@@ -48178,6 +48766,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A raised pork pie needs two distinctive techniques: shaping hot water crust pastry while it is still warm and pliable, and filling the baked"
+        }
+      ]
+    },
+    {
+      "slug": "raisin-scones",
+      "tutorialId": "cmpvt2giy0000tsv4ytlkqzfy",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:41.581Z",
+      "publishedAt": "2026-06-01T22:54:03.538Z",
+      "heroMediaId": "cmpvt7q3s001gl4v40psfcjt5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Raisin scones are the British standard fruit scone: self-raising flour, butter, sugar, buttermilk, and raisins soaked to plump them. They sh"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Raisin scones are the British standard fruit scone: self-raising flour, butter, sugar, buttermilk, and raisins soaked to plump them. They sh"
         }
       ]
     },
@@ -51345,32 +51959,6 @@
       ]
     },
     {
-      "slug": "rough-puff-pastry",
-      "tutorialId": "cmp71m3dc0001agv40gyq7hmp",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:14.394Z",
-      "publishedAt": "2026-05-15T14:59:02.147Z",
-      "heroMediaId": "cmpli1ouw00y0p8v43wyyvspr",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Rough-puff pastry sits between shortcrust and full puff. The butter is cut into large pieces and mixed cold into the flour without fully rub"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Rough-puff pastry sits between shortcrust and full puff. The butter is cut into large pieces and mixed cold into the flour without fully rub"
-        }
-      ]
-    },
-    {
       "slug": "roulade-hazelnut",
       "tutorialId": "cmps01yri000028v4peq2pxtp",
       "type": "RECIPE",
@@ -51735,6 +52323,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Dark rye bread is not made like wheat bread. There is no kneading, no shaping, and no bench work. The dough is a very thick, sticky batter t"
+        }
+      ]
+    },
+    {
+      "slug": "rye-bread-german",
+      "tutorialId": "cmpvspxax00000gv4ez8v64dt",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:41.914Z",
+      "publishedAt": "2026-06-01T22:44:18.755Z",
+      "heroMediaId": "cmpvt7rfe001kl4v47tsbie99",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A dense German-style loaf made predominantly from whole rye flour. The crumb is tight and moist, almost glossy in texture, with a pronounced"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A dense German-style loaf made predominantly from whole rye flour. The crumb is tight and moist, almost glossy in texture, with a pronounced"
         }
       ]
     },
@@ -53170,6 +53784,32 @@
       ]
     },
     {
+      "slug": "scottish-treacle-scones",
+      "tutorialId": "cmpvt6hht0000skv4ypo15z2n",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:42.185Z",
+      "publishedAt": "2026-06-01T22:57:11.421Z",
+      "heroMediaId": "cmpvt7s5o001ml4v4kt068rj0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Scottish treacle scones are a dark, spiced scone made with black treacle stirred into the buttermilk. The treacle adds a deep, slightly bitt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Scottish treacle scones are a dark, spiced scone made with black treacle stirred into the buttermilk. The treacle adds a deep, slightly bitt"
+        }
+      ]
+    },
+    {
       "slug": "scrambled-eggs",
       "tutorialId": "cmp89j3x4000004v427gzx90u",
       "type": "RECIPE",
@@ -53218,6 +53858,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Sea Bass with Crispy Potatoes. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for what you ne"
+        }
+      ]
+    },
+    {
+      "slug": "sea-salt-caramels",
+      "tutorialId": "cmpvsve020000msv4vqbhl3p4",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:42.499Z",
+      "publishedAt": "2026-06-01T22:48:33.675Z",
+      "heroMediaId": "cmpvt7t6z001ol4v4jps1bxdy",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Sea salt caramels are chewy caramel sweets made by cooking sugar, cream, and butter to firm-ball stage, then pouring the mixture into a tin "
         }
       ]
     },
@@ -62676,6 +63335,32 @@
       ]
     },
     {
+      "slug": "tiger-bread",
+      "tutorialId": "cmpvspts60000ikv4i2vwhyku",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:42.882Z",
+      "publishedAt": "2026-06-01T22:44:14.189Z",
+      "heroMediaId": "cmpvt7uyh001sl4v4jp9pmukj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Tiger bread is a white tin loaf finished with a rice-paste glaze that cracks during baking, giving the top a mottled, scaly pattern and a ve"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Tiger bread is a white tin loaf finished with a rice-paste glaze that cracks during baking, giving the top a mottled, scaly pattern and a ve"
+        }
+      ]
+    },
+    {
       "slug": "tiger-bread-dutch-crunch",
       "tutorialId": "cmpa2f92n00012ov4pmzgdtaq",
       "type": "RECIPE",
@@ -64278,6 +64963,32 @@
       ]
     },
     {
+      "slug": "upside-down-cake-pineapple",
+      "tutorialId": "cmpvsslj80000rwv4k0q39vyi",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:43.194Z",
+      "publishedAt": "2026-06-01T22:46:23.464Z",
+      "heroMediaId": "cmpvt7wxf001wl4v4hljc0mgl",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pineapple upside-down cake is a vanilla sponge baked directly on top of rings of tinned pineapple set in brown sugar and butter. When it is "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Pineapple upside-down cake is a vanilla sponge baked directly on top of rings of tinned pineapple set in brown sugar and butter. When it is "
+        }
+      ]
+    },
+    {
       "slug": "vaca-frita",
       "tutorialId": "cmpbmyvoy0000t8v4a7sqfw5b",
       "type": "RECIPE",
@@ -64326,6 +65037,44 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Vanessa’s Quiche. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for what you need."
+        }
+      ]
+    },
+    {
+      "slug": "vanilla-fudge",
+      "tutorialId": "cmpvsv70o00007sv4qdg2cm7y",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:43.480Z",
+      "publishedAt": "2026-06-01T22:48:24.622Z",
+      "heroMediaId": "cmpvt7xim001yl4v48pr0c47a",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Vanilla fudge is a cooked sugar confection made from sugar, butter, and condensed milk, boiled to soft-ball stage and beaten as it cools unt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Vanilla fudge is a cooked sugar confection made from sugar, butter, and condensed milk, boiled to soft-ball stage and beaten as it cools unt"
         }
       ]
     },
@@ -65226,6 +65975,38 @@
       ]
     },
     {
+      "slug": "victoria-sandwich",
+      "tutorialId": "cmpvt1xfo00005wv4zm83d80u",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:43.801Z",
+      "publishedAt": "2026-06-01T22:53:38.787Z",
+      "heroMediaId": "cmpvt7ygl0020l4v4udp0gdl4",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[7] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A Victoria sandwich is two layers of equal-weight sponge, sandwiched with jam and whipped cream or buttercream. The recipe is the foundation"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A Victoria sandwich is two layers of equal-weight sponge, sandwiched with jam and whipped cream or buttercream. The recipe is the foundation"
+        }
+      ]
+    },
+    {
       "slug": "victoria-sandwich-classic",
       "tutorialId": "cmp6kpkff0001r8v4iamwcis7",
       "type": "RECIPE",
@@ -65326,6 +66107,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The Victoria sponge is built on the creaming method: butter and sugar beaten together until pale and fluffy, then eggs added one at a time, "
+        }
+      ]
+    },
+    {
+      "slug": "viennese-biscuits",
+      "tutorialId": "cmpvsu13r00008kv41v30rnk0",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:44.097Z",
+      "publishedAt": "2026-06-01T22:47:30.308Z",
+      "heroMediaId": "cmpvt7zax0022l4v4clhl7ws8",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Viennese biscuits are piped butter biscuits with a very short, melt-in-the-mouth texture, made from a soft dough of butter, icing sugar, and"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Viennese biscuits are piped butter biscuits with a very short, melt-in-the-mouth texture, made from a soft dough of butter, icing sugar, and"
         }
       ]
     },
@@ -65722,6 +66529,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Waldorf salad is about texture as much as flavour: the crunch of celery and walnut against the soft apple, bound in a light mayonnaise. Use "
+        }
+      ]
+    },
+    {
+      "slug": "walnut-cake",
+      "tutorialId": "cmpvssuye0000vcv4hdb5fmpc",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:44.391Z",
+      "publishedAt": "2026-06-01T22:46:35.684Z",
+      "heroMediaId": "cmpvt7zv70024l4v4viaxu606",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Walnut cake is a lightly spiced sponge with ground and chopped walnuts worked through the batter, layered with a walnut-studded cream cheese"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Walnut cake is a lightly spiced sponge with ground and chopped walnuts worked through the batter, layered with a walnut-studded cream cheese"
         }
       ]
     },
@@ -66523,6 +67356,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Thirty percent wholemeal flour changes the character of a sourdough loaf without taking it over. The crumb stays open. The flavour becomes a"
+        }
+      ]
+    },
+    {
+      "slug": "wholemeal-cheese-scones",
+      "tutorialId": "cmpvt6eqh000098v4sj48te4m",
+      "type": "RECIPE",
+      "categorySlug": "baking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T22:58:44.668Z",
+      "publishedAt": "2026-06-01T22:57:07.843Z",
+      "heroMediaId": "cmpvt80hf0026l4v4q7yz8hy9",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Wholemeal cheese scones are a savoury scone made with half wholemeal and half plain flour, with a generous amount of mature cheddar in the d"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Wholemeal cheese scones are a savoury scone made with half wholemeal and half plain flour, with a generous amount of mature cheddar in the d"
         }
       ]
     },

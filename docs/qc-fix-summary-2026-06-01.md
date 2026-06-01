@@ -941,3 +941,65 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 22:58:44
+
+Generated: 2026-06-01T22:58:44.720Z
+
+Processed: 40
+PASS: 5
+STILL_BLOCKED: 35
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 107 |
+| opening-pattern-missing-hook | 95 |
+| ingredient-amount-missing | 7 |
+| medical-disclaimer-nonstandard | 4 |
+| prose-prep-steps | 2 |
+| grade-level-strict | 2 |
+
+## Still BLOCKED (sample 20)
+
+- apple-upside-down-cake: opening-pattern-missing-hook, content-type-opening-mismatch
+- bap: content-type-opening-mismatch
+- bread-rolls-white: opening-pattern-missing-hook, content-type-opening-mismatch
+- chestnut-cake: opening-pattern-missing-hook, content-type-opening-mismatch
+- chicken-and-mushroom-pie: opening-pattern-missing-hook, content-type-opening-mismatch
+- ciabatta-rustic: opening-pattern-missing-hook, content-type-opening-mismatch
+- clotted-cream-fudge: opening-pattern-missing-hook, content-type-opening-mismatch
+- cornish-pasty-traditional: opening-pattern-missing-hook, content-type-opening-mismatch
+- cranberry-and-orange-scones: opening-pattern-missing-hook, content-type-opening-mismatch
+- cream-puffs-small: opening-pattern-missing-hook, content-type-opening-mismatch
+- crusty-rolls: opening-pattern-missing-hook, content-type-opening-mismatch
+- langues-de-chat-biscuit: opening-pattern-missing-hook, content-type-opening-mismatch
+- macarons-french: opening-pattern-missing-hook, content-type-opening-mismatch
+- madeleines-french: opening-pattern-missing-hook, content-type-opening-mismatch
+- maple-pecan-tart: opening-pattern-missing-hook, content-type-opening-mismatch
+- marmalade-cake: opening-pattern-missing-hook, content-type-opening-mismatch
+- melting-moments: opening-pattern-missing-hook, content-type-opening-mismatch
+- milk-roll: opening-pattern-missing-hook, content-type-opening-mismatch
+- mille-feuille: opening-pattern-missing-hook, content-type-opening-mismatch
+- orange-drizzle-cake: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 23:06:36
+
+Generated: 2026-06-01T23:06:36.773Z
+
+Processed: 51
+PASS: 51
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
