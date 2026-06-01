@@ -802,3 +802,46 @@ SKIPPED: 0
 - rosemary-digestif-tea: voice-violation, grade-level-strict
 - sage-tea-for-hot-flushes: grade-level-strict
 - sourcing-dried-herbs-quality-guide: grade-level-strict
+
+---
+
+## Run at 20:06:59
+
+Generated: 2026-06-01T20:06:59.104Z
+
+Processed: 73
+PASS: 51
+STILL_BLOCKED: 22
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 66 |
+| opening-pattern-missing-hook | 63 |
+| grade-level-strict | 2 |
+| voice-violation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- acqua-pazza: opening-pattern-missing-hook, content-type-opening-mismatch
+- activated-charcoal-cold-process-soap: opening-pattern-missing-hook, content-type-opening-mismatch
+- activated-charcoal-melt-pour-soap: opening-pattern-missing-hook, content-type-opening-mismatch
+- adana-kebabi: opening-pattern-missing-hook, content-type-opening-mismatch
+- adas-polo: opening-pattern-missing-hook, content-type-opening-mismatch
+- affogato: content-type-opening-mismatch
+- afghan-cookies: opening-pattern-missing-hook, content-type-opening-mismatch
+- afghans-biscuits: opening-pattern-missing-hook, content-type-opening-mismatch
+- after-sun-aloe-lotion: opening-pattern-missing-hook, content-type-opening-mismatch
+- aftershave-balm: opening-pattern-missing-hook, content-type-opening-mismatch
+- aile-de-raie-au-beurre-noir: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-asparagus: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-baby-potatoes: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-bacon: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-bbq-wings: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-beef-burgers: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-cauliflower-wings-buffalo: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-chicken-breasts: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-chicken-drumsticks: opening-pattern-missing-hook, content-type-opening-mismatch
+- air-fryer-chicken-nuggets: opening-pattern-missing-hook, content-type-opening-mismatch
