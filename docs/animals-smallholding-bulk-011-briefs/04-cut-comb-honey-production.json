@@ -1,0 +1,146 @@
+{
+  "slug": "cut-comb-honey-production",
+  "title": "Cut-comb honey production",
+  "subtitle": "Producing sections and cut comb for the market rather than extracted honey.",
+  "excerpt": "Cut-comb honey commands a premium and has a shorter production route than extracted liquid honey. The frames need drawing on thin foundation and harvesting at the right moisture content. The process rewards patience and a well-placed hive, but it is within reach of any beekeeper who can consistently produce a honey surplus.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "timeMinutes": 90,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit guide to preparing honey for sale (2023). BBKA Bee Craft archive: cut-comb production notes. Cobbett, Cottage Economy (1822), Project Gutenberg: historical description of comb honey sections. Frank Pearson, Bee-keeping for All (1923), Internet Archive: section-box and comb production chapter.",
+  "glossaryTerms": [
+    { "slug": "cut-comb", "term": "Cut comb", "definition": "Honey still in its wax cells, cut from the frame and sold as a block or section. The comb is fully sealed and the honey has not been extracted or processed, giving it a different texture and presentation from liquid honey." },
+    { "slug": "super-frame", "term": "Super frame", "definition": "A shallow wooden or plastic frame that fits in the honey super (the upper box placed above the queen excluder) where bees store surplus honey." },
+    { "slug": "thin-super-foundation", "term": "Thin super foundation", "definition": "Wax or plastic foundation manufactured to a thinner gauge than brood-box foundation, so the resulting comb walls are lighter and less pronounced when eating. Cut-comb production uses thin foundation to reduce wax volume and improve texture." },
+    { "slug": "moisture-content", "term": "Moisture content", "definition": "The percentage of water in honey. Honey capped by bees is usually at or below 20%, the threshold below which fermentation is unlikely. Honey harvested before capping, or from damp hives, will be above 20% and risks fermenting in storage." }
+  ],
+  "techniqueSlugs": ["harvesting-honey-uncapping-and-extracting", "using-a-clearer-board-to-clear-a-super", "adding-a-honey-super"],
+  "criticalTechniques": ["using-a-clearer-board-to-clear-a-super"],
+  "aliases": ["cut comb honey", "comb honey production", "section honey bees"],
+  "recipeTools": [
+    { "slug": "national-frame", "isOptional": false },
+    { "slug": "queen-excluder", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "uncapping-fork", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut-comb honey", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cut-comb" } }] },
+          { "type": "text", "text": " is honey left in the comb and sold as a block or section. The beekeeper does not extract or process it beyond cutting and packaging. Producing it requires a dedicated super, drawn on " },
+          { "type": "text", "text": "thin super foundation", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thin-super-foundation" } }] },
+          { "type": "text", "text": ", managed for complete capping before harvest, and harvested with minimal disruption to the cells." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the cut-comb super" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a " },
+          { "type": "text", "text": "super frame", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "super-frame" } }] },
+          { "type": "text", "text": " super fitted with thin super foundation above the queen excluder at the start of the main nectar flow, typically late May or June in most UK regions. The queen excluder keeps the queen out of the super; without it she will lay in the shallow frames and the comb cannot be sold as cut comb." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Thin foundation draws into lighter comb than standard brood-weight foundation. The wax walls are thinner, the texture when eating is less waxy, and the comb looks cleaner. Some beekeepers skip foundation entirely in cut-comb supers and let the bees draw natural comb. This gives the best eating result but needs experience: bees sometimes build unevenly without a foundation guide." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Timing the harvest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Harvest only when 80% or more of each frame is sealed. Sealed cells mean the bees have judged the " },
+          { "type": "text", "text": "moisture content", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "moisture-content" } }] },
+          { "type": "text", "text": " is below 20%. Honey taken before capping risks fermentation in the jar, which renders it unsaleable and unpalatable. Check each frame against a bright light before deciding; the shimmer of capped cells across the frame surface is distinctive." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Checking for uncapped edges" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the super frame horizontally and tilt it forward sharply over the hive. If liquid honey runs from uncapped cells, the super is not ready. This simple test catches frames that look mostly sealed from the front but have a band of uncapped cells along one edge." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Clearing the super" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use a clearer board to remove bees from the super before harvest. Fit the board below the super in the evening; by morning, most bees will have moved down through the one-way valve in the board and back into the brood box, leaving the super largely bee-free. A step-by-step account of using a clearer board is in " },
+          { "type": "text", "text": "using a clearer board to clear a super", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "using-a-clearer-board-to-clear-a-super", "label": "using a clearer board to clear a super" } }] },
+          { "type": "text", "text": ". For cut-comb production, the fewer bees remaining on the frames at harvest, the less disturbance to the capped cells." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cutting and packaging" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the cleared super into a clean, warm room immediately after removal to prevent the comb cooling and hardening. Use a sharp, hot knife to cut sections from the frame. A standard approach is to cut the frame into blocks sized to fit the packaging container, with no single cut breaking more cells than necessary." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Let each cut block drain for a few minutes on a rack over a tray, then transfer to a clear plastic or cardboard box that fits snugly. Air gaps around the comb allow the surface to dry and look dusty; a tight fit preserves the gloss of the capping." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If selling, the container must be labelled under UK food law: product name, net weight in grams, producer name and address, best-before date, and lot number. The same rules apply whether you sell at the farm gate, a local market, or through a shop." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storing and selling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Finished cut-comb stores well at room temperature for 6 to 9 months before granulation becomes visible in the cells. Store it away from direct sunlight and strong odours. Granulated cut-comb is still safe to eat but less appealing; warm it gently at 35 C in a water bath to re-liquefy the honey in the cells, then cool quickly." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "Cells leaking after cutting" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [{ "type": "text", "text": "Honey moisture content too high (above 20%), or cells not fully capped at harvest." }] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Set the blocks to drain on a rack for longer before packaging. Test future harvests with the tilt-the-frame test before removing the super." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "Bees building irregular comb on foundation" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [{ "type": "text", "text": "Thin super foundation moved in warm weather before being drawn, or frames not adequately spaced." }] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Add the super only when the nectar flow is active and the colony has adequate bee numbers to draw comb quickly. Keep frames at standard spacing; pushing them too wide encourages brace comb between frames." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

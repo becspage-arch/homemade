@@ -1,0 +1,91 @@
+{
+  "slug": "boar-management-on-a-smallholding",
+  "title": "Keeping a boar on a smallholding",
+  "subtitle": "What changes when you keep an entire male pig, and how to manage him safely alongside sows.",
+  "excerpt": "A boar on a small holding changes the management picture significantly. He is larger than a sow, physically capable of serious injury, and needs different handling than a castrate or gilt. The decision to keep a boar rather than use AI or a loan service depends on flock size and breeding frequency, and either route is reasonable.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Recommendations for the Welfare of Livestock: Pigs (2003), gov.uk. British Pig Association: breeding and management guidance. Pig Veterinary Society: boar management in small herds.",
+  "glossaryTerms": [
+    { "slug": "boar-taint", "term": "Boar taint", "definition": "An off-flavour in the meat of entire male pigs caused by two compounds: androstenone (a pheromone stored in fat) and skatole (a metabolite of tryptophan). Present in a minority of entire males at slaughter weight; more common in some breeds and lines. Slaughter before 6 months reduces incidence." },
+    { "slug": "tushes", "term": "Tushes", "definition": "The elongated canine teeth of a boar, which continue growing throughout his life. Upper and lower tushes can reach several centimetres in mature boars and are capable of causing serious injury during aggressive interactions. Tushes are cut under veterinary prescription using wire saw or bolt cutters in welfare-assessed circumstances." },
+    { "slug": "sow-service", "term": "Service", "definition": "The act of a boar mating a sow or gilt. A natural service takes 5 to 20 minutes; the boar mounts and maintains a lock with the sow for an extended copulation. Sows are typically served twice per heat cycle, 12 to 24 hours apart, to maximise conception rate." }
+  ],
+  "techniqueSlugs": ["managing-a-sow-in-pig", "weaning-piglets-from-the-sow"],
+  "criticalTechniques": [],
+  "aliases": ["keeping a boar", "boar on smallholding", "entire male pig management"],
+  "recipeTools": [
+    { "slug": "pig-board", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A boar is useful on a smallholding breeding two or more litters a year. Below that frequency, AI or a loan boar service is usually more practical. The decision hinges on whether you have the infrastructure and handling experience for an animal that will eventually weigh 200 kg or more and carries significant injury potential." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Housing the boar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A boar needs solid housing: gates he cannot lift, fencing he cannot push through, and a pen adjacent to but separate from sows when they are not in season. Boars kept in sight and smell of sows but without access are more settled than those in total isolation. A boar pen needs a minimum of 6 square metres of floor space for an adult, plus an outdoor run. The legal minimum under the Pig Welfare Code is 6 m² total pen area for a boar over 110 kg." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Handling safely" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Always carry a " },
+          { "type": "text", "text": "pig board", "marks": [{ "type": "bold" }] },
+          { "type": "text", "text": " when entering a boar's pen, even with a boar you have handled daily. A pig board gives you a physical barrier at thigh height; it gives the boar something to push against that is not your legs. A boar that charges or head-swipes can knock an adult flat and cause serious injury with " },
+          { "type": "text", "text": "tushes", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tushes" } }] },
+          { "type": "text", "text": " before you regain your footing. Never crouch or kneel in a boar pen. Never turn your back." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most boars on smallholdings are manageable, but boar aggression is not always preceded by warning behaviour. A boar that has been quiet for months can become unpredictable when a nearby sow comes into heat, when his routine changes, or when he is unwell. Treat him as potentially dangerous regardless of his daily temperament." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Putting him to the sow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bring the sow to the boar's pen rather than introducing the boar into the sow's space: the boar is calmer on his own ground and less likely to fight than if introduced into a strange pen. Check the sow is in standing heat (she will stand still when you press firmly on her back) before introducing the boar. Supervise the first " },
+          { "type": "text", "text": "service", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sow-service" } }] },
+          { "type": "text", "text": " and remove the sow once a successful mating has occurred. A second service 12 to 24 hours later improves conception rate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Boar taint and slaughter planning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If you are growing on male pigs for meat as well as keeping a breeding boar, " },
+          { "type": "text", "text": "boar taint", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "boar-taint" } }] },
+          { "type": "text", "text": " is a consideration for entire males going to the abattoir. Most smallholding breeds slaughtered before 6 months and at weights under 80 kg live weight will not show significant taint. Breeds with heavy-set, late-maturing genetics (Duroc crosses, some commercial lines) have higher incidence than traditional British breeds. Ask your abattoir about their experience with entire males from your breed before committing to an uncastrated growing programme." }
+        ]
+      }
+    ]
+  }
+}

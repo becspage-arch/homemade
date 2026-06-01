@@ -1,0 +1,107 @@
+{
+  "slug": "assessing-a-lame-sheep-in-the-field",
+  "title": "Assessing a lame sheep in the field",
+  "subtitle": "How to catch, restrain, examine, and make a first decision about the cause of lameness.",
+  "excerpt": "Lameness is the most common welfare issue in sheep. Most cases on small UK flocks are foot rot, foot scald, CODD, or an abscess, and each requires a different response. Catching the sheep, sitting her on her rump, and examining the foot systematically takes 10 minutes and gives enough information to treat or call for help.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb: lameness in sheep (2022), ahdb.org.uk. Moredun Research Institute factsheet: contagious ovine digital dermatitis (CODD). DEFRA Five-Point Lameness Plan, gov.uk. Merck Veterinary Manual: foot rot and foot scald in sheep.",
+  "glossaryTerms": [
+    { "slug": "foot-scald", "term": "Foot scald", "definition": "Interdigital dermatitis caused by Fusobacterium necrophorum, affecting the soft skin between the toes. The interdigital space is red, moist, and painful, but the horn of the hoof is not yet involved. Responds well to a zinc sulphate foot bath and topical antibiotic spray." },
+    { "slug": "foot-rot-ovine", "term": "Foot rot", "definition": "A bacterial infection caused by Dichelobacter nodosus working in combination with F. necrophorum, causing separation and undermining of the hoof horn. The horn lifts from the sole, the foot smells strongly of decay, and the sheep bears little or no weight. Contagious between animals." },
+    { "slug": "codd-sheep", "term": "CODD", "definition": "Contagious Ovine Digital Dermatitis, an emerging disease associated with Treponema spirochaete bacteria. Presents as a distinct ulcer at the coronary band (where the skin meets the hoof wall), causing severe lameness. Spreads rapidly through a flock; does not respond to standard foot rot treatment." },
+    { "slug": "foot-abscess-sheep", "term": "Foot abscess", "definition": "A painful accumulation of pus within the foot, usually at the toe or heel. The sheep is suddenly very lame on one foot; the area above the hoof may be swollen. Responds to veterinary lancing or to antibiotic treatment in early cases." }
+  ],
+  "techniqueSlugs": ["hoof-trimming-a-sheep", "foot-rot-treatment-in-sheep", "foot-bathing-sheep"],
+  "criticalTechniques": ["hoof-trimming-a-sheep"],
+  "aliases": ["lame sheep diagnosis", "sheep foot examination", "sheep lameness assessment"],
+  "recipeTools": [
+    { "slug": "shepherds-crook", "isOptional": false },
+    { "slug": "hoof-trimmer-sheep", "isOptional": false },
+    { "slug": "iodine-spray-navel", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A lame sheep is straightforward to spot: she is behind the flock, spending more time lying down, or holding a leg raised while standing. The useful information comes from catching her and examining the foot. Four conditions account for the majority of lameness in UK sheep: " },
+          { "type": "text", "text": "foot scald", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-scald" } }] },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "foot rot", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-rot-ovine" } }] },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "CODD", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "codd-sheep" } }] },
+          { "type": "text", "text": ", and " },
+          { "type": "text", "text": "foot abscess", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-abscess-sheep" } }] },
+          { "type": "text", "text": ". Each looks different and responds to different treatment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Catching and restraining" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pen the flock in a small area before approaching. Use a crook to catch the sheep by a back leg. Bring her against your leg so she cannot run forward. To sit her on her rump for examination, place your left hand under her chin, your right hand on her back end, and tip her onto her rump against your legs so she is sitting up. With her sitting on her backside and supported by your knees, both front feet and both back feet are accessible." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Examining the foot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Start with the foot you think is causing the problem, identified by watching which leg she was favouring. Clean off the packed earth or manure from the hoof and between the toes with the back of the hoof trimmer. Then look and smell:" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "What each condition looks like" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Foot scald: interdigital skin red, moist, and sore, but hoof horn is intact and not lifted. No strong smell. The sheep is lame but not severely so." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Foot rot: hoof horn lifts from the sole and lateral wall; when the separation is probed gently, the exposed tissue smells strongly of the characteristic foot rot odour (sweet and putrid). Usually more severe lameness than scald." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "CODD: an ulcer at the coronary band, where the skin meets the top of the hoof wall. The hoof horn may separate from the top down rather than from the sole up. Severe lameness. No characteristic foot rot smell." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Foot abscess: swelling above the hoof, often on one side. The skin may be hot. The sheep is acutely very lame on this foot with little or no weight bearing." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First response by diagnosis" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For scald: spray topical antibiotic spray (oxytetracycline aerosol) between the toes and run through the foot bath. " },
+          { "type": "text", "text": "Foot bathing", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "foot-bathing-sheep", "label": "foot bathing" } }] },
+          { "type": "text", "text": " the whole flock within 24 hours prevents spread." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For foot rot: pare back the lifted horn with " },
+          { "type": "text", "text": "hoof trimmers", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "hoof-trimming-a-sheep", "label": "hoof trimmers" } }] },
+          { "type": "text", "text": " to expose the infected tissue, spray with topical antibiotic, then treat the flock. The full treatment protocol is in " },
+          { "type": "text", "text": "foot rot treatment in sheep", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "foot-rot-treatment-in-sheep", "label": "foot rot treatment in sheep" } }] },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For CODD: do not pare the horn aggressively. Standard foot rot treatment does not work for CODD and paring can make it worse. Treat with systemic antibiotics under veterinary prescription; CODD is the one lameness condition in sheep that requires a vet prescription for reliable resolution." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For foot abscess: a vet can lance an accessible abscess under local anaesthetic. Early cases without visible swelling often respond to a course of systemic antibiotics. A sheep standing on three legs with acute-onset lameness in one foot that was sound yesterday is the classic presentation." }]
+      }
+    ]
+  }
+}

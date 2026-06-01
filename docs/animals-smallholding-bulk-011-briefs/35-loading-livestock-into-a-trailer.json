@@ -1,0 +1,75 @@
+{
+  "slug": "loading-livestock-into-a-trailer",
+  "title": "Loading livestock into a trailer",
+  "subtitle": "How to set up a loading situation that animals enter willingly, and what to do when they refuse.",
+  "excerpt": "Loading livestock is one of the highest-risk handling tasks on a smallholding: for the animals, who may injure themselves if forced; for the handler, who is often working in a confined space with frightened animals. Most loading problems are caused by handling technique and setup, not by awkward animals. Getting the approach right makes a significant difference.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Grandin (2010), Improving Animal Welfare: a practical approach, CABI: low-stress handling and loading chapter. AHDB Beef and Lamb: handling and loading sheep. DEFRA: transport welfare regulations, gov.uk.",
+  "glossaryTerms": [
+    { "slug": "flight-zone-livestock", "term": "Flight zone", "definition": "The personal space around a prey animal within which the presence of a predator or perceived threat triggers flight or evasion. Entering the flight zone from behind and to the side causes the animal to move away from you. Entering from the front stops it. Understanding and using the flight zone is the basis of low-stress livestock handling: you move the animal by positioning yourself at the edge of its flight zone and using your body position, not noise or physical force." },
+    { "slug": "balance-point-livestock", "term": "Balance point", "definition": "The point on an animal's body, approximately at the shoulder, that determines which direction it moves when a handler applies pressure from behind. Positioning yourself behind the balance point causes the animal to move forward; positioning ahead of the balance point causes it to stop or back up. Used deliberately in livestock loading to move animals through a race or up a ramp." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["loading sheep into trailer", "loading pigs into trailer", "livestock loading technique"],
+  "recipeTools": [
+    { "slug": "pig-board", "isOptional": true },
+    { "slug": "shepherds-crook", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Animals handled calmly and regularly are much easier to load. Those that only meet humans at shearing or vet visits are harder. Plan the setup before the day: a trailer at the wrong angle and a reluctant animal make for a difficult session." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setup before you try to load" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Back the trailer against a solid wall or fence on one side to eliminate that escape route. The ramp should face a funnel, not open space." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ensure the ramp is not steep, not wobbly, and has grip: sheep and pigs both hesitate at an uncertain foothold. A rubber mat or straw on the ramp helps." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove visual distractions inside the trailer: a light source at the trailer interior, rather than a dark cave, encourages animals to enter. Prey animals are reluctant to move into darkness." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pen the animals in a small yard adjacent to the trailer before loading, so you are not trying to load from an open field." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the flight zone and balance point" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work at the edge of the animal's " },
+          { "type": "text", "text": "flight zone", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flight-zone-livestock" } }] },
+          { "type": "text", "text": ": close enough to cause the animal to move, not close enough to cause panic. Use the " },
+          { "type": "text", "text": "balance point", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "balance-point-livestock" } }] },
+          { "type": "text", "text": " to direct movement. A handler behind the balance point applies pressure that moves the animal toward the ramp; a handler ahead of the balance point blocks forward movement. For a group, position yourself to keep the group moving as a unit toward the ramp rather than singling out individuals." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When an animal refuses" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stop. Remove pressure. An animal that has been pushed to the edge of the ramp and refuses is braced against the force being applied. Take three steps back and wait. Often the animal will step forward voluntarily once the pressure is released. If the animal continues to refuse, check the setup: is the ramp secure? Is the interior dark? Is there a gap between the ramp and the trailer floor that the animal can see? Address the physical problem before trying again. Forcing a braced animal onto a ramp using multiple people and noise causes injuries and makes future loading harder." }]
+      }
+    ]
+  }
+}

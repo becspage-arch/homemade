@@ -1,0 +1,98 @@
+{
+  "slug": "goat-mastitis-recognition-and-response",
+  "title": "Goat mastitis: recognition and response",
+  "subtitle": "Identifying mastitis in dairy goats early and taking the right steps to protect the doe and the milk.",
+  "excerpt": "Mastitis in dairy goats ranges from subclinical, where the only sign is a change in milk quality, to peracute, where the udder is hard, hot, and the doe is collapsed and septic within hours. Knowing where a case sits on that spectrum determines whether you reach for a towel and a bucket or call the vet immediately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Dairy: mastitis control in goats and sheep (2022), ahdb.org.uk. DEFRA Animal Welfare Codes, goat section. Smith and Sherman, Goat Medicine (2009), Wiley-Blackwell: mastitis chapter. SAC Consulting Scotland: clinical mastitis in dairy goats.",
+  "glossaryTerms": [
+    { "slug": "subclinical-mastitis-goat", "term": "Subclinical mastitis", "definition": "Inflammation of the udder with no obvious external signs: the udder looks and feels normal, the doe is well, but milk quality is reduced. Detected by elevated somatic cell count (SCC) in bulk milk samples or by the California Mastitis Test (CMT) applied to individual quarters." },
+    { "slug": "peracute-mastitis", "term": "Peracute mastitis", "definition": "Severe, sudden-onset mastitis where the udder is hot, swollen, and painful, the milk is watery or blood-tinged, and the doe is systemically ill: not eating, high temperature, sometimes recumbent. A veterinary emergency." },
+    { "slug": "dry-off-mastitis", "term": "Dry-off treatment", "definition": "Infusion of antibiotic teat sealant into each quarter at the end of lactation (dry-off), carried out under veterinary prescription. Prevents new infection establishing during the dry period and treats any subclinical infection present at drying off." }
+  ],
+  "techniqueSlugs": ["setting-up-a-dairy-goat-milking-routine", "milking-a-dairy-goat"],
+  "criticalTechniques": [],
+  "aliases": ["mastitis goat", "dairy goat udder infection", "goat udder hard hot"],
+  "recipeTools": [
+    { "slug": "bucket-10l", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mastitis is the most common health problem in dairy goats. It occurs when bacteria breach the teat canal and establish infection in the milk-secreting tissue of the udder. The range from mild " },
+          { "type": "text", "text": "subclinical mastitis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "subclinical-mastitis-goat" } }] },
+          { "type": "text", "text": " to " },
+          { "type": "text", "text": "peracute mastitis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peracute-mastitis" } }] },
+          { "type": "text", "text": " covers very different situations, and each calls for a different response." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking the udder at milking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before milking each day, run both hands along the udder. Normal udder tissue feels soft, even, and slightly warm. Note any difference between the two halves. A hard patch, a pocket of heat, or a swollen half that is tight to the touch warrants a closer look before the milking routine continues." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Foremilking and strip test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Foremilk the first three to four squirts from each teat onto the back of a dark-coloured hand or a strip cup before milking. Normal milk is even, white, and flows cleanly. Mastitic milk shows clots, flakes, watery consistency, or pink or yellow discolouration. Any of these in the foremilk is mastitis until proven otherwise." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mild to moderate mastitis" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A doe with clotty milk from one half, a mildly swollen quarter, and otherwise normal behaviour and appetite has clinical mastitis of moderate severity. Strip out the affected side completely at each milking, three times a day if possible, to remove infected milk and relieve pressure. Keep the milk from the affected side out of any food use. Applying warm compresses and gentle massage after each stripping helps reduce the swelling. Contact your vet for prescription antibiotic treatment: most cases respond well to intramammary tubes inserted into the teat canal under sterile conditions." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Peracute mastitis" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A doe that is off feed, feverish, has a cold or discoloured quarter, or is producing watery or blood-tinged milk needs a vet the same day. Peracute mastitis can move from an abnormal udder to a collapsed animal within 12 to 24 hours. A vet can start systemic antibiotics and medication to calm the swelling quickly; intramammary tubes alone are not enough once the infection is systemic." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Cold quarter: gangrenous mastitis" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "A quarter that is cold to the touch while the rest of the udder is warm or hot is a sign of gangrenous mastitis, where the blood supply to that section of tissue has been cut off by clotting. The quarter will eventually slough. This is a life-threatening condition; call a vet immediately. Survivable if treated aggressively early; the doe may recover with the loss of that half of her udder but be milkable on the remaining side." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dry-off treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using " },
+          { "type": "text", "text": "dry-off treatment", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dry-off-mastitis" } }] },
+          { "type": "text", "text": " at the end of each lactation is standard in dairy goat herds with any history of subclinical mastitis. It needs a vet prescription. The sealant placed in the teat canal at dry-off blocks new bacteria during the dry period and helps clear any existing low-level infection." }
+        ]
+      }
+    ]
+  }
+}

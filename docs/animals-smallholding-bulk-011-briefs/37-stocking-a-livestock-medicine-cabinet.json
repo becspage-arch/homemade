@@ -1,0 +1,92 @@
+{
+  "slug": "stocking-a-livestock-medicine-cabinet",
+  "title": "Stocking a smallholding medicine cabinet",
+  "subtitle": "What to have on hand before you need it, how storage and disposal work, and which items require a vet prescription.",
+  "excerpt": "A smallholder treating an animal at 10pm needs the supplies available, not ordered. Building a medicine cabinet around the species you keep, before any problem arises, is practical stock management. The distinction between over-the-counter supplies and prescription medications determines what you can hold independently and what requires a veterinary relationship.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA: medicines for animals on your farm, gov.uk. Veterinary Medicines Directorate: medicine categories (POM-V, POM-VPS, NFA-VPS), gov.uk. RSPCA: veterinary care requirements.",
+  "glossaryTerms": [
+    { "slug": "pom-v", "term": "POM-V", "definition": "Prescription Only Medicine, Veterinary — medicines in this category require a written prescription from a vet who has examined the animal and has the animal under their care. Antibiotics, most vaccines, and specific controlled drugs fall into this category. You may hold a supply obtained on prescription, but cannot purchase them without one." },
+    { "slug": "medicine-record-keeping", "term": "Medicine records", "definition": "A legal requirement for keepers of food-producing animals (cattle, sheep, pigs, poultry, rabbits) in the UK. For every medicine administered, the keeper must record: the product name and batch number, the animal(s) treated, the dose given, the date of treatment, and the withdrawal period. Records must be retained for five years and made available to an inspector on request." },
+    { "slug": "colostrum-livestock", "term": "Colostrum", "definition": "The first milk produced by a mammal after birth, rich in antibodies that give the newborn its early immune protection. Lambs, kids, and piglets must receive colostrum within the first few hours of life; failure to do so leaves them with no immune defence and very high mortality risk. Can be stored frozen from a previous birth or purchased as a commercial supplement." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["farm medicine storage", "smallholding first aid kit animals", "livestock medicines"],
+  "recipeTools": [
+    { "slug": "drenching-gun", "isOptional": true },
+    { "slug": "vaccination-syringe", "isOptional": true },
+    { "slug": "nitrile-gloves", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stock your medicine cabinet before you need it, in discussion with your vet. For food-producing animals, " },
+          { "type": "text", "text": "medicine records", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "medicine-record-keeping" } }] },
+          { "type": "text", "text": " are a legal requirement, and some medicines need a vet prescription." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Medicine categories" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Not all animal medicines require a vet prescription. " },
+          { "type": "text", "text": "POM-V", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pom-v" } }] },
+          { "type": "text", "text": " medicines (most antibiotics, many vaccines) require a signed prescription from your vet. POM-VPS medicines (certain anthelmintics, some vaccines) require a prescription from a vet, pharmacist, or suitably qualified person. NFA-VPS and AVM-GSL products can be purchased without prescription." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building a relationship with a farm vet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A farm vet who knows your holding and stock will prescribe medicines for conditions you can reliably treat at home, and will write prescriptions for medicines you can hold in stock. This relationship needs to be established before you need it: a vet who has never visited your holding cannot legally prescribe for your animals under most circumstances. An annual flock or herd health visit builds the relationship and the documentation." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Core items for a mixed smallholding" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Oxytetracycline spray (for foot scald in sheep and navel dressing in newborns)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Iodine solution or spray for navel dipping." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Electrolyte sachets for scouring lambs, kids, or piglets." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Colostrum", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colostrum-livestock" } }] },
+            { "type": "text", "text": " supplement or stored frozen colostrum for any newborn that cannot nurse." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Zinc sulphate or copper sulphate solution for a sheep and goat foot bath." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Propylene glycol for twin lamb disease or goat ketosis." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nitrile gloves, a thermometer, and syringes in multiple sizes." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and disposal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Store medicines in a locked cabinet, away from feed and water, at the temperature specified on the product label. Check expiry dates annually. Dispose of out-of-date or unused prescription medicines through a licensed disposal route; your vet practice can advise. Do not pour medicines into drains or discard in household waste." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "drone-layer-or-laying-workers-diagnosis",
+  "title": "Drone layer or laying workers: diagnosis and resolution",
+  "subtitle": "How to tell which problem you have, and what to do about each one.",
+  "excerpt": "A colony producing nothing but drones has one of two problems: a drone-laying queen, or workers whose ovaries have activated in the absence of a queen. The signs overlap at a glance, but the cause and remedy are different. Correct diagnosis before any intervention saves weeks of recovery time.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "ADVANCED",
+  "season": "SUMMER",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBKA examination syllabus Unit 3 and Unit 5, queen failure and abnormal colony conditions. National Bee Unit advisory notes on queenless colonies (2022). Snodgrass, Anatomy of the Honey Bee (1910), Internet Archive: chapter on worker ovary development.",
+  "glossaryTerms": [
+    { "slug": "drone-laying-queen", "term": "Drone-laying queen", "definition": "A queen who lays only unfertilised eggs, producing drones in both worker and drone cells. Usually a sign that stored sperm has been exhausted or was never properly received at mating. The queen is present but functionally spent." },
+    { "slug": "laying-workers-colony", "term": "Laying workers", "definition": "Workers whose ovaries activate after several weeks without a queen or open brood. They lay unfertilised eggs in worker cells, often multiple per cell. The colony cannot raise a queen from these eggs and will decline to nothing without intervention." },
+    { "slug": "hopelessly-queenless", "term": "Hopelessly queenless", "definition": "A colony that has been without a queen or open brood long enough for laying workers to develop, and which will reject any introduced queen by balling her. The condition is difficult to reverse once established." },
+    { "slug": "supersedure-cell", "term": "Supersedure cell", "definition": "A queen cell built by workers to replace a failing queen while she is still present. Usually located in the middle of a brood frame rather than along the lower edge. Bees building supersedure cells have detected a problem with the current queen's laying or pheromone output." }
+  ],
+  "techniqueSlugs": ["reading-the-brood-frame"],
+  "criticalTechniques": ["reading-the-brood-frame"],
+  "aliases": ["laying workers bees", "drone laying queen diagnosis", "queenless hive drones"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "queen-introduction-cage", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Opening a hive and finding drone brood in worker cells is unsettling. The colony is producing no new workers; its population is falling. The first task is to distinguish between a " },
+          { "type": "text", "text": "drone-laying queen", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drone-laying-queen" } }] },
+          { "type": "text", "text": " and " },
+          { "type": "text", "text": "laying workers", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laying-workers-colony" } }] },
+          { "type": "text", "text": ". The two conditions look similar at a glance but they have different causes and demand different responses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the brood frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key distinction is the number of eggs per cell. Work slowly through a " },
+          { "type": "text", "text": "reading-the-brood-frame", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reading-the-brood-frame", "label": "brood frame inspection" } }] },
+          { "type": "text", "text": " with the frame held to the light." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Egg pattern by condition" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Drone-laying queen: one egg per cell, standing upright on the base, in the normal position. The eggs are in worker cells, but they will develop into drones because they are unfertilised. The laying pattern may be patchy but the single-egg-per-cell rule holds." }] },
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Laying workers: multiple eggs per cell, often three to six, placed at random angles and sometimes on the cell wall rather than the base. Eggs from different workers, laid at different times, produce this irregular scattering." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Is the queen present?" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work every frame looking for the queen. A drone-laying queen is still present; laying workers means the queen is gone. If the queen is present but all her brood is drone, check whether she is old or has recently been through a period of stress such as chilling or pesticide exposure. A failing queen may also have " },
+          { "type": "text", "text": "supersedure cells", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "supersedure-cell" } }] },
+          { "type": "text", "text": " on the central frames as the workers attempt to replace her." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Resolving a drone-laying queen" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove the drone-laying queen. The colony will become queenless but this is recoverable. Add one or two frames of open brood containing young larvae from a healthy hive. The colony will draw emergency queen cells from the youngest larvae available." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Alternatively, introduce a mated queen in a cage. Caging is necessary because the colony, though recognising the need for a queen, can be aggressive toward a stranger for the first few days. Leave the cage for three to four days with the candy end facing the cluster; the bees will release her naturally as the candy is consumed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Resolving laying workers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A colony with laying workers is " },
+          { "type": "text", "text": "hopelessly queenless", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hopelessly-queenless" } }] },
+          { "type": "text", "text": " and will ball any introduced queen. There is no reliable way to introduce a queen directly. The options are:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Shake all the bees out 50 metres from the hive. Flying bees will return to the hive stand; laying workers, which have stopped foraging, largely do not. When the reduced population is back in the hive, add a frame of young brood. If the colony accepts queen cells and raises one, the problem is resolved over several weeks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unite the colony with a strong healthy hive using the newspaper method. The healthy queen's pheromone environment suppresses the laying workers and restores normal colony order." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In late season, unite and accept the loss of this colony for the year rather than spending further resources on it." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prevention" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most cases of laying workers result from a colony going queenless for more than three weeks without the beekeeper noticing. Regular inspections every 7 to 9 days through the swarm season, with particular attention to the presence of eggs, are the reliable check. A hive without eggs for two consecutive inspections is at risk." }]
+      }
+    ]
+  }
+}

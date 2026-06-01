@@ -1,0 +1,102 @@
+{
+  "slug": "trace-element-deficiencies-in-sheep-and-goats",
+  "title": "Trace element deficiencies in sheep and goats",
+  "subtitle": "Recognising and correcting selenium, copper, and cobalt deficiencies in small flocks.",
+  "excerpt": "Trace element deficiencies are among the most common nutritional problems in UK sheep and goats, and some of the most damaging because the signs are non-specific and easy to attribute to other causes. A lamb that fails to thrive, a ewe whose fleece is poor, or a goat that loses condition in late pregnancy may be lacking selenium, copper, cobalt, or a combination. Soil-map data and herd history guide supplementation more reliably than chasing individual sick animals.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb: trace element supplementation for sheep (2022), ahdb.org.uk. SAC Consulting (formerly SAC): trace element deficiency in sheep and goats, Scotland. DEFRA sheep welfare codes, gov.uk: nutritional requirements section. Moredun Research Institute, bulletins on selenium and copper deficiency in UK flocks.",
+  "glossaryTerms": [
+    { "slug": "white-muscle-disease", "term": "White muscle disease", "definition": "A muscular condition of lambs and kids caused by selenium and vitamin E deficiency. The muscle fibres degenerate; affected animals show weakness or inability to rise, stiff gait, and rapid onset of breathing difficulty when the cardiac muscle is involved. Acute cases die quickly. Selenium supplementation of the ewe in late pregnancy prevents it." },
+    { "slug": "swayback", "term": "Swayback", "definition": "A copper deficiency condition in newborn lambs causing defective myelination of the nervous system. Lambs are born unable to support themselves or swaying uncontrollably on their feet. The condition is caused by the ewe being copper-deficient during pregnancy and cannot be corrected in affected lambs after birth." },
+    { "slug": "pine-cobalt", "term": "Pine (cobalt deficiency)", "definition": "A condition of sheep and goats caused by insufficient cobalt in the diet, leading to vitamin B12 deficiency. Affected animals waste away gradually: poor growth, dull coat, hollow flanks. Common on acidic, upland soils." },
+    { "slug": "copper-toxicity-sheep", "term": "Copper toxicity", "definition": "A life-threatening condition in sheep caused by excessive copper accumulation in the liver, followed by sudden release into the bloodstream. Sheep are far more sensitive to copper toxicity than cattle or goats; feeds formulated for cattle or poultry often contain copper at levels that accumulate to toxic doses in sheep over time." }
+  ],
+  "techniqueSlugs": ["drenching-sheep-with-an-oral-wormer"],
+  "criticalTechniques": [],
+  "aliases": ["selenium deficiency sheep", "copper deficiency sheep", "cobalt deficiency sheep"],
+  "recipeTools": [
+    { "slug": "drenching-gun", "isOptional": false },
+    { "slug": "vaccination-syringe", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "UK soils are deficient in selenium across most of the country. Acidic upland soils are also low in cobalt and copper. What this means for your flock depends on the land, the forage the animals eat, and any supplementation the previous keeper used. If you are new to the land, check the trace element status before assuming your stock is covered." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Selenium" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Selenium deficiency causes " },
+          { "type": "text", "text": "white muscle disease", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "white-muscle-disease" } }] },
+          { "type": "text", "text": " in lambs and kids and poor fertility and immune function in adults. Prevention is straightforward: give ewes and does a selenium and vitamin E injection or bolus in the last 4 to 6 weeks of pregnancy. Your vet can confirm deficiency through blood sampling of at-risk animals before the first supplementation cycle. Signs in newborns that survived but are weak: difficulty rising, a stilted gait, rapid breathing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Copper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Copper deficiency in sheep causes " },
+          { "type": "text", "text": "swayback", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "swayback" } }] },
+          { "type": "text", "text": " in newborns and poor fleece quality, bone weakness, and poor pigmentation in adults. However, copper supplementation in sheep must be approached with caution: " },
+          { "type": "text", "text": "copper toxicity", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "copper-toxicity-sheep" } }] },
+          { "type": "text", "text": " is a real risk if feeds or boluses formulated for cattle are used. Never supplement sheep for copper without a blood test confirming deficiency. Never feed cattle mineral buckets or cattle nut rations to sheep." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Copper safe for goats, dangerous for sheep" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Goats tolerate copper at levels that would be toxic to sheep and genuinely need supplementation more often. If housing goats and sheep together and feeding shared minerals, choose a sheep-safe mineral and supplement the goats separately via bolus or injection. There is no safe shared mineral formulation at therapeutic copper levels for both species." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cobalt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cobalt deficiency causes " },
+          { "type": "text", "text": "pine", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pine-cobalt" } }] },
+          { "type": "text", "text": ", a slow wasting condition most common in lambs growing on thin, acid, upland soils. Affected animals grow slowly, have pale mucous membranes, and a sparse, dry coat. The condition responds well to treatment if caught early. Cobalt is given via a " },
+          { "type": "text", "text": "drenching", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "drenching-sheep-with-an-oral-wormer", "label": "drenching" } }] },
+          { "type": "text", "text": " solution or slow-release bolus. Your vet can confirm by blood sampling for vitamin B12 levels, which cobalt is required to synthesise." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing before supplementing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The most accurate way to assess trace element status is a blood panel from four to six animals in the at-risk group: growing lambs, pregnant ewes in the last trimester, or newly freshened does. Your vet sends samples to a laboratory; results come back within a week. The report tells you which elements are deficient and by how much, allowing a targeted supplementation programme rather than blanket dosing." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Trace element status changes with the season (grass is higher in some elements during active growth), with stocking rate (dense grazing depletes soil elements faster), and with the soil pH (acidic soils lock up copper and cobalt). A test result from last year is a guide, not a guarantee, for this year." }]
+      }
+    ]
+  }
+}

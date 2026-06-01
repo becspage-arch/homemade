@@ -1,0 +1,156 @@
+{
+  "slug": "making-nucleus-increases-before-swarm-season",
+  "title": "Making nucleus increases before swarm season",
+  "subtitle": "How to split a strong colony and grow your apiary before the swarm impulse takes hold.",
+  "excerpt": "A nucleus split made in late April or early May gives a new colony time to build through the season while relieving population pressure on the parent hive. Done at the right moment, it is a more reliable way to increase stock than catching a swarm, and it keeps the beekeeper in control of the queen situation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBKA examination syllabus Unit 3, swarming and swarm control. National Bee Unit Best Practice Guideline No. 4: Making Increase (2023). The UK Bee Year, published by the British Beekeepers Association.",
+  "glossaryTerms": [
+    { "slug": "nuc-split", "term": "Nucleus split", "definition": "A small colony made from frames taken from a larger hive: brood, food, bees, and either a queen or queen cells. The resulting nucleus can raise its own queen or be requeened from a purchased or grafted cell." },
+    { "slug": "swarm-impulse", "term": "Swarm impulse", "definition": "The biological drive in a colony to reproduce by swarming. It builds when bee numbers outpace available space, especially in late spring. A strong swarm impulse leads to queen cell construction; once cells are sealed the beekeeper has fewer options." },
+    { "slug": "nurse-bee", "term": "Nurse bee", "definition": "A young worker bee, typically 3 to 10 days old, whose hypopharyngeal glands produce the royal jelly and brood food needed to rear larvae. Nurse bees are the essential constituency of any split; without them young brood will chill and die." },
+    { "slug": "laying-worker", "term": "Laying worker", "definition": "A worker bee whose ovaries activate in a queenless colony after several weeks. She lays unfertilised eggs that develop into drones. A colony with laying workers is difficult to requeen." }
+  ],
+  "techniqueSlugs": ["swarm-prevention-in-spring", "swarm-control-artificial-swarm"],
+  "criticalTechniques": [],
+  "aliases": ["making a nuc", "splitting a colony", "nucleus increase bees"],
+  "recipeTools": [
+    { "slug": "nuc-box", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "queen-marker-pen", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The right moment for a " },
+          { "type": "text", "text": "nucleus split", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nuc-split" } }] },
+          { "type": "text", "text": " is when the colony is strong, the brood nest is wall to wall, and the first play cups have appeared but no eggs are yet in them. At this point the " },
+          { "type": "text", "text": "swarm impulse", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "swarm-impulse" } }] },
+          { "type": "text", "text": " is building but the beekeeper is still ahead of it. In most UK locations, that window falls between late April and mid May." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a nucleus split needs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A viable split requires five things from the parent hive:" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One or two frames of open brood with young larvae, to give the queenless side material for raising queen cells." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One frame of sealed brood about to emerge, which will provide a fresh workforce within a week." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A frame of food: honey and pollen." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Enough " },
+            { "type": "text", "text": "nurse bees", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nurse-bee" } }] },
+            { "type": "text", "text": " to cover the brood and keep it warm, plus a few hundred extras." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The old queen, or a sealed queen cell, or the ability to raise a new queen from the open brood." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding the queen first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Before touching any frames, work through the hive and locate the queen. Mark her with a " },
+          { "type": "text", "text": "queen marker pen", "marks": [{ "type": "bold" }] },
+          { "type": "text", "text": " if you have not done so already. The decision on which side of the split she goes into shapes the rest of the operation." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Which side gets the old queen?" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Moving the old queen into the nuc and leaving the main hive queenless is the conservative choice. The parent hive raises its own queen from the open brood you leave behind; the nuc benefits from the proven layer. The main hive will be behind by 4 to 6 weeks but it holds the larger population. The alternative is to leave the queen in the main hive and give the nuc a ripe queen cell or open brood to raise from. The nuc will take longer to establish but the main hive carries on without interruption." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building the nuc box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Set up the nuc box a metre away from the parent hive. Work through the parent hive and shake the frames you are taking into the nuc; foragers will fly back to the parent hive, leaving only nurses in the box. This is important: a nuc short of nurses will chill the brood." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Transfer the brood and food frames. Fill the remaining space in the nuc with drawn comb or foundation. Replace the frames removed from the parent hive with foundation to keep it organised. Reduce the nuc entrance to a finger-width to aid defence." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Moving the nuc to its permanent site" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If the nuc stays on the same apiary site as the parent hive, flying bees will drift back. Move the nuc at least 3 km away for two weeks, then return it to a new position in the apiary. If moving is not possible, block the entrance with grass for two days after making the split: bees clearing the obstruction reorientate and accept the new location." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking the nuc a week later" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Seven days after making the split, check the queenless side for queen cells. If open brood was present when the split was made, there should be sealed queen cells on the frames. Select the largest and most centrally positioned cell and remove the rest. This concentrates the colony's resources into one queen." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If no queen cells are visible after a week, either the larvae were too old to be accepted, or nurse bees were lost in the move. Add another frame of young open brood from the parent hive and check again in five days." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to watch for" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "Nuc population looks thin after a week" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [{ "type": "text", "text": "Forager drift back to the parent hive, especially if the nuc is on the same site." }] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Add a frame of emerging brood from the parent hive to boost numbers. If at the same site, consider moving the nuc several metres and repositioning the entrance." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "No eggs 4 weeks after the split" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [
+                { "type": "text", "text": "Queen failed to mate (poor weather during mating flights), or the colony has developed " },
+                { "type": "text", "text": "laying workers", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laying-worker" } }] },
+                { "type": "text", "text": "." }
+              ] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Check for multiple eggs per cell (laying workers) or drone-only brood. If queenless, introduce a mated queen in an introduction cage. A laying-worker colony is more difficult: unite it back to the parent hive before trying again." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

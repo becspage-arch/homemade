@@ -1,0 +1,85 @@
+{
+  "slug": "pig-hoof-trimming",
+  "title": "Pig hoof trimming",
+  "subtitle": "When pig hooves need attention, how to restrain the animal, and what good hoof condition looks like.",
+  "excerpt": "Pigs on soft ground or bedded housing grow hooves faster than they wear them down, and overgrown hooves cause lameness and posture problems that are harder to correct the longer they are left. Most smallholding pigs need hoof inspection at least twice a year, and trimming when the outer wall of the hoof overhangs the sole.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Recommendations for the Welfare of Livestock: Pigs (2003), gov.uk. Pig Veterinary Society: lameness and foot conditions in outdoor pigs. FAO Animal Production and Health: swine foot disorders.",
+  "glossaryTerms": [
+    { "slug": "pig-dewclaw", "term": "Dewclaw", "definition": "The two small accessory hooves set above and behind the main hoof pair on each leg of a pig. They do not bear weight on firm ground but contact soft or wet ground and can catch on wire or roots. Dewclaws may need trimming if they overgrow enough to curl or impede movement." },
+    { "slug": "pig-overgrown-hoof", "term": "Overgrown hoof", "definition": "A hoof where the outer wall has grown past the level of the sole, causing the pig to bear weight on the wall rather than distributing it across the pad. The pig tends to walk on the back of its heels or knuckle forward. Corrected by trimming the outer wall back to sole level and removing any flared horn." }
+  ],
+  "techniqueSlugs": ["managing-pig-lameness"],
+  "criticalTechniques": [],
+  "aliases": ["trim pig hooves", "pig feet trimming", "pig hoof care"],
+  "recipeTools": [
+    { "slug": "pig-board", "isOptional": false },
+    { "slug": "hoof-trimmer-sheep", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pigs on concrete or well-drained hard standing wear their hooves naturally. Pigs on permanent soft-ground paddocks, deep bedding, or indoor units on straw do not, and their hooves need periodic trimming. Check hoof condition when you handle the pig for other routine tasks: look at all four feet, front and back." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs that trimming is needed" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The outer wall of the hoof has grown past the sole and you can see the pig weight-bearing on the wall edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "The hoof has a visible flare or curl, typical of an " },
+            { "type": "text", "text": "overgrown hoof", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-overgrown-hoof" } }] },
+            { "type": "text", "text": "." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The pig is shifting weight, reluctant to move on hard ground, or lying more than usual." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "The " },
+            { "type": "text", "text": "dewclaws", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-dewclaw" } }] },
+            { "type": "text", "text": " are long enough to catch on bedding or fencing." }
+          ] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Restraint" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The practical challenge with pig hoof trimming is restraint. Pigs resist lateral recumbency strongly. The most reliable approach for a smallholder working without a crush is to catch the pig in a small pen and use a snout snare: a loop of rope around the upper jaw that causes the pig to back into a corner and pull against the snare while vocalising. A pig snared and leaning back is momentarily still enough for one person to work quickly on the front feet. A second handler makes the process much faster and less stressful for the pig." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Alternatively, for small or young pigs, tipping them onto their side by grasping the near front and back leg and dropping them onto a padded surface works for quick inspections. This becomes impractical as the pig gets heavier." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming technique" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use hoof trimmers. Remove only the overgrown wall and flared horn: the goal is to restore the hoof to a shape that distributes weight evenly across the pad and both claws. Do not cut into the sensitive laminae below the white line. The white line is visible as a pale band running around the inner edge of the hoof wall; stop trimming before you reach it. Take small cuts and reassess rather than cutting aggressively." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After trimming, walk the pig a few steps on a firm surface to check balance. If the pig still knuckles or favours a foot, check between the claws for redness, swelling, or discharge. Call a vet if the lameness does not improve within 48 hours." }]
+      }
+    ]
+  }
+}

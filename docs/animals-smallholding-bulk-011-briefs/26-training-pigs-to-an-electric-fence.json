@@ -1,0 +1,75 @@
+{
+  "slug": "training-pigs-to-an-electric-fence",
+  "title": "Training pigs to an electric fence",
+  "subtitle": "How to introduce pigs to electric fencing so they respect it reliably when moved to outdoor paddocks.",
+  "excerpt": "Electric fencing is the standard containment method for outdoor pigs, but it only works if the pigs have been trained to respect it. An untrained pig that charges a fence and goes through it has not learned to avoid it. It has learned the shock follows contact. Training in a small, controlled setting before moving pigs to open paddocks prevents escapes and the handling problems they cause.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA Code of Recommendations for the Welfare of Livestock: Pigs (2003), gov.uk. British Pig Association: outdoor pig management. National Pig Association: electric fencing for outdoor pigs.",
+  "glossaryTerms": [
+    { "slug": "pig-electric-fence-strand", "term": "Strand height for pigs", "definition": "Two-strand electric fencing is standard for adult outdoor pigs: the lower strand at 20 cm to deter rooting under the wire, and the upper strand at 40 cm at snout height for an adult pig to contact on approach. Piglets need a third strand at 10 cm. Energiser output of at least 2 joules is recommended for pig fencing; pigs have thick skin and require a stronger pulse than sheep." },
+    { "slug": "electric-fence-training-area", "term": "Training pen", "definition": "A small, high-security pen (permanent wooden or metal rails, not reliant on electric alone) in which pigs are introduced to an energised electric wire before being moved to a paddock fenced only with electric. The training pen means that if a pig does break through the electric fence in the initial stages, it cannot escape the property." }
+  ],
+  "techniqueSlugs": ["setting-up-electric-fencing-for-outdoor-pigs"],
+  "criticalTechniques": [],
+  "aliases": ["electric fence pigs", "training pigs electric fence", "outdoor pig fencing"],
+  "recipeTools": [
+    { "slug": "electric-fence-energiser", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pigs move to outdoor paddocks fenced only with electric wire only after they have been trained. The training step takes one to three days and prevents the escapes and property damage that occur when untrained pigs are moved directly from a building or small pen into an open field bounded by electric tape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The training pen" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set up a " },
+          { "type": "text", "text": "training pen", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "electric-fence-training-area" } }] },
+          { "type": "text", "text": " using existing solid infrastructure (a building wall, stock panels, or permanent post-and-rail fencing) as the outer boundary. Inside this secure perimeter, run a single energised wire about 30 cm from the solid fence at snout height for the pigs you are training. The pigs are in the space between the energised wire and the solid fence. They will naturally approach and investigate the wire; they take the shock on the snout, which is highly sensitive, and retreat. After two or three contacts, most pigs avoid the wire." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Timing and energiser output" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave pigs in the training pen for at least 24 hours. Check the energiser is delivering adequate output: at least 2 joules for adult pigs. Test the wire with a fence tester at several points to confirm consistent output. Poor contacts, dead sections, or low energiser output mean the pigs may receive a weak shock that is not deterrent enough to establish fence respect. For " },
+          { "type": "text", "text": "strand heights", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-electric-fence-strand" } }] },
+          { "type": "text", "text": " in the outdoor paddock, use two strands for adults and three for piglets, at the heights described." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Moving to the paddock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After 24 to 48 hours in the training pen, pigs that are visibly respecting the wire are ready to move. Drive them calmly into the outdoor paddock and watch for the first five minutes. Pigs in a new space will trot the fence line; you are looking for the moment they reach the electric wire, stop, and turn back. If a pig charges the fence and breaks through, it has not been trained adequately. Return it to the training pen for another 24 hours before a second attempt." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs that have been fence-trained as weaners typically remember the lesson across subsequent moves to new paddocks. Pigs that have never encountered electric wire, or that broke through as piglets and were not re-trained, may require re-training at each new paddock during the first season." }]
+      }
+    ]
+  }
+}

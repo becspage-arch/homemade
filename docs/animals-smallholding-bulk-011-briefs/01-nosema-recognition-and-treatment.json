@@ -1,0 +1,163 @@
+{
+  "slug": "nosema-recognition-and-treatment",
+  "title": "Nosema: recognition and treatment",
+  "subtitle": "The gut parasite that weakens colonies quietly through spring.",
+  "excerpt": "Nosema is a microsporidian gut parasite that infects adult honey bees and reduces their foraging life. Two species occur in UK hives. Recognising the signs, understanding when it matters, and knowing the management options keeps a colony from losing its spring build-up to an invisible drain.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit advisory note on Nosema (2023), nationalbeeunit.com. BBKA examination syllabus Unit 5, pests and diseases of the honey bee. Williams et al., Apidologie (2008): comparative virulence of Nosema ceranae and N. apis. Frank Pearson, Bee-keeping for All (1923), Internet Archive: historical descriptions of dysentery in spring colonies.",
+  "glossaryTerms": [
+    { "slug": "nosema-apis", "term": "Nosema apis", "definition": "A microsporidian gut parasite of adult honey bees. Spores ingested with food germinate in the midgut epithelium, reducing nutrient absorption and cutting the bee's foraging life." },
+    { "slug": "nosema-ceranae", "term": "Nosema ceranae", "definition": "A second nosema species, originally a parasite of the Asian honey bee, now widespread in UK Apis mellifera colonies. It does not produce the crawling bees and dysentery signs of N. apis; colonies can harbour high spore loads with few visible symptoms." },
+    { "slug": "spore-load", "term": "Spore load", "definition": "The count of nosema spores per bee, measured from a sample crushed in water and examined under a microscope. A spore load above 1 million per bee is considered significant." },
+    { "slug": "cleansing-flight", "term": "Cleansing flight", "definition": "The first warm day after a prolonged winter confinement, when bees leave the hive in large numbers to defecate. Bees that cannot take cleansing flights build up faecal matter in the rectum and increase nosema transmission inside the hive." },
+    { "slug": "varroa-mite", "term": "Varroa", "definition": "Varroa destructor, an external parasitic mite that feeds on developing and adult honey bees. The primary pest of managed colonies worldwide. Unchecked varroa populations cause colony collapse through direct harm and by vectoring viruses. Managed with approved treatments on a seasonal schedule." }
+  ],
+  "techniqueSlugs": ["spring-colony-assessment", "varroa-mite-count"],
+  "criticalTechniques": [],
+  "aliases": ["nosema bees", "nosema apis bees", "nosema ceranae bees"],
+  "recipeTools": [
+    { "slug": "bee-smoker", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Colonies that come out of winter looking poor on bees, slow to build, or with a scattered brood pattern may have " },
+          { "type": "text", "text": "Nosema apis", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nosema-apis" } }] },
+          { "type": "text", "text": " or " },
+          { "type": "text", "text": "Nosema ceranae", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nosema-ceranae" } }] },
+          { "type": "text", "text": " at work. Both are microsporidian gut parasites; both reduce the functional lifespan of adult bees. Varroa gets more attention, but a high " },
+          { "type": "text", "text": "spore load", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spore-load" } }] },
+          { "type": "text", "text": " in late winter will cost a colony its spring growth window just as effectively. The difference is that " },
+          { "type": "text", "text": "varroa", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa-mite" } }] },
+          { "type": "text", "text": " is visible at the hive inspection; nosema is not." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The two species and how they differ" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "N. apis produces the classic spring symptoms: bees crawling at the entrance unable to fly, brown streaking down the front of the hive, and a sour smell from the entrance. These signs follow a long confinement where bees could not take a " },
+          { "type": "text", "text": "cleansing flight", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cleansing-flight" } }] },
+          { "type": "text", "text": " and have accumulated gut matter. They are hard to miss." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "N. ceranae is harder to read. Colonies carrying a high load of this species show few or no crawlers. The signs are subtler: a colony that fails to build up at the rate the population should support, queens superseded earlier than expected, or a general flatness through April and May with no obvious cause. Confirmation requires microscopy." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to suspect nosema" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A colony enters spring with fewer bees than its autumn population should have carried through winter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Crawling bees at the entrance on a warm day in February or March, some with swollen abdomens." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brown streaking down the front face of the hive or along the landing board." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A colony that falls behind the other hives through May, even when varroa is well managed." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Confirming the diagnosis" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "To confirm nosema and assess its severity, collect 30 bees from the entrance or from a brood frame (foragers returning with pollen are ideal). Crush them in a small amount of water, and examine a drop under a microscope at 400x. Nosema spores are oval and roughly 5 microns long; they are distinctive once you know what to look for." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Not everyone keeps a microscope. Your regional bee inspector or a local beekeeping association can run a spore count on a sample if you post it correctly. The NBU apiary advisory service will also advise on whether a count is warranted." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Management options" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fumagillin" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fumagillin was the licensed treatment for nosema in the UK for many years. Its authorisation has lapsed and it is no longer legally available to UK beekeepers. Do not source it informally: honey from treated colonies cannot legally be sold." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Comb replacement and shook swarm" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Nosema spores survive for years in old wax. The most durable management tool is regular comb renewal. Replace a third of brood comb each year by rotating out the oldest frames. For a colony with a confirmed heavy load, a shook swarm onto clean foundation removes the reservoir from the hive in one operation. The bees lose some foraging bees in the process but the gut condition of the survivors improves quickly once spore ingestion from old comb stops." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Supporting the colony through the problem" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A colony with a moderate nosema load often recovers once warm weather allows regular cleansing flights and the nectar flow gives bees access to fresh pollen. Feed 1:1 sugar syrup in early spring if stores are light. Ensure the hive is dry, well-ventilated, and positioned to catch morning sun so bees can fly by mid-morning on bright days." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reducing the risk next winter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "spring colony assessment", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "spring-colony-assessment", "label": "spring colony assessment" } }] },
+          { "type": "text", "text": " in March or April catches nosema early. Colonies that enter winter on old comb, in damp sites, or with heavy varroa loads going into autumn are at greatest risk. Run a " },
+          { "type": "text", "text": "varroa mite count", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "varroa-mite-count", "label": "varroa mite count" } }] },
+          { "type": "text", "text": " in August; treating in September gives bees reared in good health a full season before the next spring test." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "Crawling bees but no brown streaking" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [{ "type": "text", "text": "May be N. ceranae rather than N. apis, or another cause of crawling such as heavy varroa load or pesticide exposure. Brown streaking is characteristic of N. apis gut overload, not N. ceranae." }] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Check varroa levels first. Send a bee sample for nosema spore count before assuming N. apis is the culprit." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {},
+            "content": [
+              { "type": "paragraph", "attrs": { "role": "cue" }, "content": [{ "type": "text", "text": "Colony fails to build through May despite warm weather" }] },
+              { "type": "paragraph", "attrs": { "role": "cause" }, "content": [{ "type": "text", "text": "N. ceranae load may be supressing nurse-bee lifespan faster than the queen can replace losses. Also check for laying quality: a failing queen and a nosema infection look similar from a distance." }] },
+              { "type": "paragraph", "attrs": { "role": "fix" }, "content": [{ "type": "text", "text": "Inspect brood frames for egg laying pattern. If the queen is present and laying well, consider a shook swarm onto clean foundation to remove the spore reservoir." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

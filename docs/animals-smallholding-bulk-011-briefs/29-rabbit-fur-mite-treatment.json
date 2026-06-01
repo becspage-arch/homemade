@@ -1,0 +1,76 @@
+{
+  "slug": "rabbit-fur-mite-treatment",
+  "title": "Rabbit fur mites",
+  "subtitle": "Identifying the two common fur mite species, what infestation looks like, and how to treat the rabbit and its environment.",
+  "excerpt": "Fur mites in rabbits are common, often asymptomatic, and easy to treat. Cheyletiella parasitovorax is the species most often seen as 'walking dandruff' on the back. Psoroptes cuniculi causes ear canker. Both respond to licensed antiparasitic treatment, but the environment needs treating at the same time or re-infestation occurs within weeks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "rabbits",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Varga (2013), Textbook of Rabbit Medicine (2nd ed.), Butterworth-Heinemann: parasitology chapter. RCVS Knowledge: rabbit ectoparasite guidance. British Veterinary Association: mite treatment protocols for rabbits.",
+  "glossaryTerms": [
+    { "slug": "cheyletiella-rabbit", "term": "Cheyletiella parasitovorax", "definition": "A large fur mite visible to the naked eye on close inspection of rabbit fur, causing the appearance called 'walking dandruff' — flakes of skin that appear to move because the mites move under them. Most commonly affects the dorsal rump and base of the neck. Some rabbits are asymptomatic carriers; others develop intense pruritus, scaling, and patchy fur loss." },
+    { "slug": "psoroptes-rabbit", "term": "Psoroptes cuniculi", "definition": "An ear mite causing rabbit ear canker. Dense, brown, crusty deposits form in the ear canal; severely affected rabbits shake their heads, scratch at their ears, and may develop secondary bacterial otitis. The canker should not be manually removed as the tissue beneath is inflamed and bleeds easily; systemic treatment causes the crusts to drop out as the infestation resolves." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["walking dandruff rabbit", "rabbit ear mites", "rabbit cheyletiella"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two fur mite species cause most mite disease in UK rabbits: " },
+          { "type": "text", "text": "Cheyletiella parasitovorax", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cheyletiella-rabbit" } }] },
+          { "type": "text", "text": " on the coat, and " },
+          { "type": "text", "text": "Psoroptes cuniculi", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "psoroptes-rabbit" } }] },
+          { "type": "text", "text": " in the ear. Both are easy to treat, but all rabbits in contact with an affected animal must be treated at the same time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recognising Cheyletiella" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Part the fur on the rump and neck. Visible scaling or dandruff on a rabbit that is scratching excessively, or in which the scale appears to move when you look closely, is the classic presentation. In good light, adult Cheyletiella mites are just visible as white specks. Use a fine-toothed comb to collect debris from the coat onto a dark piece of paper and watch for movement." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recognising ear canker" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Look into the ear canal with a torch. A small amount of light brown waxy debris is normal; dense brown layered crusting that fills the canal is ear canker. The affected rabbit will scratch at its ears, shake its head, or hold one ear drooped. Do not attempt to remove the crusts manually." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treatment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A vet can prescribe injectable ivermectin or spot-on selamectin for both species. Selamectin (sold as Revolution or Stronghold for small animals) is the most practical route for most rabbit keepers; it is a spot-on applied to the skin at the back of the neck, repeated two to three times at two-week intervals. Ivermectin injections are given by the vet." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "All rabbits in the same housing unit must be treated at the same time. The housing must be thoroughly cleaned and disinfected: Cheyletiella eggs and mites survive off the host for days to weeks in bedding and on wooden surfaces. Replace all bedding, scrub the hutch or shed, and apply a suitable environmental insecticide or acaricide product if the infestation is persistent." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Zoonotic risk" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Cheyletiella can cause a temporary, self-limiting skin rash in humans who handle heavily infested rabbits. The mites cannot complete their life cycle on a human host and resolve without treatment once the rabbit is treated and contact is avoided. If you develop a pruritic rash during an outbreak in your rabbits, treat the rabbits promptly and the rash will typically clear within a week." }] }
+        ]
+      }
+    ]
+  }
+}

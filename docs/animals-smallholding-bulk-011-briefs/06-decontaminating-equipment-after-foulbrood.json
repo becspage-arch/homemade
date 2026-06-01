@@ -1,0 +1,118 @@
+{
+  "slug": "decontaminating-equipment-after-foulbrood",
+  "title": "Decontaminating equipment after foulbrood",
+  "subtitle": "What to do with hive boxes, frames, and tools after an AFB or EFB diagnosis.",
+  "excerpt": "An American or European foulbrood confirmation means the infected material must be dealt with before it contaminates other hives. For AFB the approach is mandatory and prescribed; for EFB it depends on the scale of infection and inspector guidance. Either way the process is methodical: contain, destroy, or decontaminate in the right order.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit Best Practice Guideline No. 2: American Foulbrood (2023). NBU Best Practice Guideline No. 8: European Foulbrood (2023). BBKA advisory note on irradiation services for beekeeping equipment, nationalbeeunit.com.",
+  "glossaryTerms": [
+    { "slug": "afb", "term": "AFB", "definition": "American foulbrood, a bacterial disease of honey bee larvae caused by Paenibacillus larvae. A notifiable disease in the UK. The spores are extremely persistent: they survive on dry equipment for 40 years. All infected comb must be burned; only heat or irradiation decontaminates the woodware." },
+    { "slug": "notifiable-disease-bees", "term": "Notifiable disease (bees)", "definition": "A disease legally required to be reported to the Animal and Plant Health Agency (APHA) when suspected. In the UK, AFB and EFB are notifiable. The regional bee inspector from the National Bee Unit confirms the diagnosis and issues formal guidance on destruction and decontamination." },
+    { "slug": "irradiation-hive", "term": "Irradiation", "definition": "A method of decontaminating beekeeping woodware using gamma radiation or X-rays. Irradiation kills AFB spores throughout the wood, including within joints and corners that a blowtorch flame cannot reliably reach. Licensed irradiation services for beekeeping equipment are available in the UK." },
+    { "slug": "lye-wash", "term": "Lye wash", "definition": "A caustic soda (sodium hydroxide) solution used to clean and decontaminate beekeeping equipment where irradiation is not available. Effective against most pathogens but not reliably effective against AFB spores; not recommended as a primary AFB decontamination method." }
+  ],
+  "techniqueSlugs": ["recognising-american-foulbrood", "european-foulbrood-recognition-and-management"],
+  "criticalTechniques": [],
+  "aliases": ["foulbrood equipment decontamination", "AFB cleanup hive", "EFB cleanup bees"],
+  "recipeTools": [
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A confirmed foulbrood diagnosis changes the task from beekeeping to containment and decontamination. Both " },
+          { "type": "text", "text": "AFB", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "afb" } }] },
+          { "type": "text", "text": " and EFB are " },
+          { "type": "text", "text": "notifiable diseases", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "notifiable-disease-bees" } }] },
+          { "type": "text", "text": ". The regional bee inspector from the National Bee Unit confirms the diagnosis and tells you what to do before any equipment is moved. Do not move equipment off site after a foulbrood suspicion." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "AFB: mandatory destruction of infected material" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For AFB, all comb and frames from the infected hive must be burned. The spores are not destroyed by normal cleaning. Burning is the legal requirement and is not optional." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The inspector will confirm the diagnosis on site and issue a Notice of Intended Prosecution if the beekeeper fails to act." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seal the hive entrance to prevent robbing. Robbing bees carry spores to other hives in the apiary." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On a still day, move the hive to a prepared burning site on the holding. Dig a pit at least 30 cm deep to contain ash." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Burn all brood comb, drawn comb, and frames in the pit. Add sufficient fuel to ensure complete combustion. Allow the fire to die naturally; scatter the cooled ash and bury." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bees remaining on the frames can be burned with the comb. The loss of the colony is the cost of AFB; attempting to save the bees by shaking them off risks spreading spores." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Decontaminating the woodware" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hive boxes, floor, crown board, and roof can be decontaminated by " },
+          { "type": "text", "text": "irradiation", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "irradiation-hive" } }] },
+          { "type": "text", "text": " or by scorching the interior surfaces with a blowtorch. Irradiation is the more reliable method for AFB spores in wood grain and joints. Scorching with a blowtorch is the common field option; work every internal surface until the wood is visibly browned but not charred through." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Irradiation services" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "UK irradiation services for beekeeping equipment are listed on the NBU website at nationalbeeunit.com. Equipment is posted to the facility, irradiated, and returned. The service covers boxes, floors, crown boards, and empty frames. It does not cover used comb." }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tools and protective equipment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Hive tools used at the infected hive should be sterilised in washing soda solution (sodium carbonate, not bicarbonate) for several hours, then rinsed. Wear gloves throughout all decontamination work and wash them in hot soapy water before using at a different hive. Bee suits exposed to an infected hive should be washed at 60 C." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "EFB: a variable approach" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "EFB does not form persistent spores in the way AFB does. The approach to equipment after an EFB diagnosis depends on the scale of infection and the inspector's guidance, which varies from scorching and restocking with new comb to a full shook swarm and routine woodware cleaning. In mild cases the inspector may advise antibiotic treatment (where it remains licensed) without destroying the comb." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After any confirmed EFB case, retire the affected comb on a faster cycle. Old comb acts as a reservoir for the bacterium. The " },
+          { "type": "text", "text": "lye wash", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-wash" } }] },
+          { "type": "text", "text": " used by some beekeepers for routine cleaning is not sufficient against AFB spores but is adequate for general EFB cleaning of woodware when directed by the inspector." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Notifying neighbouring beekeepers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The inspector notifies beekeepers within a set distance of the confirmed outbreak. If you know your neighbours keep bees, telling them directly is faster than waiting for the official notification. BeeBase registration ensures the inspector can reach everyone in the radius." }]
+      }
+    ]
+  }
+}
