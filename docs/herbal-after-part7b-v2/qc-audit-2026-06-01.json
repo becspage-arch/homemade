@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-06-01T17:58:26.306Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 6,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 6,
+      "pass": 0,
+      "block": 6,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "voice-violation": 8,
+    "content-type-opening-mismatch": 3,
+    "grade-level-strict": 1,
+    "opening-pattern-missing-hook": 1
+  },
+  "verdicts": [
+    {
+      "slug": "calendula-compress-for-minor-wounds",
+      "tutorialId": "cmpd1hdjr00003ov4xprqu8x2",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.082Z",
+      "publishedAt": "2026-05-19T19:51:56.915Z",
+      "heroMediaId": "cmplei6j4005wtkv4ttazm5c7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cold calendula brew used to soak a muslin cloth and held against a minor cut, graze, or slow-healing scratch. The infused water carries th"
+        }
+      ]
+    },
+    {
+      "slug": "echinacea-tincture",
+      "tutorialId": "cmpd1hywp0001csv4u7xokhhx",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.551Z",
+      "publishedAt": "2026-05-19T19:52:22.679Z",
+      "heroMediaId": "cmpleq60a00cctkv4caepbcb6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"tincture\" in body prose without glossary tooltip — use \"alcohol-soaked preparation\" or use a tooltip",
+          "path": "body > [12] > [0]",
+          "snippet": "tincture"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried echinacea root soaked in 40% vodka for four to six weeks, then taken by the dropper at the first sign of a cold. The alcohol draws out"
+        }
+      ]
+    },
+    {
+      "slug": "how-herbal-infusions-work",
+      "tutorialId": "cmpd1vs0v0004mwv4tpoansdv",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.000Z",
+      "publishedAt": "2026-05-19T19:53:11.058Z",
+      "heroMediaId": "cmpeirpyi00dgk8v44phxiysh",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"decoction\" in body prose without glossary tooltip — use \"simmered in water\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "decoction"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[6] > text"
+        }
+      ]
+    },
+    {
+      "slug": "nettle-infusion-for-cycle-support",
+      "tutorialId": "cmpd1k47t0001wkv47byu67ly",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.269Z",
+      "publishedAt": "2026-05-19T19:53:49.976Z",
+      "heroMediaId": "cmplbscpo00paygv488brlqnq",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A daily cup of dried nettle leaf steeped in hot water, taken through the week before menstruation. Nettle is rich in iron, calcium, and magn"
+        }
+      ]
+    },
+    {
+      "slug": "pregnancy-and-herbal-medicine",
+      "tutorialId": "cmpd1x0630002rwv4q73rw3s0",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.410Z",
+      "publishedAt": "2026-05-19T19:54:08.270Z",
+      "heroMediaId": "cmplf3zsu00s4tkv42mxdjjil",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "medical-claim: medical claim watchword: \"treats\"",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "st-johns-wort-profile",
+      "tutorialId": "cmpd1kl0l0001j4v41fk9vubh",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.440Z",
+      "publishedAt": "2026-05-19T19:54:13.946Z",
+      "heroMediaId": "cmpej6i5d00sik8v49c77t2xi",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[10] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "St John's Wort in the home kitchen, the most evidence-supported herbal antidepressant and also the most interaction-prone. What the dried he"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "St John's Wort in the home kitchen, the most evidence-supported herbal antidepressant and also the most interaction-prone. What the dried he"
+        }
+      ]
+    }
+  ]
+}

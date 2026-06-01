@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-06-01T16:54:37.838Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 3,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 3,
+      "pass": 0,
+      "block": 3,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "grade-level-strict": 3,
+    "voice-violation": 2
+  },
+  "verdicts": [
+    {
+      "slug": "echinacea-tincture",
+      "tutorialId": "cmpd1hywp0001csv4u7xokhhx",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:51:21.469Z",
+      "publishedAt": "2026-05-19T19:52:22.679Z",
+      "heroMediaId": "cmpleq60a00cctkv4caepbcb6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[12]",
+          "snippet": "Finished alcohol-soaked preparation keeps 2 years in a sealed amber bottle at room temperature away from light and heat."
+        }
+      ]
+    },
+    {
+      "slug": "elderflower-cold-infusion",
+      "tutorialId": "cmpd1ia2d0000pwv4pws5x0ob",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:51:22.089Z",
+      "publishedAt": "2026-05-19T19:52:33.612Z",
+      "heroMediaId": "cmpleqeby00citkv4gg5a70fd",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A hot steeped preparation of dried elderflowers, taken at the onset of a cold or mild flu. Traditionally used to promote perspiration and ea"
+        }
+      ]
+    },
+    {
+      "slug": "lavender-profile",
+      "tutorialId": "cmpd1jl6700019ov4qs26phrn",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T16:51:23.673Z",
+      "publishedAt": "2026-05-19T19:53:26.550Z",
+      "heroMediaId": "cmpeitnbt00fik8v48ttwmefs",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "institutional-in-body: institutional name \"EMA\" in body prose — move to sourceNotes (Sources block on the public page)",
+          "path": "body > paragraph[1] > text",
+          "snippet": "EMA"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[1]",
+          "snippet": "A materia medica profile of lavender, its traditional actions, therapeutic uses across the nervous system, skin. And musculoskeletal systems"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-06-01T18:02:30.788Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 3,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 3,
+      "pass": 0,
+      "block": 3,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "voice-violation": 5
+  },
+  "verdicts": [
+    {
+      "slug": "echinacea-tincture",
+      "tutorialId": "cmpd1hywp0001csv4u7xokhhx",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T18:00:12.716Z",
+      "publishedAt": "2026-05-19T19:52:22.679Z",
+      "heroMediaId": "cmpleq60a00cctkv4caepbcb6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"tincture\" in body prose without glossary tooltip — use \"alcohol-soaked preparation\" or use a tooltip",
+          "path": "body > [12] > [0]",
+          "snippet": "tincture"
+        }
+      ]
+    },
+    {
+      "slug": "pregnancy-and-herbal-medicine",
+      "tutorialId": "cmpd1x0630002rwv4q73rw3s0",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T18:00:13.611Z",
+      "publishedAt": "2026-05-19T19:54:08.270Z",
+      "heroMediaId": "cmplf3zsu00s4tkv42mxdjjil",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "medical-claim: medical claim watchword: \"treats\"",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "st-johns-wort-profile",
+      "tutorialId": "cmpd1kl0l0001j4v41fk9vubh",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T18:00:13.636Z",
+      "publishedAt": "2026-05-19T19:54:13.946Z",
+      "heroMediaId": "cmpej6i5d00sik8v49c77t2xi",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"tincture\" in body prose without glossary tooltip — use \"alcohol-soaked preparation\" or use a tooltip",
+          "path": "body > [2] > [0]",
+          "snippet": "tincture"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[10] > text"
+        }
+      ]
+    }
+  ]
+}

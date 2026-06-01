@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-06-01T18:04:34.463Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 1,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "voice-violation": 3
+  },
+  "verdicts": [
+    {
+      "slug": "st-johns-wort-profile",
+      "tutorialId": "cmpd1kl0l0001j4v41fk9vubh",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T18:04:28.824Z",
+      "publishedAt": "2026-05-19T19:54:13.946Z",
+      "heroMediaId": "cmpej6i5d00sik8v49c77t2xi",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"tincture\" in body prose without glossary tooltip — use \"alcohol-soaked preparation\" or use a tooltip",
+          "path": "body > [2] > [0]",
+          "snippet": "tincture"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[10] > text"
+        }
+      ]
+    }
+  ]
+}

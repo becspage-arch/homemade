@@ -1,0 +1,745 @@
+{
+  "generatedAt": "2026-06-01T17:56:42.942Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 28,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 28,
+      "pass": 0,
+      "block": 28,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "voice-violation": 16,
+    "opening-pattern-missing-hook": 17,
+    "content-type-opening-mismatch": 23,
+    "grade-level-strict": 1
+  },
+  "verdicts": [
+    {
+      "slug": "calendula-compress-for-minor-wounds",
+      "tutorialId": "cmpd1hdjr00003ov4xprqu8x2",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.082Z",
+      "publishedAt": "2026-05-19T19:51:56.915Z",
+      "heroMediaId": "cmplei6j4005wtkv4ttazm5c7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cold calendula brew used to soak a muslin cloth and held against a minor cut, graze, or slow-healing scratch. The infused water carries th"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cold calendula brew used to soak a muslin cloth and held against a minor cut, graze, or slow-healing scratch. The infused water carries th"
+        }
+      ]
+    },
+    {
+      "slug": "calendula-infused-oil",
+      "tutorialId": "cmpb7q90x00004wv4gdq67l9s",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.157Z",
+      "publishedAt": "2026-05-19T17:10:09.324Z",
+      "heroMediaId": "cmplei8hr005ytkv41omvushw",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > troubleshooter[39] > item[3] > fix",
+          "snippet": "stove"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried calendula flowers steeped in extra-virgin olive oil to draw out the golden colour and the herb's wound-soothing action. The household'"
+        }
+      ]
+    },
+    {
+      "slug": "chamomile-infusion-for-colic",
+      "tutorialId": "cmpd1hn5f0001y0v436zdsv96",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.404Z",
+      "publishedAt": "2026-05-19T19:52:08.045Z",
+      "heroMediaId": "cmplbayfs008wygv4cnzowd2w",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of chamomile after a meal that has left the stomach cramping. The herb relaxes the smooth muscle in the gut, easing the squeezing that"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of chamomile after a meal that has left the stomach cramping. The herb relaxes the smooth muscle in the gut, easing the squeezing that"
+        }
+      ]
+    },
+    {
+      "slug": "chamomile-infusion-for-tension-headache",
+      "tutorialId": "cmpd1hqlh00019sv4lk9u5d3k",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.438Z",
+      "publishedAt": "2026-05-19T19:52:11.908Z",
+      "heroMediaId": "cmpeikgg3004ck8v4uyvh358x",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of chamomile for a tension headache at the end of a stressful day, the dull squeezing pain across the forehead and round the back of t"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of chamomile for a tension headache at the end of a stressful day, the dull squeezing pain across the forehead and round the back of t"
+        }
+      ]
+    },
+    {
+      "slug": "chamomile-profile",
+      "tutorialId": "cmpd1ul6i0001ysv455h06jaz",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.489Z",
+      "publishedAt": "2026-05-19T19:52:15.527Z",
+      "heroMediaId": "cmpl9c8rl00aqqov4dhinsqca",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "HERB_PROFILE orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Chamomile in the home kitchen, what the dried flowers do, how to brew them properly, and what to do with them beyond the evening cup. The mo"
+        }
+      ]
+    },
+    {
+      "slug": "chamomile-sleep-bath",
+      "tutorialId": "cmpd1uny20001c4v4m6s1svbf",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.526Z",
+      "publishedAt": "2026-05-19T19:52:19.120Z",
+      "heroMediaId": "cmplejdpg006wtkv47ifd4twj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A strong chamomile brew poured into a warm evening bath. The cup works from the inside; the bath works through the warm steam and the skin. "
+        }
+      ]
+    },
+    {
+      "slug": "echinacea-tincture",
+      "tutorialId": "cmpd1hywp0001csv4u7xokhhx",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.551Z",
+      "publishedAt": "2026-05-19T19:52:22.679Z",
+      "heroMediaId": "cmpleq60a00cctkv4caepbcb6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"tincture\" in body prose without glossary tooltip — use \"alcohol-soaked preparation\" or use a tooltip",
+          "path": "body > [12] > [0]",
+          "snippet": "tincture"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried echinacea root soaked in 40% vodka for four to six weeks, then taken by the dropper at the first sign of a cold. The alcohol draws out"
+        }
+      ]
+    },
+    {
+      "slug": "elderberry-and-ginger-decoction",
+      "tutorialId": "cmpd1i27s00004cv4lmj1aigt",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.585Z",
+      "publishedAt": "2026-05-19T19:52:26.570Z",
+      "heroMediaId": "cmpleqcev00cgtkv4ev5vrwhc",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried elderberries and fresh ginger simmered together in water for half an hour, then strained and sipped hot. Berries are too tough for a s"
+        }
+      ]
+    },
+    {
+      "slug": "elderberry-syrup",
+      "tutorialId": "cmpb7qh3p0003nkv46vfmi913",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.668Z",
+      "publishedAt": "2026-05-19T17:09:58.515Z",
+      "heroMediaId": "cmplbgpot00emygv4fq1tyim4",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A dark, spiced syrup of dried elderberries simmered with cloves and cinnamon, then stirred into raw honey with a splash of brandy. Long take"
+        }
+      ]
+    },
+    {
+      "slug": "elderflower-cold-infusion",
+      "tutorialId": "cmpd1ia2d0000pwv4pws5x0ob",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.703Z",
+      "publishedAt": "2026-05-19T19:52:33.612Z",
+      "heroMediaId": "cmpleqeby00citkv4gg5a70fd",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried elderflowers steeped in just-boiled water, taken at the first sign of a cold. The brew gently opens the sinuses and brings on"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried elderflowers steeped in just-boiled water, taken at the first sign of a cold. The brew gently opens the sinuses and brings on"
+        }
+      ]
+    },
+    {
+      "slug": "elderflower-skin-wash",
+      "tutorialId": "cmpd1v23k000118v4du2rxish",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.737Z",
+      "publishedAt": "2026-05-19T19:52:37.460Z",
+      "heroMediaId": "cmplbgsjq00eqygv438zl8rp2",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cooled elderflower brew used as a gentle wash for dry, sensitive, or mildly irritated skin. Long used in European households as an everyda"
+        }
+      ]
+    },
+    {
+      "slug": "fennel-infusion-for-menstrual-cramps",
+      "tutorialId": "cmpd1iguj0002ucv4y6d4x7hs",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.766Z",
+      "publishedAt": "2026-05-19T19:52:41.236Z",
+      "heroMediaId": "cmplbhdjl00faygv4ykk1c414",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[7] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of fennel seed tea for period cramps. Fennel's muscle-easing action works in the gut and also in the womb muscle, calming the squeezin"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of fennel seed tea for period cramps. Fennel's muscle-easing action works in the gut and also in the womb muscle, calming the squeezin"
+        }
+      ]
+    },
+    {
+      "slug": "ginger-infusion-for-nausea",
+      "tutorialId": "cmpd1vjoe000290v4bs32hwfs",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.916Z",
+      "publishedAt": "2026-05-19T19:53:00.240Z",
+      "heroMediaId": "cmplet39v00eqtkv4ma1dbag2",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of fresh ginger steeped in hot water, for nausea on a journey, queasiness after a rich meal, or an unsettled stomach in cold weather. "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of fresh ginger steeped in hot water, for nausea on a journey, queasiness after a rich meal, or an unsettled stomach in cold weather. "
+        }
+      ]
+    },
+    {
+      "slug": "ginger-profile",
+      "tutorialId": "cmpd1j1ts0001pcv4iww6p3va",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.949Z",
+      "publishedAt": "2026-05-19T19:53:03.962Z",
+      "heroMediaId": "cmpeiqa5k00bsk8v4s1dphid3",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Ginger root in the home kitchen, what the rhizome does, how to brew it for nausea or a cold, and the dose ranges for a tea, a compress, or a"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "HERB_PROFILE orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Ginger root in the home kitchen, what the rhizome does, how to brew it for nausea or a cold, and the dose ranges for a tea, a compress, or a"
+        }
+      ]
+    },
+    {
+      "slug": "ginger-warming-bath",
+      "tutorialId": "cmpd1j6g80001kwv4ujov0pis",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:18.972Z",
+      "publishedAt": "2026-05-19T19:53:07.484Z",
+      "heroMediaId": "cmplet72g00eutkv42581dsax",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A strong ginger brew poured into a warm bath. The ginger compounds draw blood to the surface, warming the muscles and joints through. Long u"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A strong ginger brew poured into a warm bath. The ginger compounds draw blood to the surface, warming the muscles and joints through. Long u"
+        }
+      ]
+    },
+    {
+      "slug": "how-herbal-infusions-work",
+      "tutorialId": "cmpd1vs0v0004mwv4tpoansdv",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.000Z",
+      "publishedAt": "2026-05-19T19:53:11.058Z",
+      "heroMediaId": "cmpeirpyi00dgk8v44phxiysh",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"decoction\" in body prose without glossary tooltip — use \"simmered in water\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "decoction"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[6] > text"
+        }
+      ]
+    },
+    {
+      "slug": "lavender-bath-for-restlessness",
+      "tutorialId": "cmpd1jboa0001t4v404th3r08",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.025Z",
+      "publishedAt": "2026-05-19T19:53:14.479Z",
+      "heroMediaId": "cmplbp2g200m4ygv40pxjwxwp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A strong lavender brew poured into the evening bath. The aromatic oils carry into the steam and into the skin, both routes leading to the sa"
+        }
+      ]
+    },
+    {
+      "slug": "lavender-infusion-for-mild-low-mood",
+      "tutorialId": "cmpd1jhjz0001zsv4flkcvx8y",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.076Z",
+      "publishedAt": "2026-05-19T19:53:21.771Z",
+      "heroMediaId": "cmplbp3id00m6ygv4jj783v3x",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: ppe, seek medical, consult a). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > infoPanel[1] > body"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried lavender flowers steeped in just-boiled water, taken for a moment of mild, situational low mood. Long used as a supportive ev"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried lavender flowers steeped in just-boiled water, taken for a moment of mild, situational low mood. Long used as a supportive ev"
+        }
+      ]
+    },
+    {
+      "slug": "lavender-profile",
+      "tutorialId": "cmpd1jl6700019ov4qs26phrn",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.099Z",
+      "publishedAt": "2026-05-19T19:53:26.550Z",
+      "heroMediaId": "cmpeitnbt00fik8v48ttwmefs",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[5] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Lavender in the home kitchen, what the dried flowers do, how to brew them for a cup or a bath, and the usual doses for the nervous system, t"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "HERB_PROFILE orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Lavender in the home kitchen, what the dried flowers do, how to brew them for a cup or a bath, and the usual doses for the nervous system, t"
+        }
+      ]
+    },
+    {
+      "slug": "lemon-balm-infusion",
+      "tutorialId": "cmpd1jsr200011cv42p685zul",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.152Z",
+      "publishedAt": "2026-05-19T19:53:34.569Z",
+      "heroMediaId": "cmplbpf3600mgygv4qzbn3p13",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried lemon balm leaves steeped in just-boiled water, for mild anxiety or a busy, racing mind. One of the most pleasant-tasting ner"
+        }
+      ]
+    },
+    {
+      "slug": "marshmallow-root-cold-infusion",
+      "tutorialId": "cmpd1wfkl000240v45re3votl",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.209Z",
+      "publishedAt": "2026-05-19T19:53:41.579Z",
+      "heroMediaId": "cmpleygfq00k8tkv4a5b0jjjg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried marshmallow root steeped in cold water overnight, then strained and sipped slowly before meals. The cold-water method is essential, he"
+        }
+      ]
+    },
+    {
+      "slug": "nettle-infusion-for-cycle-support",
+      "tutorialId": "cmpd1k47t0001wkv47byu67ly",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.269Z",
+      "publishedAt": "2026-05-19T19:53:49.976Z",
+      "heroMediaId": "cmplbscpo00paygv488brlqnq",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A daily cup of dried nettle leaf steeped in hot water, taken through the week before menstruation. Nettle is rich in iron, calcium, and magn"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A daily cup of dried nettle leaf steeped in hot water, taken through the week before menstruation. Nettle is rich in iron, calcium, and magn"
+        }
+      ]
+    },
+    {
+      "slug": "nettle-infusion-for-hayfever",
+      "tutorialId": "cmpd1k7ed0001dcv4qjbhubc3",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.298Z",
+      "publishedAt": "2026-05-19T19:53:53.470Z",
+      "heroMediaId": "cmplb4j1v001qygv4j363rrpw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A daily cup of dried nettle leaf steeped in hot water, taken through hay fever season. Nettle has a long traditional history as a calming he"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A daily cup of dried nettle leaf steeped in hot water, taken through hay fever season. Nettle has a long traditional history as a calming he"
+        }
+      ]
+    },
+    {
+      "slug": "nettle-profile",
+      "tutorialId": "cmpd1kam50001xov4yd2x1y7z",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.325Z",
+      "publishedAt": "2026-05-19T19:53:57.300Z",
+      "heroMediaId": "cmpeiwlp300igk8v4il5y4qiy",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[3] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Stinging nettle in the home kitchen, what the dried leaf does, how to brew it for a daily cup or a compress, and the safety notes for raw ve"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "HERB_PROFILE orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Stinging nettle in the home kitchen, what the dried leaf does, how to brew it for a daily cup or a compress, and the safety notes for raw ve"
+        }
+      ]
+    },
+    {
+      "slug": "peppermint-tea-for-indigestion",
+      "tutorialId": "cmpd1kfqf0001lsv4avisdrwa",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.378Z",
+      "publishedAt": "2026-05-19T19:54:04.652Z",
+      "heroMediaId": "cmpeiyd2s00k6k8v464jtz3g6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A cup of dried peppermint leaves steeped in just-boiled water, taken after a heavy meal. The brew eases indigestion, mild bloating, and trap"
+        }
+      ]
+    },
+    {
+      "slug": "pregnancy-and-herbal-medicine",
+      "tutorialId": "cmpd1x0630002rwv4q73rw3s0",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.410Z",
+      "publishedAt": "2026-05-19T19:54:08.270Z",
+      "heroMediaId": "cmplf3zsu00s4tkv42mxdjjil",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "medical-claim: medical claim watchword: \"treats\"",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "st-johns-wort-profile",
+      "tutorialId": "cmpd1kl0l0001j4v41fk9vubh",
+      "type": "HERB_PROFILE",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.440Z",
+      "publishedAt": "2026-05-19T19:54:13.946Z",
+      "heroMediaId": "cmpej6i5d00sik8v49c77t2xi",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[10] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "St John's Wort in the home kitchen, the most evidence-supported herbal antidepressant and also the most interaction-prone. What the dried he"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "St John's Wort in the home kitchen, the most evidence-supported herbal antidepressant and also the most interaction-prone. What the dried he"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "HERB_PROFILE orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "St John's Wort in the home kitchen, the most evidence-supported herbal antidepressant and also the most interaction-prone. What the dried he"
+        }
+      ]
+    },
+    {
+      "slug": "valerian-tincture-for-sleep",
+      "tutorialId": "cmpd1kqqb0001s4v4lgvtt35a",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T17:51:19.491Z",
+      "publishedAt": "2026-05-19T19:54:21.071Z",
+      "heroMediaId": "cmplc7ggc0138ygv4rdpbfy7h",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "REMEDY orientation missing the \"for [purpose]\" / tradition / \"soothes/eases/...\" clause — voice-spec §3.2 locked pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried valerian root soaked in 40% vodka for four to six weeks, then taken by the dropper before bed. The alcohol draws out the herb's earthy"
+        }
+      ]
+    }
+  ]
+}

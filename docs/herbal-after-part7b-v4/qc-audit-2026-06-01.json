@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-06-01T18:03:24.340Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 1,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "voice-violation": 1
+  },
+  "verdicts": [
+    {
+      "slug": "pregnancy-and-herbal-medicine",
+      "tutorialId": "cmpd1x0630002rwv4q73rw3s0",
+      "type": "READING",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T18:00:13.611Z",
+      "publishedAt": "2026-05-19T19:54:08.270Z",
+      "heroMediaId": "cmplf3zsu00s4tkv42mxdjjil",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "medical-claim: medical claim watchword: \"treats\"",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    }
+  ]
+}

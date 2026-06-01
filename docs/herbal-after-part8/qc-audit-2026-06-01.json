@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-06-01T19:09:17.692Z",
+  "totalScanned": 42,
+  "passCount": 0,
+  "blockCount": 1,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "herbal-medicine": {
+      "total": 1,
+      "pass": 0,
+      "block": 1,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "opening-pattern-missing-hook": 1
+  },
+  "verdicts": [
+    {
+      "slug": "echinacea-tincture",
+      "tutorialId": "cmpd1hywp0001csv4u7xokhhx",
+      "type": "REMEDY",
+      "categorySlug": "herbal-medicine",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T19:02:41.271Z",
+      "publishedAt": "2026-05-19T19:52:22.679Z",
+      "heroMediaId": "cmpleq60a00cctkv4caepbcb6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Dried echinacea root soaked in 40% vodka for four to six weeks, then taken by the dropper at the first sign of a cold. The alcohol draws out"
+        }
+      ]
+    }
+  ]
+}
