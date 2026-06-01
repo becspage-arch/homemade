@@ -533,3 +533,36 @@ SKIPPED: 0
 - rabbit-pasteurellosis-management: voice-violation, grade-level-strict
 - reading-and-completing-livestock-movement-forms: voice-violation, grade-level-strict
 - treating-aspergillosis-in-chicks: voice-violation, grade-level-strict
+
+---
+
+## Run at 15:07:08
+
+Generated: 2026-06-01T15:07:08.008Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 15:22:13
+
+Generated: 2026-06-01T15:22:13.171Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
