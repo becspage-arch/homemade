@@ -1,0 +1,319 @@
+{
+  "slug": "gigot-d-agneau-a-la-cuillere",
+  "title": "Gigot d'agneau à la cuillère",
+  "subtitle": "Leg of lamb slow-roasted until spoon-tender",
+  "excerpt": "A whole leg of lamb cooked at very low heat for six to seven hours until the meat falls apart at the touch of a spoon. No carving required: the lamb collapses into soft, yielding pieces and the braising juices reduce to a concentrated sauce. Worth the time and almost no work.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Gigot methods and the principle of low, long cooking for leg of lamb.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. The à la cuillère designation and the tradition of seven-hour leg of lamb in French bourgeois cooking.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 420,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "You can start the lamb an hour or two earlier than needed; keep it in the oven at the same temperature and it will only improve. The resting juices can be made into a sauce while the lamb rests.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 140,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "roasting-rack", "isOptional": true },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "a-la-cuillere",
+      "term": "À la cuillère",
+      "definition": "French for 'with a spoon': a description used in cooking when meat has been cooked so slowly that it can be served and eaten using only a spoon, without the need for a knife. The phrase signals that the collagen in the meat has fully converted to gelatin."
+    }
+  ],
+  "techniqueSlugs": ["braising", "roasting"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gigot d'agneau "
+          },
+          {
+            "type": "text",
+            "text": "à la cuillère",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "a-la-cuillere" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a whole leg of lamb cooked so slowly, for so long, that it requires no knife to serve. The spoon is not a conceit: after six to seven hours at 140°C, the collagen in the meat has converted entirely to gelatin and the leg simply parts. The flesh is moist, deeply savoury, and pulls away in soft shreds. The cooking juices reduce around it to a concentrated, sticky sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The method is a hybrid of "
+          },
+          {
+            "type": "text",
+            "text": "roasting",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "roasting", "label": "roasting" } }]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "braising",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "braising", "label": "braising" } }]
+          },
+          {
+            "type": "text",
+            "text": ": the leg starts uncovered to colour the outside, then cooks covered or semi-covered in liquid. The work is mostly waiting. Start it in the morning and it will be ready by the early evening. The one thing it does not forgive is rushing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "lamb-leg",
+              "amount": 2000,
+              "unit": "g",
+              "prepNote": "bone in, about 2 kg",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 10,
+              "unit": "clove",
+              "prepNote": "8 whole for the pan, 2 sliced for studding",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "halved lengthways",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a roasting tin large enough to hold the leg flat, with sides at least 5 cm deep. A rack inside the tin keeps the lamb lifted above the braising liquid in the first hour; it is optional. You will need foil to cover the tin tightly for the long cook."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the lamb out of the fridge an hour before cooking. Heat the oven to 220°C fan. Using a small sharp knife, make 10 to 12 incisions all over the leg, each about 2 cm deep. Push a sliver of garlic and a small piece of rosemary into each cut. Rub the outside of the lamb with {{olive-oil}} of olive oil and season generously. Put the {{onion}} onions, {{carrot}} carrots, the remaining {{garlic}} of garlic, and the herb sprigs in the base of the roasting tin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "First blast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the lamb on top of the vegetables and roast uncovered at 220°C for 20 minutes to colour the outside. Remove from the oven. Pour {{dry-white-wine}} of white wine and {{stock-chicken}} of chicken stock into the base of the tin. Lower the oven to 140°C fan. Cover the tin tightly with two layers of foil, crimping the edges to seal. Return to the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The long cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook for 6 to 7 hours. Check once at the 5-hour mark: the liquid should still be present and simmering gently under the foil. If the pan looks dry, add a splash of water or stock. At 7 hours, pierce the thickest part of the leg with a skewer; the skewer should slide in with no resistance and the meat should be beginning to pull away from the bone. Remove the foil for the last 20 minutes to re-crisp the surface, if you like."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lift the lamb carefully onto a board and rest for 15 minutes. Strain the pan juices into a small saucepan, skim the fat, and reduce by half over medium heat to make a loose sauce. Season to taste. Serve the lamb by pulling it apart at the table with a spoon and fork."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat is still firm at the 7-hour mark",
+              "cause": "Oven runs cool, or foil seal was not tight and the steam escaped",
+              "fix": "Check the seal, add a cup of hot stock to the pan, re-seal tightly, and return for another hour. The transition from tough to tender can happen quickly once the collagen breaks down."
+            },
+            {
+              "symptom": "Pan has dried out halfway through",
+              "cause": "Foil seal broke or oven temperature was too high",
+              "fix": "Add 200 ml of hot water or stock immediately, re-seal, and reduce the oven by 10°C."
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Too much liquid in the pan or insufficient reduction time",
+              "fix": "Strain the juices and boil hard in a small saucepan for 5 to 8 minutes until syrupy."
+            },
+            {
+              "symptom": "Meat looks pallid and uncoloured",
+              "cause": "First-blast step skipped or foil left on for the whole cook",
+              "fix": "Remove the foil and place under a hot grill for 5 to 8 minutes, watching closely, to colour the surface."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seven-hour lamb has its roots in the farmhouse tradition of putting a piece of meat in the oven before church and returning to find it cooked by lunchtime. In French bourgeois cooking it was a Sunday centrepiece, the table set while the lamb carried on doing its work. The leg of lamb at this temperature and duration becomes a completely different thing from the pink, briefly roasted rack: quieter, more generous, and more forgiving of an imprecise oven. Serve with white beans cooked with garlic and thyme, or with the braising vegetables lifted from the pan, and a glass of Bandol rosé or a Rhône red."
+          }
+        ]
+      }
+    ]
+  }
+}

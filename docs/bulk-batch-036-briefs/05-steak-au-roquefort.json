@@ -1,0 +1,271 @@
+{
+  "slug": "steak-au-roquefort",
+  "title": "Steak au Roquefort",
+  "subtitle": "sirloin steak with a quick Roquefort cream sauce",
+  "excerpt": "Steak au Roquefort is a weeknight brasserie classic: a pan-fried sirloin finished with a sauce of Roquefort cheese and cream. The sauce takes five minutes. The blue cheese dissolves into the cream and the sharpness softens considerably as it cooks. Bold and fast.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Cream sauce principles and pan sauce technique. The pairing of Roquefort with beef is a well-established brasserie tradition; the preparation described here draws on the classic French approach of deglazing a steak pan with cream and crumbled blue cheese.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pan-sauce",
+      "term": "Pan sauce",
+      "definition": "A sauce made directly in the pan used to cook meat, using the caramelised cooking residue as its base, usually by adding liquid such as wine, stock, or cream to dissolve it."
+    }
+  ],
+  "techniqueSlugs": ["searing", "deglazing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak au Roquefort is one of the easiest sauced steaks in the French repertoire. Cook the sirloin, rest it, make the Roquefort cream "
+          },
+          {
+            "type": "text",
+            "text": "pan sauce",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pan-sauce" } }]
+          },
+          {
+            "type": "text",
+            "text": " in the same pan while the meat rests, and serve. The whole thing is done in 20 minutes. The Roquefort loses most of its sharpness when it melts into the cream, so the result is rich and savoury rather than pungently blue."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use sirloin or rump for this. The sauce is flavourful enough to go with either cut. If you prefer a leaner result, rump is the better choice; sirloin has more fat and a slightly looser texture that goes well with the cream sauce. Either way, the steak must rest after cooking or the sauce will be overshadowed by the amount of juice the meat loses to the plate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "2 steaks, about 2 cm thick, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "roquefort",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "crumbled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the steaks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{beef-sirloin}} of sirloin steak generously on both sides. Heat {{olive-oil}} of olive oil in a heavy frying pan over very high heat until the oil just starts to smoke. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the steaks for 2 to 3 minutes per side for medium-rare; they should have a deep brown crust. Add the {{unsalted-butter}} of butter at the end and baste for 30 seconds. Remove to a warm plate and rest for at least 5 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Roquefort sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the steaks rest, reduce the heat under the same pan to medium. Add the {{shallot}} chopped shallot and cook for 1 minute in the fat already in the pan. If using brandy, add the {{brandy}} of brandy now and let it bubble for 30 seconds. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " the pan with the {{double-cream}} of double cream, scraping up the browned bits. Add the {{roquefort}} of Roquefort and stir until it melts into the cream, about 2 minutes. The sauce should be thick enough to coat the back of a spoon. Season with black pepper; go easy on the salt as Roquefort is already salty."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour any resting juices from the steak back into the sauce and stir to combine. Place the steaks on warm plates and spoon the sauce over generously."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too salty",
+              "cause": "Roquefort is high in salt; added more on top of that",
+              "fix": "Taste the sauce before adding any salt; it almost never needs more"
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Cream not reduced enough",
+              "fix": "Let the cream bubble for 30 seconds longer before adding the cheese; it thickens further as the cheese melts"
+            },
+            {
+              "symptom": "Sauce has split or looks grainy",
+              "cause": "Pan was too hot when the cream went in, or heat was too high as the cheese melted",
+              "fix": "Keep the heat at medium; Roquefort melts very easily and a gentle heat is enough"
+            },
+            {
+              "symptom": "Steak tastes of nothing beside the sauce",
+              "cause": "Steak not seasoned generously enough, or pan not hot enough for a crust",
+              "fix": "Season more boldly than you think is right; the cream sauce needs a well-seasoned, well-seared steak to hold its own"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak with Roquefort cream sauce is a fixture of the French brasserie menu, particularly in southern France where Roquefort comes from. It is the same category as steak au poivre or steak à la crème: a quickly cooked steak with a pan sauce made from the resting juices. The dish needs nothing more than chips or a simple green salad alongside, and a good glass of red wine, which the sauce can also stand up to."
+          }
+        ]
+      }
+    ]
+  }
+}

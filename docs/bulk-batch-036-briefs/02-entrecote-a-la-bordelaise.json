@@ -1,0 +1,305 @@
+{
+  "slug": "entrecote-a-la-bordelaise",
+  "title": "Entrecôte à la bordelaise",
+  "subtitle": "pan-fried ribeye with a red wine, bone marrow, and shallot sauce",
+  "excerpt": "Entrecôte à la bordelaise is a pan-fried ribeye steak finished with a classic Bordelaise sauce of red wine, shallots, and bone marrow. The sauce is rich and glossy with a faint sweetness from the reduced wine. This is French bistro cooking at its most direct.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Sauce Bordelaise method, composition, and the use of bone marrow as a garnish. Jules Gouffé, Le Livre de Cuisine (1867), public domain via Project Gutenberg. Entrecôte method and general steak cookery principles.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The Bordelaise sauce can be made up to 2 hours ahead and kept warm or reheated gently. Do not add the bone marrow until just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "dateNight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bordelaise",
+      "term": "Bordelaise",
+      "definition": "A classic French sauce from the Bordeaux region, made by reducing red wine with shallots, thyme, and bay, then finishing with butter and often poached bone marrow."
+    },
+    {
+      "slug": "deglazing",
+      "term": "Deglazing",
+      "definition": "Adding liquid to a hot pan to dissolve the caramelised cooking residue (known as fond) left by meat or vegetables, forming the base of a sauce."
+    }
+  ],
+  "techniqueSlugs": ["searing", "deglazing", "reducing"],
+  "criticalTechniques": ["deglazing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Entrecôte à la bordelaise is a ribeye steak served with a sauce of reduced red wine, shallots, and bone marrow. The sauce is the point. A good ribeye needs very little else, but a Bordelaise turns it into something a restaurant would charge considerably for. The method is straightforward: reduce the wine and shallots to a syrupy base, mount with butter, finish with poached bone marrow on top."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bone marrow is the traditional finish. You can ask a butcher for a split marrow bone or use marrow scooped from a bone and poached in salted water for 2 minutes. If marrow is not available, a finishing knob of cold butter gives a similar richness. The steak itself needs a very hot pan, a generous seasoning, and no fussing once it goes in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "beef-ribeye",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "2 steaks, about 2.5 cm thick, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "for the pan",
+              "isOptional": false,
+              "groupLabel": "For the steak"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the steak"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the steak"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the steak"
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "very finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": "a Bordeaux or full-bodied Burgundy",
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 1,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "cold, cut into cubes",
+              "isOptional": false,
+              "groupLabel": "For the Bordelaise sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A large, heavy frying pan is important for the steak: it needs to hold heat when the meat goes in. Use a 30 cm pan if you have one so both steaks cook side by side without steaming each other."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Bordelaise sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the {{shallot}} chopped shallots in a medium saucepan with the {{red-wine}} of red wine, {{thyme}} of thyme, and {{bay-leaves}} of bay. Bring to a simmer and "
+          },
+          {
+            "type": "text",
+            "text": "reduce",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reducing", "label": "reduce" } }]
+          },
+          {
+            "type": "text",
+            "text": " over medium heat until the wine has almost completely evaporated and the shallots are sitting in a thick, syrupy residue; this takes about 12 minutes. Add the {{stock-beef}} of beef stock and reduce again by half, another 5 minutes. Remove the thyme and bay. Keep warm over very low heat. When the steaks are done, mount the sauce with the cold butter cubes, whisking them in off the heat one at a time until the sauce is glossy and lightly thickened. Season to taste."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the steaks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{beef-ribeye}} of ribeye steak generously on both sides with salt and pepper. Heat a large frying pan over very high heat until smoking. Add the {{olive-oil}} of olive oil, then place the steaks in the pan. Do not move them. Cook for 2 to 3 minutes on the first side until a dark crust forms. Flip and add the {{unsalted-butter}} of butter. Cook for a further 2 minutes, basting the steaks with the foaming butter. For medium-rare, aim for 54°C internal temperature. Remove and rest on a warm plate for 5 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Deglaze and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour any resting juices from the steak into the Bordelaise sauce and stir to combine. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [
+              { "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } },
+              { "type": "glossaryTooltip", "attrs": { "termSlug": "deglazing" } }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " the steak pan with a splash of the reduced wine sauce, scraping up the "
+          },
+          {
+            "type": "text",
+            "text": "Bordelaise",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bordelaise" } }]
+          },
+          {
+            "type": "text",
+            "text": " fond and adding it back to the sauce. Spoon the sauce generously over the steaks. If using bone marrow, place poached slices on top of each steak just before the plate goes to the table."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is bitter",
+              "cause": "Red wine not reduced enough before the stock was added, leaving harsh tannins",
+              "fix": "Always reduce the wine until nearly dry with the shallots before adding stock; the long reduction removes the bitter edge"
+            },
+            {
+              "symptom": "Steak is tough",
+              "cause": "Pan not hot enough, or meat was cold when it went in",
+              "fix": "Let the steak sit at room temperature for 30 minutes before cooking; a cold steak drops the pan temperature and steams instead of searing"
+            },
+            {
+              "symptom": "Sauce has broken or looks greasy",
+              "cause": "Butter added to a pan that was too hot",
+              "fix": "Always whisk the butter into the sauce off the heat; if it breaks, whisk in a tablespoon of cold water to bring it back together"
+            },
+            {
+              "symptom": "Steak has a grey band around the edge",
+              "cause": "Overcooked from the side heat in the pan",
+              "fix": "Use a thicker steak (at least 2 cm) and cook only on the flat sides; side cooking happens with very thin steaks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bordelaise sauce takes its name from the Bordeaux wine region, and the principle of reducing the local wine into a sauce for beef is entirely logical there. The Escoffier version specifies bone marrow almost as an afterthought, but it is what makes the dish stand out from a simple red wine reduction. Entrecôte à la bordelaise is a fixture of the Parisian brasserie menu. Serve with pommes frites or a simple green salad and good bread to mop the sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

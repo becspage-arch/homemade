@@ -1,0 +1,338 @@
+{
+  "slug": "quiche-aux-poireaux",
+  "title": "Quiche aux poireaux",
+  "subtitle": "Leek and gruyère quiche in a shortcrust pastry case",
+  "excerpt": "A classic French leek and gruyère quiche: buttery shortcrust pastry filled with softened leeks, eggs, double cream, and melted cheese. Baked until set with a faint wobble at the centre. It serves six as a main and is equally good warm or at room temperature.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903). Quiche Lorraine and its variants; the egg-and-cream custard (migaine) as the standard quiche filling base.\n\nProsper Montagné, Larousse Gastronomique (1938). Quiche entry: shortcrust case, custard filling, regional vegetable variants including leek (poireau) and onion.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Bakes and freezes well for up to 2 months. Cool completely, wrap well, and freeze. Reheat from frozen at 180°C fan for 25 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind-baked a day ahead. Fill and bake on the day of serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend", "weeknight"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-baking",
+      "term": "Blind baking",
+      "definition": "Baking a pastry case without its filling, using baking paper and baking beans (or dried pulses) to weigh down the pastry and prevent it from puffing up or shrinking. This pre-cooks the base so it stays crisp when the wet filling is added later. Essential for quiches and custard tarts."
+    },
+    {
+      "slug": "migaine",
+      "term": "Migaine",
+      "definition": "The egg and cream custard used as the filling base for a quiche. It is whisked together before pouring into the pastry case over the filling ingredients. The ratio of eggs to cream determines how firm the set will be; a classic migaine for a 23 cm quiche uses 3 eggs to 300 ml cream."
+    }
+  ],
+  "techniqueSlugs": ["blind-baking", "sweating"],
+  "criticalTechniques": ["blind-baking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Quiche aux poireaux is a leek and gruyère quiche in a shortcrust case: buttery pastry filled with softened leeks and a set egg-and-cream custard, baked until the filling is just firm with a faint wobble at the centre. It serves six as a main and is equally good warm or at room temperature. It keeps well for two days and reheats without complaint."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key step is ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "blind baking",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-baking" } }]
+          },
+          {
+            "type": "text",
+            "text": " the pastry before the filling goes in. A quiche case that has not been blind-baked will have a pale, soggy base no matter how well the filling sets. Chill the pastry-lined tin before blind baking to prevent shrinkage."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The filling is the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "migaine",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "migaine" } }]
+          },
+          {
+            "type": "text",
+            "text": ": eggs, cream, and cheese whisked together. The leeks are softened separately before adding so they do not steam and make the custard watery."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "shortcrust-pastry",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": "shop-bought or homemade",
+              "isOptional": false,
+              "groupLabel": "For the pastry case"
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "washed, trimmed, thinly sliced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "gruyere",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "finely grated, divided",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a 23 cm loose-bottomed tart tin, baking paper, and baking beans or dried pulses for blind baking. A rolling pin for the pastry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Line and chill the pastry case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Roll out the {{shortcrust-pastry}} of shortcrust pastry on a lightly floured surface to 3 mm thick. Line the tart tin, pressing the pastry into the corners and leaving a slight overhang. Prick the base a few times with a fork. Refrigerate for 30 minutes. This chilling step is what prevents shrinkage during blind baking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blind bake the case" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 190°C fan. Line the chilled pastry case with baking paper and fill with baking beans. ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "Blind bake",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "blind-baking", "label": "Blind bake" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 15 minutes, then remove the paper and beans and bake for a further 8 minutes until the base is pale golden and no longer looks raw. Trim the overhanging pastry level with the rim using a sharp knife while still warm. Reduce the oven to 170°C fan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the leeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the pastry is in the oven, melt {{unsalted-butter}} of butter in a wide frying pan over medium heat. Add the {{leek}} leeks and ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "sweat",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "sweating", "label": "sweat" } }]
+          },
+          {
+            "type": "text",
+            "text": " gently for 12 to 15 minutes, stirring occasionally, until soft and wilted but not coloured. Season with salt and pepper. Spread the leeks on a plate and leave to cool for 5 minutes: adding very hot filling to the pastry case makes the base soggy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and pour the migaine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk {{eggs}} eggs with {{double-cream}} of double cream, 70 g of the {{gruyere}} of grated gruyère, a pinch of salt, pepper, and a grating of nutmeg. Place the tart tin on a baking tray. Spread the cooled leeks across the base of the pastry case. Pour the cream mixture over slowly, allowing it to settle between the leeks. Scatter the remaining gruyère over the top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake at 170°C fan for 35 to 40 minutes until the top is golden and the filling is set around the edges with a slight wobble at the very centre when you shake the tin gently. A filling that is fully firm all the way across has been overbaked. Remove from the oven and leave to rest for 10 minutes before removing from the tin and slicing. Serve warm or at room temperature."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry base is pale and soggy",
+              "cause": "Not blind-baked, or hot filling poured into the case",
+              "fix": "Always blind bake the case fully; let the leeks cool before adding to the case; bake on the lowest oven shelf to get more base heat"
+            },
+            {
+              "symptom": "Filling is curdled or has separated",
+              "cause": "Oven too hot, or filling overbaked",
+              "fix": "Bake at 170°C fan, not higher; pull the quiche when the centre still has a gentle wobble; residual heat finishes the set"
+            },
+            {
+              "symptom": "Pastry has shrunk below the rim during blind baking",
+              "cause": "Pastry not chilled long enough before blind baking",
+              "fix": "Chill for the full 30 minutes. Handle the pastry as little as possible. Leave an overhang before blind baking and trim after"
+            },
+            {
+              "symptom": "Quiche is bland",
+              "cause": "Leeks not seasoned, or too little gruyère",
+              "fix": "Season the leeks in the pan and check the custard before pouring; gruyère has a strong flavour that carries the dish, so do not reduce the amount"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The quiche came to the French classical repertoire from Lorraine and Alsace in the northeast. Quiche Lorraine is the most famous (bacon, cream, eggs, no cheese in the strict original); the leek version is a quieter, more domestic interpretation that became a staple of the French home table and, later, of every brasserie menu from Bordeaux to Paris. A well-made quiche slices cleanly, holds its shape on the plate, and is as satisfying at room temperature as it is warm. It is the definition of a forgiving dish to make ahead."
+          }
+        ]
+      }
+    ]
+  }
+}

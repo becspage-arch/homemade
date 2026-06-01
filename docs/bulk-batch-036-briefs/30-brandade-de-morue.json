@@ -1,0 +1,277 @@
+{
+  "slug": "brandade-de-morue",
+  "title": "Brandade de morue",
+  "subtitle": "Provençal salt cod purée with olive oil and garlic",
+  "excerpt": "Brandade de morue is a smooth, creamy purée of salt cod worked with warm olive oil and garlic until it becomes white and almost fluffy. It is made in Languedoc and Provence and eaten on bread or toast, or baked with potato into a gratin. The soaking time is 24 hours, but the actual cooking is less than half an hour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "J.-B. Reboul, La Cuisinière Provençale (1897). Brandade de morue recipe with the classic olive oil and garlic method, and the Nîmes variant that includes potato. Public domain.\n\nA. Escoffier, Le Guide Culinaire (1903). Brandade preparation and the technique of warming the oil separately before working it into the fish. Public domain.\n\nNote: salt cod (morue) is not in the master ingredient lookup. The slug cod-fillet (cod fillet, fresh) is used as the closest available match. A dedicated salt-cod ingredient entry would better represent this dish. If using fresh cod, reduce the soaking step and instead salt the fish lightly 30 minutes ahead, then proceed.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 2 months. Thaw overnight in the fridge and reheat gently, stirring over low heat with a splash of warm milk to restore the texture.",
+    "batchable": true,
+    "batchNotes": "Makes well in double quantities. Keep refrigerated for up to 3 days.",
+    "makeAheadNotes": "Salt cod must be soaked for at least 24 hours before cooking, changing the water several times. The finished brandade keeps in the fridge for 3 days and can be reheated gently.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brandade",
+      "term": "Brandade",
+      "definition": "A Provençal and Languedocian purée made by working soaked salt cod with warm olive oil and sometimes warm milk, whisking or pounding until the mixture becomes smooth and pale. The name comes from the Occitan 'brandar', to stir or agitate. The Nîmes version adds mashed potato; the Marseille version is oil only."
+    },
+    {
+      "slug": "morue",
+      "term": "Morue",
+      "definition": "The French word for salt cod, which is dried and salted Atlantic cod. Before cooking, salt cod must be soaked in cold water for at least 24 hours, with the water changed several times, to remove the excess salt and rehydrate the flesh. The result has a firmer texture and more concentrated flavour than fresh cod."
+    }
+  ],
+  "techniqueSlugs": ["emulsifying"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brandade is made by poaching "
+          },
+          {
+            "type": "text",
+            "text": "morue",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "morue" } }]
+          },
+          {
+            "type": "text",
+            "text": " (salt cod) and then working it vigorously with warm olive oil until it becomes a creamy, pale purée. "
+          },
+          {
+            "type": "text",
+            "text": "Brandade",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brandade" } }]
+          },
+          {
+            "type": "text",
+            "text": " has the texture of a loose mash and the smell of the sea at a distance: oceanic, garlicky, deeply savoury. Spread on toast and finished with a few black olives, it is one of those things that turns a small amount of fish into a generous dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The recipe below uses fresh cod with a brief preliminary salting as a substitute for true salt cod, since dried salt cod is not always easy to find. The flavour is lighter and the texture slightly less firm, but the result is still very good. If you can source proper salt cod from a fishmonger or Portuguese shop, soak it for 24 to 36 hours in several changes of cold water, then proceed from the poaching step. The potato in this version is the Nîmes style: it softens the texture and stretches the dish to serve six."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "about 150 g each; use salt cod if available, soaked 24 to 36 hours in cold water with several changes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and cut into chunks",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "good fruity olive oil",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "peeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "sliced and toasted, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A wooden spoon and some elbow work is the traditional approach. You can use a food processor for a smoother result, but the texture will be more uniform and less rustic. Both are good."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the cod" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the {{cod-fillet}} cod fillets in a wide saucepan with the {{garlic}} of garlic, {{bay-leaves}} of bay, and {{thyme}} of thyme. Cover with cold water and bring slowly to just below the boil. Simmer gently for 8 to 10 minutes until the fish flakes easily when pressed. Remove the fish with a slotted spoon and set aside to cool slightly. Reserve the garlic cloves. If using {{potato}} potato, boil it separately in salted water until completely tender, then drain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the brandade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flake the cod, removing any skin and bones. Put the flaked fish in a large saucepan over very low heat. Using a wooden spoon, begin working the fish vigorously, breaking it down into fine threads. Warm the {{olive-oil}} of olive oil in a small pan until it is hot but not sizzling. Crush the poached garlic into the fish. Begin adding the warm olive oil a tablespoon at a time, working it in with the spoon between each addition, as if making a mayonnaise by hand. Alternate with spoonfuls of the {{whole-milk}} of warm milk. Continue until all the oil and milk are incorporated and the mixture is smooth, white, and slightly fluffy. If using potato, add the drained cooked potato partway through and work it into the mixture. Season with black pepper; taste before adding salt, as the fish may already be salty enough."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pile the brandade into a warm bowl or spread it into a gratin dish and flash under a hot grill for 3 to 4 minutes until the surface colours. Serve with thick slices of {{baguette}} baguette, toasted. Black olives alongside are traditional and cut the richness well."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Brandade is grainy and refuses to come together",
+              "cause": "Oil added too quickly, or fish and oil not warm enough when combined",
+              "fix": "Keep everything warm: the fish should still be hot from poaching, and the oil should be warm. Work more slowly, adding the oil in smaller amounts"
+            },
+            {
+              "symptom": "Mixture is too stiff and dry",
+              "cause": "Not enough liquid, or fish overcooked",
+              "fix": "Add more warm milk a spoonful at a time, working it in vigorously; a splash of the poaching liquid also works"
+            },
+            {
+              "symptom": "Brandade tastes too salty",
+              "cause": "Salt cod not soaked long enough, or fresh cod seasoned too heavily",
+              "fix": "Taste before adding any salt; if using salt cod, increase the soaking time next time and change the water more frequently"
+            },
+            {
+              "symptom": "Fish has an unpleasant fishy smell rather than a clean sea smell",
+              "cause": "Cod not fresh, or poaching water boiled too hard",
+              "fix": "Use the freshest cod available and keep the poaching at a gentle simmer; vigorous boiling toughens the flesh and sharpens the smell"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brandade de morue is from Nîmes and the surrounding Languedoc, where it has been made since at least the eighteenth century. The salt cod trade between Scandinavia and the Mediterranean sustained the dish: dried salt cod kept indefinitely and could be sold far inland, making it available year-round to people who lived nowhere near the sea. The Nîmes version with potato is the more practical one; the purer Marseille version with oil alone is richer and more intense. Brandade is now sold in tins throughout France and eaten as a weekday staple. The freshly made version, eaten warm with good toast, is a different thing entirely."
+          }
+        ]
+      }
+    ]
+  }
+}

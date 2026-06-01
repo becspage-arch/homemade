@@ -1,0 +1,256 @@
+{
+  "slug": "cote-de-boeuf",
+  "title": "Côte de boeuf",
+  "subtitle": "a thick rib of beef, pan-roasted and rested",
+  "excerpt": "Côte de boeuf is a thick, bone-in rib of beef cooked with minimal intervention: seared in a hot pan, then finished in the oven. The result is a deeply crusted exterior with a rosy centre. The quality of the meat is everything here.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Rib of beef roasting principles and resting times. Jules Gouffé, Le Livre de Cuisine (1867), public domain via Project Gutenberg. Standing rib roast method and internal temperature guidance.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "special"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "conventional oven, not fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "resting-meat",
+      "term": "Resting",
+      "definition": "Leaving cooked meat in a warm place for several minutes after cooking so the juices redistribute through the fibres, resulting in a juicier, more evenly cooked result when sliced."
+    }
+  ],
+  "techniqueSlugs": ["searing"],
+  "criticalTechniques": ["searing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Côte de boeuf is a single thick bone-in rib of beef, enough for two people. It is cooked simply: high heat to build a crust, a short time in the oven to reach the right temperature, and a long rest. There is almost nothing to do, which means the quality of the meat is what you are eating. Buy the best you can find and give it time to come to room temperature before it goes in the pan."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The rib bone acts as insulation on one side, so the thick end near the bone will be slightly more cooked than the open face. This is not a problem; it gives different people at the table different degrees of doneness from one piece of meat. The resting time is not optional: 15 minutes minimum. The inside continues cooking during the rest, and cutting too soon loses the juices to the board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "beef-rib",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "one bone-in rib steak, about 5 cm thick, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "lightly crushed, unpeeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cast-iron skillet is best here: it holds the heat when the cold (relatively) steak goes in and goes straight from hob to oven. If your skillet handle is not oven-safe, transfer the steak to a small roasting tray to finish in the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and sear" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 200°C. Take the steak out of the fridge at least 45 minutes ahead. Pat it completely dry, then season both sides and the fat cap generously with salt and pepper. Heat the cast-iron skillet over very high heat until it begins to smoke. Add the {{olive-oil}} of olive oil. Lay the steak in the pan and do not move it. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 3 to 4 minutes until a deep brown crust forms. Flip and sear the other side for 2 to 3 minutes. Stand the steak on its fat cap and render for 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Baste and oven-finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium. Add the {{unsalted-butter}} of butter to the pan along with the {{thyme}} of thyme and the {{garlic}} of garlic. As the butter foams, tilt the pan and baste the steak repeatedly for 2 minutes. Transfer the skillet to the oven and cook for 8 to 12 minutes, depending on thickness, checking with a probe thermometer: 52°C for rare, 56°C for medium-rare. Remove and transfer to a warm board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and carve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest the steak for at least 15 minutes, loosely tented with foil. The internal temperature will rise by 3 to 5 degrees during "
+          },
+          {
+            "type": "text",
+            "text": "resting",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "resting-meat" } }]
+          },
+          {
+            "type": "text",
+            "text": ". To carve, cut the meat away from the bone, then slice against the grain into thick pieces. Return the bone to the board so each person can gnaw it if they like."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Crust is pale or steamed-looking",
+              "cause": "Pan was not hot enough, or the meat was wet when it went in",
+              "fix": "Pat the steak completely dry before seasoning; always heat the pan until it smokes before adding oil"
+            },
+            {
+              "symptom": "Centre is overdone",
+              "cause": "Steak was too cold when it went in, or oven time was too long",
+              "fix": "Always bring the steak to room temperature; check the internal temperature with a probe at 8 minutes oven time"
+            },
+            {
+              "symptom": "Meat is chewy",
+              "cause": "Not rested long enough, or sliced with the grain",
+              "fix": "Rest for the full 15 minutes; slice across the grain at a slight diagonal"
+            },
+            {
+              "symptom": "Fat cap has not rendered",
+              "cause": "The fat cap step was skipped or shortened",
+              "fix": "Stand the steak on its fat cap in the pan for at least 2 minutes; the fat renders and bastes the bottom of the meat as it cooks"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Côte de boeuf is a brasserie centrepiece, usually listed as a dish for two. The French version depends on the quality of the cattle (Charolais or Aubrac). The presentation is simple: bone on, meat sliced at the table, béarnaise or compound butter served alongside. At home it is one of the best things to cook for two: the method is easy and the result looks impressive. Serve with pommes dauphinoise or a watercress salad."
+          }
+        ]
+      }
+    ]
+  }
+}

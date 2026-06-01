@@ -1,0 +1,285 @@
+{
+  "slug": "endives-au-jambon",
+  "title": "Endives au jambon",
+  "subtitle": "braised chicory wrapped in ham, baked under a Gruyère béchamel",
+  "excerpt": "Braised chicory heads wrapped in sliced cooked ham, covered in a Gruyère-enriched béchamel, and baked until golden and bubbling. This is a classic French family dish, warming and unfussy, where the slight bitterness of the braised chicory cuts through the richness of the sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "A. Escoffier, Le Guide Culinaire (1903). Braised chicory (endive) preparation method and béchamel technique. Public domain.\n\nAuguste Colombié, Nouvelle Cuisine Bourgeoise (1906). The endives au jambon gratin, describing the full braise-wrap-bake method as a classic bourgeois dish. Public domain.\n\nNote: chicory (endive) is not in the master ingredient lookup. Amounts are given as plain prose. Cooked ham is also not in the lookup; gammon is used as the closest available slug and flagged accordingly.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dish can be assembled up to 8 hours ahead, covered, and refrigerated before baking. Add an extra 10 minutes to the baking time if it goes in cold from the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "One of the French mother sauces, made by cooking a roux of butter and flour, then gradually whisking in hot milk to create a smooth, thick white sauce. It is the base for many gratin and pasta dishes and can be flavoured with nutmeg, cheese, or mustard."
+    },
+    {
+      "slug": "endive",
+      "term": "Endive (chicory)",
+      "definition": "A tight, pale-leaved vegetable from the chicory family, grown in the dark to prevent bitterness from developing fully. It has a mild bitter note and a firm texture that softens considerably with braising or baking. Known as endive in French and chicon in Belgium, it is sold as chicory in British shops."
+    }
+  ],
+  "techniqueSlugs": ["bechamel", "braising"],
+  "criticalTechniques": ["bechamel"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Endives au jambon is a two-stage dish: first the "
+          },
+          {
+            "type": "text",
+            "text": "endive",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "endive" } }]
+          },
+          {
+            "type": "text",
+            "text": " heads are braised in butter until tender and lightly coloured. Each one is then wrapped in cooked ham, laid in a baking dish, and covered in a cheese "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bechamel" } }]
+          },
+          {
+            "type": "text",
+            "text": " before baking. The chicory's slight bitterness cuts through the sauce and the saltiness of the ham."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The work is straightforward if you do it in order: braise the chicory first, make the sauce while the chicory cools slightly, then assemble and bake. The béchamel must be thick enough to coat the wrapped heads without running off; if it is too thin, the gratin will be watery. The cheese should be grated finely so it melts quickly under the heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for braising",
+              "isOptional": false,
+              "groupLabel": "For the braised chicory"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "For the braised chicory"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "for the roux",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 600,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "gruyere",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "finely grated, plus extra for the top",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "gammon",
+              "amount": 8,
+              "unit": "g",
+              "prepNote": "8 thin slices of cooked ham (about 20 g each); gammon is the closest available ingredient, but use good cooked ham slices such as jambon de Paris",
+              "isOptional": false,
+              "groupLabel": "To assemble"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You also need 8 heads of chicory (about 800 g), halved lengthways or left whole if small. Chicory is sold in British supermarkets as 'chicory' or 'witloof'; look for tight, pale heads with no brown patches on the leaves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the chicory" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 190°C fan. Melt the {{unsalted-butter}} of butter for braising in a wide ovenproof pan over medium heat. Add the 8 chicory heads, cut-side down if halved. Add the {{lemon}} lemon juice and a pinch of salt. Cook for 3 to 4 minutes until the cut surface colours lightly, then turn and cook the other side for 2 minutes. Cover with a lid or foil and transfer to the oven for 20 minutes until completely tender when pierced. Remove and let cool slightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the béchamel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the {{unsalted-butter}} of butter for the béchamel in a medium saucepan over medium heat. Add the {{plain-flour}} of plain flour and stir for 2 minutes to cook out the raw flavour. Remove from the heat and add a third of the {{whole-milk}} of warm milk, whisking until smooth. Return to medium heat and add the remaining milk in two additions, whisking constantly until the sauce is thick and smooth. Let it bubble gently for 3 minutes, stirring. Remove from the heat, add the {{gruyere}} of Gruyère, season with salt, pepper, and nutmeg. Stir until the cheese melts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spread a thin layer of béchamel over the base of the baking dish. Wrap each braised chicory head in a slice of ham, holding the ends underneath. Lay the wrapped heads in the dish, seam-side down, in a single layer. Pour the remaining sauce over the top, making sure every piece is covered. Scatter the extra grated Gruyère over the surface. Bake for 25 to 30 minutes until the top is golden and bubbling and the sauce is just beginning to colour at the edges. Leave for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Dish is watery after baking",
+              "cause": "Chicory not braised long enough, releasing excess liquid during baking",
+              "fix": "Braise the chicory until fully tender before assembling. Press each head in a clean cloth to squeeze out excess liquid before wrapping"
+            },
+            {
+              "symptom": "Béchamel is lumpy",
+              "cause": "Milk added too quickly, or sauce not whisked continuously",
+              "fix": "Remove from heat and whisk vigorously; if lumps persist, pass through a fine sieve back into the pan"
+            },
+            {
+              "symptom": "Top browns before the centre is hot",
+              "cause": "Dish assembled cold from the fridge, or oven too hot",
+              "fix": "Bring the assembled dish to room temperature for 20 minutes before baking; reduce the oven temperature by 10°C and bake for 10 minutes longer"
+            },
+            {
+              "symptom": "Chicory is very bitter",
+              "cause": "Heads old or not braised long enough",
+              "fix": "The lemon juice in the braise helps reduce bitterness; make sure the heads are fully tender before wrapping. Very bitter chicory can be blanched briefly in boiling salted water before braising"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Endives au jambon is a dish of the French and Belgian domestic kitchen, not the restaurant. It appears in the kind of cookbook that covers the whole repertoire of family cooking: the dish a mother makes on a Tuesday in November when the budget is tight and the weather cold. Chicory cultivation spread from Belgium and northern France in the nineteenth century, and the bitter-cream combination has been a fixture of the northern French table ever since. The Belgian version sometimes substitutes a Mornay sauce (béchamel with Emmental) and occasionally adds a little brown sugar to the braise to offset the bitterness. The French version generally stays plainer."
+          }
+        ]
+      }
+    ]
+  }
+}

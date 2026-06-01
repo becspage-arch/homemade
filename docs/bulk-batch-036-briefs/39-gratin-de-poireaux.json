@@ -1,0 +1,277 @@
+{
+  "slug": "gratin-de-poireaux",
+  "title": "Gratin de poireaux",
+  "subtitle": "Leeks braised in cream and gruyère, baked until bubbling and golden",
+  "excerpt": "Tender leeks braised in a simple cream and gruyère sauce, topped with more gruyère and baked until the surface is deep golden and the sauce bubbles around the edges. A winter side dish that can also stand as a main with bread. It comes together in about an hour with straightforward steps.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903). Gratin technique and the cream-and-cheese béchamel base for vegetable gratins; the braising of leeks before gratin as the correct method.\n\nProsper Montagné, Larousse Gastronomique (1938). Gratin de poireaux: leeks blanched or braised first, finished with cream or sauce mornay, and gruyère on top.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The leeks can be braised a day ahead and held in the fridge. Add the cream and cheese topping on the day, then bake.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gratin",
+      "term": "Gratin",
+      "definition": "A dish finished with a browned crust on top, produced by baking with cheese, breadcrumbs, or cream under high heat. The word comes from the French 'gratter' (to scrape), referring to the crisp crust that forms in the dish and is scraped off as the best part. A gratin can be made with vegetables, potato, pasta, or fish."
+    }
+  ],
+  "techniqueSlugs": ["sweating", "making-bechamel"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gratin",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gratin" } }]
+          },
+          {
+            "type": "text",
+            "text": " de poireaux is braised leeks in a cream and cheese sauce, baked until the top is golden and the sauce bubbles. It is a winter dish: mild, comforting, and straightforward to make. As a side it serves four; with bread it can serve two as a main."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Braising the leeks first, rather than putting them in raw, is what keeps them tender and flavourful rather than watery. They soften in butter with a little stock or water until just cooked through before the cream goes in. The gruyère melts into the sauce and forms the crust on top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "leek",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "washed, trimmed, cut into 5 cm lengths",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "gruyere",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "finely grated, divided",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a large pan for braising the leeks, and a baking dish of about 30 cm × 20 cm for the gratin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the leeks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt 20 g of the {{unsalted-butter}} of butter in a large, wide pan over medium heat. Add the {{leek}} leeks and turn to coat. Pour in {{stock-vegetable}} of vegetable stock, season with salt and pepper, and cover. Braise gently for 15 to 18 minutes, turning the leeks once, until tender when pierced with a knife but not collapsing. Lift the leeks out with a slotted spoon and arrange them in the baking dish. Reserve any cooking liquid in the pan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 200°C fan. In the same pan, melt the remaining butter over medium heat. Add {{plain-flour}} of plain flour and stir for 1 minute to form a roux; this is the base of a simple ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "making-bechamel", "label": "béchamel" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Gradually whisk in {{whole-milk}} of whole milk, a little at a time, until you have a smooth sauce. Add {{double-cream}} of double cream and any reserved leek cooking liquid. Stir in 80 g of the {{gruyere}} of grated gruyère. Season with salt, pepper, and a grating of nutmeg. Cook gently for 3 to 4 minutes, stirring, until the sauce is smooth and thickened."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the sauce over the leeks in the baking dish, spreading it evenly. Scatter the remaining gruyère over the surface. Bake for 25 to 30 minutes until the top is deep golden and the sauce bubbles at the edges. Leave to rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Gratin is watery after baking",
+              "cause": "Leeks not well drained after braising, or sauce too thin",
+              "fix": "Lift the leeks with a slotted spoon, not a ladle, so excess liquid stays in the pan; make sure the sauce has thickened properly before pouring over"
+            },
+            {
+              "symptom": "Sauce is lumpy",
+              "cause": "Milk added too fast to the roux",
+              "fix": "Add the milk in small amounts at the start, whisking each addition smooth before adding more; the sauce smooths out as it heats"
+            },
+            {
+              "symptom": "Top does not brown",
+              "cause": "Oven too cool, or too little cheese on top",
+              "fix": "Make sure the oven is fully preheated to 200°C fan; if the top is not golden after 30 minutes, switch to the grill for 3 to 4 minutes"
+            },
+            {
+              "symptom": "Leeks are stringy or tough",
+              "cause": "Outer leaves not removed, or cooking time too short",
+              "fix": "Remove the tough dark green outer leaves before braising; braise for the full 15 to 18 minutes until a knife slides through without resistance"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The gratin is one of the most practical constructions in French domestic cooking. The principle (a vegetable braised tender, layered in a baking dish, covered with a cream or cheese sauce, and browned in the oven) applies to almost any vegetable that survives gentle heat: fennel, chicory, cauliflower, celeriac. Gratin de poireaux is the winter version, and one of the most useful. It sits alongside a roast, holds on its own with bread, or reheats reliably the next day."
+          }
+        ]
+      }
+    ]
+  }
+}

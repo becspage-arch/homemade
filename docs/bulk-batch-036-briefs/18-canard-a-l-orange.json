@@ -1,0 +1,329 @@
+{
+  "slug": "canard-a-l-orange",
+  "title": "Canard à l'orange",
+  "subtitle": "Whole roast duck with a bitter orange and brandy sauce",
+  "excerpt": "A whole duck roasted until the skin is lacquered and crisp, then served with a sauce bigarade built from the pan juices, orange zest, orange juice, and brandy. The sauce is sharp, glossy, and slightly bitter, cutting the richness of the duck. It is one of the great classic French dishes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Canard à l'orange method and sauce bigarade composition using bitter orange (Seville orange) and roasting jus. Henri-Paul Pellaprat, L'Art culinaire moderne (1935), public domain via archive.org. Duck roasting temperatures and orange sauce proportions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 100,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce can be made a day ahead up to the point of adding the orange juice. Refrigerate. Finish with the orange juice and butter when the duck comes out of the oven.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "specialOccasion", "dateNight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "conventional oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "microplane", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sauce-bigarade",
+      "term": "Sauce bigarade",
+      "definition": "A classic French sauce made from bitter (Seville) orange juice and zest, combined with roasting juices and often a little brandy or Grand Marnier. Named for the bigarade, the bitter orange. It is the canonical sauce for duck à l'orange."
+    },
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To add liquid (wine, stock, or spirits) to a hot roasting pan or saucepan after cooking, loosening the caramelised residue from the base. Those residues dissolve into the liquid and enrich the sauce."
+    },
+    {
+      "slug": "rest",
+      "term": "Rest",
+      "definition": "To leave cooked meat uncovered for several minutes before carving. Resting allows the internal juices to redistribute through the flesh rather than running out when the meat is cut."
+    }
+  ],
+  "techniqueSlugs": ["roasting"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Canard à l'orange is a whole roast duck served with a sharp, orange-scented sauce built from the roasting juices. The duck gives you crisp skin and rich meat; the sauce gives you contrast, bright and slightly bitter against the fat. It is one of the great dishes of the French table."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sauce matters more than anything else here. A good "
+          },
+          {
+            "type": "text",
+            "text": "sauce bigarade",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sauce-bigarade" } }]
+          },
+          {
+            "type": "text",
+            "text": " is built from the roasting juices, orange zest, orange juice, and a dash of brandy. Seville oranges (bitter oranges) are the classical choice and are worth using in late January and February when they appear in shops. Out of season, a regular orange with a squeeze of lemon juice is a workable substitute."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Duck has a thick layer of fat under the skin. Score it before roasting so the fat renders out rather than sitting in a pool under the bird. The skin should come out lacquered and crackling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "duck-whole",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "about 2 kg, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "zest of 1, juice of both",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange-juice",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "freshly squeezed (from the oranges above)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "calvados or cognac",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "cold, cut into cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine-vinegar",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a roasting tin large enough to hold the duck with a little space around it, and a small saucepan for the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score and season the duck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 200°C conventional. Remove any giblets from the {{duck-whole}} duck. Score the skin all over in a crosshatch pattern, cutting through the fat but not into the flesh. Season generously with salt and pepper. Tuck the {{thyme}} of thyme and {{bay-leaves}} of bay inside the cavity along with a halved orange. Place the duck breast-side up in the roasting tin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the duck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Roast for 20 minutes at 200°C to start rendering the fat and crisping the skin. Reduce the oven to 180°C. Continue roasting for 60 to 70 minutes, pouring off the fat into a bowl every 25 minutes. The duck is done when the juices run clear from the thigh when pierced. Let the duck "
+          },
+          {
+            "type": "text",
+            "text": "rest",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rest" } }]
+          },
+          {
+            "type": "text",
+            "text": " on a warm plate for 15 minutes, loosely covered."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce bigarade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the duck rests, pour off all but 1 tablespoon of fat from the roasting tin. Place the tin over medium heat on the hob. Add the {{caster-sugar}} of caster sugar and the {{red-wine-vinegar}} of red wine vinegar and let it bubble for 1 minute until lightly caramelised. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with the {{brandy}} of brandy if using and let it reduce by half. Pour in the {{stock-chicken}} of chicken stock and the {{orange-juice}} of orange juice. Stir in the orange zest. Simmer for 5 minutes until the sauce is slightly reduced and glossy. Off the heat, whisk in the {{unsalted-butter}} of cold butter in pieces to finish the sauce. Taste and season."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Duck skin is flabby, not crisp",
+              "cause": "Fat not rendered out properly; possibly oven not hot enough at the start",
+              "fix": "Start the roasting at the higher temperature; pour off the rendered fat every 25 minutes so the skin is not sitting in its own fat"
+            },
+            {
+              "symptom": "Sauce is too sweet",
+              "cause": "Too much caramel or the orange is too sweet",
+              "fix": "Add a little more red wine vinegar to balance; the sauce should be sharp-edged, not sweet"
+            },
+            {
+              "symptom": "Sauce has broken or looks greasy",
+              "cause": "Butter added to a sauce that was boiling, or added too quickly",
+              "fix": "Remove the pan from the heat before whisking in the butter; add a few pieces at a time rather than all at once"
+            },
+            {
+              "symptom": "Duck meat is still pink near the bone",
+              "cause": "Undercooked; duck can look done from the outside while still raw inside",
+              "fix": "Pierce the thigh at the thickest point; the juices must run clear, not pink. Return to the oven for another 15 minutes and check again"
+            },
+            {
+              "symptom": "Sauce is bitter",
+              "cause": "Too much orange zest or the pith was included",
+              "fix": "Use only the coloured zest, not the white pith. Soften the bitterness with a pinch more sugar, or strain the sauce and start the zest step again with a lighter hand"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Duck with orange sauce is one of the most copied and most misunderstood dishes in the classical French repertoire. The original Escoffier version uses bigarade, the bitter orange (also called Seville orange), whose sharper juice and more fragrant zest make a sauce that is nothing like the sweet orange glaze that appeared on restaurant menus throughout the 1970s. The dish is at its best in winter, when Seville oranges are in season and the duck is well-fatted. Serve with gratin dauphinois or simple roast potatoes and a bunch of watercress."
+          }
+        ]
+      }
+    ]
+  }
+}

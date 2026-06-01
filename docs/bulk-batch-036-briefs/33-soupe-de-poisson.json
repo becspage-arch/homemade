@@ -1,0 +1,419 @@
+{
+  "slug": "soupe-de-poisson",
+  "title": "Soupe de poisson",
+  "subtitle": "Provençal blended fish soup with rouille and gruyère",
+  "excerpt": "A rich, rust-coloured soup from the south of France, made by simmering white fish with tomatoes, fennel, and saffron, then blending and straining smooth. Served with croutons, rouille, and grated gruyère floated on top. It takes effort but produces something deeply flavoured and distinctly Provençal.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "J.-B. Reboul, La Cuisinière Provençale (1897). Method for soupe de poisson and composition of rouille: garlic, saffron, and olive oil pounded together. The dish is a staple of the Provençal fish tradition using the cheaper bony catch unsuitable for fillets.\n\nAuguste Escoffier, Le Guide Culinaire (1903). Technique for straining and finishing bisque-style fish soups; the saffron-tomato base as a Provençal foundation.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The strained soup (without the rouille and croutons) freezes well for up to 2 months. Thaw overnight in the fridge and reheat gently, thinning with a little water if needed.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The soup base can be made up to 2 days ahead and kept in the fridge. Reheat and strain just before serving. Make the rouille on the day.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rouille",
+      "term": "Rouille",
+      "definition": "A thick Provençal sauce made from garlic, saffron, breadcrumbs, and olive oil, pounded or blended together. The name means 'rust' in French, referring to its deep orange colour. Served alongside soupe de poisson and spread on croutons before floating on the soup."
+    },
+    {
+      "slug": "croutons",
+      "term": "Croûtons",
+      "definition": "Small cubes or slices of bread that have been toasted or fried until crisp. In soupe de poisson they are rubbed with garlic and floated on the soup, spread with rouille and dusted with cheese."
+    }
+  ],
+  "techniqueSlugs": ["sweating", "blending-soups"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soupe de poisson is a Provençal fish soup made by cooking bony white fish with tomatoes, fennel, garlic, and saffron, then blending the whole pot smooth and pressing it through a sieve until it runs clear and rust-red. It is not a delicate broth. It is a thick, intensely flavoured soup that smells of the sea and the south."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The work here is in two stages: building the base and then straining it. The blending is vigorous and total, bones and all, which draws out the gelatin and colour from the fish. The fine sieve removes everything solid and leaves a smooth, concentrated liquid. Do not skip the sieve; the soup without it is grainy and unpleasant."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The accompaniments are what make the dish. Toast thick slices of baguette, spread with ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "rouille",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rouille" } }]
+          },
+          {
+            "type": "text",
+            "text": " and dusted with grated gruyère. Float them on the surface so the cheese melts into the hot soup."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "or a mix of sea bass and sea bream, roughly 700 g total fish",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "fennel",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp warm water",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "cayenne",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the rouille"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 1 tsp warm water",
+              "isOptional": false,
+              "groupLabel": "For the rouille"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "from a day-old baguette",
+              "isOptional": false,
+              "groupLabel": "For the rouille"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the rouille"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the rouille"
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into 1 cm slices",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "gruyere",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a large, heavy pot, a stick blender or jug blender, and a fine-mesh sieve. A pestle and mortar is useful for the rouille, though a small food processor works too."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sweat the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm {{olive-oil}} of olive oil in a large, heavy pot over medium heat. Add the {{onion}} onions and the {{fennel}} fennel bulb and "
+          },
+          {
+            "type": "text",
+            "text": "sweat",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "sweating", "label": "sweat" } }]
+          },
+          {
+            "type": "text",
+            "text": " gently for 10 minutes, until soft and translucent. Add the {{garlic}} of garlic and cook for 2 minutes more. Stir in {{tomato-puree}} of tomato purée and cook for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and simmer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{tinned-tomatoes}} of tinned tomatoes, the saffron with its soaking water, {{thyme}} of thyme, {{bay-leaves}} of bay, and {{water}} of water. Season with salt and a pinch of cayenne. Bring to a simmer. Add the {{cod-fillet}} fish fillets, breaking them roughly into the pot. Simmer everything together for 25 minutes. The fish will fall apart entirely; that is what you want. Remove the thyme sprigs and bay leaves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend and strain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Blend the soup thoroughly with a stick blender, working for at least 2 minutes so the fish bones are fully pulverised. Set a fine-mesh sieve over a clean pan and press the soup through in batches using the back of a ladle. Work the pulp firmly; the bones and skin left behind can take several minutes of pressing. Discard the solids. Return the strained soup to the hob, taste, and adjust the seasoning. Thin with a little water if the consistency seems too thick. Keep warm over low heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the rouille" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pound the {{garlic}} of garlic with a pinch of salt in a mortar until a smooth paste forms. Add the saffron water and {{breadcrumbs-fresh}} of fresh breadcrumbs and work into a thick paste. Add {{extra-virgin-olive-oil}} of extra-virgin olive oil in a slow, steady stream, stirring constantly as you would for a mayonnaise, until you have a thick, rust-coloured emulsion. Stir in {{lemon-juice}} of lemon juice and taste for salt. If the rouille splits, beat in a few drops of warm water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the croutons and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lay the baguette slices on a baking tray, brush lightly with oil, and toast in a hot oven (200°C fan) for 8 to 10 minutes until golden. Ladle the hot soup into bowls. Spread each ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "croûton",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "croutons" } }]
+          },
+          {
+            "type": "text",
+            "text": " with rouille, dust with {{gruyere}} of grated gruyère, and float on the surface. Serve the remaining rouille and gruyère at the table."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is grainy after straining",
+              "cause": "Not blended long enough before sieving",
+              "fix": "Blend for at least 2 minutes at high speed before pressing through the sieve; the bones need to be fully broken down"
+            },
+            {
+              "symptom": "Soup has very little flavour",
+              "cause": "Fish too mild or cooking time too short",
+              "fix": "Simmer for the full 25 minutes and season assertively with salt and cayenne; saffron and tomato purée both need enough heat time to open up"
+            },
+            {
+              "symptom": "Rouille splits or looks greasy",
+              "cause": "Oil added too fast, or garlic not worked to a fine enough paste first",
+              "fix": "Beat in a few drops of warm water to bring it back; next time add the oil drop by drop at the start before increasing to a thin stream"
+            },
+            {
+              "symptom": "Soup is too thin",
+              "cause": "Too much water added, or sieving removed most of the body",
+              "fix": "Return to the hob and simmer uncovered for 10 minutes to reduce and concentrate"
+            },
+            {
+              "symptom": "Croûtons go soggy quickly",
+              "cause": "Toasted ahead of time and left to cool in a closed container",
+              "fix": "Toast just before serving and leave uncovered; serve the rouille and croutons separately so guests dress their own bowls"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soupe de poisson is a dish of the Provençal fishing ports, made from the bony catch that could not be sold as fillets: rascasse, weever, small mullet. The Marseille version, bouillabaisse, adds shellfish and serves the fish separately from the broth. Soupe de poisson is simpler and more democratic: everything goes in, everything gets blended, and the sieve does the work. It is one of the dishes in which poverty of ingredients and richness of result sit closest together."
+          }
+        ]
+      }
+    ]
+  }
+}

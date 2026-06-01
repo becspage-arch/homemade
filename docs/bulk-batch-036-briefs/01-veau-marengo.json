@@ -1,0 +1,358 @@
+{
+  "slug": "veau-marengo",
+  "title": "Veau Marengo",
+  "subtitle": "a slow veal braise with white wine, tomatoes, and mushrooms",
+  "excerpt": "Veal Marengo is a slow braise of veal in white wine and tomatoes with mushrooms and pearl onions. The meat becomes tender over two hours, and the sauce reduces to something rich and golden. A classic French bistro dish that rewards patience.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Sauce Marengo method and composition. Jules Gouffé, Le Livre de Cuisine (1867), public domain via Project Gutenberg. Veal braise method and vegetable preparation. The Battle of Marengo origin story (1800) is widely repeated in French culinary histories; the recipe as practised today descends from Escoffier's codified version.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Reheat gently with a splash of stock or water.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool, refrigerate overnight, and reheat gently on the hob.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bouquet-garni",
+      "term": "Bouquet garni",
+      "definition": "A bundle of herbs, typically thyme, bay leaf, and parsley stalks, tied together and simmered in a braise or stock then removed before serving."
+    },
+    {
+      "slug": "lardons",
+      "term": "Lardons",
+      "definition": "Small cubes or strips of cured, often smoked, pork belly used to add fat and flavour to braises, stews, and salads."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Veau Marengo is a braise of veal in white wine with tomatoes, mushrooms, and pearl onions. The sauce is golden rather than dark, lighter in body than a red-wine braise but just as satisfying. Over two hours in the oven the meat softens completely and the liquid tightens into something you want to mop with bread."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The recipe asks for braising steak as the closest practical equivalent to veal shoulder. The method is identical to the original: flour the pieces, brown them in oil, build the sauce around them, and braise low and slow. The key is a tight-fitting lid. Too much evaporation and the sauce goes thin and sharp. A sheet of foil pressed under the lid solves this if your pot is not quite airtight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "braising-steak",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "peeled, left whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a heavy casserole with a lid that fits well. The whole braise happens in one pot from browning through to the table."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 160°C fan. Pat the {{braising-steak}} of braising steak dry and season well. Dust lightly with {{plain-flour}} of plain flour. Heat {{olive-oil}} of olive oil in the casserole over high heat. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the meat in two batches without crowding, 3 to 4 minutes per side, until deeply browned. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium. Add the {{lardons}} of "
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lardons" } }]
+          },
+          {
+            "type": "text",
+            "text": " and cook for 3 minutes until the fat renders. Add the {{onion}} finely chopped onion and cook for 5 minutes until soft. Add the {{garlic}} of garlic and the {{tomato-puree}} of tomato purée and stir for 1 minute. Pour in the {{dry-white-wine}} of white wine and let it bubble for 2 minutes, scraping up any browned bits from the base. Add the {{stock-chicken}} of chicken stock, {{tinned-tomatoes}} of tinned tomatoes, {{thyme}} of thyme, and {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise in the oven" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the meat to the pot. Nestle the {{shallot}} whole shallots around the meat. The liquid should come two-thirds up the sides. Bring to a simmer, cover tightly, and transfer to the oven. "
+          },
+          {
+            "type": "text",
+            "text": "Braise",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "braising", "label": "Braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 1 hour 30 minutes, then add the {{chestnut-mushrooms}} of chestnut mushrooms. Return to the oven for a further 30 minutes. The meat should pull apart easily and the sauce should coat a spoon. Remove the "
+          },
+          {
+            "type": "text",
+            "text": "bouquet garni",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bouquet-garni" } }]
+          },
+          {
+            "type": "text",
+            "text": " of thyme and bay. Taste and adjust the seasoning. Scatter the {{parsley-flat}} of flat-leaf parsley over before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is watery",
+              "cause": "Lid not tight enough or too much liquid added at the start",
+              "fix": "Remove the meat, simmer the sauce uncovered on the hob for 10 minutes to reduce, then return the meat to warm through"
+            },
+            {
+              "symptom": "Meat is tough after 2 hours",
+              "cause": "The pieces may be thicker than 4 cm, or the oven runs cool",
+              "fix": "Cover again and return to the oven for another 30 minutes; this cut turns from tough to tender in a narrow window"
+            },
+            {
+              "symptom": "Sauce tastes too sharp",
+              "cause": "Wine was too acidic or insufficient tomato",
+              "fix": "Add a pinch of sugar or a small knob of butter to round the acidity"
+            },
+            {
+              "symptom": "Mushrooms have gone soft and watery",
+              "cause": "Added too early in the braise",
+              "fix": "Add mushrooms only in the last 30 minutes as directed; earlier addition makes them spongy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The name connects the dish to the Battle of Marengo in 1800, a story of a cook improvising a meal from local forage after the fighting. The story is almost certainly invented, but Marengo became a classic French preparation for braised veal or chicken all the same. It appears in Escoffier's codified form with tomato, mushrooms, and sometimes a fried egg on top. The bistro version served today drops the egg and keeps the rest. It pairs well with buttered noodles, creamy polenta, or a plain boiled potato that can absorb the sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

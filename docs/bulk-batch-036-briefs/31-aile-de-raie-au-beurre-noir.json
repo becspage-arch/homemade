@@ -1,0 +1,292 @@
+{
+  "slug": "aile-de-raie-au-beurre-noir",
+  "title": "Aile de raie au beurre noir",
+  "subtitle": "skate wing with brown butter, capers, and vinegar",
+  "excerpt": "A skate wing poached in court-bouillon, then served with beurre noir: butter cooked until deep brown and nutty, sharpened with white wine vinegar and scattered with capers. This is one of the most satisfying ways to eat skate, and the sauce takes about three minutes to make.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "A. Escoffier, Le Guide Culinaire (1903). Beurre noir preparation and the classic method for serving skate (raie) with brown butter, capers, and vinegar. Public domain.\n\nAuguste Colombié, Nouvelle Cuisine Bourgeoise (1906). Skate wing with court-bouillon and beurre noir, including timing guidance. Public domain.\n\nNote: skate wing (aile de raie) is not in the master ingredient lookup. The slug sole-fillet is used as the closest available flatfish. Skate and sole are different fish: skate has a distinctive wing shape and gelatinous, fibrous flesh that separates from the cartilage in strips. If sole fillet is used instead, reduce the poaching time to 5 to 6 minutes and adjust the portion size accordingly.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "fish-slice", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beurre-noir",
+      "term": "Beurre noir",
+      "definition": "Butter cooked in a pan until it turns a deep brown colour and develops a nutty, slightly bitter aroma, then immediately sharpened with white wine vinegar or lemon juice. It is used as a sauce for fish and eggs. The name means 'black butter' though the colour should be dark brown rather than truly black."
+    },
+    {
+      "slug": "court-bouillon",
+      "term": "Court-bouillon",
+      "definition": "A lightly seasoned poaching liquid used for fish and shellfish. It typically contains water, white wine or vinegar, onion, carrot, bay leaves, peppercorns, and a little salt. The fish is cooked gently in the liquid, which gives it a clean, mild flavour without masking the taste of the fish itself."
+    }
+  ],
+  "techniqueSlugs": ["poaching"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skate wing poached in a "
+          },
+          {
+            "type": "text",
+            "text": "court-bouillon",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "court-bouillon" } }]
+          },
+          {
+            "type": "text",
+            "text": " and finished with "
+          },
+          {
+            "type": "text",
+            "text": "beurre noir",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beurre-noir" } }]
+          },
+          {
+            "type": "text",
+            "text": " is one of the classic preparations of the French bistro. The skate cooks gently in the liquid so the flesh stays soft and lifts cleanly from the cartilage ribs in long, sweet strips. The butter sauce is made separately in minutes: butter browned to a deep hazelnut colour, sharpened with a splash of white wine vinegar, and scattered with capers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The timing on the butter is the only thing to watch closely. The transition from golden to deep brown to burnt happens in under a minute once the butter is hot, so have the vinegar and capers ready before the butter goes in. Pull the pan from the heat the moment the colour is right and pour the sauce immediately. Everything else in the recipe is straightforward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "sole-fillet",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "skate wing preferred; sole fillet used as closest available substitute. For skate, use one wing per person, about 250 to 300 g each",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "for the beurre noir",
+              "isOptional": false,
+              "groupLabel": "For the beurre noir"
+            },
+            {
+              "ingredientSlug": "capers",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "drained and patted dry",
+              "isOptional": false,
+              "groupLabel": "For the beurre noir"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the beurre noir"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "leaves only, roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the beurre noir"
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the court-bouillon"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the court-bouillon"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the court-bouillon"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the court-bouillon"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "a few whole peppercorns",
+              "isOptional": false,
+              "groupLabel": "For the court-bouillon"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A wide, shallow pan for poaching the fish and a small frying pan for the butter are the key items. The frying pan should be light-coloured inside so you can see the colour of the butter as it changes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the court-bouillon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put 1 litre of water, the {{dry-white-wine}} of white wine, {{white-wine-vinegar}} of vinegar for the court-bouillon, the {{onion}} onion, {{bay-leaves}} of bay, and peppercorns into a wide saucepan. Season with salt. Bring to the boil, then simmer for 10 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the fish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower the {{sole-fillet}} fish into the simmering court-bouillon. For skate wings, cook for 10 to 12 minutes; for sole fillets, cook for 5 to 6 minutes. The flesh should be white and just starting to come away from the cartilage (skate) or flake easily (sole). Lift carefully with a fish slice onto warm plates and keep warm while you make the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the beurre noir" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the {{unsalted-butter}} of butter in a small frying pan over medium-high heat. As it melts, swirl the pan gently. Watch the colour constantly: the butter will foam, then the foam will subside, then it will begin to turn golden. Continue until it reaches a deep, even brown with a nutty, toasty smell, around 3 to 4 minutes from the start. Immediately remove the pan from the heat and add the {{capers}} of capers. The butter will spit. Pour in the {{white-wine-vinegar}} of vinegar for the sauce; the pan will sizzle. Swirl to combine and pour at once over the fish. Scatter the {{parsley-flat}} of parsley over the top and serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Butter goes from golden to burnt before you can pour it",
+              "cause": "Heat too high, or pan left unattended",
+              "fix": "Use medium-high heat and don't step away. Have the vinegar and capers measured and ready before the butter goes in the pan"
+            },
+            {
+              "symptom": "Fish breaks apart when lifted from the poaching liquid",
+              "cause": "Overcooked, or lifted at the wrong angle",
+              "fix": "Slide the fish slice flat beneath the fish and lift smoothly; if it is skate and properly cooked it will be very soft, so support the whole wing from underneath"
+            },
+            {
+              "symptom": "Beurre noir is too acidic",
+              "cause": "Too much vinegar added",
+              "fix": "Use the amount specified; the capers also add acidity, so the balance is intentional. If the sauce is too sharp, swirl in a small knob of fresh cold butter to round it"
+            },
+            {
+              "symptom": "Capers brown and become bitter",
+              "cause": "Added to the butter too early, before removing from heat",
+              "fix": "Remove the pan from the heat before adding the capers; they should go in once the butter is already off the hob, not while it is still cooking"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Raie au beurre noir is an old fixture of the Parisian brasserie, as identified with French fish cookery as sole meunière or moules marinières. Skate was long considered a cheap fish: available in good quantities from the Channel and the Atlantic coast, and not as fashionable as sole or turbot. The beurre noir treatment elevated it. The same butter sauce also appears on brains, eggs, and cauliflower in the French repertoire, always providing the same combination of nutty richness and sharp acidity. The caper is essential: without it, the sauce lacks the briny note that makes it so effective with fish."
+          }
+        ]
+      }
+    ]
+  }
+}

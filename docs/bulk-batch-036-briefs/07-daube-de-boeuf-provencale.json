@@ -1,0 +1,335 @@
+{
+  "slug": "daube-de-boeuf-provencale",
+  "title": "Daube de boeuf provençale",
+  "subtitle": "a hob-braised Provençal beef stew with tomato, orange, and anchovy",
+  "excerpt": "Daube de boeuf provençale is a stovetop braise of beef ox cheek in red wine with tomatoes, orange peel, anchovies, and black olives. Unlike the oven-baked boeuf-en-daube, this version cooks on the hob at a low simmer and uses more tomato, giving a brighter, less austere sauce. Two to three hours is all it needs.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "J.-B. Reboul, La cuisinière provençale (1897), public domain. Provençal daube with tomato and orange; the Niçoise daube variation that uses more tomato and is cooked on the stovetop rather than sealed in an oven. Elizabeth David, French Provincial Cooking (1960), drawn on for regional context only; recipe method is from earlier public-domain sources. Auguste Escoffier, Le Guide Culinaire (1903), public domain. Anchovy and olive use in Provençal beef preparations.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Reheat gently with a splash of stock or water.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool completely, refrigerate overnight, skim the fat, and reheat gently on the hob.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "daube-provencale",
+      "term": "Daube",
+      "definition": "A Provençal braise traditionally cooked in a daubière, a heavy sealed earthenware pot. The word encompasses a range of regional variations; this version is the tomato-forward Niçoise daube cooked on the stovetop."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This "
+          },
+          {
+            "type": "text",
+            "text": "daube",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "daube-provencale" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a stovetop version of the Provençal beef braise, distinct from the oven-sealed boeuf-en-daube in two important ways. First, it cooks on the hob at a very low simmer rather than in the oven; second, it uses ox cheek and a generous amount of tinned tomato, which gives the sauce a brighter, more assertive quality than the wine-only oven version. The anchovies dissolve at the start and the olives go in at the end. Both are essential."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ox cheek is the correct cut here: it has enough connective tissue to become silky after three hours, and its deep flavour holds up against the wine and tomato. The cook on the hob means you can check the level of the liquid more easily than with an oven braise. Check it every 45 minutes or so and add a splash of stock or water if the level drops too low."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "ox-cheek",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "cut into 6 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 45,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "anchovies",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "from a tin, drained",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled, cut into thick rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "a robust southern French red",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "peel only, one long strip",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olives-black",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "stoned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the {{ox-cheek}} of ox cheek dry, season, and dust with {{plain-flour}} of plain flour. Heat {{olive-oil}} of olive oil in a heavy casserole over high heat. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the pieces in batches without crowding, 4 minutes per side. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium. Add the {{anchovies}} anchovy fillets and stir for 1 minute until they dissolve. Add the {{onion}} sliced onions and {{carrot}} carrots and cook for 5 minutes. Add the {{garlic}} of garlic and cook for 1 minute. Pour in the {{red-wine}} of red wine and bubble for 2 minutes, scraping the base. Add the {{tinned-tomatoes}} of tinned tomatoes, {{stock-beef}} of beef stock, the strip of orange peel, {{thyme}} of thyme, and {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise on the hob" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the beef to the pot. Bring to a simmer, then reduce the heat to very low. Cover and "
+          },
+          {
+            "type": "text",
+            "text": "braise",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "braising", "label": "braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " gently for 2 hours, checking every 45 minutes to ensure the liquid is still at a bare simmer and has not reduced too far. If it looks low, add a splash of stock or water. At the 2-hour mark, add the {{olives-black}} of black olives. Cook for a further 45 minutes to 1 hour. The ox cheek should be completely tender, pulling apart at the touch of a spoon. Remove the orange peel strip, thyme, and bay. Taste and adjust the seasoning. Scatter the {{parsley-flat}} of flat-leaf parsley over before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too sour",
+              "cause": "Red wine too acidic combined with the tinned tomatoes",
+              "fix": "Stir in a small pinch of sugar; the tomato forward version can tip sharp if the wine was already acidic"
+            },
+            {
+              "symptom": "Ox cheek is still tough at 3 hours",
+              "cause": "Pieces were large, or the heat was too low for a real simmer",
+              "fix": "Continue cooking; check the simmer is genuine, not just a tremble. Ox cheek can take up to 4 hours in a large piece"
+            },
+            {
+              "symptom": "Liquid has reduced too far",
+              "cause": "Lid not tight enough or heat slightly too high on the stovetop",
+              "fix": "Add hot stock or water to restore the level; the sauce should always reach about two-thirds up the meat"
+            },
+            {
+              "symptom": "Anchovies are detectable as a fish flavour",
+              "cause": "Stirred too briefly or added too late",
+              "fix": "The anchovies must fully dissolve before anything else goes in; stir over medium heat until no solid pieces remain"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Niçoise variant of the daube uses more tomato and cooks on the hob rather than sealed in the oven. Orange peel and anchovies are the Provençal signature. The tomato makes the sauce brighter than the wine-only version. It is a winter dish: serve with pasta, polenta, or plain boiled potatoes, and reheat it the following day for the best result."
+          }
+        ]
+      }
+    ]
+  }
+}

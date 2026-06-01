@@ -1,0 +1,338 @@
+{
+  "slug": "coq-au-riesling",
+  "title": "Coq au Riesling",
+  "subtitle": "Alsatian chicken braised in Riesling with cream and mushrooms",
+  "excerpt": "The Alsatian version of coq au vin: chicken pieces braised in dry Riesling with lardons, shallots, and mushrooms, finished with a generous pour of cream. Lighter and more delicate than the Burgundian red-wine version, with a pale, glossy sauce that tastes of the wine and the cream together.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Poulet au vin blanc methods that inform the Alsatian tradition.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. Coq au Riesling as a regional Alsatian preparation, distinct from the Burgundian coq au vin, with the addition of cream and mushrooms in the white-wine style.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 70,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braise can be made up to 24 hours ahead without the cream. Refrigerate, then reheat gently and stir in the cream just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coq-au-riesling",
+      "term": "Coq au Riesling",
+      "definition": "An Alsatian braised chicken dish made with dry Riesling wine, lardons, mushrooms, and cream. It is the regional counterpart to the Burgundian coq au vin, using the white wines of Alsace in place of red Burgundy. The sauce is pale, rich, and slightly acidic from the wine."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing", "deglazing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coq au Riesling",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coq-au-riesling" } }]
+          },
+          {
+            "type": "text",
+            "text": " is the Alsatian answer to coq au vin: same structure (chicken braised in wine with lardons and mushrooms) but made with dry Riesling and finished with cream. The sauce comes out pale and silky rather than dark: fresh from the wine, rich from the cream, savoury from the lardons."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a hob dish, not an oven one. The chicken pieces braise gently in the wine and stock, the mushrooms go in partway through, and the cream comes at the very end, off the heat. The whole cook takes about 70 minutes from start to serving. Chicken thighs on the bone give the best result: they stay moist and contribute gelatin to the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "quartered",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "dry Riesling",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "chopped, to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A wide, heavy casserole or deep sauté pan with a lid is the key piece of kit. It needs to be large enough to hold 8 thigh pieces in a single layer without crowding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken and lardons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the chicken thighs and dust lightly with {{plain-flour}} of plain flour. Melt {{unsalted-butter}} of butter in a casserole over medium-high heat. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the chicken thighs skin-side down for 5 to 6 minutes until golden. Turn and cook for 2 minutes on the other side. Remove. Add the {{lardons}} of lardons to the pot and cook for 3 minutes until lightly golden. Remove and set aside with the chicken."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower the heat to medium. Cook the {{shallot}} shallots in the remaining fat for 4 minutes until soft. Add the {{garlic}} of garlic and stir for 1 minute. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with {{dry-white-wine}} of Riesling, scraping up the browned bits. Let it bubble for 2 minutes. Add {{stock-chicken}} of chicken stock, {{thyme}} of thyme, and {{bay-leaves}} of bay. Return the chicken and lardons to the pot, skin-side up. The liquid should come halfway up the chicken. Bring to a gentle simmer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and add mushrooms" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover and cook on a low simmer for 30 minutes. Add the {{chestnut-mushrooms}} of chestnut mushrooms, tucking them around the chicken. Cover and cook for a further 20 minutes. The chicken should be cooked through and the mushrooms tender."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish with cream" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the herb sprigs and bay. Lift the chicken pieces out and set aside briefly. Pour {{double-cream}} of double cream into the sauce and stir well. Taste and adjust the seasoning. Return the chicken to the pot, spoon the sauce over, and heat through for 2 minutes without boiling. Scatter the chopped parsley and serve directly from the pot."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is thin and watery",
+              "cause": "Too much stock, or the braise cooked at too high a heat with the lid ajar",
+              "fix": "Remove the chicken and reduce the sauce uncovered on medium heat for 5 to 8 minutes before adding the cream."
+            },
+            {
+              "symptom": "Cream has separated or sauce looks greasy",
+              "cause": "Sauce boiled after the cream was added",
+              "fix": "Once the cream goes in, keep the heat very low and do not boil. If it separates, remove from the heat and whisk vigorously; the sauce usually comes back together."
+            },
+            {
+              "symptom": "Chicken skin is soft and soggy",
+              "cause": "Skin submerged in liquid during the braise",
+              "fix": "Ensure the chicken sits skin-side up with the skin clear of the liquid. For a crisper result, remove the lid for the final 10 minutes of braising."
+            },
+            {
+              "symptom": "Sauce tastes too sharp",
+              "cause": "Riesling high in acidity or wine not reduced enough",
+              "fix": "Stir in a small extra pour of cream to balance. A tiny pinch of sugar also helps; add carefully and taste after each addition."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coq au Riesling is from Alsace, the narrow strip of France between the Vosges mountains and the Rhine: a region that has been politically French and German at different points in its history and whose cuisine reflects both. The Riesling grape thrives there on the eastern slopes of the Vosges, and the wine is the natural braising liquid for the local chickens and game. Where Burgundy uses Pinot Noir, Alsace uses Riesling; the result is cleaner and fresher. Serve with buttered egg noodles (Alsatian spaetzle are traditional), or with steamed new potatoes and a chilled glass of the same Riesling you used in the pot."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "slug": "civet-de-lievre",
+  "title": "Civet de lièvre",
+  "subtitle": "French hare stew cooked in red wine with lardons and mushrooms",
+  "excerpt": "A rich, dark French game stew of hare pieces cooked slowly in red wine with lardons, mushrooms, and aromatics. The sauce is thickened at the end with the hare's liver, if available, for depth and body. A cold-weather dish that improves overnight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Civet method, the liaison with blood or liver, and the distinction between civet and ragout.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. Civet de lièvre, the classic garnish with lardons and mushrooms, and the regional variations.\n\nNote: hare (lièvre) is not available as an ingredient slug. The closest slug in the master lookup is 'rabbit', used here as the nearest available substitute. The recipe is written for hare; rabbit can be used with a shorter braising time of around 1 hour 30 minutes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months without the liver liaison. Add the liver liaison only when reheating from fresh or from the fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool, refrigerate overnight, and skim any fat before reheating gently. The flavours deepen considerably after 24 hours.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "civet",
+      "term": "Civet",
+      "definition": "A classic French game stew, traditionally made with hare or wild boar and cooked in red wine. The name derives from the use of the animal's blood to thicken and enrich the sauce at the end of cooking. A civet without blood uses the liver as a substitute thickener, or omits the liaison entirely."
+    },
+    {
+      "slug": "liaison",
+      "term": "Liaison",
+      "definition": "A thickening or enriching agent stirred into a sauce at the end of cooking. In classical French cuisine, a liaison can be cream and egg yolks, butter, or (in a civet) the pureed liver or blood of the game animal, which adds body and a dark, mineral quality to the finished sauce."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing", "deglazing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "civet",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "civet" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a French game stew cooked in red wine: darker, richer, and more intense than an ordinary braise. Hare is the classic choice, cooked for two and a half hours in a pot with lardons, mushrooms, and a good bottle of red wine. The sauce is finished with the hare's liver (or a small knob of butter if the liver is unavailable), which gives it an exceptional depth and slightly mineral quality. This is the dish of the late autumn hunting season and the farmhouse kitchen."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hare is a stronger, more assertive meat than rabbit: darker, with more iron, and it benefits from a marinade of several hours in red wine before cooking. The marinade is not an optional step. It both tenderises the meat and forms the base of the braising liquid."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Ingredient note",
+          "body": "Hare (lièvre) is used in this recipe; the ingredient slug in the Homemade database is 'rabbit', the closest available substitute. Rabbit can be used in place of hare with a shorter braising time of around 1 hour 30 minutes and a less pronounced gamey flavour."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "rabbit",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "hare jointed into 6 to 8 pieces (use rabbit as substitute if hare unavailable)",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "quartered",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": "a full-bodied red: Burgundy, Côtes du Rhône, or similar",
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "stalks for the marinade, leaves for finishing",
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "chicken-livers",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "or the hare's liver, if available; for the liaison",
+              "isOptional": true,
+              "groupLabel": "Liaison"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "if not using liver",
+              "isOptional": true,
+              "groupLabel": "Liaison"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heavy casserole with a tight lid is the key piece of kit. A stick blender or small food processor is useful for the liver liaison at the end."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate the hare" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the hare pieces in a deep bowl. Pour over {{red-wine}} of red wine. Add the {{thyme}} of thyme, {{bay-leaves}} of bay, and parsley stalks. Cover and refrigerate for at least 4 hours, or overnight. When ready to cook, drain the pieces and pat dry; reserve the marinade. Season the pieces and dust with {{plain-flour}} of plain flour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat and lardons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 150°C fan. Heat {{olive-oil}} of olive oil in a large casserole over medium-high heat and "
+          },
+          {
+            "type": "text",
+            "text": "sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the hare pieces in batches until dark brown on all sides, about 4 minutes per side. Remove. Add the {{lardons}} of lardons to the pot and cook for 3 minutes until golden. Remove. Lower the heat and cook the {{onion}} onions for 5 minutes. Add the {{garlic}} of garlic and stir for 1 minute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using brandy, pour {{brandy}} of brandy into the pot and let it bubble for 30 seconds. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with the reserved marinade, scraping up all the browned bits. Add {{stock-beef}} of beef stock. Return the hare and lardons. The liquid should just cover the meat. Bring to a simmer, cover, and transfer to the oven. Cook for 2 hours 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add mushrooms and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 2 hours, add the {{chestnut-mushrooms}} of chestnut mushrooms to the pot and return to the oven for the final 30 minutes. To make the "
+          },
+          {
+            "type": "text",
+            "text": "liaison",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "liaison" } }]
+          },
+          {
+            "type": "text",
+            "text": ": blend the liver (if using) to a smooth paste with a little of the braising liquid, then stir into the pot off the heat. Season well. If not using liver, stir in 20 g of cold butter in small pieces for a lighter finish. Scatter the parsley leaves before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is very thin after 2 hours 30 minutes",
+              "cause": "Too much liquid at the start or lid not tight",
+              "fix": "Remove the hare and mushrooms. Boil the sauce uncovered on the hob for 10 minutes to reduce. Return everything to warm through."
+            },
+            {
+              "symptom": "Meat is still chewy at the 2-hour mark",
+              "cause": "Hare is a firm meat and older animals take longer",
+              "fix": "Return to the oven for another 30 to 45 minutes. Hare should be very tender, pulling easily from the bone."
+            },
+            {
+              "symptom": "Sauce tastes sharp or acidic",
+              "cause": "Wine high in acidity or not reduced enough during cooking",
+              "fix": "Stir in a small knob of cold butter to round the acidity. A pinch of sugar can also help; add it sparingly and taste as you go."
+            },
+            {
+              "symptom": "Liver liaison has curdled or turned grainy",
+              "cause": "Liver added to sauce that is too hot or not properly blended",
+              "fix": "Blend the liver with a little of the cool braising liquid first, then stir into the pot off the heat. The sauce should not boil after the liaison is added."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Civet de lièvre is one of the oldest named dishes in the French repertoire, appearing in medieval cookery texts and codified by the classical writers of the 19th century as the definitive treatment of autumn game. The word civet originally referred to the use of the animal's blood to thicken the sauce, though in most modern versions the blood is replaced by the liver. The dish is at its best in October and November, when hare is in season, the wine is the new vintage, and the weather calls for something slow and warming. Serve with buttered egg noodles or good bread to mop up the sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

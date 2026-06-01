@@ -1,0 +1,366 @@
+{
+  "slug": "civet-de-chevreuil",
+  "title": "Civet de chevreuil",
+  "subtitle": "Roe deer red wine stew with lardons, juniper, and mushrooms",
+  "excerpt": "A slow-braised roe deer stew cooked in a full bottle of red wine with lardons, juniper berries, mushrooms, and a classic bouquet garni. The meat marinates overnight to tenderise it, then braises for two hours until the sauce is dark, glossy, and deeply flavoured. A cold-weather dish of real depth.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Civet de chevreuil, the marinade, and the liaison with blood or liver.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. Chevreuil (roe deer) in French game cookery, the role of juniper and red wine, and the distinction from civet de lièvre.\n\nNote: chevreuil (roe deer) is not a separate ingredient slug. The master lookup has 'venison', used here as the closest available substitute. The recipe works with any saddle or shoulder of venison.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Reheat gently and add a small knob of butter to bring the sauce back to life.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braise improves significantly after an overnight rest. Cool, refrigerate, skim the fat the following day, and reheat gently before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chevreuil",
+      "term": "Chevreuil",
+      "definition": "The French word for roe deer. In French cookery, chevreuil refers to the meat of the European roe deer, smaller and more delicate than red deer venison. Recipes for chevreuil work equally well with any young venison; the cooking time may need adjusting for larger or older animals."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing", "deglazing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Civet de "
+          },
+          {
+            "type": "text",
+            "text": "chevreuil",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chevreuil" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a French roe deer stew cooked in red wine with lardons, juniper, and mushrooms. The method is close to civet de lièvre: marinate the meat overnight, brown it well, braise it slowly in the marinade and stock, and finish the sauce with a knob of cold butter for gloss. The juniper is the distinguishing note, cutting through the richness of the venison and the wine with a sharp, resinous edge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Venison shoulder or leg is the right cut for this dish. Saddle can be used but it cooks faster and is less forgiving of over-braising. The overnight marinade is not a convenience step: venison is a lean, dense meat and the wine and aromatics work into the tissue over 12 hours, changing its texture in the pot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "venison",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "shoulder or leg, cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "quartered",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Main"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": "a robust red: Burgundy, Languedoc, or Rhône",
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "juniper-berries",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "lightly crushed",
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "stalks for the marinade, leaves for finishing",
+              "isOptional": false,
+              "groupLabel": "Marinade and braise"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "cold, for the sauce",
+              "isOptional": false,
+              "groupLabel": "Finish"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heavy casserole with a tight lid is the only specialist kit. Plan ahead: the marinade takes 12 hours, and the braise takes 2 hours 30 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate overnight" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the venison pieces in a deep bowl with the {{onion}} onions, {{carrot}} carrots, and {{garlic}} of garlic. Add the {{juniper-berries}} juniper berries, {{thyme}} of thyme, {{bay-leaves}} of bay, and parsley stalks. Pour over the {{red-wine}} of red wine. Cover and refrigerate overnight, or for at least 12 hours. When ready to cook, drain and reserve the marinade separately. Pat the venison dry, season, and dust with {{plain-flour}} of plain flour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and deglaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 150°C fan. Heat {{olive-oil}} of olive oil in a large casserole over high heat and "
+          },
+          {
+            "type": "text",
+            "text": "sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the venison in batches until deeply browned, 3 to 4 minutes per side. Remove. Fry the {{lardons}} of lardons for 3 minutes until golden. Remove. Add the drained marinade vegetables to the pot and cook for 5 minutes. If using, pour in {{brandy}} of brandy and let it bubble for 30 seconds. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with the reserved marinade, scraping up the browned bits. Add {{stock-beef}} of beef stock."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the venison and lardons to the pot. The liquid should come three-quarters of the way up the meat. Bring to a gentle simmer, cover tightly, and transfer to the oven. Cook for 2 hours. Add the {{chestnut-mushrooms}} of chestnut mushrooms for the final 30 minutes. The meat should be tender enough to break apart with a spoon. Strain the sauce into a small saucepan, pressing the vegetables to extract all the liquid. Discard the solids. Return the venison, lardons, and mushrooms to the pot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the strained sauce over medium-high heat for 5 to 10 minutes until glossy and slightly thickened. Remove from the heat and stir in the cold {{unsalted-butter}} of cold butter, one piece at a time, to give the sauce a gloss. Taste and adjust the seasoning. Pour the sauce over the meat, scatter with parsley leaves, and serve."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Venison is tough after 2 hours",
+              "cause": "Older animal or thicker pieces need more time",
+              "fix": "Return to the oven for a further 30 to 45 minutes. Venison can go from chewy to tender quickly once the collagen breaks down."
+            },
+            {
+              "symptom": "Sauce is very thin",
+              "cause": "Too much liquid or insufficient reduction",
+              "fix": "Strain the sauce and reduce it hard on the hob for 10 minutes. The strained vegetables help thicken as they cook; if discarded too early, reduce longer."
+            },
+            {
+              "symptom": "Juniper dominates the sauce",
+              "cause": "Too many berries or berries not lightly crushed",
+              "fix": "Reduce the number of berries to 4 or 5 next time, or halve them rather than crushing them fully. The flavour softens during the long braise."
+            },
+            {
+              "symptom": "Sauce is bitter",
+              "cause": "Wine reduced too aggressively or lardons too smoky",
+              "fix": "Stir in a small knob of butter and a pinch of sugar to balance. A splash of stock can dilute the bitterness if it is strong."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chevreuil was prized in French cookery long before it was codified in the 19th century. The civet (red wine, juniper, lardons) became a fixture of the French game canon. It is a seasonal dish, tied to autumn and early winter, served in farmhouses and restaurant dining rooms alike. Serve with celeriac purée, braised red cabbage, or wide egg noodles, and a Burgundy or Côtes du Rhône."
+          }
+        ]
+      }
+    ]
+  }
+}

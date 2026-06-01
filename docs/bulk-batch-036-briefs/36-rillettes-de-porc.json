@@ -1,0 +1,289 @@
+{
+  "slug": "rillettes-de-porc",
+  "title": "Rillettes de porc",
+  "subtitle": "Slow-cooked potted pork in its own fat, shredded and sealed in jars",
+  "excerpt": "Pork shoulder and belly cooked very slowly in lard with thyme and bay until the meat falls apart, then shredded, seasoned, and packed into jars sealed with a layer of fat. Served cold on bread, rillettes keep for several weeks in the fridge and improve with a day's rest after potting.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "J.-B. Reboul, La Cuisinière Provençale (1897). Confit-style pork preparation and the principle of cooking meat slowly in its own fat to preserve and flavour it simultaneously.\n\nProsper Montagné, Larousse Gastronomique (1938). Rillettes entry: Sarthe and Tours styles; the shredding rather than pounding distinction; storage in earthenware sealed with lard.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "approximately 4 jars, 250 g each",
+    "prepMinutes": 20,
+    "cookMinutes": 210,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Sealed jars freeze well for up to 3 months. Thaw in the fridge overnight before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better after 24 hours. The fat sets firm and the flavours meld overnight. Make at least a day ahead.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": 140,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "jam-jars", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rillettes",
+      "term": "Rillettes",
+      "definition": "A French charcuterie preparation of meat (usually pork) slowly cooked in its own fat at a very low temperature until completely tender, then shredded into coarse fibres and packed into jars with the rendered fat to seal and preserve it. Served cold as a spread on bread. The texture is coarser than pâté; the flavour is rich, fatty, and lightly saline."
+    },
+    {
+      "slug": "confit",
+      "term": "Confit",
+      "definition": "A French preserving technique in which meat is cooked slowly submerged in its own fat at a low temperature, then stored in that fat. The fat acts as a barrier against air and bacteria, preserving the meat for weeks or months. Confit de canard (duck) is the most famous example; rillettes are the pork equivalent."
+    }
+  ],
+  "techniqueSlugs": ["confit"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rillettes",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rillettes" } }]
+          },
+          {
+            "type": "text",
+            "text": " are pork cooked slowly in fat until it falls apart in long, silky strands, then shredded and potted into jars sealed with the cooking fat. They keep for weeks in the fridge and are eaten cold on bread, typically with cornichons. The process is a simple ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "confit",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "confit" } }]
+          },
+          {
+            "type": "text",
+            "text": ": low heat, plenty of fat, and time."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The blend of shoulder and belly gives both flavour and enough fat to make the final texture spreadable without being greasy. The shoulder provides structure; the belly provides the fat that binds everything together as it cools. Do not try to make rillettes from a lean cut: they will be dry and grainy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cook time is 3 to 3.5 hours in a low oven. You check it occasionally but there is very little to do. The shredding takes 10 minutes at the end. The jars need to chill for at least 2 hours before the fat sets. The rillettes are at their best after 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rind removed, cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lard",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "coarsely ground",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a heavy casserole with a tight-fitting lid, and 4 clean jars of about 250 ml each, sterilised in a hot oven for 10 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and load the pot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 140°C fan. Season the pork shoulder and pork belly pieces generously with salt. Pack them into the casserole. Add {{lard}} of lard and {{water}} of water. Tuck in {{thyme}} of thyme, {{bay-leaves}} of bay, and {{black-pepper}} of coarsely ground black pepper. The water prevents scorching at the start; it will evaporate during cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook low and slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover tightly and place in the oven. Cook for 3 to 3.5 hours, checking once or twice and pressing the meat down into the fat if any piece has risen above the surface. At the end, the pork should be completely tender and pulling apart at a touch. The fat will be clear and the cooking juices will have reduced to a small amount of rich, dark jelly at the bottom of the pot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shred and season" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the thyme and bay leaves. Lift the meat into a large bowl, reserving the fat and any dark juices in the pot. Use two forks to shred the pork into coarse, uneven strands. Do not mince or overwork it; rillettes should be fibrous, not smooth. Pour enough of the cooking fat over the shredded pork to moisten it well and bind the strands together. Stir in the cooking juices too: they carry most of the flavour. Taste and adjust the salt. The mix should taste well-seasoned; it will mellow slightly once cold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pot and seal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pack the shredded pork firmly into sterilised jars, pressing down to eliminate air pockets. Leave a 1 cm gap at the top. Pour a thin layer of the remaining fat over the surface of each jar to seal. If you have run out of cooking fat, melt a little extra lard and pour that over instead. The fat layer must cover the surface completely. Leave the jars to cool to room temperature, then refrigerate for at least 2 hours before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rillettes are dry and grainy",
+              "cause": "Not enough fat in the cooking, or meat overcooked to dryness",
+              "fix": "Add more melted lard when mixing; the final texture should be moist and spreadable"
+            },
+            {
+              "symptom": "Rillettes taste bland",
+              "cause": "Underseasoned before potting",
+              "fix": "Season assertively at the shredding stage; rillettes are eaten cold, which dulls salt perception, so they need more salt than you think"
+            },
+            {
+              "symptom": "Fat layer has cracked or shrunk away from the jar edge",
+              "cause": "Poured when too hot; fat contracted on cooling",
+              "fix": "Top up with a little extra melted fat to reseal; the fat layer must cover the surface completely for the rillettes to keep"
+            },
+            {
+              "symptom": "Pork still tough after 3 hours",
+              "cause": "Oven temperature too low, or very large pieces of shoulder",
+              "fix": "Return to the oven for another 30 to 45 minutes; a fork should glide into the thickest piece without resistance"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rillettes come from the Loire Valley, and the towns of Le Mans and Tours both claim the definitive version. The Sarthe style is coarser and drier; the Tours style is smoother and richer. Both are served the same way: spread thickly on good bread with cornichons alongside. The dish belongs to the French tradition of making the most of the whole pig, using cheap, fatty cuts and slow heat to produce something that keeps for weeks and tastes better than its ingredients suggest."
+          }
+        ]
+      }
+    ]
+  }
+}

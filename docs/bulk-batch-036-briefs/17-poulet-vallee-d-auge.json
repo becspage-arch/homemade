@@ -1,0 +1,330 @@
+{
+  "slug": "poulet-vallee-d-auge",
+  "title": "Poulet vallée d'Auge",
+  "subtitle": "Norman chicken braised in cider and cream with apples",
+  "excerpt": "A Norman braise of chicken pieces in dry cider with cream, apple, and a splash of brandy. The sauce is rich, pale gold, and gently sweet from the cider. It comes together in under an hour and rewards good Normandy-style cider more than any other single ingredient.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Norman chicken braising method and cidre-cream sauce composition. Henri-Paul Pellaprat, L'Art culinaire moderne (1935), public domain via archive.org. Vallée d'Auge preparation including calvados flambé and apple garnish details.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braised chicken keeps in the fridge for 2 days. Reheat gently in its sauce; add the cream at the end only when you are ready to serve.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To add liquid (wine, stock, or cider) to a hot pan after browning, loosening the caramelised bits stuck to the base. Those bits dissolve into the liquid and add flavour to the sauce."
+    },
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A cooking method in which meat or vegetables are browned first, then cooked slowly in a covered pot with a modest amount of liquid. The enclosed steam and gentle heat tenderise the food and build a concentrated sauce."
+    }
+  ],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poulet vallée d'Auge is a Norman braise of chicken in dry cider with cream and apple, named for the lush farming valley south of Lisieux that produces some of France's best cider and calvados. The sauce is the point: pale gold, faintly sweet from the cider, enriched with cream until it coats the back of a spoon."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken thighs are the best cut for this. They stay moist through the braise and give a slightly richer sauce than breasts. The apple is added late so it holds its shape rather than collapsing into the sauce. Brandy is the closest available substitute for calvados (apple brandy from Normandy); use it as optional flambé at the start if you like, or skip it and the dish is still very good."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key moment is the cream reduction at the end. Add the cream over medium heat and let it reduce for 3 to 4 minutes until the sauce is just thick enough to coat a spoon. Don't rush this step."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-cider",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": "good-quality dry cider",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "apple-eating",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled, cored, cut into 8 wedges each",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "calvados if available",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a wide casserole or deep sauté pan with a lid, large enough to hold the chicken pieces in a single layer without crowding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chicken" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the {{chicken-thigh}} chicken thighs dry and season well. Melt the {{unsalted-butter}} of butter in a wide casserole over medium-high heat. Brown the chicken skin-side down for 6 to 8 minutes until the skin is deep golden. Turn and cook for 3 minutes more. Remove and set aside. If using brandy, pour the {{brandy}} of brandy into the hot pan and let it bubble for 30 seconds, scraping the base."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to medium. Add the {{shallot}} and cook for 3 minutes until soft. Add the {{garlic}} of garlic and stir for 1 minute. Pour in the {{dry-cider}} of dry cider to "
+          },
+          {
+            "type": "text",
+            "text": "deglaze",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " the pan, scraping up any sticky bits. Add the {{stock-chicken}} of chicken stock, {{thyme}} of thyme, and {{bay-leaves}} of bay. Return the chicken to the pot skin-side up. The liquid should come halfway up the thighs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover and "
+          },
+          {
+            "type": "text",
+            "text": "braise",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " over low heat for 25 to 30 minutes until the chicken is cooked through. Lift the chicken onto a plate. Discard the herb sprigs and bay leaves. Add the {{apple-eating}} apples to the sauce and cook uncovered for 5 minutes. Pour in the {{double-cream}} of double cream and simmer for 4 minutes until the sauce is lightly thickened. Stir in the mustard if using. Return the chicken to the pan, spoon the sauce over, and rest for 5 minutes before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Not reduced long enough after adding the cream",
+              "fix": "Remove the chicken and simmer the sauce uncovered for a few extra minutes; it thickens quickly once the cream is in"
+            },
+            {
+              "symptom": "Sauce is curdled or grainy",
+              "cause": "Cream added to a boiling-hot sauce or reduced too fast",
+              "fix": "Lower the heat before adding the cream; keep it at a steady simmer rather than a rolling boil"
+            },
+            {
+              "symptom": "Apple has turned to mush",
+              "cause": "Added too early with the chicken",
+              "fix": "Add the apple only after the chicken comes out; 5 minutes at a low simmer is enough to cook it through while keeping the wedges intact"
+            },
+            {
+              "symptom": "Sauce tastes flat",
+              "cause": "Cider too sweet or not enough reduction",
+              "fix": "Use a dry cider and let it reduce properly before adding the stock; a teaspoon of Dijon stirred in at the end lifts the sauce considerably"
+            },
+            {
+              "symptom": "Chicken skin has gone soft",
+              "cause": "Cooked with the lid on while skin was submerged",
+              "fix": "Keep the skin above the liquid level. Rest the chicken on a warm plate uncovered for a few minutes; it won't be crisp but shouldn't be soggy"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The vallée d'Auge is the orchard-and-dairy heart of Normandy, running south from the Seine estuary through Lisieux. Its cattle produce the cream and butter; its apple orchards produce the cider and the distilled calvados that flavours this dish. The recipe follows the Norman tendency to finish sauces with cream rather than with wine reductions, and to use the local orchard produce as a seasoning alongside the main ingredient. Serve with buttered egg noodles or plain boiled potatoes and something green on the side."
+          }
+        ]
+      }
+    ]
+  }
+}

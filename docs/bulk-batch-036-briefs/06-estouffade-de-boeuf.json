@@ -1,0 +1,349 @@
+{
+  "slug": "estouffade-de-boeuf",
+  "title": "Estouffade de boeuf",
+  "subtitle": "a long-braised beef with lardons, mushrooms, and olives",
+  "excerpt": "Estouffade de boeuf is a slow beef braise from the Languedoc with lardons, mushrooms, and black olives cooked in red wine. It shares DNA with the daube but is fattier and more deeply smoky from the cured pork. Made a day ahead, it is significantly better than when freshly cooked.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Estouffade de boeuf method and composition. J.-B. Reboul, La cuisinière provençale (1897), public domain. Regional braise methods from the Midi and Languedoc, including the use of olives and cured pork in long-cooked beef dishes.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. The sauce may thicken further on freezing; add a little stock or water when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool completely, refrigerate overnight, skim the fat, and reheat gently. The flavour deepens considerably.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "estouffade",
+      "term": "Estouffade",
+      "definition": "A French term for a long-braised dish, derived from 'estouffar' meaning to braise in a sealed pot. Similar to a daube but associated more with Languedoc and the use of cured pork alongside the beef."
+    },
+    {
+      "slug": "lardons-gloss",
+      "term": "Lardons",
+      "definition": "Small cubes or strips of cured, often smoked, pork belly used to add fat and a savoury, smoky depth to braises, stews, and salads."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An "
+          },
+          {
+            "type": "text",
+            "text": "estouffade",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "estouffade" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a sealed braise: the pot lid goes on, the temperature drops, and the meat cooks for three hours without disturbance. This one is the Languedoc version, which uses cured "
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lardons-gloss" } }]
+          },
+          {
+            "type": "text",
+            "text": ", mushrooms, and black olives to give the sauce a smoky, earthy quality that sets it apart from a plain red-wine braise. The result is darker and more deeply flavoured than a daube, with more body from the rendered pork fat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make it the day before you want to eat it. Overnight in the fridge the sauce thickens as the collagen cools, the fat rises and can be skimmed, and the flavours settle into something considerably more coherent than on the day of cooking. It is not at its best served immediately, which makes it an excellent dinner-party dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "braising-steak",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "cut into 5 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled, cut into rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "a robust Languedoc or southern French red",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olives-black",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "stoned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped, to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat and lardons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 150°C fan. Pat the {{braising-steak}} of braising steak dry, season, and dust with {{plain-flour}} of plain flour. Heat {{olive-oil}} of olive oil in a large casserole over high heat. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the beef in two batches without crowding, 3 to 4 minutes per side. Remove. In the same pot, fry the {{lardons}} of lardons over medium heat for 3 to 4 minutes until lightly browned and the fat has rendered."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{onion}} sliced onions and {{carrot}} carrots to the pot. Cook over medium heat for 5 minutes. Add the {{garlic}} of garlic and {{tomato-puree}} of tomato purée and stir for 1 minute. Pour in the {{red-wine}} of red wine and bring to a boil, scraping up the browned bits. Add the {{stock-beef}} of beef stock, {{thyme}} of thyme, and {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the beef to the pot. Bring to a simmer, cover tightly, and transfer to the oven. "
+          },
+          {
+            "type": "text",
+            "text": "Braise",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "braising", "label": "Braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 2 hours. Add the {{chestnut-mushrooms}} of chestnut mushrooms and {{olives-black}} of black olives, cover again, and return to the oven for a further 45 minutes. The beef should pull apart at the edges and the sauce should be dark and glossy. Remove the thyme and bay. If serving the next day, cool and refrigerate now. If serving immediately, scatter the {{parsley-flat}} of flat-leaf parsley over and serve."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is thin and watery",
+              "cause": "Too much liquid, or the lid was not tight",
+              "fix": "Remove the meat, reduce the sauce uncovered on the hob for 10 to 15 minutes, then return the meat to warm through"
+            },
+            {
+              "symptom": "Beef is tough at 3 hours",
+              "cause": "Pieces may be larger than 5 cm, or the oven runs cool",
+              "fix": "Return to the oven for another 30 to 45 minutes; the connective tissue in braising beef can turn in a narrow window"
+            },
+            {
+              "symptom": "Olives are too salty",
+              "cause": "Olives used were heavily brined and added too early",
+              "fix": "Rinse the olives well before adding, and always add them only in the final 45 minutes"
+            },
+            {
+              "symptom": "Sauce is lacking depth the day of cooking",
+              "cause": "Freshly cooked estouffade is less settled than one that has rested overnight",
+              "fix": "Refrigerate overnight and reheat the next day. The flavour deepens and settles after a night in the fridge"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The estouffade is closely related to the daube but associated with the Languedoc and the broader Midi rather than specifically Provence. The addition of lardons alongside the beef gives it a smokier, more rustic character. Escoffier included it in his codified French repertoire as a variant of the standard braised beef family. It is a dish for cold weather: long cook times, bold flavours, and the kind of sauce that justifies a good piece of bread. Serve with plain egg noodles or a mound of mashed potato."
+          }
+        ]
+      }
+    ]
+  }
+}

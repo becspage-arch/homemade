@@ -1,0 +1,287 @@
+{
+  "slug": "carre-d-agneau",
+  "title": "Carré d'agneau",
+  "subtitle": "French-trimmed rack of lamb with herbed crust",
+  "excerpt": "A rack of lamb with a persillade crust: breadcrumbs, flat-leaf parsley, garlic, and a little mustard pressed onto the scored fat cap, then roasted at high heat. The crust sets to a pale green shell while the chops inside stay pink. Ready in under 30 minutes once the oven is up to temperature.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Carré d'agneau methods, persillade composition, and the searing step before roasting.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. Rack of lamb in French classical cookery, the role of the herbed crust, and French-trimming terminology.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The persillade can be made up to 4 hours ahead and refrigerated. The mustard can be brushed onto the seared rack and the crust pressed on, then the whole thing refrigerated for up to 2 hours before roasting. Add 3 to 4 minutes to the roasting time if going straight from cold.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "persillade",
+      "term": "Persillade",
+      "definition": "A French mixture of chopped flat-leaf parsley and garlic, used as a seasoning or crust. In French cookery it is pressed onto meat or fish before roasting, or stirred into cooked dishes at the end to add freshness. The word comes from persil, the French for parsley."
+    },
+    {
+      "slug": "french-trimming",
+      "term": "French trimming",
+      "definition": "A butchery technique in which the meat, fat, and sinew are scraped cleanly from the rib bones of a rack, exposing the bone ends. It is done for presentation: the bare bones provide a handle and give the rack a clean, classic appearance. Ask your butcher to do this, or buy a pre-trimmed rack."
+    }
+  ],
+  "techniqueSlugs": ["searing", "roasting"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carré d'agneau is a rack of lamb with a "
+          },
+          {
+            "type": "text",
+            "text": "persillade",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "persillade" } }]
+          },
+          {
+            "type": "text",
+            "text": " crust: breadcrumbs bound with parsley, garlic, and a thin layer of mustard, pressed onto the scored fat cap before a short, hot roast. The bones are "
+          },
+          {
+            "type": "text",
+            "text": "French-trimmed",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-trimming" } }]
+          },
+          {
+            "type": "text",
+            "text": ", which means the rib ends are scraped clean and the rack sits upright in the pan. It is a fast dish: under 25 minutes in the oven, 10 minutes resting, and it is ready to carve into individual chops at the table."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two things to get right are the sear before roasting and the internal temperature at the end. "
+          },
+          {
+            "type": "text",
+            "text": "Searing",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Searing" } }]
+          },
+          {
+            "type": "text",
+            "text": " the fat cap in a hot pan before the crust goes on gives the fat a head start and sets the exterior. The internal temperature for medium-rare is 57 to 60°C; for well done, 68°C. Use a probe to be sure, as racks vary in thickness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-rack",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "French-trimmed, about 7 bones each",
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Persillade crust"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-fresh",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "from day-old white bread",
+              "isOptional": false,
+              "groupLabel": "Persillade crust"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "leaves only, finely chopped",
+              "isOptional": false,
+              "groupLabel": "Persillade crust"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Persillade crust"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "melted",
+              "isOptional": false,
+              "groupLabel": "Persillade crust"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heavy frying pan for the initial sear and a roasting pan that holds both racks without touching are the key pieces of kit. A probe thermometer removes all guesswork about doneness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the persillade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix {{breadcrumbs-fresh}} of fresh breadcrumbs with the {{parsley-flat}} of flat-leaf parsley and {{garlic}} of finely grated garlic. Add the melted {{unsalted-butter}} of unsalted butter and mix until the crumbs are evenly coated. Season with salt and pepper. The mixture should just hold together when pressed. Set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the racks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 220°C fan. Take the racks out of the fridge 30 minutes before cooking. Season generously all over. Heat {{olive-oil}} of olive oil in a heavy frying pan over high heat until smoking. Sear the racks fat-side down for 2 to 3 minutes until deep golden. Turn and sear the bone side for 1 minute. Remove from the pan and leave to cool for 5 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Apply the crust and roast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brush the fat cap of each rack with {{dijon-mustard}} of Dijon mustard. Press the breadcrumb mixture firmly onto the mustard in an even layer about 1 cm thick. Transfer to a roasting pan, crust-side up, and roast for 15 to 18 minutes for medium-rare (internal temperature 57 to 60°C). Rest for 10 minutes before carving into individual chops between the bones."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Crust falls off during roasting",
+              "cause": "Mustard layer too thin or crumbs not pressed firmly enough",
+              "fix": "Press the crust back onto the rack with a palette knife. Next time, brush the mustard generously and pack the crumbs firmly with your hand."
+            },
+            {
+              "symptom": "Crust browns too fast before the meat is cooked",
+              "cause": "Oven too hot or rack too near the top element",
+              "fix": "Cover the crust loosely with a small piece of foil and continue roasting until the meat reaches temperature."
+            },
+            {
+              "symptom": "Meat is overcooked",
+              "cause": "Racks varied in thickness or oven runs hot",
+              "fix": "Use a probe thermometer next time and check at 12 minutes. Smaller racks from young lambs cook faster than the timing suggests."
+            },
+            {
+              "symptom": "Fat is chewy rather than rendered",
+              "cause": "Searing step too brief or skipped",
+              "fix": "The sear is what renders the fat cap. Give it at least 2 minutes fat-side down in a very hot pan before the crust goes on."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The herbed rack of lamb is a French brasserie staple and a common sight on the prix fixe at restaurants from Lyon to Paris. It arrived in its current, standardised form in the 19th century, when French cookery began to codify the classical garnishes and the precise timing that the professional kitchen required. At home it earns its place because the work is concentrated into 30 minutes: sear, crust, roast, rest. Serve with flageolet beans cooked with garlic and a sprig of thyme, with gratin dauphinois, or with a simple watercress salad and a good glass of Saint-Émilion."
+          }
+        ]
+      }
+    ]
+  }
+}

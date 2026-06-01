@@ -1,0 +1,317 @@
+{
+  "slug": "pintade-aux-choux",
+  "title": "Pintade aux choux",
+  "subtitle": "Guinea fowl braised with savoy cabbage and lardons",
+  "excerpt": "A whole guinea fowl (or small chicken, used here as the closest substitute) braised with savoy cabbage, lardons, and white wine until the bird is just cooked through and the cabbage is silky and rich. The lardons provide salt and smoke; the cabbage provides bulk and sweetness. A warming autumn and winter dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Braised poultry with cabbage and lardons method. Henri-Paul Pellaprat, L'Art culinaire moderne (1935), public domain via archive.org. Pintade aux choux preparation including braising liquid and cabbage timing. Note: guinea fowl is not in the ingredient lookup; chicken-whole is used as the closest available substitute.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 80,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood", "cosy"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "conventional oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A cooking method in which meat is browned first, then cooked slowly in a covered pot with a modest amount of liquid. The enclosed steam and gentle heat tenderise the meat and build a sauce from the cooking juices."
+    },
+    {
+      "slug": "lardon",
+      "term": "Lardon",
+      "definition": "A small cube or strip of cured pork belly, used in French cooking to add fat, salt, and smoke to braises, salads, and vegetable dishes. Sold ready-cut in packets. Smoked or unsmoked depending on the recipe."
+    }
+  ],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pintade aux choux is a French braise of guinea fowl with savoy cabbage. Guinea fowl has a slightly gamier flavour than chicken and a drier texture, which makes it ideal for a braise where the cooking liquid keeps it moist. This recipe uses a small chicken as the closest available substitute; the dish works well either way."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Savoy cabbage is the right cabbage here. Its crinkled leaves soften without collapsing and they hold the braising juices well. The "
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lardon" } }]
+          },
+          {
+            "type": "text",
+            "text": " season the whole dish as they cook, releasing their fat and smoke into the braising liquid. Add the cabbage only in the last 20 minutes so it retains some texture."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The bird will tell you when it is done: the legs will wiggle freely at the joint and the juices will run clear when the thigh is pierced. Do not overcook. Chicken (and guinea fowl) braises can dry out if pushed past their resting point."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-whole",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "about 1.5 kg; substitute guinea fowl if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-savoy",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "outer leaves removed, cut into 6 wedges",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "whole, unpeeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a casserole wide enough to hold the whole bird with its legs flat against the base, with a tight-fitting lid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the bird and lardons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 170°C. Season the {{chicken-whole}} chicken all over. Melt the {{unsalted-butter}} of butter in a casserole over medium-high heat. Brown the bird on all sides, turning it every 3 minutes, for about 12 minutes total. Remove and set aside. Add the {{lardons}} of lardons and cook for 3 minutes until coloured. Add the {{shallot}} and cook for 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and braise" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{garlic}} of garlic, then pour in the {{dry-white-wine}} of white wine and let it bubble for 1 minute. Add the {{stock-chicken}} of chicken stock, {{thyme}} of thyme, and {{bay-leaves}} of bay. Return the bird to the casserole, breast-side up. Cover and "
+          },
+          {
+            "type": "text",
+            "text": "braise",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " in the oven for 40 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the cabbage and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 40 minutes, tuck the {{cabbage-savoy}} cabbage wedges around the bird, pressing them into the braising liquid. Cover and return to the oven for 20 minutes more, until the cabbage is tender and the juices from the thigh run clear. Rest the bird on a board for 5 minutes before carving. Discard the herb sprigs and bay leaves. Scatter the {{parsley-flat}} of flat-leaf parsley over the cabbage before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Bird is dry",
+              "cause": "Overcooked; poultry can dry out quickly in a braise once it passes its resting point",
+              "fix": "Check at the 40-minute mark before adding the cabbage; pierce the thigh and check the juices. A 1.5 kg bird is done by 60 minutes total"
+            },
+            {
+              "symptom": "Cabbage is waterlogged",
+              "cause": "Too much liquid in the pot, or lid kept on so no reduction happened",
+              "fix": "Remove the bird and boil the liquid hard for a few minutes to reduce it. The cabbage absorbs some liquid but the dish will taste more focused"
+            },
+            {
+              "symptom": "Dish is bland",
+              "cause": "Lardons not coloured enough, or not enough seasoning",
+              "fix": "Season the bird generously before browning; the lardons should be lightly caramelised before the wine goes in. Taste the braising liquid and add salt if needed"
+            },
+            {
+              "symptom": "Skin is soft and pale",
+              "cause": "Bird not browned enough before braising",
+              "fix": "Return the carcass to a hot pan or under a grill for 5 minutes to crisp the skin; it won't be as crisp as a roast bird but a few minutes of high heat helps"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Guinea fowl (pintade in French) is a small, lightly gamey bird that has been farmed in France for centuries. It has less fat than chicken and a firmer texture, making it better suited to slow cooking with aromatic vegetables than to roasting alone. The combination with savoy cabbage and lardons belongs to the French tradition of braised poultry dishes in which the cooking liquid and the vegetables are as important as the bird itself. Serve with boiled potatoes dressed with a little butter, or crusty bread to soak up the juices."
+          }
+        ]
+      }
+    ]
+  }
+}

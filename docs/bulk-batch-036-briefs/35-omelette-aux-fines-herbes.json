@@ -1,0 +1,302 @@
+{
+  "slug": "omelette-aux-fines-herbes",
+  "title": "Omelette aux fines herbes",
+  "subtitle": "A flat French omelette with chervil, chives, tarragon, and parsley",
+  "excerpt": "A classic French omelette: flat, barely coloured, baveuse at the centre, folded around a fine herb filling. It is made in under two minutes and requires only a well-seasoned pan, fresh eggs, and full attention. The technique is the dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903). Omelette technique: the distinction between the scrambled English omelette and the French flat omelette; the correct pan movement and the baveuse interior.\n\nProsper Montagné, Larousse Gastronomique (1938). Omelette aux fines herbes entry: chervil, chives, tarragon, and parsley as the canonical fine herb combination.",
+  "recipe": {
+    "servings": 1,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 3,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "omelette-pan", "isOptional": false },
+    { "slug": "mixing-bowl-small", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fines-herbes",
+      "term": "Fines herbes",
+      "definition": "The classic French combination of fresh soft herbs: chervil, chives, tarragon, and flat-leaf parsley, chopped finely together. Used in egg dishes, fish, and light sauces. The four herbs are used in roughly equal quantities. Dried versions are a poor substitute; the combination only works with fresh leaves."
+    },
+    {
+      "slug": "baveuse",
+      "term": "Baveuse",
+      "definition": "French: literally 'dribbling' or 'runny'. Used to describe an omelette that is still slightly fluid at the centre when it is folded and served. The correct state for a French omelette: the exterior is just set, the interior remains creamy. Overcooking produces a dry, rubbery result."
+    }
+  ],
+  "techniqueSlugs": ["omelette-technique"],
+  "criticalTechniques": ["omelette-technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A French omelette is flat and pale, folded rather than rolled, and ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "baveuse",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "baveuse" } }]
+          },
+          {
+            "type": "text",
+            "text": " at the centre: just set on the outside, still creamy within. It takes under two minutes from egg to plate. The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "fines herbes",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fines-herbes" } }]
+          },
+          {
+            "type": "text",
+            "text": " go into the egg before cooking, not on top after."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The difficulty is control. Most omelettes fail because the pan is too cool (a pale, thick, rubbery disk), too hot (brown and dry), or stirred in the wrong way (scrambled eggs rather than a flat sheet). A proper omelette should be uniformly pale gold on the outside, never browned. It should slide freely in the pan when you tip it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use an 18 to 20 cm omelette pan, ideally one kept for eggs only. Make one omelette at a time: each takes under 2 minutes, and they do not hold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chervil",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": "leaves only, finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chives",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": "finely snipped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tarragon",
+              "amount": 3,
+              "unit": "g",
+              "prepNote": "leaves only, finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": "leaves only, finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An omelette pan or small non-stick frying pan is essential. A fork for beating and a silicone spatula for folding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Beat the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crack {{eggs}} eggs into a bowl. Season with a pinch of salt and pepper. Add the chopped {{chervil}} of chervil, {{chives}} of chives, {{tarragon}} of tarragon, and {{parsley-flat}} of parsley. Beat with a fork until the yolks and whites are just combined: 20 to 30 strokes. Do not overbeat or the omelette will be tough. The mixture should look streaky, not uniform."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the pan" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the pan over high heat for 1 minute until it is very hot. Add {{unsalted-butter}} of unsalted butter. When the butter foams and the foam begins to subside (but before it browns), pour in the egg mixture. This should happen within about 30 seconds of the butter going in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the omelette" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "omelette technique",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "omelette-technique", "label": "omelette technique" } }]
+          },
+          {
+            "type": "text",
+            "text": ": with the back of a fork, draw the set egg from the edges into the centre in short, rapid strokes while shaking the pan back and forth. Do this for about 30 seconds until the egg is almost set but still wet in the middle. The surface should look glossy and barely fluid. Stop stirring. Tilt the pan slightly and let the omelette slide to the far edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fold and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold the nearer third of the omelette over the centre. Tip the pan over a warm plate and let the omelette roll over itself so it lands folded, seam side down. It should be pale gold outside, with the fines herbes visible through the fold. Eat immediately: a French omelette waits for no one."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Omelette is brown and rubbery",
+              "cause": "Pan too hot or cooked too long",
+              "fix": "The pan should be hot but the cooking fast; pull it off the heat at the first sign of browning and fold immediately"
+            },
+            {
+              "symptom": "Omelette is flat and pale with no structure",
+              "cause": "Pan not hot enough when the eggs went in",
+              "fix": "The butter must be foaming and beginning to subside before the eggs go in; a cool pan produces a thick, lifeless result"
+            },
+            {
+              "symptom": "Omelette sticks to the pan",
+              "cause": "Pan not well-seasoned, or not enough butter",
+              "fix": "Use a non-stick or well-seasoned pan; do not use a stainless-steel pan for omelettes without a lot of butter"
+            },
+            {
+              "symptom": "Herbs taste dull or faintly bitter",
+              "cause": "Dried herbs used, or chervil and tarragon omitted",
+              "fix": "Fines herbes only works with fresh leaves; the combination of all four is important; tarragon and chervil provide the anise note that lifts the others"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The flat French omelette is one of the foundational tests of classical cooking. It is taught in the first week of cookery school not because it is difficult to understand but because it is difficult to execute under pressure: the window between undercooked and overcooked is about 20 seconds. The omelette aux fines herbes is a lunch dish in the bistro tradition, made to order and eaten at once, and it is also what you make at home when the fridge offers little else. Its simplicity is not poverty of means; it is the point."
+          }
+        ]
+      }
+    ]
+  }
+}

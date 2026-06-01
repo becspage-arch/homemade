@@ -1,0 +1,279 @@
+{
+  "slug": "andouillette-a-la-lyonnaise",
+  "title": "Andouillette à la lyonnaise",
+  "subtitle": "pan-fried smoked sausage with a white wine, onion, and mustard sauce",
+  "excerpt": "Andouillette à la lyonnaise is a Lyon bistro classic: a thick smoked sausage fried until the skin crisps and blisters, then served with a quick pan sauce of white wine, onions, and mustard. The sauce is sharp and savoury, and it cuts through the fat of the sausage cleanly.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Lyon-style sausage preparations and the Lyonnaise sauce method with white wine and onions. J.-B. Reboul, La cuisinière provençale (1897), public domain. Mustard-sauced sausage preparations from the French bistro tradition.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lyonnaise-sauce",
+      "term": "Lyonnaise sauce",
+      "definition": "A French sauce named for the city of Lyon, made by cooking onions slowly in butter then deglazing with white wine and vinegar, sometimes finished with a little mustard or stock."
+    }
+  ],
+  "techniqueSlugs": ["searing", "deglazing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Andouillette is a strongly flavoured French pork sausage with a coarse, offal-based filling. It is a Lyon speciality, and the Lyonnaise way of cooking it is the one described here: fry the sausage until the skin is crisp and the inside is hot through, then make a quick "
+          },
+          {
+            "type": "text",
+            "text": "Lyonnaise sauce",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lyonnaise-sauce" } }]
+          },
+          {
+            "type": "text",
+            "text": " of white wine, onions, and mustard directly in the same pan. The sauce is made in minutes. The combination is one of the defining dishes of Lyon bistro cooking."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Authentic andouillette is not widely available outside France. For this recipe, use the closest available slug, which is smoked pork sausage: a good-quality smoked sausage with a firm texture and enough fat to crisp properly in the pan. The cooking method is identical and the Lyonnaise sauce works just as well with any well-flavoured smoked sausage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "smoked-pork-sausage",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "2 thick smoked pork sausages, pricked with a fork",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "thinly sliced into rings",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 75,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped, to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the sausages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat a heavy frying pan over medium-high heat. No oil is needed: the fat in the sausages is enough. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the {{smoked-pork-sausage}} of smoked pork sausages on all sides, turning every 2 to 3 minutes, for a total of 12 to 15 minutes. The skin should blister and turn deep golden brown, and the sausage should feel firm all the way through when pressed. Remove to a warm plate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Lyonnaise sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour off most of the fat from the pan, leaving just a film. Reduce the heat to medium and add the {{unsalted-butter}} of butter. Add the {{onion}} sliced onions and cook, stirring, for 6 to 8 minutes until soft and lightly golden. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "deglazing", "label": "Deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with the {{dry-white-wine}} of white wine and {{white-wine-vinegar}} of white wine vinegar. Let it bubble for 2 minutes, scraping up the browned bits from the base. Add the {{stock-chicken}} of chicken stock and simmer for 2 minutes more. Remove from the heat and stir in the {{dijon-mustard}} of Dijon mustard. Taste and season with salt and pepper. Scatter the {{parsley-flat}} of flat-leaf parsley over."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the sausages to the pan and turn them once in the sauce. Serve on warm plates with the sauce spooned over."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sausage skin has burst",
+              "cause": "Heat too high or not pricked before cooking",
+              "fix": "Always prick the sausages before they go in the pan; keep the heat at medium-high rather than high"
+            },
+            {
+              "symptom": "Sauce is too sharp",
+              "cause": "Too much vinegar or the wine was acidic",
+              "fix": "Add a small pinch of sugar or a knob of cold butter to round the acidity"
+            },
+            {
+              "symptom": "Onions are still firm",
+              "cause": "Cooked too quickly over too high a heat",
+              "fix": "Reduce the heat and give the onions the full 6 to 8 minutes; they need to soften before the wine goes in"
+            },
+            {
+              "symptom": "Mustard has made the sauce lumpy",
+              "cause": "Mustard added while the pan was still over heat",
+              "fix": "Always stir in the mustard off the heat; cooking it further can cause it to split and thicken unevenly"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lyon has a strong claim to being the best city in France for eating, and andouillette is one of its calling cards. The bouchons (the small, old bistros of the city) serve it fried and sauced as a matter of course. The Lyonnaise sauce itself is one of the French kitchen's most useful: onions slowly cooked in butter then hit with white wine and vinegar. It works with liver, kidneys, and most robust cooked meats. Serve with mashed potato or a simple green salad and good bread to mop the sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

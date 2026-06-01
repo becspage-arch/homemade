@@ -1,0 +1,327 @@
+{
+  "slug": "navarin-d-agneau",
+  "title": "Navarin d'agneau",
+  "subtitle": "French braised lamb stew with root vegetables",
+  "excerpt": "A navarin is a classic French braised lamb stew, built on shoulder or neck meat cooked slowly with root vegetables in a light wine and stock broth. The result is tender, well-seasoned lamb in a sauce that is clear rather than thick. It is a weekday braise as much as a Sunday one.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Navarin d'agneau method and the distinction between navarin and ragout.\n\nProsper Montagné, Larousse Gastronomique (1938), public domain edition. Regional context, garnish variations, and the principle that navarin takes its name from the turnip (navet) that traditionally accompanies it.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Freeze without the potato if possible, as potato can become watery on reheating. Add fresh potato when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Refrigerate overnight and skim any fat from the surface before reheating gently on the hob.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "navarin",
+      "term": "Navarin",
+      "definition": "A French braised lamb stew, traditionally made with turnips and root vegetables. The name likely derives from navet, the French word for turnip. The spring version, navarin printanier, uses new-season vegetables instead."
+    }
+  ],
+  "techniqueSlugs": ["braising", "searing"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "navarin",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "navarin" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a slow-braised French lamb stew, pale and herb-scented, built from inexpensive cuts and a handful of root vegetables. Shoulder or neck is best: both have enough fat and collagen to stay moist over a long cook, giving the sauce a slight body without needing any flour to thicken it. A proper navarin takes about two hours in a low oven and needs very little attention once the lid goes on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sauce should be clear and lightly glossy, not heavy. Keep the heat low and the simmer gentle; a rolling boil will cloud the liquid and tighten the meat. Season in layers rather than all at the end, and taste before serving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled, cut into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turnip",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled, quartered",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled, cut into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heavy casserole with a tight-fitting lid is the only specialist piece of kit. A 24 to 26 cm cast-iron pot holds 4 portions comfortably. If you have a smaller pot, reduce the recipe or brown the meat in two batches before transferring everything in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 160°C fan. Pat the {{lamb-shoulder}} of lamb dry with kitchen paper and season well. Dust lightly with {{plain-flour}} of plain flour. Heat {{olive-oil}} of olive oil in a heavy casserole over high heat and "
+          },
+          {
+            "type": "text",
+            "text": "sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the lamb in two batches, 3 to 4 minutes per side, until well coloured. Do not crowd the pan or the meat will steam rather than brown. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower the heat to medium. Add the {{onion}} onions and cook for 5 minutes until softened. Add the {{garlic}} of crushed garlic and stir for 1 minute. Add {{tomato-puree}} of tomato purée and stir for 1 minute more. Pour in {{dry-white-wine}} of white wine and let it bubble for 2 minutes, scraping up any browned bits from the base. Add {{stock-chicken}} of chicken stock, the {{thyme}} of thyme, and {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise with the vegetables" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the lamb to the pot. Add the {{carrot}} carrots and {{turnip}} turnips. The liquid should come about two-thirds of the way up the meat. Bring to a gentle simmer, cover tightly, and transfer to the oven. Cook for 1 hour, then add the {{potato}} potatoes and cook for a further 45 minutes. The lamb should be very tender and pull apart easily. Remove the herb sprigs and bay. Taste and adjust the seasoning. Scatter over the chopped parsley before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is watery after two hours",
+              "cause": "Lid not sealed or oven temperature too low",
+              "fix": "Remove the lid and simmer on the hob for 10 minutes to reduce. Next time, check the lid fits tightly and the oven reaches the correct temperature."
+            },
+            {
+              "symptom": "Lamb is still chewy at the two-hour mark",
+              "cause": "Pieces too large or heat too gentle",
+              "fix": "Return to the oven for 30 more minutes. Shoulder needs proper time; if using neck, allow 2 hours 30 minutes total."
+            },
+            {
+              "symptom": "Sauce is cloudy",
+              "cause": "Heat too high during the braise",
+              "fix": "Nothing can be done once clouded, but it still tastes fine. Next time, keep the oven at 150 to 160°C and check the pot is not actively boiling when you put it in."
+            },
+            {
+              "symptom": "Potatoes have broken up and thickened the sauce",
+              "cause": "Added too early or cooked at too high a temperature",
+              "fix": "The dish is still good; the potato acts as a natural thickener. Next time, add the potato in the final 45 minutes only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Navarin appears in French cookery books from at least the early 19th century and was codified as a named dish by the classical tradition. The name almost certainly comes from navet, the French word for turnip: the vegetable was the defining garnish before the spring version with new-season peas and carrots became equally well known. It sits in every French bistro repertoire as a Monday dish, made from Sunday's leftover cuts or from the cheaper end of the lamb. Serve with crusty bread or a simple green salad. A light red from the Languedoc or a glass of dry white wine from the Loire works well alongside."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "slug": "tournedos-rossini",
+  "title": "Tournedos Rossini",
+  "subtitle": "beef fillet medallion on a croûton with a Périgueux sauce",
+  "excerpt": "Tournedos Rossini is a classic French restaurant dish: a thick medallion of beef fillet pan-fried and served on a fried bread croûton, topped with foie gras and finished with a Madeira and truffle sauce. The components are rich and the dish is one of the grandest in the French classical repertoire.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Tournedos Rossini method, Sauce Périgueux composition, croûton preparation. The dish is attributed to the chef Casimir Moisson at the Café Anglais in Paris and named for the Italian composer Gioachino Rossini, a regular patron in the 1860s. Marie-Antoine Carême, L'Art de la Cuisine Française (1833), public domain. Tournedos and beef fillet principles.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The Périgueux sauce can be made up to 1 hour ahead. The croûtons can be fried 30 minutes ahead and kept warm in a low oven.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["special", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tournedos",
+      "term": "Tournedos",
+      "definition": "A small, thick medallion cut from the centre of a beef fillet, typically about 2.5 to 3 cm thick and 6 to 7 cm across, tied with string to hold its shape during cooking."
+    },
+    {
+      "slug": "perigueux",
+      "term": "Périgueux sauce",
+      "definition": "A classical French sauce made from a demi-glace base with Madeira wine and truffle, named after the city of Périgueux in the Dordogne, a region famous for truffles and foie gras."
+    },
+    {
+      "slug": "crouton-fried",
+      "term": "Croûton",
+      "definition": "In classical French cooking, a croûton can refer to a round or shaped piece of bread fried in butter until golden and crisp, used as a base for meat or garnishes."
+    }
+  ],
+  "techniqueSlugs": ["searing", "reducing"],
+  "criticalTechniques": ["searing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tournedos Rossini is one of the set pieces of French classical cooking. A "
+          },
+          {
+            "type": "text",
+            "text": "tournedos",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tournedos" } }]
+          },
+          {
+            "type": "text",
+            "text": " of beef fillet sits on a fried bread "
+          },
+          {
+            "type": "text",
+            "text": "croûton",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crouton-fried" } }]
+          },
+          {
+            "type": "text",
+            "text": ", is topped with a slice of foie gras, and is finished with a Madeira sauce that has a few shavings of truffle stirred through it. The whole thing is rich, theatrical, and not especially complicated once you have the sauce made."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foie gras is not in the ingredient list. Use one slice of pan-seared duck or goose liver per portion, placed on top of the tournedos before serving. If foie gras is unavailable, a thick slice of chicken liver pâté at room temperature on the croûton works well. For the "
+          },
+          {
+            "type": "text",
+            "text": "Périgueux sauce",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "perigueux" } }]
+          },
+          {
+            "type": "text",
+            "text": ", fresh truffle is ideal but truffle paste is widely sold and gives a good result."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "beef-fillet",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cut into 2 medallions, each about 2.5 cm thick, tied with string",
+              "isOptional": false,
+              "groupLabel": "For the tournedos"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tournedos"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tournedos"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tournedos"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tournedos"
+            },
+            {
+              "ingredientSlug": "bread",
+              "amount": 2,
+              "unit": "slice",
+              "prepNote": "thick slices, cut into rounds the same diameter as the tournedos",
+              "isOptional": false,
+              "groupLabel": "For the croûtons"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for frying the bread",
+              "isOptional": false,
+              "groupLabel": "For the croûtons"
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the Périgueux sauce"
+            },
+            {
+              "ingredientSlug": "fortified-madeira",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the Périgueux sauce"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": "good-quality, ideally reduced",
+              "isOptional": false,
+              "groupLabel": "For the Périgueux sauce"
+            },
+            {
+              "ingredientSlug": "truffle-paste",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or fresh truffle, thinly shaved",
+              "isOptional": false,
+              "groupLabel": "For the Périgueux sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "cold, to finish",
+              "isOptional": false,
+              "groupLabel": "For the Périgueux sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You will also need about 80 g of foie gras (fresh, sliced, or from a terrine) per person, or a generous spoonful of good chicken liver pâté as an alternative. Neither is in the ingredient lookup; both are used in the traditional manner described below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the Périgueux sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a small saucepan, cook the {{shallot}} chopped shallots in a knob of butter over medium heat for 3 minutes until soft. Add the {{fortified-madeira}} of Madeira and "
+          },
+          {
+            "type": "text",
+            "text": "reduce",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reducing", "label": "reduce" } }]
+          },
+          {
+            "type": "text",
+            "text": " by two-thirds, about 5 minutes. Add the {{stock-beef}} of beef stock and reduce again until the sauce coats the back of a spoon, another 8 to 10 minutes. Season, then stir in the {{truffle-paste}} of truffle paste. Keep warm over very low heat. Just before serving, whisk in the cold butter off the heat to give the sauce a gloss."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the croûtons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt {{unsalted-butter}} of butter in a frying pan over medium heat. Add the {{bread}} bread rounds and fry for 2 minutes per side until golden and crisp. Remove to a warm plate and keep in a low oven while you cook the beef."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the tournedos" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the {{beef-fillet}} of beef fillet medallions with salt and pepper. Heat {{olive-oil}} of olive oil in a clean frying pan over very high heat. "
+          },
+          {
+            "type": "text",
+            "text": "Sear",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "searing", "label": "Sear" } }]
+          },
+          {
+            "type": "text",
+            "text": " the tournedos for 2 minutes per side until deeply browned. Add {{unsalted-butter}} of butter and baste for 1 minute. The target for medium-rare is 54°C internal; check with a probe. Rest for 5 minutes on a warm plate before assembling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place a croûton on each warm plate. Remove the string from each tournedos and set it on the croûton. If using foie gras, heat a dry pan until very hot and sear the slices for 30 seconds per side, then place on top of the beef. Spoon the Périgueux sauce around and over the top. Serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Tournedos are not round",
+              "cause": "String not tied tightly enough before cooking",
+              "fix": "Tie kitchen string around the circumference of each medallion before cooking; this keeps the shape under heat"
+            },
+            {
+              "symptom": "Sauce lacks depth",
+              "cause": "Beef stock was too light, or the Madeira was not reduced enough",
+              "fix": "Use a good-quality reduced stock; the Madeira must reduce by two-thirds before the stock goes in to concentrate the flavour"
+            },
+            {
+              "symptom": "Croûton is soggy",
+              "cause": "Assembled too far in advance",
+              "fix": "Always assemble just before serving; the croûton absorbs the meat juices quickly"
+            },
+            {
+              "symptom": "Beef fillet centre is overcooked",
+              "cause": "Pan was too hot or the medallions were thin",
+              "fix": "Check the internal temperature with a probe from the side rather than the top; thin medallions cook in under 2 minutes per side"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tournedos Rossini belongs to the grand-restaurant tradition of Paris in the second half of the nineteenth century. It combines three ingredients that were considered the height of luxury at the time: beef fillet, foie gras, and truffle. The dish was codified by Escoffier and became a staple of formal French dining menus. At home it is most suited to a very small dinner party where the components can be assembled quickly. Serve alone on the plate with the sauce; the dish needs nothing else."
+          }
+        ]
+      }
+    ]
+  }
+}

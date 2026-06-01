@@ -1,0 +1,306 @@
+{
+  "slug": "canard-aux-navets",
+  "title": "Canard aux navets",
+  "subtitle": "Duck legs braised with baby turnips in a rich jus",
+  "excerpt": "Duck legs braised slowly with baby turnips, shallots, and a glass of white wine until the meat falls from the bone. The turnips soften and absorb the ducky, winey cooking liquid, losing any raw bitterness and becoming silky and sweet. A quiet bistro dish that rewards patience.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), public domain. Braised duck with turnip method and deglazing technique. Henri-Paul Pellaprat, L'Art culinaire moderne (1935), public domain via archive.org. Canard aux navets preparation including browning, braising liquid proportions, and turnip glazing.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The braised duck legs freeze well for up to 2 months. Freeze without the turnips (which go soft on thawing); add freshly cooked turnips when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Cool, refrigerate overnight, skim the fat from the surface, then reheat gently with the turnips.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfortFood", "cosy"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "conventional oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A cooking method in which meat is browned first, then cooked slowly in a covered pot with a modest amount of liquid. The enclosed steam and gentle heat tenderise the meat and build a concentrated sauce."
+    },
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To add liquid to a hot pan after browning, loosening the caramelised residue from the base and dissolving it into the sauce."
+    }
+  ],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Canard aux navets is a quiet bistro classic: duck legs braised with turnips, shallots, and white wine until the meat pulls away from the bone. The turnips are the surprise, softening and sweetening over the long cook and losing any rawness they started with."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use baby turnips if you can find them; they hold their shape better than large ones cut into pieces. The browning step at the start is not optional. Good colour on the duck legs builds the flavour base for the whole sauce. Work in batches so the pan stays hot and the meat sears rather than steams."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This dish improves overnight. Make it a day ahead if you can. The congealed fat comes off the surface easily when chilled, and the braising liquid deepens in flavour after a night in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "duck-legs",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turnip",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "baby turnips, trimmed; or 4 medium turnips peeled and quartered",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "whole, unpeeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a heavy casserole with a tight-fitting lid, large enough to hold all 4 duck legs in a single layer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the duck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 160°C. Season the {{duck-legs}} duck legs generously. Place them skin-side down in a cold casserole, then set it over medium heat. As the fat renders and the skin browns, the legs will release on their own after 8 to 10 minutes. Turn and colour the other side for 3 minutes. Remove the duck legs and set aside. Pour off all but 2 tablespoons of fat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braising liquid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Over medium heat, cook the {{shallot}} in the remaining fat for 3 minutes until golden at the edges. Add the {{garlic}} of garlic and stir for 1 minute. "
+          },
+          {
+            "type": "text",
+            "text": "Deglaze",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }]
+          },
+          {
+            "type": "text",
+            "text": " with the {{dry-white-wine}} of white wine, scraping the base, and let it bubble for 2 minutes. Add the {{stock-chicken}} of chicken stock, {{thyme}} of thyme, and {{bay-leaves}} of bay. Return the duck legs skin-side up."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise the duck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cover the casserole and transfer to the oven. "
+          },
+          {
+            "type": "text",
+            "text": "Braise",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 45 minutes, then add the {{turnip}} and push them down around the duck legs. Return to the oven uncovered for 30 minutes more until the turnips are tender and the sauce has reduced slightly. Discard the herb sprigs and bay leaves. Scatter over the {{parsley-flat}} of flat-leaf parsley before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Duck skin is pale and soft",
+              "cause": "Pan not hot enough, or too many legs in the pan at once causing steam",
+              "fix": "Start with a cold pan and let the fat render slowly; it takes 8 to 10 minutes. Cook in batches if the pan feels crowded"
+            },
+            {
+              "symptom": "Turnips are still hard",
+              "cause": "Added too late or oven too low",
+              "fix": "Cover the casserole and return to the oven for another 20 minutes; turnips need time in the hot braising liquid to soften"
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Lid on for the full cook; no reduction",
+              "fix": "Remove the lid for the last 20 to 30 minutes; the sauce will reduce as the turnips finish cooking"
+            },
+            {
+              "symptom": "Duck meat is tough",
+              "cause": "Not braised long enough",
+              "fix": "Duck legs need at least 75 to 90 minutes total; the meat should pull away from the bone with no resistance. Add more stock and return to the oven"
+            },
+            {
+              "symptom": "Braising liquid is greasy",
+              "cause": "Duck fat not poured off before braising",
+              "fix": "Tip the casserole and spoon off the floating fat; or refrigerate overnight, when the fat will solidify and lift off cleanly"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pairing of duck with turnips is a standard of the Parisian bistro kitchen, appearing in French bourgeois cooking manuals from at least the mid-nineteenth century. Turnips have a natural affinity with duck fat; they absorb the braising juices and lose their rawness over the long cook, becoming one of the best accompaniments for the meat. Serve with crusty bread to mop the sauce, or alongside plain boiled potatoes."
+          }
+        ]
+      }
+    ]
+  }
+}

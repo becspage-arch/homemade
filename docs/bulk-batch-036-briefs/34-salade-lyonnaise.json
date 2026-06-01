@@ -1,0 +1,333 @@
+{
+  "slug": "salade-lyonnaise",
+  "title": "Salade lyonnaise",
+  "subtitle": "Warm salad of bitter leaves with lardons, croûtons, and poached egg",
+  "excerpt": "A Lyonnaise warm salad of bitter leaves dressed with rendered lardons and a sharp vinaigrette, topped with a poached egg whose yolk breaks into the warm fat below. Croûtons add crunch. It is a lunch dish that satisfies like a main, built fast and eaten immediately.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903). The warm bacon-fat salade Lyonnaise as a classic of the Lyon bouchon tradition; poached egg as garnish on warm salads.\n\nProsper Montagné, Larousse Gastronomique (1938). Salade Lyonnaise entry with frisée, lardons, croûtons, and poached egg as the canonical composition.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lardons",
+      "term": "Lardons",
+      "definition": "Short strips or cubes of smoked or unsmoked pork belly or streaky bacon, used as a flavouring ingredient in French cooking. They are cooked in a dry or lightly oiled pan until the fat renders and the edges crisp, then used along with the released fat to dress salads, stews, and braised vegetables."
+    },
+    {
+      "slug": "frisee",
+      "term": "Frisée",
+      "definition": "A variety of chicory with pale, feathery, curly leaves and a pleasantly bitter flavour. The standard leaf for salade lyonnaise. The pale inner leaves (the heart) are milder and more tender than the dark outer leaves. Rocket or young endive can stand in if frisée is unavailable."
+    },
+    {
+      "slug": "poached-egg",
+      "term": "Poached egg",
+      "definition": "An egg cooked out of its shell in simmering water. The white sets around a still-runny yolk. A splash of vinegar in the water helps the white to coagulate quickly and hold its shape. The egg is cooked for 3 to 4 minutes and lifted with a slotted spoon."
+    }
+  ],
+  "techniqueSlugs": ["poaching-eggs"],
+  "criticalTechniques": ["poaching-eggs"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Salade lyonnaise is a warm salad from the bouchons of Lyon: a handful of bitter leaves dressed in hot rendered bacon fat and a sharp vinaigrette, topped with a "
+          },
+          {
+            "type": "text",
+            "text": "poached egg",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poached-egg" } }]
+          },
+          {
+            "type": "text",
+            "text": " whose yolk breaks over the whole thing when you cut into it. The contrast of hot fat and cold leaves, bitter and rich, is what makes the dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The classic leaf is ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "frisée",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "frisee" } }]
+          },
+          {
+            "type": "text",
+            "text": ", a pale curly chicory with a clean bitterness that holds up well to warm dressing. If you cannot find frisée, use rocket or a mix of rocket and endive. The leaves must be dry before the dressing goes on, or the fat will not coat them properly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Everything in this dish moves fast and is served immediately. Get the components in place before you begin: poach the eggs just before the lardons are done."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "rocket",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "or frisée lettuce, washed and dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "smoked",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "very fresh",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "4 thick slices, cut into cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "divided: 2 tbsp for dressing, remainder for poaching",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a frying pan for the lardons and croûtons, and a shallow saucepan for poaching the eggs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the croûtons" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat a dry frying pan over medium-high heat. Add the baguette cubes with a drizzle of olive oil and cook for 4 to 5 minutes, tossing frequently, until golden and crisp on all sides. Transfer to a plate and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Render the lardons and make the dressing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{lardons}} of ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lardons" } }]
+          },
+          {
+            "type": "text",
+            "text": " to the same pan over medium heat. Cook for 6 to 8 minutes, stirring occasionally, until the fat has rendered and the edges are crisp. Remove the pan from the heat. Add the {{shallot}} shallot to the pan and let it soften in the residual heat for 1 minute. Stir in {{dijon-mustard}} of Dijon mustard and 2 tablespoons of the {{white-wine-vinegar}} of white wine vinegar. Add {{extra-virgin-olive-oil}} of extra-virgin olive oil and stir well to form a warm, emulsified dressing. Season with salt and pepper."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the eggs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a shallow pan of water to a gentle simmer. Add a splash of white wine vinegar. Crack each egg into a small cup first. Stir the water to create a gentle swirl and slide the first egg in. "
+          },
+          {
+            "type": "text",
+            "text": "Poach",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "poaching-eggs", "label": "Poach" } }]
+          },
+          {
+            "type": "text",
+            "text": " for 3 to 4 minutes until the white is set and the yolk still moves when you gently press it. Lift with a slotted spoon and rest on a clean cloth. Repeat with the second egg."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dress and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the {{rocket}} of leaves into a large bowl. Pour the warm lardon dressing over them and toss quickly so the leaves wilt very slightly. Divide between two plates. Scatter the croûtons over each plate. Set a poached egg on top of each. Grind over some black pepper and serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Poached egg spreads into ragged threads",
+              "cause": "Egg not fresh enough, or water not hot enough",
+              "fix": "Use the freshest eggs you can find; fresh whites are more cohesive. Make sure the water is at a gentle simmer, not a rolling boil"
+            },
+            {
+              "symptom": "Leaves wilt too much before serving",
+              "cause": "Dressing applied too early or too hot",
+              "fix": "Dress at the very last moment; the heat from the lardons should only slightly warm the leaves, not cook them"
+            },
+            {
+              "symptom": "Dressing is greasy rather than emulsified",
+              "cause": "Mustard not well incorporated, or fat too hot",
+              "fix": "Whisk the mustard and vinegar together first, then add the oil. A little residual pan heat helps emulsify, but not if the pan is smoking hot"
+            },
+            {
+              "symptom": "Croûtons are soft",
+              "cause": "Pan not hot enough, or too many cubes crowded in at once",
+              "fix": "Toast in a single layer with space between the pieces; add more oil if the pan looks dry"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The bouchon is the traditional working-class restaurant of Lyon: small, noisy, fixed-price, unapologetically rich. Salade lyonnaise is its most copied export. The combination of warm rendered fat, sharp vinegar, and a runny egg is ancient; what Lyon did was formalise it into a dish with a canonical composition. It belongs to a category of French cooking that is too simple to be fashionable and too good to be ignored."
+          }
+        ]
+      }
+    ]
+  }
+}
