@@ -1,0 +1,105 @@
+{
+  "slug": "splicing-yarn-when-spinning",
+  "title": "Splicing yarn when spinning",
+  "subtitle": "Joining a new length of fibre without a knot",
+  "excerpt": "Splicing is the method of joining a new length of roving or top to the end of the forming yarn without tying a knot. A good splice is invisible in the finished yarn and adds no extra bulk at the join. This entry covers the Russian join, the overlap splice, and the felted join for wool fibre.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from standard spinning technique references. The overlap splice is described in Alden Amos's The Alden Amos Big Book of Handspinning (2001, in copyright, substance only referenced). The felted join is traditional practice in British handspinning.",
+  "recipeTools": [
+    { "slug": "drop-spindle-top-whorl", "isOptional": false },
+    { "slug": "spinning-wheel-castle", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "roving",
+      "term": "Roving",
+      "definition": "Wool fibre prepared as a long continuous ribbon. Roving is the standard form for joining by overlap splice; the fibre ends simply overlap and are drafted together."
+    },
+    {
+      "slug": "singles",
+      "term": "Singles",
+      "definition": "The first yarn produced from the spinning of fibre on the wheel or spindle. Singles carry active twist; a splice needs to provide enough grip to resist this twist trying to unwind the join."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["joining yarn when spinning", "no-knot yarn join", "overlap splice spinning"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When the spinning fibre supply runs out, the new length must be joined to the forming " },
+          {
+            "type": "text",
+            "text": "singles",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "singles" } }]
+          },
+          { "type": "text", "text": " without a knot. A knot creates a hard lump in the yarn and may not hold under the tension of spinning. Three methods cover most situations: the overlap splice for " },
+          {
+            "type": "text",
+            "text": "roving",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "roving" } }]
+          },
+          { "type": "text", "text": ", the felted join for wool, and the Russian join for plied yarn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: Overlap splice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is the fastest join for roving or top and works on any wheel or spindle. When about 5 cm of fibre remains in the drafting hand, stop the wheel or spindle. Tease the end of the remaining fibre into a thin point by pulling it apart lengthways. Tease the beginning of the new length into a matching thin point. Overlap the two points so the tapers interlock by about 3 to 5 cm. Dampen your fingertips very slightly, press the overlapped section together, and resume drafting. The twist will lock the join as soon as it enters the zone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: Felted join (wool only)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For short-staple wool being spun from locks or rolags, a felted join is very secure. Tease both ends into thin points. Overlap them as for the overlap splice. Moisten the overlapped area with water from your fingertips. Rub the join firmly between your palms for a few seconds; the wool fibres will begin to felt together. Dry the join with a brief rub on your palm before continuing to spin. The felted join adds a tiny amount of bulk but holds extremely well." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 3: Russian join (for plied yarn)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Russian join is used when joining lengths of finished plied yarn, not singles. Form a loop in one thread end by threading the end back through the plied structure using a blunt needle. Pass the second thread end through the first loop, then form a loop in the second end and pass the first loop end through it. Pull both loops closed slowly by working from both ends. The join is completely invisible in the fabric and adds no bulk." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The overlap splice pulls apart during spinning",
+              "cause": "The overlapped taper was too short or too thick",
+              "fix": "Pull each taper end to at least twice the staple length before overlapping. Very fine, long tapers give more surface area for the twist to grip. If the fibre is slippery (llama, silk), use the felted join method instead."
+            },
+            {
+              "problem": "There is a visible thick section at every join",
+              "cause": "The overlapped section is too bulky",
+              "fix": "Thin the taper ends further before overlapping, and keep the overlap length to 3 cm. Draft the join zone gently as it passes through your fingers; a small amount of drafting pressure on the join thins it to match the rest of the yarn."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

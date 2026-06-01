@@ -1,0 +1,134 @@
+{
+  "slug": "spinning-self-striping-yarn",
+  "title": "Spinning a self-striping yarn",
+  "subtitle": "Preparing colour sections in the fibre before spinning to produce automatic stripes",
+  "excerpt": "A self-striping yarn changes colour along its length without any knots or joins in the plied yarn. This entry covers how to arrange coloured roving sections before spinning so the plied yarn produces regular stripes, and how to calculate the section lengths needed for a given stripe width.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from handspun self-striping technique references. The section-length calculation method is standard practice in British spinning guilds and described in general colour-spinning guides.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-saxony", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "lazy-kate", "isOptional": false },
+    { "slug": "hand-cards", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "singles",
+      "term": "Singles",
+      "definition": "The first yarn produced from the fibre on the wheel or spindle before plying. In self-striping yarn, the colour sections are arranged in the singles; the ply step does not change the colour order."
+    },
+    {
+      "slug": "colour-section",
+      "term": "Colour section",
+      "definition": "A length of coloured roving or top joined end-to-end with other colour sections to form a planned sequence. The length of each section determines the stripe width in the finished knitted or woven fabric."
+    },
+    {
+      "slug": "two-ply",
+      "term": "Two-ply",
+      "definition": "A yarn made from two singles plied together. For self-striping yarn, both singles must carry identical colour sequences at the same points along their length for the plied yarn to show clean colour changes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["handspun striped yarn", "colour-section spinning", "spinning for self-striping"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Self-striping yarn changes colour at regular intervals as the yarn unwinds during knitting or weaving. In handspun yarn, the colour sections are built into the " },
+          {
+            "type": "text",
+            "text": "singles",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "singles" } }]
+          },
+          { "type": "text", "text": " before plying. The key is making both singles bobbins carry identical " },
+          {
+            "type": "text",
+            "text": "colour section",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-section" } }]
+          },
+          { "type": "text", "text": " sequences at the same points along their length; when plied into a " },
+          {
+            "type": "text",
+            "text": "two-ply",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "two-ply" } }]
+          },
+          { "type": "text", "text": ", the colours will stack rather than blend, producing clear stripes in the finished fabric." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wheel safety", "body": "Keep loose hair and clothing away from the drive band and flyer. Tie hair back before sitting at the wheel." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Roving or top in two or more colours", "qty": "100 g total" },
+            { "name": "Spinning wheel", "qty": "1" },
+            { "name": "Ruler or tape measure (for measuring sections)", "qty": "1" },
+            { "name": "Niddy-noddy and lazy kate", "qty": "1 each" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating section lengths" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a stripe that is one row wide in stocking stitch at DK gauge, each colour section needs to be about 3 metres long in the finished yarn. Since the singles are spun at roughly double the plied length, each colour section in the singles needs to be about 6 metres long. Measure and cut the roving sections to this length before spinning. For wider stripes, multiply accordingly: a 4-row stripe needs 12-metre singles sections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Join the measured sections end-to-end using an overlap splice, in the same colour sequence, to build two identical fibre strips of the same total length. Double-check the section sequence on both strips before spinning; any mismatch will show as broken stripes in the plied yarn." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Spinning and plying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spin both strips at a consistent weight and fill two bobbins. Ply from both bobbins simultaneously from the lazy kate in the opposite direction to the singles twist, keeping the bobbins in sync as the colour sections feed off. If one bobbin runs ahead of the other, tension that bobbin slightly on the lazy kate or guide it by hand. Set the twist as a standard two-ply hank, soak for 20 minutes, dry flat under light weight." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The plied yarn shows blurry colour changes rather than clean stripes",
+              "cause": "The two singles bobbins were not synchronised during plying, causing the colour sections to offset",
+              "fix": "Stop and adjust when one bobbin's colour change is more than a few centimetres ahead of the other. Re-tension the faster bobbin slightly. Clean colour changes only happen when both singles change colour at the same point."
+            },
+            {
+              "problem": "The sections are not the right length for the stripe width",
+              "cause": "Section length calculation was based on a different gauge or yarn weight",
+              "fix": "Knit or weave a tension swatch with a commercial yarn of the same weight first to confirm how many stitches or picks per centimetre you are getting. Adjust the section length from the result."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

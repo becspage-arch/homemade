@@ -1,0 +1,130 @@
+{
+  "slug": "rigid-heddle-honeycomb-structure",
+  "title": "Rigid heddle honeycomb structure",
+  "subtitle": "Using pick-up stick patterns to create a cellular textured surface",
+  "excerpt": "Honeycomb weave on a rigid heddle loom uses a pick-up stick to create a pattern of raised and recessed cells across the cloth surface. The technique requires a pick-up stick and produces a textured, three-dimensional fabric suited to hand towels and scarves.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rigid-heddle honeycomb technique synthesised from Jane Patrick's The Weaver's Idea Book (2010, in copyright, substance only referenced) and general rigid-heddle pick-up pattern guides.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "stick-shuttle", "isOptional": false },
+    { "slug": "shed-stick", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pick-up-stick",
+      "term": "Pick-up stick",
+      "definition": "A flat stick threaded through the slot threads of a rigid-heddle warp to create a third shed. Turning the stick on its edge while the heddle is in neutral position opens a patterned shed that is otherwise inaccessible."
+    },
+    {
+      "slug": "heddle",
+      "term": "Heddle",
+      "definition": "The combined reed and heddle of a rigid heddle loom. Hole threads are lifted or lowered with the heddle; slot threads hang free in neutral position."
+    },
+    {
+      "slug": "honeycomb",
+      "term": "Honeycomb weave",
+      "definition": "A weave structure that creates a grid of raised and recessed rectangular cells on the cloth surface. The cells form because some threads float over several rows while adjacent threads weave normally, producing a quilted effect."
+    },
+    {
+      "slug": "warp",
+      "term": "Warp",
+      "definition": "The threads stretched on the loom along the weaving direction. In rigid-heddle honeycomb, slot threads are picked up in a pattern to create the cells."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["rigid heddle pick-up honeycomb", "honeycomb weave rigid heddle", "textured rigid heddle weaving"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Honeycomb on the rigid heddle loom uses the " },
+          {
+            "type": "text",
+            "text": "pick-up stick",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pick-up-stick" } }]
+          },
+          { "type": "text", "text": " threaded through the slot threads of the " },
+          {
+            "type": "text",
+            "text": "warp",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }]
+          },
+          { "type": "text", "text": " to open a pattern shed that the " },
+          {
+            "type": "text",
+            "text": "heddle",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }]
+          },
+          { "type": "text", "text": " alone cannot produce. The " },
+          {
+            "type": "text",
+            "text": "honeycomb weave",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "honeycomb" } }]
+          },
+          { "type": "text", "text": " block repeat requires four or six warp threads per cell and a sequence of five picks per cell row. Set up the pattern once and repeat it across the full warp width and the full length of the piece." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "8/2 cotton warp and weft, same or contrasting colour", "qty": "200 m warp, 150 m weft" },
+            { "name": "Rigid-heddle loom, minimum 30 cm weaving width", "qty": "1" },
+            { "name": "7.5 dpi reed", "qty": "1" },
+            { "name": "Pick-up stick or flat shed stick, narrower than the loom", "qty": "1" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the pick-up pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After warping at 7.5 dpi, place the heddle in neutral. Working along the slot threads from left to right, pick up every other group of 4 slot threads onto the pick-up stick: pick up 4, skip 4, pick up 4, skip 4, and so on across the full width. Slide the pick-up stick to the back of the loom where it sits out of the way during tabby rows and is pulled forward when the pattern shed is needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The five-pick sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each honeycomb cell block is woven in a repeating five-pick sequence. Pick 1: heddle up (hole threads raised). Pick 2: pick-up stick on edge in neutral heddle position (pattern slot shed). Pick 3: heddle up. Pick 4: pick-up stick on edge in neutral heddle position. Pick 5: heddle down (hole threads lowered). Beat all picks moderately. Repeat this sequence until the cells are square, typically 6 to 8 times per block, then shift the pick-up stick pattern by half a block to begin the offset cells." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The cells do not appear in the finished cloth",
+              "cause": "The pick-up stick shed was opened with the heddle up or down instead of in neutral position",
+              "fix": "Check that the heddle is in the neutral (centre) position before turning the pick-up stick on edge. The pattern shed only works when the heddle is neutral."
+            },
+            {
+              "problem": "The cells are rectangular rather than square",
+              "cause": "The five-pick sequence was repeated too few times before shifting",
+              "fix": "Add more repeats of the five-pick sequence until the cells appear square when the cloth is measured off the loom. The exact number depends on the yarn weight and beat."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
