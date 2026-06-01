@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-01T08:08:55.777Z",
-  "totalScanned": 6124,
+  "generatedAt": "2026-06-01T11:09:46.335Z",
+  "totalScanned": 6200,
   "passCount": 0,
-  "blockCount": 1,
+  "blockCount": 6,
   "warnOnlyCount": 0,
   "perCategory": {
     "fibre-arts": {
@@ -10,11 +10,18 @@
       "pass": 0,
       "block": 1,
       "warnOnly": 0
+    },
+    "natural-home": {
+      "total": 5,
+      "pass": 0,
+      "block": 5,
+      "warnOnly": 0
     }
   },
   "perRuleKind": {
     "body-missing-method": 1,
-    "grade-level-strict": 1
+    "grade-level-strict": 2,
+    "voice-violation": 5
   },
   "verdicts": [
     {
@@ -38,6 +45,107 @@
           "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > paragraph[0]",
           "snippet": "Bronson lace is a spot-and-net structure in which some groups of warp threads interweave in a lace-like net pattern while others form solid "
+        }
+      ]
+    },
+    {
+      "slug": "frankincense-rosehip-face-serum",
+      "tutorialId": "cmpv00yal00007gv4zl1400pc",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T09:23:44.510Z",
+      "publishedAt": "2026-06-01T09:21:04.388Z",
+      "heroMediaId": "cmpv03muf000uxwv43fd6bhjj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
+      "slug": "hemp-seed-face-oil",
+      "tutorialId": "cmpv013bq0000lcv4dpjp5y3z",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T09:23:44.848Z",
+      "publishedAt": "2026-06-01T09:21:10.918Z",
+      "heroMediaId": "cmpv03ojh000yxwv49a0g7fuh",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
+      "slug": "patchouli-bergamot-linen-spray",
+      "tutorialId": "cmpv02spj00009wv4i1acoyg8",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T09:23:45.281Z",
+      "publishedAt": "2026-06-01T09:22:30.467Z",
+      "heroMediaId": "cmpv03rx90018xwv4wjw5i0wz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Patchouli lingers in fabric longer than most essential oils. With bergamot, the blend is warm and slightly citrusy with an earthy base. The "
+        }
+      ]
+    },
+    {
+      "slug": "shaving-soap-puck",
+      "tutorialId": "cmpv002zw0000ssv47oxj3erg",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T09:23:45.637Z",
+      "publishedAt": "2026-06-01T09:20:23.828Z",
+      "heroMediaId": "cmpv03uzi001exwv4skrmlevw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"saponification\" in body prose without glossary tooltip — use soap-making chemistry; technical notes only",
+          "path": "body > [0] > [0]",
+          "snippet": "saponification"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
+          "path": "body > paragraph[1] > text"
+        }
+      ]
+    },
+    {
+      "slug": "vetiver-sea-salt-body-scrub",
+      "tutorialId": "cmpv01jx20000dkv4gbhoupc9",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T09:23:46.741Z",
+      "publishedAt": "2026-06-01T09:21:32.405Z",
+      "heroMediaId": "cmpv044cp0020xwv4hhq70bgd",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
         }
       ]
     }

@@ -298,3 +298,66 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 08:14:43
+
+Generated: 2026-06-01T08:14:43.351Z
+
+Processed: 119
+PASS: 119
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| em-dash-in-content | 6 |
+| grade-level-strict | 2 |
+
+
+---
+
+## Run at 09:23:47
+
+Generated: 2026-06-01T09:23:47.070Z
+
+Processed: 40
+PASS: 35
+STILL_BLOCKED: 5
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 13 |
+| voice-violation | 8 |
+| em-dash-in-content | 6 |
+
+## Still BLOCKED (sample 20)
+
+- frankincense-rosehip-face-serum: voice-violation
+- hemp-seed-face-oil: voice-violation
+- patchouli-bergamot-linen-spray: grade-level-strict
+- shaving-soap-puck: voice-violation
+- vetiver-sea-salt-body-scrub: voice-violation
+
+---
+
+## Run at 11:07:57
+
+Generated: 2026-06-01T11:07:57.164Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

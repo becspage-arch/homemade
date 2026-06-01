@@ -76,3 +76,9 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - welsh-bara-brith hero-missing — applied: hero-fill-deferred-to-standalone-script
 
 - four-shaft-bronson-lace grade-level-strict — applied: 
+
+- frankincense-rosehip-face-serum voice-violation — applied: 
+- hemp-seed-face-oil voice-violation — applied: 
+- patchouli-bergamot-linen-spray grade-level-strict — applied: 
+- shaving-soap-puck voice-violation — applied: 
+- vetiver-sea-salt-body-scrub voice-violation — applied: 
