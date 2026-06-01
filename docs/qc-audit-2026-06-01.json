@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-06-01T01:12:54.923Z",
+  "totalScanned": 5902,
+  "passCount": 0,
+  "blockCount": 11,
+  "warnOnlyCount": 0,
+  "perCategory": {
+    "animals-smallholding": {
+      "total": 11,
+      "pass": 0,
+      "block": 11,
+      "warnOnly": 0
+    }
+  },
+  "perRuleKind": {
+    "grade-level-strict": 11,
+    "voice-violation": 6
+  },
+  "verdicts": [
+    {
+      "slug": "creamed-honey-making",
+      "tutorialId": "cmpugl8ua0003egv4hjx264s1",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:02.072Z",
+      "publishedAt": "2026-06-01T00:16:58.869Z",
+      "heroMediaId": "cmpugo7li000c44v4pwfw35i4",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[17] > troubleshooterItem[0] > paragraph[1]",
+          "snippet": "Room temperature too high, honey variety unsuitable for creaming, or insufficient seed ratio."
+        }
+      ]
+    },
+    {
+      "slug": "decontaminating-equipment-after-foulbrood",
+      "tutorialId": "cmpuglbfk0003t4v4ng62u6ys",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:02.581Z",
+      "publishedAt": "2026-06-01T00:17:02.231Z",
+      "heroMediaId": "cmpugo9sg000i44v4l9fbjpta",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[3] > listItem[0] > paragraph[0]",
+          "snippet": "The inspector will confirm the diagnosis on site and issue a Notice of Intended Prosecution if the beekeeper fails to act."
+        }
+      ]
+    },
+    {
+      "slug": "goat-mastitis-recognition-and-response",
+      "tutorialId": "cmpugm16w0003mwv44i64qjt8",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:02.939Z",
+      "publishedAt": "2026-06-01T00:17:35.613Z",
+      "heroMediaId": "cmpugodpv000o44v427i5lyej",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[2] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Goat mastitis: recognition and response go here."
+        }
+      ]
+    },
+    {
+      "slug": "internal-laying-and-egg-peritonitis-in-hens",
+      "tutorialId": "cmpuglj6p000378v4zx7dwd27",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:03.353Z",
+      "publishedAt": "2026-06-01T00:17:12.270Z",
+      "heroMediaId": "cmpugoftg000s44v4nmokji4q",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0]",
+          "snippet": "Drop in egg production over several weeks with no seasonal explanation."
+        }
+      ]
+    },
+    {
+      "slug": "introducing-new-rabbits-to-a-colony",
+      "tutorialId": "cmpugn3i900024ov40x2o13uw",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:03.624Z",
+      "publishedAt": "2026-06-01T00:18:25.269Z",
+      "heroMediaId": "cmpugogi5000u44v4s3plmiva",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[8] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Introducing a new rabbit to resident rabbits go here."
+        }
+      ]
+    },
+    {
+      "slug": "managing-mareks-disease-in-a-backyard-flock",
+      "tutorialId": "cmpuglloo0003jwv42n3y5t05",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:04.178Z",
+      "publishedAt": "2026-06-01T00:17:15.519Z",
+      "heroMediaId": "cmpugok5p001244v4iz2tu8t7",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[11] > paragraph[0]",
+          "snippet": "Marek's disease is not a notifiable disease in the UK. You do not need to report it to APHA. However, if you are experiencing unexplained mo"
+        }
+      ]
+    },
+    {
+      "slug": "preparing-for-the-shearing-contractor",
+      "tutorialId": "cmpuglyna0001b0v4yddl6fo0",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:05.060Z",
+      "publishedAt": "2026-06-01T00:17:32.315Z",
+      "heroMediaId": "cmpugop3f001e44v4hje7ac52",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[9] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Shearing day involves someone else's time and equipment, which changes the dynamic compared to most solo smallholding tasks. The contractor "
+        }
+      ]
+    },
+    {
+      "slug": "recognising-swine-dysentery",
+      "tutorialId": "cmpugmiz50003e4v4akhmlfb2",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:05.870Z",
+      "publishedAt": "2026-06-01T00:17:58.663Z",
+      "heroMediaId": "cmpugoumy001s44v4tpffkc6m",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 15.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[4] > paragraph[3]",
+          "snippet": "Salmonellosis: profuse yellow watery diarrhoea. High temperature. Rapid deterioration in severely affected pigs; sometimes purple-red skin d"
+        }
+      ]
+    },
+    {
+      "slug": "stocking-a-livestock-medicine-cabinet",
+      "tutorialId": "cmpugnizm000284v4hkqw21ju",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:06.237Z",
+      "publishedAt": "2026-06-01T00:18:45.337Z",
+      "heroMediaId": "cmpugow1i001w44v46ujgvj4j",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"colostrum\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > bulletList[6] > listItem[3] > paragraph[0] > text",
+          "snippet": "colostrum"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
+          "path": "body > bulletList[6] > listItem[6] > paragraph[0] > text",
+          "snippet": "nitrile"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Stock your medicine cabinet before you need it, in discussion with your vet. For food-producing animals, medicine records are a legal requir"
+        }
+      ]
+    },
+    {
+      "slug": "training-pigs-to-an-electric-fence",
+      "tutorialId": "cmpugmqp6000294v48hjzzswf",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:06.603Z",
+      "publishedAt": "2026-06-01T00:18:08.672Z",
+      "heroMediaId": "cmpugoxio002044v49pwjz8b5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Pigs move to outdoor paddocks fenced only with electric wire only after they have been trained. The training step takes one to three days an"
+        }
+      ]
+    },
+    {
+      "slug": "treating-encephalitozoon-cuniculi-in-rabbits",
+      "tutorialId": "cmpugmvso000390v443k7klwd",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T00:20:06.992Z",
+      "publishedAt": "2026-06-01T00:18:15.278Z",
+      "heroMediaId": "cmpugoytv002444v4pv5njlcl",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"fenbendazole\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[5] > text",
+          "snippet": "fenbendazole"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "E. cuniculi is extremely common in domestic rabbits: seroprevalence studies suggest 50 to 80% of pet rabbits have been exposed. Most never s"
+        }
+      ]
+    }
+  ]
+}
