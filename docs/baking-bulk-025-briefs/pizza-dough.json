@@ -1,0 +1,309 @@
+{
+  "slug": "pizza-dough",
+  "title": "Pizza dough",
+  "subtitle": "The straight yeasted dough for home-oven pizza",
+  "excerpt": "A 65% hydration pizza dough for a home oven. Mixes in minutes, proves for an hour, and rolls or stretches into a round that crisps at the edges and holds its centre.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The Neapolitan canon (Associazione Verace Pizza Napoletana, public specification) defines flour type 00, water, salt, and yeast at 55-65% hydration. This domestic version uses strong white bread flour as a substitute for type 00, and an oven-stone or steel to compensate for the heat deficit of a domestic oven versus a wood-fired one.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 × 30 cm pizza bases or 4 smaller ones",
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Shape into balls after the bulk ferment, wrap individually in cling film, and freeze. Defrost overnight in the fridge, then prove at room temperature for 30 minutes before stretching.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. The dough balls freeze well, so make a large batch and bank them.",
+    "makeAheadNotes": "Cold-prove in the fridge for up to 3 days after the first 30-minute rest. A longer cold prove adds flavour.",
+    "dietaryFlags": [
+      "vegan"
+    ],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 65,
+      "saltPercent": 2,
+      "yeastPercent": 0.7,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "as high as the oven goes; use a pizza stone or steel preheated for 45 minutes",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "pizza-stone",
+      "isOptional": true
+    },
+    {
+      "slug": "pizza-steel",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gluten-development",
+      "term": "Gluten development",
+      "definition": "The process of working flour and water together to form elastic protein networks that give bread its structure and chew."
+    }
+  ],
+  "techniqueSlugs": [
+    "stretching-pizza-dough"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pizza dough is mostly about temperature. A Neapolitan wood oven runs above 400°C; a domestic oven tops out around 250°C. The gap changes what the base can do. At 400°C, the dough puffs up and chars in 90 seconds. At 250°C, you need a thinner base, a preheated stone or steel, and slightly more time. The result is different, not inferior, if the dough is right."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Stone or steel"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A pizza stone or steel preheated for at least 45 minutes at full oven temperature gives the base a short, fierce blast of bottom heat that replicates some of the oven-floor effect. Without one, the base tends to cook through before the edges colour. If you have neither, use an upturned heavy baking tray."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "type 00 if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 3.5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 325,
+              "unit": "ml",
+              "prepNote": "lukewarm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine flour and yeast in a large bowl. Dissolve the salt in the water (keeping yeast and salt apart until they hit the water prevents a direct kill). Add the salted water and olive oil to the flour and mix to a shaggy dough. Let it rest 5 minutes; the flour absorbs the water and the dough comes together more easily after the rest."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Knead"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Knead on an unfloured surface for 8 to 10 minutes, or 6 minutes in a stand mixer on medium. The dough is ready when it is smooth, slightly tacky, and stretches without tearing. Good "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gluten-development"
+                }
+              }
+            ],
+            "text": "gluten development"
+          },
+          {
+            "type": "text",
+            "text": " here is what lets you stretch a base thin without it springing back."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bulk ferment, 60 minutes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oil the bowl lightly, return the dough, cover with cling film, and leave at room temperature for about an hour, until well risen. The low yeast percentage means the ferment goes slowly; the flavour builds from the long rise, not a yeast rush."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Divide and rest"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Knock back and divide into two equal balls of about 415 g. Shape each into a tight ball, place on an oiled plate, cover, and rest for 30 minutes. The gluten relaxes during this rest, which makes the ball much easier to stretch. If you skip the rest, the dough springs back and fights you."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and bake"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven with the stone or steel inside to 250°C fan, or as high as it goes, for at least 45 minutes. Dust a ball of dough with flour and stretch it by pressing from the centre outward with your fingertips, rotating as you go. Work toward a 30 cm round, about 3 mm thick, with a slightly thicker rim. Top lightly, keeping to a thin layer of sauce and not overloading with moisture-heavy toppings. Transfer to the hot stone using a floured board or a peel. Bake for 8 to 10 minutes, until the base is crisp and the edges are blistered and coloured."
+          }
+        ]
+      }
+    ]
+  }
+}

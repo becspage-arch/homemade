@@ -142,3 +142,82 @@ SKIPPED: 0
 - book-repair-lifting-endpaper: grade-level-strict
 - illuminated-border-design: grade-level-strict
 - maintaining-copperplate-slant: grade-level-strict
+
+---
+
+## Run at 03:56:11
+
+Generated: 2026-06-01T03:56:11.417Z
+
+Processed: 77
+PASS: 77
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 78 |
+| placeholder-string | 40 |
+| grade-level-strict | 13 |
+| historical-century-in-body | 12 |
+
+
+---
+
+## Run at 05:09:25
+
+Generated: 2026-06-01T05:09:25.507Z
+
+Processed: 117
+PASS: 77
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| ingredient-amount-missing | 2 |
+| grade-level-strict | 1 |
+
+## Still BLOCKED (sample 20)
+
+- almond-cake-flourless: hero-missing
+- amaretti-soft: hero-missing
+- american-biscuits-plain: hero-missing
+- apple-and-blackberry-pie: hero-missing
+- apple-cake-german: hero-missing
+- apple-pie-double-crust: hero-missing
+- bakewell-raspberry-frangipane: hero-missing
+- banana-bread-classic: hero-missing
+- biscotti-chocolate-hazelnut: hero-missing
+- brandy-snaps: hero-missing
+- brownies-classic: hero-missing
+- buttermilk-scones: hero-missing
+- caramel-shortbread-millionaires: hero-missing
+- carrot-and-walnut-cake: hero-missing
+- cherry-pie-lattice: hero-missing
+- chocolate-and-guinness-cake: hero-missing
+- chocolate-sandwich-with-buttercream: hero-missing
+- churros-chocolate-sauce: hero-missing
+- coffee-cake-american: hero-missing
+- cornbread-southern: hero-missing
+
+---
+
+## Run at 05:11:56
+
+Generated: 2026-06-01T05:11:56.749Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

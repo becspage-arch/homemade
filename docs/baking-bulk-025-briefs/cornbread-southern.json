@@ -1,0 +1,295 @@
+{
+  "slug": "cornbread-southern",
+  "title": "Cornbread, Southern",
+  "subtitle": "Cast-iron skillet cornbread, barely sweet",
+  "excerpt": "Southern American cornbread made in a cast-iron skillet: a crisp, dark underside, a tender crumb made mostly of cornmeal, and very little sugar. Serve alongside chilli, beans, or greens.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "USDA extension service bulletins and Southern US agricultural college handbooks from the 1910s to 1940s describe the skillet-cornbread method, emphasising fine stone-ground yellow or white cornmeal and minimal wheat flour. The regional distinction between sweet Northern cornbread and savoury Southern cornbread is documented in American home economics literature of the same period; the Southern version is traditionally made in a cast-iron skillet heated in the oven before the batter goes in.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Wrap wedges and freeze. Reheat from frozen in a 180°C fan oven for 8 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten within a few hours of baking; the crust softens on standing.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 240,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 220,
+      "bakeTemperatureNote": "fan oven, with the skillet already inside and preheated",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "isOptional": false
+    },
+    {
+      "slug": "cast-iron-skillet",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-jug",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "buttermilk",
+      "term": "Buttermilk",
+      "definition": "Tangy fermented milk, acidic enough to react with bicarbonate of soda and generate lift in a quick bread. Plain yoghurt thinned with milk works as a substitute at a 1:1 ratio."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Southern cornbread is a quick bread with a high cornmeal ratio, very little plain flour, and almost no sugar. The skillet goes into a hot oven first, then the batter goes into the hot skillet: the base sets fast and dark, which gives the bread its distinctive crisp underside. This is not cake made of corn. It has the texture and purpose of bread, built to sit alongside something saucy."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Buttermilk substitute"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "If you do not have "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "buttermilk"
+                    }
+                  }
+                ],
+                "text": "buttermilk"
+              },
+              {
+                "type": "text",
+                "text": ", stir a tablespoon of white wine vinegar or lemon juice into 240 ml of whole milk and leave for 5 minutes. It curdles slightly and becomes functionally acidic."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "polenta",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "fine or medium ground, stone-ground if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "optional; Southern tradition uses little or none",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "buttermilk",
+              "amount": 240,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "large",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "plus a generous knob for the skillet",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the skillet"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 220°C fan with a 25 cm cast-iron skillet inside. The skillet needs to be hot before the batter goes in; 10 minutes at temperature is enough. While it heats, mix the batter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the batter"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt 40 g of butter and let it cool slightly. Whisk together the cornmeal, flour, baking powder, bicarbonate of soda, salt, and sugar in a bowl. In a jug, whisk the buttermilk, egg, and melted butter. Pour the wet mixture into the dry and stir until just combined; a few lumps are fine. Do not overmix, and do not leave the batter standing once the wet and dry are combined. The bicarbonate starts reacting immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the hot skillet from the oven and add a generous knob of butter, swirling to coat the base and sides. It will melt and sizzle immediately. Pour in the batter; it will spit as it hits the hot skillet. Return to the oven and bake for 18 to 20 minutes, until the top is set and golden, the sides have pulled away from the skillet, and a skewer through the centre comes out clean. The base should be dark gold when you tip the cornbread out onto a board. Serve cut into wedges, warm or at room temperature."
+          }
+        ]
+      }
+    ]
+  }
+}

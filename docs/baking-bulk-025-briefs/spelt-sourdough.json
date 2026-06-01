@@ -1,0 +1,342 @@
+{
+  "slug": "spelt-sourdough",
+  "title": "Spelt sourdough",
+  "subtitle": "An open-crumbed loaf with a nuttier grain flavour",
+  "excerpt": "A spelt sourdough loaf, baked in a Dutch oven. Spelt ferments quickly and needs a slightly shorter bulk than a wheat loaf; the flavour is nuttier and the crumb more tender.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Spelt (Triticum spelta) is an ancient wheat relative documented in European grain records since at least the Bronze Age. Modern home baking guidance draws on the work of the Bread Labour Institute (UK) and Real Bread Campaign fermentation research. The technique of replacing 30-50% wheat with spelt in a sourdough loaf to moderate the flavour while retaining structure is described in Vanessa Kimbell's bread baking research (referenced in her publicly available writings).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 boule (about 900 g baked)",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 300,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Toast from frozen or defrost at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The retard in the fridge is overnight; bake in the morning from cold. The loaf goes from fridge to oven.",
+    "dietaryFlags": [
+      "vegan"
+    ],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 450,
+      "hydrationPercent": 72,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 240,
+      "proofMinutes": null,
+      "retardingMinutes": 720,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "fan oven, Dutch oven lid on for first 20 minutes then lid off",
+      "steamMethod": "Dutch oven lid traps steam for the first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "banneton",
+      "isOptional": true
+    },
+    {
+      "slug": "bench-scraper",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "Levain",
+      "definition": "Active sourdough starter at peak fermentation, used here at 20% of the flour weight. It should pass the float test: a small piece in water should rise to the top."
+    },
+    {
+      "slug": "bulk-fermentation",
+      "term": "Bulk fermentation",
+      "definition": "The first rise of the dough, before shaping, when the yeast and bacteria in the levain work through the entire mass."
+    }
+  ],
+  "techniqueSlugs": [
+    "stretch-and-fold",
+    "shaping-a-sourdough-boule",
+    "scoring-bread"
+  ],
+  "criticalTechniques": [
+    "shaping-a-sourdough-boule"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spelt ferments faster than wheat. Its gluten structure is more extensible and less elastic, which means it tears more easily if you push it too far. This loaf uses 70% spelt and 30% strong white bread flour, which keeps the crumb open and the flavour interesting while giving the dough enough structure to hold its shape through shaping and scoring."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Spelt and time"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Because spelt ferments quickly, watch the dough more closely than you would a wheat loaf. Check the "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "bulk-fermentation"
+                    }
+                  }
+                ],
+                "text": "bulk fermentation"
+              },
+              {
+                "type": "text",
+                "text": " at 3 hours rather than 4. Signs it is ready: the dough has grown by 60 to 70%, the sides of the bowl are domed, and it is jiggly when you move the bowl. Do not wait for a full double."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            {
+              "ingredientSlug": "spelt-flour",
+              "amount": 315,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 135,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 324,
+              "unit": "ml",
+              "prepNote": "room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sourdough-starter",
+              "amount": 90,
+              "unit": "g",
+              "prepNote": "at peak, passes the float test (the levain)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 9,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Autolyse, 30 minutes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix both flours with 300 ml of the water (holding back 24 ml) until no dry flour remains. Cover and rest for 30 minutes. This autolyse allows the flour to hydrate fully before the levain and salt go in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add levain and salt"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Squeeze the active "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "levain"
+                }
+              }
+            ],
+            "text": "levain"
+          },
+          {
+            "type": "text",
+            "text": " into the dough along with the salt dissolved in the remaining 24 ml of water. Mix well using your hand in a squeezing motion, then fold the dough over itself a few times in the bowl to incorporate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bulk fermentation, 3 to 4 hours"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Perform three sets of stretch and folds at 30-minute intervals. Between sets, leave the bowl covered at room temperature (around 24°C). Check at 3 hours: if the dough has grown by 60% and is domed and aerated, it is ready. Spelt moves faster than wheat at the same temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and cold retard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn the dough onto an unfloured surface. Pre-shape into a round, cover, and rest for 20 minutes. Shape into a tight boule, building surface tension by dragging the ball toward you. Place seam-up into a well-floured banneton or a bowl lined with a floured cloth. Cover and refrigerate for 8 to 12 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 240°C fan with the Dutch oven inside for 45 minutes. Tip the cold loaf onto a square of baking paper and score the top with a sharp blade or lame: a single curved score about 5 mm deep. Lower the loaf into the hot Dutch oven using the paper as a sling, put the lid on, and bake for 20 minutes. Remove the lid and bake for a further 22 to 25 minutes, until the crust is deep reddish-brown and an instant-read probe through the base reads 96°C. Cool on a wire rack for at least 2 hours before cutting. The crumb sets as the loaf cools."
+          }
+        ]
+      }
+    ]
+  }
+}
