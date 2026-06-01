@@ -268,3 +268,20 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 23:08:37
+
+Generated: 2026-05-31T23:08:37.407Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

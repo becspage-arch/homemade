@@ -61,3 +61,59 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 02:06:49
+
+Generated: 2026-06-01T02:06:49.603Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 02:15:37
+
+Generated: 2026-06-01T02:15:37.251Z
+
+Processed: 69
+PASS: 54
+STILL_BLOCKED: 15
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 43 |
+| body-missing-method | 35 |
+| voice-violation | 22 |
+| historical-century-in-body | 2 |
+
+## Still BLOCKED (sample 20)
+
+- accordion-fold-journal-insert: voice-violation, grade-level-strict
+- calligraphy-ink-testing: grade-level-strict
+- consolidating-a-loose-text-block: grade-level-strict
+- ephemera-pockets-for-journals: voice-violation, grade-level-strict
+- fraktur-minuscule-alphabet: voice-violation, grade-level-strict
+- insular-half-uncial-alphabet: voice-violation, grade-level-strict
+- mixed-fibre-pulp-blending: voice-violation, grade-level-strict
+- nonpareil-rake-marbling: voice-violation, grade-level-strict
+- nordic-klipp-papercut: grade-level-strict
+- origami-envelope: voice-violation, grade-level-strict
+- paper-pulp-natural-pigments: grade-level-strict
+- ruling-up-for-display-lettering: voice-violation, grade-level-strict
+- tortoiseshell-stitch-binding: voice-violation, grade-level-strict
+- watercolour-journal-page-prep: voice-violation, grade-level-strict
+- wycinanki-folk-papercut: voice-violation, grade-level-strict
