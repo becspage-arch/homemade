@@ -1,5 +1,27 @@
 # Paper & word authoring — worker prompt template
 
+<!-- voice-spec-quick-reference-injected -->
+
+## Voice — MANDATORY pre-read
+
+Before drafting any tutorial brief in this category, read
+`docs/voice-spec-quick-reference.md` end-to-end. The worked
+bad → good rewrites and the 10-point self-critique in §5 are not
+suggestions — they are the bar every opening paragraph is measured
+against. If any answer in §5 self-critique is "no", rewrite before
+running voice-check.
+
+The autopilot batch tail also runs the qc-fix routine on
+`--recently-published` tutorials. New rules: no subjective
+"twelve minutes of work" claims (the schema carries timeMinutes,
+yieldDescription, servings — that's where time lives), no botanical
+lecture in the orientation, no clinical / Latin vocabulary in body
+prose, no academic citations in body prose. See §4 of the quick
+reference for the full "don't" list.
+
+---
+
+
 Canonical input for any worker session that drafts a Paper & word
 tutorial. Mirrors `docs/tutorial-author.md` (the cooking template),
 `docs/baking-author.md`, and `docs/crochet-author.md` in shape. The
