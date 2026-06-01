@@ -748,3 +748,19 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - air-fryer-buffalo-wings: content-type-opening-mismatch
+
+---
+
+## Run at 19:07:57
+
+Generated: 2026-06-01T19:07:57.599Z
+
+Processed: 73
+PASS: 73
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
