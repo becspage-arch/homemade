@@ -1,0 +1,314 @@
+{
+  "slug": "paella-vegetariana",
+  "title": "Paella Vegetariana",
+  "subtitle": "Spanish vegetable paella with peppers, artichokes, and saffron",
+  "excerpt": "Vegetable paella is a Spanish rice dish of peppers, artichoke hearts, tomatoes, and beans in saffron-steeped stock. Without the distraction of meat or fish, the flavour rests entirely on the sofrito, the stock, and the caramelised socarrat base. A good vegetable paella is as satisfying as any meat version.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Vegetarian paella is a well-established variant within Spanish cooking, particularly in Valencia where seasonal vegetables are cooked in the same tradition as the meat original. The key principles (a properly made sofrito, no stirring, and a socarrat crust) apply regardless of what goes into the pan.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "paella-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "socarrat",
+      "term": "Socarrat",
+      "definition": "The toasted, slightly crispy crust of rice that forms on the base of a paella. Formed by briefly increasing the heat at the very end. The most prized part of the dish."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegetable paella is built on the same method as any other paella: a deep "
+          },
+          {
+            "type": "text",
+            "text": "socarrat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "socarrat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " on the base, a properly reduced sofrito, and rice cooked without stirring. The peppers and artichokes go in the oil first, so they caramelise before the rice is added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "paella-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 50 ml hot water",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "grated to a pulp",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "deseeded, cut into strips",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "pepper-green",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "deseeded, cut into strips",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "artichoke-hearts",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "tinned, drained and quartered",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "drained",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "wedges to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{extra-virgin-olive-oil}} in the paella pan over medium-high heat. Cook the pepper strips for 6 minutes until softened and lightly coloured. Add the artichoke hearts and cook for 3 minutes more. Push everything to the sides of the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the centre of the pan, cook the garlic over medium heat for 1 minute. Add the grated tomato and cook for 8 minutes until thick and dark. Stir in {{paprika-smoked}} of smoked paprika."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chickpeas and mix everything together. Scatter {{paella-rice}} of rice across the pan. Pour in {{stock-vegetable}} of warm vegetable stock and the saffron water. Stir once to distribute, then do not stir again."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a boil over high heat and cook for 10 minutes. Reduce to medium-low for 8 to 10 minutes more until the stock is absorbed and the rice is just cooked. Increase the heat to high for 1 to 2 minutes to form the socarrat, then rest for 5 minutes. Serve with lemon wedges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The rice is unevenly cooked",
+              "cause": "Burner too small for the pan, or uneven heat",
+              "fix": "A large paella pan needs a large burner or can be placed over two burners on the hob. Rotate the pan halfway through cooking if the rice is cooking unevenly at the edges."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vegetable paella is made across Spain wherever seasonal produce is good and plentiful. In Valencia, it is part of the same tradition as the meat original; the method is the same, only the ingredients change. Serve at the table in the pan with bread and a jug of cold water or white wine."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "slug": "stifado",
+  "title": "Stifado",
+  "subtitle": "Greek beef and shallot stew with cinnamon and red wine",
+  "excerpt": "Stifado is a Greek slow-cooked stew of beef and whole shallots in a spiced red wine sauce. The shallots melt into the sauce and the meat becomes very tender. It takes a long time but almost none of that is active.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Stifado appears across Greek and Cypriot cooking. The name derives from the Italian stufato, meaning a braised or stewed dish. The combination of warm spices, sweet onions, and wine is characteristic of the dish wherever it appears.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze in portions for up to 3 months. Reheat gently on the hob, adding a splash of water or stock if it looks thick.",
+    "batchable": true,
+    "batchNotes": "The stew improves with reheating. Make it the day before serving.",
+    "makeAheadNotes": "Make a day ahead and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "makeAhead",
+      "weeknight"
+    ],
+    "temperatureCelsius": 150,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A slow-cooking method where meat is first browned, then cooked partly submerged in liquid in a covered pot. The long, gentle heat breaks down tough cuts into something very tender."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stifado is a Greek "
+          },
+          {
+            "type": "text",
+            "text": "braise",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "braise"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of beef with a very large number of whole shallots in a spiced red wine sauce. The shallots soften completely and sweeten into the sauce over the long cooking time. The meat becomes deeply tender, flavoured with cinnamon, allspice, and clove."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The prep takes about 20 minutes; the oven does the rest. Serve with crusty bread, rice, or orzo."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "peeled, left whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "left whole, peeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "whole berries",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the beef"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 150°C. Pat the beef dry with kitchen paper and season with salt and pepper. Heat {{olive-oil}} in a large casserole over high heat. Brown the beef in batches on all sides, about 4 minutes per batch. Don't crowd the pan. Transfer to a plate."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the braise"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the whole shallots to the casserole and cook for 3 minutes until lightly coloured. Add the whole garlic cloves and stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the beef to the casserole. Add {{red-wine}} of red wine, the tinned tomatoes, {{tomato-puree}} of tomato purée, {{red-wine-vinegar}} of red wine vinegar, the cinnamon sticks, allspice berries, cloves, and bay leaves. Add enough water to nearly cover the meat. Season with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a simmer, then cover the casserole with a tight-fitting lid and transfer to the oven. Cook for 2 hours to 2 hours 30 minutes until the beef is very tender and the sauce has thickened. If the sauce is still loose after that time, remove the lid and cook for another 20 minutes on the hob over low heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the whole spices and bay leaves before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is thin after the full cooking time",
+              "cause": "Too much liquid added, or lid not tight enough",
+              "fix": "Uncover and simmer on the hob for 15 to 20 minutes to reduce. The sauce should coat the back of a spoon."
+            },
+            {
+              "symptom": "The shallots have broken down completely",
+              "cause": "Cooked slightly too long",
+              "fix": "This is not a problem if you prefer them that way. For whole shallots that keep their shape, check after 1 hour 45 minutes. The beef will still need longer."
+            },
+            {
+              "symptom": "The stew tastes too sweet",
+              "cause": "The shallots and wine reduce down to sweetness",
+              "fix": "Add a splash more red wine vinegar to balance. A pinch of salt helps too."
+            },
+            {
+              "symptom": "The beef is still tough",
+              "cause": "Not cooked long enough",
+              "fix": "Replace the lid and return to the oven for another 30 minutes. Chuck needs a long time to soften. Check at the 2-hour mark by pressing a piece with a spoon; it should give easily."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stifado is a winter dish in Greek homes. It appears with rabbit and hare as often as with beef, and sometimes with octopus in coastal areas. The combination of aromatic spices and sweet onions is characteristic of a style of Greek cooking that owes something to the trade routes through the eastern Mediterranean. Serve it with bread to mop the sauce, or over orzo for a more substantial plate."
+          }
+        ]
+      }
+    ]
+  }
+}

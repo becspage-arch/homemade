@@ -1,0 +1,341 @@
+{
+  "slug": "fabada-asturiana",
+  "title": "Fabada Asturiana",
+  "subtitle": "Asturian white bean and pork stew",
+  "excerpt": "Fabada asturiana is a rich northern Spanish stew of large white beans slow-cooked with chorizo, morcilla (black pudding), and smoked pork. It is a deeply satisfying winter dish with a thick, paprika-orange broth. Made properly it takes time but needs almost no intervention.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fabada asturiana is the emblematic dish of Asturias in northern Spain. It uses fabes de la granja, large flat white beans grown in Asturias. Butter beans are the best substitute available in the UK. The combination of smoked meats, beans, and a rich red broth is a defining feature of Asturian cooking.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 15,
+    "chillingMinutes": 720,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze in portions. Reheat gently on the hob, adding a splash of water.",
+    "batchable": true,
+    "batchNotes": "Improves the next day. Keeps in the fridge for 5 days.",
+    "makeAheadNotes": "Best made a day ahead and reheated. The flavour deepens significantly overnight.",
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "makeAhead"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "compango",
+      "term": "Compango",
+      "definition": "The Asturian word for the collective cured pork meats added to a fabada: typically chorizo, morcilla, and smoked ham or pancetta. These are what give the dish its characteristic smoky, paprika-rich character."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fabada asturiana is a slow-cooked stew of large white beans and "
+          },
+          {
+            "type": "text",
+            "text": "compango",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "compango"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", the combination of cured pork meats that gives the broth its smoky, paprika-orange colour and deep flavour. It is a substantial winter dish from northern Spain, requiring patience rather than technique. The dried beans need an overnight soak; the cooking is mostly unattended."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "butter-beans",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "dried, soaked overnight in cold water",
+              "isOptional": false,
+              "groupLabel": "For the beans"
+            },
+            {
+              "ingredientSlug": "chorizo",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "cooking chorizo, left whole or in two pieces",
+              "isOptional": false,
+              "groupLabel": "For the compango"
+            },
+            {
+              "ingredientSlug": "black-pudding",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "morcilla if available, or black pudding, sliced thick",
+              "isOptional": false,
+              "groupLabel": "For the compango"
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "smoked, or plain pork belly in a single piece",
+              "isOptional": false,
+              "groupLabel": "For the compango"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "peeled, left whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "optional",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak the beans"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the dried beans generously with cold water and leave overnight. Drain and rinse before using."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the fabada"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the drained beans, whole chorizo, pork belly, onion halves, whole garlic cloves, bay leaves, and smoked paprika in a large casserole. Cover with cold water by about 5 cm. Do not add salt at this stage."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a boil, then immediately reduce to a very gentle simmer. Skim any foam from the surface. Cook gently for 1 hour 30 minutes to 2 hours until the beans are very tender. Top up with hot water as needed to keep the beans submerged."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the black pudding or morcilla slices in the last 20 minutes of cooking. Season with salt once the beans are tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the chorizo and pork belly and slice into pieces. Remove the onion and discard. Return the meat to the pot. The broth should be thick and orange-red from the paprika and chorizo fat. Let it rest for 15 minutes off the heat before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The beans are still firm after 2 hours",
+              "cause": "Old dried beans, or water too hard, or salt added too early",
+              "fix": "Salt toughens the skin of dried beans; never add it until they are already tender. Old beans (from previous seasons) can take much longer to soften. Continue cooking and add hot water as needed."
+            },
+            {
+              "symptom": "The broth is thin and pale",
+              "cause": "Not enough chorizo fat rendered, or too much water",
+              "fix": "Start with just enough water to cover by 5 cm and resist adding too much. The fat from the chorizo and pork is what makes the broth thick and orange."
+            },
+            {
+              "symptom": "The morcilla has dissolved into the broth",
+              "cause": "Added too early",
+              "fix": "Add black pudding or morcilla only in the last 20 minutes. It is soft and breaks down with extended cooking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fabada asturiana is the defining dish of Asturias and one of the great Spanish winter dishes. It is eaten at long Sunday lunches and at the beginning of elaborate meals as a starter, though it is filling enough to be a main course with nothing but bread alongside. The leftover broth with a little pasta cooked in it is a separate meal the following day."
+          }
+        ]
+      }
+    ]
+  }
+}

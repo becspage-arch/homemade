@@ -1,0 +1,351 @@
+{
+  "slug": "croquetas-de-jamon",
+  "title": "Croquetas de Jamón",
+  "subtitle": "Spanish ham croquettes with béchamel filling",
+  "excerpt": "Croquetas de jamón are Spanish croquettes with a thick, creamy béchamel filling studded with serrano ham, coated in breadcrumbs and fried until golden and crisp outside with a molten centre. Making the béchamel and chilling is the main work; the frying is quick.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Croquetas are one of the most beloved tapas in Spain. The jamón (ham) version is the most classic, found in every bar and home kitchen. The secret to a good croqueta is a very thick, very smooth béchamel that sets firm enough to be shaped, and a proper double-crumb coating that seals it during frying.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 180,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the breaded, unfried croquetas on a tray, then transfer to a container. Fry from frozen, adding 2 minutes to the frying time.",
+    "batchable": true,
+    "batchNotes": "Double or triple the batch and freeze for later.",
+    "makeAheadNotes": "The béchamel can be made up to 2 days ahead. Bread and fry on the day.",
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "snack",
+    "mood": [
+      "party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk-balloon",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by cooking flour in butter then whisking in hot milk until thick and smooth. For croquetas, the béchamel is made much thicker than usual so it sets firm on chilling."
+    }
+  ],
+  "techniqueSlugs": [
+    "making-bechamel"
+  ],
+  "criticalTechniques": [
+    "making-bechamel"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Croquetas de jamón are small fried cylinders with a crisp breadcrumb coating and a creamy "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " interior dotted with serrano ham. The béchamel is made very thick so it sets when chilled, allowing the croquetas to be shaped and crumbed. The frying takes only 3 minutes per batch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chilling time is the longest part; allow at least 3 hours, or chill overnight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 700,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "serrano-ham",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "very finely diced",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "For breading"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-panko",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For breading"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For breading"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": "For frying"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the béchamel and chill"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} in a medium saucepan over medium heat. Add {{plain-flour}} of flour and stir for 2 minutes. Gradually whisk in {{whole-milk}} of warm milk, a ladle at a time. The béchamel will be very thick; this is correct. Cook over medium heat for 8 to 10 minutes, stirring constantly, until the mixture pulls away from the sides of the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Stir in the diced ham and {{nutmeg}} of grated nutmeg. Season with salt and pepper (the ham is already salty, so taste first). Pour into a shallow baking tray lined with cling film. Smooth the surface and lay another piece of cling film directly on top so a skin doesn't form. Refrigerate for at least 3 hours until completely cold and set."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and bread"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set up three bowls: one with flour, one with beaten egg, one with panko breadcrumbs. Using two spoons or wet hands, shape small portions of the chilled béchamel into cylinders about 5 cm long. Roll each one in flour, then egg, then breadcrumbs. For a crispier coat, dip in egg and breadcrumbs again."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a deep frying pan to 175°C, or until a breadcrumb sizzles immediately when dropped in. Fry the croquetas in small batches for 2 to 3 minutes, turning once, until deep golden all over. Drain on kitchen paper and serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The croquetas burst open during frying",
+              "cause": "Béchamel not thick enough, or not chilled long enough, or oil too hot",
+              "fix": "The béchamel must be very thick and very cold. Test a single croqueta first; if it bursts, reduce the oil temperature slightly or refrigerate the remaining croquetas for 30 more minutes."
+            },
+            {
+              "symptom": "The coating falls off",
+              "cause": "Flour step skipped, or egg coating not thorough",
+              "fix": "The flour is the anchor. Press the flour firmly onto the croqueta before dipping in egg. Make sure the entire surface is coated with egg before rolling in breadcrumbs."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Croquetas are the quintessential Spanish bar food. They arrive on a small plate with a paper napkin, two or three at a time, alongside a glass of wine or beer. At home they are made in large batches for gatherings; the unbaked version freezes well. Hot from the oil with a squeeze of lemon is when they are at their best."
+          }
+        ]
+      }
+    ]
+  }
+}

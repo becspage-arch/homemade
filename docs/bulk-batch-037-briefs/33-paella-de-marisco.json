@@ -1,0 +1,371 @@
+{
+  "slug": "paella-de-marisco",
+  "title": "Paella de Marisco",
+  "subtitle": "Spanish seafood paella with prawns, mussels, and squid",
+  "excerpt": "Paella de marisco is a Spanish seafood rice dish with prawns, mussels, squid, and saffron. The rice absorbs a rich seafood stock flavoured with tomato and smoked paprika. The seafood goes in at the end so it doesn't overcook. Allow about 45 minutes from start to finish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Seafood paella is common along the Spanish Mediterranean coast. It uses no meat and relies entirely on the quality of the seafood stock and the freshness of the shellfish for its flavour. The version here uses a homemade prawn stock from the shells.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sofrito can be made 2 hours ahead and kept at room temperature.",
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "paella-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "socarrat",
+      "term": "Socarrat",
+      "definition": "The toasted, slightly crispy crust of rice that forms on the base of a properly made paella. Achieved by briefly increasing the heat at the very end of cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paella de marisco is a Spanish seafood rice dish where the flavour comes from the stock and the sofrito as much as from the shellfish. The rice cooks in a concentrated seafood stock and forms a "
+          },
+          {
+            "type": "text",
+            "text": "socarrat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "socarrat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " on the base. The seafood goes in during the last few minutes of cooking to keep it tender. Do not stir the rice once the stock is added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "raw, shell-on; peel and reserve shells for stock",
+              "isOptional": false,
+              "groupLabel": "For the seafood"
+            },
+            {
+              "ingredientSlug": "mussels",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "scrubbed and debearded",
+              "isOptional": false,
+              "groupLabel": "For the seafood"
+            },
+            {
+              "ingredientSlug": "squid",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cleaned, tubes cut into rings",
+              "isOptional": false,
+              "groupLabel": "For the seafood"
+            },
+            {
+              "ingredientSlug": "paella-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 50 ml hot water for 10 minutes",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "stock-fish",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": "fish or shellfish stock, warm",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "grated to a pulp",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the stock and prepare the seafood"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If using prawn shells: fry the shells in a little olive oil in a saucepan for 3 minutes until bright red, then cover with 1.2 litres of water. Simmer for 20 minutes, then strain. This makes a quick prawn stock to supplement or replace the fish stock."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the paella"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} in the paella pan over medium heat. Cook the onion for 5 minutes until soft. Add the garlic and cook for 1 minute. Add the grated tomato and cook for 8 minutes until the sofrito is thick and dark. Add {{paprika-smoked}} of smoked paprika and stir for 30 seconds."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the squid rings and stir for 2 minutes. Scatter {{paella-rice}} of rice evenly over the pan. Pour in {{stock-fish}} of warm stock and the saffron water. Stir once. Bring to a boil over high heat and cook for 10 minutes without stirring."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to medium-low. Lay the prawns and mussels on top of the rice, pressing them gently into the surface. Cook for 8 more minutes until the mussels have opened and the rice has absorbed the stock. Discard any mussels that have not opened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the heat to high for 1 to 2 minutes to form the socarrat. Remove from the heat, rest for 5 minutes, then scatter with parsley and serve with lemon wedges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The prawns are overcooked and rubbery",
+              "cause": "Added too early",
+              "fix": "Prawns need only 3 to 4 minutes to cook. Add them during the last 8 minutes alongside the mussels so they don't toughen."
+            },
+            {
+              "symptom": "Several mussels didn't open",
+              "cause": "Dead mussels before cooking, or insufficient heat",
+              "fix": "Discard any mussels that didn't open after cooking. They should not be forced open. Ensure the pan is hot enough for the mussels to open."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seafood paella is at home at long summer lunches by the Mediterranean. In Spain it is eaten at midday, outdoors if possible, as a centrepiece for a gathering. It does not transport or reheat well, so it should be made and eaten immediately from the pan."
+          }
+        ]
+      }
+    ]
+  }
+}

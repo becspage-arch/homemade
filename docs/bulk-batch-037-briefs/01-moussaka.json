@@ -1,0 +1,649 @@
+{
+  "slug": "moussaka",
+  "title": "Moussaka",
+  "subtitle": "Layered aubergine, lamb, and béchamel bake",
+  "excerpt": "Moussaka is a Greek baked dish of spiced lamb mince, sliced aubergine, and a thick béchamel topping set firm in the oven. Rich, filling, and better the next day. The assembled dish takes about 45 minutes to bake.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A dish common across Greece, the Balkans, and the Middle East. The Greek version with béchamel was shaped by Nikolaos Tselementes, who described the dish in his influential cookery books in the early twentieth century. The recipe here follows the Greek household form.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 90,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked moussaka well-wrapped; bake from frozen at 180°C for about 1 hour 15 minutes. Or freeze cooked portions once cooled.",
+    "batchable": true,
+    "batchNotes": "The meat sauce and the béchamel each keep well in the fridge for two days. Assemble on the day of baking.",
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate unbaked. Add 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "dinnerParty",
+      "makeAhead"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "rectangular-baking-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk-balloon",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by cooking flour in butter then whisking in hot milk until thick and smooth. It forms the base of many baked dishes and gratins."
+    },
+    {
+      "slug": "sweat",
+      "term": "Sweat",
+      "definition": "To cook vegetables gently in fat over low heat so they soften and release their moisture without browning."
+    }
+  ],
+  "techniqueSlugs": [
+    "making-bechamel"
+  ],
+  "criticalTechniques": [
+    "making-bechamel"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Moussaka is a deep bake of spiced lamb, sliced aubergine, and a thick "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " topping set firm and golden in the oven. It is a substantial, filling dish with a long list of steps, but nothing in it is difficult. The aubergine needs salting and patting dry before it goes into the pan, and the béchamel needs steady whisking so it doesn't catch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish improves overnight. If you can make it a day ahead, do so. The layers firm up as it cools and slices cleanly when reheated."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "aubergine",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "sliced 1 cm thick",
+              "isOptional": false,
+              "groupLabel": "For the aubergine layers"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the aubergine layers"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "for drawing out moisture",
+              "isOptional": false,
+              "groupLabel": "For the aubergine layers"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 800,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A rectangular baking tin about 30 cm × 22 cm works well. You also need a large frying pan for the meat, a medium saucepan for the "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", and plenty of kitchen paper for the aubergine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Salt and fry the aubergine"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread the aubergine slices on a tray or in a colander. Sprinkle {{sea-salt-fine}} over both sides and leave for 20 minutes. Pat thoroughly dry with kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} in a large frying pan over medium-high heat. Fry the aubergine slices in batches, 2 minutes each side, until golden and soft. Transfer to a plate lined with kitchen paper. Set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the meat sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, "
+                  },
+                  {
+                    "type": "text",
+                    "text": "sweat",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "sweat"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " {{onion}} finely chopped onions over medium heat for 8 minutes until soft. Add {{garlic}} of garlic and cook for 1 minute more."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the heat to medium-high. Add {{lamb-mince}} of lamb mince and cook, breaking it up with a spoon, for 8 minutes until well browned."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in {{red-wine}} of red wine and let it bubble and reduce by half, about 3 minutes. Add the tinned tomatoes, {{tomato-puree}} of tomato purée, {{cinnamon-ground}} of ground cinnamon, {{allspice}} of allspice, and {{bay-leaves}} of bay. Season well with salt and pepper. Simmer gently for 25 minutes until thick. Remove the bay leaves."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the béchamel"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in a medium saucepan over medium heat. Add {{plain-flour}} of plain flour and stir for 2 minutes until the mixture smells biscuity. Gradually whisk in the warm milk, a ladleful at a time, until you have a thick, smooth sauce. This takes about 10 minutes. Season with salt, {{nutmeg}} of grated nutmeg, and plenty of pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Let the sauce cool for 5 minutes, then whisk in the beaten eggs and {{parmesan}} of grated parmesan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C. Arrange half the aubergine slices in an even layer in the baking tin. Spread all of the meat sauce on top. Add the remaining aubergine slices in a second even layer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the béchamel over the top and smooth it with a spatula. Bake for 45 minutes until the top is deep golden and the filling is bubbling at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to rest for 15 minutes before cutting. It slices more cleanly once slightly cooled."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The béchamel has lumps",
+              "cause": "Milk was added too fast or was too cold",
+              "fix": "Pass the sauce through a sieve, pressing with the back of a ladle. Alternatively, blend briefly with a stick blender and return to the pan to reheat."
+            },
+            {
+              "symptom": "The aubergine is bitter",
+              "cause": "The salting step was skipped or cut short",
+              "fix": "Salt draws out excess moisture and some bitterness. Twenty minutes minimum; thirty is better for large aubergines."
+            },
+            {
+              "symptom": "The moussaka is watery when cut",
+              "cause": "Meat sauce not reduced enough, or aubergine not dried properly",
+              "fix": "The meat sauce should be thick enough to hold its shape when spooned. If it still looks loose after 25 minutes, cook for another 10. Pat the aubergine very dry before frying."
+            },
+            {
+              "symptom": "The top browns too quickly before the middle is set",
+              "cause": "Oven running hot, or dish too shallow",
+              "fix": "Cover loosely with foil for the first 20 minutes, then remove to finish browning. A deeper dish spreads heat more evenly."
+            },
+            {
+              "symptom": "The béchamel cracks or separates in the oven",
+              "cause": "Eggs added to a too-hot sauce, or sauce was too thin",
+              "fix": "Let the sauce cool to roughly 60°C before adding the eggs. The sauce should be thick enough to coat the back of a spoon generously before the eggs go in."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A vegetarian moussaka replaces the lamb with a mixture of green lentils and chestnut mushrooms, cooked down with the same spices. Add a tin of chickpeas for body. The béchamel and aubergine layers are unchanged."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead and freezing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble the moussaka up to 24 hours ahead and keep it covered in the fridge, unbaked. Add 10 minutes to the oven time when baking from cold. Cooked leftovers keep in the fridge for 3 days and reheat well in the oven at 160°C. To freeze, wrap the raw assembled dish tightly and freeze for up to 3 months."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Moussaka appears across Greece, Turkey, the Balkans, and the Levant in different forms. The Greek version with the thick béchamel topping is the one that reached northern Europe and became a staple on taverna menus and in home kitchens alike. It is a dish for a cold evening or a long Sunday, served with a crisp green salad and nothing much else needed alongside."
+          }
+        ]
+      }
+    ]
+  }
+}

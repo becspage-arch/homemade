@@ -1,0 +1,435 @@
+{
+  "slug": "paella-valenciana",
+  "title": "Paella Valenciana",
+  "subtitle": "The original rabbit and chicken rice dish from Valencia",
+  "excerpt": "Paella valenciana is the original paella: rabbit, chicken, butter beans, and green beans cooked with saffron rice in a wide, shallow pan over high heat. The characteristic socarrat, the toasted crust of rice on the base, sets it apart from other rice dishes. It takes about 45 minutes once everything is in the pan.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Paella valenciana originated in Valencia, Spain, where it is cooked over an open wood fire of orange branches. The traditional recipe uses rabbit, chicken, green beans, butter beans, and snails; this version omits snails which are difficult to source. The word paella refers to the pan, not the dish.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "sunday-lunch"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "paella-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "socarrat",
+      "term": "Socarrat",
+      "definition": "The toasted, slightly crispy crust of rice that forms on the base of a properly made paella. Achieved by increasing the heat at the end of cooking and listening for a crackling sound. Considered the best part of the dish by many."
+    },
+    {
+      "slug": "sofrito",
+      "term": "Sofrito",
+      "definition": "A base of gently cooked onion, tomato, and garlic that forms the flavour foundation of many Spanish and Italian dishes. In paella, the sofrito is cooked directly in the pan before the rice and liquid are added."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paella valenciana is the original paella: chicken, rabbit, green beans, and butter beans cooked with saffron rice in a wide pan over high heat. The dish is about the rice as much as the meat; paella rice absorbs the flavoured stock and forms a caramelised "
+          },
+          {
+            "type": "text",
+            "text": "socarrat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "socarrat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " on the base. Once the stock goes in, you do not stir; stirring makes paella into risotto."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A paella pan is wide and shallow; this shape ensures the rice cooks in a thin, even layer. A 40 cm pan works for six people."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "rabbit",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "jointed into 6 to 8 pieces",
+              "isOptional": false,
+              "groupLabel": "For the protein"
+            },
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": "For the protein"
+            },
+            {
+              "ingredientSlug": "paella-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "bomba or calasparra",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 50 ml hot water for 10 minutes",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the rice"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "grated on a box grater to a pulp",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sofrito"
+            },
+            {
+              "ingredientSlug": "green-beans",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "trimmed, halved",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "butter-beans",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "tinned, drained",
+              "isOptional": false,
+              "groupLabel": "For the vegetables"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into wedges, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 38 to 42 cm paella pan is the right tool. If you don't have one, a large roasting tin or the widest shallow pan you own will work, but the socarrat may not form as evenly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the meat"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} in the paella pan over high heat. Season the chicken and rabbit with salt. Brown the pieces in batches in the hot oil, turning once, for 5 to 6 minutes per side until deeply golden. Push to the sides of the pan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sofrito"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the centre of the pan, cook the garlic over medium heat for 1 minute. Add the grated tomato pulp and cook for 8 minutes, stirring, until the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "sofrito",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "sofrito"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " is thick and dark. Add {{paprika-smoked}} of smoked paprika and stir for 30 seconds."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the green beans and butter beans to the pan. Stir to mix everything together."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the rice and stock"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter {{paella-rice}} of rice evenly across the pan. Pour in {{chicken-stock}} of warm stock and the steeped saffron with its water. Stir once to distribute the rice, then do not stir again. Bring to a boil over high heat and cook for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium-low and cook for a further 8 to 10 minutes until the liquid is absorbed and the rice is just cooked. If the rice seems dry before it's cooked, add a small splash of hot stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To form the socarrat, increase the heat to high for the last 1 to 2 minutes. You should hear a gentle crackling. Remove from the heat, cover with foil or a clean cloth, and rest for 5 minutes. Serve from the pan with lemon wedges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The rice is mushy",
+              "cause": "Too much stirring, or too much liquid",
+              "fix": "Do not stir once the stock goes in. The stock quantity for paella rice is about 3 times the volume of rice by weight. Bomba rice absorbs more than other varieties."
+            },
+            {
+              "symptom": "The rice is dry and still crunchy in the centre",
+              "cause": "Not enough liquid, or cooked over too high a heat",
+              "fix": "Add a splash of hot stock around the edges of the pan. Cover with foil and leave on very low heat for 5 minutes."
+            },
+            {
+              "symptom": "No socarrat formed",
+              "cause": "Heat not increased at the end, or too much liquid remaining",
+              "fix": "Increase the heat firmly for the last 2 minutes once the stock is absorbed. Listen for the crackling sound. If there's still visible liquid in the pan, the stock hasn't fully absorbed yet; wait before increasing the heat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paella valenciana is the original paella, made in Valencia for Sunday gatherings and festivals. The dish that spread to the rest of the world under the name paella is often quite different; this version stays true to the Valencian recipe. The socarrat is not optional; it is the point. Serve at the table directly from the pan."
+          }
+        ]
+      }
+    ]
+  }
+}

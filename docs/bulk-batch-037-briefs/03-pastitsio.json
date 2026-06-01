@@ -1,0 +1,514 @@
+{
+  "slug": "pastitsio",
+  "title": "Pastitsio",
+  "subtitle": "Greek baked pasta with spiced lamb and béchamel",
+  "excerpt": "Pastitsio is a Greek baked pasta dish: layers of thick pasta tubes, a fragrant cinnamon-and-lamb sauce, and a thick béchamel top baked golden. It is rich and deeply satisfying, and it holds up well for a crowd.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pastitsio is a staple of Greek home cooking and taverna menus. The dish has roots in Italian-influenced cooking that arrived in Greece in the nineteenth century. The version here uses penne or rigatoni in place of the traditional thick pastitsio pasta tubes, which are hard to find outside specialist shops.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 75,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions once cooled. Reheat from frozen at 180°C for 35 to 40 minutes covered in foil, then uncover for 10 minutes.",
+    "batchable": true,
+    "batchNotes": "The meat sauce keeps for 2 days in the fridge. Make it ahead, then assemble and bake on the day.",
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate unbaked. Add 15 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "makeAhead",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "rectangular-baking-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk-balloon",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by cooking flour in butter then whisking in hot milk until thick and smooth. Used here as a creamy topping that sets firm in the oven."
+    }
+  ],
+  "techniqueSlugs": [
+    "making-bechamel"
+  ],
+  "criticalTechniques": [
+    "making-bechamel"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pastitsio is Greece's answer to lasagne: pasta, a spiced meat sauce, and a thick "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " topping baked until set and golden. The cinnamon in the meat sauce is the defining flavour, warm and sweet against the savoury lamb. This is a dish that serves a crowd and keeps well."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use penne or rigatoni here; you want tubes that can stand upright in the dish if possible for the classic pastitsio look when sliced. Cook the pasta two minutes short of done; it finishes in the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "penne or rigatoni",
+              "isOptional": false,
+              "groupLabel": "For the pasta layer"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten, to bind the pasta layer",
+              "isOptional": false,
+              "groupLabel": "For the pasta layer"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the pasta layer"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 125,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "ground",
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 900,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the béchamel"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{pasta-dried}} of pasta in a large pot of well-salted boiling water for 2 minutes less than the packet says. It should be just slightly underdone. Drain, toss with a beaten egg and {{parmesan}} of grated parmesan, and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the meat sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} in a large pan over medium heat. Cook {{onion}} finely chopped onions until soft, about 8 minutes. Add {{garlic}} of garlic and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the heat to medium-high and brown {{lamb-mince}} of lamb mince well, breaking up any lumps, about 8 minutes. Pour in {{red-wine}} of red wine and let it reduce by half."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tinned tomatoes, {{tomato-puree}} of tomato purée, the cinnamon stick, and {{allspice}} of ground allspice. Season with salt and pepper. Simmer gently for 25 minutes until the sauce is thick. Remove the cinnamon stick."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the béchamel"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in a medium saucepan. Stir in {{plain-flour}} of flour and cook for 2 minutes. Whisk in the warm milk gradually until you have a thick, smooth sauce. Season with salt, {{nutmeg}} of grated nutmeg, and pepper. Cool for 5 minutes, then whisk in the beaten eggs and {{parmesan}} of grated parmesan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C. Grease a large rectangular baking tin. Spread half the pasta in an even layer on the base. Spoon all of the meat sauce over the pasta. Cover with the remaining pasta."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the béchamel over the top and smooth it with a spatula. Bake for 45 minutes until the top is deep golden and the filling is bubbling at the edges. Rest for 15 minutes before slicing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pasta is soft and the layers don't hold together when sliced",
+              "cause": "Pasta was overcooked before baking",
+              "fix": "Undercook the pasta by at least 2 minutes. It absorbs moisture from the sauce during baking and will reach the right texture in the oven."
+            },
+            {
+              "symptom": "The meat sauce tastes flat",
+              "cause": "Cinnamon stick didn't have time to infuse, or sauce not reduced enough",
+              "fix": "Simmer the sauce for the full 25 minutes. The cinnamon flavour develops with time. Add a small pinch of allspice if it still tastes thin."
+            },
+            {
+              "symptom": "The béchamel doesn't set firm",
+              "cause": "Too much milk, or eggs not added, or not baked long enough",
+              "fix": "The sauce needs to be quite thick before the eggs go in. Check the baking time: the top should be a deep golden colour and the filling should not wobble when shaken."
+            },
+            {
+              "symptom": "The dish is watery",
+              "cause": "Meat sauce too thin",
+              "fix": "Simmer the sauce until it holds its shape when spooned onto a plate. If it pools, cook it for another 10 minutes uncovered."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pastitsio sits alongside moussaka as one of the great Greek oven bakes. It appears on every family table at celebrations and is the dish many Greeks describe as the first thing they want when they come home. Like lasagne in Italy, it varies slightly from household to household; some families add a little ground clove, some use all beef, some layer the pasta all in one go. The cinnamon and the thick béchamel are the constants."
+          }
+        ]
+      }
+    ]
+  }
+}
