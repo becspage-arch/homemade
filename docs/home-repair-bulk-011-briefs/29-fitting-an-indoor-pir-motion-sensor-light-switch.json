@@ -1,0 +1,223 @@
+{
+  "slug": "fitting-an-indoor-pir-motion-sensor-light-switch",
+  "title": "Fitting an indoor PIR motion sensor light switch",
+  "subtitle": "Replace a standard light switch with a PIR motion sensor switch that turns lights off automatically",
+  "excerpt": "How to replace a standard wall light switch with a PIR motion sensor switch for hands-free lighting in hallways, cupboards, and utility rooms. Covers wiring the switch, setting the time-out and sensitivity controls, and the zone limitations.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 7671: Requirements for Electrical Installations (IET Wiring Regulations 18th Edition). IET On-Site Guide. NICEIC consumer guidance on motion sensor lighting.",
+  "recipeTools": [
+    {
+      "slug": "electricians-screwdriver-set",
+      "isOptional": false
+    },
+    {
+      "slug": "voltage-tester-pen",
+      "isOptional": false
+    },
+    {
+      "slug": "voltage-tester-2-pole",
+      "isOptional": false
+    },
+    {
+      "slug": "wire-strippers",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-sensor",
+      "term": "PIR (Passive Infrared) sensor",
+      "definition": "A sensor that detects changes in infrared radiation caused by the movement of a warm body (person or animal). A PIR light switch replaces a standard switch and activates the light when movement is detected within its detection zone. The detection angle is typically 180 degrees horizontal and 120 degrees vertical. After a set hold-on time (usually adjustable from 30 seconds to 30 minutes), the switch turns off automatically if no further movement is detected."
+    },
+    {
+      "slug": "pir-neutral-required",
+      "term": "Neutral wire (PIR switch)",
+      "definition": "Most domestic PIR motion sensor switches require a neutral wire at the switch location to power their electronics. Standard UK 2-wire switch drops (switch live and switched live in a 2-core-and-earth cable) do not include a neutral. If only a 2-core drop is present, either run a new 3-core cable or use a PIR switch specifically designed for use without a neutral connection (check the product specification)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "PIR light switch indoor",
+    "motion sensor switch hallway",
+    "automatic light switch PIR sensor"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An indoor "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pir-sensor"
+                }
+              }
+            ],
+            "text": "PIR motion sensor switch"
+          },
+          {
+            "type": "text",
+            "text": " replaces a standard light switch in the same back-box. It is most useful in hallways, cloakrooms, utility rooms, and cupboards where lights are often left on by accident. The key check before buying is whether the existing switch cable includes a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pir-neutral-required"
+                }
+              }
+            ],
+            "text": "neutral conductor"
+          },
+          {
+            "type": "text",
+            "text": ". Most PIR switches need a neutral wire to power their electronics."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A PIR motion sensor light switch (check the wiring requirements against the switch cable present; 2-wire or 3-wire). Voltage tester. Electrician's screwdriver set. Wire strippers. Insulation tape (for sleeve bare earth wire). The switch should be rated for the maximum load of the luminaires it controls."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, isolate and confirm dead"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the lighting circuit at the consumer unit. Confirm the circuit is dead at the existing switch using the voltage tester before removing the switch faceplate. Unscrew the faceplate and gently pull the switch away from the back-box, noting which wire connects to which terminal. Take a photograph before disconnecting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, identify the switch wiring"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard 1-gang 2-way switch has two terminals: COM and L1 (or L1 and L2). Count the conductors in the back-box: if there are only two conductors (plus earth), you have a 2-core switch drop with no neutral. Check the PIR switch specification; if it requires a neutral, you need a different product or a new cable run. If there are three conductors (plus earth) (live, neutral, and switched live) the PIR switch can be connected in the standard way."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, connect the PIR switch"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Following the PIR switch wiring diagram, connect: the incoming live (L) to the switch live terminal; the neutral (N) if available to the neutral terminal; and the switched live (L1 or SL) to the load terminal. Connect the earth (sleeved in green/yellow) to the earth terminal. Fold the conductors back into the back-box carefully and screw the switch faceplate in place. Restore the circuit at the consumer unit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, set sensitivity and hold-on time"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most PIR switches have two small adjusters on the back or side of the faceplate: one for sensitivity (detection range, typically marked with a symbol of a person) and one for time-on (how long the light stays on after motion stops, typically 10 seconds to 30 minutes). Set the time-on to a comfortable duration for the room. Set the sensitivity to mid-range initially and test: walk into the room from the doorway. If the switch fails to trigger, increase the sensitivity. If it triggers from adjacent rooms through walls, reduce it."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light flickers rapidly when controlled by the PIR switch",
+              "cause": "PIR switch is not compatible with LED lamps — many older PIR switches were designed for tungsten loads.",
+              "fix": "Check the PIR switch is rated for LED loads (look for a minimum wattage rating — some switches require a minimum of 5 to 10 W). Replace with a LED-compatible PIR switch."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light does not turn off after the hold-on time",
+              "cause": "The PIR sensor is detecting continuous low-level movement (air from a vent, a curtain moving).",
+              "fix": "Reposition or angle the sensor slightly away from the source of movement. Reduce the sensitivity setting."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "slug": "fitting-an-electric-shower-unit",
+  "title": "Fitting an electric shower unit",
+  "subtitle": "Install a mains-fed instantaneous electric shower on a dedicated radial circuit",
+  "excerpt": "How to fit an instantaneous electric shower unit. Covers the electrical requirements (dedicated radial circuit, correct cable size, RCD protection), the water supply connection, and the Part P notification rules that apply to this installation.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 7671: Requirements for Electrical Installations (IET Wiring Regulations 18th Edition). Building Regulations Part P (Electrical safety in dwellings). British Standard BS 6700: Design, installation, testing, and maintenance of services supplying water. Triton Showers installation guidance (reference format, not reproduced).",
+  "recipeTools": [
+    {
+      "slug": "cordless-drill-18v",
+      "isOptional": false
+    },
+    {
+      "slug": "sds-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "pipe-cutter-15-22mm",
+      "isOptional": false
+    },
+    {
+      "slug": "pipe-cutter-mini",
+      "isOptional": false
+    },
+    {
+      "slug": "adjustable-spanner-200mm",
+      "isOptional": false
+    },
+    {
+      "slug": "electricians-screwdriver-set",
+      "isOptional": false
+    },
+    {
+      "slug": "voltage-tester-2-pole",
+      "isOptional": false
+    },
+    {
+      "slug": "wire-strippers",
+      "isOptional": false
+    },
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "radial-circuit-shower",
+      "term": "Radial circuit (electric shower)",
+      "definition": "A dedicated circuit running from the consumer unit directly to the shower unit, not shared with any other appliance. The cable size depends on the shower's kW rating: a 7.5 to 8.5 kW shower typically needs 6 mm² two-core and earth cable; a 9.5 to 10.5 kW shower needs 10 mm². The circuit must be protected by an RCD and a correctly rated MCB (30 or 40 amp depending on cable and shower rating)."
+    },
+    {
+      "slug": "part-p-shower",
+      "term": "Part P (Building Regulations)",
+      "definition": "The Building Regulation that controls electrical work in dwellings. An electric shower installation in a bathroom is notifiable work under Part P and must either be carried out by a registered electrician (NICEIC, NAPIT) or notified to the local Building Control authority before work begins. DIY installation is legal but requires Building Control to inspect and certify the work. Failure to notify can cause problems when selling the property."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "electric shower installation",
+    "instantaneous shower fitting",
+    "mains shower unit install"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An instantaneous electric shower heats water as it passes through the unit. It uses only the cold mains supply. It is the most common shower type in UK homes. Fitting one involves two separate jobs: plumbing (connecting the cold supply) and electrical (running a dedicated "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "radial-circuit-shower"
+                }
+              }
+            ],
+            "text": "radial circuit"
+          },
+          {
+            "type": "text",
+            "text": " from the consumer unit). This installation is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "part-p-shower"
+                }
+              }
+            ],
+            "text": "notifiable under Part P"
+          },
+          {
+            "type": "text",
+            "text": ". Plan for Building Control notification, or use a registered electrician for the wiring."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Safety before you start"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The electrical circuit work must be done with the mains supply isolated at the consumer unit and confirmed dead with the voltage tester. Water and electricity share the same enclosure in this unit; the installation must be mechanically sound and waterproof before the circuit is energised. If the consumer unit is not the correct type to add a new MCB, or if you are not confident in identifying live conductors, instruct a registered electrician for the electrical element."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The electric shower unit (check kW rating; this determines cable size and MCB rating). Correct size twin and earth cable (6 mm² for up to 8.5 kW; 10 mm² for 9.5 to 10.5 kW). Correctly rated MCB and a double-pole switched fused connection unit (FCU) or pull-cord double-pole switch rated for the shower kW. 15 mm copper pipe and compression fittings for the cold supply tee. Isolating valve. Pipe clip and fixings. The voltage tester (essential)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, plan the circuit route and fix the unit position"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose the position for the shower unit: it must be within reach of the shower head rose height (typically 1850 to 2100 mm from the floor) and within 300 mm of the cold water supply pipe. The shower unit should be mounted on a solid wall. Mark and drill the fixing holes per the manufacturer's template. Feed the cold supply pipe to the shower position and the cable route back to the consumer unit; cable must run in the defined zones (vertical from the outlet or hidden in the wall structure) in a bathroom."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, run the dedicated cable"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Isolate the mains at the consumer unit and confirm dead with the voltage tester. Run the twin-and-earth cable from the consumer unit to the double-pole switched connection unit positioned outside the bathroom zone (at least 600 mm from the shower tray outside a bathroom). From the switched unit, run on to the shower unit position. The cable must not be routed within 50 mm of the surface if not mechanically protected unless in a safe zone. Chase or clip as appropriate. Do not connect to the consumer unit until all other connections are complete."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, connect the water supply"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the cold mains supply at the nearest stopcock. Cut into the cold supply pipe and fit a compression tee. From the tee, run a 15 mm pipe up to the shower unit. Fit an isolating valve on this spur, close to the tee, so the shower supply can be isolated without turning off the mains. Connect the supply pipe to the shower unit water inlet per the manufacturer's instructions. Turn on the mains and check all connections for leaks before proceeding to the electrical connection."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, connect the electrical supply and notify"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the cable to the terminals inside the shower unit per the wiring diagram (live, neutral, earth; the unit will specify which terminals). Connect the other end to the double-pole switched connection unit, then run from the switched unit to the new MCB in the consumer unit. Ensure the earth conductor is sleeved green/yellow and correctly terminated at each connection. Once all connections are complete, restore the mains, test the RCD, and test the shower function. Notify Building Control as required by Part P."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Shower MCB trips immediately when the shower is turned on",
+              "cause": "MCB rating is too low for the shower's kW draw, or a fault in the shower unit.",
+              "fix": "Confirm the MCB rating matches the shower manufacturer's specification. Check the shower unit for internal faults (water ingress) before re-energising."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Water pressure at the shower head is low",
+              "cause": "Mains supply pressure is below the minimum for the shower model (typically 1 bar).",
+              "fix": "Check the mains supply pressure. If below 1 bar, the shower model may not be suitable for the property — consider a shower with a lower minimum pressure rating."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "slug": "fitting-a-programmable-room-thermostat",
+  "title": "Fitting a programmable room thermostat",
+  "subtitle": "Replace an old manual thermostat with a programmable or smart thermostat for central heating",
+  "excerpt": "How to replace a manual room thermostat with a programmable model. Covers identifying the existing wiring, connecting the new thermostat, setting the temperature differential, and pairing with a smart hub if applicable.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "BS 7671: Requirements for Electrical Installations (IET Wiring Regulations 18th Edition). HHIC (Heating and Hot Water Industry Council) smart thermostat guidance (publicly available). Honeywell T6 and Hive installation guides (reference format).",
+  "recipeTools": [
+    {
+      "slug": "electricians-screwdriver-set",
+      "isOptional": false
+    },
+    {
+      "slug": "voltage-tester-pen",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill-18v",
+      "isOptional": true
+    },
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "room-thermostat-wiring",
+      "term": "Room thermostat wiring",
+      "definition": "A standard UK room thermostat connects using a 3-wire cable (live, neutral, and switched live) or a 2-wire cable (live and switched live, with neutral via a separate path). The thermostat sits in the heating circuit as a switch: when the room is below the set temperature, the thermostat closes, sending the switched live back to the boiler or motorised valve to call for heat. Most programmable thermostats also require a neutral connection for their own electronics — check the product requirements before purchasing."
+    },
+    {
+      "slug": "thermostat-differential",
+      "term": "Switching differential (thermostat)",
+      "definition": "The temperature band within which the thermostat does not switch. A thermostat set to 20°C with a 0.5°C differential will call for heat when the room drops to 19.5°C and switch off when the room reaches 20.5°C. A narrow differential (0.5°C) gives tighter temperature control; a wide differential (1.5°C) reduces boiler cycling but allows larger temperature swings."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "programmable thermostat installation",
+    "smart thermostat replacement",
+    "room thermostat wiring replacement"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replacing a manual room thermostat with a programmable or smart thermostat is straightforward if the existing "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "room-thermostat-wiring"
+                }
+              }
+            ],
+            "text": "wiring"
+          },
+          {
+            "type": "text",
+            "text": " is correct and the new unit accepts the same wiring. Most UK thermostats use a 3-terminal or 4-terminal connection. The new thermostat maps to the existing terminals without re-routing any cable. The job is reversible. The thermostat circuit is low-voltage switching, not a power circuit, so there are no sparks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you will need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A programmable room thermostat (choose a model that matches the existing wiring (2-wire or 3-wire) or check the product compatibility page before purchasing). A voltage tester pen for safety verification. An electrician's screwdriver set. A pencil and masking tape for labelling the wires before disconnection."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1, switch off at the programmer or boiler"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the heating at the central heating programmer or time switch. Do not rely on the room thermostat switch alone; leave the heating off at the programmer. Use the voltage tester pen at the thermostat wiring terminals to confirm no voltage before touching the conductors. Room thermostats are low-voltage in operation but the live feed to the thermostat is at mains potential."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2, label and photograph the existing wiring"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the old thermostat from its backplate. Before disconnecting any wires, photograph the terminal connections clearly or stick a piece of masking tape to each wire and label it with the terminal letter or number it connects to on the old thermostat (L, N, COM, NO, etc.). This photograph and labels are your reference for connecting the new unit. Disconnect the conductors from the old terminals."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3, fix the new backplate and connect"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fix the new thermostat backplate to the wall at the same position using the existing fixing holes where possible. The new thermostat's terminal layout will be shown in its installation instructions. Map the labelled conductors to the correct terminals on the new unit using the wiring diagram. Tighten each terminal screw firmly; a loose connection at a thermostat terminal causes intermittent heating problems that are difficult to diagnose."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4, set the thermostat and test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Attach the thermostat body to the backplate. Restore the heating at the programmer. Set the thermostat to a temperature above the current room temperature and listen: the boiler should fire within a few minutes. Set the switching "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermostat-differential"
+                }
+              }
+            ],
+            "text": "differential"
+          },
+          {
+            "type": "text",
+            "text": " to 0.5°C if available in the settings menu. Program the weekly schedule according to the household's daily pattern."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler does not fire when the thermostat calls for heat",
+              "cause": "Switched live (COM-to-NO switching) not connecting to the correct terminal on the new thermostat.",
+              "fix": "Refer to the wiring diagram again. On most thermostats, the boiler call is made by the COM terminal switching to the NO (normally open) output terminal — ensure the heat-call wire goes to NO, not NC."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Thermostat display is blank after connection",
+              "cause": "New thermostat requires a neutral connection that the old wiring does not provide.",
+              "fix": "Check the product specification — some smart thermostats require a 3-wire supply including neutral. If the existing cable is 2-core, a new cable run is needed, or choose a thermostat that works without neutral."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
