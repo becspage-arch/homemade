@@ -1,0 +1,134 @@
+{
+  "slug": "field-notes-page-layout",
+  "title": "Field notes page layout",
+  "subtitle": "Structuring journal pages for observation, recording, and reference",
+  "excerpt": "The field-notes tradition begins with the notebooks kept by naturalists, surveyors, and scientists who needed to record observations in a consistent format that could be understood out of context. The principles they developed, location and date headers, marginal reference codes, and defined zones for sketches versus written notes, translate directly to any kind of systematic personal recording.",
+  "type": "READING",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Gilbert White, The Natural History of Selborne (1789, public domain via Project Gutenberg), as an example of the field-notes tradition. The page structure documented here reflects the conventions established by eighteenth-century naturalist recording practices.",
+  "recipeTools": [
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "ruling-pen", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "header-block",
+      "term": "Header block",
+      "definition": "The area at the top of a journal page reserved for contextual information: date, location, weather, and reference codes. A consistent header block makes pages searchable and comparable across time."
+    },
+    {
+      "slug": "margin-column",
+      "term": "Margin column",
+      "definition": "A narrow vertical column ruled on the left of the page for keywords, symbols, or reference codes that index the content of the main body to the right."
+    },
+    {
+      "slug": "sketch-zone",
+      "term": "Sketch zone",
+      "definition": "A defined area of the page reserved for drawings, diagrams, or maps, set apart from the written text by a ruled border or blank space. Defining the zone before writing prevents text from crowding out the drawing space."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A field-notes page is distinguished from a diary page by its "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "header-block" } }],
+            "text": "header block"
+          },
+          {
+            "type": "text",
+            "text": ", its "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "margin-column" } }],
+            "text": "margin column"
+          },
+          {
+            "type": "text",
+            "text": ", and its defined "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sketch-zone" } }],
+            "text": "sketch zone"
+          },
+          {
+            "type": "text",
+            "text": ". These three elements are set up before any recording begins. They impose a consistent structure that makes it possible to return to a page months later and locate relevant information quickly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The header block" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reserve the top 15 to 20 mm of each page for the header. Rule a light horizontal line across the full page width at that depth. Inside the header, record: date (always in full: day, month, year); location (as specific as useful to the record); one or two words of context (subject or project); and optionally, weather and time. The header block should be filled in before anything else on the page."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The margin column" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule a vertical line 25 mm from the left edge of the page. The narrow strip to the left is the margin column; everything to the right is the main body of the record. Use the margin for keywords that identify the subject of each paragraph or observation, symbols that mark action items or questions, and reference numbers that link to other pages or external sources. The margin should be sparse: one entry per paragraph at most."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The sketch zone" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Decide whether the sketch zone is at the top, bottom, or right of the page. Reserve the zone by ruling its boundary before writing. In a naturalist field-notes tradition, sketches occupy the lower right quadrant and written notes occupy the upper left, with the two sharing the remaining space. For project notes or technical diagrams, the sketch zone may take up half the page. What matters is that the zone is committed to drawing space before text crowds it out."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the layout consistently" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The field-notes format only earns its value through consistency. Using the header block and margin column for a few pages and then abandoning them produces a notebook that is harder to use than one with no structure at all. Rule the page layout at the start of each session, even if the day's record is brief. The ruling takes thirty seconds."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -117,3 +117,28 @@ SKIPPED: 0
 - tortoiseshell-stitch-binding: voice-violation, grade-level-strict
 - watercolour-journal-page-prep: voice-violation, grade-level-strict
 - wycinanki-folk-papercut: voice-violation, grade-level-strict
+
+---
+
+## Run at 03:16:09
+
+Generated: 2026-06-01T03:16:09.498Z
+
+Processed: 65
+PASS: 62
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 35 |
+| grade-level-strict | 14 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- book-repair-lifting-endpaper: grade-level-strict
+- illuminated-border-design: grade-level-strict
+- maintaining-copperplate-slant: grade-level-strict

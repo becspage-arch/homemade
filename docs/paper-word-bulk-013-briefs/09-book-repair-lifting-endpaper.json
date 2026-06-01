@@ -1,0 +1,133 @@
+{
+  "slug": "book-repair-lifting-endpaper",
+  "title": "Repairing a lifting endpaper",
+  "subtitle": "Re-adhering a loose paste-down without opening the binding",
+  "excerpt": "An endpaper that has lifted from the board is the most common minor book repair. If the text block is still sound and the paste-down has not torn, the repair takes under an hour: slip fresh adhesive under the lifted area and press flat. This tutorial covers the method for both cloth-covered and paper-covered case bindings.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on care and repairs: guidance on re-adhering paste-downs and board reattachment for minor damage.",
+  "recipeTools": [
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "wheat-paste", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "washi-kozo", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "paste-down",
+      "term": "Paste-down",
+      "definition": "The half of the endpaper that is glued to the inside face of the cover board, bonding the text block to the case."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A lifting "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paste-down" } }],
+            "text": "paste-down"
+          },
+          {
+            "type": "text",
+            "text": " almost always signals that the original adhesive dried out and lost its bond. The repair is straightforward provided the paste-down itself has not torn: fresh adhesive under the lifted zone and firm pressure while it sets is all that is needed. The difficulty is getting adhesive in without disturbing the decorative paper or cloth on the outside of the board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Wheat-paste (cooked)", "notes": "For most repairs. Wheat paste is reversible and slow-tack, giving time to position the paste-down before pressing." },
+            { "name": "PVA, acid-free (optional)", "notes": "A small amount mixed with the paste if the paste-down paper is heavy and needs a stronger bond." },
+            { "name": "Bone folder", "notes": "For pressing the paste-down flat from inside." },
+            { "name": "Washi kozo (optional)", "notes": "If the paste-down has a small tear, a strip of Japanese tissue on the inside face reinforces the break before the adhesive is applied." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assess the damage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the book to the front endpaper. Lift the paste-down gently to see how far it has separated. If only a corner has lifted, a small repair suffices. If the whole paste-down has pulled away from the board, the repair is larger but uses the same method. Check whether the board itself is intact and whether the cloth or paper covering on the outside has been pulled or torn by the lifting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Apply fresh adhesive" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thin the wheat paste to a brushable consistency. Lift the free edge of the paste-down gently with a bone folder and slide a thin brush loaded with paste underneath. Work the paste across the full area of the lifted zone, touching the brush to both the board face and the inner face of the paste-down. If the paste-down is fragile, dampen it slightly with clean water first so it does not crack when pressed flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Press and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower the paste-down onto the board and press with the bone folder from the spine edge outward, working out any air pockets. Place a sheet of waxed paper on the inside face and close the book. Press under a stack of heavy books for at least two hours. For a full paste-down re-adhesion, weight overnight. Open carefully after pressing to check the bond; if any area is still lifting, repeat the process."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The paste-down tears when being re-laid",
+              "cause": "The paper has become brittle, or it was lowered too quickly before the adhesive softened it.",
+              "fix": "Dampen the paste-down lightly with a soft cloth before applying adhesive. Work very slowly and support the full area when lowering it."
+            },
+            {
+              "symptom": "The paste-down is still lifting after pressing",
+              "cause": "Insufficient adhesive reached the board surface.",
+              "fix": "Repeat the repair with slightly more paste. Work the brush further under the paste-down to ensure full coverage of the board face."
+            },
+            {
+              "symptom": "The board has cockled after the repair",
+              "cause": "Too much moisture was introduced by the adhesive.",
+              "fix": "Place the open book with a pressing board on each side and press overnight. The board will flatten as the adhesive and paper dry at the same rate."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

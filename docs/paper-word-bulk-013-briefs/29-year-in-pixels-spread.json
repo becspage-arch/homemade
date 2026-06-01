@@ -1,0 +1,147 @@
+{
+  "slug": "year-in-pixels-spread",
+  "title": "Year in pixels spread",
+  "subtitle": "Setting up a full-year mood or habit grid in a journal",
+  "excerpt": "The year-in-pixels spread maps the whole year onto a single journal spread using a grid of small squares. Each square represents one day; the square is coloured with one of a small set of colours that correspond to a mood, habit, or rating chosen at the end of each day. The result is a visual record of the year that reads as pattern as much as data.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Original tutorial based on the year-in-pixels journalling convention that became widespread in the bullet-journal community from approximately 2016. No single public-domain source.",
+  "recipeTools": [
+    { "slug": "pencil", "isOptional": false },
+    { "slug": "ruling-pen", "isOptional": false },
+    { "slug": "washi-tape", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pixel-grid",
+      "term": "Pixel grid",
+      "definition": "A grid of equal-sized squares, one per day of the year, arranged in columns by month and rows by day number. Each square is filled with a colour or symbol at the end of the day."
+    },
+    {
+      "slug": "colour-key",
+      "term": "Colour key",
+      "definition": "The legend that assigns a meaning to each colour in the pixel grid. A typical key uses five to seven colours representing a scale (excellent to difficult) or distinct categories (work, rest, social, creative)."
+    },
+    {
+      "slug": "habit-tracker",
+      "term": "Habit tracker",
+      "definition": "A journal spread that records whether a daily habit was completed. In a pixel-grid format, each row can represent one habit and each column one day of the month."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pixel-grid" } }],
+            "text": "pixel grid"
+          },
+          {
+            "type": "text",
+            "text": " needs three things before the first square is coloured: the right physical size for the journal, a clear "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-key" } }],
+            "text": "colour key"
+          },
+          {
+            "type": "text",
+            "text": ", and months correctly labelled with the right number of days. Mistakes in the grid structure are impossible to correct once the year is underway."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Journal, A5 or larger", "notes": "The year grid requires a double-page spread. In an A5 journal (148 x 210 mm per page), squares of 5 x 5 mm fit 12 months across two pages." },
+            { "name": "Pencil", "notes": "For laying out the grid before inking." },
+            { "name": "Ruling pen or fine-line pen", "notes": "For drawing the grid lines." },
+            { "name": "Colouring pens, 5 to 7 colours", "notes": "Enough to code the key. Alcohol markers bleed through most journal paper; use felt-tip or gel pens designed for the paper weight." },
+            { "name": "Washi tape (optional)", "notes": "For decorating column headers or borders." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plan the grid size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The grid has 12 columns (one per month) and 31 rows (the maximum days in any month). Months with fewer days leave the bottom rows of that column blank. Calculate the square size: divide the available width by 12 and the available height by 31. For an A5 spread (approximately 270 mm usable width, 170 mm usable height after margins) this gives squares of about 22 x 5 mm: wider than tall. Adjust the aspect ratio to suit the journal. Leave at least 20 mm at the top for month labels and 10 mm at the left for row numbers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Draw the grid in pencil first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule the full grid in pencil before inking any lines. Check the month labels and day counts. Mark February with only 28 (or 29 in a leap year) rows active; mark months with 30 days with row 31 blank. Label each column with the month initial or abbreviation. Once the pencil layout is verified, go over the grid lines in ink with the ruling pen."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set the colour key" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Draw the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-key" } }],
+            "text": "colour key"
+          },
+          {
+            "type": "text",
+            "text": " on the same spread or on the facing page. Keep the key simple: five colours maximum work better than ten. A mood key might run from dark blue (very low) through neutral grey or yellow to bright green (very good). A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "habit-tracker" } }],
+            "text": "habit tracker"
+          },
+          {
+            "type": "text",
+            "text": " version uses a binary colour pair: one colour for completed, one for missed."
+          }
+        ]
+      }
+    ]
+  }
+}

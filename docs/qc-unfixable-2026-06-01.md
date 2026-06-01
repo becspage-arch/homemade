@@ -29,3 +29,7 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - tortoiseshell-stitch-binding voice-violation,grade-level-strict — applied: 
 - watercolour-journal-page-prep voice-violation,grade-level-strict — applied: 
 - wycinanki-folk-papercut voice-violation,grade-level-strict — applied: 
+
+- book-repair-lifting-endpaper grade-level-strict — applied: 
+- illuminated-border-design grade-level-strict — applied: 
+- maintaining-copperplate-slant grade-level-strict — applied: 

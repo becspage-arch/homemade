@@ -1,0 +1,127 @@
+{
+  "slug": "making-a-home-book-press",
+  "title": "Making a home book press",
+  "subtitle": "A simple pressing board and G-clamp setup for bookbinding",
+  "excerpt": "A book press is the most useful piece of equipment in a home bindery. A commercial cast-iron nipping press costs a considerable amount; a functional equivalent can be made from two pieces of plywood and a pair of G-clamps for very little. This tutorial covers the materials, dimensions, and use of a simple home-made press.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The plywood-and-clamp book press is a widely documented alternative to the cast-iron nipping press, recommended in multiple home-bookbinding guides from the late 20th century onward.",
+  "recipeTools": [
+    { "slug": "g-cramp-100mm", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pressing-boards",
+      "term": "Pressing boards",
+      "definition": "A pair of flat, smooth boards placed on either side of a freshly glued text block or case to hold everything flat and even while adhesives dry."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A book press solves one practical problem: keeping a glued structure flat, under even pressure, while the adhesive dries. The commercial cast-iron nipping press does this with a screw mechanism and a precision-machined platen. A home-made version uses two pieces of smooth-faced plywood and two G-clamps. The difference is convenience and speed; the result is the same."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Two pieces of birch-faced plywood, 12 mm thick", "notes": "Cut to 350 mm x 250 mm. This covers A4 and smaller work. Sand the faces smooth. A coarser board transfers its texture to the work." },
+            { "name": "Two G-clamps, 100 mm", "notes": "One clamp at each end of the boards. 100 mm opening covers most text blocks up to 75 mm thick." },
+            { "name": "Waxed paper or silicone release paper", "notes": "Placed between the press boards and the work to prevent adhesive strike-through." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prepare the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sand both inner faces smooth with 120-grit sandpaper and then 220-grit. A rough face leaves impressions in soft materials. Seal the outer faces and edges with a coat of varnish or diluted PVA to prevent warping from moisture absorption. Allow to dry flat. A warped pressing board produces a warped book."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use the press" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place waxed paper between the work and both "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pressing-boards" } }],
+            "text": "pressing boards"
+          },
+          {
+            "type": "text",
+            "text": " to prevent adhesive bonding the book to the boards. Position the G-clamps at each end of the board stack, equidistant from the centre. Tighten both clamps alternately rather than fully tightening one before the other; uneven pressure causes the work to shift or bow. Tighten until firm resistance is felt in the clamp screw, not until the board deflects visibly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Typical pressing times" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Text block freshly glued and lined: 30 minutes minimum under the press, then released to air under a stack of books overnight. Newly cased book with PVA-glued endpapers: 4 hours in the press, overnight under weight. A leather-covered case where the boards have been dampened by the adhesive: overnight in the press, then a further day under weight before the book is stored or used."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The book has a slight bow after pressing",
+              "cause": "The pressing boards are warped, or the clamps were tightened unevenly.",
+              "fix": "Leave the book under a heavy stack of books overnight rather than in the press. If the bow is slight, it often relaxes on its own once the adhesive sets fully."
+            },
+            {
+              "symptom": "Adhesive has bonded the book to the pressing board",
+              "cause": "The waxed paper was omitted or shifted during clamping.",
+              "fix": "Work a bone folder gently under the book to separate it from the board. Damaged spots can be covered by the endpaper if caught early."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

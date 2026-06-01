@@ -1,0 +1,140 @@
+{
+  "slug": "zine-cover-printing-at-home",
+  "title": "Printing a zine cover at home",
+  "subtitle": "Designing and printing a zine cover for saddle-stitch binding",
+  "excerpt": "A printed zine cover needs to account for bleed, crop marks, imposition, and paper weight before the first copy is printed. This tutorial covers the decisions specific to home inkjet and laser printing: how to set up the cover document, how to print on heavier stock, and how to saddle-stitch bind a short-run zine without a professional stapler.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Original tutorial based on zine-making and short-run publishing practices established in the DIY publishing community. No single public-domain source.",
+  "recipeTools": [
+    { "slug": "long-arm-stapler", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "scissors-craft", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saddle-stitch-binding",
+      "term": "Saddle-stitch binding",
+      "definition": "A binding method in which staples are driven through the folded spine of a booklet to hold the pages together. The staples sit astride the fold (the saddle) and are the standard construction for short-run zines and magazines."
+    },
+    {
+      "slug": "cover-stock",
+      "term": "Cover stock",
+      "definition": "Heavier paper used for a zine cover, typically 160 to 220 gsm, in contrast to the lighter internal pages (80 to 120 gsm). Cover stock gives the zine a defined front and back and makes the spine lie straighter."
+    },
+    {
+      "slug": "bleed-area",
+      "term": "Bleed",
+      "definition": "An area of artwork that extends beyond the trim edge of the printed page. Printing with bleed ensures that colours and images run all the way to the trimmed edge without leaving a white border if the cut is slightly off-centre."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saddle-stitch-binding" } }],
+            "text": "saddle-stitch"
+          },
+          {
+            "type": "text",
+            "text": " zine has a cover sheet folded around the inside pages. The cover is printed on "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cover-stock" } }],
+            "text": "cover stock"
+          },
+          {
+            "type": "text",
+            "text": " at the same sheet size as the interior: both cover and content are the same unfolded size, folded together, and bound at the spine. The cover design must be set up with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bleed-area" } }],
+            "text": "bleed"
+          },
+          {
+            "type": "text",
+            "text": " if any colour or artwork touches the edge of the page."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Cover stock, A4, 160 to 200 gsm", "notes": "Must be within the paper weight range of your home printer. Check the manufacturer's maximum gsm before printing." },
+            { "name": "Interior pages, A4, 80 to 90 gsm", "notes": "Standard printer paper. Stack the pages in sets that fold into the correct gathering order." },
+            { "name": "Long-arm stapler", "notes": "Required to reach the centre of an A4 sheet for saddle-stitch binding. A regular stapler only reaches the edge." },
+            { "name": "Bone folder", "notes": "For sharpening the spine fold on each copy." },
+            { "name": "Metal ruler and cutting mat", "notes": "For trimming if the edges need squaring." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set up the cover document" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cover document is one A4 sheet that holds the front cover (right half when landscape) and back cover (left half when landscape). Set up the document in landscape orientation at A4 size. The right half is the front cover; the left half is the back cover. The spine runs down the centre: no design element should straddle the centre unless it is intended to appear on the spine. Add 3 mm of bleed beyond all four outer edges if artwork reaches the edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Print and fold" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Print the cover on the cover stock. Allow ink to dry fully (at least ten minutes for inkjet) before folding. Score the centre fold line with the bone folder against a ruler before folding: heavier stock can crack on an unscored fold. Nest the folded interior pages inside the folded cover, aligning the spine folds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Saddle-stitch bind" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the long-arm stapler flat. Place the nested zine spine-down on the extended arm. Drive two staples through the spine, one about 25 mm from each end. Close the staple legs flat against the inside of the spine. Sharpen the spine fold once more with the bone folder after stapling. Trim the outer edges if they are uneven."
+          }
+        ]
+      }
+    ]
+  }
+}

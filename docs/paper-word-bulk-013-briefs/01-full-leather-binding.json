@@ -1,0 +1,247 @@
+{
+  "slug": "full-leather-binding",
+  "title": "Full leather binding",
+  "subtitle": "Covering a sewn text block in leather from board to board",
+  "excerpt": "A full leather binding wraps the entire case in a single skin, turning the boards, the spine, and the hinges into one continuous surface. It is demanding in material and technique but produces a book that ages well and survives hard use.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapters on covering and forwarding: detailed description of covering with full leather, turn-ins, and spine treatment. Cyril Davenport, The Book: Its History and Development (1907), on historical full-leather binding structures.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "bookbinding-board-3mm", "isOptional": false },
+    { "slug": "veg-tan-leather-thin", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "wheat-paste", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "bone-folder-teflon", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "craft-knife-blades-11", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "turn-in",
+      "term": "Turn-in",
+      "definition": "The strip of covering material folded over the edge of a board and adhered to the inside face, forming a neat border around the interior of the case."
+    },
+    {
+      "slug": "foredge",
+      "term": "Foredge",
+      "definition": "The outer edge of a book, opposite the spine: the face of the text block visible when the book is closed."
+    },
+    {
+      "slug": "paring",
+      "term": "Paring",
+      "definition": "The process of thinning the edges of a piece of leather with a blade so that the turn-ins lie flat and do not produce a visible ridge on the board surface."
+    }
+  ],
+  "techniqueSlugs": ["bookbinding-kettle-stitch", "leather-paring"],
+  "criticalTechniques": ["leather-paring"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full leather binding covers the boards, spine, and hinges in a single continuous skin. The technique has been in continuous use since the early medieval period. Vegetable-tanned goat or calf leather at 1.0 to 1.5 mm is the working material for most hand-binding work: firm enough to hold its shape, thin enough to pare at the edges without exposing the fibre layer beneath."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Cutting tools safety",
+          "body": "Sharp blades are safer than blunt blades. Change the blade at the first sign of dulling. Cut on a self-healing cutting mat. Cut against a metal ruler with the non-cutting hand at least two finger-widths back from the blade path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Vegetable-tanned leather, 1.0 to 1.5 mm", "notes": "A piece large enough to cover both boards, spine, and turn-ins with 25 mm spare on each edge." },
+            { "name": "PVA, acid-free", "notes": "The adhesive for gluing leather to boards. Mix 1:1 with wheat paste for a slightly more flexible bond." },
+            { "name": "Wheat-paste (cooked)", "notes": "Mixed with PVA to slow tack and allow repositioning while turning in." },
+            { "name": "Paste brush, 50 mm flat", "notes": "For spreading adhesive evenly across the leather surface and the boards." },
+            { "name": "Bone folder", "notes": "For rubbing the leather firmly onto board surfaces and into the hinge groove." },
+            { "name": "Bone folder (Teflon)", "notes": "For smoothing the turn-ins without leaving a shine mark on the leather." },
+            { "name": "Craft knife + No. 11 blades", "notes": "For cutting the leather to size and mitring the corners." },
+            { "name": "Metal ruler, 30 cm", "notes": "For guided cuts." },
+            { "name": "Self-healing cutting mat, A3", "notes": "Work surface for all cutting." },
+            { "name": "Bookbinding board, 2 mm or 3 mm", "notes": "The case boards. The text block should already be sewn and the boards sized and cut to match." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pare the turn-in edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before cutting the leather to final size, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "paring" } }],
+            "text": "paring"
+          },
+          {
+            "type": "text",
+            "text": " the edges is the critical preparation step. Mark a line 20 mm from each edge on the flesh side (the rough inner face). Work the leather-paring knife at a low angle, removing material in thin passes until the edge tapers to a near-translucent thinness. Do not cut through. The pared zone becomes the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }],
+            "text": "turn-in"
+          },
+          {
+            "type": "text",
+            "text": ". A turn-in that is not pared produces a hard ridge visible on the inside of the cover."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut the leather to size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lay the case flat on the leather flesh-side up. Mark the covering piece with 20 mm extra on all four edges. Cut cleanly with the craft knife against the metal ruler. The piece covers one board, the spine, and the other board in a single sheet. Mark the spine width lightly on the grain side so you can position the leather accurately when gluing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Apply adhesive and position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix PVA and cooked wheat paste in equal parts. Apply the mixture to the flesh side of the leather across the full area, spreading evenly from the centre outward. Apply a thin coat to the boards and spine as well. Allow 60 seconds for the adhesive to become slightly tacky. Position the leather centrally on the case, grain side up, pressing from the spine outward to avoid trapping air bubbles."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Work the leather into the hinge grooves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the bone folder to press the leather firmly into the hinge groove on each side of the spine. Work from the head down to the tail in a single smooth pass. The leather must sit in the groove cleanly: a bridge of leather across the hinge produces a stiff book that eventually cracks at the joint. Once the groove is set, rub the spine firmly to bond the leather to the spine liner beneath."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Turn in the edges and mitre the corners" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold the long edges (head and tail) over first, pressing firmly with the Teflon folder. Then fold the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foredge" } }],
+            "text": "foredge"
+          },
+          {
+            "type": "text",
+            "text": " edges over. At each corner, cut a small mitre: remove a triangle of leather at 45 degrees, leaving enough material to butt neatly at the corner. Press all four "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turn-in" } }],
+            "text": "turn-ins"
+          },
+          {
+            "type": "text",
+            "text": " flat with the Teflon folder. The mitre should close cleanly without a gap. If the corner sits proud, pare it a fraction thinner on the flesh side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Press and dry" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the covered case between clean pressing boards with waxed paper on the inside faces to prevent adhesive strike-through. Press under moderate weight for four hours. Then transfer to a book press or heavy weights overnight. The leather must dry slowly under pressure or it will cockle as it contracts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full leather responds to occasional light dressing with a microcrystalline wax applied with a soft cloth. Keep away from prolonged direct sunlight, which dries and cracks the grain layer. Store upright on a shelf with neighbours to support the boards; leather-covered books stored flat under pressure develop cockled joints over years."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "A hard ridge is visible inside the board at each edge",
+              "cause": "The turn-in was not pared thinly enough.",
+              "fix": "Accept the ridge on this binding and pare more aggressively on the next. On a finished book, a very thin layer of endpaper pasted over the turn-in can disguise a small ridge."
+            },
+            {
+              "symptom": "The leather cockles and bubbles across the board",
+              "cause": "Adhesive was too wet, or the book was not pressed long enough while drying.",
+              "fix": "Re-dampen the affected area with a very slightly damp cloth, repress firmly, and leave overnight. A paste-heavy mix (more paste, less PVA) allows more working time."
+            },
+            {
+              "symptom": "The hinge cracks after the book is opened a few times",
+              "cause": "The leather was not seated firmly enough into the groove, and the fold at the hinge is too sharp.",
+              "fix": "On a future binding, work more adhesive into the groove and press more firmly. On a damaged binding, a thin strip of Japanese tissue applied inside the hinge from the endpaper side will stabilise the break."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
