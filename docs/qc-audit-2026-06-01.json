@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-01T21:09:31.964Z",
-  "totalScanned": 6432,
+  "generatedAt": "2026-06-01T22:07:54.950Z",
+  "totalScanned": 6439,
   "passCount": 0,
-  "blockCount": 2457,
+  "blockCount": 2462,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
-      "total": 1162,
+      "total": 1167,
       "pass": 0,
-      "block": 1162,
+      "block": 1167,
       "warnOnly": 0
     },
     "natural-home": {
@@ -61,9 +61,9 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 798,
-    "opening-pattern-missing-hook": 2101,
-    "content-type-opening-mismatch": 2393,
+    "voice-violation": 796,
+    "opening-pattern-missing-hook": 2104,
+    "content-type-opening-mismatch": 2398,
     "grade-level-strict": 75,
     "prose-prep-steps": 84,
     "body-missing-method": 1
@@ -1472,6 +1472,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Potato wedges tossed in a Cajun spice mix and cooked in the air fryer at 200°C for 22 to 25 minutes. No parboiling required: the wedge shape"
+        }
+      ]
+    },
+    {
+      "slug": "albondigas-en-salsa",
+      "tutorialId": "cmp84mhg80000nwv4rk7yz2t2",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:48.438Z",
+      "publishedAt": "2026-06-01T21:53:47.734Z",
+      "heroMediaId": "cmpvqyai90000qwv4og7o70nw",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Albóndigas en salsa are Spanish meatballs of pork and beef simmered in a rich tomato and sherry sauce. The meatballs are seasoned with garli"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Albóndigas en salsa are Spanish meatballs of pork and beef simmered in a rich tomato and sherry sauce. The meatballs are seasoned with garli"
         }
       ]
     },
@@ -3492,6 +3518,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Chicken broth thickened with egg yolks and lemon juice, finished with rice. Avgolemono is silky, bright, and restorative. The technique of t"
+        }
+      ]
+    },
+    {
+      "slug": "avgolemono-soup",
+      "tutorialId": "cmp84gs8500014wv449dpnkhv",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:48.811Z",
+      "publishedAt": "2026-06-01T21:52:14.945Z",
+      "heroMediaId": "cmpvqyblf0002qwv4qo62a0sv",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Avgolemono is a Greek soup of chicken stock, rice, and a silky egg-and-lemon thickener that gives it a pale, creamy texture without any crea"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Avgolemono is a Greek soup of chicken stock, rice, and a silky egg-and-lemon thickener that gives it a pale, creamy texture without any crea"
         }
       ]
     },
@@ -8690,23 +8742,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:22.622Z",
-      "publishedAt": "2026-05-17T01:24:45.252Z",
-      "heroMediaId": "cmpleh8aa0050tkv44ln40p33",
+      "voiceRetrofittedAt": "2026-06-01T21:55:49.178Z",
+      "publishedAt": "2026-06-01T21:52:28.244Z",
+      "heroMediaId": "cmpvqycfr0004qwv4spg1xjd2",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Briam is the Greek summer vegetable tray. Courgette, aubergine, potato, pepper, onion. And tomato. All thinly sliced. Layered in olive oil a"
+          "snippet": "Briam is a Greek tray of mixed vegetables (courgettes, potatoes, aubergine, peppers, and tomatoes) baked slowly in olive oil until very tend"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Briam is the Greek summer vegetable tray. Courgette, aubergine, potato, pepper, onion. And tomato. All thinly sliced. Layered in olive oil a"
+          "snippet": "Briam is a Greek tray of mixed vegetables (courgettes, potatoes, aubergine, peppers, and tomatoes) baked slowly in olive oil until very tend"
         }
       ]
     },
@@ -10150,32 +10202,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Cakey brownies are distinguished from fudgy ones by a higher flour ratio and a longer bake. They cut cleanly, hold their shape, and have a t"
-        }
-      ]
-    },
-    {
-      "slug": "calamares-a-la-romana",
-      "tutorialId": "cmpamanju0000cgv4jeqwm18x",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-27T10:41:22.967Z",
-      "publishedAt": "2026-05-18T03:01:18.889Z",
-      "heroMediaId": "cmpl9b2p6009eqov48tnagz4y",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The batter is what makes calamares a la romana distinct. It is thin, barely-there, and slightly crisp, more a coating than a shell. The carb"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The batter is what makes calamares a la romana distinct. It is thin, barely-there, and slightly crisp, more a coating than a shell. The carb"
         }
       ]
     },
@@ -15025,16 +15051,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-27T14:49:51.785Z",
-      "publishedAt": "2026-05-18T03:01:22.867Z",
-      "heroMediaId": "cmplekuqv0088tkv4oibcmk8t",
+      "voiceRetrofittedAt": "2026-06-01T21:55:49.656Z",
+      "publishedAt": "2026-06-01T21:53:33.237Z",
+      "heroMediaId": "cmpvqyf3s0008qwv4rht2ww54",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The key is cooking chorizo, soft, fresh, with paprika bleeding freely into the pan. Cured dry chorizo will not absorb the wine in the same w"
+          "snippet": "Chorizo al vino tinto is sliced chorizo cooked in red wine until the wine reduces to a sticky glaze around the sausage. It takes ten minutes"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Chorizo al vino tinto is sliced chorizo cooked in red wine until the wine reduces to a sticky glaze around the sausage. It takes ten minutes"
         }
       ]
     },
@@ -19208,22 +19241,30 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:49:33.506Z",
-      "publishedAt": "2026-05-18T03:07:05.829Z",
-      "heroMediaId": "cmplengf600a0tkv4hhubodpb",
+      "voiceRetrofittedAt": "2026-06-01T21:55:50.150Z",
+      "publishedAt": "2026-06-01T21:54:16.025Z",
+      "heroMediaId": "cmpvqygm2000cqwv4ih1c4vz7",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[9] > text"
+          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
+          "path": "body > troubleshooter[11] > item[1] > fix",
+          "snippet": "Anchor"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Croquetas de jamón are Spanish croquettes with a thick, creamy béchamel filling studded with serrano ham, coated in breadcrumbs and fried un"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The secret to a good croqueta is the béchamel. It must be much thicker than anything you would make for a lasagne or cauliflower cheese. Sti"
+          "snippet": "Croquetas de jamón are Spanish croquettes with a thick, creamy béchamel filling studded with serrano ham, coated in breadcrumbs and fried un"
         }
       ]
     },
@@ -22641,22 +22682,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T14:38:34.740Z",
-      "publishedAt": "2026-05-17T01:21:30.597Z",
-      "heroMediaId": "cmpleqr7700cutkv4nsu8rjp7",
+      "voiceRetrofittedAt": "2026-06-01T21:55:50.471Z",
+      "publishedAt": "2026-06-01T21:54:31.185Z",
+      "heroMediaId": "cmpvqyhrz000eqwv4j0ors2zp",
       "findings": [
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "sourceNotes"
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Fabada asturiana is a rich northern Spanish stew of large white beans slow-cooked with chorizo, morcilla (black pudding), and smoked pork. I"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Fabada is the big winter bean stew of Asturias. The green northern province between the mountains and the Cantabrian Sea. Fat white beans, s"
+          "snippet": "Fabada asturiana is a rich northern Spanish stew of large white beans slow-cooked with chorizo, morcilla (black pudding), and smoked pork. I"
         }
       ]
     },
@@ -25357,23 +25399,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:17.351Z",
-      "publishedAt": "2026-05-16T09:10:54.166Z",
-      "heroMediaId": "cmp8fmov800c8xov40vw366o8",
+      "voiceRetrofittedAt": "2026-06-01T21:55:50.813Z",
+      "publishedAt": "2026-06-01T21:53:26.760Z",
+      "heroMediaId": "cmpvqyisc000gqwv49rhv7crd",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Gambas al ajillo is a dish that depends on heat and speed. The oil goes in very hot, the garlic turns golden in under a minute, the prawns g"
-        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Gambas al ajillo is a dish that depends on heat and speed. The oil goes in very hot, the garlic turns golden in under a minute, the prawns g"
+          "snippet": "Gambas al ajillo are prawns cooked in a sizzling bath of olive oil, garlic, and dried chilli. They cook in about five minutes and are eaten "
         }
       ]
     },
@@ -25722,6 +25757,32 @@
       ]
     },
     {
+      "slug": "gazpacho-andaluz",
+      "tutorialId": "cmpvqrk7f0000i0v42ek2q1if",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:51.186Z",
+      "publishedAt": "2026-06-01T21:53:09.210Z",
+      "heroMediaId": "cmpvqykwb000iqwv4mn7yg2ps",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Gazpacho is a cold Spanish soup of blended raw tomatoes, cucumber, pepper, garlic, vinegar, and olive oil. It is refreshing, sharp, and smoo"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Gazpacho is a cold Spanish soup of blended raw tomatoes, cucumber, pepper, garlic, vinegar, and olive oil. It is refreshing, sharp, and smoo"
+        }
+      ]
+    },
+    {
       "slug": "gel-wax-jar-candle",
       "tutorialId": "cmprhpeqr0003ygv4omdsnq40",
       "type": "RECIPE",
@@ -25987,23 +26048,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:21.930Z",
-      "publishedAt": "2026-05-16T09:06:30.248Z",
-      "heroMediaId": "cmpa9ls31000cowv4kun6610x",
+      "voiceRetrofittedAt": "2026-06-01T21:55:51.590Z",
+      "publishedAt": "2026-06-01T21:52:23.734Z",
+      "heroMediaId": "cmpvqylty000kqwv449halj8y",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Gigantes plaki is a dish that rewards patience. The beans go into the oven in a fairly loose tomato sauce and come out an hour later in some"
-        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Gigantes plaki is a dish that rewards patience. The beans go into the oven in a fairly loose tomato sauce and come out an hour later in some"
+          "snippet": "Gigantes plaki is a Greek baked dish of large white beans in a thick tomato sauce with garlic, herbs, and olive oil. It is deeply flavoured "
         }
       ]
     },
@@ -27261,23 +27315,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-27T22:49:25.471Z",
-      "publishedAt": "2026-05-18T03:01:56.047Z",
-      "heroMediaId": "cmpek3xl700tersv48y6hjuae",
+      "voiceRetrofittedAt": "2026-06-01T21:55:51.970Z",
+      "publishedAt": "2026-06-01T21:52:41.250Z",
+      "heroMediaId": "cmpvqymkp000mqwv4hiaxy2i0",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Greek roast lamb is built on three things. Garlic slivers go into slits in the meat, so they melt and scent the flesh from inside. A heavy r"
+          "snippet": "Greek roast lamb is a whole leg studded with garlic and rubbed with lemon, dried oregano, and olive oil, then slow-roasted until it falls fr"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Greek roast lamb is built on three things. Garlic slivers go into slits in the meat, so they melt and scent the flesh from inside. A heavy r"
+          "snippet": "Greek roast lamb is a whole leg studded with garlic and rubbed with lemon, dried oregano, and olive oil, then slow-roasted until it falls fr"
         }
       ]
     },
@@ -27287,23 +27341,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:50:29.975Z",
-      "publishedAt": "2026-05-17T01:22:59.575Z",
-      "heroMediaId": "cmplhk8q800cap8v4mhitu4eb",
+      "voiceRetrofittedAt": "2026-06-01T21:55:52.342Z",
+      "publishedAt": "2026-06-01T21:52:19.038Z",
+      "heroMediaId": "cmpvqynck000oqwv428ragel9",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The salad you get in a Greek village is not the lettuce-and-feta plate served in hotels. The proper version is a heap of rough-cut tomato, c"
+          "snippet": "Greek salad is a simple combination of ripe tomatoes, cucumber, red onion, green pepper, kalamata olives, and a block of feta dressed with g"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The salad you get in a Greek village is not the lettuce-and-feta plate served in hotels. The proper version is a heap of rough-cut tomato, c"
+          "snippet": "Greek salad is a simple combination of ripe tomatoes, cucumber, red onion, green pepper, kalamata olives, and a block of feta dressed with g"
         }
       ]
     },
@@ -27601,6 +27655,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The dark roux is the defining step of gumbo and cannot be rushed or abandoned mid-cook. Commit twenty to thirty minutes of constant stirring"
+        }
+      ]
+    },
+    {
+      "slug": "gyros-chicken",
+      "tutorialId": "cmpvqqyb6000020v499dedsim",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:52.650Z",
+      "publishedAt": "2026-06-01T21:52:36.952Z",
+      "heroMediaId": "cmpvqynzy000qqwv4mgy885wc",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Chicken gyros are spiced, marinated chicken thighs grilled until charred and then sliced thin for wrapping in warm pitta. The spice mix of p"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Chicken gyros are spiced, marinated chicken thighs grilled until charred and then sliced thin for wrapping in warm pitta. The spice mix of p"
         }
       ]
     },
@@ -31180,23 +31260,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:51:08.599Z",
-      "publishedAt": "2026-05-17T20:50:17.541Z",
-      "heroMediaId": "cmplevgh200h6tkv4c8stzhb4",
+      "voiceRetrofittedAt": "2026-06-01T21:55:53.065Z",
+      "publishedAt": "2026-06-01T21:52:50.054Z",
+      "heroMediaId": "cmpvqyomu000sqwv46do107lz",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Keftedes are the meatball of the Greek mezze table. Pan-fried rather than baked, they develop a proper dark crust in hot olive oil that bake"
+          "snippet": "Keftedes are Greek meatballs of mixed beef and pork, flavoured with mint, oregano, and grated onion, then pan-fried in olive oil until crisp"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Keftedes are the meatball of the Greek mezze table. Pan-fried rather than baked, they develop a proper dark crust in hot olive oil that bake"
+          "snippet": "Keftedes are Greek meatballs of mixed beef and pork, flavoured with mint, oregano, and grated onion, then pan-fried in olive oil until crisp"
         }
       ]
     },
@@ -31535,23 +31615,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:51:10.491Z",
-      "publishedAt": "2026-05-16T09:06:20.133Z",
-      "heroMediaId": "cmpl9o25b00o6qov4rxqmasl1",
+      "voiceRetrofittedAt": "2026-06-01T21:55:53.384Z",
+      "publishedAt": "2026-06-01T21:51:50.654Z",
+      "heroMediaId": "cmpvqyp8v000uqwv457v6sgf0",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Kleftiko is one of the simplest slow-roasts in the Greek repertoire. The lamb goes into a parcel of greaseproof paper with lemon, garlic, po"
+          "snippet": "Kleftiko is a Greek method of slow-roasting lamb wrapped tightly in parchment so it steams in its own juices. The meat becomes very tender, "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Kleftiko is one of the simplest slow-roasts in the Greek repertoire. The lamb goes into a parcel of greaseproof paper with lemon, garlic, po"
+          "snippet": "Kleftiko is a Greek method of slow-roasting lamb wrapped tightly in parchment so it steams in its own juices. The meat becomes very tender, "
         }
       ]
     },
@@ -34056,23 +34136,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-28T05:41:12.434Z",
-      "publishedAt": "2026-05-18T03:02:11.905Z",
-      "heroMediaId": "cmplewxn000iitkv42561ir7f",
+      "voiceRetrofittedAt": "2026-06-01T21:55:53.734Z",
+      "publishedAt": "2026-06-01T21:52:45.356Z",
+      "heroMediaId": "cmpvqyqgs000wqwv4j4tcj3rn",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Greek lemon potatoes are not roast potatoes in the British sense, there is no fat in which they crisp, no high heat to shatter the edges. In"
+          "snippet": "Greek lemon potatoes are cut into wedges and roasted in a generous mix of lemon juice, olive oil, stock, and dried oregano until they absorb"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Greek lemon potatoes are not roast potatoes in the British sense, there is no fat in which they crisp, no high heat to shatter the edges. In"
+          "snippet": "Greek lemon potatoes are cut into wedges and roasted in a generous mix of lemon juice, olive oil, stock, and dried oregano until they absorb"
         }
       ]
     },
@@ -38556,30 +38636,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:51:53.106Z",
-      "publishedAt": "2026-05-17T20:51:14.497Z",
-      "heroMediaId": "cmplbs1ip00p0ygv4wty73wgs",
+      "voiceRetrofittedAt": "2026-06-01T21:55:53.892Z",
+      "publishedAt": "2026-06-01T21:51:26.900Z",
+      "heroMediaId": "cmpvqyr3f000yqwv4kh1tru9v",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "prose-prep-steps",
           "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
-          "path": "body > paragraph[9]",
-          "snippet": "Season with salt and pepper."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Moussaka is a dish of components. The aubergine is fried separately. The lamb sauce is cooked down with wine and tomato. The béchamel is mad"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Moussaka is a dish of components. The aubergine is fried separately. The lamb sauce is cooked down with wine and tomato. The béchamel is mad"
+          "path": "body > orderedList[9] > listItem[2] > paragraph[0]",
+          "snippet": "Season well with salt and pepper."
         }
       ]
     },
@@ -40089,6 +40155,39 @@
       ]
     },
     {
+      "slug": "octopus-red-wine",
+      "tutorialId": "cmpvqrefr0000pov45jkqnvox",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:54.513Z",
+      "publishedAt": "2026-06-01T21:53:00.458Z",
+      "heroMediaId": "cmpvqys7k0010qwv458cuwpos",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "prose-prep-steps",
+          "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
+          "path": "body > orderedList[5] > listItem[1] > paragraph[0]",
+          "snippet": "Reduce the heat to medium."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Octopus braised slowly in red wine until tender is one of the great Greek seafood dishes. The octopus softens over 45 to 60 minutes in a win"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Octopus braised slowly in red wine until tender is one of the great Greek seafood dishes. The octopus softens over 45 to 60 minutes in a win"
+        }
+      ]
+    },
+    {
       "slug": "oeufs-en-meurette",
       "tutorialId": "cmpuodhzm00021wv49w5rnvn4",
       "type": "RECIPE",
@@ -41013,28 +41112,28 @@
       ]
     },
     {
-      "slug": "paella-valenciana",
-      "tutorialId": "cmp5qfq5y00011kv46wlm4z0q",
+      "slug": "paella-vegetariana",
+      "tutorialId": "cmpvqsm940000qov4khafhnul",
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:09.210Z",
-      "publishedAt": "2026-05-14T16:58:23.147Z",
-      "heroMediaId": "cmpabdrd600164wv4gedracjx",
+      "voiceRetrofittedAt": "2026-06-01T21:55:55.199Z",
+      "publishedAt": "2026-06-01T21:54:12.145Z",
+      "heroMediaId": "cmpvqyuus0016qwv4946fhv8x",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Real Valencian paella has no seafood. That is a later variation. The original is a land dish: chicken, rabbit, flat beans, white beans and r"
+          "snippet": "Vegetable paella is a Spanish rice dish of peppers, artichoke hearts, tomatoes, and beans in saffron-steeped stock. Without the distraction "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Real Valencian paella has no seafood. That is a later variation. The original is a land dish: chicken, rabbit, flat beans, white beans and r"
+          "snippet": "Vegetable paella is a Spanish rice dish of peppers, artichoke hearts, tomatoes, and beans in saffron-steeped stock. Without the distraction "
         }
       ]
     },
@@ -41353,23 +41452,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:10.700Z",
-      "publishedAt": "2026-05-17T01:18:09.962Z",
-      "heroMediaId": "cmplf0w3600nitkv47ydpgjr5",
+      "voiceRetrofittedAt": "2026-06-01T21:55:55.589Z",
+      "publishedAt": "2026-06-01T21:53:22.041Z",
+      "heroMediaId": "cmpvqyvky0018qwv49yc1r92g",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Pan con tomate is a slice of bread rubbed with the cut side of a halved tomato until the cut side is gone. Salt, oil, eat. The whole thing t"
-        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Pan con tomate is a slice of bread rubbed with the cut side of a halved tomato until the cut side is gone. Salt, oil, eat. The whole thing t"
+          "snippet": "Pan con tomate is grilled bread rubbed with a cut tomato, garlic, and olive oil. It is a staple of Catalan and Spanish cooking, eaten daily "
         }
       ]
     },
@@ -42364,23 +42456,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:16.900Z",
-      "publishedAt": "2026-05-16T09:06:09.637Z",
-      "heroMediaId": "cmplhyuz700uip8v4h2t5gm3a",
+      "voiceRetrofittedAt": "2026-06-01T21:55:55.968Z",
+      "publishedAt": "2026-06-01T21:51:41.335Z",
+      "heroMediaId": "cmpvqywqx001aqwv4w84pkyw9",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Pastitsio is the baked pasta dish at the heart of Greek home cooking. It is deeper and more aromatic than its Italian cousins. Cinnamon runs"
+          "snippet": "Pastitsio is a Greek baked pasta dish: layers of thick pasta tubes, a fragrant cinnamon-and-lamb sauce, and a thick béchamel top baked golde"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Pastitsio is the baked pasta dish at the heart of Greek home cooking. It is deeper and more aromatic than its Italian cousins. Cinnamon runs"
+          "snippet": "Pastitsio is a Greek baked pasta dish: layers of thick pasta tubes, a fragrant cinnamon-and-lamb sauce, and a thick béchamel top baked golde"
         }
       ]
     },
@@ -42416,23 +42508,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:17.173Z",
-      "publishedAt": "2026-05-16T09:06:52.034Z",
-      "heroMediaId": "cmp8g0es00000d0v4sukfai53",
+      "voiceRetrofittedAt": "2026-06-01T21:55:56.315Z",
+      "publishedAt": "2026-06-01T21:53:17.943Z",
+      "heroMediaId": "cmpvqyxqr001cqwv4qqik7d7x",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The brava sauce is the point of this dish, not the potatoes. The potatoes are crisp and golden; the sauce is hot with chilli, sharp with vin"
+          "snippet": "Patatas bravas are chunks of fried potato served with a sharp, spiced tomato sauce. The potatoes should be crisp on the outside and fluffy i"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The brava sauce is the point of this dish, not the potatoes. The potatoes are crisp and golden; the sauce is hot with chilli, sharp with vin"
+          "snippet": "Patatas bravas are chunks of fried potato served with a sharp, spiced tomato sauce. The potatoes should be crisp on the outside and fluffy i"
         }
       ]
     },
@@ -44626,23 +44718,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-28T11:41:00.424Z",
-      "publishedAt": "2026-05-18T03:02:31.258Z",
-      "heroMediaId": "cmplf2h8300q2tkv42z45zprg",
+      "voiceRetrofittedAt": "2026-06-01T21:55:56.633Z",
+      "publishedAt": "2026-06-01T21:54:34.988Z",
+      "heroMediaId": "cmpvqyz0l001eqwv4m4os2f8c",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The Galician saying is: unos pican y otros no, some bite and others don't. Early-season Padróns are almost all mild; peppers grown in summer"
-        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The Galician saying is: unos pican y otros no, some bite and others don't. Early-season Padróns are almost all mild; peppers grown in summer"
+          "snippet": "Pimientos de Padrón are small green Spanish peppers fried in very hot olive oil until blistered and slightly charred, then scattered with se"
         }
       ]
     },
@@ -44930,23 +45015,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:30.253Z",
-      "publishedAt": "2026-05-16T09:11:16.840Z",
-      "heroMediaId": "cmp8fs4ra00k2xov4q3c6g1kd",
+      "voiceRetrofittedAt": "2026-06-01T21:55:56.919Z",
+      "publishedAt": "2026-06-01T21:53:43.392Z",
+      "heroMediaId": "cmpvqyzpz001gqwv4aajcjc63",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Pisto requires patience and olive oil. The vegetables need to cook long enough to completely surrender their texture. They should be soft an"
+          "snippet": "Pisto manchego is a Spanish vegetable stew of courgettes, peppers, tomatoes, and onion cooked slowly in olive oil until very soft and concen"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Pisto requires patience and olive oil. The vegetables need to cook long enough to completely surrender their texture. They should be soft an"
+          "snippet": "Pisto manchego is a Spanish vegetable stew of courgettes, peppers, tomatoes, and onion cooked slowly in olive oil until very soft and concen"
         }
       ]
     },
@@ -45585,16 +45670,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:34.983Z",
-      "publishedAt": "2026-05-17T20:50:34.432Z",
-      "heroMediaId": "cmplf3d1v00ratkv4eb49i1x9",
+      "voiceRetrofittedAt": "2026-06-01T21:55:57.288Z",
+      "publishedAt": "2026-06-01T21:53:52.169Z",
+      "heroMediaId": "cmpvqz14n001iqwv43y8hpez9",
       "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo al ajillo is Spanish chicken braised with a large amount of garlic, dry sherry, and olive oil. The garlic mellows and sweetens as it c"
+        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Pollo al ajillo is not a subtle dish. An entire head of garlic. Peeled and sliced, goes into the pan with the chicken and cooks down until s"
+          "snippet": "Pollo al ajillo is Spanish chicken braised with a large amount of garlic, dry sherry, and olive oil. The garlic mellows and sweetens as it c"
         }
       ]
     },
@@ -47371,22 +47463,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-28T11:41:02.558Z",
-      "publishedAt": "2026-05-18T03:02:54.070Z",
-      "heroMediaId": "cmpeknyom01fursv47ubn1mv2",
+      "voiceRetrofittedAt": "2026-06-01T21:55:57.715Z",
+      "publishedAt": "2026-06-01T21:54:23.636Z",
+      "heroMediaId": "cmpvqz1wf001kqwv4xm7sc9ss",
       "findings": [
         {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[6] > text"
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pulpo a la gallega is a Galician dish of boiled octopus sliced thin and served over potatoes, dressed with olive oil and smoked paprika. The"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Octopus needs to be tenderised before it can be eaten with pleasure. The traditional Galician method is to beat the freshly caught octopus a"
+          "snippet": "Pulpo a la gallega is a Galician dish of boiled octopus sliced thin and served over potatoes, dressed with olive oil and smoked paprika. The"
         }
       ]
     },
@@ -50534,6 +50627,25 @@
       ]
     },
     {
+      "slug": "romesco-sauce",
+      "tutorialId": "cmpvqsxvg0000d4v4vdndoiyr",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T21:55:58.026Z",
+      "publishedAt": "2026-06-01T21:54:27.370Z",
+      "heroMediaId": "cmpvqz2is001mqwv4yemg3hnn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Romesco is a Catalan sauce of roasted red peppers, almonds, hazelnuts, garlic, and sherry vinegar blended into a thick, smoky, brick-red pas"
+        }
+      ]
+    },
+    {
       "slug": "ropa-vieja",
       "tutorialId": "cmp8mdynf0000e8v4r2f2wsk1",
       "type": "RECIPE",
@@ -51860,30 +51972,29 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:18.451Z",
-      "publishedAt": "2026-05-17T01:26:05.081Z",
-      "heroMediaId": "cmpli1ysq00ycp8v4z1yro3h5",
+      "voiceRetrofittedAt": "2026-06-01T21:55:58.408Z",
+      "publishedAt": "2026-06-01T21:52:10.197Z",
+      "heroMediaId": "cmpvqz44n001oqwv4mdngchr4",
       "findings": [
         {
           "severity": "WARN",
           "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > troubleshooter[16] > item[3] > fix",
-          "snippet": "fall"
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "sourceNotes"
         },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Saganaki is a piece of Greek hard cheese the size of a small phone, floured and fried in olive oil until the outside is a crackling dark gol"
+          "snippet": "Saganaki is a Greek dish of thick cheese slices quickly pan-fried until a golden crust forms on the outside while the inside softens. It tak"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Saganaki is a piece of Greek hard cheese the size of a small phone, floured and fried in olive oil until the outside is a crackling dark gol"
+          "snippet": "Saganaki is a Greek dish of thick cheese slices quickly pan-fried until a golden crust forms on the outside while the inside softens. It tak"
         }
       ]
     },
@@ -52271,23 +52382,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:21.095Z",
-      "publishedAt": "2026-05-17T01:19:40.763Z",
-      "heroMediaId": "cmplf73xg00vstkv4yzvm26f8",
+      "voiceRetrofittedAt": "2026-06-01T21:55:58.703Z",
+      "publishedAt": "2026-06-01T21:53:13.274Z",
+      "heroMediaId": "cmpvqz52m001qqwv45lcartxc",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Salmorejo is the older Cordoban cousin of gazpacho. Tomato, bread, oil, garlic, salt. No peppers, no cucumber, no vinegar. The bread does th"
+          "snippet": "Salmorejo is a thick, cold Spanish soup from Córdoba, made from blended tomatoes, stale bread, garlic, olive oil, and vinegar. It is denser "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Salmorejo is the older Cordoban cousin of gazpacho. Tomato, bread, oil, garlic, salt. No peppers, no cucumber, no vinegar. The bread does th"
+          "snippet": "Salmorejo is a thick, cold Spanish soup from Córdoba, made from blended tomatoes, stale bread, garlic, olive oil, and vinegar. It is denser "
         }
       ]
     },
@@ -57471,30 +57582,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:53.468Z",
-      "publishedAt": "2026-05-18T03:07:38.247Z",
-      "heroMediaId": "cmplfmyzy001294v426ddc2vf",
+      "voiceRetrofittedAt": "2026-06-01T21:55:59.051Z",
+      "publishedAt": "2026-06-01T21:52:56.055Z",
+      "heroMediaId": "cmpvqz5zv001sqwv4jptnf1bm",
       "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > troubleshooter[11] > item[0] > symptom",
-          "snippet": "fall"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Soutzoukakia are elongated meatballs, shaped like small logs rather than balls. And they carry a combination of spices that sets them apart "
+          "snippet": "Soutzoukakia are elongated Greek meatballs strongly flavoured with cumin and garlic, browned in a pan and then simmered in a thick tomato sa"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Soutzoukakia are elongated meatballs, shaped like small logs rather than balls. And they carry a combination of spices that sets them apart "
+          "snippet": "Soutzoukakia are elongated Greek meatballs strongly flavoured with cumin and garlic, browned in a pan and then simmered in a thick tomato sa"
         }
       ]
     },
@@ -57549,23 +57653,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:54.091Z",
-      "publishedAt": "2026-05-19T04:19:31.685Z",
-      "heroMediaId": "cmplabdwe01a8qov4j1varvbe",
+      "voiceRetrofittedAt": "2026-06-01T21:55:59.362Z",
+      "publishedAt": "2026-06-01T21:52:32.377Z",
+      "heroMediaId": "cmpvqz6ys001uqwv40dmttjb5",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Souvlaki is not complicated: cube the meat, marinate it, grill it hot. The results depend almost entirely on the quality of the pork and the"
+          "snippet": "Pork souvlaki are Greek skewers of marinated pork grilled over high heat until charred at the edges and juicy inside. The marinade is simple"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Souvlaki is not complicated: cube the meat, marinate it, grill it hot. The results depend almost entirely on the quality of the pork and the"
+          "snippet": "Pork souvlaki are Greek skewers of marinated pork grilled over high heat until charred at the edges and juicy inside. The marinade is simple"
         }
       ]
     },
@@ -59124,23 +59228,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:58.297Z",
-      "publishedAt": "2026-05-14T16:59:06.854Z",
-      "heroMediaId": "cmp8g1db4000yd0v406u13cpt",
+      "voiceRetrofittedAt": "2026-06-01T21:55:59.741Z",
+      "publishedAt": "2026-06-01T21:51:34.516Z",
+      "heroMediaId": "cmpvqz7ox001wqwv4lldf17cy",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The main enemies of spanakopita are moisture and rushed filo. Spinach releases a large amount of water; if it is not squeezed properly, the "
+          "snippet": "Spanakopita is a Greek filo pastry pie filled with wilted spinach, crumbled feta, eggs, and herbs. The pastry bakes up crisp and golden with"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The main enemies of spanakopita are moisture and rushed filo. Spinach releases a large amount of water; if it is not squeezed properly, the "
+          "snippet": "Spanakopita is a Greek filo pastry pie filled with wilted spinach, crumbled feta, eggs, and herbs. The pastry bakes up crisp and golden with"
         }
       ]
     },
@@ -60201,16 +60305,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:06.422Z",
-      "publishedAt": "2026-05-16T20:00:45.607Z",
-      "heroMediaId": "cmplacqzf01bcqov45rczrhen",
+      "voiceRetrofittedAt": "2026-06-01T21:56:00.155Z",
+      "publishedAt": "2026-06-01T21:51:45.943Z",
+      "heroMediaId": "cmpvqz8rz001yqwv4g8jqxxc8",
       "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Stifado is a Greek slow-cooked stew of beef and whole shallots in a spiced red wine sauce. The shallots melt into the sauce and the meat bec"
+        },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "A kilo of beef chuck cut into large cubes. Half a kilo of baby shallots, peeled but left whole. A bottle of red wine roughly half-used. Vine"
+          "snippet": "Stifado is a Greek slow-cooked stew of beef and whole shallots in a spiced red wine sauce. The shallots melt into the sauce and the meat bec"
         }
       ]
     },
@@ -61905,23 +62016,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-28T15:44:36.133Z",
-      "publishedAt": "2026-05-18T03:07:41.857Z",
-      "heroMediaId": "cmpel13i801v2rsv4bx2q7g54",
+      "voiceRetrofittedAt": "2026-06-01T21:56:00.540Z",
+      "publishedAt": "2026-06-01T21:52:01.009Z",
+      "heroMediaId": "cmpvqza6r0020qwv45w0v4n3j",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Homemade taramasalata is a different thing from the product in a supermarket tub. The supermarket version is pale, thick, and gently fishy; "
+          "snippet": "Taramasalata is a pale pink Greek dip made by emulsifying smoked cod roe with bread, lemon juice, and olive oil. The result is smooth and cr"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Homemade taramasalata is a different thing from the product in a supermarket tub. The supermarket version is pale, thick, and gently fishy; "
+          "snippet": "Taramasalata is a pale pink Greek dip made by emulsifying smoked cod roe with bread, lemon juice, and olive oil. The result is smooth and cr"
         }
       ]
     },
@@ -62647,23 +62758,22 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-28T15:44:37.404Z",
-      "publishedAt": "2026-05-18T03:03:27.142Z",
-      "heroMediaId": "cmpel1yha01w0rsv4045q08s1",
+      "voiceRetrofittedAt": "2026-06-01T21:56:00.877Z",
+      "publishedAt": "2026-06-01T21:52:06.106Z",
+      "heroMediaId": "cmpvqzav00022qwv4vexczsc3",
       "findings": [
         {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Tirokafteri is the fiery one on the mezze table, the counterpoint to tzatziki's coolness. The heat comes from chilli flakes, the sharpness f"
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[8] > text"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Tirokafteri is the fiery one on the mezze table, the counterpoint to tzatziki's coolness. The heat comes from chilli flakes, the sharpness f"
+          "snippet": "Tirokafteri is a sharp, spicy Greek dip of crumbled feta, roasted red pepper, chilli, and olive oil. It takes five minutes to make and keeps"
         }
       ]
     },
@@ -62990,23 +63100,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:56.993Z",
-      "publishedAt": "2026-05-14T16:59:53.730Z",
-      "heroMediaId": "cmp8g1frl0012d0v4pjzvx3cx",
+      "voiceRetrofittedAt": "2026-06-01T21:56:01.221Z",
+      "publishedAt": "2026-06-01T21:53:04.746Z",
+      "heroMediaId": "cmpvqzbra0024qwv4rqpq3hl9",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The technique is the confiting of the potato in olive oil, not frying it at high heat, but cooking it slowly in barely-simmering oil until t"
+          "snippet": "Tortilla española is a thick Spanish omelette of potatoes slowly cooked in olive oil and set with eggs. It is served in wedges at room tempe"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The technique is the confiting of the potato in olive oil, not frying it at high heat, but cooking it slowly in barely-simmering oil until t"
+          "snippet": "Tortilla española is a thick Spanish omelette of potatoes slowly cooked in olive oil and set with eggs. It is served in wedges at room tempe"
         }
       ]
     },
@@ -63898,30 +64008,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:55:03.501Z",
-      "publishedAt": "2026-05-16T19:58:28.644Z",
-      "heroMediaId": "cmpel34nn01xgrsv4xkyljbz9",
+      "voiceRetrofittedAt": "2026-06-01T21:56:01.559Z",
+      "publishedAt": "2026-06-01T21:51:55.587Z",
+      "heroMediaId": "cmpvqzce60026qwv41zee4c59",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "prose-prep-steps",
-          "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
-          "path": "body > paragraph[8]",
-          "snippet": "Stir until evenly combined."
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Three rules. The cucumber has to be grated and squeezed bone-dry before it goes into the yoghurt, or the dip thins and weeps water within tw"
+          "snippet": "Tzatziki is a thick, cool dip of strained yoghurt, grated cucumber, garlic, and dill. It serves as a side sauce for grilled meats, a dip for"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Three rules. The cucumber has to be grated and squeezed bone-dry before it goes into the yoghurt, or the dip thins and weeps water within tw"
+          "snippet": "Tzatziki is a thick, cool dip of strained yoghurt, grated cucumber, garlic, and dill. It serves as a side sauce for grilled meats, a dip for"
         }
       ]
     },

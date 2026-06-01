@@ -861,3 +861,83 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 21:56:01
+
+Generated: 2026-06-01T21:56:01.618Z
+
+Processed: 40
+PASS: 4
+STILL_BLOCKED: 36
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 108 |
+| opening-pattern-missing-hook | 93 |
+| placeholder-string | 30 |
+| prose-prep-steps | 6 |
+| ingredient-amount-missing | 4 |
+| grade-level-strict | 2 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- albondigas-en-salsa: opening-pattern-missing-hook, content-type-opening-mismatch
+- avgolemono-soup: opening-pattern-missing-hook, content-type-opening-mismatch
+- briam: opening-pattern-missing-hook, content-type-opening-mismatch
+- chorizo-al-vino-tinto: opening-pattern-missing-hook, content-type-opening-mismatch
+- croquetas-de-jamon: opening-pattern-missing-hook, content-type-opening-mismatch
+- fabada-asturiana: opening-pattern-missing-hook, content-type-opening-mismatch
+- gambas-al-ajillo: content-type-opening-mismatch
+- gazpacho-andaluz: opening-pattern-missing-hook, content-type-opening-mismatch
+- gigantes-plaki: content-type-opening-mismatch
+- greek-roast-lamb: opening-pattern-missing-hook, content-type-opening-mismatch
+- greek-salad: opening-pattern-missing-hook, content-type-opening-mismatch
+- gyros-chicken: opening-pattern-missing-hook, content-type-opening-mismatch
+- keftedes: opening-pattern-missing-hook, content-type-opening-mismatch
+- kleftiko: opening-pattern-missing-hook, content-type-opening-mismatch
+- lemon-potatoes: opening-pattern-missing-hook, content-type-opening-mismatch
+- moussaka: prose-prep-steps
+- octopus-red-wine: prose-prep-steps, opening-pattern-missing-hook, content-type-opening-mismatch
+- paella-vegetariana: opening-pattern-missing-hook, content-type-opening-mismatch
+- pan-con-tomate: content-type-opening-mismatch
+- pastitsio: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 21:56:29
+
+Generated: 2026-06-01T21:56:29.242Z
+
+Processed: 4
+PASS: 4
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 22:06:36
+
+Generated: 2026-06-01T22:06:36.238Z
+
+Processed: 51
+PASS: 51
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
