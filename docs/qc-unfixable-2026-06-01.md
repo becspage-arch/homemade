@@ -142,3 +142,14 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - elderflower-cold-infusion grade-level-strict — applied: 
 
 - lavender-profile voice-violation,grade-level-strict — applied: 
+
+- applying-polyurethane-varnish-to-bare-wood-furniture grade-level-strict — applied: 
+- applying-shellac-sanding-sealer-before-varnishing-or-painting voice-violation,grade-level-strict — applied: 
+- cleaning-and-conditioning-a-leather-jacket grade-level-strict — applied: 
+- fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets grade-level-strict — applied: 
+- fitting-a-programmable-room-thermostat grade-level-strict — applied: 
+- hanging-lining-paper-before-decorating voice-violation,grade-level-strict — applied: 
+- repairing-a-continuously-running-wc-cistern voice-violation,grade-level-strict — applied: 
+- repairing-a-hollow-sounding-floor-tile grade-level-strict — applied: 
+
+- air-fryer-buffalo-wings content-type-opening-mismatch — applied: orientation-from-excerpt

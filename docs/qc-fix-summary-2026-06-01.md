@@ -697,3 +697,54 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - lavender-profile: voice-violation, grade-level-strict
+
+---
+
+## Run at 17:49:06
+
+Generated: 2026-06-01T17:49:06.563Z
+
+Processed: 70
+PASS: 62
+STILL_BLOCKED: 8
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 38 |
+| grade-level-strict | 30 |
+| voice-violation | 6 |
+
+## Still BLOCKED (sample 20)
+
+- applying-polyurethane-varnish-to-bare-wood-furniture: grade-level-strict
+- applying-shellac-sanding-sealer-before-varnishing-or-painting: voice-violation, grade-level-strict
+- cleaning-and-conditioning-a-leather-jacket: grade-level-strict
+- fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets: grade-level-strict
+- fitting-a-programmable-room-thermostat: grade-level-strict
+- hanging-lining-paper-before-decorating: voice-violation, grade-level-strict
+- repairing-a-continuously-running-wc-cistern: voice-violation, grade-level-strict
+- repairing-a-hollow-sounding-floor-tile: grade-level-strict
+
+---
+
+## Run at 18:06:50
+
+Generated: 2026-06-01T18:06:50.493Z
+
+Processed: 74
+PASS: 73
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 3 |
+
+## Still BLOCKED (sample 20)
+
+- air-fryer-buffalo-wings: content-type-opening-mismatch
