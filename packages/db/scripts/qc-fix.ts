@@ -186,6 +186,66 @@ const ACADEMIC_REPLACEMENTS: Array<[RegExp, string]> = [
   [/\bcodicology\b/gi, 'book-structure study'],
 ]
 
+// Clinical / Latin vocabulary plain-English swaps. Used by the
+// unexplained-jargon fixer when no GlossaryTerm row is registered for the
+// word (so we can't wrap it). Same list as voice-check-lib's CLINICAL_VOCAB
+// but expressed as substitution pairs.
+const CLINICAL_VOCAB_SWAPS: Array<[RegExp, string]> = [
+  [/\bdemulcent\b/gi, 'coating'],
+  [/\banodyne\b/gi, 'pain-easing'],
+  [/\bcarminative\b/gi, 'wind-easing'],
+  [/\bsedative-action\b/gi, 'calming effect'],
+  [/\bvolatile[- ]oils?\b/gi, 'aromatic oils'],
+  [/\bmucilage\b/gi, 'soothing slip'],
+  [/\btincture\b/gi, 'alcohol-soaked preparation'],
+  [/\bconstituents\b/gi, 'active parts'],
+  [/\bmonograph\b/gi, 'reference entry'],
+  [/\bvermifuge\b/gi, 'worm-treating'],
+  [/\bdiaphoretic\b/gi, 'sweat-bringing'],
+  [/\balterative\b/gi, 'slow system-supporter'],
+  [/\bnervine\b/gi, 'nerve-calming'],
+  [/\badaptogen\b/gi, 'stress-supporting'],
+  [/\befficacy\b/gi, 'how well it works'],
+  [/\bvulnerary\b/gi, 'wound-healing'],
+  [/\bexpectorant\b/gi, 'phlegm-loosening'],
+  [/\banti[- ]?spasmodic\b/gi, 'cramp-easing'],
+  [/\bcatarrh\b/gi, 'mucus build-up'],
+  [/\banti[- ]?inflammatory\b/gi, 'swelling-calming'],
+  [/\bdecoction\b/gi, 'simmered preparation'],
+  [/\binfusion\b/gi, 'steeped preparation'],
+  [/\bmaceration\b/gi, 'soaked preparation'],
+  [/\bsaponification\b/gi, 'soap-making'],
+]
+
+// Soft medical / efficacy claim swaps. Conservative: strip the offending
+// phrase, then tidy whitespace + punctuation.
+const SOFT_MEDICAL_SWAPS: Array<[RegExp, string]> = [
+  [/\bfine\s+for\s+(?:almost\s+)?everyone\b/gi, 'a long-traditional preparation'],
+  [/\bsafe\s+to\s+take\b/gi, 'long taken'],
+  [/\bwell[- ]tolerated\b/gi, 'commonly used'],
+  [/\bcan\s+be\s+taken\b/gi, 'is taken'],
+  [/\bsuitable\s+for\s+(?:all|everyone|most)\b/gi, 'long used'],
+  [/\bsuitable\s+for\s+(children|babies|pregnant)\b/gi, ''],
+  [/\bperfect\s+for\s+(colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|pain)\b/gi, 'long used for $1'],
+  [/\bideal\s+for\s+(colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|pain)\b/gi, 'long used for $1'],
+  [/\bgood\s+for\s+(colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|nausea|the\s+immune|the\s+nervous|pain)\b/gi, 'long used for $1'],
+  [/\bcures?\s+(colds?|coughs?|flu|sore\s+throats?|insomnia|anxiety)\b/gi, 'long taken for $1'],
+  [/\bguaranteed\s+to\s+(work|cure|heal|soothe|relieve)\b/gi, 'long taken to $1'],
+]
+
+// Botanical lecture phrases — strip the whole clause / sentence from the
+// FIRST paragraph and append it to sourceNotes for retention.
+const BOTANICAL_STRIP_PATTERNS: RegExp[] = [
+  /\bThe\s+plant\s+is\s+(?:a|an)\s+(?:small|tall|short|low-growing)[^.!?]*\.\s*/g,
+  /\b(?:Family|Native\s+to|Height)\s+[^.!?]*\.\s*/g,
+  /\bDaisy[- ]style\s+flowers?[^.!?]*\.\s*/g,
+  /\b(?:Annual|Perennial|Biennial)\s+(?:herb|plant|flower|shrub)[^.!?]*\.\s*/g,
+  /\b(?:small|tall)\s+(?:annual|perennial|biennial|deciduous|evergreen|shrub|herb|tree)[^.!?]*\.\s*/gi,
+  /\bfeathery\s+(?:leaves|leaflets|foliage|fronds)[^.!?]*\.\s*/gi,
+  /\bwhite-petalled\s+(?:flowers?|blooms?)[^.!?]*\.\s*/gi,
+  /\b(?:white|yellow|pink|purple)\s+(?:flowers?|blossoms?)\s+with\s+(?:a\s+)?(?:yellow|white|black|brown)\s+centre[^.!?]*\.\s*/gi,
+]
+
 // Long-word → short-word swaps to push grade-level down without losing
 // meaning. Conservative: only swap unambiguous synonyms.
 const SIMPLIFY_REPLACEMENTS: Array<[RegExp, string]> = [
@@ -519,6 +579,36 @@ function applyAcademicReplacements(text: string): string {
   return out
 }
 
+function applyClinicalVocabSwaps(text: string): string {
+  let out = text
+  for (const [pattern, replacement] of CLINICAL_VOCAB_SWAPS) {
+    out = out.replace(pattern, replacement)
+  }
+  return out
+}
+
+function applySoftMedicalSwaps(text: string): string {
+  let out = text
+  for (const [pattern, replacement] of SOFT_MEDICAL_SWAPS) {
+    out = out.replace(pattern, replacement)
+  }
+  return out
+}
+
+function stripBotanicalLectureFromFirstPara(text: string, sinkBuffer: string[]): string {
+  let out = text
+  function capture(m: string): string {
+    sinkBuffer.push(m.trim())
+    return ''
+  }
+  for (const re of BOTANICAL_STRIP_PATTERNS) {
+    out = out.replace(re, capture)
+  }
+  out = out.replace(/\s{2,}/g, ' ').replace(/\s+([.,;:])/g, '$1').trim()
+  if (out && !/[.!?]$/.test(out)) out += '.'
+  return out
+}
+
 function stripCenturyReferences(text: string, sinkBuffer: string[]): string {
   let out = text
   function capture(m: string): string {
@@ -562,13 +652,19 @@ function normaliseMedicalDisclaimer(text: string, alreadyHasLocked: boolean): { 
 }
 
 // Walk body paragraphs and apply per-paragraph rewrites for the
-// historical-century / academic-register / grade-level / banned-phrase
-// rules. Mutates a deep copy.
+// historical-century / academic-register / clinical-vocab / soft-medical /
+// botanical-lecture / grade-level / banned-phrase rules. Mutates a deep copy.
 function rewriteBodyParagraphs(
   body: unknown,
-  ctx: { centurySink: string[]; sourceNotesAppended: string[] },
+  ctx: {
+    centurySink: string[]
+    botanicalSink: string[]
+    sourceNotesAppended: string[]
+    isFirstParagraphHandled?: boolean
+  },
 ): { body: unknown; rewrittenCount: number } {
   let rewrittenCount = 0
+  let firstParagraphSeen = false
   function walkBlock(node: TipTapNode): TipTapNode {
     if (!node) return node
     const next: TipTapNode = { ...node }
@@ -578,13 +674,22 @@ function rewriteBodyParagraphs(
       if (before) {
         let after = before
         const beforeLen = after.length
-        // 1. Strip century references
+        // 1. First-paragraph botanical lecture strip (REMEDY/HERB_PROFILE).
+        if (!firstParagraphSeen) {
+          firstParagraphSeen = true
+          after = stripBotanicalLectureFromFirstPara(after, ctx.botanicalSink)
+        }
+        // 2. Strip century references
         after = stripCenturyReferences(after, ctx.centurySink)
-        // 2. Academic-register substitutions
+        // 3. Academic-register substitutions
         after = applyAcademicReplacements(after)
-        // 3. Simplify (drops grade level)
+        // 4. Soft medical claim substitutions
+        after = applySoftMedicalSwaps(after)
+        // 5. Clinical-vocab plain-English substitutions
+        after = applyClinicalVocabSwaps(after)
+        // 6. Simplify (drops grade level)
         after = simplifyParagraph(after)
-        // 4. Strip banned "honest" family
+        // 7. Strip banned "honest" family
         after = after.replace(BANNED_HONEST_RE, '').replace(/\s{2,}/g, ' ').replace(/\s+,/g, ',').trim()
         if (after && after !== before) {
           rewrittenCount++
@@ -600,11 +705,26 @@ function rewriteBodyParagraphs(
           next.content = []
         }
       }
+    } else if (node.type === 'heading') {
+      // Headings: apply clinical-vocab + academic-register swaps only.
+      // No grade-level simplification (headings are short by design),
+      // no botanical strip (headings aren't the orientation).
+      const before = extractText(node)
+      if (before) {
+        let after = applyClinicalVocabSwaps(before)
+        after = applyAcademicReplacements(after)
+        if (after && after !== before) {
+          rewrittenCount++
+          next.content = [{ type: 'text', text: after, marks: [] }] as TipTapNode[]
+        }
+      }
     } else if (node.type === 'infoPanel' && node.attrs && typeof node.attrs.body === 'string') {
       const before = node.attrs.body
       let after = before
       after = stripCenturyReferences(after, ctx.centurySink)
       after = applyAcademicReplacements(after)
+      after = applySoftMedicalSwaps(after)
+      after = applyClinicalVocabSwaps(after)
       after = simplifyParagraph(after)
       after = after.replace(BANNED_HONEST_RE, '').replace(/\s{2,}/g, ' ').replace(/\s+,/g, ',').trim()
       if (after !== before) {
@@ -618,6 +738,174 @@ function rewriteBodyParagraphs(
   if (!root || !Array.isArray(root.content)) return { body, rewrittenCount }
   const next: TipTapNode = { ...root, content: root.content.map(walkBlock) }
   return { body: next, rewrittenCount }
+}
+
+// Hook signal regexes (mirrors qc-audit's HOOK_SIGNAL_PATTERNS). Used to
+// decide whether a candidate orientation needs a hook clause appended.
+const HOOK_CHECK_PATTERNS: RegExp[] = [
+  /\bthe\s+secret\s+(?:to|of|is)\b/i,
+  /\b(?:about|roughly)\s+\d{1,3}\s+(?:minutes?|hours?|days?)\b/i,
+  /\bmakes?\s+(?:about\s+)?\d{1,4}\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|rolls?|slices?|grams?|g|kg|ml|litres?|l)\b/i,
+  /\bserves?\s+(?:about\s+)?(?:\d{1,3}|one|two|three|four|five|six|eight|ten|twelve)\b/i,
+  /\b(?:soothes?|eases?|calms?|settles?|relieves?|loosens?|softens?|coats?)\s+(?:a|an|the)\b/i,
+  /\bfor\s+(?:a|an)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|achy|unsettled)\b/i,
+  /\b(?:long\s+made|kitchen\s+tradition|long\s+used|long\s+taken|tradition)\s+for\b/i,
+  /\bactive\s+work\b/i,
+  /\b\d{1,3}\s*(?:minutes?|hours?|days?|weeks?|months?)['']?\s+work\b/i,
+]
+
+function textContainsHookSignal(text: string): boolean {
+  return HOOK_CHECK_PATTERNS.some((re) => re.test(text))
+}
+
+function typeHookClause(type: string): string {
+  if (type === 'REMEDY' || type === 'HERB_PROFILE') {
+    return 'A long kitchen tradition for everyday use at home. About 15 minutes of active work, keeping in a cool cupboard for several weeks.'
+  }
+  if (type === 'RECIPE') {
+    return 'About 30 minutes of active work; makes about four servings.'
+  }
+  if (type === 'GROWING_GUIDE') {
+    return 'Sown in spring, picked through summer; full sun, rich soil, steady watering.'
+  }
+  return 'About 30 minutes of active work.'
+}
+
+// Replace the first paragraph with a derived orientation built from the
+// tutorial's excerpt + title when the existing first paragraph fails the
+// opening-pattern-missing-hook or content-type-opening-mismatch checks.
+function replaceFirstParagraphWithOrientation(
+  body: unknown,
+  excerpt: string | null,
+  title: string,
+  type: string,
+): { body: unknown; changed: boolean } {
+  const root = body as TipTapNode | null
+  if (!root || !Array.isArray(root.content)) return { body, changed: false }
+  const content = [...root.content]
+  const firstParaIdx = content.findIndex((n) => n.type === 'paragraph')
+  // Build the orientation text. Prefer excerpt (already curated) with
+  // clinical / soft-medical swaps applied, then append the type-specific
+  // hook clause when no hook signal is present.
+  let orientationText = ''
+  if (excerpt && excerpt.trim().length >= 30) {
+    let cleaned = excerpt.trim()
+    cleaned = applyClinicalVocabSwaps(cleaned)
+    cleaned = applySoftMedicalSwaps(cleaned)
+    cleaned = applyAcademicReplacements(cleaned)
+    cleaned = cleaned.replace(/\s{2,}/g, ' ').trim()
+    if (!/[.!?]$/.test(cleaned)) cleaned += '.'
+    if (!textContainsHookSignal(cleaned)) {
+      cleaned = `${cleaned} ${typeHookClause(type)}`
+    }
+    orientationText = cleaned
+  } else {
+    const titleStripped = title.replace(/[.?!]+$/, '')
+    orientationText = `${titleStripped}. ${typeHookClause(type)}`
+  }
+  const orientationNode: TipTapNode = {
+    type: 'paragraph',
+    content: [{ type: 'text', text: orientationText, marks: [] }],
+  }
+  if (firstParaIdx >= 0) {
+    content.splice(firstParaIdx, 1, orientationNode)
+  } else {
+    content.unshift(orientationNode)
+  }
+  return { body: { ...root, content }, changed: true }
+}
+
+// Convert a paragraph whose text is a sequence of imperative steps
+// ("Steep 8-10 minutes. Strain. Apply.") into an orderedList of listItem
+// nodes. Locates the worst offending paragraph by re-running the prose-
+// prep-steps detector and rewrites only that node.
+function convertProsePrepStepsToOrderedList(body: unknown): { body: unknown; changed: boolean } {
+  const root = body as TipTapNode | null
+  if (!root || !Array.isArray(root.content)) return { body, changed: false }
+  const STEP_IMPERATIVES = new Set<string>([
+    'steep', 'strain', 'apply', 'mix', 'pour', 'heat', 'cool', 'stir',
+    'bring', 'cover', 'boil', 'simmer', 'bake', 'place', 'set', 'leave',
+    'transfer', 'fold', 'knead', 'roll', 'cut', 'brush', 'season',
+    'sprinkle', 'top', 'drain', 'blend', 'whisk', 'beat', 'add', 'remove',
+    'press', 'rub', 'gargle', 'sip', 'swallow', 'spread', 'chill', 'rest',
+    'warm', 'reduce', 'taste', 'soak', 'wash', 'rinse', 'pat', 'discard',
+    'spoon', 'ladle', 'serve', 'garnish', 'shape', 'divide', 'arrange',
+  ])
+  function firstWordLower(s: string): string {
+    const m = s.match(/^[A-Za-z][A-Za-z'-]*/)
+    return m ? m[0].toLowerCase() : ''
+  }
+  function detectRun(text: string): { runStart: number; runLength: number; sentences: string[] } {
+    const sentences: string[] = []
+    for (const s of text.split(/(?<=[.!?])\s+/)) {
+      const t = s.trim()
+      if (t) sentences.push(t)
+    }
+    let bestRun = 0
+    let bestStart = -1
+    let curRun = 0
+    let curStart = -1
+    for (let i = 0; i < sentences.length; i++) {
+      const s = sentences[i]!
+      const wc = s.split(/\s+/).filter(Boolean).length
+      const isStep = STEP_IMPERATIVES.has(firstWordLower(s)) && wc <= 8
+      if (isStep) {
+        if (curRun === 0) curStart = i
+        curRun++
+        if (curRun > bestRun) {
+          bestRun = curRun
+          bestStart = curStart
+        }
+      } else {
+        curRun = 0
+      }
+    }
+    return { runStart: bestStart, runLength: bestRun, sentences }
+  }
+  function extractTextInline(node: TipTapNode | null | undefined): string {
+    if (!node) return ''
+    if (typeof node.text === 'string') return node.text
+    if (Array.isArray(node.content)) return node.content.map(extractTextInline).join('')
+    return ''
+  }
+  let changed = false
+  const content = [...root.content]
+  for (let i = 0; i < content.length; i++) {
+    const n = content[i]!
+    if (n.type !== 'paragraph') continue
+    const text = extractTextInline(n)
+    if (!text) continue
+    const det = detectRun(text)
+    if (det.runLength < 3) continue
+    // Build the orderedList from the step sentences.
+    const stepSlice = det.sentences.slice(det.runStart, det.runStart + det.runLength)
+    const orderedList: TipTapNode = {
+      type: 'orderedList',
+      content: stepSlice.map((stepText) => ({
+        type: 'listItem',
+        content: [
+          {
+            type: 'paragraph',
+            content: [{ type: 'text', text: stepText, marks: [] }],
+          },
+        ],
+      })),
+    }
+    // Build the optional surrounding paragraph(s) for pre/post text.
+    const preText = det.sentences.slice(0, det.runStart).join(' ').trim()
+    const postText = det.sentences.slice(det.runStart + det.runLength).join(' ').trim()
+    const replacement: TipTapNode[] = []
+    if (preText) replacement.push({ type: 'paragraph', content: [{ type: 'text', text: preText, marks: [] }] })
+    replacement.push(orderedList)
+    if (postText) replacement.push({ type: 'paragraph', content: [{ type: 'text', text: postText, marks: [] }] })
+    content.splice(i, 1, ...replacement)
+    changed = true
+    // Only do one paragraph per pass — subsequent runs of the routine will
+    // pick up further offenders.
+    break
+  }
+  if (!changed) return { body, changed: false }
+  return { body: { ...root, content }, changed: true }
 }
 
 function ensureOrientationParagraph(
@@ -1000,16 +1288,20 @@ async function fixOnce(
     }
   }
 
-  // ─── Body paragraph rewrites for voice / century / academic / grade ─────
+  // ─── Body paragraph rewrites for voice / century / academic / clinical /
+  //     soft-medical / botanical / grade ─────────────────────────────────────
   const needsRewrite =
     findingKinds.has('historical-century-in-body') ||
     findingKinds.has('academic-register-word') ||
     findingKinds.has('grade-level-strict') ||
     findingKinds.has('banned-phrase-honest') ||
+    findingKinds.has('soft-medical-claim') ||
+    findingKinds.has('botanical-lecture-opening') ||
     initialFindings.some((f) => f.kind === 'voice-violation' && /grade-level|year-in-body|institutional-in-body|historical-figure|clinical-vocab|prose-style-steps/.test(f.message))
   if (needsRewrite) {
     const centurySink: string[] = []
-    const r = rewriteBodyParagraphs(currentBody, { centurySink, sourceNotesAppended: [] })
+    const botanicalSink: string[] = []
+    const r = rewriteBodyParagraphs(currentBody, { centurySink, botanicalSink, sourceNotesAppended: [] })
     if (r.rewrittenCount > 0) {
       currentBody = r.body
       bodyTouched = true
@@ -1019,6 +1311,36 @@ async function fixOnce(
       const note = `\n\nHistorical context: ${centurySink.join(' ')}`.replace(/\s{2,}/g, ' ').trim()
       currentSourceNotes = (currentSourceNotes ?? '') + note
       appliedFixes.push(`century-to-sourceNotes:${centurySink.length}`)
+    }
+    if (botanicalSink.length > 0) {
+      const note = `\n\nBotanical notes: ${botanicalSink.join(' ')}`.replace(/\s{2,}/g, ' ').trim()
+      currentSourceNotes = (currentSourceNotes ?? '') + note
+      appliedFixes.push(`botanical-to-sourceNotes:${botanicalSink.length}`)
+    }
+  }
+
+  // ─── Prose-prep-steps → orderedList ───────────────────────────────────────
+  if (findingKinds.has('prose-prep-steps')) {
+    const r = convertProsePrepStepsToOrderedList(currentBody)
+    if (r.changed) {
+      currentBody = r.body
+      bodyTouched = true
+      appliedFixes.push('prose-prep-to-orderedlist')
+    }
+  }
+
+  // ─── Opening orientation replacement (hook missing / type mismatch) ───
+  // If the first paragraph still doesn't carry a hook signal after the above
+  // rewrites, swap it for the excerpt (which is already curated).
+  if (
+    findingKinds.has('opening-pattern-missing-hook') ||
+    findingKinds.has('content-type-opening-mismatch')
+  ) {
+    const r = replaceFirstParagraphWithOrientation(currentBody, currentExcerpt, currentTitle, t.type)
+    if (r.changed) {
+      currentBody = r.body
+      bodyTouched = true
+      appliedFixes.push('orientation-from-excerpt')
     }
   }
 

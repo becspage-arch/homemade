@@ -119,10 +119,14 @@ export function PreviewPane({
     categorySlug: t.categorySlug,
   }))
 
+  // Use the server-built heroUrl (handles both R2 and legacy Cloudflare
+  // Images), falling back to the legacy in-line build for safety while old
+  // form snapshots without heroUrl propagate.
   const heroUrl =
-    heroMedia?.cloudflareId && cloudflareDeliveryHash
+    heroMedia?.heroUrl ??
+    (heroMedia?.cloudflareId && cloudflareDeliveryHash
       ? `https://imagedelivery.net/${cloudflareDeliveryHash}/${heroMedia.cloudflareId}/hero`
-      : null
+      : null)
 
   const chrome = (
     <TutorialChrome

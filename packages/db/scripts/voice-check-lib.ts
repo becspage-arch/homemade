@@ -205,11 +205,17 @@ const HISTORICAL_GLOSS_TOKENS = [
 const STEP_OPENERS = ['First,', 'Then,', 'Next,', 'Finally,', 'After that,', 'Lastly,']
 
 /** Clinical / Latin vocabulary that must appear via glossaryTooltip or be
- *  replaced with plain English. Body-only. */
+ *  replaced with plain English. Body-only.
+ *
+ *  The list grew on 2026-06-01 to cover the herbal-medicine voice-spec gap
+ *  (chamomile-profile + marshmallow body-text leakage). Word entries marked
+ *  "plain-only" surface the same kind ("clinical-vocab") — the qc-fix
+ *  routine does string-replace when no glossary slug is registered. */
 const CLINICAL_VOCAB: { word: string; plain: string }[] = [
   { word: 'catarrh', plain: 'chest congestion / mucus build-up' },
   { word: 'expectorant', plain: 'loosens phlegm' },
   { word: 'antispasmodic', plain: 'eases muscle spasm' },
+  { word: 'anti-spasmodic', plain: 'eases muscle spasm' },
   { word: 'emmenagogue', plain: 'do not use in body; sources block only' },
   { word: 'anti-inflammatory', plain: 'calms swelling' },
   { word: 'decoction', plain: '"simmered in water" or use a tooltip' },
@@ -219,6 +225,23 @@ const CLINICAL_VOCAB: { word: string; plain: string }[] = [
   { word: 'anhydrous', plain: '"water-free" or use a tooltip' },
   { word: 'determinate', plain: '"bush variety"' },
   { word: 'indeterminate', plain: '"cordon variety"' },
+  // 2026-06-01 — herbal-medicine voice-spec gap (chamomile + marshmallow).
+  { word: 'demulcent', plain: '"coating and soothing" or use a tooltip' },
+  { word: 'anodyne', plain: '"pain-easing" or use a tooltip' },
+  { word: 'carminative', plain: '"wind-easing" or use a tooltip' },
+  { word: 'sedative-action', plain: '"calming effect"' },
+  { word: 'volatile-oils', plain: '"aromatic oils"' },
+  { word: 'volatile oils', plain: '"aromatic oils"' },
+  { word: 'mucilage', plain: '"slippery, soothing liquid" or use a tooltip' },
+  { word: 'tincture', plain: '"alcohol-soaked preparation" or use a tooltip' },
+  { word: 'constituents', plain: '"active parts" or "what is in it"' },
+  { word: 'monograph', plain: '"reference entry"' },
+  { word: 'vermifuge', plain: '"worm-treating" or use a tooltip' },
+  { word: 'diaphoretic', plain: '"sweat-inducing" or use a tooltip' },
+  { word: 'alterative', plain: '"slow-acting system-supporter" or use a tooltip' },
+  { word: 'nervine', plain: '"nerve-calming" or use a tooltip' },
+  { word: 'adaptogen', plain: '"stress-supporting" or use a tooltip' },
+  { word: 'efficacy', plain: '"how well it works"' },
 ]
 
 /** Banned phrases — block. Case-insensitive, whole-word. */

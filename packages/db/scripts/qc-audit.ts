@@ -78,6 +78,12 @@ export type QCRuleKind =
   // Glossary
   | 'glossary-tooltip-unregistered'
   | 'glossary-term-unused-inline'
+  // Voice-spec opening pattern (2026-06-01 — chamomile / marshmallow gap)
+  | 'botanical-lecture-opening'
+  | 'soft-medical-claim'
+  | 'prose-prep-steps'
+  | 'opening-pattern-missing-hook'
+  | 'content-type-opening-mismatch'
 
 export interface QCFinding {
   severity: QCSeverity
@@ -246,6 +252,142 @@ const ACADEMIC_REGISTER_WORDS = [
 // banned by the project memory. voice-check already catches them; qc-audit
 // re-flags so they appear in the JSON queue too.
 const BANNED_HONEST_RE = /\b(honest(?:ly)?|frankly|genuinely)\b/i
+
+// ─── 2026-06-01 voice-spec opening-pattern rules ────────────────────────────
+//
+// Detect AI-feel openings that pass the existing voice-check rules but fail
+// the voice-spec content-type opening patterns (docs/voice-spec-2026-05-21.md
+// section 3). chamomile-profile (HERB_PROFILE) and marshmallow-* (REMEDY)
+// are the calibration cases — they currently PASS the binary rules while
+// reading academic-lecture-style.
+
+// Plant morphology / lecture-mode phrases that mean the opening is a
+// botanical description rather than a practical orientation. Body-only,
+// first paragraph only.
+const BOTANICAL_LECTURE_PATTERNS: RegExp[] = [
+  /\b(?:small|tall)\s+(?:annual|perennial|biennial|deciduous|evergreen|shrub|herb|tree)\b/i,
+  /\bfeathery\s+(?:leaves|leaflets|foliage|fronds)\b/i,
+  /\bwhite-petalled\s+(?:flowers?|blooms?)\b/i,
+  /\byellow-?petalled\s+(?:flowers?|blooms?)\b/i,
+  /\b(?:white|yellow|pink|purple)\s+(?:flowers?|blossoms?)\s+with\s+(?:a\s+)?(?:yellow|white|black|brown)\s+centre\b/i,
+  /\bdaisy[- ]style\s+flowers?\b/i,
+  /\b(?:flowers?|leaves|stems?|roots?)\s+(?:are|is)\s+\d{1,3}\s*(?:to|-)\s*\d{1,3}\s*(?:cm|mm|m)\b/i,
+  /\bheight\s+\d{1,3}\s*(?:to|-)\s*\d{1,3}\s*(?:cm|m)\b/i,
+  /\bnative\s+to\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\b/i,
+  /\bfamily\s+(?:Asteraceae|Lamiaceae|Solanaceae|Rosaceae|Brassicaceae|Apiaceae|Fabaceae|Liliaceae|Iridaceae|Poaceae)\b/i,
+  /\b(?:annual|perennial|biennial)\s+(?:herb|plant|flower|shrub)\b/i,
+  /\bthe\s+plant\s+is\s+(?:a|an)\s+(?:small|tall|short|low-growing)\b/i,
+]
+
+// Soft medical / efficacy claims applied to a remedy or food. Body-only.
+// These are flat "this works for everyone" or "safe to take" — banned per
+// spec section 3.2 (no efficacy claims).
+const SOFT_MEDICAL_PHRASES: { phrase: RegExp; label: string }[] = [
+  { phrase: /\bfine\s+for\s+(?:almost\s+)?everyone\b/i, label: '"fine for (almost) everyone"' },
+  { phrase: /\bsafe\s+to\s+take\b/i, label: '"safe to take"' },
+  { phrase: /\bwell[- ]tolerated\b/i, label: '"well-tolerated"' },
+  { phrase: /\bcan\s+be\s+taken\b/i, label: '"can be taken"' },
+  { phrase: /\bsuitable\s+for\s+(?:all|everyone|most|children|babies|pregnant)\b/i, label: '"suitable for all/everyone/..."' },
+  { phrase: /\bperfect\s+for\s+(?:colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|pain)\b/i, label: '"perfect for [condition]"' },
+  { phrase: /\bideal\s+for\s+(?:colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|pain)\b/i, label: '"ideal for [condition]"' },
+  { phrase: /\bgood\s+for\s+(?:colds?|coughs?|flu|sore\s+throats?|sleep|anxiety|digestion|nausea|the\s+immune|the\s+nervous|pain)\b/i, label: '"good for [condition]"' },
+  { phrase: /\bcures?\s+(?:colds?|coughs?|flu|sore\s+throats?|insomnia|anxiety)\b/i, label: '"cures [condition]"' },
+  { phrase: /\bguaranteed\s+to\s+(?:work|cure|heal|soothe|relieve)\b/i, label: 'guarantee claim' },
+]
+
+// Imperative verbs that signal a step-imperative sentence. Used by the
+// prose-prep-steps detector. Whole-word, case-insensitive at sentence
+// start. Trimmed to verbs that are unambiguous as prep/cooking steps.
+const STEP_IMPERATIVES = new Set<string>([
+  'steep', 'strain', 'apply', 'mix', 'pour', 'heat', 'cool', 'stir',
+  'bring', 'cover', 'boil', 'simmer', 'bake', 'place', 'set', 'leave',
+  'transfer', 'fold', 'knead', 'roll', 'cut', 'brush', 'season',
+  'sprinkle', 'top', 'drain', 'blend', 'whisk', 'beat', 'add', 'remove',
+  'press', 'rub', 'gargle', 'sip', 'swallow', 'spread', 'chill', 'rest',
+  'warm', 'reduce', 'taste', 'soak', 'wash', 'rinse', 'pat', 'discard',
+  'spoon', 'ladle', 'serve', 'garnish', 'shape', 'divide', 'arrange',
+])
+
+// Hook signals — phrases / shapes that indicate the orientation paragraph
+// carries the practical hook the voice spec demands. If NONE of these appear
+// in the first paragraph, opening-pattern-missing-hook fires (REMEDY +
+// HERB_PROFILE + RECIPE + GROWING_GUIDE).
+const HOOK_SIGNAL_PATTERNS: RegExp[] = [
+  /\bthe\s+secret\s+(?:to|of|is)\b/i,
+  /\bwhat\s+makes\s+(?:it|this|that)\s+work(?:s)?\b/i,
+  /\b(?:about|roughly)\s+\d{1,3}\s+(?:minutes?|hours?|days?)\b/i,
+  /\b(?:about|roughly)\s+(?:fifteen|twenty|thirty|forty|fifty|sixty|five|ten|an?\s+hour|half\s+an?\s+hour)\s+(?:minutes?|hours?)?\b/i,
+  /\bmakes?\s+(?:about\s+)?\d{1,4}\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|rolls?|slices?|grams?|g|kg|ml|litres?|l)\b/i,
+  /\bmakes?\s+(?:about\s+)?(?:one|two|three|four|five|six|eight|ten|twelve|a\s+dozen|two\s+dozen)\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?)\b/i,
+  /\bserves?\s+(?:about\s+)?(?:\d{1,3}|one|two|three|four|five|six|eight|ten|twelve)\b/i,
+  /\byields?\s+(?:about\s+)?\d{1,4}\b/i,
+  /\b(?:soothes?|eases?|calms?|settles?|relieves?|loosens?|softens?|coats?|cools?|warms?)\s+(?:a|an|the)\b/i,
+  /\bfor\s+(?:a|an)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy)\b/i,
+  /\b(?:long\s+made|made|kept|brewed|baked|cooked|served|kitchen\s+tradition)\s+for\s+(?:a|an|the)\b/i,
+  /\b(?:tradition|kitchen\s+tradition)\s+(?:for|long\s+made|long\s+kept)\b/i,
+  /\b(?:keeps?|good)\s+(?:for|in)\s+(?:a|an|the|\d+)\b/i,
+  /\bworking\s+(?:time|in)\b/i,
+  /\bcure\s+time\b/i,
+  /\b\d{1,3}\s*(?:minutes?|hours?|days?|weeks?|months?)['']?\s+work\b/i,
+  /\bactive\s+work\b/i,
+]
+
+function isHerbalType(type: string): boolean {
+  return type === 'REMEDY' || type === 'HERB_PROFILE'
+}
+function isPrepType(type: string): boolean {
+  return type === 'REMEDY' || type === 'RECIPE' || type === 'TECHNIQUE' || type === 'PATTERN' || type === 'HERB_PROFILE'
+}
+function isOpeningHookType(type: string): boolean {
+  return type === 'REMEDY' || type === 'RECIPE' || type === 'HERB_PROFILE' || type === 'GROWING_GUIDE'
+}
+
+function splitSentences(text: string): string[] {
+  // Greedy: split on sentence-ending punctuation followed by whitespace + uppercase
+  // or end-of-string. Keeps fragments useful for the prep-steps detector.
+  const out: string[] = []
+  const raw = text.split(/(?<=[.!?])\s+/)
+  for (const s of raw) {
+    const trimmed = s.trim()
+    if (trimmed) out.push(trimmed)
+  }
+  return out
+}
+
+function firstWord(sentence: string): string {
+  const m = sentence.match(/^[A-Za-z][A-Za-z'-]*/)
+  return m ? m[0].toLowerCase() : ''
+}
+
+function detectProsePrepSteps(text: string): { matched: boolean; runLength: number; firstStep?: string } {
+  // Looking for a paragraph containing 3+ consecutive short sentences
+  // (under 8 words) each starting with a step imperative.
+  const sentences = splitSentences(text)
+  let bestRun = 0
+  let bestStart = -1
+  let currentRun = 0
+  let currentStart = -1
+  for (let i = 0; i < sentences.length; i++) {
+    const s = sentences[i]!
+    const wordCount = s.split(/\s+/).filter(Boolean).length
+    const fw = firstWord(s)
+    const isStep = STEP_IMPERATIVES.has(fw) && wordCount <= 8
+    if (isStep) {
+      if (currentRun === 0) currentStart = i
+      currentRun++
+      if (currentRun > bestRun) {
+        bestRun = currentRun
+        bestStart = currentStart
+      }
+    } else {
+      currentRun = 0
+    }
+  }
+  if (bestRun >= 3) {
+    return { matched: true, runLength: bestRun, firstStep: sentences[bestStart]?.slice(0, 80) }
+  }
+  return { matched: false, runLength: 0 }
+}
 
 function isRecipeType(type: string): boolean {
   return type === 'RECIPE' || type === 'REMEDY'
@@ -629,6 +771,142 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
         path: p.path,
         snippet: p.text.slice(0, 140),
       })
+    }
+  }
+
+  // ─── 2026-06-01 voice-spec opening-pattern rules ────────────────────────
+  // First-paragraph botanical lecture (HERB_PROFILE / REMEDY / GROWING_GUIDE).
+  // Detects "the plant is a small annual with feathery leaves" openings —
+  // calibration case chamomile-profile.
+  if (
+    isHerbalType(t.type) ||
+    t.type === 'GROWING_GUIDE'
+  ) {
+    const firstPara = bodySummary.firstParaText
+    if (firstPara) {
+      for (const re of BOTANICAL_LECTURE_PATTERNS) {
+        const m = re.exec(firstPara)
+        if (m) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'botanical-lecture-opening',
+            message: `first-paragraph botanical lecture phrase "${m[0]}" — move plant morphology to a "Botanical" / "Technical notes" section under the orientation`,
+            path: 'body > paragraph[0]',
+            snippet: m[0],
+          })
+          break
+        }
+      }
+    }
+  }
+
+  // Soft medical / efficacy claim anywhere in body prose (REMEDY +
+  // HERB_PROFILE only; flagged elsewhere too if it slips into other
+  // categories).
+  if (isHerbalType(t.type) || t.category.slug === 'herbal-medicine') {
+    for (const p of bodyParas) {
+      if (p.isVerbatim) continue
+      for (const sm of SOFT_MEDICAL_PHRASES) {
+        const m = sm.phrase.exec(p.text)
+        if (m) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'soft-medical-claim',
+            message: `soft medical claim ${sm.label} — replace with factual tradition framing (no efficacy claims)`,
+            path: p.path,
+            snippet: m[0],
+          })
+          break
+        }
+      }
+    }
+  }
+
+  // Prose-style preparation steps (RECIPE / REMEDY / TECHNIQUE / PATTERN
+  // / HERB_PROFILE). Three+ consecutive short imperatives in one paragraph
+  // is "Steep. Strain. Apply." — must be an orderedList.
+  if (isPrepType(t.type)) {
+    for (const p of bodyParas) {
+      if (p.isVerbatim) continue
+      const det = detectProsePrepSteps(p.text)
+      if (det.matched) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'prose-prep-steps',
+          message: `prose-style preparation steps detected (${det.runLength} consecutive short imperatives) — convert to orderedList`,
+          path: p.path,
+          snippet: det.firstStep,
+        })
+        break
+      }
+    }
+  }
+
+  // Opening-pattern-missing-hook (RECIPE / REMEDY / HERB_PROFILE /
+  // GROWING_GUIDE). The first paragraph must include at least one practical
+  // hook signal — yield, time, what-for, "the secret to", etc.
+  if (isOpeningHookType(t.type)) {
+    const firstPara = bodySummary.firstParaText
+    if (firstPara && firstPara.split(/\s+/).filter(Boolean).length >= 12) {
+      const hasHook = HOOK_SIGNAL_PATTERNS.some((re) => re.test(firstPara))
+      if (!hasHook) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'opening-pattern-missing-hook',
+          message: 'orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern',
+          path: 'body > paragraph[0]',
+          snippet: firstPara.slice(0, 140),
+        })
+      }
+    }
+  }
+
+  // Content-type-opening-mismatch: the type-specific shape check. For now
+  // we BLOCK when an opening that should be a recipe orientation (RECIPE)
+  // is missing yield+time entirely, or a remedy orientation (REMEDY) is
+  // missing a "for [purpose]"/tradition framing. Distinct from the
+  // generic hook check above — this surfaces the specific missing field
+  // for the qc-fix routine.
+  if (t.type === 'REMEDY' || t.type === 'HERB_PROFILE') {
+    const firstPara = bodySummary.firstParaText
+    if (firstPara) {
+      const hasForPurpose =
+        /\bfor\s+(?:a|an|the)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy|unsettled)\b/i.test(firstPara) ||
+        /\b(?:long\s+made|tradition|kitchen\s+tradition|traditionally\s+(?:used|made|taken))\b/i.test(firstPara) ||
+        /\b(?:soothes?|eases?|calms?|settles?|relieves?|coats?|loosens?|softens?)\b/i.test(firstPara)
+      if (!hasForPurpose) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'content-type-opening-mismatch',
+          message: `${t.type} orientation missing the "for [purpose]" / tradition / "soothes/eases/..." clause — voice-spec §3.2 locked pattern`,
+          path: 'body > paragraph[0]',
+          snippet: firstPara.slice(0, 140),
+        })
+      }
+    }
+  }
+  if (t.type === 'RECIPE') {
+    const firstPara = bodySummary.firstParaText
+    if (firstPara) {
+      const hasYieldOrTime =
+        /\b(?:about|roughly)\s+\d{1,3}\s+(?:minutes?|hours?|days?)\b/i.test(firstPara) ||
+        /\bmakes?\s+(?:about\s+)?(?:\d{1,4}|one|two|three|four|five|six|eight|ten|twelve|a\s+dozen)\b/i.test(firstPara) ||
+        /\bserves?\s+(?:about\s+)?(?:\d{1,3}|one|two|three|four|five|six|eight|ten|twelve)\b/i.test(firstPara) ||
+        /\byields?\s+(?:about\s+)?\d{1,4}\b/i.test(firstPara) ||
+        /\b\d{1,3}\s*(?:minutes?|hours?|days?|weeks?|months?)['']?\s+work\b/i.test(firstPara) ||
+        /\bactive\s+work\b/i.test(firstPara) ||
+        /\bcook(?:ing)?\s+time\b/i.test(firstPara) ||
+        /\bworking\s+(?:time|in)\b/i.test(firstPara) ||
+        /\bcure\s+time\b/i.test(firstPara)
+      if (!hasYieldOrTime) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'content-type-opening-mismatch',
+          message: `RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]"`,
+          path: 'body > paragraph[0]',
+          snippet: firstPara.slice(0, 140),
+        })
+      }
     }
   }
 
