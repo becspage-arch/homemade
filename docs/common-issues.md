@@ -305,3 +305,17 @@ generic claims rather than concrete facts, etc.)
   **How to fix:** Replace every em-dash with a full stop, a comma, a colon,
   brackets, or a reworded sentence. Scripted speech inside body content
   (sample messages, sample replies) counts too.
+
+
+## Natural-home essential-oil slug reversal (3+ recurrences — natural-home)
+
+  **Symptom:** Upload fails with "Body references ingredient slugs not in the
+  master table: {name}-essential-oil".
+  **Root cause:** Natural-home authoring agents write essential oil slugs as
+  `lavender-essential-oil`, `eucalyptus-essential-oil`, etc. The master
+  ingredient table uses the reversed format: `essential-oil-lavender`,
+  `essential-oil-eucalyptus`, etc.
+  **How to fix:** Run a remapping script (see docs/fix-natural-home-bulk009.mjs
+  as template) before uploading. Remap each `{name}-essential-oil` slug to
+  `essential-oil-{name}` in the body ingredientsList nodes. Applies to all
+  essential oils used in natural-home recipes.
