@@ -1,11 +1,9 @@
 import { config as loadEnv } from 'dotenv'
 import { existsSync } from 'node:fs'
-import { dirname, resolve } from 'node:path'
+import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
+const __dirname = dirname(fileURLToPath(import.meta.url))
 {
   let dir = __dirname
   for (let depth = 0; depth < 8; depth++) {
@@ -19,13 +17,13 @@ const __dirname = dirname(__filename)
 
 async function main() {
   const { prisma } = await import('../src/index.js')
-  const slug = process.argv[2] ?? 'natural-home'
-  const updated = await prisma.category.update({
-    where: { slug },
+  const result = await prisma.category.update({
+    where: { slug: 'natural-home' },
     data: { lastAutopilotRunAt: new Date() },
-    select: { id: true, slug: true, lastAutopilotRunAt: true },
+    select: { slug: true, lastAutopilotRunAt: true },
   })
-  console.log(`Claimed slot for ${updated.slug} at ${updated.lastAutopilotRunAt?.toISOString()}`)
+  console.log('CLAIMED', result.slug, result.lastAutopilotRunAt?.toISOString())
   await prisma.$disconnect()
 }
-main()
+
+main().catch(err => { console.error(err); process.exit(1) })

@@ -1,0 +1,235 @@
+{
+  "slug": "sunflower-oat-cold-process-soap",
+  "title": "Sunflower and oat cold-process soap",
+  "subtitle": "A very gentle, high-oleic conditioning bar for sensitive skin",
+  "excerpt": "A mild cold-process soap built on high-oleic sunflower oil and shea butter, with finely milled oats for a gentle exfoliating texture. Scented lightly with lavender essential oil. This bar is well-suited to dry or sensitive skin and children.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: sunflower oil 0.134, coconut oil 0.190, shea butter 0.128, castor oil 0.128. 6% superfat for extra mildness; water 33% of oil weight. High-oleic sunflower oil properties: USDA AOCS fatty acid database, oleic content and skin compatibility reference. Oat use in soap documented in Susan Miller Cavitch, The Soapmaker's Companion (1997), natural additive chapter.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "7 bars (~125 g each after cure)",
+    "prepMinutes": 55,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60535,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run all oil weight changes through a lye calculator. Ground oat addition scales proportionally.",
+    "makeAheadNotes": "Allow 48 hours in the mould. High-oleic bars are softer than coconut-dominant bars and benefit from a full 6-week cure.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Store on an open rack in a cool dark place. Cured bars keep two years. High-linoleic oils (sunflower) are more prone to DOS than stable fats; store away from heat and humidity. Discard on first sign of orange oily spots or a sharp, paint-like smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value: grams of lye per gram of oil needed for full saponification."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of fat left unsaponified in the finished bar. At 6% superfat, a slightly larger reserve of free oil remains, making the bar particularly mild and conditioning."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which soap batter thickens enough to hold a brief trail when drizzled from the stick blender. The cue to add any last ingredients and pour."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 3,
+      "title": "Unmould and cut",
+      "body": "High-oleic bars take longer to firm. Wait 3 days before unmoulding. If the loaf still feels soft, leave it another day. Cut wearing protective gloves."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "Test a sliver on the forearm. At 6 weeks the bar is firm, pale cream with visible oat flecks, and mild. Store on an open rack."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "High-oleic sunflower oil has a fatty acid profile dominated by oleic acid (80% and above), which is close to that of olive oil without the dark colour or heavy feel. Combined with shea butter for conditioning and a modest amount of coconut oil for lather, this formula produces a pale, gentle bar that suits dry or sensitive skin and is mild enough for children. Finely milled oats add a light, even exfoliating texture. A 6% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " leaves more free oil in the bar than a standard 5% formula, which is a deliberate choice for this kind of gentle bar. The trade-off is that sunflower oil is higher in linoleic acid than some other oils, which means the bars can be more prone to developing DOS if stored in warm, humid conditions; a cool, dark cupboard solves this. Cure time is 4 to 6 weeks; the full 6 weeks gives a considerably harder bar. Yield is 7 bars of around 125 g each."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles before opening the lye container."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "sunflower-oil", "amount": 250, "unit": "g", "isOptional": false, "prepNote": "50% of oil weight; high-oleic variety preferred" },
+            { "ingredientSlug": "coconut-oil", "amount": 125, "unit": "g", "isOptional": false, "prepNote": "25% of oil weight; melt if solid" },
+            { "ingredientSlug": "shea-butter", "amount": 100, "unit": "g", "isOptional": false, "prepNote": "20% of oil weight" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight; lather stabiliser" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 68, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99%; calculated for 6% superfat" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight" },
+            { "ingredientSlug": "essential-oil-lavender", "amount": 15, "unit": "ml", "isOptional": true, "prepNote": "3% of oil weight; a clean, light scent suitable for sensitive skin" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You will also need 30 g of finely milled oats (rolled oats blitzed in a blender to a fine powder) to add at trace. This is not in the lye calculation as oats are not saponifiable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a ventilated space with protective gloves and goggles on. Weigh the sodium hydroxide into a small container. Pour the distilled water into the HDPE lye pitcher. Add the lye to the water in a steady stream, stirring constantly. The solution heats rapidly; step back from the fumes. Set aside to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the coconut oil and shea butter in a heatproof bowl and melt gently. Stir in the sunflower oil and castor oil. Allow to cool to 38 to 42°C. Blend the oat powder with a tablespoon of the oil blend to form a paste; this prevents clumping in the batter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oil blend in a slow stream. Use the stick blender in short bursts until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Stir in the oat paste and lavender essential oil until evenly combined. Pour into the mould promptly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour, insulate, unmould, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould, smooth the surface, wrap in a towel, and leave undisturbed for 48 hours. The "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " reaction will be gentler than in a coconut-dominant bar; a partial or no gel phase is normal. After 3 days, check the loaf. If still soft, leave it another day before unmoulding. Cut into bars wearing protective gloves. Cure on an open rack for 4 to 6 weeks in a cool, dry room."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store cured bars on an open rack in a cool, dark, dry place. Avoid humid bathrooms as a storage location; use the bar in the bathroom and store the spares elsewhere. Fully cured bars keep two years in good conditions. Because sunflower oil has a relatively high linoleic content, these bars are more susceptible to DOS than a palm-oil or tallow bar. Discard any bar showing orange oily spots or a sharp smell."
+          }
+        ]
+      }
+    ]
+  }
+}

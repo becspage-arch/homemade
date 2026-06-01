@@ -1,0 +1,224 @@
+{
+  "slug": "unscented-sensitive-cold-process-soap",
+  "title": "Unscented sensitive-skin cold-process soap",
+  "subtitle": "A plain, fragrance-free bar with a high olive content and generous superfat",
+  "excerpt": "A minimal cold-process bar made for people who react to fragrance or need a very gentle daily wash. High olive oil content for conditioning, a modest coconut oil for lather, and an 8% superfat for extra mildness. No colouring, no essential oils.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, castor oil 0.128. 8% superfat for extra conditioning; water 33% of oil weight. High-olive, fragrance-free formulation recommended for sensitive and reactive skin in Susan Miller Cavitch, The Soapmaker's Companion (1997), and in standard dermatology guidance on syndets and plain-soap alternatives.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "7 bars (~120 g each after cure)",
+    "prepMinutes": 40,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60520,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run all changes through a lye calculator. The 8% superfat is intentional; do not reduce it.",
+    "makeAheadNotes": "Allow at least 48 hours in the mould. This bar benefits from a full 6-week cure; the high olive oil content means the bar is quite soft until fully cured.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Store on an open rack in a cool, dark, dry place. Fully cured bars keep two years. High-olive bars have a stable fatty acid profile and are less prone to DOS than high-linoleic formulas. Discard on orange oily spots or a paint-like smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value: the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of fat deliberately left unsaponified in the bar. At 8% superfat, the bar is particularly mild and conditioning. It is especially suited to sensitive or reactive skin."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which soap batter thickens to a loose custard, indicating the oils and lye have emulsified. High-olive batters trace more slowly than coconut-dominant batches."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 3,
+      "title": "Unmould and cut",
+      "body": "High-olive bars can take longer to firm. Wait 3 days; if the loaf still feels sticky, leave another day before cutting. Wear protective gloves when cutting."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "At 6 weeks the bar is firm, very white, and thoroughly mild. Test a sliver on the forearm; there should be no sting at all."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There is a lot of soap that is not for sensitive skin, and not much that is. This bar is designed specifically for people who react to fragrance, essential oils, or cosmetic additives: no colour, no scent, no botanicals. The formula uses 65% olive oil for a gentle, conditioning lather that does not strip the skin, 25% coconut oil for enough cleansing power and foam to work as a daily wash, and 10% castor oil to stabilise the lather. The "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " is set at 8%, higher than the standard 5%, which leaves a larger reserve of free conditioning oil in the bar. The trade-off is a slightly softer bar that takes longer to cure; the full 6-week cure is important here. The lather is fine-bubbled and creamy rather than voluminous; this is the character of high-olive soap and is not a fault. Yield is 7 bars of around 120 g each."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles before opening the lye container."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 325, "unit": "g", "isOptional": false, "prepNote": "65% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 125, "unit": "g", "isOptional": false, "prepNote": "25% of oil weight" },
+            { "ingredientSlug": "castor-oil", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight; lather stabiliser" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 64, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 8% superfat on this oil blend" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a ventilated space with protective gloves and goggles on. Weigh the sodium hydroxide. Pour the distilled water into the HDPE lye pitcher. Add the lye to the water in a steady stream while stirring. Never add water to lye. The solution heats sharply; step back. Leave to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil in a heatproof bowl over low heat. Add the olive oil and castor oil. Stir to combine. Cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and blend" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oil blend in a slow stream. Use the stick blender in short 5-second bursts, alternating with hand-stirring, until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". High-olive batters trace slowly; this may take 3 to 5 minutes of intermittent blending. Pour once light trace is reached. The "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " reaction in a high-olive bar is gentler and produces less heat than a coconut-dominant batch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour, insulate, unmould, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould, smooth the top, wrap in a towel, and leave undisturbed for 2 to 3 days. Turn out after 3 days (or leave longer if still soft). Cut into bars wearing protective gloves. Cure on an open rack in a cool dry room for 4 to 6 weeks. Turn the bars every two weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store on an open rack in a cool, dark, dry place. In good conditions, fully cured bars keep two years. High-olive soaps are among the more stable formulations and are less prone to DOS than high-linoleic or nut-oil bars. Discard any bar showing orange oily spots or a sharp smell that does not belong."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "slug": "sweet-orange-cedarwood-cold-process-soap",
+  "title": "Sweet orange and cedarwood cold-process soap",
+  "subtitle": "A bright, fresh bar with a woody base note",
+  "excerpt": "A straightforward cold-process bar scented with sweet orange and cedarwood essential oils. The formula uses an olive, coconut, and shea base for a gentle lather that suits most skin types. A good first cold-process project for those moving on from melt-and-pour.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values: olive oil 0.134, coconut oil 0.190, shea butter 0.128, castor oil 0.128. 5% superfat; water 33% of oil weight. Standard oil combination documented in Susan Miller Cavitch, The Soapmaker's Companion (1997). Sweet orange and cedarwood essential oil blending reference: Valerie Ann Worwood, The Complete Book of Essential Oils and Aromatherapy (1991), woody-citrus family combinations.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "8 bars (~120 g each after cure)",
+    "prepMinutes": 50,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "chillingMinutes": 0,
+    "totalMinutes": 60530,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Scale oil weights through a lye calculator. Essential oil amounts scale linearly.",
+    "makeAheadNotes": "Allow 48 hours in the mould, then 4 weeks minimum on a curing rack before use.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Store on an open rack in a cool dark cupboard. Cured bars keep two years. The sweet orange top note fades after several months; the cedarwood base note persists longer. Discard if DOS (orange oily spots) or a sharp paint-like smell develop."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The reaction between a fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value: the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of fat deliberately left unsaponified in the bar. At 5% superfat, the bar is mild and carries a small reserve of free conditioning oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which soap batter thickens to a loose custard consistency. A trail of batter drizzled across the surface briefly holds its shape before sinking back in."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 2,
+      "title": "Unmould and cut",
+      "body": "Turn out the loaf after 2 days. The bar should be firm. Cut into bars wearing protective gloves. The citrus scent is strongest at this stage."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 28,
+      "title": "Four-week check",
+      "body": "Test a sliver on the inside of the forearm. If there is no sting or irritation after 10 minutes, the bar is ready. The cedarwood note comes forward as the orange fades."
+    },
+    {
+      "stepNumber": 3,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 42,
+      "title": "Cure complete",
+      "body": "A fully cured bar is hard, cream-coloured, and mild. Store on an open rack for up to two years."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This bar uses a simple, reliable three-oil base: olive oil for conditioning and lather quality, coconut oil for cleaning power and bubbly lather, and shea butter to round out the feel on the skin. Castor oil holds the lather together. The scent blend is sweet orange for brightness and cedarwood for warmth and staying power; citrus oils are light volatiles that fade faster than woody essential oils, so the cedarwood anchors the fragrance through the cure. At 5% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": " and a 33% lye discount, the finished bar is gentle enough for everyday use. The process is the same as any cold-process soap; the formula is forgiving of small temperature variations at combine time. Yield is 8 bars of around 120 g each."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles before handling lye."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 250, "unit": "g", "isOptional": false, "prepNote": "50% of oil weight; pure or pomace grade both work" },
+            { "ingredientSlug": "coconut-oil", "amount": 150, "unit": "g", "isOptional": false, "prepNote": "30% of oil weight; melt gently if solid" },
+            { "ingredientSlug": "shea-butter", "amount": 75, "unit": "g", "isOptional": false, "prepNote": "15% of oil weight" },
+            { "ingredientSlug": "castor-oil", "amount": 25, "unit": "g", "isOptional": false, "prepNote": "5% of oil weight; lather stabiliser" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 70, "unit": "g", "isOptional": false, "prepNote": "NaOH at 99% purity; calculated for 5% superfat" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight" },
+            { "ingredientSlug": "essential-oil-sweet-orange", "amount": 12, "unit": "ml", "isOptional": false, "prepNote": "2.5% of oil weight; adds a bright citrus note" },
+            { "ingredientSlug": "essential-oil-cedarwood", "amount": 5, "unit": "ml", "isOptional": false, "prepNote": "1% of oil weight; woody base note that anchors the scent" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work in a ventilated space with gloves and goggles on. Weigh the sodium hydroxide into a small dry container. Pour the distilled water into the HDPE lye pitcher. Add the lye to the water in a thin, steady stream while stirring. The solution heats rapidly; keep your face away from the steam. Set aside to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the coconut oil and shea butter in a heatproof bowl and melt gently over low heat until liquid. Remove from heat and add the olive oil and castor oil. Stir to combine and allow to cool to 38 to 42°C. Measure the essential oils into a small cup and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine and blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When both the lye solution and the oil blend are between 38 and 42°C, pour the lye into the oils in a slow stream. Use the stick blender in 5-second bursts, stirring between each, until the batter reaches light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": ". Add the essential oils and stir by hand until evenly dispersed. Pour promptly; sweet orange accelerates "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " slightly and the batter can thicken quickly once the oils are added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour and insulate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould. Tap once to settle. Cover with a piece of cardboard and wrap in a towel. Leave undisturbed for 48 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Unmould, cut, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn out the loaf after 48 hours and cut into bars wearing protective gloves. Arrange on a curing rack with space between each bar. Leave in a cool, dry room for 4 to 6 weeks, turning the bars every two weeks. The bars will firm and lighten as they cure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store finished bars on an open soap dish or rack in a cool dark place. Avoid closed containers, which trap moisture. Fully cured bars keep two years. The orange top note is volatile and will fade over several months; the cedarwood base holds longer. Discard any bar showing DOS (orange oily spots) or a sharp smell unrelated to the original fragrance."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "slug": "argan-shea-facial-lotion",
+  "title": "Argan and shea facial lotion",
+  "subtitle": "A light emulsion moisturiser for dry to normal skin",
+  "excerpt": "A water-in-oil emulsion moisturiser made with argan oil, shea butter, and rose water. The emulsifying wax brings the oil and water phases together into a light, spreadable lotion. A broad-spectrum preservative is required for any useful shelf life.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "beauty",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Emulsifying wax (Emulsifying Wax NF / E-wax): standard cosmetic emulsifier, documented in Cosmetic Formulation of Skin Care Products (Walters and Roberts, eds, 2004). Argan oil skin properties: USDA AOCS fatty acid database. Required preservative for water-containing cosmetics: EU Cosmetics Regulation (EC) No 1223/2009 and UK Cosmetics Regulation (2013).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 jar (~60 ml, approximately 30 applications)",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "totalMinutes": 160,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "The emulsifying wax percentage (7% of total batch weight) must remain fixed; do not reduce it or the emulsion will not hold. Oil phase total can be adjusted but recalculate emulsifying wax if oil content changes significantly.",
+    "makeAheadNotes": "Allow 2 hours to cool fully before sealing the jar. The lotion reaches its final texture at room temperature.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 90,
+    "shelfLifeNotes": "Store in the jar at room temperature. With a broad-spectrum preservative at the standard rate, shelf life is 3 months. Discard if the lotion separates, changes colour, develops an off smell, or shows visible mould."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "double-boiler", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false },
+    { "slug": "glass-jar-60ml", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "emulsifier",
+      "term": "Emulsifier",
+      "definition": "A molecule with both water-loving (hydrophilic) and oil-loving (lipophilic) ends, which allows water and oil to combine into a stable mixture. Without an emulsifier, the two phases separate immediately. Emulsifying wax is a cosmetic-grade solid emulsifier."
+    },
+    {
+      "slug": "phase-blend",
+      "term": "Phase blend",
+      "definition": "The technique of heating the oil phase and water phase separately to the same temperature, then combining them with agitation. Required for stable emulsion formation."
+    },
+    {
+      "slug": "broad-spectrum-preservative",
+      "term": "Broad-spectrum preservative",
+      "definition": "A preservative effective against both bacteria and fungi. Mandatory in any water-containing cosmetic for shelf stability. Common options: Optiphen (0.5 to 1%), Geogard ECT, Liquid Germall Plus."
+    },
+    {
+      "slug": "patch-test",
+      "term": "Patch test",
+      "definition": "Apply a small amount to the inside of the forearm and leave for 24 to 48 hours before using on the face. Emulsion lotion can contain any number of ingredients that cause contact reactions; always test a new batch."
+    }
+  ],
+  "techniqueSlugs": ["emulsion-cosmetic-formulation"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This lotion uses the "
+          },
+          {
+            "type": "text",
+            "text": "phase-blend",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "phase-blend" } }]
+          },
+          {
+            "type": "text",
+            "text": " method: the oil phase and the water phase are each heated to 70 to 75°C, then combined with stirring to form a stable emulsion. The "
+          },
+          {
+            "type": "text",
+            "text": "emulsifier",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "emulsifier" } }]
+          },
+          {
+            "type": "text",
+            "text": " (emulsifying wax) is weighed into the oil phase; when the hot water phase is added and the mixture is stirred, the emulsifying wax holds the two together. The result is a light lotion that sets to a spreadable cream as it cools. Argan oil gives a smooth, non-greasy feel suited to facial use; shea butter adds richness for dry skin. Rose water contributes a light floral note and calms mild redness. Because this formula contains water, a "
+          },
+          {
+            "type": "text",
+            "text": "broad-spectrum-preservative",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broad-spectrum-preservative" } }]
+          },
+          {
+            "type": "text",
+            "text": " is not optional; omitting it produces a lotion that will support bacterial growth within days."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "emulsifying-wax", "amount": 4.5, "unit": "g", "isOptional": false, "prepNote": "7.5% of total formula by weight (oil phase)" },
+            { "ingredientSlug": "argan-oil", "amount": 9, "unit": "g", "isOptional": false, "prepNote": "15% of formula (oil phase); cold-pressed" },
+            { "ingredientSlug": "shea-butter", "amount": 4.5, "unit": "g", "isOptional": false, "prepNote": "7.5% of formula (oil phase); melt into oil phase" },
+            { "ingredientSlug": "rose-water", "amount": 38, "unit": "g", "isOptional": false, "prepNote": "63% of formula (water phase)" },
+            { "ingredientSlug": "vegetable-glycerine", "amount": 3, "unit": "g", "isOptional": false, "prepNote": "5% of formula (water phase); humectant" },
+            { "ingredientSlug": "optiphen-preservative", "amount": 0.6, "unit": "g", "isOptional": false, "prepNote": "1% of formula; added to cool-down phase below 40°C; follow product data sheet" },
+            { "ingredientSlug": "essential-oil-rose", "amount": 0.3, "unit": "ml", "isOptional": true, "prepNote": "0.5% of formula; added to cool-down phase; optional" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Heat the phases separately" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oil phase: combine emulsifying wax, argan oil, and shea butter in the top of the double boiler. Melt gently until fully liquid. Hold at 70 to 75°C. Water phase: combine rose water and vegetable glycerine in a separate heatproof container. Heat to 70 to 75°C. Both phases must be at the same temperature when combined."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine the phases" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the water phase into the oil phase in a slow, steady stream, stirring or whisking constantly. Continue stirring for 2 to 3 minutes; the mixture will turn white and thicken as the emulsion forms. Use a stick blender in short 10-second bursts if available, alternating with hand-stirring, for a smoother result."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cool-down phase" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continue stirring as the lotion cools. Once below 40°C, add the preservative and any essential oils. Stir well to incorporate. The lotion will thicken further as it cools to room temperature. Spoon into the clean glass jar before it sets fully (while still pourable)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Patch test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Complete a "
+          },
+          {
+            "type": "text",
+            "text": "patch-test",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "patch-test" } }]
+          },
+          {
+            "type": "text",
+            "text": " on the inside of the forearm for 24 to 48 hours before using on the face."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store in the sealed jar at room temperature. With preservative at the standard rate, use within 3 months. Discard if the lotion separates, changes colour, develops an off smell, or shows any visible contamination."
+          }
+        ]
+      }
+    ]
+  }
+}

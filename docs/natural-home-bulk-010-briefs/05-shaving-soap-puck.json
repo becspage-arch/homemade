@@ -1,0 +1,240 @@
+{
+  "slug": "shaving-soap-puck",
+  "title": "Traditional shaving soap puck",
+  "subtitle": "A KOH-based soft soap that loads onto a brush to build a dense, slick lather",
+  "excerpt": "A traditional shaving soap made with potassium hydroxide rather than sodium hydroxide, producing a soft paste that loads readily onto a shaving brush. The high castor oil content gives a particularly dense, cushioning lather. This is an advanced cold-process project requiring careful handling of KOH.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SAP values for KOH (90% purity): coconut oil 0.257, castor oil 0.173, shea butter 0.173. 15% superfat applied for shaving soaps (higher than bar soap to maximise slickness). Water as 33% of KOH weight. Reference: Catherine Failor, Making Natural Liquid Soaps (2000), KOH soap chapter and shaving soap formulation. Susan Miller Cavitch, The Soapmaker's Companion (1997), potassium hydroxide soap notes.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 shaving puck (~200 g finished soap)",
+    "prepMinutes": 75,
+    "cookMinutes": 180,
+    "restingMinutes": 4320,
+    "chillingMinutes": 0,
+    "totalMinutes": 4575,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any changes through a KOH lye calculator, specifying your KOH purity. Do not substitute NaOH; it produces a hard bar, not a soft paste.",
+    "makeAheadNotes": "Allow 3 days in the tin before use. The lather quality improves further over 2 to 4 weeks as the soap continues to neutralise.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 365,
+    "shelfLifeNotes": "Store in a covered shaving bowl or tin with the lid ajar to allow air circulation. Fully neutralised shaving soap keeps 12 months. Discard if the paste turns watery or develops a sharp sour smell."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "double-boiler", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and an alkali that produces soap and glycerine. In shaving soap, potassium hydroxide (KOH) rather than sodium hydroxide (NaOH) is the alkali; KOH produces a soft paste rather than a hard bar."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of fat left unsaponified in the finished soap. Shaving soaps use a higher superfat (12 to 15%) than bar soap to maximise slickness and provide cushioning for the blade."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "In hot-process and paste soap, trace refers to the point where the batter thickens and emulsification is complete. It often progresses quickly in high-castor-oil formulas."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 3,
+      "title": "Ready to use",
+      "body": "After 3 days the paste will have firmed slightly and the lather quality will be good. Load the brush with warm water, press into the puck, and work up a lather on the face or in a bowl."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 21,
+      "title": "Fully matured",
+      "body": "At 3 weeks the soap is fully neutralised and the lather is at its best: dense, cushioning, and slick. Keep in a covered tin between uses."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shaving soap differs from bar soap in one fundamental way: it uses potassium hydroxide (KOH) rather than sodium hydroxide (NaOH) as the alkali. NaOH produces a hard bar; KOH produces a soft, pasty soap that loads readily onto a shaving brush and builds a dense, cushioning lather. Castor oil is key to the formula: its unique ricinoleic acid structure produces a thick, stable foam that holds moisture against the skin and provides slip for the blade. At 15% "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "superfat" } }]
+          },
+          {
+            "type": "text",
+            "text": ", there is a generous reserve of free oil in the paste, which is standard practice for shaving soap to maximise skin protection. The process uses a hot-process method in a double boiler; the heat drives "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }]
+          },
+          {
+            "type": "text",
+            "text": " to completion in a single session rather than waiting 6 weeks for a cold-process cure. Yield is one shaving puck of around 200 g."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "KOH requires the same precautions as NaOH: protective gloves and goggles on before opening the container. KOH dissolves exothermically and produces a similar heat spike; the fumes are less harsh than NaOH but still require ventilation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "coconut-oil", "amount": 150, "unit": "g", "isOptional": false, "prepNote": "50% of oil weight; melted" },
+            { "ingredientSlug": "castor-oil", "amount": 100, "unit": "g", "isOptional": false, "prepNote": "33% of oil weight; the lather-building backbone" },
+            { "ingredientSlug": "shea-butter", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "17% of oil weight; conditioning superfat carrier" },
+            { "ingredientSlug": "potassium-hydroxide", "amount": 74, "unit": "g", "isOptional": false, "prepNote": "KOH at 90% purity; the figure accounts for purity; check your supplier's purity and recalculate if different" },
+            { "ingredientSlug": "distilled-water", "amount": 185, "unit": "g", "isOptional": false, "prepNote": "62% of oil weight; more water than bar soap to allow a soft paste consistency" },
+            { "ingredientSlug": "essential-oil-lavender", "amount": 10, "unit": "ml", "isOptional": true, "prepNote": "3% of oil weight; added after cook; optional" },
+            { "ingredientSlug": "essential-oil-cedarwood", "amount": 5, "unit": "ml", "isOptional": true, "prepNote": "1.7% of oil weight; added after cook; optional" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the KOH solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put on protective gloves and goggles. Weigh the KOH into a small dry container. Pour the distilled water into the HDPE lye pitcher. Add the KOH to the water in a steady stream, stirring until dissolved. The solution heats sharply. Set aside to cool to around 60°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Melt the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the coconut oil and shea butter in the top of the double boiler and melt gently. Add the castor oil and stir to combine. Bring the oil temperature to around 60°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook to trace and beyond" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the KOH solution into the oils in a steady stream over the double boiler, stirring constantly. Use the stick blender in short bursts to bring the batter to "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }]
+          },
+          {
+            "type": "text",
+            "text": "; this happens quickly with a high-castor formula, often in under a minute. Once at trace, keep the batter over the double boiler on very low heat, stirring every 10 minutes. The paste will go through a taffy-like stage, then a glossy applesauce stage, and finally settle into a smooth, translucent paste. This takes 2 to 3 hours. A zap test with the tip of the tongue confirms neutralisation: no sting means the soap is ready."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add scent and pack" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the paste has cooled to below 45°C, stir in any essential oils. Spoon into a wide-mouthed tin or shaving bowl. Leave the lid off for 24 hours to allow any residual water to evaporate, then place the lid on loosely (or use a lid with a vent hole). The paste will firm slightly as it cools."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet the shaving brush with warm water. Press the tips of the brush into the puck and swirl 10 to 15 times to load the brush. Build the lather directly on the face or in a bowl using circular motions. A well-loaded brush will produce 3 to 4 minutes of dense lather from a single loading."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep in a tin or bowl with the lid resting on top, not sealed, between uses; the paste needs air circulation or surface moisture builds up. Fully neutralised soft soap keeps 12 months. Discard if the paste thins noticeably (water phase separation), turns a different colour, or develops a sour or rancid smell."
+          }
+        ]
+      }
+    ]
+  }
+}
