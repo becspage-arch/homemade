@@ -1,0 +1,299 @@
+# QC audit 2026-06-01
+
+Generated: 2026-06-01T16:56:25.053Z
+
+Filters: category=all slug=all since=all block-only=true
+
+## Summary
+
+- Scanned: 6360
+- PASS: 0
+- BLOCK: 2475
+- WARN_ONLY: 0
+
+## Per category
+
+| Category | Total | PASS | BLOCK | WARN_ONLY |
+|---|---:|---:|---:|---:|
+| animals-smallholding | 27 | 0 | 27 | 0 |
+| baking | 883 | 0 | 883 | 0 |
+| cooking | 1189 | 0 | 1189 | 0 |
+| fibre-arts | 2 | 0 | 2 | 0 |
+| herbal-medicine | 3 | 0 | 3 | 0 |
+| natural-home | 359 | 0 | 359 | 0 |
+| paper-word | 3 | 0 | 3 | 0 |
+| pottery-ceramics | 1 | 0 | 1 | 0 |
+| sustainability | 7 | 0 | 7 | 0 |
+| wood-natural-craft | 1 | 0 | 1 | 0 |
+
+## Per rule kind
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 1 |
+| content-type-opening-mismatch | 2409 |
+| grade-level-strict | 44 |
+| opening-pattern-missing-hook | 2343 |
+| prose-prep-steps | 92 |
+| voice-violation | 807 |
+
+## Top 50 BLOCK violators
+
+### potted-shrimp (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### muhammara (cooking, RECIPE)
+
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### zucchini-pine-nut-cranberry-paleo-pasta (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### fesenjan (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### parmesan-cheese-crisps-laced-with-zucchini-carrots (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### understanding-varroa-lifecycle (animals-smallholding, READING)
+
+- BLOCK grade-level-strict: paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8) @ body > paragraph[10]
+
+### varroa-oxalic-acid-winter-treatment (animals-smallholding, TECHNIQUE)
+
+- BLOCK voice-violation: clinical-vocab: clinical/Latin vocabulary "efficacy" in body prose without glossary tooltip — use "how well it works" @ body > [5] > [0] > [0]
+
+### vegan-cottage-pie (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### boston-brown-bread (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### caribbean-black-cake (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### cold-process-oatmeal-soap (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### vegetarian-shepherds-pie (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### activated-charcoal-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### adana-kebabi (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### birds-nest-baklava (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### brown-stew (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > orderedList[11] > listItem[1] > paragraph[0]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### cauliflower-cheese-soup (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### chicken-and-leek-pie (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > orderedList[9] > listItem[0] > paragraph[0]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### chicken-jalfrezi (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### chocolate-cream-pie (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### coucou-and-flying-fish (cooking, RECIPE)
+
+- BLOCK voice-violation: clinical-vocab: clinical/Latin vocabulary "mucilage" in body prose without glossary tooltip — use "slippery, soothing liquid" or use a tooltip @ body > [0] > [0]
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[6]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### frankincense-cedarwood-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### honey-garlic-glazed-salmon (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### honeycomb (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### mango-butter-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[13]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### mississippi-mud-pie (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### natural-perfume-oil-roller (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### niacinamide-toning-serum (natural-home, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[4]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### patlican-salatasi (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[8]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### philly-cheesesteak (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### pollo-alla-cacciatore (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[8]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### sada-roti (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[6]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### shrimp-and-grits (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### soy-candle-lemon-verbena (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### soy-candle-neroli-ylang (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### unscented-sensitive-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[8]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### all-purpose-surface-spray (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### american-biscuits-plain (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### apple-pear-pie (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### avocado-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### baguette-homemade (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### bamia (cooking, RECIPE)
+
+- BLOCK voice-violation: clinical-vocab: clinical/Latin vocabulary "mucilage" in body prose without glossary tooltip — use "slippery, soothing liquid" or use a tooltip @ body > [0] > [0]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### barszcz-czerwony (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### battered-sausage (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### beans-on-toast (cooking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### beef-and-ale-casserole (cooking, RECIPE)
+
+- BLOCK prose-prep-steps: prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList @ body > paragraph[6]
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### beeswax-leather-conditioner (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### beeswax-pillar-candle (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### bentonite-detox-cold-process-soap (natural-home, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]
+
+### borodinsky-rye (baking, RECIPE)
+
+- BLOCK opening-pattern-missing-hook: orientation paragraph has no hook signal (no yield / time / "the secret to" / "for [purpose]" / "soothes/eases/calms" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern @ body > paragraph[0]
+- BLOCK content-type-opening-mismatch: RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with "[yield + time]" @ body > paragraph[0]

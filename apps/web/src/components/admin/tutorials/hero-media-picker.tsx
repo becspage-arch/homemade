@@ -11,6 +11,8 @@ export interface MediaOption {
   cloudflareId: string | null
   /** Pre-built delivery URL, computed on the server. */
   thumbnailUrl: string | null
+  /** Pre-built hero-variant URL, computed on the server. Resolves both R2 and legacy Cloudflare Images rows. */
+  heroUrl: string | null
 }
 
 interface HeroMediaPickerProps {

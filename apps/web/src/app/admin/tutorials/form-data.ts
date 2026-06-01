@@ -118,6 +118,7 @@ export async function loadTutorialFormData(
     type: m.type,
     cloudflareId: m.cloudflareId,
     thumbnailUrl: mediaUrl(m, 'thumbnail'),
+    heroUrl: mediaUrl(m, 'hero'),
   }))
 
   return {
