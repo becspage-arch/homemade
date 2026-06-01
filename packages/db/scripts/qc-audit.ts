@@ -335,13 +335,24 @@ const HOOK_SIGNAL_PATTERNS: RegExp[] = [
   /\b(?:long\s+made|long\s+used|long\s+taken|long\s+kept|made|kept|brewed|baked|cooked|served|kitchen\s+tradition)\s+for\s+(?:a|an|the)\b/i,
   /\b(?:tradition|kitchen\s+tradition)\s+(?:for|long\s+made|long\s+kept)\b/i,
   /\b(?:long\s+taken|long\s+used|long\s+made)\s+(?:as|by|in|by\s+the|for|to)\b/i,
-  /\b(?:keeps?|good)\s+(?:for|in)\s+(?:a|an|the|\d+)\b/i,
+  /\b(?:keeps?|good)\s+(?:for|in)\s+(?:a|an|the|\d+|several|two|three|four|five|six|ten|twelve|a\s+few|months?|years?)\b/i,
+  /\b(?:keeps?\s+a\s+year|keeps?\s+for\s+two\s+years|keeps?\s+in\s+a\s+cool\s+cupboard|keeps?\s+in\s+the\s+(?:fridge|cupboard))\b/i,
   /\bworking\s+(?:time|in)\b/i,
   /\bcure\s+time\b/i,
+  // NOTE: kept as a positive signal but no longer expected from the qc-fix
+  // template. Hand-authored openings won't use this; existing ones still do.
   /\b\d{1,3}\s*(?:minutes?|hours?|days?|weeks?|months?)['']?\s+work\b/i,
   /\bactive\s+work\b/i,
-  /\b(?:a|one)\s+(?:cup|jar|bottle|tin|bath|bowl|session)\b/i,
+  /\b(?:a|one)\s+(?:cup|jar|bottle|tin|bath|bowl|session|pot|batch)\b/i,
   /\b(?:daily|every\s+day|once\s+a\s+day|twice\s+a\s+day)\b/i,
+  /\bbrew(?:ed)?\s+fresh\s+(?:each|every)\s+(?:time|cup|session)\b/i,
+  /\bone\s+(?:batch|pot|bowl|jar)\s+(?:is|makes|gives)\b/i,
+  /\benough\s+for\s+(?:a|one|two|three|several|a\s+few|\d+)\b/i,
+  /\bthe\s+(?:jar|bottle|tin|pot|bowl)\s+(?:gives|makes|keeps|holds)\b/i,
+  /\b(?:bottle|jar|tin|pot|bowl|batch)\s+(?:gives|makes|holds|keeps)\s+\d+/i,
+  /\b(?:steep|soak|simmer|brew|infuse)(?:ed)?\s+[^.!?]{0,40}for\s+(?:overnight|\d{1,3}|ten|twenty|thirty|four|six|several|a\s+few)/i,
+  /\bfor\s+(?:four|six|several|a\s+few)\s+to\s+(?:six|eight|ten)\s+(?:weeks|days|months|hours|minutes)\b/i,
+  /\b(?:overnight|covered)\b/i,
 ]
 
 function isHerbalType(type: string): boolean {

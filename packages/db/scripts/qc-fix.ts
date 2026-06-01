@@ -796,26 +796,29 @@ function textContainsHookSignal(text: string): boolean {
 }
 
 // Per-type orientation builder. Returns a plain-English orientation
-// paragraph derived from the tutorial title and a fact bundle inferred from
-// the body. The output reads as a friend-at-the-kitchen-table description
-// — not Mary Berry, but no longer catalogue-shaped.
+// paragraph derived from the tutorial title.
+//
+// 2026-06-01 Part 8: dropped ALL subjective "about N minutes of active
+// work" claims. Time-of-work is platitude territory and assumes an
+// uninterrupted kitchen. The Tutorial schema already carries timeMinutes /
+// prepMinutes / servings / yieldDescription — those render in the info
+// bar. Orientations now carry only intrinsic facts: shelf life ("keeps a
+// year"), yield ("makes about thirty cups"), or simply nothing-extra.
 function buildTitleBasedOrientation(title: string, type: string): string {
   const titleStripped = title.replace(/[.?!]+$/, '').trim()
   if (type === 'HERB_PROFILE') {
-    // For HERB_PROFILEs the title is usually the plant ("Chamomile",
-    // "Marshmallow"). Frame it as the cup or jar the kitchen meets it as.
-    return `${titleStripped} as the home kitchen meets it: dried, kept in a jar, steeped in a covered cup for ten minutes when the day winds down. A long-standing herb of the home cupboard, taken for the gentle end of an evening. About ten minutes' work for a single cup; the jar of dried herb keeps a year.`
+    return `${titleStripped} in the home kitchen, what the dried herb does, how it is traditionally brewed, and the doses for a tea, a compress, or a bath. A long-standing herb of the home cupboard. A jar of dried herb keeps a year in the kitchen cupboard.`
   }
   if (type === 'REMEDY') {
-    return `${titleStripped} as the kitchen makes it. A long-standing home preparation, taken at the first sign of the trouble it eases. About twenty minutes of work; the finished preparation keeps in a cool cupboard for a few weeks.`
+    return `${titleStripped} as the kitchen makes it. A long-standing home preparation, long taken at the first sign of the trouble it eases. The finished preparation keeps in a cool cupboard for a few weeks.`
   }
   if (type === 'RECIPE') {
-    return `${titleStripped} as the home kitchen makes it. About thirty minutes of active work; makes about four servings.`
+    return `${titleStripped} as the home kitchen makes it. A long-standing kitchen recipe for everyday cooking at home.`
   }
   if (type === 'GROWING_GUIDE') {
     return `${titleStripped} as the home garden grows it. Sown in spring, picked through summer; full sun, rich soil, steady watering.`
   }
-  return `${titleStripped}. About thirty minutes of active work.`
+  return `${titleStripped}. A long-standing home practice.`
 }
 
 // Replace the first paragraph with a derived orientation built from the
