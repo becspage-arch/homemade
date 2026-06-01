@@ -242,6 +242,16 @@ const CLINICAL_VOCAB: { word: string; plain: string }[] = [
   { word: 'nervine', plain: '"nerve-calming" or use a tooltip' },
   { word: 'adaptogen', plain: '"stress-supporting" or use a tooltip' },
   { word: 'efficacy', plain: '"how well it works"' },
+  // 2026-06-01 Part 7a — catalogue / academic markers leaking through the
+  // excerpt-verbatim orientation path.
+  { word: 'materia medica', plain: '"kitchen herb" / strip — admin catalogue language' },
+  { word: 'materia-medica', plain: '"kitchen herb" / strip — admin catalogue language' },
+  { word: 'western herbal canon', plain: '"old home medicine" / strip' },
+  { word: 'herbal canon', plain: '"home medicine" / strip' },
+  { word: 'contraindication', plain: '"should be avoided" or use a tooltip' },
+  { word: 'phytochemical', plain: '"plant component" or use a tooltip' },
+  { word: 'pharmacology', plain: '"how-it-works" — keep out of body prose' },
+  { word: 'pharmacological', plain: '"how-it-works" — keep out of body prose' },
 ]
 
 /** Banned phrases — block. Case-insensitive, whole-word. */

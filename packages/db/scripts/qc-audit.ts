@@ -312,24 +312,36 @@ const STEP_IMPERATIVES = new Set<string>([
 // carries the practical hook the voice spec demands. If NONE of these appear
 // in the first paragraph, opening-pattern-missing-hook fires (REMEDY +
 // HERB_PROFILE + RECIPE + GROWING_GUIDE).
+//
+// 2026-06-01 (Part 7b): extended to accept word-form numbers ("Twelve
+// minutes' work", "Twenty-five minutes' work") and "long taken / long used"
+// hook framings used by the hand-authored herbal-medicine openings.
+const HOOK_NUMBER_WORDS =
+  '(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty[- ]?(?:one|two|three|four|five|six|seven|eight|nine)|thirty|thirty[- ]?(?:one|two|three|four|five|six|seven|eight|nine)|forty|fifty|sixty|a\s+few|several)'
 const HOOK_SIGNAL_PATTERNS: RegExp[] = [
   /\bthe\s+secret\s+(?:to|of|is)\b/i,
   /\bwhat\s+makes\s+(?:it|this|that)\s+work(?:s)?\b/i,
   /\b(?:about|roughly)\s+\d{1,3}\s+(?:minutes?|hours?|days?)\b/i,
+  new RegExp(`\\b(?:about|roughly)?\\s*${HOOK_NUMBER_WORDS}\\s+(?:minutes?|hours?)['']?\\s+(?:work|wait)\\b`, 'i'),
   /\b(?:about|roughly)\s+(?:fifteen|twenty|thirty|forty|fifty|sixty|five|ten|an?\s+hour|half\s+an?\s+hour)\s+(?:minutes?|hours?)?\b/i,
-  /\bmakes?\s+(?:about\s+)?\d{1,4}\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|rolls?|slices?|grams?|g|kg|ml|litres?|l)\b/i,
-  /\bmakes?\s+(?:about\s+)?(?:one|two|three|four|five|six|eight|ten|twelve|a\s+dozen|two\s+dozen)\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?)\b/i,
+  /\bmakes?\s+(?:about\s+)?\d{1,4}\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|rolls?|slices?|grams?|g|kg|ml|litres?|l|doses?|sessions?|wash|baths?|compress(?:es)?|gargles?|brews?|batches?)\b/i,
+  /\bmakes?\s+(?:about\s+)?(?:one|two|three|four|five|six|eight|ten|twelve|a\s+dozen|two\s+dozen|thirty|several|a\s+few|dozens?\s+of)\s+(?:bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|brews?|sessions?|baths?|compress(?:es)?|gargles?)\b/i,
   /\bserves?\s+(?:about\s+)?(?:\d{1,3}|one|two|three|four|five|six|eight|ten|twelve)\b/i,
   /\byields?\s+(?:about\s+)?\d{1,4}\b/i,
+  /\benough\s+for\s+(?:about\s+)?(?:\d{1,3}|one|two|three|four|five|six|several|a\s+few)\b/i,
   /\b(?:soothes?|eases?|calms?|settles?|relieves?|loosens?|softens?|coats?|cools?|warms?)\s+(?:a|an|the)\b/i,
-  /\bfor\s+(?:a|an)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy)\b/i,
-  /\b(?:long\s+made|made|kept|brewed|baked|cooked|served|kitchen\s+tradition)\s+for\s+(?:a|an|the)\b/i,
+  /\bfor\s+(?:a|an)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy|unsettled|moment|cup|cramping|period)\b/i,
+  /\bfor\s+(?:a|an|the)\s+(?:tension|tired|stressful|first|early|cold|warm|busy|racing|restless|wound[- ]up|cramping|gas[sy]?|heavy|period|aching|sore|stiff)\b/i,
+  /\b(?:long\s+made|long\s+used|long\s+taken|long\s+kept|made|kept|brewed|baked|cooked|served|kitchen\s+tradition)\s+for\s+(?:a|an|the)\b/i,
   /\b(?:tradition|kitchen\s+tradition)\s+(?:for|long\s+made|long\s+kept)\b/i,
+  /\b(?:long\s+taken|long\s+used|long\s+made)\s+(?:as|by|in|by\s+the|for|to)\b/i,
   /\b(?:keeps?|good)\s+(?:for|in)\s+(?:a|an|the|\d+)\b/i,
   /\bworking\s+(?:time|in)\b/i,
   /\bcure\s+time\b/i,
   /\b\d{1,3}\s*(?:minutes?|hours?|days?|weeks?|months?)['']?\s+work\b/i,
   /\bactive\s+work\b/i,
+  /\b(?:a|one)\s+(?:cup|jar|bottle|tin|bath|bowl|session)\b/i,
+  /\b(?:daily|every\s+day|once\s+a\s+day|twice\s+a\s+day)\b/i,
 ]
 
 function isHerbalType(type: string): boolean {
@@ -871,9 +883,12 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
     const firstPara = bodySummary.firstParaText
     if (firstPara) {
       const hasForPurpose =
-        /\bfor\s+(?:a|an|the)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy|unsettled)\b/i.test(firstPara) ||
-        /\b(?:long\s+made|tradition|kitchen\s+tradition|traditionally\s+(?:used|made|taken))\b/i.test(firstPara) ||
-        /\b(?:soothes?|eases?|calms?|settles?|relieves?|coats?|loosens?|softens?)\b/i.test(firstPara)
+        /\bfor\s+(?:a|an|the)\s+(?:sore|dry|tickly|raw|inflamed|irritated|upset|tight|cracked|tired|tense|cold|hot|flushed|achy|unsettled|moment|cup|cramping|period|tension|stressful|first|early|warm|busy|racing|restless|wound[- ]up|gas[sy]?|heavy|aching|stiff|head|hay|fresh|mild|brewed|blocked|nasal|short|cycle|menstrua)\b/i.test(firstPara) ||
+        /\bat\s+the\s+(?:first|onset|start)\s+(?:sign\s+of\s+)?a?\s*(?:cold|flu|cramp|tension|headache)\b/i.test(firstPara) ||
+        /\b(?:long\s+made|long\s+taken|long\s+used|tradition|kitchen\s+tradition|traditionally\s+(?:used|made|taken)|traditional)\b/i.test(firstPara) ||
+        /\b(?:soothes?|eases?|calms?|settles?|relieves?|coats?|loosens?|softens?|calming|easing|coating|warming|cooling|soothing|cramp[- ]easing|muscle[- ]easing|nerve[- ]calming|swelling[- ]calming|wound[- ]soothing|immune[- ]supporting|mood[- ]lifting|cycle[- ]support|nutritive|antihistamine)\b/i.test(firstPara) ||
+        /\bthe\s+(?:home\s+kitchen|household|home\s+cupboard|kitchen\s+cupboard)\b/i.test(firstPara) ||
+        /\bin\s+the\s+home\s+kitchen\b/i.test(firstPara)
       if (!hasForPurpose) {
         findings.push({
           severity: 'BLOCK',

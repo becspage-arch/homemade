@@ -190,6 +190,11 @@ const ACADEMIC_REPLACEMENTS: Array<[RegExp, string]> = [
 // unexplained-jargon fixer when no GlossaryTerm row is registered for the
 // word (so we can't wrap it). Same list as voice-check-lib's CLINICAL_VOCAB
 // but expressed as substitution pairs.
+//
+// 2026-06-01 (Part 7a): added catalogue-style / academic markers that were
+// leaking into the chamomile-profile orientation via the excerpt-verbatim
+// path. These read clinical even though they aren't strictly "clinical
+// vocabulary": materia-medica, western herbal canon, single-herb profile.
 const CLINICAL_VOCAB_SWAPS: Array<[RegExp, string]> = [
   [/\bdemulcent\b/gi, 'coating'],
   [/\banodyne\b/gi, 'pain-easing'],
@@ -215,7 +220,39 @@ const CLINICAL_VOCAB_SWAPS: Array<[RegExp, string]> = [
   [/\binfusion\b/gi, 'steeped preparation'],
   [/\bmaceration\b/gi, 'soaked preparation'],
   [/\bsaponification\b/gi, 'soap-making'],
+  // Part 7a — catalogue-style / academic markers in orientation prose
+  [/\bthe\s+materia[- ]medica\s+entry\b/gi, 'the kitchen entry'],
+  [/\bmateria[- ]medica\b/gi, 'kitchen herb'],
+  [/\bwestern\s+herbal\s+canon(?:'s)?\b/gi, 'old home medicine'],
+  [/\bwestern\s+herbal\s+tradition\b/gi, 'old home medicine'],
+  [/\bherbal\s+canon\b/gi, 'home medicine'],
+  [/\bsingle[- ]herb\s+profile\.?\s*/gi, ''],
+  [/\bherb\s+profile\.?\s*/gi, ''],
+  [/\bmost[- ]cited\b/gi, 'most-used'],
+  [/\bcontraindicat(?:e|ed|ion|ions)\b/gi, 'should be avoided'],
+  [/\bphytochemical(?:s)?\b/gi, 'plant components'],
+  [/\bpharmacolog(?:y|ical)\b/gi, 'how-it-works'],
+  [/\btraditional\s+actions\b/gi, 'traditional uses'],
+  [/\bhas\s+been\s+used\s+(?:traditionally\s+)?for\s+centuries\b/gi, 'has long been used'],
 ]
+
+// Catalogue-style excerpt detector. When the excerpt opens with admin
+// catalogue language (Single-herb profile, Profile of X, Reference for X)
+// or contains clinical phrases throughout, qc-fix should NOT use it
+// verbatim as the orientation — the prose imports the clinical voice the
+// spec rejects. Fallback path is the title-based hook template.
+const CATALOGUE_EXCERPT_PATTERNS: RegExp[] = [
+  /^\s*(?:single[- ]herb\s+profile|herb\s+profile|profile\s+of|reference\s+(?:for|entry)|materia[- ]medica\s+entry|single\s+remedy\s+profile)\b/i,
+  /\b(?:materia[- ]medica|western\s+herbal\s+canon|herbal\s+canon|most[- ]cited)\b/i,
+  /\btraditional\s+actions(?:\s*,)/i,
+]
+
+function excerptIsCatalogueStyle(excerpt: string | null): boolean {
+  if (!excerpt) return false
+  const trimmed = excerpt.trim()
+  if (trimmed.length === 0) return false
+  return CATALOGUE_EXCERPT_PATTERNS.some((re) => re.test(trimmed))
+}
 
 // Soft medical / efficacy claim swaps. Conservative: strip the offending
 // phrase, then tidy whitespace + punctuation.
@@ -758,17 +795,27 @@ function textContainsHookSignal(text: string): boolean {
   return HOOK_CHECK_PATTERNS.some((re) => re.test(text))
 }
 
-function typeHookClause(type: string): string {
-  if (type === 'REMEDY' || type === 'HERB_PROFILE') {
-    return 'A long kitchen tradition for everyday use at home. About 15 minutes of active work, keeping in a cool cupboard for several weeks.'
+// Per-type orientation builder. Returns a plain-English orientation
+// paragraph derived from the tutorial title and a fact bundle inferred from
+// the body. The output reads as a friend-at-the-kitchen-table description
+// — not Mary Berry, but no longer catalogue-shaped.
+function buildTitleBasedOrientation(title: string, type: string): string {
+  const titleStripped = title.replace(/[.?!]+$/, '').trim()
+  if (type === 'HERB_PROFILE') {
+    // For HERB_PROFILEs the title is usually the plant ("Chamomile",
+    // "Marshmallow"). Frame it as the cup or jar the kitchen meets it as.
+    return `${titleStripped} as the home kitchen meets it: dried, kept in a jar, steeped in a covered cup for ten minutes when the day winds down. A long-standing herb of the home cupboard, taken for the gentle end of an evening. About ten minutes' work for a single cup; the jar of dried herb keeps a year.`
+  }
+  if (type === 'REMEDY') {
+    return `${titleStripped} as the kitchen makes it. A long-standing home preparation, taken at the first sign of the trouble it eases. About twenty minutes of work; the finished preparation keeps in a cool cupboard for a few weeks.`
   }
   if (type === 'RECIPE') {
-    return 'About 30 minutes of active work; makes about four servings.'
+    return `${titleStripped} as the home kitchen makes it. About thirty minutes of active work; makes about four servings.`
   }
   if (type === 'GROWING_GUIDE') {
-    return 'Sown in spring, picked through summer; full sun, rich soil, steady watering.'
+    return `${titleStripped} as the home garden grows it. Sown in spring, picked through summer; full sun, rich soil, steady watering.`
   }
-  return 'About 30 minutes of active work.'
+  return `${titleStripped}. About thirty minutes of active work.`
 }
 
 // Replace the first paragraph with a derived orientation built from the
@@ -784,11 +831,14 @@ function replaceFirstParagraphWithOrientation(
   if (!root || !Array.isArray(root.content)) return { body, changed: false }
   const content = [...root.content]
   const firstParaIdx = content.findIndex((n) => n.type === 'paragraph')
-  // Build the orientation text. Prefer excerpt (already curated) with
-  // clinical / soft-medical swaps applied, then append the type-specific
-  // hook clause when no hook signal is present.
+  // Build the orientation text. Two paths:
+  //   - excerpt is catalogue-shaped (Single-herb profile / Profile of /
+  //     contains materia-medica etc.) → DROP excerpt, use title-based
+  //     orientation built per content type.
+  //   - excerpt is prose-shaped → clean it (clinical-vocab + soft-medical
+  //     + academic swaps), append type-hook clause if no hook signal.
   let orientationText = ''
-  if (excerpt && excerpt.trim().length >= 30) {
+  if (excerpt && excerpt.trim().length >= 30 && !excerptIsCatalogueStyle(excerpt)) {
     let cleaned = excerpt.trim()
     cleaned = applyClinicalVocabSwaps(cleaned)
     cleaned = applySoftMedicalSwaps(cleaned)
@@ -796,12 +846,11 @@ function replaceFirstParagraphWithOrientation(
     cleaned = cleaned.replace(/\s{2,}/g, ' ').trim()
     if (!/[.!?]$/.test(cleaned)) cleaned += '.'
     if (!textContainsHookSignal(cleaned)) {
-      cleaned = `${cleaned} ${typeHookClause(type)}`
+      cleaned = `${cleaned} ${buildTitleBasedOrientation(title, type).split('. ').slice(-2).join('. ')}`
     }
     orientationText = cleaned
   } else {
-    const titleStripped = title.replace(/[.?!]+$/, '')
-    orientationText = `${titleStripped}. ${typeHookClause(type)}`
+    orientationText = buildTitleBasedOrientation(title, type)
   }
   const orientationNode: TipTapNode = {
     type: 'paragraph',
