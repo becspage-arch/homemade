@@ -110,3 +110,8 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - underground-rainwater-tank-sizing voice-violation,grade-level-strict — applied: 
 - wall-ties-inspection-and-replacement grade-level-strict — applied: 
 - wood-furniture-stripping-and-refinishing grade-level-strict — applied: 
+
+- honey-harvest-uncapping-and-extraction voice-violation,grade-level-strict — applied: 
+- mating-rabbits-and-managing-gestation grade-level-strict — applied: 
+- rabbit-respiratory-infections-early-signs voice-violation,grade-level-strict — applied: 
+- rabbit-winter-management-outdoor-colony voice-violation,grade-level-strict — applied: 

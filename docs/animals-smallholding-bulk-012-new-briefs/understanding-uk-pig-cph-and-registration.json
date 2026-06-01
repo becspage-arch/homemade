@@ -1,0 +1,118 @@
+{
+  "slug": "understanding-uk-pig-cph-and-registration",
+  "title": "Understanding UK pig CPH and registration",
+  "subtitle": "What a CPH number is, how to get one, and what it unlocks.",
+  "excerpt": "Every person keeping pigs in the UK must register their holding and obtain a CPH number before pigs arrive. The CPH number is the foundation of the legal movement recording system. Without it you cannot accept pigs, tag them, or record movements on eAML2.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rural Payments Agency, Apply for a county parish holding number. https://www.gov.uk/guidance/county-parish-holding-numbers\nDEFRA, Pig identification and movement rules. https://www.gov.uk/guidance/pig-identification-and-movement\nPigs (Records, Identification and Movement) Order 2011. https://www.legislation.gov.uk/uksi/2011/2264",
+  "glossaryTerms": [
+    {
+      "slug": "cph-number",
+      "term": "CPH number",
+      "definition": "County Parish Holding number: a nine-digit reference number formatted as county/parish/holding (for example, 12/345/0001). Issued by the Rural Payments Agency, it identifies the physical location of the holding. A CPH number is required before pigs can be kept or moved legally in England."
+    },
+    {
+      "slug": "rpa",
+      "term": "Rural Payments Agency (RPA)",
+      "definition": "The government body responsible for issuing CPH numbers and administering farm payments in England. Applications for a new CPH are made through the RPA online portal or by phone. The RPA does not charge for issuing a CPH number."
+    },
+    {
+      "slug": "eaml2",
+      "term": "eAML2",
+      "definition": "Electronic Animal Movement Licence 2: the online system used in England and Wales to record pig movements between holdings. Both the seller and buyer must register a movement within three days. eAML2 also generates the movement documents required to accompany pigs in transit."
+    },
+    {
+      "slug": "herd-mark",
+      "term": "Herd mark",
+      "definition": "A unique alphanumeric code linked to a CPH number, used to identify the origin of pigs. Ear tags applied to pigs must include the herd mark. The herd mark is allocated by the RPA when you register the holding and stays with the CPH even if the keeper changes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig holding registration", "CPH number pigs", "Rural Payments Agency pigs"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In England, you must register your holding and get a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cph-number" } }], "text": "CPH number" },
+          { "type": "text", "text": " before you keep pigs. The law is clear: no CPH, no pigs. The application is straightforward and free." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a CPH number is" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A CPH number is a nine-digit reference in the format county/parish/holding. It identifies a specific piece of land rather than a specific person. If you buy land that already has a CPH, the holding number transfers; you apply to update the keeper details. If you are renting land with no existing CPH, you apply for a new one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to apply" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Contact the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rpa" } }], "text": "Rural Payments Agency" },
+          { "type": "text", "text": " by phone (03000 200 301) or through the Rural Payments online service. You will need to provide your name and contact details, the address and approximate grid reference of the land, and confirmation that you intend to keep pigs. The RPA typically issues the CPH number within a few working days." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the CPH number enables" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once you have a CPH, the RPA allocates a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "herd-mark" } }], "text": "herd mark" },
+          { "type": "text", "text": ". This code must appear on all ear tags applied to pigs born on or moved through the holding. Without a herd mark you cannot legally tag pigs, and without tags pigs cannot move off the holding legally." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The CPH number also allows you to register for " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eaml2" } }], "text": "eAML2" },
+          { "type": "text", "text": ". Every pig movement on or off your holding must be recorded in eAML2 within three days. The system generates the movement documents that must accompany pigs in transit. A movement without an eAML2 record is an offence." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Scotland, Wales, and Northern Ireland",
+          "body": "The CPH system is England-specific. Scotland uses a similar system via the Scottish Government Rural Payments and Inspections Directorate (RPID). Wales uses the Rural Payments Wales service. Northern Ireland uses the DAERA Livestock and Meat Commission system. The principles are the same: register the holding, obtain an identifier, and record all movements. Check the relevant government portal for your nation."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Record-keeping requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "You must keep a holding register recording every pig on the holding: the herd mark and tag numbers, dates of birth or arrival, dates of any movements or deaths, and the CPH of any holding they move to or come from. Records must be kept for three years and produced on request during an inspection. The register can be paper-based or electronic, but it must be up to date at all times." }
+        ]
+      }
+    ]
+  }
+}

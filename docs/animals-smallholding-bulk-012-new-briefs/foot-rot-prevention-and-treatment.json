@@ -1,0 +1,137 @@
+{
+  "slug": "foot-rot-prevention-and-treatment",
+  "title": "Foot rot prevention and treatment",
+  "subtitle": "Telling foot rot from foot scald, correct footbathing technique, and when antibiotics are needed.",
+  "excerpt": "Foot rot and foot scald are the two most common causes of lameness in sheep and goats in the UK. They look similar in early stages but require different treatments. This tutorial covers how to tell them apart, how to set up a footbath correctly, the right zinc sulphate concentration, and when to call the vet for antibiotic treatment.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme: Improving Flock Performance (2013), foot health section. https://ahdb.org.uk\nDEFRA, Code of Recommendations for the Welfare of Livestock: Sheep (1998). https://www.gov.uk\nSAC Consulting, Lameness in Sheep: Foot Rot and Foot Scald. https://www.sac.co.uk",
+  "glossaryTerms": [
+    {
+      "slug": "foot-rot",
+      "term": "Foot rot",
+      "definition": "A highly contagious infection caused by the interaction of two bacteria, Fusobacterium necrophorum and Dichelobacter nodosus. It causes progressive separation of the horn from the sensitive laminae of the hoof, produces a characteristic foul smell, and can render affected sheep unwilling to bear weight. Unlike foot scald, foot rot requires antibiotic treatment and footbathing to clear."
+    },
+    {
+      "slug": "foot-scald",
+      "term": "Foot scald",
+      "definition": "Inflammation between the toes caused by Fusobacterium necrophorum alone, without Dichelobacter nodosus. It presents as reddening and softening of the skin between the digits, with mild lameness. There is no horn separation and no foul smell. Foot scald responds well to footbathing and usually resolves without antibiotics."
+    },
+    {
+      "slug": "zinc-sulphate-footbath",
+      "term": "Zinc sulphate footbath",
+      "definition": "A footbath solution used to treat and prevent foot scald and to support foot rot recovery after trimming and antibiotic treatment. The recommended concentration for sheep is 10 percent (100 g of zinc sulphate per litre of water). Solutions above 20 percent can cause chemical burns. Change the solution after 200 sheep passes or when it becomes heavily contaminated with mud and dung."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sheep lameness", "foot bathing sheep", "footrot treatment"],
+  "recipeTools": [
+    { "slug": "hoof-trimmers" },
+    { "slug": "iodine-spray-navel" }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lameness is the most welfare-significant problem on most small sheep and goat holdings. Up to 80 percent of cases are caused by either " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-rot" } }], "text": "foot rot" },
+          { "type": "text", "text": " or " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-scald" } }], "text": "foot scald" },
+          { "type": "text", "text": ". The two conditions are easy to confuse in early stages. Getting the diagnosis right before reaching for antibiotics protects both the animal and the antibiotic supply." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Telling foot rot from foot scald" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Restrain the lame animal and lift the affected foot. Clean off mud with water and examine the cleft between the toes and the underside of the hoof." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Foot scald: red, moist, swollen skin between the toes. No horn separation. No strong smell. Mild to moderate lameness." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Foot rot: the horn of the hoof is separating from the sensitive tissues beneath. There is a characteristic foul smell when you open the affected area. The tissue underneath is grey and necrotic. Severe lameness: the sheep may kneel or refuse to bear weight." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Footbathing protocol" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "zinc-sulphate-footbath" } }], "text": "zinc sulphate footbath" },
+          { "type": "text", "text": " at 10 percent concentration helps foot scald and supports recovery from foot rot after trimming. Set up a container deep enough for sheep to stand with the solution at least 10 cm deep. Walk the entire flock through once a week for four weeks during a foot scald outbreak. Stand animals in the bath for at least one minute. Change the solution after 200 sheep passes or when it is heavily contaminated with dung. Walk the flock onto a clean, dry surface after the bath to allow the feet to dry." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Formalin footbaths are not recommended",
+          "body": "Formalin (formaldehyde) was the traditional footbath chemical. It is now known to be a carcinogen and is not recommended for routine use. Zinc sulphate is as effective and far safer to handle. If you have old formalin stock, dispose of it correctly and replace it with zinc sulphate."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trimming and antibiotics" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Trim affected hooves minimally. Remove only the loose, underrun horn to expose the affected area for treatment. Do not cut into healthy tissue: over-trimming causes bleeding, slows healing, and creates more entry points for bacteria. Apply oxytetracycline aerosol or topical antibiotic spray to the exposed tissue after trimming." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Inject antibiotic when: the animal is severely lame and cannot bear weight, multiple feet are affected, or footbathing and topical treatment have not produced improvement within five days. Your vet will prescribe the correct product and dose. Keep a record of all antibiotic treatments, including the product, dose, date, and the ear tag number of the treated animal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preventing spread" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foot rot bacteria survive in soil for up to two weeks. Move the flock off affected ground as soon as cases are identified. Do not bring in new sheep without checking their feet on arrival. Any animal that remains lame after three full treatment courses should be culled: persistently lame sheep are the main source of infection for the rest of the flock." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "slug": "autumn-hive-inspection-and-assessment",
+  "title": "Autumn hive inspection and assessment",
+  "subtitle": "The end-of-season inspection: stores, varroa, brood quality, and colony combination decisions.",
+  "excerpt": "The autumn inspection is the most consequential inspection of the year. It sets each colony up for winter or ends a failing one before it becomes a problem. This tutorial covers the full assessment process: stores, varroa load, brood pattern, and the decision on whether to unite two colonies or winter them separately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Preparing Colonies for Winter (2024). BBKA Good Practice Guide, autumn management. Vita (Europe) Ltd, Varroa Management Guide (2023). Ted Hooper, Guide to Bees and Honey (1976), autumn chapter.",
+  "glossaryTerms": [
+    {
+      "slug": "varroa-destructor",
+      "term": "Varroa destructor",
+      "definition": "A parasitic mite that feeds on developing bee pupae and adult bees. Left untreated it will kill a colony within two to four years. Treatment is timed to coincide with low brood periods, usually in late summer and autumn, when the mite population is most exposed."
+    },
+    {
+      "slug": "stores-adequacy",
+      "term": "Stores adequacy",
+      "definition": "Whether a colony has sufficient capped honey and pollen to survive winter without supplementary feeding. A National hive colony needs at least 18 to 20 kg of stores going into November. Hefting or frame-by-frame assessment confirms this."
+    },
+    {
+      "slug": "winter-bees",
+      "term": "Winter bees",
+      "definition": "Bees born in August and September from the last brood cycle of the season. They have larger fat bodies than summer bees and can live for four to six months, compared to six weeks for summer foragers. The quality of the winter bee cohort determines whether the colony survives to spring."
+    },
+    {
+      "slug": "newspaper-combine",
+      "term": "Newspaper combine",
+      "definition": "A method of uniting two colonies by placing a sheet of newspaper with a few small holes punched in it between the two brood boxes. The bees chew through the paper slowly over 24 to 48 hours, by which point the colonies have mixed scents and accepted each other."
+    }
+  ],
+  "techniqueSlugs": [
+    "lighting-a-bee-smoker",
+    "varroa-mite-count",
+    "combining-two-colonies",
+    "winter-hive-checks-and-hefting"
+  ],
+  "criticalTechniques": [
+    "lighting-a-bee-smoker",
+    "varroa-mite-count"
+  ],
+  "aliases": [
+    "autumn bee inspection",
+    "preparing bees for winter",
+    "end of season hive check",
+    "winter prep bees"
+  ],
+  "recipeTools": [
+    {
+      "slug": "bee-smoker",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-suit",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-gloves",
+      "isOptional": false
+    },
+    {
+      "slug": "hive-tool-j",
+      "isOptional": false
+    },
+    {
+      "slug": "varroa-treatment-oxalic-acid",
+      "isOptional": false
+    },
+    {
+      "slug": "hive-feeder-rapid",
+      "isOptional": true
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carry out the main autumn assessment in late August or early September, before night temperatures drop below 12°C. You want to be able to treat "
+          },
+          {
+            "type": "text",
+            "text": "varroa destructor",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "varroa-destructor"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " while there is still some brood in the colony, and you want any supplementary syrup to be processed before the cold sets in. The last full inspection of the year is also the time to make the combination decision for any weak colony."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stores assessment"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull each frame and hold it to the light. Capped honey is a warm amber colour with a white wax cap. You are looking at "
+          },
+          {
+            "type": "text",
+            "text": "stores adequacy",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stores-adequacy"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": does the colony have at least 18 to 20 kg of capped stores across the brood and super frames combined? A full National brood frame of capped honey weighs about 2.5 kg. An 11-frame National brood box that is mostly capped on both sides of the outer frames and across the top of the central brood frames is close to the target weight."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If stores are short, feed heavy syrup now: two parts sugar to one part water by weight. A rapid feeder holds enough to deliver 5 to 6 litres in one fill. Feed in the evening to reduce robbing. Stop feeding by late September. The colony needs time to process and cap the syrup before the weather shuts down flight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brood check and winter bee quality"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The bees born now are the "
+          },
+          {
+            "type": "text",
+            "text": "winter bees",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "winter-bees"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". They will keep the colony alive until February. Check that the brood pattern is solid. Patchy brood with many empty cells in the middle of a frame can indicate disease or a failing queen. A colony heading into winter with a failing queen will be queenless by spring with no chance to requeen."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Look for the queen. In August she should still be laying well. If you cannot find her but the brood pattern is solid and there are eggs, she is present. If the brood is patchy and there are no eggs, the colony may already be queenless. A queenless colony in August can still raise a new queen from worker eggs if you act fast; check the relevant beekeeper's manual or seek association advice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Varroa treatment"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treat after the honey supers are removed and before the winter bee cohort is sealed. A colony with high varroa loads entering autumn produces infected, shorter-lived winter bees. The colony goes into winter already weakened. Oxalic acid-based treatments are highly effective when applied correctly to low-brood colonies in late summer. Follow the product instructions for dosage and timing. A second treatment in December or January, when the colony is broodless, kills mites that were protected inside sealed cells during the summer treatment."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Assessing a varroa count before treating",
+          "body": "An alcohol wash or sugar roll of a 100-bee sample gives you a mite-per-hundred-bees figure. A count above 3 per 100 in summer or above 1 per 100 in autumn means the colony needs treatment now. Treating without knowing the count is still better than not treating at all, but a count helps you prioritise which colonies need attention most urgently."
+        },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Deciding whether to combine weak colonies"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A colony covering fewer than four frames of bees in September has a low chance of surviving winter alone. Two options: unite it with a strong colony, or accept the loss and investigate the cause in spring. The "
+          },
+          {
+            "type": "text",
+            "text": "newspaper combine",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "newspaper-combine"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the standard method. Place the weak colony on top of the strong colony with a sheet of newspaper between the two brood boxes. Score a few small holes in the paper with a hive tool. The bees mix scents over 24 to 48 hours and accept each other. After 48 hours, consolidate the frames, remove the spare box, and winter as one colony."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When combining, always keep the better queen. If the weak colony has a better queen, remove the strong colony's queen before combining. Let the weak colony's queen be the survivor."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "entries": [
+            {
+              "cue": "Colonies are still bringing in heavy pollen in September and not taking syrup",
+              "cause": "Ivy is in flower; colonies on a strong ivy flow will not take syrup during the flow",
+              "fix": "Wait until the ivy flow ends, usually late October, then feed. Ivy honey sets very hard; a colony that built up heavily on ivy alone may struggle to access stores in the cold. Add fondant in winter as a precaution."
+            },
+            {
+              "cue": "One brood frame shows a greasy or sunken appearance on sealed cells",
+              "cause": "Possible European or American foulbrood",
+              "fix": "Do not guess. Contact the National Bee Unit via BeeBase and request a free inspection. Do not move frames from this colony until you have a diagnosis. Foulbrood is a notifiable disease in England and Wales."
+            },
+            {
+              "cue": "Combined colony shows fighting bees at the entrance after 48 hours",
+              "cause": "Newspaper was not well pierced; the bees chewed too large a hole too fast and met as strangers",
+              "fix": "This usually resolves within a further 24 hours. Smoke the entrance gently and leave the colony alone. If fighting continues for more than three days, the queens may have both survived. Open and check for two queens; the workers will have chosen one."
+            }
+          ]
+        },
+        "content": []
+      }
+    ]
+  }
+}

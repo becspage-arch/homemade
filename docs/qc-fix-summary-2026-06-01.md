@@ -441,3 +441,30 @@ SKIPPED: 0
 | body-missing-method | 25 |
 | grade-level-strict | 15 |
 | em-dash-in-content | 1 |
+
+
+---
+
+## Run at 12:53:37
+
+Generated: 2026-06-01T12:53:37.606Z
+
+Processed: 129
+PASS: 125
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 15 |
+| body-missing-method | 14 |
+| voice-violation | 6 |
+
+## Still BLOCKED (sample 20)
+
+- honey-harvest-uncapping-and-extraction: voice-violation, grade-level-strict
+- mating-rabbits-and-managing-gestation: grade-level-strict
+- rabbit-respiratory-infections-early-signs: voice-violation, grade-level-strict
+- rabbit-winter-management-outdoor-colony: voice-violation, grade-level-strict
