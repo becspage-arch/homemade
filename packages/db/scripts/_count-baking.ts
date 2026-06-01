@@ -9,19 +9,16 @@ for (let depth = 0; depth < 12; depth++) {
   if (existsSync(candidate)) { loadEnv({ path: candidate, override: true }); break }
   const parent = dirname(dir); if (parent === dir) break; dir = parent
 }
-
-const CATEGORY_ID = process.argv[2] ?? 'cmp6k8pfp0000rgv4kpfgse4e'
-const CATEGORY_SLUG = process.argv[3] ?? 'baking'
-
 async function main() {
   const { prisma } = await import('../src/index.js')
-  const now = new Date()
-  await prisma.category.update({
-    where: { id: CATEGORY_ID },
-    data: { lastAutopilotRunAt: now },
-  })
-  console.log('CLAIMED:' + CATEGORY_SLUG + ' lastAutopilotRunAt=' + now.toISOString())
+  const counts: any[] = await prisma.$queryRaw`
+    SELECT COUNT(*)::int AS published_count
+    FROM "Tutorial" t
+    JOIN "Category" c ON c.id = t."categoryId"
+    WHERE c.slug = 'baking'
+      AND t.status = 'PUBLISHED'
+  `
+  console.log('Baking PUBLISHED count:', counts[0].published_count)
   await prisma.$disconnect()
 }
-
 main().catch((e) => { console.error(e); process.exit(1) })
