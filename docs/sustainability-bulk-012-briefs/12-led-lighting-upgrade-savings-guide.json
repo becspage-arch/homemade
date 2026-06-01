@@ -1,0 +1,124 @@
+{
+  "slug": "led-lighting-upgrade-savings-guide",
+  "title": "LED lighting upgrade: calculating the savings",
+  "subtitle": "Working out payback, choosing the right colour temperature, and what to do about non-standard fittings",
+  "excerpt": "Replacing halogen and incandescent bulbs with LED is one of the quickest-payback domestic energy improvements. A typical home with 20 halogen spotlights running 4 hours a day saves around 200 kWh per year, worth around 54 pounds. The calculation is straightforward, the products are now reliable, and the main choices are colour temperature and driver compatibility.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust Lighting fact sheet. gov.uk BEIS household energy consumption data. UK lighting industry data on LED product lifespans. Electrical Safety First guidance on LED driver compatibility. Which? guide to LED bulb reliability.",
+  "approximateCostGbp": 150,
+  "paybackYears": 3,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lumens",
+      "term": "Lumens",
+      "definition": "The measure of total light output from a source. Replacing a 50 W halogen spot with an LED requires matching lumens, not watts. A 50 W halogen produces around 600 lumens; a good LED equivalent produces the same at 6 to 8 W."
+    },
+    {
+      "slug": "colour-temperature",
+      "term": "Colour temperature",
+      "definition": "The warmth or coolness of white light, measured in Kelvin. 2700 K is warm white, similar to incandescent light. 4000 K is cool white, similar to daylight. 6000 K is blue-white, used in task lighting and some commercial settings."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The calculation for LED payback: (old bulb wattage minus new LED wattage) divided by 1000, multiplied by annual hours, multiplied by electricity unit rate. For a 50 W halogen replaced with a 6 W LED running 4 hours per day for 365 days: (50 - 6) / 1000 x 1460 x 0.27 = 17.3 pounds per bulb per year. Twenty bulbs save 346 pounds per year. At around 4 pounds per LED replacement bulb, the 20-bulb payback is about 4 months." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the right LED" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Match " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lumens" } }],
+                "text": "lumens"
+              },
+              { "type": "text", "text": ", not watts. A GU10 halogen 50 W produces around 600 lm. A good GU10 LED produces 600 lm at 6 to 8 W." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Choose " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-temperature" } }],
+                "text": "colour temperature"
+              },
+              { "type": "text", "text": " deliberately. 2700 K for bedrooms and living rooms; 3000 K for kitchens; 4000 K for bathrooms and utility rooms where task accuracy matters." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check dimmer compatibility. Most existing leading-edge dimmers are not compatible with LED drivers. Either replace the dimmer with a trailing-edge dimmer designed for LED loads, or choose non-dimmable LEDs and remove the dimmer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beam angle matters for spotlights. A 35-degree beam angle is narrow (accent lighting); a 60-degree angle gives broader room illumination equivalent to a standard halogen spot." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Driver compatibility for mains-voltage fittings" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "GU10 LEDs are direct mains-voltage (230 V). These are the simplest upgrade: unplug the halogen, push in the LED, done. MR16 fittings (12 V, two round pins) run from a transformer. If the existing transformer is an old magnetic type (heavy, hums), it must be replaced with an electronic LED driver for the LED to function correctly. Check that the new LED is rated for use with an electronic transformer. Mixing a mains-voltage GU10 LED in an MR16 fitting is a wiring error: use only the correct base type." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recessed spotlights and fire rating" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Recessed downlights in a ceiling above which there is a habitable room require a fire-rated cover or an intumescent downlight cover. Old halogen cans were routinely fitted without these because they ran so hot that a cover would have caused a fire. LED replacements run at 60 to 80 degrees Celsius at the base rather than 200 to 250 degrees Celsius for halogens. Check whether your existing cans are fire-rated. If not, fit a fire-rated LED fitting or add intumescent covers when changing to LED." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "LEDs flicker even when the switch is off" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "A neon indicator in the switch is leaking a small current through the LED circuit, causing it to flicker. Replace the switch with one that does not have a neon indicator, or fit a suppressor capacitor across the LED lamp." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "LED dims unevenly or flickers at low dimmer setting" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The dimmer is a leading-edge (phase-cut) type not compatible with the LED driver. Replace the dimmer with a trailing-edge unit rated for LED loads and the minimum load stated on the LED packaging." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

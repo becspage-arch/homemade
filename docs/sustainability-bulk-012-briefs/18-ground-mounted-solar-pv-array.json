@@ -1,0 +1,110 @@
+{
+  "slug": "ground-mounted-solar-pv-array",
+  "title": "Building a small ground-mounted solar PV array",
+  "subtitle": "A post-and-rail structure for 4 to 8 panels on a garden or field site",
+  "excerpt": "A ground-mounted solar PV frame on a concrete post foundation allows panels to be installed at the optimum pitch and orientation when the roof is unsuitable, shaded, or not strong enough. A 4-panel array at 30 degrees on a south-facing site generates roughly 1,500 to 1,800 kWh per year in the UK.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk planning guidance on permitted development for stand-alone solar PV installations. MCS 012 standard for solar PV installation. IET Wiring Regulations BS 7671 Chapter 7.12 for PV installations. Schletter and K2 Systems ground mount structural specifications.",
+  "approximateCostGbp": 3500,
+  "paybackYears": 8,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic. Technology that converts sunlight directly into electricity using semiconductor cells. Measured in kilowatts peak (kWp) of installed capacity."
+    },
+    {
+      "slug": "string-inverter",
+      "term": "String inverter",
+      "definition": "A solar inverter that converts the DC output of a series-connected string of PV panels into AC electricity for household use."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof", "solar-pv-export-limit-g98-g99"],
+  "criticalTechniques": ["solar-pv-export-limit-g98-g99"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 4-panel ground-mounted frame producing 1.6 kWp of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " capacity at 30 degrees on a true south orientation in Bristol generates approximately 1,450 kWh per year. At a self-consumption rate of 60 percent, that is 870 kWh at 27p avoided (235 pounds) plus 580 kWh exported at 5p SEG (29 pounds): around 264 pounds per year combined value." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning and permitted development" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In England, a ground-mounted solar PV system qualifies for permitted development if it is on land within the property boundary, the array does not exceed 9 m² and the highest point is not above 4 m, and it is not installed within the curtilage of a listed building. Systems larger than these limits require full planning permission. Scotland, Wales, and Northern Ireland have slightly different thresholds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Foundation options" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Concrete post footings: the most common approach. Steel posts (typically 60 x 60 mm square section) are set in concrete-filled holes 600 to 900 mm deep. Adequate for most garden soil conditions; deeper footings in loose or waterlogged ground." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Helical ground screws: steel screws that are driven into the ground with a portable auger without concrete. Easier to install and fully reversible but require a ground survey to confirm there are no services in the path." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ballasted ground frames: concrete ballast weights on a flat frame, used on hard standing where digging is not possible. Only suitable for calm-wind areas; wind uplift calculations must confirm the ballast is sufficient for the site's design wind speed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Frame construction" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the two front posts (lower end of the tilt) and two back posts at the correct spacing for the panel widths. For 4 standard 1.8 m x 1.1 m panels in a 2x2 landscape layout, the frame is approximately 2.2 m wide by 3.6 m front-to-back at the planned tilt angle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the post heights to produce the target tilt angle (25 to 35 degrees is optimal for UK latitudes). The back posts are taller than the front posts; the height difference produces the tilt. For a 30-degree tilt with 1.8 m panel length, the back posts are approximately 900 mm taller than the front." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mount aluminium purlins (horizontal rails) across the posts. Two purlins per panel tier is standard. Fix the panel clamps to the purlins at the positions marked from the panel mounting holes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mount the panels onto the clamps, earthing each panel frame through a dedicated earth wire back to the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "string-inverter" } }], "text": "string inverter" },
+            { "type": "text", "text": " earth terminal. The DC cable between the panels and the inverter runs in conduit if it passes through any inhabited space or within 100 mm of a surface accessible to the public." }
+          ]}]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "in-vessel-composting-unit-guide",
+  "title": "Choosing an in-vessel home composting unit",
+  "subtitle": "Comparing Hotbin, Aerobin, and similar insulated composters for a domestic garden",
+  "excerpt": "Insulated in-vessel composters like the Hotbin, Aerobin, and Jora 125 aim to maintain higher temperatures than a standard plastic dalek bin by insulating the walls, managing aeration, and providing a tight seal against heat loss. In practice, achieving hot composting performance depends on the inputs and management, not the bin alone.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Hotbin Composting technical guidance and user manual (2023). Aerobin product documentation and temperature data. Garden Organic independent assessment of in-vessel composting units. WRAP guidance on accelerated home composting.",
+  "approximateCostGbp": 250,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot composting",
+      "definition": "Composting that reaches 55 to 70 degrees Celsius in the core, killing weed seeds and most pathogens. Requires a minimum pile volume and active aeration."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "The ratio of carbon to nitrogen in composted material, ideally 25:1 to 35:1 for hot composting performance."
+    }
+  ],
+  "techniqueSlugs": ["hot-compost-vs-warm-compost-comparison", "three-bin-hot-compost-system"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Hotbin is a 200-litre insulated polypropylene bin with a built-in thermometer. The maker claims a core temperature of 40 to 60 degrees Celsius on inputs with a correct " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }], "text": "C:N ratio" },
+          { "type": "text", "text": ". Garden Organic independent testing found core temperatures of 35 to 45 degrees Celsius on typical domestic inputs, peaking at 55 degrees Celsius with large batches of well-balanced material. This is warmer than a standard dalek bin (ambient plus 5 to 10 degrees), but not reliably " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot compost" },
+          { "type": "text", "text": " performance at pathogen-kill temperatures." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Hotbin" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Key feature: insulated walls plus a top aeration channel. A valve at the base allows passive airflow without turning. The claim is that regular top-loading without turning maintains sufficient aeration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Practical performance: works well for kitchen food waste plus garden material when a 'bulking agent' (wood chip or straw) is added with every feed. Without the bulking agent, the base compacts and the aeration channel blocks." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Limitations: the 200-litre volume is too small for large gardens; filling it slows after 3 months of settled material at the base. Not capable of consistently killing weed seeds without supplementary turning." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Aerobin" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Key feature: a central aeration core (a hollow tube that runs the full height of the bin) plus insulated walls. Designed to allow passive air movement through the core without manual turning." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Practical performance: performs better than a standard dalek bin, reaching 30 to 40 degrees Celsius reliably in summer. Produces mature compost in 8 to 12 months rather than 18 months, on average." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The aeration core helps where turning is not possible: a small enclosed garden, or where the user cannot turn the heap easily." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When a standard bin is enough" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For kitchen scraps and garden waste without weed seeds, a standard 220-litre dalek bin gives good compost in 12 to 18 months with no active management. The 150 to 300 pound premium for an insulated unit is worth it if you need compost under a year, or if you are composting kitchen food waste that benefits from higher temperatures. For large gardens with heavy weed-seed loads, a three-bay hot compost system with manual turning beats any in-vessel unit." }
+        ]
+      }
+    ]
+  }
+}

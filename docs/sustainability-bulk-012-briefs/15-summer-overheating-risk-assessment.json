@@ -1,0 +1,131 @@
+{
+  "slug": "summer-overheating-risk-assessment",
+  "title": "Summer overheating risk assessment for a home",
+  "subtitle": "Using the CIBSE TM52 criteria adapted for domestic use to identify which rooms are at risk and why",
+  "excerpt": "Overheating is defined in UK building regulations (Approved Document O) as a room exceeding 26 degrees Celsius for more than 3 percent of occupied hours, or reaching 28 degrees Celsius at any point. This guide explains how to identify whether rooms in an existing home are overheating, which causes are most significant, and how to apply the remediation in order of cost-effectiveness.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document O (Overheating) 2021. CIBSE TM52 on the limits of thermal comfort: avoiding overheating in European buildings. CIBSE TM59 on design methodology for assessment of overheating risk in homes. Public Health England report on heat mortality. Future Homes Hub guidance on overheating in new homes.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "humidity-meter", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-gain",
+      "term": "Solar gain",
+      "definition": "Heat entering a building through glazing as solar radiation. The primary driver of overheating in UK homes, particularly in top-floor rooms with south, east, or west-facing windows."
+    },
+    {
+      "slug": "operative-temperature",
+      "term": "Operative temperature",
+      "definition": "A combined measure of air temperature and mean radiant temperature that better represents thermal comfort than air temperature alone. A room with hot walls or a glass roof can feel much hotter than the air temperature suggests."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A room that hits 28 degrees Celsius in July is a health risk for elderly and very young occupants and a discomfort problem for everyone else. Before spending money on mechanical cooling, find what is causing the overheating. Solar gain through unshaded glazing drives 50 to 80 percent of cases in most UK homes. The rest comes from insulation trapping daytime heat, poor ventilation, and heat from cooking or electronics." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying which rooms are at risk" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top-floor rooms: heat rises and the roof adds radiant gain from above. These are typically the worst-affected rooms even with double glazing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "South, east, or west-facing rooms with large windows. North-facing rooms rarely overheat from solar gain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rooms with high external wall insulation and good air-tightness: these retain heat well in winter but also trap daytime " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-gain" } }],
+                "text": "solar gain"
+              },
+              { "type": "text", "text": " in summer. Ventilation must be managed actively to avoid overheating." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Kitchen: internal heat gains from cooking and appliances are significant. A gas hob with four burners at full power adds around 8 kW." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The assessment: a simple data log" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A data-logging thermometer placed in the suspect room for two to three weeks in July gives enough data to assess against the AD O criteria. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "operative-temperature" } }],
+            "text": "operative temperature"
+          },
+          { "type": "text", "text": " should stay below 26 degrees Celsius for at least 97 percent of occupied hours. A cheap logger from a DIY store records hourly readings; export to a spreadsheet and count the hours above 26 degrees Celsius during normal waking hours (08:00 to 23:00). If more than 3 percent of those hours (about 5 hours per week) exceed 26 degrees Celsius, the room meets the AD O definition of overheating." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remediation in cost order" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Night purge ventilation: free. Open cross-ventilating windows overnight to cool mass. Effective if outdoor temperature drops below 18 degrees Celsius most nights." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External shading on south and west windows: 300 to 600 pounds per window for roller shutters. Reduces solar gain by 80 to 90 percent. The most cost-effective mechanical intervention after free ventilation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roof insulation upgrade: a poorly insulated roof adds radiant heat to top-floor rooms. Insulating it cuts the daytime heat load." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mechanical cooling: a last resort. A split system air conditioner for a single room costs 600 to 1,500 pounds to install and uses 1 to 2 kW when running." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Thermometer reads 30°C but the room feels tolerable" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "If there is good air movement across the skin, a higher air temperature is tolerable. The discomfort threshold is not the air temperature alone but the combination of temperature, humidity, and air speed. High humidity reduces tolerance: check the humidity reading alongside temperature." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

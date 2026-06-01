@@ -1,0 +1,116 @@
+{
+  "slug": "floor-insulation-concrete-slab-overlay",
+  "title": "Insulating a concrete ground floor from above",
+  "subtitle": "Adding rigid insulation and a new screed or board finish over an existing solid slab",
+  "excerpt": "An uninsulated concrete ground floor loses 0.7 to 0.8 W/m²K through the slab into the ground below. Adding 75 mm of EPS or PIR insulation with a new board or screed finish reduces that to 0.2 to 0.3 W/m²K and eliminates the cold-floor feeling in rooms heated to 20 degrees Celsius. The floor build-up typically raises the floor level by 100 to 150 mm.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document Part L1B (2022) ground floor target of 0.22 W/m²K for retained floors. BRE Digest 312 on assessment of existing ground floors. CIBSE Guide A U-value calculation methodology for ground-bearing floors.",
+  "approximateCostGbp": 2500,
+  "paybackYears": 18,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of heat flow through a building element in W/m²K. Lower values indicate better thermal performance."
+    },
+    {
+      "slug": "dpc",
+      "term": "Damp proof course",
+      "definition": "A horizontal layer in a wall or floor construction that resists the upward movement of moisture from the ground. On a solid floor, the damp proof membrane sits below or within the screed."
+    }
+  ],
+  "techniqueSlugs": ["understanding-u-values"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A concrete slab floor in a 1960s bungalow in Sheffield, heated to 20 degrees Celsius against a ground temperature of around 10 degrees Celsius, loses heat through the slab at a rate set by a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+          { "type": "text", "text": " of approximately 0.7 W/m²K. For a 50 m² ground floor area, that is around 1,750 kWh per year, worth about 105 pounds at gas rates. Adding 75 mm EPS below a 65 mm screed finish brings the composite U-value to around 0.23 W/m²K, a saving of approximately 1,200 kWh per year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to check first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Floor level relative to damp proof course. The new floor build-up must not raise the finished floor level above the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dpc" } }], "text": "damp proof course" },
+            { "type": "text", "text": " in the adjacent wall. Where the existing floor is close to DPC level, the perimeter detailing must maintain a 150 mm gap below the DPC." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Door threshold heights. A 100 to 150 mm floor raise means all door linings need to be shortened or replaced. Assess this before committing to the specification." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Existing floor condition. Any cracked, soft, or damp areas of the existing slab should be repaired and a damp-proof membrane laid before the insulation." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Build-up options" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "EPS 100 grade (compressive strength 100 kPa) plus 65 mm sand-cement screed: total build-up 140 to 145 mm. Suitable for a domestic ground floor with standard furniture loads. The screed provides underfloor heating coils if required." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR 75 mm plus 22 mm tongue-and-groove chipboard floating floor: total build-up 97 mm. Faster and drier than a wet screed. Less suitable where underfloor heating is planned but acceptable for a board finish." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay a 1200 gauge polythene damp-proof membrane over the existing slab, lapping 200 mm up the wall perimeter and taping all joints. The DPM protects the insulation from ground moisture vapour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the insulation boards dry, staggering the joints. On EPS, butt joints tightly; EPS does not compress significantly under load. On PIR, leave 2 mm at board joints to allow for thermal movement." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit perimeter insulation strips (50 mm EPS or foam tape) around the full room perimeter before screeding. These isolate the screed from the walls and prevent cracking at the perimeter junction as the screed dries." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a screed finish, mix at a 4:1 or 5:1 sand-cement ratio, lay at 65 mm minimum depth, and tamp to a flat surface. Allow 28 days minimum curing before laying a finished floor covering." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

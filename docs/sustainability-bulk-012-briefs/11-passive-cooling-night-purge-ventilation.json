@@ -1,0 +1,126 @@
+{
+  "slug": "passive-cooling-night-purge-ventilation",
+  "title": "Passive cooling with night purge ventilation",
+  "subtitle": "Using cross-ventilation at night to pre-cool thermal mass and avoid mechanical air conditioning",
+  "excerpt": "Night purge ventilation opens windows in the evening when outdoor air is cooler than indoor air, allows the thermal mass to cool, and then closes windows in the morning before outdoor temperature exceeds indoor. Done correctly, this technique can keep a bedroom below 26 degrees Celsius on nights when outdoor temperatures drop below 18. It requires thermal mass, a clear ventilation path, and consistent management.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE TM52 on overheating risk assessment. gov.uk Approved Document O (Overheating) 2021. BRE Digest 454 on solar gain and overheating. CIBSE Guide A Chapter 4 on natural ventilation. Chartered Institute of Environmental Health guidance on household overheating.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "humidity-meter", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-mass",
+      "term": "Thermal mass",
+      "definition": "The capacity of a material to absorb and release heat. Concrete floors, brick walls, and tile surfaces have high thermal mass and store the coolness absorbed during night purge, releasing it during the day."
+    },
+    {
+      "slug": "night-purge-ventilation",
+      "term": "Night purge ventilation",
+      "definition": "Opening windows and doors in the late evening when outdoor air is cooler than indoor air, to cool the thermal mass of the building fabric. Windows are then closed in the morning to retain the coolness."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In the UK, summer nights cool to 14 to 18 degrees Celsius in most years, even during heatwaves. A building with significant " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-mass" } }],
+            "text": "thermal mass"
+          },
+          { "type": "text", "text": " can absorb this coolness if ventilation is managed correctly. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "night-purge-ventilation" } }],
+            "text": "Night purge ventilation"
+          },
+          { "type": "text", "text": " is not a strategy for lightweight timber-framed or dry-lined rooms where there is little mass to cool. It works best in rooms with exposed concrete or tile floors, solid masonry walls, and ceilings that are not separated from the slab by a void." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The daily sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "By 21:00: if outdoor temperature is below indoor temperature, open windows on opposite faces of the room (cross-ventilation). Open vents at low and high levels if stack effect allows (warm air rises and exits high, cooler air enters low)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Through the night: leave windows open as long as outdoor air remains cooler. In most of the UK in July this is from around 21:00 to 07:00." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "By 08:00: close all windows and external shutters before the outdoor temperature rises above the indoor temperature. The building fabric holds the coolness it absorbed overnight. Avoid opening windows during the hottest part of the day." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "By 18:00: reopen windows once outdoor temperature drops below indoor again." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What limits the technique" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nights that stay above 18 degrees Celsius: there is not enough coolness to absorb. This occurs on 5 to 15 nights per year in southern England in a typical summer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No thermal mass: carpet, plasterboard, and lightweight flooring do not store coolness. The technique provides minimal benefit in a room that is fully boarded and carpeted." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Security concerns: on an upper floor with restricted window opening, the ventilation area may be too small to move enough air. Window restrictors set to 100 mm opening give very low airflow." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Monitoring effectiveness" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A data-logging thermometer (10 to 15 pounds) placed in the room will show the overnight temperature drop and the following afternoon peak. In a well-managed purge with good mass, the afternoon peak should be 3 to 5 degrees Celsius cooler than the outdoor maximum. If the room tracks outdoor temperature closely, the mass is insufficient or the windows are not being managed at the right times." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Room is still hot by 15:00 despite overnight purge" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check whether west-facing windows are shaded. Afternoon sun on an unshaded west window can add 2 to 4 kW of heat gain that the overnight cooling cannot offset. Fit external blinds or shutters on west-facing glazing." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

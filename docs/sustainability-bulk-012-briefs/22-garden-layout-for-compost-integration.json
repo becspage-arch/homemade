@@ -1,0 +1,100 @@
+{
+  "slug": "garden-layout-for-compost-integration",
+  "title": "Garden layout designed around the compost system",
+  "subtitle": "Siting compost bays for efficient cycling between kitchen, beds, and heap, with no-dig design principles",
+  "excerpt": "The position of a compost bay relative to the kitchen door, the growing beds, and the path network determines whether composting is convenient or whether it gets abandoned. A compost system that requires a two-minute walk through wet grass will not be used daily. This guide covers how to site compost bays, plan access paths, integrate them with a no-dig growing system, and design for multiple stages from fresh waste to finished compost.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Charles Dowding guidance on no-dig growing and compost integration. The Garden Organic (HDRA) composting guide. RHS advice on kitchen garden design. Monty Don guidance on kitchen garden layout. Permaculture Institute principles on zone design.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "no-dig-growing",
+      "term": "No-dig growing",
+      "definition": "A growing method where soil is not turned or cultivated. Compost and organic matter are added as a top dressing and incorporated by worm activity. The undisturbed soil structure preserves fungal networks and drainage channels."
+    },
+    {
+      "slug": "zone-design",
+      "term": "Zone design",
+      "definition": "A permaculture planning principle that places frequently visited elements close to the house (zone 1) and less-visited elements further away. Kitchen compost collection goes in zone 1; leaf mould bins go in zone 2 or 3."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A composting system works best when the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "zone-design" } }],
+            "text": "zone design"
+          },
+          { "type": "text", "text": " principle is applied: the kitchen caddy goes to a compost bay within 30 to 50 steps of the back door. That bay is the active receiver. Finished compost bays go near the growing beds. Leaf mould heaps, which need no maintenance once filled, go furthest away." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Three-bay system siting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A three-bay system (bay 1: receiving fresh waste; bay 2: active hot composting; bay 3: maturing and finished compost) should be sited with the long side facing a path. The path must be accessible with a wheelbarrow. Each bay is 1 m wide and 1 m deep; the total footprint is 3 m x 1 m. Ideally site the whole unit where it receives some shade in the afternoon (reduces moisture loss in summer) but is not under overhanging trees that will shed leaves directly in and prevent turning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "No-dig integration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "no-dig-growing" } }],
+            "text": "no-dig growing"
+          },
+          { "type": "text", "text": " system, finished compost is applied in autumn as a 5 to 10 cm top dressing over the bed surface. A wheelbarrow path directly between the finished compost bay and the bed edge makes this straightforward. The path between the growing beds needs to be 600 mm wide for a wheelbarrow (900 mm preferred for easy manoeuvring). Placing the compost bays at the end of the bed rows rather than behind a perimeter hedge makes the annual top-dressing operation much quicker." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The kitchen-to-heap distance problem" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the main compost heap is too far from the kitchen, kitchen waste composting fails in winter. The solution is a covered intermediate collection point within 10 steps of the back door: a small lidded caddy goes to a larger covered kitchen caddy (20 to 30 litres) at the back step, which is emptied once a week to the main heap. This means the once-weekly trip to the heap is less unpleasant than a daily trip in the dark." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Compost heap not used in winter because of distance" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Fit a covered path or stepping stones from the back door to the heap. Even a 5 m paved path with good drainage removes the main barrier to winter use. Alternatively, add a second small caddy nearer the house and empty it every two weeks." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

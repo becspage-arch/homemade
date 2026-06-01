@@ -1,0 +1,132 @@
+{
+  "slug": "broadband-router-lifespan-extension",
+  "title": "Extending the lifespan of home broadband and networking equipment",
+  "subtitle": "When ISP-supplied routers become disposal hazards, how to update firmware, and when replacement is actually needed",
+  "excerpt": "A typical home router has a manufacturing carbon footprint of around 20 to 40 kg CO2 equivalent and runs continuously at 5 to 15 W. Replacing it every 3 to 4 years when an ISP upgrade is offered is common, but most routers remain fully functional for 7 to 10 years. This guide covers firmware maintenance, common performance problems and their solutions, and what actually justifies replacement.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ofcom Connected Nations report on UK broadband infrastructure. WEEE Directive (Waste Electrical and Electronic Equipment) UK implementation. Carbon Trust ICT sector analysis. Router manufacturer firmware update guidance. Which? router reliability survey.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "router-firmware",
+      "term": "Router firmware",
+      "definition": "The operating software embedded in the router's flash memory. Firmware updates fix security vulnerabilities and sometimes improve performance. Most ISP-supplied routers update automatically; third-party routers require manual update via the admin interface."
+    },
+    {
+      "slug": "wi-fi-band",
+      "term": "Wi-Fi band (2.4 GHz vs 5 GHz)",
+      "definition": "Modern Wi-Fi operates on two frequency bands. 2.4 GHz carries further but at lower speeds and suffers more interference from neighbours' routers and other devices. 5 GHz provides faster speeds at shorter range with less interference. Devices close to the router should use 5 GHz; devices at distance use 2.4 GHz."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An ISP that offers a free router upgrade usually benefits from the upgrade more than the customer does. New equipment reduces support calls. The router you return is reconditioned and resold or recycled; the one you kept working was already functional. Before accepting a replacement, check whether the current router's problems (slow Wi-Fi, dropped connections) have a firmware or configuration solution." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Firmware: keeping the router secure and performing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A router without current " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "router-firmware" } }],
+            "text": "router firmware"
+          },
+          { "type": "text", "text": " is a security risk. ISP routers (BT Smart Hub, Virgin Media Hub, Sky Q Hub) update on their own when connected. Third-party routers need manual updates via the admin interface (usually at 192.168.0.1 or 192.168.1.1). A router over 5 years old that no longer gets updates from the maker is a real security risk. Replace it, whatever the performance." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems and their solutions" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slow Wi-Fi in distant rooms: check the " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wi-fi-band" } }],
+                "text": "Wi-Fi band"
+              },
+              { "type": "text", "text": " the device is connecting to. Move far devices to 2.4 GHz band manually. Add a Wi-Fi extender or a mesh Wi-Fi node before replacing the main router." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dropped connections: check for overheating. Routers placed in enclosed spaces or near heat sources run hotter and become unstable. Place on a hard, flat, ventilated surface away from other electronics." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Router crashes and needs frequent reboots: a factory reset (hold the reset button for 10 seconds) and fresh setup often fixes a corrupted config. Save your settings via the admin interface before resetting." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When replacement is justified" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No firmware updates available for more than 12 months: security risk." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Switching from ADSL to FTTP fibre: incompatible technology; new ONT and router required." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The router does not support WPA3 and the household has high-value data: a security upgrade is justified." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Disposal of old routers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Old routers are WEEE items (Waste Electrical and Electronic Equipment) and must not go in the general waste bin. ISPs are legally required to provide free take-back on request when you accept a replacement. Local council WEEE recycling points accept routers at no charge. Functional routers in good condition can be donated to community organisations via FreeGLe or Buy Nothing groups." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "ISP saying you need a new router for the upgrade to work" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Ask specifically which technical incompatibility requires the new hardware. Switching from ADSL to FTTP is a genuine incompatibility. Staying on FTTC fibre with a speed upgrade does not require a new router if the existing router handles the current speed." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

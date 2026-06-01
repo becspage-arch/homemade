@@ -1,0 +1,111 @@
+{
+  "slug": "solar-pv-export-limit-g98-g99",
+  "title": "Solar PV export limits and DNO connection agreements",
+  "subtitle": "Understanding G98, G99, and how to request a higher export limit from your distribution network operator",
+  "excerpt": "Every solar PV installation that exports to the grid must comply with a connection agreement set by the Distribution Network Operator. Systems up to 3.68 kW per phase can connect under G98 self-notification. Larger systems require a G99 application and DNO approval, which can take four to twelve weeks and may result in an export limit lower than the inverter capacity.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Networks Association Engineering Recommendation G98 Issue 1 Amendment 6 (2022). Energy Networks Association Engineering Recommendation G99 Issue 1 Amendment 6 (2022). Ofgem guidance on connection applications for distributed generation.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "dno",
+      "term": "Distribution Network Operator",
+      "definition": "The company that owns and operates the electricity distribution network in a specific area of Great Britain. There are six DNOs covering different regions."
+    },
+    {
+      "slug": "g98",
+      "term": "G98",
+      "definition": "Engineering Recommendation G98. The connection standard for micro-generators up to 3.68 kW per phase that allows self-notification rather than requiring pre-approval from the DNO."
+    },
+    {
+      "slug": "g99",
+      "term": "G99",
+      "definition": "Engineering Recommendation G99. The connection standard for larger generators (above 3.68 kW per phase on a single-phase supply) that requires an application and approval from the DNO before connection."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-string-vs-microinverter-choice", "smart-export-guarantee-explained"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 4 kWp system on a single-phase supply exceeds the 3.68 kW threshold for self-notification under " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "g98" } }], "text": "G98" },
+          { "type": "text", "text": ". It must go through a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "g99" } }], "text": "G99" },
+          { "type": "text", "text": " application to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dno" } }], "text": "Distribution Network Operator" },
+          { "type": "text", "text": " before commissioning. The DNO checks network capacity at the connection point. It issues a connection offer that may cap export below the system's full output." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "G98 versus G99 at a glance" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "G98: for single-phase systems up to 3.68 kW and three-phase systems up to 11.04 kW total. Installer notifies the DNO within 28 days of commissioning. No prior approval required. Most domestic rooftop installations of 12 panels or fewer fall into this category." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "G99: required for single-phase systems above 3.68 kW, three-phase systems above 11.04 kW, and any system where the DNO has concerns about local network capacity. Application is submitted before installation. DNO responds within 45 working days for straightforward applications." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Export limits and why they are imposed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A DNO may impose an export limit because the local low-voltage network has insufficient capacity to accept the additional generation without voltage rising above the statutory limit of 253 V. An export limit of 3.68 kW means the inverter throttles output whenever export would exceed that level. The panels still generate; the surplus is simply not exported. In summer midday on a south-facing 6 kWp array in Bristol, this curtailment might mean 1 to 2 hours per day where the system generates above the export limit. The energy that can not be exported is only valuable if it can be self-consumed at the time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Requesting a higher export limit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Export limits imposed at connection can be appealed or revised. If network investment or demand changes have freed capacity, the DNO may agree to increase the limit. The process is a new connection application. In areas with high PV penetration, a smart inverter that curtails export automatically when network voltage exceeds 247 V may be accepted at a higher export limit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rural areas with long low-voltage spurs: voltage rise is more severe; export limits are more common and often lower. Adding a battery storage system to absorb peak generation can remove the practical impact of a low export limit." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Three-phase supplies: the G98 threshold is 11.04 kW total (3.68 kW per phase). A 10 kWp system on three-phase is below the G99 threshold." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

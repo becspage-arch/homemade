@@ -1,0 +1,130 @@
+{
+  "slug": "mvhr-decision-guide",
+  "title": "Deciding whether MVHR is right for your retrofit",
+  "subtitle": "When whole-house mechanical ventilation with heat recovery makes sense and when it does not",
+  "excerpt": "Mechanical ventilation with heat recovery exchanges stale indoor air with fresh outdoor air through a central heat exchanger, recovering 75 to 92 percent of the heat in the outgoing air. In a well-sealed retrofit, it reduces ventilation heat loss by two-thirds compared to trickle-vent and background infiltration. Whether the installation cost is justified depends on how airtight the house already is.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE Guide A Chapter 4 on ventilation heat loss rates. BRE report on MVHR in existing dwellings (BR 469). gov.uk Part F Approved Document on ventilation requirements. NHBC Foundation NF78 on whole house ventilation systems in existing homes.",
+  "approximateCostGbp": 4000,
+  "paybackYears": 20,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "mvhr",
+      "term": "MVHR",
+      "definition": "Mechanical ventilation with heat recovery. A system that extracts stale air from wet rooms, passes it through a heat exchanger, and supplies the recovered heat to the incoming fresh air stream."
+    },
+    {
+      "slug": "air-changes-per-hour",
+      "term": "Air changes per hour",
+      "definition": "The number of times per hour that the total volume of air in a building is replaced, used to measure both deliberate ventilation and uncontrolled air leakage."
+    },
+    {
+      "slug": "airtightness-test",
+      "term": "Airtightness test",
+      "definition": "A blower-door test that measures the rate of air leakage through a building envelope under a standardised pressure. Result expressed in m³/h/m² at 50 Pascals."
+    }
+  ],
+  "techniqueSlugs": ["airtightness-survey-smoke-pencil", "ventilation-after-draughtproofing"],
+  "criticalTechniques": ["ventilation-after-draughtproofing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A typical pre-1990 UK house has an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "airtightness-test" } }], "text": "airtightness" },
+          { "type": "text", "text": " result of 10 to 20 m³/h/m² at 50 Pascals: it leaks constantly through gaps around windows, floor joists, service penetrations, and loft hatches. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mvhr" } }], "text": "MVHR" },
+          { "type": "text", "text": " only delivers its claimed heat recovery efficiency when the building envelope is tight enough that the ventilation supplied by the unit is the dominant air exchange pathway. In a leaky house, most of the incoming fresh air bypasses the heat exchanger via cracks, and the MVHR unit runs to no useful effect. The decision on MVHR therefore depends first on whether the building can be or has been made sufficiently airtight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The threshold for viable MVHR" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "MVHR becomes a useful energy measure at an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "air-changes-per-hour" } }], "text": "air changes per hour" },
+          { "type": "text", "text": " result below roughly 3 m³/h/m² at 50 Pascals. At that level, the unit controls most of the ventilation and the heat recovery is real. Above 5 m³/h/m², the uncontrolled leakage is dominant and the unit contribution is marginal. A thorough draught-proofing programme on a 1930s semi can realistically get from 15 down to 5 to 7 m³/h/m². Getting below 3 requires targeted air-sealing work on floor zones, loft hatch, service penetrations, and window perimeters: achievable, but time-consuming." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "MVHR versus decentralised MEV" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Decentralised mechanical extract ventilation (dMEV) fits a continuously-running low-energy fan in each wet room, discharging directly through the wall. No ductwork. No central unit. No heat recovery. The install cost is roughly a fifth of a whole-house MVHR installation. In a house that is moderately well sealed but not to Passivhaus levels, dMEV handles the statutory ventilation requirement at lower capital cost and lower complexity. MVHR pulls ahead when the house is very well sealed (below 3 m³/h/m²) and the heat recovery rate generates a meaningful annual saving. In a house at 1 m³/h/m², a well-specified MVHR unit at 82 percent heat recovery efficiency saves 800 to 1,200 kWh per year in ventilation heat loss compared to a trickle-vent strategy." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where MVHR works in existing houses" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "New building extensions where the extended part is built to a high airtightness standard and the MVHR serves only the new volume." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whole-house deep retrofits (EnerPHit standard or close to it) where the building envelope has been fully sealed and re-tested to below 3 m³/h/m²." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houses where the occupants have respiratory conditions and the controlled, filtered incoming air supply provides a health benefit regardless of the heat recovery payback calculation." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When MVHR is not the right choice" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houses with unresolved damp, condensation, or mould: fixing the source is more important than changing the ventilation strategy." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houses with an active open fireplace or solid-fuel stove without a dedicated air supply: MVHR creates a slightly negative pressure that can cause backdraught." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houses where the layout makes continuous ductwork impractical (deep-plan terraces, complex multi-floor layouts without a void between floors)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Done well, MVHR in a well-sealed retrofit is commissioned with a proper airtightness result confirming the envelope is tight, a duct pressure test confirming the ducting does not leak, and a measured flow-rate at each supply and extract terminal. Filter servicing is scheduled at 6-month intervals. Done badly, MVHR is installed in a house at 12 m³/h/m² airtightness. The unit runs continuously but contributes almost nothing to heat recovery. The electricity consumption of the fans adds to the energy bill without producing the expected saving." }
+        ]
+      }
+    ]
+  }
+}

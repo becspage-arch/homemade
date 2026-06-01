@@ -1,0 +1,123 @@
+{
+  "slug": "substrate-inoculation-for-mushroom-compost",
+  "title": "Preparing compost-based substrate for mushroom cultivation",
+  "subtitle": "Choosing between pasteurisation and sterilisation, inoculating with grain spawn, and managing colonisation",
+  "excerpt": "Compost-based substrate for mushroom growing requires different preparation to sawdust substrate. Oyster mushrooms grow well on a mix of straw, woodchip, and garden compost, but the compost must be pasteurised or the competing organisms will outcompete the mycelium. This guide covers substrate preparation, pasteurisation temperatures, inoculation technique, and the colonisation environment.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Peter McCoy, Radical Mycology (Chthaeus Press). Tradd Cotter, Organic Mushroom Farming and Mycoremediation (Chelsea Green). Fungi Perfecti cultivation guides. Mushroom Mountain substrate preparation protocols.",
+  "approximateCostGbp": 30,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false },
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "grain-spawn",
+      "term": "Grain spawn",
+      "definition": "Sterilised cereal grain (usually rye or wheat berries) colonised by mushroom mycelium. Used to inoculate substrate. The large surface area of individual grains gives rapid mycelium spread through the new substrate."
+    },
+    {
+      "slug": "colonisation",
+      "term": "Colonisation",
+      "definition": "The phase during which mushroom mycelium grows through and digests the substrate before fruiting. Visible as white, cobweb-like growth through the block or bag. Colonisation requires no light, some humidity, and temperatures of 18 to 25 degrees Celsius depending on species."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oyster mushrooms are the easiest species to grow on a composted straw mix. They are fast-growing and tolerant of competition, but pasteurisation is still needed to knock back the main competing fungi. Shiitake on sawdust needs full sterilisation (pressure cooker at 15 psi for 2 hours): it is slower to establish and cannot compete in unpasteurised substrate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Substrate composition for oyster mushrooms" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "70 percent chopped straw (wheat or barley, 5 to 10 cm lengths): the primary food source." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "15 percent mature garden compost: adds micronutrients and holds moisture in the block." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "15 percent wood chip (hardwood, not conifer): slows degradation and provides structure." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pasteurisation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hot water pasteurisation: submerge the dry substrate mix in water at 70 to 80 degrees Celsius for 1 to 1.5 hours. Use a large pot or a clean plastic bin with boiling water poured over and weighted down. The compost thermometer confirms the temperature holds. After pasteurisation, spread the substrate on a clean surface to cool to below 28 degrees Celsius before inoculation. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colonisation" } }],
+            "text": "Colonisation"
+          },
+          { "type": "text", "text": " is fastest when the substrate is inoculated warm but not hot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Inoculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mix " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grain-spawn" } }],
+            "text": "grain spawn"
+          },
+          { "type": "text", "text": " into the cooled substrate at 10 to 15 percent by weight of the substrate. Mix thoroughly with clean hands or a clean tool. Pack into a clear plastic bag or a bucket with holes drilled at 100 mm intervals (the mushrooms fruit through the holes). The inoculated block should feel firm but not waterlogged: squeeze and a few drops of water should come out." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colonisation environment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Place in a dark or low-light location at 18 to 24 degrees Celsius. Oyster mycelium colonises straw-compost substrate in 10 to 20 days. White growth visible through the bag confirms progress. If grey or green patches appear, contamination is present: the whole block must be discarded. When the block is fully white (colonised), move it to a fruiting environment: high humidity (80 to 95 percent), some air exchange, and indirect light." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Green patches appearing in the block after 5 days" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Green is Trichoderma mould, the main contaminant of straw-compost substrate. It indicates the pasteurisation was incomplete, the substrate was too wet, or inoculation happened while the substrate was still too warm. Discard the block outdoors (not on the compost heap)." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "ev-smart-charging-solar-pv-sync",
+  "title": "Syncing EV charging to solar PV export",
+  "subtitle": "Using an OCPP charger and a solar diverter or API integration to charge from surplus solar",
+  "excerpt": "A solar PV array that exports to the grid at 5p per unit while the house buys power for EV charging at 27p per unit is a significant missed opportunity. Smart EV chargers with OCPP or proprietary solar-sync modes can redirect surplus solar export into the car battery, shifting 50 to 80 percent of EV charging costs to free solar power in summer.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Zappi EDDI and myenergi technical specifications for CT clamp-based solar diversion. OZEV (Office for Zero Emission Vehicles) smart charger regulations under SI 2021/1297. Ohme, Pod Point, and Wallbox manufacturer documentation on solar sync modes.",
+  "approximateCostGbp": 800,
+  "paybackYears": 4,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ocpp",
+      "term": "OCPP",
+      "definition": "Open Charge Point Protocol. An open standard communication protocol between EV charging points and a management system, allowing third-party integration and remote control."
+    },
+    {
+      "slug": "ct-clamp",
+      "term": "CT clamp",
+      "definition": "A current transformer clamp that measures the electrical current flowing in a cable without breaking the circuit. Used to monitor import and export on the main supply cable."
+    },
+    {
+      "slug": "smart-export-guarantee",
+      "term": "Smart Export Guarantee",
+      "definition": "A UK government scheme requiring licensed electricity suppliers to offer a tariff for energy exported to the grid from small-scale renewable generators."
+    }
+  ],
+  "techniqueSlugs": ["solar-immersion-diverter-guide", "smart-meter-half-hourly-data"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 4 kWp south-facing solar PV array in the south of England generates around 3,800 kWh per year. If 50 percent of that exports to the grid at the average " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-export-guarantee" } }], "text": "Smart Export Guarantee" },
+          { "type": "text", "text": " rate of around 5p per unit, the household receives 95 pounds for 1,900 kWh of exports. An EV charging at home uses roughly 2,000 to 3,000 kWh per year. If a smart charger diverts 70 percent of those exports into the car instead of grid export, the value captured at the grid import rate of 27p is 360 pounds, compared with 133 pounds at the SEG rate. The difference is 227 pounds per year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How solar-sync EV charging works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "There are two approaches. The first uses a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ct-clamp" } }], "text": "CT clamp" },
+          { "type": "text", "text": " on the main supply cable to measure the real-time import or export current. When the clamp detects export (current flowing out to the grid), the charger controller increases the EV charging rate to consume the surplus. When export drops to zero or import starts, the charger rate reduces or pauses. The Zappi charger by myenergi uses this approach: it continuously adjusts the charging rate from the minimum 1.4 kW to the maximum available solar surplus, throttling in 1.4 kW increments." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The second approach uses an API integration between the inverter and the charger. The inverter exports its real-time generation and consumption data; the charger reads this and adjusts accordingly. This works with any charger that supports " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ocpp" } }], "text": "OCPP" },
+          { "type": "text", "text": " and with some proprietary pairings (GivEnergy inverter and GivEnergy charger, for example). The API approach is more accurate but is typically limited to matched brand ecosystems." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Minimum car charge state to make this viable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Solar-sync charging typically starts only when there is a continuous surplus above the charger's minimum rate (1.4 kW for a single-phase charge at 6A minimum, or 4.2 kW for three-phase). On a cloudy summer day, the surplus may not reach the minimum threshold, and the car does not charge. The Zappi's ECO+ mode adds a programmable grid top-up to a target state of charge if the solar fill is not enough by a set departure time. Setting a minimum state of charge of 30 percent with a departure top-up target of 80 percent works well for most daily commutes." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Time-of-use tariff interaction" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On a time-of-use tariff with a cheap overnight rate (7p to 9p per unit on Octopus Go or similar), the maths shifts. Filling the car overnight at 7p means the daytime solar divert saves only the avoided buy at 27p minus the foregone export at 5p: a net 22p per unit. The biggest gain is still avoiding peak-rate daytime charging, not replacing cheap overnight power." }
+        ]
+      }
+    ]
+  }
+}

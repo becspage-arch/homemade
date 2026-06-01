@@ -1,0 +1,122 @@
+{
+  "slug": "service-void-internal-insulation",
+  "title": "Leaving a service void when fitting internal wall insulation",
+  "subtitle": "Why a 25 to 50 mm uninsulated service cavity matters for future access and fire safety",
+  "excerpt": "Internal wall insulation fitted directly to the masonry face with no service void means that every future plumber or electrician must strip the insulation to reach services. It also means electrical cables that run through the foam face risk overheating. This guide explains how to build a service void correctly, what depth is needed, and how to manage the detailing at junctions.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NHBC Standards Chapter 6.7 on internal wall insulation. National Insulation Association technical guidance on IWI. IStructE guidance on internal insulation of solid walls. BSI PAS 2035:2019 on retrofitting dwellings for energy efficiency.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane on the warm face of insulation that slows moisture-laden air from reaching the cold insulation zone, where it would condense. Required when insulating solid walls internally."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A zone of faster heat flow through the building fabric. Service void battens fixed directly to masonry without a thermal break create minor bridges; the gap must be managed in the overall U-value calculation."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Internal wall insulation on a solid brick or stone wall is already a significant investment: materials, loss of floor area, and the disruption of refixing sockets and switches. Building it without a service void means doing most of that work again when pipes or cables need access. A 25 to 50 mm void adds minimal cost and protects the investment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The layer sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Masonry wall face (solid brick, stone, or block)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Main insulation layer: mineral wool between timber battens, or PIR board adhered to the masonry face. This does the thermal work." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " taped at all joints, on the warm face of the insulation. This is the critical layer for condensation management." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A second set of battens at 25 to 50 mm depth to create the service void. These can be metal furring channels or CLS timber at 400 mm centres." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plasterboard fixed to the service void battens. All services run in the void and do not penetrate the vapour control layer." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Electrical cable routing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cables embedded in foam insulation that cannot dissipate heat freely must be de-rated per BS 7671. A 2.5 mm twin-and-earth cable rated at 27 A in open air drops to around 13 A when enclosed in insulation. If the service void is deep enough for cables to run without touching the insulation face, derating is not required. A 50 mm void gives enough clearance for most domestic cable routes. Always check with a registered electrician before running cables in an unusual thermal environment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Managing the thermal bridge from service battens" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 50 x 25 mm CLS batten fixed through the VCL into the main insulation layer creates a minor " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " at each fixing. The bridge effect is small (0.02 to 0.04 W/m·K per batten at 400 mm centres) and acceptable for a secondary service void where the main insulation layer already provides the bulk of the thermal resistance. Use non-metallic fixings where possible to minimise the bridge." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Condensation appearing behind plasterboard after the first winter" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The vapour control layer has a hole or untaped joint, typically where a socket was cut through. Remove the plasterboard in the affected area, find the breach, and repair with foil tape lapping at least 50 mm either side of the gap." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

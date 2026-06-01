@@ -1,0 +1,129 @@
+{
+  "slug": "underground-rainwater-tank-sizing",
+  "title": "Sizing and installing an underground rainwater harvesting tank",
+  "subtitle": "Calculating tank volume for WC flushing, choosing a first-flush diverter, and understanding Building Regs notification",
+  "excerpt": "An underground rainwater tank for WC flushing reduces mains water demand by 25 to 35 percent for a typical UK household. The tank size depends on the roof catchment area, local rainfall, and the household's WC usage. This guide covers the sizing calculation, the key components, what Building Regs require, and what the payback calculation actually looks like in most UK areas.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIRIA C625 on rainwater and greywater use in buildings. gov.uk Building Regulations Part G (Sanitation) on rainwater harvesting. WRAS (Water Regulations Advisory Scheme) guidance on backflow prevention in rainwater harvesting systems. Environment Agency guidance on rainwater harvesting. UK Water Regulations 2010.",
+  "approximateCostGbp": 4000,
+  "paybackYears": 25,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "first-flush-diverter",
+      "term": "First flush diverter",
+      "definition": "A device that discards the first 1 to 2 mm of rainfall from a roof before allowing water into the storage tank. The first rain washes off bird droppings, pollen, and airborne pollutants concentrated on the dry roof surface. The diverted fraction is typically 1 litre per m² of roof catchment."
+    },
+    {
+      "slug": "rainwater-harvesting-yield",
+      "term": "Rainwater harvesting yield",
+      "definition": "The volume of collected rainwater available for use in a given period. Calculated as: roof area (m²) x rainfall (mm) x runoff coefficient (0.85 for pitched tile roof). In most of England, average annual rainfall is 650 to 900 mm, giving a usable yield of 550 to 765 litres per m² of roof per year."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A UK household with four occupants flushes the toilet approximately 18 to 20 times per day, consuming roughly 100 litres at 6 litres per dual-flush. Over a year that is 36,500 litres. A standard rainwater harvesting system with a 5,000-litre underground tank and a 50 m² roof catchment (half of a typical detached house roof) supplies around 30,000 litres per year in most English regions: enough to cover 80 percent of WC demand. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rainwater-harvesting-yield" } }],
+            "text": "rainwater harvesting yield"
+          },
+          { "type": "text", "text": " determines the practical sizing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing the tank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The CIRIA C625 method sizes the tank for 5 to 10 percent of annual demand as buffer capacity. For 36,500 litres annual WC demand and 30,000 litres annual yield: daily demand is around 100 litres, daily supply varies by season. A tank of 3,000 to 5,000 litres provides 30 to 50 days of buffer at 100 litres per day. Larger tanks do not improve yield; they only improve resilience in a dry spell. For most UK households a 3,000 to 5,000-litre tank is optimal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Key components" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Underground polyethylene or concrete tank with inspection hatch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "first-flush-diverter" } }],
+                "text": "first flush diverter"
+              },
+              { "type": "text", "text": " on each downpipe connected to the tank." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Submersible pump in the tank to deliver water to the WC cisterns at mains pressure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mains backup supply with an air gap (non-return valve not sufficient; an air gap is required by WRAS) for periods when the tank is empty." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Separate pipework to all WC cisterns: a dedicated circuit, clearly labelled, with no connection to the mains supply." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building Regs notification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A rainwater harvesting system connected to WC cisterns must be notified to Building Control under Part G before installation. The key requirement is the air gap between the mains backup supply and the rainwater circuit to prevent backflow. A Gas Safe or WIAPS-registered plumber must install and certify the mains connection and backflow prevention device." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Payback reality" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At a 2025 UK average mains water cost of around 0.15 pounds per cubic metre, 30,000 litres of rainwater saves around 4.50 pounds per year. Installation cost: 3,000 to 5,000 pounds installed. Payback: 600 to 1,100 years at current water rates. The financial case does not work for most UK households at current water prices. The case for installing is environmental (reducing mains demand) or preparatory (water scarcity in some areas is increasing). Some water companies offer grants; check your water company's current scheme." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pump running but no water to cisterns" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the tank level via the inspection hatch. If the tank is low, the system has switched to mains backup; this is normal operation. If the tank is not empty and no water is delivered, check the pump non-return valve and the inline filter above the pump." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

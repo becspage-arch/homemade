@@ -1,0 +1,159 @@
+{
+  "slug": "internal-wall-insulation-one-room-pattern",
+  "title": "Insulating one room of a Victorian terrace from the inside",
+  "subtitle": "Fitting 50 mm PIR board and plasterboard to a solid external wall",
+  "excerpt": "Internal wall insulation on a solid brick wall is a room-by-room job that loses 50 to 100 mm of floor area in exchange for a wall U-value that drops from 2.1 to around 0.35 W/m²K. This guide covers the installation of a 47 mm PIR board bonded with adhesive and finished with a 12.5 mm plasterboard skim coat.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Part L1B (2022) for the retained solid wall target of 0.30 W/m²K. BRE Information Paper IP 1/06 on internal wall insulation. Historic England guidance on insulation in traditional buildings for condensation risk management.",
+  "approximateCostGbp": 800,
+  "paybackYears": 15,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "silicone-sealant-gun", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid insulation board. Offers a higher thermal resistance per millimetre than mineral wool or EPS, making it useful where space is limited."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane installed on the warm side of insulation to limit the movement of water vapour through the construction and prevent interstitial condensation."
+    },
+    {
+      "slug": "interstitial-condensation",
+      "term": "Interstitial condensation",
+      "definition": "Condensation that forms within the structure of a wall or roof rather than on its surface, when warm moist air migrates into the construction and reaches the dew point."
+    }
+  ],
+  "techniqueSlugs": ["solid-wall-insulation-comparison", "vapour-control-layers-explained"],
+  "criticalTechniques": ["vapour-control-layers-explained"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Solid brick walls built before 1920 are the biggest single source of heat loss in Victorian terraces: a 215 mm solid brick wall has a U-value of around 2.1 W/m²K. Adding 47 mm of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
+          { "type": "text", "text": " (thermal conductivity 0.022 W/mK) reduces the composite U-value to approximately 0.35 W/m²K. For a 3.5 m by 2.4 m external wall in a living room, the saving in a typical winter is around 300 to 400 kWh per year, worth about 18 to 24 pounds at gas rates. The cost in floor area is 60 mm around the room perimeter." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Internal wall insulation on a solid brick wall creates a risk of " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interstitial-condensation" } }], "text": "interstitial condensation" },
+              { "type": "text", "text": " if the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+              { "type": "text", "text": " is not installed correctly. Tape all joints and perimeter edges. Any gap in the VCL allows warm moist air to migrate behind the board and condense on the cold brick face." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials for one room" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "47 mm foil-faced PIR boards. The foil facing acts as a vapour barrier on the warm side; tape all joints to complete the VCL." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "12.5 mm plasterboard, taped and skimmed or finished with direct skim coat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continuous bead of acoustic sealant around the full perimeter of each board at the junction with the ceiling, floor, and side walls." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drylining adhesive (dot and dab or Tilebond-type) for bonding boards to masonry." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "PIR boards contain an isocyanate blowing agent and should be cut with a fine-toothed saw or score-and-snap. Wear a dust mask rated FFP2 or better and eye protection when cutting. The foil facing is sharp at cut edges. Keep cutting tools sharp; blunt tools compress the board and close the cells at the cut face, reducing the achieved thermal resistance." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation: step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove skirting boards and any electrical face plates on the wall to be insulated. Mark the final board face on the floor and ceiling using a chalk line: this is the finished plane of the insulation system and everything else is set from it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply adhesive to the brick face in a dot-and-dab or full-bed pattern. Press the PIR board onto the wall, checking for level. The board must be plumb regardless of the wall behind it; use packers at the base where the floor is not level." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all board joints and the perimeter edges with foil vapour-barrier tape. This completes the VCL. Any penetration through the board face (for a socket backbox, a cable, or a fixing) must be sealed on both faces of the penetration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a continuous bead of acoustic mastic sealant around the perimeter before fitting the plasterboard. The mastic seals the junction between the insulation system and the adjacent walls, ceiling, and floor." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bond the plasterboard onto the PIR board face using compatible adhesive or a dot-and-dab method. Skim coat and re-fix skirting boards at the new position." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dealing with floor and ceiling junctions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The junction where the wall meets the floor and ceiling is the most common location for condensation problems and for VCL failures. At the floor, return the VCL tape under the skirting board and tape to the floor screed or boards. At the ceiling, tape the VCL to the ceiling plasterboard with a 50 mm overlap. Where the floor is suspended timber, the insulation board should not extend below the floor level; the floor void must remain ventilated." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Done well, the PIR layer is plumb and flat, all joints are taped, the perimeter is sealed with mastic, and sockets are repositioned in proprietary surface-mounted boxes rather than cut into the insulation layer. Done badly, the VCL has untaped joints and unsealed perimeters. Within one to two heating seasons, mould appears on the cold brick face behind the board where vapour has condensed. Removing the boards at that stage reveals a wet brick face." }
+        ]
+      }
+    ]
+  }
+}

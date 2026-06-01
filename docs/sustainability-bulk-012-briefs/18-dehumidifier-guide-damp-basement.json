@@ -1,0 +1,108 @@
+{
+  "slug": "dehumidifier-guide-damp-basement",
+  "title": "Choosing and running a dehumidifier in a damp basement or cellar",
+  "subtitle": "Heat pump versus refrigerant types, sizing for the space, and what target relative humidity means for condensation",
+  "excerpt": "A basement or cellar running above 70 percent relative humidity will grow mould on walls, wooden joists, and any stored items. A dehumidifier that runs correctly can hold the space below 60 percent without mechanical ventilation. Choosing the wrong type or the wrong capacity results in high running costs with little effect. This guide covers the two main dehumidifier technologies, how to size the unit, and what relative humidity to target.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British Standard BS 5250 on control of moisture in buildings. CIBSE Guide A Chapter 2 on moisture and humidity in buildings. NHS guidance on damp and mould in homes. Energy Saving Trust guidance on dehumidifiers. Manufacturer technical data for compressor and desiccant dehumidifier performance curves.",
+  "approximateCostGbp": 250,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "humidity-meter", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "relative-humidity",
+      "term": "Relative humidity",
+      "definition": "The percentage of water vapour in the air relative to the maximum the air can hold at that temperature. Above 70 percent relative humidity, mould growth accelerates on porous surfaces. Below 40 percent, air feels dry and causes discomfort."
+    },
+    {
+      "slug": "cop-dehumidifier",
+      "term": "COP (dehumidifier)",
+      "definition": "Coefficient of performance for a dehumidifier: litres of water extracted per kilowatt-hour of electricity consumed. A heat pump dehumidifier achieves 2.5 to 4.0 L/kWh. A refrigerant-only type achieves 1.5 to 2.5 L/kWh."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A basement at 70 percent " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "relative-humidity" } }],
+            "text": "relative humidity"
+          },
+          { "type": "text", "text": " grows mould on any surface below the dew point. The dew point at 15 degrees Celsius and 70 percent RH is around 9 degrees Celsius. A north-facing basement wall in winter will be at 8 to 10 degrees Celsius on the inner face: the wall surface is at dew point and mould grows. Reducing RH to 55 percent moves the dew point down to 5.5 degrees Celsius and removes the condensation problem without requiring structural intervention." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Heat pump type versus refrigerant-only type" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat pump (compressor) dehumidifiers: work best above 15 degrees Celsius. The coil surface cools below the dew point, condenses moisture, and returns the air warmed by the compressor heat. " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop-dehumidifier" } }],
+                "text": "COP"
+              },
+              { "type": "text", "text": " 2.5 to 4.0 L/kWh. Efficiency falls sharply below 12 degrees Celsius; the coil ices over below 5 degrees Celsius and the unit defrost cycle removes the moisture gain." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Desiccant dehumidifiers: use a rotating drum of silica gel to absorb moisture, then heat the drum to release the moisture into a condenser coil and then into the collection tank. They work at temperatures down to minus 5 degrees Celsius and extract at lower ambient humidity levels. COP 0.8 to 1.5 L/kWh. They are less efficient but work in cold and unheated spaces." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sizing for the space" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dehumidifier capacity is rated in litres per 24 hours at a specific test condition (typically 30 degrees Celsius and 80 percent RH). Real basement conditions in the UK are 12 to 18 degrees Celsius and 70 to 80 percent RH in summer. At these conditions, a rated 20 L/day compressor unit actually extracts around 8 to 10 L/day. For a 40 m² basement at 12 degrees Celsius and 80 percent RH, a 20 L/day rated compressor unit is the minimum; a 30 L/day rated unit is better." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the target and running cost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the dehumidifier humidity control to 55 percent. It will run until the space reaches 55 percent RH then stop. In a sealed basement this typically takes 4 to 8 hours on first run. Thereafter the unit runs intermittently to hold the level. A 400 W compressor dehumidifier running 4 hours per day uses 0.4 x 4 x 365 = 584 kWh per year: around 158 pounds. A continuous drainage hose to a floor drain or pump-out system avoids the need to empty a collection tank daily." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Dehumidifier runs continuously but humidity does not drop" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The moisture source is larger than the extraction rate. Check for liquid water entry (rising damp through the floor slab, water through a crack), not just condensation. A dehumidifier cannot keep pace with active water ingress." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

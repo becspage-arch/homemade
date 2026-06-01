@@ -1,0 +1,142 @@
+{
+  "slug": "cold-bridge-lintel-boxing-insulation",
+  "title": "Boxing in and insulating an exposed steel lintel",
+  "subtitle": "Eliminating the thermal bridge at an exposed steel or concrete lintel with PIR board and a plasterboard box",
+  "excerpt": "A steel or concrete lintel above an opening conducts heat from inside to outside at several times the rate of the surrounding wall. The result is a cold strip above windows and doors, condensation on the surface in cold weather, and an ongoing heat loss that is disproportionate to the lintel's area. Boxing in the lintel with PIR board and plasterboard takes a day and costs around 100 to 200 pounds in materials.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Report BR 443 on thermal bridging in building constructions. CIBSE Guide A Chapter 3 on psi-values and linear thermal bridging. gov.uk Building Regulations Part L (2022) on thermal bridging. MarmoxBoard technical data sheets for PIR board in internal applications.",
+  "approximateCostGbp": 150,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "filling-knife-100mm", "isOptional": false },
+    { "slug": "stanley-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone where heat flows faster than through the surrounding construction. Structural elements like lintels, columns, and joist ends that span the insulation layer create thermal bridges."
+    },
+    {
+      "slug": "psi-value",
+      "term": "Psi-value",
+      "definition": "The linear thermal transmittance of a thermal bridge, measured in W/m·K. A steel lintel across a 1 m opening with a psi-value of 0.5 W/m·K loses 0.5 W for every degree of temperature difference, year-round."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A typical galvanised steel lintel above a 900 mm-wide external doorway has a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "psi-value" } }],
+            "text": "psi-value"
+          },
+          { "type": "text", "text": " of 0.4 to 0.8 W/m·K. Over an 8-month heating season at an average temperature difference of 10 degrees Celsius, a 1 m lintel with a psi-value of 0.6 W/m·K loses around 170 kWh: roughly 10 pounds at gas rates. A house with six exposed lintels loses around 60 pounds per year purely through those bridged sections. Boxing them in reduces the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " contribution by 60 to 80 percent." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you'll need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "50 mm PIR insulation board, foil-faced both sides (one sheet 2400 x 1200 mm covers four standard window-head lintels)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "12.5 mm plasterboard for the box faces (two sheets standard)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foil tape for all PIR board joints." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plasterboard adhesive (dot and dab) or furring strips with plasterboard screws." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Joint tape and jointing compound to skim the visible joints." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The build" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the exposed lintel face: length, depth from wall face, and height of the visible steel or concrete. Note the positions of any electrical back boxes above the window." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut PIR board to wrap the underside and two sides of the lintel. For a simple head lintel, this is three pieces: one horizontal soffit piece and two short vertical returns. Tape all joints with foil tape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix the PIR board to the lintel using non-conductive fixing plugs or construction adhesive. Avoid metal fixings that project through the insulation and re-introduce a bridge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut plasterboard to cover the PIR faces. Fix by dot-and-dab adhesive to the foam face, or by screwing through the PIR into timber furring strips fixed to the wall at each side of the lintel box." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill, tape, and skim the joints between the new plasterboard box and the existing wall plaster. Sand when dry. Paint to match." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Commissioning check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On the first cold day after decoration, hold your hand close to the boxed lintel area. It should feel similar in temperature to the surrounding wall. If it still feels noticeably cool, check for gaps in the PIR board layer, particularly at the junction with the wall and around any electrical conduits." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Condensation still appears on the boxed area" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The PIR layer has a gap, usually at the junction with the window frame or the wall return. Remove the plasterboard at the corner, check for an untaped gap, and refit with foil tape and adhesive." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

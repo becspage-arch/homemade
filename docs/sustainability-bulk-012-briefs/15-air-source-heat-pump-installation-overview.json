@@ -1,0 +1,100 @@
+{
+  "slug": "air-source-heat-pump-installation-overview",
+  "title": "What an air source heat pump installation involves",
+  "subtitle": "The survey, approvals, and commissioning process a homeowner navigates",
+  "excerpt": "An air source heat pump installation is a multi-week process involving a heat loss survey, MCS design, planning permission in some cases, a G99 or G98 electrical connection notification, and a commissioning visit with SAP calculations. Understanding the sequence helps homeowners plan realistically and know what to expect at each stage.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS (Microgeneration Certification Scheme) MCS 007 heat pump installation standard. gov.uk planning guidance on permitted development rights for air source heat pumps. Boiler Upgrade Scheme (BUS) eligibility guidance for ASHP. CIBSE CP1 Heat Networks code of practice for heat pump commissioning.",
+  "approximateCostGbp": 10000,
+  "paybackYears": 10,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme. A quality standard for renewable energy and heat pump installers. An MCS-certified installation is required to claim the Boiler Upgrade Scheme grant."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The ratio of heat output to electrical energy input over a full heating season. A higher SCOP means the heat pump delivers more heat per unit of electricity consumed."
+    },
+    {
+      "slug": "boiler-upgrade-scheme",
+      "term": "Boiler Upgrade Scheme",
+      "definition": "A UK government grant scheme that pays 7,500 pounds toward the installation of an air source heat pump, subject to an EPC with no outstanding cavity wall or loft insulation recommendations."
+    }
+  ],
+  "techniqueSlugs": ["ashp-vs-gshp", "ashp-winter-performance-and-cop", "understanding-the-boiler-upgrade-scheme"],
+  "criticalTechniques": ["ashp-vs-gshp"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An air source heat pump replaces a gas or oil boiler as the primary heat source for space heating and hot water. The heat pump extracts heat from outdoor air (even at temperatures down to minus 20 degrees Celsius) and concentrates it for distribution around the house. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }], "text": "SCOP" },
+          { "type": "text", "text": " of a well-specified installation in a typical UK climate is 2.5 to 3.5: each unit of electricity produces 2.5 to 3.5 units of heat. At current electricity rates of 27p per unit, that heat costs 8 to 11p per kWh, compared with 6p for gas. This is more expensive per kWh in 2025/26, but the gap is closing as the carbon price on gas rises." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The installation process" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat loss survey: the installer measures the room-by-room heat loss of the house using room dimensions, wall and window areas, U-values, and the design outdoor temperature for the location. This produces the peak heat demand in kW, which determines the heat pump size. Oversizing by more than 20 percent causes cycling losses; undersizing means the heat pump cannot maintain comfort in the coldest weather." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "MCS design: an " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }], "text": "MCS" },
+            { "type": "text", "text": "-registered installer prepares a design package. It covers the heat pump model and siting, the refrigerant pipe route, the cylinder specification, the target flow temperature, and an emitter check." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Permitted development check: in England, a domestic ASHP qualifies for permitted development if it is at least 1 m from the boundary, the refrigerant charge is below 200 kg CO2 equivalent, and no heat pump has been installed at the property before. Scotland, Wales, and Northern Ireland have separate rules. Listed buildings always require consent." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "EPC check for " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "boiler-upgrade-scheme" } }], "text": "Boiler Upgrade Scheme" },
+            { "type": "text", "text": " grant: the BUS grant requires an EPC issued in the last 10 years with no outstanding recommendations for loft insulation or cavity wall insulation. If the EPC has those recommendations, they must be completed and the EPC re-issued before claiming." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Installation day or days: the outdoor unit is mounted on a base pad or wall bracket. The refrigerant circuit is run between the outdoor unit and the indoor hydronic unit (where heat is transferred to the heating water). The hot water cylinder is connected to the hydronic circuit. The controls are configured. A typically-sized domestic installation takes one to three days." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Commissioning: the installer tests a full heating and hot water cycle. They set the weather compensation, check the refrigerant charge, and hand over the user manual and MCS certificate." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The emitter check" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A gas boiler heats water to 70 to 80 degrees Celsius. A heat pump runs at 45 to 55 degrees Celsius flow temperature for optimal efficiency. Radiators sized for a boiler at 70 degrees Celsius emit roughly 60 percent of their rated output at 45 degrees Celsius. The emitter check calculates whether the existing radiators can deliver enough heat to each room at the lower flow temperature. Rooms where they cannot need larger radiators or supplementary emitters. This is not a reason to avoid a heat pump; it is a design step." }
+        ]
+      }
+    ]
+  }
+}

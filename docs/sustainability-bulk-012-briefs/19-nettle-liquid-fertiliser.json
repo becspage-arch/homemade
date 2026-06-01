@@ -1,0 +1,127 @@
+{
+  "slug": "nettle-liquid-fertiliser",
+  "title": "Making nettle liquid fertiliser",
+  "subtitle": "Steeping fresh nettles for 2 to 4 weeks to produce a nitrogen-rich plant feed, and managing the smell",
+  "excerpt": "Nettle liquid is a simple, free plant fertiliser made from steeping fresh nettles in water. The resulting liquid is nitrogen-rich, with some potassium and iron. It is particularly effective as a leaf feed for brassicas and leafy greens during active growth. The smell is significant and must be managed. This guide covers the making process, dilution ratios, and how nettles compare to comfrey as a plant food.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Royal Horticultural Society guidance on homemade liquid fertilisers. ADAS nutrient management guide. Thompson and Morgan guide to liquid plant feeds. Garden Organic (HDRA) technical bulletin on compost liquids.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "bucket-10l", "isOptional": false },
+    { "slug": "spray-bottle-500ml", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nitrogen",
+      "term": "Nitrogen (N)",
+      "definition": "The primary macronutrient that drives leafy growth in plants. Plants deficient in nitrogen show yellowing of older leaves first. Nettle liquid is nitrogen-rich and most useful for leafy crops, brassicas, and lawns."
+    },
+    {
+      "slug": "npk-ratio",
+      "term": "NPK ratio",
+      "definition": "The proportion of nitrogen (N), phosphorus (P), and potassium (K) in a fertiliser. Nettles give roughly N:3, P:0.5, K:1 after steeping. Comfrey gives roughly N:0.7, P:0.2, K:3.3, making it better for fruiting crops."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fresh nettles are high in " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nitrogen" } }],
+            "text": "nitrogen"
+          },
+          { "type": "text", "text": " because the plant grows fast and fixes atmospheric nitrogen in its leaves. Cutting nettles in spring and early summer, when they are actively growing, gives the best nitrogen concentration. Autumn nettles are lower in nitrogen as the plant draws nutrients back into the roots before die-back." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the liquid" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill a 10-litre bucket with fresh-cut nettles, packed but not tightly compressed. Leaves and stems; roots excluded." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover with water and weigh the nettles down with a stone or brick to keep them submerged. A lid reduces smell but allow some gas to escape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave for 2 to 4 weeks, stirring every few days. The liquid turns dark brown and smells strongly of rotting vegetation. At 2 weeks it is usable; at 4 weeks it is more concentrated." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strain out the plant material (it goes on the compost heap) and store the liquid in a lidded container." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dilution and application" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "npk-ratio" } }],
+            "text": "NPK ratio"
+          },
+          { "type": "text", "text": " of nettle liquid varies but is broadly N:3, P:0.5, K:1. Dilute 1 part liquid to 10 parts water before applying. As a root drench around brassicas and leafy greens, apply once every two weeks during active growth. As a foliar feed (diluted 1:20), spray on leaves in the morning so they dry before evening." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Nettles versus comfrey" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Nettle liquid is better for leafy crops (brassicas, spinach, chard, lawn) because of its higher nitrogen. Comfrey liquid is better for fruiting and root crops (tomatoes, potatoes, squash) because of its higher potassium. For a kitchen garden with both types, use nettle liquid on the leaves and comfrey liquid on the fruits." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Managing the smell" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The smell is the main drawback. Site the bucket away from the house. A lid with a small gap, rather than an open bucket, reduces odour while allowing the fermentation gases to escape. Adding a small amount of effective microorganism (EM) culture or live yoghurt at the start shifts the fermentation towards lactic acid bacteria, which smell less than putrefactive bacteria." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Plants showing yellow leaves after nettle liquid feed" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the dilution: undiluted nettle liquid will scorch roots and leaves due to salt concentration. Always dilute to at least 1:10 before applying." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

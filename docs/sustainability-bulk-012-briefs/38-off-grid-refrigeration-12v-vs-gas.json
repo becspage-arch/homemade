@@ -1,0 +1,132 @@
+{
+  "slug": "off-grid-refrigeration-12v-vs-gas",
+  "title": "Off-grid refrigeration: 12V compressor versus gas absorption",
+  "subtitle": "Comparing efficiency, reliability, and running costs for refrigeration in cabins, narrowboats, and remote properties",
+  "excerpt": "An off-grid property or boat that needs reliable refrigeration faces a choice between 12V compressor fridges (similar to domestic fridges but efficient at low voltage) and gas absorption fridges (operate on LPG without any electricity). The choice depends on the power source available, ambient temperature, and how much the fridge is used while the installation is unattended.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "12 Volt Planet technical guides on 12V refrigeration. Engel and Dometic 12V fridge technical specifications. Thetford gas absorption fridge installation manual. Victron Energy guide on DC load sizing for off-grid systems. Practical Boat Owner guidance on boat refrigeration.",
+  "approximateCostGbp": 500,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "multimeter-digital", "isOptional": false },
+    { "slug": "battery-hydrometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coefficient-of-performance-fridge",
+      "term": "Coefficient of performance (COP) — fridge",
+      "definition": "The ratio of heat removed from the fridge interior to the electrical energy consumed. A COP of 1.5 means 1 kWh of electricity removes 1.5 kWh of heat from the box. Modern 12V compressor fridges achieve COP of 1.5 to 2.5. Gas absorption fridges have a lower effective COP when expressed in electricity terms."
+    },
+    {
+      "slug": "absorption-refrigeration",
+      "term": "Absorption refrigeration",
+      "definition": "A refrigeration cycle that uses heat rather than mechanical compression to drive the refrigerant cycle. Can be powered by LPG, 230V electricity, or DC electricity. Moving parts are absent: no compressor. Suitable for unattended operation; less efficient than compressor cooling."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 12V compressor fridge for a cabin or narrowboat draws 30 to 50 W when the compressor runs and nothing when the thermostat is satisfied. Average draw for a 50-litre fridge in a 20 degrees Celsius ambient: approximately 0.4 to 0.6 Ah per hour (10 to 14 Ah per day). An " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "absorption-refrigeration" } }],
+            "text": "absorption refrigeration"
+          },
+          { "type": "text", "text": " fridge on LPG uses around 180 to 250 g of LPG per day for the same 50-litre box. At UK LPG bulk prices, that is roughly 0.30 to 0.45 pounds per day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "12V compressor fridge advantages" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Higher " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "coefficient-of-performance-fridge" } }],
+                "text": "COP"
+              },
+              { "type": "text", "text": ": more cooling per unit of energy. If the energy is solar, this matters." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Better in hot weather: above 25 degrees Celsius, absorption fridges lose cooling capacity fast. Compressor fridges hold their performance." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Works on any angle: suitable for vehicles and boats." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No gas: eliminates LPG supply logistics and fire risk." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gas absorption fridge advantages" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No electricity needed on LPG: the right choice for a cabin with no solar and little battery storage." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "No moving parts: theoretically infinite service life. A well-maintained absorption fridge lasts 30 to 40 years." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Silent operation: no compressor noise." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Multi-fuel: most absorption fridges run on LPG, 230V, or 12V. Easy to switch between power sources." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The decision" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a cabin with a 400 Wp solar array and a 200 Ah lithium battery: a 12V compressor fridge draws 12 to 15 Ah per day in cool weather. The solar array will cover this easily in summer and on bright winter days. For a property with no solar and grid connection only by generator: a gas absorption fridge on LPG with 12V backup is more practical. For a narrowboat that is frequently blacked out and heated by diesel: LPG is already on board; an absorption fridge running on LPG eliminates the 12V load." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Gas absorption fridge not cooling despite gas burning" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The boiler tube may have residue blocking it, or the ammonia solution may have migrated. Invert the fridge for 4 hours (place it upside down) then return it to upright and reconnect the gas. This redistributes the ammonia. If it still does not cool, the boiler tube needs cleaning by a qualified engineer or replacement." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

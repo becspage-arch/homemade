@@ -1,0 +1,109 @@
+{
+  "slug": "green-manure-cover-crop-cycling",
+  "title": "Green manures and cover crops as compost inputs",
+  "subtitle": "Selecting, timing, and cutting cover crops to maximise nitrogen contribution to compost or soil",
+  "excerpt": "Green manures (crops grown specifically to be cut and incorporated) add nitrogen and organic matter to the soil or compost heap. They work as a living compost in place, or as a high-nitrogen input to an existing compost system. The choice of species, the cutting time, and the method of incorporation determine how much nitrogen benefit is realised.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Royal Horticultural Society guidance on green manures. Garden Organic guidance on cover crops and soil fertility. NIAB research on green manure nitrogen availability. Rothamsted Research bulletins on nitrogen fixation from leguminous cover crops. Charles Dowding guidance on green manures in a no-dig system.",
+  "approximateCostGbp": 10,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "garden-fork", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nitrogen-fixation",
+      "term": "Nitrogen fixation",
+      "definition": "The process by which certain bacteria, typically Rhizobium in root nodules of legumes, convert atmospheric nitrogen gas to ammonia that plants can use. Leguminous green manures like clover and winter vetch fix nitrogen from the atmosphere into the soil."
+    },
+    {
+      "slug": "c-to-n-ratio",
+      "term": "C:N ratio",
+      "definition": "The ratio of carbon to nitrogen in an organic material. Young, leafy green manures have a low C:N ratio (high nitrogen) and decompose quickly. Mature, stemmy materials have a high C:N ratio and decompose slowly. For hot composting, the ideal input mix is around 25:1 to 30:1."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The nitrogen benefit from a green manure depends almost entirely on timing. Young, leafy growth cut before flowering has a low " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "c-to-n-ratio" } }],
+            "text": "C:N ratio"
+          },
+          { "type": "text", "text": " (high nitrogen) and decomposes quickly, releasing nitrogen within 2 to 4 weeks. The same plants left to set seed and dry become high-carbon material with slow breakdown and slow nitrogen release. Cut early for maximum benefit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Species and their roles" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Winter vetch (Vicia sativa): winter-hardy legume; fixes " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nitrogen-fixation" } }],
+                "text": "nitrogen"
+              },
+              { "type": "text", "text": ". Sow in autumn, cut in spring before it flowers. Yield: 80 to 150 kg N per hectare. Best as a pre-brassica bed preparer." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Red clover: nitrogen-fixing perennial for bare areas left fallow for 12+ months. Cut repeatedly through the summer and add cuttings to the compost heap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mustard (Sinapis alba): fast-growing, non-fixing; mainly organic matter. Frost-kills, so it incorporates itself. Does not fix nitrogen but adds bulk and suppresses weeds. Has biofumigant properties (glucosinolates) that suppress some soil diseases." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Phacelia (Phacelia tanacetifolia): fast-growing, non-fixing; excellent bee forage if left to flower. Cut before seed set. Fine, feathery leaves decompose quickly when added to a compost heap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ryegrass (annual): high biomass and deep roots. Not nitrogen-fixing. Better used for organic matter addition and soil structure than nitrogen. Requires cutting before maturity to avoid becoming a problem grass." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Incorporation methods" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For no-dig beds: cut and drop the green manure on the bed surface, do not dig it in. It acts as a mulch-compost on the surface, slowly incorporated by worms. Add a thin layer of compost or cardboard over the top if the cut material is very bulky. For compost heap input: cut and add in alternating layers with carbon-rich material (straw, cardboard, dried leaves) at the standard 3:1 carbon-to-green ratio." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Mustard did not die in the frost" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Mustard is reliably frost-killed in most UK winters, but mild autumns may allow it to survive into December before dying back. If it survives to spring, cut before it sets seed. Mustard that self-seeds becomes a persistent weed." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

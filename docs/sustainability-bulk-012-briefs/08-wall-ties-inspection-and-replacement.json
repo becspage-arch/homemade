@@ -1,0 +1,124 @@
+{
+  "slug": "wall-ties-inspection-and-replacement",
+  "title": "Inspecting and replacing corroded cavity wall ties",
+  "subtitle": "How to identify failing ties, when to call a structural engineer, and how stainless retrofit ties are installed",
+  "excerpt": "Cavity wall ties made of galvanised mild steel in buildings from 1920 to the mid-1980s can corrode and expand, causing horizontal cracking in mortar joints and eventually displacement of the outer leaf. Corroded ties are a structural issue first and a thermal issue second. This guide covers the visual signs, the endoscope inspection, when to engage a structural engineer, and how stainless steel remedial ties are drilled in.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Good Repair Guide GRG 29 on wall tie failure. RICS guidance note on cavity wall tie failure. Helifix technical guidance on remedial tie installation. gov.uk Historic England guidance on wall tie replacement in traditional buildings.",
+  "approximateCostGbp": 1200,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "sds-drill", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cavity-wall",
+      "term": "Cavity wall",
+      "definition": "A wall built in two separate masonry leaves with an air gap between them. Wall ties span the gap to tie the two leaves together structurally. Without functional ties, the outer leaf can delaminate and lean outward."
+    },
+    {
+      "slug": "joist-spread",
+      "term": "Mortar joint cracking pattern",
+      "definition": "Horizontal cracks in mortar joints at regular vertical intervals in an outer brick leaf are the classic sign of wall tie corrosion. The corroding tie expands and lifts the mortar joint above it. Intervals correspond to the row spacing of the original ties."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a standard " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cavity-wall" } }],
+            "text": "cavity wall"
+          },
+          { "type": "text", "text": " built between 1940 and 1980, the original ties are often 3 mm mild steel with a light galvanising. In a 50 to 75 mm cavity they span from inner to outer leaf. Moisture in the cavity corrodes the steel. Rust expands to five to eight times the original volume, lifting the mortar joint above it. The signs are visible and distinctive before structural failure occurs." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Visual signs of tie corrosion" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Horizontal cracks in the mortar joints of the outer leaf, running at regular vertical intervals of 450 to 600 mm. The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joist-spread" } }],
+                "text": "mortar joint cracking pattern"
+              },
+              { "type": "text", "text": " does not follow the brick joints; it runs horizontally and continuously." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The outer leaf bowing or leaning away from the wall when viewed from a distance." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rust staining on the outer face at specific joint levels." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Endoscope inspection and structural engineer assessment" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the visual signs suggest tie corrosion, the next step is an endoscope inspection. A surveyor drills a small hole in the mortar joint and inserts a flexible camera to view the tie. If ties are corroding and the outer leaf has moved by more than 10 mm, call a structural engineer before any remedial work. Tie replacement is a structural repair. The order of work matters: fitting new ties into a displaced leaf while removing the old ones needs temporary propping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stainless steel remedial tie installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remedial ties are driven through the outer brick into the inner leaf without removing any brickwork. The process: drill a 6 mm pilot hole; drive a helical stainless steel tie through the hole with an SDS drill; the resin or expanding head locks the tie in the outer brick while the other end grips the inner block. Typical spacing is one tie per 900 mm of wall width in a staggered grid. The original ties are left in place: removing them risks further disturbance to a displaced leaf." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The thermal consequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tie replacement often coincides with cavity fill. If the original ties are corroded, the cavity has likely had some moisture. A specialist surveyor will advise whether cavity fill is appropriate at the same time as tie replacement, or whether the cavity should remain open to dry out. A dry and undamaged cavity can be filled with blown mineral wool or cellulose after the tie work is complete and inspected." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Insurance company flags tie corrosion on a survey" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Get a specialist wall tie survey from a CSSW (Certified Specialist in Structural Waterproofing) or structural engineer. A single surveyor's mention in a mortgage valuation is not the same as a specialist wall tie report." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

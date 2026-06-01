@@ -1,0 +1,111 @@
+{
+  "slug": "floor-insulation-below-service-runs",
+  "title": "Insulating a suspended timber floor where pipes and cables run in the void",
+  "subtitle": "Fire-stopping, pest-proofing, and insulation strategy when services occupy the underfloor void",
+  "excerpt": "A suspended timber floor void with heating pipes, electrical cables, or water supply pipes running through it cannot be simply filled with insulation. The services must remain accessible, the cables must not overheat, and the fire compartmentation of the void must be maintained. This guide covers the detailing for insulating around services, the materials that work, and what to check before and after the work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part B (Fire Safety) for compartmentation requirements. BS 7671 on electrical installations and cable current-carrying capacity in different environments. BRE Information Paper on suspended floor insulation. NHBC Standards on floor insulation below DPC level. EST guidance on underfloor insulation.",
+  "approximateCostGbp": 1500,
+  "paybackYears": 8,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "staple-gun-electric", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of heat flow through a building element per unit area per degree of temperature difference. Measured in W/m²·K."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane that limits vapour diffusion. In a suspended floor, the VCL goes on the warm side of the insulation, against the underside of the floorboards, to prevent moisture from the subfloor void condensing in the insulation."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A suspended timber floor without insulation has a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": " of around 0.7 to 1.0 W/m²·K depending on the floorboard thickness and air exchange rate in the void. Insulating to 200 mm of mineral wool between joists drops this to 0.15 to 0.18 W/m²·K. For a 50 m² ground floor, that saves around 700 to 1,000 kWh per year. The presence of services in the void changes the approach but does not prevent the work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assessing the services" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before insulating, document what runs through the void. Water supply pipes: insulate separately with pipe lagging before fitting the floor insulation, then leave a clear 50 mm air gap below the board insulation in the zone where the pipes run. Heating pipes: as above. Electrical cables: check whether the cables are already enclosed in conduit. Bare cables embedded in mineral wool must be de-rated; if load calculation shows a problem, fit the cables in conduit before insulating, or re-route them above floor level." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The installation approach" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit rodent mesh or treated timber barriers at the perimeter sleeper walls and around any pipe or cable penetrations to keep pests out of the void." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In service zones: fit pipe lagging to all pipes. Leave the cable zone clear or fit cables in conduit. Do not block the cross-ventilation path through the void." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Between joists in non-service areas: fit mineral wool batts friction-fit between joists, supported by netting stapled to the joist faces, or by rigid support battens at 500 mm intervals. The insulation sits against the underside of the floorboard. Do not compress the batts." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " on the warm side of the insulation (the floorboard face side). Tape all joints with vapour tape." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fire-stop all pipe and cable holes where they pass through compartment walls. Use intumescent foam or mineral wool fire stop." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Pipes froze in the first winter after insulation" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The insulation has been fitted below the pipes rather than above them, leaving the pipes in the cold void. The correct position is insulation between the joists with the pipes above (warm side). If access is difficult, fit individual pipe lagging as a minimum." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "french-drain-and-rubble-soakaway",
+  "title": "Building a French drain and rubble soakaway for garden flooding",
+  "subtitle": "Sizing and digging a French drain to redirect surface water, with a perforated pipe or rubble soakaway at the outlet",
+  "excerpt": "A garden that floods after heavy rain loses growing time and risks structural damp at the house if water pools near the foundations. A French drain intercepts surface water and routes it to a soakaway or an outlet point away from the problem area. This guide covers site assessment, sizing, the materials, and what Building Regs require for soakaways near the property boundary.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document H (Drainage and Waste Disposal) on soakaways. CIRIA C153 on the design and use of soakaways. BRE Digest 365 on soakaway design. Environment Agency guidance on sustainable drainage systems (SuDS).",
+  "approximateCostGbp": 500,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "spade", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "french-drain",
+      "term": "French drain",
+      "definition": "A trench filled with coarse aggregate (gravel or stone chippings) with or without a perforated pipe at the bottom, used to collect and redirect groundwater and surface runoff. Named after Henry Flagg French who popularised the design in 19th-century agricultural drainage."
+    },
+    {
+      "slug": "soakaway",
+      "term": "Soakaway",
+      "definition": "A pit or trench filled with coarse aggregate into which surface water drains and then infiltrates slowly into the surrounding soil. Approved Document H requires soakaways to be at least 5 m from any building and 2.5 m from the property boundary."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-drain" } }],
+            "text": "French drain"
+          },
+          { "type": "text", "text": " intercepts water at the surface before it can pool. The trench runs across the slope at the point where water accumulates, and routes it to a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soakaway" } }],
+            "text": "soakaway"
+          },
+          { "type": "text", "text": " or to a lower outlet point. The key design question is whether the soil at the soakaway location can absorb the water at the design storm rate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Site assessment: percolation test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dig a 300 mm x 300 mm test hole at the proposed soakaway location to the planned soakaway depth. Fill with water and allow to drain completely (first pass). Fill again and time how long it takes to drain from the 75 percent full mark to the 25 percent full mark. The percolation rate in litres per m² per hour determines whether a soakaway will work. Clay soils with percolation below 15 mm per hour are unlikely to work; the French drain must outlet to a ditch or a surface water drain instead." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The French drain trench" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the trench line: across the slope, 1 to 2 m above the waterlogged area. The trench runs to the soakaway or outlet point at the lowest convenient location." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dig 300 to 500 mm wide and 400 to 600 mm deep. Fall: minimum 1:200 (5 mm per metre) towards the outlet. Maintain consistent fall across the full length." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Line the trench with permeable landscape fabric to prevent silt ingress." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Option A (no pipe): fill entirely with 20 to 40 mm clean angular gravel. Cover with landscape fabric folded over and replace turf." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Option B (with pipe): lay a 100 mm perforated drain pipe at the bottom, perforations facing down. Surround with 20 mm gravel. Cover with landscape fabric and turf." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The rubble soakaway" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Dig a pit 1 m x 1 m x 1 m at the outlet point, at least 5 m from the house and 2.5 m from the boundary. Fill with clean brick rubble or 40 to 80 mm stone aggregate, wrapped in landscape fabric. The soakaway holds water temporarily and releases it into the surrounding soil over 24 to 48 hours. For large catchment areas, use a proprietary plastic soakaway crate (more effective void space per cubic metre than rubble)." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "French drain fills with water after heavy rain but does not drain" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The soakaway is in a clay layer that does not infiltrate. Check the percolation rate at the base of the soakaway. If poor, extend the French drain to a ditch, a watercourse, or a surface water drain (with the relevant authority's permission for the connection)." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

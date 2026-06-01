@@ -1,0 +1,118 @@
+{
+  "slug": "external-shutters-summer-overheating",
+  "title": "External shutters and blinds for summer overheating",
+  "subtitle": "Comparing roller shutters, external venetian blinds, and retractable awnings for reducing solar gain",
+  "excerpt": "External window shading reduces solar heat gain before it enters the building, which is five to seven times more effective at preventing overheating than internal blinds that trap the heat inside the glass. This guide covers the main product types, their effectiveness for different window orientations, the planning implications, and when the cost justifies the investment.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document O (Overheating) 2021. CIBSE TM52 on overheating risk assessment. Energy Saving Trust report on overheating in new homes. Which? guide to external window blinds and shutters. Planning Portal guidance on permitted development for shutters in England.",
+  "approximateCostGbp": 400,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solar-gain",
+      "term": "Solar gain",
+      "definition": "Heat entering a building through glazing as solar radiation. External shading blocks this before it enters; internal blinds trap it between the glass and the blind, where most of it still enters the room."
+    },
+    {
+      "slug": "g-value",
+      "term": "g-value",
+      "definition": "The proportion of incident solar radiation that passes through a window system (glass plus any shading) into the room. A lower g-value means less solar heat gain. No shading gives the glass's own g-value; external shutters can reduce the combined g-value to 0.1 or below."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An internal blind on a south-facing window stops perhaps 30 percent of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-gain" } }],
+            "text": "solar gain"
+          },
+          { "type": "text", "text": " from entering the room. An external roller shutter on the same window stops 80 to 90 percent. The difference matters when a room hits 28 degrees Celsius by 11 am in July and the only strategy at present is closing an internal blind and hoping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Product types and their effectiveness" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roller shutters (aluminium slat): the most effective. The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "g-value" } }],
+                "text": "g-value"
+              },
+              { "type": "text", "text": " of the closed shutter plus glass is typically 0.05 to 0.10. They also add security and can be manually operated or motorised. Cost per window: 250 to 500 pounds installed for a standard 1.2 x 1.5 m window." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External venetian blinds: adjustable angle lets you admit daylight while blocking direct sun. Effective g-value with blinds angled to reflect: 0.15 to 0.20. More expensive than roller shutters because of the motorised tracking system. Good for offices and south-facing rooms where daylight matters. Cost 400 to 800 pounds per window." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Retractable awnings: appropriate for French doors and bifold doors to a terrace. They project 2 to 3 m and shade a large area of glazing and the floor zone immediately inside. Wind sensor retraction is standard on quality units. Not suitable for exposed sites or upper floors." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fixed overhangs (masonry or timber): no moving parts, no maintenance, but sized for a specific latitude. A 600 mm overhang at window head height blocks direct south sun in England from mid-April to mid-August." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which orientations benefit most" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "South-facing: high priority. Shutters or a fixed overhang. East and west-facing: high priority in summer because morning and evening sun enters at low angle that a horizontal overhang cannot block. External shutters or venetian blinds are more effective than overhangs for east and west windows. North-facing: rarely an overheating problem in the UK; not a priority." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning permission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "External shutters and blinds are generally permitted development on domestic properties in England provided they do not protrude beyond the existing facade and do not project more than 1 m beyond the wall. Conservation areas and listed buildings require consent. Check with your local planning authority before ordering." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Shutter is effective but room still reaches 28°C by afternoon" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the west-facing windows. West sun in late afternoon enters at a low angle and can still overheat a room after the south shutter has done its work. Fit west shading as well." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

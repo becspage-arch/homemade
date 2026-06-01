@@ -1,0 +1,131 @@
+{
+  "slug": "radiator-bleeding-and-balancing",
+  "title": "Bleeding and balancing radiators",
+  "subtitle": "Removing air locks and adjusting lockshield valves so the system heats evenly",
+  "excerpt": "A radiator that is cold at the top but warm at the bottom is air-locked. Bleeding removes the trapped air and restores flow. A radiator that is much hotter than others in the same circuit needs balancing: the lockshield valve on its return side is partially closed to redirect hot water to radiators further from the boiler. Both tasks are straightforward and have an immediate effect on comfort and efficiency.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heating and Hotwater Industry Council (HHIC) guidance on radiator maintenance. Worcester Bosch technical guidance on system balancing. British Gas guidance on bleeding radiators. BSI BS EN 442 on radiators and convectors.",
+  "approximateCostGbp": 5,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "adjustable-spanner", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lockshield-valve",
+      "term": "Lockshield valve",
+      "definition": "The valve on the return (outlet) side of a radiator, usually covered by a plastic cap. It can be adjusted to restrict flow through the radiator. The flow side has the thermostatic radiator valve; the return side has the lockshield."
+    },
+    {
+      "slug": "delta-t",
+      "term": "Delta-T",
+      "definition": "The temperature difference between the flow and return of a heating circuit. A correctly balanced radiator on an 80/60 degree system shows a delta-T of around 20 K. A radiator that is too hot has a low delta-T; a cold radiator has a high delta-T."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Air accumulates in the top of radiators over time, particularly after a system refill or after any work on pipework. Bleeding takes two minutes per radiator and should be done at the start of each heating season." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Bleeding: the process" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the heating on and wait until all radiators are hot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify which radiators are cold at the top. Feel the whole surface: a warm bottom and cold top indicates air." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the heating off and wait 10 minutes for the system to stop pumping. Bleeding with the pump running can draw more air in." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold a cloth under the bleed valve (small square or slot at the top of one end of the radiator). Insert the bleed key and turn anticlockwise by a quarter turn. Air will hiss out. When water runs steadily, close the valve. Do not open more than a quarter turn; the valve can be damaged." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After bleeding all radiators, check the system pressure gauge on the boiler. Bleeding removes water as well as air. If pressure has dropped below 1 bar, repressurise via the filling loop to 1.2 to 1.5 bar." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Balancing: which radiators to adjust" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After bleeding, run the system for an hour. Radiators closest to the boiler will typically get hotter than those at the far end of the circuit. The correct adjustment is to restrict the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lockshield-valve" } }],
+            "text": "lockshield valve"
+          },
+          { "type": "text", "text": " on the near radiators to push more flow to the far ones." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Balancing: the delta-T method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open all lockshield valves fully by removing the plastic cap and turning the spindle anticlockwise until it stops. Record the starting position for each." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the system for an hour. Measure the flow temperature (the hot pipe into the radiator) and the return temperature (the pipe leaving the radiator). The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "delta-t" } }],
+                "text": "delta-T"
+              },
+              { "type": "text", "text": " should be around 10 to 20 K for a conventional boiler. The target delta-T for a heat pump is lower: 5 to 8 K." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For radiators with a very small delta-T (too much flow), close the lockshield valve by a quarter turn. Wait 20 minutes and measure again. Repeat until delta-T is in range." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "System needs bleeding every few weeks" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Repeated air entry usually means a small air leak into the system, often at a pump gland, an expansion vessel connection, or a bleed valve that has not sealed properly. A Gas Safe engineer should check for the air entry point." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

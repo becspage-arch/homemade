@@ -1,0 +1,125 @@
+{
+  "slug": "immersion-heater-element-replacement",
+  "title": "Replacing an immersion heater element",
+  "subtitle": "Draining the cylinder, removing the old element, and fitting a new one safely",
+  "excerpt": "An immersion heater element that has failed or scaled up can be replaced without replacing the entire hot water cylinder. The job involves isolating the electrical supply, draining the relevant section of the cylinder, unbolting the element flange, and fitting a new element with a fresh fibre or PTFE gasket seal.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "IET Wiring Regulations BS 7671:2018 Chapter 7.5 on electric heating and hot water. CIBSE Guide G on public health and plumbing. Building Regulations Part G (2022) on hot water safety for immersion heater temperature settings.",
+  "approximateCostGbp": 60,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "immersion-heater",
+      "term": "Immersion heater",
+      "definition": "An electric resistance heating element screwed into a hot water cylinder, used as a primary or backup heat source for domestic hot water."
+    },
+    {
+      "slug": "cylinder-thermostat",
+      "term": "Cylinder thermostat",
+      "definition": "A temperature-sensing device strapped to the outside of a hot water cylinder that controls the immersion heater or heating coil circuit, preventing the water from overheating."
+    }
+  ],
+  "techniqueSlugs": ["immersion-heater-timer-replacement", "solar-immersion-diverter-guide"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard copper hot water cylinder in a 1970s or 1980s house has an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "immersion-heater" } }], "text": "immersion heater" },
+          { "type": "text", "text": " element rated at 3 kW in a 2.25-inch BSP boss. Elements last 5 to 15 years. In hard water areas, limescale coats the element and reduces its efficiency. Eventually it burns through. A replacement element costs 15 to 30 pounds plus a couple of hours' work." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Immersion heaters are permanently wired to the electricity supply. Before any work, isolate the circuit at the consumer unit and test with a voltage tester or live-wire detector at the element terminal block. Do not rely on the adjacent switch alone. Failure to isolate the supply can cause fatal electric shock." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replacement element: match the boss size (usually 2.25 inch BSP), the element length (usually 11 inch for the lower element, 7 inch for the upper), and the kW rating. Incoloy elements resist scale better than copper in hard water areas." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A replacement fibre gasket or a PTFE sealing tape wrap for the thread. Reusing the old gasket risks a weeping joint." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An immersion heater spanner (a C-spanner with the correct peg pattern for the 2.25-inch BSP flange). A standard adjustable spanner does not grip the flange and will damage it." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Isolate the immersion heater circuit at the consumer unit. Lock out or tape over the MCB. Test for voltage at the terminal block inside the immersion heater cap. Drain the relevant section of the cylinder before unbolting the element: an element removed from a full cylinder will release the full stored volume (120 to 250 litres) into the airing cupboard floor. The cylinder drain connection (if fitted) is usually at the cylinder base or on the cold feed near the cylinder. If there is no drain valve, tie off the cold feed and drain from the hot taps." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain the cylinder to below the element boss level. The lower element (which heats the full cylinder volume) requires the cylinder to be substantially empty. The upper element (which heats only the top third) requires draining to just below the upper boss." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Disconnect the wiring from the element terminal block, noting which terminal carries line, neutral, and earth. Unscrew the immersion heater cap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Using the C-spanner, unscrew the element from the boss. Turn anti-clockwise when viewed from the face of the element. Elements can be very tight after years in service; heating the boss area briefly with a heat gun (never a naked flame near the cylinder insulation) eases removal." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean the boss thread. Fit the new gasket or apply PTFE tape to the element thread. Screw in the new element by hand to confirm the thread engages cleanly, then tighten with the C-spanner to firm resistance. Overtightening risks cracking the boss in older copper cylinders." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Restore the cold feed and check for weeps at the boss before restoring power. Set the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cylinder-thermostat" } }], "text": "cylinder thermostat" },
+            { "type": "text", "text": " to 60 degrees Celsius (to prevent Legionella) and restore the electrical supply." }
+          ]}]
+          }
+        ]
+      }
+    ]
+  }
+}

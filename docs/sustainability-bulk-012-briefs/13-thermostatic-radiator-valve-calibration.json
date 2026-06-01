@@ -1,0 +1,115 @@
+{
+  "slug": "thermostatic-radiator-valve-calibration",
+  "title": "Calibrating and upgrading thermostatic radiator valves",
+  "subtitle": "Setting TRV head temperatures correctly and when to replace with smart TRVs for zone control",
+  "excerpt": "Thermostatic radiator valves that are set to maximum in every room negate most of the energy benefit they are supposed to deliver. This guide covers how to set TRV heads to appropriate temperatures for each room type, how to test that the valve is working, and when to upgrade to a smart TRV to get zone scheduling as well as temperature control.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on radiator controls. Heating and Hotwater Industry Council (HHIC) guidance on TRVs and zone control. British Standards Institution BS EN 15316-2-1 on space heating. Danfoss TRV technical documentation. BEAMA guide to effective heating controls.",
+  "approximateCostGbp": 30,
+  "paybackYears": 2,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermostatic-radiator-valve-fitting", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "trv",
+      "term": "Thermostatic radiator valve (TRV)",
+      "definition": "A valve fitted to a radiator that modulates the flow of hot water in response to the room temperature. The head is the removable part with the temperature dial. The body remains permanently on the radiator."
+    },
+    {
+      "slug": "balancing-valve",
+      "term": "Balancing valve",
+      "definition": "A lockshield valve on the return side of a radiator that can be adjusted to restrict flow and equalise heat distribution across a multi-radiator circuit. Balancing is distinct from TRV temperature control."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trv" } }],
+            "text": "thermostatic radiator valve (TRV)"
+          },
+          { "type": "text", "text": " head numbered 1 to 5 roughly corresponds to 12, 16, 20, 24, and 28 degrees Celsius in the room, though the exact relationship varies by manufacturer. A bedroom typically needs 16 to 18 degrees Celsius (setting 2 to 3). A living room 19 to 21 degrees Celsius (setting 3 to 4). A bathroom with a towel rail that provides background heat: 18 degrees Celsius (setting 2). A study where the occupant sits still: 20 degrees Celsius (setting 3). Setting every radiator to 5 delivers the same temperature as having no TRVs at all." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting the valves" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the room temperature with a reliable thermometer when the heating has been running for at least an hour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the TRV head slowly down until the radiator becomes slightly cooler to the touch: this is the click-off point where the valve is closing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the room temperature after 30 minutes. Adjust up or down one setting and allow another 30 minutes to settle. Repeat until the room holds the target temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The room with the thermostat: leave the TRV on that radiator fully open (or remove the head and fit a lockshield cap). The room thermostat controls the boiler; the TRV on the same radiator would fight it." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing that the valve works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A TRV head that has seized (pin stuck open or closed) does not control temperature. To test: turn the head to minimum and check whether the radiator cools within 15 minutes when the rest of the system is calling for heat. If not, the pin is stuck. Turn the head off and remove it. The pin should be visible in the centre of the valve body and should move in and out freely when pressed. If it is stuck, apply penetrating oil and work it with pliers over 20 minutes. Severe seizing requires a new valve body from a plumber." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to upgrade to smart TRVs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smart TRVs (Tado, Drayton Wiser, Honeywell Evohome) add scheduling to the temperature function: a bedroom can be at 16 degrees Celsius until 18:00, then rise to 19 degrees Celsius for the evening, then drop again at 22:00 for sleeping. This time-based zone control saves 10 to 20 percent on heating bills compared to manual TRVs that residents typically leave on one setting. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "balancing-valve" } }],
+            "text": "balancing valve"
+          },
+          { "type": "text", "text": " adjustment remains the same whether you fit manual or smart TRV heads." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "One radiator stays cold even on maximum TRV setting" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The radiator is either air-locked (bleed it) or the lockshield valve is closed. Check the lockshield cap on the return side of the radiator. Open it by a full quarter-turn and check whether the radiator warms up." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

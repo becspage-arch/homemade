@@ -1,0 +1,103 @@
+{
+  "slug": "radiator-sizing-for-heat-pump-compatibility",
+  "title": "Sizing radiators for heat pump compatibility",
+  "subtitle": "Calculating whether existing radiators are adequate at lower flow temperatures, and what to do when they are not",
+  "excerpt": "Heat pumps operate at flow temperatures of 45 to 55 degrees Celsius rather than the 70 to 80 degrees Celsius typical of a gas boiler. A radiator that was correctly sized for a boiler at 70 degrees will emit only 55 to 65 percent of its nameplate output at a heat pump flow temperature of 45 degrees. This guide covers the calculation and the options when existing radiators fall short.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE Guide C (2007) for radiator output correction at different mean water temperatures. BS EN 442 radiator test conditions and output rating methodology. Heat Pump Association guidance on emitter sizing for heat pump retrofits.",
+  "approximateCostGbp": 300,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mean-water-temperature",
+      "term": "Mean water temperature",
+      "definition": "The average of the flow and return temperatures in a radiator circuit, used to calculate the actual heat output relative to the rated output at standard conditions (MWT 75 degrees Celsius)."
+    },
+    {
+      "slug": "delta-t",
+      "term": "Delta-T",
+      "definition": "The temperature difference between the mean water temperature and the room air temperature. Standard radiator output ratings assume a Delta-T of 50 K (MWT 75°C, room at 20°C)."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The ratio of heat output to electrical input over a full heating season. SCOP falls as flow temperature rises."
+    }
+  ],
+  "techniqueSlugs": ["trv-sizing-for-heat-pump-systems", "air-source-heat-pump-installation-overview"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The output of a radiator varies with the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "delta-t" } }], "text": "Delta-T" },
+          { "type": "text", "text": " between the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mean-water-temperature" } }], "text": "mean water temperature" },
+          { "type": "text", "text": " and the room air temperature. Radiator manufacturers rate output at a standard " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "delta-t" } }], "text": "Delta-T" },
+          { "type": "text", "text": " of 50 K (MWT 75°C in a 20°C room). At a heat pump flow temperature of 45°C with a 5°C drop in the return (MWT 42.5°C), Delta-T is 22.5 K. Output relative to the rated value is approximately (22.5/50)^1.3, which equals about 0.40. A radiator rated at 1,000 W at standard conditions produces only around 400 W at a heat pump low-flow condition." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The calculation for one room" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Take a living room with a calculated peak heat loss of 1,200 W. The existing radiator is a double-panel convector rated at 2,400 W at standard conditions. At the heat pump's 45°C flow temperature with a 5°C differential (MWT 42.5°C, room 20°C, Delta-T 22.5 K), the actual output is 2,400 x (22.5/50)^1.3, which is approximately 960 W. The radiator is slightly undersized for the room's peak heat loss of 1,200 W. The gap is 240 W. Options are to raise the flow temperature to 50°C, to upsize the radiator, or to accept that the room takes longer to reach setpoint in the coldest weather." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Options when radiators are undersized" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Upsize the radiator: replace the existing panel with one double or 50 percent larger in area. This is the most permanent solution and keeps the flow temperature at 45°C for best " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scop" } }], "text": "SCOP" },
+            { "type": "text", "text": "." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Raise the flow temperature: 55°C flow rather than 45°C boosts radiator output. At 55°C and 5°C differential, the same radiator gives around 1,440 W. SCOP falls by 0.3 to 0.5 compared with 45°C operation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a fan convector: a fan-assisted radiator or fan convector unit in the room extracts more heat per unit of emitter volume, compensating for a shortfall without a full radiator replacement." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The practice" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a typical 1990s detached house, a room-by-room check finds that 60 to 80 percent of rooms are adequate at 50°C flow. The remaining rooms need a larger radiator or a slightly higher flow temperature. Most installers do this check as part of the MCS design package. Ask to see the room-by-room figures before accepting the specification." }
+        ]
+      }
+    ]
+  }
+}

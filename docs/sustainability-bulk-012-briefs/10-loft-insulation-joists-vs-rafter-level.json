@@ -1,0 +1,122 @@
+{
+  "slug": "loft-insulation-joists-vs-rafter-level",
+  "title": "Loft insulation at joist level versus rafter level",
+  "subtitle": "When to keep the loft cold and when to bring it into the heated envelope, and what changes between the two",
+  "excerpt": "Most UK loft insulation goes at ceiling joist level, keeping the loft cold and accessible only for storage. When the loft is used as a habitable room or contains the hot water cylinder and heat pump components, the insulation moves to the rafters instead. The structural implications, ventilation requirements, and U-value calculations differ significantly between the two approaches.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document L1B (2022) on loft insulation targets. BRE Good Building Guide 57 on pitched roof insulation. Energy Saving Trust insulation fact sheets. NHBC Standards Chapter 7.1 on pitched roofs. CIBSE Guide A on thermal performance of building fabric.",
+  "approximateCostGbp": 300,
+  "paybackYears": 4,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of heat flow through a building element per unit area per degree of temperature difference. Measured in W/m²·K."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane on the warm face of insulation that limits vapour diffusion. Required at rafter level when insulating a warm roof. Not required at joist level for a cold loft where the ceiling plaster acts as an adequate vapour check for a well-ventilated loft."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Joist-level insulation keeps the loft cold, the roof structure cold, and the structure ventilated. Rafter-level insulation brings the loft into the heated envelope and makes the roof structure warm. Both approaches can achieve a good " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": ", but the practical considerations differ substantially." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Joist-level (cold loft) insulation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The standard approach for any unused loft. Lay 100 mm of mineral wool between the joists (first layer), then a second layer of 170 mm at right angles across the joists (second layer), giving a total of 270 mm and a U-value around 0.13 W/m²·K. Part L1B notional target for existing buildings: 0.16 W/m²·K. Cost for 50 m² of ceiling area: typically 300 to 400 pounds in materials, plus access. The loft remains cold: any water tanks or pipework in the loft need frost protection. Any hatch must be insulated to match and draught-sealed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rafter-level (warm loft) insulation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Used when the loft is a habitable room, or when the loft contains a heat pump indoor unit, MVHR unit, or hot water cylinder that you want inside the heated envelope. The insulation goes between and below the rafters, with a ventilation baffle above if the existing felt is not breather membrane. A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+            "text": "vapour control layer"
+          },
+          { "type": "text", "text": " is required on the warm face. The roof structure is now warm: winter condensation risk in the cold baffle zone requires a continuous ventilation path from eaves to ridge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When rafter-level makes sense" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The loft is used as a room (bedroom, office) and already has a ceiling following the rafter slope." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A heat pump or MVHR unit is located in the loft. Equipment inside the heated envelope does not need frost protection and runs more efficiently." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The cold loft insulation is already to standard and the main heat loss route is now through an uninsulated dormer cheek." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to stay with joist level" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Joist-level insulation is cheaper and simpler for any loft that is not used as a room. At 270 mm of mineral wool, it achieves a lower U-value than most rafter-level installations in buildings with shallow rafters. Rafter-level does not give better performance than joist-level unless the rafter depth allows a thick enough layer and a below-rafter layer is also fitted." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Already have joist insulation but now moving a heat pump to the loft" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Add insulation to the rafter zone around the heat pump unit while keeping the joist insulation in the zones where the loft is unused. The loft can have a mixed boundary: insulated at joist level in storage areas, insulated at rafter level in the equipment bay." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

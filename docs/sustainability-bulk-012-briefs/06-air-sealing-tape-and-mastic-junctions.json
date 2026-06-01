@@ -1,0 +1,116 @@
+{
+  "slug": "air-sealing-tape-and-mastic-junctions",
+  "title": "Air sealing at construction junctions with tapes and mastic",
+  "subtitle": "Which tapes go where, and how to achieve airtight continuity at wall, floor, and ceiling junctions",
+  "excerpt": "A building airtightness test measures the combined air leakage from every gap in the envelope. The largest gaps are typically at construction junctions: where the ceiling meets the wall, where the floor meets the wall, where pipes and cables pass through the structure. Tape and mastic sealing at these junctions costs around 100 to 300 pounds in materials and produces measurable reductions in airtightness test results.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "ATTMA TS1:2016 on airtightness testing in dwellings. BBA certificates for proprietary airtightness tapes (Pro Clima Tescon Vana, Siga Rissan). NHBC Standards Chapter 2.3 on airtightness layers in dwellings. CIBSE TM23 on testing for air leakage in buildings.",
+  "approximateCostGbp": 200,
+  "paybackYears": 5,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "silicone-sealant-gun", "isOptional": false },
+    { "slug": "foam-strip-gun", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "airtightness-layer",
+      "term": "Airtightness layer",
+      "definition": "A continuous layer in the building envelope that resists the passage of air. Can be formed by plaster, membranes, foil-faced insulation boards, or concrete, as long as the layer has no unintended gaps."
+    },
+    {
+      "slug": "service-penetration",
+      "term": "Service penetration",
+      "definition": "Any location where a pipe, cable, or duct passes through the building envelope. Each penetration is a potential air leakage path and must be sealed."
+    }
+  ],
+  "techniqueSlugs": ["airtightness-survey-smoke-pencil", "ventilation-after-draughtproofing"],
+  "criticalTechniques": ["airtightness-survey-smoke-pencil"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "airtightness-layer" } }], "text": "airtightness layer" },
+          { "type": "text", "text": " in a typical UK house is formed by the plaster on the internal wall faces and ceilings. Where that plaster is continuous and crack-free, it performs well as an air barrier. The failures occur at junctions: the gap between the ceiling plaster and the top of the wall plaster, the skirting board gap at the floor, every " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "service-penetration" } }], "text": "service penetration" },
+          { "type": "text", "text": " through the ceiling for a light fitting or pipe, and every socket and switch cut into an external wall." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which materials seal what" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Acoustic mastic sealant: applied from a gun at any static junction (skirting board to floor, plasterboard to joist, VCL membrane to masonry). Remains flexible indefinitely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Proprietary airtightness tape: high-tack, permeable-face tape for bonding VCL membranes to timber, concrete, or masonry. The bond must be to a clean, dry, dust-free surface. Tescon Vana, Siga Rissan, and similar products form the standard options. Standard decorating masking tape is not an airtightness product and fails within one heating season." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Expanding foam: suitable for filling large, irregular voids around pipe penetrations through floors or walls. Cut flush when cured and tape over the joint face." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Proprietary grommet seals: pre-formed sleeves that clamp around a pipe or cable as it passes through a membrane or ceiling. The most reliable way to seal round pipe penetrations without cold-bridging the pipe jacket." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The five highest-impact locations" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft hatch perimeter. The hatch box typically has an 8 to 15 mm gap where it meets the ceiling plasterboard on all four sides. This is a direct air path between the warm house and the unheated loft. Seal with mastic on the warm side before fitting the weatherstrip on the hatch lid." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ceiling rose and loft cable penetrations. Every ceiling light fitting is a 50 to 80 mm hole through the ceiling into the loft void. Pack with mineral wool around the cable and seal the face of the fitting box with mastic or a proprietary fire-rated downlight cover." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Soil stack, flue, or boiler flue penetrations through the ceiling. Seal with acoustic mastic at the junction. Where the stack passes through the loft, seal the gap at the ceiling entry with a proprietary sleeve sealed to the plasterboard." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skirting board to floor junction. The gap under a standard skirting board on a suspended timber floor is a direct air path to the subfloor void. Seal with mastic on the internal face, behind the skirting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External wall socket backboxes. Where a standard 35 mm pattress box is cut into the plaster on an external wall, the gap around it is a direct air path through the wall. Replace with surface-mounted backboxes or seal the pattress gap with foam and mastic before re-plastering." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Testing the work" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A smoke pencil or incense stick held near suspected junctions on a windy day confirms whether air movement persists after sealing. For a more systematic check, a professional airtightness test before and after a sealing programme gives a measurable result. Airtightness tests for dwellings cost around 300 to 500 pounds and take three to four hours on site. For a programme targeting the five junctions above, the improvement in test result is typically 1 to 3 m³/h/m² at 50 Pascals on a house starting at 10 to 15 m³/h/m²." }
+        ]
+      }
+    ]
+  }
+}

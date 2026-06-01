@@ -1,0 +1,98 @@
+{
+  "slug": "listed-building-insulation-options",
+  "title": "Insulating a listed building or conservation area property",
+  "subtitle": "What works inside a listed building when external alterations are not permitted",
+  "excerpt": "Listed buildings and properties in conservation areas cannot receive external wall insulation, replacement double glazing, or any alteration visible from a public highway without listed building consent or prior approval. The insulation options that do not require consent focus on draught-proofing, secondary glazing, breathable internal wall insulation, and loft access.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Historic England guidance on energy efficiency improvements to historic buildings (2020). gov.uk listed building consent guidance under the Planning (Listed Buildings and Conservation Areas) Act 1990. The Society for the Protection of Ancient Buildings SPAB note on insulation of historic walls. BRE guidance on moisture in traditional buildings (BR 262).",
+  "approximateCostGbp": 3000,
+  "paybackYears": 20,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": true },
+    { "slug": "foam-strip-gun", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "breathable-construction",
+      "term": "Breathable construction",
+      "definition": "A wall or roof construction that allows moisture vapour to pass through and evaporate from the surface, rather than accumulating within the structure. Required for pre-1919 lime-mortar masonry."
+    },
+    {
+      "slug": "secondary-glazing",
+      "term": "Secondary glazing",
+      "definition": "An additional glazed panel fitted inside an existing window frame, reducing heat loss and draught without altering the external appearance of the building."
+    }
+  ],
+  "techniqueSlugs": ["secondary-glazing-a-single-window-with-acrylic", "breathable-insulation-pre-1919"],
+  "criticalTechniques": ["breathable-insulation-pre-1919"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Grade II listed cottage in Dorset has original lime-plastered solid stone walls, single-glazed timber sash windows, and a clay pantile roof. External wall insulation is not permitted; the windows cannot be replaced. The property still loses heat at roughly twice the rate of a 1990s cavity-wall house. The question is which internal improvements are possible within the consent framework and without compromising the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "breathable-construction" } }], "text": "breathable construction" },
+          { "type": "text", "text": " that the lime plaster depends on." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What typically does not require consent" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draught-proofing: fitting brush seals, compression strips, or draught-excluding letter-box brushes to doors and windows. Internal work that does not alter the building fabric." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Secondary glazing: fitting a glazed panel inside the existing window reveal. This is an internal alteration and does not change the external appearance. A single room of " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "secondary-glazing" } }], "text": "secondary glazing" },
+            { "type": "text", "text": " on a sash window reduces the window heat loss by around 65 percent." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft insulation top-up: adding insulation at ceiling level in an accessible loft rarely requires consent and does not alter the fabric. Use mineral wool, not closed-cell foam. Foam traps moisture against historic roof timbers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Suspended floor draught-sealing: fitting brushes or flexible strips to the floor board joints to reduce subfloor draughts without altering the fabric." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Internal wall insulation in a listed building" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Internal wall insulation on a listed building requires listed building consent in most cases because it involves altering the internal fabric. When consent is granted, Historic England recommends breathable insulation systems: wood fibre board, hemp board, or lime-based cork insulation. These materials are vapour-open: the masonry behind them can continue to breathe. Closed-cell foam boards (PIR, XPS) trap vapour against the old masonry and cause interstitial condensation within the wall. A 50 mm wood fibre board achieves a lambda value of around 0.045 W/mK, lower performance per millimetre than PIR, but compatible with the structure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The consent process" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Listed building consent is applied for through the local planning authority. The application needs a description of the works, a heritage impact statement, and details showing the materials are reversible and breathable. Many conservation officers know these proposals. A pre-application call before submitting saves time." }
+        ]
+      }
+    ]
+  }
+}

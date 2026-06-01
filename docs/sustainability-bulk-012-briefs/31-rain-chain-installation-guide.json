@@ -1,0 +1,124 @@
+{
+  "slug": "rain-chain-installation-guide",
+  "title": "Installing a rain chain as a downpipe alternative",
+  "subtitle": "How rain chains work, their limitations in the UK climate, and combining them with a water butt",
+  "excerpt": "Rain chains guide rainwater from gutter to ground in a visible, decorative flow, replacing a solid downpipe. They work well on roofs with moderate rainfall, orientations that do not face prevailing winds, and where the outlet routes to a water butt or a planted bed. In exposed UK locations or on large roof areas, rain chains overflow in heavy rain. This guide covers the design considerations, the installation, and what to connect at the base.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Japanese traditional rain chain (kusari-doi) cultural and technical references. RHS guidance on managing roof runoff in gardens. Specifier Research guidance on sustainable drainage integration with rain chains. Planning Portal guidance on permitted development for minor drainage works.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "adjustable-spanner", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rain-chain",
+      "term": "Rain chain",
+      "definition": "A decorative water feature made from linked cups or chain links that guides rainwater from a gutter outlet to ground level. Water clings to the chain surface by surface tension and flows downward in a visible stream."
+    },
+    {
+      "slug": "guttering-outlet-size",
+      "term": "Guttering outlet size",
+      "definition": "The internal diameter of the gutter outlet that connects to the downpipe or rain chain. Standard UK guttering uses 68 mm or 75 mm diameter outlets. A rain chain must be matched or adapted to fit the outlet to prevent overflow."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rain-chain" } }],
+            "text": "rain chain"
+          },
+          { "type": "text", "text": " replaces a conventional downpipe on a gutter outlet. It slows the falling water and makes it visible, which is the main appeal. It is not suitable for very large roof areas (above 40 m²) draining to a single outlet, or for exposed locations where wind will scatter the water off the chain." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Chain types" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Link chain: individual metal links. Water flows along the outside of the links. Allows some wind scatter but is simple and inexpensive." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cup chain: a series of cup-shaped collectors linked in a vertical chain. Water pours from cup to cup and is more contained than link chain. Better for higher-flow situations and windy conditions." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the existing downpipe outlet section. Clean the gutter outlet." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the rain chain adapter: a metal plate or funnel that replaces the downpipe connector and holds the chain in the correct central position under the outlet. Standard " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "guttering-outlet-size" } }],
+                "text": "guttering outlet size"
+              },
+              { "type": "text", "text": " in the UK is 68 mm; verify before ordering." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hang the chain to length: the bottom should end 100 to 200 mm above the collection point (ground, water butt, planting bed). Allow 10 to 15 percent extra length when ordering to account for drape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the base with a ground stake or a metal anchoring weight sold with the chain to prevent wind movement." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connecting to a water butt" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A water butt directly under a rain chain collects the flow without modification. Fit a standard 30 mm inlet cover in the butt lid with a funnel-shaped opening to catch the chain flow. In very heavy rain the chain flow will exceed the butt inlet rate: ensure the butt has an overflow pipe routed to a bed or soakaway." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Water sprays sideways in wind rather than flowing down the chain" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The outlet location is too exposed. Fit a cup-type chain rather than a link chain; the cups contain the water better in wind. Alternatively, use a short conventional downpipe section to bring the outlet below the eaves before connecting the chain." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

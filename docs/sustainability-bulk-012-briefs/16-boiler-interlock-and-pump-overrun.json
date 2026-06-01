@@ -1,0 +1,111 @@
+{
+  "slug": "boiler-interlock-and-pump-overrun",
+  "title": "Boiler interlock and pump overrun: how to check and set them correctly",
+  "subtitle": "Preventing the boiler and pump from running when there is no heating demand, and extracting the last heat from the heat exchanger",
+  "excerpt": "A boiler without an interlock fires whenever the heating circuit is powered, even if all thermostatic radiator valves are closed and no room needs heat. The pump overrun timer keeps the pump running for 5 to 10 minutes after the burner switches off, extracting the residual heat from the heat exchanger. Both settings are often misconfigured or missing on installations done before 2010. Together they account for 5 to 10 percent of annual gas consumption.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "HHIC technical guidance on heating system controls. Worcestershire SESP guidance on boiler interlocks and TRV compatibility. CIBSE AM12 on controls for HVAC systems. MCS guidance on controls optimisation for gas boilers. BEAMA guide to energy-efficient heating controls.",
+  "approximateCostGbp": 200,
+  "paybackYears": 3,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "boiler-interlock",
+      "term": "Boiler interlock",
+      "definition": "A wiring arrangement that prevents the boiler from firing unless there is an active demand signal from either the room thermostat or a zone valve. Without an interlock, the boiler fires on a time clock alone, regardless of room temperature."
+    },
+    {
+      "slug": "pump-overrun",
+      "term": "Pump overrun",
+      "definition": "A timer function that keeps the circulating pump running for 5 to 10 minutes after the boiler burner switches off, to extract residual heat from the heat exchanger and push it into the circuit. Prevents heat exchanger overheating."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A boiler without a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "boiler-interlock" } }],
+            "text": "boiler interlock"
+          },
+          { "type": "text", "text": " fires every time the heating time clock calls for heat, even on warm days when every TRV has closed. The boiler cycles on overtemperature, wasting gas and cycling wear. A correctly wired interlock connects the boiler's demand terminal to a call-for-heat signal from the room thermostat. The boiler only fires when the room thermostat is below its set temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking whether the interlock is wired" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "With the heating time clock in the on period: turn the room thermostat to its lowest setting. If the boiler continues firing, the interlock is missing or bypassed. If the boiler stops firing within a minute of the thermostat dropping below room temperature, the interlock is correctly wired. Systems with a programmer and a separate cylinder thermostat (Y-plan or S-plan) should have similar behaviour when only the heating zone valve is open." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding an interlock" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding an interlock to an existing wiring centre requires rerouting the boiler's demand supply through the switching contact of the room thermostat. This is work for a Gas Safe registered engineer or a competent electrician. The wiring configuration depends on the system type (Y-plan, S-plan, or basic two-zone). Cost to add on a standard installation: around 150 to 200 pounds." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pump overrun: checking and setting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pump-overrun" } }],
+            "text": "pump overrun"
+          },
+          { "type": "text", "text": " is set on the boiler itself. Find the pump overrun setting in the boiler commissioning menu, not the user menu: check the boiler installation manual for the parameter number. Correct value: 5 minutes for a heat-only boiler; 3 minutes for a combi. Zero means no overrun and the pump stops the moment the burner cuts out. With no overrun, the heat exchanger can overheat on shutdown." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weather compensation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Many modern boilers have weather compensation: the flow temperature drops as the outdoor temperature rises. A well-tuned condensing boiler runs in condensing mode for more of the heating season. The outdoor sensor is usually a small resistor on the north-facing wall. Enable and set the compensation curve if it is off: savings are typically 5 to 8 percent of annual gas use." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Boiler fires for 2 minutes, locks out, then restarts in a cycle" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Short cycling is often caused by missing pump overrun, by a system with insufficient water volume, or by a flow temperature set too high for the system design. Check the overrun setting and the minimum modulation level in the boiler parameters." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

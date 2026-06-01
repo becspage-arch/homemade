@@ -1,0 +1,90 @@
+{
+  "slug": "compost-thermometer-use-and-hot-heap-management",
+  "title": "Using a compost thermometer to manage a hot heap",
+  "subtitle": "Reading the temperature probe, interpreting the results, and knowing when to turn",
+  "excerpt": "A compost thermometer with a 300 mm probe reads the core temperature of an active heap every few days. The readings tell you whether the heap is in the heating, peak, cooling, or curing phase and when to turn. Managing by temperature rather than by calendar produces consistent finished compost in 4 to 8 weeks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "USDA National Organic Program temperature guidelines for pathogen kill (55°C for 15 days, 5 turnings). Garden Organic hot composting guidance. Eliot Coleman: The Winter Harvest Handbook on compost temperature management.",
+  "approximateCostGbp": 15,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false },
+    { "slug": "compost-aerator", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot composting",
+      "definition": "Composting that reaches 55 to 70 degrees Celsius in the core through controlled carbon-to-nitrogen balance, moisture, and regular aeration."
+    }
+  ],
+  "techniqueSlugs": ["turning-a-hot-compost-heap", "hot-compost-vs-warm-compost-comparison"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Push the compost thermometer probe into the centre of the heap to a depth of 200 to 300 mm. Take the reading, then move to two or three other probe positions at the same depth before withdrawing. The highest reading is the centre temperature; the average across positions gives a better picture of overall heap activity. A well-built " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot compost" },
+          { "type": "text", "text": " heap heats within 2 to 3 days of building and can be read immediately after that initial period." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Temperature phases and what they mean" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "20 to 40 degrees Celsius: mesophilic phase. The heap has started but has not yet reached the thermophilic zone. Bacteria are active; no weed-seed kill yet. Check moisture: if the heap is dry, add water and check again in 24 hours." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "40 to 55 degrees Celsius: early thermophilic phase. Good activity; not yet reaching pathogen-kill temperatures reliably. The heap can climb to the optimal zone from here if moisture and aeration are adequate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "55 to 70 degrees Celsius: peak thermophilic phase. Weed seeds and most pathogens are killed at sustained temperatures above 55 degrees Celsius. Maintain this zone for at least 3 days before turning, to allow thorough treatment of the inner material." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Above 70 degrees Celsius: the heap is too hot. Decomposition slows above 70 degrees Celsius as the thermophilic bacteria approach their upper limit. Turn immediately to introduce air and cool the core." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to turn" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the heap when the core temperature drops below 45 degrees Celsius after a peak phase, or when it has been above 55 degrees Celsius for 3 or more consecutive days (to ensure the outer edges also reach treatment temperature). Turning brings cool material from the edges into the centre and introduces oxygen. Within 24 to 48 hours of turning, a heap in good condition re-heats to the thermophilic zone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When the heap has finished" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A finished heap reads below 30 degrees Celsius across all probe positions and does not re-heat after turning. The material looks and smells like dark crumbly soil. At this point the compost is in the curing phase: leave it undisturbed for 2 to 4 weeks before using, to allow the microbial community to stabilise." }
+        ]
+      }
+    ]
+  }
+}

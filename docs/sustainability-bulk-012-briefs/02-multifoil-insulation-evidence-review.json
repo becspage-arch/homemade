@@ -1,0 +1,120 @@
+{
+  "slug": "multifoil-insulation-evidence-review",
+  "title": "Multifoil insulation: what the evidence actually says",
+  "subtitle": "Cutting through the marketing claims on reflective foil products and when they have a genuine role",
+  "excerpt": "Multifoil or reflective foil insulation is heavily marketed to homeowners doing barn conversions, loft rooms, and van builds. The claimed R-values often look impressive on paper. In practice, the real-world performance of multifoil products in UK wall and roof applications is much lower than the marketing suggests. This guide covers what the BBA certificates and NHBC data actually show, and when a foil layer can be useful.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British Board of Agrément (BBA) certificates for representative multifoil products including Actis Hybris. NHBC Standards Chapter 7.2 on insulation. BRE Information Paper IP 1/06 on reflective insulation. CIBSE Technical Memorandum TM38. National Insulation Association guidance notes on vapour control and radiant barriers.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat flows through one square metre of a building element per degree of temperature difference. Measured in W/m²·K. Lower is better."
+    },
+    {
+      "slug": "thermal-resistance",
+      "term": "Thermal resistance (R-value)",
+      "definition": "The reciprocal of U-value: how well an element resists heat flow. Measured in m²·K/W. Higher is better. Layers in series can be added directly."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Multifoil insulation products are sheets of bubble wrap, foam, or wadding sandwiched between reflective aluminium foil layers. Manufacturers claim total equivalent " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-resistance" } }],
+            "text": "thermal resistance"
+          },
+          { "type": "text", "text": " values of 3 to 6 m²·K/W from a 30 to 50 mm thick product, implying performance equivalent to 150 to 300 mm of mineral wool. These claims rely on test conditions that do not match real buildings." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the test conditions differ from a real UK roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Radiant barriers work by reflecting infrared radiation across an air gap. The reflection only helps when the heat transfer mechanism is primarily radiation, not conduction. In a standard UK pitched roof in winter, 70 to 80 percent of heat transfer through the roof plane is by conduction through the materials, not by radiation across air cavities. A reflective barrier reduces the radiation component, which is the small fraction, while doing nothing about the large conductive fraction. Independent BRE testing has consistently shown real-world " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": " reductions of 20 to 35 percent compared to the baseline with no insulation. A foil product alone in a 100 mm rafter space typically gives a U-value of 0.9 to 1.2 W/m²·K, not 0.18." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the BBA certificates confirm" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "BBA certificates set out the exact conditions the product must be installed in: 20 mm air gaps on each face of the foil, still air with no draughts, and a minimum reflectivity level at the air gap surfaces. In a rafter space, the foil is usually fitted against the tile batten with no gap above it. The certificate performance does not apply. NHBC standards require the installer to match those conditions or to use solid insulation of equal thermal value." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When multifoil products have a legitimate role" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "As a vapour control layer when installed on the warm face below solid insulation. Foil-faced PIR board and foil-faced multifoil both perform this role." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In warm climates where summer solar gain reduction is the design goal (not winter heat retention). The reflective surface reduces radiant gain from a hot roof into the room below." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In mobile applications (campervans, narrow boats) where weight and thickness matter more than thermal performance per pound spent." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The replacement calculation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a 35 m² attic room roof plane, replacing a multifoil-only installation with 75 mm mineral wool between the rafters plus 60 mm PIR board below the rafters reduces the U-value from around 1.0 to around 0.21 W/m²·K. At a temperature difference of 12 degrees Celsius for 4,000 hours per year, that saves roughly 1,250 kWh or about 75 pounds at gas rates. Payback on a 1,200 pound material cost is around 16 years, but the comfort gain is immediate and significant." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Installer claims product meets Building Regs based on BBA certificate" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Ask to see the certificate and check whether the installed air gaps match the certified conditions. If there is no air gap above the foil, the certificate performance does not apply and the U-value must be calculated from the actual installed conditions." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

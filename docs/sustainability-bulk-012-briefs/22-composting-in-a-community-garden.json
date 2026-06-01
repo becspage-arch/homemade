@@ -1,0 +1,93 @@
+{
+  "slug": "composting-in-a-community-garden",
+  "title": "Running a compost system in a community garden or allotment",
+  "subtitle": "Managing a shared compost area for multiple contributors with varying materials",
+  "excerpt": "A community compost system in a shared garden or allotment site takes contributions from 10 to 50 plot holders and produces finished compost for shared use. The main management challenges are contamination control, maintaining the C:N balance across varied inputs, and communicating the rules clearly enough that the system stays functional without a dedicated volunteer carrying all the work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Garden Organic community composting guidelines. WRAP guidance on setting up community composting schemes. Community Composting Network best practice notes. Garden Law guidance on environmental permits for small community composting schemes in England.",
+  "approximateCostGbp": 500,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false },
+    { "slug": "compost-aerator", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "The carbon-to-nitrogen ratio in composted material. Community heaps often receive too many nitrogen-rich grass clippings relative to browns, pulling the C:N below the optimal 25:1."
+    },
+    {
+      "slug": "environmental-permit",
+      "term": "Environmental permit exemption",
+      "definition": "A registration with the Environment Agency (England) that allows composting above certain thresholds without a full permit. Community schemes typically operate under Exemption T23 for treatment of waste at a community composting site."
+    }
+  ],
+  "techniqueSlugs": ["three-bin-hot-compost-system", "communal-compost-bin-shared-garden"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A community garden with 20 plot holders produces around 500 to 800 kg of green waste per month in the growing season. Run through a three-bay or windrow system, this gives 150 to 250 kg of finished compost per month, enough for the site's raised beds with a small surplus for plot holders." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Regulatory position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In England, composting above 5 m³ per week requires either a permit or a registered " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "environmental-permit" } }], "text": "environmental permit exemption" },
+          { "type": "text", "text": " under these regulations. The standard route is Exemption T23, free to register with the Environment Agency. It covers plant material, untreated wood, paper, and cardboard, but not meat, fish, or cooked food. Scotland, Wales, and Northern Ireland have their own rules." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common C:N problems on shared sites" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Community compost bays fill rapidly with grass clippings in summer. Grass clippings have a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }], "text": "C:N ratio" },
+          { "type": "text", "text": " of around 15:1: far too nitrogen-rich to compost cleanly without browns. A bay full of only grass clippings compacts, goes anaerobic, and produces a smelly slurry rather than compost. The fix is to post clear signage at the bay requiring every load of grass clippings to be accompanied by an equal volume of brown material (cardboard, straw, dry leaves, shredded paper). Storing bales of straw or bags of cardboard next to the bay gives contributors a practical way to comply." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Managing contributions from multiple plot holders" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Designate one bay as the active input bay and close the others to contributions. Rotate input access when the bay is full." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Post an allow/prohibit list at the bay. Allowed: plant trimmings, grass clippings (with browns added), cardboard, paper, coffee grounds, vegetable kitchen scraps. Prohibited: meat, cooked food, diseased plants, weeds in seed, cat and dog waste." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Assign one volunteer per season to monitor the bay temperature and turn the heap when it drops below 45 degrees Celsius. A rotating monthly rota avoids dependency on one person." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

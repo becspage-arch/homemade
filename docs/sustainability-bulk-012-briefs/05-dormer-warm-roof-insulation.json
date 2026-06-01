@@ -1,0 +1,136 @@
+{
+  "slug": "dormer-warm-roof-insulation",
+  "title": "Insulating a dormer roof with PIR between and below rafters",
+  "subtitle": "Creating a warm-roof construction in a loft conversion dormer",
+  "excerpt": "A dormer loft conversion with an uninsulated or poorly insulated pitched roof section loses heat at the same rate as any other uninsulated rafter space: around 0.7 to 1.2 W/m²K depending on rafter depth. Achieving a U-value of 0.18 W/m²K or below in a dormer typically requires insulation both between and below the rafters.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Part L1B (2022) for the 0.18 W/m²K new-roof-element target in extensions. CIBSE Guide A U-value calculation methodology. BRE guidance on warm-roof and cold-roof rafter insulation. NBS specification clause K11 for rigid insulation between and below rafters.",
+  "approximateCostGbp": 1500,
+  "paybackYears": 12,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid insulation board with a foil facing. Lambda value around 0.022 W/mK, the most thermally efficient rigid board in common use."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane on the warm side of insulation that limits vapour diffusion through the construction and prevents interstitial condensation."
+    },
+    {
+      "slug": "cold-roof",
+      "term": "Cold-roof construction",
+      "definition": "A roof where insulation sits at ceiling level, leaving the rafter void uninsulated and ventilated to the outside. Contrasts with warm-roof construction where insulation fills or tops the rafter zone."
+    }
+  ],
+  "techniqueSlugs": ["vapour-control-layers-explained", "understanding-u-values"],
+  "criticalTechniques": ["vapour-control-layers-explained"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A dormer with 100 mm rafters and no insulation loses heat at around 1.2 W/m²K. Filling the full rafter depth with 100 mm PIR board (lambda 0.022 W/m·K) brings this down to about 0.48 W/m²K. Adding a 60 mm " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
+          { "type": "text", "text": " layer below the rafters breaks the rafter thermal bridge and drops the U-value to around 0.16 W/m²K, below the Part L1B target of 0.18 W/m²K." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warm roof versus cold roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-roof" } }], "text": "cold-roof construction" },
+          { "type": "text", "text": " puts insulation at ceiling level, leaving the rafter space as a cold ventilated void. This does not work for a dormer where the occupied space runs to the rafter face. There is no ceiling level where the insulation can go without removing all headroom. In a converted dormer, insulation must go between and below the rafters to get acceptable U-values while keeping usable height." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "PIR board cut to fit tightly between the rafters. Target: full rafter depth minus a 25 mm ventilation gap at the top of the rafter zone (between the insulation and the sarking felt). This gap allows any vapour that bypasses the VCL to escape toward the ridge vent." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A PIR layer below the rafter face cuts the rafter thermal bridge. Without it, the rafters carry 15 to 20 percent of all roof heat loss." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foil-faced rigid insulation for the between-rafter layer, with all joints taped to form the primary " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "vapour control layer" },
+            { "type": "text", "text": ". The below-rafter layer adds a secondary VCL continuity." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "12.5 mm plasterboard, screwed through the below-rafter insulation into the rafters using long screws (length = rafter depth plus below-rafter insulation thickness plus 38 mm into the timber)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation sequence" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm the existing sarking felt is in good condition and the ridge and eaves are ventilated. The ventilation gap at the top of the rafter zone relies on continuous airflow from eaves to ridge; block any gaps at the eaves with a breathable mesh, not solid blocking." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the between-rafter boards to a width 2 mm less than the rafter bay width. This allows a tight press-fit without bowing the rafters. The ventilation gap at the top is maintained by pushing the board down from the ridge, leaving a 25 mm gap between the board top and the sarking felt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all board joints and perimeter edges with foil VCL tape. The foil facing of the PIR forms the VCL; the tape completes the continuity at joints." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install the below-rafter PIR layer, staggering joints so they do not align with the between-rafter board joints. Tape all joints. Apply a bead of acoustic mastic sealant at the perimeter where the below-rafter layer meets the wall." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix the plasterboard through the below-rafter insulation into the rafters with appropriate length screws. Skim coat and finish." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Done well, all board joints are taped, a 25 mm ventilation gap runs continuously from eaves to ridge, and the below-rafter layer eliminates the timber bridge. Done badly, insulation fills to the top of the rafter with no ventilation gap; condensation forms on the cold sarking felt and eventually rots the rafters. The VCL has untaped joints; vapour migrates through and condenses on the cold foil backing of the upper insulation layer." }
+        ]
+      }
+    ]
+  }
+}

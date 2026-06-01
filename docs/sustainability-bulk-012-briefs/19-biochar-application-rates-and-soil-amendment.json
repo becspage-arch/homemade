@@ -1,0 +1,116 @@
+{
+  "slug": "biochar-application-rates-and-soil-amendment",
+  "title": "Biochar application rates and soil amendment",
+  "subtitle": "How much biochar to use, when to use it, and what to expect from the soil",
+  "excerpt": "Biochar improves soil water retention, aeration, and microbial activity when applied at the right rate and pre-charged with nutrients before incorporation. At too low a rate it has no measurable effect; at too high a rate it can raise soil pH and create a nitrogen immobilisation problem. The effective range for most UK garden soils is 5 to 20 tonnes per hectare, or 0.5 to 2 kg per square metre.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lehmann and Joseph: Biochar for Environmental Management (2nd ed., 2015), the standard reference for application rate research. UK Biochar Research Centre publications on biochar in UK agricultural soils. RHS guidance on soil improvement for garden soils. International Biochar Initiative standards for biochar quality classification.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-aerator", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "biochar",
+      "term": "Biochar",
+      "definition": "A stable form of charcoal produced by pyrolysis of organic material in low-oxygen conditions, used as a long-term soil amendment to improve structure and support microbial activity."
+    },
+    {
+      "slug": "cec",
+      "term": "CEC",
+      "definition": "Cation Exchange Capacity. A measure of a soil's ability to hold and exchange positively charged nutrient ions. Biochar increases CEC by providing porous binding sites."
+    },
+    {
+      "slug": "charging-biochar",
+      "term": "Charging biochar",
+      "definition": "Pre-soaking biochar in a nutrient-rich liquid (compost tea, liquid fertiliser, or dilute urine) to fill its pores before soil application, preventing it from temporarily immobilising soil nitrogen on first incorporation."
+    }
+  ],
+  "techniqueSlugs": ["biochar-drum-retort", "biochar-in-compost"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fresh " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "biochar" } }], "text": "biochar" },
+          { "type": "text", "text": " has millions of micropores and a very high surface area per gram. When added to soil, those pores initially absorb soil nitrogen as they equilibrate, causing a temporary nitrogen drawdown that can suppress plant growth for 6 to 12 weeks. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "charging-biochar" } }], "text": "Charging" },
+          { "type": "text", "text": " the biochar before use eliminates this problem by filling the pores before they reach the soil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Application rates" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vegetable bed, first application: 1 to 2 kg per m², worked into the top 15 to 20 cm. A raised bed 2.4 m x 1.2 m (2.88 m²) needs 3 to 6 kg of biochar." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lawn or meadow top-dressing: 0.5 to 1 kg per m², applied as a thin surface dressing and watered in. Visible surface dressing at higher rates shades the grass." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compost blend: 10 to 20 percent by volume in a finished compost mix for potting or bed improvement. This is typically the most effective application method because the biochar charges in the compost pile over weeks or months before use." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Maximum single application: research shows diminishing returns above 20 t/ha (2 kg/m²) for most garden soils. Above this, pH rise can harm acid-loving plants." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Charging biochar before use" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the biochar with 3 to 5 parts of mature compost, or soak it in diluted compost tea or diluted liquid feed (nettle or comfrey, diluted 10:1 with water) for 48 hours." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The biochar should be visibly damp and darkened after charging. Dry, dusty biochar is uncharged." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the mix for at least 1 week before adding it to the soil, so microbes can colonise the biochar surfaces." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What biochar does to soil " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cec" } }], "text": "CEC" }],
+        "content": [{ "type": "text", "text": "What biochar does for soil CEC and water retention" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On light sandy soils in the UK, a one-off incorporation of 1.5 kg/m² of charged biochar increases water holding capacity by 15 to 25 percent in the treated zone. The effect is permanent: biochar does not biodegrade. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cec" } }], "text": "CEC" },
+          { "type": "text", "text": " increase is measurable within one growing season and persists indefinitely. On heavy clay soils, the structural benefit is less pronounced; compost addition is more effective at improving structure in clay." }
+        ]
+      }
+    ]
+  }
+}

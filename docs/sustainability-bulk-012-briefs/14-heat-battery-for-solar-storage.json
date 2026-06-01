@@ -1,0 +1,83 @@
+{
+  "slug": "heat-battery-for-solar-storage",
+  "title": "Heat batteries for solar storage — how they work and when to use them",
+  "subtitle": "Comparing heat battery technology to lithium-ion batteries for domestic solar storage",
+  "excerpt": "A heat battery stores surplus solar electricity as thermal energy in a high-density phase-change material, then releases it as heat for hot water or space heating. The round-trip efficiency is lower than a lithium battery, but the capital cost is roughly half, and the technology has no degradation limit on charge cycles.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sunamp technical documentation for UniQ heat battery range (2022). Tepeo ZEB (Zero Emission Boiler) product specification. Mixergy smart cylinder technical guide. Solar Trade Association guidance on thermal storage in solar installations.",
+  "approximateCostGbp": 2500,
+  "paybackYears": 8,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "phase-change-material",
+      "term": "Phase-change material",
+      "definition": "A substance that absorbs and releases large amounts of heat energy when it melts or solidifies at a specific temperature, allowing very high energy storage density compared to water."
+    },
+    {
+      "slug": "heat-battery",
+      "term": "Heat battery",
+      "definition": "A compact thermal storage device that uses phase-change materials or high-temperature thermal mass to store heat energy from solar PV or off-peak electricity."
+    }
+  ],
+  "techniqueSlugs": ["solar-battery-storage-sizing", "solar-immersion-diverter-guide"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A Sunamp UniQ 9e " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-battery" } }], "text": "heat battery" },
+          { "type": "text", "text": " stores 9 kWh of thermal energy using a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "phase-change-material" } }], "text": "phase-change material" },
+          { "type": "text", "text": " (sodium acetate trihydrate) that melts at 58 degrees Celsius and re-solidifies as it releases heat. The unit is roughly the size of a large suitcase and can supply hot water at 50 to 60 degrees Celsius on demand. The stored 9 kWh is sufficient for a family's daily hot water use plus some heating top-up. The unit recharges from solar PV surplus or from overnight grid electricity at cheap tariff rates." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Heat battery versus lithium battery for a solar home" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round-trip efficiency: lithium battery 90 to 95 percent (electricity in, electricity out). Heat battery 95 to 98 percent for thermal output, but the electricity-to-useful-energy path includes the conversion to heat only. Where the end use is hot water, the heat battery delivers the energy more directly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cycle life: lithium batteries degrade with each charge cycle, typically losing 20 percent of capacity after 3,000 to 6,000 cycles depending on chemistry. Heat batteries using phase-change materials have been tested to 25,000+ cycles without measurable capacity degradation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Capital cost: a 9 kWh Sunamp heat battery is roughly half the cost of a comparable lithium battery system. The saving reflects simpler chemistry and no power electronics for DC conversion." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flexibility: a lithium battery can power any electrical load; a heat battery only supplies heat. In a home where the dominant solar storage opportunity is hot water (typically 30 to 40 percent of household energy in a gas-free home), a heat battery captures that opportunity at lower cost. In a home where solar should also power lights, appliances, and an EV, a lithium battery is more flexible." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Integration with solar and tariffs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heat battery connects to the household electricity supply and charges like any other appliance. It includes an onboard controller that can be set to charge only during solar surplus hours (using a CT clamp on the main supply cable to detect export) or during off-peak grid tariff windows. The typical setup in a solar home is to set the primary charge window to daytime solar surplus and a backup window to overnight cheap-rate grid electricity. In a well-insulated modern heat battery, the thermal standby loss is around 0.3 kWh per day, comparable to a well-insulated hot water cylinder." }
+        ]
+      }
+    ]
+  }
+}

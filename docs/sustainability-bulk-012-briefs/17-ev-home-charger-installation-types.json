@@ -1,0 +1,122 @@
+{
+  "slug": "ev-home-charger-installation-types",
+  "title": "EV home charger types and installation: tethered versus untethered, single versus three-phase",
+  "subtitle": "Choosing between charger configurations, understanding earthing requirements, and what the installer must check",
+  "excerpt": "A home EV charger fitted by an OZEV-approved installer is now almost universal for new EV buyers. The choice between a tethered and untethered unit, between 7 kW and 22 kW, and between single-phase and three-phase supply affects both installation cost and day-to-day convenience. This guide explains what the choices mean in practice, what the installer must check before commissioning, and what documentation you need for the warranty and for future property sale.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk OZEV Electric Vehicle Homecharge Scheme guidance. BS 7671:2018 Amendment 2 on EV charging installations. IET Code of Practice for Electric Vehicle Charging Equipment Installation. BEAMA guidance on protective earth requirements for EV charge points. Electrical Safety First guidance on EV home charging safety.",
+  "approximateCostGbp": 1000,
+  "paybackYears": null,
+  "recipe": { "foundational": true },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "tethered-charger",
+      "term": "Tethered charger",
+      "definition": "A home charge unit with a permanently attached cable and connector. The cable type is fixed at installation (usually Type 2 for UK/EU vehicles). More convenient for a single-car household; less flexible if you change to a car with a different connector."
+    },
+    {
+      "slug": "protective-earth",
+      "term": "Protective earth (PE)",
+      "definition": "The safety earth connection required for Class I electrical equipment. EV charge points require a protective earth connection and, in most domestic installations, a separate earth electrode because the charge current can cause DC offset that prevents standard residual current devices from operating correctly."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A single-phase 7 kW home charger adds around 37 km of range per hour of charging for most current electric cars. On a standard overnight 8-hour charge from 20 percent, that is around 296 km of range: more than most UK drivers need for a week. The choice of 7 kW versus 22 kW is relevant only if the car battery is very large (above 100 kWh) or if daytime rapid charging is required." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tethered versus untethered" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tethered-charger" } }],
+            "text": "tethered charger"
+          },
+          { "type": "text", "text": " has the cable attached permanently to the unit. You plug the car end into the car and leave the charger end in the unit. It is faster to use each day but less flexible if you change car brand or share the charger with multiple cars of different connector types. An untethered charger has a socket on the unit; you supply your own cable. The cable goes with the car if you sell the charger or move house." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Single-phase versus three-phase" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most UK homes have single-phase supply (230 V, 100 A maximum). Single-phase limits the charger to 7.4 kW maximum. Three-phase supply (available in some rural areas and some new developments) allows 22 kW charging for vehicles that support three-phase onboard charging. Most current electric cars in the UK accept 7.4 kW AC maximum on the onboard charger regardless of whether the supply is single or three-phase. Check the car's AC charging capability before specifying a three-phase unit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the installer must check" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Consumer unit capacity: a 7.4 kW charger draws 32 A. The main fuse must be at least 80 A and there must be a spare way in the consumer unit for a dedicated circuit breaker." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Protective earth: most EV charge points require a TT earthing system (local earth electrode) because the DC offset from the charging circuit can blind a standard RCD. The installer fits an earth rod and connects it to the charger via a green/yellow conductor." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Smart charging capability: the unit must meet the EV Smart Charging Standard (BS EN 62196) and be capable of remote scheduling. OZEV-approved installations require smart functionality." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The " },
+        { "type": "text", "text": "protective earth" },
+        { "type": "text", "text": " documentation and solar integration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ask the installer for the BS 7671 test certificate and the earth electrode resistance reading. A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "protective-earth" } }],
+            "text": "protective earth"
+          },
+          { "type": "text", "text": " resistance above 200 ohms requires additional electrodes. If you have solar panels, a charger with solar divert functionality can use surplus export power to charge the car rather than export it to the grid for less per kWh than you pay to import. Check this against the charger specification before purchase." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Charger trips the consumer unit RCD when charging starts" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The charger draws DC residual current that is tripping the standard 30 mA RCD. The charger requires a Type B RCD rather than the standard Type A or AC. The installer should fit a Type B RCD on the dedicated charger circuit." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "slug": "insulating-attic-room-sloped-ceiling",
+  "title": "Insulating an attic room with a sloped ceiling",
+  "subtitle": "Choosing layers and managing ventilation paths between rafters in a habitable room-in-roof",
+  "excerpt": "Attic rooms with sloped ceilings present a harder insulation problem than flat-ceilinged lofts. The rafter depth is fixed, ventilation baffle sizing eats into the available insulation thickness, and the junction with the vertical kneeler wall and any flat ceiling section above the wardrobe zone all need careful detailing. This guide covers the calculation, the layer choices, and the common mistakes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Approved Document L1B (2022). CIBSE Guide A Chapter 3 on heat loss calculation. BRE Report BR 443 conventions for U-value calculations. NHBC Standards Chapter 7.1 on roof construction. Energy Saving Trust Insulation Fact File.",
+  "approximateCostGbp": 800,
+  "paybackYears": 12,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "staple-gun-electric", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat flows through one square metre of a building element per degree of temperature difference between inside and outside. Measured in W/m²·K. Lower is better."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in a building element where heat flows faster than through the surrounding construction. Common at rafters, joists, and structural timbers running through insulation layers."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane installed on the warm side of insulation to slow the movement of moisture-laden air into the insulation zone, reducing condensation risk."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An attic room heated and used year-round needs the sloped ceiling, the kneeler wall, and any flat ceiling zone insulated to the same standard. Doing one and leaving the others cold creates large " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " paths and makes the room uncomfortable and expensive to heat. A 1930s semi with a 30 m² attic room that has no roof insulation at all loses roughly 2,500 kWh per year through the roof plane alone at a standard UK heated-floor temperature of 20 degrees Celsius." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The rafter depth problem" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Standard 1930s and 1950s rafters are 100 x 50 mm. Building Regs Part L1B sets a target " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": " for existing rafter roofs of 0.18 W/m²·K. Achieving 0.18 requires around 200 mm of mineral wool, or around 100 mm of PIR board (lambda 0.022 W/m·K). Into a 100 mm rafter you must fit a 25 to 50 mm ventilation gap above the insulation if you are working with an existing breathable felt below the tiles. That leaves 50 to 75 mm for insulation between the rafters, plus a layer below the rafter to close the bridge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Layer strategy: between and below" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a rigid ventilation baffle from ridge to eaves before any insulation. 25 mm air gap minimum for standard roofs; 50 mm where the roof pitch is below 15 degrees." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Between the rafters: fill the remaining rafter depth with cut-to-fit mineral wool batts or rigid PIR board. PIR board gives more R-value per millimetre but requires a close fit to avoid edge bypass." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Below the rafters: a continuous layer of PIR board (typically 50 to 75 mm) taped at all joints eliminates the rafter thermal bridge. This layer is the most important in older buildings with shallow rafters." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " goes on the warm side: below the PIR layer and before the plasterboard. The exception is when the below-rafter PIR boards are foil-faced with all joints taped. In that case the foil acts as the VCL." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plasterboard on the warm face. 12.5 mm minimum. Do not omit fire protection on PIR board." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1950s semi has 100 x 50 mm rafters at 400 mm centres. Pitch 35 degrees. Existing tiles with breathable felt. Available rafter depth after 25 mm baffle: 75 mm. Install 75 mm mineral wool between rafters (lambda 0.040: R = 1.88 m²·K/W). Add 60 mm PIR board below rafters (lambda 0.022: R = 2.73 m²·K/W). Combined R ignoring rafter bridges: 4.61 m²·K/W plus 0.21 for surfaces and air gaps. Resulting U-value approximately 0.21 W/m²·K, close to the Part L1B target. With 30 m² of roof plane at a design temperature difference of 12 degrees Celsius: heat loss reduced from roughly 3,600 W to around 76 W. Annual saving around 1,400 kWh at current gas rates (approximately 84 pounds)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Kneeler wall and flat ceiling sections" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The kneeler wall and the flat ceiling above the storage zone must be insulated to the same standard as the slope. The flat ceiling zone sits above a cold void: use 270 mm of mineral wool at ceiling level. For the kneeler wall, fit 100 mm of mineral wool between the studs and a 50 mm board on the warm face." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Room still cold after insulating slope" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the kneeler wall and flat ceiling zone. Heat escapes fastest through the uninsulated flat ceiling that covers the storage area behind the kneeler wall." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Condensation on tiles after insulation" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The ventilation baffle has been blocked or omitted. Remove the lowest rafter board, check the soffit ventilation is clear, and refit a proper baffle." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

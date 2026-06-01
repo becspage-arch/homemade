@@ -1,0 +1,102 @@
+{
+  "slug": "spray-applied-airtightness-membrane",
+  "title": "Spray-applied and liquid-applied airtightness membranes",
+  "subtitle": "Where sprayed airtightness coatings are used and how they work",
+  "excerpt": "Liquid-applied airtightness membranes are sprayed or rolled onto masonry, concrete, or timber substrates to form a continuous air barrier across irregular surfaces. They are used where sheet membranes are difficult to detail at penetrations and junctions, and in new-build or major renovation projects targeting very low airtightness results.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBA and ETA product certification for Pro Clima Kaflex, Siga Majcoat, and similar spray-applied systems. ATTMA TS1:2016 on airtightness test requirements. Passive House Institute guidance on airtightness layers in EnerPHit retrofit projects.",
+  "approximateCostGbp": 3000,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "airtightness-layer",
+      "term": "Airtightness layer",
+      "definition": "A continuous layer in the building envelope that resists the passage of air. Can be formed by plaster, membranes, foil-faced boards, or a spray-applied coating."
+    },
+    {
+      "slug": "enerphit",
+      "term": "EnerPHit",
+      "definition": "A Passive House Institute certification standard for the deep retrofit of existing buildings to a very high level of energy performance, including a blower-door test result of 1.0 m³/h/m² or below."
+    }
+  ],
+  "techniqueSlugs": ["airtightness-survey-smoke-pencil", "air-sealing-tape-and-mastic-junctions"],
+  "criticalTechniques": ["air-sealing-tape-and-mastic-junctions"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sheet airtightness membranes work well where the substrate is flat and regular. On a brick wall with joist pockets, service entries, existing socket boxes, and irregular mortar joints, a sheet membrane needs dozens of individual tape seals at penetrations. A spray-applied " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "airtightness-layer" } }], "text": "airtightness layer" },
+          { "type": "text", "text": " conforms to the substrate and seals irregular surfaces in one pass, then receives the insulation system over the top." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Product types" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Acrylic-based spray membranes: applied cold with an airless sprayer or brush/roller for small areas. Cure to a flexible film that bridges hairline cracks. Application thickness 1 to 2 mm wet (0.5 to 1 mm dry). Not vapour-open; suited to masonry substrates that will be covered with insulation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vapour-open spray membranes: applied similarly but use a formulation with controlled vapour permeance (typically Sd value 0.5 to 1.0 m). Suited to timber-frame or pre-1919 masonry where vapour management through the membrane is needed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Closed-cell spray polyurethane foam: applied as a thicker layer (25 to 50 mm) to provide both air barrier and thermal insulation in one operation. Very high airtightness performance but difficult to reverse; the substrate is coated permanently." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where liquid membranes are specified" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Passivhaus and " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "enerphit" } }], "text": "EnerPHit" },
+            { "type": "text", "text": " retrofits that need below 0.6 air changes per hour at 50 Pascals. Tape-and-sheet cannot achieve this over rough masonry." }
+          ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Junctions where new timber frame meets existing masonry: mixed substrates make sheet membrane detailing difficult without a movement gap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Historic masonry interiors where the surface is too irregular for sheet membranes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Application and quality" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Spray membranes require a clean, dust-free, dry substrate. Surface contamination is the most common cause of delamination failures. The manufacturer's minimum and maximum application temperature must be observed; most water-based products cannot be applied below 5 degrees Celsius or above 30 degrees Celsius. A peel-adhesion test (a test patch applied, cured, and peeled after 24 hours) on the actual substrate is good practice before a large application. The cured film should resist peeling without tearing; if the film peels cleanly from the substrate, the surface needs a primer or de-dusting." }
+        ]
+      }
+    ]
+  }
+}

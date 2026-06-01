@@ -1,0 +1,231 @@
+{
+  "slug": "external-wall-insulation-ewi-installation",
+  "title": "Installing external wall insulation on a solid-wall house",
+  "subtitle": "A full EWI project from survey to render coat on a 1930s semi",
+  "excerpt": "External wall insulation adds 60 to 150 mm of insulation around the outside of a solid-wall house, then wraps it in a render finish. On a typical 1930s or 1950s semi with 230 mm solid brick walls, a full EWI installation reduces the wall U-value from around 2.1 to below 0.3 W/m²K, cutting heat loss through the walls by roughly 85 percent.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE Guide A Chapter 3 for wall U-value calculation methodology. BRE Digest 369 on external insulation of walls. gov.uk Part L1B (2022) for the 0.30 W/m²K retained wall target. PAS 2035 for the retrofit assessor and installer requirements for publicly-funded work.",
+  "approximateCostGbp": 12000,
+  "paybackYears": 25,
+  "recipe": { "foundational": true },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a square metre of a building element per degree of temperature difference. Measured in W/m²K. Lower is better."
+    },
+    {
+      "slug": "ewi",
+      "term": "External wall insulation (EWI)",
+      "definition": "A system of insulation boards fixed to the outside of a building wall, finished with a reinforced render or cladding system."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A localised zone in the building envelope where heat flows faster than through the surrounding construction, typically at junctions, reveals, and structural elements."
+    },
+    {
+      "slug": "pas-2035",
+      "term": "PAS 2035",
+      "definition": "The British Standard for retrofitting dwellings for improved energy efficiency. Sets out the roles of retrofit assessor, retrofit coordinator, and installer."
+    }
+  ],
+  "techniqueSlugs": ["understanding-u-values", "thermal-bridging-explained"],
+  "criticalTechniques": ["understanding-u-values"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1930s semi with 230 mm solid brick walls loses heat through every wall face at a rate determined by a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+          { "type": "text", "text": " of around 2.1 W/m²K. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ewi" } }], "text": "External wall insulation" },
+          { "type": "text", "text": " reduces that to 0.28 to 0.30 W/m²K with 90 mm of EPS board, or to 0.18 W/m²K with 150 mm of mineral wool. For a house with 80 m² of exposed wall area, heating to 21 degrees Celsius against a mean winter temperature of 5 degrees Celsius, the annual wall heat loss falls from around 9,400 kWh to approximately 1,400 kWh after EWI. At current UK gas rates that is a saving of around 480 pounds per year." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "EWI on a listed building or in a conservation area typically requires planning permission. Check with the local planning authority before proceeding. The installer must also notify Building Control under Part L1B unless the work qualifies as like-for-like maintenance." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The condition of the existing wall. Any damp, spalling, or failed render must be repaired before the EWI system is installed; trapping moisture behind insulation boards accelerates decay." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The roof overhang. EWI adds 90 to 150 mm to each wall face. Where the roof overhangs by less than 200 mm, a soffit extension is needed before the boards reach the fascia." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Window reveal depth. Adding 90 mm of board may bring the wall flush with or past the window frame. Windows may need to move forward; or fit insulation in the reveal separately." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Neighbour consent for a semi-detached property. The boards must stop at the party wall boundary; a proper expansion joint and end-of-system profile is needed at the boundary line." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "EWI boards: EPS (expanded polystyrene) at 90 mm or mineral wool slab at 100 mm are the standard choices. Mineral wool is vapour-open and suits damp climates; EPS is lighter but vapour-closed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Adhesive mortar: compatible with the board type. EPS typically uses a polymer-modified cement adhesive applied as dots and strips or full bed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mechanical fixings: stainless steel hammer fixings at a density set by the system manufacturer (typically 8 per m² on open areas, 12 per m² at edges)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Base coat render with fibreglass reinforcing mesh: typically 4 to 6 mm wet thickness. The mesh is embedded in two layers, lapping at all joints and doubled at corners and window reveals." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Finish render or silicone topcoat in the chosen texture and colour. Silicone renders are more flexible and self-cleaning than acrylic." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beads and trims: starter track at DPC level, corner beads at all external corners, stop beads at the party wall termination and at any system edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "EWI is scaffold work. The scaffold must be inspected by a competent person before use and erected with a gap of 300 mm between the boards and the working platform to allow the render coats to be applied to the full height of each lift. Never stand on scaffold boards placed across ladders. Never load more materials onto a scaffold lift than the load-rated capacity; a full pack of mineral wool boards weighs around 100 kg. Keep the scaffold platform clear of render bags at height." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The installation: step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix the starter track along the full base of the EWI zone, set 150 mm above finished ground level (300 mm in high-exposure zones). This carries the first course of boards and provides a weather stop at the base of the system." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the adhesive to a stiff but workable consistency. Apply to the back of each board in the manufacturer's specified pattern. For EPS on a reasonably flat brick face, the dots-and-strips method (four adhesive pads plus a perimeter ring) gives adequate contact area while allowing trapped air to vent during press-on." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press each board onto the wall with full-hand pressure and check for level. Stagger the vertical joints by at least half a board width. Boards must never be smaller than 200 mm in any dimension at cut edges; cut pieces that fall below this are raked out and replaced with a full board trimmed from the adjacent position." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After the adhesive has cured (24 to 48 hours for most polymer-modified cements at above 5 degrees Celsius), install the mechanical fixings. Drive to the depth recommended in the system approval document." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rasp or sand the board face to level any steps at joints. Apply the first 3 mm base coat, then embed the reinforcing mesh, pressing it into the wet render with a steel float. The mesh must be fully embedded with no dry texture visible through it. Apply a second 2 to 3 mm base coat over the mesh to produce a flat, even surface. Allow to cure for the manufacturer's stated open time (typically 3 to 7 days depending on temperature and humidity)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the finish coat. For silicone topcoat, prime the base first with a silicone primer in the matching colour shade. Apply the topcoat in one continuous application per wall face where possible. Lap marks and stop lines will show on lighter colours if sections are allowed to dry before adjoining sections are applied." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thermal bridges at junctions" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The most common failure in an otherwise well-executed EWI installation is the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }], "text": "thermal bridge" },
+          { "type": "text", "text": " at window and door reveals. Where the EWI boards stop flush with the original window frame, the 230 mm reveal is uninsulated. Heat flows around the edge of the boards and through the masonry reveal to the frame. At least 20 mm of insulation on the reveal, taken back to the frame and sealed with a render bead, cuts this junction loss. On older reveals with decorative brickwork or stone sills, the insulation depth is limited by the sill overhang. The assessor's survey should identify this and set the reveal depth to match." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Done well versus done badly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Done well, the finished system has no visible board joints in the base coat, a continuous reinforcing mesh doubled at all corners and reveals, a tight seal at the starter track and all system edges, and reveal insulation returning to the window frames on all apertures. A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pas-2035" } }], "text": "PAS 2035" },
+          { "type": "text", "text": "-compliant installation includes a retrofit assessor's report specifying the system and an independent inspection mid-installation and at completion. Done badly, boards are applied to a wall that still has rising damp; the boards hold moisture against the wall and accelerate the damp problem. Mechanical fixings are under-specified; boards detach in freeze-thaw cycles. The reveal is left uninsulated, maintaining a cold junction that condenses in cold weather and produces mould on the internal wall surface." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Board delaminating from wall" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Check the adhesive coverage: less than 40 percent contact area on the board back is insufficient. Boards should be removed, the wall surface re-checked for loose render or contamination, and re-fixed with adhesive and additional mechanical fixings." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Cracking in the render coat" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Diagonal cracks at window corners indicate board joints in the wrong position. The board joints should never align with the corners of window or door apertures; offset the boards so the corner falls mid-board. Re-apply mesh diagonally at all four corners." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Cold strips remaining at window reveals after install" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Confirm reveal insulation depth with a thermal imaging camera during the first cold spell after install. Where the reveal shows a clear cold edge compared to the EWI face, the reveal insulation is insufficient or absent. Add insulation returns of at least 20 mm and re-render." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

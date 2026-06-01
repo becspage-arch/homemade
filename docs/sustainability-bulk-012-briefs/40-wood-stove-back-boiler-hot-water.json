@@ -1,0 +1,120 @@
+{
+  "slug": "wood-stove-back-boiler-hot-water",
+  "title": "Installing a back boiler in a wood stove for hot water",
+  "subtitle": "How a gravity-fed back boiler works, Building Regs requirements, and the open-vented versus unvented system decision",
+  "excerpt": "A back boiler is a water jacket or coil fitted inside a wood stove that heats water alongside the room. The heated water rises by gravity to a hot water cylinder above the stove. This is an established technology for off-grid hot water production, but the Building Regulations requirements, the cylinder sizing, and the expansion and safety relief arrangements are not simple and have specific mandatory requirements.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part J (Combustion Appliances and Fuel Storage Systems). HETAS guidance on solid fuel appliances with back boilers. HSE guidance on wood-burning stove installation. Worcester Bosch and Klover back boiler technical specifications. CIBSE Guide B4 on hot water supply. WRAS guidance on hot water system safety.",
+  "approximateCostGbp": 3000,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "gravity-circulation",
+      "term": "Gravity circulation",
+      "definition": "Water circulation driven by density differences between hot and cold water rather than by a pump. Hot water from the back boiler is less dense and rises to the cylinder; cooler water from the base of the cylinder descends to the back boiler. Requires at least 150 mm height difference between the boiler and the cylinder, and 22 mm minimum pipework."
+    },
+    {
+      "slug": "open-vented-system",
+      "term": "Open vented hot water system",
+      "definition": "A hot water system open to the atmosphere via a cold water storage cistern and an open-ended vent pipe. If the system overheats, water expands up the vent pipe and into the cistern rather than building pressure. The standard and safest configuration for back boiler installations."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wood stove back boiler with " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gravity-circulation" } }],
+            "text": "gravity circulation"
+          },
+          { "type": "text", "text": " is a reliable, low-maintenance hot water system for an off-grid property. The back boiler transfers 3 to 6 kW of the stove's heat output to the water circuit while the remaining 4 to 8 kW heats the room. A well-fired 10 kW stove with a 4 kW back boiler can heat 100 litres of water from cold to 60 degrees Celsius in 2 to 3 hours of burning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "System configuration: always open vented" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A back boiler installation must use an " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "open-vented-system" } }],
+            "text": "open vented hot water system"
+          },
+          { "type": "text", "text": ". Sealed (pressurised) systems are not permitted with solid fuel boilers. A solid fuel fire cannot be turned off instantly, so if a sealed system overheats, pressure builds until the safety valve lifts or the system fails. An open vented system has a feed cistern in the loft and an open vent pipe. If it overheats, water steams off through the vent instead of building pressure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building Regs and HETAS approval" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The stove itself must be HETAS-approved for use with a back boiler. Not all stoves are approved for boiler use; the stove type approval must include back boiler operation." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A HETAS-registered installer must carry out the work. They self-certify the job to Building Control, so no separate Building Regs application is needed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The cylinder must be sized correctly and sit at least 1 m above the back boiler for gravity circulation. Two metres of height difference is better." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "An immersion heater in the cylinder provides backup hot water when the stove is not lit." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pipework sizing and layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gravity circulation pipework must be 22 mm minimum diameter; 28 mm for runs above 3 m. The flow pipe (hot, rising) runs from the top of the back boiler to the top of the cylinder coil with no horizontal sections that would trap air. The return pipe (cool, falling) runs from the bottom of the cylinder coil to the bottom of the back boiler. Any horizontal run must slope at least 1 in 100. Air venting at the high points is critical: fit an automatic air vent at the top of the flow pipe if there is any unavoidable dip in the pipe run." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Cylinder not heating despite stove burning well" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Air lock is the most common cause. Open the automatic air vent if fitted, or bleed air from the system at the highest point. If no vent is fitted, the system must be drained and refilled carefully from the bottom to push air up and out through the open vent pipe." }] }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Expansion cistern overflowing in normal operation" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "The system is overheating. Check the back boiler for scale build-up reducing water circulation, and check that the gravity circulation is actually flowing (both pipes should be warm when the stove is burning). A restricted flow increases the boiler temperature, which expands more water into the cistern." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

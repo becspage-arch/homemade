@@ -1,0 +1,86 @@
+{
+  "slug": "dc-coupled-vs-ac-coupled-solar-battery",
+  "title": "DC-coupled versus AC-coupled solar battery storage",
+  "subtitle": "How the two coupling architectures differ in efficiency, compatibility, and retrofit cost",
+  "excerpt": "Solar battery storage systems can connect to the PV array at the DC level (before the inverter) or at the AC level (after the inverter). DC coupling is more efficient for energy captured directly from the panels; AC coupling is easier to retrofit to an existing PV installation and allows the battery to charge from the grid on cheap overnight tariffs.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SolarEdge, GivEnergy, and Tesla Powerwall installation manuals for DC and AC coupling architectures. Solar Trade Association technical guidance on battery storage in domestic systems. BEIS Smart Export Guarantee guidance for hybrid systems.",
+  "approximateCostGbp": 4000,
+  "paybackYears": 12,
+  "recipe": { "foundational": false },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "dc-coupling",
+      "term": "DC coupling",
+      "definition": "A solar battery configuration where the battery charger is connected between the PV panels and the main inverter, capturing DC power directly from the panels without conversion losses."
+    },
+    {
+      "slug": "ac-coupling",
+      "term": "AC coupling",
+      "definition": "A solar battery configuration where the battery has its own inverter-charger connected to the AC bus of the system, receiving power after the PV inverter has already converted it."
+    },
+    {
+      "slug": "round-trip-efficiency",
+      "term": "Round-trip efficiency",
+      "definition": "The percentage of energy put into a battery storage system that is recovered as usable electricity. Typically 85 to 95 percent for lithium-ion batteries, depending on coupling architecture and charge/discharge rate."
+    }
+  ],
+  "techniqueSlugs": ["solar-battery-storage-sizing", "solar-diverter-vs-battery"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dc-coupling" } }], "text": "DC-coupled" },
+          { "type": "text", "text": " system, the PV panels connect to a hybrid inverter that manages both the battery charge controller and the AC output in a single unit. The energy flows from the panels to the battery at DC, then from the battery to the load at AC: one conversion stage. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "round-trip-efficiency" } }], "text": "Round-trip efficiency" },
+          { "type": "text", "text": " for DC coupling is typically 92 to 95 percent. In an " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ac-coupling" } }], "text": "AC-coupled" },
+          { "type": "text", "text": " system, the existing PV inverter converts to AC; a separate battery inverter-charger then converts that AC back to DC for battery storage, then back to AC for the load. Three conversion stages instead of one: round-trip efficiency falls to around 85 to 88 percent." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which to choose for a new installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a new installation of panels plus battery together, DC coupling is generally more efficient and often simpler to install. The hybrid inverter handles both PV power tracking and battery charge. Examples include GivEnergy All-in-One, SolarEdge Energy Hub, and Solax X-Hybrid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which to choose for a retrofit battery" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For an existing PV system with a functioning string inverter, AC coupling is the practical option. The existing inverter and panels stay unchanged. A battery inverter-charger (Tesla Powerwall, GivEnergy AC Battery, Sonnen) connects to the AC consumer unit. The 5 to 7 percentage point efficiency penalty is partly offset by keeping the working inverter and avoiding a full system replacement cost. For a 10 kWh battery cycling once per day, the efficiency difference is roughly 50 to 70 kWh per year of additional losses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Grid charging and time-of-use tariffs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Both AC and DC coupled systems can charge from the grid on cheap overnight tariffs, not just from solar. In winter, solar generation is low. The battery value comes from shifting cheap overnight power (7p to 9p per unit) to expensive daytime rates (25p to 30p per unit). The coupling choice matters less then. At a 20p rate differential, a 10 kWh battery cycling once daily saves around 700 to 730 pounds per year from time-shift arbitrage, minus battery degradation cost." }
+        ]
+      }
+    ]
+  }
+}

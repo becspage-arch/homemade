@@ -1,0 +1,134 @@
+{
+  "slug": "composting-biodegradable-cat-litter",
+  "title": "Composting biodegradable cat litter",
+  "subtitle": "Which cat litters are safe to compost, thermophilic temperature requirements for safety, and what to exclude",
+  "excerpt": "Biodegradable cat litters made from paper, wood fibre, or plant starch can be composted, but only in a hot compost system that reaches 60 degrees Celsius for several days to destroy the parasites (including Toxoplasma gondii) carried in cat faeces. Clay and silica gel litters cannot be composted and must go in the general waste bin. This guide covers the safe composting method and what not to do.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Health Security Agency guidance on Toxoplasma gondii and cat faeces. Defra guidance on animal waste composting at household scale. Garden Organic guidance on pet waste composting. USDA guidance on composting pet waste (municipal scale). Defra Code of Practice on safe application of animal manure.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermophilic-composting",
+      "term": "Thermophilic composting",
+      "definition": "Composting that reaches temperatures of 55 to 65 degrees Celsius in the active zone. At these temperatures, most weed seeds, plant pathogens, and animal parasites including Toxoplasma gondii are destroyed within several days. Cold compost heaps do not reach these temperatures."
+    },
+    {
+      "slug": "toxoplasma",
+      "term": "Toxoplasma gondii",
+      "definition": "A parasite shed in cat faeces that can cause toxoplasmosis in humans. The cysts are resistant to composting at low temperatures but are destroyed by sustained heat above 60 degrees Celsius. Pregnant women should avoid handling cat litter entirely."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The hazard in composting cat litter is not the litter itself but the cat faeces, which may contain " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "toxoplasma" } }],
+            "text": "Toxoplasma gondii"
+          },
+          { "type": "text", "text": ". This is destroyed by " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermophilic-composting" } }],
+            "text": "thermophilic composting"
+          },
+          { "type": "text", "text": " at 60 degrees Celsius for at least three consecutive days. Cold heaps and wormeries do not reach these temperatures; used cat litter must not go in them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which litters can be composted" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Paper pellet litters (recycled newspaper): fully compostable. High carbon, absorbs well, no dye risk." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wood fibre pellets (pine, softwood): compostable. Break down well in a hot heap. Some brands have an aromatic pine smell that fades in composting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Corn, wheat, or other plant-based starch litters: compostable but clumping types may slow breakdown. Remove any heavily clumped sections if possible." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clay/bentonite litters: not compostable. Go in the general waste bin." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Silica gel crystal litters: not compostable. Go in the general waste bin." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The safe composting method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use a dedicated hot compost heap or insulated bin. Do not add cat litter to a cold pile or a wormery." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the used litter with carbon-rich material: cardboard, straw, or wood chip at a ratio of 3 parts carbon to 1 part litter by volume. Cat litter is nitrogen-rich; it needs carbon to balance." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Monitor the temperature with a compost thermometer. The heap must reach 60 degrees Celsius and stay there for at least 3 days before turning. After turning, allow a second hot phase." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not use the resulting compost on edible crops. Apply to ornamental beds, shrubs, or trees only." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Who should not handle cat litter compost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pregnant women should not handle cat litter at all, whether raw or composted. The risk is toxoplasmosis infection, which can be serious during pregnancy. People with weakened immune systems should also avoid raw or cold-composted cat litter." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": { "title": "Troubleshooter" },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "symptom": "Heap stays below 50°C even after adding litter" },
+            "content": [
+              { "type": "paragraph", "content": [{ "type": "text", "text": "Add more nitrogen-rich material (fresh green waste, grass clippings) and check moisture level. A hot heap needs 50 to 60 percent moisture: it should feel like a wrung-out sponge." }] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

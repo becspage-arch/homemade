@@ -1,0 +1,112 @@
+{
+  "slug": "pitched-roof-ventilation-baffle-installation",
+  "title": "Installing ventilation baffles when insulating a rafter space from below",
+  "subtitle": "Maintaining the 25 mm airway from eaves to ridge when fitting between-rafter insulation",
+  "excerpt": "When insulating between rafters from inside, the 25 mm ventilation channel between the insulation and the sarking felt must be maintained continuously from eaves to ridge. Without it, moisture accumulates at the sarking felt and rots the structure over time. Ventilation baffles hold this channel open and deflect insulation away from the felt.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Approved Document C (2004) on site preparation and moisture. NHBC Standards Chapter 7.2 on pitched roofs: ventilation requirements. BS 5250:2011 + A1:2016 on moisture control in buildings. BRE Good Building Guide GBG 26 on ventilated roofs.",
+  "approximateCostGbp": 80,
+  "paybackYears": null,
+  "recipe": { "foundational": false },
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "staple-gun-manual", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ventilation-baffle",
+      "term": "Ventilation baffle",
+      "definition": "A shaped board or moulded insert fitted between rafters above the insulation layer to keep the 25 mm ventilation channel open and prevent insulation from contacting the sarking felt."
+    },
+    {
+      "slug": "sarking-felt",
+      "term": "Sarking felt",
+      "definition": "The waterproofing underlay laid over the roof rafters and beneath the tiles or slates. It is the secondary weather barrier and the substrate against which the ventilation channel is maintained."
+    }
+  ],
+  "techniqueSlugs": ["dormer-warm-roof-insulation", "vapour-control-layers-explained"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every rafter insulation installation in a cold or mixed roof construction must preserve a 25 mm clear airway between the insulation top face and the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sarking-felt" } }], "text": "sarking felt" },
+          { "type": "text", "text": ". Without this channel, moisture from inside migrates up through any VCL gap and condenses on the cold felt. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ventilation-baffle" } }], "text": "ventilation baffle" },
+          { "type": "text", "text": " holds the insulation down and keeps the channel open." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Baffle types" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rigid polypropylene troughs: pre-formed C-sections that clip or wedge between rafters. Available in 400 mm and 600 mm bay widths. The trough profile holds its shape and does not compress under the weight of insulation above." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rigid EPS baffles: rectangular profile with spacer pins that sit against the felt. Lighter than polypropylene troughs and adequate for standard mineral wool at minimum code depth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Formed plywood or OSB site-made baffles: cut to width and held down with temporary clips while the insulation is installed. Adequate but time-consuming on large areas." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Installation: step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the rafter bay width at eaves and ridge. Rafters are rarely exactly 400 mm or 600 mm apart; cut baffles to the measured width minus 5 mm to allow for fit without forcing." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Starting at the eaves, push the first baffle up to contact the sarking felt, pressing it flat against the underside of the felt with light hand pressure. The baffle holds itself in position against the rafters; staple through the baffle flange into the rafter sides at 300 mm intervals if working in a wide bay." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Butt the next baffle tightly against the first, working up to the ridge. Overlap joints by 50 mm and tape the joint with foil tape to prevent any air bypass at the joint between baffles." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the ridge, the baffle terminates at the ridge board or ridge piece. The ventilation channel must open into a ventilated ridge: confirm the ridge tiles are set on open battens or that a proprietary ridge vent tile is present." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once all baffles are fitted, install the insulation against the baffle face, filling to the required depth below the baffle bottom edge. Do not compress the insulation: compressed mineral wool loses thermal resistance in proportion to how much it is squashed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "At the eaves" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The eaves junction is the most critical location. The insulation must not block the eaves ventilation gap between the top of the ceiling insulation and the soffit. Where the eaves gap is less than 25 mm, fit a rigid eaves tray that directs the air flow from the soffit vent up through the counter-batten channel and into the rafter bay above. Proprietary eaves trays are available to match the common rafter pitches and soffit configurations." }
+        ]
+      }
+    ]
+  }
+}
