@@ -1,0 +1,215 @@
+{
+  "slug": "ruling-up-for-display-lettering",
+  "title": "Ruling up for display lettering, preparing large-format guide lines",
+  "subtitle": "How to calculate and rule guide lines for calligraphy above 10 mm x-height",
+  "excerpt": "Display calligraphy at large scale requires accurate ruling. The relationship between nib width, x-height, and line spacing changes at large scale, margins that look right at 5 mm x-height become cramped or excessive at 30 mm. This tutorial covers the calculation and ruling process for large-format work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), appendix on ruling and margin proportions: Johnston's detailed tables of nib-width-to-x-height ratios for the various manuscript hands, combined with his analysis of classical margin proportions from medieval manuscripts, form the basis of this tutorial.",
+  "recipeTools": [
+    {
+      "slug": "metal-ruler-60cm",
+      "isOptional": false
+    },
+    {
+      "slug": "ruling-pen",
+      "isOptional": false
+    },
+    {
+      "slug": "pencil",
+      "isOptional": false
+    },
+    {
+      "slug": "cartridge-paper-220",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nib-width",
+      "term": "Nib width",
+      "definition": "The width of the broad-edge nib's writing edge. X-heights in calligraphy are measured in nib-widths, a Foundational 'a' at 4 nib-widths means the x-height is four times the edge width of the nib in use."
+    },
+    {
+      "slug": "line-spacing",
+      "term": "Line spacing",
+      "definition": "The distance between the baselines of successive lines of text. At minimum, line spacing equals the sum of the x-height plus the ascender height plus the descender height, narrower than this causes collisions."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Display calligraphy works at x-heights of 10-50 mm. At this scale, small ruling errors that would be invisible in practice work show clearly. A systematic method removes the main sources of error: uneven line spacing, lines that are not parallel, and margins not derived from the page size."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            {
+              "name": "Metal ruler, 60 cm",
+              "notes": "Long enough to rule a full line across A2 or larger paper."
+            },
+            {
+              "name": "Ruling pen",
+              "notes": "For ruling fine, precise lines in pencil or ink. A well-set ruling pen produces a more consistent line than a pencil against a ruler."
+            },
+            {
+              "name": "Pencil (HB)",
+              "notes": "For all guide lines that will be erased after the lettering dries."
+            },
+            {
+              "name": "Cartridge paper, 220 gsm",
+              "notes": "Heavy paper for display work. Lighter paper buckles under heavy ink at large scale."
+            },
+            {
+              "name": "Set square or T-square",
+              "notes": "For ruling parallel lines perpendicular to the left margin."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculate the x-height"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nib-width"
+                }
+              }
+            ],
+            "text": "nib width"
+          },
+          {
+            "type": "text",
+            "text": " determines the x-height. For Foundational at 4 nib-widths: measure the nib face width in millimetres and multiply by 4. A 5 mm broad-edge nib produces a 20 mm x-height. For Italic at 5 nib-widths: the same 5 mm nib gives a 25 mm x-height. Work out the ascender and descender zones as multiples of the x-height: typically 50% each (so 10 mm ascender and 10 mm descender for a 20 mm x-height)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculate line spacing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The minimum "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "line-spacing"
+                }
+              }
+            ],
+            "text": "line spacing"
+          },
+          {
+            "type": "text",
+            "text": " is x-height + ascender + descender. For a 20 mm x-height with 10 mm ascender and 10 mm descender, the minimum is 40 mm between baselines. Adding an inter-line gap of 5-8 mm gives better readability at large scale, use 45-48 mm between baselines as the default for display work at 20 mm x-height."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule the margins first"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule the left and right margins before the horizontal lines. Classical margin proportions for a single text column on an upright page: inner margin = 1 unit, top margin = 1.5 units, outer margin = 2 units, bottom margin = 3 units. The unit can be any size that fits the page, experiment on a reduced sketch before ruling the final sheet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule the horizontals"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark the baseline intervals down the left margin with a pencil dot. Connect them across the page with the metal rule, working with the ruling pen or a sharp pencil. Use a T-square or set square to ensure the lines are parallel to the top edge of the paper. Check parallelism after every three or four lines, measurement error accumulates. Erase and re-rule rather than accepting a drifting line; the guide lines will show if they are uneven."
+          }
+        ]
+      }
+    ]
+  }
+}

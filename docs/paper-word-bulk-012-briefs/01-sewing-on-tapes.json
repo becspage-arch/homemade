@@ -1,0 +1,370 @@
+{
+  "slug": "sewing-on-tapes",
+  "title": "Sewing on tapes, a laced-in binding structure",
+  "subtitle": "How to sew signatures onto horizontal linen tapes",
+  "excerpt": "Tapes are strips of linen or cotton webbing sewn across the spine. Where cords leave a raised rib, tapes lie flat inside the boards, the hidden backbone of the classic European trade binding.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter III, 'Sewing': detailed description of sewing on tapes and the transition from cord to tape binding in the 19th century, with guidance on tape width and spacing relative to book height.",
+  "recipeTools": [
+    {
+      "slug": "bookbinding-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-thread-linen",
+      "isOptional": false
+    },
+    {
+      "slug": "beeswax-block",
+      "isOptional": false
+    },
+    {
+      "slug": "bookbinding-awl",
+      "isOptional": false
+    },
+    {
+      "slug": "piercing-jig",
+      "isOptional": false
+    },
+    {
+      "slug": "pencil",
+      "isOptional": false
+    },
+    {
+      "slug": "metal-ruler-30cm",
+      "isOptional": false
+    },
+    {
+      "slug": "bone-folder",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "signature",
+      "term": "Signature",
+      "definition": "A folded group of sheets sewn together through the fold, the basic unit of a sewn binding."
+    },
+    {
+      "slug": "kettle-stitch",
+      "term": "Kettle stitch",
+      "definition": "The link stitch worked at the head and tail of each signature, catching the previous signature to pull the text block together."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "A pierced hole in the fold of a signature through which the needle passes. Tapes create two sewing stations per tape, one each side."
+    }
+  ],
+  "techniqueSlugs": [
+    "kettle-stitch",
+    "bookbinding-folding-signatures"
+  ],
+  "criticalTechniques": [
+    "kettle-stitch"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Linen tape replaces the raised cord in European bookbinding from roughly the mid-18th century onward. The tape sits flush in a channel cut across the backing board; where cords leave a visible ridge on the spine, tapes produce a smooth surface. The laced-in construction is mechanically stronger than a glued-on case: each tape passes through a slot in the board and is glued down under a thin sheet of spine liner. A tape-sewn book opens flatter and distributes stress more evenly along the hinge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            {
+              "name": "Bookbinding thread, linen (waxed)",
+              "notes": "4-cord waxed linen thread. If the thread is unwaxed, run it across the beeswax block twice before sewing."
+            },
+            {
+              "name": "Bookbinding needle",
+              "notes": "Blunt-tip needle sized for 4-cord thread."
+            },
+            {
+              "name": "Bookbinding awl",
+              "notes": "For piercing sewing stations."
+            },
+            {
+              "name": "Piercing jig",
+              "notes": "V-cradle to hold each signature open while piercing."
+            },
+            {
+              "name": "Beeswax block",
+              "notes": "For conditioning thread."
+            },
+            {
+              "name": "Linen tape, 20 mm",
+              "notes": "Unbleached or natural linen webbing, 20 mm wide. Cotton twill tape also works at this width. Width matched to the book height, three tapes for a book up to 200 mm tall, four tapes for 200-300 mm."
+            },
+            {
+              "name": "Bone folder",
+              "notes": "For marking tape positions on each signature."
+            },
+            {
+              "name": "Metal ruler, 30 cm",
+              "notes": "For measuring tape spacing."
+            },
+            {
+              "name": "Pencil",
+              "notes": "For marking sewing stations."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark and pierce the signatures"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place all folded signatures in order. Mark a single template "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "signature"
+                }
+              }
+            ],
+            "text": "signature"
+          },
+          {
+            "type": "text",
+            "text": " for the sewing stations. Allow 15 mm from head and tail for the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kettle-stitch"
+                }
+              }
+            ],
+            "text": "kettle-stitch"
+          },
+          {
+            "type": "text",
+            "text": " holes. Space the tapes evenly between these end points. Each tape produces two sewing stations, one either side of the tape: mark the first station 5 mm to the left of the tape edge and the second 5 mm to the right. Pierce all stations from the inside of the fold with the awl; hold the signature in the piercing jig to keep the fold steady."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Position the tapes on the sewing frame"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A simple sewing frame keeps the tapes vertical and taut. Tie or tape each strip to the upper rail so it hangs straight. The tapes must be perpendicular to the spine and under even tension, a slack tape catches the thread on the wrong side of the tape and weakens the sewing. If you lack a frame, clamp the tapes to a horizontal bar above the work surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sew the first signature"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the needle with a length of waxed linen thread around 1.5 times the height of the book. Begin at the tail end kettle-stitch hole, entering from inside the fold. Exit at the first sewing station to the left of the first tape. Pass the thread over the tape (front to back), re-enter the signature at the station to the right of the tape. Continue across all tapes in this way, then exit at the head kettle-stitch station. Lay the first signature flat on the work surface with the spine facing you."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sew successive signatures"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the second "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "signature"
+                }
+              }
+            ],
+            "text": "signature"
+          },
+          {
+            "type": "text",
+            "text": " on top of the first, tail end at your right. Enter the head "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sewing-station"
+                }
+              }
+            ],
+            "text": "sewing station"
+          },
+          {
+            "type": "text",
+            "text": " from inside. Work across to the tail end, catching under the tape each time. At the tail, work a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kettle-stitch"
+                }
+              }
+            ],
+            "text": "kettle stitch"
+          },
+          {
+            "type": "text",
+            "text": ": slide the needle between the first signature's thread and the spine, from head toward tail, then pull the thread through and tighten. The kettle stitch locks the current signature to the previous one at the extremities. Repeat for every subsequent signature, alternating from which end you begin."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After sewing the final signature, work two kettle stitches to anchor the end. Trim the thread leaving a 10 mm tail; thread the tail back under the last two stitches and cut flush. Press the sewn text block between boards under moderate weight for an hour before lacing in. This firms the signatures before the boards go on and prevents the spine from rocking."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Thread catches on the side of the tape rather than passing over the face",
+              "cause": "The sewing stations are too close together, or the tape is not taut.",
+              "fix": "Re-pierce the stations at least 5 mm to each side of the tape edge. Ensure the tape is held vertical and taut on the frame."
+            },
+            {
+              "symptom": "Signatures shift sideways during sewing",
+              "cause": "The head-to-tail alignment is not being checked between signatures.",
+              "fix": "Tap the spine edge of each new signature flush against the previous before pulling the kettle stitch tight."
+            },
+            {
+              "symptom": "Thread breaks mid-signature",
+              "cause": "Thread is not waxed or has been pulled at a sharp angle around the tape.",
+              "fix": "Run new thread through the beeswax block and rejoin with a weaver's knot at the nearest sewing station."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this leads"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tape sewing is the foundation of the classic hard case-bound book. Once the text block is sewn, the tapes lace through slots in the boards to form the hinge."
+          }
+        ]
+      }
+    ]
+  }
+}
