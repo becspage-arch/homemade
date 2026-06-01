@@ -1,10 +1,16 @@
 {
-  "generatedAt": "2026-06-01T11:09:46.335Z",
-  "totalScanned": 6200,
+  "generatedAt": "2026-06-01T12:09:55.063Z",
+  "totalScanned": 6256,
   "passCount": 0,
-  "blockCount": 6,
+  "blockCount": 33,
   "warnOnlyCount": 0,
   "perCategory": {
+    "sustainability": {
+      "total": 27,
+      "pass": 0,
+      "block": 27,
+      "warnOnly": 0
+    },
     "fibre-arts": {
       "total": 1,
       "pass": 0,
@@ -19,11 +25,329 @@
     }
   },
   "perRuleKind": {
-    "body-missing-method": 1,
-    "grade-level-strict": 2,
-    "voice-violation": 5
+    "voice-violation": 32,
+    "grade-level-strict": 39,
+    "body-missing-method": 1
   },
   "verdicts": [
+    {
+      "slug": "blown-cellulose-cavity-fill",
+      "tutorialId": "cmpv43x4x0001n8v4kq7hnjvv",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:34.817Z",
+      "publishedAt": "2026-06-01T11:15:21.325Z",
+      "heroMediaId": "cmpv4f5hi00040sv47kdbal51",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Blown cellulose insulation for cavity walls go here."
+        }
+      ]
+    },
+    {
+      "slug": "broadband-router-lifespan-extension",
+      "tutorialId": "cmpv47n4r0002gov480cnxmo2",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:35.677Z",
+      "publishedAt": "2026-06-01T11:18:14.989Z",
+      "heroMediaId": "cmpv4f88h000a0sv46d19y6bn",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
+          "snippet": "The router does not support WPA3 and the household has high-value data: a security upgrade is justified."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Extending the lifespan of home broadband and networking equipment go here."
+        }
+      ]
+    },
+    {
+      "slug": "composting-in-a-community-garden",
+      "tutorialId": "cmpv4df4c0001d4v4xoewv3p4",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:36.181Z",
+      "publishedAt": "2026-06-01T11:22:44.541Z",
+      "heroMediaId": "cmpv4fc7k000i0sv4fpsnm13s",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[2] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Running a compost system in a community garden or allotment go here."
+        }
+      ]
+    },
+    {
+      "slug": "composting-toilet-urine-diversion",
+      "tutorialId": "cmpv49tk50002wgv4sbyw7y19",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:36.367Z",
+      "publishedAt": "2026-06-01T11:19:56.613Z",
+      "heroMediaId": "cmpv4fdk7000k0sv4qyckmzh7",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 16.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 16.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Composting toilet urine diversion: separating and using liquid safely go here."
+        }
+      ]
+    },
+    {
+      "slug": "dehumidifier-condensate-for-gardens",
+      "tutorialId": "cmpv463ow000218v40shgjfn5",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:36.990Z",
+      "publishedAt": "2026-06-01T11:17:03.139Z",
+      "heroMediaId": "cmpv4fekc000m0sv4hlalpo92",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[4] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Using dehumidifier condensate water in the garden go here."
+        }
+      ]
+    },
+    {
+      "slug": "dehumidifier-guide-damp-basement",
+      "tutorialId": "cmpv4522v0001tgv4slvjn7fi",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:37.406Z",
+      "publishedAt": "2026-06-01T11:16:14.389Z",
+      "heroMediaId": "cmpv4fh21000o0sv4i3428d12",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "subtitle",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "excerpt",
+          "snippet": "Target"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > heading[5] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Choosing and running a dehumidifier in a damp basement or cellar go here."
+        }
+      ]
+    },
+    {
+      "slug": "digital-footprint-and-data-energy",
+      "tutorialId": "cmpv46zul0002jcv4eomntnui",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:37.606Z",
+      "publishedAt": "2026-06-01T11:17:44.815Z",
+      "heroMediaId": "cmpv4fijh000q0sv4h6qlz7qs",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[3] > paragraph[0]",
+          "snippet": "Cryptocurrency and NFTs: proof-of-work coins use far more energy per transaction than ordinary online activity. Cutting this out makes a rea"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Reducing the energy cost of your digital footprint go here."
+        }
+      ]
+    },
+    {
+      "slug": "ev-home-charger-installation-types",
+      "tutorialId": "cmpv44y6b00022ov4ee4790wv",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:37.886Z",
+      "publishedAt": "2026-06-01T11:16:09.334Z",
+      "heroMediaId": "cmpv4fjyu000s0sv482hz9e05",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
+          "snippet": "Smart charging capability: the unit must meet the EV Smart Charging Standard and be capable of remote scheduling. OZEV-approved installation"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for EV home charger types and installation: tethered versus untethered, single versus three-phase go here."
+        }
+      ]
+    },
+    {
+      "slug": "external-shutters-summer-overheating",
+      "tutorialId": "cmpv43kxe0000u4v496uk2ql9",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:38.220Z",
+      "publishedAt": "2026-06-01T11:15:05.498Z",
+      "heroMediaId": "cmpv4fm51000w0sv4hqjp52ar",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "External shutters and blinds are generally permitted development on domestic properties in England provided they do not protrude beyond the "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for External shutters and blinds for summer overheating go here."
+        }
+      ]
+    },
+    {
+      "slug": "floor-insulation-below-service-runs",
+      "tutorialId": "cmpv445ek00006cv4tcsqn2xm",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:38.659Z",
+      "publishedAt": "2026-06-01T11:15:32.026Z",
+      "heroMediaId": "cmpv4fnj200100sv4cu26io7h",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Fit rodent mesh or treated timber barriers at the perimeter sleeper walls and around any pipe or cable penetrations to keep pests out of the"
+        }
+      ]
+    },
+    {
+      "slug": "food-date-labels-and-sensory-checking",
+      "tutorialId": "cmpv46p0m0002z4v41eg76o29",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:39.106Z",
+      "publishedAt": "2026-06-01T11:17:30.777Z",
+      "heroMediaId": "cmpv4fq8z00140sv4fqllncmo",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Understanding food date labels and using sensory checks to reduce waste go here."
+        }
+      ]
+    },
     {
       "slug": "four-shaft-bronson-lace",
       "tutorialId": "cmpuvg0j60000cwv4wiu81b03",
@@ -87,6 +411,260 @@
       ]
     },
     {
+      "slug": "in-vessel-composting-unit-guide",
+      "tutorialId": "cmpv4dj640000p4v4ly23cjoe",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:40.162Z",
+      "publishedAt": "2026-06-01T11:22:49.778Z",
+      "heroMediaId": "cmpv4fxlh001i0sv4pv250rzm",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Choosing an in-vessel home composting unit go here."
+        }
+      ]
+    },
+    {
+      "slug": "internal-wall-insulation-one-room-pattern",
+      "tutorialId": "cmpv4bxl50000t8v4beuvv2sw",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:40.516Z",
+      "publishedAt": "2026-06-01T11:21:35.121Z",
+      "heroMediaId": "cmpv4fyy3001m0sv4xqw5d1ng",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "sourceNotes",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[7] > listItem[3] > paragraph[0]",
+          "snippet": "Apply a continuous bead of acoustic mastic sealant around the perimeter before fitting the plasterboard. The mastic seals the junction betwe"
+        }
+      ]
+    },
+    {
+      "slug": "lacto-fermentation-for-food-preservation",
+      "tutorialId": "cmpv459sq0002r4v4547oj8dn",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:40.857Z",
+      "publishedAt": "2026-06-01T11:16:24.397Z",
+      "heroMediaId": "cmpv4fzte001o0sv4ixktodd5",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Lacto-fermentation as a food preservation method go here."
+        }
+      ]
+    },
+    {
+      "slug": "led-lighting-upgrade-savings-guide",
+      "tutorialId": "cmpv44gom000050v4f1rfhjd0",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:41.131Z",
+      "publishedAt": "2026-06-01T11:15:46.651Z",
+      "heroMediaId": "cmpv4g12s001q0sv49lzs20ts",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for LED lighting upgrade: calculating the savings go here."
+        }
+      ]
+    },
+    {
+      "slug": "listed-building-insulation-options",
+      "tutorialId": "cmpv4cfub00010kv40whwmfu4",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:41.522Z",
+      "publishedAt": "2026-06-01T11:21:58.817Z",
+      "heroMediaId": "cmpv4g278001s0sv40b3pwp2n",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.0 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[3] > paragraph[0]",
+          "snippet": "Suspended floor draught-sealing: fitting brushes or flexible strips to the floor board joints to reduce subfloor draughts without altering t"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Insulating a listed building or conservation area property go here."
+        }
+      ]
+    },
+    {
+      "slug": "loft-insulation-joists-vs-rafter-level",
+      "tutorialId": "cmpv449ki0000b4v4qmb6ylnl",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:41.760Z",
+      "publishedAt": "2026-06-01T11:15:37.424Z",
+      "heroMediaId": "cmpv4g6bp001u0sv4bbus43ke",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[2] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Loft insulation at joist level versus rafter level go here."
+        }
+      ]
+    },
+    {
+      "slug": "medication-and-blister-pack-disposal",
+      "tutorialId": "cmpv48r2l00022kv4nlw2fh1q",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:42.614Z",
+      "publishedAt": "2026-06-01T11:19:06.665Z",
+      "heroMediaId": "cmpv4g7uh001y0sv4gnw22g3c",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0]",
+          "snippet": "Prescription medicines: all pharmacies must take back unused prescription medicines at no charge."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[1] > paragraph[0]",
+          "snippet": "Over-the-counter medicines: most pharmacies accept these as well, though they are not legally required to."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Safe medication disposal and blister pack recycling go here."
+        }
+      ]
+    },
+    {
+      "slug": "multifoil-insulation-evidence-review",
+      "tutorialId": "cmpv43d3e0000ucv4s5wet0pt",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:42.899Z",
+      "publishedAt": "2026-06-01T11:14:55.338Z",
+      "heroMediaId": "cmpv4g8ku00200sv432w678ml",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Multifoil insulation: what the evidence actually says go here."
+        }
+      ]
+    },
+    {
+      "slug": "off-grid-refrigeration-12v-vs-gas",
+      "tutorialId": "cmpv498140002mkv452u097xl",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:43.430Z",
+      "publishedAt": "2026-06-01T11:19:28.618Z",
+      "heroMediaId": "cmpv4gb1b00260sv4slp7labq",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Off-grid refrigeration: 12V compressor versus gas absorption go here."
+        }
+      ]
+    },
+    {
       "slug": "patchouli-bergamot-linen-spray",
       "tutorialId": "cmpv02spj00009wv4i1acoyg8",
       "type": "RECIPE",
@@ -131,6 +709,147 @@
       ]
     },
     {
+      "slug": "solar-pv-export-limit-g98-g99",
+      "tutorialId": "cmpv4cp0k0003i8v4hpk5qxsz",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:43.845Z",
+      "publishedAt": "2026-06-01T11:22:10.705Z",
+      "heroMediaId": "cmpv4gj50002k0sv4nd8k0hvy",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Solar PV export limits and DNO connection agreements go here."
+        }
+      ]
+    },
+    {
+      "slug": "substrate-inoculation-for-mushroom-compost",
+      "tutorialId": "cmpv45otx0002ywv4a0y2rfyb",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:44.176Z",
+      "publishedAt": "2026-06-01T11:16:43.881Z",
+      "heroMediaId": "cmpv4gjv8002m0sv413gaxf21",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Preparing compost-based substrate for mushroom cultivation go here."
+        }
+      ]
+    },
+    {
+      "slug": "summer-overheating-risk-assessment",
+      "tutorialId": "cmpv44qy9000124v4x4zs5mvd",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:44.349Z",
+      "publishedAt": "2026-06-01T11:15:59.972Z",
+      "heroMediaId": "cmpv4gkot002o0sv4fwf1v1if",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "Rooms with high external wall insulation and good air-tightness: these retain heat well in winter but also trap daytime solar gain in summer"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > troubleshooter[7] > troubleshooterItem[0] > paragraph[0]",
+          "snippet": "If there is good air movement across the skin, a higher air temperature is tolerable. The discomfort threshold is not the air temperature al"
+        }
+      ]
+    },
+    {
+      "slug": "thermal-mass-passive-solar-design",
+      "tutorialId": "cmpv43h2w0001eov4ez6a3z22",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:44.604Z",
+      "publishedAt": "2026-06-01T11:15:00.521Z",
+      "heroMediaId": "cmpv4gleh002q0sv4cxvvjoi7",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[2] > paragraph[0]",
+          "snippet": "Does not work: carpeting an existing conservatory, adding more south glazing, and fitting no overhang or blind."
+        }
+      ]
+    },
+    {
+      "slug": "underground-rainwater-tank-sizing",
+      "tutorialId": "cmpv45zth0001d0v4cx6u5qwf",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:44.955Z",
+      "publishedAt": "2026-06-01T11:16:58.114Z",
+      "heroMediaId": "cmpv4gnhm002u0sv4lnyiq3nu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.1 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[4] > paragraph[0]",
+          "snippet": "Separate pipework to all WC cisterns: a dedicated circuit, clearly labelled, with no connection to the mains supply."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "A rainwater harvesting system connected to WC cisterns must be notified to Building Control under Part G before installation. The key requir"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Sizing and installing an underground rainwater harvesting tank go here."
+        }
+      ]
+    },
+    {
       "slug": "vetiver-sea-salt-body-scrub",
       "tutorialId": "cmpv01jx20000dkv4gbhoupc9",
       "type": "RECIPE",
@@ -146,6 +865,44 @@
           "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
           "path": "body > [0] > [0]",
           "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
+      "slug": "wall-ties-inspection-and-replacement",
+      "tutorialId": "cmpv4415t0001mkv45wf2yzkp",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:45.226Z",
+      "publishedAt": "2026-06-01T11:15:26.543Z",
+      "heroMediaId": "cmpv4go9f002w0sv4dbh0i72d",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Inspecting and replacing corroded cavity wall ties go here."
+        }
+      ]
+    },
+    {
+      "slug": "wood-furniture-stripping-and-refinishing",
+      "tutorialId": "cmpv46t3y0002e4v4dbzfrv23",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-01T11:25:45.589Z",
+      "publishedAt": "2026-06-01T11:17:36.080Z",
+      "heroMediaId": "cmpv4gs2y00300sv45qjdv8mr",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[9] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Stripping and refinishing old wood furniture go here."
         }
       ]
     }

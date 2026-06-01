@@ -361,3 +361,83 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 11:25:45
+
+Generated: 2026-06-01T11:25:45.947Z
+
+Processed: 56
+PASS: 29
+STILL_BLOCKED: 27
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 122 |
+| body-missing-method | 32 |
+| voice-violation | 30 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- blown-cellulose-cavity-fill: voice-violation, grade-level-strict
+- broadband-router-lifespan-extension: voice-violation, grade-level-strict
+- composting-in-a-community-garden: voice-violation, grade-level-strict
+- composting-toilet-urine-diversion: voice-violation, grade-level-strict
+- dehumidifier-condensate-for-gardens: voice-violation, grade-level-strict
+- dehumidifier-guide-damp-basement: voice-violation, grade-level-strict
+- digital-footprint-and-data-energy: grade-level-strict
+- ev-home-charger-installation-types: voice-violation, grade-level-strict
+- external-shutters-summer-overheating: grade-level-strict
+- floor-insulation-below-service-runs: grade-level-strict
+- food-date-labels-and-sensory-checking: grade-level-strict
+- in-vessel-composting-unit-guide: grade-level-strict
+- internal-wall-insulation-one-room-pattern: grade-level-strict
+- lacto-fermentation-for-food-preservation: voice-violation, grade-level-strict
+- led-lighting-upgrade-savings-guide: grade-level-strict
+- listed-building-insulation-options: voice-violation, grade-level-strict
+- loft-insulation-joists-vs-rafter-level: grade-level-strict
+- medication-and-blister-pack-disposal: voice-violation, grade-level-strict
+- multifoil-insulation-evidence-review: voice-violation, grade-level-strict
+- off-grid-refrigeration-12v-vs-gas: voice-violation, grade-level-strict
+
+---
+
+## Run at 12:08:29
+
+Generated: 2026-06-01T12:08:29.352Z
+
+Processed: 74
+PASS: 74
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 12:08:50
+
+Generated: 2026-06-01T12:08:50.145Z
+
+Processed: 68
+PASS: 68
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 25 |
+| grade-level-strict | 15 |
+| em-dash-in-content | 1 |
