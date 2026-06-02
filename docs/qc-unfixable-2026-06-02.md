@@ -190,3 +190,23 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - gooseberry-and-elderflower-cake opening-pattern-missing-hook — applied: recipe-yield-appended
 - harcha opening-pattern-missing-hook — applied: recipe-yield-appended
 - honey-walnut-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- fitting-a-window-opening-restrictor grade-level-strict — applied: 
+- repairing-a-sagging-plasterboard-ceiling grade-level-strict — applied: 
+
+- kunafa-with-cheese opening-pattern-missing-hook — applied: recipe-yield-appended
+- lavender-lime-lip-balm voice-violation — applied: 
+- maids-of-honour opening-pattern-missing-hook — applied: recipe-yield-appended
+- mango-body-butter voice-violation — applied: 
+- mirabelle-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- muscle-rub-balm voice-violation — applied: 
+- nail-strengthening-oil voice-violation — applied: 
+
+- beef-stroganoff grade-level-strict — applied: 
+- green-bean-casserole prose-prep-steps — applied: 
+- gumbo prose-prep-steps — applied: 
+- jambalaya grade-level-strict — applied: 
+- stovetop-mac-and-cheese grade-level-strict — applied: 
+- stuffed-cabbage-rolls grade-level-strict — applied: 
+- stuffed-peppers grade-level-strict,prose-prep-steps — applied: 
+- swedish-meatballs grade-level-strict — applied: 

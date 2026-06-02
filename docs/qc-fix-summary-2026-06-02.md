@@ -742,3 +742,67 @@ SKIPPED: 0
 
 - fitting-a-window-opening-restrictor: grade-level-strict
 - repairing-a-sagging-plasterboard-ceiling: grade-level-strict
+
+---
+
+## Run at 18:09:41
+
+Generated: 2026-06-02T18:09:41.564Z
+
+Processed: 74
+PASS: 67
+STILL_BLOCKED: 7
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 74 |
+| opening-pattern-missing-hook | 68 |
+| voice-violation | 11 |
+| prose-prep-steps | 3 |
+
+## Still BLOCKED (sample 20)
+
+- kunafa-with-cheese: opening-pattern-missing-hook
+- lavender-lime-lip-balm: voice-violation
+- maids-of-honour: opening-pattern-missing-hook
+- mango-body-butter: voice-violation
+- mirabelle-tart: opening-pattern-missing-hook
+- muscle-rub-balm: voice-violation
+- nail-strengthening-oil: voice-violation
+
+---
+
+## Run at 18:18:41
+
+Generated: 2026-06-02T18:18:41.601Z
+
+Processed: 40
+PASS: 32
+STILL_BLOCKED: 8
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 70 |
+| placeholder-string | 40 |
+| content-type-opening-mismatch | 36 |
+| grade-level-strict | 31 |
+| opening-pattern-missing-hook | 30 |
+| prose-prep-steps | 10 |
+| historical-century-in-body | 4 |
+
+## Still BLOCKED (sample 20)
+
+- beef-stroganoff: grade-level-strict
+- green-bean-casserole: prose-prep-steps
+- gumbo: prose-prep-steps
+- jambalaya: grade-level-strict
+- stovetop-mac-and-cheese: grade-level-strict
+- stuffed-cabbage-rolls: grade-level-strict
+- stuffed-peppers: grade-level-strict, prose-prep-steps
+- swedish-meatballs: grade-level-strict
