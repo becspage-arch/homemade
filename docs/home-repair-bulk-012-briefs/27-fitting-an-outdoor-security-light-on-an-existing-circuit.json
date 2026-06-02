@@ -1,0 +1,118 @@
+{
+  "slug": "fitting-an-outdoor-security-light-on-an-existing-circuit",
+  "title": "Fitting an outdoor security light on an existing circuit",
+  "subtitle": "Connect a mains-voltage PIR security floodlight to an existing lighting circuit and route the cable through an external wall",
+  "excerpt": "How to fit a mains-voltage outdoor PIR security light by connecting to an existing lighting circuit. Covers isolating the circuit, routing cable through a drilled wall, connecting the light at the luminaire and at the circuit junction, and testing the PIR sensor.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "UK 18th Edition Wiring Regulations (BS 7671) for outdoor lighting circuits. Building Regulations Part P (notification requirements for outdoor fixed wiring in England and Wales. UK building trade practice. Reader's Digest Complete DIY Manual (referenced, not reproduced).",
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "sds-drill", "isOptional": true },
+    { "slug": "lock-off-device", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-floodlight",
+      "term": "PIR security floodlight",
+      "definition": "A mains-voltage outdoor luminaire that incorporates a passive infrared sensor. The PIR detects movement from warm bodies within a set detection arc (typically 120 to 180 degrees horizontal, 6 to 12 metres range) and switches the lamp on for a set period, then off. Adjusted by three dials on the unit: sensitivity (how easy to trigger), duration (how long the light stays on after motion stops), and LUX (whether the light activates only in darkness or always). LED floodlights draw 10 to 50 W; older halogen units 150 to 500 W."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "outdoor security light fitting",
+    "PIR floodlight installation",
+    "external security light wiring"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fitting a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-floodlight" } }],
+            "text": "PIR security floodlight"
+          },
+          {
+            "type": "text",
+            "text": " is wired to an existing lighting circuit via a fused spur, with cable routed through the external wall. Outdoor mains-voltage wiring is notifiable under Part P in England and Wales. Notify your local authority or use a Part P registered electrician unless you are self-certifying."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate the circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the circuit at the consumer unit MCB and lock off with the lock-off device if available. Test at the intended connection point with the two-pole tester and prove the tester works on a known live source using the proving unit before and after testing the circuit. Do not work on any part of the circuit until confirmed dead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Route the cable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the outdoor circuit via a switched fused connection unit (FCU) inside the house: typically rated at 5 A with a 3 A fuse for a LED floodlight. Run 1.0 mm² or 1.5 mm² two-core-and-earth outdoor-rated cable from the FCU to the light mounting position. Drill through the external wall with the SDS drill and core bit. Pass the cable through the hole and seal around the cable entry with silicone on the outside to prevent water ingress. Protect the cable where it runs along the external wall in UV-resistant conduit or surface trunking rated for outdoors."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the light" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Terminate the cable at the luminaire following the manufacturer's connection diagram. Live (brown) to L, neutral (blue) to N, earth (green-yellow sleeve) to the earth terminal. Fit the luminaire to the wall, feeding the cable through the base entry gasket. Tighten the weatherproof cable gland firmly. Restore the circuit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set the PIR and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the LUX dial to the test position (fully anti-clockwise) so the sensor triggers in daylight. Walk through the detection zone to confirm the light triggers. Adjust the detection arc by angling the PIR head. Set the duration dial to 1 to 2 minutes for a typical external security light. Once tested, set the LUX dial to the desired threshold."
+          }
+        ]
+      }
+    ]
+  }
+}

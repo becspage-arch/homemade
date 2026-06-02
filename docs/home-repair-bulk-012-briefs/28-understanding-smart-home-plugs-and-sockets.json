@@ -1,0 +1,122 @@
+{
+  "slug": "understanding-smart-home-plugs-and-sockets",
+  "title": "Understanding smart home plugs and sockets",
+  "subtitle": "A plain-English guide to smart plugs, smart sockets, and the protocols they use (Wi-Fi, Zigbee, and Z-Wave",
+  "excerpt": "A reference guide to smart plugs and sockets for home automation. Covers how plug-in smart adaptors and wired smart sockets work, the difference between Wi-Fi and mesh-protocol devices, and the practical limits of what they can control.",
+  "type": "READING",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK building trade guidance on smart-home integration. Wi-Fi Alliance and Zigbee Alliance specification overviews (generic referenced principles). Matter standard overview from the Connectivity Standards Alliance.",
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "smart-plug",
+      "term": "Smart plug",
+      "definition": "A plug-in adaptor that sits between a standard 13 A plug and a wall socket, adding remote-switching capability without any wiring. The adaptor contains a relay and a Wi-Fi, Zigbee, or Z-Wave radio. Through an app, the user can switch the connected appliance on or off from anywhere with a data connection, set schedules, and) on energy-monitoring models (read power consumption. Load ratings vary by model; most are rated to 13 A (3 kW) continuous, suitable for most domestic appliances but not for electric heaters above 2.5 kW."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "smart plug home automation",
+    "smart socket guide",
+    "wifi smart plug"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-plug" } }],
+            "text": "smart plug"
+          },
+          {
+            "type": "text",
+            "text": " turns a standard socket into one you can switch from your phone. This guide covers plug-in adaptors versus wired smart sockets, how Wi-Fi and mesh devices differ, and what they can and cannot control."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plug-in adaptors versus wired smart sockets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A plug-in adaptor plugs into a standard socket and can be moved anywhere. A wired smart socket replaces the faceplate and needs the circuit isolated first; this is notifiable work in a kitchen or bathroom. Plug-in adaptors suit most homes. Wired sockets are for a fixed install where USB ports or a flush finish matter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wi-Fi devices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wi-Fi smart plugs connect directly to the home router and are controlled via the manufacturer's cloud platform. They work out of the box without a hub. The trade-off: each device consumes a Wi-Fi slot, the cloud platform can be discontinued, and latency can be 0.5 to 2 seconds. Wi-Fi devices work at 2.4 GHz (make sure the router offers a separate 2.4 GHz network if the router is dual-band (some dual-band routers merge the two bands in a way that confuses 2.4 GHz-only devices at setup)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Zigbee and Z-Wave devices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Zigbee and Z-Wave devices communicate on dedicated frequencies (Zigbee at 2.4 GHz, Z-Wave at 868 MHz in Europe) via a mesh network) each plug-in mains device acts as a router for others, extending range. They need a hub (a Zigbee or Z-Wave coordinator plugged into the home router) to connect to the internet. Response times are under 100 milliseconds. Devices from different manufacturers can interoperate on the same hub with local processing; no cloud dependency."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Matter (the interoperability standard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Matter is an open standard that lets smart home devices from different brands work together in one app. Apple, Google, Amazon, and Samsung all support it. Look for the Matter logo when buying smart plugs. It means the plug will work with whatever hub you choose now or later."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What they cannot do" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A smart plug switches power on or off (it does not dim. Lamp dimmers are separate smart devices (smart dimmer switches). A smart plug cannot tell whether the connected appliance is on or off at its own controls; it only knows whether power is present. An electric oven turned on at the oven controls with a smart plug switched off presents no hazard; an oven at temperature with power turned off remotely could be a hazard) use smart plugs on appliances that are safe to cut power to."
+          }
+        ]
+      }
+    ]
+  }
+}

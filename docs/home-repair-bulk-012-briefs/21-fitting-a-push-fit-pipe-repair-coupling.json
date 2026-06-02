@@ -1,0 +1,127 @@
+{
+  "slug": "fitting-a-push-fit-pipe-repair-coupling",
+  "title": "Fitting a push-fit pipe repair coupling",
+  "subtitle": "Cut out a damaged section of copper or plastic pipe and reconnect using a push-fit slip coupling without soldering",
+  "excerpt": "How to repair a burst or pinhole-leaking pipe section using a push-fit slip coupling. Covers cutting out the damaged section, deburring the pipe ends, and inserting the slip coupling without needing flux or a blowtorch.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "UK plumbing trade practice. Hep2O, Speedfit, and Conex generic push-fit coupling fitting guidance (referenced principles, not brand instructions). Reader's Digest Complete DIY Manual (referenced, not reproduced).",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "pipe-cutter-mini", "isOptional": true },
+    { "slug": "emery-cloth-roll", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": true },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "push-fit-slip-coupling",
+      "term": "Push-fit slip coupling",
+      "definition": "A plumbing connector in which a plastic body contains a collet ring with grab teeth, a plastic jaws ring, and an O-ring seal. Pushing the pipe end into the connector causes the collet teeth to grip the pipe; the O-ring provides a watertight seal. A slip coupling has a body that slides fully along the pipe in one direction, so it can be slipped past a damaged section and then slid back to span the gap. Used for emergency repairs where soldering access is impossible or the pipe cannot be fully drained."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "push fit repair coupling",
+    "slip coupling pipe repair",
+    "push fit burst pipe repair"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "push-fit-slip-coupling" } }],
+            "text": "push-fit slip coupling"
+          },
+          {
+            "type": "text",
+            "text": " joins two cut pipe ends without soldering (the grab teeth grip the pipe and the O-ring seals it on insertion. Used to cut out a damaged section and reconnect without removing the pipe run. Isolate and drain the supply before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate and drain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the water supply at the nearest isolation valve or stopcock. Open the lowest tap on the run to drain the water from the pipe. Check there is no pressure remaining before cutting) even a trickle can prevent the O-ring sealing correctly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut out the damaged section" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut the pipe 20 mm on each side of the damaged section using the pipe cutter (this gives clean, square cuts. Rotate the cutter one turn, advance the cutting wheel one click, and repeat until the pipe is cut through. Use the mini pipe cutter in confined spaces where the full cutter will not open. The cut-out section must be long enough to be removed cleanly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prepare the pipe ends" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Deburr the inside of each cut end with the reamer on the pipe cutter or a half-round file. Clean the outside of each cut end with emery cloth for 50 mm back from the cut) remove any burr, score, or rough patch that would prevent the O-ring sealing. Wipe clean."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the coupling" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slide the slip coupling fully onto one pipe end past the cut-out position. Connect the coupling to the second pipe end by pushing it on to the insertion depth marked on the coupling body: most bodies have a depth mark on the barrel. Then slide the coupling back to span the gap and push the first pipe end in to depth. Press both ends home firmly until the insertion mark is flush with the coupling body. Restore the water supply and check for drips."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The coupling drips from the body after restoring the supply",
+              "cause": "One pipe end is not inserted to the full depth mark, or the pipe has a rough surface that prevents the O-ring seating.",
+              "fix": "Turn off and drain. Release the pipe by pressing the release collar and pulling the pipe free. Inspect the pipe end: re-clean with emery and re-insert to full depth."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

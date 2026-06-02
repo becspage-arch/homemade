@@ -1,0 +1,116 @@
+{
+  "slug": "fitting-a-double-pole-isolator-switch-for-an-electric-shower",
+  "title": "Fitting a double-pole isolator switch for an electric shower",
+  "subtitle": "Install a 45 A double-pole cord pull or ceiling switch to provide a local isolation point for an electric shower circuit",
+  "excerpt": "How to fit a 45 A double-pole isolation switch for an electric shower. Covers the pull-cord type and ceiling-mounted type, connecting the shower supply cable, and confirming correct polarity and earthing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "UK 18th Edition Wiring Regulations (BS 7671) (requirements for shower isolation switches. Building Regulations Part P. Reader's Digest Complete DIY Manual (referenced, not reproduced). UK building trade practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-pole-isolator-shower",
+      "term": "Double-pole shower isolator switch",
+      "definition": "A switch that breaks both the live and neutral conductors simultaneously when operated, fully isolating the appliance from the supply. Required for electric showers under BS 7671) a shower must have a local means of isolation accessible from outside the shower zone. Rated at 45 A for showers up to 10 kW; 50 A for 10 to 12 kW models. The pull-cord type is the standard bathroom installation (the cord mechanism is out of reach of someone in the shower. Ceiling-mounted plate switches serve the same function where a cord is not needed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "shower isolator switch fitting",
+    "45A shower switch",
+    "double pole cord pull switch bathroom"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-pole-isolator-shower" } }],
+            "text": "45 A double-pole isolator"
+          },
+          {
+            "type": "text",
+            "text": " is the required local on-off switch for an electric shower. This wiring work is notifiable under Part P in England and Wales: use a registered electrician or self-certify. Switch off the shower MCB at the consumer unit before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate and confirm dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the shower MCB at the consumer unit and lock off. Confirm dead at the switch position with the two-pole tester (prove the tester works on a live source before and after testing the circuit. A shower circuit runs at 6 mm² twin-and-earth from a 40 or 45 A RCBO) treat it with the same caution as any high-current circuit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mount the switch box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The isolator must be outside bathroom zones 0, 1, and 2 (more than 600 mm horizontally from the shower enclosure). Mount the ceiling box with two screws into a joist or a timber noggin between joists (the 45 A switch is heavier than a standard light switch and needs solid fixings. Feed the 6 mm² shower supply cable into the box."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the incoming supply cable to the terminal block: live (brown) to the L-in terminal, neutral (blue) to N-in, earth (green-yellow) to earth. Connect the outgoing cable to the shower: brown to L-out, blue to N-out, earth to earth. Sleeve any grey or black conductors that are used as a switched live with brown or red sleeving at each end) a standard reminder that the conductor is live when the switch is on. Fit the switch body to the box and attach the pull cord."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Restore the MCB. Test with the two-pole tester at the shower unit: voltage present at the shower terminals when the isolator is on, absent when off. Confirm the neon indicator on the switch (if fitted) shows correctly. Test the shower at the shower controls and confirm the isolator pulls the shower off immediately."
+          }
+        ]
+      }
+    ]
+  }
+}

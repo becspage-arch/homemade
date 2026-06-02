@@ -1,0 +1,131 @@
+{
+  "slug": "replacing-a-fluorescent-tube-fitting-with-an-led-panel",
+  "title": "Replacing a fluorescent tube fitting with an LED panel",
+  "subtitle": "Remove a recessed or surface-mounted fluorescent strip and install a matching-footprint LED panel on the same circuit",
+  "excerpt": "How to replace an old fluorescent tube light fitting with an LED panel. Covers isolating the circuit, removing the old fitting, connecting the LED driver to the existing feed cable, and mounting the panel in the same ceiling position.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "UK 18th Edition Wiring Regulations (BS 7671). UK building trade practice for lighting upgrades. Reader's Digest Complete DIY Manual (referenced, not reproduced).",
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "led-driver-integral",
+      "term": "LED driver (integral / external)",
+      "definition": "An electronic power-supply unit that converts mains AC voltage (230 V AC) to the low DC voltage required by LED circuits. Integral LED panels have the driver built into the fitting body; external driver panels have a separate driver box wired to the panel. The driver replaces the fluorescent fitting's ballast and starter. Most LED panels for direct mains replacement operate at 230 V AC input, with the driver integrated (these wire the same as a standard mains luminaire: live, neutral, and earth in, power out to the LED board."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "fluorescent to LED conversion",
+    "LED panel installation",
+    "replace strip light LED"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replacing a fluorescent tube fitting with an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "led-driver-integral" } }],
+            "text": "LED panel with an integral driver"
+          },
+          {
+            "type": "text",
+            "text": " is a straightforward wiring swap once the circuit is isolated. The new panel connects live, neutral, and earth to the same feed cable as the old fitting. The panel slots into the same ceiling cut-out on a recessed fitting; a surface-mounted replacement fixes to the same backplate or ceiling box."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate the circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the lighting circuit MCB at the consumer unit and lock off. Test the fitting terminals with the two-pole tester) prove the tester live and dead at a known source before and after testing the circuit. Work only when confirmed dead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remove the old fitting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the tube and starter from the old fluorescent fitting. Unscrew the backplate or release the recessed panel from its clips. Disconnect the feed cable from the terminal block in the fitting (noting the live, neutral, and earth connections. Remove the old fitting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Check the new panel footprint" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "LED panels come in standard sizes) 600 × 600 mm for a recessed square panel, 1200 × 300 mm for a long strip replacement. Match the new panel to the existing ceiling cut-out. If the cut-out is larger than the new panel, fit a trim surround or adapt with an infill. A surface-mounted replacement does not need to match the ceiling cut-out."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect and fit the LED panel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the feed cable to the LED panel's integral terminal block or driver: live (brown) to L, neutral (blue) to N, earth (green-yellow) to earth. Ensure the earth is connected to the panel body if the driver terminal block is separate. Tuck the cable into the ceiling void. For a recessed panel, push the panel up into the cut-out and open the spring clips outward to engage the ceiling. For a surface-mounted panel, screw through the backplate into the ceiling plasterboard with suitable fixings."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Restore and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Restore the circuit. Switch the light on. The LED panel should illuminate immediately with no flicker: flickering or failure to start usually means a loose connection at the driver terminal block."
+          }
+        ]
+      }
+    ]
+  }
+}
