@@ -1,0 +1,89 @@
+{
+  "slug": "four-shaft-point-twill-sampler",
+  "title": "Four-shaft point twill sampler",
+  "subtitle": "Threading a straight draw and then a point draw on four shafts to compare the diagonal directions",
+  "excerpt": "A point twill threading creates a V-shaped chevron by reversing the threading direction at the midpoint. This sampler threads half the warp on a straight draw and half on a point draw, then weaves both with the same treadling sequence to show how the threading direction controls the chevron.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Point twill threading documented in Mary E. Black, The Key to Weaving (1945, in-copyright, substance only referenced), and in Hooper, Hand-Loom Weaving (1910, public domain, Internet Archive). The point threading producing a chevron is a standard four-shaft structure.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "point-threading", "term": "Point threading", "definition": "A threading sequence that rises to a maximum shaft number and then reverses, creating a mirror-image pattern. On four shafts: 1-2-3-4-3-2 repeated produces the classic point-twill chevron." },
+    { "slug": "threading-draft", "term": "Threading draft", "definition": "A grid diagram showing which shaft each warp thread passes through. Reading the threading draft tells you the repeating order to thread the heddles." },
+    { "slug": "twill", "term": "Twill", "definition": "A weave structure in which the weft passes over two or more warp threads before interlacing, advancing one thread each pick to produce a diagonal rib on the cloth surface." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["point twill weave", "four-shaft chevron weave", "point draw threading sampler"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Point " },
+          { "type": "text", "text": "threading", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "point-threading" } }] },
+          { "type": "text", "text": " produces the classic " },
+          { "type": "text", "text": "twill", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twill" } }] },
+          { "type": "text", "text": " chevron by reversing the threading direction at a midpoint. This sampler weaves both a straight draw and a point draw side by side from the same treadling sequence, using the " },
+          { "type": "text", "text": "threading draft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading-draft" } }] },
+          { "type": "text", "text": " to show exactly how the threading direction controls the resulting diagonal." }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Point twill on four shafts",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4],
+            "tieUp": [
+              [1, 0, 0, 1],
+              [1, 1, 0, 0],
+              [0, 1, 1, 0],
+              [0, 0, 1, 1]
+            ],
+            "treadling": [1, 2, 3, 4, 1, 2, 3, 4]
+          }
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth wool or cotton warp yarn (8/2)", "qty": "warp length as needed" },
+            { "name": "Same or contrasting weft yarn", "qty": "as needed" },
+            { "name": "Four-shaft floor loom", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Understanding the threading sequence'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A point threading on four shafts reads 1-2-3-4-3-2 and repeats. The sequence rises from shaft 1 to shaft 4, then falls back to shaft 2, then rises again. The shared shaft 4 at the top and shaft 1 at the bottom are where the chevron points form. The number of full repeats determines how many chevron peaks appear across the cloth width." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Threading the loom'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Thread the loom following the point draft above. Check each threading repeat as you go: the heddles on shaft 1 should be flanked on each side by shaft 2, shaft 2 flanked by shaft 3, and shaft 4 at the apex. Any threading error will create a straight diagonal rather than a true chevron at that point in the cloth." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Weaving the sampler'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Treadle the standard 2/2 twill sequence (treadles 1-2-3-4 repeating) and weave at a balanced sett. The point threading will produce a clear V-shaped chevron in the woven cloth, with the diagonal reversing at each threading peak. Weave 15 to 20 cm to establish the pattern, then try a different treadling sequence to see how the point threading responds to different treadle orders." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The diagonal rib does not reverse at the expected point, producing a straight line instead of a chevron", "cause": "A threading error at the reversal point: a thread that should be on shaft 1 was threaded on shaft 3, or vice versa", "fix": "Count the heddle sequence from both ends toward the reversal point. The apex should be a single shaft 4 heddle flanked on both sides by shaft 3. If both sides read as shaft 3-2-1 from the apex, the threading is correct." },
+            { "problem": "The diagonal is broken with a hole or float at the chevron peak", "cause": "A shaft 4 thread was missed in the threading and the sequence jumped from 3 to 3 at the apex", "fix": "Add the missing shaft-4 heddle thread. On a finished warp this requires inserting a floating heddle; on an incomplete thread-up, correct before sleying the reed." }
+          ]
+        }
+      }
+    ]
+  }
+}

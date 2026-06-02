@@ -1,0 +1,73 @@
+{
+  "slug": "spinning-masham-wool",
+  "title": "Spinning Masham wool",
+  "subtitle": "A dual-coat North of England breed with a soft undercoat and a longer, coarser outer fibre",
+  "excerpt": "Masham is a North of England cross-breed with a characteristically mixed fleece: a soft, finer undercoat interspersed with longer, coarser kemps. Spinning it produces a rustic, slightly textured yarn suited to outerwear, rugs, and hard-wearing household items.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Masham breed characteristics documented in British wool-breed literature and spinning guild references. The Masham is a cross between Dalesbred or Swaledale ewes and Teeswater or Wensleydale rams, producing the characteristic dual-coat fleece.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "hand-cards", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "dual-coat-fleece", "term": "Dual-coat fleece", "definition": "A fleece with two distinct fibre types: a finer, softer undercoat and a longer, coarser outer coat. Masham fleece contains both in the same lock; they can be spun together for a rustic yarn or separated by combing." },
+    { "slug": "kemp", "term": "Kemp", "definition": "Short, brittle, often white fibres mixed into the longer wool fibres of some breeds. Kemps do not absorb dye evenly and add a characteristic flecked or speckled appearance to the yarn." },
+    { "slug": "woollen-draw", "term": "Woollen draw", "definition": "A spinning technique using a long, open drafting zone that leaves the fibres somewhat randomised. Suited to Masham because the mixed fibre lengths benefit from the more accommodating drafting zone." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["Masham fleece spinning", "spin Masham wool", "North England breed wool tutorial"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Masham has a " },
+          { "type": "text", "text": "dual-coat fleece", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dual-coat-fleece" } }] },
+          { "type": "text", "text": " with two fibre types in each lock: shorter, finer undercoat and longer, coarser outer fibres, often with white " },
+          { "type": "text", "text": "kemp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kemp" } }] },
+          { "type": "text", "text": " mixed in. A " },
+          { "type": "text", "text": "woollen draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "woollen-draw" } }] },
+          { "type": "text", "text": " handles the varied lengths well. The finished yarn has a rustic, flecked character suited to outerwear and hard-wearing home textiles." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Carding or combing Masham throws fibre dust. Work in a ventilated room and damp-mop the floor after." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Masham fleece or prepared Masham tops", "qty": "100 g" },
+            { "name": "Hand cards (if preparing from raw fleece)", "qty": "1 pair" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fibre preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "If spinning from raw fleece, skirt and sort the locks to remove heavily kemped sections if a softer yarn is wanted. Card the prepared locks into rolags using hand cards. For a more textured, rustic yarn, leave the kemps in and spin directly from the carded rolag. For a yarn closer to DK weight with less prickle, remove the longer coarse fibres by hand before carding." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Spinning" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Use a moderate twist ratio (8:1 to 10:1) and a woollen draw with a long drafting zone. Masham does not need the high twist of a fine Merino; too much twist makes the yarn scratchy. Pull back smoothly from the orifice, letting the drafting zone open to 10 to 15 cm. The result is an airy, slightly lofted singles with visible flecks from the kemp." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two singles with S-twist to a balanced 2-ply. Masham plies easily because the mixed fibre lengths allow the twist to distribute evenly. Set the twist by soaking the skein in warm water and snapping gently between your hands; hang to dry with a moderate weight. The finished yarn will be slightly hairy with a warm, earthy character." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The yarn is very prickly and itchy", "cause": "The kemp fibres in Masham are coarser than the undercoat and sit proud of the surface", "fix": "Next time, remove the long kemps by hand before carding. If the yarn is already spun, using it for outerwear items worn over a base layer reduces the prickle in wear." },
+            { "problem": "The singles keep breaking during spinning", "cause": "Over-drafting: pulling the fibre bundle too thin given the mixed fibre lengths", "fix": "Keep the drafting zone slightly shorter and work more slowly. Masham with short undercoat fibres is less forgiving of very thin sections than a longer-stapled breed." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "four-shaft-rosepath-weave",
+  "title": "Four-shaft rosepath weave",
+  "subtitle": "Threading and treadling a classic Scandinavian rosepath pattern on a four-shaft loom",
+  "excerpt": "Rosepath is a traditional Scandinavian weave structure that produces a characteristic star or rose motif from a simple four-shaft threading and six-treadle sequence. This entry covers the threading, tie-up, and pattern treadling for a rosepath sampler.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Rosepath threading documented in Scandinavian weaving tradition, referenced in historical textile catalogues and weaving manuals. The structure appears in Swedish and Norwegian traditional weaving from the 17th century onward.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "reed-hook", "isOptional": false },
+    { "slug": "weaving-reed", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "rosepath", "term": "Rosepath", "definition": "A traditional Scandinavian four-shaft threading that produces a star or rose motif when woven with a specific treadling. The threading is a point threading variant: 1-2-3-4-3-2-3-4-3-2-1." },
+    { "slug": "tabby-binding", "term": "Tabby binding", "definition": "A plain-weave pass inserted between each pattern pick in a rosepath sequence. The tabby pass locks the pattern floats in place and prevents the cloth from being too open or unstable." },
+    { "slug": "float", "term": "Float", "definition": "A weft or warp thread that passes over two or more opposing threads without interlacing. In rosepath, controlled floats create the petal and star shapes." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["rosepath weave four-shaft", "Scandinavian rosepath loom", "star weave four-shaft tutorial"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rosepath uses a " },
+          { "type": "text", "text": "rosepath", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rosepath" } }] },
+          { "type": "text", "text": " threading to produce its star motif. Each pattern pick needs a " },
+          { "type": "text", "text": "tabby binding", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby-binding" } }] },
+          { "type": "text", "text": " pass to hold the " },
+          { "type": "text", "text": "floats", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float" } }] },
+          { "type": "text", "text": " in place. Without the tabby, the floats lie unsupported and the cloth is unstable. The pattern-and-tabby alternation produces the spotted-rose look rather than a solid block." }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Rosepath on four shafts",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 3, 4, 3, 2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 3, 4, 3, 2],
+            "tieUp": [
+              [1, 0, 1, 0],
+              [0, 1, 0, 1],
+              [1, 1, 0, 0],
+              [0, 0, 1, 1],
+              [1, 0, 0, 1],
+              [0, 1, 1, 0]
+            ],
+            "treadling": [1, 2, 3, 2, 4, 2, 5, 2, 6, 2, 1, 2]
+          }
+        }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Smooth cotton or wool warp in a plain ground colour", "qty": "warp length as needed" },
+            { "name": "Contrasting pattern weft (slightly thicker than the warp)", "qty": "as needed" },
+            { "name": "Tabby weft matching the warp colour", "qty": "as needed" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Threading the loom'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Thread the rosepath repeat: 1-2-3-4-3-2-3-4-3-2-1. This 10-thread unit produces one complete rose motif. Repeat as many times as the warp width allows. Note that shafts 1 and 2 carry fewer heddles than shafts 3 and 4 in this threading; rebalance heddles before threading if needed." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Treadling the pattern'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Treadle the rosepath sequence from the draft, alternating each pattern pick with a tabby pick. For a standard rosepath flower: one pattern pick, one tabby. Repeat for each of the six pattern picks per motif repeat. The motifs stack vertically as you weave; each full treadling sequence produces one rose motif height." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The rose motifs look blocky or the floats are too long", "cause": "The tabby picks were omitted between pattern picks", "fix": "Rosepath requires the tabby pick between every pattern pick. Without the tabby, the floats become unsupported and the cloth is unstable. Re-weave the motif with alternating tabby passes." },
+            { "problem": "The rosepath motif does not look like a rose; it looks like vertical stripes", "cause": "A threading error in the 3-4-3-2 section of the repeat, likely a shaft-3 and shaft-2 swap", "fix": "Re-check the threading in the middle of each motif: shafts 3 and 4 should alternate four times before reaching the mirrored section. The characteristic rose shape comes from the specific threading sequence." }
+          ]
+        }
+      }
+    ]
+  }
+}

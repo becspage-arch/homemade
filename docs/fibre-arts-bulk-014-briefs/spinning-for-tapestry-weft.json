@@ -1,0 +1,72 @@
+{
+  "slug": "spinning-for-tapestry-weft",
+  "title": "Spinning for tapestry weft",
+  "subtitle": "The grist, twist, and fibre choices that produce a weft yarn suited to tapestry weaving",
+  "excerpt": "Tapestry weft needs to be slightly thicker than the warp, have a matte surface that does not reflect light, and pack down evenly in the shed. This entry covers the fibre choice, twist level, and finishing required to spin a weft suited to tapestry weaving on a frame loom or floor loom.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weft properties for tapestry weaving described in Mary E. Black, The Key to Weaving (1945, in-copyright, substance only referenced), and in historical tapestry-weaving references. The matte, woollen-spun weft principle is well established in British and Scandinavian tapestry teaching.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "weft", "term": "Weft", "definition": "The horizontal yarn in a woven piece, interlaced through the warp. In tapestry weaving, the weft is the colour-carrying yarn that forms the pattern surface." },
+    { "slug": "grist", "term": "Grist", "definition": "The weight of yarn per unit length (or length per unit weight). Tapestry weft needs a specific grist relative to the warp sett to pack properly into the shed." },
+    { "slug": "matte-finish", "term": "Matte finish", "definition": "A non-reflective yarn surface produced by woollen preparation and low twist. Tapestry weft should be matte so the pattern reads by colour rather than by light reflection." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["tapestry weft yarn spinning", "spin tapestry yarn", "woollen tapestry yarn tutorial"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tapestry " },
+          { "type": "text", "text": "weft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }] },
+          { "type": "text", "text": " should pack down evenly in the shed, cover the warp completely, and have a " },
+          { "type": "text", "text": "matte finish", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "matte-finish" } }] },
+          { "type": "text", "text": " so the design reads clearly. The " },
+          { "type": "text", "text": "grist", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grist" } }] },
+          { "type": "text", "text": " you spin to depends on the warp sett: the weft must be thick enough to fill the gap between warp threads at the beat." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wheel safety", "body": "Keep loose hair and clothing back from the drive band and flyer. Tie hair back before sitting at the wheel." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Carded roving, any breed suited to weft (Corriedale, BFL, Romney)", "qty": "50 g per colour" },
+            { "name": "Sample of the warp yarn for grist comparison", "qty": "small amount" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Fibre choice'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Choose a medium-staple breed with a matte surface: Corriedale, Romney, or BFL all work well. Avoid high-lustre breeds (Border Leicester, Wensleydale) for tapestry weft; their shine makes pattern areas read differently at different viewing angles and distracts from the colour work. Merino is soft but slightly too springy for weft; it resists packing down and the beat requires more force." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Grist and twist'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Spin a thick, low-twist singles: the weft should be about twice the diameter of the warp thread. Low twist is important for matte appearance and for pliability in the shed; a tightly twisted weft is stiff and does not pack flat. Use a drive ratio of 6:1 to 8:1 and a long woollen draw." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Testing the grist before spinning a full batch'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Spin 5 to 10 metres of sample weft and weave a test stripe on the loom before spinning the full colour supply. The weft should cover the warp completely without packing so tightly that the beat requires excessive force. Adjust the singles grist up or down by changing the drafting speed before committing to the full batch." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The weft does not cover the warp; warp threads show through the surface", "cause": "Weft is too thin for the warp sett", "fix": "Spin a thicker singles or use two strands of the existing singles together in the shed. A thicker weft covers the warp more completely." },
+            { "problem": "The weft looks shiny in places and matte in others", "cause": "Twist level varied during spinning, creating both low-twist matte sections and higher-twist shiny sections", "fix": "Maintain a consistent treadling cadence and drafting speed throughout. Sample the twist level every few minutes by folding a short cut length back on itself." }
+          ]
+        }
+      }
+    ]
+  }
+}

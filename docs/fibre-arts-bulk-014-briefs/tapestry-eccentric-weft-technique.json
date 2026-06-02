@@ -1,0 +1,71 @@
+{
+  "slug": "tapestry-eccentric-weft-technique",
+  "title": "Tapestry eccentric weft technique",
+  "subtitle": "Using curved weft insertions to create diagonal lines, curves, and shaped edges in tapestry",
+  "excerpt": "Eccentric weft means inserting the weft at an angle rather than straight across, so the woven rows follow a diagonal or curved path rather than horizontal lines. It is the basis for creating curves, diagonals, and organic shapes in tapestry weaving.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Eccentric weft technique documented in tapestry weaving references including Scandinavian tapestry tradition and British Aubusson-style weaving teaching. The technique appears in historical tapestry production references.",
+  "recipeTools": [
+    { "slug": "frame-loom", "isOptional": false },
+    { "slug": "tapestry-shuttle", "isOptional": false },
+    { "slug": "tapestry-comb", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "eccentric-weft", "term": "Eccentric weft", "definition": "A weft insertion that does not run straight across the warp at 90 degrees but instead curves or angles across the warp to create diagonal lines or shaped edges in the tapestry surface." },
+    { "slug": "warp", "term": "Warp", "definition": "The vertical threads tensioned on the loom through which the weft is woven. In tapestry, the warp threads are the structural element; the weft carries all the colour and pattern." },
+    { "slug": "tapestry-beat", "term": "Tapestry beat", "definition": "The action of pushing the weft down with a tapestry comb or beater to cover the warp completely. In eccentric weaving, the beat must follow the curve or angle of the weft, not a horizontal line." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["eccentric weft tapestry", "curved weft weaving", "diagonal tapestry technique"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Eccentric " },
+          { "type": "text", "text": "weft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eccentric-weft" } }] },
+          { "type": "text", "text": " is what allows tapestry weavers to create curves and diagonals in a " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": "-faced structure. The technique changes only the angle of the weft insertion; the shed and the " },
+          { "type": "text", "text": "tapestry beat", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tapestry-beat" } }] },
+          { "type": "text", "text": " remain the same. Once mastered, it opens up freeform organic shapes that horizontal weaving cannot produce." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Tapestry warp (cotton seine or linen) on a frame loom", "qty": "as needed for sampler" },
+            { "name": "Tapestry weft in 3 to 4 colours", "qty": "as needed" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "What eccentric weft does'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "In standard tapestry weaving, each weft pass crosses the full width of the warp at 90 degrees and builds up in horizontal rows. Eccentric weft does the same interlacement but travels at an angle across only part of the warp width, or curves across the full width. The angled passes pack differently from horizontal ones, so the weft rows follow the curve of the insertion rather than lying flat." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 1: Weave a diagonal line'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Start with a simple diagonal: insert the weft across 8 warp threads at a 45-degree angle, enter the return shed, and work the return pass at the same 45-degree angle one step along. Each pass steps one warp thread further along the diagonal. The beat follows the diagonal angle; use the tapestry comb along the line of the weft rather than straight across." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 2: Weave a curve'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For a curve, vary the angle of the weft insertion across successive passes: start at one angle, gradually steepen it, then gradually shallow it back. The result is a smoothly curved weft row. The more passes you use across the same number of warp threads, the sharper the curve." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Step 3: Filling around the eccentric area'" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Once you have woven the eccentric shape, the surrounding warp area needs to be filled with horizontal passes to bring the weaving level. Work horizontal passes in the background colour around the eccentric area until all the warp threads on both sides of the curve are at the same height." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The eccentric passes create a gap or split in the woven surface where they meet horizontal passes", "cause": "The eccentric weft and the horizontal weft in the background did not interlock or share a warp thread at their boundary", "fix": "At the edge of the eccentric area, ensure the last eccentric pass and the first horizontal pass share at least one warp thread. This is the same interlocking principle used for colour joins in standard tapestry." },
+            { "problem": "The diagonal line looks stepped rather than smooth", "cause": "Too few passes at each angle position before stepping to the next", "fix": "Use two passes at each angle step rather than one before moving on. More passes per angle step softens the diagonal and makes it read as a smoother line." }
+          ]
+        }
+      }
+    ]
+  }
+}
