@@ -618,3 +618,29 @@ SKIPPED: 0
 | Rule kind | Count |
 |---|---:|
 | opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 16:42:37
+
+Generated: 2026-06-02T16:42:37.201Z
+
+Processed: 74
+PASS: 72
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 74 |
+| opening-pattern-missing-hook | 65 |
+| voice-violation | 2 |
+| prose-prep-steps | 1 |
+
+## Still BLOCKED (sample 20)
+
+- cedarwood-vetiver-cologne-balm: voice-violation
+- damper: opening-pattern-missing-hook

@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-06-02T16:28:04.936Z",
+  "generatedAt": "2026-06-02T16:44:18.190Z",
   "totalScanned": 6704,
   "passCount": 0,
-  "blockCount": 2515,
+  "blockCount": 2443,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
-      "total": 1173,
+      "total": 1167,
       "pass": 0,
-      "block": 1173,
+      "block": 1167,
       "warnOnly": 0
     },
     "baking": {
-      "total": 895,
+      "total": 858,
       "pass": 0,
-      "block": 895,
+      "block": 858,
       "warnOnly": 0
     },
     "natural-home": {
-      "total": 361,
+      "total": 332,
       "pass": 0,
-      "block": 361,
+      "block": 332,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -61,11 +61,11 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 836,
-    "opening-pattern-missing-hook": 2121,
-    "content-type-opening-mismatch": 2370,
+    "voice-violation": 813,
+    "opening-pattern-missing-hook": 2059,
+    "content-type-opening-mismatch": 2296,
     "grade-level-strict": 125,
-    "prose-prep-steps": 85,
+    "prose-prep-steps": 84,
     "body-missing-method": 1,
     "hero-missing": 1
   },
@@ -10292,16 +10292,16 @@
       "type": "RECIPE",
       "categorySlug": "natural-home",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T16:42:26.976Z",
       "publishedAt": "2026-06-01T09:22:38.244Z",
       "heroMediaId": "cmpv03h83000gxwv42twip94m",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Cedarwood and vetiver are both base notes with significant longevity on warm skin. Together they produce a dry, earthy, woody character in t"
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
         }
       ]
     },
@@ -10327,32 +10327,6 @@
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
           "snippet": "Celeriac makes one of the best autumn soups: earthy, smooth, and slightly nutty. The apple, sharp enough to cut the celeriac's richness, is "
-        }
-      ]
-    },
-    {
-      "slug": "ceramic-hob-cleaning-paste",
-      "tutorialId": "cmprryven0001p0v4qo4vg1e9",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:12:11.893Z",
-      "heroMediaId": "cmprs07k2000q8kv4kzp92q6i",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Ceramic hob cleaning works in two stages because the two types of residue need different chemistry. Mineral deposits (limescale, hard water "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Ceramic hob cleaning works in two stages because the two types of residue need different chemistry. Mineral deposits (limescale, hard water "
         }
       ]
     },
@@ -10498,58 +10472,6 @@
       ]
     },
     {
-      "slug": "chamomile-eye-gel",
-      "tutorialId": "cmpuxkolf0000mkv4vbswcco3",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T08:12:26.039Z",
-      "heroMediaId": "cmpuxmjzy000gu4v47j96ns1a",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Aloe vera gel forms the base of this eye gel. Chamomile hydrosol adds a light floral note and is well-tolerated by sensitive skin. No essent"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Aloe vera gel forms the base of this eye gel. Chamomile hydrosol adds a light floral note and is well-tolerated by sensitive skin. No essent"
-        }
-      ]
-    },
-    {
-      "slug": "chamomile-melt-pour-soap",
-      "tutorialId": "cmprrwfdk0000xsv4c1fgzaha",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:10:17.795Z",
-      "heroMediaId": "cmprs086z000s8kv4p26czn5t",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Chamomile tea in a melt-and-pour base tints the bar a warm gold and carries a very faint floral-hay note that does not clash with other scen"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Chamomile tea in a melt-and-pour base tints the bar a warm gold and carries a very faint floral-hay note that does not clash with other scen"
-        }
-      ]
-    },
-    {
       "slug": "champ",
       "tutorialId": "cmpeds4ql0000k0v4k1dbgi3g",
       "type": "RECIPE",
@@ -10605,32 +10527,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Tinned chickpeas work perfectly here and make this a very quick dish. The key step is mashing roughly 20% of the chickpeas once they're in t"
-        }
-      ]
-    },
-    {
-      "slug": "charcoal-face-wash",
-      "tutorialId": "cmprhqbfv0004okv480lpvy7v",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T22:25:36.605Z",
-      "heroMediaId": "cmprhsee3000ef0v4pn1pkoaf",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This face wash uses liquid castile soap base as the main cleanser. Activated charcoal at 2% adds adsorption of excess sebum and surface impu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This face wash uses liquid castile soap base as the main cleanser. Activated charcoal at 2% adds adsorption of excess sebum and surface impu"
         }
       ]
     },
@@ -10767,38 +10663,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "An American family-table recipe. Generous and warming, built for a crowd. The amounts adjust to suit what you need."
-        }
-      ]
-    },
-    {
-      "slug": "cheese-and-chive-scones",
-      "tutorialId": "cmpql69wk000010v42boqaapl",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:05.855Z",
-      "heroMediaId": "cmpqodur6002ggcv4ccj1t5oz",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[6] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Cheese and chive scones are a savoury variation on the standard scone method: cold butter rubbed into flour, liquid added quickly, minimal m"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Cheese and chive scones are a savoury variation on the standard scone method: cold butter rubbed into flour, liquid added quickly, minimal m"
         }
       ]
     },
@@ -11152,32 +11016,6 @@
       ]
     },
     {
-      "slug": "cherry-pie-lattice",
-      "tutorialId": "cmpuqz33p00009sv4veda4l6t",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T05:07:40.769Z",
-      "heroMediaId": "cmpur28yp000sxsv4xqvabsnh",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The filling thickens in the oven as the cherry juices heat and activate the cornflour; but it only sets fully as the pie cools. Cutting a ho"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The filling thickens in the oven as the cherry juices heat and activate the cornflour; but it only sets fully as the pie cools. Cutting a ho"
-        }
-      ]
-    },
-    {
       "slug": "cherry-scones",
       "tutorialId": "cmp99aijg0001gcv4n2iljr3y",
       "type": "RECIPE",
@@ -11225,32 +11063,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The dough has oil in it so it stretches without tearing. Rest it for 30 minutes before you begin. Stretching it paper-thin takes practice. T"
-        }
-      ]
-    },
-    {
-      "slug": "chess-pie-southern",
-      "tutorialId": "cmpqx264c00002gv4ybvytk8u",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:46:57.641Z",
-      "heroMediaId": "cmpqx4yf60006d0v4uvv2l00d",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Chess pie is an exercise in excess: the filling is almost entirely butter, sugar, and eggs, thickened slightly with a little cornmeal and cr"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Chess pie is an exercise in excess: the filling is almost entirely butter, sugar, and eggs, thickened slightly with a little cornmeal and cr"
         }
       ]
     },
@@ -11303,32 +11115,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Chestnut cake is a flat, rustic Italian cake made from chestnut flour, olive oil, and water, topped with rosemary and fennel seeds. The batt"
-        }
-      ]
-    },
-    {
-      "slug": "chiacchiere-carnival",
-      "tutorialId": "cmprphe010001d4v4wekixq27",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:36.942Z",
-      "heroMediaId": "cmprpko6z000cmwv42emily8a",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Chiacchiere are one of the simplest fried pastries. The dough is quick to make, and rolling it as thin as possible is the only technique tha"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Chiacchiere are one of the simplest fried pastries. The dough is quick to make, and rolling it as thin as possible is the only technique tha"
         }
       ]
     },
@@ -11570,25 +11356,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Use dry cider rather than sweet, the cream provides enough sweetness, and sweet cider produces a cloying sauce. Bone-in thighs hold their te"
-        }
-      ]
-    },
-    {
-      "slug": "chicken-casserole-with-cider-and-tarragon",
-      "tutorialId": "cmpqyqey60000rov4hiziqomu",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:33:48.440Z",
-      "heroMediaId": "cmpqzj0ic000gxkv476dtql2c",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Chicken with cider and tarragon is a light weeknight braise: chicken thighs and shallots cooked in dry cider until the sauce is just thick e"
         }
       ]
     },
@@ -12453,51 +12220,6 @@
       ]
     },
     {
-      "slug": "chip-butty",
-      "tutorialId": "cmpqzgu6w00008wv4ovy1ikr7",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:54:21.252Z",
-      "heroMediaId": "cmpqzj1ug000ixkv47al14y6f",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The chip butty is chips in bread, and it needs no further justification. The chips should be thick, hot, and slightly soft in the middle. Th"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The chip butty is chips in bread, and it needs no further justification. The chips should be thick, hot, and slightly soft in the middle. Th"
-        }
-      ]
-    },
-    {
-      "slug": "chip-shop-curry-sauce",
-      "tutorialId": "cmpqzha7i0000b0v4dkbgg9h4",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:54:42.011Z",
-      "heroMediaId": "cmpqzj2m1000kxkv4v86rhnaw",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The secret of chip shop curry sauce is that it is not a complex sauce. It is built on softened onion, mild curry powder, a little flour to t"
-        }
-      ]
-    },
-    {
       "slug": "chocolate-and-beetroot-cake",
       "tutorialId": "cmpaqasqj0000wcv4h325e8c5",
       "type": "RECIPE",
@@ -12546,65 +12268,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Chocolate And Chestnut Yule Log. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for what you "
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-and-courgette-cake",
-      "tutorialId": "cmprdu0x90001ugv4yjxt3rg9",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T20:36:31.137Z",
-      "heroMediaId": "cmprdx63j000854v4x67hvbkx",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"zucchini\" — prefer \"courgette\"",
-          "path": "sourceNotes",
-          "snippet": "zucchini"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This is a one-bowl oil cake. There is no creaming, no mixer required and nothing to melt. Grate the courgette on the coarse side of a box gr"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This is a one-bowl oil cake. There is no creaming, no mixer required and nothing to melt. Grate the courgette on the coarse side of a box gr"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-and-guinness-cake",
-      "tutorialId": "cmpuqz5ma00003cv4zz5io47o",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T05:07:44.032Z",
-      "heroMediaId": "cmpur29nj000uxsv4yh3ymaa3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The stout goes in the batter, not as a flavour you will notice immediately, but as a structural contribution. The liquid from the beer adds "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The stout goes in the batter, not as a flavour you will notice immediately, but as a structural contribution. The liquid from the beer adds "
         }
       ]
     },
@@ -12712,32 +12375,6 @@
       ]
     },
     {
-      "slug": "chocolate-chip-scones",
-      "tutorialId": "cmpsr7hqd0000esv4j6iudz7g",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T19:38:40.626Z",
-      "heroMediaId": "cmpsrbfg9000aesv4bkh3n429",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The method is the same as for any scone: cold fat, minimal handling, hot oven. The chocolate chips go in after the butter is rubbed in, just"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The method is the same as for any scone: cold fat, minimal handling, hot oven. The chocolate chips go in after the butter is rubbed in, just"
-        }
-      ]
-    },
-    {
       "slug": "chocolate-chip-shortbread",
       "tutorialId": "cmpazwqt90000fcv4xxew39d8",
       "type": "RECIPE",
@@ -12766,44 +12403,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Shortbread is defined by its ratio: 1 part sugar to 2 parts butter to 3 parts flour by weight (100 g: 200 g: 300 g is a workable batch). The"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-cold-process-soap",
-      "tutorialId": "cmpuzzvku0000e0v4wubsw5lo",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T09:20:14.218Z",
-      "heroMediaId": "cmpv03i1q000ixwv4znlzbimy",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[6] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[13] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Cocoa butter is one of the hardest soap-making fats, contributing stearic acid that gives the finished bar density and longevity. This formu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Cocoa butter is one of the hardest soap-making fats, contributing stearic acid that gives the finished bar density and longevity. This formu"
         }
       ]
     },
@@ -12958,58 +12557,6 @@
       ]
     },
     {
-      "slug": "chocolate-dipped-shortbread-fingers",
-      "tutorialId": "cmpqx28y1000010v48r560u89",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:47:01.302Z",
-      "heroMediaId": "cmpqx50u60008d0v45n5hhblo",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The shortbread base is plain butter shortbread: flour, icing sugar, butter, and salt, baked until just pale. Once cool, each finger is half-"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The shortbread base is plain butter shortbread: flour, icing sugar, butter, and salt, baked until just pale. Once cool, each finger is half-"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-drip-decoration",
-      "tutorialId": "cmprphgwt0000sgv4uadhcd1u",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:40.712Z",
-      "heroMediaId": "cmprpkoze000emwv4a66j7suc",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Drip decoration is controlled by temperature. The ganache must be at 30 to 35 degrees C and the cake must be cold. A warm cake on a warm day"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Drip decoration is controlled by temperature. The ganache must be at 30 to 35 degrees C and the cake must be cold. A warm cake on a warm day"
-        }
-      ]
-    },
-    {
       "slug": "chocolate-eclairs",
       "tutorialId": "cmp87k09e0000lov4autes18e",
       "type": "RECIPE",
@@ -13039,32 +12586,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Choux pastry is unlike any other. The paste is cooked twice: first on the hob, where the flour gelatinises in the hot butter and water; then"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-frangipane-tart",
-      "tutorialId": "cmprphjjb0001fgv4g81cckyw",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:44.113Z",
-      "heroMediaId": "cmprpkps1000gmwv4zqfe9zpa",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This tart is built in layers: chocolate pastry, raspberry jam, almond frangipane. The contrast between the three elements is the point. Chec"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This tart is built in layers: chocolate pastry, raspberry jam, almond frangipane. The contrast between the three elements is the point. Chec"
         }
       ]
     },
@@ -13117,51 +12638,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The chocolate fudge cake uses hot milk in the batter to develop the cocoa and create a closer, moister crumb than you get from a creamed cak"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-guinness-cake",
-      "tutorialId": "cmpq75ua20001uwv4tm4c1b40",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T00:41:58.910Z",
-      "heroMediaId": "cmpqody0l002mgcv4v3hicdd5",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A chocolate cake made with stout in the batter takes on a dark, malt-deepened flavour that no amount of extra cocoa can match. The stout sha"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-hazelnut-cake",
-      "tutorialId": "cmpqx2bw100001sv4ujoeo9bv",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:47:05.118Z",
-      "heroMediaId": "cmpqx51pj000ad0v4sbzrxs8l",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This cake is held together by eggs, not flour. The egg-set structure gives the cake a fudgy, dense crumb that is quite different from a spon"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This cake is held together by eggs, not flour. The egg-set structure gives the cake a fudgy, dense crumb that is quite different from a spon"
         }
       ]
     },
@@ -13389,32 +12865,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A chocolate sandwich cake is simply a Victoria sponge with cocoa powder added to the flour and a chocolate buttercream instead of jam and pl"
-        }
-      ]
-    },
-    {
-      "slug": "chocolate-sandwich-with-buttercream",
-      "tutorialId": "cmpuqz83p000050v4d6x98li9",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T05:07:47.251Z",
-      "heroMediaId": "cmpur2afk000wxsv49dm4flff",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The creaming method is the foundation. How long you cream the butter and sugar directly affects how much the cake rises. Three minutes of pr"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The creaming method is the foundation. How long you cream the butter and sugar directly affects how much the cake rises. Three minutes of pr"
         }
       ]
     },
@@ -13679,39 +13129,6 @@
       ]
     },
     {
-      "slug": "choux-buns",
-      "tutorialId": "cmpql6cu10000awv4lrh450ks",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:09.367Z",
-      "heroMediaId": "cmpqoe1fn002sgcv4jfzdvjqj",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > paragraph[7] > text",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Choux buns are hollow pastry shells made from a cooked flour paste called a panade, enriched with eggs and piped onto a tray before baking. "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Choux buns are hollow pastry shells made from a cooked flour paste called a panade, enriched with eggs and piped onto a tray before baking. "
-        }
-      ]
-    },
-    {
       "slug": "choux-pastry-base",
       "tutorialId": "cmp99ao7u00023cv4i9supbty",
       "type": "RECIPE",
@@ -13837,96 +13254,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Christmas Salmon. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for what you need."
-        }
-      ]
-    },
-    {
-      "slug": "christmas-spice-room-spray",
-      "tutorialId": "cmprhrs4100036ov42b3x2dmc",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T22:26:44.857Z",
-      "heroMediaId": "cmprhsfv3000gf0v47ac5nfo8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Cinnamon bark and clove bud essential oils are skin sensitisers and are used here exclusively as a room spray, never as a body product. The "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Cinnamon bark and clove bud essential oils are skin sensitisers and are used here exclusively as a room spray, never as a body product. The "
-        }
-      ]
-    },
-    {
-      "slug": "chrome-descaler-spray",
-      "tutorialId": "cmpsm7lpi0000qcv49c90dh6x",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T17:18:47.695Z",
-      "heroMediaId": "cmpsm8hdx000cssv4x8jqf6b3",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > infoPanel[1] > body"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid is the active ingredient in most commercial bathroom descalers. At a 5 to 8% concentration in water it dissolves limescale quick"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid is the active ingredient in most commercial bathroom descalers. At a 5 to 8% concentration in water it dissolves limescale quick"
-        }
-      ]
-    },
-    {
-      "slug": "churros-traditional",
-      "tutorialId": "cmpql6fn20000okv4uiu0qjee",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:12.996Z",
-      "heroMediaId": "cmpqoe3k8002wgcv49wchkyuq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Churros start with the simplest possible cooked dough: flour beaten into boiling salted water until smooth. The dough is piped directly from"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Churros start with the simplest possible cooked dough: flour beaten into boiling salted water until smooth. The dough is piped directly from"
         }
       ]
     },
@@ -14382,83 +13709,6 @@
       ]
     },
     {
-      "slug": "cinnamon-swirl-coffee-cake",
-      "tutorialId": "cmpqwkvid00012wv4qhsd2fy0",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:33:30.745Z",
-      "heroMediaId": "cmpqwm7xu000cj0v4sebix60y",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "American coffee cake has no coffee in it. The name refers to the occasion rather than an ingredient: this is the cake you cut when the coffe"
-        }
-      ]
-    },
-    {
-      "slug": "citric-acid-descaler",
-      "tutorialId": "cmpv026g3000010v45kkjcizw",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T09:22:01.615Z",
-      "heroMediaId": "cmpv03iqa000kxwv4v0yklq5g",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[11] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid works on limescale through a simple acid reaction: the acid converts insoluble calcium carbonate into soluble calcium citrate, w"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid works on limescale through a simple acid reaction: the acid converts insoluble calcium carbonate into soluble calcium citrate, w"
-        }
-      ]
-    },
-    {
-      "slug": "citric-bicarbonate-toilet-fizz",
-      "tutorialId": "cmpsur4cg0000i0v44t208zvg",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T21:17:55.245Z",
-      "heroMediaId": "cmpsus78e0008kwv4rvcj3ybq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid and bicarbonate of soda are stable as a dry mix; in water they react with effervescence and release carbon dioxide bubbles. The "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Citric acid and bicarbonate of soda are stable as a dry mix; in water they react with effervescence and release carbon dioxide bubbles. The "
-        }
-      ]
-    },
-    {
       "slug": "citronella-bug-repellent-balm",
       "tutorialId": "cmps3tswy00011wv4zj8t509l",
       "type": "RECIPE",
@@ -14485,32 +13735,6 @@
       ]
     },
     {
-      "slug": "citronella-garden-candle",
-      "tutorialId": "cmprrwiaa0000r8v4adggbzfp",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:10:21.559Z",
-      "heroMediaId": "cmprs08vw000u8kv41rghdt1e",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Citronella candles work best outdoors where there is some air movement. The scent throw disperses faster outside than indoors, which is why "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Citronella candles work best outdoors where there is some air movement. The scent throw disperses faster outside than indoors, which is why "
-        }
-      ]
-    },
-    {
       "slug": "citrus-solid-perfume",
       "tutorialId": "cmpevga8d00024sv4xwl393ic",
       "type": "RECIPE",
@@ -14533,64 +13757,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A solid perfume fits in a pocket or handbag and applies cleanly without the alcohol sting of a spray. The solid perfume concentration of 20%"
-        }
-      ]
-    },
-    {
-      "slug": "citrus-vanilla-reed-diffuser",
-      "tutorialId": "cmprhrllu0003hwv4810aqy0g",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T22:26:36.437Z",
-      "heroMediaId": "cmprhsgk6000if0v4d0gmtg36",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "A reed diffuser releases fragrance through capillary action: rattan reeds draw the liquid up from the bottle and the fragrance evaporates fr"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A reed diffuser releases fragrance through capillary action: rattan reeds draw the liquid up from the bottle and the fragrance evaporates fr"
-        }
-      ]
-    },
-    {
-      "slug": "citrus-vinegar-all-purpose-cleaner",
-      "tutorialId": "cmpqohdv80001nwv4u99u3wo0",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T08:46:50.981Z",
-      "heroMediaId": "cmpqrbusg0006ksv4lohvlsi4",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[1] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Citrus peel and vinegar make a cleaner that punches above its three-ingredient list. The vinegar dissolves limescale on the kitchen sink and"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Citrus peel and vinegar make a cleaner that punches above its three-ingredient list. The vinegar dissolves limescale on the kitchen sink and"
         }
       ]
     },
@@ -14723,39 +13889,6 @@
       ]
     },
     {
-      "slug": "classic-ring-doughnuts",
-      "tutorialId": "cmps0bss70000ywv4x5whyvau",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T07:06:11.938Z",
-      "heroMediaId": "cmps0ezev000aagv4oe1o1epd",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[0] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Oil temperature is the critical variable in doughnut frying. Too cool, below 170 degrees C, and the doughnuts absorb oil and become greasy. "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Oil temperature is the critical variable in doughnut frying. Too cool, below 170 degrees C, and the doughnuts absorb oil and become greasy. "
-        }
-      ]
-    },
-    {
       "slug": "classic-scones-with-jam-clotted-cream",
       "tutorialId": "cmp5nr9vn0000x4v42tarj6yg",
       "type": "RECIPE",
@@ -14778,44 +13911,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Classic Scones With Jam & Clotted Cream. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for w"
-        }
-      ]
-    },
-    {
-      "slug": "clay-swirl-cold-process-soap",
-      "tutorialId": "cmpuxiwx40000mgv44pv2a25a",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T08:11:03.574Z",
-      "heroMediaId": "cmpuxml5p000iu4v4o119r3fr",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[9] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[14] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "In-the-pot swirl is a cold-process soap technique where two differently coloured batters are combined in the mould at trace and swirled with"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "In-the-pot swirl is a cold-process soap technique where two differently coloured batters are combined in the mould at trace and swirled with"
         }
       ]
     },
@@ -14917,57 +14012,6 @@
       ]
     },
     {
-      "slug": "clementine-polenta-cake",
-      "tutorialId": "cmpql6imx0001rsv4zp8vamh1",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:16.588Z",
-      "heroMediaId": "cmpqoe5r00032gcv4loaqftr4",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This is a moist citrus cake made without wheat flour: polenta and ground almonds carry the structure, and clementine zest and juice run thro"
-        }
-      ]
-    },
-    {
-      "slug": "clootie-dumpling",
-      "tutorialId": "cmpqzimjq00017sv48btyrrxq",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:55:44.666Z",
-      "heroMediaId": "cmpqzj4jn000mxkv4m4g50i8l",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Clootie dumpling is one of the oldest forms of British pudding. The cloot is a square of clean cotton or muslin dusted with flour. The dumpl"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Clootie dumpling is one of the oldest forms of British pudding. The cloot is a square of clean cotton or muslin dusted with flour. The dumpl"
-        }
-      ]
-    },
-    {
       "slug": "clotted-cream-fudge",
       "tutorialId": "cmpvsvi1t0000r8v40w779pje",
       "type": "RECIPE",
@@ -14990,39 +14034,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Clotted cream fudge uses clotted cream instead of condensed milk, giving a deeper, more buttery flavour and a slightly smoother, creamier se"
-        }
-      ]
-    },
-    {
-      "slug": "clove-orange-pomander",
-      "tutorialId": "cmprrz8si0001n4v4hd81sxno",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:12:29.235Z",
-      "heroMediaId": "cmprs09mb000w8kv4g342ok6a",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"flavor\" — prefer \"flavour\"",
-          "path": "sourceNotes",
-          "snippet": "flavor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "A pomander is one of the oldest fragrance traditions in Britain. The word comes from the French pomme d'ambre: apple of amber. The original "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A pomander is one of the oldest fragrance traditions in Britain. The word comes from the French pomme d'ambre: apple of amber. The original "
         }
       ]
     },
@@ -15113,32 +14124,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Çoban salatası lives or dies by the knife work. The vegetables should be diced small and uniformly (about 1 cm or smaller) so that each fork"
-        }
-      ]
-    },
-    {
-      "slug": "cocadas",
-      "tutorialId": "cmpsr7ke30000r0v4852tfg4x",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T19:38:44.072Z",
-      "heroMediaId": "cmpsrbg3c000cesv47mmregzu",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The mixture is just coconut, condensed milk, and egg stirred together. Spoon onto a lined tray in small mounds (they spread very little. The"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The mixture is just coconut, condensed milk, and egg stirred together. Spoon onto a lined tray in small mounds (they spread very little. The"
         }
       ]
     },
@@ -15414,32 +14399,6 @@
       ]
     },
     {
-      "slug": "coconut-milk-cold-process-soap",
-      "tutorialId": "cmprrw6cz0000fsv4jdrhh6fd",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:10:06.106Z",
-      "heroMediaId": "cmprs0a9b000y8kv47z5bpa77",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Full-fat tinned coconut milk contains 17 to 24% fat. Those fats carry into the soap and contribute to a rich, conditioning lather. Temperatu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Full-fat tinned coconut milk contains 17 to 24% fat. Those fats carry into the soap and contribute to a rich, conditioning lather. Temperatu"
-        }
-      ]
-    },
-    {
       "slug": "coconut-oil-body-polish",
       "tutorialId": "cmpevezrh0002zgv40dxt92he",
       "type": "RECIPE",
@@ -15466,32 +14425,6 @@
       ]
     },
     {
-      "slug": "coconut-wax-candle-bergamot-lime",
-      "tutorialId": "cmpsuqkjd0000mwv45jq0l0hj",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T21:17:29.562Z",
-      "heroMediaId": "cmpsus85u000akwv41ljlb7ln",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax is refined from coconut oil and has a lower melting point than soy or paraffin. It burns cleanly, tends to give a very smooth, c"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax is refined from coconut oil and has a lower melting point than soy or paraffin. It burns cleanly, tends to give a very smooth, c"
-        }
-      ]
-    },
-    {
       "slug": "coconut-wax-candle-frankincense",
       "tutorialId": "cmpwm8a0i0001z0v4nb8sbqwr",
       "type": "RECIPE",
@@ -15507,58 +14440,6 @@
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
           "snippet": "A container candle made with coconut wax and frankincense essential oil. Coconut wax burns more slowly than soy and produces a creamier whit"
-        }
-      ]
-    },
-    {
-      "slug": "coconut-wax-candle-lime",
-      "tutorialId": "cmps3une10001q4v4n7gihkqv",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:50.270Z",
-      "heroMediaId": "cmps3vx85000mfwv49sm7g1au",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax has the smoothest finish of any natural wax -- it sets without the slight frosting that soy can develop. Its lower melt point al"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax has the smoothest finish of any natural wax -- it sets without the slight frosting that soy can develop. Its lower melt point al"
-        }
-      ]
-    },
-    {
-      "slug": "coconut-wax-candle-lime-bergamot",
-      "tutorialId": "cmpv00t3q0000u4v4978cezp0",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T09:20:57.670Z",
-      "heroMediaId": "cmpv03jms000mxwv47ydz1kyl",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax produces a very white, creamy candle with a smooth surface and excellent fragrance throw. It holds essential oils and fragrance "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax produces a very white, creamy candle with a smooth surface and excellent fragrance throw. It holds essential oils and fragrance "
         }
       ]
     },
@@ -15585,32 +14466,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A coconut wax container candle. Coconut wax is pressed from coconut meat and has the softest texture and highest fragrance-binding capacity "
-        }
-      ]
-    },
-    {
-      "slug": "coconut-wax-travel-tin-candle",
-      "tutorialId": "cmprrwx8d0000mwv43ect8t2r",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:10:40.933Z",
-      "heroMediaId": "cmprs0b2d00108kv4dlx8c7ec",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax is made from hydrogenated coconut oil. It produces a smooth, creamy surface without the slight roughness that can appear on soy "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Coconut wax is made from hydrogenated coconut oil. It produces a smooth, creamy surface without the slight roughness that can appear on soy "
         }
       ]
     },
@@ -15673,32 +14528,6 @@
       ]
     },
     {
-      "slug": "coffee-cake-american",
-      "tutorialId": "cmpuqzd7y00003wv4ovxgs34p",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T05:07:53.884Z",
-      "heroMediaId": "cmpur2c330010xsv4lztq6np8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The streusel is the point of this cake. It should be rubbed until it clumps into pieces the size of small grapes; too finely rubbed and it c"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The streusel is the point of this cake. It should be rubbed until it clumps into pieces the size of small grapes; too finely rubbed and it c"
-        }
-      ]
-    },
-    {
       "slug": "coffee-cake-american-streusel",
       "tutorialId": "cmp9yfzed000140v4l0jxpl92",
       "type": "RECIPE",
@@ -15721,123 +14550,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "An American coffee cake is a square-tin, one-layer affair, not a layer cake, not a celebration cake, just a simple sponge baked at home for "
-        }
-      ]
-    },
-    {
-      "slug": "coffee-cold-process-soap",
-      "tutorialId": "cmpqogklo0001h0v4in01vj23",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T08:46:13.057Z",
-      "heroMediaId": "cmpqrbvs60008ksv4jnw6bhvz",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[3] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "unflagged-jargon: \"nitrile\" — use \"protective gloves\" unless the specific material is critical to the outcome",
-          "path": "body > paragraph[3] > text",
-          "snippet": "nitrile"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Coffee soap deodorises hands after garlic, fish, or onion prep better than any commercial kitchen bar. The coconut, olive, and castor base g"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Coffee soap deodorises hands after garlic, fish, or onion prep better than any commercial kitchen bar. The coconut, olive, and castor base g"
-        }
-      ]
-    },
-    {
-      "slug": "coffee-cream-tart",
-      "tutorialId": "cmprphm5400019gv4ygq9163z",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:47.497Z",
-      "heroMediaId": "cmprpkr41000imwv46cqnt2p8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Chocolate pastry is slightly more fragile than plain shortcrust because the cocoa replaces some of the flour. Patch cracks as they appear; t"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Chocolate pastry is slightly more fragile than plain shortcrust because the cocoa replaces some of the flour. Patch cracks as they appear; t"
-        }
-      ]
-    },
-    {
-      "slug": "coffee-hazelnut-biscotti",
-      "tutorialId": "cmpsekh89000090v4mt6cgxa4",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T13:44:51.493Z",
-      "heroMediaId": "cmpsemh1j000idcv4gswuepcr",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Good biscotti slicing is the key skill here: cut at 45 degrees while the log is still warm, with a sharp serrated knife. Work deliberately a"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Good biscotti slicing is the key skill here: cut at 45 degrees while the log is still warm, with a sharp serrated knife. Work deliberately a"
-        }
-      ]
-    },
-    {
-      "slug": "coffee-scalp-scrub",
-      "tutorialId": "cmps3tqdk0001usv4eqylt9he",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T08:44:07.481Z",
-      "heroMediaId": "cmps3vxx9000ofwv4029fur40",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This scrub uses ground coffee as a physical exfoliant to break up product build-up and flakes on the scalp, bound in coconut oil which condi"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This scrub uses ground coffee as a physical exfoliant to break up product build-up and flakes on the scalp, bound in coconut oil which condi"
         }
       ]
     },
@@ -16271,32 +14983,6 @@
       ]
     },
     {
-      "slug": "cookie-bars",
-      "tutorialId": "cmps0bven0000usv48ljln7fm",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T07:06:15.340Z",
-      "heroMediaId": "cmps0f03b000cagv4t8g91f9q",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The dough is identical to a standard chocolate chip cookie dough. The difference is that you press it evenly into a lined tin rather than po"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The dough is identical to a standard chocolate chip cookie dough. The difference is that you press it evenly into a lined tin rather than po"
-        }
-      ]
-    },
-    {
       "slug": "cookie-bars-chocolate-chip",
       "tutorialId": "cmppnlidv0001ikv43zicw8cg",
       "type": "RECIPE",
@@ -16556,32 +15242,6 @@
       ]
     },
     {
-      "slug": "cornbread-american",
-      "tutorialId": "cmpql6ll80000rov4wu8i7x5e",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:20.301Z",
-      "heroMediaId": "cmpqoelpb003ugcv47m1q4vgc",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "This is a southern-American skillet cornbread: crumbly, faintly sweet, with a dark underside that comes from pouring the batter into a very "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "This is a southern-American skillet cornbread: crumbly, faintly sweet, with a dark underside that comes from pouring the batter into a very "
-        }
-      ]
-    },
-    {
       "slug": "cornbread-southern",
       "tutorialId": "cmp9yg6zi0001c0v4y6ahywxb",
       "type": "RECIPE",
@@ -16656,32 +15316,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Corned beef hash uses either tinned corned beef or the shredded remains of a braised beef brisket. The tinned version is quicker and more tr"
-        }
-      ]
-    },
-    {
-      "slug": "cornish-biscuits",
-      "tutorialId": "cmps0by100000cov4983j9frt",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T07:06:18.738Z",
-      "heroMediaId": "cmps0f13l000eagv4jvcq7u07",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The dough is on the dry side compared with other biscuit doughs: it comes together into a firm ball that can be rolled between the palms wit"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The dough is on the dry side compared with other biscuit doughs: it comes together into a firm ball that can be rolled between the palms wit"
         }
       ]
     },
@@ -16818,50 +15452,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Despite the name, Cornish saffron cake is a yeasted loaf rather than a cake. It is a dense, close-crumbed enriched dough made with lard, a s"
-        }
-      ]
-    },
-    {
-      "slug": "cornish-splits",
-      "tutorialId": "cmprdu9c90001i8v4z6jv3o2q",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T20:36:42.047Z",
-      "heroMediaId": "cmprdx8gb000e54v41r8u8la0",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Cornish split dough is enriched with warm milk and butter, which means it rises more slowly than a lean white bread dough. Give it the full "
-        }
-      ]
-    },
-    {
-      "slug": "cornmeal-exfoliating-cold-process-soap",
-      "tutorialId": "cmpuxighz000030v4gkrz4iwj",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T08:10:42.289Z",
-      "heroMediaId": "cmpuxmlsd000ku4v4g63kpkmy",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[6] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Fine cornmeal stirred into soap batter at trace creates a bar with a light scrubby texture that polishes rather than scratches. The oil base"
         }
       ]
     },
@@ -17050,32 +15640,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Country captain is a mild Anglo-Indian curry. It came back to Britain with colonial families in the 1800s. Chicken thighs are browned in but"
-        }
-      ]
-    },
-    {
-      "slug": "courgette-and-lemon-loaf",
-      "tutorialId": "cmps0c0o20000qwv4iwcr0bly",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T07:06:22.158Z",
-      "heroMediaId": "cmps0f1sv000gagv41ibuwyhn",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Courgette contains a great deal of water, which it releases gradually as the loaf bakes. This is what makes the crumb so moist. There is no "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Courgette contains a great deal of water, which it releases gradually as the loaf bakes. This is what makes the crumb so moist. There is no "
         }
       ]
     },
@@ -17379,32 +15943,6 @@
       ]
     },
     {
-      "slug": "cranberry-orange-scones",
-      "tutorialId": "cmprphoyn0001fgv49c0w5qhw",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:51.154Z",
-      "heroMediaId": "cmprpkrxs000kmwv47v6c1i0p",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The principle behind any good scone is cold butter worked in quickly and wet ingredients added just until the dough comes together. Do not k"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The principle behind any good scone is cold butter worked in quickly and wet ingredients added just until the dough comes together. Do not k"
-        }
-      ]
-    },
-    {
       "slug": "cranberry-sauce",
       "tutorialId": "cmp89vp2f0000q0v4ub9ja0y7",
       "type": "RECIPE",
@@ -17427,32 +15965,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The only judgment call in cranberry sauce is sweetness. Cranberries are very sharp. The amount of sugar needed varies with personal preferen"
-        }
-      ]
-    },
-    {
-      "slug": "cream-horns",
-      "tutorialId": "cmpsekiw10000c8v4hoyzcoko",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T13:44:53.640Z",
-      "heroMediaId": "cmpsemiyb000kdcv4wk33uy7r",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The single most important rule for cream horns is keeping the pastry cold until the moment it goes into the oven. Work quickly when cutting "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The single most important rule for cream horns is keeping the pastry cold until the moment it goes into the oven. Work quickly when cutting "
         }
       ]
     },
@@ -17516,32 +16028,6 @@
       ]
     },
     {
-      "slug": "cream-puffs-plain",
-      "tutorialId": "cmpqwkyse0001xsv4upr5jjbb",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:33:34.995Z",
-      "heroMediaId": "cmpqwma3n000gj0v40kc5ny2c",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Choux pastry is cooked twice: once on the hob as you beat flour into boiling water and butter to form a paste, and once in the oven where st"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Choux pastry is cooked twice: once on the hob as you beat flour into boiling water and butter to form a paste, and once in the oven where st"
-        }
-      ]
-    },
-    {
       "slug": "cream-puffs-small",
       "tutorialId": "cmpvstbhd0000pkv4yjmsdqvb",
       "type": "RECIPE",
@@ -17590,32 +16076,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Scone quality comes down to two things: a light hand and a hot oven. Scone handling should be minimal, bring the dough together and cut it w"
-        }
-      ]
-    },
-    {
-      "slug": "cream-scones-devonshire",
-      "tutorialId": "cmpql6og70001l0v46ck8h029",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T07:17:23.700Z",
-      "heroMediaId": "cmpqoeme1003wgcv4k45t60hq",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Devonshire cream scones are a plain or fruit-studded scone served with clotted cream and jam. The order of toppings is a matter of county lo"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Devonshire cream scones are a plain or fruit-studded scone served with clotted cream and jam. The order of toppings is a matter of county lo"
         }
       ]
     },
@@ -17776,32 +16236,6 @@
       ]
     },
     {
-      "slug": "creme-brulee-tart",
-      "tutorialId": "cmprphrm20001fgv499tb6ro1",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T02:02:54.590Z",
-      "heroMediaId": "cmprpksmf000mmwv4xxez6y63",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The tart format makes creme brulee sliceable. The low oven temperature for the custard is the key: 140 degrees C prevents the eggs from scra"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The tart format makes creme brulee sliceable. The low oven temperature for the custard is the key: 140 degrees C prevents the eggs from scra"
-        }
-      ]
-    },
-    {
       "slug": "creme-caramel",
       "tutorialId": "cmpcvym8d0000u0v4fj5wi6k8",
       "type": "RECIPE",
@@ -17850,32 +16284,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Crepes. Classical French method, scaled to a home kitchen. Adjustable for what you need."
-        }
-      ]
-    },
-    {
-      "slug": "crisp-sandwich",
-      "tutorialId": "cmpqzgx1p0000x0v47p6smrxv",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:54:24.953Z",
-      "heroMediaId": "cmpqzj6kt000qxkv4pfujui41",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The crisp sandwich has one rule: the crisps must be inside the bread, not beside it, and they must crunch when you bite. The flavour of cris"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The crisp sandwich has one rule: the crisps must be inside the bread, not beside it, and they must crunch when you bite. The flavour of cris"
         }
       ]
     },
@@ -18400,97 +16808,6 @@
       ]
     },
     {
-      "slug": "cuccidati",
-      "tutorialId": "cmpsr7n1000004wv4ruqqkzst",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T19:38:47.489Z",
-      "heroMediaId": "cmpsrbgv5000eesv46rhfxcfm",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[8] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The pastry is a classic shortcrust enriched with egg and a little sugar; it handles easily and holds its shape when baked. The filling is pr"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The pastry is a classic shortcrust enriched with egg and a little sugar; it handles easily and holds its shape when baked. The filling is pr"
-        }
-      ]
-    },
-    {
-      "slug": "cucumber-aloe-melt-pour-soap",
-      "tutorialId": "cmpsupuz50000rwv4b1dwm7ff",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T21:16:56.447Z",
-      "heroMediaId": "cmpsus8hy000ckwv4yx94b2j8",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Melt-and-pour soap uses a pre-made glycerine base that has already been processed into soap; there is no lye to handle. The method is to mel"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Melt-and-pour soap uses a pre-made glycerine base that has already been processed into soap; there is no lye to handle. The method is to mel"
-        }
-      ]
-    },
-    {
-      "slug": "cucumber-sandwich",
-      "tutorialId": "cmpqzhg0600000wv4r3q46hib",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T13:54:49.523Z",
-      "heroMediaId": "cmpqzj7du000sxkv4qpilgrti",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
-          "path": "body > troubleshooter[5] > item[2] > symptom",
-          "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The cucumber sandwich has two requirements: the cucumber must be sliced very thin, and the bread must be soft enough to roll slightly at the"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The cucumber sandwich has two requirements: the cucumber must be sliced very thin, and the bread must be soft enough to roll slightly at the"
-        }
-      ]
-    },
-    {
       "slug": "cuisse-de-canard-confit-aux-lentilles",
       "tutorialId": "cmpuoaur40000fwv4irfamv1v",
       "type": "RECIPE",
@@ -18933,39 +17250,6 @@
       ]
     },
     {
-      "slug": "custard-tart",
-      "tutorialId": "cmpuqzi8r0000icv4jy0q8t6i",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T05:08:00.389Z",
-      "heroMediaId": "cmpur2dpf0014xsv47kj2emem",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "prose-prep-steps",
-          "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
-          "path": "body > paragraph[7]",
-          "snippet": "Pour slowly over the egg mixture, whisking."
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The custard must be blind-baked into a fully set case or it will soak the pastry from the inside. Bake the filling at 150°C fan: any hotter "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The custard must be blind-baked into a fully set case or it will soak the pastry from the inside. Bake the filling at 150°C fan: any hotter "
-        }
-      ]
-    },
-    {
       "slug": "custard-tart-british",
       "tutorialId": "cmpa326qt0001mov4zdlt82sc",
       "type": "RECIPE",
@@ -19044,51 +17328,6 @@
       ]
     },
     {
-      "slug": "cuticle-oil",
-      "tutorialId": "cmprrxbmv0000jsv4y5dkedgt",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T03:10:59.598Z",
-      "heroMediaId": "cmprs0civ00128kv43c1l602y",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Jojoba is a liquid wax ester, not a true oil. Its molecular structure is close to the skin's own sebum, so it absorbs quickly and leaves no "
-        }
-      ]
-    },
-    {
-      "slug": "cutting-board-conditioning-oil",
-      "tutorialId": "cmpslr80g0000i4v4ghk0xysv",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T17:18:38.937Z",
-      "heroMediaId": "cmpsm8hsy000essv4yq3fse7u",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "A wooden cutting board that is left dry splits, warps, and develops deep cracks that trap bacteria. Regular conditioning with a food-safe oi"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A wooden cutting board that is left dry splits, warps, and develops deep cracks that trap bacteria. Regular conditioning with a food-safe oi"
-        }
-      ]
-    },
-    {
       "slug": "czech-goulash",
       "tutorialId": "cmpbg0mhb0000ecv4u99ftwkp",
       "type": "RECIPE",
@@ -19120,7 +17359,7 @@
       "type": "RECIPE",
       "categorySlug": "baking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T16:42:36.178Z",
       "publishedAt": "2026-05-30T07:06:25.527Z",
       "heroMediaId": "cmps0f2l6000iagv4mv67ghbn",
       "findings": [
@@ -19128,13 +17367,6 @@
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Damper is about as simple as bread gets: flour, water, salt, and heat. The baking powder lifts the loaf slightly and gives a lighter crumb t"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Damper is about as simple as bread gets: flour, water, salt, and heat. The baking powder lifts the loaf slightly and gives a lighter crumb t"
         }
@@ -19195,45 +17427,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "All-butter puff pastry is the essential shortcut here. Cheaper all-fat versions taste greasy rather than buttery. Make the custard the day b"
-        }
-      ]
-    },
-    {
-      "slug": "danish-pastry-apricot-custard",
-      "tutorialId": "cmpqx2etf0000fkv4t8h6ab62",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:47:08.912Z",
-      "heroMediaId": "cmpqx52n7000cd0v43i4r75an",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[6] > text"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Anchor\" — generic equivalent is \"salted butter\"",
-          "path": "body > paragraph[7] > text",
-          "snippet": "Anchor"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Danish pastries use the same technique as pain aux raisins: an enriched laminated dough, folded three times, proved once cut and shaped. The"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Danish pastries use the same technique as pain aux raisins: an enriched laminated dough, folded three times, proved once cut and shaped. The"
         }
       ]
     },
@@ -19328,32 +17521,6 @@
       ]
     },
     {
-      "slug": "date-and-walnut-cake",
-      "tutorialId": "cmprduhu70001psv4f42bn3i8",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T20:36:53.060Z",
-      "heroMediaId": "cmprdxayo000k54v4n0paoxtd",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The bicarbonate of soda date soak is what turns this from a plain fruit cake into something with depth. Do not skip it. Leave the dates to s"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The bicarbonate of soda date soak is what turns this from a plain fruit cake into something with depth. Do not skip it. Leave the dates to s"
-        }
-      ]
-    },
-    {
       "slug": "date-and-walnut-loaf",
       "tutorialId": "cmp9ygj6k0001z8v4ld0zh3kz",
       "type": "RECIPE",
@@ -19432,31 +17599,6 @@
       ]
     },
     {
-      "slug": "dead-sea-mud-cold-process-soap",
-      "tutorialId": "cmpuxim600000p4v46xbxibed",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T08:10:49.639Z",
-      "heroMediaId": "cmpuxmmfq000mu4v4hyy46nt5",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "safety-block: possible safety-advice block (3 safety keywords: goggles, gloves, ventilat). Body content is craft steps — move safety actions inline as numbered steps or compress to one line",
-          "path": "body > paragraph[8] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Dead Sea mud is a cosmetic-grade mineral clay from the bed of the Dead Sea. It is rich in magnesium, calcium, and potassium salts, which giv"
-        }
-      ]
-    },
-    {
       "slug": "death-by-chocolate-cake",
       "tutorialId": "cmppt19ng00009sv4514g1u9q",
       "type": "RECIPE",
@@ -19479,32 +17621,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "This cake earns its name through layering: a dark cocoa sponge deepened with melted chocolate and hot coffee, filled with chocolate buttercr"
-        }
-      ]
-    },
-    {
-      "slug": "delicates-wool-wash",
-      "tutorialId": "cmpsm7qc30000gcv4i63g20hc",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T17:18:53.694Z",
-      "heroMediaId": "cmpsm8iwb000gssv4k0m9zsf3",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Wool and cashmere felt when agitated in hot or highly alkaline water; the scale structure of wool fibres locks together and the garment shri"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Wool and cashmere felt when agitated in hot or highly alkaline water; the scale structure of wool fibres locks together and the garment shri"
         }
       ]
     },
@@ -19770,38 +17886,6 @@
       ]
     },
     {
-      "slug": "digestive-biscuits-gluten-free",
-      "tutorialId": "cmpqwl5to00011kv4uhkedri2",
-      "type": "RECIPE",
-      "categorySlug": "baking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T12:33:44.102Z",
-      "heroMediaId": "cmpqwmcnx000mj0v4lnmetz5m",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > heading[4] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "The gluten-free biscuit crumb relies on chilling the dough before rolling. The oats must be certified gluten-free; standard oats are often c"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "The gluten-free biscuit crumb relies on chilling the dough before rolling. The oats must be certified gluten-free; standard oats are often c"
-        }
-      ]
-    },
-    {
       "slug": "digestive-biscuits-homemade",
       "tutorialId": "cmp87ka8n0000ngv4ijn8ewdy",
       "type": "RECIPE",
@@ -19976,31 +18060,6 @@
       ]
     },
     {
-      "slug": "dishwasher-deep-clean-tab",
-      "tutorialId": "cmpuxl5gg0000r0v4di2hro92",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-01T08:12:47.916Z",
-      "heroMediaId": "cmpuxmn45000ou4v4x5j5yzbh",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "excerpt"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Washing soda handles grease and general build-up. Citric acid handles descaling: the calcium and magnesium deposits from hard water that coa"
-        }
-      ]
-    },
-    {
       "slug": "dishwasher-powder",
       "tutorialId": "cmpdl87t10000n4v4qtso1q14",
       "type": "RECIPE",
@@ -20029,32 +18088,6 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A dry dishwasher powder. Three ingredients handle three different cleaning challenges. Washing soda is the primary degreaser and water softe"
-        }
-      ]
-    },
-    {
-      "slug": "dishwasher-rinse-aid",
-      "tutorialId": "cmprhr5gr000240v44tu04y8w",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-29T22:26:15.518Z",
-      "heroMediaId": "cmprhsij6000of0v4j8vflk80",
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "White vinegar works as a rinse aid because its acetic acid content prevents hard water deposits from forming on glassware during the final r"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "White vinegar works as a rinse aid because its acetic acid content prevents hard water deposits from forming on glassware during the final r"
         }
       ]
     },

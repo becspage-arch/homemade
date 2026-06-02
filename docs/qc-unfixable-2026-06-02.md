@@ -161,3 +161,6 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - cedar-lavender-wardrobe-sachet opening-pattern-missing-hook — applied: recipe-yield-appended
 - cedar-wardrobe-sachets opening-pattern-missing-hook — applied: recipe-yield-appended
 - cedarwood-bergamot-soy-candle opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- cedarwood-vetiver-cologne-balm voice-violation — applied: 
+- damper opening-pattern-missing-hook — applied: recipe-yield-appended
