@@ -1,0 +1,240 @@
+{
+  "slug": "battery-storage-wall-unit-installation",
+  "title": "Home battery storage: what AC-coupled wall units actually do",
+  "subtitle": "How a wall battery works with solar PV, when it earns its cost, and what G98 notification covers",
+  "excerpt": "A home battery storage unit (typically 5-15 kWh, lithium iron phosphate) connected AC-coupled to a solar PV system stores surplus daytime generation for use in the evening. At 2025/26 electricity prices, a 10 kWh battery with 5 kWp of solar can avoid 1,200-1,800 kWh of grid imports per year. The economics depend heavily on your consumption pattern.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gov.uk G98 connection standard for home batteries. Energy Saving Trust battery storage guidance. BEAMA guide to domestic battery energy storage. Which? money guide to solar battery storage (2024). IET Wiring Regulations BS 7671 for energy storage system installation. Sonnen, GivEnergy, Givenergy, and Tesla Powerwall installation documentation for AC-coupled configurations.",
+  "approximateCostGbp": 7000,
+  "paybackYears": 12,
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "battery-storage",
+      "term": "Battery storage",
+      "definition": "A lithium (typically LiFePO4) battery system connected to the household electrical circuit to store surplus solar generation or cheap overnight electricity for use at other times."
+    },
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that generate electricity directly from sunlight, typically installed on a south-facing roof."
+    },
+    {
+      "slug": "seg",
+      "term": "SEG",
+      "definition": "Smart Export Guarantee: the UK scheme under which energy suppliers pay households for electricity exported to the grid from renewable generation."
+    },
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "A device that converts DC electricity (from solar panels or battery) to AC electricity (for household use and grid export). An AC-coupled battery has its own inverter separate from the solar inverter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A home "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "battery-storage"
+                }
+              }
+            ],
+            "text": "battery storage"
+          },
+          {
+            "type": "text",
+            "text": " unit stores surplus "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "solar-pv"
+                }
+              }
+            ],
+            "text": "solar PV"
+          },
+          {
+            "type": "text",
+            "text": " generation (or cheap overnight electricity from an Octopus Agile or similar tariff) for use later. An AC-coupled unit has its own "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "inverter"
+                }
+              }
+            ],
+            "text": "inverter"
+          },
+          {
+            "type": "text",
+            "text": " and connects to the household consumer unit. No modification of the existing solar PV inverter is needed. A DC-coupled system connects directly to the panels. It is usually more efficient but needs a different type of inverter. This tutorial covers AC-coupled systems, the common retrofit choice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What a 10 kWh battery actually does for a typical house"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 3-person household with 5 kWp of south-facing solar generates around 4,500 kWh/year. Without a battery, 30% is used directly and 70% is exported. With a 10 kWh battery, afternoon surplus is stored for evening use. Self-consumption rises from 30% to around 65% and grid import falls by 1,200-1,500 kWh/year. That saves a modest cost. The battery costs a modest cost installed, giving a payback of 15-28 years at current prices."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "G98 notification"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A home battery must comply with Engineering Recommendation G98. Below 3.68 kW export capacity, notify your DNO within 28 days. No prior approval is needed. Above 3.68 kW, G99 applies and prior approval is required. Most batteries register via the manufacturer portal. An MCS installer handles this; a DIY install requires the homeowner to notify directly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When the economics improve"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Time-of-use tariff (Agile, Go, or similar): charge the battery cheaply overnight and use it at the peak rate in the evening. The saving adds to the solar self-consumption benefit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "EV charging: if you own an EV and charge at home, a battery lets you store cheap overnight electricity and use it to charge the car during the day."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grid outage resilience: some battery units offer islanding capability, keeping the house powered during a grid outage. Check the spec before relying on this feature."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When a battery is not worth it"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are away during the day and return after dark, a battery adds little value. There is no surplus daytime generation to store. In this pattern, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "seg"
+                }
+              }
+            ],
+            "text": "SEG"
+          },
+          {
+            "type": "text",
+            "text": " export income from selling the surplus directly may be a better financial choice than battery investment, unless you are on a strong time-of-use tariff with a cheap overnight rate."
+          }
+        ]
+      }
+    ]
+  }
+}

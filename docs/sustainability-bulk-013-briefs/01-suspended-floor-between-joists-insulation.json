@@ -1,0 +1,577 @@
+{
+  "slug": "suspended-floor-between-joists-insulation",
+  "title": "Insulating a suspended timber floor from below",
+  "subtitle": "Fitting rigid board or mineral wool between floor joists to cut heat loss through the ground floor",
+  "excerpt": "A suspended timber ground floor over a subfloor void loses around 10% of a typical home's heat. Fitting insulation between the joists from below, or from above when the floor is up, can cut that loss to near zero for under a modest cost materials in a typical mid-terrace.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gov.uk Building Regulations Part L1B (2022) for ground-floor U-value target of 0.25 W/m2K. Energy Saving Trust suspended-floor guidance for typical heat loss and insulation depths. AECB Warm House Retrofit Guide for thermal bridging at joist ends. BRE Good Repair Guide 33 on subfloor ventilation requirements.",
+  "approximateCostGbp": 450,
+  "paybackYears": 5,
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    },
+    {
+      "slug": "spirit-level",
+      "isOptional": false
+    },
+    {
+      "slug": "stanley-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "screwdriver",
+      "isOptional": false
+    },
+    {
+      "slug": "thermal-imaging-camera",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "suspended-floor",
+      "term": "Suspended floor",
+      "definition": "A ground floor built from timber joists spanning a void between the house wall and the earth below, rather than resting directly on a concrete slab."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how much heat passes through a building element per second per square metre per degree of temperature difference, in W/m2K. Lower is better."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A point in the building fabric where heat flows more readily than through the surrounding insulation, typically at joist ends, fixings, or structural elements."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane fitted on the warm side of insulation to limit moisture-laden air reaching the cold surface and condensing."
+    },
+    {
+      "slug": "mineral-wool",
+      "term": "Mineral wool",
+      "definition": "Glass or rock fibre insulation sold as batts or rolls, lambda around 0.035-0.044 W/mK depending on density."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Insulating a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "suspended-floor"
+                }
+              }
+            ],
+            "text": "suspended timber floor"
+          },
+          {
+            "type": "text",
+            "text": " cuts heat loss through the ground floor by fitting insulation between the joists, either from below through the subfloor void or from above when the floorboards are lifted. A typical mid-terrace loses 10-15% of its total heat through an uninsulated suspended floor. Fitting 100 mm of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mineral-wool"
+                }
+              }
+            ],
+            "text": "mineral wool"
+          },
+          {
+            "type": "text",
+            "text": " between joists (lambda 0.040, 200 mm deep) brings the floor "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " from around 0.70 W/m2K to roughly 0.25 W/m2K, meeting the current Part L1B retrofit target. At 2025/26 cap rates of 6p gas / 27p electricity, the saving is typically 400-800 kWh/year, worth a modest cost on gas heating, depending on floor area and overlap with walls."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Subfloor check"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check whether the subfloor void has adequate ventilation. Traditional suspended floors rely on airbricks (typically 225 x 75 mm) in the external walls to keep the void dry. Count the airbricks on your external walls before starting. The NHBC and BRE guidance requires at least 1500 mm2 of free ventilation area per metre of external wall. If airbricks are missing or blocked, do not proceed until they are cleared or reinstated. Insulating a poorly ventilated void traps moisture and rots the joists."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Also check whether your subfloor void is accessible. Most pre-1939 houses have a void of 300-600 mm. You need at least 400 mm of clearance to work from below. If the void is shallower than that, the only practical route is to lift the floorboards and work from above."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: materials"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mineral wool batts sized to fit between joists (typically 400 mm wide for joists at 400 mm centres, or 600 mm for 600 mm centres): 100-150 mm depth for most floors"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Netting or breathable membrane to support the batts from below (e.g. jute garden netting or polypropylene mesh, 10-15 m2 per 10 m2 of floor)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Timber battens (38 x 25 mm, cut to fit between joists) to staple the netting to"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Staple gun staples, 12 mm, for fixing netting to battens"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Foam draught-sealing strip (20 x 3 mm) for the perimeter joist-wall junction"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Safety"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you handle mineral wool. Long sleeves, gloves, dust mask (FFP2 minimum), eye protection. The fibres irritate skin, eyes, and lungs. Cool shower after the job to rinse fibres off skin; wash work clothes separately."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Measuring and calculating"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Measure the total ground-floor area in m2. Measure joist centres (typically 400 mm or 600 mm). Measure joist depth to confirm 100 mm fits without compressing the batt. Mineral wool works at its rated lambda only when it is not compressed. Order batts 10% wider than the joist centres so they friction-fit without gaps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Installation: from below"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Enter the subfloor void via the access hatch (typically inside a cupboard or under the stairs). Lay a plank across the joists to spread your weight and avoid pushing through the floor above."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Clear any debris from the void. Look for moisture staining or rot on the joist underside. Any joists showing soft spots need a carpenter's assessment before proceeding."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Staple battens across the underside of the joists at 600 mm intervals. These battens will carry the netting that supports the mineral wool batts from below."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut the mineral wool batts to length (joist bay length) with a stanley knife on a firm surface. The batt should fit snugly end-to-end in the bay."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Push each batt up between the joists until it sits against the floorboard underside. The batt should press lightly against the boards with no air gap above it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll the netting across the joist bays and staple it to the underside of the battens every 150 mm. The netting prevents the batts drooping over time. Keep tension even."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At the perimeter, push foam strip into the junction between the joists and the external wall. This closes the linear gap that is often the largest source of draught in a suspended floor."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Thermal bridges at joist ends"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The biggest residual weakness after insulating the floor bays is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": " at the joist ends embedded in the external wall. In a traditional solid-wall terrace, each joist bears into the wall by 100-150 mm and conducts heat directly to the cold external surface. Addressing these requires either packing the joist pockets with mineral wool around the joist ends (if there is space) or accepting the residual bridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Vapour control"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Suspended floors over a ventilated void do not normally need a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vapour-control-layer"
+                }
+              }
+            ],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": " because the ventilation keeps the void dry. Fitting a VCL would trap moisture between it and the cold ground, which causes rot. Leave the underside of the insulation open to the ventilated air."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Verification"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Walk the floor above after installation. A well-insulated floor feels noticeably warmer underfoot within one cold night. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal imaging camera"
+          },
+          {
+            "type": "text",
+            "text": " pointed at the floor from below will show cold bands where the netting has sagged and left an air gap. Any gap more than 10 mm deep needs restuffing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like vs done badly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well, the insulation fills every bay flush to the floorboards, the netting is taut, the perimeter gaps are sealed, and the airbricks remain clear. Done badly, the batts are compressed, there are gaps at joist ends and perimeter, and the airbricks have been blocked by the installation. Blocking airbricks is the most common single error: it traps moisture in the void and rots the joists within a few seasons."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Netting sags after a few weeks",
+              "cause": "Battens fixed too far apart or netting tension too low at installation",
+              "fix": "Add additional battens at 300 mm centres and re-staple the netting taut"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Floor still feels cold after installation",
+              "cause": "Perimeter gap at joist-wall junction not sealed, or batt depth insufficient",
+              "fix": "Check and re-seal the perimeter with foam strip; consider a second layer of batts above the first"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Damp smell from subfloor after installation",
+              "cause": "Airbricks partially blocked or void ventilation reduced",
+              "fix": "Clear all airbricks immediately; fit additional airbricks if count is below the 1500 mm2/metre requirement"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

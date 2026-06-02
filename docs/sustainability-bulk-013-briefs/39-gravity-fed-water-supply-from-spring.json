@@ -1,0 +1,241 @@
+{
+  "slug": "gravity-fed-water-supply-from-spring",
+  "title": "Setting up a gravity-fed water supply from a spring",
+  "subtitle": "Spring collection, flow rate testing, filtration, and the legal position in England, Wales, and Scotland",
+  "excerpt": "A spring on private land can supply a household's water needs without mains connection. The legal position in England and Wales classifies a spring abstraction as a water right under the Water Act 2003; below 20 m3/day no licence is needed. Flow rate, filtration, and storage tank sizing determine whether the supply is reliable through a dry summer.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Environment Agency abstraction licensing guidance for England and Wales (below 20 m3/day threshold). Natural Resources Wales equivalent guidance. SEPA (Scottish Environment Protection Agency) for Scotland. WHO drinking water quality guidelines 4th edition for spring water quality assessment. CAT (Centre for Alternative Technology) off-grid water supply guide. Water Quality Association NSF/ANSI standards for filtration.",
+  "approximateCostGbp": 1500,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "bucket-10l",
+      "isOptional": false
+    },
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rainwater-harvesting",
+      "term": "Gravity supply",
+      "definition": "A water supply delivered by the pressure of elevation difference between the source and the user, without a pump. Requires the source to be at least 5-10 m higher than the delivery point for usable pressure."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A spring is groundwater emerging at the surface under its own pressure, fed by a saturated zone (aquifer) in the hillside above. Where the spring is on private land, at least 5-10 m above the house, and produces a consistent flow, it can supply domestic water needs by "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rainwater-harvesting"
+                }
+              }
+            ],
+            "text": "gravity"
+          },
+          {
+            "type": "text",
+            "text": " without a pump. A household needs around 150 litres per person per day for cooking, drinking, bathing, and washing. A spring producing 2-3 litres per minute (120-180 litres per hour) is technically sufficient for a 4-person household, but dry-season flow rate may be 30-60% of winter peak and must be tested in August or September."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Legal position"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "England and Wales: abstracting spring water for domestic use on your own land below 20 m3/day (20,000 litres per day) is exempt from Environment Agency abstraction licensing. Above that threshold a licence is required. A 4-person household uses approximately 0.6 m3/day (600 litres), well under the threshold."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scotland: small private water supplies for household use are exempt from SEPA abstraction licensing. If the supply serves more than one household, register it with the local council under the Private Water Supplies (Scotland) Regulations 2006."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The spring water must be tested and meet the Private Water Supply Regulations (England and Wales) 2016 or equivalent. A local council environmental health officer can arrange testing and will advise on treatment requirements."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Flow rate testing"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Locate the spring: look for a damp or boggy area on a hillside where water seeps from the ground. Often identifiable by rushes, sedges, or watercress growing in a line across an otherwise dry slope."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure the flow: dam a small channel below the spring and time how long it takes to fill a 10-litre bucket. 10 litres in 5 minutes = 2 litres/minute = 120 litres/hour = 2,880 litres/day. Do this test in late summer for the dry-season minimum."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Basic system components"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spring box: a covered concrete or stone chamber around the spring collection point. Prevents surface water contamination and animal access. A 1 m3 spring box costs approximately a modest cost in materials."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Header tank: a closed, covered storage tank close to the house, higher than the delivery point. 1,000-2,000 litres for a family with a 2-3 day supply buffer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Filtration: three stages minimum. A coarse mesh screen at the spring box. A 1-micron sediment filter before the header tank. A UV steriliser at the drinking water outlet."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Supply pipe: HDPE (high-density polyethylene) 25-32 mm diameter, buried at least 500 mm to avoid freezing and UV degradation."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

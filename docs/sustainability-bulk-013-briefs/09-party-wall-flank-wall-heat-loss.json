@@ -1,0 +1,227 @@
+{
+  "slug": "party-wall-flank-wall-heat-loss",
+  "title": "Heat loss at party walls and flank walls",
+  "subtitle": "Why end-of-terrace and semi-detached homes lose more heat — and what to do about it",
+  "excerpt": "An end-of-terrace house has one or two more exposed walls than a mid-terrace, typically adding 25-40% to its space-heating demand for a comparable floor area. The flank wall and the party wall where it meets an unheated void both need attention in a whole-house retrofit.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Housing Energy Efficiency report for heat loss by dwelling type. BEIS UK Housing Energy Fact File 2022 for end-of-terrace vs mid-terrace energy comparisons. AECB Warm House Retrofit Guide on flanking losses. Gov.uk Part L1B for U-value targets on existing exposed walls.",
+  "approximateCostGbp": 2500,
+  "paybackYears": 10,
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    },
+    {
+      "slug": "thermal-imaging-camera",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "The rate of heat transfer through a building element, W/m2K. An uninsulated solid brick wall is 2.1 W/m2K; a cavity wall with blown insulation is around 0.5 W/m2K."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A high-conductivity path through the building fabric, typically at junctions between elements, such as where a flank wall meets a cold loft void."
+    },
+    {
+      "slug": "solid-wall-insulation",
+      "term": "Solid wall insulation",
+      "definition": "Insulation added to a solid (non-cavity) wall, applied internally or externally."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A mid-terrace house shares its two long walls with neighbours who heat their homes. Those shared walls conduct little heat to the outside. An end-of-terrace house has one exposed flank wall facing outside air, adding roughly 20-30 m2 of building fabric to the heat-loss calculation. At an uninsulated solid-brick "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " of 2.1 W/m2K, a 25 m2 flank wall loses around 3,700 kWh/year more than the equivalent internal wall in a mid-terrace, worth approximately a modest cost on gas at 6p/kWh (2025/26 cap rates). Insulating the flank wall to 0.5 W/m2K cuts that loss by 75%."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Identifying the problem"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a cold morning, touch the interior face of each external wall. The flank wall will feel noticeably colder than the party walls if it is solid and uninsulated. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal imaging camera"
+          },
+          {
+            "type": "text",
+            "text": " makes the difference visible: the flank wall will appear blue on an internal thermal image while the party walls appear neutral-yellow."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cavity vs solid flank walls"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flank walls built after around 1920 are usually cavity construction and can be insulated by blown cavity fill (the same process as a front or rear cavity wall). Pre-1920 flank walls are usually solid: one or two brick thicknesses, no cavity: and need internal or external "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "solid-wall-insulation"
+                }
+              }
+            ],
+            "text": "solid wall insulation"
+          },
+          {
+            "type": "text",
+            "text": ". To determine which you have: tap the wall. A dull thud is solid; a hollow sound is cavity. Alternatively, an energy assessor's inspection or an EPC survey will identify the construction type."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The cold loft junction"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the top of the flank wall, where it meets the loft void, heat conducts through the uninsulated masonry from the warm room below into the cold attic air. This is a linear "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": " along the entire width of the building. Adding loft insulation improves the ceiling U-value but leaves this junction exposed unless the insulation wraps down over the wall top inside the loft to 150-200 mm depth. Check your loft insulation at the wall perimeter and stuff any visible gap with offcuts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Party walls between heated and unheated spaces"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A party wall shared with an adjacent property in the same ownership but used as storage or a garage (unheated) behaves like an external wall: it loses heat from the warm house into the unheated space next door. Insulate the party wall the same as any external wall. If the adjacent property is owned by a different party, you have no obligation to coordinate (the insulation goes on your side, inside your property)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example: 1930s end-of-terrace in Manchester"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 1930s end-of-terrace: flank wall 8 m x 5 m = 40 m2 exposed surface (minus windows), cavity construction 1930s. Cavity fill (blown mineral wool): cost around a modest cost reduces U-value from 1.5 to 0.45 W/m2K, saves roughly 2,100 kWh/year on gas heating, worth a modest cost. Payback approximately 5 years. Compare to the mid-terrace neighbour whose equivalent party wall saves nothing because it is shared with a heated space."
+          }
+        ]
+      }
+    ]
+  }
+}

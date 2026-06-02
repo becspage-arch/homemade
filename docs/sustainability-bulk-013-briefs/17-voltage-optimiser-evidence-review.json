@@ -1,0 +1,143 @@
+{
+  "slug": "voltage-optimiser-evidence-review",
+  "title": "Voltage optimisers: what the evidence actually shows",
+  "subtitle": "When reducing mains voltage saves energy and when it makes no difference",
+  "excerpt": "A voltage optimiser reduces the mains supply voltage from the UK network average of 242 V to around 220 V. Resistive loads (older incandescent bulbs, heating elements) use less energy at lower voltage. Modern loads with switched-mode power supplies do not. The typical saving claimed by installers (8-12%) applies mainly to pre-2010 homes still running a lot of resistive equipment.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Power Networks voltage management report. Carbon Trust voltage optimisation review (CTV007). BRE assessment of voltage optimisation products. Which? investigation into voltage optimiser claims (2016). BEAMA position paper on voltage reduction technology. Electrical Research Association test data on motor and SMPS response to voltage reduction.",
+  "approximateCostGbp": 600,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "energy-monitor",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A voltage optimiser is a transformer fitted between the energy meter and the consumer unit. It reduces the supply voltage from around 242 V (the UK network runs slightly high) to 220 V. The claim is that reducing voltage reduces energy consumption, saving 8-12% on the electricity bill. The claim is partially true and extensively over-sold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where voltage reduction saves energy"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ohmic (resistive) loads: electric heating elements, old-style incandescent bulbs (now rare), older single-speed motors, and some older fridge-freezer compressors. Power consumption of a resistive element drops in proportion to the square of the voltage reduction. Reducing from 242 V to 220 V (a 9% reduction) cuts resistive load consumption by around 17%. Old storage heaters and electric panel heaters are the main beneficiary."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where voltage reduction makes no difference"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switched-mode power supplies (SMPS) include laptop chargers, phone chargers, LED drivers, modern TVs, and most white goods made after 2005. An SMPS regulates its output regardless of input voltage, across about 100-265 V. Reducing the input voltage from 242 to 220 V draws the same regulated output power: the SMPS compensates by drawing slightly more current."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The real saving in a modern UK home"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A modern home where the majority of electrical consumption is SMPS-based (LED lighting, laptop, TV, fridge freezer with inverter drive, induction hob) will see savings of 2-5% rather than 8-12%. The Carbon Trust review found that homes with mostly resistive loads (predominantly electric heating, old filament bulbs) achieved 8-10% savings; homes with mostly modern loads achieved 1-4%. At 27p/kWh and 3,500 kWh/year consumption, 3% saving is a modest cost. A a modest cost voltage optimiser has a payback of over 20 years in that scenario."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to check before buying"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Install a whole-house energy monitor (clip-on CT sensor at the meter) for two to four weeks with the existing supply. Then borrow or rent a voltage optimiser from the supplier for a trial period (some offer this). Compare baseline energy use against the optimised period, correcting for any change in weather or occupancy. If the reduction is below 5%, the payback is unlikely to be justified at current prices."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When a voltage optimiser is not worth buying"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Almost always in a home built after 2005, fitted with LED lighting, and with modern appliances. The marketing claims assume a house full of resistive loads that no longer represent the majority of UK electricity consumption. Spend the a modest cost on loft insulation top-up or draught-proofing instead."
+          }
+        ]
+      }
+    ]
+  }
+}

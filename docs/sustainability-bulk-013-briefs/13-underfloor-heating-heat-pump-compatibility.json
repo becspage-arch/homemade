@@ -1,0 +1,214 @@
+{
+  "slug": "underfloor-heating-heat-pump-compatibility",
+  "title": "Underfloor heating and heat pumps: making them work together",
+  "subtitle": "Flow temperatures, screed depth, and commissioning for heat-pump-compatible UFH",
+  "excerpt": "Underfloor heating is often described as the ideal heat emitter for a heat pump because both work best at low flow temperatures. The reality depends on screed depth, room height, and what the system was designed for. Retrofitting UFH into an existing house for a heat pump is more complex than adding larger radiators.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE AM15 on underfloor heating system design. MCS MIS 3005 heat pump installation standard for emitter design. Heat Pump Association UK guidance on radiator vs UFH emitters. Nu-Heat and Polypipe technical design guides for screed-embedded UFH. Energy Saving Trust heat pump commissioning guidance.",
+  "approximateCostGbp": 4500,
+  "paybackYears": null,
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from outside air or the ground into the building using electricity, achieving a COP of 2.5-4 at typical UK temperatures."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The water temperature leaving the heat pump toward the heating circuit. Heat pumps are most efficient at flow temperatures of 35-45°C."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal COP: the efficiency across a full heating season. SCOP falls when flow temperature is raised to meet peak demand."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Underfloor heating (UFH) distributes heat through pipes or electric cables embedded in the floor surface, warming the room from below. The supply water temperature is typically 35-45°C "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "flow-temperature"
+                }
+              }
+            ],
+            "text": "flow temperature"
+          },
+          {
+            "type": "text",
+            "text": " for wet systems, which is exactly where a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-pump"
+                }
+              }
+            ],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": " operates most efficiently. A heat pump running at 35°C flow temperature achieves a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scop"
+                }
+              }
+            ],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " of 4.0-4.5; the same heat pump at 55°C achieves 2.0-2.5. UFH operating at 35-40°C is theoretically well matched. The complication is that the heat output of a UFH system depends on pipe spacing, screed depth, floor finish, and heat loss of the room: and an undersized UFH system that needs 50°C to meet peak demand loses most of the efficiency advantage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Screed-embedded UFH: the design challenge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The output of a wet UFH system is determined by the mean water temperature, pipe spacing, and thermal resistance of the screed and floor finish. A standard design: 100 mm lightweight screed with 15 mm pipe at 200 mm centres, flow temperature 45°C, output around 80-100 W/m2. A well-insulated modern room (heat demand 25-35 W/m2 floor area) is easily satisfied. An older house with poor insulation (heat demand 60-80 W/m2) may not be: the UFH cannot deliver enough heat at 45°C and requires flow temperatures of 50-55°C to compensate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Floor finish and its effect on performance"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stone and tile floor finishes have low thermal resistance and transfer heat efficiently from the screed. Timber, carpet, and underlay have higher resistance and reduce output. A 10 mm timber floor overlay reduces UFH output by around 20-30% compared to stone at the same flow temperature. For a heat-pump-optimised system, specify stone or tile where possible, or engineered timber (maximum thermal resistance 0.10 m2K/W)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Retrofitting UFH into an existing floor"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two retrofit routes exist without lifting the entire floor:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Overlay systems: low-profile aluminum-routed panels (18-20 mm total depth) placed on top of the existing floor and covered with engineered boards. Adds minimal floor height but has lower output than screed-embedded systems; works best in well-insulated rooms."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Full screed: lift the existing floor, fit insulation below (100 mm minimum), lay the pipe on the insulation, pour screed. High disruption but proper performance. Floor level rises by typically 100-150 mm, affecting skirting boards, stairs, and doorframes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When radiators are the better choice"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oversized radiators run at 35-40°C flow temperature and are often simpler and cheaper than full retrofit UFH. Doubling the radiator area roughly halves the flow temperature needed. For a heat pump in an existing house, sizing up radiators by 50-100% usually costs less than retrofitting UFH. Keep UFH for new builds, extensions, or rooms being fully renovated."
+          }
+        ]
+      }
+    ]
+  }
+}

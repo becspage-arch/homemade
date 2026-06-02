@@ -1,0 +1,471 @@
+{
+  "slug": "insulated-plasterboard-dot-and-dab",
+  "title": "Fitting insulated plasterboard to a cold internal wall",
+  "subtitle": "Dot-and-dab method for adding PIR-backed plasterboard to solid or cold cavity walls",
+  "excerpt": "Insulated plasterboard (a PIR foam board factory-bonded to plasterboard) applied by dot-and-dab adhesive is one of the few internal wall insulation methods that doesn't require battens or wall plugs. At 52.5 mm total thickness, it takes a solid brick wall from around 2.1 W/m2K to roughly 0.55 W/m2K, cutting heat loss through that wall by 75%.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gov.uk Building Regulations Part L1B (2022) for solid-wall U-value targets. SPAB (Society for the Protection of Ancient Buildings) guidance on internal insulation and moisture risk for pre-1919 buildings. BBA Certificates for insulated plasterboard products. AECB Warm House Retrofit Guide on cold-bridge management at floor and ceiling junctions.",
+  "approximateCostGbp": 1200,
+  "paybackYears": 8,
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    },
+    {
+      "slug": "spirit-level-1200mm",
+      "isOptional": false
+    },
+    {
+      "slug": "stanley-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "filling-knife-100mm",
+      "isOptional": false
+    },
+    {
+      "slug": "sanding-block",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation with a lambda value of around 0.022-0.026 W/mK, factory bonded to plasterboard for internal wall insulation systems."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "The rate of heat transfer through a building element, measured in W/m2K. Lower values mean better insulation."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A point of higher heat conductivity in the building envelope, typically at junctions between elements such as floor-wall or window-wall joints."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane placed on the warm side of insulation to resist vapour diffusion toward the cold wall behind, reducing the risk of interstitial condensation."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Insulated plasterboard is a composite board with a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pir-board"
+                }
+              }
+            ],
+            "text": "PIR foam"
+          },
+          {
+            "type": "text",
+            "text": " core bonded to a plasterboard face. Fitted by dot-and-dab adhesive to an existing wall, it is the simplest internal wall insulation route for solid brick or block walls and some poorly performing cavity walls. A 52.5 mm board (12.5 mm plasterboard + 40 mm PIR) on a solid brick wall takes the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " from around 2.1 W/m2K to roughly 0.55 W/m2K. At 2025/26 cap rates of 6p gas / 27p electricity, a 10 m2 north-facing wall saves around 600-900 kWh/year on a gas-heated house, worth a modest cost."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Not suitable for pre-1919 solid-wall buildings with permeable lime mortar joints without specialist advice. Internal insulation on a solid historic wall creates a new cold surface behind the board where moisture can accumulate. SPAB recommends breathable hemp or wood-fibre alternatives in those cases."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: materials"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insulated plasterboard boards, 52.5 mm or 72.5 mm (12.5 mm plasterboard + 40 or 60 mm PIR), 1200 x 2400 mm sheets"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dot-and-dab adhesive (gypsum-based, sold in 25 kg bags)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Expanding foam sealant for perimeter gaps"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Joint tape and finishing plaster for board joints"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vapour control layer membrane if specified by the board manufacturer"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Safety"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you start cutting or drilling. Eye protection for every cut. Gloves for handling board edges. First aid kit within reach."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Installation"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Clear the wall back to bare plaster or masonry. Remove skirting boards and architraves. Check the wall for damp, rising damp, or penetrating rain. Resolve any moisture source before proceeding: trapping moisture behind insulation accelerates decay."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut the boards to height using a straight edge and stanley knife. Score the face firmly once and snap the board over your knee. Cut the PIR foam with a second pass."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply the dot-and-dab adhesive in a series of dots and two continuous horizontal dabs (one at 25 mm from the top edge, one at 25 mm from the bottom). Dot spacing is typically 300 mm centres in both directions. Apply to the back of the PIR face, not the wall."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press the board onto the wall. Use the spirit level to check plumb and flat. Tap with a rubber mallet to adjust the position within the first 10 minutes before the adhesive grips. Prop the board while it sets if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seal the perimeter gap between the board edges and the floor, ceiling, and side walls with expanding foam. This is the single most important step for preventing convective bypasses. An unsealed 5 mm gap at the skirting negates a significant proportion of the insulation benefit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape and skim the board joints. Replace skirting boards and architraves with thicker stock to cover the added thickness at the wall face."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Vapour control"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most insulated plasterboard systems include a foil facing on the PIR that acts as the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vapour-control-layer"
+                }
+              }
+            ],
+            "text": "vapour control layer"
+          },
+          {
+            "type": "text",
+            "text": ". The foil faces the room (warm side). The expanded foam sealing at the perimeter completes the vapour barrier. Check the product datasheet to confirm whether additional VCL membrane is required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold bridges at junctions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Where the insulated wall meets an uninsulated floor slab or ceiling soffit, the bare concrete or brick creates a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": ". Cut the board to extend behind the skirting line to within 10 mm of the floor surface. At the ceiling, extend to within 10 mm of the cornice. Fill both perimeter gaps with foam."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like vs done badly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: the boards are plumb, joints taped and skimmed, all perimeter gaps foamed, services rerouted to sit proud of the new face, and skirting reinstated flush. Done badly: boards are not plumb, perimeter gaps left open, the backing cavity traps air that convects heat out of the room, and skirting boards float away from the wall. A 5 mm perimeter gap around a 10 m2 wall can halve the effective U-value improvement."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Board falls away from wall within 48 hours",
+              "cause": "Adhesive applied to damp wall surface, or adhesive coverage insufficient",
+              "fix": "Check and resolve wall damp source; apply adhesive to a dry surface with correct dot pattern and perimeter dabs"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cold spot appearing at floor level after installation",
+              "cause": "Perimeter gap between board bottom edge and floor not sealed",
+              "fix": "Lift skirting and inject expanding foam into the gap; refit skirting"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Mould forming on the room side of the board within one heating season",
+              "cause": "High indoor humidity combined with a missing or damaged vapour control face on the PIR",
+              "fix": "Improve room ventilation; check the PIR foil face is intact on all boards; replace any damaged sheets"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

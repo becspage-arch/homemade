@@ -1,0 +1,182 @@
+{
+  "slug": "hot-water-cylinder-thermostat-setting",
+  "title": "Setting the hot water cylinder thermostat",
+  "subtitle": "The 60°C rule, legionella control, and how to balance energy savings with safety",
+  "excerpt": "A hot water cylinder thermostat controls the maximum stored water temperature. The standard setting of 60°C comes from legionella control requirements: at 60°C, Legionella bacteria die within two minutes. Lower settings save energy but create a legionella risk in stored water. The compromise used in most heat-pump installs is 55°C daily with a weekly pasteurisation cycle to 60°C.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "ACOP L8 and HSG274 Part 2 for legionella control in hot water systems. CIBSE TM13 on avoiding legionella in building services. WHO Guidelines for Drinking-water Quality 4th edition for Legionella temperature thresholds. Energy Saving Trust hot water guidance. Vaillant and Worcester Bosch cylinder installation manuals for thermostat calibration.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "screwdriver",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that uses electricity to move heat from outside air or the ground. Heat pumps are less efficient at high cylinder temperatures, so the temperature setting is a key operating decision."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A hot water cylinder thermostat sits in a pocket in the cylinder wall and controls when the heat source (boiler, heat pump, or immersion heater) fires to reheat the stored water. Most UK cylinders are factory-set to 60°C. This temperature is set for a reason: Legionella bacteria multiply in water between 20°C and 45°C and are killed in under two minutes at 60°C. Below 60°C, the kill time rises: at 55°C it takes about 5-6 hours of continuous exposure for the same effect."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The risk in practice"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For most homes, the legionella risk from a cylinder is low. The water turns over frequently, the cylinder is small, and there are no complex circuits. ACOP L8 explicitly excludes domestic premises from formal risk-assessment. The 60°C default is the safest option. A managed 55°C plus weekly pasteurisation is widely used in heat-pump installs for the efficiency gain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Energy consumption at different temperatures"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a gas boiler-heated cylinder, the energy consumption difference between 55°C and 60°C is small (around 3-5% of the standby heat loss through the cylinder walls). For a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-pump"
+                }
+              }
+            ],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": " the difference is larger: a COP of 2.8 at 60°C vs 3.5 at 55°C. Over a year with a 200-litre cylinder charged daily, the saving from 55°C vs 60°C on a heat-pump system is around 150-250 kWh/year, worth a modest cost at 27p/kWh."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The 55°C plus weekly pasteurisation approach"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the cylinder thermostat to 55°C for daily operation. This is where the heat pump is most efficient."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Program the immersion heater or boiler to heat the cylinder to 60°C once per week (typically overnight, on a cheap electricity tariff). Hold at 60°C for at least one hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fit a thermostatic blending valve at the cylinder outlet, set to 50°C. This prevents scalding at the taps during and after the pasteurisation cycle."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjusting the thermostat"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the electricity before opening the thermostat cover. Most immersion thermostats have a slotted screw that sets the temperature (marked on the dial). Restore power and check the stored temperature at the hot outlet with a contact thermometer after one full heating cycle."
+          }
+        ]
+      }
+    ]
+  }
+}

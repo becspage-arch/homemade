@@ -1,0 +1,252 @@
+{
+  "slug": "thermal-imaging-survey-guide",
+  "title": "Reading a thermal imaging survey of your home",
+  "subtitle": "What the colours show, what to fix first, and when to call a professional thermographer",
+  "excerpt": "A thermal imaging camera shows surface temperatures across walls, ceilings, and floors in false colour. A DIY survey with a handheld camera (around a modest cost to buy or a modest cost to hire) can locate the biggest heat-loss paths in an hour. The images only mean what they say if the conditions are right.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BSRIA BG 44/2017 for thermographic survey methodology. IEA Energy in Buildings and Communities Technology Collaboration Programme (EBC) on building thermal imaging standards. CIBSE AM10 for natural ventilation and building airtightness context. EST (Energy Saving Trust) guidance on interpreting thermal surveys.",
+  "approximateCostGbp": 40,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "thermal-imaging-camera",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A point of elevated heat transfer through the building fabric, visible in thermal images as a cold spot on the warm internal surface or a hot spot on the cold external surface."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "The rate of heat transfer through a building element, W/m2K. Areas of high U-value appear cold internally in a thermal image during winter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A thermal imaging camera measures surface temperature and shows it in false colour. Cold areas appear blue-purple; hot areas appear red-white. FLIR is a major brand name for these cameras. Pointed at an internal wall during cold weather, it shows where heat is escaping: cold patches on the inside surface indicate higher "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " areas. A DIY survey requires no calibration and takes about an hour for a typical semi-detached. Hiring a thermal camera for a weekend costs a modest cost; buying one costs a modest cost for a resolution adequate for domestic surveys."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Conditions for a useful survey"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The temperature difference between inside and outside must be at least 10°C, preferably 15°C. A survey taken when it is 8°C outside and 20°C inside gives good results; a survey taken on a mild day (15°C outside, 20°C inside) shows almost nothing. Survey on a still evening (no wind). Avoid surveying within two hours of sunshine on the walls being imaged (solar heating masks the heat-loss signal)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to look at"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "External walls: cold patches (blue in default palette) show missing or thin insulation in a cavity wall. In solid walls, they show high-conductivity points such as stone lintels or concrete padstones."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Loft hatch and ceiling: a bright cold ring around the loft hatch frame shows air infiltration. A uniformly cold ceiling means the loft insulation is too thin or is missing entirely from some areas."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Floor perimeter: cold bands at the ground floor junction show missing insulation under a suspended floor or an uninsulated slab edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Window frames: cold spots at frame corners or along the sill indicate frame "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "thermal-bridge"
+                        }
+                      }
+                    ],
+                    "text": "thermal bridges"
+                  },
+                  {
+                    "type": "text",
+                    "text": " or failed double-glazed unit seals. A failed unit fills with moisture, loses its insulating gas, and its U-value rises to near that of single glazing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Service penetrations: cold streaks where a pipe or cable enters through the external wall show an unsealed hole."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What the images cannot tell you"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thermal imaging shows surface temperature, not insulation depth or type. A cold patch in a wall could mean missing insulation, settled fill, a wet fill, or a structural element conducting heat. The image locates the problem but does not diagnose it. A professional thermographer compares image data with building records and blower-door results to go further."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prioritising the findings"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fix the largest cold areas first. The typical order: loft insulation top-up (cheapest per kWh saved), floor insulation, wall insulation (if cavity), then draught-proofing the penetrations and frame gaps the camera found. Uniform walls with only frame-gap cold spots mean the building fabric is already reasonable. The remaining gains are in the detail."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to call a professional thermographer"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Level 1 thermographer produces a formal report for insurance claims, contractor disputes, or pre-purchase surveys. They use higher-resolution cameras and compare the images with blower-door data. A DIY survey with a consumer camera works well for planning your own retrofit."
+          }
+        ]
+      }
+    ]
+  }
+}

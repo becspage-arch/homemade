@@ -1,0 +1,273 @@
+{
+  "slug": "heat-pump-hot-water-cylinder-sizing",
+  "title": "Sizing a hot water cylinder for a heat pump",
+  "subtitle": "Why a heat pump needs a larger unvented cylinder than a gas boiler, and how to calculate the right size",
+  "excerpt": "A heat pump heats water more slowly than a gas boiler and cannot reheat the cylinder in minutes on demand. The cylinder needs to be large enough to store a full day's hot water demand so the heat pump can fill it during off-peak hours. Most UK heat-pump installations need 200-300 litres; many installs use under-sized cylinders and end up with legionella-prevention conflicts.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS MIS 3005 heat pump installation standard for hot water system requirements. CIBSE Guide G for domestic hot water demand calculations. Energy Saving Trust heat pump guidance. ACOP L8 (Approved Code of Practice for legionella control) for domestic hot water temperature requirements. Vaillant and Mitsubishi installer guides for cylinder-to-heat-pump ratio.",
+  "approximateCostGbp": 1800,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from a cold source (outside air, ground) to a warm space, using electricity. The ratio of heat output to electricity input is the COP."
+    },
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance: the ratio of heat output to electrical energy input. A COP of 3 means 3 kWh of heat for every 1 kWh of electricity consumed."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature at which a heat pump or boiler delivers water to the heating or hot water circuit. Heat pumps work most efficiently at lower flow temperatures."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance: the COP measured across a full year, accounting for seasonal weather variation. More useful than a single COP figure for predicting annual energy use."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A gas boiler heats a hot water cylinder from cold to 60°C in 30-45 minutes. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-pump"
+                }
+              }
+            ],
+            "text": "heat pump"
+          },
+          {
+            "type": "text",
+            "text": " running at its typical 3-6 kW output takes 3-5 times longer. This means the cylinder must be sized not for peak demand but for a full day's stored demand, typically charged overnight on a cheaper off-peak tariff and topped up during the day if needed. Under-sized cylinders lead to two failure modes: cold showers (the store runs out before demand), or running the heat pump's immersion heater to reheat quickly (expensive, and a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cop"
+                }
+              }
+            ],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": " of 1 rather than 3-4)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The sizing calculation"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK hot water demand for domestic use is typically 40-60 litres per person per day at 45°C mixed temperature (the usable temperature at the tap, not the store temperature). For a 4-person house, that is 160-240 litres/day. Cylinder storage at 60°C gives a mixing ratio of roughly 1.5 litres stored per 1 litre used at 45°C (because the stored water at 60°C mixes 50:50 with cold at 10°C to reach 45°C). So the cylinder must hold 240-360 litres for a 4-person house if it is recharged daily."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example: 4-person household"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Demand: 4 people x 50 litres/day at 45°C = 200 litres"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Storage temperature: 60°C (legionella control minimum)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mixing factor at 45°C: 60°C store x 0.62 = 37 effective litres per 60 litres stored"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Required cylinder volume: 200 / 0.62 = 323 litres; choose 300 litres as the next standard size down, or 350 litres if the household has high bathing demand."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat pump reheat time at 6 kW output: 300 litres from 15°C to 60°C = 15.7 kWh; at 6 kW takes approximately 2.6 hours."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Legionella and the 60°C conflict"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "ACOP L8 sets the standard: store hot water at 60°C and deliver to taps above 50°C to control Legionella. A heat pump's "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "flow-temperature"
+                }
+              }
+            ],
+            "text": "flow temperature"
+          },
+          {
+            "type": "text",
+            "text": " drops as it raises water temperature: at 60°C, the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scop"
+                }
+              }
+            ],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " is typically 1.8-2.5, compared to 3.5-4.5 at 45°C. The most common solution: charge the cylinder to 55°C daily and run a weekly pasteurisation cycle to 60°C using the immersion heater. Schedule the pasteurisation overnight on a cheap tariff to minimise cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Unvented vs vented cylinders"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat pumps work with both vented and unvented cylinders. An unvented cylinder (mains pressure) gives better shower pressure and eliminates the cold-water tank in the loft. Unvented cylinders over 15 litres require installation by a G3-qualified plumber. For heat pump installations, an unvented cylinder with a dedicated heat-pump coil (a large-diameter spiral at the bottom of the cylinder, sized to the heat pump's flow rate) gives the best heat transfer."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "slug": "irrigation-timer-setup",
+  "title": "Setting up an irrigation timer for a greenhouse or veg plot",
+  "subtitle": "Battery-powered timer with drip-line or soaker hose for automatic watering",
+  "excerpt": "A battery-powered irrigation timer attaches to an outdoor tap and runs watering on a set schedule. No outdoor electricity supply is needed. Most timers handle standard UK mains pressure of 2-6 bar. Combined with a drip line or soaker hose, it waters at root level with minimal evaporation.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "RHS guidance on irrigation systems for kitchen gardens. CIBSE water efficiency guide for horticultural use. Energy Saving Trust water efficiency in the garden guidance. WRAS (Water Regulations Advisory Scheme) guidance on hose fittings and backflow prevention for garden irrigation.",
+  "approximateCostGbp": 60,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drip-irrigation",
+      "term": "Drip irrigation",
+      "definition": "A watering method that delivers water directly to the plant root zone through emitters on a distribution pipe, minimising evaporation and runoff compared to overhead sprinklers."
+    },
+    {
+      "slug": "rainwater-harvesting",
+      "term": "Water butt",
+      "definition": "A barrel or tank that collects rainwater from a roof downpipe for garden use."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 7,
+      "title": "First watering check",
+      "body": "After the first week, check that all emitters are flowing and no drip lines have kinked or become blocked. Adjust run times if the soil appears too wet (surface puddles) or too dry (wilting between cycles).",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An irrigation timer with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "drip-irrigation"
+                }
+              }
+            ],
+            "text": "drip irrigation"
+          },
+          {
+            "type": "text",
+            "text": " delivers water when plants need it, at root level, without relying on your memory. A battery-powered timer screws onto a standard outdoor tap thread and controls when the tap opens and closes. Combined with a drip line or soaker hose, it replaces hand-watering for a typical greenhouse or 10-15 m2 veg plot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A battery-powered irrigation timer (most use 2x AA alkaline, lasting one full season). Choose one with an override button for manual watering."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A pressure reducer if your mains pressure exceeds 3 bar (check with a gauge; drip emitters are typically rated to 0.5-3 bar). Most UK domestic taps run at 2-4 bar."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A header pipe (16 mm polyethylene, also called spaghetti tube mainline) to run from the timer to the plot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drip emitters (2 or 4 litre/hour adjustable type) pushed into holes in the header pipe using a punch tool, one per plant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Or use a soaker hose laid along the rows instead of individual emitters."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Installation"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread the timer onto the outdoor tap. Fit the pressure reducer after the timer if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Run the header pipe from the timer to the plot. Keep bends gentle (16 mm poly kinks at angles under 100 mm radius)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Punch holes in the header pipe using the punch tool and push in drip emitters. Space one emitter per plant for widely-spaced crops (tomatoes, squash); use a soaker hose for closely-spaced rows (carrots, salad leaves)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the timer: for established vegetable plants in summer, a typical starting point is 20-30 minutes once per day in the early morning. Adjust after the first week based on soil moisture (see schedule below)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Close the system with an end cap or figure-of-eight fitting at the header pipe's far end."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Water source: tap vs water butt"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Battery timers work with mains tap pressure (2-6 bar). Running from a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rainwater-harvesting"
+                }
+              }
+            ],
+            "text": "water butt"
+          },
+          {
+            "type": "text",
+            "text": " requires a pump because gravity pressure from a butt (typically 0.1-0.3 bar at 1 m head) is too low for most drip emitters. A small 12V submersible pump (around a modest cost) powered by a solar panel can run from a butt with a timer, but the system is more complex to set up. For a simple reliable first system, start with mains tap pressure."
+          }
+        ]
+      }
+    ]
+  }
+}

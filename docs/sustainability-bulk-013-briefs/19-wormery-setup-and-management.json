@@ -1,0 +1,374 @@
+{
+  "slug": "wormery-setup-and-management",
+  "title": "Setting up and managing a wormery",
+  "subtitle": "A three-tray system for composting kitchen scraps with red wigglers, year-round, in small spaces",
+  "excerpt": "A wormery (vermicomposter) uses red wiggler worms to break down kitchen scraps into a rich compost and liquid plant feed. A three-tray stacking unit handles 2-4 kg of kitchen waste per week and fits under a kitchen worktop. The worms work year-round if kept between 10°C and 25°C.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "RHS (Royal Horticultural Society) guidance on vermicomposting. Mary Appelhof Worms Eat My Garbage (1982, public-domain principles still current for feeding ratios and bedding setup). WRAP (Waste and Resources Action Programme) household food waste diversion data. Garden Organic worm composting guide.",
+  "approximateCostGbp": 60,
+  "paybackYears": null,
+  "recipeTools": [
+    {
+      "slug": "compost-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "bucket-10l",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "wormery",
+      "term": "Wormery",
+      "definition": "A contained vermicomposting system using red wiggler worms (Eisenia fetida) to convert kitchen waste into compost and liquid plant feed."
+    },
+    {
+      "slug": "leachate",
+      "term": "Leachate",
+      "definition": "The dark liquid that drains from a wormery or compost bin. Diluted 1:10 with water it makes a liquid plant feed."
+    },
+    {
+      "slug": "cn-ratio",
+      "term": "C:N ratio",
+      "definition": "Carbon to nitrogen ratio in organic material. Carbon-rich 'browns' and nitrogen-rich 'greens' must be balanced to avoid smells and maintain worm health."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 7,
+      "title": "First check on worm activity",
+      "body": "Lift the first tray and check the bedding. Worms should have moved through the waste and be visible throughout. If there is an ammonia smell, add a layer of torn cardboard. Drain any leachate from the base.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 42,
+      "title": "Start filling the second tray",
+      "body": "When the first tray is three-quarters full of semi-processed material, place the second tray on top and begin adding food there. The worms migrate upward through the mesh base. Continue collecting leachate from the base unit.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 90,
+      "title": "Harvest the first tray",
+      "body": "The bottom tray should now be fully processed into dark, crumbly vermicompost. Empty it into the garden or use it as a potting-mix additive. Rinse the tray and place it on top of the stack as the new feeding tray.",
+      "surfaceAs": "HERO",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wormery"
+                }
+              }
+            ],
+            "text": "wormery"
+          },
+          {
+            "type": "text",
+            "text": " converts kitchen scraps into compost and liquid plant feed using red wiggler worms (Eisenia fetida), which are not the same as garden earthworms. A typical three-tray stacking unit (around 45 x 35 x 60 cm) handles 2-4 kg of kitchen waste per week: roughly what a 2-person household generates. The worms produce around 50-80 litres of finished compost and 10-20 litres of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "leachate"
+                }
+              }
+            ],
+            "text": "leachate"
+          },
+          {
+            "type": "text",
+            "text": " per year."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need: materials"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A three-tray wormery kit with base collection tray (or a DIY equivalent using ventilated plastic crates)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "500 g to 1 kg of red wiggler worms (Eisenia fetida), ordered from a supplier. Standard garden earthworms do not work in a contained wormery"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bedding material: torn newspaper, cardboard, or coconut coir: enough to fill the first tray 100 mm deep"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting up"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the base collection unit in a sheltered spot: indoors (under the kitchen sink, in a garage) or outdoors in summer. The worms need 10-25°C to be active. Below 10°C they slow down; above 30°C they try to escape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dampen the bedding material until it is as moist as a wrung-out sponge. Fill the first working tray 100 mm deep with this bedding."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tip the worms onto the bedding. They will burrow into it within a few hours. Cover with a damp sheet of newspaper or hessian to keep moisture in and light out."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave the worms to settle for 3-4 days before adding the first food scraps. Start with a small amount: 200-300 g: to let the worm population acclimatise."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to feed and what to avoid"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Feed freely: fruit and vegetable scraps, cooked plain carbohydrates (bread, rice, pasta in small amounts), teabags, coffee grounds, crushed eggshells, torn cardboard"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Feed sparingly: citrus peel in large quantities (acidic), onion and garlic (worms avoid these), and cooked protein such as meat or dairy. Protein smells before the worms can break it down."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Avoid: raw meat, fish bones, heavily processed food, anything with preservatives, pet faeces (cat and dog), diseased plant material"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Maintaining the C:N balance"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A balanced "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cn-ratio"
+                }
+              }
+            ],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": " in a wormery means adding roughly equal volumes of wet kitchen scraps (high nitrogen) and dry carbon material (torn newspaper, cardboard, dry straw). If the wormery smells of ammonia, add carbon. If material is drying out and the worms are slow, add a small water misting and more scraps."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Strong ammonia smell",
+              "cause": "Too much nitrogen-rich kitchen waste, not enough carbon bedding",
+              "fix": "Cover all fresh food with a 50 mm layer of torn cardboard or newspaper; add no food for one week"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Worms trying to escape from the sides",
+              "cause": "Temperature too high, too acidic, or recently disturbed by repotting",
+              "fix": "Move to a cooler spot; check for overfeeding of citrus; give worms 48 hours to re-settle"
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Food not being processed: sitting unchanged for weeks",
+              "cause": "Worm population too small, material too dry, or temperature below 10°C",
+              "fix": "Check temperature with a compost thermometer; if below 10°C move indoors; moisten bedding lightly; increase food particle size reduction (chop scraps smaller)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
