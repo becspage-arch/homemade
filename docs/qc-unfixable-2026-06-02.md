@@ -101,3 +101,23 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - tagliata-di-manzo opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
 - tagliatelle-ai-funghi opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
 - trenette-al-pesto opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+
+- bayberry-soy-pillar-candle opening-pattern-missing-hook — applied: orientation-from-excerpt
+- beeswax-jar-candle-lavender opening-pattern-missing-hook — applied: orientation-from-excerpt
+- beeswax-room-freshener-disc opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- calendula-chamomile-face-balm voice-violation — applied: 
+- cedarwood-frankincense-reed-diffuser opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- charcoal-kaolin-face-mask opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- cinnamon-orange-simmer-pot opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- coconut-wax-candle-frankincense opening-pattern-missing-hook — applied: orientation-from-excerpt
+- coffee-sugar-body-scrub opening-pattern-missing-hook — applied: orientation-from-excerpt
+- lemon-eucalyptus-outdoor-soy-candle opening-pattern-missing-hook — applied: orientation-from-excerpt
+- oat-honey-bath-soak content-type-opening-mismatch — applied: orientation-from-excerpt
+- peppermint-cocoa-lip-scrub opening-pattern-missing-hook — applied: orientation-from-excerpt
+- sandalwood-vanilla-solid-perfume opening-pattern-missing-hook — applied: orientation-from-excerpt
+- soy-candle-black-pepper-bergamot opening-pattern-missing-hook — applied: orientation-from-excerpt
+- soy-candle-chamomile-honey opening-pattern-missing-hook — applied: orientation-from-excerpt
+- soy-candle-cinnamon-orange-spice opening-pattern-missing-hook — applied: orientation-from-excerpt
+- soy-candle-rose-geranium grade-level-strict,opening-pattern-missing-hook — applied: orientation-from-excerpt
+- toilet-bowl-fizz-tabs opening-pattern-missing-hook — applied: orientation-from-excerpt
+- whipped-shea-mango-body-butter opening-pattern-missing-hook — applied: orientation-from-excerpt

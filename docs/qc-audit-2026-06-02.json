@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T12:08:18.907Z",
-  "totalScanned": 6669,
+  "generatedAt": "2026-06-02T14:08:09.958Z",
+  "totalScanned": 6704,
   "passCount": 0,
-  "blockCount": 2540,
+  "blockCount": 2554,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
@@ -18,9 +18,9 @@
       "warnOnly": 0
     },
     "natural-home": {
-      "total": 356,
+      "total": 370,
       "pass": 0,
-      "block": 356,
+      "block": 370,
       "warnOnly": 0
     },
     "animals-smallholding": {
@@ -61,10 +61,10 @@
     }
   },
   "perRuleKind": {
-    "opening-pattern-missing-hook": 2141,
+    "opening-pattern-missing-hook": 2153,
     "content-type-opening-mismatch": 2439,
-    "voice-violation": 847,
-    "grade-level-strict": 124,
+    "voice-violation": 848,
+    "grade-level-strict": 125,
     "prose-prep-steps": 85,
     "body-missing-method": 1,
     "hero-missing": 1
@@ -4955,6 +4955,25 @@
       ]
     },
     {
+      "slug": "bayberry-soy-pillar-candle",
+      "tutorialId": "cmpwm8h7l0000k0v41y6sfmon",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:04.749Z",
+      "publishedAt": "2026-06-02T12:30:33.222Z",
+      "heroMediaId": "cmpwmbp390006b8v4rt765bdu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A freestanding pillar candle of bayberry wax blended with soy wax, scented with cedarwood and frankincense. Bayberry gives a pale sage-green"
+        }
+      ]
+    },
+    {
       "slug": "bazlama",
       "tutorialId": "cmpsr79bn0000u4v4hcylsb0n",
       "type": "RECIPE",
@@ -5772,23 +5791,16 @@
       "type": "RECIPE",
       "categorySlug": "natural-home",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-05-30T21:17:16.543Z",
-      "heroMediaId": "cmpsus55q0002kwv4j1ahznfs",
+      "voiceRetrofittedAt": "2026-06-02T12:34:05.143Z",
+      "publishedAt": "2026-06-02T12:30:28.504Z",
+      "heroMediaId": "cmpwmbpnc0008b8v4uor6dh3o",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Beeswax burns slower and hotter than soy, giving a longer burn. It has its own faint honey scent, so the lavender sits alongside it rather t"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "Beeswax burns slower and hotter than soy, giving a longer burn. It has its own faint honey scent, so the lavender sits alongside it rather t"
+          "snippet": "A container candle of pure beeswax with lavender essential oil. Beeswax burns cleaner and longer than soy or paraffin but holds less fragran"
         }
       ]
     },
@@ -5899,6 +5911,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Beeswax pillar candles need more care than jar candles. The wax must be poured at the right temperature, the wick must be sized for the diam"
+        }
+      ]
+    },
+    {
+      "slug": "beeswax-room-freshener-disc",
+      "tutorialId": "cmpwmaw200001xcv44xcd6mr7",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:05.709Z",
+      "publishedAt": "2026-06-02T12:32:25.785Z",
+      "heroMediaId": "cmpwmbqjc000ab8v4kojenprz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Small beeswax discs scented with lavender and bergamot essential oils, poured into silicone moulds and hung or placed in drawers, wardrobes,"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Small beeswax discs scented with lavender and bergamot essential oils, poured into silicone moulds and hung or placed in drawers, wardrobes,"
         }
       ]
     },
@@ -9841,6 +9879,25 @@
       ]
     },
     {
+      "slug": "calendula-chamomile-face-balm",
+      "tutorialId": "cmpwm8ok4000110v4end6sre3",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:05.907Z",
+      "publishedAt": "2026-06-02T12:30:42.746Z",
+      "heroMediaId": "cmpwmbri8000cb8v4c2qvwd3p",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "clinical-vocab: clinical/Latin vocabulary \"anhydrous\" in body prose without glossary tooltip — use \"water-free\" or use a tooltip",
+          "path": "body > [0] > [0]",
+          "snippet": "anhydrous"
+        }
+      ]
+    },
+    {
       "slug": "calendula-lip-balm",
       "tutorialId": "cmpdl743d0000c4v4hwgh8ls3",
       "type": "RECIPE",
@@ -11432,6 +11489,32 @@
       ]
     },
     {
+      "slug": "cedarwood-frankincense-reed-diffuser",
+      "tutorialId": "cmpwmb49h000104v454j1s07p",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:06.831Z",
+      "publishedAt": "2026-06-02T12:32:36.423Z",
+      "heroMediaId": "cmpwmbu0d000ib8v4bv0amj36",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A reed diffuser blend of cedarwood and frankincense essential oils in a dipropylene glycol base. Wicks steadily from a narrow-necked bottle "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A reed diffuser blend of cedarwood and frankincense essential oils in a dipropylene glycol base. Wicks steadily from a narrow-necked bottle "
+        }
+      ]
+    },
+    {
       "slug": "cedarwood-orange-beeswax-candle",
       "tutorialId": "cmprrx06s00001kv4ukaf2ai0",
       "type": "RECIPE",
@@ -11811,23 +11894,23 @@
       "type": "RECIPE",
       "categorySlug": "natural-home",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:48:46.450Z",
-      "publishedAt": "2026-05-29T08:46:46.916Z",
-      "heroMediaId": "cmpqrbtzw0004ksv48s93oddz",
+      "voiceRetrofittedAt": "2026-06-02T12:34:07.426Z",
+      "publishedAt": "2026-06-02T12:31:03.346Z",
+      "heroMediaId": "cmpwmburc000kb8v4j9x7n429",
       "findings": [
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "A clay mask tightens as it dries and the clay pulls surface oil and debris into its porous structure as the water evaporates. Kaolin is the "
+          "snippet": "A dry clay mask powder of kaolin, activated charcoal, and sea salt that is mixed fresh with water or rose water before each use. Draws surfa"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "A clay mask tightens as it dries and the clay pulls surface oil and debris into its porous structure as the water evaporates. Kaolin is the "
+          "snippet": "A dry clay mask powder of kaolin, activated charcoal, and sea salt that is mixed fresh with water or rose water before each use. Draws surfa"
         }
       ]
     },
@@ -15335,6 +15418,32 @@
       ]
     },
     {
+      "slug": "cinnamon-orange-simmer-pot",
+      "tutorialId": "cmpwmarsf00007sv43qzyzlv6",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:08.014Z",
+      "publishedAt": "2026-06-02T12:32:20.244Z",
+      "heroMediaId": "cmpwmbxta000ob8v44szwbpwc",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Cinnamon sticks, dried orange peel, and dried chamomile flowers simmered in a small saucepan of water on the hob. The steam carries a warm s"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Cinnamon sticks, dried orange peel, and dried chamomile flowers simmered in a small saucepan of water on the hob. The steam carries a warm s"
+        }
+      ]
+    },
+    {
       "slug": "cinnamon-roasted-almonds",
       "tutorialId": "cmp5nr4p20000tgv4pp8yyegj",
       "type": "RECIPE",
@@ -16637,6 +16746,25 @@
       ]
     },
     {
+      "slug": "coconut-wax-candle-frankincense",
+      "tutorialId": "cmpwm8a0i0001z0v4nb8sbqwr",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:08.559Z",
+      "publishedAt": "2026-06-02T12:30:23.907Z",
+      "heroMediaId": "cmpwmbzb9000sb8v4d52z2q40",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A container candle made with coconut wax and frankincense essential oil. Coconut wax burns more slowly than soy and produces a creamier whit"
+        }
+      ]
+    },
+    {
       "slug": "coconut-wax-candle-lime",
       "tutorialId": "cmps3une10001q4v4n7gihkqv",
       "type": "RECIPE",
@@ -16964,6 +17092,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "This scrub uses ground coffee as a physical exfoliant to break up product build-up and flakes on the scalp, bound in coconut oil which condi"
+        }
+      ]
+    },
+    {
+      "slug": "coffee-sugar-body-scrub",
+      "tutorialId": "cmpwm8vud0001x0v4atcqtf61",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:09.312Z",
+      "publishedAt": "2026-06-02T12:30:52.197Z",
+      "heroMediaId": "cmpwmc0wr000wb8v4aazyu5fk",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Ground coffee and granulated sugar in a coconut oil base, with peppermint essential oil. Exfoliates and brightens dull skin. Use in the show"
         }
       ]
     },
@@ -26681,38 +26828,6 @@
       ]
     },
     {
-      "slug": "glass-cleaner-spray",
-      "tutorialId": "cmpdl82bp0000z4v4pc556tnx",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-25T20:45:47.976Z",
-      "publishedAt": "2026-05-20T04:54:36.978Z",
-      "heroMediaId": "cmplbjwyh00hmygv465lqyle0",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[10] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "A streak-free glass cleaner. Streaks on glass come from two sources: residual cleaning agent that hasn't rinsed off, and dissolved minerals "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A streak-free glass cleaner. Streaks on glass come from two sources: residual cleaning agent that hasn't rinsed off, and dissolved minerals "
-        }
-      ]
-    },
-    {
       "slug": "gluten-free-chocolate-cake",
       "tutorialId": "cmppnmgcb000148v4hkld3s71",
       "type": "RECIPE",
@@ -34206,6 +34321,25 @@
       ]
     },
     {
+      "slug": "lemon-eucalyptus-outdoor-soy-candle",
+      "tutorialId": "cmpwm7tt80001s8v4pcyzt15d",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:10.764Z",
+      "publishedAt": "2026-06-02T12:30:02.909Z",
+      "heroMediaId": "cmpwmc99c001ab8v4k721i6f2",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A soy container candle scented with lemon and eucalyptus essential oils, intended for outdoor use on terraces and in garden spaces. The citr"
+        }
+      ]
+    },
+    {
       "slug": "lemon-herb-roasted-potatoes",
       "tutorialId": "cmp5nts3w0000n8v4m7c0kqld",
       "type": "RECIPE",
@@ -40593,6 +40727,25 @@
       ]
     },
     {
+      "slug": "oat-honey-bath-soak",
+      "tutorialId": "cmpwm8zao0001i8v4qnukjymc",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:11.164Z",
+      "publishedAt": "2026-06-02T12:30:56.672Z",
+      "heroMediaId": "cmpwmcbb0001eb8v49zvjki53",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "A dry bath-soak blend of colloidal oats, honey powder, sea salt, and lavender essential oil. Scoop a portion under the running tap to dissol"
+        }
+      ]
+    },
+    {
       "slug": "oat-honey-face-mask",
       "tutorialId": "cmpdl7g0g0000cov4yglqzcsx",
       "type": "RECIPE",
@@ -44329,6 +44482,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "This toothpaste uses kaolin clay as its primary abrasive: it is fine-particle, very mild, and gives a smooth, creamy texture when blended wi"
+        }
+      ]
+    },
+    {
+      "slug": "peppermint-cocoa-lip-scrub",
+      "tutorialId": "cmpwm9gh5000138v4964u877o",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:12.202Z",
+      "publishedAt": "2026-06-02T12:31:18.930Z",
+      "heroMediaId": "cmpwmcdgp001ib8v44c3p85zu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Caster sugar in a cocoa butter and coconut oil base with peppermint essential oil, for gently exfoliating chapped lips. Apply with a fingert"
         }
       ]
     },
@@ -52149,39 +52321,6 @@
       ]
     },
     {
-      "slug": "rose-geranium-room-spray",
-      "tutorialId": "cmpevfvd200021ov4u7z4wz8l",
-      "type": "RECIPE",
-      "categorySlug": "natural-home",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-26T14:44:35.493Z",
-      "publishedAt": "2026-05-21T02:28:23.545Z",
-      "heroMediaId": "cmplkfbm500c8okv4dlclylnk",
-      "findings": [
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
-          "path": "body > paragraph[8] > text",
-          "snippet": "Target"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "A room spray disperses fragrance into the air through a fine mist. Because essential oils do not dissolve in water, this recipe uses vodka a"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "A room spray disperses fragrance into the air through a fine mist. Because essential oils do not dissolve in water, this recipe uses vodka a"
-        }
-      ]
-    },
-    {
       "slug": "rose-oud-solid-perfume",
       "tutorialId": "cmpuxloel0000lwv47qqe9g4p",
       "type": "RECIPE",
@@ -53987,6 +54126,37 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Reed diffusers draw liquid up from the bottle by capillary action through the reeds and release it as it evaporates from the top. The carrie"
+        }
+      ]
+    },
+    {
+      "slug": "sandalwood-vanilla-solid-perfume",
+      "tutorialId": "cmpwmb8d000008kv4xw7aa549",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:13.561Z",
+      "publishedAt": "2026-06-02T12:32:41.728Z",
+      "heroMediaId": "cmpwmcizc001sb8v43jwfkme8",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A solid perfume balm of beeswax, jojoba oil, sandalwood, and vanilla fragrance oil poured into a small tin. Warm, woody, and sweet. Apply wi"
         }
       ]
     },
@@ -59259,6 +59429,25 @@
       ]
     },
     {
+      "slug": "soy-candle-black-pepper-bergamot",
+      "tutorialId": "cmpwm82jm00014gv4i2s49q3q",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:14.057Z",
+      "publishedAt": "2026-06-02T12:30:14.223Z",
+      "heroMediaId": "cmpwmcjs7001ub8v4jj2duf22",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A container soy candle blending a black pepper and amber fragrance oil with bergamot essential oil. Warm and slightly spiced, with a bright "
+        }
+      ]
+    },
+    {
       "slug": "soy-candle-cedarwood-lime",
       "tutorialId": "cmpsuq3hd0000q8v4greutxex",
       "type": "RECIPE",
@@ -59313,6 +59502,44 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Most essential oils evaporate too quickly at the temperatures needed to work with candle wax. Cedarwood and vetiver essential oil are except"
+        }
+      ]
+    },
+    {
+      "slug": "soy-candle-chamomile-honey",
+      "tutorialId": "cmpwm7ybz0000mov4glt4wppo",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:14.510Z",
+      "publishedAt": "2026-06-02T12:30:08.663Z",
+      "heroMediaId": "cmpwmckkc001wb8v4hqpuqe5l",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A container soy candle scented with a chamomile and honey fragrance oil for a soft, warm, slightly sweet scent. Well-suited to bedrooms and "
+        }
+      ]
+    },
+    {
+      "slug": "soy-candle-cinnamon-orange-spice",
+      "tutorialId": "cmpwm8kxd0000zsv4f9a0j4zh",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:15.046Z",
+      "publishedAt": "2026-06-02T12:30:38.043Z",
+      "heroMediaId": "cmpwmclqy001yb8v4jfjfgk6y",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "A container soy candle scented with a cinnamon and spice fragrance oil and sweet orange essential oil. Warm, familiar, and suited to winter "
         }
       ]
     },
@@ -59727,23 +59954,23 @@
       "type": "RECIPE",
       "categorySlug": "natural-home",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-30T22:29:25.093Z",
-      "publishedAt": "2026-05-30T08:44:43.718Z",
-      "heroMediaId": "cmps3wfcl001yfwv4vb5zjqx5",
+      "voiceRetrofittedAt": "2026-06-02T12:34:15.567Z",
+      "publishedAt": "2026-06-02T12:30:18.900Z",
+      "heroMediaId": "cmpwmcmg50020b8v43dis785c",
       "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[1]",
+          "snippet": "Never leave a burning candle unattended or near curtains or other flammable materials."
+        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "True rose essential oil is very expensive. It performs poorly in candle wax, as most of its scent evaporates during the pour. Rose geranium "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "content-type-opening-mismatch",
-          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
-          "path": "body > paragraph[0]",
-          "snippet": "True rose essential oil is very expensive. It performs poorly in candle wax, as most of its scent evaporates during the pour. Rose geranium "
+          "snippet": "A soy container candle scented with rose geranium and bergamot essential oils. A softer, more affordable floral than rose absolute, with a w"
         }
       ]
     },
@@ -64527,6 +64754,25 @@
       ]
     },
     {
+      "slug": "toilet-bowl-fizz-tabs",
+      "tutorialId": "cmpwma2by0000scv4q6vdhr51",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:16.218Z",
+      "publishedAt": "2026-06-02T12:31:47.241Z",
+      "heroMediaId": "cmpwmco9q0024b8v4xaljpthj",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Small citric acid and bicarbonate tablets that fizz on contact with water, releasing peppermint and tea tree essential oils. Descale and deo"
+        }
+      ]
+    },
+    {
       "slug": "toilet-cleaning-fizz-tabs",
       "tutorialId": "cmpdl8acd0000tgv47cvswxuv",
       "type": "RECIPE",
@@ -68309,6 +68555,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Whipping shea butter incorporates air into the fat structure, changing the dense, waxy block into a light mousse-like texture that spreads m"
+        }
+      ]
+    },
+    {
+      "slug": "whipped-shea-mango-body-butter",
+      "tutorialId": "cmpwm8sc80000zwv4xqgxc77u",
+      "type": "RECIPE",
+      "categorySlug": "natural-home",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T12:34:16.671Z",
+      "publishedAt": "2026-06-02T12:30:47.648Z",
+      "heroMediaId": "cmpwmcpdz0026b8v4n5br2cmg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Shea butter and mango butter whipped together with fractionated coconut oil and lavender essential oil. The whipping traps air in the butter"
         }
       ]
     },

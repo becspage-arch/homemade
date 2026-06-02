@@ -425,3 +425,62 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 12:34:16
+
+Generated: 2026-06-02T12:34:16.747Z
+
+Processed: 40
+PASS: 21
+STILL_BLOCKED: 19
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 68 |
+| content-type-opening-mismatch | 48 |
+| grade-level-strict | 6 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- bayberry-soy-pillar-candle: opening-pattern-missing-hook
+- beeswax-jar-candle-lavender: opening-pattern-missing-hook
+- beeswax-room-freshener-disc: opening-pattern-missing-hook, content-type-opening-mismatch
+- calendula-chamomile-face-balm: voice-violation
+- cedarwood-frankincense-reed-diffuser: opening-pattern-missing-hook, content-type-opening-mismatch
+- charcoal-kaolin-face-mask: opening-pattern-missing-hook, content-type-opening-mismatch
+- cinnamon-orange-simmer-pot: opening-pattern-missing-hook, content-type-opening-mismatch
+- coconut-wax-candle-frankincense: opening-pattern-missing-hook
+- coffee-sugar-body-scrub: opening-pattern-missing-hook
+- lemon-eucalyptus-outdoor-soy-candle: opening-pattern-missing-hook
+- oat-honey-bath-soak: content-type-opening-mismatch
+- peppermint-cocoa-lip-scrub: opening-pattern-missing-hook
+- sandalwood-vanilla-solid-perfume: opening-pattern-missing-hook
+- soy-candle-black-pepper-bergamot: opening-pattern-missing-hook
+- soy-candle-chamomile-honey: opening-pattern-missing-hook
+- soy-candle-cinnamon-orange-spice: opening-pattern-missing-hook
+- soy-candle-rose-geranium: grade-level-strict, opening-pattern-missing-hook
+- toilet-bowl-fizz-tabs: opening-pattern-missing-hook
+- whipped-shea-mango-body-butter: opening-pattern-missing-hook
+
+---
+
+## Run at 14:06:21
+
+Generated: 2026-06-02T14:06:21.847Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
