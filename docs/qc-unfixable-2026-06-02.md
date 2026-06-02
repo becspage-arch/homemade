@@ -164,3 +164,29 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 
 - cedarwood-vetiver-cologne-balm voice-violation — applied: 
 - damper opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- ashwagandha-tincture-for-burnout grade-level-strict — applied: 
+- calendula-profile grade-level-strict — applied: 
+- chamomile-tincture-for-nervous-digestion grade-level-strict — applied: 
+- ginseng-profile grade-level-strict — applied: 
+- hawthorn-berry-decoction grade-level-strict — applied: 
+- herbal-medicine-and-drug-interactions grade-level-strict — applied: 
+- lavender-tincture-for-anxiety grade-level-strict — applied: 
+- nettle-seed-tincture-for-adrenal-fatigue grade-level-strict — applied: 
+- peppermint-profile grade-level-strict — applied: 
+- rosemary-infusion-for-circulation grade-level-strict — applied: 
+- st-johns-wort-infused-oil-for-nerve-pain content-type-opening-mismatch — applied: orientation-from-excerpt
+
+- applying-pebbledash-to-an-exterior-wall hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-fireplace-surround-to-a-chimney-breast hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-letterbox-draught-seal hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-tile-edge-trim-strip-to-an-exposed-tile-cut hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-polystyrene-coving-with-adhesive hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- laying-solid-wood-parquet-floor-tiles-in-adhesive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- painting-a-concrete-garage-floor hero-missing — applied: hero-fill-deferred-to-standalone-script
+- re-grouting-and-resealing-a-tiled-shower-enclosure hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- using-hollow-wall-anchors-on-plasterboard hero-missing — applied: hero-fill-deferred-to-standalone-script
+- einkorn-sourdough opening-pattern-missing-hook — applied: recipe-yield-appended
+- gooseberry-and-elderflower-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- harcha opening-pattern-missing-hook — applied: recipe-yield-appended
+- honey-walnut-tart opening-pattern-missing-hook — applied: recipe-yield-appended

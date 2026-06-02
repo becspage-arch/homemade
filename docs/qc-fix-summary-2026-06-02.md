@@ -644,3 +644,78 @@ SKIPPED: 0
 
 - cedarwood-vetiver-cologne-balm: voice-violation
 - damper: opening-pattern-missing-hook
+
+---
+
+## Run at 16:54:16
+
+Generated: 2026-06-02T16:54:16.794Z
+
+Processed: 29
+PASS: 18
+STILL_BLOCKED: 11
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 93 |
+| ingredient-amount-missing | 29 |
+| medical-disclaimer-nonstandard | 27 |
+| content-type-opening-mismatch | 13 |
+| soft-medical-claim | 7 |
+| historical-century-in-body | 4 |
+| opening-pattern-missing-hook | 4 |
+
+## Still BLOCKED (sample 20)
+
+- ashwagandha-tincture-for-burnout: grade-level-strict
+- calendula-profile: grade-level-strict
+- chamomile-tincture-for-nervous-digestion: grade-level-strict
+- ginseng-profile: grade-level-strict
+- hawthorn-berry-decoction: grade-level-strict
+- herbal-medicine-and-drug-interactions: grade-level-strict
+- lavender-tincture-for-anxiety: grade-level-strict
+- nettle-seed-tincture-for-adrenal-fatigue: grade-level-strict
+- peppermint-profile: grade-level-strict
+- rosemary-infusion-for-circulation: grade-level-strict
+- st-johns-wort-infused-oil-for-nerve-pain: content-type-opening-mismatch
+
+---
+
+## Run at 17:07:37
+
+Generated: 2026-06-02T17:07:37.675Z
+
+Processed: 74
+PASS: 61
+STILL_BLOCKED: 13
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 67 |
+| content-type-opening-mismatch | 65 |
+| hero-missing | 27 |
+| body-missing-method | 9 |
+| grade-level-strict | 5 |
+| voice-violation | 5 |
+
+## Still BLOCKED (sample 20)
+
+- applying-pebbledash-to-an-exterior-wall: hero-missing
+- fitting-a-fireplace-surround-to-a-chimney-breast: hero-missing
+- fitting-a-letterbox-draught-seal: hero-missing
+- fitting-a-tile-edge-trim-strip-to-an-exposed-tile-cut: hero-missing
+- fitting-polystyrene-coving-with-adhesive: hero-missing, voice-violation, grade-level-strict
+- laying-solid-wood-parquet-floor-tiles-in-adhesive: hero-missing
+- painting-a-concrete-garage-floor: hero-missing
+- re-grouting-and-resealing-a-tiled-shower-enclosure: hero-missing, grade-level-strict
+- using-hollow-wall-anchors-on-plasterboard: hero-missing
+- einkorn-sourdough: opening-pattern-missing-hook
+- gooseberry-and-elderflower-cake: opening-pattern-missing-hook
+- harcha: opening-pattern-missing-hook
+- honey-walnut-tart: opening-pattern-missing-hook
