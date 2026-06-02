@@ -806,3 +806,32 @@ SKIPPED: 0
 - stuffed-cabbage-rolls: grade-level-strict
 - stuffed-peppers: grade-level-strict, prose-prep-steps
 - swedish-meatballs: grade-level-strict
+
+---
+
+## Run at 19:11:42
+
+Generated: 2026-06-02T19:11:42.128Z
+
+Processed: 74
+PASS: 68
+STILL_BLOCKED: 6
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 74 |
+| opening-pattern-missing-hook | 71 |
+| voice-violation | 10 |
+| prose-prep-steps | 3 |
+
+## Still BLOCKED (sample 20)
+
+- neem-hair-oil: voice-violation
+- olive-oil-orange-cake: opening-pattern-missing-hook
+- pine-juniper-solid-perfume: voice-violation
+- plum-frangipane-cake: opening-pattern-missing-hook
+- pre-shave-oil: voice-violation
+- rhubarb-and-almond-cake: opening-pattern-missing-hook

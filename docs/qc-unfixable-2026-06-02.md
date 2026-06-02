@@ -210,3 +210,10 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - stuffed-cabbage-rolls grade-level-strict — applied: 
 - stuffed-peppers grade-level-strict,prose-prep-steps — applied: 
 - swedish-meatballs grade-level-strict — applied: 
+
+- neem-hair-oil voice-violation — applied: 
+- olive-oil-orange-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- pine-juniper-solid-perfume voice-violation — applied: 
+- plum-frangipane-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- pre-shave-oil voice-violation — applied: 
+- rhubarb-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
