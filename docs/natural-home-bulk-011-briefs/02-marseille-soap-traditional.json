@@ -1,0 +1,195 @@
+{
+  "slug": "marseille-soap-traditional",
+  "title": "Traditional Marseille soap",
+  "subtitle": "The classic French 72% olive-oil bar",
+  "excerpt": "A cold-process Marseille-style soap based on the traditional formula of 72% olive oil, 18% coconut oil, and 10% castor oil, with no added fragrance. Firm, hard-lathering, and long-lasting. Makes 7 bars.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Marseille soap traditional 72% olive formula: documented in Anne Bramson, Soap: Making It, Enjoying It (1972) and Susan Miller Cavitch, The Soapmaker's Companion (1997), ch. 12. SAP values: SoapCalc table (olive 0.134, coconut 0.190, castor 0.128). 5% superfat, 33% water-to-oil. Note: true Savon de Marseille under French regulation requires industrial production and specific provenance; this is a home version in the traditional formula.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "7 bars (~130 g each after 6-week cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "totalMinutes": 60540,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any scale change through a lye calculator before batching.",
+    "makeAheadNotes": "Allow 4 to 6 weeks minimum cure. Six weeks gives the classic firm, white Marseille bar.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "shelfLifeDays": 1095,
+    "shelfLifeNotes": "Three years or more in a cool dark cupboard once fully cured. The high olive-oil content makes the bar resistant to rancidity. Discard if orange spots (DOS) or a sharp paint-like smell appear."
+  },
+  "recipeTools": [
+    { "slug": "digital-scale-precision", "isOptional": false },
+    { "slug": "safety-goggles", "isOptional": false },
+    { "slug": "nitrile-gloves", "isOptional": false },
+    { "slug": "lye-pitcher-hdpe", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "silicone-loaf-mould", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value: the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which soap batter has thickened enough that a drizzle on the surface briefly holds its shape. The signal that oils and lye have emulsified and the batter is ready to pour."
+    },
+    {
+      "slug": "lye-discount",
+      "term": "Lye discount",
+      "definition": "The percentage of lye reduced below the full saponification amount to leave a small reserve of unsaponified oil in the finished bar (also called the superfat). This makes the bar gentler on skin."
+    }
+  ],
+  "techniqueSlugs": ["working-with-lye-safely", "cold-process-soap-method"],
+  "criticalTechniques": ["working-with-lye-safely"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 2,
+      "title": "Unmould and cut",
+      "body": "Turn out the loaf. This formula cuts more easily than 100% olive Castile because the coconut oil gives extra hardness. Wear protective gloves: the bar is still caustic."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 14,
+      "title": "Turn the bars",
+      "body": "Flip each bar on the rack so both sides cure evenly. The bars should be firm enough to handle at this point."
+    },
+    {
+      "stepNumber": 3,
+      "surfaceAs": "HERO",
+      "offsetDays": 28,
+      "title": "Four-week test",
+      "body": "Press a sliver to the tongue. No sting means the soap is fully alkaline-neutralised and safe. The bar is usable from this point."
+    },
+    {
+      "stepNumber": 4,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 42,
+      "title": "Six-week cure complete",
+      "body": "A fully cured Marseille-style bar is firm, white to pale ivory, and produces a dense, stable lather. Store on an open rack."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Marseille soap is the traditional French bar of 72% olive oil, with coconut oil for cleansing and lather, and castor oil to stabilise the foam. The formula has no fragrance and no colour. The " },
+          { "type": "text", "text": "lye discount", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lye-discount" } }] },
+          { "type": "text", "text": " here is 5%, leaving a small reserve of free oil in the bar. The " },
+          { "type": "text", "text": "saponification", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "saponification" } }] },
+          { "type": "text", "text": " of this oil blend produces a bar that is firm enough to use as a laundry soap and mild enough for daily face and body use. Cure time is four to six weeks." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Put on protective gloves and goggles before handling lye." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 360, "unit": "g", "isOptional": false, "prepNote": "72% of oil weight" },
+            { "ingredientSlug": "coconut-oil", "amount": 90, "unit": "g", "isOptional": false, "prepNote": "18% of oil weight; melt gently if solid" },
+            { "ingredientSlug": "castor-oil", "amount": 50, "unit": "g", "isOptional": false, "prepNote": "10% of oil weight; stabilises and boosts lather" },
+            { "ingredientSlug": "sodium-hydroxide", "amount": 68, "unit": "g", "isOptional": false, "prepNote": "calculated for 5% superfat: (360×0.134 + 90×0.190 + 50×0.128) × 0.95 = 68 g NaOH" },
+            { "ingredientSlug": "distilled-water", "amount": 165, "unit": "g", "isOptional": false, "prepNote": "33% of total oil weight" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix the lye solution" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In a ventilated space, wearing protective gloves and goggles, pour the distilled water into the HDPE lye pitcher. Add the sodium hydroxide to the water in a steady stream, stirring. Never add water to lye. The solution heats sharply; let it cool to 38 to 42°C before proceeding." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the oils" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Melt the coconut oil gently. Combine with the olive oil and castor oil. Cool to 38 to 42°C." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blend to trace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When both are within a few degrees of each other, pour the lye solution into the oils in a slow stream. Blend with the stick blender in short bursts until the batter reaches light " },
+          { "type": "text", "text": "trace", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trace" } }] },
+          { "type": "text", "text": ": thin custard consistency. The high olive content means this may take 10 to 20 minutes of stick blending." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pour, insulate, unmould, and cure" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pour into the silicone loaf mould. Wrap in a towel. Leave 48 hours. Unmould wearing protective gloves. Cut into bars and cure on a rack in a cool, dry room for 4 to 6 weeks, turning every two weeks." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage and shelf life" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Three years in a cool dark cupboard on an open rack. The high oleic-acid content of the olive oil makes this bar very resistant to rancidity. Discard if DOS (orange spots) or a sharp smell appear." }
+        ]
+      }
+    ]
+  }
+}
