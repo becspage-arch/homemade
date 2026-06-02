@@ -835,3 +835,29 @@ SKIPPED: 0
 - plum-frangipane-cake: opening-pattern-missing-hook
 - pre-shave-oil: voice-violation
 - rhubarb-and-almond-cake: opening-pattern-missing-hook
+
+---
+
+## Run at 20:08:17
+
+Generated: 2026-06-02T20:08:17.806Z
+
+Processed: 74
+PASS: 70
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 74 |
+| opening-pattern-missing-hook | 70 |
+| voice-violation | 11 |
+
+## Still BLOCKED (sample 20)
+
+- rosehip-chamomile-balm: voice-violation
+- rosemary-hair-oil: voice-violation
+- shea-hair-mask: voice-violation
+- solid-lotion-bar: voice-violation

@@ -217,3 +217,8 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - plum-frangipane-cake opening-pattern-missing-hook — applied: recipe-yield-appended
 - pre-shave-oil voice-violation — applied: 
 - rhubarb-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- rosehip-chamomile-balm voice-violation — applied: 
+- rosemary-hair-oil voice-violation — applied: 
+- shea-hair-mask voice-violation — applied: 
+- solid-lotion-bar voice-violation — applied: 
