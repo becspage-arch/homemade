@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T10:07:19.414Z",
-  "totalScanned": 6668,
+  "generatedAt": "2026-06-02T11:32:13.700Z",
+  "totalScanned": 6669,
   "passCount": 0,
-  "blockCount": 2539,
+  "blockCount": 2540,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
@@ -48,9 +48,9 @@
       "warnOnly": 0
     },
     "fibre-arts": {
-      "total": 2,
+      "total": 3,
       "pass": 0,
-      "block": 2,
+      "block": 3,
       "warnOnly": 0
     },
     "paper-word": {
@@ -66,7 +66,8 @@
     "voice-violation": 847,
     "grade-level-strict": 124,
     "prose-prep-steps": 85,
-    "body-missing-method": 1
+    "body-missing-method": 1,
+    "hero-missing": 1
   },
   "verdicts": [
     {
@@ -40029,6 +40030,23 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Navarin printanier is the spring counterpart to the autumn navarin d'agneau: the same braised lamb shoulder. The same clear broth. But finis"
+        }
+      ]
+    },
+    {
+      "slug": "needle-felted-weasel",
+      "tutorialId": "cmpwizod300006wv4yt02krbz",
+      "type": "PATTERN",
+      "categorySlug": "fibre-arts",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": null,
+      "publishedAt": "2026-06-02T10:59:43.726Z",
+      "heroMediaId": null,
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "hero-missing",
+          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
         }
       ]
     },
