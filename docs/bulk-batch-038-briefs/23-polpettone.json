@@ -1,0 +1,180 @@
+{
+  "slug": "polpettone",
+  "title": "Polpettone",
+  "subtitle": "Italian meatloaf with boiled egg in the centre",
+  "excerpt": "Polpettone is the Italian meatloaf: a mixture of minced beef and pork packed around a hard-boiled egg, braised in tomato sauce on the hob. Sliced at the table, each piece shows a cross-section of the egg in the centre. It is the kind of practical, unhurried dish that Italian home cooks have been making for generations.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Italian home-cooking tradition. Polpettone with a whole egg at the centre is documented across Italian regional cookery books. Method drawn from Pellegrino Artusi, La scienza in cucina e l'arte di mangiar bene (1891, public domain), and Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice once cooled and freeze in portions. Thaw overnight and reheat in the tomato sauce.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to two days ahead. The polpettone slices more neatly when cold.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "polpettone",
+      "term": "Polpettone",
+      "definition": "Italian meatloaf; the name means 'large meatball'; the version with a hard-boiled egg in the centre is a classic of central and southern Italian home cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Polpettone is a meatloaf shaped into a firm cylinder with a hard-boiled egg tucked in the centre. The word means 'large "
+          },
+          {
+            "type": "text",
+            "text": "polpettone",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "polpettone" } }]
+          },
+          {
+            "type": "text",
+            "text": "'. It is braised slowly in tomato sauce rather than baked, which keeps it moist. When you slice it at the table, the egg in the cross-section makes it look far more impressive than the effort required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "pork-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "raw, for binding", "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "hard-boiled for 9 minutes and peeled", "isOptional": false, "groupLabel": "For the centre" },
+            { "ingredientSlug": "breadcrumbs-dried", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "For the meatloaf" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "whole peeled, crushed", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-white-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{beef-mince}} of beef, {{pork-mince}} of pork, 2 raw eggs, {{breadcrumbs-dried}} of breadcrumbs, Parmesan, parsley, and garlic with salt. Mix until just combined. Flatten the mixture on a sheet of baking paper into a 30 x 20 cm rectangle. Lay the 2 hard-boiled eggs end to end in the centre. Roll the mixture tightly around the eggs into a firm cylinder. Seal the ends."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a wide casserole over medium-high heat. Brown the polpettone all over, about 8 minutes, turning gently. Remove. Cook the {{onion}} onion in the pan for 4 minutes. Add {{dry-white-wine}} of wine and let it reduce by half. Add the tomatoes. Return the polpettone to the sauce. Cover and simmer over low heat for 45 minutes, turning once halfway."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest for 5 minutes. Slice at the table and serve with the sauce spooned over."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Polpettone falls apart when turning",
+              "cause": "Mixture too loose, or not browned long enough to form a crust before turning.",
+              "fix": "Chill the formed log for 20 minutes before cooking. Brown each side well before attempting to turn it."
+            },
+            {
+              "symptom": "Eggs are not centred in the slice",
+              "cause": "Eggs placed off-centre in the rectangle, or the log was rolled unevenly.",
+              "fix": "Lay the eggs end to end precisely in the middle of the meat rectangle. Roll tightly and evenly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Polpettone is practical Italian home cooking: cheap, unfussy, and more satisfying than it looks. The version with a boiled egg in the centre is the Sunday version, made when there is no occasion to mark but when dinner should feel a little special. Artusi calls it a dish of the people, made wherever there is minced meat to hand."
+          }
+        ]
+      }
+    ]
+  }
+}

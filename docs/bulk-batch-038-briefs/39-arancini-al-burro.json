@@ -1,0 +1,178 @@
+{
+  "slug": "arancini-al-burro",
+  "title": "Arancini al burro",
+  "subtitle": "Sicilian butter-and-mozzarella filled rice balls",
+  "excerpt": "Arancini al burro are the white Sicilian rice ball: saffron-scented rice moulded around a nugget of mozzarella and butter, breaded, and deep-fried until golden. Where the ragù-filled arancini al ragù are savoury and filling, these are lighter and more delicate. They are the Palermitan version of the arancino.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sicilian traditional recipe. Arancini al burro (also called arancine in western Sicily) are a Palermitan specialty. Method drawn from traditional Sicilian street food sources and Anna Del Conte, Gastronomy of Italy (2001).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 12 arancini (serves 4 as a starter)",
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unfried and bread fresh before frying. Fry from frozen adding 2 minutes to the time.",
+    "batchable": true,
+    "batchNotes": "Make double and freeze half unfried.",
+    "makeAheadNotes": "Cook the rice a day ahead. Shape and bread the next day.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "arancino",
+      "term": "Arancino",
+      "definition": "Sicilian fried rice ball; the name means 'little orange', referring to its golden colour and roughly spherical shape; arancini al burro are the butter-and-mozzarella filled variety."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini al burro are saffron rice balls filled with mozzarella and butter. The "
+          },
+          {
+            "type": "text",
+            "text": "arancino",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "arancino" } }]
+          },
+          {
+            "type": "text",
+            "text": " gets its colour from saffron stirred into the rice while it cooks; the mozzarella and butter filling melts into a pool inside when fried. These are easier to make than the ragù version because the filling requires no separate cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "saffron", "amount": 1, "unit": "pinch", "prepNote": "steeped in 3 tbsp warm water", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "stock-vegetable", "amount": 700, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten, to bind the rice", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "for the rice", "isOptional": false, "groupLabel": "For the rice" },
+            { "ingredientSlug": "mozzarella", "amount": 200, "unit": "g", "prepNote": "drained and cut into 1.5 cm cubes", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cut into 12 small cubes, one per arancino", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "breadcrumbs-dried", "amount": 150, "unit": "g", "prepNote": "fine", "isOptional": false, "groupLabel": "For breading" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten, for breading", "isOptional": false, "groupLabel": "For breading" },
+            { "ingredientSlug": "vegetable-oil", "amount": 500, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{arborio-rice}} of rice in {{stock-vegetable}} of hot stock, risotto-style, adding stock ladle by ladle for 18 minutes until just cooked and dense. Stir in {{saffron}} of steeped saffron, the Parmesan, and 30 g of butter. Taste for salt. Spread on a tray and cool completely. Beat 2 eggs into the cooled rice. Refrigerate for 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take about 60 g of rice per arancino. Press flat in your palm. Place a cube of {{mozzarella}} of mozzarella and a small cube of cold butter in the centre. Shape into a compact ball or oval, making sure the filling is fully enclosed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip each arancino in beaten egg and roll firmly in {{breadcrumbs-dried}} of fine breadcrumbs. Heat {{vegetable-oil}} of vegetable oil to 180°C. Fry 3 to 4 at a time for 3 to 4 minutes until deeply golden. Drain on kitchen paper. Eat immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Arancini fall apart in the oil",
+              "cause": "Rice not chilled long enough, or too loose before adding the egg binder.",
+              "fix": "Chill for the full hour. The rice should be sticky enough to hold under gentle pressure."
+            },
+            {
+              "symptom": "No saffron colour",
+              "cause": "Saffron not steeped long enough.",
+              "fix": "Steep for at least 10 minutes in warm water before stirring into the hot rice."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini are Sicilian street food, sold from market stalls and bars across the island, particularly in Palermo and Catania. The butter version is the Palermitan specialty; the ragù version is more common in Catania. In Sicily, arancini are eaten for breakfast or as a mid-morning snack, not as a starter. The saffron in the rice reflects the island's historical Arab influence: saffron came to Sicily with the Arabs in the 9th century and stayed."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "slug": "stracotto",
+  "title": "Stracotto",
+  "subtitle": "Tuscan slow-braised beef in red wine and tomato",
+  "excerpt": "Stracotto is Tuscan 'overcooked' beef: a whole joint braised for four or more hours in red wine and tomato until the meat is so soft it barely holds together. The name literally means 'overcooked', which is both the method and the point. It is eaten shredded into pasta or sliced with polenta.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tuscan regional recipe. Stracotto is a slow braise documented across Tuscany and Umbria, where it is often served with pappardelle or polenta. Method drawn from Anna Del Conte, Gastronomy of Italy (2001), and traditional Florentine sources.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 240,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes very well. Shred and freeze with the sauce.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better the next day. Make ahead and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "oven method; hob method also works",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stracotto",
+      "term": "Stracotto",
+      "definition": "Italian for 'overcooked'; a Tuscan slow braise where the meat is intentionally cooked past the point of slicing, until it falls apart into soft shreds."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stracotto means 'overcooked' in Italian, and that is exactly what happens: a large piece of beef braised in red wine and tomato for at least four hours until the meat dissolves into soft, dark threads of flavour. It is the word that makes it Tuscan: the same technique in Rome is called "
+          },
+          {
+            "type": "text",
+            "text": "stracotto",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stracotto" } }]
+          },
+          {
+            "type": "text",
+            "text": " there too, but the flavouring varies by region. Serve it shredded with pappardelle, or in thick slices (before it fully collapses) with polenta."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-shin", "amount": 1500, "unit": "g", "prepNote": "or beef chuck, in one piece", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "whole peeled, crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season {{beef-shin}} of beef and brown on all sides in {{olive-oil}} of olive oil in a heavy casserole over high heat, about 10 minutes. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the {{onion}} of onion, carrot, and celery for 8 minutes. Add {{garlic}} of garlic for 1 minute. Pour in {{red-wine}} of red wine and let it reduce by one third. Add {{tinned-tomatoes}} of tomatoes, the bay leaves, and rosemary. Return the beef."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly and place in the oven at 150°C for 3.5 to 4 hours, turning the meat every hour. The meat should be collapsing when pressed. Shred with two forks into the sauce, or slice if serving with polenta. Season and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat still holding together after 4 hours",
+              "cause": "Cut too lean, or temperature slightly too high (which tightens the proteins).",
+              "fix": "A well-marbled shin or chuck will collapse; a lean cut may never fully shred. Continue cooking at lower heat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stracotto is made across central Italy wherever there are full-bodied red wines and a cold winter. The Florentine version is the most famous, served with pappardelle that soak up the dark braising liquid. It is a dish that rewards the cook who starts it in the morning and ignores it until dinner; the oven does all the work."
+          }
+        ]
+      }
+    ]
+  }
+}

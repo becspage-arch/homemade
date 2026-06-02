@@ -1,0 +1,222 @@
+{
+  "slug": "rigatoni-alla-genovese",
+  "title": "Rigatoni alla genovese",
+  "subtitle": "Short pasta with slow-cooked onion and beef sauce",
+  "excerpt": "The Neapolitan genovese is a slow sauce of onions cooked down for hours until they become almost melted, enriched with braised beef. Despite the name, this is a Neapolitan dish. The beef gives the onions their body; the onions give the dish its unusual, sweetly savoury depth. Rigatoni is the right pasta for it.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic Neapolitan recipe despite the Genoese name. The genovese was mentioned by Ippolito Cavalcanti in his Cucina teorico-pratica (1837), one of the earliest Neapolitan cookery texts. Method drawn from traditional Neapolitan home-cooking sources.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The sauce freezes well without the pasta. Thaw overnight in the fridge and reheat gently.",
+    "batchable": true,
+    "batchNotes": "The sauce improves overnight. Make double and freeze half.",
+    "makeAheadNotes": "Make the sauce up to two days ahead. Store in the fridge. The flavour deepens with time.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "genovese",
+      "term": "Genovese",
+      "definition": "A Neapolitan meat-and-onion sauce; the name is historical and does not refer to the city of Genoa or to pesto."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "genovese",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "genovese" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a Neapolitan Sunday sauce: a slow braise of beef buried under a deep pile of onions, cooked for at least three hours until the onions collapse into a soft, amber-coloured mass that clings to the pasta. The beef is served on the side or shredded into the sauce; both versions exist and both are correct. The dish takes patience but almost no technique."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The onion-to-meat ratio is the thing most cooks get wrong. You need a lot more onion than you think: roughly 1.5 kg of onions for 500 g of beef. They cook down to a third of their raw volume. Don't be tempted to reduce the onions."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 500, "unit": "g", "prepNote": "rigatoni or paccheri", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beef-chuck", "amount": 700, "unit": "g", "prepNote": "in one piece", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 8, "unit": "each", "prepNote": "halved and thinly sliced — about 1.5 kg total", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-white-wine", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lard", "amount": 30, "unit": "g", "prepNote": "or extra olive oil", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "grated, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": "to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to taste", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm {{olive-oil}} of olive oil and the lard if using in a large, heavy casserole over medium heat. Season {{beef-chuck}} of beef all over with salt and pepper. Brown on all sides, about 8 minutes. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pot, add the sliced {{onion}} onions, the carrot, and the celery. Cook over medium-low heat, stirring occasionally, for 20 minutes until softened. Return the beef to the pot, nestle it among the onions, and pour in {{dry-white-wine}} of wine. Let the wine bubble for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly and cook over the lowest possible heat for 2.5 to 3 hours, stirring every 30 minutes. The onions should collapse entirely and turn a deep amber. If the pot looks dry, add a splash of water. The beef should be tender enough to pull apart with two forks. Season the sauce well."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a large pot of salted water to the boil. Cook {{pasta-dried}} of rigatoni until al dente. Reserve a mug of pasta water, then drain. Toss the pasta with the onion sauce, adding pasta water to loosen. Serve with grated Parmesan. The beef can be sliced and served alongside or shredded into the sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Onions caught and burned on the bottom",
+              "cause": "Heat too high or stirring not frequent enough.",
+              "fix": "Add a splash of water and scrape up the stuck onions. Lower the heat. The genovese needs the lowest simmer possible."
+            },
+            {
+              "symptom": "Sauce is still pale after 2 hours",
+              "cause": "Temperature too low or the onions were undersliced.",
+              "fix": "Remove the lid and cook uncovered for 30 minutes to drive off moisture and develop colour."
+            },
+            {
+              "symptom": "Beef is tough",
+              "cause": "Not cooked long enough.",
+              "fix": "Continue cooking with a splash more water until the beef is easily shredded. Chuck needs real time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The genovese is a core Neapolitan Sunday dish, made when there is time to leave a pot on the hob for three hours. Outside Naples it is barely known, but many Neapolitans consider it their finest pasta sauce: richer than a tomato ragù and more complex. The name is disputed. Some say it came south with Genoese merchants; others that it was named after a Genoese-style tavern in Naples where it was first served."
+          }
+        ]
+      }
+    ]
+  }
+}

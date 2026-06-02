@@ -1,0 +1,221 @@
+{
+  "slug": "coda-alla-vaccinara",
+  "title": "Coda alla vaccinara",
+  "subtitle": "Roman braised oxtail in tomato sauce with celery, cocoa, and raisins",
+  "excerpt": "Coda alla vaccinara is the Roman oxtail braise: oxtail pieces cooked for at least three hours in tomato and wine, finished with a handful of raisins, dark cocoa, and a large amount of celery. The combination sounds unusual but produces a deeply savoury, complex sauce with notes of chocolate and sweetness cutting through the richness. This is the signature dish of Roman offal cooking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roman traditional recipe. Coda alla vaccinara is documented in Ada Boni, Il talismano della felicità (1925), and appears in Roman cookery sources from the 19th century. Method drawn from Boni and traditional slaughterhouse-district (Testaccio) cooking of Rome.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 210,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes extremely well. Thaw overnight and reheat gently.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Better made a day or two ahead. Reheat gently and add the celery finishing step only at serving.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vaccinara",
+      "term": "Vaccinara",
+      "definition": "The name comes from vaccinaro, the Roman slaughterhouse workers who prepared beef and offal in the Testaccio district; dishes alla vaccinara are associated with the humble cuts of beef cooked there."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coda alla "
+          },
+          {
+            "type": "text",
+            "text": "vaccinara",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vaccinara" } }]
+          },
+          {
+            "type": "text",
+            "text": " is oxtail braised slowly in tomato and red wine for three hours, then finished with celery, raisins, and a scraping of cocoa. The cocoa and raisins are the southern Italian sweet-and-savoury tradition at its most direct. Use a generous amount of celery: it should be a vegetable presence in the finished dish, not a background note."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "oxtail", "amount": 1500, "unit": "g", "prepNote": "cut into 5 cm sections by butcher", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 5, "unit": "each", "prepNote": "stalks: 2 roughly chopped for the braise, 3 cut into batons for the finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 800, "unit": "g", "prepNote": "two tins, whole peeled, crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "raisins", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the finish" },
+            { "ingredientSlug": "olives-green", "amount": 40, "unit": "g", "prepNote": "pitted", "isOptional": true, "groupLabel": "For the finish" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The cocoa"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Traditional recipes call for 15 g of unsweetened cocoa stirred in with the raisins and olives in the final 20 minutes. Cocoa is not in the current ingredient lookup; add a note to the batch report to flag this as a missing ingredient. Omit it here — the dish is still very good without it, though less characteristically Roman."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the oxtail" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season {{oxtail}} of oxtail sections. Heat {{olive-oil}} of olive oil in a large casserole over high heat. Brown the oxtail on all sides in batches, about 6 minutes per batch. Remove."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the {{onion}} of onion, 2 roughly chopped celery stalks, and the carrot in the same pan for 8 minutes. Add {{garlic}} of garlic for 1 minute. Pour in {{red-wine}} of wine and let it reduce by half. Add {{tinned-tomatoes}} of tomatoes. Return the oxtail. Cover and braise over the lowest heat for 2.5 to 3 hours until the meat is tender and falling from the bone."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate pan, blanch the 3 remaining celery batons in salted boiling water for 4 minutes. Drain and add to the oxtail with {{raisins}} of raisins and the green olives if using. Cook for a further 20 minutes uncovered to concentrate the sauce. Season and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Oxtail is still tough after 3 hours",
+              "cause": "Heat too high, causing the collagen to tighten rather than melt.",
+              "fix": "Continue cooking. Oxtail needs a very low, barely bubbling simmer. High heat makes it tough. It will eventually yield."
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Lid too tight and no evaporation.",
+              "fix": "Cook the final 30 minutes partially uncovered to reduce the sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coda alla vaccinara comes from Testaccio, the old slaughterhouse district of Rome. Butchers were paid in the quinto quarto (fifth quarter): the offal, trotters, tripe, and tail. The sweet-savoury finish of raisins comes from Arab cooking, which shaped southern Italian food in the Middle Ages. The dish is now one of Rome's best-known, eaten in trattorie that have served it for generations."
+          }
+        ]
+      }
+    ]
+  }
+}

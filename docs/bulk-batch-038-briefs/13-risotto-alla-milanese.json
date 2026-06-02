@@ -1,0 +1,257 @@
+{
+  "slug": "risotto-alla-milanese",
+  "title": "Risotto alla milanese",
+  "subtitle": "Saffron risotto in the Milanese style",
+  "excerpt": "Risotto alla milanese is the golden saffron risotto of Milan, traditionally served with osso buco. Saffron turns the rice a deep amber yellow and gives it a distinct, slightly floral bitterness. This is the foundational Italian risotto: the technique of gradual stock addition and constant stirring produces a creamy, flowing result.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lombard regional recipe. Risotto alla milanese is documented in Pellegrino Artusi's La scienza in cucina e l'arte di mangiar bene (1891, public domain), and is one of the oldest preserved risotto recipes. Method drawn from Artusi and Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 2,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mantecatura",
+      "term": "Mantecatura",
+      "definition": "The final beating-in of cold butter and Parmesan into cooked risotto, done off the heat; creates the creamy, flowing consistency Italian risotto is known for."
+    },
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "The base of gently cooked onion (and sometimes celery and carrot) that forms the aromatic foundation of many Italian dishes, cooked slowly in butter or oil until soft."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto alla milanese is the saffron risotto of Milan: a golden rice dish finished with cold butter and Parmesan. The saffron should be steeped in warm stock before it goes into the rice so that the colour and flavour distribute evenly. The technique is the same as all risotti: add the stock in stages, stir regularly, and finish with "
+          },
+          {
+            "type": "text",
+            "text": "mantecatura",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mantecatura" } }]
+          },
+          {
+            "type": "text",
+            "text": " off the heat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The traditional version also includes beef bone marrow, which adds richness; it is not in this recipe as it is difficult to source, but a generous amount of cold butter at the finish compensates. The "
+          },
+          {
+            "type": "text",
+            "text": "soffritto",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soffritto" } }]
+          },
+          {
+            "type": "text",
+            "text": " should be very gentle and very slow."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": "or carnaroli", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1200, "unit": "ml", "prepNote": "kept hot in a separate pan", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "saffron", "amount": 1, "unit": "pinch", "prepNote": "steeped in 3 tbsp warm stock", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "very finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-white-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "half for the soffritto, half cold for the finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Steep the saffron and make the soffritto" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put {{saffron}} of saffron into a small cup with 3 tablespoons of warm stock. Leave for 10 minutes to steep. Keep the remaining {{stock-beef}} of beef stock hot in a small saucepan over low heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt 40 g of the butter in a wide, heavy pan over low heat. Add {{onion}} of finely chopped onion and cook gently for 10 minutes until completely soft but not coloured."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the rice and add the stock" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{arborio-rice}} of rice to the pan and stir for 2 minutes until the grains are coated in butter and starting to turn translucent at the edges. Pour in {{dry-white-wine}} of dry white wine and stir until absorbed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the saffron and its soaking liquid. Then add the hot stock one ladle at a time, stirring frequently and letting each addition absorb before adding the next. Continue for about 18 minutes until the rice is al dente: there should be a little resistance in the centre of each grain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The mantecatura" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pan from the heat. Add the remaining 40 g of cold butter cut into pieces and the Parmesan. Beat vigorously with a wooden spoon for 1 minute. Cover and rest for 2 minutes. The risotto should flow slowly when you tilt the pan. Season with salt and serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice is sticky or gluey",
+              "cause": "Too much stirring or overcooked.",
+              "fix": "Stir regularly but not constantly. The mantecatura step is intentionally vigorous; the cooking stage should not be."
+            },
+            {
+              "symptom": "Risotto is too thick",
+              "cause": "Not enough stock added, or rested too long before serving.",
+              "fix": "Add a ladleful of hot stock and beat it in. Risotto must be served immediately after the mantecatura."
+            },
+            {
+              "symptom": "Saffron colour is pale",
+              "cause": "Saffron not steeped long enough in warm stock.",
+              "fix": "Always steep for at least 10 minutes in warm (not boiling) liquid before adding to the rice."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto alla milanese is the oldest documented risotto, appearing in print in 1809 and later described in detail by Artusi. It is served alongside braised veal (osso buco) in its classic Milanese pairing, though it stands well on its own. Saffron came to Milan via Spain during the centuries of Spanish rule in Lombardy; it became embedded in the cooking and has never left."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "slug": "spaghetti-alle-vongole-in-bianco",
+  "title": "Spaghetti alle vongole in bianco",
+  "subtitle": "Spaghetti with clams in white wine without tomato",
+  "excerpt": "Spaghetti alle vongole in bianco is the no-tomato version of the classic: clams, garlic, white wine, and parsley. Without the tomato, the briny sweetness of the clams comes through more clearly. It is the purist's choice along the Neapolitan coast.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Traditional Neapolitan recipe. The in bianco preparation (without tomato) is considered the older and more classical form. Techniques from Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "colander", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "in-bianco",
+      "term": "In bianco",
+      "definition": "Italian cooking term meaning 'in white', referring to a dish made without tomato sauce; the opposite of rosso (red)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti alle vongole "
+          },
+          {
+            "type": "text",
+            "text": "in bianco",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "in-bianco" } }]
+          },
+          {
+            "type": "text",
+            "text": " is the white version of the vongole, made without tomato so the flavour of the clams stands alone. It tastes cleaner and lighter than the rosso, and the sauce is thinner; it coats the strands of spaghetti in a thin, glossy film of wine, olive oil, and clam liquor. The purging and speed rules are the same as for the standard recipe."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "spaghetti", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "clams", "amount": 1000, "unit": "g", "prepNote": "live, purged in cold salted water for 30 minutes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-white-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": "good quality", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 25, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "wedges to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Purge the clams" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak {{clams}} of clams in cold, well-salted water for 30 minutes. Lift them out by hand into a colander; don't tip the bowl. Rinse briefly under cold water."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil a large pot of salted water. Cook {{pasta-dried}} of spaghetti until 2 minutes short of done. Reserve a large mug of pasta water and drain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Open the clams and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the pasta cooks, warm {{olive-oil}} of olive oil in a wide pan over high heat. Add {{garlic}} of sliced garlic and the chilli flakes if using. Cook for 1 minute. Add the clams and pour in {{dry-white-wine}} of wine. Cover and cook for 3 to 4 minutes, shaking often, until the clams open. Discard any that stay shut."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the spaghetti to the pan. Toss over high heat for 2 minutes, adding pasta water as needed to keep the sauce loose. Add the parsley, toss, and serve immediately with lemon wedges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too oily",
+              "cause": "The oil and clam liquor have not come together into a sauce; they are sitting separately.",
+              "fix": "Toss more vigorously over higher heat while adding small splashes of pasta water. The starch in the water helps bind the sauce."
+            },
+            {
+              "symptom": "Dish tastes bland",
+              "cause": "Pasta water not salty enough, or too few clams.",
+              "fix": "Pasta water should taste noticeably salty. The dish has no added salt, so all seasoning comes from the clams and the pasta water."
+            },
+            {
+              "symptom": "Clams are gritty",
+              "cause": "Purging skipped or cut short.",
+              "fix": "Always purge clams for a full 30 minutes. Lift them out of the bowl rather than pouring; grit sinks to the bottom."
+            },
+            {
+              "symptom": "Garlic turned bitter",
+              "cause": "Garlic cooked over too-high heat for too long before the clams went in.",
+              "fix": "Add the clams as soon as the garlic is fragrant, not browned. Keep a close eye on it; 60 seconds is all it needs."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In bianco is the form the Neapolitans argue about most. Purists reject the tomato entirely: the clam is the point, they say, and anything added dilutes it. The dish is eaten on Friday along the coast, when fish replaces meat, and in summer when the smaller, sweeter clams from the bay are at their best. A glass of dry Falanghina alongside is the local pairing."
+          }
+        ]
+      }
+    ]
+  }
+}

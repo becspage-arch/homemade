@@ -1,0 +1,215 @@
+{
+  "slug": "risotto-alla-pescatora",
+  "title": "Risotto alla pescatora",
+  "subtitle": "Seafood risotto with prawns, mussels, clams, and squid",
+  "excerpt": "Risotto alla pescatora is the Italian fisherman's risotto: a combination of mixed seafood cooked into a rich, golden stock, then the rice is cooked in that same stock until creamy. The seafood goes back in at the end, just long enough to warm through. It is a dish that rewards the effort of making a proper seafood broth.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Italian coastal recipe, found across Veneto, Campania, and Sicily. Methods drawn from Marcella Hazan, Essentials of Classic Italian Cooking (1992), and traditional Italian seafood risotto preparations.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "ladle", "isOptional": false },
+    { "slug": "colander", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pescatora",
+      "term": "Alla pescatora",
+      "definition": "Italian for 'in the style of the fisherman'; dishes alla pescatora use a mix of fresh seafood and are built on a seafood broth."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto "
+          },
+          {
+            "type": "text",
+            "text": "alla pescatora",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pescatora" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a mixed seafood risotto: prawns, mussels, clams, and squid, cooked in a light seafood stock that becomes the base for the rice. The seafood is cooked briefly, removed, and added back at the very end. No Parmesan in this one: cheese with fish is not done in the Italian tradition."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most important step is the stock. Simmering the prawn shells, a few mussels, some wine, and aromatics for 20 minutes produces a broth that carries the sea into every grain of rice. Without a good stock, the dish is flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "shell-on; peel and reserve the shells for stock", "isOptional": false, "groupLabel": "Seafood" },
+            { "ingredientSlug": "mussels", "amount": 500, "unit": "g", "prepNote": "scrubbed and debearded", "isOptional": false, "groupLabel": "Seafood" },
+            { "ingredientSlug": "clams", "amount": 400, "unit": "g", "prepNote": "purged in cold salted water 30 minutes", "isOptional": false, "groupLabel": "Seafood" },
+            { "ingredientSlug": "squid", "amount": 200, "unit": "g", "prepNote": "cleaned, bodies sliced into rings, tentacles halved", "isOptional": false, "groupLabel": "Seafood" },
+            { "ingredientSlug": "stock-fish", "amount": 500, "unit": "ml", "prepNote": "plus 500 ml water", "isOptional": false, "groupLabel": "For the stock" },
+            { "ingredientSlug": "dry-white-wine", "amount": 200, "unit": "ml", "prepNote": "half for the stock, half for the risotto", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "shallot", "amount": 3, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the seafood stock" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 1 tablespoon of olive oil in a saucepan. Add the prawn shells and cook for 3 minutes. Add 100 ml of white wine and let it bubble for 1 minute. Add the fish stock and 500 ml water. Simmer for 20 minutes, then strain and keep hot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the seafood" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 2 tablespoons of oil in a wide pan. Cook the squid rings over high heat for 2 minutes. Remove. In the same pan, add the mussels and clams with 100 ml white wine. Cover and cook for 4 minutes until the shells open. Lift out the shellfish. Discard any that didn't open. Strain the liquid through a fine sieve into the stock. Remove about half the shellfish from their shells, leaving some in for visual effect. Quickly sauté the peeled prawns for 2 minutes in the same pan. Set all seafood aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the risotto" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the remaining olive oil in the same pan. Cook the shallots for 5 minutes. Add the garlic and chilli if using, cook 1 minute more. Add {{arborio-rice}} of rice, stir for 2 minutes. Add the tomato purée, stir in. Add the stock, one ladle at a time, for about 18 minutes until al dente. Fold in all the seafood and warm through for 1 minute. Add the parsley, season, and serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Seafood is rubbery",
+              "cause": "Cooked for too long before the rice was ready.",
+              "fix": "Cook all the seafood separately, set aside, and only add it back in the final minute. Overcooked shellfish doesn't recover."
+            },
+            {
+              "symptom": "Stock is bland",
+              "cause": "Prawn shells not coloured enough, or not enough simmering time.",
+              "fix": "Sizzle the shells for 3 full minutes before adding liquid. Don't rush the 20-minute simmer."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seafood risotto appears along every coast of Italy, from the Venetian lagoon to the Sicilian ports. The Venetian version (risi e bisi, and its fishy cousins) is the most restrained; the Neapolitan version is richer and more herbed. What all share is the principle of building the stock from the seafood itself and returning each component at the end just long enough to warm through."
+          }
+        ]
+      }
+    ]
+  }
+}

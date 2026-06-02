@@ -1,0 +1,210 @@
+{
+  "slug": "brasato-al-barolo",
+  "title": "Brasato al barolo",
+  "subtitle": "Piemontese beef braised in Barolo wine",
+  "excerpt": "Brasato al barolo is a whole beef joint marinated and then slowly braised in Barolo wine with vegetables and aromatics until the meat is fork-tender and the wine has reduced to a deep, glossy sauce. It is a centrepiece dish for a winter occasion, best started the day before and reheated.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Piemontese regional recipe. Brasato al barolo is one of the foundational dishes of Piedmont and one of Italy's most celebrated braises. Method drawn from Marcella Hazan, Essentials of Classic Italian Cooking (1992), and traditional Piemontese sources.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 15,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze with the sauce. Thaw overnight and reheat gently.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight in the wine and aromatics. After cooking, the dish improves overnight: make it a day ahead and reheat.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "festive"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "oven method",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "carving-knife", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brasato",
+      "term": "Brasato",
+      "definition": "Italian for a slow braise of a large piece of meat in wine, covered tightly; the meat cooks in the steam of its own juices and the wine, emerging tender and surrounded by a concentrated sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brasato al barolo is a whole beef joint marinated overnight in Barolo and then very slowly "
+          },
+          {
+            "type": "text",
+            "text": "brasato",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brasato" } }]
+          },
+          {
+            "type": "text",
+            "text": " until the meat can be cut with a spoon and the wine has reduced to a deep, glossy sauce. Use beef shin or chuck; both have enough collagen to become soft and succulent over three hours. You don't need actual Barolo; any full-bodied Piemontese red or similar will work well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-shin", "amount": 1500, "unit": "g", "prepNote": "in one piece, tied if boneless", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 750, "unit": "ml", "prepNote": "Barolo or similar full-bodied red", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "whole", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cloves", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate (the night before)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place {{beef-shin}} of beef in a large bowl with the vegetables, garlic, bay leaves, rosemary, cloves, cinnamon if using, and {{red-wine}} of red wine. Cover and refrigerate overnight or for at least 8 hours."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the beef and vegetables from the marinade; reserve the marinade. Dry the beef with kitchen paper. Season. Heat the oil and butter in a casserole over high heat. Brown the beef on all sides, about 10 minutes. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the vegetables from the marinade for 5 minutes. Return the beef and pour over the marinade. Bring to a simmer. Cover tightly and place in the oven at 160°C (or continue on the hob at the lowest heat) for 2.5 to 3 hours until very tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the beef. Strain the cooking liquid and reduce it in a saucepan until thick and glossy, about 15 minutes. Slice the beef and serve with the sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Beef is still tough after 3 hours",
+              "cause": "Temperature too high during braising.",
+              "fix": "The braise should barely simmer. Reduce the oven to 150°C and continue. Beef shin needs real time."
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Not reduced enough after straining.",
+              "fix": "Reduce on the hob at a vigorous simmer until the sauce coats a spoon."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brasato al barolo is the special-occasion braise of Piedmont, made for Christmas and important Sundays. The wine's quality matters here: Barolo's tannins and depth produce a sauce that lighter wines cannot match. Served with soft polenta or mashed potato, it is one of the best winter dishes in the Italian repertoire."
+          }
+        ]
+      }
+    ]
+  }
+}

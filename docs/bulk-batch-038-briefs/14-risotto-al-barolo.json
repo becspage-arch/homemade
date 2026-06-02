@@ -1,0 +1,189 @@
+{
+  "slug": "risotto-al-barolo",
+  "title": "Risotto al barolo",
+  "subtitle": "Red-wine risotto from Piedmont",
+  "excerpt": "Risotto al barolo is a Piemontese risotto made with red wine in place of white. The rice turns a deep reddish-purple as it cooks, and the finished dish has a rich, slightly tannic flavour balanced by butter and Parmesan. It is a robust winter dish, well-suited to the same Barolo or Nebbiolo used in its making.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Piemontese regional recipe. Red-wine risotto is a traditional winter dish in Piedmont, where Barolo and other Nebbiolo-based wines are produced. Method drawn from traditional Piemontese sources and Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 30,
+    "restingMinutes": 2,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["dinnerParty", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nebbiolo",
+      "term": "Nebbiolo",
+      "definition": "The grape variety behind Barolo, Barbaresco, and other Piemontese reds; it produces wines with high tannin and acidity that benefit from several years of ageing."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Risotto al barolo is the red-wine risotto of Piedmont: the "
+          },
+          {
+            "type": "text",
+            "text": "Nebbiolo",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nebbiolo" } }]
+          },
+          {
+            "type": "text",
+            "text": " goes in at the start in place of white wine, turning the rice a deep reddish colour. It is a rich, full-flavoured dish with a slightly dry finish. You don't need to use actual Barolo, which is expensive; any full-bodied Piemontese red or similar will give the same result."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": "or carnaroli", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 300, "unit": "ml", "prepNote": "Barolo, Barbaresco, or other full-bodied red", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1000, "unit": "ml", "prepNote": "kept hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "shallot", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "half for cooking, half cold for the finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt 40 g of the butter in a wide, heavy pan over medium-low heat. Add the shallots and cook gently for 8 minutes until soft and translucent."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{arborio-rice}} of rice and stir for 2 minutes until coated. Pour in {{red-wine}} of red wine and stir until absorbed, about 3 minutes. The rice will turn a deep burgundy colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the hot {{stock-beef}} of beef stock one ladle at a time, stirring often and letting each addition absorb before adding the next. Continue for about 18 minutes until the rice is al dente. Season with salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Beat in the remaining 40 g of cold butter and the Parmesan. Rest, covered, for 2 minutes. Serve immediately in warm bowls."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Risotto tastes too tannic",
+              "cause": "Wine was very high in tannin, or too much wine relative to stock.",
+              "fix": "The mantecatura of butter and Parmesan should balance the tannin. If still sharp, a pinch of sugar or a little more butter will help."
+            },
+            {
+              "symptom": "Colour is pale",
+              "cause": "Wine not fully absorbed before stock was added.",
+              "fix": "Let the wine reduce completely before the first ladle of stock. The colour sets in this step."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Piedmont produces some of Italy's finest red wines and some of its finest rice, in the Po Valley. Risotto al barolo combines both. The dish is made on cold winter evenings when Barolo is being opened anyway; using a glass or two in the risotto is considered perfectly reasonable, and the bottle goes on the table alongside."
+          }
+        ]
+      }
+    ]
+  }
+}

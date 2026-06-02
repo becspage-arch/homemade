@@ -1,0 +1,176 @@
+{
+  "slug": "pollo-alla-romana",
+  "title": "Pollo alla romana",
+  "subtitle": "Roman chicken braised with peppers, prosciutto, and white wine",
+  "excerpt": "Pollo alla romana is a Roman classic: bone-in chicken pieces braised with prosciutto, sweet peppers, garlic, and white wine. The prosciutto melts into the sauce and gives it depth; the peppers soften into sweet ribbons around the chicken. It is cooked in a single pan and takes about an hour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roman traditional recipe. Pollo alla romana is one of the foundational Roman secondi, appearing in cookery writing from the mid-20th century. Method drawn from Ada Boni, Il talismano della felicità (1925), and traditional Lazio cooking sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Good made a day ahead; the prosciutto flavour deepens overnight.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "alla-romana",
+      "term": "Alla romana",
+      "definition": "Italian culinary term for 'in the Roman style'; dishes alla romana typically feature ingredients associated with Lazio, including prosciutto, sweet peppers, and white wine."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pollo "
+          },
+          {
+            "type": "text",
+            "text": "alla romana",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "alla-romana" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a Roman braise of chicken, prosciutto, sweet peppers, and white wine. The prosciutto goes in with the aromatics, not as a garnish, so its fat melts into the cooking oil and flavours everything from the start. It is a richer, more complex version of the simpler pollo con peperoni."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 8, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prosciutto", "amount": 80, "unit": "g", "prepNote": "thickly sliced or in a single piece, chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "each", "prepNote": "deseeded, cut into wide strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-yellow", "amount": 2, "unit": "each", "prepNote": "deseeded, cut into wide strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dry-white-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season {{chicken-thigh}} of chicken thighs. Heat {{olive-oil}} of olive oil in a wide casserole over high heat. Brown the chicken, skin-side down, for 5 minutes; turn and brown the other side for 3 minutes. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{prosciutto}} of chopped prosciutto to the pan and cook for 2 minutes until it crisps slightly. Add {{garlic}} of garlic for 1 minute. Add the {{pepper-red}} of red and {{pepper-yellow}} of yellow pepper strips. Cook for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in {{dry-white-wine}} of wine and let it reduce by half. Add the tomatoes. Return the chicken, skin-side up. Cover and braise over medium-low heat for 40 minutes. Rest 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Prosciutto is tough",
+              "cause": "Sliced too thinly and dried out during cooking.",
+              "fix": "Buy thickly sliced prosciutto (ask for 3 mm at the deli counter). Thin slices are for eating raw; thick pieces braise better."
+            },
+            {
+              "symptom": "Sauce is too salty",
+              "cause": "Prosciutto added a lot of salt; no adjustment made to seasoning.",
+              "fix": "Taste before adding any additional salt. Prosciutto and tinned tomatoes are both salty."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pollo alla romana is on the fixed menus of old-school Roman trattorie, served on specific days of the week as part of the traditional rotation. It is the dish many Romans associate with childhood Sunday lunches. The combination of prosciutto and peppers in a braise is distinctly Lazio; neither the north nor the south uses these ingredients quite the same way."
+          }
+        ]
+      }
+    ]
+  }
+}

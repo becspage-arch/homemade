@@ -1,0 +1,226 @@
+{
+  "slug": "rigatoni-con-polpettine",
+  "title": "Rigatoni con polpettine",
+  "subtitle": "Rigatoni with tiny Italian meatballs in tomato sauce",
+  "excerpt": "Rigatoni con polpettine pairs thick-ridged pasta tubes with miniature pork-and-beef meatballs simmered in a simple tomato sauce. The meatballs are small enough to slip inside the rigatoni or cling in the ridges. This is Italian home cooking at its most direct: it takes about an hour and feeds a table with minimum fuss.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Italian-American and southern Italian home-cooking tradition. Small meatball-and-pasta combinations are common across Campania and Calabria. Methods drawn from Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The meatballs in tomato sauce freeze well. Thaw overnight and reheat gently before tossing with freshly cooked pasta.",
+    "batchable": true,
+    "batchNotes": "Double the meatball and sauce quantity and freeze half.",
+    "makeAheadNotes": "The meatball sauce can be made up to two days ahead and kept in the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "polpettine",
+      "term": "Polpettine",
+      "definition": "Italian diminutive of polpette (meatballs); polpettine are small, typically walnut-sized, designed to pair with pasta rather than to be eaten on their own."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rigatoni con "
+          },
+          {
+            "type": "text",
+            "text": "polpettine",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "polpettine" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a straightforward pasta dish: small meatballs rolled to walnut size, browned in a little oil, then finished in a simple tomato sauce while the pasta boils alongside. The meatballs are soft and seasoned plainly; the tomato sauce does the heavy lifting. This one is popular with children and adults alike."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "rigatoni", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beef-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "pork-mince", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "parmesan", "amount": 30, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "For the polpettine" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "good-quality whole peeled, crushed by hand", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tomato-passata", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "basil", "amount": 10, "unit": "g", "prepNote": "a handful", "isOptional": true, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roll and fry the meatballs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{beef-mince}} of beef mince, {{pork-mince}} of pork mince, the egg, breadcrumbs, Parmesan, parsley, and grated garlic in a bowl with a good pinch of salt. Mix until just combined. Roll into balls roughly the size of large marbles, about 2 cm across. You should get 40 to 50."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a wide frying pan over medium-high heat. Fry the meatballs in two batches, turning every minute, until golden all over, about 5 minutes per batch. Transfer to a plate."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tomato sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, cook the onion over medium heat for 5 minutes. Add the sliced garlic and cook for 1 minute. Add the crushed tomatoes and the passata. Season with salt. Bring to a simmer and add the browned meatballs. Cover loosely and cook for 20 minutes, turning the meatballs once halfway. Add basil at the end if using."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil {{pasta-dried}} of rigatoni in well-salted water until al dente. Drain and toss with some of the tomato sauce. Serve topped with the meatballs and more sauce, with Parmesan at the table."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meatballs fall apart in the pan",
+              "cause": "Not enough binder or mixture was too wet.",
+              "fix": "Add another tablespoon of breadcrumbs and let the mixture rest in the fridge for 15 minutes before rolling. Don't overwork the meat."
+            },
+            {
+              "symptom": "Meatballs are dense and tough",
+              "cause": "Mixture was overworked.",
+              "fix": "Mix until just combined. Over-mixing develops the proteins and makes the meatballs rubbery."
+            },
+            {
+              "symptom": "Tomato sauce too sharp",
+              "cause": "Acidic tinned tomatoes.",
+              "fix": "Add a pinch of sugar or a small knob of butter at the end to balance the acidity."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Small meatballs in tomato sauce are found across southern Italy, mainly in Campania and Calabria. The pasta version, with rigatoni or paccheri, is a Sunday dish in Naples. In Italian-American cooking, the same preparation became spaghetti and meatballs, with larger meatballs and a richer sauce. The Italian original is lighter and simpler."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "slug": "polpette-al-sugo",
+  "title": "Polpette al sugo",
+  "subtitle": "Italian meatballs braised in tomato sauce",
+  "excerpt": "Polpette al sugo are the Italian meatball: a mix of beef and pork, shaped into walnut-sized balls, browned in olive oil, then simmered in a simple tomato sauce for 20 minutes. They are softer and more herb-forward than their American cousins. Serve on their own, or with pasta or polenta.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Italian home-cooking tradition. Meatballs in tomato sauce are eaten across southern and central Italy, particularly Campania, Lazio, and Calabria. Method drawn from Marcella Hazan, Essentials of Classic Italian Cooking (1992).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Meatballs in sauce freeze well. Thaw overnight and reheat gently over low heat.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily. Freeze in meal-sized portions.",
+    "makeAheadNotes": "Meatballs improve overnight in the sauce. Make ahead and reheat.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "polpette",
+      "term": "Polpette",
+      "definition": "Italian meatballs; the word applies to any size from small walnut-sized polpette to large palm-sized ones eaten as a main course rather than with pasta."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Polpette al sugo are Italian "
+          },
+          {
+            "type": "text",
+            "text": "polpette",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "polpette" } }]
+          },
+          {
+            "type": "text",
+            "text": " simmered in a straightforward tomato sauce. The meatballs are made with beef and pork, soaked bread for softness, Parmesan, and a little parsley. The bread is the key to a tender texture: dry breadcrumbs make a denser meatball, soaked bread makes a more yielding one. Brown them first so the tomato sauce doesn't wash out the colour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "bread", "amount": 2, "unit": "slice", "prepNote": "crusts removed, soaked in milk and squeezed dry", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "parmesan", "amount": 30, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "For the meatballs" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "whole peeled, crushed by hand", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "tomato-passata", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 10, "unit": "g", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix {{beef-mince}} of beef, {{pork-mince}} of pork, the squeezed bread, egg, Parmesan, parsley, and grated garlic with salt. Mix until just combined; do not overwork. Roll into walnut-sized balls, about 3 cm across."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a wide pan over medium-high heat. Brown the meatballs in batches, turning to colour all sides, about 5 minutes per batch. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, cook the {{onion}} onion for 5 minutes. Add the sliced garlic for 1 minute. Add the tomatoes and passata. Bring to a simmer. Add the meatballs. Cover and cook for 25 minutes, turning once. Add the basil at the end and season. Serve with crusty bread, pasta, or polenta."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meatballs fall apart",
+              "cause": "Too wet, or mixture was overworked.",
+              "fix": "Squeeze the bread very dry before adding. Handle the mixture minimally."
+            },
+            {
+              "symptom": "Meatballs are dense",
+              "cause": "Too much bread squeezed out, or egg proportion is low.",
+              "fix": "The bread should be soaked until soft but still moist, not bone-dry."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Meatballs in tomato sauce are a home dish across southern Italy, eaten on their own with bread as a main course rather than with pasta. Serving them with spaghetti is an Italian-American tradition; in Italy, pasta and meatballs stay separate. These polpette are the standalone version: soft, herb-forward, and braised until the sauce is thick and dark."
+          }
+        ]
+      }
+    ]
+  }
+}
