@@ -58,3 +58,19 @@ SKIPPED: 0
 - air-fryer-cauliflower-wings-buffalo: opening-pattern-missing-hook, content-type-opening-mismatch
 - air-fryer-chicken-breasts: opening-pattern-missing-hook, content-type-opening-mismatch
 - air-fryer-chicken-drumsticks: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 01:06:29
+
+Generated: 2026-06-02T01:06:29.661Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
