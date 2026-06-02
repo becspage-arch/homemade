@@ -91,3 +91,62 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 02:32:55
+
+Generated: 2026-06-02T02:32:55.544Z
+
+Processed: 40
+PASS: 21
+STILL_BLOCKED: 19
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 104 |
+| body-missing-method | 21 |
+| voice-violation | 10 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- blower-door-airtightness-test-consumer-guide: grade-level-strict
+- composting-meat-and-dairy: grade-level-strict
+- garden-pond-liner-repair: grade-level-strict
+- going-paperless-home-systems: voice-violation, grade-level-strict
+- gravity-fed-water-supply-from-spring: grade-level-strict
+- insulated-plasterboard-dot-and-dab: grade-level-strict
+- off-peak-tariff-switching-guide: voice-violation, grade-level-strict
+- repair-cafe-guide: grade-level-strict
+- solar-cooking-parabolic-cooker: voice-violation, grade-level-strict
+- solar-thermal-collector-installation: grade-level-strict
+- thermal-imaging-survey-guide: grade-level-strict
+- tool-library-and-community-lending: grade-level-strict
+- triple-glazing-decision-guide: grade-level-strict
+- underfloor-heating-heat-pump-compatibility: grade-level-strict
+- vermicompost-tea-making: voice-violation, grade-level-strict
+- voltage-optimiser-evidence-review: grade-level-strict
+- wood-ash-in-compost: grade-level-strict
+- wood-stove-installation-part-j: voice-violation, grade-level-strict
+- wormery-setup-and-management: grade-level-strict
+
+---
+
+## Run at 03:07:02
+
+Generated: 2026-06-02T03:07:02.813Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

@@ -27,3 +27,23 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - air-fryer-chicken-nuggets opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
 - air-fryer-chicken-shawarma opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
 - air-fryer-chicken-tenders opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+
+- blower-door-airtightness-test-consumer-guide grade-level-strict — applied: 
+- composting-meat-and-dairy grade-level-strict — applied: 
+- garden-pond-liner-repair grade-level-strict — applied: 
+- going-paperless-home-systems voice-violation,grade-level-strict — applied: 
+- gravity-fed-water-supply-from-spring grade-level-strict — applied: 
+- insulated-plasterboard-dot-and-dab grade-level-strict — applied: 
+- off-peak-tariff-switching-guide voice-violation,grade-level-strict — applied: 
+- repair-cafe-guide grade-level-strict — applied: 
+- solar-cooking-parabolic-cooker voice-violation,grade-level-strict — applied: 
+- solar-thermal-collector-installation grade-level-strict — applied: 
+- thermal-imaging-survey-guide grade-level-strict — applied: 
+- tool-library-and-community-lending grade-level-strict — applied: 
+- triple-glazing-decision-guide grade-level-strict — applied: 
+- underfloor-heating-heat-pump-compatibility grade-level-strict — applied: 
+- vermicompost-tea-making voice-violation,grade-level-strict — applied: 
+- voltage-optimiser-evidence-review grade-level-strict — applied: 
+- wood-ash-in-compost grade-level-strict — applied: 
+- wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
+- wormery-setup-and-management grade-level-strict — applied: 

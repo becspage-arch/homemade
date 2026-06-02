@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T02:07:41.919Z",
-  "totalScanned": 6516,
+  "generatedAt": "2026-06-02T03:08:13.962Z",
+  "totalScanned": 6552,
   "passCount": 0,
-  "blockCount": 2473,
+  "blockCount": 2492,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
@@ -35,6 +35,12 @@
       "block": 10,
       "warnOnly": 0
     },
+    "sustainability": {
+      "total": 26,
+      "pass": 0,
+      "block": 26,
+      "warnOnly": 0
+    },
     "fibre-arts": {
       "total": 2,
       "pass": 0,
@@ -47,12 +53,6 @@
       "block": 23,
       "warnOnly": 0
     },
-    "sustainability": {
-      "total": 7,
-      "pass": 0,
-      "block": 7,
-      "warnOnly": 0
-    },
     "paper-word": {
       "total": 1,
       "pass": 0,
@@ -61,10 +61,10 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 794,
+    "voice-violation": 823,
     "opening-pattern-missing-hook": 2112,
     "content-type-opening-mismatch": 2408,
-    "grade-level-strict": 76,
+    "grade-level-strict": 100,
     "prose-prep-steps": 83,
     "body-missing-method": 1
   },
@@ -7102,6 +7102,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A bloomer is a free-form oval loaf, baked on a flat tray rather than in a tin, with five diagonal cuts scored across the top before it goes "
+        }
+      ]
+    },
+    {
+      "slug": "blower-door-airtightness-test-consumer-guide",
+      "tutorialId": "cmpw0r5rn0000b0v43afodic2",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:48.652Z",
+      "publishedAt": "2026-06-02T02:29:13.307Z",
+      "heroMediaId": "cmpw0uo8s0008nov4gr7vvgpk",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "excerpt",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[9]",
+          "snippet": "ATTMA-registered testers advertise regionally. A test takes 2-4 hours and results in a formal certificate. Some energy companies include tes"
         }
       ]
     },
@@ -17015,6 +17041,25 @@
       ]
     },
     {
+      "slug": "composting-meat-and-dairy",
+      "tutorialId": "cmpw0sel90000ewv4hk33p1jw",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:49.090Z",
+      "publishedAt": "2026-06-02T02:30:11.394Z",
+      "heroMediaId": "cmpw0uqf0000enov4xlng4vms",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[6]",
+          "snippet": "Sealed in-vessel composters maintain temperature through insulated walls and controlled ventilation. The Hotbin manufacturer claims consiste"
+        }
+      ]
+    },
+    {
       "slug": "confit-de-canard",
       "tutorialId": "cmp73thno000270v4fjs5gu63",
       "type": "RECIPE",
@@ -25131,6 +25176,25 @@
       ]
     },
     {
+      "slug": "garden-pond-liner-repair",
+      "tutorialId": "cmpw0t51a0000z8v4qth16k1k",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:49.362Z",
+      "publishedAt": "2026-06-02T02:30:45.673Z",
+      "heroMediaId": "cmpw0ur4j000gnov4onoaah4e",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Clear marginal plants and gravel from the liner around the perimeter at the stabilised water level."
+        }
+      ]
+    },
+    {
       "slug": "garibaldi-biscuits",
       "tutorialId": "cmpa6g01a000070v4an3d86g1",
       "type": "RECIPE",
@@ -26353,6 +26417,64 @@
       ]
     },
     {
+      "slug": "going-paperless-home-systems",
+      "tutorialId": "cmpw0titm0000z0v4nblaaugn",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:49.715Z",
+      "publishedAt": "2026-06-02T02:31:03.541Z",
+      "heroMediaId": "cmpw0ursm000inov4tp2fz3r0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.1 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[6] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Paper arrives unsolicited from many sources: utility bills, bank statements, council tax, catalogues, charity appeals, and unaddressed leafl"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "Charity appeals: contact each charity individually to ask them to suppress mailing. Under GDPR, charities must comply if you withdraw consen"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Council tax, housing benefit, electoral registration: contact your local council directly. Many UK councils have moved to e-correspondence b"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Reducing household paper: switching bills, managing documents, and opting out of junk mail go here."
+        }
+      ]
+    },
+    {
       "slug": "golabki",
       "tutorialId": "cmpbggady0000mkv4jthxxlkr",
       "type": "RECIPE",
@@ -26914,6 +27036,37 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "The filling of a grasshopper pie is peppermint cream stabilised with melted white chocolate. White chocolate as a cream stabiliser produces "
+        }
+      ]
+    },
+    {
+      "slug": "gravity-fed-water-supply-from-spring",
+      "tutorialId": "cmpw0tsx60000rwv4i4n1q88w",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:49.994Z",
+      "publishedAt": "2026-06-02T02:31:16.629Z",
+      "heroMediaId": "cmpw0ush6000knov4odmpmh1y",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "The spring water must be tested and meet the Private Water Supply Regulations 2016 or equivalent. A local council environmental health offic"
         }
       ]
     },
@@ -29510,6 +29663,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Insalata di rinforzo is the salad of the Neapolitan Christmas table. It is the counterweight to the rich food around it. The cauliflower is "
+        }
+      ]
+    },
+    {
+      "slug": "insulated-plasterboard-dot-and-dab",
+      "tutorialId": "cmpw0qsq3000080v4ar36izi5",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:50.543Z",
+      "publishedAt": "2026-06-02T02:28:56.404Z",
+      "heroMediaId": "cmpw0uxt5000snov4x80giptt",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > infoPanel[1] > paragraph[0]",
+          "snippet": "Not suitable for pre-1919 solid-wall buildings with permeable lime mortar joints without specialist advice. Internal insulation on a solid h"
         }
       ]
     },
@@ -40049,6 +40221,38 @@
       ]
     },
     {
+      "slug": "off-peak-tariff-switching-guide",
+      "tutorialId": "cmpw0s3bl0000a0v41dvge0tp",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:50.989Z",
+      "publishedAt": "2026-06-02T02:29:56.798Z",
+      "heroMediaId": "cmpw0v2cl0012nov4a4x44imb",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Switching to an off-peak electricity tariff go here."
+        }
+      ]
+    },
+    {
       "slug": "ojja-merguez",
       "tutorialId": "cmpbcenpy000024v4dpzhdw7n",
       "type": "RECIPE",
@@ -48609,6 +48813,43 @@
       ]
     },
     {
+      "slug": "repair-cafe-guide",
+      "tutorialId": "cmpw0tg4x000070v4k5z2bdp7",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:51.638Z",
+      "publishedAt": "2026-06-02T02:31:00.061Z",
+      "heroMediaId": "cmpw0v62r0016nov477w30nxz",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[3] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "A repair cafe is a free community event where volunteers with practical skills repair broken items for the public. Most run fortnightly or m"
+        }
+      ]
+    },
+    {
       "slug": "repairing-a-continuously-running-wc-cistern",
       "tutorialId": "cmpvi06h900027wv4l0krpq1f",
       "type": "PATTERN",
@@ -56946,6 +57187,31 @@
       ]
     },
     {
+      "slug": "solar-cooking-parabolic-cooker",
+      "tutorialId": "cmpw0tq3z0000cgv49cqg9440",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:52.208Z",
+      "publishedAt": "2026-06-02T02:31:12.987Z",
+      "heroMediaId": "cmpw0v9ja001enov4wsz0ue8t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Solar cooking with a parabolic reflector go here."
+        }
+      ]
+    },
+    {
       "slug": "solar-pv-export-limit-g98-g99",
       "tutorialId": "cmpv4cp0k0003i8v4hpk5qxsz",
       "type": "TECHNIQUE",
@@ -56968,6 +57234,25 @@
           "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Solar PV export limits and DNO connection agreements go here."
+        }
+      ]
+    },
+    {
+      "slug": "solar-thermal-collector-installation",
+      "tutorialId": "cmpw0ruuz0000w0v42ptmuyzp",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:52.395Z",
+      "publishedAt": "2026-06-02T02:29:45.825Z",
+      "heroMediaId": "cmpw0vaab001gnov45qjrah8y",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "A twin-coil hot water cylinder if you do not already have one. Single-coil cylinders cannot accept a second solar circuit without modificati"
         }
       ]
     },
@@ -62595,6 +62880,32 @@
       ]
     },
     {
+      "slug": "thermal-imaging-survey-guide",
+      "tutorialId": "cmpw0r2uu000038v4xsnew2wt",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:53.017Z",
+      "publishedAt": "2026-06-02T02:29:09.537Z",
+      "heroMediaId": "cmpw0vdb0001onov4ffd9vk90",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[2] > paragraph[0]",
+          "snippet": "Floor perimeter: cold bands at the ground floor junction show missing insulation under a suspended floor or an uninsulated slab edge."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[10]",
+          "snippet": "A Level 1 thermographer produces a formal report for insurance claims, contractor disputes, or pre-purchase surveys. They use higher-resolut"
+        }
+      ]
+    },
+    {
       "slug": "thermal-mass-passive-solar-design",
       "tutorialId": "cmpv43h2w0001eov4ez6a3z22",
       "type": "TECHNIQUE",
@@ -63074,6 +63385,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Tomato soup made properly starts in a hot oven, not on the hob. Roasting concentrates the tomatoes, caramelises their edges, and drives off "
+        }
+      ]
+    },
+    {
+      "slug": "tool-library-and-community-lending",
+      "tutorialId": "cmpw0tne60000mcv4pq8eodzi",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:53.306Z",
+      "publishedAt": "2026-06-02T02:31:09.465Z",
+      "heroMediaId": "cmpw0ve1l001qnov4e2sl9kok",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Garden tools: lawn aerator, rotavator, hedge trimmer, pressure washer, leaf blower."
         }
       ]
     },
@@ -63599,6 +63929,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Triple chocolate cake is three layers of the same cocoa sponge with three different chocolate fillings: white chocolate cream between the fi"
+        }
+      ]
+    },
+    {
+      "slug": "triple-glazing-decision-guide",
+      "tutorialId": "cmpw0r0110000ewv4x4jlgfhe",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:53.590Z",
+      "publishedAt": "2026-06-02T02:29:05.860Z",
+      "heroMediaId": "cmpw0ver5001snov40su970m0",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[4] > listItem[1] > paragraph[0]",
+          "snippet": "Passivhaus or low-energy build where the entire fabric is at very low U-value. Here glazing accounts for a larger proportion of the remainin"
         }
       ]
     },
@@ -64177,6 +64526,31 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Ultimate Spaghetti Carbonara. The dish belongs to the Italian home-cooking register: straightforward, ingredient-led, calm at the hob. Adjus"
+        }
+      ]
+    },
+    {
+      "slug": "underfloor-heating-heat-pump-compatibility",
+      "tutorialId": "cmpq7s8ge0000w8v4ol1msz63",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:53.864Z",
+      "publishedAt": "2026-06-02T02:29:38.612Z",
+      "heroMediaId": "cmpw0vfwi001unov4zlxeqtmu",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > bulletList[7] > listItem[1] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[7] > listItem[0] > paragraph[0]",
+          "snippet": "Overlay systems: low-profile aluminum-routed panels placed on top of the existing floor and covered with engineered boards. Adds minimal flo"
         }
       ]
     },
@@ -65259,6 +65633,31 @@
       ]
     },
     {
+      "slug": "vermicompost-tea-making",
+      "tutorialId": "cmpw0smz90000ucv40frdrl72",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:54.180Z",
+      "publishedAt": "2026-06-02T02:30:22.275Z",
+      "heroMediaId": "cmpw0vhn9001ynov43lr4fvy6",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Making vermicompost tea from wormery drainage go here."
+        }
+      ]
+    },
+    {
       "slug": "vetiver-sandalwood-room-spray",
       "tutorialId": "cmpsurcqq0001gcv4lxetwqt2",
       "type": "RECIPE",
@@ -65814,6 +66213,31 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Vollkornbrot is not bread in the everyday sense. The dough is almost a paste: too wet and sticky to shape with bare hands, impossible to sco"
+        }
+      ]
+    },
+    {
+      "slug": "voltage-optimiser-evidence-review",
+      "tutorialId": "cmpw0s0id0000y4v4afmgjypj",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:54.454Z",
+      "publishedAt": "2026-06-02T02:29:53.154Z",
+      "heroMediaId": "cmpw0vibn0020nov4g00t6tzo",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[2] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "Ohmic loads: electric heating elements, old-style incandescent bulbs, older single-speed motors, and some older fridge-freezer compressors. "
         }
       ]
     },
@@ -66944,6 +67368,148 @@
       ]
     },
     {
+      "slug": "wood-ash-in-compost",
+      "tutorialId": "cmpw0s8y4000088v4zfz9x12z",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:54.723Z",
+      "publishedAt": "2026-06-02T02:30:04.089Z",
+      "heroMediaId": "cmpw0vjcl0022nov40xfezjfq",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "excerpt",
+          "snippet": "stove"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[0] > paragraph[0]",
+          "snippet": "On alkaline soils: further liming is counterproductive and locks out phosphorus and trace elements."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[1] > paragraph[0]",
+          "snippet": "On brassica beds in succession (repeated brassica lime is already standard; adding wood ash on top may over-lime)."
+        }
+      ]
+    },
+    {
+      "slug": "wood-stove-installation-part-j",
+      "tutorialId": "cmpw0rs2900008kv4cs0wassr",
+      "type": "TECHNIQUE",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:55.018Z",
+      "publishedAt": "2026-06-02T02:29:42.205Z",
+      "heroMediaId": "cmpw0vk4k0024nov47i0h932c",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > bulletList[8] > listItem[1] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "title",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "excerpt",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > bulletList[2] > listItem[1] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > bulletList[2] > listItem[3] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > orderedList[6] > listItem[1] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > orderedList[6] > listItem[2] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > orderedList[6] > listItem[3] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"stove\" — prefer \"hob\"",
+          "path": "body > bulletList[8] > listItem[1] > paragraph[0] > text",
+          "snippet": "stove"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[1] > paragraph[0]",
+          "snippet": "Confirmed stove output: this determines liner diameter and air supply requirements."
+        }
+      ]
+    },
+    {
       "slug": "wood-wick-soy-candle",
       "tutorialId": "cmprrwr7t0000hov42mptqcun",
       "type": "RECIPE",
@@ -67058,6 +67624,25 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "World’s Best Cheesy Garlic Bread. A British home-cook's dish, the kind of recipe families adjust across generations. Adjustable for what you"
+        }
+      ]
+    },
+    {
+      "slug": "wormery-setup-and-management",
+      "tutorialId": "cmpw0s65t00001wv4vdu16vw6",
+      "type": "PATTERN",
+      "categorySlug": "sustainability",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T02:32:55.285Z",
+      "publishedAt": "2026-06-02T02:30:00.479Z",
+      "heroMediaId": "cmpw0vktr0026nov45xki1r55",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[2] > paragraph[0]",
+          "snippet": "Avoid: raw meat, fish bones, heavily processed food, anything with preservatives, pet faeces, diseased plant material."
         }
       ]
     },
