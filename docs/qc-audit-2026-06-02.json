@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-02T07:09:27.806Z",
-  "totalScanned": 6650,
+  "generatedAt": "2026-06-02T08:08:38.648Z",
+  "totalScanned": 6668,
   "passCount": 0,
-  "blockCount": 2525,
+  "blockCount": 2539,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
-      "total": 1166,
+      "total": 1180,
       "pass": 0,
-      "block": 1166,
+      "block": 1180,
       "warnOnly": 0
     },
     "baking": {
@@ -61,18 +61,66 @@
     }
   },
   "perRuleKind": {
+    "opening-pattern-missing-hook": 2141,
+    "content-type-opening-mismatch": 2439,
     "voice-violation": 847,
-    "opening-pattern-missing-hook": 2126,
-    "content-type-opening-mismatch": 2424,
-    "grade-level-strict": 125,
-    "prose-prep-steps": 84,
-    "hero-missing": 22,
-    "placeholder-string": 22,
-    "ingredient-amount-missing": 25,
-    "body-missing-method": 1,
-    "historical-century-in-body": 1
+    "grade-level-strict": 124,
+    "prose-prep-steps": 85,
+    "body-missing-method": 1
   },
   "verdicts": [
+    {
+      "slug": "abbacchio-alla-romana",
+      "tutorialId": "cmpware4l0001owv4lz40x2eq",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:08.253Z",
+      "publishedAt": "2026-06-02T07:09:20.301Z",
+      "heroMediaId": "cmpwas7ip0000uov43ggchl5s",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Abbacchio alla romana is the Roman way with young lamb: small pieces braised in white wine and vinegar, with garlic, rosemary, and anchovy d"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Abbacchio alla romana is the Roman way with young lamb: small pieces braised in white wine and vinegar, with garlic, rosemary, and anchovy d"
+        }
+      ]
+    },
+    {
+      "slug": "agnello-in-fricassea",
+      "tutorialId": "cmpwar6e60001zov4ky3q63ed",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:08.735Z",
+      "publishedAt": "2026-06-02T07:09:10.211Z",
+      "heroMediaId": "cmpwas8oy0002uov4d73aiu6f",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Agnello in fricassea is an Italian lamb braise finished with beaten egg yolks and lemon juice, which thicken the sauce into a velvety, pale "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Agnello in fricassea is an Italian lamb braise finished with beaten egg yolks and lemon juice, which thicken the sauce into a velvety, pale "
+        }
+      ]
+    },
     {
       "slug": "air-fryer-chicken-thighs-boneless",
       "tutorialId": "cmpbhyknd0000o4v474z9kmtj",
@@ -2643,6 +2691,46 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Cold saffron risotto shaped into large balls around a pocket of slow-cooked beef ragù, coated in breadcrumbs, and deep-fried until crisp and"
+        }
+      ]
+    },
+    {
+      "slug": "arancini-al-burro",
+      "tutorialId": "cmpwarntl0001qov4lyyq08ro",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:09.689Z",
+      "publishedAt": "2026-06-02T07:09:32.873Z",
+      "heroMediaId": "cmpwasam90004uov46x82sgln",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
+          "path": "body > troubleshooter[5] > item[0] > symptom",
+          "snippet": "fall"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "prose-prep-steps",
+          "message": "prose-style preparation steps detected (3 consecutive short imperatives) — convert to orderedList",
+          "path": "body > orderedList[4] > listItem[0] > paragraph[0]",
+          "snippet": "Taste for salt."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Arancini al burro are the white Sicilian rice ball: saffron-scented rice moulded around a nugget of mozzarella and butter, breaded, and deep"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Arancini al burro are the white Sicilian rice ball: saffron-scented rice moulded around a nugget of mozzarella and butter, breaded, and deep"
         }
       ]
     },
@@ -8067,6 +8155,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Cooking fish whole is easier than cooking fillets. A whole fish is far more forgiving. The bone keeps the flesh from drying out. The skin pr"
+        }
+      ]
+    },
+    {
+      "slug": "brasato-al-barolo",
+      "tutorialId": "cmpwaqd880001ewv4eqmmpcfy",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:10.242Z",
+      "publishedAt": "2026-06-02T07:08:32.462Z",
+      "heroMediaId": "cmpwasc8j0006uov4xnpyl76u",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Brasato al barolo is a whole beef joint marinated and then slowly braised in Barolo wine with vegetables and aromatics until the meat is for"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Brasato al barolo is a whole beef joint marinated and then slowly braised in Barolo wine with vegetables and aromatics until the meat is for"
         }
       ]
     },
@@ -16626,6 +16740,38 @@
       ]
     },
     {
+      "slug": "coda-alla-vaccinara",
+      "tutorialId": "cmpwaq3eg000138v44nzum8zg",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:10.836Z",
+      "publishedAt": "2026-06-02T07:08:19.740Z",
+      "heroMediaId": "cmpwasddy0008uov4mz060xrj",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[13] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Coda alla vaccinara is the Roman oxtail braise: oxtail pieces cooked for at least three hours in tomato and wine, finished with a handful of"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Coda alla vaccinara is the Roman oxtail braise: oxtail pieces cooked for at least three hours in tomato and wine, finished with a handful of"
+        }
+      ]
+    },
+    {
       "slug": "coffee-and-walnut-cake",
       "tutorialId": "cmp87k4wj0000i0v4fbjcg31o",
       "type": "RECIPE",
@@ -17160,34 +17306,6 @@
       ]
     },
     {
-      "slug": "conchiglie-al-pesto",
-      "tutorialId": "cmpwanph70001bcv4uon3w5ze",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-02T07:06:28.395Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{garlic}} — must be substituted before publish",
-          "snippet": "Blend the basil, {{garlic}} of garlic, Parmesan, Pecorino, and a pinch of salt in a food processor u"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanpj70009bcv4za9idpka (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
-        }
-      ]
-    },
-    {
       "slug": "confit-de-canard",
       "tutorialId": "cmp73thno000270v4fjs5gu63",
       "type": "RECIPE",
@@ -17203,6 +17321,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Confit is not a recipe for a weeknight. It is a two-day process: the duck legs cure in salt overnight, then submerge in fat for 2.5 hours at"
+        }
+      ]
+    },
+    {
+      "slug": "coniglio-alla-cacciatora",
+      "tutorialId": "cmpwaqw3a0001xcv4hpylyo7l",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:11.957Z",
+      "publishedAt": "2026-06-02T07:08:56.914Z",
+      "heroMediaId": "cmpwasfdq000cuov48o4gsn0k",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "Cacciatora preparations are found across Tuscany, Umbria, the Marche, and Lazio, wherever rabbit is hunted. Rabbit is the traditional choice"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Coniglio alla cacciatora is the hunter's rabbit: pieces of rabbit braised in white wine, tomato, garlic, rosemary, and sage. The same caccia"
         }
       ]
     },
@@ -17878,46 +18022,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:13.303Z",
       "publishedAt": "2026-06-02T07:07:09.293Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwashs4000guov4z9xrp2e5",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{pork-chop}} — must be substituted before publish",
-          "snippet": "Place {{pork-chop}} of pork chops between baking paper and beat flat to 1 cm. Set up three dishes: s"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "Milan's breaded cutlet has been claimed as the inspiration for Wiener Schnitzel; there is historical dispute about which came first. What is"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "A cotoletta alla milanese is a large, bone-in chop pounded flat and breaded in egg and fine breadcrumbs, then fried in butter until golden o"
+          "snippet": "Cotoletta alla milanese is a bone-in chop, breaded and fried in butter until golden. The original uses veal; this version uses a thick pork "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "A cotoletta alla milanese is a large, bone-in chop pounded flat and breaded in egg and fine breadcrumbs, then fried in butter until golden o"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaol3e000aa0v4hz3ia4qs (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Cotoletta alla milanese is a bone-in chop, breaded and fried in butter until golden. The original uses veal; this version uses a thick pork "
         }
       ]
     },
@@ -22790,46 +22911,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:13.830Z",
       "publishedAt": "2026-06-02T07:06:23.386Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwasiw1000iuov4irpirgwf",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{pasta-dried}} — must be substituted before publish",
-          "snippet": "Cook {{pasta-dried}} of farfalle in a large pot of salted boiling water until al dente. Reserve a mu"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[7]",
-          "snippet": "Smoked salmon cream pasta became popular in Italian restaurants outside Italy in the 1980s, pushed along by the wave of cream-based pasta di"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Farfalle al salmone is a cream pasta that needs almost no cooking: a shallot softened in butter, a splash of wine reduced, cream warmed thro"
+          "snippet": "Farfalle al salmone pairs bowtie pasta with a quick cream sauce made with smoked salmon, dill, and a small amount of white wine. The salmon "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Farfalle al salmone is a cream pasta that needs almost no cooking: a shallot softened in butter, a splash of wine reduced, cream warmed thro"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanlo7000b9cv4d4xkhzt3 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "Farfalle al salmone pairs bowtie pasta with a quick cream sauce made with smoked salmon, dill, and a small amount of white wine. The salmon "
         }
       ]
     },
@@ -35901,6 +35999,32 @@
       ]
     },
     {
+      "slug": "maiale-al-latte",
+      "tutorialId": "cmpwapnqy0001z0v4x688qejt",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:14.838Z",
+      "publishedAt": "2026-06-02T07:07:59.461Z",
+      "heroMediaId": "cmpwasjjx000kuov41mjncs95",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Maiale al latte is a northern Italian method of braising pork in milk. As the pork cooks, the milk curdles into savoury golden nuggets that "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Maiale al latte is a northern Italian method of braising pork in milk. As the pork cooks, the milk curdles into savoury golden nuggets that "
+        }
+      ]
+    },
+    {
       "slug": "maids-of-honour",
       "tutorialId": "cmpqziaq60000qsv43rbbg2ug",
       "type": "RECIPE",
@@ -41160,39 +41284,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:15.319Z",
       "publishedAt": "2026-06-02T07:06:05.842Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwaskgh000muov4xs3qw9cw",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{olive-oil}} — must be substituted before publish",
-          "snippet": "Heat {{olive-oil}} of olive oil in a wide frying pan over medium-high heat. Crumble in {{sausage-mea"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Orecchiette con salsiccia is a Pugliese weeknight dish: small ear-shaped orecchiette tossed with crumbled pork sausage, broccoli florets, ga"
+          "snippet": "Orecchiette con salsiccia is a Pugliese staple: the small ear-shaped pasta tossed with crumbled pork sausage, broccoli, garlic, and chilli. "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Orecchiette con salsiccia is a Pugliese weeknight dish: small ear-shaped orecchiette tossed with crumbled pork sausage, broccoli florets, ga"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwan84k000a6gv4hb707xqj (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Orecchiette con salsiccia is a Pugliese staple: the small ear-shaped pasta tossed with crumbled pork sausage, broccoli, garlic, and chilli. "
         }
       ]
     },
@@ -42358,39 +42466,6 @@
       ]
     },
     {
-      "slug": "pappardelle-ai-funghi-misti",
-      "tutorialId": "cmpwam00m0001jwv4s8jrgfjg",
-      "type": "RECIPE",
-      "categorySlug": "cooking",
-      "status": "BLOCK",
-      "voiceRetrofittedAt": null,
-      "publishedAt": "2026-06-02T07:05:32.463Z",
-      "heroMediaId": null,
-      "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{mushrooms-porcini-dried}} — must be substituted before publish",
-          "snippet": "Put {{mushrooms-porcini-dried}} of dried porcini into a small bowl and cover with 250 ml of warm wat"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwamidv000b6kv46y4jxk8v (ingredientId=cmp49f7ll0087rkv43k6j3dft) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwamidv000c6kv4r36xhe60 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
-        }
-      ]
-    },
-    {
       "slug": "pappardelle-ai-porcini",
       "tutorialId": "cmpc0p8oz0000okv4u2eoul2e",
       "type": "RECIPE",
@@ -42877,21 +42952,10 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:16.690Z",
       "publishedAt": "2026-06-02T07:06:17.039Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwasm65000quov414ggogdw",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -42900,28 +42964,17 @@
         },
         {
           "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{tinned-tomatoes}} — must be substituted before publish",
-          "snippet": "Add {{tinned-tomatoes}} of crushed tomatoes. Season with black pepper. Simmer for 15 minutes until t"
-        },
-        {
-          "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Pasta alla zozzona combines the best bits of three Roman pastas (carbonara, amatriciana, and gricia) and then adds pork sausage on top. Guan"
+          "snippet": "Pasta alla zozzona is a Roman 'everything in the pan' pasta: guanciale, pork sausage, tomato, and egg yolk, combined into one rich sauce. Th"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Pasta alla zozzona combines the best bits of three Roman pastas (carbonara, amatriciana, and gricia) and then adds pork sausage on top. Guan"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwangt90009pwv4y0d8gdjz (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "Pasta alla zozzona is a Roman 'everything in the pan' pasta: guanciale, pork sausage, tomato, and egg yolk, combined into one rich sauce. Th"
         }
       ]
     },
@@ -46425,6 +46478,32 @@
       ]
     },
     {
+      "slug": "pollo-alla-milanese",
+      "tutorialId": "cmpwap68300019gv4d418c1dw",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:17.142Z",
+      "publishedAt": "2026-06-02T07:07:36.759Z",
+      "heroMediaId": "cmpwasngk000suov4w5vafiuu",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo alla milanese is a boneless chicken breast beaten thin, breaded in egg and fine breadcrumbs, and fried in butter and oil until golden."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo alla milanese is a boneless chicken breast beaten thin, breaded in egg and fine breadcrumbs, and fried in butter and oil until golden."
+        }
+      ]
+    },
+    {
       "slug": "pollo-alla-pizzaiola",
       "tutorialId": "cmpatns6o0000owv4cot8i05o",
       "type": "RECIPE",
@@ -46447,6 +46526,58 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Pizzaiola is a Neapolitan idea that takes the flavour of their most famous export and puts it on meat. Tomato, oregano, garlic, capers, and "
+        }
+      ]
+    },
+    {
+      "slug": "pollo-alla-romana",
+      "tutorialId": "cmpwap9vz00014wv4czje2euc",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:17.975Z",
+      "publishedAt": "2026-06-02T07:07:41.503Z",
+      "heroMediaId": "cmpwasono000uuov4bl7bezic",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo alla romana is a Roman classic: bone-in chicken pieces braised with prosciutto, sweet peppers, garlic, and white wine. The prosciutto "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo alla romana is a Roman classic: bone-in chicken pieces braised with prosciutto, sweet peppers, garlic, and white wine. The prosciutto "
+        }
+      ]
+    },
+    {
+      "slug": "pollo-con-peperoni",
+      "tutorialId": "cmpwap2rm00015wv4laiywusd",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:18.588Z",
+      "publishedAt": "2026-06-02T07:07:32.276Z",
+      "heroMediaId": "cmpwasqcr000wuov44fbc4w0t",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo con peperoni is a Roman family dish: bone-in chicken pieces braised in a pan with red and yellow peppers, white wine, and tomato. The "
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Pollo con peperoni is a Roman family dish: bone-in chicken pieces braised in a pan with red and yellow peppers, white wine, and tomato. The "
         }
       ]
     },
@@ -46489,27 +46620,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:52:36.385Z",
+      "voiceRetrofittedAt": "2026-06-02T07:11:19.060Z",
       "publishedAt": "2026-06-02T07:07:18.484Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwasr3c000yuov4wyu14h9n",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
           "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
           "path": "body > troubleshooter[5] > item[0] > symptom",
           "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{beef-mince}} — must be substituted before publish",
-          "snippet": "Mix {{beef-mince}} of beef, {{pork-mince}} of pork, the squeezed bread, egg, Parmesan, parsley, and "
         },
         {
           "severity": "BLOCK",
@@ -46520,22 +46640,55 @@
         },
         {
           "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Polpette al sugo are the Italian meatball: a mix of beef and pork, shaped into walnut-sized balls, browned in olive oil, then simmered in a "
+        }
+      ]
+    },
+    {
+      "slug": "polpettone",
+      "tutorialId": "cmpwaovp10001qgv4at2orzd0",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:20.076Z",
+      "publishedAt": "2026-06-02T07:07:23.111Z",
+      "heroMediaId": "cmpwassau0010uov4minpm5q2",
+      "findings": [
+        {
+          "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Polpette al sugo are Italian polpette simmered in a straightforward tomato sauce. The meatballs are made with beef and pork, soaked bread fo"
+          "snippet": "Polpettone is the Italian meatloaf: a mixture of minced beef and pork packed around a hard-boiled egg, braised in tomato sauce on the hob. S"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Polpette al sugo are Italian polpette simmered in a straightforward tomato sauce. The meatballs are made with beef and pork, soaked bread fo"
-        },
+          "snippet": "Polpettone is the Italian meatloaf: a mixture of minced beef and pork packed around a hard-boiled egg, braised in tomato sauce on the hob. S"
+        }
+      ]
+    },
+    {
+      "slug": "polpo-alla-luciana",
+      "tutorialId": "cmpwart6k00012wv49r54c5jj",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:20.578Z",
+      "publishedAt": "2026-06-02T07:09:39.813Z",
+      "heroMediaId": "cmpwastsf0012uov4agg9iem3",
+      "findings": [
         {
           "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaos7s000f9sv4e5mqfzko (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Polpo alla luciana is the octopus braise of Naples: whole octopus slow-cooked in a covered terracotta pot with tomato, garlic, olive oil, an"
         }
       ]
     },
@@ -46640,6 +46793,32 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Poppy seeds used in soap making are the same culinary poppy seeds sold in supermarkets. They are small enough to provide gentle exfoliation "
+        }
+      ]
+    },
+    {
+      "slug": "porchetta",
+      "tutorialId": "cmpwapjfv0000iwv4vecb637g",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:21.182Z",
+      "publishedAt": "2026-06-02T07:07:53.871Z",
+      "heroMediaId": "cmpwasvos0014uov4ic2zujvz",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Porchetta is a whole rolled pork belly stuffed with garlic, rosemary, fennel seeds, and sage, then roasted slowly until the flesh is juicy a"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Porchetta is a whole rolled pork belly stuffed with garlic, rosemary, fennel seeds, and sage, then roasted slowly until the flesh is juicy a"
         }
       ]
     },
@@ -49935,44 +50114,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:22.398Z",
       "publishedAt": "2026-06-02T07:05:52.283Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwaswxu0016uov46w1uw0k2",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{olive-oil}} — must be substituted before publish",
-          "snippet": "Warm {{olive-oil}} of olive oil and the lard if using in a large, heavy casserole over medium heat. "
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "The genovese is a Neapolitan Sunday sauce: a slow braise of beef buried under a deep pile of onions, cooked for at least three hours until t"
+          "snippet": "The Neapolitan genovese is a slow sauce of onions cooked down for hours until they become almost melted, enriched with braised beef. Despite"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "The genovese is a Neapolitan Sunday sauce: a slow braise of beef buried under a deep pile of onions, cooked for at least three hours until t"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwamxoi000cigv4rd80vgqg (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwamxoi000digv4vmrf2ko5 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "The Neapolitan genovese is a slow sauce of onions cooked down for hours until they become almost melted, enriched with braised beef. Despite"
         }
       ]
     },
@@ -49982,44 +50140,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:22.885Z",
       "publishedAt": "2026-06-02T07:05:56.896Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwasxv50018uov477ua6ybv",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{olive-oil}} — must be substituted before publish",
-          "snippet": "Heat {{olive-oil}} of olive oil in a wide frying pan over medium-high heat. Crumble in {{sausage-mea"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Rigatoni alla norcina is the sausage-and-cream pasta of Umbria, where good pork is the foundation of the regional table. The sausagemeat is "
+          "snippet": "Rigatoni alla norcina is an Umbrian pasta of Italian sausage, cream, and a generous amount of black pepper. The name comes from Norcia, the "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Rigatoni alla norcina is the sausage-and-cream pasta of Umbria, where good pork is the foundation of the regional table. The sausagemeat is "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwan18p000cqgv4v1ynihq5 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwan18p000dqgv4jwvp51v9 (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Rigatoni alla norcina is an Umbrian pasta of Italian sausage, cream, and a generous amount of black pepper. The name comes from Norcia, the "
         }
       ]
     },
@@ -50029,27 +50166,16 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:23.937Z",
       "publishedAt": "2026-06-02T07:06:01.546Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwasynh001auov4x6pztxqx",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
           "message": "americanism: Americanism \"fall\" — prefer \"autumn\"",
           "path": "body > troubleshooter[10] > item[0] > symptom",
           "snippet": "fall"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{beef-mince}} — must be substituted before publish",
-          "snippet": "Combine {{beef-mince}} of beef mince, {{pork-mince}} of pork mince, the egg, breadcrumbs, Parmesan, "
         },
         {
           "severity": "BLOCK",
@@ -50060,22 +50186,10 @@
         },
         {
           "severity": "BLOCK",
-          "kind": "opening-pattern-missing-hook",
-          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
-          "path": "body > paragraph[0]",
-          "snippet": "Rigatoni con polpettine is a straightforward pasta dish: small meatballs rolled to walnut size, browned in a little oil, then finished in a "
-        },
-        {
-          "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Rigatoni con polpettine is a straightforward pasta dish: small meatballs rolled to walnut size, browned in a little oil, then finished in a "
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwan4tt000hmsv4ot2w3top (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Rigatoni con polpettine pairs thick-ridged pasta tubes with miniature pork-and-beef meatballs simmered in a simple tomato sauce. The meatbal"
         }
       ]
     },
@@ -50208,39 +50322,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:24.360Z",
       "publishedAt": "2026-06-02T07:06:38.991Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwaszjo001cuov4va9fbb86",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{arborio-rice}} — must be substituted before publish",
-          "snippet": "Add {{arborio-rice}} of rice and stir for 2 minutes until coated. Pour in {{red-wine}} of red wine a"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto al barolo is the red-wine risotto of Piedmont: the Nebbiolo goes in at the start in place of white wine, turning the rice a deep red"
+          "snippet": "Risotto al barolo is a Piemontese risotto made with red wine in place of white. The rice turns a deep reddish-purple as it cooks, and the fi"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto al barolo is the red-wine risotto of Piedmont: the Nebbiolo goes in at the start in place of white wine, turning the rice a deep red"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanxpi00097kv4dpiw292x (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Risotto al barolo is a Piemontese risotto made with red wine in place of white. The rice turns a deep reddish-purple as it cooks, and the fi"
         }
       ]
     },
@@ -50309,39 +50407,30 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:25.266Z",
       "publishedAt": "2026-06-02T07:06:55.657Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat06t001euov4y8ls91b8",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{arborio-rice}} — must be substituted before publish",
-          "snippet": "Melt 40 g of butter in a wide heavy pan over medium-low heat. Cook the shallots gently for 8 minutes"
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Risotto al tartufo is a butter-and-Parmesan risotto finished with truffle paste. Fresh truffle is the luxury version; truffle paste, widely "
         },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto al tartufo is a simple, clean risotto: butter, good stock, Parmesan, and truffle paste folded in at the end. The truffle goes in off"
+          "snippet": "Risotto al tartufo is a butter-and-Parmesan risotto finished with truffle paste. Fresh truffle is the luxury version; truffle paste, widely "
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto al tartufo is a simple, clean risotto: butter, good stock, Parmesan, and truffle paste folded in at the end. The truffle goes in off"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaoak2000azkv4f4ajaq1k (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Risotto al tartufo is a butter-and-Parmesan risotto finished with truffle paste. Fresh truffle is the luxury version; truffle paste, widely "
         }
       ]
     },
@@ -50351,46 +50440,30 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:03.259Z",
+      "voiceRetrofittedAt": "2026-06-02T07:11:25.741Z",
       "publishedAt": "2026-06-02T07:06:33.503Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat0w8001guov4yqrblylv",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{saffron}} — must be substituted before publish",
-          "snippet": "Put {{saffron}} of saffron into a small cup with 3 tablespoons of warm stock. Leave for 10 minutes t"
-        },
-        {
-          "severity": "BLOCK",
           "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "Risotto alla milanese is the oldest documented risotto, appearing in print in 1809 and later described in detail by Artusi. It is served alo"
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[0]",
+          "snippet": "Risotto alla milanese is the golden saffron risotto of Milan, traditionally served with osso buco. Saffron turns the rice a deep amber yello"
         },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto alla milanese is the saffron risotto of Milan: a golden rice dish finished with cold butter and Parmesan. The saffron should be stee"
+          "snippet": "Risotto alla milanese is the golden saffron risotto of Milan, traditionally served with osso buco. Saffron turns the rice a deep amber yello"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto alla milanese is the saffron risotto of Milan: a golden rice dish finished with cold butter and Parmesan. The saffron should be stee"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanti50008wov4yli74u48 (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Risotto alla milanese is the golden saffron risotto of Milan, traditionally served with osso buco. Saffron turns the rice a deep amber yello"
         }
       ]
     },
@@ -50400,47 +50473,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:26.372Z",
       "publishedAt": "2026-06-02T07:06:45.318Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat1rc001iuov46t9l45bd",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "WARN",
-          "kind": "voice-violation",
-          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
-          "path": "body > paragraph[0] > text"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{arborio-rice}} — must be substituted before publish",
-          "snippet": "Heat the remaining olive oil in the same pan. Cook the shallots for 5 minutes. Add the garlic and ch"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "grade-level-strict",
-          "message": "paragraph reads at grade 11.4 (qc threshold: 11) — simplify (target grade 6-8)",
-          "path": "body > paragraph[13]",
-          "snippet": "Seafood risotto appears along every coast of Italy, from the Venetian lagoon to the Sicilian ports. The Venetian version (risi e bisi, and i"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto alla pescatora is a mixed seafood risotto: prawns, mussels, clams, and squid, cooked in a light seafood stock that becomes the base "
+          "snippet": "Risotto alla pescatora is the Italian fisherman's risotto: a combination of mixed seafood cooked into a rich, golden stock, then the rice is"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto alla pescatora is a mixed seafood risotto: prawns, mussels, clams, and squid, cooked in a light seafood stock that becomes the base "
+          "snippet": "Risotto alla pescatora is the Italian fisherman's risotto: a combination of mixed seafood cooked into a rich, golden stock, then the rice is"
         }
       ]
     },
@@ -50502,39 +50551,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:27.069Z",
       "publishedAt": "2026-06-02T07:06:50.429Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat2p8001kuov48o790onu",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{saffron}} — must be substituted before publish",
-          "snippet": "Steep {{saffron}} of saffron in 3 tablespoons of warm stock for 10 minutes. Keep the remaining {{sto"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto allo zafferano is the straightforward saffron risotto: a creamy, golden rice dish made with chicken or vegetable stock, steeped saff"
+          "snippet": "Risotto allo zafferano is the simple saffron risotto: the rice is cooked in chicken or vegetable stock and finished with saffron, butter, an"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Risotto allo zafferano is the straightforward saffron risotto: a creamy, golden rice dish made with chicken or vegetable stock, steeped saff"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwao6j30009xov4r27eb74o (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Risotto allo zafferano is the simple saffron risotto: the rice is cooked in chicken or vegetable stock and finished with saffron, butter, an"
         }
       ]
     },
@@ -53635,6 +53668,32 @@
       ]
     },
     {
+      "slug": "salsiccia-e-fagioli",
+      "tutorialId": "cmpwapubf0001k0v43n9kbjrp",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:27.541Z",
+      "publishedAt": "2026-06-02T07:08:07.958Z",
+      "heroMediaId": "cmpwat46m001muov4uq1l0iuf",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Salsiccia e fagioli is a Tuscan peasant stew of pork sausages and cannellini beans cooked in tomato and sage. It is one of the most comforti"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Salsiccia e fagioli is a Tuscan peasant stew of pork sausages and cannellini beans cooked in tomato and sage. It is one of the most comforti"
+        }
+      ]
+    },
+    {
       "slug": "salt-bar-soap-coconut",
       "tutorialId": "cmpdlaufp0000eov4q6255j14",
       "type": "RECIPE",
@@ -54141,44 +54200,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:28.447Z",
       "publishedAt": "2026-06-02T07:07:00.191Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat4sm001ouov4qpv2cteq",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{chicken-breast}} — must be substituted before publish",
-          "snippet": "Lay {{chicken-breast}} of chicken breast halves between two sheets of baking paper. Beat with a roll"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Scaloppine al limone are thin beaten scaloppine dusted in flour, fried in butter, and finished with lemon juice and a little more butter. Th"
+          "snippet": "Scaloppine al limone are thin escalopes cooked fast in a hot pan, then finished in a sharp lemon-and-butter pan sauce. The classic version u"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Scaloppine al limone are thin beaten scaloppine dusted in flour, fried in butter, and finished with lemon juice and a little more butter. Th"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaoe38000960v4dxtaol46 (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaoe38000a60v4l2m2ttq2 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "Scaloppine al limone are thin escalopes cooked fast in a hot pan, then finished in a sharp lemon-and-butter pan sauce. The classic version u"
         }
       ]
     },
@@ -54188,46 +54226,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:28.897Z",
       "publishedAt": "2026-06-02T07:07:05.021Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat5mt001quov4iampcqy3",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{chicken-breast}} — must be substituted before publish",
-          "snippet": "Beat {{chicken-breast}} of chicken breast halves flat to 5 mm. Dust in {{plain-flour}} of seasoned f"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "historical-century-in-body",
-          "message": "historical century reference \"18th century\" in body — move to sourceNotes or introduce with a person (e.g. \"the 17th-century herbalist X\")",
-          "path": "body > paragraph[7]",
-          "snippet": "18th century"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Scaloppine al marsala is a richer version of the lemon escalope: the same beaten, floured chicken, but the sauce is built on dry Marsala and"
+          "snippet": "Scaloppine al marsala pairs beaten chicken escalopes with a deeply flavoured pan sauce of Marsala wine and mushrooms. The Marsala reduces qu"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Scaloppine al marsala is a richer version of the lemon escalope: the same beaten, floured chicken, but the sauce is built on dry Marsala and"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaohsc000bq4v49nu3dfke (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Scaloppine al marsala pairs beaten chicken escalopes with a deeply flavoured pan sauce of Marsala wine and mushrooms. The Marsala reduces qu"
         }
       ]
     },
@@ -60469,15 +60484,10 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:53:57.599Z",
+      "voiceRetrofittedAt": "2026-06-02T07:11:29.338Z",
       "publishedAt": "2026-06-02T07:05:37.150Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat6c8001suov40xdy5zy7",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
         {
           "severity": "WARN",
           "kind": "voice-violation",
@@ -60494,23 +60504,17 @@
         },
         {
           "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{clams}} — must be substituted before publish",
-          "snippet": "Put {{clams}} of clams into a large bowl of cold water with a generous handful of salt. Leave for 30"
-        },
-        {
-          "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Spaghetti alle vongole is a clam pasta from the Neapolitan coast: live vongole cooked in a hot, garlicky pan with white wine until they snap"
+          "snippet": "Spaghetti alle vongole is the Neapolitan clam pasta that rewards a hot pan and a quick hand. Clams open in minutes and release a salty, brin"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Spaghetti alle vongole is a clam pasta from the Neapolitan coast: live vongole cooked in a hot, garlicky pan with white wine until they snap"
+          "snippet": "Spaghetti alle vongole is the Neapolitan clam pasta that rewards a hot pan and a quick hand. Clams open in minutes and release a salty, brin"
         }
       ]
     },
@@ -60520,27 +60524,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:30.227Z",
       "publishedAt": "2026-06-02T07:05:42.560Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwat7as001uuov469ofy00v",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{clams}} — must be substituted before publish",
-          "snippet": "Soak {{clams}} of clams in cold, well-salted water for 30 minutes. Lift them out by hand into a cola"
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Spaghetti alle vongole in bianco is the no-tomato version of the classic: clams, garlic, white wine, and parsley. Without the tomato, the br"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Spaghetti alle vongole in bianco is the white version of the vongole, made without tomato so the flavour of the clams stands alone. It taste"
+          "snippet": "Spaghetti alle vongole in bianco is the no-tomato version of the classic: clams, garlic, white wine, and parsley. Without the tomato, the br"
         }
       ]
     },
@@ -61998,6 +61998,32 @@
       ]
     },
     {
+      "slug": "stracotto",
+      "tutorialId": "cmpwaqna2000124v4j6vjimaz",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:30.931Z",
+      "publishedAt": "2026-06-02T07:08:45.494Z",
+      "heroMediaId": "cmpwat8xy001yuov4pd52hdpf",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Stracotto is Tuscan 'overcooked' beef: a whole joint braised for four or more hours in red wine and tomato until the meat is so soft it bare"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Stracotto is Tuscan 'overcooked' beef: a whole joint braised for four or more hours in red wine and tomato until the meat is so soft it bare"
+        }
+      ]
+    },
+    {
       "slug": "strawberry-banana-smoothie",
       "tutorialId": "cmp5nxxw00000ngv4bb7sbvvk",
       "type": "RECIPE",
@@ -62700,6 +62726,32 @@
       ]
     },
     {
+      "slug": "suppli",
+      "tutorialId": "cmpwariy80001zwv4k2ldt9zy",
+      "type": "RECIPE",
+      "categorySlug": "cooking",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T07:11:31.966Z",
+      "publishedAt": "2026-06-02T07:09:26.558Z",
+      "heroMediaId": "cmpwataeo0020uov4crrutls7",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Supplì are the Roman street-food rice balls: risotto bound with egg, shaped around a piece of mozzarella, breaded, and fried until the outsi"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "content-type-opening-mismatch",
+          "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
+          "path": "body > paragraph[0]",
+          "snippet": "Supplì are the Roman street-food rice balls: risotto bound with egg, shaped around a piece of mozzarella, breaded, and fried until the outsi"
+        }
+      ]
+    },
+    {
       "slug": "surowka-z-kapusty",
       "tutorialId": "cmpbg3d960000i4v4xjuj0oys",
       "type": "RECIPE",
@@ -63254,44 +63306,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:32.440Z",
       "publishedAt": "2026-06-02T07:07:13.946Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwatbg90022uov4hm6cr5g3",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{beef-ribeye}} — must be substituted before publish",
-          "snippet": "Pat {{beef-ribeye}} of steak dry and season generously with salt and pepper. Heat a griddle pan or h"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Tagliata di manzo is sliced grilled steak served over rocket with Parmesan shavings and a drizzle of olive oil. The tagliata method means th"
+          "snippet": "Tagliata di manzo is a Florentine way of serving steak: the beef is grilled hot and fast, rested, then sliced thinly and laid over a mound o"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Tagliata di manzo is sliced grilled steak served over rocket with Parmesan shavings and a drizzle of olive oil. The tagliata method means th"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaooo5000830v4r6fv3wr7 (ingredientId=cmp49f7ll0087rkv43k6j3dft) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwaooo5000930v4ld1ucmko (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "Tagliata di manzo is a Florentine way of serving steak: the beef is grilled hot and fast, rested, then sliced thinly and laid over a mound o"
         }
       ]
     },
@@ -63301,44 +63332,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": "2026-05-29T08:54:13.146Z",
+      "voiceRetrofittedAt": "2026-06-02T07:11:33.002Z",
       "publishedAt": "2026-06-02T07:06:10.694Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwatcp50024uov43539oe2f",
       "findings": [
-        {
-          "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{olive-oil}} — must be substituted before publish",
-          "snippet": "Heat {{olive-oil}} of olive oil and half the butter in a wide frying pan over high heat. Add {{chest"
-        },
         {
           "severity": "BLOCK",
           "kind": "opening-pattern-missing-hook",
           "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
           "path": "body > paragraph[0]",
-          "snippet": "Tagliatelle ai funghi is one of the simplest Italian pasta dishes: broad tagliatelle tossed with garlicky mushrooms, butter, and fresh parsl"
+          "snippet": "Tagliatelle ai funghi is a simple northern Italian pasta: broad egg-pasta ribbons dressed with a quick sauté of mushrooms, garlic, butter, a"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Tagliatelle ai funghi is one of the simplest Italian pasta dishes: broad tagliatelle tossed with garlicky mushrooms, butter, and fresh parsl"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanbvq000aesv4yitt9vp7 (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwanbvq000besv4a4gl1cd2 (ingredientId=cmp49f7mq0089rkv49t6gtibv) has null amount — list renders empty"
+          "snippet": "Tagliatelle ai funghi is a simple northern Italian pasta: broad egg-pasta ribbons dressed with a quick sauté of mushrooms, garlic, butter, a"
         }
       ]
     },
@@ -65073,32 +65083,23 @@
       "type": "RECIPE",
       "categorySlug": "cooking",
       "status": "BLOCK",
-      "voiceRetrofittedAt": null,
+      "voiceRetrofittedAt": "2026-06-02T07:11:33.798Z",
       "publishedAt": "2026-06-02T07:05:47.214Z",
-      "heroMediaId": null,
+      "heroMediaId": "cmpwate8y0026uov46nivqpli",
       "findings": [
         {
           "severity": "BLOCK",
-          "kind": "hero-missing",
-          "message": "Tutorial PUBLISHED with heroMediaId IS NULL — hero-fill must be run"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "placeholder-string",
-          "message": "body contains unresolved placeholder {{garlic}} — must be substituted before publish",
-          "snippet": "Put the basil, {{garlic}} of garlic, {{parmesan}} of Parmesan, {{pecorino-romano}} of Pecorino, and "
+          "kind": "opening-pattern-missing-hook",
+          "message": "orientation paragraph has no hook signal (no yield / time / \"the secret to\" / \"for [purpose]\" / \"soothes/eases/calms\" / kitchen-tradition framing) — voice-spec §3 requires the secret-in-first-sentence pattern",
+          "path": "body > paragraph[0]",
+          "snippet": "Trenette al pesto is the Ligurian version of pesto pasta, traditionally served with small pieces of green bean and potato cooked in the same"
         },
         {
           "severity": "BLOCK",
           "kind": "content-type-opening-mismatch",
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
-          "snippet": "Trenette al pesto is the full Ligurian treatment of pesto pasta: trenette cooked in the same pot as diced potato and green beans. The potato"
-        },
-        {
-          "severity": "BLOCK",
-          "kind": "ingredient-amount-missing",
-          "message": "recipeIngredient cmpwamtro000cj8v4d2n8kdyy (ingredientId=cmp49f7kz0086rkv4lsr8ds3o) has null amount — list renders empty"
+          "snippet": "Trenette al pesto is the Ligurian version of pesto pasta, traditionally served with small pieces of green bean and potato cooked in the same"
         }
       ]
     },

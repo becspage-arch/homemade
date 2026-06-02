@@ -294,3 +294,66 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 07:11:33
+
+Generated: 2026-06-02T07:11:33.870Z
+
+Processed: 40
+PASS: 4
+STILL_BLOCKED: 36
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 107 |
+| opening-pattern-missing-hook | 97 |
+| ingredient-amount-missing | 54 |
+| placeholder-string | 40 |
+| grade-level-strict | 22 |
+| prose-prep-steps | 6 |
+| historical-century-in-body | 2 |
+
+## Still BLOCKED (sample 20)
+
+- abbacchio-alla-romana: opening-pattern-missing-hook, content-type-opening-mismatch
+- agnello-in-fricassea: opening-pattern-missing-hook, content-type-opening-mismatch
+- arancini-al-burro: prose-prep-steps, opening-pattern-missing-hook, content-type-opening-mismatch
+- brasato-al-barolo: opening-pattern-missing-hook, content-type-opening-mismatch
+- coda-alla-vaccinara: opening-pattern-missing-hook, content-type-opening-mismatch
+- coniglio-alla-cacciatora: grade-level-strict, opening-pattern-missing-hook
+- cotoletta-alla-milanese: opening-pattern-missing-hook, content-type-opening-mismatch
+- farfalle-al-salmone: opening-pattern-missing-hook, content-type-opening-mismatch
+- maiale-al-latte: opening-pattern-missing-hook, content-type-opening-mismatch
+- orecchiette-con-salsiccia: opening-pattern-missing-hook, content-type-opening-mismatch
+- pasta-alla-zozzona: opening-pattern-missing-hook, content-type-opening-mismatch
+- pollo-alla-milanese: opening-pattern-missing-hook, content-type-opening-mismatch
+- pollo-alla-romana: opening-pattern-missing-hook, content-type-opening-mismatch
+- pollo-con-peperoni: opening-pattern-missing-hook, content-type-opening-mismatch
+- polpette-al-sugo: prose-prep-steps, content-type-opening-mismatch
+- polpettone: opening-pattern-missing-hook, content-type-opening-mismatch
+- polpo-alla-luciana: content-type-opening-mismatch
+- porchetta: opening-pattern-missing-hook, content-type-opening-mismatch
+- rigatoni-alla-genovese: opening-pattern-missing-hook, content-type-opening-mismatch
+- rigatoni-alla-norcina: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 08:07:01
+
+Generated: 2026-06-02T08:07:01.039Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

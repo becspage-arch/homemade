@@ -64,3 +64,40 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - fitting-an-outdoor-security-light-on-an-existing-circuit grade-level-strict — applied: 
 - re-webbing-and-re-foaming-a-mid-century-armchair-seat voice-violation,grade-level-strict — applied: 
 - restoring-chrome-and-metal-fittings-on-vintage-furniture grade-level-strict — applied: 
+
+- abbacchio-alla-romana opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- agnello-in-fricassea opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- arancini-al-burro prose-prep-steps,opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- brasato-al-barolo opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- coda-alla-vaccinara opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- coniglio-alla-cacciatora grade-level-strict,opening-pattern-missing-hook — applied: body-rewrite:1,orientation-from-excerpt
+- cotoletta-alla-milanese opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- farfalle-al-salmone opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- maiale-al-latte opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- orecchiette-con-salsiccia opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- pasta-alla-zozzona opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- pollo-alla-milanese opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- pollo-alla-romana opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- pollo-con-peperoni opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- polpette-al-sugo prose-prep-steps,content-type-opening-mismatch — applied: orientation-from-excerpt
+- polpettone opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- polpo-alla-luciana content-type-opening-mismatch — applied: orientation-from-excerpt
+- porchetta opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- rigatoni-alla-genovese opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- rigatoni-alla-norcina opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- rigatoni-con-polpettine grade-level-strict,content-type-opening-mismatch — applied: orientation-from-excerpt
+- risotto-al-barolo opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- risotto-al-tartufo grade-level-strict,opening-pattern-missing-hook,content-type-opening-mismatch — applied: body-rewrite:1,orientation-from-excerpt
+- risotto-alla-milanese grade-level-strict,opening-pattern-missing-hook,content-type-opening-mismatch — applied: body-rewrite:1,orientation-from-excerpt
+- risotto-alla-pescatora opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- risotto-allo-zafferano opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- salsiccia-e-fagioli opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- scaloppine-al-limone opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- scaloppine-al-marsala opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- spaghetti-alle-vongole opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- spaghetti-alle-vongole-in-bianco opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- stracotto opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- suppli opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- tagliata-di-manzo opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- tagliatelle-ai-funghi opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
+- trenette-al-pesto opening-pattern-missing-hook,content-type-opening-mismatch — applied: orientation-from-excerpt
