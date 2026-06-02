@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T03:08:13.962Z",
-  "totalScanned": 6552,
+  "generatedAt": "2026-06-02T04:08:08.030Z",
+  "totalScanned": 6592,
   "passCount": 0,
-  "blockCount": 2492,
+  "blockCount": 2500,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
@@ -21,6 +21,12 @@
       "total": 356,
       "pass": 0,
       "block": 356,
+      "warnOnly": 0
+    },
+    "animals-smallholding": {
+      "total": 31,
+      "pass": 0,
+      "block": 31,
       "warnOnly": 0
     },
     "home-repair": {
@@ -47,12 +53,6 @@
       "block": 2,
       "warnOnly": 0
     },
-    "animals-smallholding": {
-      "total": 23,
-      "pass": 0,
-      "block": 23,
-      "warnOnly": 0
-    },
     "paper-word": {
       "total": 1,
       "pass": 0,
@@ -61,10 +61,10 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 823,
+    "voice-violation": 835,
     "opening-pattern-missing-hook": 2112,
     "content-type-opening-mismatch": 2408,
-    "grade-level-strict": 100,
+    "grade-level-strict": 113,
     "prose-prep-steps": 83,
     "body-missing-method": 1
   },
@@ -2530,6 +2530,31 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Applesauce cake is an American autumn cake: a moist, warmly spiced sponge made with stewed apple purée in place of some of the fat, giving i"
+        }
+      ]
+    },
+    {
+      "slug": "applying-for-a-cph-number",
+      "tutorialId": "cmpw3fe3p0001t4v41ns6s8g7",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:45.623Z",
+      "publishedAt": "2026-06-02T03:44:03.088Z",
+      "heroMediaId": "cmpw3kgga0000ekv4988dtgsg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.3 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > paragraph[2] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[2]",
+          "snippet": "The Rural Payments Agency issues CPH numbers in England. Scotland, Wales, and Northern Ireland have equivalent bodies. The application is on"
         }
       ]
     },
@@ -9672,6 +9697,31 @@
       ]
     },
     {
+      "slug": "calculating-winter-feed-requirements-for-livestock",
+      "tutorialId": "cmpw3fb660001kov4f75nhtqg",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:46.416Z",
+      "publishedAt": "2026-06-02T03:43:59.297Z",
+      "heroMediaId": "cmpw3kjcj0008ekv436mzxgd2",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 14.4 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 14.4 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Calculating winter feed requirements for livestock go here."
+        }
+      ]
+    },
+    {
       "slug": "calendula-lip-balm",
       "tutorialId": "cmpdl743d0000c4v4hwgh8ls3",
       "type": "RECIPE",
@@ -14527,6 +14577,52 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Chocolate truffles are ganache (warm cream poured over chocolate, stirred to a smooth glossy emulsion), chilled until firm, rolled into ball"
+        }
+      ]
+    },
+    {
+      "slug": "choosing-a-pig-breed-for-the-smallholding",
+      "tutorialId": "cmpw3e55o00001wv4k280r9nt",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:46.592Z",
+      "publishedAt": "2026-06-02T03:43:04.840Z",
+      "heroMediaId": "cmpw3kjyc000aekv4e6nnzq0s",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"weaner\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[2] > text",
+          "snippet": "weaner"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"weaner\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > paragraph[8] > text",
+          "snippet": "weaner"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[0] > paragraph[0]",
+          "snippet": "Tamworth, lean, long-bodied, excellent outdoor pig; ginger colouring suits woodland and pasture; good for bacon."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[6] > listItem[3] > paragraph[0]",
+          "snippet": "Gloucester Old Spot, traditional apple-orchard pig; big-framed, heavy fat cover, good for lard production."
         }
       ]
     },
@@ -28272,6 +28368,52 @@
       ]
     },
     {
+      "slug": "herd-health-programme-pig-vaccination-calendar",
+      "tutorialId": "cmpw3el2o0002tov4u6nx0o3p",
+      "type": "READING",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:47.295Z",
+      "publishedAt": "2026-06-02T03:43:25.475Z",
+      "heroMediaId": "cmpw3krrc000uekv4z0lrs28q",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > bulletList[8] > listItem[3] > paragraph[0] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[0] > paragraph[0]",
+          "snippet": "January: winter health check, body condition scoring all breeding animals."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[3] > paragraph[0]",
+          "snippet": "September: erysipelas booster if on a six-month programme; check finishing pigs are on target weight for autumn."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[8] > listItem[4] > paragraph[0]",
+          "snippet": "November: review medicine records with vet; confirm prescription renewals for next year."
+        }
+      ]
+    },
+    {
       "slug": "hibiscus-cold-process-soap",
       "tutorialId": "cmpsupmrg0000mgv46d68lia7",
       "type": "RECIPE",
@@ -40463,6 +40605,31 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "A French omelette is flat and pale, folded rather than rolled, and baveuse at the centre: just set on the outside, still creamy within. It t"
+        }
+      ]
+    },
+    {
+      "slug": "on-farm-injection-technique-for-livestock",
+      "tutorialId": "cmpw3for500026sv4mrngh6n9",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:48.031Z",
+      "publishedAt": "2026-06-02T03:44:16.901Z",
+      "heroMediaId": "cmpw3kwef0018ekv4g5efnxy6",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[7] > listItem[2] > paragraph[0]",
+          "snippet": "Insert the needle quickly with confidence, hesitation and slow insertion hurts more than a single clean entry."
         }
       ]
     },
@@ -54068,6 +54235,25 @@
       ]
     },
     {
+      "slug": "sheep-footbath-design-and-use",
+      "tutorialId": "cmpw3e23k0000hkv482tus6by",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:49.274Z",
+      "publishedAt": "2026-06-02T03:43:00.872Z",
+      "heroMediaId": "cmpw3l4tv001sekv4i0sgmsqp",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.0 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > paragraph[7]",
+          "snippet": "For active foot rot treatment, your vet may prescribe an antibiotic footbath solution. Follow the prescription precisely, over-concentration"
+        }
+      ]
+    },
+    {
       "slug": "shepherds-pie",
       "tutorialId": "cmp5nkc0y0000uwv4vhekfef4",
       "type": "RECIPE",
@@ -63829,6 +64015,38 @@
       ]
     },
     {
+      "slug": "treating-mycoplasma-in-a-laying-flock",
+      "tutorialId": "cmpw3d3uf00020ov4koc5ftj1",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:51.080Z",
+      "publishedAt": "2026-06-02T03:42:16.491Z",
+      "heroMediaId": "cmpw3l6py001yekv49xflw2ie",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "body > orderedList[7] > listItem[1] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.2 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[2] > paragraph[0]",
+          "snippet": "Swollen infraorbital sinuses, the area directly below the eye looks puffy."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[7] > listItem[1] > paragraph[0]",
+          "snippet": "Reduce stress triggers. Mixed-age introductions, overcrowding, sudden diet changes, and predator disturbance all suppress immunity. During a"
+        }
+      ]
+    },
+    {
       "slug": "tres-leches-cake",
       "tutorialId": "cmpa2fe4a00018cv4eiojhmtx",
       "type": "RECIPE",
@@ -64909,6 +65127,53 @@
           "message": "RECIPE orientation missing yield + time — voice-spec §3.1 closes the orientation with \"[yield + time]\"",
           "path": "body > paragraph[0]",
           "snippet": "Vareniki dough is made with boiling water instead of egg and soured cream. That gives a softer, more flexible result, a touch easier to seal"
+        }
+      ]
+    },
+    {
+      "slug": "varroa-alcohol-wash-monitoring",
+      "tutorialId": "cmpw3cl9f0000swv42ub3xqcb",
+      "type": "TECHNIQUE",
+      "categorySlug": "animals-smallholding",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T03:48:51.402Z",
+      "publishedAt": "2026-06-02T03:41:52.392Z",
+      "heroMediaId": "cmpw3l83w0022ekv41cy6iugr",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "title",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "sourceNotes",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "unflagged-jargon: \"varroa\" — domain jargon — register in glossaryTerms[] with a definition",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0] > text",
+          "snippet": "varroa"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.1 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[0] > paragraph[0]",
+          "snippet": "A jar or container with a fine-mesh lid (purpose-made varroa-wash jar or a mason jar with mesh screen replacing the disc)."
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > bulletList[2] > listItem[1] > paragraph[0]",
+          "snippet": "Windscreen washer fluid or isopropyl alcohol, enough to cover the bee sample fully."
         }
       ]
     },

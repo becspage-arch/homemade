@@ -150,3 +150,67 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 03:40:19
+
+Generated: 2026-06-02T03:40:19.797Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 03:48:51
+
+Generated: 2026-06-02T03:48:51.692Z
+
+Processed: 40
+PASS: 32
+STILL_BLOCKED: 8
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 58 |
+| body-missing-method | 5 |
+| voice-violation | 4 |
+
+## Still BLOCKED (sample 20)
+
+- applying-for-a-cph-number: voice-violation, grade-level-strict
+- calculating-winter-feed-requirements-for-livestock: voice-violation, grade-level-strict
+- choosing-a-pig-breed-for-the-smallholding: grade-level-strict
+- herd-health-programme-pig-vaccination-calendar: grade-level-strict
+- on-farm-injection-technique-for-livestock: grade-level-strict
+- sheep-footbath-design-and-use: grade-level-strict
+- treating-mycoplasma-in-a-laying-flock: grade-level-strict
+- varroa-alcohol-wash-monitoring: grade-level-strict
+
+---
+
+## Run at 04:07:01
+
+Generated: 2026-06-02T04:07:01.084Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

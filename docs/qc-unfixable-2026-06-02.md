@@ -47,3 +47,12 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - wood-ash-in-compost grade-level-strict — applied: 
 - wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
 - wormery-setup-and-management grade-level-strict — applied: 
+
+- applying-for-a-cph-number voice-violation,grade-level-strict — applied: 
+- calculating-winter-feed-requirements-for-livestock voice-violation,grade-level-strict — applied: 
+- choosing-a-pig-breed-for-the-smallholding grade-level-strict — applied: 
+- herd-health-programme-pig-vaccination-calendar grade-level-strict — applied: 
+- on-farm-injection-technique-for-livestock grade-level-strict — applied: 
+- sheep-footbath-design-and-use grade-level-strict — applied: 
+- treating-mycoplasma-in-a-laying-flock grade-level-strict — applied: 
+- varroa-alcohol-wash-monitoring grade-level-strict — applied: 
