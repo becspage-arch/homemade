@@ -56,3 +56,11 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - sheep-footbath-design-and-use grade-level-strict — applied: 
 - treating-mycoplasma-in-a-laying-flock grade-level-strict — applied: 
 - varroa-alcohol-wash-monitoring grade-level-strict — applied: 
+
+- fitting-a-domestic-water-softener-bypass-valve grade-level-strict — applied: 
+- fitting-a-double-pole-isolator-switch-for-an-electric-shower voice-violation,grade-level-strict — applied: 
+- fitting-a-pressure-reducing-valve-to-a-mains-supply grade-level-strict — applied: 
+- fitting-a-ventilation-grille-in-an-external-cavity-wall voice-violation,grade-level-strict — applied: 
+- fitting-an-outdoor-security-light-on-an-existing-circuit grade-level-strict — applied: 
+- re-webbing-and-re-foaming-a-mid-century-armchair-seat voice-violation,grade-level-strict — applied: 
+- restoring-chrome-and-metal-fittings-on-vintage-furniture grade-level-strict — applied: 

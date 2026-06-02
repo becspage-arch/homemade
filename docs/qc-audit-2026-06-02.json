@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T04:08:08.030Z",
-  "totalScanned": 6592,
+  "generatedAt": "2026-06-02T05:07:59.327Z",
+  "totalScanned": 6632,
   "passCount": 0,
-  "blockCount": 2500,
+  "blockCount": 2507,
   "warnOnlyCount": 0,
   "perCategory": {
     "cooking": {
@@ -30,9 +30,9 @@
       "warnOnly": 0
     },
     "home-repair": {
-      "total": 8,
+      "total": 15,
       "pass": 0,
-      "block": 8,
+      "block": 15,
       "warnOnly": 0
     },
     "herbal-medicine": {
@@ -61,10 +61,10 @@
     }
   },
   "perRuleKind": {
-    "voice-violation": 835,
+    "voice-violation": 840,
     "opening-pattern-missing-hook": 2112,
     "content-type-opening-mismatch": 2408,
-    "grade-level-strict": 113,
+    "grade-level-strict": 120,
     "prose-prep-steps": 83,
     "body-missing-method": 1
   },
@@ -23471,6 +23471,56 @@
       ]
     },
     {
+      "slug": "fitting-a-domestic-water-softener-bypass-valve",
+      "tutorialId": "cmpw5l9s80001hwv43g1hx5e1",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:24.139Z",
+      "publishedAt": "2026-06-02T04:44:36.667Z",
+      "heroMediaId": "cmpw5q396000e3wv4e5lg98am",
+      "findings": [
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "tricolon: tricolon (three parallel items) — two adjectives almost always beats three",
+          "path": "excerpt"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[8] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a domestic water softener bypass valve go here."
+        }
+      ]
+    },
+    {
+      "slug": "fitting-a-double-pole-isolator-switch-for-an-electric-shower",
+      "tutorialId": "cmpw5lzjv0001v0v4jvtjvhhq",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:24.421Z",
+      "publishedAt": "2026-06-02T04:45:10.063Z",
+      "heroMediaId": "cmpw5q44c000g3wv4o9aiello",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 13.5 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 13.5 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a double-pole isolator switch for an electric shower go here."
+        }
+      ]
+    },
+    {
       "slug": "fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets",
       "tutorialId": "cmpvhzemp00015gv4idb1tcdp",
       "type": "TECHNIQUE",
@@ -23497,6 +23547,25 @@
       ]
     },
     {
+      "slug": "fitting-a-pressure-reducing-valve-to-a-mains-supply",
+      "tutorialId": "cmpw5lcsx0000z4v4fozhh9sp",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:26.692Z",
+      "publishedAt": "2026-06-02T04:44:40.572Z",
+      "heroMediaId": "cmpw5qhcv00123wv403rhsm4s",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a pressure-reducing valve to a mains supply go here."
+        }
+      ]
+    },
+    {
       "slug": "fitting-a-programmable-room-thermostat",
       "tutorialId": "cmpvhrx1u0002g4v47hsyhmgq",
       "type": "PATTERN",
@@ -23519,6 +23588,57 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[13] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Fitting a programmable room thermostat go here."
+        }
+      ]
+    },
+    {
+      "slug": "fitting-a-ventilation-grille-in-an-external-cavity-wall",
+      "tutorialId": "cmpw5jqf10001icv4gmasi53e",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:27.409Z",
+      "publishedAt": "2026-06-02T04:43:24.913Z",
+      "heroMediaId": "cmpw5qldk001a3wv44ya83666",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.6 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "WARN",
+          "kind": "voice-violation",
+          "message": "brand-trademark: brand name \"Target\" — generic equivalent is \"(any general-purpose shop)\"",
+          "path": "body > paragraph[4] > text",
+          "snippet": "Target"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.6 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting a ventilation grille in an external cavity wall go here."
+        }
+      ]
+    },
+    {
+      "slug": "fitting-an-outdoor-security-light-on-an-existing-circuit",
+      "tutorialId": "cmpw5lqqj0001gov46uopokb0",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:28.134Z",
+      "publishedAt": "2026-06-02T04:44:58.641Z",
+      "heroMediaId": "cmpw5qqst001g3wv416oe4ykg",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.8 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Fitting an outdoor security light on an existing circuit go here."
         }
       ]
     },
@@ -48782,6 +48902,31 @@
       ]
     },
     {
+      "slug": "re-webbing-and-re-foaming-a-mid-century-armchair-seat",
+      "tutorialId": "cmpw5m2kz0001uwv4yjznwj5g",
+      "type": "PATTERN",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:30.360Z",
+      "publishedAt": "2026-06-02T04:45:13.993Z",
+      "heroMediaId": "cmpw5r0lw001y3wv48e0la49u",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "voice-violation",
+          "message": "grade-level: paragraph reads at grade 12.7 (threshold: 12.0) — simplify vocabulary or shorten sentences (grade 6-8 register)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0] > text"
+        },
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 12.7 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[10] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Re-webbing and re-foaming a mid-century armchair seat go here."
+        }
+      ]
+    },
+    {
       "slug": "reading-and-completing-livestock-movement-forms",
       "tutorialId": "cmpvc1f4p0000gwv40cej7i2u",
       "type": "TECHNIQUE",
@@ -49057,6 +49202,25 @@
           "message": "paragraph reads at grade 11.9 (qc threshold: 11) — simplify (target grade 6-8)",
           "path": "body > orderedList[11] > listItem[0] > paragraph[0]",
           "snippet": "Step-by-step instructions for Repairing a hollow-sounding floor tile go here."
+        }
+      ]
+    },
+    {
+      "slug": "restoring-chrome-and-metal-fittings-on-vintage-furniture",
+      "tutorialId": "cmpw5mnia0001q0v4og6tw8an",
+      "type": "TECHNIQUE",
+      "categorySlug": "home-repair",
+      "status": "BLOCK",
+      "voiceRetrofittedAt": "2026-06-02T04:49:31.351Z",
+      "publishedAt": "2026-06-02T04:45:41.111Z",
+      "heroMediaId": "cmpw5r32t00223wv4dma6bygx",
+      "findings": [
+        {
+          "severity": "BLOCK",
+          "kind": "grade-level-strict",
+          "message": "paragraph reads at grade 11.3 (qc threshold: 11) — simplify (target grade 6-8)",
+          "path": "body > orderedList[12] > listItem[0] > paragraph[0]",
+          "snippet": "Step-by-step instructions for Restoring chrome and metal fittings on vintage furniture go here."
         }
       ]
     },

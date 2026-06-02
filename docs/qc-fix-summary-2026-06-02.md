@@ -214,3 +214,49 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 04:49:31
+
+Generated: 2026-06-02T04:49:31.619Z
+
+Processed: 40
+PASS: 33
+STILL_BLOCKED: 7
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 37 |
+| grade-level-strict | 25 |
+| voice-violation | 6 |
+
+## Still BLOCKED (sample 20)
+
+- fitting-a-domestic-water-softener-bypass-valve: grade-level-strict
+- fitting-a-double-pole-isolator-switch-for-an-electric-shower: voice-violation, grade-level-strict
+- fitting-a-pressure-reducing-valve-to-a-mains-supply: grade-level-strict
+- fitting-a-ventilation-grille-in-an-external-cavity-wall: voice-violation, grade-level-strict
+- fitting-an-outdoor-security-light-on-an-existing-circuit: grade-level-strict
+- re-webbing-and-re-foaming-a-mid-century-armchair-seat: voice-violation, grade-level-strict
+- restoring-chrome-and-metal-fittings-on-vintage-furniture: grade-level-strict
+
+---
+
+## Run at 05:06:24
+
+Generated: 2026-06-02T05:06:24.281Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
