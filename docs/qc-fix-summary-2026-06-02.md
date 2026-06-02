@@ -484,3 +484,137 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 16:18:59
+
+Generated: 2026-06-02T16:18:59.407Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 16:19:11
+
+Generated: 2026-06-02T16:19:11.508Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 1 |
+| content-type-opening-mismatch | 1 |
+
+
+---
+
+## Run at 16:19:23
+
+Generated: 2026-06-02T16:19:23.069Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 1 |
+| content-type-opening-mismatch | 1 |
+
+
+---
+
+## Run at 16:20:04
+
+Generated: 2026-06-02T16:20:04.453Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 16:21:59
+
+Generated: 2026-06-02T16:21:59.755Z
+
+Processed: 75
+PASS: 36
+STILL_BLOCKED: 39
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 131 |
+| content-type-opening-mismatch | 85 |
+| voice-violation | 11 |
+| hero-missing | 3 |
+| prose-prep-steps | 3 |
+
+## Still BLOCKED (sample 20)
+
+- needle-felted-weasel: hero-missing
+- baby-safe-bottom-balm: voice-violation
+- bakewell-pudding-original: opening-pattern-missing-hook
+- barley-sugar-boiled: opening-pattern-missing-hook
+- bayberry-soy-blend-candle: opening-pattern-missing-hook
+- bazlama: opening-pattern-missing-hook
+- beard-balm-cedarwood: voice-violation
+- beard-oil-sandalwood: voice-violation, opening-pattern-missing-hook
+- beeswax-birthday-taper-candles: opening-pattern-missing-hook
+- beeswax-botanical-pillar-candle: opening-pattern-missing-hook
+- beeswax-car-air-freshener: opening-pattern-missing-hook
+- beeswax-pillar-frankincense: opening-pattern-missing-hook
+- beeswax-shoe-polish: opening-pattern-missing-hook
+- beeswax-votive-candles: opening-pattern-missing-hook
+- bergamot-cedar-reed-diffuser: opening-pattern-missing-hook
+- bergamot-lime-room-spray: opening-pattern-missing-hook, content-type-opening-mismatch
+- bergamot-neroli-room-spray: opening-pattern-missing-hook, content-type-opening-mismatch
+- bin-deodoriser-discs: opening-pattern-missing-hook, content-type-opening-mismatch
+- biscotti-almond-cranberry: opening-pattern-missing-hook
+- black-pepper-amber-reed-diffuser: opening-pattern-missing-hook, content-type-opening-mismatch
+
+---
+
+## Run at 16:25:26
+
+Generated: 2026-06-02T16:25:26.209Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 1 |

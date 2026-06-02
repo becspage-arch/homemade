@@ -121,3 +121,43 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - soy-candle-rose-geranium grade-level-strict,opening-pattern-missing-hook — applied: orientation-from-excerpt
 - toilet-bowl-fizz-tabs opening-pattern-missing-hook — applied: orientation-from-excerpt
 - whipped-shea-mango-body-butter opening-pattern-missing-hook — applied: orientation-from-excerpt
+
+- needle-felted-weasel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- baby-safe-bottom-balm voice-violation — applied: 
+- bakewell-pudding-original opening-pattern-missing-hook — applied: recipe-yield-appended
+- barley-sugar-boiled opening-pattern-missing-hook — applied: recipe-yield-appended
+- bayberry-soy-blend-candle opening-pattern-missing-hook — applied: recipe-yield-appended
+- bazlama opening-pattern-missing-hook — applied: recipe-yield-appended
+- beard-balm-cedarwood voice-violation — applied: 
+- beard-oil-sandalwood voice-violation,opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-birthday-taper-candles opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-botanical-pillar-candle opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-car-air-freshener opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-pillar-frankincense opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-shoe-polish opening-pattern-missing-hook — applied: recipe-yield-appended
+- beeswax-votive-candles opening-pattern-missing-hook — applied: recipe-yield-appended
+- bergamot-cedar-reed-diffuser opening-pattern-missing-hook — applied: recipe-yield-appended
+- bergamot-lime-room-spray opening-pattern-missing-hook,content-type-opening-mismatch — applied: recipe-yield-appended
+- bergamot-neroli-room-spray opening-pattern-missing-hook,content-type-opening-mismatch — applied: recipe-yield-appended
+- bin-deodoriser-discs opening-pattern-missing-hook,content-type-opening-mismatch — applied: recipe-yield-appended
+- biscotti-almond-cranberry opening-pattern-missing-hook — applied: recipe-yield-appended
+- black-pepper-amber-reed-diffuser opening-pattern-missing-hook,content-type-opening-mismatch — applied: recipe-yield-appended
+- brass-cleaning-paste content-type-opening-mismatch — applied: recipe-yield-appended
+- brigadeiro-brazilian opening-pattern-missing-hook — applied: recipe-yield-appended
+- brioche-suisse opening-pattern-missing-hook — applied: recipe-yield-appended
+- brown-stew prose-prep-steps — applied: 
+- brown-sugar-vanilla-lip-scrub voice-violation,opening-pattern-missing-hook — applied: body-rewrite:1,recipe-yield-appended
+- brownies-classic opening-pattern-missing-hook — applied: recipe-yield-appended
+- bunuelos-mexican opening-pattern-missing-hook — applied: recipe-yield-appended
+- buttercream-watercolour-painting opening-pattern-missing-hook,content-type-opening-mismatch — applied: recipe-yield-appended
+- buttermilk-cold-process-soap opening-pattern-missing-hook — applied: recipe-yield-appended
+- cannoli-siciliani opening-pattern-missing-hook — applied: recipe-yield-appended
+- cantucci-pistachio-cranberry opening-pattern-missing-hook — applied: recipe-yield-appended
+- caramel-corn opening-pattern-missing-hook — applied: recipe-yield-appended
+- caramel-soft opening-pattern-missing-hook — applied: recipe-yield-appended
+- carrot-cold-process-soap opening-pattern-missing-hook — applied: recipe-yield-appended
+- cast-iron-cleaning-paste opening-pattern-missing-hook — applied: recipe-yield-appended
+- cathead-biscuits opening-pattern-missing-hook — applied: recipe-yield-appended
+- cedar-lavender-wardrobe-sachet opening-pattern-missing-hook — applied: recipe-yield-appended
+- cedar-wardrobe-sachets opening-pattern-missing-hook — applied: recipe-yield-appended
+- cedarwood-bergamot-soy-candle opening-pattern-missing-hook — applied: recipe-yield-appended
