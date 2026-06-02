@@ -1,0 +1,251 @@
+{
+  "slug": "pot-roast",
+  "title": "Pot roast",
+  "subtitle": "Chuck braised low and slow with root vegetables",
+  "excerpt": "A pot roast is a piece of beef chuck braised in a covered pot with stock, onion, carrot, and celery for 3 to 4 hours until the meat is tender enough to break with a fork. The braising liquid becomes the sauce. It is the defining American Sunday-dinner dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg. Pot roast appears as a braised beef method in the original edition. Edna Lewis, The Taste of Country Cooking (1976), gives the Southern pot-roast tradition with root vegetables and pan gravy.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 240,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "The braised meat and vegetables freeze well in the cooking liquid for up to 3 months. Thaw overnight and reheat gently in a covered pot.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the day before and refrigerate in the pot. Reheat covered in a 160°C oven for 45 minutes. The flavour improves overnight.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "sundayLunch"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braising",
+      "term": "Braising",
+      "definition": "Cooking in a covered pot with a small amount of liquid over low heat for a long time, so the meat becomes tender as the collagen in the connective tissue converts to gelatin."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pot roast is beef chuck "
+          },
+          {
+            "type": "text",
+            "text": "braised",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braising" } }]
+          },
+          {
+            "type": "text",
+            "text": " in a covered pot with aromatics and stock for the better part of an afternoon until the meat pulls apart and the liquid has concentrated into a rich, dark sauce. Chuck is the right cut: it has enough fat and connective tissue to reward long, slow cooking. A lean joint dries out."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Searing the meat well before adding the liquid is worth doing. It takes ten minutes and adds significant flavour to the finished sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 1500, "unit": "g", "prepNote": "tied into a compact shape if loose", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 4, "unit": "each", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "stalks, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "smashed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 6, "unit": "each", "prepNote": "medium, halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": "for searing", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sear the meat" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160°C. Pat the {{beef-chuck}} of beef chuck dry with kitchen paper. Season all over with salt and pepper. Heat {{vegetable-oil}} of oil in the Dutch oven over high heat until smoking. Sear the beef on all sides for about 3 minutes per side until deeply browned all over. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the {{onion}} onions, {{carrot}} carrots, and {{celery}} celery to the pot and cook for 4 minutes. Add {{garlic}} of garlic and {{tomato-puree}} of tomato purée. Cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in {{stock-beef}} of beef stock and {{tinned-tomatoes}} of chopped tomatoes. Add {{worcestershire-sauce}} of Worcestershire sauce, the {{thyme}} sprigs of thyme, and the {{bay-leaves}} of bay. Return the beef to the pot. The liquid should come halfway up the meat. Bring to a simmer."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly and transfer to the oven. Cook for 2 hours. Add the {{potato}} potatoes around the beef. Re-cover and cook for a further 1 to 1.5 hours until the beef is completely tender and a fork meets no resistance. Rest for 15 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat tough even after 3 hours",
+              "cause": "Oven too low, or the cut was different from chuck (a lean joint won't respond the same way).",
+              "fix": "Raise the oven to 170°C and cook for another 30 minutes. Check that the joint is actually chuck or a similar collagen-rich cut."
+            },
+            {
+              "symptom": "Sauce thin and watery",
+              "cause": "Too much liquid added, or the pot was not covered properly.",
+              "fix": "Remove the meat and vegetables. Boil the sauce on the hob for 10 minutes until reduced. Add a teaspoon of cornflour dissolved in cold water to thicken further."
+            },
+            {
+              "symptom": "Potatoes falling apart",
+              "cause": "Added too early in the cook.",
+              "fix": "Add waxy potatoes (Charlotte, new potatoes) in the final 1 hour rather than at the start, or use a firmer potato variety."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mississippi pot roast swaps the stock and tomatoes for a packet of ranch dressing mix and a jar of pepperoncini, cooked in a slow cooker. Yankee pot roast from New England uses cider vinegar in the braising liquid for a sharper result. Parsnips and turnips work alongside or instead of the carrots."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pot roast is the American equivalent of the British Sunday joint, a single-pot centrepiece built for a table of six on a cold afternoon. It appears in American cookery from the late nineteenth century and remains one of the most-cooked dishes in the country. The genius is the braising liquid: there is no separate sauce to make."
+          }
+        ]
+      }
+    ]
+  }
+}

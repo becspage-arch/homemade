@@ -1,0 +1,214 @@
+{
+  "slug": "mac-and-cheese-baked",
+  "title": "Baked mac and cheese",
+  "subtitle": "Southern soul-food macaroni in a creamy cheddar sauce with a crisp breadcrumb top",
+  "excerpt": "Baked mac and cheese is a Southern soul-food staple of macaroni stirred into a rich cheddar and egg custard, baked until set and golden. The texture is denser than the stovetop version: each piece holds its shape. The top browns to a crust while the inside stays creamy.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Southern American culinary tradition. Baked macaroni and cheese as a soul-food staple is documented in Edna Lewis, The Taste of Country Cooking (1976). The dish appears in earlier form in Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions once baked and cooled. Reheat from frozen at 180°C for 25 minutes covered with foil, then uncovered for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the dish up to a day ahead, cover and refrigerate, then add the topping and bake from cold: add 10 minutes to the baking time.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "kidFriendly"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "colander", "isOptional": false },
+    { "slug": "box-grater", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "custard-bake",
+      "term": "Custard bake",
+      "definition": "A savory or sweet preparation where eggs and milk or cream are mixed together and set by gentle oven heat, giving a firm but creamy texture."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Baked mac and cheese uses a "
+          },
+          {
+            "type": "text",
+            "text": "custard bake",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "custard-bake" } }]
+          },
+          {
+            "type": "text",
+            "text": " method: macaroni is stirred into a mixture of grated cheddar, evaporated milk, eggs, and butter, then baked until the custard is set. The result is sliceable rather than saucy. It is the dish that appears at Thanksgiving tables and church potlucks across the American South."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 350, "unit": "g", "prepNote": "macaroni or small pasta shapes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 400, "unit": "g", "prepNote": "mature, finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "evaporated-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cayenne-pepper", "amount": null, "unit": "tsp", "prepNote": "a small pinch", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "breadcrumbs-dried", "amount": 40, "unit": "g", "prepNote": "for the topping", "isOptional": true, "groupLabel": "Topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C. Butter a large baking dish. Cook {{pasta-dried}} of macaroni in well-salted boiling water until 2 minutes short of the packet time. It will finish cooking in the oven. Drain and return to the pot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the custard and assemble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{unsalted-butter}} of butter to the hot drained pasta and stir to melt. Reserve a handful of the {{cheddar}} of grated cheddar for the top. Add the rest to the pasta along with the 2 beaten eggs, {{evaporated-milk}} of evaporated milk, {{mustard-powder}} of mustard powder, {{paprika-smoked}} of smoked paprika, salt, and black pepper. Stir well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tip into the buttered baking dish. Scatter the reserved cheddar on top, then the {{breadcrumbs-dried}} of dried breadcrumbs if using. Bake for 35 to 40 minutes until the top is golden and the custard is set around the edges with a slight wobble in the centre. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Custard not setting, still liquid after 40 minutes",
+              "cause": "Oven temperature too low, or too much liquid relative to eggs.",
+              "fix": "Check the oven temperature with an oven thermometer. The dish should be set around the edges and still slightly wobbly in the centre at 40 minutes; it firms up as it cools."
+            },
+            {
+              "symptom": "Dry and grainy texture",
+              "cause": "Overbaked, or mature cheddar used without enough fat content.",
+              "fix": "Pull from the oven as soon as the custard is set. Adding a 50 g block of cream cheese to the mix helps keep it creamy."
+            },
+            {
+              "symptom": "Breadcrumb top burning before the inside sets",
+              "cause": "Oven too hot, or dish placed too high in the oven.",
+              "fix": "Cover with foil for the first 25 minutes, then remove for the final 15 to brown."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add crumbled crispy bacon between the pasta layers before baking. A layer of thinly sliced tomato on top under the breadcrumbs looks good and adds sharpness. Gruyere or a mix of cheddar and Comté gives a more complex flavour. Jalapenos stirred into the pasta add heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Baked macaroni and cheese is one of the most important dishes in the American Southern and soul-food canon. Unlike the stovetop version, it is considered a proper side dish that holds its own on a holiday table. It appears at every Thanksgiving and Christmas spread in households across the American South alongside collard greens and candied yams."
+          }
+        ]
+      }
+    ]
+  }
+}

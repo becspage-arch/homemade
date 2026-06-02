@@ -1,0 +1,248 @@
+{
+  "slug": "meatloaf",
+  "title": "Meatloaf",
+  "subtitle": "Ketchup-glazed beef and pork loaf baked in a tin",
+  "excerpt": "Meatloaf is a mixture of beef mince, pork mince, egg, breadcrumbs, and aromatics packed into a loaf tin and baked under a sticky ketchup glaze. It slices cleanly when cold and makes good sandwiches the next day. The ketchup glaze caramelises in the oven to a lacquered finish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "American domestic tradition. Meatloaf appears in Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg, and in WPA-era American state-cookery surveys of the 1930s. The ketchup-glaze version became the standard mid-century presentation.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 65,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice the cooked, cooled meatloaf and freeze portions between sheets of baking paper. Reheat slices in a covered pan with a splash of beef stock.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Meatloaf is best made the day before: bake it, cool it in the tin, then refrigerate overnight. It slices more cleanly when cold and reheats well.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "loaf-tin", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "panade",
+      "term": "Panade",
+      "definition": "A paste of bread or breadcrumbs soaked in milk or stock, added to meat mixtures such as meatloaf or meatballs to keep them moist and tender during cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Meatloaf is a mixture of beef and pork mince bound with egg and a "
+          },
+          {
+            "type": "text",
+            "text": "panade",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "panade" } }]
+          },
+          {
+            "type": "text",
+            "text": " of breadcrumbs soaked in milk, baked in a loaf tin at 180°C with a ketchup glaze on top. The pork keeps it moist where beef alone would dry out. Softened onion and celery in the base carry the flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pork-mince", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped and softened in butter", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "stalks, finely chopped and softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped and softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 60, "unit": "ml", "prepNote": "to soak the breadcrumbs", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ketchup", "amount": 4, "unit": "tbsp", "prepNote": "for the glaze", "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "light-brown-sugar", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "cider-vinegar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Soften the aromatics" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt a knob of butter in the frying pan over medium heat. Add the {{onion}} onion and {{celery}} celery stalks. Cook for 6 minutes until soft. Add {{garlic}} of garlic and cook for 1 minute more. Set aside to cool."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and shape" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak {{breadcrumbs-fresh}} of fresh breadcrumbs in {{whole-milk}} of milk for 2 minutes. In a large bowl, mix {{beef-mince}} of beef mince, {{pork-mince}} of pork mince, the soaked breadcrumbs, and the cooled onion mix. Add the 2 beaten eggs, {{worcestershire-sauce}} of Worcester sauce, {{mustard-powder}} of mustard powder, {{thyme-dried}} of dried thyme, salt, and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix until combined but do not overwork it. Press into a lined 2 lb (900 g) loaf tin. Mix together the {{ketchup}} of ketchup, {{light-brown-sugar}} of brown sugar, and {{cider-vinegar}} of vinegar for the glaze. Spread half over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C. Bake for 45 minutes. Spread the rest of the glaze over the top. Bake for 15 to 20 minutes more until the glaze is dark and sticky and a probe reads 70°C at the centre. Rest for 10 minutes before slicing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meatloaf falling apart when sliced",
+              "cause": "Not enough binder (egg and breadcrumb) or sliced while still hot.",
+              "fix": "Rest for at least 10 minutes before cutting. For the cleanest slices, refrigerate and cut cold."
+            },
+            {
+              "symptom": "Dry texture",
+              "cause": "Lean mince used, or overbaked.",
+              "fix": "Use a mix with at least 15% fat. Check the internal temperature rather than relying on time alone: 70°C is done."
+            },
+            {
+              "symptom": "Glaze burning before the loaf is cooked",
+              "cause": "Oven too hot, or glaze applied too early.",
+              "fix": "Apply the first half of the glaze at the 45-minute mark, not before. Cover loosely with foil if it is darkening too fast."
+            },
+            {
+              "symptom": "Watery liquid pooling in the tin",
+              "cause": "Excess moisture from the onions or mince.",
+              "fix": "Make sure the softened onions are fully cooled and squeeze out any excess moisture. The liquid can be tipped off and reduced into a quick pan sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All-beef meatloaf is leaner and needs more moisture: add an extra egg. Stuffed meatloaf has a layer of sliced hard-boiled eggs or a filling of spinach and cheese rolled into the centre before baking. A glaze of brown sauce in place of ketchup gives a British-diner version."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Meatloaf is the quintessential American Sunday-dinner dish, a stretch meal that turns a modest amount of mince into a centrepiece for six. Its reputation for domesticity and frugality is exactly right. Cold meatloaf in a sandwich the next day is considered by many the better version."
+          }
+        ]
+      }
+    ]
+  }
+}

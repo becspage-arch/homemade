@@ -1,0 +1,244 @@
+{
+  "slug": "jambalaya",
+  "title": "Jambalaya",
+  "subtitle": "Cajun rice with andouille sausage, chicken, and prawns",
+  "excerpt": "Jambalaya is a one-pot Cajun rice dish of chicken, andouille sausage, and prawns cooked with the Cajun trinity of onion, celery, and green pepper, spiced with smoked paprika and cayenne. The rice cooks in the seasoned stock and absorbs all the flavour from the meat and the pan. It feeds a crowd from a single pot.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cajun culinary tradition, Louisiana. Jambalaya draws on Spanish, French, and West African cooking traditions and is documented in Louisiana from the late eighteenth century. Background from WPA Louisiana Writers' Project food surveys and Paul Prudhomme, Chef Paul Prudhomme's Louisiana Kitchen (1984).",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze without the prawns, adding them fresh when reheating. The rice-based dish freezes for up to 2 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "batchCook"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cajun-trinity",
+      "term": "Cajun trinity",
+      "definition": "The aromatic base of Cajun and Creole cooking: onion, celery, and green pepper, used in the same role as the French mirepoix. Almost every Cajun dish starts by cooking these three together in fat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Jambalaya is a one-pot Cajun rice dish built on the "
+          },
+          {
+            "type": "text",
+            "text": "Cajun trinity",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cajun-trinity" } }]
+          },
+          {
+            "type": "text",
+            "text": " of onion, celery, and green pepper. The rice cooks directly in the spiced stock and absorbs everything. Andouille sausage, chicken thighs, and prawns added at different stages each bring different texture: the sausage chewy and smoky, the chicken yielding, the prawns firm. It is a deeply savoury, generous dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 4, "unit": "each", "prepNote": "cut into 4 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-pork-sausage", "amount": 300, "unit": "g", "prepNote": "andouille or smoked kielbasa, sliced into rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 350, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "stalks, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cayenne-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "sliced, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the sausage and chicken" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{vegetable-oil}} of oil in the Dutch oven over medium-high heat. Add the {{smoked-pork-sausage}} of sliced sausage and cook for 3 minutes until browned. Remove and set aside. Season {{chicken-thighs-boneless}} of chicken pieces and brown in the same pot for 4 minutes per side. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the trinity and rice" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce heat to medium. Add the {{onion}} onion, {{celery}} celery, and {{pepper-green}} green pepper to the pot. Cook for 5 minutes. Add {{garlic}} of garlic, {{paprika-smoked}} of smoked paprika, {{cayenne-pepper}} of cayenne, {{thyme-dried}} of dried thyme, and {{oregano-dried}} of dried oregano. Cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{long-grain-rice}} of rice and stir to coat in the spiced oil. Add {{tinned-tomatoes}} of crushed tomatoes, {{stock-chicken}} of chicken stock, and {{bay-leaves}} of bay. Return the sausage and chicken to the pot. Bring to a boil, then reduce to a low simmer, cover, and cook for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the prawns and rest" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in {{prawns-raw}} of raw prawns. Replace the lid and cook for 5 minutes until the prawns are pink and the rice has absorbed all the liquid. Remove from the heat and rest with the lid on for 5 minutes. Remove the bay leaves. Serve scattered with spring onions."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice sticking and burning at the base",
+              "cause": "Heat too high during the covered cook, or too little liquid.",
+              "fix": "Check the simmer is gentle, not a rapid boil. If the pot sounds like it is scorching, add 50 ml more stock and reduce the heat."
+            },
+            {
+              "symptom": "Rice undercooked after 20 minutes",
+              "cause": "Heat too low, or cover not sitting tightly.",
+              "fix": "Add 50 ml more stock, replace the lid, and cook for a further 5 minutes over low heat."
+            },
+            {
+              "symptom": "Prawns overcooked and rubbery",
+              "cause": "Added too early or left in the heat too long.",
+              "fix": "Prawns need only 4 to 5 minutes. Add them in the final stage only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Creole jambalaya adds more tomatoes and is associated with New Orleans. Cajun jambalaya (this version) uses fewer tomatoes. A chicken-and-sausage-only version without seafood is equally classic. Louisiana hot sauce on the table at serving is the standard accompaniment."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Jambalaya is one of the great American one-pot dishes, a product of the multi-cultural collision in Louisiana where French, Spanish, and West African cooking traditions fused. It is the dish of festivals, of Mardi Gras, of church suppers. The word itself is thought to derive from the French jambon (ham) via a Spanish-Creole blending."
+          }
+        ]
+      }
+    ]
+  }
+}

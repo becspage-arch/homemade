@@ -1,0 +1,193 @@
+{
+  "slug": "blt",
+  "title": "BLT",
+  "subtitle": "Bacon, lettuce, and tomato sandwich on toasted white bread",
+  "excerpt": "A BLT is crisp streaky bacon, a leaf of cos lettuce, and sliced ripe tomato on toasted white bread with mayonnaise. The balance depends on two things: the bacon must be cooked until properly crisp, and the tomato must be in season.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American diner tradition. The BLT appears in American cookery writing from the early twentieth century, becoming a diner menu staple by the 1950s. General technique from Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A BLT is three ingredients on toast: crisp streaky bacon, ripe tomato, and a leaf of cos lettuce, with enough mayonnaise to hold everything together. It works because each element plays a distinct role: crunch from the bacon, acidity and moisture from the tomato, cool freshness from the lettuce. The bread must be toasted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "streaky-bacon", "amount": 8, "unit": "slice", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "sliced thickly", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cos-lettuce", "amount": 1, "unit": "each", "prepNote": "outer leaves only, washed and dried", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bread-white", "amount": 4, "unit": "each", "prepNote": "medium-sliced, for toasting", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mayonnaise", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": "for the tomato", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "for the tomato", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the bacon" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay the {{streaky-bacon}} of streaky bacon strips flat in a cold dry pan. Turn the heat to medium. Cook for 4 to 5 minutes per side until the fat has rendered and the edges are crisp. Drain on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sandwich" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the bread slices until golden. Spread each slice generously with {{mayonnaise}} of mayonnaise."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the sliced tomatoes with salt and pepper. Layer lettuce on 2 of the bread slices, then the tomatoes, then the bacon, then close with the other bread slices. Cut in half and serve at once."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Bacon not crisp",
+              "cause": "Pan started hot and the bacon crisped unevenly, or it was not cooked long enough.",
+              "fix": "Start in a cold pan over medium heat. The fat renders gradually and the bacon crisps as the fat cooks off. Give it the full time on each side."
+            },
+            {
+              "symptom": "Bread soggy",
+              "cause": "Tomatoes placed directly against the bread with no barrier, releasing liquid.",
+              "fix": "Put the lettuce leaf on the bread first to act as a moisture barrier between the tomato and the toast."
+            },
+            {
+              "symptom": "Tomato slipping out when eating",
+              "cause": "Sliced too thick or rounds rather than crossways.",
+              "fix": "Slice the tomato across the equator about 5 mm thick. Pat with kitchen paper to remove excess moisture."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An avocado BLT adds half a sliced avocado. A turkey BLT replaces bacon with sliced roast turkey and works well out of summer tomato season. Hot sauce in the mayonnaise adds heat. Back bacon gives a leaner result. Ciabatta or sourdough hold up better to extra fillings."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The BLT is one of the most ordered sandwiches in American diners and short-order counters, and one of the few dishes where the quality of the ingredients is the whole recipe. A winter tomato makes a mediocre BLT. A summer one, sliced thick and salted, makes a very good one. The bacon needs to be crisp, not chewy: the texture contrast is what separates a good BLT from a disappointing one."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "slug": "cheeseburger",
+  "title": "Cheeseburger",
+  "subtitle": "Smash-style beef patty with melted American cheese",
+  "excerpt": "A smash-style cheeseburger presses a loose ball of beef mince hard onto a hot griddle to get a lacey, caramelised crust, then melts a slice of processed cheese over the top before it leaves the pan. Fast, direct, and better than the drive-through version in almost every way.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American diner tradition. The smash method is associated with mid-century griddle houses across the Midwest. Technique drawn from J. Kenji López-Alt, The Food Lab (2015), and Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg, for the baseline beef-patty method.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Form the balls up to 4 hours ahead and keep them covered in the fridge. Cook straight from cold.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "fish-slice", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "maillard-reaction",
+      "term": "Maillard reaction",
+      "definition": "The browning reaction that happens when proteins and sugars in food are exposed to high heat, producing hundreds of flavour compounds and the characteristic crust on seared meat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cheeseburger built on the smash method starts as a loose ball of beef mince pressed flat against a scorching-hot surface. The contact produces a wide, caramelised crust through the "
+          },
+          {
+            "type": "text",
+            "text": "Maillard reaction",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "maillard-reaction" } }]
+          },
+          {
+            "type": "text",
+            "text": ", which gives the burger its flavour. A slice of processed cheese melted on in the final 30 seconds ties it all together."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The crust is what you are cooking for. Keep the heat high, press once and press hard, then leave the patty alone. Resist the urge to move it. Flip when the edges have gone grey halfway up the side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 600, "unit": "g", "prepNote": "20% fat if possible, kept cold", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 4, "unit": "each", "prepNote": "slices of processed or melting cheese", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bread-white", "amount": 4, "unit": "each", "prepNote": "brioche or plain burger buns", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "for the buns", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": "to season", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ketchup", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "mayonnaise", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "gherkins", "amount": 4, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "thinly sliced, raw or quick-pickled", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A cast-iron skillet or a heavy griddle pan holds the heat needed for the crust. A thin metal spatula (fish slice) lets you press and flip without tearing. You will make one patty at a time unless the pan is very large."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the beef" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the cold {{beef-mince}} of beef mince into 4 loose balls, about 150 g each. Do not pack them tight. Keep them in the fridge until the pan is ready."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Toast the buns" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the skillet over medium heat. Split the buns, spread the cut sides with {{unsalted-butter}} of butter, and toast them cut-side down in the dry pan for about 1 minute until golden. Set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Smash and cook" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the heat to high. When the skillet is smoking, place one ball of mince in the centre. Using the flat base of a spatula, press it down firmly into a patty about 1 cm thick. Season generously with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook for 2 minutes without touching it. The edges will look grey halfway up. Flip once. Lay a cheese slice on top immediately and cook for 1 minute more. The cheese should be melted and the patty cooked through. Lift onto a toasted bun and cook the remaining patties the same way."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "No crust forming",
+              "cause": "Pan not hot enough, or meat was wet or packed too tightly.",
+              "fix": "The skillet must be smoking before the meat goes in. Pat the balls dry with kitchen paper and use a looser hand when forming them."
+            },
+            {
+              "symptom": "Patty steaming rather than searing",
+              "cause": "Too much liquid in the pan from prior cooking, or mince with too little fat.",
+              "fix": "Wipe the pan dry between patties. Higher-fat mince (20%) gives better browning than lean."
+            },
+            {
+              "symptom": "Cheese not melting",
+              "cause": "Hard cheese used rather than a melting variety, or not enough residual heat.",
+              "fix": "Processed sliced cheese melts on contact. For cheddar, cover the pan briefly with a lid or a sheet of foil after flipping to trap steam."
+            },
+            {
+              "symptom": "Burger sticking to the pan",
+              "cause": "Flipped too early before the crust formed and released.",
+              "fix": "Wait until the edges are grey halfway up the side before trying to flip. If it is stuck, it needs more time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A double smash puts two thinner patties in the bun for more crust. Gruyere or Comté work in place of processed cheese for a more complex flavour. Add crisp streaky bacon, sliced tomato, or shredded lettuce. A mushroom and Swiss variation omits the cheese and adds sautéed mushrooms."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The smash burger is a mid-century American diner staple. It fell out of fashion when thick steakhouse patties became popular, then came back when cooks noticed the crust was where all the flavour lived. The thin patty on a hot flat-top is the working-lunch version: fast, cheap, and hard to beat."
+          }
+        ]
+      }
+    ]
+  }
+}

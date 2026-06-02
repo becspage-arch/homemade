@@ -1,0 +1,231 @@
+{
+  "slug": "beef-stroganoff",
+  "title": "Beef stroganoff",
+  "subtitle": "Beef strips in a soured cream and mushroom sauce over egg noodles",
+  "excerpt": "Beef stroganoff is thin strips of beef ribeye or sirloin cooked quickly in a hot pan and served in a mushroom sauce finished with soured cream. The whole dish is ready in about 25 minutes. Served over egg noodles or rice, it is one of the most popular American weeknight dinners.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Beef stroganoff originated in mid-nineteenth century Russia, associated with the Stroganov family. It became widely popular in America after World War Two through mid-century cookbooks including Fannie Farmer (in later editions) and the Joy of Cooking. The American version uses soured cream rather than the original crème fraîche.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The mushroom sauce base can be made ahead. Add the beef and soured cream just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "emulsify-sauce",
+      "term": "Emulsify",
+      "definition": "When two liquids that do not naturally mix (such as fat and water-based sauce) are combined into a smooth, unified mixture. In stroganoff, the soured cream is stirred in off the heat to prevent it splitting."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef stroganoff is thin strips of beef cooked fast in a very hot pan, then combined with a mushroom and onion sauce finished with soured cream. The trick is to keep the sauce and the beef separate until the last moment: the beef goes in hot, the cream goes in off the heat, and the dish goes straight to the table. Cook it gently and the cream will "
+          },
+          {
+            "type": "text",
+            "text": "emulsify",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "emulsify-sauce" } }]
+          },
+          {
+            "type": "text",
+            "text": " into a smooth sauce; overheat it and it will split."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 600, "unit": "g", "prepNote": "cut into strips 5 mm thick, against the grain", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 300, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 200, "unit": "g", "prepNote": "at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "noodles-egg", "amount": 300, "unit": "g", "prepNote": "dried, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the mushroom sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Start the {{noodles-egg}} of egg noodles in a large pot of salted boiling water according to the packet. Heat {{unsalted-butter}} of butter in the wide frying pan over medium heat. Add the {{onion}} onion and cook for 5 minutes until soft. Add {{garlic}} of garlic and cook for 1 minute. Turn the heat to high, add {{chestnut-mushrooms}} of sliced mushrooms, and cook without stirring for 3 minutes to get some colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{stock-beef}} of beef stock, {{dijon-mustard}} of Dijon mustard, and {{worcestershire-sauce}} of Worcestershire sauce. Simmer for 4 minutes until the sauce has reduced slightly. Remove the pan from the heat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the beef and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a separate frying pan or clear space in the same pan over very high heat with {{vegetable-oil}} of oil. Season the {{beef-sirloin}} of beef strips and cook in a single layer for 1 minute per side. Do this in batches if needed: do not crowd the pan or the beef will steam rather than sear."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the mushroom pan to low heat. Stir in {{soured-cream}} of soured cream until smooth. Do not let it boil. Add the beef, stir to coat, and serve immediately over drained egg noodles, scattered with parsley."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soured cream splitting or curdling",
+              "cause": "Added to a boiling or near-boiling sauce.",
+              "fix": "Take the pan off the heat before adding the soured cream. Stir it in over a very low flame if needed."
+            },
+            {
+              "symptom": "Beef tough and chewy",
+              "cause": "Cooked too long or pan not hot enough.",
+              "fix": "Beef strips cook in 1 to 2 minutes per side in a very hot pan. Any longer and they tighten. Cut them thinner next time."
+            },
+            {
+              "symptom": "Sauce too thin",
+              "cause": "Stock not reduced enough before the cream was added.",
+              "fix": "Simmer the stock in the mushroom pan until it coats the back of a spoon before adding the soured cream."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crème fraîche in place of soured cream gives a milder, slightly less tangy result. Chicken breast strips in place of beef makes a lighter weeknight version. Long-grain rice is the other traditional base in the American South and Midwest. A teaspoon of smoked paprika in the sauce adds depth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef stroganoff arrived in American kitchens after the Second World War with a wave of adapted European dishes that became standard on the mid-century home dinner table. It appears in almost every American general cookbook printed between 1950 and 1980. The American version swapped the original crème fraîche for the more widely available soured cream."
+          }
+        ]
+      }
+    ]
+  }
+}

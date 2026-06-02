@@ -1,0 +1,197 @@
+{
+  "slug": "swedish-meatballs",
+  "title": "Swedish meatballs",
+  "subtitle": "Beef and pork meatballs in a cream and dill gravy",
+  "excerpt": "Swedish meatballs are small, tightly packed beef and pork balls seasoned with allspice and nutmeg, browned in butter, then finished in a cream and beef-stock gravy with a little dill. They are served over egg noodles or mashed potato. An American comfort-food classic via Scandinavian immigration.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Swedish-American culinary tradition. The Swedish meatball became a fixture of the American home-cooking repertoire in the mid-twentieth century, appearing in Joy of Cooking and similar mid-century American cookbooks. The original Swedish köttbulle uses allspice and is associated with Swedish home cooking from at least the nineteenth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked meatballs without the sauce for up to 3 months. Make the sauce fresh when reheating.",
+    "batchable": true,
+    "batchNotes": "Double the recipe easily. Meatballs keep in the fridge for 3 days.",
+    "makeAheadNotes": "Roll and refrigerate the uncooked meatballs up to a day ahead.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Swedish meatballs are small, dense balls of seasoned beef and pork mince browned in butter until deep golden, then finished in a pan sauce of beef stock, cream, and a little dill. Allspice and nutmeg are what distinguish them from Italian-style meatballs. The texture is firm and the flavour is mild but savoury."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 60, "unit": "g", "prepNote": "soaked in 4 tbsp milk", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "grated or very finely chopped", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "allspice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "nutmeg", "amount": null, "unit": "tsp", "prepNote": "a pinch freshly grated", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "for browning", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "dill", "amount": 15, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "noodles-egg", "amount": 300, "unit": "g", "prepNote": "dried, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and roll" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{beef-mince}} of beef mince, {{pork-mince}} of pork mince, the soaked breadcrumbs, the beaten egg, {{onion}} grated onion, {{allspice}} of allspice, nutmeg, salt, and pepper. Mix well. Roll into balls about 3 cm in diameter. You should get about 24."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in the wide frying pan over medium-high heat. Brown the meatballs in two batches, turning regularly, for about 5 minutes until golden all over and cooked through. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour {{stock-beef}} of beef stock into the pan, scraping up any browned bits. Stir in {{double-cream}} of double cream, {{dijon-mustard}} of Dijon mustard, and {{worcestershire-sauce}} of Worcestershire sauce. Simmer for 3 minutes until slightly thickened. Return the meatballs to the pan and coat in the sauce. Stir in the dill. Serve over egg noodles."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meatballs falling apart while browning",
+              "cause": "Not enough binder, or rolled too loosely.",
+              "fix": "Make sure the breadcrumbs are properly soaked in milk and mix the meat thoroughly. Roll firmly. Refrigerate for 30 minutes before cooking if they are very soft."
+            },
+            {
+              "symptom": "Sauce too thin",
+              "cause": "Stock not reduced before adding cream.",
+              "fix": "Boil the stock for 2 minutes before adding the cream to reduce and concentrate it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All-beef meatballs are leaner and benefit from an extra tablespoon of soured cream in the mix. A spoonful of redcurrant or lingonberry jam stirred into the sauce at the end is the traditional Swedish accompaniment. Serve with mashed potato instead of noodles for a more substantial plate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Swedish meatballs came to America with Nordic settlers in the 1800s and became a staple of the mid-century dinner table. They differ from Italian meatballs: smaller, milder, spiced with allspice not garlic, served in cream not tomato sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

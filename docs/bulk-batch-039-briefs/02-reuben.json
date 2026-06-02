@@ -1,0 +1,223 @@
+{
+  "slug": "reuben",
+  "title": "Reuben",
+  "subtitle": "Corned beef, sauerkraut, Swiss cheese, and Thousand Island on rye",
+  "excerpt": "A Reuben stacks corned beef, sauerkraut, Swiss cheese, and Thousand Island dressing between two slices of buttered rye bread, then presses the whole thing on a hot griddle until the cheese melts and the bread is golden. It is one of the great American deli sandwiches.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American delicatessen tradition. The Reuben's origin is disputed between Reuben Kulakofsky of Omaha, Nebraska (c. 1920s) and the Reuben's Restaurant in New York. Technique and assembly drawn from classic deli guides and the WPA Iowa Writers' Project culinary surveys.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "fish-slice", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "corned-beef",
+      "term": "Corned beef",
+      "definition": "Beef brisket cured in a brine with salt, sugar, and pickling spices such as peppercorns, bay, and coriander seed. In American deli tradition the term refers to the sliced cured brisket, not the canned variety."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Reuben is a grilled deli sandwich built on sliced "
+          },
+          {
+            "type": "text",
+            "text": "corned beef",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "corned-beef" } }]
+          },
+          {
+            "type": "text",
+            "text": ", tangy sauerkraut, Swiss cheese, and Thousand Island dressing on dark rye. The contrast of the warm, fatty beef against the cold-weather sourness of the kraut is the whole point. Pressing the bread against a hot buttered pan ties everything together."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "bread", "amount": 8, "unit": "slice", "prepNote": "dark rye, seeded rye, or marbled rye", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salted-butter", "amount": 50, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sauerkraut", "amount": 200, "unit": "g", "prepNote": "drained and squeezed dry", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "emmental", "amount": 120, "unit": "g", "prepNote": "sliced, or Swiss cheese", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mayonnaise", "amount": 3, "unit": "tbsp", "prepNote": "for Thousand Island base", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ketchup", "amount": 1, "unit": "tbsp", "prepNote": "for Thousand Island", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gherkins", "amount": 2, "unit": "each", "prepNote": "finely chopped, for Thousand Island", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You will need pre-cooked corned beef from a deli, supermarket charcuterie counter, or a previous salt-beef session. The recipe uses about 400 g for 4 sandwiches. A heavy pan and a spatula wide enough to press the sandwich flat give you the best crust."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dressing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir together the {{mayonnaise}} of mayonnaise, {{ketchup}} of ketchup, and the finely chopped gherkins in a small bowl. Taste and add a squeeze of the gherkin brine if you want more sharpness."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build and grill" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread the dressing on the inside of all 8 bread slices. Layer sliced corned beef on 4 of the slices, then add the squeezed-dry {{sauerkraut}} of sauerkraut and slices of {{emmental}} of Swiss cheese. Close the sandwiches."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Butter the outside of each sandwich generously with {{salted-butter}} of softened butter. Heat the pan over medium heat. Cook 2 sandwiches at a time, pressing down lightly with the spatula. Cook for 3 minutes per side until the bread is golden and the cheese has melted through."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauerkraut making the bread soggy",
+              "cause": "Excess brine not squeezed out before assembly.",
+              "fix": "Drain the sauerkraut in a sieve, then squeeze it in a clean cloth or with your hands until no liquid runs out."
+            },
+            {
+              "symptom": "Cheese not melting",
+              "cause": "Heat too high, so the bread burns before the centre warms.",
+              "fix": "Lower the heat to medium-low, cover the pan with a lid for the last minute of each side to trap heat and melt the cheese."
+            },
+            {
+              "symptom": "Bread tearing when pressing",
+              "cause": "Bread sliced too thin or pressed too hard.",
+              "fix": "Use medium-cut rye and press gently. The weight of the spatula is enough."
+            },
+            {
+              "symptom": "Dressing too sweet",
+              "cause": "Ketchup-to-mayo ratio too high.",
+              "fix": "Add a teaspoon of white wine vinegar or more chopped gherkin to cut the sweetness."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Rachel is the turkey version: sliced roast turkey in place of corned beef, coleslaw in place of sauerkraut, same dressing and cheese. A pastrami Reuben uses pastrami instead of corned beef and is considered equally valid by most deli traditions. Russian dressing (no gherkin, more horseradish) is the other period-correct dressing option."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Reuben is the canonical American deli sandwich, as associated with New York Jewish delis and Omaha steakhouse lunch counters as with any single place. It works because every element brings something: the fatty beef, the sharp kraut, the mild nutty Swiss, the sweet-sharp dressing, the caraway-seeded rye. Nothing is neutral. It was voted the most popular sandwich in America in a 1956 nationwide cookery competition and has barely left the top of deli menus since."
+          }
+        ]
+      }
+    ]
+  }
+}

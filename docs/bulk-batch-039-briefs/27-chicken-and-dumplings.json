@@ -1,0 +1,228 @@
+{
+  "slug": "chicken-and-dumplings",
+  "title": "Chicken and dumplings",
+  "subtitle": "Southern chicken stew with fluffy biscuit dumplings dropped on top",
+  "excerpt": "Chicken and dumplings is a Southern stew of poached chicken in a thick cream sauce with vegetables, with soft dumpling dough dropped by spoonfuls onto the simmering surface and cooked with the lid on. The dumplings steam and puff into soft, fluffy pillows. One of the most comforting American dishes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Southern American culinary tradition. Chicken and dumplings appears in Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg, and is a staple of Edna Lewis, The Taste of Country Cooking (1976). The drop-dumpling method is the Southern style; the rolled-flat-noodle version is Midwestern.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The stew base can be made ahead; make the dumplings and cook them fresh just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "winter"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drop-dumpling",
+      "term": "Drop dumpling",
+      "definition": "A dumpling made by dropping spoonfuls of a soft dough directly onto simmering liquid and cooking with a lid on, so the dumpling steams and puffs from the top while cooking in the liquid from below."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken and dumplings is a thick chicken stew with "
+          },
+          {
+            "type": "text",
+            "text": "drop dumplings",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drop-dumpling" } }]
+          },
+          {
+            "type": "text",
+            "text": " cooked on top. The dumplings are a simple buttermilk biscuit dough dropped by the tablespoon onto the simmering stew and cooked covered for 15 minutes. Do not lift the lid during the dumpling cook: the steam inside is what makes them rise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "each", "prepNote": "about 1.5 kg, or 6 chicken thighs", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "stalks, diced", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "peas-frozen", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": "for the stew", "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "Stew" },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": "for the dumplings", "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "buttermilk", "amount": 120, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "cold, cut into cubes, for dumplings", "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "baking-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" },
+            { "ingredientSlug": "salt-table", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dumplings" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the stew" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Poach the {{chicken-whole}} whole chicken in {{stock-chicken}} of stock with {{thyme}} sprigs of thyme and {{bay-leaves}} of bay for 35 minutes until cooked through. Lift out and shred the meat. Strain and reserve the stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in the Dutch oven over medium heat. Add {{carrot}} carrots, {{celery}} celery, and {{onion}} onion. Cook for 5 minutes. Add {{garlic}} of garlic and the stew flour. Cook for 1 minute. Gradually add 1 litre of the reserved stock, whisking to avoid lumps. Simmer for 5 minutes. Stir in {{double-cream}} of cream, the shredded chicken, and {{peas-frozen}} of peas. Season well."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and cook the dumplings" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a bowl, mix the dumpling flour, {{baking-powder}} of baking powder, and dumpling salt. Rub the cold dumpling butter in until the mix resembles breadcrumbs. Stir in {{buttermilk}} of buttermilk until just combined."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the stew to a steady simmer. Drop heaped tablespoons of dumpling dough onto the surface, spacing them a little apart. Cover tightly and cook for 15 minutes without lifting the lid. The dumplings should have risen and be cooked through when a skewer inserted in the centre comes out clean."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Dumplings dense and gummy",
+              "cause": "Lid lifted during cooking, releasing steam; or batter overworked.",
+              "fix": "Do not lift the lid for the full 15 minutes. Mix the dumpling batter as little as possible: lumps are fine."
+            },
+            {
+              "symptom": "Stew too thin under the dumplings",
+              "cause": "Not enough flour in the stew base.",
+              "fix": "Simmer the stew without the dumplings for a further 5 minutes before adding them."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Midwestern flat-noodle version rolls the dumpling dough thin, cuts it into strips, and drops the strips into the simmering stew, cooking uncovered. Adding a teaspoon of fresh thyme to the dumpling dough gives a more herby result."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken and dumplings is a pot pie without the pastry: a one-pot meal that stretches a single chicken across six portions. It is tied to farmhouse cooking across the American South and Appalachia. The dish has changed very little in generations."
+          }
+        ]
+      }
+    ]
+  }
+}

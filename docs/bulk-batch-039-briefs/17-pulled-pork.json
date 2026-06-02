@@ -1,0 +1,238 @@
+{
+  "slug": "pulled-pork",
+  "title": "Pulled pork",
+  "subtitle": "Slow-roasted spiced pork shoulder that shreds with a fork",
+  "excerpt": "Pulled pork is a pork shoulder rubbed with brown sugar, smoked paprika, and spices, then roasted low and slow in a covered pot until the meat collapses and pulls apart in long strands. The oven version takes 6 to 7 hours. Pile it into soft buns with coleslaw and a sharp vinegar sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American BBQ tradition, particularly associated with the Carolinas, where whole-hog and shoulder smoking is a regional craft. Oven-roasted pulled pork follows the same principles as the pit-smoked original. Background from Edna Lewis, The Taste of Country Cooking (1976), and WPA Carolina food surveys.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 420,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze pulled pork with its juices in portions for up to 3 months. Thaw overnight and reheat in a covered pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "A large shoulder feeds 8 to 10 people. The cooked meat keeps in the fridge for 4 days and freezes well.",
+    "makeAheadNotes": "Cook the day before: shred while warm, then refrigerate in its juices. The fat solidifies on top overnight and can be lifted off. Reheat gently in a covered pan.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "batchCook"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bark",
+      "term": "Bark",
+      "definition": "The dark, caramelised outer crust that forms on slow-cooked or smoked meat as the surface dries and the spice rub cooks into a firm shell. In pulled pork, the bark is considered the best part."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pulled pork is pork shoulder cooked at 150°C for 6 to 7 hours until the collagen has broken down completely and the meat falls apart in long strands. A dry rub of brown sugar, smoked paprika, and spices forms the "
+          },
+          {
+            "type": "text",
+            "text": "bark",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bark" } }]
+          },
+          {
+            "type": "text",
+            "text": " on the outside as it cooks. The oven gives a reliable result without a smoker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 2000, "unit": "g", "prepNote": "bone-in preferred, or boneless", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "light-brown-sugar", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "garlic-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "cayenne-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dry rub" },
+            { "ingredientSlug": "cider-vinegar", "amount": 3, "unit": "tbsp", "prepNote": "for serving", "isOptional": false, "groupLabel": "Serving" },
+            { "ingredientSlug": "ketchup", "amount": 2, "unit": "tbsp", "prepNote": "for serving", "isOptional": false, "groupLabel": "Serving" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Apply the rub" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix together the {{light-brown-sugar}} of brown sugar, {{paprika-smoked}} of smoked paprika, {{sea-salt-flakes}} of salt, {{black-pepper}} of pepper, {{garlic-powder}} of garlic powder, {{onion-powder}} of onion powder, {{cayenne-pepper}} of cayenne, {{cumin-ground}} of cumin, and {{mustard-powder}} of mustard powder. Score the pork shoulder skin in a diamond pattern. Rub the mixture all over the meat. For the best result, leave uncovered in the fridge overnight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow roast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 150°C. Place the pork in the Dutch oven or a deep roasting tin. Add 200 ml of water to the base. Cover tightly with a lid or foil. Roast for 6 hours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid or foil. Raise the oven to 200°C and roast uncovered for 30 minutes to firm up and darken the bark. The meat is ready when a fork meets no resistance anywhere and the internal temperature is above 90°C."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and pull" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest the pork, covered loosely, for 30 minutes. Pull the meat apart using two forks or your fingers: it should separate easily into long, moist strands. Mix the {{cider-vinegar}} of vinegar and {{ketchup}} of ketchup with the pan juices to make a quick finishing sauce. Toss the pulled pork with the sauce and serve in buns."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pork not pulling after 6 hours",
+              "cause": "Oven too cool, or a particularly large joint.",
+              "fix": "Cook for another hour. Pulled pork is done when the bone (if present) pulls out cleanly and a fork twists through the meat with no resistance."
+            },
+            {
+              "symptom": "Bark gone pale and soft",
+              "cause": "Lid left on throughout without the uncovered finish.",
+              "fix": "The uncovered 30-minute blast at 200°C is what sets and darkens the bark. Do not skip this step."
+            },
+            {
+              "symptom": "Dry meat",
+              "cause": "Boneless shoulder cooked without liquid, or cooking temperature too high.",
+              "fix": "Boneless shoulder dries faster than bone-in. Keep the liquid in the base and check at 5 hours."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carolina pulled pork uses an Eastern Carolina vinegar sauce: equal parts cider vinegar and water, salt, pepper, and chilli flakes, with no ketchup. Serve with a separate Carolina mustard sauce (yellow mustard, vinegar, brown sugar) for the South Carolina style. Slow cooker pulled pork works well: 8 hours on low with the dry-rubbed joint and 100 ml of apple juice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pulled pork is central to American BBQ culture, above all in the Carolinas, where whole-hog barbecue is a centuries-old tradition at community gatherings and church events. The oven version makes it accessible year-round. The key is time: nothing substitutes for the hours the meat needs to break down."
+          }
+        ]
+      }
+    ]
+  }
+}

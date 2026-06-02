@@ -1,0 +1,236 @@
+{
+  "slug": "fried-chicken",
+  "title": "Fried chicken",
+  "subtitle": "Buttermilk-brined, double-dredged Southern fried chicken",
+  "excerpt": "Southern fried chicken soaks bone-in pieces in buttermilk overnight, then coats them in well-seasoned flour twice before frying in oil heated to 170°C. The double dredge gives a thick, craggy crust that stays crisp as it cools. The brine tenderises the meat all the way through.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Southern American culinary tradition. Buttermilk-brined fried chicken is most associated with Edna Lewis, The Taste of Country Cooking (1976), and Scott Peacock's documented collaboration with Lewis. The technique of double-dredging for a craggy crust appears in regional Appalachian and Deep South cookery.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The chicken must soak in buttermilk for at least 4 hours and up to 24 hours. The longer the brine, the more tender the meat.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "buttermilk-brine",
+      "term": "Buttermilk brine",
+      "definition": "A soak in buttermilk (or milk acidified with lemon juice or vinegar) used to tenderise chicken before frying. The mild acidity loosens the protein structure and the coating it leaves helps the flour dredge stick."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Southern fried chicken starts with a "
+          },
+          {
+            "type": "text",
+            "text": "buttermilk brine",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "buttermilk-brine" } }]
+          },
+          {
+            "type": "text",
+            "text": " of at least 4 hours, ideally overnight. The chicken pieces go from the brine straight into seasoned flour, back briefly into the brine, then into the flour again. The double coat gives a thick, craggy crust that holds together in the oil and stays crisp as the chicken cools on a rack."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oil temperature matters. Too hot and the crust burns before the meat cooks through. Too cool and the crust absorbs oil and turns soggy. A probe thermometer makes the difference between reliable and inconsistent results."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 4, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-drumsticks", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "buttermilk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cayenne-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 10, "unit": "g", "prepNote": "generous for the flour", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 1000, "unit": "ml", "prepNote": "for frying, enough to come halfway up the pot", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brine the chicken" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the chicken thighs and drumsticks in a large bowl. Pour over {{buttermilk}} of buttermilk and add a tablespoon of the salt. Mix to coat, cover, and refrigerate for at least 4 hours and up to 24 hours."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dredge and fry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the spiced flour. Put {{plain-flour}} of flour in a large bowl. Add {{paprika-smoked}} of smoked paprika, {{garlic-powder}} of garlic powder, {{onion-powder}} of onion powder, {{cayenne-pepper}} of cayenne, the rest of the salt, and {{black-pepper}} of black pepper. Mix well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift a piece of chicken from the buttermilk and press it firmly into the flour mixture on all sides. Dip back into the buttermilk briefly, then press into the flour again. The second coat should be thick and craggy. Place on a wire rack. Repeat with all pieces. Rest for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{vegetable-oil}} of oil in the Dutch oven to 170°C. Fry in batches of 4 pieces. Cook for 12 to 14 minutes, turning once or twice, until deep golden. A probe at the thickest part should read 75°C. Drain on a rack, not paper."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Crust falling off in the oil",
+              "cause": "Chicken moved too soon, or the crust was not fully set before touching.",
+              "fix": "Do not move the chicken for the first 3 minutes. The crust will release from the pan bottom naturally when it has set."
+            },
+            {
+              "symptom": "Pale crust with undercooked centre",
+              "cause": "Oil too cool, so the chicken cooked slowly without browning.",
+              "fix": "Monitor oil temperature throughout. It will drop when cold chicken is added; raise the heat to bring it back to 170°C."
+            },
+            {
+              "symptom": "Crust burned but meat still pink",
+              "cause": "Oil too hot, or pieces too thick.",
+              "fix": "Start larger pieces in oil at 165°C and finish in a 180°C oven for 10 minutes to cook through without further browning."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nashville hot chicken dips the fried pieces in a paste of chilli oil and spices immediately after they come out of the oil. Korean-American fried chicken uses a thin rice-flour coating and double-fries at higher temperature for an exceptionally crisp shell. Serve with coleslaw, cornbread, or mashed potato and gravy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Southern fried chicken is one of the pillars of the American soul-food tradition, a dish with roots in the cooking of enslaved people on Southern plantations who brought West African frying techniques to the cooking of chicken. The buttermilk brine and the double-dredge crust are the Southern refinements. It is served cold at picnics, hot at church suppers, and everywhere in between."
+          }
+        ]
+      }
+    ]
+  }
+}

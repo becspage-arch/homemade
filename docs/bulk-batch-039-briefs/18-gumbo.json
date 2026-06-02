@@ -1,0 +1,248 @@
+{
+  "slug": "gumbo",
+  "title": "Gumbo",
+  "subtitle": "Dark-roux Cajun stew with chicken, andouille sausage, and okra",
+  "excerpt": "Gumbo is a Louisiana stew built on a very dark roux cooked until it smells of toasted nuts, then simmered with chicken, andouille sausage, the Cajun trinity, and okra. The roux takes patience: 20 to 30 minutes of constant stirring. Everything else takes care of itself. Served over long-grain rice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cajun and Creole culinary tradition, Louisiana. Gumbo is documented from the early nineteenth century and is considered the signature dish of Louisiana cooking. Background from Paul Prudhomme, Chef Paul Prudhomme's Louisiana Kitchen (1984), and WPA Louisiana Writers' Project food surveys.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Gumbo freezes very well for up to 3 months. The roux base holds its texture on reheating. Serve over freshly cooked rice.",
+    "batchable": true,
+    "batchNotes": "Gumbo improves overnight and feeds a crowd. Make it a day ahead for the best flavour.",
+    "makeAheadNotes": "The stew is better the next day. Make it entirely ahead and refrigerate, reheating gently.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "batchCook"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dark-roux",
+      "term": "Dark roux",
+      "definition": "Flour cooked in fat (usually oil, sometimes butter) over medium heat for 20 to 40 minutes with constant stirring until it turns the colour of dark chocolate and smells like toasted nuts. It is the flavour base of Cajun and Creole cooking, particularly gumbo."
+    },
+    {
+      "slug": "file-powder",
+      "term": "Filé powder",
+      "definition": "Ground dried sassafras leaves, used in Louisiana cooking as a seasoning and thickener added to gumbo at the table or at the end of cooking. It has a faint root-beer note and is traditional but optional."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gumbo starts with a "
+          },
+          {
+            "type": "text",
+            "text": "dark roux",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dark-roux" } }]
+          },
+          {
+            "type": "text",
+            "text": ": flour and oil cooked together for 20 to 30 minutes with constant stirring until the mixture turns the colour of dark chocolate. The roux is the whole flavour of the dish. Once it is made, the rest of the recipe is a fairly straightforward braise. Patience with the roux is the only skill required."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 6, "unit": "each", "prepNote": "bone-in, skin-on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-pork-sausage", "amount": 400, "unit": "g", "prepNote": "andouille or smoked kielbasa, sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "okra", "amount": 200, "unit": "g", "prepNote": "sliced into 1 cm rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": "for the roux", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 120, "unit": "ml", "prepNote": "for the roux", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 4, "unit": "each", "prepNote": "stalks, finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 3, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cayenne-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 400, "unit": "g", "prepNote": "cooked, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "sliced, to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dark roux" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{vegetable-oil}} of oil in the Dutch oven over medium heat. Add {{plain-flour}} of flour all at once. Stir constantly with a wooden spoon for 20 to 30 minutes. The mixture will turn from pale yellow to tan to peanut butter to dark chocolate. Do not stop stirring and do not increase the heat. If it smells burnt rather than toasted, start again. The finished roux should be the colour of dark chocolate."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the stew" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Immediately add the {{onion}} onions, {{celery}} celery, and {{pepper-green}} green pepper to the roux. The vegetables will sizzle hard. Stir well and cook for 5 minutes. Add {{garlic}} of garlic, {{paprika-smoked}} of smoked paprika, {{cayenne-pepper}} of cayenne, and {{thyme-dried}} of thyme."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gradually pour in {{stock-chicken}} of hot chicken stock, stirring well. Add the {{chicken-thigh}} chicken thighs, {{smoked-pork-sausage}} of sliced sausage, and {{bay-leaves}} of bay. Bring to a simmer. Cook uncovered over medium-low heat for 45 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift out the chicken thighs. Remove and discard the skin and bones. Shred the meat and return it to the pot. Add the {{okra}} of okra and simmer for 15 minutes. Remove the bay leaves. Taste and season. Serve over long-grain rice, scattered with spring onions."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Roux burning or smelling acrid",
+              "cause": "Heat too high or stirring stopped.",
+              "fix": "The roux must be stirred constantly. If it smells bitter and acrid rather than nutty and toasty, it has burned. Discard it and start again with a clean pot."
+            },
+            {
+              "symptom": "Gumbo thin and flat-tasting",
+              "cause": "Roux not cooked dark enough.",
+              "fix": "The flavour comes from the darkness of the roux. A chocolate-coloured roux gives a richer, deeper result than a tan one."
+            },
+            {
+              "symptom": "Okra slimy",
+              "cause": "Cooked too long.",
+              "fix": "Okra thickens the gumbo with its natural gelling properties, but overcooking makes it unpleasantly slimy. Add it in the final 15 minutes only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seafood gumbo replaces the chicken with prawns, crab, and oysters, added in the final 10 minutes. "
+          },
+          {
+            "type": "text",
+            "text": "Filé powder",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "file-powder" } }]
+          },
+          {
+            "type": "text",
+            "text": " can be stirred in at the end (off the heat) as an additional thickener and traditional flavouring. Gumbo z'herbes is a Lenten vegetarian version built from seven or more types of greens."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gumbo is the official cuisine of the state of Louisiana and the dish most identified with New Orleans and Cajun country. Its name is thought to derive from the Bantu word for okra, linking it directly to the West African cooking traditions brought by enslaved people to Louisiana. The dark roux technique itself is from French cooking; the combination is uniquely Louisiana."
+          }
+        ]
+      }
+    ]
+  }
+}

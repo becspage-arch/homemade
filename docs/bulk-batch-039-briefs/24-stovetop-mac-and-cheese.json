@@ -1,0 +1,201 @@
+{
+  "slug": "stovetop-mac-and-cheese",
+  "title": "Stovetop mac and cheese",
+  "subtitle": "Quick weeknight macaroni in a creamy cheddar sauce",
+  "excerpt": "Stovetop mac and cheese is macaroni stirred into a béchamel enriched with cheddar and a pinch of mustard. It comes together in 20 minutes and has the loose, saucy texture that makes it the quick weeknight version as opposed to the baked Southern style. It works for a weeknight supper and is popular with children.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American comfort-food tradition. Stovetop macaroni and cheese is a simplified version of the baked dish documented in Fannie Farmer, The Boston Cooking-School Cook Book (1896), Project Gutenberg.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "colander", "isOptional": false },
+    { "slug": "box-grater", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made by cooking butter and flour together to form a roux, then adding milk gradually while stirring to produce a smooth, thick sauce. It is the base for macaroni cheese sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stovetop mac and cheese builds a "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bechamel" } }]
+          },
+          {
+            "type": "text",
+            "text": " while the pasta cooks, then combines the two. The sauce should be loose enough to coat every piece of macaroni: it will thicken as the pasta absorbs it. Serve immediately, not after standing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 350, "unit": "g", "prepNote": "macaroni or small pasta shapes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 200, "unit": "g", "prepNote": "mature, grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mustard-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and make the sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{pasta-dried}} of macaroni in well-salted boiling water according to the packet. Reserve a mug of pasta water before draining."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Meanwhile, melt {{unsalted-butter}} of butter in the medium saucepan over medium heat. Add {{plain-flour}} of flour and stir for 1 minute. Gradually whisk in {{whole-milk}} of warm milk, adding it in stages. Cook, stirring, for 5 minutes until the sauce is thick enough to coat the back of a spoon. Add {{mustard-powder}} of mustard powder and season with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the sauce from the heat. Add {{cheddar}} of grated cheddar and stir until melted. Add the drained pasta and toss to coat, adding splashes of pasta water to keep it saucy. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce lumpy",
+              "cause": "Milk added too quickly before the roux was fully incorporated.",
+              "fix": "Add the first 100 ml of milk gradually while whisking constantly. Once smooth, the rest can go in faster."
+            },
+            {
+              "symptom": "Sauce thick and gluey after mixing with pasta",
+              "cause": "Too little pasta water added, or sauce made too thick.",
+              "fix": "Add pasta water a tablespoon at a time and stir vigorously until the sauce coats the pasta but moves freely."
+            },
+            {
+              "symptom": "Cheese not melting smoothly",
+              "cause": "Cheese added to a very hot sauce, causing the proteins to tighten.",
+              "fix": "Take the sauce off the heat before adding the cheese. A cooler sauce allows the cheese to melt into smooth threads rather than clumping."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A mix of cheddar and Gruyere gives a more complex result. Adding crumbled cooked bacon, a teaspoon of chipotle paste, or a handful of frozen peas all work well. For a richer result, swap 100 ml of the milk for double cream."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stovetop macaroni and cheese is the quick, child-friendly weeknight version of its baked counterpart. The two are considered different dishes in the American South, where the baked version is the serious one. The stovetop version appears on every American diner and family restaurant menu as a side dish."
+          }
+        ]
+      }
+    ]
+  }
+}

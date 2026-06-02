@@ -1,0 +1,231 @@
+{
+  "slug": "prawn-and-grits",
+  "title": "Prawn and grits",
+  "subtitle": "Cajun-spiced prawns over creamy stone-ground polenta",
+  "excerpt": "Prawn and grits is a South Carolina Lowcountry dish of prawns cooked with bacon, garlic, and Cajun spices in a quick pan sauce, served over a bowl of creamy, buttered grits. The whole dish is ready in 30 minutes. The spiced prawn sauce against the mild, rich grits is the point.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "South Carolina Lowcountry culinary tradition. Prawn and grits (shrimp and grits in the original American) as a composed dish gained national recognition through Craig Claiborne's 1985 New York Times article about a Chapel Hill version. The Lowcountry tradition predates this by generations, documented in Edna Lewis, The Taste of Country Cooking (1976).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The grits can be made 30 minutes ahead and kept warm with a disc of butter on top. Make the prawn topping just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "breakfast",
+    "mood": ["weekend", "dinnerParty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "grits",
+      "term": "Grits",
+      "definition": "Coarsely ground dried maize cooked in water or stock to a thick, creamy porridge. Stone-ground grits take 30 to 40 minutes to cook and have more flavour than quick-cook varieties. Similar in texture to polenta."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prawn and grits is a bowl of creamy buttered "
+          },
+          {
+            "type": "text",
+            "text": "grits",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grits" } }]
+          },
+          {
+            "type": "text",
+            "text": " topped with prawns cooked in a sauce of bacon fat, garlic, lemon, and Cajun spices. The grits take about 30 minutes; the prawn topping takes about 8. Start them at the same time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "prawns-raw", "amount": 500, "unit": "g", "prepNote": "large, peeled and deveined", "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "streaky-bacon", "amount": 4, "unit": "slice", "prepNote": "cut into small pieces", "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "sliced, white and green parts separated", "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "louisiana-hot-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "cayenne-pepper", "amount": null, "unit": "tsp", "prepNote": "a pinch", "isOptional": true, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "stock-chicken", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the prawns" },
+            { "ingredientSlug": "polenta", "amount": 200, "unit": "g", "prepNote": "stone-ground or coarse-ground", "isOptional": false, "groupLabel": "For the grits" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the grits" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the grits" },
+            { "ingredientSlug": "cheddar", "amount": 60, "unit": "g", "prepNote": "grated, optional", "isOptional": true, "groupLabel": "For the grits" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the grits" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring {{whole-milk}} of milk and 500 ml of water to a simmer in the large saucepan with a generous pinch of salt. Whisk in {{polenta}} of polenta in a slow stream to prevent lumps. Switch to a wooden spoon and cook over low heat, stirring regularly, for 25 to 30 minutes until thick and creamy. Stir in {{unsalted-butter}} of butter and the {{cheddar}} of grated cheddar if using. Season well and keep warm."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the prawns" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the {{streaky-bacon}} of bacon pieces in the frying pan over medium heat until crisp. Remove with a slotted spoon and set aside. Pour off all but 1 tablespoon of the bacon fat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the heat to medium-high. Add the white parts of the {{spring-onion}} spring onions and {{garlic}} of garlic. Cook for 1 minute. Add {{prawns-raw}} of prawns in a single layer. Cook for 1 to 2 minutes per side until pink. Add {{stock-chicken}} of chicken stock, {{lemon}} lemon juice, {{louisiana-hot-sauce}} of hot sauce, and {{paprika-smoked}} of smoked paprika. Stir for 1 minute. Return the bacon to the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the grits between warm bowls. Spoon the prawn mixture on top, including the pan juices. Scatter the green spring onion tops over and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Grits lumpy",
+              "cause": "Polenta added too quickly or liquid not hot enough.",
+              "fix": "Whisk the polenta into a gentle simmer, not a cold liquid. Add it slowly in a steady stream while whisking constantly."
+            },
+            {
+              "symptom": "Prawns overcooked",
+              "cause": "Too long in the pan or heat too high.",
+              "fix": "Prawns turn opaque and pink in 2 to 3 minutes total. Pull them off as soon as they curl and turn pink all the way through."
+            },
+            {
+              "symptom": "Grits thick and sticky after standing",
+              "cause": "Polenta continues to absorb liquid as it sits.",
+              "fix": "Stir in a splash of warm water or milk over low heat to loosen to the right consistency."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cheese grits (polenta stirred with a generous amount of cheddar) make a richer base and is the Carolina standard. A version with andouille sausage sliced in with the prawns is very good. For a brunch version, a poached egg on top of the prawns finishes the dish well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Prawn and grits (known as shrimp and grits in the American South) is the signature dish of the South Carolina Lowcountry, where prawn fishing and maize have coexisted for centuries. It was a fishermen's breakfast before it became a restaurant staple. A 1985 New York Times article brought it to national attention."
+          }
+        ]
+      }
+    ]
+  }
+}

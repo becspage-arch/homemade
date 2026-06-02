@@ -1,0 +1,225 @@
+{
+  "slug": "smothered-pork-chops",
+  "title": "Smothered pork chops",
+  "subtitle": "Pork chops braised in an onion and mushroom cream gravy",
+  "excerpt": "Smothered pork chops are seasoned pork chops browned in cast iron, then braised covered in a thick onion and mushroom gravy until the meat is tender and the sauce has soaked into the chops. The term 'smothered' in Southern cooking means cooked in gravy in a covered pan. Served over mashed potato or rice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Southern American culinary tradition. The 'smothered' cooking method is documented in Edna Lewis, The Taste of Country Cooking (1976), and in WPA Southern state food surveys. The method applies to chicken, pork, and beef throughout the American South.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The whole dish reheats well the next day.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "wooden-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "smothered",
+      "term": "Smothered",
+      "definition": "A Southern cooking term for braising meat in a covered pan with a thick gravy or sauce. The lid traps steam so the meat cooks in the liquid from above and below simultaneously."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In Southern cooking, '"
+          },
+          {
+            "type": "text",
+            "text": "smothered",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smothered" } }]
+          },
+          {
+            "type": "text",
+            "text": "' means braised under a thick gravy with the lid on. Pork chops browned in a hot pan, covered in a sauce of caramelised onions, mushrooms, and chicken stock thickened with a roux, then cooked on the lowest heat for 30 minutes until the chops are tender. The sauce penetrates the meat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-chop", "amount": 4, "unit": "each", "prepNote": "bone-in, about 2 cm thick", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 200, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": "for seasoning the chops", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the chops" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the {{pork-chop}} pork chops with salt, pepper, and {{paprika-smoked}} of smoked paprika. Heat {{vegetable-oil}} of oil in the cast-iron skillet over high heat until smoking. Brown the chops for 3 minutes per side until deep golden. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the gravy and braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce heat to medium. Melt {{unsalted-butter}} of butter in the skillet. Add {{onion}} onions and cook for 8 minutes, stirring, until golden and soft. Add {{chestnut-mushrooms}} of mushrooms and {{garlic}} of garlic. Cook for 3 minutes. Add {{plain-flour}} of flour and stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gradually pour in {{stock-chicken}} of chicken stock, stirring. Add {{worcestershire-sauce}} of Worcestershire sauce and {{thyme-dried}} of dried thyme. Bring to a simmer. Return the pork chops to the pan, nestling them into the gravy. Cover tightly and cook over low heat for 25 to 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the chops. Stir {{double-cream}} of cream into the gravy and taste for seasoning. Return the chops, spoon the gravy over them, and serve with mashed potato."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Gravy lumpy after adding stock",
+              "cause": "Flour not properly incorporated into the fat before the liquid was added.",
+              "fix": "Cook the flour in the butter until it smells slightly nutty before adding the stock. Add the first 100 ml slowly while stirring."
+            },
+            {
+              "symptom": "Pork chops tough",
+              "cause": "Not cooked long enough in the covered braise.",
+              "fix": "The covered low-heat braise is what tenderises the meat. Give it the full 30 minutes and check with a fork."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smothered chicken is made the same way with chicken thighs in place of pork chops. A teaspoon of Cajun seasoning in the gravy gives a deeper, more savoury result. Serve over rice instead of mashed potato for the more traditional Southern approach."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The smothered method is one of the most practical techniques in the Southern kitchen. A single pan, cheap cuts, and patience produce something that tastes like much more work. It works equally well with chicken, beef, and pork and appears across the Southern states from Louisiana to Georgia."
+          }
+        ]
+      }
+    ]
+  }
+}

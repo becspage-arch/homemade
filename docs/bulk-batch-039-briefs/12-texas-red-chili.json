@@ -1,0 +1,227 @@
+{
+  "slug": "texas-red-chili",
+  "title": "Texas red chili",
+  "subtitle": "Purist beef chili with dried chillies and no beans",
+  "excerpt": "Texas red chili is chunks of braised beef in a deep red sauce built from dried ancho and chipotle chillies, beef stock, and cumin, with no tomatoes and no beans. The purist version from central Texas has been the subject of fierce regional debate for a century. It is rich, dark, and serious.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Texas culinary tradition. The International Chili Society rules and the Terlingua Chili Championship (established 1967) codified the no-bean, no-tomato Texas red standard. Background from WPA Texas state-cookery surveys and James Beard Foundation documentation of regional American cooking.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes extremely well. Portion into containers once cooled. Reheat from frozen in a covered pot with a splash of beef stock.",
+    "batchable": true,
+    "batchNotes": "Better the next day. Double batches work well and freeze in portions.",
+    "makeAheadNotes": "Prepare up to 3 days ahead. The flavour deepens considerably overnight in the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "batchCook"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chili-paste",
+      "term": "Chili paste",
+      "definition": "A paste made by toasting and rehydrating dried chillies, then blending them with a little of the soaking liquid. It forms the base of Texas red chili and many Mexican sauces, giving a deeper, more complex flavour than ground chilli powder."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Texas red chili builds its flavour from a "
+          },
+          {
+            "type": "text",
+            "text": "chili paste",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chili-paste" } }]
+          },
+          {
+            "type": "text",
+            "text": " of toasted and rehydrated dried ancho chillies blended with a little chipotle. The beef is cut into chunks, not minced: this is a braise, not a ragù. The sauce is thick, dark red, and unmistakably savoury, with cumin as the dominant spice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 1200, "unit": "g", "prepNote": "cut into 3 cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ancho-chilli", "amount": 6, "unit": "each", "prepNote": "dried, stems and seeds removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chipotle", "amount": 2, "unit": "each", "prepNote": "dried, or 2 tsp chipotle paste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 3, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": null, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": null, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the chili paste" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the {{ancho-chilli}} ancho chillies and {{chipotle}} chipotle chillies in a dry frying pan over medium heat for 30 seconds per side until fragrant. Do not let them burn. Cover with 300 ml of just-boiled water and soak for 20 minutes. Blend the soaked chillies with 150 ml of the soaking liquid, the {{garlic}} of garlic, and {{onion}} onion until smooth."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef and build" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{vegetable-oil}} of oil in the Dutch oven over high heat. Season the {{beef-chuck}} of beef chunks with salt and pepper and brown in batches for 3 minutes per side. Do not crowd the pot. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the chili paste to the pot and fry, stirring, for 3 minutes until it darkens slightly and smells toasted. Add {{cumin-ground}} of cumin and {{oregano-dried}} of oregano. Cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the beef to the pot. Pour in {{stock-beef}} of beef stock and bring to a simmer. Cover and cook over low heat for 2 to 2.5 hours until the beef is very tender and the sauce has thickened. Taste and adjust with salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Chili bitter",
+              "cause": "Chillies toasted too long and scorched, or soaking liquid too concentrated.",
+              "fix": "Toast briefly and watch carefully. If bitter, add a pinch of sugar or a teaspoon of honey to balance."
+            },
+            {
+              "symptom": "Sauce too thin after 2.5 hours",
+              "cause": "Too much stock added, or pot not covered properly.",
+              "fix": "Remove the lid for the final 30 minutes of cooking to reduce the sauce."
+            },
+            {
+              "symptom": "Beef still tough",
+              "cause": "Not cooked long enough, or heat too low.",
+              "fix": "Chuck needs a full 2 to 2.5 hours. If still firm, cook for another 30 minutes with the lid on."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cincinnati chili adds cinnamon, cloves, and allspice and is served over spaghetti with cheddar cheese. White chicken chili uses chicken thighs, white beans, and green chillies for a completely different flavour profile. For a more accessible version, a couple of tablespoons of good chilli powder in place of the dried chilli paste works well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Texas red is taken seriously in a way few dishes in the American culinary tradition are. Competition chili cooking is a recognised sport in Texas, and the rules that govern it, including no beans and no tomatoes, are observed with the kind of rigour that the French apply to their regional appellations. The dish rewards patience more than technique."
+          }
+        ]
+      }
+    ]
+  }
+}
