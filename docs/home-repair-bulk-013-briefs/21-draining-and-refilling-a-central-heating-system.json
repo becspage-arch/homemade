@@ -1,0 +1,148 @@
+{
+  "slug": "draining-and-refilling-a-central-heating-system",
+  "title": "Draining and refilling a central heating system",
+  "subtitle": "Drain a sealed or open-vented central heating system for a radiator swap or pipework repair, then refill, purge air, and restore to pressure",
+  "excerpt": "How to drain and refill a central heating system. Covers isolating the boiler, connecting a drain hose, opening the drain valve, fully draining the system, and refilling and purging air via the radiator bleed valves.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). Reader's Digest Complete DIY Manual (referenced, not reproduced). UK Gas Safe Register guidance on central heating maintenance (open access).",
+  "recipeTools": [
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "water-pump-pliers", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "drain-valve-heating",
+      "term": "Drain valve (heating system)",
+      "definition": "A brass tap with a hose connection screwed into the lowest point of the heating system pipework. Opening the valve with a key or pliers releases water from the system into a hose that runs to a drain. Most domestic systems have one main drain point near the boiler."
+    },
+    {
+      "slug": "sealed-heating-system",
+      "term": "Sealed heating system",
+      "definition": "A closed central heating system without a header tank: water is added via a filling loop and the system operates at a set pressure (usually 1.0 to 1.5 bar). After draining, the system is refilled via the filling loop and the pressure is restored before the boiler is restarted."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "drain central heating",
+    "flush heating system",
+    "central heating drain and refill"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Draining the central heating system is needed when replacing a radiator, repairing a leaking joint, or flushing an old system. The job takes a morning. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sealed-heating-system" } }],
+            "text": "Sealed systems"
+          },
+          {
+            "type": "text",
+            "text": " refill via a filling loop; open-vented systems refill via the header tank in the loft. The procedure is the same for both up to the refill step."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate the boiler and allow to cool" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch the boiler off. Set the thermostat to the minimum. Allow the system to cool for at least 1 hour before draining: draining hot water is dangerous and the pipework will be too hot to handle. Check that the boiler is off and not calling for heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the hose and open the drain valve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Locate the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "drain-valve-heating" } }],
+            "text": "drain valve"
+          },
+          {
+            "type": "text",
+            "text": " (usually on a low-level pipe near the boiler or at the lowest point of the system). Connect a garden hose to the hose thread and run it to an outside drain or a suitable discharge point. Open the drain valve with the correct key (a square-section drain valve key) or a pair of pliers. Water will flow, slowly at first as the system pressure equalises. Open an air vent (the bleed valve) on an upstairs radiator to admit air and speed drainage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drain fully and make your repair" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Allow the system to drain until water stops flowing. There will be some residual water in each radiator that drains only if you isolate and tilt it individually. For a radiator swap, close the lock-shield and TRV valves on the radiator before draining the full system, so only the individual radiator needs to drain. Carry out the repair or replacement."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Refill a sealed system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Close the drain valve and all bleed valves. Connect the filling loop (the short flexi-hose with a valve at each end that bridges the mains cold supply and the heating system). Open both filling-loop valves and watch the pressure gauge rise to 1.0 to 1.5 bar. Close the filling-loop valves. Bleed each radiator starting from the ground floor and working upward, opening the bleed valve until water runs and no air hisses. Check the pressure gauge; top up if it has dropped below 1.0 bar. Restart the boiler."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "System pressure drops to zero within a day of refilling",
+              "cause": "A joint that was repaired or disturbed during the work is leaking, or the expansion vessel pressure needs resetting.",
+              "fix": "Check all disturbed joints for drips. Check the expansion vessel charge pressure (this requires releasing pressure from the system first; call a heating engineer if you are not confident)."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cold spots at the top of radiators after refilling",
+              "cause": "Air trapped in the top of the radiator.",
+              "fix": "Bleed the affected radiators again. With the heating running, the air will rise to the top of the radiator; bleed when the water is warm."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

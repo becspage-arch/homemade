@@ -719,3 +719,26 @@ SKIPPED: 0
 - gooseberry-and-elderflower-cake: opening-pattern-missing-hook
 - harcha: opening-pattern-missing-hook
 - honey-walnut-tart: opening-pattern-missing-hook
+
+---
+
+## Run at 17:09:43
+
+Generated: 2026-06-02T17:09:43.947Z
+
+Processed: 49
+PASS: 47
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 29 |
+| grade-level-strict | 6 |
+
+## Still BLOCKED (sample 20)
+
+- fitting-a-window-opening-restrictor: grade-level-strict
+- repairing-a-sagging-plasterboard-ceiling: grade-level-strict

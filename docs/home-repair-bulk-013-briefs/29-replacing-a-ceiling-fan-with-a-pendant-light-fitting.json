@@ -1,0 +1,151 @@
+{
+  "slug": "replacing-a-ceiling-fan-with-a-pendant-light-fitting",
+  "title": "Replacing a ceiling fan with a pendant light fitting",
+  "subtitle": "Isolate the circuit, remove the ceiling fan and its bracket, fit a new ceiling rose or close-coupled pendant, and reconnect the wiring",
+  "excerpt": "How to replace a ceiling fan with a pendant light fitting. Covers isolating and verifying dead, removing the fan body and canopy, assessing the ceiling mounting point, fitting a new ceiling rose, and reconnecting the loop-in or switch wiring.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK 18th Edition Wiring Regulations (referenced, not reproduced). IET Guidance Notes on domestic electrical installations (open access).",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": true },
+    { "slug": "tape-measure-5m", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "loop-in-ceiling-rose",
+      "term": "Loop-in ceiling rose",
+      "definition": "The standard domestic UK ceiling-rose wiring method. The supply comes in to the rose, loops on to the next fitting, and a separate switch cable drops to the wall switch. The rose has three terminal blocks: supply in/out, switch wire, and the lamp output."
+    },
+    {
+      "slug": "ceiling-fan-canopy",
+      "term": "Ceiling fan canopy",
+      "definition": "The decorative cover plate at the top of a ceiling fan body that conceals the mounting bracket and the wiring connections. Unclipping or unscrewing the canopy exposes the bracket fixing and the electrical connections."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "remove ceiling fan",
+    "ceiling fan to light",
+    "replace fan with pendant"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Replacing a ceiling fan with a pendant fitting is straightforward once the circuit is verified dead. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loop-in-ceiling-rose" } }],
+            "text": "loop-in wiring"
+          },
+          {
+            "type": "text",
+            "text": " at the ceiling is the standard domestic type; the new pendant rose uses the same terminal arrangement. The ceiling fan's mounting bracket may need replacing; most pendant roses use a standard BESA box or a direct-fix backplate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate, lock off, and verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch the relevant lighting circuit off at the consumer unit. Identify the breaker, switch it to OFF, and apply a lock-off device. Test your two-pole voltage tester against a known-live source (a proving unit or a working socket) to confirm it is working. Switch the wall switch to ON. Test the conductors at the ceiling fitting. Test your tester again on the live source. The order is live-dead-live. Do not start removing fittings until all conductors read dead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remove the ceiling fan" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the fan at the wall and confirm the circuit is dead. Unclip or unscrew the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ceiling-fan-canopy" } }],
+            "text": "canopy"
+          },
+          {
+            "type": "text",
+            "text": ". Most ceiling fans have three or four screws around the canopy rim. Disconnect the conductors at the terminal block in the canopy; note which conductor goes to which terminal (photograph before disconnecting). The fan body and bracket hang from a ceiling plate fixed to the joist or a BESA box; remove the fixing screws and lower the fan. The fan may be heavy; have a helper support it while you disconnect."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assess the ceiling mounting point" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A pendant light fitting is much lighter than a ceiling fan, so any solid ceiling fixing is adequate. If the fan was fixed to a BESA box, the new pendant rose can screw directly to the same BESA box. If the fan used a proprietary bracket, fit a standard BESA box or a direct-fix metal loop hook rated to the weight of the pendant and lampshade."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the pendant rose and reconnect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Screw the new ceiling rose to the BESA box or directly to the ceiling joist. Connect the conductors to the three terminal blocks of the loop-in rose: supply in and out to the first block, the switch cable to the second, and the lamp output conductors to the third. Refer to the old photograph if the wiring is complex. The standard colours are: brown (line), blue (neutral), green-and-yellow (earth). Older red/black cable uses the same positions but red is line, black is neutral. Hang the pendant flex and lampshade."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The light does not come on after reconnection",
+              "cause": "A conductor is not fully seated in its terminal or is connected to the wrong terminal.",
+              "fix": "Isolate and verify dead again. Remove the canopy and check that every terminal has a securely clamped conductor. Check against the loop-in wiring diagram for the rose."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "The MCB trips immediately when the circuit is switched back on",
+              "cause": "A short circuit: line and neutral are touching or earth and line are bridged in the terminal connections.",
+              "fix": "Isolate and verify dead. Open the rose and check that no conductor strands are escaping from the terminal and touching another terminal. Re-make all connections carefully."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

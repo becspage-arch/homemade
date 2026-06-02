@@ -1,0 +1,159 @@
+{
+  "slug": "understanding-18th-edition-wiring-regulations",
+  "title": "Understanding the 18th Edition Wiring Regulations",
+  "subtitle": "What BS 7671:2018 covers, how it differs from earlier editions, and what it means for the domestic homeowner doing their own electrical work",
+  "excerpt": "An overview of the 18th Edition of the IET Wiring Regulations (BS 7671:2018). Covers the scope and purpose of the regulations, the key changes from the 17th Edition, what Part P notification means in practice, and the areas relevant to domestic DIY.",
+  "type": "READING",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET Guidance Note 1 (open access summary). UK Building Regulations Approved Document P (open access). Health and Safety Executive guidance on electrical safety in the home (open access).",
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "bs-7671",
+      "term": "BS 7671",
+      "definition": "British Standard 7671, also known as the IET Wiring Regulations. The national standard for the design and installation of electrical installations in the UK. The 18th Edition (2018, amended 2020) is the current version. Not a statutory instrument in itself, but compliance is required under Building Regulations for notifiable work, and it is the reference standard for all electrical contractors."
+    },
+    {
+      "slug": "part-p-notification",
+      "term": "Part P (Building Regulations, England and Wales)",
+      "definition": "Approved Document P of the Building Regulations covers electrical safety in dwellings. It requires that notifiable electrical work (new circuits, work in kitchens, bathrooms, outside, and other specified locations) is either done by a registered competent person or notified to and inspected by a building control body. Non-notifiable work (replacing like-for-like fittings, adding a socket to an existing ring, etc.) does not require notification."
+    },
+    {
+      "slug": "rcd-protection-18th",
+      "term": "RCD protection (18th Edition)",
+      "definition": "The 18th Edition requires residual current device (RCD) protection for all socket outlets (up to 32 A) and for all final circuits supplying outdoor equipment, concealed cables, and circuits in bathrooms and special locations. The amendment in 2020 extended the requirement to include most circuits in new and rewired installations. A 30 mA RCD is the standard domestic protection device."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "IET wiring regulations",
+    "BS 7671",
+    "18th edition electrical"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bs-7671" } }],
+            "text": "18th Edition of the IET Wiring Regulations"
+          },
+          {
+            "type": "text",
+            "text": " is the current UK standard for electrical installations. It is not a wiring manual. It sets the design rules and safety requirements. Knowing what it requires helps a homeowner decide which jobs need a registered contractor and which can be done without notification."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the 18th Edition covers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BS 7671 sets the rules for design and installation of wiring in homes, shops, and light industrial buildings. It does not cover railways, high-voltage supply networks, or mine equipment. For a homeowner, the most useful sections cover special locations: kitchens, bathrooms, outdoor wiring, EV charging, and solar panels. These all have extra rules on top of the standard domestic ones."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The key change from the 17th Edition: RCD protection" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The main change in the 18th Edition is that "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rcd-protection-18th" } }],
+            "text": "RCD protection"
+          },
+          {
+            "type": "text",
+            "text": " now covers more circuits. Before, only bathrooms, outdoor cables, and buried cables needed it. The 2020 update extended it to most socket circuits in new work. Old wiring does not need upgrading. But any new circuit or full rewire must comply."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What is and is not notifiable under Part P" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-p-notification" } }], "text": "Part P"
+          },
+          {
+            "type": "text",
+            "text": " applies to homes in England and Wales. Some work does not need notification. Replacing a light fitting, switch, or socket faceplate is fine. Adding a socket to a ring circuit in a normal room is fine. Other work must be notified or done by a registered electrician: a new circuit, any work in a kitchen or bathroom, outdoor work, adding a consumer unit, or installing EV charging equipment."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example: adding a socket in a bedroom" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adding a spur socket off an existing ring final circuit in a bedroom is not notifiable. The spur must be wired with twin-and-earth cable of at least 2.5 mm cross-section, terminated in a correctly wired socket, and protected by the existing ring-circuit MCB and RCD. The socket must be correctly earthed. A registered competent person can certify the work; an unregistered person can do the work and apply for a building control inspection and test certificate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cable colour codes: old and new" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Old wiring (pre-2006): red = line, black = neutral, bare copper or green-yellow sleeve = earth. New wiring (post-2006, harmonised European colours): brown = line, blue = neutral, green-yellow = earth. Many domestic installations have both old and new wiring. When connecting to old wiring, identify the colours correctly before touching anything live. If in doubt about which conductor is line, treat all conductors as live until verified dead with the two-pole tester."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to find more detail" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The IET sells the BS 7671 document. It is for electricians, not for DIY. The HSE has free home safety guides. The scheme operators list which jobs need sign-off. Your local building control body can help."
+          }
+        ]
+      }
+    ]
+  }
+}
