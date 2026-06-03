@@ -45,6 +45,7 @@ export function Toolbar({ editor, glossary, techniques, defaultServings }: Toolb
 
   const isGlossaryActive = editor.isActive('glossaryTooltip')
   const isTechniqueActive = editor.isActive('techniqueLink')
+  const isMonthTokenActive = editor.isActive('monthToken')
 
   return (
     <div className="sticky top-0 z-20 -mx-1 mb-3 flex flex-wrap items-center gap-1 border-b border-[var(--color-linen-grey)] bg-[var(--color-linen-cream)] px-1 py-2">
@@ -108,6 +109,43 @@ export function Toolbar({ editor, glossary, techniques, defaultServings }: Toolb
               .run()
           }}
           active={editor.isActive('link')}
+        />
+        <Btn
+          label={isMonthTokenActive ? 'months ✓' : 'months'}
+          onClick={() => {
+            // Wraps a selected span like "Feb-Mar" with both hemispheres'
+            // values baked in. Renderer swaps to monthsS when the reader
+            // has User.hemisphere = 'S'. Clicking on an existing mark
+            // clears it.
+            if (isMonthTokenActive) {
+              editor.chain().focus().unsetMark('monthToken').run()
+              return
+            }
+            const { from, to } = editor.state.selection
+            if (from === to) {
+              alert(
+                'Select the month text you want to make hemisphere-aware (e.g. "Feb-Mar"), then click months.',
+              )
+              return
+            }
+            const selected = editor.state.doc.textBetween(from, to, ' ')
+            const monthsN = window.prompt(
+              'Northern hemisphere months (as written):',
+              selected,
+            )
+            if (monthsN === null) return
+            const monthsS = window.prompt(
+              'Southern hemisphere months (6-month flip; e.g. Feb-Mar → Aug-Sep):',
+              flipMonthRangeText(monthsN),
+            )
+            if (monthsS === null) return
+            editor
+              .chain()
+              .focus()
+              .setMark('monthToken', { monthsN: monthsN.trim(), monthsS: monthsS.trim() })
+              .run()
+          }}
+          active={isMonthTokenActive}
         />
       </Group>
 
@@ -459,6 +497,28 @@ export function Toolbar({ editor, glossary, techniques, defaultServings }: Toolb
         </div>
       )}
     </div>
+  )
+}
+
+/**
+ * Convert a month / month-range string like "Feb-Mar", "February to March",
+ * or "March" into its 6-month flip ("Aug-Sep", "August to September",
+ * "September"). Used to seed the southern-hemisphere prompt in the
+ * monthToken authoring dialog. Author can edit before saving.
+ */
+const MONTH_FLIP: Record<string, string> = {
+  january: 'July', february: 'August', march: 'September', april: 'October',
+  may: 'November', june: 'December', july: 'January', august: 'February',
+  september: 'March', october: 'April', november: 'May', december: 'June',
+  jan: 'Jul', feb: 'Aug', mar: 'Sep', apr: 'Oct', jun: 'Dec',
+  jul: 'Jan', aug: 'Feb', sep: 'Mar', sept: 'Mar', oct: 'Apr', nov: 'May', dec: 'Jun',
+}
+
+function flipMonthRangeText(text: string): string {
+  if (!text) return ''
+  return text.replace(
+    /\b(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\b/gi,
+    (m) => MONTH_FLIP[m.toLowerCase()] ?? m,
   )
 }
 
