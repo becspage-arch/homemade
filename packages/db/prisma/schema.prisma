@@ -188,6 +188,35 @@ model User {
   // defaults. Set via /api/me/preferences/chart-viewer.
   chartViewerPrefs Json?
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Location + climate (phase_location_climate_paper_001). Drives the
+  // gardening renderer's silent month / frost-date customisation and the
+  // pattern-page paper-size selector. All nullable: the renderer falls back
+  // to the country-default row in `CountryClimate` when a user-level value
+  // isn't set, and to the friendly "Where this works best" card when even
+  // the country code is missing.
+  //
+  //   hemisphere          — 'N' | 'S'. Drives 6-month transposition.
+  //   koppenZone          — e.g. 'Cfb' (oceanic UK). Indexes country climate.
+  //   usdaHardinessZone   — '1a'..'13b'. US / Canada gardening lookup.
+  //   rhsHardinessZone    — 'H1a'..'H7'. RHS gardening lookup.
+  //   lastFrostDate       — month-day this year. Drives "plant after X" copy.
+  //   firstFrostDate      — month-day this year. Drives "last harvest before X" copy.
+  //   paperSize           — 'A4' | 'Letter' | 'Legal' | 'A3'. Drives PDF reflow.
+  //
+  // The existing `country` + `homeCountryCode` columns stay the canonical
+  // country code; new code should read `homeCountryCode` (captured at
+  // signup from cf-ipcountry); `country` is the older analytics column
+  // and is kept for back-compat.
+  // ──────────────────────────────────────────────────────────────────────────
+  hemisphere        String?
+  koppenZone        String?
+  usdaHardinessZone String?
+  rhsHardinessZone  String?
+  lastFrostDate     String?
+  firstFrostDate    String?
+  paperSize         String?
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -551,6 +580,49 @@ model Tutorial {
   regionsApplicable String[] @default([])
 
   // ──────────────────────────────────────────────────────────────────────────
+  // Phase location_climate_paper_001 — region + climate metadata used by
+  // every category that needs region-aware rendering (gardening leads;
+  // needlework / sewing / knitting / crochet reuse the same columns when
+  // those pipelines wire up their region-sensitive surfaces).
+  //
+  // All nullable. Tutorials with no climate metadata get no "Where this
+  // works best" card and no silent month / frost adjustment — the renderer
+  // falls through silently. The fields are deliberately granular so the
+  // renderer can compose plain-English region guidance without authors
+  // having to write or maintain that English themselves.
+  //
+  //   hemisphere               — 'N' | 'S'. Drives 6-month transposition.
+  //   climateZones             — Köppen codes the tutorial is written for
+  //                              (['Cfb'] for an oceanic-UK tutorial).
+  //   usdaHardinessZones       — USDA zones the schedule works for
+  //                              ([7, 8, 9] for a UK-range tutorial).
+  //   rhsHardinessZones        — RHS zones ('H4', 'H5'…).
+  //   growingMonthsByHemisphere — JSON map { N: ['feb', 'mar'], S: ['aug', 'sep'] }
+  //                              keyed by hemisphere. Renderer prefers this
+  //                              over a naive +6 transposition when set.
+  //   frostSensitivity         — 'hardy' | 'half-hardy' | 'tender' | null.
+  //                              Drives "wait until after last frost" copy.
+  //   dayLengthSensitive       — true on lettuce-style plants that bolt
+  //                              once daylight crosses a threshold.
+  //   primaryRegionWrittenFor  — human-readable ('UK & Northern Europe').
+  //   alsoGrowsIn              — human-readable ('US zones 5-9 …').
+  //   paperSizeCompatible      — String[] of paper sizes a printable
+  //                              pattern reflows cleanly to. Empty array
+  //                              means non-printable (no PDF button).
+  // ──────────────────────────────────────────────────────────────────────────
+
+  hemisphere                String?
+  climateZones              String[] @default([])
+  usdaHardinessZones        Int[]    @default([])
+  rhsHardinessZones         String[] @default([])
+  growingMonthsByHemisphere Json?
+  frostSensitivity          String?
+  dayLengthSensitive        Boolean  @default(false)
+  primaryRegionWrittenFor   String?
+  alsoGrowsIn               String?
+  paperSizeCompatible       String[] @default([])
+
+  // ──────────────────────────────────────────────────────────────────────────
   // Phase 8 Herbal pipeline — herbal-medicine recipe metadata.
   //
   // Set on rows where `type IN (REMEDY, HERB_PROFILE)`. Null on every
@@ -818,6 +890,13 @@ model Tutorial {
   @@index([type, approximateCostGbp])
   @@index([type, paybackYears])
   @@index([shelfLifeDays])
+  @@index([hemisphere])
+  @@index([frostSensitivity])
+  @@index([dayLengthSensitive])
+  @@index([climateZones], type: Gin)
+  @@index([usdaHardinessZones], type: Gin)
+  @@index([rhsHardinessZones], type: Gin)
+  @@index([paperSizeCompatible], type: Gin)
 }
 
 enum TutorialType {
@@ -3299,4 +3378,40 @@ model TutorialVisit {
 
   @@id([userId, tutorialId])
   @@index([userId, count])
+}
+
+/// Country-level climate + paper defaults, used when a user has a
+/// `homeCountryCode` set but hasn't picked specific zone / paper values.
+/// Phase location_climate_paper_001.
+///
+/// `countryCode` is ISO 3166-1 alpha-2 (UK = GB per ISO; we accept both
+/// 'GB' and 'UK' as the same row by storing 'GB' canonical + the brief's
+/// label).
+///
+/// `defaultHemisphere`, `defaultKoppenZone`, `defaultUsdaZone`,
+/// `defaultRhsZone` are coarse country-average values — fine as a
+/// starting point; the user can override in settings or via the
+/// postcode lookup (UK / US / CA / AU, follow-up worker).
+///
+/// `defaultPaperSize` is 'Letter' for the four imperial countries
+/// (US / MX / PH / LR) and 'A4' for everyone else. `defaultLastFrostDate`
+/// + `defaultFirstFrostDate` are stored as 'MM-DD' month-day strings so
+/// the year rolls automatically.
+model CountryClimate {
+  countryCode           String  @id
+  countryName           String
+  defaultHemisphere     String
+  defaultKoppenZone     String
+  defaultUsdaZone       String?
+  defaultRhsZone        String?
+  defaultPaperSize      String
+  defaultLastFrostDate  String?
+  defaultFirstFrostDate String?
+  notes                 String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([defaultHemisphere])
+  @@index([defaultKoppenZone])
 }

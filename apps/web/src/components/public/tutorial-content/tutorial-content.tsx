@@ -115,6 +115,12 @@ export function TutorialContent({
   // persist progress per chart. Walk the doc once to assign indices.
   const chartIndexByNode = assignChartIndices(content.content)
 
+  // Ordered-list "method index" — counts every top-level orderedList in
+  // body order. Used by the `numberingScope: 'alternative'` renderer so
+  // the second method shows "Method 2 (alternative)" without the author
+  // having to write the header.
+  const methodIndexByNode = assignMethodIndices(content.content)
+
   return (
     <div className={`tutorial-content${beginnerMode ? ' beginner' : ''}`}>
       {content.content.map((node, i) => (
@@ -129,10 +135,29 @@ export function TutorialContent({
           tutorialId={tutorialId}
           isSignedIn={isSignedIn}
           chartIndex={chartIndexByNode.get(node) ?? null}
+          methodIndex={methodIndexByNode.get(node) ?? null}
         />
       ))}
     </div>
   )
+}
+
+/**
+ * Walk the top-level body once and assign every orderedList a 1-based
+ * "method index". The renderer uses this for the `numberingScope:
+ * 'alternative'` header — the first alternative becomes "Method 2", the
+ * second "Method 3", etc.
+ */
+function assignMethodIndices(nodes: TipTapNode[]): Map<TipTapNode, number> {
+  const map = new Map<TipTapNode, number>()
+  let counter = 0
+  for (const node of nodes) {
+    if (node.type === 'orderedList') {
+      counter += 1
+      map.set(node, counter)
+    }
+  }
+  return map
 }
 
 /**
@@ -180,6 +205,7 @@ interface RenderNodeProps {
   tutorialId?: string | null
   isSignedIn?: boolean
   chartIndex?: number | null
+  methodIndex?: number | null
 }
 
 function RenderNode({
@@ -192,6 +218,7 @@ function RenderNode({
   tutorialId = null,
   isSignedIn = false,
   chartIndex = null,
+  methodIndex = null,
 }: RenderNodeProps): ReactNode {
   const ctx: RenderContext = {
     glossary,
@@ -218,8 +245,35 @@ function RenderNode({
     case 'bulletList':
       return <ul>{renderChildren(node.content, ctx)}</ul>
 
-    case 'orderedList':
-      return <ol>{renderChildren(node.content, ctx)}</ol>
+    case 'orderedList': {
+      // numberingScope (phase_location_climate_paper_001, part 7):
+      //   'continue'    — current behaviour. No header, browser continues
+      //                   the list counter from the previous <ol>.
+      //   'restart'     — list counter resets to 1, no header.
+      //   'alternative' — emits a "Method N (alternative)" header above
+      //                   the list and resets the counter to 1. N comes
+      //                   from `assignMethodIndices` (1-based across all
+      //                   top-level orderedLists in the body).
+      const rawScope = stringOrUndef(attrs.numberingScope)
+      const scope =
+        rawScope === 'restart' || rawScope === 'alternative' ? rawScope : 'continue'
+      const ol = (
+        <ol start={scope === 'continue' ? undefined : 1}>
+          {renderChildren(node.content, ctx)}
+        </ol>
+      )
+      if (scope === 'alternative' && methodIndex) {
+        return (
+          <>
+            <h4 className="method-alternative-header">
+              Method {methodIndex} (alternative)
+            </h4>
+            {ol}
+          </>
+        )
+      }
+      return ol
+    }
 
     case 'listItem': {
       // TipTap wraps li content in paragraphs; unwrap a single-paragraph li

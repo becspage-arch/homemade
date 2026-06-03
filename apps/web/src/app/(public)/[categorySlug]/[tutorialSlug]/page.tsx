@@ -48,6 +48,8 @@ import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-
 import { CookingModeToggle } from '@/components/public/cooking-mode/cooking-mode-toggle'
 import { MadeByMakers } from '@/components/public/tutorial-reader/made-by-makers'
 import { DidYouMakeThisPrompt } from '@/components/public/tutorial-reader/did-you-make-this-prompt'
+import { RegionGuidanceCard } from '@/components/public/region-guidance/region-guidance-card'
+import { composeRegionGuidance } from '@/lib/region-guidance'
 import {
   recordTutorialVisit,
   shouldShowDidYouMakeThisPrompt,
@@ -473,15 +475,43 @@ export default async function TutorialPage({ params }: PageProps) {
     (project?.status === UserProjectStatus.IN_PROGRESS ||
       project?.status === UserProjectStatus.COMPLETED)
 
+  // Above-body region guidance (phase_location_climate_paper_001).
+  // The "Where this works best" card shows when the tutorial carries
+  // climate metadata AND the reader hasn't set a location. Once a
+  // location is on file, the renderer drops the card and (follow-up
+  // worker) silently rewrites month / frost-date copy to match.
+  const regionGuidance = composeRegionGuidance(
+    {
+      hemisphere: tutorial.hemisphere,
+      climateZones: tutorial.climateZones,
+      primaryRegionWrittenFor: tutorial.primaryRegionWrittenFor,
+      alsoGrowsIn: tutorial.alsoGrowsIn,
+      frostSensitivity: tutorial.frostSensitivity,
+      dayLengthSensitive: tutorial.dayLengthSensitive,
+    },
+    currentUser
+      ? {
+          homeCountryCode: currentUser.homeCountryCode,
+          hemisphere: currentUser.hemisphere,
+          koppenZone: currentUser.koppenZone,
+        }
+      : null,
+  )
+
   // Above-body social proof. Pinterest pattern — makers who've already
   // made this tutorial render as a small rail just above the body.
   const preBodySlot = (
-    <MadeByMakers
-      tiles={madeByMakers}
-      totalCount={madeByTotal}
-      tutorialCategorySlug={tutorial.category.slug}
-      tutorialSlug={tutorialSlug}
-    />
+    <>
+      {regionGuidance.mode === 'card' && regionGuidance.card && (
+        <RegionGuidanceCard card={regionGuidance.card} />
+      )}
+      <MadeByMakers
+        tiles={madeByMakers}
+        totalCount={madeByTotal}
+        tutorialCategorySlug={tutorial.category.slug}
+        tutorialSlug={tutorialSlug}
+      />
+    </>
   )
 
   // Footer cluster — Reviews, Photos, Q&A, What to make next, and the

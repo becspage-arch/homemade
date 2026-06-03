@@ -363,3 +363,74 @@
   color: var(--color-forest);
   text-decoration: underline;
 }
+
+/* "Where this works best" region-guidance card. */
+.region-guidance-card {
+  margin: 24px 0;
+  padding: 14px 18px;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-warm-charcoal);
+}
+
+.region-guidance-card > summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+
+.region-guidance-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.region-guidance-card-label {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.region-guidance-card-summary {
+  font-size: 15px;
+  color: var(--color-warm-charcoal);
+}
+
+.region-guidance-card[open] > summary > .region-guidance-card-summary {
+  margin-bottom: 8px;
+}
+
+.region-guidance-card-body {
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 0.5px solid var(--color-linen-grey);
+}
+
+.region-guidance-card-body p {
+  margin: 0 0 10px 0;
+}
+
+.region-guidance-card-heading {
+  margin-top: 14px !important;
+  font-weight: 600;
+}
+
+.region-guidance-card-bullets {
+  margin: 0 0 10px 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.region-guidance-card-frost {
+  margin-top: 14px !important;
+  font-style: italic;
+  color: var(--color-warm-taupe);
+}
