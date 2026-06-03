@@ -30,6 +30,20 @@ const PUBLIC_PATHS = [
   '/api/webhooks/clerk',
 ]
 
+// Permanent (301) tutorial-path redirects for content that moved between
+// categories. Seeded when the cross-stitch category was promoted out of
+// needlework (2026-06-03). Keys must be lower-case, with no trailing slash,
+// matching the path *after* the canonical-URL hygiene step below has run.
+// Extend this map whenever a tutorial moves categoryId — old SEO juice
+// stays attached to the canonical URL via the 301.
+const TUTORIAL_REDIRECTS: Record<string, string> = {
+  '/needlework/cross-stitch-alphabet-sampler-border':
+    '/cross-stitch/cross-stitch-alphabet-sampler-border',
+  '/needlework/start-and-end-a-thread-cleanly':
+    '/cross-stitch/start-and-end-a-thread-cleanly',
+  '/needlework/how-to-cross-stitch': '/cross-stitch/how-to-cross-stitch',
+}
+
 const isAdminRoute = createRouteMatcher(['/admin(.*)'])
 const isAccountRoute = createRouteMatcher(['/me(.*)'])
 
@@ -53,6 +67,16 @@ export default clerkMiddleware(async (auth, req) => {
       const redirectUrl = req.nextUrl.clone()
       redirectUrl.pathname = stripped
       return NextResponse.redirect(redirectUrl, 308)
+    }
+
+    // Permanent (301) path-level redirects for tutorials that moved between
+    // categories. Runs *after* canonical-URL hygiene so the lookup key is
+    // already lower-cased and trimmed.
+    const newPath = TUTORIAL_REDIRECTS[stripped]
+    if (newPath) {
+      const redirectUrl = req.nextUrl.clone()
+      redirectUrl.pathname = newPath
+      return NextResponse.redirect(redirectUrl, 301)
     }
   }
 
