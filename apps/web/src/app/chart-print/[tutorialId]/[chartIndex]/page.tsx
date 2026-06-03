@@ -40,12 +40,33 @@ const DENSITY_PRESETS = {
 } as const
 
 type DensityKey = keyof typeof DENSITY_PRESETS
-type PaperKey = 'a4' | 'letter'
+type PaperKey = 'a4' | 'letter' | 'a3' | 'legal'
 type SymbolMode = 'colour' | 'symbol-only'
 
 const PAPER_LABEL: Record<PaperKey, string> = {
   a4: 'A4',
   letter: 'US Letter',
+  a3: 'A3',
+  legal: 'US Legal',
+}
+
+/**
+ * Inline @page CSS by paper size. `size: A4 portrait` is the default
+ * baked into print.css; anything else needs an inline override because
+ * @page is a top-level at-rule and can't be nested inside a class
+ * selector. A3 is larger than A4 (twice the area) so charts fit on
+ * fewer tiles; Legal is a long-form US sheet (8.5 x 14 inches).
+ */
+const PAPER_CSS: Record<PaperKey, string | null> = {
+  a4: null,
+  letter: '@page { size: letter portrait; margin: 0; }',
+  a3: '@page { size: A3 portrait; margin: 0; }',
+  legal: '@page { size: legal portrait; margin: 0; }',
+}
+
+function parsePaper(raw: string | undefined): PaperKey {
+  if (raw === 'letter' || raw === 'a3' || raw === 'legal') return raw
+  return 'a4'
 }
 
 const OVERLAP_CELLS = 2
@@ -93,7 +114,12 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
   if (!Number.isInteger(chartIndex) || chartIndex < 0) notFound()
 
   const density = (sp.density && sp.density in DENSITY_PRESETS ? sp.density : 'medium') as DensityKey
-  const paper = (sp.paper === 'letter' ? 'letter' : 'a4') as PaperKey
+  // Paper resolution order: explicit ?paper= query param > User.paperSize
+  // setting > A4 default. Lets a user who set Letter / Legal / A3 in
+  // settings get the right paper without re-selecting on every chart.
+  const paper: PaperKey = sp.paper
+    ? parsePaper(sp.paper)
+    : parsePaper((user.paperSize ?? '').toLowerCase())
   const symbol = (sp.symbol === 'symbol-only' ? 'symbol-only' : 'colour') as SymbolMode
 
   const tutorial = await prisma.tutorial.findUnique({
@@ -132,10 +158,14 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
     </>
   )
 
-  const inlineLetter = paper === 'letter' ? (
+  // Inline @page override for any paper size other than the default A4
+  // baked into print.css. A3 / Legal land here via User.paperSize +
+  // paper=... query param; the same code path supports all four.
+  const inlinePageCss = PAPER_CSS[paper]
+  const inlineLetter = inlinePageCss ? (
     <style
       dangerouslySetInnerHTML={{
-        __html: '@page { size: letter portrait; margin: 0; }',
+        __html: inlinePageCss,
       }}
     />
   ) : null
@@ -177,6 +207,8 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
             <PrintLink label="A4 · large · colour" href={buildHref({ paper: 'a4', density: 'large', symbol: 'colour' })} active={paper === 'a4' && density === 'large' && symbol === 'colour'} />
             <PrintLink label="A4 · small · colour" href={buildHref({ paper: 'a4', density: 'small', symbol: 'colour' })} active={paper === 'a4' && density === 'small' && symbol === 'colour'} />
             <PrintLink label="Letter · medium · colour" href={buildHref({ paper: 'letter', density: 'medium', symbol: 'colour' })} active={paper === 'letter' && density === 'medium' && symbol === 'colour'} />
+            <PrintLink label="A3 · medium · colour" href={buildHref({ paper: 'a3', density: 'medium', symbol: 'colour' })} active={paper === 'a3' && density === 'medium' && symbol === 'colour'} />
+            <PrintLink label="Legal · medium · colour" href={buildHref({ paper: 'legal', density: 'medium', symbol: 'colour' })} active={paper === 'legal' && density === 'medium' && symbol === 'colour'} />
           </div>
         </div>
 
