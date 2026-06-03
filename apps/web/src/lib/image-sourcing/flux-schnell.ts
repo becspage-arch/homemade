@@ -139,7 +139,85 @@ function buildMindsetPrompt(input: SourceHeroInput): string {
   }
 }
 
+/**
+ * Pattern-aware prompt — used when a needlework / craft tutorial passes
+ * its chart metadata via SourceHeroInput.pattern. Describes the finished
+ * piece (palette names, fabric count, project type) so Flux generates
+ * a stitched-piece photo rather than a generic editorial scene.
+ *
+ * Phase location_climate_paper_001 — Part 6. This is the MVP: a richer
+ * text prompt derived from the chart metadata. The original brief
+ * suggested feeding the SVG itself as an image input (Fal flux/dev
+ * image-to-image) which gives stronger composition fidelity at the
+ * cost of an SVG-to-PNG step + R2 upload + a different Fal endpoint.
+ * That upgrade ships in a follow-up if visual fidelity to the chart's
+ * exact layout matters; the rich-prompt path produces good finished-
+ * piece photos in our calibration runs.
+ */
+function buildPatternPrompt(input: SourceHeroInput): string {
+  const pattern = input.pattern!
+  const palette = (pattern.paletteNames ?? []).slice(0, 6).join(', ')
+  const fabricLine = pattern.fabricCount
+    ? `Stitched on ${pattern.fabricCount}-count linen or aida. `
+    : 'Stitched on natural linen or aida. '
+  const sizeLine = pattern.finishedSizeText
+    ? `Finished piece roughly ${pattern.finishedSizeText}. `
+    : ''
+  const subjectLine = pattern.subjectHint
+    ? `${pattern.subjectHint}. `
+    : `${input.title}. `
+
+  switch (pattern.kind) {
+    case 'cross-stitch':
+      return (
+        'Editorial photography of a finished cross-stitch piece laid flat on a wooden table. ' +
+        subjectLine +
+        fabricLine +
+        sizeLine +
+        (palette ? `Visible floss colours: ${palette}. ` : '') +
+        'Warm natural light from a window. Soft shadows. ' +
+        'A wooden hoop or unframed piece resting on linen, a pair of embroidery scissors and a small skein bundle nearby. ' +
+        'No hands, no faces. Three-quarter or directly overhead angle. ' +
+        'Magazine-quality slow-living tableau.'
+      )
+    case 'knitting':
+      return (
+        'Editorial photography of a finished hand-knitted piece on a wooden surface. ' +
+        subjectLine +
+        (palette ? `Yarn colours: ${palette}. ` : '') +
+        sizeLine +
+        'Bamboo or wooden needles resting alongside, a small ball of yarn unspooling. ' +
+        'Warm natural light. No people. Slow-living editorial register.'
+      )
+    case 'crochet':
+      return (
+        'Editorial photography of a finished crochet piece on a wooden surface. ' +
+        subjectLine +
+        (palette ? `Yarn colours: ${palette}. ` : '') +
+        sizeLine +
+        'Wooden crochet hook resting alongside, small ball of yarn nearby. ' +
+        'Warm natural light. No people. Magazine-quality.'
+      )
+    case 'sewing':
+      return (
+        'Editorial photography of a finished hand-sewn piece on a wooden surface. ' +
+        subjectLine +
+        sizeLine +
+        'Folded fabric, a pair of fabric scissors and a thread spool nearby. ' +
+        'Warm natural light. No people. Slow-living register.'
+      )
+    default:
+      return (
+        'Editorial photography of a finished hand-crafted piece on a wooden surface. ' +
+        subjectLine +
+        sizeLine +
+        'Warm natural light. No people. Magazine-quality.'
+      )
+  }
+}
+
 function buildPrompt(input: SourceHeroInput): string {
+  if (input.pattern) return buildPatternPrompt(input)
   if (input.category === 'mindset') return buildMindsetPrompt(input)
 
   const ingredientHint =

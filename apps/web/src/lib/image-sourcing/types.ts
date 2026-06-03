@@ -68,6 +68,24 @@ export interface SourceHeroInput {
   subCategory?: string | null
   /** Up to a few key ingredient names — used to make the search query specific. */
   ingredients?: string[]
+  /**
+   * Optional needlework / craft pattern metadata. When present, the Flux
+   * generator routes through a pattern-aware prompt that describes the
+   * finished piece (palette names, fabric count, project type) rather
+   * than the generic editorial template.
+   */
+  pattern?: {
+    /** Project kind: 'cross-stitch' | 'knitting' | 'crochet' | 'sewing'. */
+    kind: string
+    /** Plain-English palette names, in palette order, e.g. ['soft sage', 'tea rose']. */
+    paletteNames?: string[]
+    /** Aida / evenweave count if known. */
+    fabricCount?: number
+    /** Finished size text, e.g. "30 x 30 cm". */
+    finishedSizeText?: string
+    /** Free-form hint, e.g. "alphabet sampler border". */
+    subjectHint?: string
+  }
 }
 
 export type SourceOutcome = 'free' | 'ai-generated' | 'failed'
