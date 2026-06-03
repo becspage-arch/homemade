@@ -656,6 +656,11 @@ export default async function TutorialPage({ params }: PageProps) {
             }
             tutorialId={tutorial.id}
             isSignedIn={Boolean(currentUser)}
+            userHemisphere={
+              currentUser?.hemisphere === 'N' || currentUser?.hemisphere === 'S'
+                ? currentUser.hemisphere
+                : null
+            }
           />
         </>
       }

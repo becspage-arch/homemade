@@ -9,20 +9,60 @@ interface RouteContext {
 }
 
 /**
- * Floss-shopping-list export — currently a stub that returns the
- * palette + per-key cell totals so the UI can build against a real
- * shape. The real generator (skein estimate per colour, brand-aware
- * cross-reference, paper / PDF export) ships in a follow-up worker.
+ * Floss-shopping-list export — palette + per-colour cell count + skein
+ * estimate. The reader hits this when they want to buy the floss for a
+ * pattern without scrolling the chart.
  *
- * Phase location_climate_paper_001 — Part 5 stub.
+ * Phase location_climate_paper_001 — Part 5.
  *
  * Premium-gated in a later phase via config flag only; no UI gating
  * built in. The endpoint is callable for any signed-in user.
  *
- * Sign-in required: charts as a whole require sign-in to view, and
- * the export endpoint inherits that gate so we don't accidentally
- * publish the palette via an unauthenticated URL.
+ * Sign-in required: charts as a whole require sign-in to view, and the
+ * export endpoint inherits that gate so we don't accidentally publish
+ * the palette via an unauthenticated URL.
+ *
+ * PDF + brand-aware cross-reference (DMC ↔ Anchor full snap, Madeira,
+ * Sullivans) ships in a follow-up. For now the response carries DMC +
+ * Anchor codes verbatim from the palette so the UI can render them.
  */
+
+/**
+ * Stitches per skein, indexed by fabric count. Standard rule of thumb:
+ * a DMC skein is 8m / 6 strands; most cross-stitch uses 2 strands per
+ * stitch, which covers roughly:
+ *   11-count Aida  → ~700 stitches per skein
+ *   14-count Aida  → ~900 stitches per skein  (the default)
+ *   16-count Aida  → ~1100 stitches per skein
+ *   18-count Aida  → ~1400 stitches per skein
+ *   22-count linen → ~1800 stitches per skein (over-two on 32-count evenweave)
+ *   25-count linen → ~1100 stitches per skein (over-two on 25-count)
+ *   28-count linen → ~1400 stitches per skein
+ *   32-count linen → ~1800 stitches per skein
+ *
+ * Round up + add one skein waste allowance, capped at +20% so very
+ * small palettes don't over-buy. Bigger palettes already buffer well.
+ */
+function stitchesPerSkein(fabricCount: number | null | undefined): number {
+  if (!fabricCount || !Number.isFinite(fabricCount)) return 900
+  if (fabricCount <= 11) return 700
+  if (fabricCount <= 14) return 900
+  if (fabricCount <= 16) return 1100
+  if (fabricCount <= 18) return 1400
+  if (fabricCount <= 25) return 1100
+  if (fabricCount <= 28) return 1400
+  return 1800
+}
+
+function estimateSkeins(stitches: number, perSkein: number): number {
+  if (stitches <= 0) return 0
+  const raw = stitches / perSkein
+  // Always at least one skein per colour you actually stitch.
+  const rounded = Math.max(1, Math.ceil(raw))
+  // Waste allowance: +1 skein up to 5, otherwise +20% rounded up.
+  if (rounded <= 5) return rounded + 1
+  return rounded + Math.ceil(rounded * 0.2)
+}
 export async function GET(_req: Request, ctx: RouteContext) {
   const user = await getCurrentDbUser()
   if (!user) {
@@ -48,32 +88,42 @@ export async function GET(_req: Request, ctx: RouteContext) {
     return NextResponse.json({ error: 'Chart not found at that index' }, { status: 404 })
   }
 
-  // Stub: count cells per palette key + echo the palette entries. A
-  // future worker will turn this into a paper-sized PDF + skein
-  // estimate including waste allowance + brand cross-references.
+  // Count cells per palette key and compute skein estimate per colour.
   const counts = new Map<string, number>()
   for (const cell of chart.cells ?? []) {
     counts.set(cell.paletteKey, (counts.get(cell.paletteKey) ?? 0) + 1)
   }
+  const perSkein = stitchesPerSkein(chart.fabricCount)
 
-  const items = (chart.palette ?? []).map((entry) => ({
-    key: entry.key,
-    name: entry.name,
-    hex: entry.hex,
-    dmcCode: entry.dmcCode ?? null,
-    anchorCode: entry.anchorCode ?? null,
-    skeinEstimate: entry.skeinEstimate ?? null,
-    stitchCount: counts.get(entry.key) ?? 0,
-  }))
+  const items = (chart.palette ?? []).map((entry) => {
+    const stitchCount = counts.get(entry.key) ?? 0
+    return {
+      key: entry.key,
+      name: entry.name,
+      hex: entry.hex,
+      dmcCode: entry.dmcCode ?? null,
+      anchorCode: entry.anchorCode ?? null,
+      stitchCount,
+      estimatedSkeins: estimateSkeins(stitchCount, perSkein),
+      // Authored skein note (if any) — kept for display when the
+      // pattern's author already wrote a per-colour buy guide.
+      authoredSkeinNote: entry.skeinEstimate ?? null,
+    }
+  })
+
+  const totalStitches = items.reduce((acc, item) => acc + item.stitchCount, 0)
+  const totalSkeins = items.reduce((acc, item) => acc + item.estimatedSkeins, 0)
 
   return NextResponse.json({
-    stub: true,
     tutorialId,
     tutorialSlug: tutorial.slug,
     chartIndex,
     title: chart.title ?? null,
     fabricCount: chart.fabricCount ?? null,
     finishedSizeText: chart.finishedSizeText ?? null,
+    totalStitches,
+    totalSkeins,
+    stitchesPerSkeinAssumption: perSkein,
     items,
   })
 }

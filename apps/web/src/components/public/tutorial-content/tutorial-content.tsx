@@ -77,6 +77,13 @@ interface TutorialContentProps {
    * Defaults to false; callers that know better must opt in.
    */
   isSignedIn?: boolean
+  /**
+   * Reader hemisphere ('N' | 'S'). Drives the `monthToken` mark — every
+   * span the author wrapped with `monthToken` renders the matching
+   * hemisphere's value. Null = no rewrite (renders the northern value
+   * as written, matching the legacy behaviour).
+   */
+  userHemisphere?: 'N' | 'S' | null
 }
 
 export interface RecipeRenderContext {
@@ -102,6 +109,7 @@ export function TutorialContent({
   recipeContext = null,
   tutorialId = null,
   isSignedIn = false,
+  userHemisphere = null,
 }: TutorialContentProps): ReactNode {
   if (!content || content.type !== 'doc' || !Array.isArray(content.content)) {
     return (
@@ -134,6 +142,7 @@ export function TutorialContent({
           recipeContext={recipeContext}
           tutorialId={tutorialId}
           isSignedIn={isSignedIn}
+          userHemisphere={userHemisphere}
           chartIndex={chartIndexByNode.get(node) ?? null}
           methodIndex={methodIndexByNode.get(node) ?? null}
         />
@@ -193,6 +202,7 @@ interface RenderContext {
   recipeContext: RecipeRenderContext | null
   tutorialId: string | null
   isSignedIn: boolean
+  userHemisphere: 'N' | 'S' | null
 }
 
 interface RenderNodeProps {
@@ -204,6 +214,7 @@ interface RenderNodeProps {
   recipeContext: RecipeRenderContext | null
   tutorialId?: string | null
   isSignedIn?: boolean
+  userHemisphere?: 'N' | 'S' | null
   chartIndex?: number | null
   methodIndex?: number | null
 }
@@ -217,6 +228,7 @@ function RenderNode({
   recipeContext,
   tutorialId = null,
   isSignedIn = false,
+  userHemisphere = null,
   chartIndex = null,
   methodIndex = null,
 }: RenderNodeProps): ReactNode {
@@ -228,6 +240,7 @@ function RenderNode({
     recipeContext,
     tutorialId,
     isSignedIn,
+    userHemisphere,
   }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
@@ -658,11 +671,12 @@ const MARK_ORDER: Record<string, number> = {
   link: 0,
   techniqueLink: 1,
   glossaryTooltip: 2,
-  bold: 3,
-  italic: 4,
-  underline: 5,
-  strike: 6,
-  code: 7,
+  monthToken: 3,
+  bold: 4,
+  italic: 5,
+  underline: 6,
+  strike: 7,
+  code: 8,
 }
 
 function sortMarks(marks: TipTapMark[]): TipTapMark[] {
@@ -723,6 +737,20 @@ function wrapMark(mark: TipTapMark, children: ReactNode, ctx: RenderContext): Re
           {children}
         </TechniqueLink>
       )
+    }
+    case 'monthToken': {
+      // Body-prose silent month rewrite. The author wrapped a span like
+      // "Feb-Mar" with both hemispheres baked in (monthsN + monthsS);
+      // the renderer picks the matching string for the reader's
+      // hemisphere. Children carry the original text (matches monthsN
+      // by convention), so:
+      //   - S-hemisphere reader with monthsS set → render monthsS
+      //   - any other case                       → render children
+      const monthsS = stringOrUndef(attrs.monthsS)?.trim() ?? ''
+      if (ctx.userHemisphere === 'S' && monthsS) {
+        return <span data-month-token="adjusted">{monthsS}</span>
+      }
+      return <>{children}</>
     }
     default:
       return <>{children}</>

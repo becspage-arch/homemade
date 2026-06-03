@@ -16,6 +16,7 @@ import { VarietiesPanel } from './extensions/varieties-panel'
 import { Troubleshooter } from './extensions/troubleshooter'
 import { IngredientsList } from './extensions/ingredients-list'
 import { NumberingScopeExtension } from './extensions/numbering-scope'
+import { MonthToken } from './extensions/month-token'
 import { Toolbar } from './toolbar'
 import type { GlossaryRef, TechniqueRef, TutorialRef } from './types'
 
@@ -89,6 +90,7 @@ export function TiptapEditor({
       Troubleshooter,
       IngredientsList,
       NumberingScopeExtension,
+      MonthToken,
     ],
     content: initialJson,
     editorProps: {

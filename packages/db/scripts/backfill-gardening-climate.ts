@@ -79,14 +79,78 @@ function extractAllText(body: unknown): string {
 }
 
 /**
- * Infer frost sensitivity from the body copy. Returns null when the
- * body doesn't mention frost / hardiness at all — the renderer falls
- * back to the climate-zone defaults in that case.
+ * Slug-keyed override map for plants whose bodies don't carry explicit
+ * frost / hardiness vocabulary. Covers the obvious botanical cases that
+ * a UK-trained gardener would know on sight. Extend as the gardening
+ * library grows; falls through to the body-text inference when a slug
+ * isn't listed.
+ *
+ * Half-hardy = survives a mild frost but not a hard freeze (snapdragons,
+ * stocks, antirrhinums). Tender = killed by any frost (tomatoes, basil,
+ * courgettes, dahlias). Hardy = overwinters outdoors in the UK
+ * (strawberries, rosemary, sage, mint, chives).
+ */
+const FROST_SLUG_OVERRIDES: Record<string, 'hardy' | 'half-hardy' | 'tender'> = {
+  // Tender — frost-killed.
+  'growing-tomatoes-from-seed': 'tender',
+  'growing-tomatoes': 'tender',
+  'growing-basil': 'tender',
+  'growing-courgettes': 'tender',
+  'growing-cucumbers': 'tender',
+  'growing-peppers': 'tender',
+  'growing-chillies': 'tender',
+  'growing-aubergine': 'tender',
+  'growing-aubergines': 'tender',
+  'growing-pumpkins': 'tender',
+  'growing-squash': 'tender',
+  'growing-sweetcorn': 'tender',
+  'growing-french-beans': 'tender',
+  'growing-runner-beans': 'tender',
+  'growing-dahlias': 'tender',
+
+  // Half-hardy — withstand a light frost.
+  'growing-snapdragons': 'half-hardy',
+  'growing-stocks': 'half-hardy',
+  'growing-antirrhinums': 'half-hardy',
+  'growing-cosmos': 'half-hardy',
+  'growing-nicotiana': 'half-hardy',
+
+  // Hardy — overwinters outdoors in the UK.
+  'growing-strawberries': 'hardy',
+  'growing-rosemary': 'hardy',
+  'growing-rosemary-from-cuttings': 'hardy',
+  'growing-sage': 'hardy',
+  'growing-thyme': 'hardy',
+  'growing-mint': 'hardy',
+  'growing-chives': 'hardy',
+  'growing-parsley': 'hardy',
+  'growing-rhubarb': 'hardy',
+  'growing-garlic': 'hardy',
+  'growing-onions': 'hardy',
+  'growing-shallots': 'hardy',
+  'growing-broad-beans': 'hardy',
+  'growing-peas': 'hardy',
+  'growing-spinach': 'hardy',
+  'growing-kale': 'hardy',
+  'growing-cabbage': 'hardy',
+  'growing-leeks': 'hardy',
+  'growing-purple-sprouting-broccoli': 'hardy',
+}
+
+/**
+ * Infer frost sensitivity from the body copy. Returns null when nothing
+ * matches — the renderer falls back to the climate-zone defaults in
+ * that case. Callers should check the slug override map BEFORE invoking
+ * this function.
  *
  * Priority order:
  *   1. 'tender' / 'frost-tender' / 'frost tender'   → 'tender'
  *   2. 'half-hardy' / 'half hardy'                  → 'half-hardy'
  *   3. 'fully hardy' / 'hardy'                      → 'hardy'
+ *   4. 'first frost' / 'last frost' mention without
+ *      'overwinter' anywhere                        → 'tender'
+ *      (the plant's schedule is gated on frost dates,
+ *      which only matters for tender plants)
  */
 function inferFrostSensitivity(text: string): string | null {
   const lower = text.toLowerCase()
@@ -99,11 +163,17 @@ function inferFrostSensitivity(text: string): string | null {
   if (/\b(fully hardy|hardy perennial|cold[\s-]?hardy|frost[\s-]?hardy|hardy down to|hardy annual)\b/.test(lower)) {
     return 'hardy'
   }
-  // Fall back to a single 'hardy' mention only if 'tender' isn't also present.
   if (/\bhardy\b/.test(lower) && !/\btender\b/.test(lower)) {
     return 'hardy'
   }
   if (/\btender\b/.test(lower)) return 'tender'
+  // Frost-date mentions without overwinter language imply tender.
+  if (
+    /\b(first frost|last frost|after the last frost|before the first frost)\b/.test(lower) &&
+    !/\b(over[\s-]?winter|overwinter)\b/.test(lower)
+  ) {
+    return 'tender'
+  }
   return null
 }
 
@@ -150,7 +220,10 @@ async function main(): Promise<void> {
     if (!row.alsoGrowsIn) update.alsoGrowsIn = UK_ALSO_GROWS_IN
 
     if (!row.frostSensitivity) {
-      const inferred = inferFrostSensitivity(extractAllText(row.body))
+      // Slug override beats body-text inference — explicit beats heuristic.
+      const inferred =
+        FROST_SLUG_OVERRIDES[row.slug] ??
+        inferFrostSensitivity(extractAllText(row.body))
       if (inferred) {
         update.frostSensitivity = inferred
         counts.bySensitivity[inferred] = (counts.bySensitivity[inferred] ?? 0) + 1
