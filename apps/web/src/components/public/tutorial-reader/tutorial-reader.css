@@ -434,3 +434,16 @@
   font-style: italic;
   color: var(--color-warm-taupe);
 }
+
+/* Silent-mode hemisphere banner — shown when the reader's hemisphere
+   doesn't match the tutorial's. Smaller and lighter than the full card. */
+.region-guidance-silent-banner {
+  margin: 18px 0;
+  padding: 10px 14px;
+  background: var(--color-linen-cream);
+  border-left: 3px solid var(--color-sage);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-warm-charcoal);
+}

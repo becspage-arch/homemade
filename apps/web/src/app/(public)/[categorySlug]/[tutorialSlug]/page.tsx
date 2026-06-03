@@ -505,6 +505,14 @@ export default async function TutorialPage({ params }: PageProps) {
       {regionGuidance.mode === 'card' && regionGuidance.card && (
         <RegionGuidanceCard card={regionGuidance.card} />
       )}
+      {regionGuidance.mode === 'silent' && regionGuidance.silentBanner && (
+        <p
+          className="region-guidance-silent-banner"
+          data-testid="region-guidance-silent-banner"
+        >
+          {regionGuidance.silentBanner.message}
+        </p>
+      )}
       <MadeByMakers
         tiles={madeByMakers}
         totalCount={madeByTotal}

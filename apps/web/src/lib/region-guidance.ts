@@ -61,9 +61,20 @@ export interface RegionGuidanceCardProps {
   frostHint: string
 }
 
+/**
+ * Lightweight banner shown above the body in silent mode when the
+ * reader's hemisphere doesn't match the tutorial's. Sits in for the
+ * full body-prose rewrite (Feb-Mar → Aug-Sep) until the author-side
+ * month-token convention is locked in a follow-up worker.
+ */
+export interface RegionGuidanceSilentBanner {
+  message: string
+}
+
 export interface RegionGuidance {
   mode: RegionGuidanceMode
   card?: RegionGuidanceCardProps
+  silentBanner?: RegionGuidanceSilentBanner
 }
 
 /**
@@ -115,8 +126,25 @@ export function composeRegionGuidance(
   if (userHasLocation) {
     // Silent customisation. The body-rewrite (Feb-Mar → Aug-Sep) ships
     // in a follow-up worker once the author convention for month tokens
-    // is locked. For now we still hide the card to keep the page clean
-    // for readers who have set their location.
+    // is locked. For now we hide the card, and emit a one-line banner
+    // when the reader's hemisphere doesn't match the tutorial's so the
+    // months still make sense.
+    const tutorialHemisphere = tutorial.hemisphere ?? null
+    const userHemisphere = user?.hemisphere ?? null
+    if (
+      tutorialHemisphere &&
+      userHemisphere &&
+      tutorialHemisphere !== userHemisphere
+    ) {
+      const fromLabel =
+        tutorialHemisphere === 'N' ? 'the northern hemisphere' : 'the southern hemisphere'
+      return {
+        mode: 'silent',
+        silentBanner: {
+          message: `Months in this guide are written for ${fromLabel}. For your hemisphere, shift each month six months forward (March becomes September, October becomes April).`,
+        },
+      }
+    }
     return { mode: 'silent' }
   }
 
