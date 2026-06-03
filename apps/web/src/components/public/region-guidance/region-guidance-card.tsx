@@ -34,7 +34,7 @@ export function RegionGuidanceCard({
         <p className="region-guidance-card-also-works">{card.alsoWorksLine}</p>
         <p className="region-guidance-card-trickier">{card.trickierLine}</p>
         <p className="region-guidance-card-heading">
-          Not in the region above? Here's how to adjust the timing.
+          Not in the region above? Here&apos;s how to adjust the timing.
         </p>
         <ul className="region-guidance-card-bullets">
           {card.adjustmentBullets.map((bullet, i) => (
