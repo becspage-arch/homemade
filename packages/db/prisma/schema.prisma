@@ -3602,6 +3602,13 @@ model Pattern {
   fabricCountSuggested  Int          @default(14)
   recommendedHoopInches Decimal?     @db.Decimal(5, 2)
 
+  // Additional finished-piece photographs the library detail page rotates
+  // through. JSON array of Media.id strings; ordering is the rotation order.
+  // Heroes (heroMediaId) take the primary card slot; gallery is the
+  // supporting detail-page strip. Populated by the Stitching Mama catalogue
+  // import (Phase C) and by the admin upload flow.
+  galleryMediaIds       Json         @default("[]")
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   tutorialsInset Tutorial[]            @relation("TutorialPattern")
