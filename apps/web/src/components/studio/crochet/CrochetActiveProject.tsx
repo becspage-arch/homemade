@@ -18,6 +18,8 @@ import { CrochetSchematicView } from './CrochetSchematicView'
 import { CrochetNotesPanel } from './CrochetNotesPanel'
 import { CrochetStitchHelpPanel } from './CrochetStitchHelpPanel'
 import { CrochetProjectSetupCard } from './CrochetProjectSetupCard'
+import { CrochetExtrasDrawer } from './CrochetExtrasDrawer'
+import { CrochetSubstitutionBanner } from './CrochetSubstitutionBanner'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 import type {
   CrochetPatternData,
@@ -35,6 +37,7 @@ interface Props {
   terminology: TerminologyMode
   leftHanded: boolean
   notesOpen: boolean
+  yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
   onClose: () => void
 }
 
@@ -57,6 +60,7 @@ export function CrochetActiveProject({
   terminology,
   leftHanded,
   notesOpen,
+  yarnWeights,
   onClose,
 }: Props) {
   const rows = useMemo<PatternRow[]>(() => normaliseRows(pattern.rowsStructured), [pattern])
@@ -309,10 +313,11 @@ export function CrochetActiveProject({
         <div className="crochet-studio-active-main">
           <CrochetProjectSetupCard
             patternName={pattern.name}
-            suggestedYarnWeight={null}
-            suggestedHookMm={null}
+            suggestedYarnWeight={pattern.primaryYarnWeightName}
+            suggestedHookMm={pattern.primaryHookMm}
             patternGaugeText={pattern.gaugeText}
             initial={state.projectSetup}
+            yarnWeights={yarnWeights}
             onSave={saveProjectSetup}
             onSkip={() => setSetupSkipped(true)}
           />
@@ -373,12 +378,30 @@ export function CrochetActiveProject({
             {totalRows > 0 ? `${completedCount} of ${totalRows} rows` : 'No rows authored yet'}
           </span>
           {state.projectSetup ? (
-            <ProjectSetupReadout setup={state.projectSetup} />
+            <>
+              <ProjectSetupReadout setup={state.projectSetup} />
+              <CrochetSubstitutionBanner
+                inputs={{
+                  patternYarnCategory: pattern.primaryYarnWeightCategory,
+                  patternHookMm: pattern.primaryHookMm,
+                  userYarnCategory: lookupYarnCategory(
+                    state.projectSetup.yarn?.weightSlug,
+                    yarnWeights,
+                  ),
+                  userHookMm: state.projectSetup.hook?.mmSize ?? null,
+                }}
+              />
+            </>
           ) : pattern.gaugeText ? (
             <span className="crochet-studio-active-gauge">{pattern.gaugeText}</span>
           ) : null}
         </div>
         <div className="crochet-studio-active-footer-actions">
+          <CrochetExtrasDrawer
+            crochetPatternId={pattern.id}
+            sections={sections}
+            projectSetup={state.projectSetup}
+          />
           <CrochetStitchHelpPanel craftStitchSlugs={pattern.craftStitchSlugs} />
           {pattern.sourceTutorialId && (
             <div className="crochet-studio-active-errata">
@@ -401,6 +424,15 @@ export function CrochetActiveProject({
  * Validates and normalises the rowsStructured JSON into the shape the
  * views consume. Tolerant of older or partial data.
  */
+function lookupYarnCategory(
+  weightSlug: string | undefined,
+  yarnWeights: Array<{ slug: string; standardCategory: number }>,
+): number | null {
+  if (!weightSlug) return null
+  const match = yarnWeights.find((w) => w.slug === weightSlug)
+  return match?.standardCategory ?? null
+}
+
 function ProjectSetupReadout({ setup }: { setup: ProjectSetup }) {
   const yarn = setup.yarn
   const hook = setup.hook

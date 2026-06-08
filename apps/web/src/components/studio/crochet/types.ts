@@ -46,6 +46,10 @@ export interface CrochetPatternData {
   sourceTutorialSlug: string | null
   sourceTutorialCategorySlug: string | null
   sourceTutorialId: string | null
+  primaryYarnWeightCategory: number | null
+  primaryYarnWeightName: string | null
+  primaryHookMm: number | null
+  primaryHookName: string | null
 }
 
 export interface CrochetProjectProgressData {

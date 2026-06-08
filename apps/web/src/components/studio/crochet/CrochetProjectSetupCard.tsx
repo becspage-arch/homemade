@@ -26,6 +26,7 @@ interface Props {
   suggestedHookMm: number | null
   patternGaugeText: string | null
   initial: ProjectSetup | null
+  yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
   onSave: (setup: ProjectSetup) => void
   onSkip: () => void
 }
@@ -36,10 +37,12 @@ export function CrochetProjectSetupCard({
   suggestedHookMm,
   patternGaugeText,
   initial,
+  yarnWeights,
   onSave,
   onSkip,
 }: Props) {
   const [yarnLabel, setYarnLabel] = useState(initial?.yarn?.label ?? '')
+  const [yarnWeightSlug, setYarnWeightSlug] = useState(initial?.yarn?.weightSlug ?? '')
   const [colourName, setColourName] = useState(initial?.yarn?.colourName ?? '')
   const [colourHex, setColourHex] = useState(initial?.yarn?.colourHex ?? '')
   const [hookMm, setHookMm] = useState<string>(
@@ -60,6 +63,7 @@ export function CrochetProjectSetupCard({
     if (yarnLabel.trim()) {
       setup.yarn = {
         label: yarnLabel.trim(),
+        weightSlug: yarnWeightSlug || undefined,
         colourName: colourName.trim() || undefined,
         colourHex: colourHex.trim() || undefined,
       }
@@ -105,14 +109,29 @@ export function CrochetProjectSetupCard({
         </p>
 
         <div className="crochet-studio-project-setup-grid">
-          <label className="crochet-studio-project-setup-field full">
-            <span>Yarn</span>
+          <label className="crochet-studio-project-setup-field">
+            <span>Yarn name</span>
             <input
               type="text"
               value={yarnLabel}
               onChange={(e) => setYarnLabel(e.target.value)}
-              placeholder="Stylecraft Special DK, Drops Paris, the cream cone from grandma..."
+              placeholder="Stylecraft Special DK"
             />
+          </label>
+
+          <label className="crochet-studio-project-setup-field">
+            <span>Yarn weight</span>
+            <select
+              value={yarnWeightSlug}
+              onChange={(e) => setYarnWeightSlug(e.target.value)}
+            >
+              <option value="">—</option>
+              {yarnWeights.map((w) => (
+                <option key={w.slug} value={w.slug}>
+                  {w.canonicalName}
+                </option>
+              ))}
+            </select>
           </label>
 
           <label className="crochet-studio-project-setup-field">

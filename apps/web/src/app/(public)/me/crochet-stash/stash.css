@@ -1,0 +1,234 @@
+.crochet-stash-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  font-family: 'Lora', Georgia, serif;
+  color: #3d2f22;
+}
+
+.crochet-stash-header {
+  margin-bottom: 2.5rem;
+}
+
+.crochet-stash-overline {
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: #8a8276;
+  margin: 0 0 0.5rem;
+}
+
+.crochet-stash-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+  color: #3d2f22;
+}
+
+.crochet-stash-lede {
+  color: #5c5347;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 600px;
+}
+
+.crochet-stash-section {
+  margin-top: 2.5rem;
+}
+
+.crochet-stash-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.crochet-stash-section-header h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.crochet-stash-cta {
+  appearance: none;
+  border: none;
+  background: #7d957d;
+  color: #fff;
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.crochet-stash-cta:hover,
+.crochet-stash-cta:focus-visible {
+  background: #5d7959;
+  outline: none;
+}
+
+.crochet-stash-empty {
+  color: #8a8276;
+  font-style: italic;
+  background: rgba(60, 47, 34, 0.03);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.crochet-stash-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.crochet-stash-card {
+  background: #fafaf6;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 18px rgba(60, 47, 34, 0.06), 0 1px 2px rgba(60, 47, 34, 0.04);
+  transition: transform 160ms ease;
+}
+
+.crochet-stash-card:hover {
+  transform: translateY(-2px);
+}
+
+.crochet-stash-card-pip {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(60, 47, 34, 0.12);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.crochet-stash-card-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.crochet-stash-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.crochet-stash-card-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #8a8276;
+  font-family: ui-monospace, monospace;
+}
+
+.crochet-stash-card-notes {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: #5c5347;
+  font-style: italic;
+}
+
+.crochet-stash-card-delete {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 6px;
+  color: #8a8276;
+  cursor: pointer;
+}
+
+.crochet-stash-card-delete:hover,
+.crochet-stash-card-delete:focus-visible {
+  background: rgba(60, 47, 34, 0.06);
+  color: #3d2f22;
+  outline: none;
+}
+
+.crochet-stash-form {
+  background: #fafaf6;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.crochet-stash-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  color: #5c5347;
+}
+
+.crochet-stash-form label.full {
+  grid-column: 1 / -1;
+}
+
+.crochet-stash-form input,
+.crochet-stash-form select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.16);
+  background: #fff;
+  color: #3d2f22;
+}
+
+.crochet-stash-form input[type='color'] {
+  padding: 0.2rem;
+  height: 38px;
+}
+
+.crochet-stash-form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.crochet-stash-form-actions button {
+  appearance: none;
+  border: none;
+  background: rgba(60, 47, 34, 0.06);
+  color: #5c5347;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.crochet-stash-form-actions button.primary {
+  background: #7d957d;
+  color: #fff;
+}
+
+.crochet-stash-form-actions button.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .crochet-stash-form {
+    grid-template-columns: 1fr;
+  }
+}

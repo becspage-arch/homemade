@@ -83,6 +83,8 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
         thumbnail: { select: { id: true } },
         schematic: { select: { id: true } },
         sourceTutorial: { select: { id: true, slug: true, category: { select: { slug: true } } } },
+        primaryYarnWeight: { select: { standardCategory: true, canonicalName: true } },
+        primaryHook: { select: { mmSize: true, canonicalName: true } },
       },
     })
 
@@ -127,6 +129,10 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
           sourceTutorialSlug: row.sourceTutorial?.slug ?? null,
           sourceTutorialCategorySlug: row.sourceTutorial?.category?.slug ?? null,
           sourceTutorialId: row.sourceTutorial?.id ?? null,
+          primaryYarnWeightCategory: row.primaryYarnWeight?.standardCategory ?? null,
+          primaryYarnWeightName: row.primaryYarnWeight?.canonicalName ?? null,
+          primaryHookMm: row.primaryHook?.mmSize ?? null,
+          primaryHookName: row.primaryHook?.canonicalName ?? null,
         }
       }
     }
@@ -135,6 +141,13 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
       progress = await loadProgress(user.id, pattern.id)
     }
   }
+
+  const yarnWeights = pattern
+    ? await prisma.yarnWeight.findMany({
+        select: { slug: true, canonicalName: true, standardCategory: true },
+        orderBy: { standardCategory: 'asc' },
+      })
+    : []
 
   let myProjects: MyCrochetProjectListItem[] = []
   if (user && !pattern) {
@@ -193,6 +206,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
       pattern={pattern}
       progress={progress}
       myProjects={myProjects}
+      yarnWeights={yarnWeights}
     />
   )
 }

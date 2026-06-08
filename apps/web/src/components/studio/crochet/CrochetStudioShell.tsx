@@ -49,6 +49,7 @@ interface CrochetStudioShellProps {
   pattern: CrochetPatternData | null
   progress: CrochetProjectProgressData | null
   myProjects: MyCrochetProjectListItem[]
+  yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
 }
 
 export function CrochetStudioShell({
@@ -60,6 +61,7 @@ export function CrochetStudioShell({
   pattern,
   progress,
   myProjects,
+  yarnWeights,
 }: CrochetStudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -161,6 +163,7 @@ export function CrochetStudioShell({
       notesOpen={notesOpen}
       onToggleNotes={() => setNotesOpen((v) => !v)}
       onClose={cancelToEmpty}
+      yarnWeights={yarnWeights}
     />
   )
 }
@@ -178,12 +181,14 @@ function ActiveProjectSurface({
   notesOpen,
   onToggleNotes,
   onClose,
+  yarnWeights,
 }: {
   pattern: CrochetPatternData
   progress: CrochetProjectProgressData | null
   userTerminologyPreference: string | null
   userLeftHanded: boolean
   notesOpen: boolean
+  yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
   onToggleNotes: () => void
   onClose: () => void
 }) {
@@ -251,6 +256,7 @@ function ActiveProjectSurface({
         terminology={terminology}
         leftHanded={leftHanded}
         notesOpen={notesOpen}
+        yarnWeights={yarnWeights}
         onClose={onClose}
       />
     </div>
