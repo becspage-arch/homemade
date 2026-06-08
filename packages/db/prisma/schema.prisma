@@ -3956,6 +3956,20 @@ model CrochetProjectProgress {
   preferredView       String?
   countByCluster      Boolean  @default(false)
 
+  /// What the maker is using on THIS project — yarn, hook, optional
+  /// swatch gauge. Shape:
+  ///   {
+  ///     yarn?: { label: string, weightSlug?: string, colourHex?: string,
+  ///              colourName?: string, yardage?: number },
+  ///     hook?: { mmSize: number, brand?: string },
+  ///     swatch?: { stitchesPer10cm?: number, rowsPer10cm?: number,
+  ///                blocked?: boolean }
+  ///   }
+  /// Captured by the Studio's project setup card on first open.
+  /// Surfaces in the footer once filled. Optional — patterns without
+  /// gauge concerns can skip the prompt.
+  projectSetup        Json?
+
   startedAt    DateTime  @default(now())
   lastWorkedAt DateTime  @default(now())
   completedAt  DateTime?

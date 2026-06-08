@@ -36,6 +36,26 @@ interface ProgressPayload {
   preferredView?: 'written' | 'chart' | 'schematic' | null
   countByCluster?: boolean
   completedAt?: string | null
+  projectSetup?: ProjectSetup | null
+}
+
+interface ProjectSetup {
+  yarn?: {
+    label: string
+    weightSlug?: string
+    colourHex?: string
+    colourName?: string
+    yardage?: number
+  }
+  hook?: {
+    mmSize: number
+    brand?: string
+  }
+  swatch?: {
+    stitchesPer10cm?: number
+    rowsPer10cm?: number
+    blocked?: boolean
+  }
 }
 
 export async function GET(_request: Request, { params }: RouteContext) {
@@ -65,6 +85,7 @@ export async function GET(_request: Request, { params }: RouteContext) {
       countByCluster: true,
       lastWorkedAt: true,
       completedAt: true,
+      projectSetup: true,
     },
   })
 
@@ -83,6 +104,7 @@ export async function GET(_request: Request, { params }: RouteContext) {
       countByCluster: false,
       lastWorkedAt: null,
       completedAt: null,
+      projectSetup: null,
     })
   }
 
@@ -128,6 +150,11 @@ export async function PATCH(request: Request, { params }: RouteContext) {
   if (payload.completedAt !== undefined) {
     updateData.completedAt = payload.completedAt ? new Date(payload.completedAt) : null
   }
+  if (payload.projectSetup !== undefined) {
+    updateData.projectSetup = payload.projectSetup
+      ? (payload.projectSetup as unknown as Prisma.InputJsonValue)
+      : undefined
+  }
 
   const createData: Prisma.CrochetProjectProgressUncheckedCreateInput = {
     userId: user.id,
@@ -144,6 +171,9 @@ export async function PATCH(request: Request, { params }: RouteContext) {
     preferredView: payload.preferredView ?? null,
     countByCluster: payload.countByCluster ?? false,
     completedAt: payload.completedAt ? new Date(payload.completedAt) : null,
+    projectSetup: payload.projectSetup
+      ? (payload.projectSetup as unknown as Prisma.InputJsonValue)
+      : undefined,
   }
 
   await prisma.crochetProjectProgress.upsert({

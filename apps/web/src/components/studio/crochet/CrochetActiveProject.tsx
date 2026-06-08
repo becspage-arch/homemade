@@ -17,10 +17,13 @@ import { CrochetChartView } from './CrochetChartView'
 import { CrochetSchematicView } from './CrochetSchematicView'
 import { CrochetNotesPanel } from './CrochetNotesPanel'
 import { CrochetStitchHelpPanel } from './CrochetStitchHelpPanel'
+import { CrochetProjectSetupCard } from './CrochetProjectSetupCard'
+import { ErrataLink } from '@/components/public/ugc/errata-link'
 import type {
   CrochetPatternData,
   CrochetProjectProgressData,
   PatternRow,
+  ProjectSetup,
   TerminologyMode,
   ViewMode,
 } from './types'
@@ -44,6 +47,7 @@ interface ProgressState {
   notes: string | null
   perRowNotes: Record<string, string>
   completedAt: string | null
+  projectSetup: ProjectSetup | null
 }
 
 export function CrochetActiveProject({
@@ -75,7 +79,17 @@ export function CrochetActiveProject({
     notes: initialProgress?.notes ?? null,
     perRowNotes: initialProgress?.perRowNotes ?? {},
     completedAt: initialProgress?.completedAt ?? null,
+    projectSetup: initialProgress?.projectSetup ?? null,
   }))
+  // Setup card visible once at project start. Skipping hides it for
+  // this session; opening Studio fresh later will prompt again until
+  // the user fills it in.
+  const [setupSkipped, setSetupSkipped] = useState(false)
+  const projectIsBlank =
+    state.currentRow === 0 &&
+    Object.keys(state.completedRows).length === 0 &&
+    !state.completedAt
+  const setupVisible = !state.projectSetup && projectIsBlank && !setupSkipped
 
   // Debounced autosave. Mirrors the cross-stitch Studio progress
   // autosave shape — coalesce fast taps, write at most once per
@@ -271,11 +285,41 @@ export function CrochetActiveProject({
     scheduleSave()
   }, [scheduleSave])
 
+  const saveProjectSetup = useCallback(
+    (setup: ProjectSetup) => {
+      setState((prev) => {
+        const newState = { ...prev, projectSetup: setup }
+        pendingState.current = newState
+        return newState
+      })
+      scheduleSave()
+    },
+    [scheduleSave],
+  )
+
   const totalRows = rows.length
   const completedCount = Object.values(state.completedRows).reduce(
     (sum, arr) => sum + arr.length,
     0,
   )
+
+  if (setupVisible) {
+    return (
+      <div className="crochet-studio-active">
+        <div className="crochet-studio-active-main">
+          <CrochetProjectSetupCard
+            patternName={pattern.name}
+            suggestedYarnWeight={null}
+            suggestedHookMm={null}
+            patternGaugeText={pattern.gaugeText}
+            initial={state.projectSetup}
+            onSave={saveProjectSetup}
+            onSkip={() => setSetupSkipped(true)}
+          />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`crochet-studio-active${notesOpen ? ' notes-open' : ''}`}>
@@ -328,11 +372,20 @@ export function CrochetActiveProject({
             {state.currentSection && sections.length > 1 ? `${state.currentSection} · ` : ''}
             {totalRows > 0 ? `${completedCount} of ${totalRows} rows` : 'No rows authored yet'}
           </span>
-          {pattern.gaugeText && (
+          {state.projectSetup ? (
+            <ProjectSetupReadout setup={state.projectSetup} />
+          ) : pattern.gaugeText ? (
             <span className="crochet-studio-active-gauge">{pattern.gaugeText}</span>
+          ) : null}
+        </div>
+        <div className="crochet-studio-active-footer-actions">
+          <CrochetStitchHelpPanel craftStitchSlugs={pattern.craftStitchSlugs} />
+          {pattern.sourceTutorialId && (
+            <div className="crochet-studio-active-errata">
+              <ErrataLink tutorialId={pattern.sourceTutorialId} />
+            </div>
           )}
         </div>
-        <CrochetStitchHelpPanel craftStitchSlugs={pattern.craftStitchSlugs} />
       </footer>
 
       {notesOpen && (
@@ -348,6 +401,29 @@ export function CrochetActiveProject({
  * Validates and normalises the rowsStructured JSON into the shape the
  * views consume. Tolerant of older or partial data.
  */
+function ProjectSetupReadout({ setup }: { setup: ProjectSetup }) {
+  const yarn = setup.yarn
+  const hook = setup.hook
+  const swatch = setup.swatch
+  const parts: string[] = []
+  if (yarn?.label) parts.push(`${yarn.colourName ? `${yarn.colourName} ` : ''}${yarn.label}`)
+  if (hook?.mmSize) parts.push(`${hook.mmSize} mm hook`)
+  if (swatch?.stitchesPer10cm) parts.push(`${swatch.stitchesPer10cm} sts / 10 cm`)
+  if (parts.length === 0) return null
+  return (
+    <span className="crochet-studio-active-setup-readout">
+      {yarn?.colourHex && (
+        <span
+          className="crochet-studio-active-setup-pip"
+          style={{ background: yarn.colourHex }}
+          aria-hidden
+        />
+      )}
+      <span>{parts.join(' · ')}</span>
+    </span>
+  )
+}
+
 function normaliseRows(raw: unknown): PatternRow[] {
   if (!Array.isArray(raw)) return []
   const out: PatternRow[] = []

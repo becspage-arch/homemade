@@ -82,7 +82,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
         designer: { select: { slug: true, displayName: true } },
         thumbnail: { select: { id: true } },
         schematic: { select: { id: true } },
-        sourceTutorial: { select: { slug: true, category: { select: { slug: true } } } },
+        sourceTutorial: { select: { id: true, slug: true, category: { select: { slug: true } } } },
       },
     })
 
@@ -126,6 +126,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
           designerName: row.designer?.displayName ?? null,
           sourceTutorialSlug: row.sourceTutorial?.slug ?? null,
           sourceTutorialCategorySlug: row.sourceTutorial?.category?.slug ?? null,
+          sourceTutorialId: row.sourceTutorial?.id ?? null,
         }
       }
     }
@@ -213,6 +214,7 @@ async function loadProgress(userId: string, crochetPatternId: string) {
       countByCluster: true,
       lastWorkedAt: true,
       completedAt: true,
+      projectSetup: true,
     },
   })
   if (!row) return null
@@ -230,5 +232,6 @@ async function loadProgress(userId: string, crochetPatternId: string) {
     countByCluster: row.countByCluster,
     lastWorkedAt: row.lastWorkedAt.toISOString(),
     completedAt: row.completedAt ? row.completedAt.toISOString() : null,
+    projectSetup: row.projectSetup as import('@/components/studio/crochet/types').ProjectSetup | null,
   }
 }

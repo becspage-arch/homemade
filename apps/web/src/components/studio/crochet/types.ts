@@ -45,6 +45,7 @@ export interface CrochetPatternData {
   designerName: string | null
   sourceTutorialSlug: string | null
   sourceTutorialCategorySlug: string | null
+  sourceTutorialId: string | null
 }
 
 export interface CrochetProjectProgressData {
@@ -61,6 +62,26 @@ export interface CrochetProjectProgressData {
   countByCluster: boolean
   lastWorkedAt: string | null
   completedAt: string | null
+  projectSetup: ProjectSetup | null
+}
+
+export interface ProjectSetup {
+  yarn?: {
+    label: string
+    weightSlug?: string
+    colourHex?: string
+    colourName?: string
+    yardage?: number
+  }
+  hook?: {
+    mmSize: number
+    brand?: string
+  }
+  swatch?: {
+    stitchesPer10cm?: number
+    rowsPer10cm?: number
+    blocked?: boolean
+  }
 }
 
 export interface MyCrochetProjectListItem {
