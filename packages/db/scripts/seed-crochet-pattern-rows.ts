@@ -268,10 +268,44 @@ async function main(): Promise<void> {
       continue
     }
 
+    const existing = await prisma.crochetPattern.findUnique({
+      where: { slug: spec.slug },
+      select: { id: true, rowsStructured: true, thumbnailMediaId: true },
+    })
+
+    // Preserve generated media IDs across re-runs. The pattern-rows
+    // seed defines authoring content (instruction, count, colour
+    // label, help note) but doesn't know about thumbnailMediaId or
+    // per-row referencePhotoMediaId — those land via
+    // seed-crochet-pattern-photos.ts. Merge them in here so a re-run
+    // never wipes the photos.
+    interface ExistingRowShape {
+      section?: string
+      rowNumber?: number
+      referencePhotoMediaId?: string | null
+    }
+    const existingRows: ExistingRowShape[] = Array.isArray(existing?.rowsStructured)
+      ? (existing.rowsStructured as ExistingRowShape[])
+      : []
+    const photoByKey = new Map<string, string>()
+    for (const row of existingRows) {
+      if (row?.referencePhotoMediaId && typeof row.referencePhotoMediaId === 'string') {
+        photoByKey.set(`${row.section}:${row.rowNumber}`, row.referencePhotoMediaId)
+      }
+    }
+    const mergedRows = spec.rows.map((row) => {
+      const key = `${row.section}:${row.rowNumber}`
+      const existingPhoto = photoByKey.get(key)
+      if (existingPhoto && !row.referencePhotoMediaId) {
+        return { ...row, referencePhotoMediaId: existingPhoto }
+      }
+      return row
+    })
+
     const baseData = {
       name: spec.name,
       description: spec.description,
-      rowsStructured: spec.rows as unknown,
+      rowsStructured: mergedRows as unknown,
       chartData: spec.chartData as unknown,
       format: spec.format,
       construction: spec.construction,
@@ -292,12 +326,13 @@ async function main(): Promise<void> {
       subCategoryId: tutorial.subCategoryId,
       visibility: Visibility.PUBLIC,
       publishedAt: new Date(),
+      // Preserve hero thumbnail across re-runs unless spec explicitly sets one.
+      ...(existing?.thumbnailMediaId && !spec.thumbnailMediaId
+        ? { thumbnailMediaId: existing.thumbnailMediaId }
+        : spec.thumbnailMediaId
+        ? { thumbnailMediaId: spec.thumbnailMediaId }
+        : {}),
     }
-
-    const existing = await prisma.crochetPattern.findUnique({
-      where: { slug: spec.slug },
-      select: { id: true },
-    })
 
     if (existing) {
       await prisma.crochetPattern.update({
