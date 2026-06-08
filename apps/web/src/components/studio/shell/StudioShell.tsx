@@ -26,6 +26,7 @@ import { NewBlankPanel } from './NewBlankPanel'
 import { PhotoToChartPanel } from './PhotoToChartPanel'
 import { MyPatternsGrid } from './MyPatternsGrid'
 import { useStudioAutosave } from './use-studio-autosave'
+import { BrandSwapDialog } from './BrandSwapDialog'
 
 export type StudioStartMode = 'empty' | 'pattern' | 'new-blank' | 'new-photo'
 
@@ -63,6 +64,7 @@ export function StudioShell({
   const [paletteOpen, setPaletteOpen] = useState(true)
   const [flossKeyOpen, setFlossKeyOpen] = useState(true)
   const [mobilePanel, setMobilePanel] = useState<'none' | 'palette' | 'flosskey'>('none')
+  const [brandSwapOpen, setBrandSwapOpen] = useState(false)
 
   const initialStitched = useMemo(() => new Set(stitchedKeys), [stitchedKeys])
 
@@ -140,7 +142,30 @@ export function StudioShell({
         userEmail={userEmail}
         userName={userName}
         canEdit={pattern.ownerUserId !== null}
+        onOpenBrandSwap={() => setBrandSwapOpen(true)}
       />
+
+      {brandSwapOpen && (
+        <BrandSwapDialog
+          patternId={pattern.id}
+          pattern={pattern.data}
+          onClose={() => setBrandSwapOpen(false)}
+          onSwapped={(result) => {
+            setBrandSwapOpen(false)
+            // Library pattern silently forked into a new owned row.
+            // Library pattern silently forked into a new owned row. Swap the
+            // URL's patternId so the next render loads the user's fork; the
+            // shell re-mounts with the swapped palette already persisted.
+            if (result.forked) {
+              const params = new URLSearchParams(searchParams.toString())
+              params.set('patternId', result.id)
+              router.replace(`/studio/cross-stitch?${params.toString()}`, { scroll: false })
+            } else {
+              router.refresh()
+            }
+          }}
+        />
+      )}
 
       <main className="studio-canvas">
         <ChartViewport

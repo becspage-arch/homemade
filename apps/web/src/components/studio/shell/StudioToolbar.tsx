@@ -24,6 +24,7 @@ interface StudioToolbarProps {
   userEmail: string | null
   userName: string | null
   canEdit: boolean
+  onOpenBrandSwap: () => void
 }
 
 export function StudioToolbar({
@@ -33,6 +34,7 @@ export function StudioToolbar({
   userEmail,
   userName,
   canEdit,
+  onOpenBrandSwap,
 }: StudioToolbarProps) {
   const [editingTitle, setEditingTitle] = useState(false)
   const [titleValue, setTitleValue] = useState(patternName)
@@ -156,6 +158,10 @@ export function StudioToolbar({
               patternId={patternId}
               canEdit={canEdit}
               onClose={() => setOverflowOpen(false)}
+              onOpenBrandSwap={() => {
+                setOverflowOpen(false)
+                onOpenBrandSwap()
+              }}
             />
           )}
         </div>
@@ -245,10 +251,12 @@ function OverflowMenu({
   patternId,
   canEdit,
   onClose,
+  onOpenBrandSwap,
 }: {
   patternId: string
   canEdit: boolean
   onClose: () => void
+  onOpenBrandSwap: () => void
 }) {
   return (
     <div className="studio-popover" onMouseLeave={onClose}>
@@ -258,6 +266,9 @@ function OverflowMenu({
       <a className="studio-popover-item" href={`/api/studio/patterns/${patternId}/floss-list`} target="_blank">
         Download floss list
       </a>
+      <button type="button" className="studio-popover-item" onClick={onOpenBrandSwap}>
+        Switch floss brand
+      </button>
       {canEdit && (
         <button
           type="button"

@@ -9,6 +9,9 @@
  */
 
 import { DMC_TABLE, type FlossEntry } from './dmc-table'
+import { ANCHOR_TABLE } from './anchor-table'
+import { MADEIRA_TABLE } from './madeira-table'
+import { brandEquivalent, colourDistance } from './equivalence-table'
 
 export interface NearestOptions {
   /** Restrict the search to a brand. Defaults to DMC. */
@@ -53,19 +56,23 @@ function rgbToLab(r: number, g: number, b: number): [number, number, number] {
   return [116 * fy - 16, 500 * (fx - fy), 200 * (fy - fz)]
 }
 
-const dmcLab: [number, number, number][] = DMC_TABLE.map((entry) => {
-  const [r, g, b] = hexToRgb(entry.rgb)
-  return rgbToLab(r, g, b)
-})
+const labCache = new Map<'DMC' | 'ANCHOR' | 'MADEIRA', [number, number, number][]>()
+
+function labFor(brand: 'DMC' | 'ANCHOR' | 'MADEIRA'): [number, number, number][] {
+  const cached = labCache.get(brand)
+  if (cached) return cached
+  const table = brand === 'DMC' ? DMC_TABLE : brand === 'ANCHOR' ? ANCHOR_TABLE : MADEIRA_TABLE
+  const lab = table.map((entry) => {
+    const [r, g, b] = hexToRgb(entry.rgb)
+    return rgbToLab(r, g, b)
+  })
+  labCache.set(brand, lab)
+  return lab
+}
 
 export function pickBrandTable(brand: 'DMC' | 'ANCHOR' | 'MADEIRA' | undefined): FlossEntry[] {
-  if (brand && brand !== 'DMC') {
-    // v1 only ships the DMC table; ANCHOR / MADEIRA fall through. Pattern
-    // brand-swap remaps via DMC ↔ ANCHOR ↔ MADEIRA equivalence tables in
-    // a follow-up; today we tag the entry's `brand` with the requested
-    // brand so the UI reads consistently and the user sees DMC values.
-    return DMC_TABLE.map((e) => ({ ...e, brand }))
-  }
+  if (brand === 'ANCHOR') return ANCHOR_TABLE
+  if (brand === 'MADEIRA') return MADEIRA_TABLE
   return DMC_TABLE
 }
 
@@ -73,25 +80,27 @@ export function nearestFloss(
   targetHex: string,
   opts: NearestOptions = {},
 ): { entry: FlossEntry; index: number; distance: number } {
-  const table = pickBrandTable(opts.brand)
+  const brand = opts.brand ?? 'DMC'
+  const table = pickBrandTable(brand)
+  const lab = labFor(brand)
   const [r, g, b] = hexToRgb(targetHex)
   const [l, a, bb] = rgbToLab(r, g, b)
   let bestIndex = 0
   let bestD = Number.POSITIVE_INFINITY
   const indices = opts.candidates ?? table.map((_, i) => i)
   for (const i of indices) {
-    const lab = dmcLab[i]
-    if (!lab) continue
-    const dl = lab[0] - l
-    const da = lab[1] - a
-    const db = lab[2] - bb
+    const labEntry = lab[i]
+    if (!labEntry) continue
+    const dl = labEntry[0] - l
+    const da = labEntry[1] - a
+    const db = labEntry[2] - bb
     const d = dl * dl + da * da + db * db
     if (d < bestD) {
       bestD = d
       bestIndex = i
     }
   }
-  return { entry: { ...table[bestIndex]!, brand: opts.brand ?? 'DMC' }, index: bestIndex, distance: Math.sqrt(bestD) }
+  return { entry: { ...table[bestIndex]!, brand }, index: bestIndex, distance: Math.sqrt(bestD) }
 }
 
 /**
@@ -113,4 +122,71 @@ export function buildFlossPalette(
     out.push({ ...entry, sourceRgb: raw })
   }
   return out
+}
+
+/**
+ * One swap result per source palette entry. `exact` mirrors the
+ * published cross-reference; `closestMatch` is true when the swap
+ * fell back to perceptual nearest-by-RGB. `distance` is the CIELAB
+ * ΔE between source and target — a value above ~5 is a visible
+ * shift the Studio surfaces in the preview warning.
+ */
+export interface BrandSwapResult {
+  source: FlossEntry
+  target: FlossEntry
+  closestMatch: boolean
+  distance: number
+}
+
+/**
+ * Build a per-entry brand swap proposal for an entire palette.
+ * Returns one BrandSwapResult per source entry, in order. The
+ * Studio renders this as a side-by-side preview so the user can
+ * see exact-vs-closest before committing, and (in a follow-up
+ * pass) pick a per-colour override if they prefer a different
+ * target code than the auto-mapped one.
+ */
+export function swapBrand(
+  palette: FlossEntry[],
+  toBrand: 'DMC' | 'ANCHOR' | 'MADEIRA',
+): BrandSwapResult[] {
+  const results: BrandSwapResult[] = []
+  for (const source of palette) {
+    if (source.brand === toBrand) {
+      results.push({ source, target: source, closestMatch: false, distance: 0 })
+      continue
+    }
+    const lookup = brandEquivalent(source.brand, source.code, toBrand)
+    if (!lookup) {
+      // No published equivalent and no nearest-by-RGB possible (e.g. the
+      // source brand isn't in any table yet). Fall back to a perceptual
+      // nearest-by-RGB pick from the target table directly.
+      const { entry, distance } = nearestFloss(source.rgb, { brand: toBrand })
+      results.push({ source, target: entry, closestMatch: true, distance })
+      continue
+    }
+    const targetTable = pickBrandTable(toBrand)
+    const targetEntry = targetTable.find((e) => e.code === lookup.code)
+    if (!targetEntry) {
+      // The equivalence row pointed at a code that isn't in the embedded
+      // target table yet. Fall back to nearest-by-RGB from source.rgb.
+      const { entry, distance } = nearestFloss(source.rgb, { brand: toBrand })
+      results.push({ source, target: entry, closestMatch: true, distance })
+      continue
+    }
+    const distance = colourDistance(source.brand, source.code, toBrand, targetEntry.code) ?? 0
+    results.push({
+      source,
+      target: {
+        ...targetEntry,
+        // Preserve strands settings from the source palette entry so the
+        // floss-list skein estimate stays consistent across the swap.
+        // The Studio writes these onto the target after applying any
+        // per-colour overrides the user made in the preview.
+      },
+      closestMatch: !lookup.exact,
+      distance,
+    })
+  }
+  return results
 }
