@@ -4,6 +4,7 @@ import { CategoryScopedSearch } from '@/components/public/category/category-scop
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { CrochetPatternGrid } from './crochet-pattern-grid'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
@@ -20,13 +21,14 @@ interface PatternLayoutProps {
   category: PatternLayoutCategory
   searchParams: {
     sub?: string
-    sort?: 'featured' | 'newest' | 'size' | 'popular'
+    sort?: 'featured' | 'newest' | 'size' | 'popular' | 'name'
     difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'
     size?: 's' | 'm' | 'l'
     minColour?: string
     maxColour?: string
     hasBackstitch?: '1'
     hasFrenchKnots?: '1'
+    yarnWeight?: string
   }
 }
 
@@ -118,7 +120,26 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
           ? { updatedAt: 'desc' as const }
           : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns, spotlightDesigner, recentlyCompleted] = await Promise.all([
+  // Crochet category surfaces CrochetPattern rows alongside the
+  // cross-stitch-shaped Pattern surface. The PatternLayout falls
+  // through to the Crochet block when category.slug === 'crochet'.
+  const isCrochet = category.slug === 'crochet'
+  const crochetWhere: Record<string, unknown> = {
+    ownerUserId: null,
+    visibility: Visibility.PUBLIC,
+    publishedAt: { not: null },
+    subCategory: { categoryId: category.id },
+  }
+  if (sp.difficulty) crochetWhere.difficulty = sp.difficulty
+  if (sp.sub) crochetWhere.subCategory = { slug: sp.sub, categoryId: category.id }
+  if (sp.yarnWeight) crochetWhere.primaryYarnWeight = { slug: sp.yarnWeight }
+
+  const crochetOrderBy =
+    sp.sort === 'name'
+      ? { name: 'asc' as const }
+      : { publishedAt: 'desc' as const }
+
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -184,6 +205,27 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
     patternType
       ? pickRotatingDesigner({ categoryId: category.id, patternType })
       : Promise.resolve(null),
+    isCrochet
+      ? prisma.crochetPattern.findMany({
+          where: crochetWhere,
+          orderBy: crochetOrderBy,
+          take: 96,
+          select: {
+            id: true,
+            slug: true,
+            name: true,
+            thumbnailMediaId: true,
+            difficulty: true,
+            shapeCategory: true,
+            finishedSizeText: true,
+            premium: true,
+            designer: { select: { displayName: true, slug: true } },
+            primaryYarnWeight: { select: { canonicalName: true } },
+            primaryHook: { select: { canonicalName: true } },
+            subCategory: { select: { slug: true, name: true } },
+          },
+        })
+      : Promise.resolve([]),
     patternType
       ? prisma.userPatternProgress.findMany({
           where: {
@@ -387,7 +429,44 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
         </section>
       )}
 
-      <section id="patterns" className="pattern-landing-library">
+      {isCrochet && (
+        <section id="patterns" className="pattern-landing-library">
+          <header className="pattern-landing-library-header">
+            <h2 className="pattern-landing-library-heading">Crochet patterns</h2>
+            <p className="pattern-landing-library-sub">
+              Open any pattern in the Crochet Studio to mark each row as you go.
+            </p>
+          </header>
+          <CrochetPatternGrid
+            patterns={crochetPatterns.map((p) => ({
+              id: p.id,
+              slug: p.slug,
+              name: p.name,
+              thumbnailMediaId: p.thumbnailMediaId,
+              difficulty: p.difficulty,
+              shapeCategory: p.shapeCategory,
+              finishedSizeText: p.finishedSizeText,
+              primaryYarnWeightName: p.primaryYarnWeight?.canonicalName ?? null,
+              primaryHookName: p.primaryHook?.canonicalName ?? null,
+              premium: p.premium,
+              designerName: p.designer?.displayName ?? null,
+              designerSlug: p.designer?.slug ?? null,
+              subCategoryName: p.subCategory?.name ?? null,
+              subCategorySlug: p.subCategory?.slug ?? null,
+            }))}
+            subCategories={category.subCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            currentFilters={{
+              sub: sp.sub ?? null,
+              difficulty: sp.difficulty ?? null,
+              yarnWeight: sp.yarnWeight ?? null,
+              sort: sp.sort === 'name' ? 'name' : 'newest',
+            }}
+            basePath={`/${category.slug}`}
+          />
+        </section>
+      )}
+
+      <section id="patterns-classic" className="pattern-landing-library" hidden={isCrochet}>
         {patternType ? (
           patterns.length === 0 && filtered.length === 0 && Object.keys(sp).length === 0 ? (
             <div className="pattern-landing-empty">

@@ -168,6 +168,17 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/seed-crochet-pattern-rows.ts
 
+      # Discovery (phase_crochet_pattern_001 step 5). Flips the crochet
+      # category to public visibility and marks the four foundation
+      # tutorials as foundational so they appear in the Start Here
+      # ladder on the /crochet landing page. Idempotent.
+      - name: Flip crochet public + foundations (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/flip-crochet-public.ts
+
       # Photographic demo patterns — pulls 3 public-domain Wikimedia
       # photos through the live photo-to-chart pipeline at ~120 cells
       # / ~36 colours so the library shows what dense subject matter

@@ -340,3 +340,177 @@
     font-size: 24px;
   }
 }
+
+/* ===== Crochet pattern grid ============================================ */
+
+.crochet-pattern-grid {
+  margin-top: 1.5rem;
+}
+
+.crochet-pattern-grid-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(60, 47, 34, 0.03);
+  border-radius: 12px;
+}
+
+.crochet-pattern-grid-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.crochet-pattern-grid-filter-label {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  color: #8a8276;
+  margin-right: 0.4rem;
+}
+
+.crochet-pattern-grid-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #5c5347;
+  background: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(60, 47, 34, 0.08);
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+.crochet-pattern-grid-chip:hover {
+  background: rgba(125, 149, 125, 0.10);
+  color: #5d7959;
+  border-color: rgba(125, 149, 125, 0.4);
+}
+
+.crochet-pattern-grid-chip.is-active {
+  background: #7d957d;
+  color: #fff;
+  border-color: #7d957d;
+}
+
+.crochet-pattern-grid-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.crochet-pattern-grid-card {
+  background: #fafaf6;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(60, 47, 34, 0.06), 0 1px 2px rgba(60, 47, 34, 0.04);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.crochet-pattern-grid-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(60, 47, 34, 0.12), 0 2px 6px rgba(60, 47, 34, 0.06);
+}
+
+.crochet-pattern-grid-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.crochet-pattern-grid-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: rgba(60, 47, 34, 0.05);
+}
+
+.crochet-pattern-grid-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crochet-pattern-grid-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(125, 149, 125, 0.12), rgba(60, 47, 34, 0.06));
+}
+
+.crochet-pattern-grid-premium {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: #c4856b;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.crochet-pattern-grid-meta {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.crochet-pattern-grid-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #3d2f22;
+  margin-bottom: 0.15rem;
+}
+
+.crochet-pattern-grid-sub {
+  font-size: 0.82rem;
+  color: #5c5347;
+}
+
+.crochet-pattern-grid-yarn {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #8a8276;
+  letter-spacing: 0.02em;
+}
+
+.crochet-pattern-grid-designer {
+  font-size: 0.78rem;
+  color: #8a8276;
+  font-style: italic;
+}
+
+.crochet-pattern-grid-empty {
+  background: rgba(60, 47, 34, 0.03);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #8a8276;
+  font-style: italic;
+}
+
+.pattern-landing-library-header {
+  margin-bottom: 1rem;
+}
+
+.pattern-landing-library-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 0 0 0.3rem;
+}
+
+.pattern-landing-library-sub {
+  color: #5c5347;
+  margin: 0;
+}
