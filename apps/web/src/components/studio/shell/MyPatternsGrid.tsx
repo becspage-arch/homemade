@@ -25,6 +25,7 @@ export function MyPatternsGrid({ patterns, onOpen }: MyPatternsGridProps) {
           <li key={p.id} className="studio-my-patterns-card">
             <button type="button" className="studio-my-patterns-card-button" onClick={() => onOpen(p.id)}>
               <div className="studio-my-patterns-thumb">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`/api/studio/patterns/${p.id}/thumbnail`} alt="" loading="lazy" />
               </div>
               <div className="studio-my-patterns-meta">

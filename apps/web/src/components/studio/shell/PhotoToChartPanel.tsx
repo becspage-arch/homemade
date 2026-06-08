@@ -15,7 +15,7 @@
  * so the user is looking at the actual output, not an approximation.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { UploadCloud, X } from 'lucide-react'
 import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
@@ -107,6 +107,7 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
 
   useEffect(() => {
     if (!file) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPattern(null)
       return
     }
@@ -157,6 +158,7 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
             <ChartViewport pattern={pattern} mode="view" />
           </div>
         ) : previewUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img src={previewUrl} alt="Source" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
         ) : (
           <div className="studio-p2c-preview-canvas">

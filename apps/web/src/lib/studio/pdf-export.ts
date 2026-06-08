@@ -344,7 +344,6 @@ function drawTileMap(
   const mapMax = 60
   const cellSize = Math.min(mapMax / tilesX, mapMax / tilesY)
   const mapW = cellSize * tilesX
-  const mapH = cellSize * tilesY
   const baseX = ctx.paper.width - ctx.m - mapW
   const baseY = ctx.m + 4
   for (let y = 0; y < tilesY; y++) {

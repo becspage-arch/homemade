@@ -29,6 +29,7 @@ export function PatternInset({ pattern, isSignedIn }: PatternInsetProps) {
   return (
     <aside className="pattern-inset" aria-label={`Pattern: ${pattern.name}`}>
       <Link href={studioHref} className="pattern-inset-thumb" aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={pattern.thumbnailUrl} alt="" loading="lazy" />
       </Link>
       <div className="pattern-inset-body">

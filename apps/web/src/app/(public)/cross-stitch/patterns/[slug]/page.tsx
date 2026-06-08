@@ -84,6 +84,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
 
       <header className="pattern-detail-hero">
         <div className="pattern-detail-hero-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={`/api/studio/patterns/${row.id}/thumbnail`} alt={row.name} loading="eager" />
         </div>
         <div className="pattern-detail-hero-body">
@@ -156,6 +157,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
             {related.map((r) => (
               <li key={r.id}>
                 <Link href={r.slug ? `/cross-stitch/patterns/${r.slug}` : `/studio/cross-stitch?patternId=${r.id}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`/api/studio/patterns/${r.id}/thumbnail`} alt="" loading="lazy" />
                   <div>
                     <span className="pattern-detail-related-name">{r.name}</span>

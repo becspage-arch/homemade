@@ -179,6 +179,7 @@ function PatternCardItem({ pattern }: { pattern: PatternCard }) {
   return (
     <li className="cross-stitch-library-card">
       <Link href={detailHref} className="cross-stitch-library-card-thumb">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={pattern.thumbnailUrl} alt="" loading="lazy" />
         {pattern.premium && <span className="cross-stitch-library-card-badge">Premium</span>}
       </Link>

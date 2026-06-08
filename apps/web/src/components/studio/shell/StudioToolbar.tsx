@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Undo2, Redo2, MoreHorizontal, Check, Loader2 } from 'lucide-react'
 import { useChartStore } from '../chart/chart-store'
 
@@ -44,13 +45,17 @@ export function StudioToolbar({
   const canRedo = store.future.length > 0
 
   useEffect(() => {
-    if (store.dirty) {
-      setSaveState('saving')
-    } else if (saveState === 'saving') {
-      setSaveState('saved')
-      const t = setTimeout(() => setSaveState('idle'), 1800)
-      return () => clearTimeout(t)
-    }
+    if (!store.dirty) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSaveState('saving')
+  }, [store.dirty])
+
+  useEffect(() => {
+    if (saveState !== 'saving' || store.dirty) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSaveState('saved')
+    const t = setTimeout(() => setSaveState('idle'), 1800)
+    return () => clearTimeout(t)
   }, [store.dirty, saveState])
 
   const commitTitle = async () => {
@@ -74,9 +79,9 @@ export function StudioToolbar({
   return (
     <header className="studio-toolbar">
       <div className="studio-toolbar-left">
-        <a href="/cross-stitch" className="studio-toolbar-home" aria-label="Back to cross-stitch">
+        <Link href="/cross-stitch" className="studio-toolbar-home" aria-label="Back to cross-stitch">
           <span className="studio-toolbar-home-mark">⌂</span>
-        </a>
+        </Link>
         {editingTitle ? (
           <input
             type="text"
@@ -254,12 +259,12 @@ function AvatarMenu({
         <div className="studio-popover-account-name">{userName ?? 'Maker'}</div>
         {userEmail && <div className="studio-popover-account-email">{userEmail}</div>}
       </div>
-      <a className="studio-popover-item" href="/me/settings">
+      <Link className="studio-popover-item" href="/me/settings">
         Settings
-      </a>
-      <a className="studio-popover-item" href="/me">
+      </Link>
+      <Link className="studio-popover-item" href="/me">
         Your account
-      </a>
+      </Link>
       <form action="/sign-out" method="post" className="studio-popover-item-form">
         <button className="studio-popover-item" type="submit">
           Sign out
