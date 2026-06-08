@@ -85,7 +85,7 @@ export async function readCatalogue(sourceRoot: string): Promise<CatalogueEntry[
     const folderName = f.name
     // "Elephant - Baby Elephant" → theme="Elephant", subject="Baby Elephant"
     const m = folderName.match(/^([A-Za-z]+)\s*-\s*(.+)$/)
-    if (!m) continue
+    if (!m || !m[1] || !m[2]) continue
     const themeRaw = m[1]
     const subject = m[2].trim()
     if (!(themeRaw in THEME_TO_SUBCAT)) continue
