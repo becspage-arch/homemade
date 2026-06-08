@@ -97,7 +97,7 @@ const MINDSET_PICKER: PickerBand[] = [
   },
 ]
 
-const SUSTAINABILITY_PICKER: PickerBand[] = [
+const SUSTAINABILITY_BASE_PICKER: PickerBand[] = [
   {
     key: 'difficulty',
     label: 'Commitment level',
@@ -109,7 +109,7 @@ const SUSTAINABILITY_PICKER: PickerBand[] = [
   },
 ]
 
-const ANIMALS_PICKER: PickerBand[] = [
+const ANIMALS_BASE_PICKER: PickerBand[] = [
   {
     key: 'difficulty',
     label: 'Where are you?',
@@ -121,10 +121,37 @@ const ANIMALS_PICKER: PickerBand[] = [
   },
 ]
 
-const PICKERS_BY_SLUG: Record<string, PickerBand[]> = {
-  mindset: MINDSET_PICKER,
-  sustainability: SUSTAINABILITY_PICKER,
-  'animals-smallholding': ANIMALS_PICKER,
+const SECOND_BAND_LABEL: Record<string, string> = {
+  sustainability: 'Area',
+  'animals-smallholding': 'Animal',
+}
+
+function pickersForCategory(
+  category: PracticeLayoutCategory,
+): PickerBand[] {
+  if (category.slug === 'mindset') return MINDSET_PICKER
+
+  const base =
+    category.slug === 'sustainability'
+      ? SUSTAINABILITY_BASE_PICKER
+      : category.slug === 'animals-smallholding'
+        ? ANIMALS_BASE_PICKER
+        : []
+  if (base.length === 0) return base
+
+  const subBand: PickerBand | null =
+    category.subCategories.length > 0
+      ? {
+          key: 'sub',
+          label: SECOND_BAND_LABEL[category.slug] ?? 'Topic',
+          values: category.subCategories.map((sc) => ({
+            value: sc.slug,
+            label: sc.name,
+          })),
+        }
+      : null
+
+  return subBand ? [...base, subBand] : base
 }
 
 function parseDifficulty(raw: string | undefined): Difficulty | null {
@@ -169,7 +196,7 @@ export async function PracticeLayout({
   const depth = isMindset ? parseDifficulty(searchParams.depth) : null
   const difficulty = !isMindset ? parseDifficulty(searchParams.difficulty) : null
 
-  const pickers = PICKERS_BY_SLUG[category.slug] ?? []
+  const pickers = pickersForCategory(category)
   const anyPicked = Boolean(
     target || timeBand || depth || difficulty || subCategory,
   )
@@ -252,7 +279,9 @@ export async function PracticeLayout({
                     ? target
                     : band.key === 'timeBand'
                       ? timeBand
-                      : null
+                      : band.key === 'sub'
+                        ? subSlug
+                        : null
             return (
               <div key={band.key} className="practice-picker-band">
                 <span className="practice-picker-label">{band.label}</span>

@@ -1,3 +1,73 @@
-/* SkillLayout reuses the existing .category-page CSS. Only the
-   scoped-search and foundations-path additions need extra. Empty
-   stylesheet placeholder — extend here as the archetype grows. */
+/* SkillLayout reuses the existing .category-page CSS. */
+
+.pottery-setup-picker {
+  margin: 24px 0 16px;
+  padding: 24px;
+  background: var(--color-soft-parchment);
+  border-radius: 18px;
+}
+
+.pottery-setup-picker-heading {
+  font-family: var(--font-fraunces);
+  font-size: 22px;
+  color: var(--color-espresso);
+  letter-spacing: -0.005em;
+  margin: 0 0 6px;
+}
+
+.pottery-setup-picker-lede {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 18px;
+}
+
+.pottery-setup-picker-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.pottery-setup-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-espresso);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pottery-setup-card:hover {
+  border-color: var(--color-sage);
+}
+
+.pottery-setup-card.is-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.pottery-setup-card.is-active .pottery-setup-card-sub {
+  color: var(--color-cream);
+  opacity: 0.85;
+}
+
+.pottery-setup-card-label {
+  font-family: var(--font-fraunces);
+  font-size: 16px;
+  letter-spacing: -0.005em;
+}
+
+.pottery-setup-card-sub {
+  font-family: var(--font-lora);
+  font-size: 12.5px;
+  color: var(--color-warm-taupe);
+  line-height: 1.35;
+}

@@ -143,7 +143,7 @@ export async function PlantLayout({
   if (containerOnly) where.containerFriendly = true
   if (indoorOnly) where.indoorFriendly = true
 
-  const [matches, anchors] = await Promise.all([
+  const [matches, anchors, allInCategory] = await Promise.all([
     prisma.tutorial.findMany({
       where,
       orderBy: [{ publishedAt: 'desc' }],
@@ -156,11 +156,21 @@ export async function PlantLayout({
       countryCode: null,
       limit: 8,
     }),
+    prisma.tutorial.findMany({
+      where: {
+        categoryId: category.id,
+        status: TutorialStatus.PUBLISHED,
+      },
+      orderBy: [{ publishedAt: 'desc' }],
+      take: 24,
+      select: CARD_SELECT,
+    }),
   ])
 
   const allIds = new Set<string>()
   for (const t of matches as TutorialCardLike[]) allIds.add(t.id)
   for (const t of anchors as TutorialCardLike[]) allIds.add(t.id)
+  for (const t of allInCategory as TutorialCardLike[]) allIds.add(t.id)
   const readerState = currentUserId
     ? await loadReaderState(currentUserId, Array.from(allIds))
     : emptyReaderState()
@@ -251,10 +261,30 @@ export async function PlantLayout({
 
       <section className="plant-results">
         {matches.length === 0 ? (
-          <p className="category-empty">
-            Nothing in our library to {verb} in {monthLabel} in the {regionLabel} yet. We
-            are filling the garden library now; come back soon.
-          </p>
+          allInCategory.length === 0 ? (
+            <p className="category-empty">
+              The garden library is still being seeded. Come back soon.
+            </p>
+          ) : (
+            <div className="plant-empty-soft">
+              <p className="plant-empty-headline">
+                Nothing to {verb} in {monthLabel} in the {regionLabel} yet.
+              </p>
+              <p className="plant-empty-lede">
+                The garden library is small but growing. Here is what we have so far,
+                whatever the month.
+              </p>
+              <div className="plant-results-grid">
+                {(allInCategory as TutorialCardLike[]).map((t) => (
+                  <HomeCard
+                    key={t.id}
+                    tutorial={t}
+                    state={readerStateFor(readerState, t.id)}
+                  />
+                ))}
+              </div>
+            </div>
+          )
         ) : (
           <div className="plant-results-grid">
             {(matches as TutorialCardLike[]).map((t) => (

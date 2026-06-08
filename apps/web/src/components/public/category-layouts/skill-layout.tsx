@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { prisma, TutorialStatus, type Difficulty } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
 import { CategoryHero } from '@/components/public/category-hero'
@@ -226,6 +227,16 @@ export async function SkillLayout({
         />
       )}
 
+      {showEquipmentFilters && (
+        <PotteryEquipmentPicker
+          categorySlug={category.slug}
+          active={equipment}
+          preserveQuery={
+            activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
+          }
+        />
+      )}
+
       {category.subCategories.length > 0 && (
         <div className="category-chip-rows">
           <SubCategoryChips
@@ -239,9 +250,9 @@ export async function SkillLayout({
           />
           <CategoryFilterChips
             categorySlug={category.slug}
-            showEquipment={showEquipmentFilters}
+            showEquipment={false}
             activeDifficulty={difficulty}
-            activeEquipment={equipment}
+            activeEquipment={null}
             preserveQuery={
               activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
             }
@@ -305,4 +316,58 @@ interface TutorialCardLike {
   subCategoryId?: string | null
   requiresKiln?: boolean
   requiresWheel?: boolean
+}
+
+interface PotteryEquipmentPickerProps {
+  categorySlug: string
+  active: EquipmentFilter
+  preserveQuery: Record<string, string>
+}
+
+const POTTERY_SETUPS: { value: EquipmentFilter; label: string; sub: string }[] = [
+  { value: 'none', label: 'No equipment', sub: 'Hand-built, air-dry or oven-bake' },
+  { value: 'no-wheel', label: 'No wheel', sub: 'Kiln access, hand-built shapes' },
+  { value: 'no-kiln', label: 'No kiln', sub: 'Wheel access, plus alternative firing' },
+  { value: null, label: 'Full setup', sub: 'Wheel plus kiln' },
+]
+
+function PotteryEquipmentPicker({
+  categorySlug,
+  active,
+  preserveQuery,
+}: PotteryEquipmentPickerProps) {
+  function hrefFor(value: EquipmentFilter): string {
+    const params = new URLSearchParams(preserveQuery)
+    params.delete('equipment')
+    if (value) params.set('equipment', value)
+    const qs = params.toString()
+    return qs ? `/${categorySlug}?${qs}` : `/${categorySlug}`
+  }
+
+  return (
+    <section className="pottery-setup-picker" aria-label="Pottery setup">
+      <h2 className="pottery-setup-picker-heading">
+        What is your pottery setup?
+      </h2>
+      <p className="pottery-setup-picker-lede">
+        We will show you what you can make with what you have access to.
+      </p>
+      <ul className="pottery-setup-picker-grid">
+        {POTTERY_SETUPS.map((s) => {
+          const isActive = active === s.value
+          return (
+            <li key={s.value ?? 'full'}>
+              <Link
+                href={hrefFor(s.value)}
+                className={`pottery-setup-card${isActive ? ' is-active' : ''}`}
+              >
+                <span className="pottery-setup-card-label">{s.label}</span>
+                <span className="pottery-setup-card-sub">{s.sub}</span>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
+  )
 }

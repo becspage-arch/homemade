@@ -5,6 +5,9 @@ import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
+const DESIGNER_SPOTLIGHT_TAKE = 6
+const RECENTLY_COMPLETED_TAKE = 8
+
 interface PatternLayoutCategory {
   id: string
   slug: string
@@ -115,7 +118,7 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
           ? { updatedAt: 'desc' as const }
           : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns] = await Promise.all([
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, recentlyCompleted] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -175,6 +178,77 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
             id: true,
             slug: true,
             hero: { select: { cloudflareId: true, r2Key: true } },
+          },
+        })
+      : Promise.resolve([]),
+    patternType
+      ? prisma.designer.findFirst({
+          where: {
+            patterns: {
+              some: {
+                ownerUserId: null,
+                visibility: Visibility.PUBLIC,
+                publishedAt: { not: null },
+                type: patternType,
+                subCategory: { categoryId: category.id },
+              },
+            },
+          },
+          orderBy: [{ patternCount: 'desc' }, { createdAt: 'desc' }],
+          select: {
+            id: true,
+            slug: true,
+            displayName: true,
+            bio: true,
+            websiteUrl: true,
+            avatar: { select: { cloudflareId: true, r2Key: true } },
+            patterns: {
+              where: {
+                ownerUserId: null,
+                visibility: Visibility.PUBLIC,
+                publishedAt: { not: null },
+                type: patternType,
+                subCategory: { categoryId: category.id },
+              },
+              orderBy: { publishedAt: 'desc' },
+              take: DESIGNER_SPOTLIGHT_TAKE,
+              select: {
+                id: true,
+                slug: true,
+                name: true,
+                hero: { select: { cloudflareId: true, r2Key: true } },
+              },
+            },
+          },
+        })
+      : Promise.resolve(null),
+    patternType
+      ? prisma.userPatternProgress.findMany({
+          where: {
+            completedAt: { not: null },
+            pattern: {
+              ownerUserId: null,
+              visibility: Visibility.PUBLIC,
+              type: patternType,
+              subCategory: { categoryId: category.id },
+            },
+          },
+          orderBy: { completedAt: 'desc' },
+          take: RECENTLY_COMPLETED_TAKE,
+          select: {
+            id: true,
+            completedAt: true,
+            pattern: {
+              select: {
+                id: true,
+                slug: true,
+                name: true,
+                hero: { select: { cloudflareId: true, r2Key: true } },
+              },
+            },
+            user: {
+              select: { id: true, name: true, displayHandle: true },
+            },
           },
         })
       : Promise.resolve([]),
@@ -260,6 +334,95 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
               : null
           }
         />
+      )}
+
+      {spotlightDesigner && spotlightDesigner.patterns.length >= 2 && (
+        <section className="pattern-landing-spotlight" aria-label="Designer spotlight">
+          <header className="pattern-landing-spotlight-header">
+            <p className="pattern-landing-spotlight-eyebrow">Designer spotlight</p>
+            <h2 className="pattern-landing-spotlight-name">
+              {spotlightDesigner.displayName}
+            </h2>
+            {spotlightDesigner.bio && (
+              <p className="pattern-landing-spotlight-bio">
+                {spotlightDesigner.bio}
+              </p>
+            )}
+            {spotlightDesigner.websiteUrl && (
+              <a
+                href={spotlightDesigner.websiteUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="pattern-landing-spotlight-link"
+              >
+                Designer website ↗
+              </a>
+            )}
+          </header>
+          <ul className="pattern-landing-spotlight-grid">
+            {spotlightDesigner.patterns.map((p) => {
+              const href = p.slug
+                ? `/${category.slug}/patterns/${p.slug}`
+                : `/studio/cross-stitch?patternId=${p.id}`
+              return (
+                <li key={p.id} className="pattern-landing-spotlight-card">
+                  <Link href={href}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={patternHeroUrl({ id: p.id, hero: p.hero }, 'card')}
+                      alt={p.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span className="pattern-landing-spotlight-card-name">
+                      {p.name}
+                    </span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
+      )}
+
+      {recentlyCompleted.length > 0 && (
+        <section className="pattern-landing-completed" aria-label="Recently completed by the community">
+          <header className="pattern-landing-completed-header">
+            <h2 className="pattern-landing-completed-heading">Recently finished by the community</h2>
+            <p className="pattern-landing-completed-subheading">
+              Real makes from real makers.
+            </p>
+          </header>
+          <ul className="pattern-landing-completed-grid">
+            {recentlyCompleted.map((p) => {
+              const href = p.pattern.slug
+                ? `/${category.slug}/patterns/${p.pattern.slug}`
+                : `/studio/cross-stitch?patternId=${p.pattern.id}`
+              const handle = p.user.displayHandle ?? p.user.name
+              return (
+                <li key={p.id} className="pattern-landing-completed-card">
+                  <Link href={href}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={patternHeroUrl({ id: p.pattern.id, hero: p.pattern.hero }, 'card')}
+                      alt={p.pattern.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span className="pattern-landing-completed-card-name">
+                      {p.pattern.name}
+                    </span>
+                    {handle && (
+                      <span className="pattern-landing-completed-card-maker">
+                        by {handle}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
       )}
 
       <section id="patterns" className="pattern-landing-library">

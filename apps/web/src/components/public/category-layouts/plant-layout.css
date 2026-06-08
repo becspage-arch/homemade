@@ -136,6 +136,28 @@
   gap: 24px 16px;
 }
 
+.plant-empty-soft {
+  padding: 32px;
+  background: var(--color-soft-parchment);
+  border-radius: 20px;
+}
+
+.plant-empty-headline {
+  font-family: var(--font-fraunces);
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
+}
+
+.plant-empty-lede {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+
 @media (max-width: 900px) {
   .plant-landing { padding: 0 16px 48px; }
   .plant-landing-header { padding: 32px 0 16px; }

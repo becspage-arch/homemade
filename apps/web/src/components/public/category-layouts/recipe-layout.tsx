@@ -8,6 +8,7 @@ import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { HomeRail } from '@/components/public/home-rail'
 import { CategoryScopedSearch } from '@/components/public/category/category-scoped-search'
 import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-chips'
+import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
 import {
@@ -130,6 +131,8 @@ export async function RecipeLayout({
   let filteredTutorials: TutorialCardLike[] = []
   let inSeasonForCategory: TutorialCardLike[] = []
   let quickWins: TutorialCardLike[] = []
+  let magazineFeature: TutorialCardLike | null = null
+  let magazineSupporting: TutorialCardLike[] = []
 
   if (isFiltered) {
     const tutorials = await prisma.tutorial.findMany({
@@ -144,7 +147,7 @@ export async function RecipeLayout({
     })
     filteredTutorials = tutorials as TutorialCardLike[]
   } else {
-    const [perSubResults, seasonal, quick] = await Promise.all([
+    const [perSubResults, seasonal, quick, mostLoved] = await Promise.all([
       Promise.all(
         category.subCategories.map((sub) =>
           prisma.tutorial.findMany({
@@ -186,6 +189,21 @@ export async function RecipeLayout({
             select: CARD_SELECT,
           })
         : Promise.resolve([]),
+      prisma.tutorial.findMany({
+        where: {
+          categoryId: category.id,
+          status: TutorialStatus.PUBLISHED,
+          hero: { isNot: null },
+          heroQuality: 'EDITORIAL',
+        },
+        orderBy: [
+          { bookmarks: { _count: 'desc' } },
+          { projects: { _count: 'desc' } },
+          { publishedAt: 'desc' },
+        ],
+        take: 4,
+        select: CARD_SELECT,
+      }),
     ])
 
     unfilteredRails = category.subCategories
@@ -193,6 +211,12 @@ export async function RecipeLayout({
       .filter((r) => r.tutorials.length > 0)
     inSeasonForCategory = seasonal as TutorialCardLike[]
     quickWins = quick as TutorialCardLike[]
+
+    const loved = mostLoved as TutorialCardLike[]
+    if (loved.length > 0) {
+      magazineFeature = loved[0] ?? null
+      magazineSupporting = loved.slice(1, 4)
+    }
   }
 
   const allIds = new Set<string>()
@@ -200,6 +224,8 @@ export async function RecipeLayout({
   for (const r of unfilteredRails) for (const t of r.tutorials) allIds.add(t.id)
   for (const t of inSeasonForCategory) allIds.add(t.id)
   for (const t of quickWins) allIds.add(t.id)
+  if (magazineFeature) allIds.add(magazineFeature.id)
+  for (const t of magazineSupporting) allIds.add(t.id)
   const readerState = currentUserId
     ? await loadReaderState(currentUserId, Array.from(allIds))
     : emptyReaderState()
@@ -236,6 +262,16 @@ export async function RecipeLayout({
             }
           />
         </div>
+      )}
+
+      {!isFiltered && magazineFeature && magazineSupporting.length > 0 && (
+        <EditorialMagazineBlock
+          heading={magazineHeadingFor(category.slug)}
+          subheading={magazineSubheadingFor(category.slug)}
+          feature={magazineFeature}
+          supporting={magazineSupporting}
+          readerState={readerState}
+        />
       )}
 
       {!isFiltered && inSeasonForCategory.length > 0 && (
@@ -313,6 +349,31 @@ function quickWinsHeadingFor(slug: string): string {
     case 'baking': return 'Quick bakes'
     case 'natural-home': return 'Quick makes'
     default: return 'Quick wins'
+  }
+}
+
+function magazineHeadingFor(slug: string): string {
+  switch (slug) {
+    case 'cooking': return 'The kitchen this week'
+    case 'baking': return 'The bake of the week'
+    case 'herbal-medicine': return 'The remedy this week'
+    case 'natural-home': return 'The make of the week'
+    default: return 'This week'
+  }
+}
+
+function magazineSubheadingFor(slug: string): string {
+  switch (slug) {
+    case 'cooking':
+      return 'A featured dish plus a handful of supporting cooks.'
+    case 'baking':
+      return 'One feature bake, three more worth your weekend.'
+    case 'herbal-medicine':
+      return 'The remedy we keep coming back to, with three close cousins.'
+    case 'natural-home':
+      return 'One feature formulation, with three more from the shelf.'
+    default:
+      return 'One feature, three to follow.'
   }
 }
 

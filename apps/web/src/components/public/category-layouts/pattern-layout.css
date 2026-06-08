@@ -152,6 +152,174 @@
   max-width: 50ch;
 }
 
+/* ── Designer spotlight ────────────────────────────────────────────────── */
+
+.pattern-landing-spotlight {
+  margin: 48px 0;
+  padding: 32px;
+  background: var(--color-soft-parchment);
+  border-radius: 20px;
+}
+
+.pattern-landing-spotlight-header {
+  margin-bottom: 24px;
+  max-width: 60ch;
+}
+
+.pattern-landing-spotlight-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin: 0 0 8px;
+}
+
+.pattern-landing-spotlight-name {
+  font-family: var(--font-fraunces);
+  font-size: 32px;
+  color: var(--color-espresso);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.pattern-landing-spotlight-bio {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.pattern-landing-spotlight-link {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.pattern-landing-spotlight-link:hover {
+  color: var(--color-espresso);
+}
+
+.pattern-landing-spotlight-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.pattern-landing-spotlight-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-cream);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid var(--color-linen-grey);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pattern-landing-spotlight-card a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(60, 47, 34, 0.08);
+}
+
+.pattern-landing-spotlight-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: var(--color-soft-parchment);
+}
+
+.pattern-landing-spotlight-card-name {
+  display: block;
+  font-family: var(--font-fraunces);
+  font-size: 14px;
+  color: var(--color-espresso);
+  padding: 10px 12px 14px;
+  line-height: 1.25;
+}
+
+/* ── Recently completed by community ───────────────────────────────────── */
+
+.pattern-landing-completed {
+  margin: 40px 0;
+}
+
+.pattern-landing-completed-header {
+  margin-bottom: 16px;
+}
+
+.pattern-landing-completed-heading {
+  font-family: var(--font-fraunces);
+  font-size: 26px;
+  color: var(--color-espresso);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.pattern-landing-completed-subheading {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 4px 0 0;
+}
+
+.pattern-landing-completed-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.pattern-landing-completed-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pattern-landing-completed-card a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(60, 47, 34, 0.08);
+}
+
+.pattern-landing-completed-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: var(--color-soft-parchment);
+}
+
+.pattern-landing-completed-card-name {
+  display: block;
+  font-family: var(--font-fraunces);
+  font-size: 14px;
+  color: var(--color-espresso);
+  padding: 10px 12px 2px;
+  line-height: 1.25;
+}
+
+.pattern-landing-completed-card-maker {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  padding: 0 12px 12px;
+}
+
 @media (max-width: 900px) {
   .pattern-landing {
     padding: 0 16px 48px;
@@ -164,5 +332,11 @@
   }
   .pattern-landing-lede {
     font-size: 15px;
+  }
+  .pattern-landing-spotlight {
+    padding: 20px;
+  }
+  .pattern-landing-spotlight-name {
+    font-size: 24px;
   }
 }
