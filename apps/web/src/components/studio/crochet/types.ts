@@ -1,0 +1,93 @@
+/**
+ * Shared types for /studio/crochet — passed between the server entry
+ * page and the client shell. Kept in one file so the renderer never
+ * imports from the server-side page module.
+ */
+
+import type {
+  CrochetConstruction,
+  CrochetPatternFormat,
+  CrochetShape,
+  Difficulty,
+} from '@homemade/db'
+
+export interface CrochetPatternData {
+  id: string
+  slug: string | null
+  name: string
+  description: string | null
+  rowsStructured: unknown
+  chartData: unknown
+  schematicMediaId: string | null
+  thumbnailMediaId: string | null
+  format: CrochetPatternFormat
+  construction: CrochetConstruction | null
+  shapeCategory: CrochetShape | null
+  sizesGraded: unknown
+  yardageBySize: unknown
+  gaugeText: string | null
+  finishedSizeText: string | null
+  pieceCount: number
+  pieces: unknown
+  buildOrder: unknown
+  abbreviationsUsed: string[]
+  specialStitchesUsed: string[]
+  craftStitchSlugs: string[]
+  craftTechniqueTags: string[]
+  terminologyConvention: string
+  clusterCountByRound: unknown
+  repeatRowGroups: unknown
+  leftHandedChartAvailable: boolean
+  difficulty: Difficulty | null
+  premium: boolean
+  ownerUserId: string | null
+  designerSlug: string | null
+  designerName: string | null
+}
+
+export interface CrochetProjectProgressData {
+  currentRow: number
+  currentSection: string | null
+  completedRows: Record<string, number[]>
+  notes: string | null
+  perRowNotes: Record<string, string>
+  gradedSize: string | null
+  customMeasurements: Record<string, number> | null
+  leftHandedOverride: boolean | null
+  terminologyOverride: 'uk' | 'us' | null
+  preferredView: 'written' | 'chart' | 'schematic' | null
+  countByCluster: boolean
+  lastWorkedAt: string | null
+  completedAt: string | null
+}
+
+export interface MyCrochetProjectListItem {
+  crochetPatternId: string
+  patternName: string
+  shapeCategory: CrochetShape | null
+  difficulty: Difficulty | null
+  thumbnailMediaId: string | null
+  currentRow: number
+  currentSection: string | null
+  lastWorkedAt: string
+  completedAt: string | null
+}
+
+/**
+ * One row of the rowsStructured JSON. The author writes these per
+ * piece / section so the renderer can group them. See the schema doc
+ * for the full shape in `packages/db/prisma/schema.prisma`.
+ */
+export interface PatternRow {
+  section: string
+  rowNumber: number
+  rowLabel?: string
+  instruction: string
+  stitchCount?: number
+  stitchCountAsCluster?: number
+  sizeVariants?: Record<string, { instruction: string; stitchCount?: number }>
+  isRoundNotRow?: boolean
+}
+
+export type ViewMode = 'written' | 'chart' | 'schematic'
+export type TerminologyMode = 'uk' | 'us'

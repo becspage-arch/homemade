@@ -1274,3 +1274,195 @@
   gap: 6px;
 }
 
+
+/* ---------------------------------------------------------------------------
+   Crochet pattern body nodes (phase_crochet_pattern_001).
+   The static / read-only surface that the public tutorial page renders.
+   The interactive Studio layers on top via crochetPatternInset.
+--------------------------------------------------------------------------- */
+
+.tutorial-content .pattern-row,
+.tutorial-content .pattern-round,
+.tutorial-content .pattern-graded-row {
+  margin: 0.5rem 0;
+  line-height: 1.55;
+}
+
+.tutorial-content .pattern-row-label,
+.tutorial-content .pattern-graded-row .pattern-row-label {
+  font-weight: 600;
+}
+
+.tutorial-content .pattern-row-count {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  font-size: 0.88em;
+  color: var(--ink-soft, #5c5347);
+}
+
+.tutorial-content .pattern-graded-row-variants {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0 1rem;
+}
+
+.tutorial-content .pattern-graded-row-variant {
+  margin: 0.2rem 0;
+  font-size: 0.95em;
+}
+
+.tutorial-content .pattern-chart-inset-missing,
+.tutorial-content .pattern-schematic figure {
+  background: rgba(60, 47, 34, 0.04);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tutorial-content .pattern-schematic {
+  margin: 1.5rem 0;
+}
+
+.tutorial-content .pattern-schematic img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tutorial-content .pattern-schematic-measurements {
+  list-style: none;
+  padding: 0.6rem 0 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.4rem;
+}
+
+.tutorial-content .crochet-pattern-inset {
+  background: linear-gradient(135deg, rgba(125, 149, 125, 0.10), rgba(125, 149, 125, 0.02));
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.tutorial-content .crochet-pattern-inset-body {
+  flex: 1 1 280px;
+}
+
+.tutorial-content .crochet-pattern-inset-overline {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: rgba(93, 121, 89, 0.9);
+  margin: 0 0 0.4rem;
+}
+
+.tutorial-content .crochet-pattern-inset-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+  color: var(--ink, #3d2f22);
+}
+
+.tutorial-content .crochet-pattern-inset-lede {
+  font-size: 0.95rem;
+  color: var(--ink-soft, #5c5347);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tutorial-content .crochet-pattern-inset-cta {
+  background: #7d957d;
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 160ms ease;
+  white-space: nowrap;
+}
+
+.tutorial-content .crochet-pattern-inset-cta:hover,
+.tutorial-content .crochet-pattern-inset-cta:focus-visible {
+  background: #5d7959;
+  outline: none;
+}
+
+.tutorial-content .pattern-materials,
+.tutorial-content .pattern-gauge,
+.tutorial-content .pattern-abbreviations,
+.tutorial-content .pattern-special-stitches,
+.tutorial-content .stitches-used {
+  background: rgba(60, 47, 34, 0.03);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.tutorial-content .pattern-materials-heading,
+.tutorial-content .pattern-gauge-heading,
+.tutorial-content .pattern-abbreviations-heading,
+.tutorial-content .pattern-special-stitches-heading,
+.tutorial-content .stitches-used-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+}
+
+.tutorial-content .pattern-abbreviations-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.8rem;
+  margin: 0;
+}
+
+.tutorial-content .pattern-abbreviations-row {
+  display: contents;
+}
+
+.tutorial-content .pattern-abbreviations-row dt {
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  font-weight: 600;
+  color: var(--ink, #3d2f22);
+}
+
+.tutorial-content .pattern-abbreviations-row dd {
+  margin: 0;
+  color: var(--ink-soft, #5c5347);
+}
+
+.tutorial-content .pattern-special-stitches-list,
+.tutorial-content .stitches-used-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tutorial-content .pattern-special-stitch {
+  margin-bottom: 0.6rem;
+}
+
+.tutorial-content .pattern-special-stitch-name {
+  margin: 0 0 0.2rem;
+}
+
+.tutorial-content .pattern-special-stitch-steps {
+  margin: 0.2rem 0 0 1.2rem;
+  padding: 0;
+}
+
+.tutorial-content .stitches-used-item {
+  display: inline-block;
+  background: rgba(60, 47, 34, 0.07);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.1rem 0.3rem 0.1rem 0;
+  font-size: 0.88rem;
+  font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+}

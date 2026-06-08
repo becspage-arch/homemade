@@ -154,6 +154,20 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/seed-crochet-starter-content.ts
 
+      # Crochet pattern rows for Studio Crochet (phase_crochet_pattern_001
+      # step 3). Upserts the seed CrochetPattern rows (granny square v1)
+      # so /studio/crochet has something to open against. Idempotent on
+      # slug; runs every deploy so edits to the seed file land
+      # automatically. Depends on the starter-content step having
+      # published the source tutorials (the pattern row references
+      # sourceTutorialId).
+      - name: Seed Studio crochet pattern rows (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/seed-crochet-pattern-rows.ts
+
       # Photographic demo patterns — pulls 3 public-domain Wikimedia
       # photos through the live photo-to-chart pipeline at ~120 cells
       # / ~36 colours so the library shows what dense subject matter

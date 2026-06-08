@@ -723,17 +723,32 @@ function RenderNode({
     }
 
     case 'crochetPatternInset': {
-      // Studio Crochet "Start this pattern" surface. Mirrors the
-      // cross-stitch patternInset shape — server-resolved metadata
-      // plus a CTA into /studio/crochet?crochetPatternId=...
+      // Studio Crochet "Start this pattern" surface. Accepts either a
+      // crochetPatternId or crochetPatternSlug — the Studio page
+      // resolves slug to row at load time, so authoring can reference
+      // a pattern by stable slug without worrying about a cuid that
+      // changes between environments.
       const crochetPatternId = stringOrUndef(attrs.crochetPatternId)
-      if (!crochetPatternId) {
+      const crochetPatternSlug = stringOrUndef(attrs.crochetPatternSlug)
+      if (!crochetPatternId && !crochetPatternSlug) {
         return <div className="craft-chart-missing">Pattern not yet attached.</div>
       }
+      const query = crochetPatternId
+        ? `crochetPatternId=${encodeURIComponent(crochetPatternId)}`
+        : `crochetPatternSlug=${encodeURIComponent(crochetPatternSlug as string)}`
       return (
-        <div className="crochet-pattern-inset" data-crochet-pattern-id={crochetPatternId}>
-          <p className="crochet-pattern-inset-cta">Open this pattern in the Studio.</p>
-        </div>
+        <aside className="crochet-pattern-inset">
+          <div className="crochet-pattern-inset-body">
+            <p className="crochet-pattern-inset-overline">Crochet Studio</p>
+            <h3 className="crochet-pattern-inset-heading">Open this pattern row by row</h3>
+            <p className="crochet-pattern-inset-lede">
+              Mark each round as you go, switch between written and chart, save your place. Picks up exactly where you left off next time.
+            </p>
+          </div>
+          <a className="crochet-pattern-inset-cta" href={`/studio/crochet?${query}`}>
+            Start in the Studio
+          </a>
+        </aside>
       )
     }
 
