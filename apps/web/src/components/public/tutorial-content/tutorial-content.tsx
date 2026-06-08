@@ -610,6 +610,236 @@ function RenderNode({
       )
     }
 
+    // ──────────────────────────────────────────────────────────────────────
+    // Crochet pattern nodes (phase_crochet_pattern_001). These render
+    // the static / read-only surface of a crochet pattern body. The
+    // interactive Studio Crochet shell layers on top in a later phase;
+    // these renderers are what a printed PDF and the public pattern
+    // page both consume.
+    // ──────────────────────────────────────────────────────────────────────
+
+    case 'patternRow':
+    case 'patternRound': {
+      const isRound = node.type === 'patternRound'
+      const num = typeof attrs.rowNumber === 'number'
+        ? attrs.rowNumber
+        : typeof attrs.roundNumber === 'number'
+        ? attrs.roundNumber
+        : null
+      const label = stringOrUndef(attrs.rowLabel) ?? stringOrUndef(attrs.roundLabel) ?? null
+      const instruction = stringOrUndef(attrs.instruction) ?? ''
+      const stitchCount = typeof attrs.stitchCount === 'number' ? attrs.stitchCount : null
+      const clusterCount = typeof attrs.stitchCountAsCluster === 'number' ? attrs.stitchCountAsCluster : null
+      const headingPrefix = isRound ? 'Round' : 'Row'
+      const heading = label ?? (num !== null ? `${headingPrefix} ${num}` : headingPrefix)
+      return (
+        <div className={`pattern-${isRound ? 'round' : 'row'}`} data-row-number={num ?? undefined}>
+          <span className="pattern-row-label">{heading}.</span>{' '}
+          <span className="pattern-row-instruction">{instruction}</span>
+          {(stitchCount !== null || clusterCount !== null) && (
+            <span className="pattern-row-count">
+              {' ('}{stitchCount !== null ? `${stitchCount} sts` : ''}
+              {stitchCount !== null && clusterCount !== null ? ', ' : ''}
+              {clusterCount !== null ? `${clusterCount} clusters` : ''}
+              {')'}
+            </span>
+          )}
+        </div>
+      )
+    }
+
+    case 'gradedRow': {
+      const num = typeof attrs.rowNumber === 'number' ? attrs.rowNumber : null
+      const label = stringOrUndef(attrs.rowLabel) ?? (num !== null ? `Row ${num}` : 'Row')
+      const baseInstruction = stringOrUndef(attrs.baseInstruction) ?? ''
+      const variants = Array.isArray(attrs.sizeVariants)
+        ? (attrs.sizeVariants as Array<Record<string, unknown>>)
+        : []
+      return (
+        <div className="pattern-graded-row" data-row-number={num ?? undefined}>
+          <span className="pattern-row-label">{label}.</span>{' '}
+          <span className="pattern-row-instruction">{baseInstruction}</span>
+          {variants.length > 0 && (
+            <ul className="pattern-graded-row-variants">
+              {variants.map((v, i) => {
+                const name = stringOrUndef(v.name) ?? `Size ${i + 1}`
+                const instruction = stringOrUndef(v.instruction) ?? ''
+                const count = typeof v.stitchCount === 'number' ? v.stitchCount : null
+                return (
+                  <li key={i} className="pattern-graded-row-variant" data-size={name}>
+                    <strong>{name}:</strong> {instruction}
+                    {count !== null && <span className="pattern-row-count"> ({count} sts)</span>}
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </div>
+      )
+    }
+
+    case 'patternChartInset': {
+      // Inline chart that sits next to a written-pattern block. The chart
+      // data is the same shape as the standalone craftChart node, but it
+      // renders compact (no fullscreen, no progress marking) — it's
+      // reference-only alongside the written instructions.
+      const def = attrs.chartData as ChartDefinition | undefined
+      if (!def || typeof def !== 'object') {
+        return <div className="pattern-chart-inset-missing">Chart not yet attached.</div>
+      }
+      return (
+        <ReferenceChartView ariaLabel="Pattern chart">
+          <CraftChart definition={def} />
+        </ReferenceChartView>
+      )
+    }
+
+    case 'patternSchematic': {
+      // Labelled measurements diagram for garments. The media holds the
+      // base illustration; measurements attr is an array of label /
+      // value pairs the renderer overlays.
+      const mediaUrl = stringOrUndef(attrs.mediaUrl)
+      const measurements = Array.isArray(attrs.measurements)
+        ? (attrs.measurements as Array<Record<string, unknown>>)
+        : []
+      return (
+        <figure className="pattern-schematic">
+          {mediaUrl && <img src={mediaUrl} alt="Pattern schematic" />}
+          {measurements.length > 0 && (
+            <figcaption>
+              <ul className="pattern-schematic-measurements">
+                {measurements.map((m, i) => (
+                  <li key={i}>
+                    <strong>{stringOrUndef(m.label) ?? ''}:</strong>{' '}
+                    {stringOrUndef(m.value) ?? ''}
+                  </li>
+                ))}
+              </ul>
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
+
+    case 'crochetPatternInset': {
+      // Studio Crochet "Start this pattern" surface. Mirrors the
+      // cross-stitch patternInset shape — server-resolved metadata
+      // plus a CTA into /studio/crochet?crochetPatternId=...
+      const crochetPatternId = stringOrUndef(attrs.crochetPatternId)
+      if (!crochetPatternId) {
+        return <div className="craft-chart-missing">Pattern not yet attached.</div>
+      }
+      return (
+        <div className="crochet-pattern-inset" data-crochet-pattern-id={crochetPatternId}>
+          <p className="crochet-pattern-inset-cta">Open this pattern in the Studio.</p>
+        </div>
+      )
+    }
+
+    case 'stitchesUsedInset': {
+      // "Stitches used in this pattern" surface. Each slug links to the
+      // foundation tutorial for that stitch in a side drawer; the slug
+      // is resolved against the techniques ctx.
+      const slugs = Array.isArray(attrs.craftStitchSlugs)
+        ? (attrs.craftStitchSlugs as string[])
+        : []
+      if (slugs.length === 0) return null
+      return (
+        <aside className="stitches-used">
+          <h3 className="stitches-used-heading">Stitches used in this pattern</h3>
+          <ul className="stitches-used-list">
+            {slugs.map((slug) => (
+              <li key={slug} className="stitches-used-item">{slug}</li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+
+    case 'materialsBlock': {
+      const yarn = stringOrUndef(attrs.yarn) ?? ''
+      const hook = stringOrUndef(attrs.hook) ?? ''
+      const notions = Array.isArray(attrs.notions) ? (attrs.notions as string[]) : []
+      const note = stringOrUndef(attrs.note) ?? null
+      return (
+        <aside className="pattern-materials">
+          <h3 className="pattern-materials-heading">Materials</h3>
+          {yarn && <p className="pattern-materials-yarn"><strong>Yarn.</strong> {yarn}</p>}
+          {hook && <p className="pattern-materials-hook"><strong>Hook.</strong> {hook}</p>}
+          {notions.length > 0 && (
+            <ul className="pattern-materials-notions">
+              {notions.map((n, i) => <li key={i}>{n}</li>)}
+            </ul>
+          )}
+          {note && <p className="pattern-materials-note">{note}</p>}
+        </aside>
+      )
+    }
+
+    case 'gaugeBlock': {
+      const gaugeText = stringOrUndef(attrs.gaugeText) ?? ''
+      const note = stringOrUndef(attrs.note) ?? null
+      return (
+        <aside className="pattern-gauge">
+          <h3 className="pattern-gauge-heading">Gauge</h3>
+          {gaugeText && <p className="pattern-gauge-text">{gaugeText}</p>}
+          {note && <p className="pattern-gauge-note">{note}</p>}
+        </aside>
+      )
+    }
+
+    case 'abbreviationsBlock': {
+      const items = Array.isArray(attrs.abbreviations)
+        ? (attrs.abbreviations as Array<Record<string, unknown>>)
+        : []
+      if (items.length === 0) return null
+      return (
+        <aside className="pattern-abbreviations">
+          <h3 className="pattern-abbreviations-heading">Abbreviations</h3>
+          <dl className="pattern-abbreviations-list">
+            {items.map((item, i) => (
+              <div key={i} className="pattern-abbreviations-row">
+                <dt>{stringOrUndef(item.abbr) ?? ''}</dt>
+                <dd>{stringOrUndef(item.term) ?? ''}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+      )
+    }
+
+    case 'specialStitchesBlock': {
+      const items = Array.isArray(attrs.stitches)
+        ? (attrs.stitches as Array<Record<string, unknown>>)
+        : []
+      if (items.length === 0) return null
+      return (
+        <aside className="pattern-special-stitches">
+          <h3 className="pattern-special-stitches-heading">Special stitches</h3>
+          <ul className="pattern-special-stitches-list">
+            {items.map((s, i) => {
+              const name = stringOrUndef(s.name) ?? ''
+              const abbr = stringOrUndef(s.abbr) ?? null
+              const steps = Array.isArray(s.steps) ? (s.steps as string[]) : []
+              return (
+                <li key={i} className="pattern-special-stitch">
+                  <p className="pattern-special-stitch-name">
+                    <strong>{name}</strong>
+                    {abbr && <span className="pattern-special-stitch-abbr"> ({abbr})</span>}
+                  </p>
+                  {steps.length > 0 && (
+                    <ol className="pattern-special-stitch-steps">
+                      {steps.map((step, j) => <li key={j}>{step}</li>)}
+                    </ol>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </aside>
+      )
+    }
+
     case 'doc':
       // Defensive: doc inside doc shouldn't happen but render its children.
       return <>{renderChildren(node.content, ctx)}</>

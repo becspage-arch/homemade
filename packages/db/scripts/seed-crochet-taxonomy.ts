@@ -63,36 +63,57 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'stitches',
     name: 'Stitches',
     description:
-      'Individual named stitch tutorials — chain, slip stitch, double crochet, half treble, treble, double treble, and textured stitches (bobble, shell, V-stitch, cluster, puff, popcorn).',
+      'Individual named stitch tutorials, chain, slip stitch, double crochet, half treble, treble, double treble, and textured stitches (bobble, shell, V-stitch, cluster, puff, popcorn).',
     order: 10,
   },
   {
     slug: 'motifs',
     name: 'Motifs',
     description:
-      'In-the-round repeating shapes — granny squares, hexagons, circles, mandalas, flowers, and the joining techniques that turn individual motifs into finished pieces.',
+      'In-the-round repeating shapes, granny squares, hexagons, circles, mandalas, flowers, and the joining techniques that turn individual motifs into finished pieces.',
     order: 20,
   },
   {
     slug: 'homewares',
     name: 'Homewares',
     description:
-      'Finished-item patterns for the home — dishcloths, facecloths, pot holders, blankets, cushion covers, baskets, and storage vessels.',
+      'Finished-item patterns for the home, dishcloths, facecloths, pot holders, blankets, cushion covers, baskets, and storage vessels.',
     order: 30,
   },
   {
     slug: 'garments',
     name: 'Garments',
     description:
-      'Wearable patterns — shawls, scarves, hats, mittens, socks, and simple top-down or granny-square-construction garments.',
+      'Wearable patterns, scarves, shawls, tops, cardigans, sweaters, dresses, hats, mittens, socks, and other clothing the maker wears.',
     order: 40,
+  },
+  {
+    slug: 'amigurumi',
+    name: 'Amigurumi',
+    description:
+      'Crocheted soft toys and figures worked in the round, animals, characters, dolls, baby toys, seasonal characters, and the assembly techniques that turn separate pieces into one finished shape.',
+    order: 45,
+  },
+  {
+    slug: 'lacework',
+    name: 'Lacework',
+    description:
+      'Open-stitch patterns, Irish crochet motifs, filet charts, doilies, edgings, summer-weight shawls, and the lace techniques the patterns use.',
+    order: 55,
+  },
+  {
+    slug: 'seasonal',
+    name: 'Seasonal',
+    description:
+      'Patterns tied to a moment in the year, Christmas ornaments and stockings, Easter decorations, autumn pumpkins, Valentine hearts, and other date-pegged makes.',
+    order: 60,
   },
   {
     slug: 'foundations',
     name: 'Foundations',
     description:
-      'Long-form articles on the craft — gauge swatching, blocking, joining methods, reading a pattern chart, choosing yarn, understanding tension.',
-    order: 50,
+      'Long-form articles on the craft, gauge swatching, blocking, joining methods, reading a pattern chart, choosing yarn, understanding tension.',
+    order: 70,
   },
 ]
 

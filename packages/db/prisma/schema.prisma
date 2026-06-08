@@ -230,10 +230,49 @@ model User {
   defaultBrand       FlossBrand @default(DMC)
   defaultStrands     Int        @default(2)
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Crochet Studio (phase_crochet_pattern_001). Per-user crochet preferences
+  // and personal-inventory entries the Studio uses for substitution maths
+  // and pattern presentation.
+  //
+  //   myHooks                       — slug refs to CrochetHook rows the user
+  //                                    owns. Surfaces in the substitution
+  //                                    helper ("you own a 3.5 mm Tulip Etimo").
+  //   myYarns                       — Json stash entries. Free-form schema for
+  //                                    v1: { id, name, weightSlug, yardage,
+  //                                    leftoverYardage, colourHex, photoMediaId,
+  //                                    notes }. Promoted to a real table only
+  //                                    if query patterns demand it.
+  //   myColourSchemes               — Json. Saved schemes — { id, name, colours[],
+  //                                    sourceCrochetPatternId }. Mirrors the
+  //                                    CrochetColourScheme model and stays in
+  //                                    sync at write-time; this denormalised
+  //                                    form is what the Studio reads.
+  //   crochetLeftHanded             — true mirrors the chart horizontally and
+  //                                    swaps direction-of-work in instructions
+  //                                    that reference it.
+  //   crochetTerminologyPreference  — 'uk' | 'us' | null. Null = use the
+  //                                    pattern's declared terminologyConvention
+  //                                    as the initial state of the toggle.
+  // ──────────────────────────────────────────────────────────────────────────
+  myHooks                      String[] @default([])
+  myYarns                      Json?
+  myColourSchemes              Json?
+  crochetLeftHanded            Boolean  @default(false)
+  crochetTerminologyPreference String?
+
   // Pattern Studio reverse relations.
-  patterns         Pattern[]             @relation("PatternOwner")
-  patternProgress  UserPatternProgress[]
-  designerProfile  Designer[]            @relation("DesignerUser")
+  patterns        Pattern[]             @relation("PatternOwner")
+  patternProgress UserPatternProgress[]
+  designerProfile Designer[]            @relation("DesignerUser")
+
+  // Crochet Studio reverse relations.
+  crochetPatterns              CrochetPattern[]              @relation("CrochetPatternOwner")
+  crochetProjectProgress       CrochetProjectProgress[]
+  crochetProjectGauges         CrochetProjectGauge[]
+  crochetStitchMarkers         CrochetStitchMarker[]
+  crochetProjectRepeatCounters CrochetProjectRepeatCounter[]
+  crochetColourSchemes         CrochetColourScheme[]
 
   @@index([role])
   @@index([isSuspended])
@@ -317,8 +356,9 @@ model SubCategory {
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
 
-  tutorials Tutorial[]
-  patterns  Pattern[]
+  tutorials       Tutorial[]
+  patterns        Pattern[]
+  crochetPatterns CrochetPattern[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -870,6 +910,14 @@ model Tutorial {
   pattern         Pattern?  @relation("TutorialPattern", fields: [patternId], references: [id], onDelete: SetNull)
   patternsSourced Pattern[] @relation("PatternSourceTutorial")
 
+  // Crochet Studio (phase_crochet_pattern_001). `crochetPatternId` is the
+  // bridge to the canonical CrochetPattern row backing a tutorial's
+  // crochetPatternInset; null on every non-crochet tutorial. The reverse
+  // relation `crochetPatternsSourced` matches Pattern.sourceTutorialId.
+  crochetPatternId       String?
+  crochetPattern         CrochetPattern?  @relation("TutorialCrochetPattern", fields: [crochetPatternId], references: [id], onDelete: SetNull)
+  crochetPatternsSourced CrochetPattern[] @relation("CrochetPatternSourceTutorial")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -918,6 +966,7 @@ model Tutorial {
   @@index([type, approximateCostGbp])
   @@index([type, paybackYears])
   @@index([patternId])
+  @@index([crochetPatternId])
   @@index([shelfLifeDays])
   @@index([hemisphere])
   @@index([frostSensitivity])
@@ -1105,6 +1154,11 @@ model Media {
   patternThumbnails Pattern[]  @relation("PatternThumbnail")
   patternHeros      Pattern[]  @relation("PatternHero")
   designerAvatars   Designer[]
+
+  // Crochet Studio (phase_crochet_pattern_001).
+  crochetPatternThumbnails CrochetPattern[]      @relation("CrochetPatternThumbnail")
+  crochetPatternSchematics CrochetPattern[]      @relation("CrochetPatternSchematic")
+  crochetGaugeSwatchPhotos CrochetProjectGauge[] @relation("CrochetGaugeSwatchPhoto")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -3172,7 +3226,8 @@ model YarnWeight {
 
   notes String?
 
-  tutorials Tutorial[] @relation("TutorialPrimaryYarnWeight")
+  tutorials       Tutorial[]       @relation("TutorialPrimaryYarnWeight")
+  crochetPatterns CrochetPattern[] @relation("CrochetPatternPrimaryYarn")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -3208,7 +3263,8 @@ model CrochetHook {
 
   notes String?
 
-  tutorials Tutorial[] @relation("TutorialPrimaryHook")
+  tutorials       Tutorial[]       @relation("TutorialPrimaryHook")
+  crochetPatterns CrochetPattern[] @relation("CrochetPatternPrimaryHook")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -3460,19 +3516,20 @@ model CountryClimate {
 
 /// A designer — house (Homemade) or external — credited on patterns.
 model Designer {
-  id              String   @id @default(cuid())
-  slug            String   @unique
+  id              String  @id @default(cuid())
+  slug            String  @unique
   displayName     String
   bio             String?
   avatarMediaId   String?
-  avatar          Media?   @relation(fields: [avatarMediaId], references: [id], onDelete: SetNull)
+  avatar          Media?  @relation(fields: [avatarMediaId], references: [id], onDelete: SetNull)
   websiteUrl      String?
-  isHouseDesigner Boolean  @default(false)
+  isHouseDesigner Boolean @default(false)
   userId          String?
-  user            User?    @relation("DesignerUser", fields: [userId], references: [id], onDelete: SetNull)
-  patternCount    Int      @default(0)
+  user            User?   @relation("DesignerUser", fields: [userId], references: [id], onDelete: SetNull)
+  patternCount    Int     @default(0)
 
-  patterns Pattern[]
+  patterns        Pattern[]
+  crochetPatterns CrochetPattern[] @relation("DesignerCrochetPatterns")
 
   createdAt DateTime @default(now())
 
@@ -3485,50 +3542,50 @@ model Designer {
 /// colourCount / totalStitches stay in sync via the save path so library
 /// surfaces never re-walk the cell list.
 model Pattern {
-  id                    String      @id @default(cuid())
-  slug                  String?     @unique
+  id                    String       @id @default(cuid())
+  slug                  String?      @unique
   type                  PatternType
   name                  String
   description           String?
   data                  Json
   thumbnailMediaId      String?
-  thumbnail             Media?      @relation("PatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
+  thumbnail             Media?       @relation("PatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
   // Hero photograph of the finished stitched piece. Used by the
   // library card / detail hero / tutorial inset / PDF cover when set.
   // Falls back to the rendered beauty thumbnail when null. Set by the
   // Stitching Mama catalogue import (Phase C) and by the admin
   // upload flow once a tester has stitched a user-generated pattern.
   heroMediaId           String?
-  hero                  Media?      @relation("PatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
+  hero                  Media?       @relation("PatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
   widthCells            Int
   heightCells           Int
   colourCount           Int
-  totalStitches         Int         @default(0)
+  totalStitches         Int          @default(0)
   designerId            String?
-  designer              Designer?   @relation(fields: [designerId], references: [id], onDelete: SetNull)
+  designer              Designer?    @relation(fields: [designerId], references: [id], onDelete: SetNull)
   ownerUserId           String?
-  owner                 User?       @relation("PatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+  owner                 User?        @relation("PatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
   forkedFromId          String?
-  forkedFrom            Pattern?    @relation("PatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
-  forks                 Pattern[]   @relation("PatternForks")
+  forkedFrom            Pattern?     @relation("PatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
+  forks                 Pattern[]    @relation("PatternForks")
   sourceTutorialId      String?
-  sourceTutorial        Tutorial?   @relation("PatternSourceTutorial", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
+  sourceTutorial        Tutorial?    @relation("PatternSourceTutorial", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
   difficulty            Difficulty?
   estimatedHours        Int?
-  premium               Boolean     @default(false)
-  visibility            Visibility  @default(PRIVATE)
+  premium               Boolean      @default(false)
+  visibility            Visibility   @default(PRIVATE)
   publishedAt           DateTime?
   subCategoryId         String?
   subCategory           SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
-  hasBackstitch         Boolean     @default(false)
-  hasFrenchKnots        Boolean     @default(false)
-  hasBeads              Boolean     @default(false)
-  hasQuarterStitches    Boolean     @default(false)
-  fabricCountSuggested  Int         @default(14)
-  recommendedHoopInches Decimal?    @db.Decimal(5, 2)
+  hasBackstitch         Boolean      @default(false)
+  hasFrenchKnots        Boolean      @default(false)
+  hasBeads              Boolean      @default(false)
+  hasQuarterStitches    Boolean      @default(false)
+  fabricCountSuggested  Int          @default(14)
+  recommendedHoopInches Decimal?     @db.Decimal(5, 2)
 
-  license       PatternLicense?
-  userProgress  UserPatternProgress[]
+  license        PatternLicense?
+  userProgress   UserPatternProgress[]
   tutorialsInset Tutorial[]            @relation("TutorialPattern")
 
   createdAt DateTime @default(now())
@@ -3604,10 +3661,361 @@ enum PaperSize {
   LETTER
   LEGAL
   A3
+  A2
+  A1
+  A0
 }
 
 enum FlossBrand {
   DMC
   ANCHOR
   MADEIRA
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Crochet Studio (phase_crochet_pattern_001)
+//
+// A sibling family to Pattern + UserPatternProgress + PatternLicense. Crochet
+// patterns have enough category-specific structure (row-by-row written data
+// with per-size variants, multi-piece amigurumi, garment grading with
+// measurements, mandatory gauge, UK/US convention) that a single union with
+// the cross-stitch Pattern table would be 40% NULL. This family stays
+// separate; the Studio shell shares URL state and routing patterns with the
+// cross-stitch Studio but the data model differs.
+//
+// Models:
+//   CrochetPattern               — the pattern row.
+//   CrochetPatternLicense        — sidecar license metadata.
+//   CrochetProjectProgress       — per-(user, crochetPattern) project state.
+//   CrochetProjectGauge          — swatch measurements the user logged.
+//   CrochetStitchMarker          — digital stitch markers per project.
+//   CrochetProjectRepeatCounter  — "repeat rows N-M until X cm" counters.
+//   CrochetColourScheme          — saved colour schemes (reusable).
+// ────────────────────────────────────────────────────────────────────────────
+
+/// A crochet pattern. `rowsStructured` is the canonical body — a JSON array
+/// of row / round objects the Studio renders into the written view, the
+/// chart, and the schematic. `chartData` is the SVG-ready chart for in-the-
+/// round and motif patterns. `schematicMediaId` points to a labelled
+/// measurements diagram for garments. Multi-piece patterns (amigurumi,
+/// seamed garments) carry `pieces` JSON and `assemblyInstructions` TipTap.
+model CrochetPattern {
+  id          String  @id @default(cuid())
+  slug        String? @unique
+  name        String
+  description String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Body data — structured rows, chart, schematic.
+  //
+  // rowsStructured shape:
+  //   [{
+  //     section: "Body" | "Head" | "Round 1" | ...
+  //     rowNumber: 1,
+  //     rowLabel: "Round 1" | "Row 1 (RS)",
+  //     instruction: "Ch 3 (counts as first treble), 2 tr into the ring, ...",
+  //     stitchCount: 12,
+  //     stitchCountAsCluster: 4,        // optional, for cluster-counted motifs
+  //     sizeVariants: { "S": { instruction, stitchCount }, "M": { ... } },
+  //     special: "uk-specific" | "left-handed-note" | null,
+  //   }, ...]
+  //
+  // chartData shape: vector — { rounds: [...], grid: [...], symbols: [...] }
+  //   consumed by `apps/web/src/lib/craft-charts/svg-chart.tsx`.
+  // ──────────────────────────────────────────────────────────────────────────
+  rowsStructured       Json
+  chartData            Json?
+  schematicMediaId     String?
+  schematic            Media?  @relation("CrochetPatternSchematic", fields: [schematicMediaId], references: [id], onDelete: SetNull)
+  thumbnailMediaId     String?
+  thumbnail            Media?  @relation("CrochetPatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
+  assemblyInstructions Json?
+
+  // Pattern shape and construction
+  format        CrochetPatternFormat @default(WRITTEN_ONLY)
+  construction  CrochetConstruction?
+  shapeCategory CrochetShape?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Sizing.
+  //
+  // sizesGraded shape:
+  //   [{ name: "M", bust: 92, waist: 76, hip: 96, length: 60,
+  //      sleeveLength: 45, shoulderWidth: 38 }, ...]
+  //   Null on non-graded patterns (blankets, amigurumi, motifs).
+  //
+  // yardageBySize shape:
+  //   { "XS": 800, "S": 900, "M": 1000, ... } per garment size
+  //   { "default": 350 } for non-graded patterns
+  // ──────────────────────────────────────────────────────────────────────────
+  sizesGraded   Json?
+  yardageBySize Json?
+
+  // Yarn + hook + gauge
+  primaryYarnWeightId String?
+  primaryYarnWeight   YarnWeight?  @relation("CrochetPatternPrimaryYarn", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
+  primaryHookId       String?
+  primaryHook         CrochetHook? @relation("CrochetPatternPrimaryHook", fields: [primaryHookId], references: [id], onDelete: SetNull)
+  gaugeText           String?
+  finishedSizeText    String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Multi-piece patterns (amigurumi, seamed garments).
+  //
+  // pieces shape:
+  //   [{ name: "Head", sectionLabel: "Head", makeQuantity: 1,
+  //      stuffing: "firm", stitchCountTotal: 196 }, ...]
+  // buildOrder shape:
+  //   ["Ears", "Head", "Body", "Arms", "Legs", "Tail", "Assembly"]
+  // ──────────────────────────────────────────────────────────────────────────
+  pieceCount Int   @default(1)
+  pieces     Json?
+  buildOrder Json?
+
+  // Stitches + techniques used (slug refs into Stitch master table + free-form
+  // technique tags). abbreviationsUsed lists the per-pattern abbreviation
+  // shorthand so the renderer can build the legend. specialStitchesUsed is
+  // the subset that needs an inline explainer block at the top.
+  abbreviationsUsed   String[] @default([])
+  specialStitchesUsed String[] @default([])
+  craftStitchSlugs    String[] @default([])
+  craftTechniqueTags  String[] @default([])
+
+  // UK / US terminology. 'uk' default; per-user toggle overrides at view time.
+  terminologyConvention String @default("uk")
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Per-pattern counter affordances.
+  //
+  // clusterCountByRound shape:
+  //   { "1": 4, "2": 8, "3": 12, ... } — for motif patterns, clusters per round
+  //
+  // repeatRowGroups shape:
+  //   [{ startRow: 2, endRow: 3, label: "Stitch pattern repeat",
+  //      defaultTargetCm: 30 }] — which rows form the repeatable block
+  //
+  // leftHandedChartAvailable — true when chartData includes a pre-mirrored
+  //   variant; false means the renderer reflects at render time.
+  // ──────────────────────────────────────────────────────────────────────────
+  clusterCountByRound      Json?
+  repeatRowGroups          Json?
+  leftHandedChartAvailable Boolean @default(false)
+
+  // Standard cataloguing
+  difficulty     Difficulty?
+  estimatedHours Int?
+  premium        Boolean     @default(false)
+  visibility     Visibility  @default(PRIVATE)
+  publishedAt    DateTime?
+
+  // Relations
+  designerId       String?
+  designer         Designer?        @relation("DesignerCrochetPatterns", fields: [designerId], references: [id], onDelete: SetNull)
+  ownerUserId      String?
+  owner            User?            @relation("CrochetPatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+  forkedFromId     String?
+  forkedFrom       CrochetPattern?  @relation("CrochetPatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
+  forks            CrochetPattern[] @relation("CrochetPatternForks")
+  sourceTutorialId String?
+  sourceTutorial   Tutorial?        @relation("CrochetPatternSourceTutorial", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
+  subCategoryId    String?
+  subCategory      SubCategory?     @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+
+  license        CrochetPatternLicense?
+  progress       CrochetProjectProgress[]
+  gaugeLogs      CrochetProjectGauge[]
+  stitchMarkers  CrochetStitchMarker[]
+  repeatCounters CrochetProjectRepeatCounter[]
+  colourSchemes  CrochetColourScheme[]         @relation("CrochetColourSchemeSource")
+  tutorialsInset Tutorial[]                    @relation("TutorialCrochetPattern")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ownerUserId, updatedAt])
+  @@index([visibility, publishedAt])
+  @@index([subCategoryId, publishedAt])
+  @@index([designerId])
+  @@index([forkedFromId])
+  @@index([sourceTutorialId])
+  @@index([shapeCategory])
+  @@index([format])
+  @@index([primaryYarnWeightId])
+  @@index([primaryHookId])
+  @@index([craftStitchSlugs], type: Gin)
+  @@index([craftTechniqueTags], type: Gin)
+}
+
+/// Sidecar so a CrochetPattern can be retagged (free → premium → marketplace)
+/// without rewriting pattern data. Marketplace patterns add commercial
+/// attribution + a redistribution stance the renderer surfaces in the
+/// pattern footer and PDF cover.
+model CrochetPatternLicense {
+  id                    String         @id @default(cuid())
+  crochetPatternId      String         @unique
+  crochetPattern        CrochetPattern @relation(fields: [crochetPatternId], references: [id], onDelete: Cascade)
+  licenseType           LicenseType
+  attributionRequired   Boolean        @default(true)
+  commercialUseAllowed  Boolean        @default(false)
+  redistributionAllowed Boolean        @default(false)
+  attributionText       String?
+}
+
+/// Per-(user, crochetPattern) project state. `completedRows` is a JSON map
+/// keyed by section then row number (`{ "Body": [1,2,3], "Head": [1,2] }`).
+/// `currentRow` and `currentSection` cache the active position so reopening
+/// the Studio lands exactly where the user left off. `customMeasurements`
+/// is set when the user opts into custom grading (premium); the renderer
+/// recomputes stitch counts against the user's measurements.
+model CrochetProjectProgress {
+  id               String         @id @default(cuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  crochetPatternId String
+  crochetPattern   CrochetPattern @relation(fields: [crochetPatternId], references: [id], onDelete: Cascade)
+
+  currentRow     Int     @default(0)
+  currentSection String?
+  completedRows  Json    @default("{}")
+  notes          String?
+  perRowNotes    Json    @default("{}")
+
+  // User overrides for this project
+  gradedSize          String?
+  customMeasurements  Json?
+  leftHandedOverride  Boolean?
+  terminologyOverride String?
+  preferredView       String?
+  countByCluster      Boolean  @default(false)
+
+  startedAt    DateTime  @default(now())
+  lastWorkedAt DateTime  @default(now())
+  completedAt  DateTime?
+  updatedAt    DateTime  @updatedAt
+
+  @@unique([userId, crochetPatternId])
+  @@index([userId, lastWorkedAt])
+  @@index([crochetPatternId])
+}
+
+/// Swatch measurements the user logged for a project. Multiple rows per
+/// project are allowed — a crocheter often resamples after the first few cm
+/// of real work. `crochetPatternId` is nullable so the user can log a swatch
+/// outside any active project (e.g. stash exploration).
+model CrochetProjectGauge {
+  id               String          @id @default(cuid())
+  userId           String
+  user             User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  crochetPatternId String?
+  crochetPattern   CrochetPattern? @relation(fields: [crochetPatternId], references: [id], onDelete: Cascade)
+
+  stitchesPer10cm Float?
+  rowsPer10cm     Float?
+  hookMm          Float?
+  yarnLabel       String?
+  blocked         Boolean @default(false)
+  notes           String?
+
+  swatchPhotoMediaId String?
+  swatchPhoto        Media?  @relation("CrochetGaugeSwatchPhoto", fields: [swatchPhotoMediaId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([crochetPatternId])
+}
+
+/// A digital stitch marker. `position` JSON identifies the marker location:
+///   { type: "row", section: "Body", row: 12, stitch: 8 }
+///   { type: "chart", x: 4, y: 7 }
+/// The Studio surfaces markers in both the written view and the chart view.
+model CrochetStitchMarker {
+  id               String         @id @default(cuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  crochetPatternId String
+  crochetPattern   CrochetPattern @relation(fields: [crochetPatternId], references: [id], onDelete: Cascade)
+
+  position Json
+  label    String?
+  colour   String?
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, crochetPatternId])
+}
+
+/// "Repeat rows N-M until 15 cm" counter. The pattern declares the repeat
+/// group on CrochetPattern.repeatRowGroups; the user's counter rides on top
+/// per project. `targetCm` (measure with a tape) and `targetRepeats` (count
+/// the rounds) are alternatives; the user picks whichever fits her project.
+model CrochetProjectRepeatCounter {
+  id               String         @id @default(cuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  crochetPatternId String
+  crochetPattern   CrochetPattern @relation(fields: [crochetPatternId], references: [id], onDelete: Cascade)
+
+  sectionLabel  String
+  repeatsWorked Int    @default(0)
+  targetRepeats Int?
+  targetCm      Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, crochetPatternId])
+}
+
+/// User-saved colour scheme. Built from a finished project or composed
+/// fresh. `colours` JSON is an ordered array — `[{ hex: "#9CAF88",
+/// label: "Sage", role: "main" }, ...]`. `sourceCrochetPatternId` is the
+/// pattern the scheme was first used on; null for hand-composed schemes.
+model CrochetColourScheme {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  name                   String
+  colours                Json
+  sourceCrochetPatternId String?
+  sourceCrochetPattern   CrochetPattern? @relation("CrochetColourSchemeSource", fields: [sourceCrochetPatternId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, updatedAt])
+}
+
+enum CrochetPatternFormat {
+  WRITTEN_ONLY
+  WRITTEN_AND_CHART
+  CHART_ONLY
+}
+
+enum CrochetConstruction {
+  TOP_DOWN_SEAMLESS
+  BOTTOM_UP_SEAMLESS
+  SEAMED
+  SEAMLESS_ROUND
+  ROW
+  MOTIF_JOIN
+  AMIGURUMI
+  OTHER
+}
+
+enum CrochetShape {
+  BLANKET
+  GARMENT
+  AMIGURUMI
+  MOTIF
+  ACCESSORY
+  HOMEWARE
+  DECOR
+  WEARABLE_ACCESSORY
+  LACEWORK
+  BAG
+  HAT
+  SCARF
+  SHAWL
 }

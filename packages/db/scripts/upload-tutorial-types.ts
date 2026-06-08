@@ -843,7 +843,33 @@ export interface TutorialUploadInput {
    *                  subTutorialCard (attrs: tutorialId),
    *                  productCard (attrs: imageUrl, title, description, label),
    *                  varietiesPanel (attrs: label, heading, intro, items[]{name,type,description}),
-   *                  troubleshooter (attrs: heading, intro, items[]{symptom,cause,fix})
+   *                  troubleshooter (attrs: heading, intro, items[]{symptom,cause,fix}),
+   *
+   *   Crochet pattern nodes (phase_crochet_pattern_001 — read by the
+   *   crochet pattern renderer and Studio Crochet):
+   *                  patternRow (attrs: rowNumber, rowLabel, instruction,
+   *                    stitchCount, stitchCountAsCluster, sizeVariants,
+   *                    isRepeatRow, isCurrentRow),
+   *                  patternRound (attrs: roundNumber, roundLabel, instruction,
+   *                    stitchCount, stitchCountAsCluster, sizeVariants),
+   *                  gradedRow (attrs: rowNumber, rowLabel, baseInstruction,
+   *                    sizeVariants{ name, instruction, stitchCount }),
+   *                  patternChartInset (attrs: chartData) — inline symbol
+   *                    chart that sits next to a written-pattern block,
+   *                  patternSchematic (attrs: schematicMediaId, measurements)
+   *                    — labelled measurement diagram for garments,
+   *                  crochetPatternInset (attrs: crochetPatternId) — Studio
+   *                    Crochet "Start this pattern" surface; analog of the
+   *                    cross-stitch patternInset node,
+   *                  stitchesUsedInset (attrs: craftStitchSlugs[]) — surfaces
+   *                    "Stitches used in this pattern" with linked tutorials,
+   *                  materialsBlock (attrs: yarn, hook, notions[], note) —
+   *                    full materials surface,
+   *                  gaugeBlock (attrs: gaugeText, swatchPhotoMediaId, note),
+   *                  abbreviationsBlock (attrs: abbreviations[]{abbr, term,
+   *                    convention}),
+   *                  specialStitchesBlock (attrs: stitches[]{name, abbr,
+   *                    steps[], chartSymbol})
    *
    * The author writes `ingredientSlug` in each `ingredientsList` item; the
    * script resolves it to `ingredientId` (cuid) before inserting, and copies
