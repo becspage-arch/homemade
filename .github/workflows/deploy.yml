@@ -141,6 +141,20 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/migrate-cross-stitch-charts.ts
 
+      # Photographic demo patterns — pulls 3 public-domain Wikimedia
+      # photos through the live photo-to-chart pipeline at ~120 cells
+      # / ~36 colours so the library shows what dense subject matter
+      # looks like through the hero renderer. Idempotent on slug.
+      # Continues on failure: a Wikimedia outage shouldn't block the
+      # rollout, and a re-run picks the photos up on the next deploy.
+      - name: Seed photographic demo patterns (idempotent, non-blocking)
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/web exec tsx scripts/seed-photographic-patterns.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match
