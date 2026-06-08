@@ -381,6 +381,26 @@ export function ChartViewport({
             <rect width="8" height="8" fill={pattern.fabric.colourRgb} />
             <path d="M0 4 L8 4 M4 0 L4 8" stroke={shiftColour(pattern.fabric.colourRgb, -0.04)} strokeWidth="0.3" />
           </pattern>
+          {/* Soft cross-hatch for stitched cells — fabric tone two steps
+              darker, fine diagonal lines, scales with cell size via the
+              parent g's transform. Reads "completed" without flat-greying
+              the stitch underneath. */}
+          <pattern
+            id="stitched-hatch"
+            x="0"
+            y="0"
+            width={cellPx}
+            height={cellPx}
+            patternUnits="userSpaceOnUse"
+          >
+            <rect width={cellPx} height={cellPx} fill={pattern.fabric.colourRgb} opacity={0.55} />
+            <path
+              d={`M0 ${cellPx} L${cellPx} 0`}
+              stroke={shiftColour(pattern.fabric.colourRgb, -0.18)}
+              strokeWidth={Math.max(0.6, cellPx * 0.04)}
+              opacity={0.55}
+            />
+          </pattern>
         </defs>
 
         <g transform={transform}>
@@ -478,7 +498,9 @@ export function ChartViewport({
             </g>
           )}
 
-          {/* Stitched-overlay — greys cells that the user has marked stitched. */}
+          {/* Stitched-overlay — soft cross-hatch lays over the X stitch
+              so a finished cell reads "done" without erasing the colour
+              underneath. */}
           {showStitchedOverlay &&
             Array.from(stitchedSet).map((k) => {
               const [xs, ys] = k.split(',')
@@ -492,8 +514,7 @@ export function ChartViewport({
                   y={y * cellPx}
                   width={cellPx}
                   height={cellPx}
-                  fill={pattern.fabric.colourRgb}
-                  opacity={0.72}
+                  fill="url(#stitched-hatch)"
                 />
               )
             })}

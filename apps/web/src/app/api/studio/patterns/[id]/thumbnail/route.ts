@@ -53,8 +53,12 @@ export async function GET(_req: Request, ctx: Ctx) {
     padding: 16,
   })
 
-  const targetW = 480
-  const targetH = 360
+  // 2× density (960×720) — fits 480-css-px cards crisply on Retina without
+  // needing srcSet plumbing on every consumer. PNG output stays small
+  // because most patterns have a tiny palette and sharp's quality:88
+  // keeps the file under ~60KB.
+  const targetW = 960
+  const targetH = 720
   const png = await sharp(Buffer.from(svg))
     .resize(targetW, targetH, { fit: 'contain', background: { r: 245, g: 240, b: 232 } })
     .png({ quality: 88 })

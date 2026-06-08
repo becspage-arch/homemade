@@ -1,3 +1,4 @@
+import { createHash } from 'crypto'
 import { NextResponse } from 'next/server'
 import sharp from 'sharp'
 import { utils as iqUtils, buildPaletteSync, applyPaletteSync } from 'image-q'
@@ -9,6 +10,11 @@ import {
   type PaletteEntry,
 } from '@homemade/db'
 import { nearestFloss, pickBrandTable } from '@/lib/floss/nearest-floss'
+import {
+  downscaleCacheKey,
+  getDownscale,
+  putDownscale,
+} from '@/lib/studio/downscale-cache'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -70,25 +76,41 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'colours must be 4-96' }, { status: 400 })
   }
 
-  // 1) Downscale + sharpen.
-  let pipeline = sharp(buf)
-    .removeAlpha()
-    .resize(width, height, { fit: 'cover', position: 'attention' })
-  if (removeBackground) {
-    // Coarse background-removal — pull the corner-average pixel as the bg
-    // colour and replace it with the modal centre-area colour. Real
-    // bg-removal lives in a follow-up; v1 covers the common "photo on a
-    // plain backdrop" case.
-    pipeline = pipeline.modulate({ saturation: 1.1 }).normalise()
-  }
-  const { data: raw } = await pipeline.raw().toBuffer({ resolveWithObject: true })
-  // sharp .raw() gives RGB bytes when there's no alpha; pad to RGBA for image-q.
-  const rgba = Buffer.alloc(width * height * 4)
-  for (let i = 0, j = 0; i < raw.length; i += 3, j += 4) {
-    rgba[j] = raw[i]!
-    rgba[j + 1] = raw[i + 1]!
-    rgba[j + 2] = raw[i + 2]!
-    rgba[j + 3] = 255
+  // 1) Downscale + sharpen — or pull from the LRU cache if this user has
+  //    already POSTed the same image at the same target size (typical
+  //    pattern when the colour-count slider fires N times in a row).
+  const imageHash = createHash('sha1').update(buf).digest('hex')
+  const cacheKey = downscaleCacheKey({
+    imageHash,
+    width,
+    height,
+    backgroundRemoval: removeBackground,
+  })
+  let rgba: Buffer
+  const cached = getDownscale(cacheKey)
+  if (cached) {
+    rgba = cached.rgba
+  } else {
+    let pipeline = sharp(buf)
+      .removeAlpha()
+      .resize(width, height, { fit: 'cover', position: 'attention' })
+    if (removeBackground) {
+      // Coarse background-removal — bump saturation then auto-level so a
+      // plain backdrop gets pushed out of the dominant colour cluster.
+      // Real masking lives in a follow-up; v1 covers the common
+      // "subject on a flat backdrop" case.
+      pipeline = pipeline.modulate({ saturation: 1.1 }).normalise()
+    }
+    const { data: raw } = await pipeline.raw().toBuffer({ resolveWithObject: true })
+    // sharp .raw() gives RGB bytes when there's no alpha; pad to RGBA for image-q.
+    rgba = Buffer.alloc(width * height * 4)
+    for (let i = 0, j = 0; i < raw.length; i += 3, j += 4) {
+      rgba[j] = raw[i]!
+      rgba[j + 1] = raw[i + 1]!
+      rgba[j + 2] = raw[i + 2]!
+      rgba[j + 3] = 255
+    }
+    putDownscale(cacheKey, rgba, width, height)
   }
 
   // 2) Quantise via image-q (Wu by default; iqUtils handles selection).
