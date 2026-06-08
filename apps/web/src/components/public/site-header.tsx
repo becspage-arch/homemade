@@ -4,20 +4,6 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { UserMenu } from './user-menu'
 import { CategoryMenu } from './category-menu'
 
-/**
- * Locked spine-category slugs for the top-level desktop nav. The first
- * five categories the homepage rebuild promotes to header-level. Anything
- * else slides into the "Browse" mega-menu.
- */
-const SPINE_CATEGORY_SLUGS = [
-  'cooking',
-  'baking',
-  'garden',
-  'mindset',
-  'herbal',
-  'herbal-medicine',
-]
-
 export async function SiteHeader() {
   const [categories, dbUser] = await Promise.all([
     prisma.category.findMany({
@@ -28,22 +14,7 @@ export async function SiteHeader() {
     getCurrentDbUser(),
   ])
 
-  type ArchetypeCat = {
-    slug: string
-    name: string
-    archetype: 'RECIPE' | 'PATTERN' | 'SKILL' | 'PRACTICE' | 'PLANT' | 'FIX'
-  }
-
-  const spine: ArchetypeCat[] = []
-  for (const slug of SPINE_CATEGORY_SLUGS) {
-    const match = categories.find((c) => c.slug === slug)
-    if (match && !spine.some((s) => s.slug === match.slug)) {
-      spine.push({ slug: match.slug, name: match.name, archetype: match.archetype })
-    }
-    if (spine.length === 5) break
-  }
-
-  const all: ArchetypeCat[] = categories.map((c) => ({
+  const all = categories.map((c) => ({
     slug: c.slug,
     name: c.name,
     archetype: c.archetype,
@@ -60,7 +31,7 @@ export async function SiteHeader() {
           homemade
         </Link>
 
-        {categories.length > 0 && <CategoryMenu spine={spine} all={all} />}
+        {categories.length > 0 && <CategoryMenu all={all} />}
 
         <form
           method="GET"

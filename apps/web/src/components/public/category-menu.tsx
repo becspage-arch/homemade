@@ -10,7 +10,6 @@ interface MenuCategory {
 }
 
 interface CategoryMenuProps {
-  spine: MenuCategory[]
   /** All categories — used to build the archetype mega-menu. */
   all: MenuCategory[]
 }
@@ -80,13 +79,13 @@ function groupByArchetype(all: MenuCategory[]): ArchetypeGroup[] {
 }
 
 /**
- * Header category menu — five spine links on desktop, "Browse" mega-menu
- * grouped by archetype for the full library, hamburger-into-sheet on mobile.
- * The mega-menu makes the depth of the site visible: users can see at a
- * glance that the site has six families of things to do, what each one
- * leads with, and where the categories live underneath.
+ * Header category menu — single "Browse" trigger opening a mega-menu
+ * grouped by archetype. Hamburger-into-sheet on mobile. The mega-menu
+ * makes the depth of the site visible: users can see at a glance that
+ * the site has six families of things to do, what each one leads with,
+ * and where the categories live underneath.
  */
-export function CategoryMenu({ spine, all }: CategoryMenuProps) {
+export function CategoryMenu({ all }: CategoryMenuProps) {
   const [browseOpen, setBrowseOpen] = useState(false)
   const [sheetOpen, setSheetOpen] = useState(false)
   const browseRef = useRef<HTMLDivElement>(null)
@@ -116,11 +115,6 @@ export function CategoryMenu({ spine, all }: CategoryMenuProps) {
   return (
     <>
       <nav className="header-nav-desktop" aria-label="Categories">
-        {spine.map((cat) => (
-          <Link key={cat.slug} href={`/${cat.slug}`} className="header-nav-link">
-            {cat.name}
-          </Link>
-        ))}
         <div className="header-nav-more" ref={browseRef}>
           <button
             type="button"
