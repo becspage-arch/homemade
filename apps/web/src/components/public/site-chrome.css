@@ -99,6 +99,207 @@
   color: var(--color-sage);
 }
 
+/* ── Browse mega-menu ──────────────────────────────────────────────────── */
+
+.header-mega-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 48px rgba(56, 50, 42, 0.16);
+  z-index: 200;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 24px;
+  width: min(880px, 92vw);
+}
+
+@media (min-width: 1280px) {
+  .header-mega-panel {
+    grid-template-columns: repeat(3, 240px);
+    width: 800px;
+  }
+}
+
+.header-mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--color-soft-parchment);
+  border-radius: 10px;
+}
+
+.header-mega-column-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-mega-column-title {
+  font-family: var(--font-fraunces);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.header-mega-column-lede {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.header-mega-column-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-mega-column-link {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  color: var(--color-espresso);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 0.5px solid rgba(200, 196, 184, 0.5);
+  transition: color 0.15s ease;
+}
+
+.header-mega-column-link:hover {
+  color: var(--color-sage);
+}
+
+.header-mega-column-list li:last-child .header-mega-column-link {
+  border-bottom: 0;
+}
+
+.header-mega-column-cta {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--color-sage);
+  text-decoration: none;
+  padding-top: 6px;
+  margin-top: auto;
+  transition: color 0.15s ease;
+}
+
+.header-mega-column-cta:hover {
+  color: var(--color-espresso);
+}
+
+/* Hide the mega-panel on small screens — the hamburger sheet takes over. */
+@media (max-width: 900px) {
+  .header-mega-panel { display: none; }
+}
+
+/* ── Mobile sheet — archetype-grouped accordion ────────────────────────── */
+
+.header-nav-sheet-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header-nav-sheet-group {
+  background: var(--color-soft-parchment);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header-nav-sheet-group-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.header-nav-sheet-group-summary::-webkit-details-marker {
+  display: none;
+}
+
+.header-nav-sheet-group-title {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  letter-spacing: -0.005em;
+}
+
+.header-nav-sheet-group-count {
+  font-family: var(--font-mono, var(--font-lora));
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--color-warm-taupe);
+}
+
+.header-nav-sheet-group-body {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-nav-sheet-group-lede {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 4px;
+}
+
+.header-nav-sheet-group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-nav-sheet-group-link {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-espresso);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 0.5px solid rgba(200, 196, 184, 0.5);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-sheet-group-list .header-nav-sheet-group-link:last-child {
+  border-bottom: 0;
+}
+
+.header-nav-sheet-group-cta {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding-top: 6px;
+}
+
+.header-nav-sheet-search-link {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  text-decoration: none;
+  padding: 16px 0;
+  border-top: 0.5px solid var(--color-linen-grey);
+  margin-top: 8px;
+}
+
 .header-nav-mobile-trigger {
   display: none;
   align-items: center;

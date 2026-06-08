@@ -7,7 +7,7 @@ import { CategoryMenu } from './category-menu'
 /**
  * Locked spine-category slugs for the top-level desktop nav. The first
  * five categories the homepage rebuild promotes to header-level. Anything
- * else slides into the "All categories" overflow.
+ * else slides into the "Browse" mega-menu.
  */
 const SPINE_CATEGORY_SLUGS = [
   'cooking',
@@ -23,24 +23,31 @@ export async function SiteHeader() {
     prisma.category.findMany({
       where: { isPublicVisible: true },
       orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
-      select: { slug: true, name: true },
+      select: { slug: true, name: true, archetype: true },
     }),
     getCurrentDbUser(),
   ])
 
-  // The five spine items keep their canonical order even if `Category.order`
-  // disagrees. Everything else falls into "All categories" as already sorted.
-  const spine: { slug: string; name: string }[] = []
+  type ArchetypeCat = {
+    slug: string
+    name: string
+    archetype: 'RECIPE' | 'PATTERN' | 'SKILL' | 'PRACTICE' | 'PLANT' | 'FIX'
+  }
+
+  const spine: ArchetypeCat[] = []
   for (const slug of SPINE_CATEGORY_SLUGS) {
     const match = categories.find((c) => c.slug === slug)
     if (match && !spine.some((s) => s.slug === match.slug)) {
-      spine.push({ slug: match.slug, name: match.name })
+      spine.push({ slug: match.slug, name: match.name, archetype: match.archetype })
     }
     if (spine.length === 5) break
   }
-  const otherCategories = categories.filter(
-    (c) => !spine.some((s) => s.slug === c.slug),
-  )
+
+  const all: ArchetypeCat[] = categories.map((c) => ({
+    slug: c.slug,
+    name: c.name,
+    archetype: c.archetype,
+  }))
 
   const greeting = dbUser?.name?.split(' ')[0] ?? null
   const initial =
@@ -53,9 +60,7 @@ export async function SiteHeader() {
           homemade
         </Link>
 
-        {categories.length > 0 && (
-          <CategoryMenu spine={spine} other={otherCategories} />
-        )}
+        {categories.length > 0 && <CategoryMenu spine={spine} all={all} />}
 
         <form
           method="GET"
