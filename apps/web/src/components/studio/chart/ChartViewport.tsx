@@ -52,6 +52,13 @@ interface ChartViewportProps {
   onRequestIsolate?: (symbol: string) => void
   /** Called when an editor wants the colour-picker tool to set a colour from a cell. */
   onPickColour?: (symbol: string) => void
+  /**
+   * When false, every pointer-down — inside or outside the grid — starts
+   * a pan. No mark-stitched, no painting. Used by the photo-to-chart
+   * preview, where the chart is a transient render the user is just
+   * inspecting, not editing.
+   */
+  interactive?: boolean
 }
 
 export function ChartViewport({
@@ -60,6 +67,7 @@ export function ChartViewport({
   initialStitched,
   onRequestIsolate,
   onPickColour,
+  interactive = true,
 }: ChartViewportProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
@@ -202,7 +210,7 @@ export function ChartViewport({
       const rect = svgRef.current!.getBoundingClientRect()
       const lx = e.clientX - rect.left
       const ly = e.clientY - rect.top
-      if (spacePanning || e.button === 1) {
+      if (spacePanning || e.button === 1 || !interactive) {
         dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
         return
       }
@@ -267,7 +275,7 @@ export function ChartViewport({
       }
       dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
     },
-    [spacePanning, mode, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
+    [spacePanning, interactive, mode, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
   )
 
   const onPointerMove = useCallback(
@@ -373,6 +381,7 @@ export function ChartViewport({
 
   const cursorStyle = (() => {
     if (spacePanning) return 'grab'
+    if (!interactive) return 'grab'
     if (mode === 'view' || tool === 'mark-stitched') return 'pointer'
     if (tool === 'brush' || tool === 'erase' || tool === 'select') return 'crosshair'
     if (tool === 'colour-picker') return 'copy'
@@ -390,6 +399,7 @@ export function ChartViewport({
         onPointerCancel={onPointerUp}
         onWheel={onWheel}
         onContextMenu={(e) => {
+          if (!interactive) return
           e.preventDefault()
           const rect = svgRef.current!.getBoundingClientRect()
           const cell = screenToCell(e.clientX - rect.left, e.clientY - rect.top, viewport)

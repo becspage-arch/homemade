@@ -3,20 +3,31 @@
 /**
  * PhotoToChartPanel — the photo-to-chart conversion surface.
  *
- * Two-panel layout: image + live chart preview on the left, controls on
- * the right. Every slider movement debounces a 300ms POST to
- * /api/studio/photo-to-chart and updates the preview in place. The
- * "save" button persists the current preview as a new owned pattern via
- * /api/studio/patterns.
+ * Three-step flow:
  *
- * Magic-moment goal: watching the colour-count slider drop from 50 to
- * 12 should make the chart visibly consolidate in real time. We render
- * the live preview through the same ChartViewport everywhere else uses,
- * so the user is looking at the actual output, not an approximation.
+ *   1. Drop a photo. The source image renders on the left so the user
+ *      can see what they're working with.
+ *   2. Pick dimensions, fabric, brand, colour count, etc. on the right.
+ *      Default: width/height locked to the source photo's aspect ratio
+ *      so a portrait subject doesn't get squashed. The user can untick
+ *      "Lock to photo aspect" if they want to deliberately crop.
+ *   3. Click "Create pattern". A thinking overlay shows on the preview
+ *      area while the server runs the sharp + image-q + nearest-floss
+ *      pipeline. When done, the chart preview replaces the source
+ *      image and the action buttons flip to "Save to my patterns" +
+ *      "Revise". Any setting change after the first generate dirties
+ *      the preview and the action returns to "Re-generate" + "Save"
+ *      (the user gets to see "this preview is stale" via the dirty
+ *      indicator without having to lose their last result).
+ *
+ * The Studio chart viewport stops being a mark-stitched surface in this
+ * panel (interactive={false}) — clicking and dragging just pans the
+ * preview, which is what a user trying to inspect a generated chart
+ * actually wants.
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { UploadCloud, X } from 'lucide-react'
+import { UploadCloud, X, Loader2 } from 'lucide-react'
 import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
 
@@ -34,10 +45,10 @@ interface Settings {
   brand: 'DMC' | 'ANCHOR' | 'MADEIRA'
   confettiMin: 'low' | 'medium' | 'high'
   backgroundRemoval: boolean
+  lockAspect: boolean
 }
 
-const DEBOUNCE_MS = 300
-const DEFAULTS: Settings = {
+const DEFAULT_SETTINGS: Settings = {
   width: 80,
   height: 100,
   colours: 18,
@@ -45,25 +56,29 @@ const DEFAULTS: Settings = {
   brand: 'DMC',
   confettiMin: 'medium',
   backgroundRemoval: false,
+  lockAspect: true,
 }
 
 export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartPanelProps) {
   const [file, setFile] = useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = useState<string | null>(null)
+  const [photoAspect, setPhotoAspect] = useState<number | null>(null)
   const [pattern, setPattern] = useState<PatternData | null>(null)
-  const [settings, setSettings] = useState<Settings>(DEFAULTS)
+  const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS)
+  const [previewIsStale, setPreviewIsStale] = useState(false)
   const [generating, setGenerating] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [name, setName] = useState('Untitled photo pattern')
   const [saving, setSaving] = useState(false)
   const [dragOver, setDragOver] = useState(false)
-  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const inflight = useRef<AbortController | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const finishedW = (settings.width / settings.fabricCount) * 2.54
   const finishedH = (settings.height / settings.fabricCount) * 2.54
 
+  // Tidy up the preview blob URL when the panel unmounts or the photo
+  // changes.
   useEffect(() => () => {
     if (previewUrl) URL.revokeObjectURL(previewUrl)
   }, [previewUrl])
@@ -96,6 +111,7 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
       }
       const body = await res.json()
       setPattern(body.pattern as PatternData)
+      setPreviewIsStale(false)
     } catch (e) {
       if (e instanceof Error && e.name !== 'AbortError') {
         setError(e.message)
@@ -105,25 +121,57 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
     }
   }, [file, settings])
 
-  useEffect(() => {
-    if (!file) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setPattern(null)
-      return
-    }
-    if (debounceTimer.current) clearTimeout(debounceTimer.current)
-    debounceTimer.current = setTimeout(() => generate(), DEBOUNCE_MS)
-    return () => {
-      if (debounceTimer.current) clearTimeout(debounceTimer.current)
-    }
-  }, [file, settings, generate])
-
+  // When the source photo changes, throw away any earlier preview and
+  // measure the new image's aspect ratio so the dimension lock can
+  // mirror it.
   const onFileChosen = (f: File | null) => {
     if (!f) return
     setFile(f)
+    setPattern(null)
+    setPreviewIsStale(false)
+    setError(null)
     if (previewUrl) URL.revokeObjectURL(previewUrl)
-    setPreviewUrl(URL.createObjectURL(f))
+    const url = URL.createObjectURL(f)
+    setPreviewUrl(url)
     setName(prettifyName(f.name))
+    // Probe the image to learn its aspect; default the target height to
+    // match so a portrait stays portrait and a landscape stays landscape.
+    const img = new Image()
+    img.onload = () => {
+      const aspect = img.naturalWidth / img.naturalHeight
+      setPhotoAspect(aspect)
+      setSettings((s) => ({
+        ...s,
+        height: Math.max(20, Math.min(300, Math.round(s.width / aspect))),
+      }))
+    }
+    img.src = url
+  }
+
+  // Apply a settings patch. When lockAspect is on, mirror width/height
+  // through the photo's aspect ratio. Mark the preview stale unless the
+  // change was the lock toggle itself.
+  const update = (patch: Partial<Settings>) => {
+    setSettings((prev) => {
+      const next = { ...prev, ...patch }
+      if (next.lockAspect && photoAspect) {
+        if (patch.width !== undefined && patch.height === undefined) {
+          next.height = Math.max(20, Math.min(300, Math.round(patch.width / photoAspect)))
+        } else if (patch.height !== undefined && patch.width === undefined) {
+          next.width = Math.max(20, Math.min(300, Math.round(patch.height * photoAspect)))
+        } else if (patch.lockAspect === true && patch.width === undefined && patch.height === undefined) {
+          // The user just turned the lock back on — snap height to the
+          // photo aspect from the current width.
+          next.height = Math.max(20, Math.min(300, Math.round(next.width / photoAspect)))
+        }
+      }
+      // Any meaningful setting change marks the preview as stale once
+      // we already have one. The lock toggle itself doesn't.
+      if (pattern && !('lockAspect' in patch && Object.keys(patch).length === 1)) {
+        setPreviewIsStale(true)
+      }
+      return next
+    })
   }
 
   const save = async () => {
@@ -148,14 +196,19 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
     }
   }
 
-  const update = (patch: Partial<Settings>) => setSettings((s) => ({ ...s, ...patch }))
+  const showChart = pattern && !previewIsStale
+  const primaryLabel = !pattern
+    ? 'Create pattern'
+    : previewIsStale
+    ? 'Re-generate'
+    : 'Save to my patterns'
 
   return (
     <section className="studio-p2c">
       <div className="studio-p2c-preview">
-        {pattern ? (
+        {showChart ? (
           <div className="studio-p2c-preview-canvas">
-            <ChartViewport pattern={pattern} mode="view" />
+            <ChartViewport pattern={pattern} mode="view" interactive={false} />
           </div>
         ) : previewUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -166,6 +219,16 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
               Drop a photo on the right to begin
             </p>
           </div>
+        )}
+        {generating && (
+          <div className="studio-p2c-thinking" role="status" aria-live="polite">
+            <Loader2 size={28} strokeWidth={1.6} className="studio-p2c-thinking-spin" />
+            <p>Building your chart…</p>
+            <p className="studio-p2c-thinking-sub">Sampling colours, mapping floss codes, smoothing detail.</p>
+          </div>
+        )}
+        {pattern && previewIsStale && !generating && (
+          <div className="studio-p2c-stale">Preview is stale. Re-generate to see your new settings.</div>
         )}
       </div>
 
@@ -240,6 +303,7 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
                   max={300}
                   value={settings.height}
                   onChange={(e) => update({ height: Number(e.target.value) })}
+                  disabled={settings.lockAspect && photoAspect !== null}
                 />
               </div>
               <div className="studio-dialog-field">
@@ -254,6 +318,22 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
                 </select>
               </div>
             </div>
+
+            <label className="studio-p2c-checkbox">
+              <input
+                type="checkbox"
+                checked={settings.lockAspect}
+                onChange={(e) => update({ lockAspect: e.target.checked })}
+              />
+              <span>
+                Lock to photo aspect
+                <span className="studio-p2c-checkbox-hint">
+                  {settings.lockAspect
+                    ? 'Changing width keeps the photo from being squashed.'
+                    : 'Untick to crop the photo to the dimensions above.'}
+                </span>
+              </span>
+            </label>
 
             <p className="studio-dialog-finished subtle">
               Finished size: {finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm
@@ -296,20 +376,36 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
               </select>
             </div>
 
-            <label style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontSize: 14, color: 'var(--studio-ink-soft)' }}>
+            <label className="studio-p2c-checkbox">
               <input
                 type="checkbox"
                 checked={settings.backgroundRemoval}
                 onChange={(e) => update({ backgroundRemoval: e.target.checked })}
               />
-              Bump saturation and remove flat backgrounds
+              <span>Bump saturation and remove flat backgrounds</span>
             </label>
 
             <div className="studio-dialog-actions">
               <button type="button" className="studio-button ghost" onClick={onCancel}>Cancel</button>
-              <button type="button" className="studio-button primary" onClick={save} disabled={saving || !pattern}>
-                {saving ? 'Saving…' : generating ? 'Generating…' : 'Save to my patterns'}
-              </button>
+              {pattern && !previewIsStale ? (
+                <>
+                  <button type="button" className="studio-button ghost" onClick={() => setPreviewIsStale(true)}>
+                    Try different settings
+                  </button>
+                  <button type="button" className="studio-button primary" onClick={save} disabled={saving}>
+                    {saving ? 'Saving…' : primaryLabel}
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  className="studio-button primary"
+                  onClick={generate}
+                  disabled={generating}
+                >
+                  {generating ? 'Generating…' : primaryLabel}
+                </button>
+              )}
             </div>
 
             {error && <div className="studio-dialog-error">{error}</div>}

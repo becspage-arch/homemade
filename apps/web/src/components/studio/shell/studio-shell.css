@@ -912,6 +912,7 @@
   z-index: 20;
 }
 .studio-p2c-preview {
+  position: relative;
   background: var(--studio-surface-2);
   display: flex;
   flex-direction: column;
@@ -919,6 +920,77 @@
   justify-content: center;
   padding: 32px;
   overflow: hidden;
+}
+
+/* Thinking overlay — soft cream wash with a centred spinner. Sits over
+   the preview area while the photo-to-chart pipeline runs. */
+.studio-p2c-thinking {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(245, 240, 232, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--studio-ink);
+  font-family: var(--studio-font-display);
+  padding: 24px;
+  text-align: center;
+  z-index: 5;
+}
+.studio-p2c-thinking p {
+  margin: 0;
+  font-size: 17px;
+}
+.studio-p2c-thinking-sub {
+  font-family: var(--studio-font-body);
+  font-size: 13px;
+  color: var(--studio-ink-soft);
+  max-width: 320px;
+}
+.studio-p2c-thinking-spin { animation: studio-spin 900ms linear infinite; color: var(--studio-accent); }
+
+/* Stale indicator — appears below the preview when the user has changed
+   settings since the last generate. */
+.studio-p2c-stale {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--studio-ink);
+  color: var(--studio-bg);
+  font-family: var(--studio-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: var(--studio-shadow-soft);
+  z-index: 4;
+}
+
+/* Inline checkbox row with a hint line beneath the label. */
+.studio-p2c-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--studio-ink);
+  cursor: pointer;
+}
+.studio-p2c-checkbox input {
+  margin-top: 3px;
+}
+.studio-p2c-checkbox-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--studio-ink-mute);
+  margin-top: 2px;
+}
+.studio-p2c-checkbox > span {
+  flex: 1 1 auto;
 }
 .studio-p2c-preview-canvas {
   width: 100%;

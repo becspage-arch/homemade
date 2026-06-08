@@ -188,12 +188,25 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   progressDirty: false,
 
   setPattern: (pattern) =>
-    set({
-      pattern,
-      history: [],
-      future: [],
-      dirty: false,
-      currentSymbol: pattern.palette[0]?.symbol ?? null,
+    set((state) => {
+      // Re-fit the viewport whenever the pattern changes. Without this,
+      // the photo-to-chart live preview kept the previous pattern's
+      // pan/zoom which left the new chart cropped on one corner with no
+      // way to recover. If the container hasn't measured yet, reset to
+      // the default sentinel so the next setContainerSize call will fit.
+      const next: Partial<ChartStoreState> = {
+        pattern,
+        history: [],
+        future: [],
+        dirty: false,
+        currentSymbol: pattern.palette[0]?.symbol ?? null,
+      }
+      if (state.containerWidth > 0 && state.containerHeight > 0) {
+        next.viewport = fitToScreen(pattern, state.containerWidth, state.containerHeight)
+      } else {
+        next.viewport = DEFAULT_VIEWPORT
+      }
+      return next as ChartStoreState
     }),
   setStitchedCells: (cells) => set({ stitchedCells: cells, progressDirty: false }),
   setMode: (mode) => set({ mode }),
