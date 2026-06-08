@@ -89,6 +89,22 @@ export interface PatternRow {
   stitchCountAsCluster?: number
   sizeVariants?: Record<string, { instruction: string; stitchCount?: number }>
   isRoundNotRow?: boolean
+
+  // Teacher-improvement fields (rowsStructured JSON, no migration needed).
+  /** "centre colour" / "outer colour" / "Colour A". Surfaced as a coloured
+   *  pip beside the row label so makers see colour changes coming. */
+  colourLabel?: string
+  /** Optional hex for the pip. When null and colourLabel is set, the pip
+   *  shows as a neutral outline (the user has chosen her own colour). */
+  colourHex?: string | null
+  /** Photograph of finished work AFTER this row. The teacher reference. */
+  referencePhotoMediaId?: string | null
+  /** Inline tip surfaced beside the row. "First time? The magic ring is the
+   *  trickiest part of any granny square. Pull the tail gently to close." */
+  helpNote?: string
+  /** Slug of the foundation tutorial whose troubleshooter to link from the
+   *  helpNote. Renders as "See troubleshooting →" beneath the note. */
+  helpTroubleshooterTutorialSlug?: string
 }
 
 export type ViewMode = 'written' | 'chart' | 'schematic'

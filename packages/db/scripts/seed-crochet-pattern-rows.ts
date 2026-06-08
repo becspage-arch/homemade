@@ -55,6 +55,11 @@ interface RowSpec {
     instruction: string
     stitchCount?: number
     stitchCountAsCluster?: number
+    colourLabel?: string
+    colourHex?: string | null
+    referencePhotoMediaId?: string | null
+    helpNote?: string
+    helpTroubleshooterTutorialSlug?: string
   }>
   chartData: unknown
   thumbnailSlug?: string
@@ -83,6 +88,7 @@ interface CrochetPatternSpec {
   chartData: unknown
   clusterCountByRound: Record<string, number>
   sourceTutorialSlug: string
+  thumbnailMediaId?: string
 }
 
 const GRANNY_SQUARE: CrochetPatternSpec = {
@@ -122,6 +128,10 @@ const GRANNY_SQUARE: CrochetPatternSpec = {
         'Form a magic ring. Ch 3 (counts as first treble), 2 tr into the ring, ch 2 (first corner space), [3 tr into the ring, ch 2] three more times. Sl st to the top of the beginning ch-3 to join. Pull the tail to close the ring. Fasten off centre colour, leaving a 10 cm tail.',
       stitchCount: 12,
       stitchCountAsCluster: 4,
+      colourLabel: 'centre colour',
+      helpNote:
+        'First time? The magic ring is the trickiest part of any granny square. Work the round before you pull the tail to close — once the stitches anchor the ring, the centre will stay shut. If you pull the tail too early the loop slides free.',
+      helpTroubleshooterTutorialSlug: 'crochet-magic-ring',
     },
     {
       section: 'Pattern',
@@ -132,6 +142,9 @@ const GRANNY_SQUARE: CrochetPatternSpec = {
         'Join the outer colour with a sl st into any ch-2 corner space. Ch 3 (counts as first treble), [2 tr into the same corner space, ch 2, 3 tr into the same corner space], the first corner is now formed. Then: ch 1, *(3 tr, ch 2, 3 tr) all into the next ch-2 corner space, ch 1, repeat from * twice more. Sl st to the top of the beginning ch-3 to join.',
       stitchCount: 24,
       stitchCountAsCluster: 8,
+      colourLabel: 'outer colour',
+      helpNote:
+        'Round 2 starts the four-corner shape. Each ch-2 corner space gets two clusters of three trebles separated by ch 2; each side gets a single chain in between. Eight clusters total when round 2 is done.',
     },
     {
       section: 'Pattern',
@@ -142,6 +155,9 @@ const GRANNY_SQUARE: CrochetPatternSpec = {
         'Sl st across the next 2 trebles to bring the hook to the corner space. Ch 3 (counts as first treble), 2 tr into the corner space, ch 2, 3 tr into the same corner space (first corner formed). *Ch 1, 3 tr into the next ch-1 side space, ch 1, (3 tr, ch 2, 3 tr) into the next ch-2 corner space*, repeat from * to * twice more. Ch 1, 3 tr into the final ch-1 side space, ch 1. Sl st to the top of the beginning ch-3 to join. Fasten off, leaving a 10 cm tail for weaving in.',
       stitchCount: 36,
       stitchCountAsCluster: 12,
+      colourLabel: 'outer colour',
+      helpNote:
+        'Round 3 is the finishing round. Twelve clusters total: two at each corner, one on each side. Block the square once you have woven in your ends so the corners sit square.',
     },
   ],
   chartData: {

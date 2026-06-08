@@ -32,6 +32,7 @@ interface Props {
   terminology: TerminologyMode
   leftHanded: boolean
   notesOpen: boolean
+  onClose: () => void
 }
 
 const SAVE_DEBOUNCE_MS = 700
@@ -52,6 +53,7 @@ export function CrochetActiveProject({
   terminology,
   leftHanded,
   notesOpen,
+  onClose,
 }: Props) {
   const rows = useMemo<PatternRow[]>(() => normaliseRows(pattern.rowsStructured), [pattern])
   const sections = useMemo<string[]>(() => {
@@ -260,6 +262,15 @@ export function CrochetActiveProject({
     [scheduleSave],
   )
 
+  const markProjectComplete = useCallback(() => {
+    setState((prev) => {
+      const newState = { ...prev, completedAt: new Date().toISOString() }
+      pendingState.current = newState
+      return newState
+    })
+    scheduleSave()
+  }, [scheduleSave])
+
   const totalRows = rows.length
   const completedCount = Object.values(state.completedRows).reduce(
     (sum, arr) => sum + arr.length,
@@ -274,15 +285,20 @@ export function CrochetActiveProject({
             rows={rows}
             sections={sections}
             terminology={terminology}
+            sourceTerminology={pattern.terminologyConvention === 'us' ? 'us' : 'uk'}
+            patternName={pattern.name}
             completedRows={state.completedRows}
             currentSection={state.currentSection}
             currentRow={state.currentRow}
             perRowNotes={state.perRowNotes}
+            countByCluster={initialProgress?.countByCluster ?? false}
             onMarkComplete={markRowComplete}
             onUnmark={unmarkRow}
             onFrogToRow={frogToRow}
             onSetCurrentSection={setCurrentSection}
             onUpdatePerRowNote={updatePerRowNote}
+            onMarkProjectComplete={markProjectComplete}
+            onClose={onClose}
           />
         )}
         {viewMode === 'chart' && (
@@ -355,6 +371,15 @@ function normaliseRows(raw: unknown): PatternRow[] {
           ? (row.sizeVariants as PatternRow['sizeVariants'])
           : undefined,
       isRoundNotRow: row.isRoundNotRow === true,
+      colourLabel: typeof row.colourLabel === 'string' ? row.colourLabel : undefined,
+      colourHex: typeof row.colourHex === 'string' ? row.colourHex : null,
+      referencePhotoMediaId:
+        typeof row.referencePhotoMediaId === 'string' ? row.referencePhotoMediaId : null,
+      helpNote: typeof row.helpNote === 'string' ? row.helpNote : undefined,
+      helpTroubleshooterTutorialSlug:
+        typeof row.helpTroubleshooterTutorialSlug === 'string'
+          ? row.helpTroubleshooterTutorialSlug
+          : undefined,
     })
   }
   return out

@@ -1030,3 +1030,313 @@
   font-style: normal;
   font-size: 0.78rem;
 }
+
+/* ===== Teacher improvements: inline stitch tokens ===================== */
+
+.crochet-studio-inline-stitch-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.crochet-studio-inline-stitch {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0 0.18rem;
+  margin: 0 0.04rem;
+  border-radius: 4px;
+  font: inherit;
+  font-family: var(--studio-font-mono);
+  color: var(--crochet-accent-strong);
+  cursor: help;
+  border-bottom: 1px dotted var(--crochet-accent);
+  transition: background 120ms var(--studio-easing-out);
+}
+
+.crochet-studio-inline-stitch:hover,
+.crochet-studio-inline-stitch:focus-visible,
+.crochet-studio-inline-stitch.is-open {
+  background: var(--crochet-accent-soft);
+  outline: none;
+}
+
+.crochet-studio-inline-stitch-popover {
+  position: absolute;
+  bottom: calc(100% + 0.4rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-m);
+  padding: 0.6rem 0.8rem;
+  box-shadow: var(--studio-shadow-pop);
+  min-width: 180px;
+  max-width: 260px;
+  z-index: 6;
+  font-family: var(--studio-font-body);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crochet-studio-inline-stitch-name {
+  font-family: var(--studio-font-display);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--studio-ink);
+}
+
+.crochet-studio-inline-stitch-link {
+  color: var(--crochet-accent-strong);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.crochet-studio-inline-stitch-loading,
+.crochet-studio-inline-stitch-orphan {
+  font-size: 0.82rem;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+}
+
+/* ===== Teacher improvements: colour pip =============================== */
+
+.crochet-studio-written-row-headline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.crochet-studio-colour-pip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-family: var(--studio-font-mono);
+  color: var(--studio-ink-soft);
+  background: rgba(60, 47, 34, 0.04);
+  padding: 0.1rem 0.5rem 0.1rem 0.3rem;
+  border-radius: 10px;
+}
+
+.crochet-studio-colour-pip-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--studio-ink-soft);
+}
+
+.crochet-studio-colour-pip-label {
+  letter-spacing: 0.02em;
+}
+
+/* ===== Teacher improvements: row instruction paragraph ================ */
+
+.crochet-studio-written-row-instruction {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== Teacher improvements: row help note ============================ */
+
+.crochet-studio-written-row-help {
+  margin: 0.6rem 0 0;
+  padding: 0.6rem 0.8rem;
+  background: rgba(125, 149, 125, 0.08);
+  border-left: 3px solid var(--crochet-accent);
+  border-radius: 6px;
+}
+
+.crochet-studio-written-row-help-text {
+  margin: 0 0 0.3rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--studio-ink);
+}
+
+.crochet-studio-written-row-help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--crochet-accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* ===== Teacher improvements: mid-row counter ========================== */
+
+.crochet-studio-mid-row-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--studio-bg);
+  border-radius: 999px;
+  box-shadow: var(--studio-shadow-soft);
+}
+
+.crochet-studio-mid-row-counter.is-reached {
+  background: var(--crochet-accent-soft);
+  box-shadow: none;
+}
+
+.crochet-studio-mid-row-counter-button {
+  appearance: none;
+  border: 1.5px solid var(--studio-line-strong);
+  background: var(--studio-surface);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--studio-ink);
+  transition: background 140ms var(--studio-easing-out), border-color 140ms var(--studio-easing-out);
+}
+
+.crochet-studio-mid-row-counter-button:hover:not(:disabled),
+.crochet-studio-mid-row-counter-button:focus-visible {
+  background: var(--crochet-accent-soft);
+  border-color: var(--crochet-accent);
+  outline: none;
+}
+
+.crochet-studio-mid-row-counter-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.crochet-studio-mid-row-counter-value {
+  font-family: var(--studio-font-mono);
+  font-size: 0.95rem;
+  color: var(--studio-ink);
+  min-width: 64px;
+  text-align: center;
+}
+
+.crochet-studio-mid-row-counter-value strong {
+  font-size: 1.15em;
+}
+
+.crochet-studio-mid-row-counter-target {
+  color: var(--studio-ink-soft);
+}
+
+/* ===== Teacher improvements: reference photo ========================== */
+
+.crochet-studio-written-row-reference {
+  margin: 0.7rem 0 0;
+}
+
+.crochet-studio-written-row-reference img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: var(--studio-radius-m);
+  display: block;
+  background: var(--studio-bg);
+}
+
+.crochet-studio-written-row-reference figcaption {
+  font-size: 0.78rem;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+/* ===== Teacher improvements: completion card ========================== */
+
+.crochet-studio-completion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.crochet-studio-completion-card {
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  padding: 3rem 2.5rem;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: var(--studio-shadow-soft);
+}
+
+.crochet-studio-completion-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--crochet-accent);
+  color: #fff;
+  margin: 0 auto 1rem;
+}
+
+.crochet-studio-completion-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 0 0 0.7rem;
+  line-height: 1.2;
+  color: var(--studio-ink);
+}
+
+.crochet-studio-completion-lede {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--studio-ink-soft);
+  margin: 0 0 1.6rem;
+}
+
+.crochet-studio-completion-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.crochet-studio-completion-primary,
+.crochet-studio-completion-secondary {
+  appearance: none;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--studio-radius-m);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.crochet-studio-completion-primary {
+  background: var(--crochet-accent);
+  color: #fff;
+}
+
+.crochet-studio-completion-primary:hover,
+.crochet-studio-completion-primary:focus-visible {
+  background: var(--crochet-accent-strong);
+  outline: none;
+}
+
+.crochet-studio-completion-secondary {
+  background: var(--studio-bg);
+  color: var(--studio-ink-soft);
+}
+
+.crochet-studio-completion-secondary:hover,
+.crochet-studio-completion-secondary:focus-visible {
+  background: var(--studio-surface-2);
+  outline: none;
+}

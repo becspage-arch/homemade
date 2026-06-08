@@ -251,6 +251,7 @@ function ActiveProjectSurface({
         terminology={terminology}
         leftHanded={leftHanded}
         notesOpen={notesOpen}
+        onClose={onClose}
       />
     </div>
   )
