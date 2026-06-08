@@ -88,48 +88,65 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
   )
 
   // ─── Defs: filters + fabric weave (beauty mode only) ────────────────────
+  // Aida texture scales with pattern complexity: simple craft-style
+  // patterns (< 20 colours) get a barely-there weave so they don't read
+  // as twee; photographic patterns (≥ 20 colours) get the visible
+  // weave + corner holes that imply real cloth.
+  const richPalette = pattern.palette.length >= 20
   if (mode === 'beauty' && !monochrome) {
     const fabric = pattern.fabric.colourRgb
     const fabricDark = shiftColour(fabric, -0.08)
     const fabricMid = shiftColour(fabric, -0.03)
     const fabricHole = shiftColour(fabric, -0.16)
     parts.push(`<defs>`)
-    // Aida weave: each cell has a tiny hole at each corner where the
-    // four warp/weft threads cross, with subtle horizontal + vertical
-    // grain in between. Scales with cellPx so the texture stays at the
-    // right physical density regardless of zoom.
     parts.push(
       `<pattern id="aida-weave" x="0" y="0" width="${cellPx}" height="${cellPx}" patternUnits="userSpaceOnUse">`,
     )
     parts.push(`<rect width="${cellPx}" height="${cellPx}" fill="${fabric}"/>`)
-    // Warp + weft thread bundles — slightly darker bands either side of
-    // each cell boundary.
-    parts.push(
-      `<rect x="0" y="0" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
-    )
-    parts.push(
-      `<rect x="0" y="${cellPx * 0.92}" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
-    )
-    parts.push(
-      `<rect x="0" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
-    )
-    parts.push(
-      `<rect x="${cellPx * 0.92}" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
-    )
-    // The four corner holes where threads intersect.
-    const holeR = cellPx * 0.06
-    parts.push(`<circle cx="0" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
-    parts.push(`<circle cx="${cellPx}" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
-    parts.push(`<circle cx="0" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
-    parts.push(`<circle cx="${cellPx}" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
-    // Slight warp/weft grain — a thin diagonal twill suggesting the
-    // woven fibre direction.
-    parts.push(
-      `<path d="M0 ${cellPx * 0.5} L${cellPx} ${cellPx * 0.5}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
-    )
-    parts.push(
-      `<path d="M${cellPx * 0.5} 0 L${cellPx * 0.5} ${cellPx}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
-    )
+    if (richPalette) {
+      // Visible weave: warp + weft thread bundles + corner holes +
+      // grain. Used for dense photographic patterns where the cloth
+      // texture adds depth instead of fighting the subject.
+      parts.push(
+        `<rect x="0" y="0" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
+      )
+      parts.push(
+        `<rect x="0" y="${cellPx * 0.92}" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
+      )
+      parts.push(
+        `<rect x="0" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
+      )
+      parts.push(
+        `<rect x="${cellPx * 0.92}" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
+      )
+      const holeR = cellPx * 0.06
+      parts.push(`<circle cx="0" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+      parts.push(`<circle cx="${cellPx}" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+      parts.push(`<circle cx="0" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+      parts.push(`<circle cx="${cellPx}" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+      parts.push(
+        `<path d="M0 ${cellPx * 0.5} L${cellPx} ${cellPx * 0.5}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
+      )
+      parts.push(
+        `<path d="M${cellPx * 0.5} 0 L${cellPx * 0.5} ${cellPx}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
+      )
+    } else {
+      // Subtle weave: just the warp + weft bundles at lower opacity.
+      // Simple patterns look modern instead of craft-y. No corner holes,
+      // no grain lines.
+      parts.push(
+        `<rect x="0" y="0" width="${cellPx}" height="${cellPx * 0.06}" fill="${fabricMid}" opacity="0.28"/>`,
+      )
+      parts.push(
+        `<rect x="0" y="${cellPx * 0.94}" width="${cellPx}" height="${cellPx * 0.06}" fill="${fabricMid}" opacity="0.28"/>`,
+      )
+      parts.push(
+        `<rect x="0" y="0" width="${cellPx * 0.06}" height="${cellPx}" fill="${fabricMid}" opacity="0.28"/>`,
+      )
+      parts.push(
+        `<rect x="${cellPx * 0.94}" y="0" width="${cellPx * 0.06}" height="${cellPx}" fill="${fabricMid}" opacity="0.28"/>`,
+      )
+    }
     parts.push(`</pattern>`)
     // Drop-shadow filter for the stitched group. Soft, low, just enough
     // to lift the work off the fabric.
@@ -179,29 +196,30 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     if (inRegion.length === 0) continue
 
     if (mode === 'beauty' && !monochrome) {
-      // Beauty mode: 5-layer concentric stroke build for each X. Reads
-      // as round 3D strands of thread on cloth.
+      // Beauty mode: 4-layer concentric stroke build for each X.
+      // Earlier draft had a dark base layer at -32% that was eating the
+      // saturation of every colour. Dropped — body now sits directly
+      // on the fabric, reads at the actual palette colour. Outer rim
+      // softened from -16% to -10% so the silhouette is shaped without
+      // dulling the edge.
       const path = buildBucketCrossPath(inRegion, cellPx)
       const highlightPath = buildBucketHighlightPath(inRegion, cellPx)
       const w = cellPx
-      // 1. dark base (the visible underside of the thread)
+      // 1. soft outer rim — shapes the silhouette, barely darker
       parts.push(
-        `<path d="${path}" stroke="${shiftColour(entry.rgb, -0.32)}" stroke-width="${w * 0.30}" stroke-linecap="round" fill="none" opacity="0.95"/>`,
+        `<path d="${path}" stroke="${shiftColour(entry.rgb, -0.10)}" stroke-width="${w * 0.26}" stroke-linecap="round" fill="none"/>`,
       )
-      // 2. outer rim — softens the silhouette
+      // 2. body — full saturation palette colour, slightly wider so it
+      //    reads as the dominant colour of the stitch
       parts.push(
-        `<path d="${path}" stroke="${shiftColour(entry.rgb, -0.16)}" stroke-width="${w * 0.26}" stroke-linecap="round" fill="none"/>`,
+        `<path d="${path}" stroke="${entry.rgb}" stroke-width="${w * 0.22}" stroke-linecap="round" fill="none"/>`,
       )
-      // 3. body — full saturation palette colour
+      // 3. inner band — slightly lighter, gives the strand bundle look
       parts.push(
-        `<path d="${path}" stroke="${entry.rgb}" stroke-width="${w * 0.20}" stroke-linecap="round" fill="none"/>`,
+        `<path d="${path}" stroke="${shiftColour(entry.rgb, 0.20)}" stroke-width="${w * 0.10}" stroke-linecap="round" fill="none" opacity="0.85"/>`,
       )
-      // 4. inner band — slightly lighter, gives the strand bundle look
-      parts.push(
-        `<path d="${path}" stroke="${shiftColour(entry.rgb, 0.18)}" stroke-width="${w * 0.10}" stroke-linecap="round" fill="none" opacity="0.85"/>`,
-      )
-      // 5. top sheen — offset along the highlight diagonal so the X has a
-      //    raised, light-catching ridge.
+      // 4. top sheen — offset along the highlight diagonal so the X has
+      //    a raised, light-catching ridge.
       parts.push(
         `<path d="${highlightPath}" stroke="${shiftColour(entry.rgb, 0.45)}" stroke-width="${w * 0.06}" stroke-linecap="round" fill="none" opacity="0.7"/>`,
       )

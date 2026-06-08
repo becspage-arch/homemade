@@ -7,6 +7,7 @@ import {
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
+import { stitchedBoundingBox } from '@/components/studio/chart/render-helpers'
 
 export const dynamic = 'force-dynamic'
 
@@ -45,19 +46,38 @@ export async function GET(_req: Request, ctx: Ctx) {
     return new NextResponse('Malformed pattern data', { status: 500 })
   }
 
-  // Beauty mode — strand-shaded X stitches on visible Aida weave with a
-  // soft drop shadow. The thumbnail should read as a finished piece,
-  // not as a chart screenshot. cellPx scales with grid size so very
-  // small patterns get a denser render and very large patterns stay
-  // fast to rasterise.
-  const cellPx = data.grid.width <= 60 ? 30 : data.grid.width <= 120 ? 18 : 12
+  // Beauty mode — strand-shaded X stitches on subtle / visible weave
+  // depending on palette complexity. The thumbnail crops tight to the
+  // stitched bounding box (with a small margin) so the subject fills
+  // the frame instead of floating in a sea of cream — biggest impact
+  // for simple craft-style patterns where the stitched area only
+  // occupies the centre of the grid.
+  const bbox = stitchedBoundingBox(data)
+  const margin = 2
+  const region = bbox
+    ? {
+        x: Math.max(0, bbox.minX - margin),
+        y: Math.max(0, bbox.minY - margin),
+        width:
+          Math.min(data.grid.width, bbox.maxX + 1 + margin) -
+          Math.max(0, bbox.minX - margin),
+        height:
+          Math.min(data.grid.height, bbox.maxY + 1 + margin) -
+          Math.max(0, bbox.minY - margin),
+      }
+    : undefined
+  const regionW = region?.width ?? data.grid.width
+  // cellPx scales with the rendered region size, not the full grid —
+  // a tight-cropped small subject gets the denser per-cell render.
+  const cellPx = regionW <= 60 ? 30 : regionW <= 120 ? 18 : 12
   const svg = renderPatternSvgString(data, {
     mode: 'beauty',
     cellPx,
     showSymbols: false,
     showGrid: false,
     showCentreCrosshairs: false,
-    padding: Math.round(cellPx * 1.6),
+    padding: Math.round(cellPx * 0.8),
+    region,
   })
 
   // 2× density (960×720) — fits 480-css-px cards crisply on Retina without

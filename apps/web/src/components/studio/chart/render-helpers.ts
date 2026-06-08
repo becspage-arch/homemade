@@ -136,6 +136,74 @@ export function buildCellHighlightPath(
 }
 
 /**
+ * Compute the tight bounding box of every stitched cell + back-stitch
+ * endpoint + French knot + bead in a pattern. Returns null when the
+ * pattern is empty. Used by the thumbnail / hero renderer to crop the
+ * frame to the actual subject instead of showing the whole empty
+ * grid.
+ *
+ * Coordinates are inclusive — `maxX` is the highest x-index of any
+ * cell, not one past it; the renderer adds +1 to convert to width.
+ */
+export function stitchedBoundingBox(pattern: PatternData): {
+  minX: number
+  minY: number
+  maxX: number
+  maxY: number
+} | null {
+  let minX = Infinity
+  let minY = Infinity
+  let maxX = -Infinity
+  let maxY = -Infinity
+  let touched = false
+  for (const cell of pattern.grid.cells) {
+    if (cell.x < minX) minX = cell.x
+    if (cell.y < minY) minY = cell.y
+    if (cell.x > maxX) maxX = cell.x
+    if (cell.y > maxY) maxY = cell.y
+    touched = true
+  }
+  for (const seg of pattern.grid.backstitch) {
+    const xs = [seg.x1, seg.x2]
+    const ys = [seg.y1, seg.y2]
+    for (const x of xs) {
+      const fx = Math.floor(x)
+      const cx = Math.ceil(x) - 1
+      if (fx < minX) minX = fx
+      if (cx > maxX) maxX = cx
+    }
+    for (const y of ys) {
+      const fy = Math.floor(y)
+      const cy = Math.ceil(y) - 1
+      if (fy < minY) minY = fy
+      if (cy > maxY) maxY = cy
+    }
+    touched = true
+  }
+  for (const k of pattern.grid.frenchKnots) {
+    if (k.x < minX) minX = k.x
+    if (k.y < minY) minY = k.y
+    if (k.x > maxX) maxX = k.x
+    if (k.y > maxY) maxY = k.y
+    touched = true
+  }
+  for (const b of pattern.grid.beads) {
+    if (b.x < minX) minX = b.x
+    if (b.y < minY) minY = b.y
+    if (b.x > maxX) maxX = b.x
+    if (b.y > maxY) maxY = b.y
+    touched = true
+  }
+  if (!touched) return null
+  return {
+    minX: Math.max(0, minX),
+    minY: Math.max(0, minY),
+    maxX: Math.min(pattern.grid.width - 1, maxX),
+    maxY: Math.min(pattern.grid.height - 1, maxY),
+  }
+}
+
+/**
  * Group cells by palette symbol so the renderer can emit one <g>
  * per colour, set `color` / `stroke` once, and let the browser batch
  * the paint pass. Returns a Map preserving palette insertion order.
