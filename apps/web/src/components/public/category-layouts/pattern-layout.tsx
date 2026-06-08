@@ -266,11 +266,8 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
         {patternType ? (
           patterns.length === 0 && filtered.length === 0 && Object.keys(sp).length === 0 ? (
             <div className="pattern-landing-empty">
-              <h2>Pattern library coming soon</h2>
-              <p>
-                Foundation skills are landing first. Patterns themselves arrive
-                as the Studio for this craft ships.
-              </p>
+              <h2>{emptyPatternHeading(category.slug, foundations.length > 0)}</h2>
+              <p>{emptyPatternBody(category.slug, foundations.length > 0)}</p>
             </div>
           ) : (
             <PatternLibraryGrid
@@ -311,11 +308,8 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
           )
         ) : (
           <div className="pattern-landing-empty">
-            <h2>Pattern library coming soon</h2>
-            <p>
-              The {category.name.toLowerCase()} Studio is on its way. In the
-              meantime, the foundation tutorials above are live.
-            </p>
+            <h2>{emptyPatternHeading(category.slug, foundations.length > 0)}</h2>
+            <p>{emptyPatternBody(category.slug, foundations.length > 0)}</p>
           </div>
         )}
       </section>
@@ -359,5 +353,51 @@ function patternSearchPlaceholder(slug: string): string {
     case 'needlework': return 'Pattern name or technique'
     case 'sewing': return "Pattern name or 'tote bag'"
     default: return 'Pattern name, theme, designer'
+  }
+}
+
+function emptyPatternHeading(slug: string, hasFoundations: boolean): string {
+  if (hasFoundations) {
+    switch (slug) {
+      case 'knitting': return 'Start with the basics above.'
+      case 'crochet': return 'Open the Studio, or learn the foundations first.'
+      case 'sewing': return 'Sewing patterns are arriving soon.'
+      case 'needlework': return 'Needlework patterns are arriving soon.'
+      case 'cross-stitch': return 'New patterns coming soon.'
+      default: return 'Patterns are arriving soon.'
+    }
+  }
+  switch (slug) {
+    case 'sewing': return 'Sewing patterns are on the way.'
+    case 'needlework': return 'Needlework patterns are on the way.'
+    case 'cross-stitch': return 'The cross-stitch library is being seeded.'
+    default: return 'Patterns are on the way.'
+  }
+}
+
+function emptyPatternBody(slug: string, hasFoundations: boolean): string {
+  if (hasFoundations) {
+    switch (slug) {
+      case 'knitting':
+        return 'The Knitting Studio is on its way. While we build it, learn the cast-on, the knit stitch, the purl stitch, and the bind-off in the foundation tutorials above.'
+      case 'crochet':
+        return 'The Crochet Studio is live. Start with the foundation tutorials above if you are new to crochet; designed patterns are landing as we sign more designers.'
+      case 'sewing':
+        return 'Designer sewing patterns are landing as we sign more designers. The Techniques sub-category above is the place to start in the meantime.'
+      case 'needlework':
+        return 'Needlepoint, tatting and lacemaking patterns are arriving with the Needlework Studio. The reference tutorials above are live.'
+      case 'cross-stitch':
+        return 'More patterns from independent designers are joining the library each week. Browse what is there above, or start your own from a photo.'
+      default:
+        return 'Designed patterns are arriving with the Studio. The foundation tutorials above are live.'
+    }
+  }
+  switch (slug) {
+    case 'sewing':
+      return 'Independent sewing designers are joining as we open the Studio for sewing. Until then, the rest of the site has plenty to make.'
+    case 'needlework':
+      return 'Needlepoint, tatting and lacemaking patterns are arriving with the Needlework Studio. Until then, the rest of the site has plenty to make.'
+    default:
+      return 'Patterns will arrive here as the catalogue grows. Check back soon.'
   }
 }

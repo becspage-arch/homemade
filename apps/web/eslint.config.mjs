@@ -72,5 +72,12 @@ export default defineConfig([
     // Plain JS scripts at the repo root (one-offs, no lint value)
     '**/*.cjs',
     'tmp/**',
+
+    // One-shot tsx import scripts — also excluded from the Next build
+    // typecheck for the same reason: they ship with strict-rule violations
+    // and are not part of the deployed bundle. (ESLint runs from the
+    // apps/web cwd, so paths here are relative to that.)
+    'scripts/import-lib/**',
+    'scripts/import-stitching-mama-catalogue.ts',
   ]),
 ])

@@ -1,13 +1,13 @@
 import { headers } from 'next/headers'
-import { prisma, TutorialStatus, type Difficulty } from '@homemade/db'
+import { prisma, TutorialStatus } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
 import { CategoryHero } from '@/components/public/category-hero'
 import { SubCategoryChips } from '@/components/public/sub-category-chips'
-import { CategoryFilterChips } from '@/components/public/category-filter-chips'
 import { CategorySubRail } from '@/components/public/category-sub-rail'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { HomeRail } from '@/components/public/home-rail'
 import { CategoryScopedSearch } from '@/components/public/category/category-scoped-search'
+import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-chips'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
 import {
@@ -28,8 +28,7 @@ interface RecipeLayoutProps {
   category: RecipeLayoutCategory
   searchParams: {
     sub?: string
-    difficulty?: string
-    equipment?: string
+    dietary?: string
   }
   currentUserId: string | null
 }
@@ -50,15 +49,6 @@ const CARD_SELECT = {
   requiresKiln: true,
   requiresWheel: true,
 } as const
-
-function parseDifficulty(raw: string | undefined): Difficulty | null {
-  if (!raw) return null
-  const upper = raw.toUpperCase()
-  if (upper === 'BEGINNER' || upper === 'INTERMEDIATE' || upper === 'ADVANCED') {
-    return upper as Difficulty
-  }
-  return null
-}
 
 async function readCountryCode(): Promise<string | null> {
   try {
@@ -109,22 +99,27 @@ const PLACEHOLDER_BY_SLUG: Record<string, string> = {
   'natural-home': 'What are you making? Try a soap or a cleaning spray',
 }
 
+/** Recipe categories where time-aware "quick wins" is meaningful. */
+const QUICK_WINS_CATEGORIES = new Set(['cooking', 'baking', 'natural-home'])
+/** Recipe categories where the seasonal rail is meaningful. */
+const SEASONAL_CATEGORIES = new Set(['cooking', 'baking', 'herbal-medicine'])
+
 export async function RecipeLayout({
   category,
   searchParams,
   currentUserId,
 }: RecipeLayoutProps) {
-  const difficulty = parseDifficulty(searchParams.difficulty)
   const subSlug = searchParams.sub ?? null
+  const dietary = searchParams.dietary ?? null
 
   const subCategory = subSlug
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
   const activeSubSlug = subCategory ? subCategory.slug : null
-  const isFiltered = Boolean(difficulty) || Boolean(activeSubSlug)
+  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug)
 
   const preserveQuery: Record<string, string> = {}
-  if (difficulty) preserveQuery.difficulty = difficulty.toLowerCase()
+  if (dietary) preserveQuery.dietary = dietary
 
   const [countryCode, recentlyMade] = await Promise.all([
     readCountryCode(),
@@ -134,56 +129,77 @@ export async function RecipeLayout({
   let unfilteredRails: { sub: { id: string; slug: string; name: string }; tutorials: TutorialCardLike[] }[] = []
   let filteredTutorials: TutorialCardLike[] = []
   let inSeasonForCategory: TutorialCardLike[] = []
+  let quickWins: TutorialCardLike[] = []
 
   if (isFiltered) {
     const tutorials = await prisma.tutorial.findMany({
       where: {
         categoryId: category.id,
         status: TutorialStatus.PUBLISHED,
-        ...(difficulty ? { difficulty } : {}),
-        ...(activeSubSlug && subCategory
-          ? { subCategoryId: subCategory.id }
-          : {}),
+        ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
+        ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
       },
       orderBy: [{ publishedAt: 'desc' }],
       select: CARD_SELECT,
     })
     filteredTutorials = tutorials as TutorialCardLike[]
   } else {
-    const perSubResults = await Promise.all(
-      category.subCategories.map((sub) =>
-        prisma.tutorial.findMany({
-          where: {
-            categoryId: category.id,
-            subCategoryId: sub.id,
-            status: TutorialStatus.PUBLISHED,
-          },
-          orderBy: [
-            { bookmarks: { _count: 'desc' } },
-            { projects: { _count: 'desc' } },
-            { publishedAt: 'desc' },
-          ],
-          take: 8,
-          select: CARD_SELECT,
-        }),
+    const [perSubResults, seasonal, quick] = await Promise.all([
+      Promise.all(
+        category.subCategories.map((sub) =>
+          prisma.tutorial.findMany({
+            where: {
+              categoryId: category.id,
+              subCategoryId: sub.id,
+              status: TutorialStatus.PUBLISHED,
+            },
+            orderBy: [
+              { bookmarks: { _count: 'desc' } },
+              { projects: { _count: 'desc' } },
+              { publishedAt: 'desc' },
+            ],
+            take: 8,
+            select: CARD_SELECT,
+          }),
+        ),
       ),
-    )
+      SEASONAL_CATEGORIES.has(category.slug)
+        ? loadInSeasonForCategory({
+            categoryId: category.id,
+            now: new Date(),
+            countryCode,
+            limit: 8,
+          })
+        : Promise.resolve([]),
+      QUICK_WINS_CATEGORIES.has(category.slug)
+        ? prisma.tutorial.findMany({
+            where: {
+              categoryId: category.id,
+              status: TutorialStatus.PUBLISHED,
+              totalMinutes: { lte: 30, not: null },
+            },
+            orderBy: [
+              { bookmarks: { _count: 'desc' } },
+              { publishedAt: 'desc' },
+            ],
+            take: 8,
+            select: CARD_SELECT,
+          })
+        : Promise.resolve([]),
+    ])
+
     unfilteredRails = category.subCategories
       .map((sub, i) => ({ sub, tutorials: (perSubResults[i] ?? []) as TutorialCardLike[] }))
       .filter((r) => r.tutorials.length > 0)
-
-    inSeasonForCategory = (await loadInSeasonForCategory({
-      categoryId: category.id,
-      now: new Date(),
-      countryCode,
-      limit: 8,
-    })) as TutorialCardLike[]
+    inSeasonForCategory = seasonal as TutorialCardLike[]
+    quickWins = quick as TutorialCardLike[]
   }
 
   const allIds = new Set<string>()
   for (const t of filteredTutorials) allIds.add(t.id)
   for (const r of unfilteredRails) for (const t of r.tutorials) allIds.add(t.id)
   for (const t of inSeasonForCategory) allIds.add(t.id)
+  for (const t of quickWins) allIds.add(t.id)
   const readerState = currentUserId
     ? await loadReaderState(currentUserId, Array.from(allIds))
     : emptyReaderState()
@@ -212,11 +228,9 @@ export async function RecipeLayout({
             activeSlug={activeSubSlug}
             preserveQuery={preserveQuery}
           />
-          <CategoryFilterChips
+          <RecipeDietaryChips
             categorySlug={category.slug}
-            showEquipment={false}
-            activeDifficulty={difficulty}
-            activeEquipment={null}
+            activeFlag={dietary}
             preserveQuery={
               activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
             }
@@ -227,6 +241,21 @@ export async function RecipeLayout({
       {!isFiltered && inSeasonForCategory.length > 0 && (
         <HomeRail heading={`In season right now in ${category.name.toLowerCase()}`}>
           {inSeasonForCategory.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(readerState, t.id)}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {!isFiltered && quickWins.length > 0 && (
+        <HomeRail
+          heading={quickWinsHeadingFor(category.slug)}
+          subheading="Under 30 minutes, start to finish."
+        >
+          {quickWins.map((t) => (
             <HomeCard
               key={t.id}
               tutorial={t}
@@ -276,6 +305,15 @@ export async function RecipeLayout({
       )}
     </div>
   )
+}
+
+function quickWinsHeadingFor(slug: string): string {
+  switch (slug) {
+    case 'cooking': return 'Tonight, in under half an hour'
+    case 'baking': return 'Quick bakes'
+    case 'natural-home': return 'Quick makes'
+    default: return 'Quick wins'
+  }
 }
 
 interface TutorialCardLike {

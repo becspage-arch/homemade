@@ -40,68 +40,91 @@ const CARD_SELECT = {
 } as const
 
 interface PickerBand {
+  /** URL parameter name. */
   key: string
+  /** Question for the user. */
   label: string
   values: { value: string; label: string }[]
 }
 
+/**
+ * Mindset picker is the heart of the Practice archetype. Bands map to the
+ * real schema enums so the WHERE clause hits the right column:
+ *   target   → Tutorial.practiceTargets (PracticeTarget[])
+ *   timeBand → Tutorial.timeBand        (TimeBand)
+ *   depth    → Tutorial.practiceDepth   (Difficulty)
+ *
+ * Labels are voice-tuned for the user state, not the schema.
+ */
+const MINDSET_PICKER: PickerBand[] = [
+  {
+    key: 'target',
+    label: 'What do you need right now?',
+    values: [
+      { value: 'ANXIETY', label: 'Anxious' },
+      { value: 'STUCK', label: 'Stuck' },
+      { value: 'GRIEF', label: 'Grieving' },
+      { value: 'FEAR', label: 'Fearful' },
+      { value: 'CONFIDENCE', label: 'Confidence' },
+      { value: 'ENERGY', label: 'Energy' },
+      { value: 'JOY', label: 'Joy' },
+      { value: 'SLEEP', label: 'Sleep' },
+      { value: 'ABUNDANCE', label: 'Abundance' },
+      { value: 'RELATIONSHIPS', label: 'Relationships' },
+      { value: 'BODY', label: 'Body' },
+      { value: 'SELF_WORTH', label: 'Self-worth' },
+    ],
+  },
+  {
+    key: 'timeBand',
+    label: 'How much time do you have?',
+    values: [
+      { value: 'THREE_MIN', label: '3 min' },
+      { value: 'FIVE_MIN', label: '5 min' },
+      { value: 'TEN_MIN', label: '10 min' },
+      { value: 'TWENTY_MIN', label: '20 min' },
+      { value: 'THIRTY_PLUS', label: '30 min+' },
+    ],
+  },
+  {
+    key: 'depth',
+    label: 'Pace',
+    values: [
+      { value: 'BEGINNER', label: 'Gentle' },
+      { value: 'INTERMEDIATE', label: 'Steady' },
+      { value: 'ADVANCED', label: 'Deep' },
+    ],
+  },
+]
+
+const SUSTAINABILITY_PICKER: PickerBand[] = [
+  {
+    key: 'difficulty',
+    label: 'Commitment level',
+    values: [
+      { value: 'BEGINNER', label: 'Try' },
+      { value: 'INTERMEDIATE', label: 'Embed' },
+      { value: 'ADVANCED', label: 'Go all-in' },
+    ],
+  },
+]
+
+const ANIMALS_PICKER: PickerBand[] = [
+  {
+    key: 'difficulty',
+    label: 'Where are you?',
+    values: [
+      { value: 'BEGINNER', label: 'Considering' },
+      { value: 'INTERMEDIATE', label: 'Setting up' },
+      { value: 'ADVANCED', label: 'Already keeping' },
+    ],
+  },
+]
+
 const PICKERS_BY_SLUG: Record<string, PickerBand[]> = {
-  mindset: [
-    {
-      key: 'mood',
-      label: 'How are you feeling?',
-      values: [
-        { value: 'anxious', label: 'Anxious' },
-        { value: 'scattered', label: 'Scattered' },
-        { value: 'sad', label: 'Sad' },
-        { value: 'overwhelmed', label: 'Overwhelmed' },
-        { value: 'flat', label: 'Flat' },
-        { value: 'lit-up', label: 'Lit-up' },
-        { value: 'grieving', label: 'Grieving' },
-        { value: 'restless', label: 'Restless' },
-      ],
-    },
-    {
-      key: 'timeBand',
-      label: 'How much time do you have?',
-      values: [
-        { value: 'UP_TO_5', label: '5 minutes' },
-        { value: 'UP_TO_20', label: '20 minutes' },
-        { value: 'UP_TO_45', label: '45 minutes' },
-      ],
-    },
-    {
-      key: 'depth',
-      label: 'Pace',
-      values: [
-        { value: 'BEGINNER', label: 'Gentle' },
-        { value: 'INTERMEDIATE', label: 'Steady' },
-        { value: 'ADVANCED', label: 'Deep' },
-      ],
-    },
-  ],
-  sustainability: [
-    {
-      key: 'depth',
-      label: 'Commitment level',
-      values: [
-        { value: 'BEGINNER', label: 'Try' },
-        { value: 'INTERMEDIATE', label: 'Embed' },
-        { value: 'ADVANCED', label: 'Go all-in' },
-      ],
-    },
-  ],
-  'animals-smallholding': [
-    {
-      key: 'depth',
-      label: 'Where are you?',
-      values: [
-        { value: 'BEGINNER', label: 'Considering' },
-        { value: 'INTERMEDIATE', label: 'Setting up' },
-        { value: 'ADVANCED', label: 'Already keeping' },
-      ],
-    },
-  ],
+  mindset: MINDSET_PICKER,
+  sustainability: SUSTAINABILITY_PICKER,
+  'animals-smallholding': ANIMALS_PICKER,
 }
 
 function parseDifficulty(raw: string | undefined): Difficulty | null {
@@ -138,12 +161,18 @@ export async function PracticeLayout({
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
 
-  const mood = searchParams.mood ?? null
-  const timeBand = searchParams.timeBand ?? null
-  const depth = parseDifficulty(searchParams.depth)
+  const isMindset = category.slug === 'mindset'
+
+  // Different bound fields per category.
+  const target = isMindset ? (searchParams.target ?? null) : null
+  const timeBand = isMindset ? (searchParams.timeBand ?? null) : null
+  const depth = isMindset ? parseDifficulty(searchParams.depth) : null
+  const difficulty = !isMindset ? parseDifficulty(searchParams.difficulty) : null
 
   const pickers = PICKERS_BY_SLUG[category.slug] ?? []
-  const anyPicked = Boolean(mood || timeBand || depth || subCategory)
+  const anyPicked = Boolean(
+    target || timeBand || depth || difficulty || subCategory,
+  )
   const base = `/${category.slug}`
 
   const where: Record<string, unknown> = {
@@ -151,9 +180,10 @@ export async function PracticeLayout({
     status: TutorialStatus.PUBLISHED,
   }
   if (subCategory) where.subCategoryId = subCategory.id
-  if (depth) where.difficulty = depth
-  if (mood) where.mood = { has: mood }
+  if (target) where.practiceTargets = { has: target }
   if (timeBand) where.timeBand = timeBand
+  if (depth) where.practiceDepth = depth
+  if (difficulty) where.difficulty = difficulty
 
   const [recommended, recentlyMade, perSubResults] = await Promise.all([
     anyPicked
@@ -216,11 +246,13 @@ export async function PracticeLayout({
             const currentValue =
               band.key === 'depth'
                 ? depth ?? null
-                : band.key === 'mood'
-                  ? mood
-                  : band.key === 'timeBand'
-                    ? timeBand
-                    : null
+                : band.key === 'difficulty'
+                  ? difficulty ?? null
+                  : band.key === 'target'
+                    ? target
+                    : band.key === 'timeBand'
+                      ? timeBand
+                      : null
             return (
               <div key={band.key} className="practice-picker-band">
                 <span className="practice-picker-label">{band.label}</span>
@@ -257,8 +289,8 @@ export async function PracticeLayout({
         <section className="practice-recommended">
           <h2 className="practice-recommended-heading">
             {recommended.length === 0
-              ? 'Nothing yet matches that combination.'
-              : `${recommended.length} suggestion${recommended.length === 1 ? '' : 's'} for you right now.`}
+              ? 'Nothing yet matches that combination. Try lifting a filter.'
+              : `${recommended.length} for you right now.`}
           </h2>
           {recommended.length > 0 && (
             <div className="practice-recommended-grid">
@@ -308,7 +340,7 @@ function practiceTitleFor(slug: string): string {
 function practiceLedeFor(slug: string): string {
   switch (slug) {
     case 'mindset':
-      return 'Pick how you are feeling, how much time you have, and how deep you want to go. We will match you with a practice that fits.'
+      return 'Pick what you need, how much time you have, and how deep you want to go. We will match you with a practice that fits.'
     case 'sustainability':
       return 'Composting, energy, water, waste, off-grid. Start small or commit deep — both count.'
     case 'animals-smallholding':
