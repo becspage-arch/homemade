@@ -141,6 +141,19 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/migrate-cross-stitch-charts.ts
 
+      # Crochet starter content (phase_crochet_pattern_001 step 2).
+      # Publishes the four foundation tutorials that anchor the crochet
+      # category — hook-grip + treble + magic-ring + granny-square. Idempotent
+      # on slug: upserts row + glossary + chart definition + tool join rows.
+      # Re-publishes every deploy so author edits to the JSON files land
+      # automatically.
+      - name: Publish crochet starter content (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/seed-crochet-starter-content.ts
+
       # Photographic demo patterns — pulls 3 public-domain Wikimedia
       # photos through the live photo-to-chart pipeline at ~120 cells
       # / ~36 colours so the library shows what dense subject matter

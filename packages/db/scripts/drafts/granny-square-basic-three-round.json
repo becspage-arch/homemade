@@ -26,7 +26,83 @@
     "craftTechniqueTags": [
       "magic-ring",
       "blocking"
-    ]
+    ],
+    "chartDefinition": {
+      "title": "Granny square, three-round chart",
+      "layout": "round",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Read each round outwards from the centre. The chain-2 corner spaces sit at the four corners of the finished square; the chain-1 side spaces appear from round 2 onwards.",
+      "rounds": [
+        {
+          "roundNumber": 1,
+          "label": "Rnd 1",
+          "stitches": [
+            { "symbol": "magic-ring", "label": "magic ring centre" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" }
+          ]
+        },
+        {
+          "roundNumber": 2,
+          "label": "Rnd 2",
+          "stitches": [
+            { "symbol": "treble", "count": 3, "label": "first cluster" },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" }
+          ]
+        },
+        {
+          "roundNumber": 3,
+          "label": "Rnd 3",
+          "stitches": [
+            { "symbol": "treble", "count": 3, "label": "first cluster" },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 2, "label": "ch 2 corner" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" },
+            { "symbol": "treble", "count": 3 },
+            { "symbol": "chain", "count": 1, "label": "ch 1 side" }
+          ]
+        }
+      ]
+    }
   },
   "recipeTools": [
     {
@@ -407,6 +483,21 @@
           {
             "type": "text",
             "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "craftChart",
+        "attrs": {
+          "useTutorialChart": true
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chart above shows the three rounds in symbol form. Read it alongside the written pattern below, the chart speaks the structure and the written speaks the detail. Either is enough on its own; together they cross-check each other."
           }
         ]
       },

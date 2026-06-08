@@ -137,9 +137,9 @@ interface ToolResolution {
   name: string
 }
 
-type DesiredStatus = 'DRAFT' | 'PUBLISHED'
+export type DesiredStatus = 'DRAFT' | 'PUBLISHED'
 
-async function uploadTutorial(
+export async function uploadTutorial(
   input: TutorialUploadInput,
   inputFilePath: string,
   desiredStatus: DesiredStatus = 'DRAFT',
@@ -1386,12 +1386,27 @@ async function main(): Promise<void> {
   await prisma.$disconnect()
 }
 
-main().catch(async (err) => {
-  console.error('[upload-tutorial] failed:', err)
+// Only run main() when invoked directly as a script. Other scripts
+// (e.g. seed-crochet-starter-content.ts) import `uploadTutorial` without
+// triggering the CLI flow.
+const invokedDirectly = (() => {
   try {
-    if (prismaMod) await prismaMod.prisma.$disconnect()
+    if (!process.argv[1]) return false
+    const argvUrl = new URL(`file://${process.argv[1].replace(/\\/g, '/')}`).href
+    return import.meta.url === argvUrl
   } catch {
-    // ignore
+    return false
   }
-  process.exit(1)
-})
+})()
+
+if (invokedDirectly) {
+  main().catch(async (err) => {
+    console.error('[upload-tutorial] failed:', err)
+    try {
+      if (prismaMod) await prismaMod.prisma.$disconnect()
+    } catch {
+      // ignore
+    }
+    process.exit(1)
+  })
+}
