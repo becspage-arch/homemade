@@ -39,14 +39,22 @@ interface PhotoSeed {
   estimatedHours: number
 }
 
+// Wikimedia's Special:FilePath endpoint 301s to the canonical file —
+// works even when you don't know the hash-prefix directory. The
+// original photos are large (several MB each); sharp downscales them
+// in the photo-to-pattern pipeline to whatever target dimensions we
+// ask for, so the bandwidth cost only hits the deploy step once per
+// shipment.
+const WM = (filename: string) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}`
+
 const PHOTOS: PhotoSeed[] = [
   {
     slug: 'demo-blue-hydrangea',
     name: 'Blue hydrangea',
     description:
-      'A single blue hydrangea bloom against a clean background. Built from a Wikimedia Commons photograph through Homemade\'s photo-to-chart pipeline. Demonstrates how dense photographic patterns render in the library.',
-    photoUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Hydrangea_macrophylla_-_Hortensia_hydrangea.jpg/1024px-Hydrangea_macrophylla_-_Hortensia_hydrangea.jpg',
+      'A single blue hydrangea bloom rendered through Homemade\'s photo-to-chart pipeline from a Wikimedia Commons photograph (CC BY-SA). Demonstrates how a dense photographic subject renders through the library hero pipeline.',
+    photoUrl: WM('Hydrangea macrophylla - Hortensia hydrangea.jpg'),
     width: 120,
     height: 120,
     colours: 36,
@@ -58,9 +66,8 @@ const PHOTOS: PhotoSeed[] = [
     slug: 'demo-pink-peony',
     name: 'Pink peony',
     description:
-      'A full pink peony in close-up, every petal layer visible. Built from a Wikimedia Commons photograph through the photo-to-chart pipeline. Shows how the renderer handles soft pink-to-cream colour transitions across many shades.',
-    photoUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Paeonia_lactiflora_-_Karl_Rosenfield_-_Topsalo_-_2.jpg/1024px-Paeonia_lactiflora_-_Karl_Rosenfield_-_Topsalo_-_2.jpg',
+      'A pink peony in close-up, petal layers visible, rendered through the photo-to-chart pipeline from a Wikimedia Commons photograph. Shows how the renderer handles soft pink-to-cream gradients across many shades.',
+    photoUrl: WM('Paeonia officinalis 001.JPG'),
     width: 130,
     height: 130,
     colours: 40,
@@ -72,9 +79,8 @@ const PHOTOS: PhotoSeed[] = [
     slug: 'demo-african-elephant',
     name: 'African elephant',
     description:
-      'An adult African elephant in profile against a soft savanna sky. Built from a Wikimedia Commons photograph. Shows how the photo-to-chart pipeline handles greys and the natural textural detail of skin.',
-    photoUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/1024px-African_Bush_Elephant.jpg',
+      'An African bush elephant from Tanzania, rendered through the photo-to-chart pipeline from a Wikimedia Commons featured photograph. Shows how the pipeline handles greys and natural textural detail.',
+    photoUrl: WM('African Bush Elephant.jpg'),
     width: 140,
     height: 110,
     colours: 28,
