@@ -46,8 +46,28 @@ export interface TechniqueRef {
   categorySlug: string
 }
 
+/**
+ * Reference to a Pattern row pointed at by a `patternInset` node.
+ * Resolved at page-render time by `loadContentRefs`. The thumbnail URL
+ * points at the server-rendered SVG-to-PNG endpoint; the Studio CTA
+ * builds from the id directly.
+ */
+export interface PatternInsetRef {
+  id: string
+  name: string
+  description: string | null
+  widthCells: number
+  heightCells: number
+  colourCount: number
+  totalStitches: number
+  fabricCountSuggested: number
+  designerName: string | null
+  thumbnailUrl: string
+}
+
 export interface TutorialContentRefs {
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
   techniques: TechniqueRef[]
+  patternInsets: PatternInsetRef[]
 }

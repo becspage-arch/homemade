@@ -202,7 +202,6 @@ model User {
   //   rhsHardinessZone    — 'H1a'..'H7'. RHS gardening lookup.
   //   lastFrostDate       — month-day this year. Drives "plant after X" copy.
   //   firstFrostDate      — month-day this year. Drives "last harvest before X" copy.
-  //   paperSize           — 'A4' | 'Letter' | 'Legal' | 'A3'. Drives PDF reflow.
   //
   // The existing `country` + `homeCountryCode` columns stay the canonical
   // country code; new code should read `homeCountryCode` (captured at
@@ -215,7 +214,26 @@ model User {
   rhsHardinessZone  String?
   lastFrostDate     String?
   firstFrostDate    String?
-  paperSize         String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Pattern Studio (phase_pattern_studio_001). `paperSize` was promoted
+  // from a nullable String to a non-null PaperSize enum (A4 default).
+  // `studioPreferences` is a per-user JSON bag for Studio UI state that
+  // doesn't deserve its own column (zoom-on-open, palette panel pinned,
+  // floss-key sort order, last-used brush size). `defaultFabricCount` /
+  // `defaultBrand` / `defaultStrands` are the new-pattern + photo-to-
+  // chart starting defaults; user can override per pattern.
+  // ──────────────────────────────────────────────────────────────────────────
+  paperSize          PaperSize  @default(A4)
+  studioPreferences  Json?
+  defaultFabricCount Int        @default(14)
+  defaultBrand       FlossBrand @default(DMC)
+  defaultStrands     Int        @default(2)
+
+  // Pattern Studio reverse relations.
+  patterns         Pattern[]             @relation("PatternOwner")
+  patternProgress  UserPatternProgress[]
+  designerProfile  Designer[]            @relation("DesignerUser")
 
   @@index([role])
   @@index([isSuspended])
@@ -300,6 +318,7 @@ model SubCategory {
   category   Category @relation(fields: [categoryId], references: [id])
 
   tutorials Tutorial[]
+  patterns  Pattern[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -842,6 +861,15 @@ model Tutorial {
   practiceUses       UserPracticeUse[]
   feelingMatches     UserFeeling[]
 
+  // Pattern Studio (phase_pattern_studio_001). `patternId` is the bridge
+  // to the canonical Pattern row backing this tutorial's chart inset; null
+  // on every non-charted tutorial. `patternsSourced` is the reverse of
+  // Pattern.sourceTutorialId — patterns that were originally extracted
+  // from this tutorial body during the crossStitchChart backfill.
+  patternId       String?
+  pattern         Pattern?  @relation("TutorialPattern", fields: [patternId], references: [id], onDelete: SetNull)
+  patternsSourced Pattern[] @relation("PatternSourceTutorial")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -889,6 +917,7 @@ model Tutorial {
   @@index([techniqueSlugs], type: Gin)
   @@index([type, approximateCostGbp])
   @@index([type, paybackYears])
+  @@index([patternId])
   @@index([shelfLifeDays])
   @@index([hemisphere])
   @@index([frostSensitivity])
@@ -1071,6 +1100,10 @@ model Media {
   tutorialsHero    Tutorial[]
   ugcPhotos        UGCPhoto[]
   makerHeaderUsers User[]     @relation("UserMakerHeader")
+
+  // Pattern Studio (phase_pattern_studio_001).
+  patternThumbnails Pattern[]
+  designerAvatars   Designer[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -3414,4 +3447,158 @@ model CountryClimate {
 
   @@index([defaultHemisphere])
   @@index([defaultKoppenZone])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Pattern Studio — Pattern, Designer, PatternLicense, UserPatternProgress
+// (phase_pattern_studio_001). One canonical Pattern row backs every chart
+// whether it sits inside a tutorial inset, the public library, or a user's
+// My Patterns drawer. Cross-stitch is v1; knitting + crochet plug into the
+// same shape via PatternType.
+// ────────────────────────────────────────────────────────────────────────────
+
+/// A designer — house (Homemade) or external — credited on patterns.
+model Designer {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  displayName     String
+  bio             String?
+  avatarMediaId   String?
+  avatar          Media?   @relation(fields: [avatarMediaId], references: [id], onDelete: SetNull)
+  websiteUrl      String?
+  isHouseDesigner Boolean  @default(false)
+  userId          String?
+  user            User?    @relation("DesignerUser", fields: [userId], references: [id], onDelete: SetNull)
+  patternCount    Int      @default(0)
+
+  patterns Pattern[]
+
+  createdAt DateTime @default(now())
+
+  @@index([isHouseDesigner])
+  @@index([userId])
+}
+
+/// A pattern. `data` is the validated pattern JSON (schemaVersion 1, see
+/// `packages/db/src/pattern.ts`). Denormalised widthCells / heightCells /
+/// colourCount / totalStitches stay in sync via the save path so library
+/// surfaces never re-walk the cell list.
+model Pattern {
+  id                    String      @id @default(cuid())
+  slug                  String?     @unique
+  type                  PatternType
+  name                  String
+  description           String?
+  data                  Json
+  thumbnailMediaId      String?
+  thumbnail             Media?      @relation(fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
+  widthCells            Int
+  heightCells           Int
+  colourCount           Int
+  totalStitches         Int         @default(0)
+  designerId            String?
+  designer              Designer?   @relation(fields: [designerId], references: [id], onDelete: SetNull)
+  ownerUserId           String?
+  owner                 User?       @relation("PatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+  forkedFromId          String?
+  forkedFrom            Pattern?    @relation("PatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
+  forks                 Pattern[]   @relation("PatternForks")
+  sourceTutorialId      String?
+  sourceTutorial        Tutorial?   @relation("PatternSourceTutorial", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
+  difficulty            Difficulty?
+  estimatedHours        Int?
+  premium               Boolean     @default(false)
+  visibility            Visibility  @default(PRIVATE)
+  publishedAt           DateTime?
+  subCategoryId         String?
+  subCategory           SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  hasBackstitch         Boolean     @default(false)
+  hasFrenchKnots        Boolean     @default(false)
+  hasBeads              Boolean     @default(false)
+  hasQuarterStitches    Boolean     @default(false)
+  fabricCountSuggested  Int         @default(14)
+  recommendedHoopInches Decimal?    @db.Decimal(5, 2)
+
+  license       PatternLicense?
+  userProgress  UserPatternProgress[]
+  tutorialsInset Tutorial[]            @relation("TutorialPattern")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ownerUserId, updatedAt])
+  @@index([type, visibility, publishedAt])
+  @@index([subCategoryId, publishedAt])
+  @@index([designerId])
+  @@index([forkedFromId])
+  @@index([sourceTutorialId])
+}
+
+/// Sidecar so a Pattern can be retagged (free → marketplace → premium)
+/// without rewriting the pattern data. Marketplace patterns add commercial
+/// attribution + a redistribution stance the renderer surfaces in the
+/// floss-key footer and PDF cover.
+model PatternLicense {
+  id                    String      @id @default(cuid())
+  patternId             String      @unique
+  pattern               Pattern     @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  licenseType           LicenseType
+  attributionRequired   Boolean     @default(true)
+  commercialUseAllowed  Boolean     @default(false)
+  redistributionAllowed Boolean     @default(false)
+  attributionText       String?
+}
+
+/// Per-(user, pattern) progress + study state. `stitchedCells` is a JSON
+/// sparse map `{ "x,y": true }`; `currentColourSymbol` caches the last-
+/// active palette symbol so reopening a pattern lands on the colour the
+/// user was stitching.
+model UserPatternProgress {
+  id                  String    @id @default(cuid())
+  userId              String
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  patternId           String
+  pattern             Pattern   @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  stitchedCells       Json      @default("{}")
+  currentColourSymbol String?
+  notes               String?
+  startedAt           DateTime  @default(now())
+  lastStitchedAt      DateTime  @default(now())
+  completedAt         DateTime?
+  updatedAt           DateTime  @updatedAt
+
+  @@unique([userId, patternId])
+  @@index([userId, lastStitchedAt])
+  @@index([patternId])
+}
+
+enum PatternType {
+  CROSS_STITCH
+  KNITTING_CHART
+  CROCHET_CHART
+}
+
+enum LicenseType {
+  LIBRARY_FREE
+  LIBRARY_PREMIUM
+  MARKETPLACE
+}
+
+enum Visibility {
+  PRIVATE
+  UNLISTED
+  PUBLIC
+}
+
+enum PaperSize {
+  A4
+  LETTER
+  LEGAL
+  A3
+}
+
+enum FlossBrand {
+  DMC
+  ANCHOR
+  MADEIRA
 }

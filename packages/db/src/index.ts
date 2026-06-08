@@ -31,6 +31,43 @@ export {
   type SweepResult,
 } from './technique-sweep'
 
+// Pattern Studio (phase_pattern_studio_001). Canonical pattern JSON
+// schema, validator, metrics, skein estimator, cell-key encoding.
+// Imported by the Studio app + photo-to-chart save path + tutorial
+// chart migration script + library card grid.
+export {
+  SCHEMA_VERSION as PATTERN_SCHEMA_VERSION,
+  PatternDataSchema,
+  PatternGridSchema,
+  PatternCellSchema,
+  PaletteEntrySchema,
+  BackstitchSegmentSchema,
+  FrenchKnotSchema,
+  BeadSchema,
+  FabricSchema,
+  PatternMetadataSchema,
+  PatternTypeSchema,
+  FlossBrandSchema,
+  HexColourSchema,
+  parsePatternData,
+  computePatternMetrics,
+  estimateSkeinCount,
+  cellKey,
+  parseCellKey,
+  type PatternData,
+  type PatternGrid,
+  type PatternCell,
+  type PaletteEntry,
+  type BackstitchSegment,
+  type FrenchKnot,
+  type Bead,
+  type Fabric,
+  type PatternMetadata,
+  type PatternTypeName,
+  type FlossBrand as FlossBrandName,
+  type PatternMetrics,
+} from './pattern'
+
 declare global {
   // eslint-disable-next-line no-var
   var __homemade_prisma: PrismaClient | undefined

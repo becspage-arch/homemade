@@ -119,7 +119,7 @@ export default async function ChartPrintPage({ params, searchParams }: PageProps
   // settings get the right paper without re-selecting on every chart.
   const paper: PaperKey = sp.paper
     ? parsePaper(sp.paper)
-    : parsePaper((user.paperSize ?? '').toLowerCase())
+    : parsePaper(user.paperSize.toLowerCase())
   const symbol = (sp.symbol === 'symbol-only' ? 'symbol-only' : 'colour') as SymbolMode
 
   const tutorial = await prisma.tutorial.findUnique({

@@ -1,0 +1,125 @@
+import type { Metadata } from 'next'
+import { prisma, parsePatternData, type PatternData, Visibility } from '@homemade/db'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { StudioShell } from '@/components/studio/shell/StudioShell'
+
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Cross-stitch Studio · homemade',
+  description: 'Stitch a pattern. Make your own. Start from a photo.',
+  robots: { index: false, follow: false },
+}
+
+interface PageProps {
+  searchParams: Promise<{
+    patternId?: string
+    new?: 'blank' | 'photo'
+    progress?: 'local' | 'server'
+  }>
+}
+
+/**
+ * /studio/cross-stitch — the single cross-stitch Studio route.
+ *
+ * State is derived from the URL query, not the path. The shell decides
+ * which surface to render based on (signed-in?, ?patternId, ?new=…):
+ *
+ *   no patternId, no ?new            → empty state (sign-in hero or "Your patterns")
+ *   patternId=…                      → load that pattern + render the Studio
+ *   ?new=blank                       → blank-canvas dialog
+ *   ?new=photo                       → photo-to-chart panel
+ *
+ * Library patterns load read-only until the user makes their first edit;
+ * the silent-fork path then swaps `patternId` for the new fork's id.
+ */
+export default async function CrossStitchStudioPage({ searchParams }: PageProps) {
+  const sp = await searchParams
+  const user = await getCurrentDbUser()
+
+  let pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null = null
+  let stitchedKeys: string[] = []
+
+  if (sp.patternId) {
+    const row = await prisma.pattern.findUnique({
+      where: { id: sp.patternId },
+      select: { id: true, name: true, data: true, ownerUserId: true, visibility: true },
+    })
+    if (row) {
+      const isOwned = user && row.ownerUserId === user.id
+      const isLibrary =
+        row.ownerUserId === null &&
+        (row.visibility === Visibility.PUBLIC || row.visibility === Visibility.UNLISTED)
+      if (isOwned || isLibrary) {
+        try {
+          const parsed = parsePatternData(row.data)
+          pattern = { id: row.id, name: row.name, data: parsed, ownerUserId: row.ownerUserId }
+        } catch {
+          // Malformed JSON — fall through to empty state; user will see the
+          // empty-state hero with a "this pattern failed to load" note.
+        }
+      }
+    }
+    if (pattern && user) {
+      const prog = await prisma.userPatternProgress.findUnique({
+        where: { userId_patternId: { userId: user.id, patternId: pattern.id } },
+        select: { stitchedCells: true },
+      })
+      if (prog?.stitchedCells && typeof prog.stitchedCells === 'object') {
+        stitchedKeys = Object.keys(prog.stitchedCells as Record<string, true>)
+      }
+    }
+  }
+
+  let myPatterns: Array<{
+    id: string
+    name: string
+    updatedAt: Date
+    widthCells: number
+    heightCells: number
+    colourCount: number
+  }> = []
+  if (user && !pattern) {
+    myPatterns = await prisma.pattern.findMany({
+      where: { ownerUserId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      take: 24,
+      select: {
+        id: true,
+        name: true,
+        updatedAt: true,
+        widthCells: true,
+        heightCells: true,
+        colourCount: true,
+      },
+    })
+  }
+
+  const startMode: 'empty' | 'pattern' | 'new-blank' | 'new-photo' = pattern
+    ? 'pattern'
+    : sp.new === 'blank'
+    ? 'new-blank'
+    : sp.new === 'photo'
+    ? 'new-photo'
+    : 'empty'
+
+  return (
+    <StudioShell
+      startMode={startMode}
+      signedIn={Boolean(user)}
+      userEmail={user?.email ?? null}
+      userName={user?.name ?? null}
+      pattern={pattern}
+      stitchedKeys={stitchedKeys}
+      myPatterns={myPatterns.map((p) => ({
+        id: p.id,
+        name: p.name,
+        updatedAt: p.updatedAt.toISOString(),
+        widthCells: p.widthCells,
+        heightCells: p.heightCells,
+        colourCount: p.colourCount,
+      }))}
+    />
+  )
+}
+

@@ -2,6 +2,7 @@ import 'server-only'
 import { prisma } from '@homemade/db'
 import type {
   GlossaryRef,
+  PatternInsetRef,
   SubTutorialRef,
   TechniqueRef,
   TipTapNode,
@@ -19,17 +20,23 @@ function collectReferencedIds(doc: TipTapNode | null | undefined): {
   glossaryIds: Set<string>
   tutorialIds: Set<string>
   techniqueSlugs: Set<string>
+  patternIds: Set<string>
 } {
   const glossaryIds = new Set<string>()
   const tutorialIds = new Set<string>()
   const techniqueSlugs = new Set<string>()
-  if (!doc) return { glossaryIds, tutorialIds, techniqueSlugs }
+  const patternIds = new Set<string>()
+  if (!doc) return { glossaryIds, tutorialIds, techniqueSlugs, patternIds }
 
   function walk(node: TipTapNode): void {
     if (!node) return
     if (node.type === 'subTutorialCard') {
       const id = node.attrs?.tutorialId
       if (typeof id === 'string' && id) tutorialIds.add(id)
+    }
+    if (node.type === 'patternInset') {
+      const id = node.attrs?.patternId
+      if (typeof id === 'string' && id) patternIds.add(id)
     }
     if (node.marks) {
       for (const m of node.marks) {
@@ -49,7 +56,7 @@ function collectReferencedIds(doc: TipTapNode | null | undefined): {
   }
 
   walk(doc)
-  return { glossaryIds, tutorialIds, techniqueSlugs }
+  return { glossaryIds, tutorialIds, techniqueSlugs, patternIds }
 }
 
 /**
@@ -67,19 +74,21 @@ export async function loadContentRefs(
   glossary: GlossaryRef[]
   subTutorials: SubTutorialRef[]
   techniques: TechniqueRef[]
+  patternInsets: PatternInsetRef[]
 }> {
-  const { glossaryIds, tutorialIds, techniqueSlugs } = collectReferencedIds(body)
+  const { glossaryIds, tutorialIds, techniqueSlugs, patternIds } = collectReferencedIds(body)
   if (excludeTutorialId) tutorialIds.delete(excludeTutorialId)
 
   if (
     glossaryIds.size === 0 &&
     tutorialIds.size === 0 &&
-    techniqueSlugs.size === 0
+    techniqueSlugs.size === 0 &&
+    patternIds.size === 0
   ) {
-    return { glossary: [], subTutorials: [], techniques: [] }
+    return { glossary: [], subTutorials: [], techniques: [], patternInsets: [] }
   }
 
-  const [glossaryRows, tutorialRows, techniqueRows] = await Promise.all([
+  const [glossaryRows, tutorialRows, techniqueRows, patternRows] = await Promise.all([
     glossaryIds.size > 0
       ? prisma.glossaryTerm.findMany({
           where: { id: { in: [...glossaryIds] } },
@@ -116,6 +125,22 @@ export async function loadContentRefs(
           },
         })
       : Promise.resolve([]),
+    patternIds.size > 0
+      ? prisma.pattern.findMany({
+          where: { id: { in: [...patternIds] } },
+          select: {
+            id: true,
+            name: true,
+            description: true,
+            widthCells: true,
+            heightCells: true,
+            colourCount: true,
+            totalStitches: true,
+            fabricCountSuggested: true,
+            designer: { select: { displayName: true } },
+          },
+        })
+      : Promise.resolve([]),
   ])
 
   const glossary: GlossaryRef[] = glossaryRows.map((g) => ({
@@ -141,5 +166,18 @@ export async function loadContentRefs(
     categorySlug: t.category.slug,
   }))
 
-  return { glossary, subTutorials, techniques }
+  const patternInsets: PatternInsetRef[] = patternRows.map((p) => ({
+    id: p.id,
+    name: p.name,
+    description: p.description,
+    widthCells: p.widthCells,
+    heightCells: p.heightCells,
+    colourCount: p.colourCount,
+    totalStitches: p.totalStitches,
+    fabricCountSuggested: p.fabricCountSuggested,
+    designerName: p.designer?.displayName ?? null,
+    thumbnailUrl: `/api/studio/patterns/${p.id}/thumbnail`,
+  }))
+
+  return { glossary, subTutorials, techniques, patternInsets }
 }

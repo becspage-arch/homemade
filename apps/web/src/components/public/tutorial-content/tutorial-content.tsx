@@ -37,11 +37,13 @@ import '../chart-viewer/chart-viewer.css'
 import { ScaleToken } from './scale-context'
 import type {
   GlossaryRef,
+  PatternInsetRef,
   SubTutorialRef,
   TechniqueRef,
   TipTapMark,
   TipTapNode,
 } from './types'
+import { PatternInset } from './blocks/pattern-inset'
 
 import './tutorial-content.css'
 
@@ -84,6 +86,12 @@ interface TutorialContentProps {
    * as written, matching the legacy behaviour).
    */
   userHemisphere?: 'N' | 'S' | null
+  /**
+   * Pattern Studio insets — server-resolved patternId → Pattern row
+   * metadata for every `patternInset` node in the body. Empty when the
+   * tutorial has no charts.
+   */
+  patternInsets?: PatternInsetRef[]
 }
 
 export interface RecipeRenderContext {
@@ -110,6 +118,7 @@ export function TutorialContent({
   tutorialId = null,
   isSignedIn = false,
   userHemisphere = null,
+  patternInsets = [],
 }: TutorialContentProps): ReactNode {
   if (!content || content.type !== 'doc' || !Array.isArray(content.content)) {
     return (
@@ -143,6 +152,7 @@ export function TutorialContent({
           tutorialId={tutorialId}
           isSignedIn={isSignedIn}
           userHemisphere={userHemisphere}
+          patternInsets={patternInsets}
           chartIndex={chartIndexByNode.get(node) ?? null}
           methodIndex={methodIndexByNode.get(node) ?? null}
         />
@@ -203,6 +213,7 @@ interface RenderContext {
   tutorialId: string | null
   isSignedIn: boolean
   userHemisphere: 'N' | 'S' | null
+  patternInsets: PatternInsetRef[]
 }
 
 interface RenderNodeProps {
@@ -215,6 +226,7 @@ interface RenderNodeProps {
   tutorialId?: string | null
   isSignedIn?: boolean
   userHemisphere?: 'N' | 'S' | null
+  patternInsets?: PatternInsetRef[]
   chartIndex?: number | null
   methodIndex?: number | null
 }
@@ -229,6 +241,7 @@ function RenderNode({
   tutorialId = null,
   isSignedIn = false,
   userHemisphere = null,
+  patternInsets = [],
   chartIndex = null,
   methodIndex = null,
 }: RenderNodeProps): ReactNode {
@@ -241,6 +254,7 @@ function RenderNode({
     tutorialId,
     isSignedIn,
     userHemisphere,
+    patternInsets,
   }
   const attrs = (node.attrs ?? {}) as Record<string, unknown>
 
@@ -433,12 +447,28 @@ function RenderNode({
       )
     }
 
+    case 'patternInset': {
+      // Pattern Studio — the new canonical chart-in-tutorial node. Renders
+      // a server-resolved thumbnail + the "Stitch this pattern" CTA. Click
+      // opens /studio/cross-stitch?patternId=... where the full Studio
+      // takes over. Tutorials migrated from the old crossStitchChart
+      // shape carry one of these per chart node.
+      const patternId = stringOrUndef(attrs.patternId)
+      if (!patternId) {
+        return <div className="craft-chart-missing">Pattern not yet attached.</div>
+      }
+      const inset = ctx.patternInsets.find((p) => p.id === patternId)
+      if (!inset) {
+        return <div className="craft-chart-missing">Pattern not found.</div>
+      }
+      return <PatternInset pattern={inset} isSignedIn={isSignedIn} />
+    }
+
     case 'crossStitchChart': {
-      // Needlework — cross-stitch colour-symbol grid. Interactive client
-      // viewer wraps the chart with mark-stitch, view-mode toggles,
-      // legend highlight, palette swap, and progress persistence via
-      // `/api/me/chart-progress/[tutorialId]/[chartIndex]`. Anonymous
-      // users hit the sign-in gate.
+      // Legacy — replaced by `patternInset` via the
+      // scripts/migrate-cross-stitch-charts.ts one-shot script. Kept
+      // here so unmigrated tutorial bodies still render correctly.
+      // Anonymous users hit the sign-in gate.
       const def = attrs.definition as CrossStitchChartDefinition | undefined
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Chart not yet attached.</div>

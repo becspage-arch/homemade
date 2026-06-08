@@ -644,6 +644,7 @@ export default async function TutorialPage({ params }: PageProps) {
             glossary={refs.glossary}
             subTutorials={refs.subTutorials}
             techniques={refs.techniques}
+            patternInsets={refs.patternInsets}
             beginnerMode={beginnerMode}
             recipeContext={
               isRecipe

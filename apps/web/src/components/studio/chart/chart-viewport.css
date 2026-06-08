@@ -1,0 +1,35 @@
+/* ChartViewport — neutral, content-first surface. The pattern is the
+   hero; the chrome stays out of the way. */
+
+.chart-viewport-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% 35%,
+      #f5f0e8 0%,
+      #efe6d6 100%
+    );
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.chart-viewport-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.chart-viewport-svg .chart-bucket,
+.chart-viewport-svg .chart-backstitch,
+.chart-viewport-svg .chart-french-knots {
+  pointer-events: none;
+}
+
+.chart-viewport-svg text {
+  user-select: none;
+}
