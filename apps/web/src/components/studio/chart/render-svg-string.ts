@@ -1,14 +1,22 @@
 /**
- * Server-side SVG renderer for a Pattern. Produces a self-contained
- * SVG string the thumbnail endpoint then rasterises via `sharp` and
- * the PDF export embeds directly.
+ * Server-side SVG renderer for a Pattern.
  *
- * The output mirrors what ChartViewport draws on screen but without
- * any interactive state: no selection rect, no pan/zoom transform, no
- * mark-stitched overlay (callers can opt in for the "in-progress"
- * thumbnail flavour). The grid + centre crosshairs render at the same
- * weights, so a chart printed on paper reads the same as the chart
- * viewed on screen.
+ * Two render modes:
+ *
+ *   - 'beauty'   — looks like finished cross-stitch on real Aida cloth.
+ *                  Strand-shaded X stitches in 5 concentric strokes,
+ *                  visible Aida weave underneath with the characteristic
+ *                  corner holes, soft drop shadow under the whole
+ *                  stitched area. Used for hero / thumbnail / PDF cover.
+ *
+ *   - 'chart'    — the readable working-chart view (current behaviour).
+ *                  Used for PDF chart pages and any other surface where
+ *                  the stitcher needs the chart to be readable rather
+ *                  than pretty.
+ *
+ * Both modes share the back-stitch, French-knot, grid, crosshair, and
+ * stitched-overlay layers. Beauty mode adds the fabric texture defs and
+ * the filter; chart mode skips them.
  */
 
 import type { PatternData } from '@homemade/db'
@@ -21,16 +29,21 @@ import {
   symbolOnFill,
 } from './render-helpers'
 
+export type SvgRenderMode = 'beauty' | 'chart'
+
 export interface SvgRenderOptions {
   /** Pixel size of one cell in the output. Defaults to 32. */
   cellPx?: number
-  /** Render in symbol-only B&W mode (for monochrome PDF chart pages). */
+  /** Visual style. Defaults to 'chart' (readable). 'beauty' is the
+   *  finished-piece look used for hero / PDF cover / thumbnails. */
+  mode?: SvgRenderMode
+  /** Render in symbol-only B&W mode (chart mode only). */
   monochrome?: boolean
-  /** Render the centre crosshairs. */
+  /** Render the centre crosshairs. Defaults to true in chart mode. */
   showCentreCrosshairs?: boolean
-  /** Render the grid. */
+  /** Render the grid. Defaults to true in chart mode, false in beauty. */
   showGrid?: boolean
-  /** Render the symbol overlay. */
+  /** Render the symbol overlay. Defaults to true in chart mode. */
   showSymbols?: boolean
   /** Optional sub-rectangle of the grid to render (used by tiled PDF). */
   region?: { x: number; y: number; width: number; height: number }
@@ -41,12 +54,15 @@ export interface SvgRenderOptions {
 }
 
 export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOptions = {}): string {
+  const mode: SvgRenderMode = opts.mode ?? 'chart'
   const cellPx = opts.cellPx ?? 32
-  const showSymbols = opts.showSymbols ?? true
-  const showGrid = opts.showGrid ?? true
-  const showCentreCrosshairs = opts.showCentreCrosshairs ?? true
-  const padding = opts.padding ?? 0
   const monochrome = opts.monochrome ?? false
+  const padding = opts.padding ?? 0
+
+  // Mode-dependent defaults.
+  const showGrid = opts.showGrid ?? mode === 'chart'
+  const showSymbols = opts.showSymbols ?? mode === 'chart'
+  const showCentreCrosshairs = opts.showCentreCrosshairs ?? mode === 'chart'
 
   const region =
     opts.region ?? {
@@ -71,18 +87,88 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${totalW} ${totalH}" width="${totalW}" height="${totalH}" role="img">`,
   )
 
-  // Fabric background.
-  if (!monochrome) {
+  // ─── Defs: filters + fabric weave (beauty mode only) ────────────────────
+  if (mode === 'beauty' && !monochrome) {
+    const fabric = pattern.fabric.colourRgb
+    const fabricDark = shiftColour(fabric, -0.08)
+    const fabricMid = shiftColour(fabric, -0.03)
+    const fabricHole = shiftColour(fabric, -0.16)
+    parts.push(`<defs>`)
+    // Aida weave: each cell has a tiny hole at each corner where the
+    // four warp/weft threads cross, with subtle horizontal + vertical
+    // grain in between. Scales with cellPx so the texture stays at the
+    // right physical density regardless of zoom.
     parts.push(
-      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
+      `<pattern id="aida-weave" x="0" y="0" width="${cellPx}" height="${cellPx}" patternUnits="userSpaceOnUse">`,
     )
-  } else {
+    parts.push(`<rect width="${cellPx}" height="${cellPx}" fill="${fabric}"/>`)
+    // Warp + weft thread bundles — slightly darker bands either side of
+    // each cell boundary.
+    parts.push(
+      `<rect x="0" y="0" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
+    )
+    parts.push(
+      `<rect x="0" y="${cellPx * 0.92}" width="${cellPx}" height="${cellPx * 0.08}" fill="${fabricMid}" opacity="0.6"/>`,
+    )
+    parts.push(
+      `<rect x="0" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
+    )
+    parts.push(
+      `<rect x="${cellPx * 0.92}" y="0" width="${cellPx * 0.08}" height="${cellPx}" fill="${fabricMid}" opacity="0.6"/>`,
+    )
+    // The four corner holes where threads intersect.
+    const holeR = cellPx * 0.06
+    parts.push(`<circle cx="0" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+    parts.push(`<circle cx="${cellPx}" cy="0" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+    parts.push(`<circle cx="0" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+    parts.push(`<circle cx="${cellPx}" cy="${cellPx}" r="${holeR}" fill="${fabricHole}" opacity="0.65"/>`)
+    // Slight warp/weft grain — a thin diagonal twill suggesting the
+    // woven fibre direction.
+    parts.push(
+      `<path d="M0 ${cellPx * 0.5} L${cellPx} ${cellPx * 0.5}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
+    )
+    parts.push(
+      `<path d="M${cellPx * 0.5} 0 L${cellPx * 0.5} ${cellPx}" stroke="${fabricDark}" stroke-width="0.4" opacity="0.32"/>`,
+    )
+    parts.push(`</pattern>`)
+    // Drop-shadow filter for the stitched group. Soft, low, just enough
+    // to lift the work off the fabric.
+    parts.push(
+      `<filter id="stitch-shadow" x="-5%" y="-5%" width="110%" height="110%">` +
+        `<feGaussianBlur in="SourceAlpha" stdDeviation="${cellPx * 0.05}"/>` +
+        `<feOffset dx="0" dy="${cellPx * 0.04}" result="offsetblur"/>` +
+        `<feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>` +
+        `<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>` +
+        `</filter>`,
+    )
+    parts.push(`</defs>`)
+  }
+
+  // ─── Fabric background ──────────────────────────────────────────────────
+  if (monochrome) {
     parts.push(
       `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="#ffffff"/>`,
     )
+  } else if (mode === 'beauty') {
+    parts.push(
+      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
+    )
+    parts.push(
+      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="url(#aida-weave)"/>`,
+    )
+  } else {
+    parts.push(
+      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
+    )
   }
 
-  // One <g> per colour bucket.
+  // ─── Stitches ───────────────────────────────────────────────────────────
+  // Wrap all stitched buckets in one <g> so the drop-shadow filter
+  // applies to the whole stitched area at once.
+  if (mode === 'beauty' && !monochrome) {
+    parts.push(`<g transform="translate(${offX} ${offY})" filter="url(#stitch-shadow)">`)
+  }
+
   for (const [symbol, cells] of buckets) {
     if (cells.length === 0) continue
     const entry = paletteIndex.bySymbol.get(symbol)
@@ -91,15 +177,47 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       (c) => c.x >= region.x && c.x < regionMaxX && c.y >= region.y && c.y < regionMaxY,
     )
     if (inRegion.length === 0) continue
-    parts.push(`<g transform="translate(${offX} ${offY})">`)
-    if (monochrome) {
-      // B&W: fill is white, symbol overlay carries the colour identity.
+
+    if (mode === 'beauty' && !monochrome) {
+      // Beauty mode: 5-layer concentric stroke build for each X. Reads
+      // as round 3D strands of thread on cloth.
+      const path = buildBucketCrossPath(inRegion, cellPx)
+      const highlightPath = buildBucketHighlightPath(inRegion, cellPx)
+      const w = cellPx
+      // 1. dark base (the visible underside of the thread)
+      parts.push(
+        `<path d="${path}" stroke="${shiftColour(entry.rgb, -0.32)}" stroke-width="${w * 0.30}" stroke-linecap="round" fill="none" opacity="0.95"/>`,
+      )
+      // 2. outer rim — softens the silhouette
+      parts.push(
+        `<path d="${path}" stroke="${shiftColour(entry.rgb, -0.16)}" stroke-width="${w * 0.26}" stroke-linecap="round" fill="none"/>`,
+      )
+      // 3. body — full saturation palette colour
+      parts.push(
+        `<path d="${path}" stroke="${entry.rgb}" stroke-width="${w * 0.20}" stroke-linecap="round" fill="none"/>`,
+      )
+      // 4. inner band — slightly lighter, gives the strand bundle look
+      parts.push(
+        `<path d="${path}" stroke="${shiftColour(entry.rgb, 0.18)}" stroke-width="${w * 0.10}" stroke-linecap="round" fill="none" opacity="0.85"/>`,
+      )
+      // 5. top sheen — offset along the highlight diagonal so the X has a
+      //    raised, light-catching ridge.
+      parts.push(
+        `<path d="${highlightPath}" stroke="${shiftColour(entry.rgb, 0.45)}" stroke-width="${w * 0.06}" stroke-linecap="round" fill="none" opacity="0.7"/>`,
+      )
+    } else if (monochrome) {
+      // B&W chart pages: white cells with crisp outline; the symbol
+      // overlay (below) carries the colour identity.
+      parts.push(`<g transform="translate(${offX} ${offY})">`)
       for (const { x, y } of inRegion) {
         parts.push(
           `<rect x="${x * cellPx}" y="${y * cellPx}" width="${cellPx}" height="${cellPx}" fill="#ffffff" stroke="#1a1410" stroke-width="0.6"/>`,
         )
       }
+      parts.push(`</g>`)
     } else {
+      // Chart mode: the readable 3-stroke X used in working charts.
+      parts.push(`<g transform="translate(${offX} ${offY})">`)
       parts.push(
         `<path d="${buildBucketCrossPath(inRegion, cellPx)}" stroke="${shiftColour(entry.rgb, -0.18)}" stroke-width="${cellPx * 0.22}" stroke-linecap="round" fill="none" opacity="0.85"/>`,
       )
@@ -109,11 +227,15 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       parts.push(
         `<path d="${buildBucketHighlightPath(inRegion, cellPx)}" stroke="${shiftColour(entry.rgb, 0.32)}" stroke-width="${cellPx * 0.06}" stroke-linecap="round" fill="none" opacity="0.55"/>`,
       )
+      parts.push(`</g>`)
     }
+  }
+
+  if (mode === 'beauty' && !monochrome) {
     parts.push(`</g>`)
   }
 
-  // Back-stitch.
+  // ─── Back-stitch ────────────────────────────────────────────────────────
   if (pattern.grid.backstitch.length > 0) {
     parts.push(`<g transform="translate(${offX} ${offY})" stroke-linecap="round">`)
     for (const seg of pattern.grid.backstitch) {
@@ -127,7 +249,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
-  // French knots.
+  // ─── French knots ───────────────────────────────────────────────────────
   if (pattern.grid.frenchKnots.length > 0) {
     parts.push(`<g transform="translate(${offX} ${offY})">`)
     for (const k of pattern.grid.frenchKnots) {
@@ -147,7 +269,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
-  // Stitched overlay.
+  // ─── Stitched overlay ───────────────────────────────────────────────────
   if (opts.stitched && opts.stitched.size > 0) {
     parts.push(`<g transform="translate(${offX} ${offY})">`)
     for (const k of opts.stitched) {
@@ -170,7 +292,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
-  // Grid lines.
+  // ─── Grid lines ─────────────────────────────────────────────────────────
   if (showGrid) {
     parts.push(`<g transform="translate(${offX} ${offY})" stroke="#3d2f22" fill="none">`)
     const startX = Math.max(0, region.x)
@@ -198,7 +320,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
-  // Centre crosshairs.
+  // ─── Centre crosshairs ──────────────────────────────────────────────────
   if (showCentreCrosshairs) {
     const cx = pattern.grid.width / 2
     const cy = pattern.grid.height / 2
@@ -216,14 +338,16 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     }
   }
 
-  // Symbol overlay.
+  // ─── Symbol overlay ─────────────────────────────────────────────────────
+  // Bumped from 0.5 to 0.66 of cell size — at 0.5 the letter competed
+  // visually with the X stroke pattern; 0.66 puts it firmly above.
   if (showSymbols && cellPx >= 14) {
-    parts.push(`<g transform="translate(${offX} ${offY})" font-family="ui-monospace,monospace" text-anchor="middle" dominant-baseline="central">`)
+    parts.push(`<g transform="translate(${offX} ${offY})" font-family="ui-monospace,monospace" font-weight="600" text-anchor="middle" dominant-baseline="central">`)
     for (const [symbol, cells] of buckets) {
       const entry = paletteIndex.bySymbol.get(symbol)
       if (!entry) continue
       const fill = monochrome ? '#1a1410' : symbolOnFill(entry.rgb)
-      const fontSize = cellPx * 0.5
+      const fontSize = cellPx * 0.66
       const inRegion = cells.filter(
         (c) => c.x >= region.x && c.x < regionMaxX && c.y >= region.y && c.y < regionMaxY,
       )

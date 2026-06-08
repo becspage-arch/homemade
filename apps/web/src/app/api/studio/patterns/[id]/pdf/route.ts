@@ -6,6 +6,7 @@ import {
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { buildPatternPdf, type PaperKey } from '@/lib/studio/pdf-export'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -38,6 +39,7 @@ export async function GET(req: Request, ctx: Ctx) {
       ownerUserId: true,
       visibility: true,
       designer: { select: { displayName: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
   if (!row) return new NextResponse('Not found', { status: 404 })
@@ -55,10 +57,30 @@ export async function GET(req: Request, ctx: Ctx) {
     return new NextResponse('Pattern data is malformed', { status: 500 })
   }
 
+  // Try to pull the finished-piece photograph if one's attached. Fall
+  // through to the beauty-mode chart render in pdf-export when the
+  // fetch fails or no hero is set.
+  let heroPhoto: Buffer | null = null
+  if (row.hero) {
+    const url = mediaUrl(row.hero, 'hero')
+    if (url) {
+      try {
+        const res = await fetch(url)
+        if (res.ok) {
+          const arr = new Uint8Array(await res.arrayBuffer())
+          heroPhoto = Buffer.from(arr)
+        }
+      } catch {
+        // ignore — fall through to render
+      }
+    }
+  }
+
   const pdf = await buildPatternPdf(data, row.name, {
     paper,
     monochrome,
     designerName: row.designer?.displayName ?? null,
+    heroPhoto,
   })
 
   const filename = `${slugify(row.name)}-${paper}${monochrome ? '-bw' : ''}.pdf`

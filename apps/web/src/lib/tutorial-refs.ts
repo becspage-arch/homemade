@@ -8,6 +8,7 @@ import type {
   TipTapNode,
 } from '@/components/public/tutorial-content/types'
 import { mediaUrl } from './media'
+import { patternHeroUrl } from './studio/pattern-hero'
 
 /**
  * Walks a TipTap document and collects the IDs of every glossary term and
@@ -138,6 +139,7 @@ export async function loadContentRefs(
             totalStitches: true,
             fabricCountSuggested: true,
             designer: { select: { displayName: true } },
+            hero: { select: { cloudflareId: true, r2Key: true } },
           },
         })
       : Promise.resolve([]),
@@ -176,7 +178,7 @@ export async function loadContentRefs(
     totalStitches: p.totalStitches,
     fabricCountSuggested: p.fabricCountSuggested,
     designerName: p.designer?.displayName ?? null,
-    thumbnailUrl: `/api/studio/patterns/${p.id}/thumbnail`,
+    thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
   }))
 
   return { glossary, subTutorials, techniques, patternInsets }

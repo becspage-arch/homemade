@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { prisma, Visibility } from '@homemade/db'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { PatternLibraryGrid } from './pattern-library-grid'
 import './patterns.css'
 
@@ -77,6 +78,7 @@ export default async function CrossStitchPatternsLibraryPage({ searchParams }: P
         fabricCountSuggested: true,
         designer: { select: { displayName: true, slug: true } },
         subCategory: { select: { slug: true, name: true } },
+        hero: { select: { cloudflareId: true, r2Key: true } },
       },
     }),
     prisma.subCategory.findMany({
@@ -131,7 +133,7 @@ export default async function CrossStitchPatternsLibraryPage({ searchParams }: P
           designerSlug: p.designer?.slug ?? null,
           subCategorySlug: p.subCategory?.slug ?? null,
           subCategoryName: p.subCategory?.name ?? null,
-          thumbnailUrl: `/api/studio/patterns/${p.id}/thumbnail`,
+          thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
         }))}
         subCategories={subCategories}
         currentFilters={{

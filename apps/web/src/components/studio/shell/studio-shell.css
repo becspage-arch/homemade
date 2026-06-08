@@ -136,6 +136,38 @@
 @keyframes studio-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
 .studio-toolbar-history { display: inline-flex; gap: 2px; }
+
+/* Render-style segmented control. Three small icon buttons grouped into
+   a pill, mid-warm-neutral background, the active one inks dark for
+   confidence. Sits between the save indicator and undo/redo. */
+.studio-render-style {
+  display: inline-flex;
+  align-items: center;
+  background: var(--studio-surface-2);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 1px;
+}
+.studio-render-style-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  color: var(--studio-ink-soft);
+  cursor: pointer;
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+.studio-render-style-button:hover {
+  color: var(--studio-ink);
+}
+.studio-render-style-button.is-active {
+  background: var(--studio-ink);
+  color: var(--studio-bg);
+}
 .studio-toolbar-overflow-wrap,
 .studio-toolbar-avatar-wrap {
   position: relative;

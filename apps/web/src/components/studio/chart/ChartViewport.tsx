@@ -99,6 +99,7 @@ export function ChartViewport({
   const layers = useChartStore((s) => s.layers)
   const selection = useChartStore((s) => s.selection)
   const tool = useChartStore((s) => s.tool)
+  const renderStyle = useChartStore((s) => s.renderStyle)
 
   // ───── one-time pattern install + container measure
   useEffect(() => {
@@ -432,50 +433,81 @@ export function ChartViewport({
             <rect x={0} y={0} width={totalW} height={totalH} fill="url(#fabric-weave)" opacity={0.6} />
           )}
 
-          {/* Stitches — one <g> per colour. Low-zoom collapses to filled rects. */}
-          {layers.colours &&
-            renderedBuckets.map(({ symbol, rgb, cross, highlight, cellList }) => (
-              <g key={`bucket-${symbol}`} className="chart-bucket">
-                {useLowZoom
-                  ? cellList.map(({ x, y }) => (
-                      <rect
-                        key={`r-${x}-${y}`}
-                        x={x * cellPx}
-                        y={y * cellPx}
-                        width={cellPx}
-                        height={cellPx}
-                        fill={rgb}
-                      />
-                    ))
-                  : (
-                      <>
-                        <path
-                          d={cross}
-                          stroke={shiftColour(rgb, -0.18)}
-                          strokeWidth={cellPx * 0.22}
-                          strokeLinecap="round"
-                          fill="none"
-                          opacity={0.85}
-                        />
-                        <path
-                          d={cross}
-                          stroke={rgb}
-                          strokeWidth={cellPx * 0.16}
-                          strokeLinecap="round"
-                          fill="none"
-                        />
-                        <path
-                          d={highlight}
-                          stroke={shiftColour(rgb, 0.32)}
-                          strokeWidth={cellPx * 0.06}
-                          strokeLinecap="round"
-                          fill="none"
-                          opacity={0.55}
-                        />
-                      </>
-                    )}
-              </g>
-            ))}
+          {/* Stitches — one <g> per colour. Branches on renderStyle:
+              colour-block (filled rect, the working-chart default),
+              x-stitch (current X-shape), symbol-only (white cells, the
+              symbol overlay below carries identity). Low-zoom always
+              collapses to filled rects for performance regardless of
+              style. */}
+          {renderedBuckets.map(({ symbol, rgb, cross, highlight, cellList }) => (
+            <g key={`bucket-${symbol}`} className="chart-bucket">
+              {useLowZoom ? (
+                cellList.map(({ x, y }) => (
+                  <rect
+                    key={`r-${x}-${y}`}
+                    x={x * cellPx}
+                    y={y * cellPx}
+                    width={cellPx}
+                    height={cellPx}
+                    fill={renderStyle === 'symbol-only' ? '#ffffff' : rgb}
+                  />
+                ))
+              ) : renderStyle === 'colour-block' ? (
+                cellList.map(({ x, y }) => (
+                  <rect
+                    key={`r-${x}-${y}`}
+                    x={x * cellPx}
+                    y={y * cellPx}
+                    width={cellPx}
+                    height={cellPx}
+                    fill={rgb}
+                    stroke={shiftColour(rgb, -0.18)}
+                    strokeWidth={0.5}
+                  />
+                ))
+              ) : renderStyle === 'symbol-only' ? (
+                cellList.map(({ x, y }) => (
+                  <rect
+                    key={`r-${x}-${y}`}
+                    x={x * cellPx}
+                    y={y * cellPx}
+                    width={cellPx}
+                    height={cellPx}
+                    fill="#ffffff"
+                    stroke="#3d2f22"
+                    strokeWidth={0.6}
+                    opacity={0.95}
+                  />
+                ))
+              ) : (
+                <>
+                  <path
+                    d={cross}
+                    stroke={shiftColour(rgb, -0.18)}
+                    strokeWidth={cellPx * 0.22}
+                    strokeLinecap="round"
+                    fill="none"
+                    opacity={0.85}
+                  />
+                  <path
+                    d={cross}
+                    stroke={rgb}
+                    strokeWidth={cellPx * 0.16}
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                  <path
+                    d={highlight}
+                    stroke={shiftColour(rgb, 0.32)}
+                    strokeWidth={cellPx * 0.06}
+                    strokeLinecap="round"
+                    fill="none"
+                    opacity={0.55}
+                  />
+                </>
+              )}
+            </g>
+          ))}
 
           {/* Back-stitch — drawn over the cells. */}
           {layers.backstitch && pattern.grid.backstitch.length > 0 && (
@@ -595,13 +627,20 @@ export function ChartViewport({
             </g>
           )}
 
-          {/* Symbol overlay — only at high zoom where the symbol fits. */}
-          {layers.symbols && scaledCellPx >= 18 &&
+          {/* Symbol overlay — drawn over the colour layer at high zoom.
+              Size bumped from 0.5 to 0.66 of cell width so the letter
+              sits firmly on top of the rendering rather than competing
+              with it. In symbol-only mode the cell is white, so the
+              symbol always renders dark; in colour-block / x-stitch
+              modes we pick black-or-white per cell based on the colour
+              brightness for legibility. */}
+          {layers.symbols && scaledCellPx >= 14 &&
             renderedBuckets.map(({ symbol, rgb, cellList }) => (
               <g
                 key={`sym-${symbol}`}
-                fill={symbolOnFill(rgb)}
-                fontSize={cellPx * 0.5}
+                fill={renderStyle === 'symbol-only' ? '#1a1410' : symbolOnFill(rgb)}
+                fontSize={cellPx * 0.66}
+                fontWeight={600}
                 fontFamily="ui-monospace, JetBrains Mono, Geist Mono, monospace"
                 textAnchor="middle"
                 dominantBaseline="central"

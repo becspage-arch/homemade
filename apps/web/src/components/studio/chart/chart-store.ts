@@ -36,6 +36,22 @@ export type ChartTool =
 
 export type DisplayMode = 'all' | 'stitched' | 'remaining'
 
+/**
+ * How each cell renders inside the editor canvas.
+ *
+ *   colour-block  — filled rect of the floss colour + symbol overlay.
+ *                   The default. Most-readable for stitching from. This
+ *                   is what Pattern Maker, PCStitch, KG-Chart all
+ *                   default to.
+ *   x-stitch      — the X-shape rendering with strand-coloured strokes.
+ *                   Reads as the finished work; harder to scan while
+ *                   stitching. Equivalent to thumbnail / hero look.
+ *   symbol-only   — white cell with the symbol overlay only. Classic
+ *                   monochrome chart style, same as printing the PDF
+ *                   in B&W mode.
+ */
+export type RenderStyle = 'colour-block' | 'x-stitch' | 'symbol-only'
+
 export interface LayerToggles {
   symbols: boolean
   colours: boolean
@@ -84,6 +100,7 @@ export interface ChartStoreState {
   currentSymbol: string | null
   isolateSymbol: string | null
   displayMode: DisplayMode
+  renderStyle: RenderStyle
   layers: LayerToggles
   selection: SelectionRect | null
   viewport: Viewport
@@ -103,6 +120,7 @@ export interface ChartStoreState {
   setCurrentSymbol: (symbol: string | null) => void
   setIsolate: (symbol: string | null) => void
   setDisplayMode: (mode: DisplayMode) => void
+  setRenderStyle: (style: RenderStyle) => void
   toggleLayer: (key: keyof LayerToggles) => void
 
   // ───── viewport
@@ -157,6 +175,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   currentSymbol: null,
   isolateSymbol: null,
   displayMode: 'all',
+  renderStyle: 'colour-block',
   layers: DEFAULT_LAYERS,
   selection: null,
   viewport: DEFAULT_VIEWPORT,
@@ -182,6 +201,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   setCurrentSymbol: (symbol) => set({ currentSymbol: symbol }),
   setIsolate: (symbol) => set({ isolateSymbol: symbol }),
   setDisplayMode: (mode) => set({ displayMode: mode }),
+  setRenderStyle: (renderStyle) => set({ renderStyle }),
   toggleLayer: (key) =>
     set((state) => ({ layers: { ...state.layers, [key]: !state.layers[key] } })),
 

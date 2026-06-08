@@ -36,6 +36,10 @@ interface ExportOptions {
   paper: PaperKey
   monochrome?: boolean
   designerName?: string | null
+  /** Optional uploaded hero photograph. If provided, the cover embeds
+   *  this image instead of the rendered chart. Buffer must be PNG / JPEG
+   *  bytes the caller has already fetched. */
+  heroPhoto?: Buffer | null
 }
 
 export async function buildPatternPdf(
@@ -104,22 +108,41 @@ async function drawCover(
     })
   }
 
-  // Hero thumbnail — square aspect, sized to leave room for the spec table.
+  // Cover hero: a finished-piece photograph if the pattern has one
+  // attached, otherwise the beauty-mode render (strand-shaded X stitches
+  // on Aida weave with soft drop shadow). Either way, sized to leave
+  // room for the spec table beneath.
   const heroBoxW = paper.width - m * 2
   const heroBoxH = Math.min(380, paper.height * 0.42)
-  const heroSvg = renderPatternSvgString(pattern, {
-    cellPx: 18,
-    showSymbols: false,
-    showGrid: false,
-    showCentreCrosshairs: false,
-    padding: 18,
-    monochrome: opts.monochrome,
-  })
-  const heroPng = await sharp(Buffer.from(heroSvg))
-    .resize(Math.round(heroBoxW * 2), Math.round(heroBoxH * 2), { fit: 'contain', background: { r: 245, g: 240, b: 232 } })
-    .png()
-    .toBuffer()
-  const heroImage = await doc.embedPng(heroPng)
+
+  let heroBuffer: Buffer
+  if (opts.heroPhoto && !opts.monochrome) {
+    heroBuffer = await sharp(opts.heroPhoto)
+      .resize(Math.round(heroBoxW * 2), Math.round(heroBoxH * 2), {
+        fit: 'cover',
+        position: 'attention',
+      })
+      .png()
+      .toBuffer()
+  } else {
+    const heroSvg = renderPatternSvgString(pattern, {
+      mode: opts.monochrome ? 'chart' : 'beauty',
+      cellPx: 24,
+      showSymbols: false,
+      showGrid: false,
+      showCentreCrosshairs: false,
+      padding: 24,
+      monochrome: opts.monochrome,
+    })
+    heroBuffer = await sharp(Buffer.from(heroSvg))
+      .resize(Math.round(heroBoxW * 2), Math.round(heroBoxH * 2), {
+        fit: 'contain',
+        background: { r: 245, g: 240, b: 232 },
+      })
+      .png()
+      .toBuffer()
+  }
+  const heroImage = await doc.embedPng(heroBuffer)
   const heroPlace = scaleFit(heroImage.width, heroImage.height, heroBoxW, heroBoxH)
   page.drawImage(heroImage, {
     x: m + (heroBoxW - heroPlace.w) / 2,

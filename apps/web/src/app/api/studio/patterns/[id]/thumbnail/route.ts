@@ -45,12 +45,19 @@ export async function GET(_req: Request, ctx: Ctx) {
     return new NextResponse('Malformed pattern data', { status: 500 })
   }
 
+  // Beauty mode — strand-shaded X stitches on visible Aida weave with a
+  // soft drop shadow. The thumbnail should read as a finished piece,
+  // not as a chart screenshot. cellPx scales with grid size so very
+  // small patterns get a denser render and very large patterns stay
+  // fast to rasterise.
+  const cellPx = data.grid.width <= 60 ? 30 : data.grid.width <= 120 ? 18 : 12
   const svg = renderPatternSvgString(data, {
-    cellPx: 14,
+    mode: 'beauty',
+    cellPx,
     showSymbols: false,
-    showGrid: data.grid.width <= 80,
+    showGrid: false,
     showCentreCrosshairs: false,
-    padding: 16,
+    padding: Math.round(cellPx * 1.6),
   })
 
   // 2× density (960×720) — fits 480-css-px cards crisply on Retina without

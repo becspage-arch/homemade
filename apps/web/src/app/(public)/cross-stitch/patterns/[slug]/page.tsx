@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -34,6 +35,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
     include: {
       designer: { select: { displayName: true, slug: true, bio: true } },
       subCategory: { select: { slug: true, name: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
       license: true,
     },
   })
@@ -65,6 +67,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
       heightCells: true,
       colourCount: true,
       designer: { select: { displayName: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 
@@ -85,7 +88,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
       <header className="pattern-detail-hero">
         <div className="pattern-detail-hero-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`/api/studio/patterns/${row.id}/thumbnail`} alt={row.name} loading="eager" />
+          <img src={patternHeroUrl({ id: row.id, hero: row.hero }, 'hero')} alt={row.name} loading="eager" />
         </div>
         <div className="pattern-detail-hero-body">
           <p className="pattern-detail-overline">Cross-stitch pattern</p>
@@ -158,7 +161,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
               <li key={r.id}>
                 <Link href={r.slug ? `/cross-stitch/patterns/${r.slug}` : `/studio/cross-stitch?patternId=${r.id}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/api/studio/patterns/${r.id}/thumbnail`} alt="" loading="lazy" />
+                  <img src={patternHeroUrl({ id: r.id, hero: r.hero }, 'card')} alt="" loading="lazy" />
                   <div>
                     <span className="pattern-detail-related-name">{r.name}</span>
                     {r.designer?.displayName && <span className="pattern-detail-related-by">by {r.designer.displayName}</span>}

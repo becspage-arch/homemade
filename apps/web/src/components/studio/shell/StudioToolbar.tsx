@@ -14,8 +14,8 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Undo2, Redo2, MoreHorizontal, Check, Loader2 } from 'lucide-react'
-import { useChartStore } from '../chart/chart-store'
+import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type } from 'lucide-react'
+import { useChartStore, type RenderStyle } from '../chart/chart-store'
 
 interface StudioToolbarProps {
   patternId: string
@@ -40,23 +40,27 @@ export function StudioToolbar({
   const [avatarOpen, setAvatarOpen] = useState(false)
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved'>('idle')
 
-  const store = useChartStore()
-  const canUndo = store.history.length > 0
-  const canRedo = store.future.length > 0
+  // Per-slice selectors — keep the toolbar from re-rendering on every
+  // store tick (every cell paint, every pan / zoom).
+  const dirty = useChartStore((s) => s.dirty)
+  const canUndo = useChartStore((s) => s.history.length > 0)
+  const canRedo = useChartStore((s) => s.future.length > 0)
+  const undoAction = useChartStore((s) => s.undo)
+  const redoAction = useChartStore((s) => s.redo)
 
   useEffect(() => {
-    if (!store.dirty) return
+    if (!dirty) return
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSaveState('saving')
-  }, [store.dirty])
+  }, [dirty])
 
   useEffect(() => {
-    if (saveState !== 'saving' || store.dirty) return
+    if (saveState !== 'saving' || dirty) return
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSaveState('saved')
     const t = setTimeout(() => setSaveState('idle'), 1800)
     return () => clearTimeout(t)
-  }, [store.dirty, saveState])
+  }, [dirty, saveState])
 
   const commitTitle = async () => {
     const next = titleValue.trim()
@@ -113,12 +117,13 @@ export function StudioToolbar({
       </div>
 
       <div className="studio-toolbar-right">
+        <RenderStyleToggle />
         {canEdit && (
           <div className="studio-toolbar-history">
             <button
               type="button"
               className="studio-icon-button"
-              onClick={() => store.undo()}
+              onClick={() => undoAction()}
               disabled={!canUndo}
               title="Undo (Cmd+Z)"
             >
@@ -127,7 +132,7 @@ export function StudioToolbar({
             <button
               type="button"
               className="studio-icon-button"
-              onClick={() => store.redo()}
+              onClick={() => redoAction()}
               disabled={!canRedo}
               title="Redo (Cmd+Shift+Z)"
             >
@@ -196,6 +201,44 @@ function SaveIndicator({ state, signedIn }: { state: 'idle' | 'saving' | 'saved'
     )
   }
   return <span className="studio-save-indicator subtle">Saved</span>
+}
+
+/**
+ * Render-style segmented control. Three options that map to how each
+ * cell draws: colour-block (rect fill, the working-chart default),
+ * x-stitch (X-shape, the finished-piece preview), symbol-only
+ * (monochrome, the printed-magazine style).
+ */
+function RenderStyleToggle() {
+  const renderStyle = useChartStore((s) => s.renderStyle)
+  const setRenderStyle = useChartStore((s) => s.setRenderStyle)
+
+  const options: Array<{ value: RenderStyle; label: string; icon: typeof Grid2X2 }> = [
+    { value: 'colour-block', label: 'Colour blocks', icon: Grid2X2 },
+    { value: 'x-stitch', label: 'X stitches (preview)', icon: XIcon },
+    { value: 'symbol-only', label: 'Symbols only', icon: Type },
+  ]
+
+  return (
+    <div className="studio-render-style" role="radiogroup" aria-label="Chart render style">
+      {options.map(({ value, label, icon: Icon }) => (
+        <button
+          key={value}
+          type="button"
+          role="radio"
+          aria-checked={renderStyle === value}
+          className={[
+            'studio-render-style-button',
+            renderStyle === value ? 'is-active' : '',
+          ].join(' ')}
+          onClick={() => setRenderStyle(value)}
+          title={label}
+        >
+          <Icon size={15} strokeWidth={1.8} />
+        </button>
+      ))}
+    </div>
+  )
 }
 
 function OverflowMenu({
