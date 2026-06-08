@@ -107,8 +107,9 @@ interface SeedPattern {
 
 function tinyAlphabetSampler(): SeedPattern {
   // A six-letter "stitch" set (the word STITCH itself) — a tiny first
-  // project. Two colours. ~120 stitches.
-  const W = 30
+  // project. Two colours. Six 5-wide glyphs + 6 gap cells + 4 padding +
+  // 2 border = 42 cells wide.
+  const W = 42
   const H = 12
   const cells: PatternCell[] = []
   const place = (x: number, y: number, s: string) => cells.push({ x, y, s })
@@ -132,14 +133,18 @@ function tinyAlphabetSampler(): SeedPattern {
     H: ['10001', '10001', '10001', '11111', '10001', '10001', '10001'],
   }
   const word = ['S', 'T', 'I', 'T', 'C', 'H']
-  let x0 = 2
+  let x0 = 3
   for (const letter of word) {
     const rows = glyphs[letter]
     if (!rows) continue
     for (let r = 0; r < rows.length; r++) {
       const row = rows[r]!
       for (let c = 0; c < row.length; c++) {
-        if (row.charAt(c) === '1') place(x0 + c, 2 + r, 'B')
+        if (row.charAt(c) === '1') {
+          const x = x0 + c
+          const y = 2 + r
+          if (x < W - 1 && y < H - 1) place(x, y, 'B')
+        }
       }
     }
     x0 += 6
