@@ -71,3 +71,44 @@
   color: var(--color-warm-taupe);
   line-height: 1.35;
 }
+
+.skill-tool-picker {
+  margin: 16px 0;
+}
+
+.skill-tool-picker-heading {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: var(--color-espresso);
+  margin: 0 0 10px;
+}
+
+.skill-tool-picker-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tool-picker-chip {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  color: var(--color-espresso);
+  border-radius: 999px;
+  padding: 6px 14px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.skill-tool-picker-chip:hover {
+  border-color: var(--color-sage);
+}
+
+.skill-tool-picker-chip.is-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-cream);
+}

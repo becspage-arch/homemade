@@ -182,45 +182,7 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
         })
       : Promise.resolve([]),
     patternType
-      ? prisma.designer.findFirst({
-          where: {
-            patterns: {
-              some: {
-                ownerUserId: null,
-                visibility: Visibility.PUBLIC,
-                publishedAt: { not: null },
-                type: patternType,
-                subCategory: { categoryId: category.id },
-              },
-            },
-          },
-          orderBy: [{ patternCount: 'desc' }, { createdAt: 'desc' }],
-          select: {
-            id: true,
-            slug: true,
-            displayName: true,
-            bio: true,
-            websiteUrl: true,
-            avatar: { select: { cloudflareId: true, r2Key: true } },
-            patterns: {
-              where: {
-                ownerUserId: null,
-                visibility: Visibility.PUBLIC,
-                publishedAt: { not: null },
-                type: patternType,
-                subCategory: { categoryId: category.id },
-              },
-              orderBy: { publishedAt: 'desc' },
-              take: DESIGNER_SPOTLIGHT_TAKE,
-              select: {
-                id: true,
-                slug: true,
-                name: true,
-                hero: { select: { cloudflareId: true, r2Key: true } },
-              },
-            },
-          },
-        })
+      ? pickRotatingDesigner({ categoryId: category.id, patternType })
       : Promise.resolve(null),
     patternType
       ? prisma.userPatternProgress.findMany({
@@ -517,6 +479,92 @@ function patternSearchPlaceholder(slug: string): string {
     case 'sewing': return "Pattern name or 'tote bag'"
     default: return 'Pattern name, theme, designer'
   }
+}
+
+/**
+ * Pick the designer to spotlight for this category, rotating every 2 days.
+ *
+ * Eligible designers are those with at least 2 PUBLIC + published patterns
+ * in the category. They're ordered newest-first by their createdAt; the
+ * rotation index advances every 2 days so each designer gets a fair turn.
+ *
+ * Falls back to most-popular ordering (patternCount desc) when the
+ * newest-first cycle would land on the same designer it just left, which
+ * happens when the category has only one eligible designer.
+ */
+async function pickRotatingDesigner({
+  categoryId,
+  patternType,
+}: {
+  categoryId: string
+  patternType: 'CROSS_STITCH' | 'KNITTING_CHART' | 'CROCHET_CHART'
+}) {
+  const eligibleWhere = {
+    patterns: {
+      some: {
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        publishedAt: { not: null },
+        type: patternType,
+        subCategory: { categoryId },
+      },
+    },
+  }
+
+  // Pull the full eligible list with a hard cap so a deep designer list
+  // doesn't pull a huge result set; 50 is generous for the foreseeable.
+  const newestFirst = await prisma.designer.findMany({
+    where: eligibleWhere,
+    orderBy: [{ createdAt: 'desc' }],
+    take: 50,
+    select: { id: true, createdAt: true },
+  })
+
+  if (newestFirst.length === 0) return null
+
+  // Rotation index: advance every 2 days, deterministic per category so the
+  // homepage and category page would agree. Computed in UTC against a fixed
+  // epoch so the cycle survives timezone drift.
+  const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000
+  const cyclesSinceEpoch = Math.floor(Date.now() / TWO_DAYS_MS)
+  // Salt the index with the category id so different categories rotate on
+  // different days of the cycle. Hash by char-code sum is enough for spread.
+  const salt = categoryId
+    .split('')
+    .reduce((acc, ch) => acc + ch.charCodeAt(0), 0)
+  const idx = (cyclesSinceEpoch + salt) % newestFirst.length
+  const targetEntry = newestFirst[idx]
+  if (!targetEntry) return null
+
+  // Hydrate the chosen designer with the data the section needs.
+  return prisma.designer.findUnique({
+    where: { id: targetEntry.id },
+    select: {
+      id: true,
+      slug: true,
+      displayName: true,
+      bio: true,
+      websiteUrl: true,
+      avatar: { select: { cloudflareId: true, r2Key: true } },
+      patterns: {
+        where: {
+          ownerUserId: null,
+          visibility: Visibility.PUBLIC,
+          publishedAt: { not: null },
+          type: patternType,
+          subCategory: { categoryId },
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: DESIGNER_SPOTLIGHT_TAKE,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          hero: { select: { cloudflareId: true, r2Key: true } },
+        },
+      },
+    },
+  })
 }
 
 function emptyPatternHeading(slug: string, hasFoundations: boolean): string {

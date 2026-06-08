@@ -151,7 +151,8 @@ function pickersForCategory(
         }
       : null
 
-  return subBand ? [...base, subBand] : base
+  // Coarse cut first (area / animal), then the commitment-level / setup-stage.
+  return subBand ? [subBand, ...base] : base
 }
 
 function parseDifficulty(raw: string | undefined): Difficulty | null {

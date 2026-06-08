@@ -351,6 +351,7 @@ model Category {
 
   subCategories SubCategory[]
   tutorials     Tutorial[]
+  magazinePicks CategoryMagazinePick[]
 
   @@index([pipelineStatus, lastAutopilotRunAt])
 }
@@ -546,8 +547,9 @@ model Tutorial {
   recipeTools       RecipeTool[]
   chartProgress     ChartProgress[]
 
-  weeklyEditorialPicks WeeklyEditorialPick[]
-  projectSchedule      ProjectSchedule[]
+  weeklyEditorialPicks  WeeklyEditorialPick[]
+  categoryMagazinePicks CategoryMagazinePick[]
+  projectSchedule       ProjectSchedule[]
 
   // Session A addendum — visit counter for the "Did you make this?" prompt.
   tutorialVisits TutorialVisit[]
@@ -627,6 +629,13 @@ model Tutorial {
   // across categories). See `docs/garden-author.md` for per-sub-topic guidance
   // on which fields to set.
   // ──────────────────────────────────────────────────────────────────────────
+
+  // Tool / equipment requirements (Skill archetype tool picker).
+  // Free-form slug array (e.g. "drop-spindle", "wheel", "rigid-heddle",
+  // "sloyd-knife"). The Skill landing aggregates distinct slugs across
+  // the category's published tutorials to drive a tool picker so users
+  // can filter "what can I make with the tools I have".
+  requiredTools String[] @default([])
 
   // Months when the plant is sown / planted (lower-case 'march',
   // 'april', ...). Drives the "what to sow in April" public filter.
@@ -2626,6 +2635,40 @@ model WeeklyEditorialPick {
 
   @@unique([weekStarting, position])
   @@index([weekStarting])
+}
+
+/// Per-category magazine block on the Recipe-archetype landing pages
+/// (/cooking, /baking, /herbal-medicine, /natural-home). Position 1 is the
+/// feature card; 2..4 are the supporting cards. Pinning is optional — when
+/// no rows are scheduled for the current week, the RecipeLayout falls back
+/// to algorithmic most-loved picking.
+model CategoryMagazinePick {
+  id String @id @default(cuid())
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  /// Monday 00:00 UTC of the week this pick is for. Admin pins land per-week.
+  weekStarting DateTime
+
+  /// 1 = feature card; 2, 3, 4 = supporting cards.
+  position Int
+
+  tutorialId String
+  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  /// Clerk userId (or User.id) when an admin pinned the row.
+  selectedBy String?
+  selectedAt DateTime?
+
+  /// Optional admin note.
+  reason String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([categoryId, weekStarting, position])
+  @@index([categoryId, weekStarting])
 }
 
 // ────────────────────────────────────────────────────────────────────────────

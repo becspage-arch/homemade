@@ -29,6 +29,7 @@ interface SkillLayoutProps {
     sub?: string
     difficulty?: string
     equipment?: string
+    tool?: string
   }
   currentUserId: string | null
 }
@@ -105,12 +106,17 @@ export async function SkillLayout({
   const difficulty = parseDifficulty(searchParams.difficulty)
   const equipment = parseEquipment(searchParams.equipment)
   const subSlug = searchParams.sub ?? null
+  const tool = searchParams.tool ?? null
 
   const subCategory = subSlug
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
   const activeSubSlug = subCategory ? subCategory.slug : null
-  const isFiltered = Boolean(difficulty) || Boolean(equipment) || Boolean(activeSubSlug)
+  const isFiltered =
+    Boolean(difficulty) ||
+    Boolean(equipment) ||
+    Boolean(activeSubSlug) ||
+    Boolean(tool)
   const showEquipmentFilters = category.slug === 'pottery-ceramics'
 
   const equipmentWhere =
@@ -125,8 +131,9 @@ export async function SkillLayout({
   const preserveQuery: Record<string, string> = {}
   if (difficulty) preserveQuery.difficulty = difficulty.toLowerCase()
   if (equipment) preserveQuery.equipment = equipment
+  if (tool) preserveQuery.tool = tool
 
-  const [recentlyMade, foundations] = await Promise.all([
+  const [recentlyMade, foundations, toolsInCategory] = await Promise.all([
     loadRecentlyMade({ limit: 10, categorySlug: category.slug }),
     prisma.tutorial.findMany({
       where: {
@@ -146,7 +153,25 @@ export async function SkillLayout({
         hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
       },
     }),
+    // Aggregate distinct tool slugs across published tutorials in the
+    // category so the tool picker shows only options that have content.
+    prisma.tutorial.findMany({
+      where: {
+        categoryId: category.id,
+        status: TutorialStatus.PUBLISHED,
+        requiredTools: { isEmpty: false },
+      },
+      select: { requiredTools: true },
+    }),
   ])
+
+  const distinctTools = new Set<string>()
+  for (const t of toolsInCategory) {
+    for (const slug of t.requiredTools) distinctTools.add(slug)
+  }
+  const toolOptions = Array.from(distinctTools)
+    .sort()
+    .map((slug) => ({ slug, label: prettifyToolSlug(slug) }))
 
   let unfilteredRails: { sub: { id: string; slug: string; name: string }; tutorials: TutorialCardLike[] }[] = []
   let filteredTutorials: TutorialCardLike[] = []
@@ -158,6 +183,7 @@ export async function SkillLayout({
         status: TutorialStatus.PUBLISHED,
         ...(difficulty ? { difficulty } : {}),
         ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
+        ...(tool ? { requiredTools: { has: tool } } : {}),
         ...equipmentWhere,
       },
       orderBy: [{ publishedAt: 'desc' }],
@@ -231,6 +257,17 @@ export async function SkillLayout({
         <PotteryEquipmentPicker
           categorySlug={category.slug}
           active={equipment}
+          preserveQuery={
+            activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
+          }
+        />
+      )}
+
+      {toolOptions.length > 0 && (
+        <ToolPicker
+          categorySlug={category.slug}
+          options={toolOptions}
+          active={tool}
           preserveQuery={
             activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
           }
@@ -318,6 +355,79 @@ interface TutorialCardLike {
   requiresWheel?: boolean
 }
 
+interface ToolPickerProps {
+  categorySlug: string
+  options: { slug: string; label: string }[]
+  active: string | null
+  preserveQuery: Record<string, string>
+}
+
+function ToolPicker({
+  categorySlug,
+  options,
+  active,
+  preserveQuery,
+}: ToolPickerProps) {
+  function hrefFor(slug: string | null): string {
+    const params = new URLSearchParams(preserveQuery)
+    params.delete('tool')
+    if (slug) params.set('tool', slug)
+    const qs = params.toString()
+    return qs ? `/${categorySlug}?${qs}` : `/${categorySlug}`
+  }
+
+  return (
+    <section className="skill-tool-picker" aria-label="Filter by tool or equipment">
+      <h2 className="skill-tool-picker-heading">By tool or equipment</h2>
+      <div className="skill-tool-picker-chips">
+        <Link
+          href={hrefFor(null)}
+          className={`skill-tool-picker-chip${!active ? ' is-active' : ''}`}
+        >
+          Any
+        </Link>
+        {options.map((opt) => {
+          const isActive = active === opt.slug
+          return (
+            <Link
+              key={opt.slug}
+              href={hrefFor(isActive ? null : opt.slug)}
+              className={`skill-tool-picker-chip${isActive ? ' is-active' : ''}`}
+            >
+              {opt.label}
+            </Link>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Best-effort label for a free-form tool slug. The schema field is
+ * intentionally unstructured so authors can mint new slugs without a
+ * migration; this helper just makes "drop-spindle" read as "Drop spindle".
+ * Known-tool overrides go in TOOL_LABEL_OVERRIDES below.
+ */
+const TOOL_LABEL_OVERRIDES: Record<string, string> = {
+  'drop-spindle': 'Drop spindle',
+  'rigid-heddle': 'Rigid heddle loom',
+  'floor-loom': 'Floor loom',
+  'spinning-wheel': 'Spinning wheel',
+  'felting-needle': 'Felting needle',
+  'sloyd-knife': 'Sloyd knife',
+  'crook-knife': 'Crook knife',
+  'pyrography-pen': 'Pyrography pen',
+  'pottery-wheel': 'Pottery wheel',
+  'bookbinding-press': 'Bookbinding press',
+}
+
+function prettifyToolSlug(slug: string): string {
+  if (TOOL_LABEL_OVERRIDES[slug]) return TOOL_LABEL_OVERRIDES[slug]!
+  const words = slug.replace(/-/g, ' ').trim()
+  return words.charAt(0).toUpperCase() + words.slice(1)
+}
+
 interface PotteryEquipmentPickerProps {
   categorySlug: string
   active: EquipmentFilter
@@ -328,7 +438,7 @@ const POTTERY_SETUPS: { value: EquipmentFilter; label: string; sub: string }[] =
   { value: 'none', label: 'No equipment', sub: 'Hand-built, air-dry or oven-bake' },
   { value: 'no-wheel', label: 'No wheel', sub: 'Kiln access, hand-built shapes' },
   { value: 'no-kiln', label: 'No kiln', sub: 'Wheel access, plus alternative firing' },
-  { value: null, label: 'Full setup', sub: 'Wheel plus kiln' },
+  { value: null, label: 'I have a wheel and kiln', sub: 'Throwing, glazing, firing' },
 ]
 
 function PotteryEquipmentPicker({

@@ -11,6 +11,7 @@ import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-
 import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
+import { isoWeekStartUtc } from '@/lib/editorial-picks'
 import {
   emptyReaderState,
   loadReaderState,
@@ -147,7 +148,8 @@ export async function RecipeLayout({
     })
     filteredTutorials = tutorials as TutorialCardLike[]
   } else {
-    const [perSubResults, seasonal, quick, mostLoved] = await Promise.all([
+    const weekStart = isoWeekStartUtc(new Date())
+    const [perSubResults, seasonal, quick, mostLoved, magazinePicks] = await Promise.all([
       Promise.all(
         category.subCategories.map((sub) =>
           prisma.tutorial.findMany({
@@ -204,6 +206,18 @@ export async function RecipeLayout({
         take: 4,
         select: CARD_SELECT,
       }),
+      prisma.categoryMagazinePick.findMany({
+        where: {
+          categoryId: category.id,
+          weekStarting: weekStart,
+        },
+        orderBy: { position: 'asc' },
+        include: {
+          tutorial: {
+            select: CARD_SELECT,
+          },
+        },
+      }),
     ])
 
     unfilteredRails = category.subCategories
@@ -212,10 +226,24 @@ export async function RecipeLayout({
     inSeasonForCategory = seasonal as TutorialCardLike[]
     quickWins = quick as TutorialCardLike[]
 
-    const loved = mostLoved as TutorialCardLike[]
-    if (loved.length > 0) {
-      magazineFeature = loved[0] ?? null
-      magazineSupporting = loved.slice(1, 4)
+    // Prefer admin-pinned magazine picks for the current week. Falls back
+    // to algorithmic most-loved EDITORIAL heroes when none are scheduled.
+    if (magazinePicks.length > 0) {
+      const feature = magazinePicks.find((p) => p.position === 1)
+      const supporting = magazinePicks
+        .filter((p) => p.position >= 2 && p.position <= 4)
+        .map((p) => p.tutorial as TutorialCardLike)
+      if (feature) {
+        magazineFeature = feature.tutorial as TutorialCardLike
+        magazineSupporting = supporting
+      }
+    }
+    if (!magazineFeature) {
+      const loved = mostLoved as TutorialCardLike[]
+      if (loved.length > 0) {
+        magazineFeature = loved[0] ?? null
+        magazineSupporting = loved.slice(1, 4)
+      }
     }
   }
 
