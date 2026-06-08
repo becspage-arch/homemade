@@ -17,7 +17,7 @@
  *     thread length, plus a 61.5pt × 15.1pt colour swatch on the left.
  */
 
-import { extractAllPageCells, loadPageContentStreams, executeContentStream, type RgbCell } from './pdf-content-stream'
+import { extractAllPageCells, type RgbCell } from './pdf-content-stream'
 import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs'
 
 // Cell side length on every Stitching Mama chart page (constant from

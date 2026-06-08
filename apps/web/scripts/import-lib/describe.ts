@@ -17,7 +17,7 @@
  */
 
 import type { ParsedStitchingMamaPattern } from './parse-stitching-mama-pdf'
-import type { CatalogueEntry, Theme } from './catalogue'
+import type { CatalogueEntry } from './catalogue'
 
 function colourCountPhrase(n: number): string {
   if (n <= 10) return `${n} DMC shades`
@@ -37,7 +37,7 @@ function sizePhrase(parsed: ParsedStitchingMamaPattern): string {
   return `${w} by ${h} stitches on 14-count Aida`
 }
 
-function techniquePhrase(parsed: ParsedStitchingMamaPattern): string {
+function techniquePhrase(_parsed: ParsedStitchingMamaPattern): string {
   // Stitching Mama's PDFs are full cross only — no back-stitch / French
   // knots / beads. State that plainly so stitchers know what they're
   // committing to.

@@ -19,7 +19,7 @@
  * matter for cell-fill extraction.
  */
 
-import { PDFDocument, PDFRawStream, PDFArray, PDFName, type PDFRef } from 'pdf-lib'
+import { PDFDocument, PDFRawStream, PDFArray, type PDFRef } from 'pdf-lib'
 import { inflateSync } from 'node:zlib'
 
 export interface RgbCell {
