@@ -215,7 +215,10 @@ function ActiveProjectSurface({
   const [terminology, setTerminology] = useState<'uk' | 'us'>(initialTerminology)
   const [leftHanded, setLeftHanded] = useState<boolean>(initialLeftHanded)
 
-  const printHref = `/studio/crochet/${pattern.id}/print?paper=a4`
+  const tutorialHref =
+    pattern.sourceTutorialSlug && pattern.sourceTutorialCategorySlug
+      ? `/${pattern.sourceTutorialCategorySlug}/${pattern.sourceTutorialSlug}`
+      : null
 
   return (
     <div className="crochet-studio-surface crochet-studio-active-surface">
@@ -232,7 +235,7 @@ function ActiveProjectSurface({
         onLeftHandedToggle={() => setLeftHanded((v) => !v)}
         notesOpen={notesOpen}
         onToggleNotes={onToggleNotes}
-        printHref={printHref}
+        tutorialHref={tutorialHref}
         onClose={onClose}
       />
 

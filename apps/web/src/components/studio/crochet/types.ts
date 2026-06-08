@@ -43,6 +43,8 @@ export interface CrochetPatternData {
   ownerUserId: string | null
   designerSlug: string | null
   designerName: string | null
+  sourceTutorialSlug: string | null
+  sourceTutorialCategorySlug: string | null
 }
 
 export interface CrochetProjectProgressData {

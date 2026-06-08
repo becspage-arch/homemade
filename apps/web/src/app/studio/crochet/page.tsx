@@ -82,6 +82,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
         designer: { select: { slug: true, displayName: true } },
         thumbnail: { select: { id: true } },
         schematic: { select: { id: true } },
+        sourceTutorial: { select: { slug: true, category: { select: { slug: true } } } },
       },
     })
 
@@ -123,6 +124,8 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
           ownerUserId: row.ownerUserId,
           designerSlug: row.designer?.slug ?? null,
           designerName: row.designer?.displayName ?? null,
+          sourceTutorialSlug: row.sourceTutorial?.slug ?? null,
+          sourceTutorialCategorySlug: row.sourceTutorial?.category?.slug ?? null,
         }
       }
     }

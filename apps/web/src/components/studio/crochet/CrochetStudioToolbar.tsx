@@ -11,7 +11,7 @@
  * (charts only; written rows are direction-agnostic in v1).
  */
 
-import { ScrollText, Grid3x3, Ruler, Printer, X, StickyNote, Hand } from 'lucide-react'
+import { ScrollText, Grid3x3, Ruler, BookOpen, X, StickyNote, Hand } from 'lucide-react'
 
 interface Props {
   patternName: string
@@ -26,7 +26,7 @@ interface Props {
   onLeftHandedToggle: () => void
   notesOpen: boolean
   onToggleNotes: () => void
-  printHref: string
+  tutorialHref: string | null
   onClose: () => void
 }
 
@@ -43,7 +43,7 @@ export function CrochetStudioToolbar({
   onLeftHandedToggle,
   notesOpen,
   onToggleNotes,
-  printHref,
+  tutorialHref,
   onClose,
 }: Props) {
   return (
@@ -134,16 +134,18 @@ export function CrochetStudioToolbar({
           <span>Notes</span>
         </button>
 
-        <a
-          href={printHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="crochet-studio-toolbar-action"
-          title="Print this pattern"
-        >
-          <Printer size={16} strokeWidth={1.5} />
-          <span>Print</span>
-        </a>
+        {tutorialHref && (
+          <a
+            href={tutorialHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="crochet-studio-toolbar-action"
+            title="Open the full tutorial in a new tab"
+          >
+            <BookOpen size={16} strokeWidth={1.5} />
+            <span>Tutorial</span>
+          </a>
+        )}
 
         <button
           type="button"

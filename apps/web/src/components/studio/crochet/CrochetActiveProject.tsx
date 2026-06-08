@@ -16,6 +16,7 @@ import { CrochetWrittenView } from './CrochetWrittenView'
 import { CrochetChartView } from './CrochetChartView'
 import { CrochetSchematicView } from './CrochetSchematicView'
 import { CrochetNotesPanel } from './CrochetNotesPanel'
+import { CrochetStitchHelpPanel } from './CrochetStitchHelpPanel'
 import type {
   CrochetPatternData,
   CrochetProjectProgressData,
@@ -315,6 +316,7 @@ export function CrochetActiveProject({
             <span className="crochet-studio-active-gauge">{pattern.gaugeText}</span>
           )}
         </div>
+        <CrochetStitchHelpPanel craftStitchSlugs={pattern.craftStitchSlugs} />
       </footer>
 
       {notesOpen && (

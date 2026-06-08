@@ -653,7 +653,11 @@
   }
 }
 
-.crochet-studio-chart.is-left-handed .crochet-studio-chart-svg {
+/* LH mirror: flip the chart itself (the SVG inside the figure) but
+   leave the figcaption title, the legend, and the caption text right-
+   reading. The round labels inside the SVG mirror with the chart, that
+   trade-off is the v1 honest answer. */
+.crochet-studio-chart.is-left-handed .crochet-studio-chart-svg .craft-chart__svg-wrap {
   transform: scaleX(-1);
 }
 
@@ -910,4 +914,119 @@
     border-left: none;
     border-bottom: 1px solid var(--studio-line);
   }
+}
+
+/* ===== Stitch help drawer (footer) ==================================== */
+
+.crochet-studio-stitch-help {
+  position: relative;
+}
+
+.crochet-studio-stitch-help-trigger {
+  appearance: none;
+  border: none;
+  background: var(--studio-bg);
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--studio-radius-m);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft);
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+
+.crochet-studio-stitch-help-trigger:hover,
+.crochet-studio-stitch-help-trigger:focus-visible,
+.crochet-studio-stitch-help.is-open .crochet-studio-stitch-help-trigger {
+  background: var(--crochet-accent-soft);
+  color: var(--crochet-accent-strong);
+  outline: none;
+}
+
+.crochet-studio-stitch-help-count {
+  background: rgba(60, 47, 34, 0.08);
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+  font-family: var(--studio-font-mono);
+  font-size: 0.72rem;
+  color: var(--studio-ink-soft);
+}
+
+.crochet-studio-stitch-help-drawer {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--studio-shadow-pop);
+  min-width: 260px;
+  max-width: 360px;
+  z-index: 4;
+}
+
+.crochet-studio-stitch-help-help {
+  margin: 0 0 0.6rem;
+  font-size: 0.82rem;
+  color: var(--studio-ink-mute);
+  line-height: 1.45;
+}
+
+.crochet-studio-stitch-help-loading {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+}
+
+.crochet-studio-stitch-help-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crochet-studio-stitch-help-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--studio-bg);
+  border-radius: var(--studio-radius-s);
+  color: var(--studio-ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 140ms var(--studio-easing-out);
+}
+
+.crochet-studio-stitch-help-link:hover,
+.crochet-studio-stitch-help-link:focus-visible {
+  background: var(--crochet-accent-soft);
+  outline: none;
+}
+
+.crochet-studio-stitch-help-name {
+  font-family: var(--studio-font-display);
+  font-weight: 500;
+}
+
+.crochet-studio-stitch-help-orphan {
+  display: block;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--studio-radius-s);
+  background: transparent;
+  font-size: 0.88rem;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+}
+
+.crochet-studio-stitch-help-orphan-note {
+  font-style: normal;
+  font-size: 0.78rem;
 }
