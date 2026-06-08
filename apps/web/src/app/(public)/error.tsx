@@ -11,10 +11,38 @@ interface PublicErrorProps {
   reset: () => void
 }
 
+const CHUNK_RELOAD_GUARD = 'homemade-chunk-reload-attempted'
+
+function isChunkLoadError(error: Error): boolean {
+  if (error.name === 'ChunkLoadError') return true
+  const msg = error.message ?? ''
+  return (
+    /Loading chunk [^ ]+ failed/i.test(msg) ||
+    /Failed to (?:load|fetch) (?:dynamically imported )?(?:module|chunk)/i.test(msg) ||
+    /Importing a module script failed/i.test(msg)
+  )
+}
+
 export default function PublicError({ error, reset }: PublicErrorProps) {
   const pathname = usePathname()
 
   useEffect(() => {
+    // Stale chunk from a previous deploy — force a full reload so the
+    // browser re-fetches HTML with current chunk references. Skip Sentry to
+    // keep the signal clean: this isn't a real bug.
+    if (isChunkLoadError(error)) {
+      try {
+        if (!sessionStorage.getItem(CHUNK_RELOAD_GUARD)) {
+          sessionStorage.setItem(CHUNK_RELOAD_GUARD, '1')
+          window.location.reload()
+          return
+        }
+      } catch {
+        window.location.reload()
+        return
+      }
+    }
+
     Sentry.captureException(error)
     captureClientEvent('error_boundary_triggered', {
       path: pathname,

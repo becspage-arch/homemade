@@ -1,5 +1,17 @@
 import * as Sentry from '@sentry/nextjs'
 
+// Clear the chunk-error reload guard once the page has rendered successfully.
+// The guard prevents a reload loop when a NEW build is also broken; clearing
+// it on a healthy load means a later chunk error in the same long-open tab
+// still gets one auto-recovery rather than going straight to the fallback.
+if (typeof window !== 'undefined') {
+  try {
+    sessionStorage.removeItem('homemade-chunk-reload-attempted')
+  } catch {
+    // sessionStorage unavailable (private mode etc.) — nothing to clear.
+  }
+}
+
 if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   Sentry.init({
     dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
