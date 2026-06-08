@@ -1466,3 +1466,28 @@
   font-size: 0.88rem;
   font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
 }
+
+.tutorial-content .crochet-pattern-inset-actions {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.tutorial-content .crochet-pattern-inset-print {
+  color: #5d7959;
+  text-decoration: none;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(125, 149, 125, 0.4);
+  transition: background 160ms ease;
+}
+
+.tutorial-content .crochet-pattern-inset-print:hover,
+.tutorial-content .crochet-pattern-inset-print:focus-visible {
+  background: rgba(125, 149, 125, 0.1);
+  outline: none;
+}

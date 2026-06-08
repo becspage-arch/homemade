@@ -220,6 +220,10 @@ function ActiveProjectSurface({
       ? `/${pattern.sourceTutorialCategorySlug}/${pattern.sourceTutorialSlug}`
       : null
 
+  const printHref = pattern.slug
+    ? `/studio/crochet/${encodeURIComponent(pattern.slug)}/print?terminology=${terminology}`
+    : null
+
   return (
     <div className="crochet-studio-surface crochet-studio-active-surface">
       <CrochetStudioToolbar
@@ -236,6 +240,7 @@ function ActiveProjectSurface({
         notesOpen={notesOpen}
         onToggleNotes={onToggleNotes}
         tutorialHref={tutorialHref}
+        printHref={printHref}
         onClose={onClose}
       />
 

@@ -12,6 +12,7 @@ import { extractScaleIngredients } from '@/components/public/tutorial-content/sc
 import { TutorialChrome } from '@/components/public/tutorial-chrome'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 import { loadContentRefs } from '@/lib/tutorial-refs'
+import { prepareTutorialBody } from '@/lib/tutorial-body-prep'
 import { tutorialHeroUrl } from '@/lib/tutorial-hero'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { harvestSupplies } from '@/lib/supplies'
@@ -185,7 +186,10 @@ export default async function TutorialPage({ params }: PageProps) {
   ])
   if (!tutorial) notFound()
 
-  const body = tutorial.body as TipTapNode | null
+  const rawBody = tutorial.body as TipTapNode | null
+  const body = prepareTutorialBody(rawBody, {
+    chartDefinition: tutorial.chartDefinition ?? undefined,
+  })
   const refs = await loadContentRefs(body, tutorial.id)
   const heroUrl = tutorialHeroUrl(tutorial, 'hero')
   const beginnerMode = currentUser?.beginnerMode === true

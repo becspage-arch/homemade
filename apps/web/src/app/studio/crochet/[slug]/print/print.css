@@ -1,0 +1,214 @@
+/* Crochet pattern print — server-rendered, browser-print-to-PDF.
+   Targets a single coherent article suitable for kitchen-table use.
+
+   Sections in order:
+     header (title + designer + description)
+     meta (finished size, gauge, materials)
+     abbreviations key
+     pattern (per-section row list)
+     chart (if present)
+*/
+
+@page {
+  size: A4 portrait;
+  margin: 18mm 16mm;
+}
+
+.crochet-print--letter {
+  --paper-rule: 'letter';
+}
+.crochet-print--letter {
+}
+.crochet-print--letter > * {
+  /* @page rules can't be class-scoped, so the actual paper override
+     happens via a <style> injected on each variant — kept simple for v1:
+     paper switching changes the URL and re-renders the @page above. */
+}
+
+.crochet-print {
+  font-family: 'Lora', Georgia, serif;
+  color: #2b2b2b;
+  line-height: 1.55;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.crochet-print-controls {
+  background: #faf6ef;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.crochet-print-controls strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.crochet-print-controls p {
+  margin: 0.4rem 0;
+  font-size: 0.92rem;
+  color: #5c5347;
+}
+
+.crochet-print-controls code {
+  background: rgba(60, 47, 34, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.crochet-print-controls a {
+  color: #5d7959;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.crochet-print-article {
+  background: #fff;
+}
+
+.crochet-print-header h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.15;
+}
+
+.crochet-print-designer {
+  color: #8a8276;
+  font-size: 0.95rem;
+  margin: 0 0 0.6rem;
+}
+
+.crochet-print-description {
+  margin: 0 0 1.5rem;
+  color: #5c5347;
+}
+
+.crochet-print h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 1.4rem 0 0.4rem;
+  color: #3d2f22;
+}
+
+.crochet-print h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin: 1rem 0 0.4rem;
+  color: #3d2f22;
+}
+
+.crochet-print-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e8ddc8;
+  border-bottom: 1px solid #e8ddc8;
+  margin: 1rem 0 1.5rem;
+}
+
+.crochet-print-meta h2 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8276;
+  font-family: ui-monospace, monospace;
+}
+
+.crochet-print-meta p,
+.crochet-print-meta ul {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.crochet-print-meta ul {
+  list-style: none;
+  padding: 0;
+}
+
+.crochet-print-meta ul li {
+  margin: 0.2rem 0;
+}
+
+.crochet-print-abbreviations dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.8rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.crochet-print-abbreviations dl > div {
+  display: contents;
+}
+
+.crochet-print-abbreviations dt {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: #3d2f22;
+}
+
+.crochet-print-abbreviations dd {
+  margin: 0;
+  color: #5c5347;
+}
+
+.crochet-print-rows {
+  list-style: none;
+  counter-reset: row;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.crochet-print-rows li {
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.crochet-print-row-count {
+  color: #5c5347;
+  font-size: 0.88em;
+  font-family: ui-monospace, monospace;
+}
+
+.crochet-print-chart {
+  margin-top: 1.5rem;
+  page-break-before: always;
+}
+
+.crochet-print-chart .craft-chart {
+  max-width: 100%;
+  margin: 0;
+  display: block;
+}
+
+.crochet-print-chart .craft-chart__svg-wrap {
+  max-width: 480px;
+  margin: 1rem auto;
+}
+
+.crochet-print-section {
+  break-inside: avoid-page;
+  margin-bottom: 1.2rem;
+}

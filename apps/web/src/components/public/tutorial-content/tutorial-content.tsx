@@ -736,6 +736,9 @@ function RenderNode({
       const query = crochetPatternId
         ? `crochetPatternId=${encodeURIComponent(crochetPatternId)}`
         : `crochetPatternSlug=${encodeURIComponent(crochetPatternSlug as string)}`
+      const printHref = crochetPatternSlug
+        ? `/studio/crochet/${encodeURIComponent(crochetPatternSlug)}/print`
+        : null
       return (
         <aside className="crochet-pattern-inset">
           <div className="crochet-pattern-inset-body">
@@ -745,9 +748,16 @@ function RenderNode({
               Mark each round as you go, switch between written and chart, save your place. Picks up exactly where you left off next time.
             </p>
           </div>
-          <a className="crochet-pattern-inset-cta" href={`/studio/crochet?${query}`}>
-            Start in the Studio
-          </a>
+          <div className="crochet-pattern-inset-actions">
+            <a className="crochet-pattern-inset-cta" href={`/studio/crochet?${query}`}>
+              Start in the Studio
+            </a>
+            {printHref && (
+              <a className="crochet-pattern-inset-print" href={printHref} target="_blank" rel="noopener noreferrer">
+                Print pattern
+              </a>
+            )}
+          </div>
         </aside>
       )
     }
