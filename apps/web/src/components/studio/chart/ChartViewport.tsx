@@ -65,22 +65,40 @@ export function ChartViewport({
   const svgRef = useRef<SVGSVGElement>(null)
   const [spacePanning, setSpacePanning] = useState(false)
 
-  const store = useChartStore()
-  const {
-    setPattern,
-    setMode,
-    setContainerSize,
-    setStitchedCells,
-    fitViewportToScreen,
-    applyPan,
-    applyZoom,
-    paintCell,
-    eraseCell,
-    toggleStitched,
-    markStitchedBatch,
-    setSelection,
-    setCurrentSymbol,
-  } = store
+  // Zustand actions are stable refs across state changes, but
+  // `useChartStore()` (no selector) returns a fresh state-object on every
+  // tick — putting that whole object into effect dep arrays produces an
+  // infinite-loop on the first setMode call. Use selectors for actions
+  // (stable) and for the small set of state values the component
+  // actually renders against; pointer / keyboard handlers read latest
+  // state imperatively via `useChartStore.getState()` so they neither
+  // resubscribe nor stale-close.
+  const setPattern = useChartStore((s) => s.setPattern)
+  const setMode = useChartStore((s) => s.setMode)
+  const setContainerSize = useChartStore((s) => s.setContainerSize)
+  const setStitchedCells = useChartStore((s) => s.setStitchedCells)
+  const fitViewportToScreen = useChartStore((s) => s.fitViewportToScreen)
+  const applyPan = useChartStore((s) => s.applyPan)
+  const applyZoom = useChartStore((s) => s.applyZoom)
+  const paintCell = useChartStore((s) => s.paintCell)
+  const eraseCell = useChartStore((s) => s.eraseCell)
+  const toggleStitched = useChartStore((s) => s.toggleStitched)
+  const markStitchedBatch = useChartStore((s) => s.markStitchedBatch)
+  const setSelection = useChartStore((s) => s.setSelection)
+  const setCurrentSymbol = useChartStore((s) => s.setCurrentSymbol)
+  const setTool = useChartStore((s) => s.setTool)
+  const setIsolate = useChartStore((s) => s.setIsolate)
+  const undo = useChartStore((s) => s.undo)
+  const redo = useChartStore((s) => s.redo)
+
+  // Render-affecting state slices.
+  const viewport = useChartStore((s) => s.viewport)
+  const isolate = useChartStore((s) => s.isolateSymbol)
+  const stitchedSet = useChartStore((s) => s.stitchedCells)
+  const displayMode = useChartStore((s) => s.displayMode)
+  const layers = useChartStore((s) => s.layers)
+  const selection = useChartStore((s) => s.selection)
+  const tool = useChartStore((s) => s.tool)
 
   // ───── one-time pattern install + container measure
   useEffect(() => {
@@ -107,7 +125,9 @@ export function ChartViewport({
     return () => observer.disconnect()
   }, [setContainerSize])
 
-  // ───── keyboard: space-bar pan, undo/redo, tool shortcuts
+  // ───── keyboard: space-bar pan, undo/redo, tool shortcuts.
+  // Reads latest state imperatively (getState()) so we don't reattach
+  // the listener on every store tick.
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null
@@ -119,31 +139,34 @@ export function ChartViewport({
       }
       if ((e.metaKey || e.ctrlKey) && e.key === 'z' && !e.shiftKey) {
         e.preventDefault()
-        store.undo()
+        undo()
         return
       }
       if ((e.metaKey || e.ctrlKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) {
         e.preventDefault()
-        store.redo()
+        redo()
         return
       }
-      if (e.key === 'b' && !e.metaKey && !e.ctrlKey) store.setTool('brush')
-      else if (e.key === 'e' && !e.metaKey && !e.ctrlKey) store.setTool('erase')
-      else if (e.key === 'm' && !e.metaKey && !e.ctrlKey) store.setTool('mark-stitched')
-      else if (e.key === 'c' && !e.metaKey && !e.ctrlKey) store.setTool('colour-picker')
-      else if (e.key === 'v' && !e.metaKey && !e.ctrlKey) store.setTool('select')
+      if (e.key === 'b' && !e.metaKey && !e.ctrlKey) setTool('brush')
+      else if (e.key === 'e' && !e.metaKey && !e.ctrlKey) setTool('erase')
+      else if (e.key === 'm' && !e.metaKey && !e.ctrlKey) setTool('mark-stitched')
+      else if (e.key === 'c' && !e.metaKey && !e.ctrlKey) setTool('colour-picker')
+      else if (e.key === 'v' && !e.metaKey && !e.ctrlKey) setTool('select')
       else if (e.key === 'i' && !e.metaKey && !e.ctrlKey) {
-        const c = store.currentSymbol
-        if (c) store.setIsolate(store.isolateSymbol === c ? null : c)
+        const s = useChartStore.getState()
+        const c = s.currentSymbol
+        if (c) setIsolate(s.isolateSymbol === c ? null : c)
       } else if (e.key === '+' || e.key === '=') {
-        applyZoom(1.2, store.containerWidth / 2, store.containerHeight / 2)
+        const s = useChartStore.getState()
+        applyZoom(1.2, s.containerWidth / 2, s.containerHeight / 2)
       } else if (e.key === '-' || e.key === '_') {
-        applyZoom(1 / 1.2, store.containerWidth / 2, store.containerHeight / 2)
+        const s = useChartStore.getState()
+        applyZoom(1 / 1.2, s.containerWidth / 2, s.containerHeight / 2)
       } else if (e.key === '0') {
         fitViewportToScreen()
       } else if (e.key === 'Escape') {
-        store.setSelection(null)
-        store.setIsolate(null)
+        setSelection(null)
+        setIsolate(null)
       }
     }
     const onKeyUp = (e: KeyboardEvent) => {
@@ -155,7 +178,7 @@ export function ChartViewport({
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('keyup', onKeyUp)
     }
-  }, [store, applyZoom, fitViewportToScreen])
+  }, [applyZoom, fitViewportToScreen, undo, redo, setTool, setIsolate, setSelection])
 
   // ───── pointer interaction (pan / paint / mark)
   const dragRef = useRef<
@@ -182,14 +205,15 @@ export function ChartViewport({
         dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
         return
       }
-      const cell = screenToCell(lx, ly, store.viewport)
+      const s = useChartStore.getState()
+      const cell = screenToCell(lx, ly, s.viewport)
       if (cell.x < 0 || cell.y < 0 || cell.x >= pattern.grid.width || cell.y >= pattern.grid.height) {
         dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
         return
       }
-      if (mode === 'view' || store.tool === 'mark-stitched') {
+      if (mode === 'view' || s.tool === 'mark-stitched') {
         const k = cellKey(cell.x, cell.y)
-        const currently = store.stitchedCells.has(k)
+        const currently = s.stitchedCells.has(k)
         toggleStitched(cell.x, cell.y)
         dragRef.current = {
           mode: 'mark',
@@ -200,8 +224,8 @@ export function ChartViewport({
         }
         return
       }
-      if (store.tool === 'brush' && store.currentSymbol) {
-        paintCell(cell.x, cell.y, store.currentSymbol)
+      if (s.tool === 'brush' && s.currentSymbol) {
+        paintCell(cell.x, cell.y, s.currentSymbol)
         dragRef.current = {
           mode: 'paint',
           lastX: lx,
@@ -210,7 +234,7 @@ export function ChartViewport({
         }
         return
       }
-      if (store.tool === 'erase') {
+      if (s.tool === 'erase') {
         eraseCell(cell.x, cell.y)
         dragRef.current = {
           mode: 'erase',
@@ -220,7 +244,7 @@ export function ChartViewport({
         }
         return
       }
-      if (store.tool === 'colour-picker') {
+      if (s.tool === 'colour-picker') {
         const hit = pattern.grid.cells.find((c) => c.x === cell.x && c.y === cell.y)
         if (hit) {
           setCurrentSymbol(hit.s)
@@ -228,7 +252,7 @@ export function ChartViewport({
         }
         return
       }
-      if (store.tool === 'select') {
+      if (s.tool === 'select') {
         dragRef.current = {
           mode: 'select',
           lastX: lx,
@@ -242,7 +266,7 @@ export function ChartViewport({
       }
       dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
     },
-    [spacePanning, mode, store, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
+    [spacePanning, mode, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
   )
 
   const onPointerMove = useCallback(
@@ -260,12 +284,13 @@ export function ChartViewport({
         applyPan(dx, dy)
         return
       }
-      const cell = screenToCell(lx, ly, store.viewport)
+      const s = useChartStore.getState()
+      const cell = screenToCell(lx, ly, s.viewport)
       if (cell.x < 0 || cell.y < 0 || cell.x >= pattern.grid.width || cell.y >= pattern.grid.height) return
       const k = cellKey(cell.x, cell.y)
-      if (drag.mode === 'paint' && store.currentSymbol && !drag.touched.has(k)) {
+      if (drag.mode === 'paint' && s.currentSymbol && !drag.touched.has(k)) {
         drag.touched.add(k)
-        paintCell(cell.x, cell.y, store.currentSymbol)
+        paintCell(cell.x, cell.y, s.currentSymbol)
         return
       }
       if (drag.mode === 'erase' && !drag.touched.has(k)) {
@@ -287,7 +312,7 @@ export function ChartViewport({
         })
       }
     },
-    [store, pattern, paintCell, eraseCell, markStitchedBatch, applyPan, setSelection],
+    [pattern, paintCell, eraseCell, markStitchedBatch, applyPan, setSelection],
   )
 
   const onPointerUp = useCallback((e: ReactPointerEvent<SVGSVGElement>) => {
@@ -311,13 +336,10 @@ export function ChartViewport({
   const paletteIndex = useMemo(() => buildPaletteIndex(pattern), [pattern])
   const cellBuckets = useMemo(() => groupCellsBySymbol(pattern), [pattern])
   const cellPx = DEFAULT_CELL_PX
-  const scaledCellPx = cellPx * store.viewport.scale
+  const scaledCellPx = cellPx * viewport.scale
   const useLowZoom = scaledCellPx < LOW_ZOOM_THRESHOLD
 
-  const isolate = store.isolateSymbol
-  const stitchedSet = store.stitchedCells
-  const showStitchedOverlay = store.displayMode !== 'all' || stitchedSet.size > 0
-  const layers = store.layers
+  const showStitchedOverlay = displayMode !== 'all' || stitchedSet.size > 0
 
   const renderedBuckets = useMemo(() => {
     const buckets: Array<{ symbol: string; rgb: string; cross: string; highlight: string; cellList: { x: number; y: number }[] }> = []
@@ -326,7 +348,7 @@ export function ChartViewport({
       if (isolate && symbol !== isolate) continue
       const entry = paletteIndex.bySymbol.get(symbol)
       if (!entry) continue
-      const filtered = filterByDisplayMode(cells, stitchedSet, store.displayMode)
+      const filtered = filterByDisplayMode(cells, stitchedSet, displayMode)
       if (filtered.length === 0) continue
       buckets.push({
         symbol,
@@ -337,7 +359,7 @@ export function ChartViewport({
       })
     }
     return buckets
-  }, [cellBuckets, paletteIndex, isolate, stitchedSet, store.displayMode, useLowZoom, cellPx])
+  }, [cellBuckets, paletteIndex, isolate, stitchedSet, displayMode, useLowZoom, cellPx])
 
   // Render the centre crosshairs as a + that crosses the whole grid.
   const gridW = pattern.grid.width
@@ -346,13 +368,13 @@ export function ChartViewport({
   const totalH = gridH * cellPx
 
   // The viewport transform applied to the world-space content.
-  const transform = `translate(${store.viewport.panX} ${store.viewport.panY}) scale(${store.viewport.scale})`
+  const transform = `translate(${viewport.panX} ${viewport.panY}) scale(${viewport.scale})`
 
   const cursorStyle = (() => {
     if (spacePanning) return 'grab'
-    if (mode === 'view' || store.tool === 'mark-stitched') return 'pointer'
-    if (store.tool === 'brush' || store.tool === 'erase' || store.tool === 'select') return 'crosshair'
-    if (store.tool === 'colour-picker') return 'copy'
+    if (mode === 'view' || tool === 'mark-stitched') return 'pointer'
+    if (tool === 'brush' || tool === 'erase' || tool === 'select') return 'crosshair'
+    if (tool === 'colour-picker') return 'copy'
     return 'default'
   })()
 
@@ -369,7 +391,7 @@ export function ChartViewport({
         onContextMenu={(e) => {
           e.preventDefault()
           const rect = svgRef.current!.getBoundingClientRect()
-          const cell = screenToCell(e.clientX - rect.left, e.clientY - rect.top, store.viewport)
+          const cell = screenToCell(e.clientX - rect.left, e.clientY - rect.top, viewport)
           if (cell.x < 0 || cell.y < 0 || cell.x >= gridW || cell.y >= gridH) return
           const hit = pattern.grid.cells.find((c) => c.x === cell.x && c.y === cell.y)
           if (hit && onRequestIsolate) onRequestIsolate(hit.s)
@@ -534,7 +556,7 @@ export function ChartViewport({
                     y1={0}
                     x2={c * cellPx}
                     y2={totalH}
-                    strokeWidth={w / store.viewport.scale}
+                    strokeWidth={w / viewport.scale}
                     opacity={o}
                   />
                 )
@@ -551,7 +573,7 @@ export function ChartViewport({
                     y1={r * cellPx}
                     x2={totalW}
                     y2={r * cellPx}
-                    strokeWidth={w / store.viewport.scale}
+                    strokeWidth={w / viewport.scale}
                     opacity={o}
                   />
                 )
@@ -564,7 +586,7 @@ export function ChartViewport({
             <g
               className="chart-centre-crosshairs"
               stroke="#c4856b"
-              strokeWidth={1.6 / store.viewport.scale}
+              strokeWidth={1.6 / viewport.scale}
               opacity={0.72}
               pointerEvents="none"
             >
@@ -594,16 +616,16 @@ export function ChartViewport({
             ))}
 
           {/* Selection rectangle. */}
-          {store.selection && (
+          {selection && (
             <rect
-              x={store.selection.x1 * cellPx}
-              y={store.selection.y1 * cellPx}
-              width={(store.selection.x2 - store.selection.x1 + 1) * cellPx}
-              height={(store.selection.y2 - store.selection.y1 + 1) * cellPx}
+              x={selection.x1 * cellPx}
+              y={selection.y1 * cellPx}
+              width={(selection.x2 - selection.x1 + 1) * cellPx}
+              height={(selection.y2 - selection.y1 + 1) * cellPx}
               fill="rgba(196, 133, 107, 0.16)"
               stroke="#c4856b"
-              strokeWidth={1.6 / store.viewport.scale}
-              strokeDasharray={`${6 / store.viewport.scale} ${4 / store.viewport.scale}`}
+              strokeWidth={1.6 / viewport.scale}
+              strokeDasharray={`${6 / viewport.scale} ${4 / viewport.scale}`}
               pointerEvents="none"
             />
           )}

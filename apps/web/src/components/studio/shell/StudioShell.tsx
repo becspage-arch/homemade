@@ -66,10 +66,17 @@ export function StudioShell({
 
   const initialStitched = useMemo(() => new Set(stitchedKeys), [stitchedKeys])
 
-  const store = useChartStore()
+  // Pull stable action refs via selectors. `const store = useChartStore()`
+  // would subscribe this component to every store change and put a new
+  // state-object reference into any effect dep array — that turned this
+  // effect into an infinite loop because setMode triggers a state change,
+  // which gave the effect a new `store` reference, which re-fired it.
+  const setMode = useChartStore((s) => s.setMode)
+  const setIsolate = useChartStore((s) => s.setIsolate)
+  const setCurrentSymbol = useChartStore((s) => s.setCurrentSymbol)
   useEffect(() => {
-    if (pattern) store.setMode(pattern.ownerUserId ? 'edit' : 'view')
-  }, [pattern, store])
+    if (pattern) setMode(pattern.ownerUserId ? 'edit' : 'view')
+  }, [pattern, setMode])
 
   // Autosave hook — debounced save to server when the user is logged in and
   // owns the pattern. Library patterns silently fork on first edit.
@@ -140,8 +147,8 @@ export function StudioShell({
           pattern={pattern.data}
           mode={pattern.ownerUserId ? 'edit' : 'view'}
           initialStitched={initialStitched}
-          onRequestIsolate={(s) => store.setIsolate(s)}
-          onPickColour={(s) => store.setCurrentSymbol(s)}
+          onRequestIsolate={(s) => setIsolate(s)}
+          onPickColour={(s) => setCurrentSymbol(s)}
         />
 
         {/* Floating palette drawer — left edge, Procreate-style. */}
