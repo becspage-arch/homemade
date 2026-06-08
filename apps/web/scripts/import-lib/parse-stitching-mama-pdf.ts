@@ -192,11 +192,11 @@ function parseCover(items: TextItem[]): CoverInfo {
     const s = it.str
     if (!fabricCount) {
       const m = s.match(/Aida\s+(\d+)\s+count/i)
-      if (m) fabricCount = parseInt(m[1], 10)
+      if (m && m[1]) fabricCount = parseInt(m[1], 10)
     }
     if (gridWidth === null) {
       const m = s.match(/^\s*(\d+)\s*x\s*(\d+)\s*$/i)
-      if (m) {
+      if (m && m[1] && m[2]) {
         gridWidth = parseInt(m[1], 10)
         gridHeight = parseInt(m[2], 10)
       }
@@ -208,7 +208,7 @@ function parseCover(items: TextItem[]): CoverInfo {
   if (fabricCount) {
     for (const it of sorted) {
       const m = it.str.match(new RegExp(`(?:^|\\s)${fabricCount}\\s*ct\\s*\\(\\s*([\\d.]+)\\s*x\\s*([\\d.]+)\\s*cm\\)`, 'i'))
-      if (m) {
+      if (m && m[1] && m[2]) {
         finishedSizeCm = { width: parseFloat(m[1]), height: parseFloat(m[2]) }
         break
       }
@@ -221,12 +221,12 @@ function parseCover(items: TextItem[]): CoverInfo {
   if (!finishedSizeCm) {
     const all = sorted.flatMap(it => {
       const m = it.str.match(/([\d.]+)\s*cm\s*x\s*([\d.]+)\s*cm/i)
-      return m ? [{ w: parseFloat(m[1]), h: parseFloat(m[2]) }] : []
+      return m && m[1] && m[2] ? [{ w: parseFloat(m[1]), h: parseFloat(m[2]) }] : []
     })
     const decimal = all.find(s => !Number.isInteger(s.w) || !Number.isInteger(s.h))
     if (decimal) finishedSizeCm = { width: decimal.w, height: decimal.h }
-    else if (all.length > 1) finishedSizeCm = { width: all[1].w, height: all[1].h }
-    else if (all.length > 0) finishedSizeCm = { width: all[0].w, height: all[0].h }
+    else if (all.length > 1 && all[1]) finishedSizeCm = { width: all[1].w, height: all[1].h }
+    else if (all.length > 0 && all[0]) finishedSizeCm = { width: all[0].w, height: all[0].h }
   }
 
   return { title, gridWidth, gridHeight, fabricCount, finishedSizeCm, declaredTotalStitches }
@@ -280,13 +280,17 @@ function parseLegendPage(items: TextItem[], cells: RgbCell[]): LegendInfo {
     if (strandsIdx < 0) continue
     const name = row.slice(brandIdx + 2, strandsIdx).map(it => it.str).join(' ').replace(/\s+/g, ' ').trim()
     // Strands; length ("xxx.xx cm"); stitches integer follow.
-    const strands = parseInt(row[strandsIdx].str.trim(), 10)
+    const strandsItem = row[strandsIdx]
+    if (!strandsItem) continue
+    const strands = parseInt(strandsItem.str.trim(), 10)
     let lengthCm = 0
     let stitches = 0
     for (let j = strandsIdx + 1; j < row.length; j++) {
-      const s = row[j].str.trim()
+      const item = row[j]
+      if (!item) continue
+      const s = item.str.trim()
       const lm = s.match(/^([\d.]+)\s*cm$/)
-      if (lm && !lengthCm) lengthCm = parseFloat(lm[1])
+      if (lm && lm[1] && !lengthCm) lengthCm = parseFloat(lm[1])
       else if (!stitches && /^\d{1,6}$/.test(s)) stitches = parseInt(s, 10)
     }
     out.rows.push({
