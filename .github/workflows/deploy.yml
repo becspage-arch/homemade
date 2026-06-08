@@ -122,6 +122,25 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db migrate:deploy
 
+      # Pattern Studio data backfills (phase_pattern_studio_001).
+      # Both scripts are idempotent: the seed upserts on Pattern.slug,
+      # and the chart migration only touches Tutorial body nodes still
+      # typed `crossStitchChart` (already-migrated nodes are
+      # `patternInset`). Safe to re-run on every deploy.
+      - name: Seed cross-stitch starter patterns (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/seed-cross-stitch-patterns.ts
+
+      - name: Migrate legacy crossStitchChart nodes to patternInset (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/migrate-cross-stitch-charts.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match
