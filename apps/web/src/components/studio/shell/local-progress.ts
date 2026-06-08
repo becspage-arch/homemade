@@ -14,7 +14,7 @@
  */
 
 import { openDB, type IDBPDatabase } from 'idb'
-import type { PatternData } from '@homemade/db'
+import type { PatternData } from '@homemade/db/pattern'
 
 const DB_NAME = 'homemade-studio'
 const DB_VERSION = 1

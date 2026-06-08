@@ -13,7 +13,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import type { PatternData } from '@homemade/db'
+import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
 import { useChartStore } from '../chart/chart-store'
 import { StudioToolbar } from './StudioToolbar'

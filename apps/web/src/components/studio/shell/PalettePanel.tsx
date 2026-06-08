@@ -11,7 +11,7 @@
  */
 
 import { useState, useEffect } from 'react'
-import type { PatternData } from '@homemade/db'
+import type { PatternData } from '@homemade/db/pattern'
 import { X, EyeOff, Eye, Palette } from 'lucide-react'
 import { useChartStore } from '../chart/chart-store'
 

@@ -19,8 +19,8 @@ import type {
   FrenchKnot,
   PatternData,
   PaletteEntry,
-} from '@homemade/db'
-import { cellKey } from '@homemade/db'
+} from '@homemade/db/pattern'
+import { cellKey } from '@homemade/db/pattern'
 import { DEFAULT_VIEWPORT, type Viewport, zoomAtPoint, fitToScreen } from './render-helpers'
 
 export type ChartMode = 'view' | 'edit'

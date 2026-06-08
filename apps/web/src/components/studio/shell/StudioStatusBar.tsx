@@ -7,7 +7,7 @@
  */
 
 import { Palette, ListChecks } from 'lucide-react'
-import type { PatternData } from '@homemade/db'
+import type { PatternData } from '@homemade/db/pattern'
 import { useChartStore } from '../chart/chart-store'
 
 interface StudioStatusBarProps {

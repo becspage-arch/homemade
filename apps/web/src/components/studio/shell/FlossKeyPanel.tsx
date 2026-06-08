@@ -12,7 +12,7 @@
 
 import { useMemo, useState, useEffect } from 'react'
 import { ListChecks, X, ArrowUpDown } from 'lucide-react'
-import { estimateSkeinCount, cellKey, type PatternData } from '@homemade/db'
+import { estimateSkeinCount, cellKey, type PatternData } from '@homemade/db/pattern'
 import { useChartStore } from '../chart/chart-store'
 
 type SortKey = 'palette' | 'most' | 'alpha' | 'next'

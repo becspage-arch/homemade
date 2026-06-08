@@ -18,7 +18,7 @@
  * - Layers are grouped by colour so the SVG paint pass batches strokes.
  */
 
-import type { PatternData, PaletteEntry } from '@homemade/db'
+import type { PatternData, PaletteEntry } from '@homemade/db/pattern'
 
 export const DEFAULT_CELL_PX = 32
 export const LOW_ZOOM_THRESHOLD = 6

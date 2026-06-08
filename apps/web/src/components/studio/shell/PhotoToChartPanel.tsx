@@ -17,7 +17,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { UploadCloud, X } from 'lucide-react'
-import type { PatternData } from '@homemade/db'
+import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
 
 interface PhotoToChartPanelProps {

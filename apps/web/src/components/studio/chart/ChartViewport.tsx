@@ -28,7 +28,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type WheelEvent as ReactWheelEvent,
 } from 'react'
-import { cellKey, type PatternData } from '@homemade/db'
+import { cellKey, type PatternData } from '@homemade/db/pattern'
 import { useChartStore, type ChartMode } from './chart-store'
 import {
   buildBucketCrossPath,
