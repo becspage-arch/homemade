@@ -704,6 +704,7 @@ function RenderNode({
         : []
       return (
         <figure className="pattern-schematic">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           {mediaUrl && <img src={mediaUrl} alt="Pattern schematic" />}
           {measurements.length > 0 && (
             <figcaption>
