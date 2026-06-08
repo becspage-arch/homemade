@@ -149,7 +149,7 @@ export function BrandSwapDialog({ patternId, pattern, onClose, onSwapped }: Bran
 
         <ul className="studio-brand-swap-list">
           {proposal.map((row, i) => (
-            <li key={row.source.symbol + i} className="studio-brand-swap-row">
+            <li key={`${row.source.code}-${i}`} className="studio-brand-swap-row">
               <span className="studio-brand-swap-swatch" style={{ background: row.source.rgb }} />
               <span className="studio-brand-swap-source">
                 <span className="studio-brand-swap-code">{row.source.brand} {row.source.code}</span>
