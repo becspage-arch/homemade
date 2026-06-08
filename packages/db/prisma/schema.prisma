@@ -337,6 +337,15 @@ model Category {
   lastAutopilotRunAt DateTime?
   autopilotWeight    Int            @default(1)
 
+  // Landing-page archetype. Drives /[categorySlug] layout selection.
+  // RECIPE   → cooking, baking, herbal-medicine, natural-home
+  // PATTERN  → cross-stitch, knitting, crochet, needlework, sewing
+  // SKILL    → fibre-arts, wood-natural-craft, paper-word, pottery-ceramics
+  // PRACTICE → mindset, sustainability, animals-smallholding
+  // PLANT    → garden
+  // FIX      → home-repair
+  archetype CategoryArchetype @default(RECIPE)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -1023,6 +1032,15 @@ enum PipelineStatus {
   READY // Queue may fire bulk batches against this category.
   PAUSED // Temporarily skipped (e.g. quality drift) without disabling cron.
   COMPLETE // Published count has reached targetTutorialCount.
+}
+
+enum CategoryArchetype {
+  RECIPE
+  PATTERN
+  SKILL
+  PRACTICE
+  PLANT
+  FIX
 }
 
 enum Season {

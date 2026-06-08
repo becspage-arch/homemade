@@ -1,25 +1,27 @@
 import 'server-only'
 
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, TutorialStatus, Visibility } from '@homemade/db'
 import {
   extractBodyText,
   removeCategoryFromSearch,
+  removeCrochetPatternFromSearch,
   removeGlossaryFromSearch,
+  removePatternFromSearch,
   removeTutorialFromSearch,
   syncCategoryDoc,
+  syncCrochetPatternDoc,
   syncGlossaryDoc,
+  syncPatternDoc,
   syncTutorialDoc,
   type CategoryDoc,
+  type CrochetPatternDoc,
   type GlossaryDoc,
+  type PatternDoc,
   type TutorialDoc,
 } from '@homemade/search'
 
 /**
  * Build a Typesense tutorial doc from a freshly-read Prisma row.
- *
- * The Prisma include shape is intentionally narrow — we ask for only the
- * fields the doc needs, so callers can pre-fetch this in one query rather
- * than re-hydrating from a partial.
  */
 async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
   const tutorial = await prisma.tutorial.findUnique({
@@ -48,20 +50,30 @@ async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
     difficulty: tutorial.difficulty,
     season: tutorial.season,
     timeMinutes: tutorial.timeMinutes,
+    totalMinutes: tutorial.totalMinutes,
     tagSlugs: tutorial.tags.map((t) => t.slug),
     heroCloudflareId: tutorial.hero?.cloudflareId ?? null,
     heroR2Key: tutorial.hero?.r2Key ?? null,
     publishedAt: tutorial.publishedAt ? tutorial.publishedAt.getTime() : null,
+    type: tutorial.type,
+    mealType: tutorial.mealType,
+    cuisine: tutorial.cuisine,
+    dietaryFlags: tutorial.dietaryFlags,
+    mood: tutorial.mood,
+    practiceType: tutorial.practiceType,
+    practiceTargets: tutorial.practiceTargets,
+    timeBand: tutorial.timeBand,
+    bestTime: tutorial.bestTime,
+    practiceDepth: tutorial.practiceDepth,
+    plantingMonths: tutorial.plantingMonths,
+    harvestMonths: tutorial.harvestMonths,
+    containerFriendly: tutorial.containerFriendly,
+    indoorFriendly: tutorial.indoorFriendly,
+    regionsApplicable: tutorial.regionsApplicable,
+    foundational: tutorial.foundational,
   }
 }
 
-/**
- * Sync a tutorial to Typesense if it's published; remove it otherwise.
- * Idempotent. Logs but does not throw.
- *
- * Use after any mutation to a tutorial row. The caller does not need to
- * know whether the row was published — pass the id and we read the row.
- */
 export async function syncTutorialById(id: string): Promise<void> {
   try {
     const tutorial = await prisma.tutorial.findUnique({
@@ -93,6 +105,188 @@ export async function removeTutorialById(id: string): Promise<void> {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
+// Patterns
+// ────────────────────────────────────────────────────────────────────────────
+
+async function buildPatternDoc(id: string): Promise<PatternDoc | null> {
+  const pattern = await prisma.pattern.findUnique({
+    where: { id },
+    include: {
+      designer: { select: { slug: true, displayName: true } },
+      subCategory: {
+        select: {
+          slug: true,
+          name: true,
+          category: { select: { slug: true } },
+        },
+      },
+      hero: { select: { cloudflareId: true, r2Key: true } },
+      thumbnail: { select: { cloudflareId: true, r2Key: true } },
+    },
+  })
+  if (!pattern) return null
+  if (!pattern.subCategory) return null
+
+  return {
+    id: pattern.id,
+    slug: pattern.slug,
+    name: pattern.name,
+    description: pattern.description,
+    type: pattern.type,
+    categorySlug: pattern.subCategory.category.slug,
+    subCategorySlug: pattern.subCategory.slug,
+    subCategoryName: pattern.subCategory.name,
+    designerSlug: pattern.designer?.slug ?? null,
+    designerName: pattern.designer?.displayName ?? null,
+    difficulty: pattern.difficulty,
+    widthCells: pattern.widthCells,
+    heightCells: pattern.heightCells,
+    colourCount: pattern.colourCount,
+    totalStitches: pattern.totalStitches,
+    estimatedHours: pattern.estimatedHours,
+    hasBackstitch: pattern.hasBackstitch,
+    hasFrenchKnots: pattern.hasFrenchKnots,
+    hasBeads: pattern.hasBeads,
+    hasQuarterStitches: pattern.hasQuarterStitches,
+    fabricCountSuggested: pattern.fabricCountSuggested,
+    premium: pattern.premium,
+    heroCloudflareId: pattern.hero?.cloudflareId ?? null,
+    heroR2Key: pattern.hero?.r2Key ?? null,
+    thumbnailCloudflareId: pattern.thumbnail?.cloudflareId ?? null,
+    thumbnailR2Key: pattern.thumbnail?.r2Key ?? null,
+    publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
+  }
+}
+
+export async function syncPatternById(id: string): Promise<void> {
+  try {
+    const pattern = await prisma.pattern.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        visibility: true,
+        publishedAt: true,
+        ownerUserId: true,
+      },
+    })
+    if (!pattern) {
+      await removePatternFromSearch(id)
+      return
+    }
+    // Only catalogue patterns (ownerUserId null) that are PUBLIC and published.
+    if (
+      pattern.ownerUserId !== null ||
+      pattern.visibility !== Visibility.PUBLIC ||
+      pattern.publishedAt === null
+    ) {
+      await removePatternFromSearch(id)
+      return
+    }
+    const doc = await buildPatternDoc(id)
+    if (!doc) return
+    await syncPatternDoc(doc)
+  } catch (err) {
+    console.warn(`[search] syncPatternById(${id}) failed`, err)
+  }
+}
+
+export async function removePatternById(id: string): Promise<void> {
+  try {
+    await removePatternFromSearch(id)
+  } catch (err) {
+    console.warn(`[search] removePatternById(${id}) failed`, err)
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Crochet patterns
+// ────────────────────────────────────────────────────────────────────────────
+
+async function buildCrochetPatternDoc(id: string): Promise<CrochetPatternDoc | null> {
+  const pattern = await prisma.crochetPattern.findUnique({
+    where: { id },
+    include: {
+      designer: { select: { slug: true, displayName: true } },
+      subCategory: {
+        select: {
+          slug: true,
+          name: true,
+          category: { select: { slug: true } },
+        },
+      },
+      primaryYarnWeight: { select: { canonicalName: true } },
+      primaryHook: { select: { mmSize: true } },
+    },
+  })
+  if (!pattern) return null
+  if (!pattern.subCategory) return null
+
+  return {
+    id: pattern.id,
+    slug: pattern.slug,
+    name: pattern.name,
+    description: pattern.description,
+    categorySlug: pattern.subCategory.category.slug,
+    subCategorySlug: pattern.subCategory.slug,
+    subCategoryName: pattern.subCategory.name,
+    designerSlug: pattern.designer?.slug ?? null,
+    designerName: pattern.designer?.displayName ?? null,
+    difficulty: pattern.difficulty,
+    estimatedHours: pattern.estimatedHours,
+    shape: pattern.shapeCategory,
+    construction: pattern.construction,
+    primaryStitches: pattern.specialStitchesUsed,
+    yarnWeight: pattern.primaryYarnWeight?.canonicalName ?? null,
+    hookSizeMm: pattern.primaryHook?.mmSize ?? null,
+    hasMultipleSizes: pattern.sizesGraded !== null,
+    terminology: pattern.terminologyConvention,
+    premium: pattern.premium,
+    heroCloudflareId: null,
+    heroR2Key: null,
+    publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
+  }
+}
+
+export async function syncCrochetPatternById(id: string): Promise<void> {
+  try {
+    const pattern = await prisma.crochetPattern.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        visibility: true,
+        publishedAt: true,
+        ownerUserId: true,
+      },
+    })
+    if (!pattern) {
+      await removeCrochetPatternFromSearch(id)
+      return
+    }
+    if (
+      pattern.ownerUserId !== null ||
+      pattern.visibility !== Visibility.PUBLIC ||
+      pattern.publishedAt === null
+    ) {
+      await removeCrochetPatternFromSearch(id)
+      return
+    }
+    const doc = await buildCrochetPatternDoc(id)
+    if (!doc) return
+    await syncCrochetPatternDoc(doc)
+  } catch (err) {
+    console.warn(`[search] syncCrochetPatternById(${id}) failed`, err)
+  }
+}
+
+export async function removeCrochetPatternById(id: string): Promise<void> {
+  try {
+    await removeCrochetPatternFromSearch(id)
+  } catch (err) {
+    console.warn(`[search] removeCrochetPatternById(${id}) failed`, err)
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
 // Categories
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -108,6 +302,7 @@ export async function syncCategoryById(id: string): Promise<void> {
       slug: category.slug,
       name: category.name,
       description: category.description,
+      archetype: category.archetype,
     }
     await syncCategoryDoc(doc)
   } catch (err) {

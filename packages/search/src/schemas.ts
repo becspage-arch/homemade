@@ -1,10 +1,12 @@
 import type { CollectionCreateSchema } from 'typesense/lib/Typesense/Collections.js'
 
 /**
- * Typesense collection schemas. Three collections power public search:
- *   - tutorials  → the bulk of search; only PUBLISHED tutorials are indexed
- *   - categories → category landing pages
- *   - glossary   → glossary terms, useful for direct term lookups
+ * Typesense collection schemas. Five collections power public search:
+ *   - tutorials       → recipes / techniques / practices / growing-guides
+ *   - patterns        → cross-stitch + knitting-chart + crochet-chart Patterns
+ *   - crochet_patterns → row-by-row crochet patterns (sibling family)
+ *   - categories      → category landing pages
+ *   - glossary        → glossary terms, useful for direct term lookups
  *
  * Document shapes (the `*Doc` types) drive both indexing on the admin side
  * and result rendering on the public side, so they're exported alongside
@@ -12,6 +14,8 @@ import type { CollectionCreateSchema } from 'typesense/lib/Typesense/Collections
  */
 
 export const TUTORIALS_COLLECTION = 'tutorials'
+export const PATTERNS_COLLECTION = 'patterns'
+export const CROCHET_PATTERNS_COLLECTION = 'crochet_patterns'
 export const CATEGORIES_COLLECTION = 'categories'
 export const GLOSSARY_COLLECTION = 'glossary'
 
@@ -30,7 +34,82 @@ export interface TutorialDoc {
   difficulty: string
   season: string | null
   timeMinutes: number | null
+  totalMinutes: number | null
   tagSlugs: string[]
+  heroCloudflareId: string | null
+  heroR2Key: string | null
+  publishedAt: number | null
+  // Extended facets (Worker 1, category-landing-rethink) — every field that
+  // the archetype-aware landings filter on. All optional; null on rows that
+  // never set them.
+  type: string | null
+  mealType: string | null
+  cuisine: string | null
+  dietaryFlags: string[]
+  mood: string[]
+  practiceType: string | null
+  practiceTargets: string[]
+  timeBand: string | null
+  bestTime: string | null
+  practiceDepth: string | null
+  plantingMonths: string[]
+  harvestMonths: string[]
+  containerFriendly: boolean | null
+  indoorFriendly: boolean | null
+  regionsApplicable: string[]
+  foundational: boolean
+}
+
+export interface PatternDoc {
+  id: string
+  slug: string | null
+  name: string
+  description: string | null
+  type: string
+  categorySlug: string
+  subCategorySlug: string | null
+  subCategoryName: string | null
+  designerSlug: string | null
+  designerName: string | null
+  difficulty: string | null
+  widthCells: number
+  heightCells: number
+  colourCount: number
+  totalStitches: number
+  estimatedHours: number | null
+  hasBackstitch: boolean
+  hasFrenchKnots: boolean
+  hasBeads: boolean
+  hasQuarterStitches: boolean
+  fabricCountSuggested: number
+  premium: boolean
+  heroCloudflareId: string | null
+  heroR2Key: string | null
+  thumbnailCloudflareId: string | null
+  thumbnailR2Key: string | null
+  publishedAt: number | null
+}
+
+export interface CrochetPatternDoc {
+  id: string
+  slug: string | null
+  name: string
+  description: string | null
+  categorySlug: string
+  subCategorySlug: string | null
+  subCategoryName: string | null
+  designerSlug: string | null
+  designerName: string | null
+  difficulty: string | null
+  estimatedHours: number | null
+  shape: string | null
+  construction: string | null
+  primaryStitches: string[]
+  yarnWeight: string | null
+  hookSizeMm: number | null
+  hasMultipleSizes: boolean
+  terminology: string | null
+  premium: boolean
   heroCloudflareId: string | null
   heroR2Key: string | null
   publishedAt: number | null
@@ -41,6 +120,7 @@ export interface CategoryDoc {
   slug: string
   name: string
   description: string | null
+  archetype: string
 }
 
 export interface GlossaryDoc {
@@ -69,7 +149,87 @@ export const tutorialSchema: CollectionCreateSchema = {
     { name: 'difficulty', type: 'string', facet: true },
     { name: 'season', type: 'string', optional: true, facet: true },
     { name: 'timeMinutes', type: 'int32', optional: true },
+    { name: 'totalMinutes', type: 'int32', optional: true },
     { name: 'tagSlugs', type: 'string[]', facet: true, optional: true },
+    { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
+    { name: 'heroR2Key', type: 'string', optional: true, index: false },
+    { name: 'publishedAt', type: 'int64', optional: true },
+    { name: 'type', type: 'string', optional: true, facet: true },
+    { name: 'mealType', type: 'string', optional: true, facet: true },
+    { name: 'cuisine', type: 'string', optional: true, facet: true },
+    { name: 'dietaryFlags', type: 'string[]', facet: true, optional: true },
+    { name: 'mood', type: 'string[]', facet: true, optional: true },
+    { name: 'practiceType', type: 'string', optional: true, facet: true },
+    { name: 'practiceTargets', type: 'string[]', facet: true, optional: true },
+    { name: 'timeBand', type: 'string', optional: true, facet: true },
+    { name: 'bestTime', type: 'string', optional: true, facet: true },
+    { name: 'practiceDepth', type: 'string', optional: true, facet: true },
+    { name: 'plantingMonths', type: 'string[]', facet: true, optional: true },
+    { name: 'harvestMonths', type: 'string[]', facet: true, optional: true },
+    { name: 'containerFriendly', type: 'bool', optional: true, facet: true },
+    { name: 'indoorFriendly', type: 'bool', optional: true, facet: true },
+    { name: 'regionsApplicable', type: 'string[]', facet: true, optional: true },
+    { name: 'foundational', type: 'bool', facet: true, optional: true },
+  ],
+}
+
+export const patternSchema: CollectionCreateSchema = {
+  name: PATTERNS_COLLECTION,
+  default_sorting_field: 'publishedAt',
+  enable_nested_fields: false,
+  fields: [
+    { name: 'slug', type: 'string', optional: true },
+    { name: 'name', type: 'string', sort: true },
+    { name: 'description', type: 'string', optional: true },
+    { name: 'type', type: 'string', facet: true },
+    { name: 'categorySlug', type: 'string', facet: true },
+    { name: 'subCategorySlug', type: 'string', optional: true, facet: true },
+    { name: 'subCategoryName', type: 'string', optional: true, facet: true },
+    { name: 'designerSlug', type: 'string', optional: true, facet: true },
+    { name: 'designerName', type: 'string', optional: true, facet: true },
+    { name: 'difficulty', type: 'string', optional: true, facet: true },
+    { name: 'widthCells', type: 'int32', sort: true },
+    { name: 'heightCells', type: 'int32', sort: true },
+    { name: 'colourCount', type: 'int32', sort: true },
+    { name: 'totalStitches', type: 'int32', sort: true },
+    { name: 'estimatedHours', type: 'int32', optional: true, sort: true },
+    { name: 'hasBackstitch', type: 'bool', facet: true },
+    { name: 'hasFrenchKnots', type: 'bool', facet: true },
+    { name: 'hasBeads', type: 'bool', facet: true },
+    { name: 'hasQuarterStitches', type: 'bool', facet: true },
+    { name: 'fabricCountSuggested', type: 'int32' },
+    { name: 'premium', type: 'bool', facet: true },
+    { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
+    { name: 'heroR2Key', type: 'string', optional: true, index: false },
+    { name: 'thumbnailCloudflareId', type: 'string', optional: true, index: false },
+    { name: 'thumbnailR2Key', type: 'string', optional: true, index: false },
+    { name: 'publishedAt', type: 'int64', optional: true },
+  ],
+}
+
+export const crochetPatternSchema: CollectionCreateSchema = {
+  name: CROCHET_PATTERNS_COLLECTION,
+  default_sorting_field: 'publishedAt',
+  enable_nested_fields: false,
+  fields: [
+    { name: 'slug', type: 'string', optional: true },
+    { name: 'name', type: 'string', sort: true },
+    { name: 'description', type: 'string', optional: true },
+    { name: 'categorySlug', type: 'string', facet: true },
+    { name: 'subCategorySlug', type: 'string', optional: true, facet: true },
+    { name: 'subCategoryName', type: 'string', optional: true, facet: true },
+    { name: 'designerSlug', type: 'string', optional: true, facet: true },
+    { name: 'designerName', type: 'string', optional: true, facet: true },
+    { name: 'difficulty', type: 'string', optional: true, facet: true },
+    { name: 'estimatedHours', type: 'int32', optional: true, sort: true },
+    { name: 'shape', type: 'string', optional: true, facet: true },
+    { name: 'construction', type: 'string', optional: true, facet: true },
+    { name: 'primaryStitches', type: 'string[]', facet: true, optional: true },
+    { name: 'yarnWeight', type: 'string', optional: true, facet: true },
+    { name: 'hookSizeMm', type: 'float', optional: true, facet: true },
+    { name: 'hasMultipleSizes', type: 'bool', facet: true },
+    { name: 'terminology', type: 'string', optional: true, facet: true },
+    { name: 'premium', type: 'bool', facet: true },
     { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
     { name: 'heroR2Key', type: 'string', optional: true, index: false },
     { name: 'publishedAt', type: 'int64', optional: true },
@@ -83,6 +243,7 @@ export const categorySchema: CollectionCreateSchema = {
     { name: 'slug', type: 'string' },
     { name: 'name', type: 'string', sort: true },
     { name: 'description', type: 'string', optional: true },
+    { name: 'archetype', type: 'string', facet: true },
   ],
 }
 
@@ -99,6 +260,8 @@ export const glossarySchema: CollectionCreateSchema = {
 
 export const ALL_SCHEMAS: CollectionCreateSchema[] = [
   tutorialSchema,
+  patternSchema,
+  crochetPatternSchema,
   categorySchema,
   glossarySchema,
 ]
@@ -128,7 +291,6 @@ function walk(node: TipTapNodeLike, out: string[]): void {
 
   const attrs = node.attrs
   if (attrs && typeof attrs === 'object') {
-    // Pull inline text out of the custom blocks so info-panel titles etc. are searchable.
     for (const key of ['title', 'body', 'heading', 'quote', 'attribution', 'description'] as const) {
       const value = (attrs as Record<string, unknown>)[key]
       if (typeof value === 'string' && value.trim()) out.push(value)

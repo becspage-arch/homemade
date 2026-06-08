@@ -1,0 +1,382 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Shared category-landing components.
+   Used by every archetype layout. Brand-register: Fraunces / Lora / sage.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── CategoryScopedSearch ─────────────────────────────────────────────── */
+
+.category-scoped-search {
+  margin: 24px 0 32px;
+}
+
+.category-scoped-search-heading {
+  font-family: var(--font-fraunces);
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0 0 6px;
+}
+
+.category-scoped-search-lede {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 14px;
+  max-width: 60ch;
+}
+
+.category-scoped-search-form {
+  display: flex;
+  gap: 8px;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 16px;
+  padding: 6px 6px 6px 18px;
+  align-items: center;
+  max-width: 640px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-scoped-search-form:focus-within {
+  border-color: var(--color-sage);
+  box-shadow: 0 0 0 3px rgba(107, 117, 88, 0.12);
+}
+
+.category-scoped-search-input {
+  flex: 1;
+  font-family: var(--font-lora);
+  font-size: 16px;
+  color: var(--color-espresso);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+}
+
+.category-scoped-search-input::placeholder {
+  color: var(--color-warm-taupe);
+  opacity: 0.7;
+}
+
+.category-scoped-search-submit {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.category-scoped-search-submit:hover {
+  background: var(--color-espresso);
+}
+
+.category-scoped-search-suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-scoped-search-suggestion {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 999px;
+  padding: 6px 14px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.category-scoped-search-suggestion:hover {
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border-color: var(--color-sage);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── FoundationsPath ──────────────────────────────────────────────────── */
+
+.foundations-path {
+  margin: 40px 0;
+  padding: 32px;
+  background: var(--color-soft-parchment);
+  border-radius: 20px;
+  position: relative;
+}
+
+.foundations-path-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.foundations-path-heading {
+  font-family: var(--font-fraunces);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.foundations-path-subheading {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 4px 0 0;
+  flex: 1;
+}
+
+.foundations-path-see-all {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.foundations-path-see-all:hover {
+  color: var(--color-espresso);
+}
+
+.foundations-path-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  position: relative;
+}
+
+.foundations-path-list::before {
+  /* Connecting line between steps on desktop. */
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 5%;
+  right: 5%;
+  height: 0.5px;
+  background: var(--color-linen-grey);
+  z-index: 0;
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .foundations-path-list::before { display: block; }
+}
+
+.foundations-path-item {
+  position: relative;
+  z-index: 1;
+}
+
+.foundations-path-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+}
+
+.foundations-path-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(60, 47, 34, 0.08);
+}
+
+.foundations-path-number {
+  font-family: var(--font-mono, var(--font-fraunces));
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--color-sage);
+  margin-bottom: 8px;
+}
+
+.foundations-path-thumb {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: var(--color-soft-parchment);
+}
+
+.foundations-path-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.foundations-path-thumb img.procedural {
+  object-fit: contain;
+  padding: 12px;
+}
+
+.foundations-path-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.foundations-path-overline {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.foundations-path-title {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  line-height: 1.25;
+}
+
+.foundations-path-excerpt {
+  font-family: var(--font-lora);
+  font-size: 13.5px;
+  color: var(--color-warm-taupe);
+  line-height: 1.45;
+}
+
+/* ── EditorialMagazineBlock ───────────────────────────────────────────── */
+
+.magazine-block {
+  margin: 32px 0;
+}
+
+.magazine-block-header {
+  margin-bottom: 16px;
+}
+
+.magazine-block-heading {
+  font-family: var(--font-fraunces);
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.magazine-block-subheading {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 4px 0 0;
+}
+
+.magazine-block-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .magazine-block-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.magazine-block-feature {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.magazine-block-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(60, 47, 34, 0.1);
+}
+
+.magazine-block-feature-image {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-soft-parchment);
+}
+
+.magazine-block-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.magazine-block-feature-image img.procedural {
+  object-fit: contain;
+  padding: 24px;
+}
+
+.magazine-block-feature-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.magazine-block-feature-category {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.magazine-block-feature-title {
+  font-family: var(--font-fraunces);
+  font-size: 28px;
+  letter-spacing: -0.005em;
+  color: var(--color-espresso);
+  line-height: 1.15;
+}
+
+.magazine-block-feature-excerpt {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  line-height: 1.5;
+}
+
+.magazine-block-supporting {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

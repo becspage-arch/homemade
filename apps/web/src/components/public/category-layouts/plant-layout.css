@@ -1,0 +1,144 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   PlantLayout — month + region + verb-cycling hero for /garden.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.plant-landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.plant-landing-header {
+  padding: 48px 0 24px;
+}
+
+.plant-landing-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin: 0 0 12px;
+}
+
+.plant-landing-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  color: var(--color-espresso);
+  margin: 0 0 12px;
+}
+
+@media (min-width: 900px) {
+  .plant-landing-title { font-size: 56px; }
+}
+
+.plant-landing-verb {
+  color: var(--color-terracotta);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--color-terracotta);
+  padding-bottom: 2px;
+}
+
+.plant-landing-verb:hover {
+  color: var(--color-espresso);
+  border-bottom-color: var(--color-espresso);
+}
+
+.plant-landing-lede {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 24px;
+}
+
+.plant-month-strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -24px 16px;
+  padding: 6px 24px;
+}
+
+.plant-month-strip::-webkit-scrollbar { display: none; }
+
+.plant-month-chip {
+  flex: 0 0 auto;
+  font-family: var(--font-mono, var(--font-lora));
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  color: var(--color-espresso);
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.plant-month-chip:hover {
+  border-color: var(--color-sage);
+}
+
+.plant-month-chip.is-active {
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border-color: var(--color-sage);
+}
+
+.plant-secondary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.plant-region-picker,
+.plant-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.plant-region-chip,
+.plant-toggle {
+  font-family: var(--font-lora);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  background: transparent;
+  border: 0.5px solid var(--color-linen-grey);
+  color: var(--color-warm-taupe);
+  border-radius: 999px;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.plant-region-chip.is-active,
+.plant-toggle.is-active {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  color: var(--color-cream);
+}
+
+.plant-results {
+  margin: 32px 0;
+}
+
+.plant-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px 16px;
+}
+
+@media (max-width: 900px) {
+  .plant-landing { padding: 0 16px 48px; }
+  .plant-landing-header { padding: 32px 0 16px; }
+  .plant-landing-title { font-size: 30px; }
+  .plant-month-strip { margin: 0 -16px 16px; padding: 6px 16px; }
+}

@@ -36,12 +36,15 @@ interface PatternLibraryGridProps {
     hasBackstitch: boolean
     hasFrenchKnots: boolean
   }
+  /** Where the filter-link router pushes to. Defaults to /cross-stitch/patterns. */
+  basePath?: string
 }
 
 export function PatternLibraryGrid({
   patterns,
   subCategories,
   currentFilters,
+  basePath = '/cross-stitch/patterns',
 }: PatternLibraryGridProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -51,7 +54,7 @@ export function PatternLibraryGrid({
     if (value === null || value === '') params.delete(key)
     else params.set(key, value)
     const qs = params.toString()
-    router.push(qs ? `/cross-stitch/patterns?${qs}` : '/cross-stitch/patterns', { scroll: false })
+    router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false })
   }
 
   return (

@@ -12,18 +12,20 @@ import type { Client } from 'typesense'
 import { getAdminClient } from './client'
 import type {
   CategoryDoc,
+  CrochetPatternDoc,
   GlossaryDoc,
+  PatternDoc,
   TutorialDoc,
 } from './schemas'
 import {
   CATEGORIES_COLLECTION,
+  CROCHET_PATTERNS_COLLECTION,
   GLOSSARY_COLLECTION,
+  PATTERNS_COLLECTION,
   TUTORIALS_COLLECTION,
 } from './schemas'
 
 function logFailure(scope: string, err: unknown): void {
-  // Keep logging cheap and consistent. Server actions run in the Next.js
-  // server runtime, so console.warn is captured by CloudWatch.
   // eslint-disable-next-line no-console
   console.warn(`[search] ${scope} failed`, err)
 }
@@ -44,7 +46,6 @@ async function removeDoc(
   try {
     await client.collections(collection).documents(id).delete()
   } catch (err) {
-    // Typesense returns 404 when the doc doesn't exist — fine.
     if (isNotFound(err)) return
     throw err
   }
@@ -77,6 +78,54 @@ export async function removeTutorialFromSearch(id: string): Promise<void> {
     await removeDoc(client, TUTORIALS_COLLECTION, id)
   } catch (err) {
     logFailure(`tutorial.remove(${id})`, err)
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Patterns (cross-stitch / knitting-chart / crochet-chart)
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function syncPatternDoc(doc: PatternDoc): Promise<void> {
+  const client = getAdminClient()
+  if (!client) return
+  try {
+    await upsertDoc(client, PATTERNS_COLLECTION, doc)
+  } catch (err) {
+    logFailure(`pattern.upsert(${doc.id})`, err)
+  }
+}
+
+export async function removePatternFromSearch(id: string): Promise<void> {
+  const client = getAdminClient()
+  if (!client) return
+  try {
+    await removeDoc(client, PATTERNS_COLLECTION, id)
+  } catch (err) {
+    logFailure(`pattern.remove(${id})`, err)
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Crochet patterns (row-by-row written / charted crochet)
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function syncCrochetPatternDoc(doc: CrochetPatternDoc): Promise<void> {
+  const client = getAdminClient()
+  if (!client) return
+  try {
+    await upsertDoc(client, CROCHET_PATTERNS_COLLECTION, doc)
+  } catch (err) {
+    logFailure(`crochet_pattern.upsert(${doc.id})`, err)
+  }
+}
+
+export async function removeCrochetPatternFromSearch(id: string): Promise<void> {
+  const client = getAdminClient()
+  if (!client) return
+  try {
+    await removeDoc(client, CROCHET_PATTERNS_COLLECTION, id)
+  } catch (err) {
+    logFailure(`crochet_pattern.remove(${id})`, err)
   }
 }
 
@@ -133,7 +182,7 @@ export async function removeGlossaryFromSearch(id: string): Promise<void> {
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
- * Ensure all three collections exist. Idempotent: if a collection is already
+ * Ensure all collections exist. Idempotent: if a collection is already
  * present it's left alone (we don't auto-mutate schemas). Returns the list of
  * created collection names.
  */

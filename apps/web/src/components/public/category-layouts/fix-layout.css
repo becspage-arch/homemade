@@ -1,0 +1,73 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   FixLayout — search-first hero for /home-repair.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.fix-landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.fix-landing-header {
+  padding: 56px 0 24px;
+}
+
+.fix-landing-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin: 0 0 12px;
+}
+
+.fix-landing-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--color-espresso);
+  margin: 0 0 24px;
+}
+
+@media (min-width: 900px) {
+  .fix-landing-title { font-size: 64px; }
+}
+
+.fix-landing-stop {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-terracotta);
+  margin: 16px 0 0;
+}
+
+.fix-landing-pro {
+  margin: 48px 0;
+  padding: 28px 32px;
+  background: var(--color-soft-parchment);
+  border-left: 3px solid var(--color-terracotta);
+  border-radius: 12px;
+}
+
+.fix-landing-pro h3 {
+  font-family: var(--font-fraunces);
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0 0 12px;
+}
+
+.fix-landing-pro ul {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 900px) {
+  .fix-landing { padding: 0 16px 48px; }
+  .fix-landing-header { padding: 32px 0 16px; }
+  .fix-landing-title { font-size: 34px; }
+}
