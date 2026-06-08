@@ -3,26 +3,33 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
+type Archetype = 'RECIPE' | 'PATTERN' | 'SKILL' | 'PRACTICE' | 'PLANT' | 'FIX'
+
 interface MenuCategory {
   slug: string
   name: string
-  archetype: 'RECIPE' | 'PATTERN' | 'SKILL' | 'PRACTICE' | 'PLANT' | 'FIX'
+  archetype: Archetype
 }
 
 interface CategoryMenuProps {
-  /** All categories — used to build the archetype mega-menu. */
+  /** All categories — used to populate each archetype dropdown. */
   all: MenuCategory[]
 }
 
 interface ArchetypeGroup {
-  archetype: MenuCategory['archetype']
+  archetype: Archetype
+  /** Top-line nav label — short noun verb-ish. */
+  label: string
+  /** Dropdown panel title — slightly fuller phrasing. */
   title: string
+  /** One-line lede inside the panel. */
   lede: string
+  /** Per-archetype CTA — points at the most representative entry. */
   cta: { label: string; href: string }
   categories: MenuCategory[]
 }
 
-const ARCHETYPE_ORDER: MenuCategory['archetype'][] = [
+const ARCHETYPE_ORDER: Archetype[] = [
   'RECIPE',
   'PATTERN',
   'SKILL',
@@ -31,33 +38,42 @@ const ARCHETYPE_ORDER: MenuCategory['archetype'][] = [
   'FIX',
 ]
 
-const ARCHETYPE_META: Record<MenuCategory['archetype'], { title: string; lede: string; cta: { label: string; href: string } }> = {
+const ARCHETYPE_META: Record<
+  Archetype,
+  Pick<ArchetypeGroup, 'label' | 'title' | 'lede' | 'cta'>
+> = {
   RECIPE: {
+    label: 'Food',
     title: 'Make food & remedies',
     lede: 'Recipe-led: cook, bake, brew, blend.',
     cta: { label: 'What are you cooking? →', href: '/cooking' },
   },
   PATTERN: {
+    label: 'Make',
     title: 'Make things',
     lede: 'Pattern + Studio: stitch, knit, sew.',
     cta: { label: 'Open the Studio →', href: '/cross-stitch' },
   },
   SKILL: {
+    label: 'Skills',
     title: 'Build a skill',
     lede: 'Craft + technique: hands, tools, time.',
     cta: { label: 'Start with foundations →', href: '/fibre-arts' },
   },
   PRACTICE: {
+    label: 'Practice',
     title: 'Daily practice',
     lede: 'Mood + habit-led: turn up regularly.',
     cta: { label: 'How are you feeling? →', href: '/mindset' },
   },
   PLANT: {
+    label: 'Grow',
     title: 'Grow',
     lede: 'Plant + season-aware: what to sow now.',
     cta: { label: 'What can I sow this month? →', href: '/garden' },
   },
   FIX: {
+    label: 'Fix',
     title: 'Fix it',
     lede: 'Search-first: something is broken.',
     cta: { label: 'What needs fixing? →', href: '/home-repair' },
@@ -65,7 +81,7 @@ const ARCHETYPE_META: Record<MenuCategory['archetype'], { title: string; lede: s
 }
 
 function groupByArchetype(all: MenuCategory[]): ArchetypeGroup[] {
-  const buckets = new Map<MenuCategory['archetype'], MenuCategory[]>()
+  const buckets = new Map<Archetype, MenuCategory[]>()
   for (const cat of all) {
     const list = buckets.get(cat.archetype) ?? []
     list.push(cat)
@@ -79,26 +95,24 @@ function groupByArchetype(all: MenuCategory[]): ArchetypeGroup[] {
 }
 
 /**
- * Header category menu — single "Browse" trigger opening a mega-menu
- * grouped by archetype. Hamburger-into-sheet on mobile. The mega-menu
- * makes the depth of the site visible: users can see at a glance that
- * the site has six families of things to do, what each one leads with,
- * and where the categories live underneath.
+ * Header category menu — six archetype top-line items on desktop, each
+ * opening its own focused dropdown panel with the categories underneath.
+ * Hamburger-into-sheet on mobile (still archetype-grouped accordion).
  */
 export function CategoryMenu({ all }: CategoryMenuProps) {
-  const [browseOpen, setBrowseOpen] = useState(false)
+  const [openArchetype, setOpenArchetype] = useState<Archetype | null>(null)
   const [sheetOpen, setSheetOpen] = useState(false)
-  const browseRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
-      if (!browseRef.current) return
-      if (e.target instanceof Node && browseRef.current.contains(e.target)) return
-      setBrowseOpen(false)
+      if (!navRef.current) return
+      if (e.target instanceof Node && navRef.current.contains(e.target)) return
+      setOpenArchetype(null)
     }
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setBrowseOpen(false)
+        setOpenArchetype(null)
         setSheetOpen(false)
       }
     }
@@ -114,33 +128,41 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
 
   return (
     <>
-      <nav className="header-nav-desktop" aria-label="Categories">
-        <div className="header-nav-more" ref={browseRef}>
-          <button
-            type="button"
-            className="header-nav-link header-nav-more-trigger"
-            aria-haspopup="menu"
-            aria-expanded={browseOpen}
-            onClick={() => setBrowseOpen((o) => !o)}
-          >
-            Browse {browseOpen ? '▴' : '▾'}
-          </button>
-          {browseOpen && (
-            <div className="header-mega-panel" role="menu" aria-label="All categories">
-              {groups.map((group) => (
-                <section key={group.archetype} className="header-mega-column">
-                  <header className="header-mega-column-header">
-                    <h3 className="header-mega-column-title">{group.title}</h3>
-                    <p className="header-mega-column-lede">{group.lede}</p>
-                  </header>
-                  <ul className="header-mega-column-list">
+      <nav className="header-nav-desktop" aria-label="Categories" ref={navRef}>
+        {groups.map((group) => {
+          const isOpen = openArchetype === group.archetype
+          return (
+            <div key={group.archetype} className="header-nav-archetype">
+              <button
+                type="button"
+                className={`header-nav-link header-nav-archetype-trigger${isOpen ? ' is-open' : ''}`}
+                aria-haspopup="menu"
+                aria-expanded={isOpen}
+                onClick={() =>
+                  setOpenArchetype(isOpen ? null : group.archetype)
+                }
+              >
+                {group.label}
+                <span className="header-nav-archetype-chev" aria-hidden="true">
+                  {isOpen ? '▴' : '▾'}
+                </span>
+              </button>
+              {isOpen && (
+                <div
+                  className="header-archetype-panel"
+                  role="menu"
+                  aria-label={group.title}
+                >
+                  <p className="header-archetype-panel-eyebrow">{group.title}</p>
+                  <p className="header-archetype-panel-lede">{group.lede}</p>
+                  <ul className="header-archetype-panel-list">
                     {group.categories.map((cat) => (
                       <li key={cat.slug}>
                         <Link
                           href={`/${cat.slug}`}
                           role="menuitem"
-                          className="header-mega-column-link"
-                          onClick={() => setBrowseOpen(false)}
+                          className="header-archetype-panel-link"
+                          onClick={() => setOpenArchetype(null)}
                         >
                           {cat.name}
                         </Link>
@@ -149,16 +171,16 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                   </ul>
                   <Link
                     href={group.cta.href}
-                    className="header-mega-column-cta"
-                    onClick={() => setBrowseOpen(false)}
+                    className="header-archetype-panel-cta"
+                    onClick={() => setOpenArchetype(null)}
                   >
                     {group.cta.label}
                   </Link>
-                </section>
-              ))}
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          )
+        })}
       </nav>
 
       <button

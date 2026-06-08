@@ -99,47 +99,48 @@
   color: var(--color-sage);
 }
 
-/* ── Browse mega-menu ──────────────────────────────────────────────────── */
+/* ── Per-archetype dropdowns ───────────────────────────────────────────── */
 
-.header-mega-panel {
-  position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
-  background: var(--color-cream);
-  border: 0.5px solid var(--color-linen-grey);
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 20px 48px rgba(56, 50, 42, 0.16);
-  z-index: 200;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 24px;
-  width: min(880px, 92vw);
+.header-nav-archetype {
+  position: relative;
 }
 
-@media (min-width: 1280px) {
-  .header-mega-panel {
-    grid-template-columns: repeat(3, 240px);
-    width: 800px;
-  }
-}
-
-.header-mega-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 16px;
-  background: var(--color-soft-parchment);
-  border-radius: 10px;
-}
-
-.header-mega-column-header {
-  display: flex;
-  flex-direction: column;
+.header-nav-archetype-trigger {
+  display: inline-flex;
+  align-items: center;
   gap: 4px;
 }
 
-.header-mega-column-title {
+.header-nav-archetype-trigger.is-open {
+  color: var(--color-sage);
+}
+
+.header-nav-archetype-chev {
+  font-size: 10px;
+  color: inherit;
+  line-height: 1;
+}
+
+.header-archetype-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 12px;
+  padding: 18px 20px 16px;
+  box-shadow: 0 16px 40px rgba(56, 50, 42, 0.14);
+  z-index: 200;
+  width: max-content;
+  min-width: 240px;
+  max-width: min(320px, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-archetype-panel-eyebrow {
   font-family: var(--font-fraunces);
   font-size: 17px;
   font-weight: 400;
@@ -148,60 +149,73 @@
   margin: 0;
 }
 
-.header-mega-column-lede {
+.header-archetype-panel-lede {
   font-family: var(--font-lora);
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--color-warm-taupe);
-  margin: 0;
+  margin: 0 0 6px;
   line-height: 1.4;
 }
 
-.header-mega-column-list {
+.header-archetype-panel-list {
   list-style: none;
   padding: 0;
-  margin: 6px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-.header-mega-column-link {
+.header-archetype-panel-link {
   display: block;
   font-family: var(--font-lora);
-  font-size: 13.5px;
+  font-size: 14px;
   letter-spacing: 0.02em;
   color: var(--color-espresso);
   text-decoration: none;
-  padding: 6px 0;
-  border-bottom: 0.5px solid rgba(200, 196, 184, 0.5);
+  padding: 8px 0;
+  border-bottom: 0.5px solid rgba(200, 196, 184, 0.45);
   transition: color 0.15s ease;
 }
 
-.header-mega-column-link:hover {
+.header-archetype-panel-link:hover {
   color: var(--color-sage);
 }
 
-.header-mega-column-list li:last-child .header-mega-column-link {
+.header-archetype-panel-list li:last-child .header-archetype-panel-link {
   border-bottom: 0;
 }
 
-.header-mega-column-cta {
+.header-archetype-panel-cta {
   font-family: var(--font-lora);
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
   color: var(--color-sage);
   text-decoration: none;
-  padding-top: 6px;
-  margin-top: auto;
+  padding-top: 8px;
+  border-top: 0.5px solid var(--color-linen-grey);
+  margin-top: 4px;
   transition: color 0.15s ease;
 }
 
-.header-mega-column-cta:hover {
+.header-archetype-panel-cta:hover {
   color: var(--color-espresso);
 }
 
-/* Hide the mega-panel on small screens — the hamburger sheet takes over. */
+/* Clamp first/last panel to viewport edges so they don't overflow. */
+.header-nav-archetype:first-child .header-archetype-panel {
+  left: 0;
+  transform: none;
+}
+
+.header-nav-archetype:last-child .header-archetype-panel {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* Hide the desktop dropdown on small screens — hamburger sheet takes over. */
 @media (max-width: 900px) {
-  .header-mega-panel { display: none; }
+  .header-archetype-panel { display: none; }
 }
 
 /* ── Mobile sheet — archetype-grouped accordion ────────────────────────── */
