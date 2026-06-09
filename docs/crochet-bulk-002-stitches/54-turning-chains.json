@@ -1,0 +1,124 @@
+{
+  "slug": "crochet-turning-chain-counts",
+  "title": "Turning chains — how many and whether they count",
+  "subtitle": "The chain at the row start sets the height, and whether it counts as a stitch affects the count",
+  "excerpt": "The turning chain at the start of every row raises the hook to the height of the next row's stitches. Whether the turning chain counts as the first stitch depends on the stitch height: dc rows use ch 1 and it does not count; tr rows use ch 3 and it typically does count. Getting this wrong shifts the stitch count every row.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain"],
+    "craftTechniqueTags": []
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "turning-chain",
+      "term": "Turning chain",
+      "definition": "The chain(s) worked at the start of a row before turning to raise the work to the correct stitch height. Standard counts: dc = ch 1 (does not count as stitch), htr = ch 2 (sometimes counts), tr = ch 3 (counts as first tr), dtr = ch 4 (counts). Always follow what the specific pattern states."
+    }
+  ],
+  "techniqueSlugs": ["crochet-turning-chain-counts"],
+  "criticalTechniques": ["crochet-turning-chain-counts"],
+  "aliases": ["turning chain", "t-ch", "standing stitch", "ch-3 turns"],
+  "heroPrompt": "A crochet swatch in dark blue DK yarn showing three rows — dc, htr, and tr — with the turning chain at the start of each row visible, annotated to show ch-1 vs ch-3, close-up.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turning-chain" } }],
+            "text": "Turning chain"
+          },
+          {
+            "type": "text",
+            "text": " is the mechanism that gets the hook up to the right height at the start of a row. Each stitch height needs a different number of turning chains. The critical question is whether the turning chain counts as the first stitch of the row — this determines whether the first real stitch of the row goes into the first or second stitch from the edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Standard turning chain counts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The conventional rules for UK stitches:"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dc row: ch 1. Does NOT count as first dc. Work dc into the first stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "htr row: ch 2. Some patterns count this as first htr, some do not. Follow the pattern's stated rule." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "tr row: ch 3. Counts as first tr. Work first tr into the second stitch from the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dtr row: ch 4. Counts as first dtr. Work first dtr into second stitch from hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "End of a tr row: work the last tr into the top of the ch-3 from the previous row — this is the stitch that the ch-3 replaced." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stitch count increases by one each row",
+              "cause": "Working a dc into the first stitch AND treating the turning chain as a stitch on tr rows — effectively adding one extra stitch per row",
+              "fix": "For tr rows: the ch-3 is the first stitch — work the first tr into the second stitch from the hook. At the end of the row, the last tr goes into the top of the ch-3 from below."
+            },
+            {
+              "symptom": "Stitch count decreases by one each row",
+              "cause": "Treating the ch-3 as a stitch on the forward pass but not working into it at the end of the return row",
+              "fix": "Check the last stitch of every tr row: it should go into the top chain of the ch-3 below."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Some modern patterns use a 'standing stitch' start instead of a turning chain — cut the yarn after each row and rejoin with the stitch directly. This avoids the ch-3 counting ambiguity. For most beginners, mastering the ch-3 rule is simpler and produces more consistent fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

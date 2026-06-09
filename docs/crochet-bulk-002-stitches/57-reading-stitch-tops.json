@@ -1,0 +1,116 @@
+{
+  "slug": "crochet-reading-stitch-tops",
+  "title": "Reading stitch tops — both loops, front loop, back loop",
+  "subtitle": "What you're actually inserting into and why it changes the fabric",
+  "excerpt": "Every standard crochet stitch has two loops at the top — a front loop and a back loop — forming a V. Standard crochet inserts under both loops. Front-loop-only and back-loop-only insertions each use one loop and leave the other free as a visible ridge. This tutorial explains how to identify and choose the loops.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["rib", "textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "both-loops",
+      "term": "Both loops",
+      "definition": "The standard crochet insertion: hook passes under both the front and back loops of the stitch top V simultaneously. Used unless the pattern specifies FLO or BLO."
+    }
+  ],
+  "techniqueSlugs": ["crochet-reading-stitch-tops"],
+  "criticalTechniques": ["crochet-reading-stitch-tops"],
+  "aliases": ["both loops", "two loops", "standard insertion", "reading stitches"],
+  "heroPrompt": "Close-up of a crochet stitch top viewed from above, showing the two loops of the V clearly — front loop and back loop labeled, hook shown inserting under both.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "A dc stitch top showing front loop (nearest viewer), back loop (far), and hook inserted under both", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "both-loops" } }],
+            "text": "Both loops"
+          },
+          {
+            "type": "text",
+            "text": " is the standard crochet default. The top of every crochet stitch has two yarn strands forming a V — the front loop, which sits nearest to you as you hold the work, and the back loop, which sits away from you. Working under both gives a solid fabric with no free strands. Choosing one or the other changes the texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying the loops" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the work with the right side facing you. Look down at the top edge of the last row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The front loop is the strand of the V that angles toward you — the one closest to the hook when the work faces you." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The back loop is the strand that angles away from you — it sits slightly behind the front loop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Both loops = insert under both strands of the V at once (standard)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "FLO = insert under the front strand only, leaving the back strand visible on the other side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "BLO = insert under the back strand only, leaving the front strand visible as a raised ridge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "After the first few rows it's hard to see which loop is which",
+              "cause": "Using a dark or fuzzy yarn that obscures the stitch definition",
+              "fix": "Use a smooth, light-coloured DK yarn when learning to read stitch tops. The V of each stitch top is much clearer in smooth yarn under good light."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "FLO dc and BLO dc go into the detail of working single-loop stitches — how they affect the fabric texture and where they are used. Waistcoat stitch bypasses both top loops entirely and inserts into the vertical body of the stitch, producing a completely different result."
+          }
+        ]
+      }
+    ]
+  }
+}

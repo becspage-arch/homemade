@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-crossed-treble",
+  "title": "Crossed treble — the reverse-order X-stitch",
+  "subtitle": "Work the second treble before the first so it crosses in front",
+  "excerpt": "Crossed treble makes a simple X-shape by working two trebles in reverse order. The second stitch is worked first, then the first stitch is worked so it crosses in front. The result is a neat interlocking pattern used in lace panels and Victorian edgings.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — crossed stitch patterns in open-work crochet. Weldon's Practical Crochet, Vol. 4 (1889) — crossed treble in lace panels.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-cross-stitch-crochet"],
+    "craftTechniqueTags": ["textured", "lace"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crossed-treble",
+      "term": "Crossed treble",
+      "definition": "Two trebles worked in reverse order so the second crosses in front of the first. Work a treble into the stitch one ahead, then reach back and work a treble into the skipped stitch. The two stitches form an X."
+    }
+  ],
+  "techniqueSlugs": ["crochet-crossed-treble"],
+  "criticalTechniques": ["crochet-crossed-treble"],
+  "aliases": ["cr-tr", "crossed treble", "X-stitch crochet", "cross stitch crochet"],
+  "heroPrompt": "A close-up swatch of crossed treble stitch in navy DK cotton, four rows, showing the interlocking X-stitch pattern clearly, good side light on a pale linen background.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "Reaching back over the completed first stitch to work the second into the skipped stitch — the cross formation", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crossed-treble" } }],
+            "text": "Crossed treble"
+          },
+          {
+            "type": "text",
+            "text": " makes an X by swapping the order of two trebles. Skip the next stitch, work a treble into the stitch after it, then reach back and work a treble into the stitch you skipped. The second stitch crosses in front of the first. Repeated across a row, crossed trebles create an interlocked diagonal X texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a crossed treble pair" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the two stitches where the cross will go." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip the next stitch. Yarn over and work a complete treble into the stitch after the skipped one." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and work a complete treble into the skipped stitch — inserting the hook from the front, passing it behind the treble just made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The two trebles now cross: the second one comes in front of the first. One crossed treble pair made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue: skip the next stitch, tr in stitch after, tr in skipped stitch." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Keeping the stitch count even",
+          "body": "Crossed trebles work in pairs over 2 stitches. Your total stitch count must be even for the pattern to work out evenly. An odd stitch count at the start leaves a lone stitch at the end of each row."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The cross lies behind instead of in front",
+              "cause": "Working the second treble with the hook passing in front of the first instead of behind",
+              "fix": "When working into the skipped stitch, push the hook under the first treble from the front — through the back of the work and out — so the second treble sits in front."
+            },
+            {
+              "symptom": "Work becomes uneven after a few rows",
+              "cause": "Working crossed treble pairs across an odd number of stitches",
+              "fix": "Check your stitch count before starting the pattern. Cross trebles use stitches in pairs — you need an even total."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crossed double treble is the taller version — the same X-stitch but with dtr, making a more pronounced cross. Both stitches appear in Victorian open-lace panels where crossed groups alternate with chain spaces."
+          }
+        ]
+      }
+    ]
+  }
+}

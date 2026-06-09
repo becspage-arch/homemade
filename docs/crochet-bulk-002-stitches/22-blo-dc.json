@@ -1,0 +1,118 @@
+{
+  "slug": "crochet-blo-dc-stitch",
+  "title": "Back-loop-only dc — BLO dc",
+  "subtitle": "Work into the back loop only to raise a ridge on the right side",
+  "excerpt": "Back-loop-only dc inserts the hook into the back loop only of each stitch, leaving the front loop as a visible raised ridge on the right side of the work. It is the standard technique for crochet ribbing bands, cuffs, and any place where a right-side horizontal crease is wanted.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-blo-dc"],
+    "craftTechniqueTags": ["textured", "rib"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blo-dc",
+      "term": "BLO dc",
+      "definition": "Double crochet worked into the back loop only of each stitch. Abbreviated BLO dc. Leaves the front loop free as a visible horizontal ridge on the right side; used for cuffs, bands, and ribbed sections."
+    }
+  ],
+  "techniqueSlugs": ["crochet-blo-dc-stitch"],
+  "criticalTechniques": ["crochet-blo-dc-stitch"],
+  "aliases": ["BLO dc", "back loop only dc", "blo", "bl dc"],
+  "heroPrompt": "A crochet swatch in cream DK yarn showing multiple rows of BLO dc, horizontal ridges prominent on the right side, close-up overhead view.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted under the back loop only, front loop visible and unworked", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo-dc" } }],
+            "text": "BLO dc"
+          },
+          {
+            "type": "text",
+            "text": " works into the back loop only of each stitch top, leaving the front loop free. The unworked front loops lie flat across the right side of the fabric as a row of visible ridges. Worked back and forth, BLO dc creates a firm, elastic rib — the standard technique for crochet cuffs, wrist bands, and hat brims."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working BLO dc" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard dc." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 1, turn. Insert the hook into the back loop only of the first dc — the strand furthest from you." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the dc normally. The front loop of the stitch you just worked into remains free." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue BLO dc across all stitches. The freed front loops appear as raised ridges on the right side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Direction matters for ribbing",
+          "body": "For a crochet rib band, work the BLO dc rows lengthways (short rows, many stitches wide), then attach the band to the main piece along the long edge. Working short rows produces the elastic rib effect; working long rows creates a textured fabric that doesn't stretch like a rib."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Ridges appear on the wrong side",
+              "cause": "Working FLO when BLO is intended, or having turned the work inconsistently",
+              "fix": "On each new row, confirm you are inserting into the strand furthest from you. If the ridges are appearing on the wrong side, try turning the finished piece over — the wrong side may be the one that looks like the intended right side."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "FLO dc is the reverse: front-loop only, ridge on the back. Alternating FLO and BLO rows on each turn builds up a deeper two-sided rib. BLO htr and BLO tr work the same principle on taller stitches for a more open texture."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "crochet-blo-tr-stitch",
+  "title": "Back-loop-only treble — BLO tr",
+  "subtitle": "A tall stitch's back loop — bold ridge, open fabric",
+  "excerpt": "BLO tr works into the back loop only of each treble, leaving the front loop as a bold visible ridge on the right side. The treble's height makes these freed loops large — the result is a more dramatic, open ridge than BLO dc or BLO htr, suited to textured panels in shawls and open fabric structures.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-blo-tr"],
+    "craftTechniqueTags": ["textured", "openwork"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blo-tr",
+      "term": "BLO tr",
+      "definition": "Treble worked into the back loop only. Leaves the front loop free as a bold ridge on the right side. At treble height, the freed loops are large and create an open, prominent horizontal line."
+    }
+  ],
+  "techniqueSlugs": ["crochet-blo-tr-stitch"],
+  "criticalTechniques": ["crochet-blo-tr-stitch"],
+  "aliases": ["BLO tr", "back loop treble", "bl tr"],
+  "heroPrompt": "A crochet swatch in rust orange DK yarn showing BLO tr rows, bold prominent ridges on the right side with open mesh between, close-up overhead.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo-tr" } }],
+            "text": "BLO tr"
+          },
+          {
+            "type": "text",
+            "text": " takes back-loop-only working to the treble height. Each freed front loop is larger than at dc or htr height, producing a bold raised line across the right side. The fabric between ridges is more open than BLO dc ribbing because the trebles themselves are longer. This suits open shawl panels, textured blanket stripes, and any design where a dramatic horizontal line is part of the visual pattern."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working BLO tr" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard tr." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 3, turn. Yarn over. Insert the hook into the back loop only of the first tr top." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, draw up a loop (3 loops on hook). [Yarn over, draw through 2 loops] twice." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue BLO tr to end. The freed front loops form large ridges across the right side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Fabric is very open and floppy",
+              "cause": "BLO tr at full treble height creates an inherently open mesh",
+              "fix": "Use a hook one size down, or work into both the back loop of the current row and the corresponding freed front loop of the row below for a denser effect."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Front-post treble (FPTR) and back-post treble (BPTR) produce raised ridges from the treble post rather than the top loops — a more structured raised line used in crochet cables and advanced textured stitch panels."
+          }
+        ]
+      }
+    ]
+  }
+}

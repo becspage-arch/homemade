@@ -1,0 +1,115 @@
+{
+  "slug": "crochet-crossed-double-treble",
+  "title": "Crossed double treble — the tall X",
+  "subtitle": "The same reverse-order method as the crossed treble, one step taller",
+  "excerpt": "Crossed double treble works the same reverse-order logic as crossed treble but uses double trebles — taller stitches that create a more dramatic X shape and an airier openwork fabric. A Victorian open-lace staple.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — tall crossed stitch patterns in open lace. Weldon's Practical Crochet, Vol. 5 (1890) — crossed double treble in lace panels.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-crossed-double-treble"],
+    "craftTechniqueTags": ["lace", "openwork"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crossed-double-treble",
+      "term": "Crossed double treble",
+      "definition": "Two double trebles worked in reverse order — skip a stitch, dtr into the next, then dtr into the skipped stitch passing behind the first — forming a tall X. Used in Victorian open-lace panels."
+    }
+  ],
+  "techniqueSlugs": ["crochet-crossed-double-treble"],
+  "criticalTechniques": ["crochet-crossed-double-treble"],
+  "aliases": ["cr-dtr", "crossed dtr", "tall X-stitch crochet"],
+  "heroPrompt": "A swatch of crossed double treble stitch in dusty pink DK cotton, two rows, showing the tall diagonal X shapes and open mesh between, close-up on linen.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "The tall X formed by crossing two dtr, showing the hook path for the second stitch", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crossed-double-treble" } }],
+            "text": "Crossed double treble"
+          },
+          {
+            "type": "text",
+            "text": " uses double trebles instead of trebles in the crossed-stitch method. The extra height makes the X shape more visible and creates a more open mesh — each pair of stitches spans a wider gap than the crossed treble version. It reads particularly well in lace-weight cotton or fine DK on a 4 mm hook."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a crossed dtr pair" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the two stitches where the cross will go." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip the next stitch. Yarn over twice and work a complete dtr into the stitch after the skipped one." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over twice and work a complete dtr into the skipped stitch — hook passes behind the dtr just made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The two dtr cross. One crossed dtr pair made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat across in pairs." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The cross is hard to form — stitches too close together",
+              "cause": "Working on a hook that's too small for the yarn, making the stitches stiff",
+              "fix": "Go up one hook size for crossed dtr to leave room for the stitch to reach back. The stitches need space to cross cleanly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crossed treble (the shorter version) is a good starting point if the dtr feels complex. In Victorian lace patterns, rows of crossed dtr alternate with rows of chains-and-clusters for full open-mesh fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

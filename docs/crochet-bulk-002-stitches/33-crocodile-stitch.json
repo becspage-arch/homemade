@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-crocodile-stitch",
+  "title": "Crocodile stitch — the overlapping scale",
+  "subtitle": "Five trebles worked around each side of a V-stitch frame to build up overlapping scales",
+  "excerpt": "Crocodile stitch builds overlapping scales onto a V-stitch framework. Each scale is ten trebles — five worked down one post of a V-stitch and five worked up the other — forming a fan that folds over to look like a crocodile or fish scale. The effect is dramatic and three-dimensional.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "ADVANCED",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-crocodile-stitch"],
+    "craftTechniqueTags": ["textured", "in-the-round"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crocodile-stitch",
+      "term": "Crocodile stitch",
+      "definition": "A three-dimensional crochet stitch where five trebles are worked around each arm of a V-stitch post in turn — five downward, five upward — to form a overlapping scale. Built onto a V-stitch skeleton framework."
+    }
+  ],
+  "techniqueSlugs": ["crochet-crocodile-stitch"],
+  "criticalTechniques": ["crochet-crocodile-stitch"],
+  "aliases": ["crocodile stitch", "scale stitch crochet", "fish scale stitch crochet"],
+  "heroPrompt": "A crochet swatch in emerald green DK yarn showing four crocodile stitch scales, the overlapping 3D fan shapes clearly visible, close-up side-lit to show dimension.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "Five trebles worked down the left arm of one V-stitch, the fan partially formed", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crocodile-stitch" } }],
+            "text": "Crocodile stitch"
+          },
+          {
+            "type": "text",
+            "text": " is built in two passes. The first pass creates a skeleton of V-stitches (1 dc, ch 2, 1 dc into the same stitch), which become the frame for the scales. The second pass works five trebles around each arm of every V, creating a fan that folds over itself to produce the scale effect."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pass 1: the V-stitch skeleton" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation chain in a multiple of 6, plus 3. Row 1 (skeleton): ch 3. *Skip 2 ch. In next ch work (1 dc, ch 2, 1 dc) — one V. Ch 2. Skip 2 ch. Repeat from *." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn. Row 2: ch 3. *Work the V-stitch (1 dc, ch 2, 1 dc) into each ch-2 space of the V below. Ch 2 between each V. Repeat from *." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pass 2: the scales" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work 5 tr down the left arm (post) of the first V-stitch — inserting around the post of each dc, not into the top." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 2 at the bottom of the V (or sl st depending on pattern)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work 5 tr up the right arm of the same V. The 10 trebles form a fan that curls over the ch-2 space of the V." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The scale flips over the V-frame. One scale complete. Continue to the next V." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Scale does not lie flat or fold over",
+              "cause": "Too few trebles per arm, or trebles worked too tightly",
+              "fix": "Each arm takes exactly 5 tr. Work them slightly loosely — tight trebles resist folding. If the scale still won't fold, add a sl st at the base of the V to pull it together before the 5-tr count begins."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crocodile stitch worked in the round on a hat forms a full cover of scales without visible joining lines. Star stitch and spider stitch are similarly complex-looking stitches that become manageable once the repeating unit is understood."
+          }
+        ]
+      }
+    ]
+  }
+}

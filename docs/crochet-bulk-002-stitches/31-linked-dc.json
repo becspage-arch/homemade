@@ -1,0 +1,114 @@
+{
+  "slug": "crochet-linked-dc-stitch",
+  "title": "Linked dc — stitches that borrow from each other",
+  "subtitle": "Insert into the side of the stitch below to close the gap between tall stitches",
+  "excerpt": "Linked dc inserts first into the horizontal bar on the side of the previous stitch before completing in the usual stitch position. This links adjacent stitches sideways, closing the gaps that normally appear between taller stitches and producing a denser, more solid fabric than standard treble or dtr rows.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-linked-dc"],
+    "craftTechniqueTags": ["textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "linked-dc",
+      "term": "Linked dc",
+      "definition": "A double crochet that inserts first into the horizontal bar on the right side of the previous stitch (the link), then works the stitch normally into the main position. The borrowed loop closes the gap between adjacent tall stitches."
+    }
+  ],
+  "techniqueSlugs": ["crochet-linked-dc-stitch"],
+  "criticalTechniques": ["crochet-linked-dc-stitch"],
+  "aliases": ["linked dc", "linked double crochet", "closed-gap dc"],
+  "heroPrompt": "A crochet swatch in deep teal DK yarn showing 4 rows of linked dc, the fabric solid and closed with no gaps between stitches, close-up compared to standard htr next to it.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted into the horizontal side bar of the previous stitch before moving to the working stitch position", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "linked-dc" } }],
+            "text": "Linked dc"
+          },
+          {
+            "type": "text",
+            "text": " is a way of connecting adjacent stitches sideways as you work them. Before going into the normal stitch position, you insert the hook into a horizontal bar on the body of the stitch just made. This borrowed loop links the two stitches and fills the vertical gap that would otherwise appear between them in rows of tall stitches. The technique is most noticeable when used with treble and double treble — it produces a completely solid, non-porous fabric from what would normally be an open mesh."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working linked dc" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first stitch of the row normally." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Before working the next stitch: insert the hook into the horizontal bar on the right side of the stitch you just made (about halfway up its body). Yarn over and draw up a loop — 2 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Now insert the hook into the next stitch position in the row below. Yarn over and draw up a loop — 3 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through 2 loops. Yarn over, draw through the remaining 2 loops. One linked dc made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue: each new stitch links to the previous via its side bar before completing in the next stitch position." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Can't find the side bar to link into",
+              "cause": "Looking at the top or bottom of the stitch rather than the body",
+              "fix": "Look at the right face of the stitch you just made. Roughly halfway up, there is a small horizontal strand running across the stitch body — that is the linking bar. On dc it's subtle; on taller stitches it's clearer."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Linked treble and linked double treble apply the same technique to taller stitches where the gap-closing effect is more dramatic. Waistcoat stitch is a different approach to a knit-like solid fabric, using a split dc insertion instead of a borrowed side bar."
+          }
+        ]
+      }
+    ]
+  }
+}

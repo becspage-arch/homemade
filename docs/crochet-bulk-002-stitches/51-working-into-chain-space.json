@@ -1,0 +1,112 @@
+{
+  "slug": "crochet-working-into-chain-space",
+  "title": "Working into a chain space",
+  "subtitle": "Insert under the chain arch, not into a specific chain stitch",
+  "excerpt": "Working into a chain space means inserting the hook under the entire chain arch — through the open gap below all the chains — rather than into one individual chain stitch. This is the standard method for granny squares, lace patterns, V-stitches, and any pattern with ch-2 or longer spaces between stitches.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain"],
+    "craftTechniqueTags": ["lace", "in-the-round"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chain-space",
+      "term": "Chain space",
+      "definition": "The open arch formed by one or more chains skipped over in the previous row. Working into a chain space inserts the hook under all the chains of the arch at once — not into any individual chain stitch. Abbreviated ch sp or ch-2 sp (for a two-chain space)."
+    }
+  ],
+  "techniqueSlugs": ["crochet-working-into-chain-space"],
+  "criticalTechniques": ["crochet-working-into-chain-space"],
+  "aliases": ["ch sp", "chain space", "into the space", "under the arch"],
+  "heroPrompt": "Close-up of a hook inserted under a chain space arch — under all three chains at once — with a granny square motif visible in the background, showing the hook path clearly.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted under a ch-3 arch, passing under all three chains with hook tip emerging through the open space below", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-space" } }],
+            "text": "Chain space"
+          },
+          {
+            "type": "text",
+            "text": " insertions look simple but trip up many beginners because the written instruction 'work into ch-3 sp' does not mean 'insert into one of the chains.' It means insert the hook through the open gap below all three chains — under the arch, not into it. When you insert under the whole arch, the new stitch sits neatly in the opening and uses all the chains as its base."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The correct insertion" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Locate the chain space — the open gap formed by 2, 3, or more chain stitches from the row below." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the chain arch slightly open with the left thumb. Insert the hook from front to back through the gap below all the chains — the hook passes under all of them at once." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the stitch normally (dc, tr, etc.). The completed stitch encloses the chain arch inside its body." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "When the pattern says 'into the 2nd chain'",
+          "body": "Some patterns do specify inserting into individual chain stitches — for example, 'dc into 2nd ch from hook' when starting a foundation row. This is different from working into a chain space. Read the instruction: 'ch sp' or 'ch-2 sp' = under the arch. '2nd chain' or 'ch 4' = into a specific chain stitch."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stitches look uneven — some sit on top of the chain, some under it",
+              "cause": "Inconsistently inserting into single chain stitches on some passes and under the arch on others",
+              "fix": "Always insert under the entire arch for chain-space stitches. Hold the arch open with the left hand so the gap is visible before inserting."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Working into a chain space is used in nearly every lace and motif pattern: granny squares, V-stitch, shell, fan, and filet mesh all rely on this insertion method. It is also the basis of working around the post of a stitch (FPDC/BPDC), where the hook goes under the post — a comparable under-the-structure insertion."
+          }
+        ]
+      }
+    ]
+  }
+}

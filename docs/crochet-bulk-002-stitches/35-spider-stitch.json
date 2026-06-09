@@ -1,0 +1,119 @@
+{
+  "slug": "crochet-spider-stitch",
+  "title": "Spider stitch — the open web",
+  "subtitle": "Multiple loops drawn from chain spaces and closed at the centre — a lacy radiating pattern",
+  "excerpt": "Spider stitch draws up loops from several chain spaces around a central gathering point and closes them together to form a web-like spoke pattern. The result is an open, lacy motif that tiles into large repeats for shawls and decorative panels. It is related to star stitch but works into open chain spaces rather than stitch tops.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "ADVANCED",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Vol. 4 (1889) — spider stitch and web-lace crochet patterns. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — drawn-loop web stitch.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-spider-stitch"],
+    "craftTechniqueTags": ["lace", "openwork"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "spider-stitch",
+      "term": "Spider stitch",
+      "definition": "A lace crochet stitch where loops are drawn up from surrounding chain spaces and gathered at a central close-all yarn-over, forming a radiating web or spoke pattern. Each spider occupies a large chain-space grid and creates an open, open-mesh fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-spider-stitch"],
+  "criticalTechniques": ["crochet-spider-stitch"],
+  "aliases": ["spider stitch", "web stitch crochet", "spider web crochet"],
+  "heroPrompt": "A crochet swatch in white crochet thread showing spider stitch pattern, several open web-like spiders visible with their radiating spokes, close-up on dark surface.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "Five or six loops drawn from surrounding chain spaces, gathered at the centre before closing", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spider-stitch" } }],
+            "text": "Spider stitch"
+          },
+          {
+            "type": "text",
+            "text": " is worked on a foundation of chain spaces arranged around a gathering point. Several loops are drawn up from the surrounding spaces — typically five or six — and closed through a single yarn-over. Chain spaces between the gathering points form the open legs of the web. The pattern covers a larger area than star stitch and reads as a distinctly lacy, open fabric."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "note",
+          "title": "Pattern variation",
+          "body": "Spider stitch patterns vary in how many spokes they use (4 to 8) and how the surrounding chain mesh is constructed. The version here uses 5 spokes drawn from a ch-2 mesh. Always follow the specific spider-stitch pattern you're using for the exact insertion sequence."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a five-spoke spider" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Establish a foundation of ch-2 spaces across the row (standard mesh: *dc, ch 2, skip 2, repeat)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the spider position: insert hook into first ch-2 sp and draw up a loop. Insert into next 4 ch-2 spaces in sequence, drawing up a loop from each — 6 loops on hook (5 drawn up plus the original)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through all 6 loops. Ch 5 (or per pattern) to form the centre spoke chain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dc or sl st into the centre close-point to anchor. Continue mesh to position of next spider." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Loops too loose to draw through cleanly",
+              "cause": "Carrying the loops across too many chain spaces leaves them long and tangly",
+              "fix": "Hold the drawn-up loops snug against the hook with the working hand as you gather them. A slight downward tension keeps the loops aligned for the close-all."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Star stitch works the same gathered-loop principle but into stitch tops rather than chain spaces — slightly denser and easier to control for first attempts. Solomon's knot is a simpler open-mesh technique that produces a larger-holed fabric without the gathering step."
+          }
+        ]
+      }
+    ]
+  }
+}

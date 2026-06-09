@@ -1,0 +1,119 @@
+{
+  "slug": "crochet-surface-slip-stitch-technique",
+  "title": "Surface slip stitch — drawing on top of finished fabric",
+  "subtitle": "A slip stitch chain worked across the face of a finished piece to add colour or texture",
+  "excerpt": "Surface slip stitch works a chain of slip stitches directly across the surface of a finished crochet fabric, inserting through the fabric to anchor each stitch. It is the crochet equivalent of embroidery on top of knitting — used to add colour lines, outlines, faux seams, and texture details without working them into the main fabric structure.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-surface-slip-stitch"],
+    "craftTechniqueTags": ["colourwork", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "surface-slip-stitch",
+      "term": "Surface slip stitch",
+      "definition": "A line of slip stitches drawn across the surface of a finished piece. The hook inserts through the fabric at each anchor point, the working yarn is held on the back, and a loop is pulled through to form a raised chain on the face. Used for colourwork lines, outlines, and texture details applied after the main fabric is complete."
+    }
+  ],
+  "techniqueSlugs": ["crochet-surface-slip-stitch-technique"],
+  "criticalTechniques": ["crochet-surface-slip-stitch-technique"],
+  "aliases": ["surface sl st", "surface crochet", "decorative sl st", "applied chain"],
+  "heroPrompt": "A finished crochet fabric with two parallel lines of contrasting-colour surface slip stitch running horizontally across it, the raised chain lines clearly visible, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted through the fabric surface with yarn held on the back, about to pull a loop through to the front", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "surface-slip-stitch" } }],
+            "text": "Surface slip stitch"
+          },
+          {
+            "type": "text",
+            "text": " lets you draw lines and shapes across a piece that's already finished. The hook goes through the fabric, the yarn is pulled from behind to the front as a loop, then the loop passes through the loop on the hook — a slip stitch, but worked on top of the fabric rather than into the normal top loops. The raised chain line sits on the right side of the work and follows whatever path the hook takes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working surface slip stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the finished fabric flat, right side up. Hold the new yarn behind the fabric at the starting point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook from front to back through the fabric at the start point. Catch the yarn behind and pull a loop through to the front." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook through the fabric at the next position along the line. Catch the yarn behind and pull through both the fabric and the loop on the hook — one surface slip stitch made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue along the line. The raised chain builds up on the right side, anchored through the fabric at each step." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To finish: cut yarn, pull through the final loop, and use a tapestry needle to weave in both tails on the back." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The chain puckers or pulls the fabric inward",
+              "cause": "Surface slip stitches worked too tightly",
+              "fix": "Keep the chain loose — the raised loop should sit on top of the fabric, not pull it. Work with a slightly relaxed hand."
+            },
+            {
+              "symptom": "The line goes wobbly instead of straight",
+              "cause": "Inserting into different row positions rather than consistently along one row or column",
+              "fix": "Mark the line with a water-soluble fabric pen or pins before starting. Follow a column of stitch openings for straight vertical lines, or a row edge for straight horizontal ones."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Surface slip stitch curves easily — it can follow any path through the fabric openings, making it useful for letter outlines, motif borders, and stripe details. For bolder surface lines, surface dc (the same approach but with a full dc) makes a wider, more prominent raised row."
+          }
+        ]
+      }
+    ]
+  }
+}

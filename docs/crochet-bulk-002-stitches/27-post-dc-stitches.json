@@ -1,0 +1,160 @@
+{
+  "slug": "crochet-post-dc-stitches",
+  "title": "FPDC and BPDC — front and back post double crochet",
+  "subtitle": "Work around the post of the stitch, not into the top — the foundation of crochet rib",
+  "excerpt": "Front-post dc (FPDC) and back-post dc (BPDC) insert around the vertical post of a stitch from the previous row rather than into the top. The stitch wraps the post, producing a raised ridge on the surface. Alternating FPDC and BPDC across a row makes the elastic rib found on crochet cuffs, hats, and waistbands.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-fpdc", "crochet-bpdc"],
+    "craftTechniqueTags": ["rib", "textured", "cables"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fpdc",
+      "term": "FPDC",
+      "definition": "Front-post double crochet. Insert the hook from front to back on the right side of a stitch's post, under and around it, emerging on the left side. The completed dc sits on the front of the fabric as a raised ridge."
+    },
+    {
+      "slug": "bpdc",
+      "term": "BPDC",
+      "definition": "Back-post double crochet. Insert the hook from back to front on the right side of a stitch's post, under and around it, emerging on the left side of the post. The dc lies against the back of the fabric — from the front it reads as a recessed column."
+    }
+  ],
+  "techniqueSlugs": ["crochet-post-dc-stitches"],
+  "criticalTechniques": ["crochet-post-dc-stitches"],
+  "aliases": ["FPDC", "BPDC", "front post dc", "back post dc", "post stitch dc"],
+  "heroPrompt": "A crochet swatch in mustard DK yarn showing several rows of alternating FPDC/BPDC ribbing, the raised and recessed columns clearly visible, close-up on neutral background.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook path for FPDC: entering from front-right, passing behind the post, emerging front-left", "sourcePreference": "synthetic-chart-render" },
+    { "stepIndex": 5, "description": "Hook path for BPDC: entering from back-right, passing in front of the post, emerging back-left", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fpdc" } }],
+            "text": "FPDC"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bpdc" } }],
+            "text": "BPDC"
+          },
+          {
+            "type": "text",
+            "text": " work around the vertical body of the stitch — its post — rather than into the top loops. Because the new stitch wraps around the post of the row below, it pulls the post to the front or back of the fabric and creates a raised column. Alternating FPDC and BPDC across a row makes the ribbed columns found on crochet cuffs, hats, and neckbands."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working FPDC (front post)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard dc." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 1, turn. Yarn over. Insert the hook from front to back immediately to the right of the post of the first dc in the previous row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the hook under the post and out to the front on the left side of the same post." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop (3 loops on hook). Yarn over, draw through 2 loops. Yarn over, draw through remaining 2 loops. One FPDC made." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working BPDC (back post)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over. Insert the hook from back to front immediately to the right of the post of the stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the hook in front of the post and out to the back on the left side of the post." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop, then complete the dc as normal. One BPDC made." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "2x2 rib pattern",
+          "body": "For a standard crochet rib: foundation row of dc. Row 1: *FPDC in next 2 sts, BPDC in next 2 sts; repeat from *. Row 2: work FPDC over the FPDC columns of the row below and BPDC over the BPDC columns. The columns align and deepen with each row."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Post stitches are too tight and pull the fabric",
+              "cause": "Working the post stitch too tightly around the post, or using a hook that's too small",
+              "fix": "Go up one hook size for post-stitch rows. Post stitches need room to wrap around the post without compressing the row below."
+            },
+            {
+              "symptom": "Rib columns shift sideways each row",
+              "cause": "Working FPDC where BPDC should be, or vice versa",
+              "fix": "On every row, work the same type of post stitch over the same column. If a column is raised toward you (an FPDC ridge), the next row works FPDC over it again to maintain the raised column."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "FPTR and BPTR apply the same post-stitch logic to the treble — the taller stitch creates a deeper, more pronounced rib and is the standard stitch for crochet cable panels."
+          }
+        ]
+      }
+    ]
+  }
+}

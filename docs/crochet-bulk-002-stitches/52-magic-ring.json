@@ -1,0 +1,113 @@
+{
+  "slug": "crochet-magic-ring-technique",
+  "title": "Magic ring — the adjustable start for in-the-round work",
+  "subtitle": "A slip loop that closes completely — no centre hole left over",
+  "excerpt": "The magic ring (also called adjustable ring or magic loop) creates a small adjustable circle that closes to nothing when the tail is pulled. Unlike a chain ring, it leaves no hole in the centre — essential for amigurumi, flat circles, and any motif where a neat closed centre is wanted.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk"],
+    "craftTechniqueTags": ["in-the-round", "amigurumi"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-ring",
+      "term": "Magic ring",
+      "definition": "An adjustable starting loop for in-the-round crochet. Wrap the yarn in a circle around two fingers, insert the hook through the loop and work the first-round stitches over both the loop and the tail. Pull the tail to close the ring after the round is complete. No hole remains."
+    }
+  ],
+  "techniqueSlugs": ["crochet-magic-ring-technique"],
+  "criticalTechniques": ["crochet-magic-ring-technique"],
+  "aliases": ["magic ring", "adjustable ring", "magic loop", "magic circle"],
+  "heroPrompt": "Hands forming a magic ring in sage green DK yarn, the ring held open between two fingers with hook inserted and first dc being worked, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "The yarn loop wrapped twice around two fingers, with hook inserted under both loops ready to draw up the first stitch", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "magic-ring" } }],
+            "text": "Magic ring"
+          },
+          {
+            "type": "text",
+            "text": " is the standard way to start any flat circle, amigurumi piece, or granny motif where a visible centre hole is unwanted. The ring is adjustable because the tail end of the yarn is what closes it — after working the first round over the open loop, pulling the tail draws the ring shut with no gap left."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the magic ring" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the yarn tail over the left index and middle fingers. Wrap the working yarn (from the ball) around both fingers once to make a circle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under the loop on the fingers (under both strands of the circle). Catch the working yarn and draw a loop through — 1 loop on hook. Ch 1 to secure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Carefully slide the ring off the fingers, holding it from below. Work the first round by inserting into the ring (through the open circle) for each stitch — work over both strands of the ring plus the tail." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After completing all stitches of round 1, pull the tail end to draw the ring closed. Then sl st or continue to round 2." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Ring unravels when removing from fingers",
+              "cause": "The securing ch 1 was not worked, or the ring slipped before the first stitch",
+              "fix": "Work the securing ch 1 before removing the ring from the fingers. Hold the tail and the ring base firmly between thumb and middle finger as the first few stitches are made."
+            },
+            {
+              "symptom": "Centre does not close fully when the tail is pulled",
+              "cause": "Some stitches were worked into the ring loop but not over the tail",
+              "fix": "All first-round stitches must enclose both the ring loop and the tail. Hold both together as you insert for each stitch."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chain ring is an alternative start: ch 4, sl st to first ch to make a small ring. It is simpler to execute but leaves a small central hole. For amigurumi and flat motifs, magic ring is preferable."
+          }
+        ]
+      }
+    ]
+  }
+}

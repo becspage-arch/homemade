@@ -1,0 +1,120 @@
+{
+  "slug": "crochet-star-stitch",
+  "title": "Star stitch — the five-spoke pull",
+  "subtitle": "Draw five loops through a single yarn-over to make a raised five-point star",
+  "excerpt": "Star stitch pulls five separate loops onto the hook and closes them all through a single yarn-over to create a raised star shape. The five spokes radiate from a central yarn-over knot. Worked in rows it creates an intricate-looking fabric that is deceptively straightforward once the five insertion points are understood.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Vol. 3 (1888) — star stitch in crochet fabric patterns. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — grouped-loop pulled stitches.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-star-stitch"],
+    "craftTechniqueTags": ["textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "star-stitch",
+      "term": "Star stitch",
+      "definition": "A crochet stitch formed by inserting into five separate positions to draw up five loops, then closing all of them with a single yarn-over pull-through, and finishing with a ch 1 'eye'. Each completed star overlaps with adjacent stars to create a dense interlocking fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-star-stitch"],
+  "criticalTechniques": ["crochet-star-stitch"],
+  "aliases": ["star stitch", "crochet star", "five-spoke stitch"],
+  "heroPrompt": "A crochet swatch in pale pink DK yarn showing star stitch pattern, three or four visible stars with their five-loop radiating centres clear, close-up overhead view.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 4, "description": "Five loops on hook from five insertion points, about to be closed with one yarn-over pull-through", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "star-stitch" } }],
+            "text": "Star stitch"
+          },
+          {
+            "type": "text",
+            "text": " works by gathering five loops from five different positions and closing them all at once through a single yarn-over. The five insertion points are: the first chain of the turning chain, the stitch before the starting point, and three consecutive stitches after. The close-all-through creates the raised centre knot of the star, and the single chain 1 forms the eye of the star."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working one star stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation: chain in a multiple of 2, plus 1." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert hook into 2nd ch from hook, draw up loop. Insert into 3rd ch, draw up loop. Insert into 4th ch, draw up loop — 4 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add one more: insert into 5th ch, draw up loop — 5 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through all 5 loops. Ch 1 to close the eye of the star." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the next star: the last 2 of the 5 loops are shared with the previous star (insert into the eye and the last insertion point of the previous star), then 3 new insertions. 5 loops, close, ch 1. Continue." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stars are difficult to count — pattern gets lost",
+              "cause": "Missing or misidentifying the five insertion points",
+              "fix": "Place a stitch marker in the eye (ch 1) of each completed star as you go. The eye is always one of the insertion points for the following star."
+            },
+            {
+              "symptom": "Fabric puckers or pulls together",
+              "cause": "Pulling the five-loop close-all too tightly",
+              "fix": "Draw through all five loops with a moderate tension — firm but not yanked. The star should sit flat, not dome upward."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spider stitch uses a similar multiple-loop drawn-up technique but inserts into chain spaces rather than stitches, creating a lacy web effect. Puff stitch is the simpler pulled-loop close in a single position."
+          }
+        ]
+      }
+    ]
+  }
+}

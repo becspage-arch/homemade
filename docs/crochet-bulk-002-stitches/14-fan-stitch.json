@@ -1,0 +1,129 @@
+{
+  "slug": "crochet-fan-stitch",
+  "title": "Fan stitch — seven trebles, wide spread",
+  "subtitle": "A deeper fan than the shell stitch — shawls, borders, and statement edges",
+  "excerpt": "Fan stitch is seven trebles worked into the same base point, spreading wider than a shell. It appears in shawl edges, lace borders, and any crochet piece where a dramatic, open curve is wanted.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Vol. 3 (1888) — fan stitch in shawl and border patterns. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — fan-shaped stitch clusters.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-fan-stitch"],
+    "craftTechniqueTags": ["textured", "lace"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fan-stitch",
+      "term": "Fan stitch",
+      "definition": "Seven (or more) trebles worked into the same base stitch or chain space, spreading wide from a single entry point to form a fan or peacock-tail shape."
+    }
+  ],
+  "techniqueSlugs": ["crochet-fan-stitch"],
+  "criticalTechniques": ["crochet-fan-stitch"],
+  "aliases": ["fan", "fan stitch", "peacock fan", "7tr fan"],
+  "heroPrompt": "A swatch of fan stitch in cream DK cotton showing wide scalloped fans separated by chain spaces, three fans visible, on a pale wooden surface.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Seven trebles fanning out from a single chain space — viewed from above", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fan-stitch" } }],
+            "text": "Fan stitch"
+          },
+          {
+            "type": "text",
+            "text": " is a wider version of the shell — seven trebles from one point rather than five. The extra two stitches spread the fan broadly, creating a peacock-tail curve that reads more dramatically than a shell, particularly when worked in a fine or shiny yarn. Fan stitches appear on shawl cast-off edges, blanket borders, and as the main stitch in lightweight lace wraps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a fan stitch row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chain a multiple of 8 plus 5. This example uses ch 29 for 3 fans."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation: ch 29." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1 (set-up): dc in 2nd chain from hook, *skip 3 ch, 7 tr in next ch (one fan), skip 3 ch, dc in next ch; repeat from * across. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2: ch 4, 3 tr in first dc (half fan at edge). *Dc in 4th tr of fan (the centre), 7 tr in next dc. Repeat from * to last fan, dc in centre of last fan, 4 tr in last dc. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 3: ch 1, dc in first tr, *7 tr in next dc (centre stitch between fans), dc in 4th tr of fan. Repeat from * ending dc in top of ch-4. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat rows 2-3 for the pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Fan edges don't form a neat scallop",
+              "cause": "The outer trebles of the fan pull too tight, closing the spread",
+              "fix": "Work the outermost trebles of each fan slightly looser. They should spread wide, not lean inward. Holding the yarn with lighter tension for the first and last treble of each fan helps."
+            },
+            {
+              "symptom": "Fans don't align row to row",
+              "cause": "Working into the wrong stitch on the return row",
+              "fix": "Each new fan's centre goes into the dc stitch between two fans from the previous row. Count to the midpoint stitch carefully."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shell stitch is the 5tr version of the same shape — practice shell first if fan feels complex. Victorian peacock-tail patterns use fans of nine or eleven trebles for even more dramatic spread. The crocodile stitch uses double fan pairs worked in opposing directions to create overlapping scales."
+          }
+        ]
+      }
+    ]
+  }
+}

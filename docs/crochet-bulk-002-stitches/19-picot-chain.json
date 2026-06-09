@@ -1,0 +1,115 @@
+{
+  "slug": "crochet-picot-chain-edge",
+  "title": "Picot chain — an open row of floating points",
+  "subtitle": "Picots separated by chains rather than dc anchors — the lighter finish",
+  "excerpt": "Picot chain spaces picots with chains rather than double crochet anchors between them. The result is an open, floating row of points — lighter than a standard picot edge and suited to fine shawls and delicate edgings.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — open picot chain borders. Weldon's Practical Crochet, Vol. 2 (1887) — picot chain in lace edgings.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-picot-chain"],
+    "craftTechniqueTags": ["edging", "lace"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "picot-chain",
+      "term": "Picot chain",
+      "definition": "A row of picots separated by chain links rather than dc anchors, creating an open floating border. Each picot is three chains closed into the first, with two or three chains between each picot."
+    }
+  ],
+  "techniqueSlugs": ["crochet-picot-chain-edge"],
+  "criticalTechniques": ["crochet-picot-chain-edge"],
+  "aliases": ["picot chain", "pic-ch", "floating picot edge"],
+  "heroPrompt": "A delicate crochet edging showing a row of picot chain — small pointed loops separated by open chain arches — in white cotton thread on a dark background, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "A picot chain segment: chain, picot, chain, picot — showing the open arches between points", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "picot-chain" } }],
+            "text": "Picot chain"
+          },
+          {
+            "type": "text",
+            "text": " replaces the double crochet anchors between picots with chains, leaving the points floating freely in an open row. The effect is more delicate than a solid picot edge — better suited to fine cotton shawls, lightweight collars, and lace where a solid row of dc would look too heavy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a picot chain edging" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Attach yarn at any edge stitch with a sl st." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 2 (or 3 for a slightly looser drape)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the picot: ch 3, sl st into the first of those 3 chains." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 2. Sl st into the edge to anchor, spacing the anchor 2-3 stitches along from the last anchor." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat steps 2-4 along the full edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Edging pulls the main fabric",
+              "cause": "Anchor sl stitches too close together or too tight",
+              "fix": "Space anchors evenly — every 3rd stitch for most fabrics. Work anchor sl stitches loosely; they should sit on the surface, not pull the edge inward."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Solomon's knot border is the open-mesh equivalent of the picot chain — larger scale, used on shawls and bags where a bigger lace mesh is wanted."
+          }
+        ]
+      }
+    ]
+  }
+}

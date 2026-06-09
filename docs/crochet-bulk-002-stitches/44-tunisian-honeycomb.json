@@ -1,0 +1,113 @@
+{
+  "slug": "crochet-tunisian-honeycomb-stitch",
+  "title": "Tunisian honeycomb stitch — chequerboard of knit and purl",
+  "subtitle": "Alternating TKS and TPS in a chequerboard pattern makes a textured grid",
+  "excerpt": "Tunisian honeycomb alternates columns of Tunisian knit stitch and Tunisian purl stitch in a chequerboard arrangement. On the fabric face, the knit columns push forward and the purl columns push back, creating a raised grid that resembles seed stitch knitting — bumpy, textured, and visually dense.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-honeycomb"],
+    "craftTechniqueTags": ["tunisian", "textured"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-honeycomb",
+      "term": "Tunisian honeycomb stitch",
+      "definition": "A Tunisian stitch pattern that alternates columns of TKS (knit) and TPS (purl) in a 2x2 or 1x1 chequerboard. Each row of the forward pass works TKS over the previous TPS columns and TPS over the previous TKS columns, so the textures alternate with every row and produce a raised grid."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-honeycomb-stitch"],
+  "criticalTechniques": ["crochet-tunisian-honeycomb-stitch"],
+  "aliases": ["Tunisian honeycomb", "Tunisian seed stitch", "Tunisian chequerboard"],
+  "heroPrompt": "A Tunisian honeycomb stitch swatch in warm grey DK yarn, 8 rows, the raised bumpy grid of alternating knit and purl columns clearly visible, close-up.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-honeycomb" } }],
+            "text": "Tunisian honeycomb stitch"
+          },
+          {
+            "type": "text",
+            "text": " is a combination pattern that relies on knowing both Tunisian knit stitch and Tunisian purl stitch. The key rule is simple: on each forward pass, work TKS over every position that was TPS in the previous row, and TPS over every position that was TKS. The stitches are always swapped — the texture alternates row by row and column by column, making the grid."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working Tunisian honeycomb" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation: chain in an even number. Work foundation row in TSS. Return pass standard." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1 forward pass: *TKS in next stitch, TPS in next stitch. Repeat from * across." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return pass: standard (yarn over, pull through 1; *yarn over, pull through 2; repeat)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2 forward pass: *TPS in next stitch, TKS in next stitch. Repeat from * — the stitch types are now swapped from Row 1." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat rows 1-2 for the pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The grid is not forming — the fabric looks similar to plain TSS",
+              "cause": "Working TKS over TKS and TPS over TPS rather than swapping",
+              "fix": "On each forward pass, mark the first stitch of the row so you know whether row 1 or row 2 is the current row, and start with the opposite stitch type from the row before."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Broomstick lace is the next large-scale specialty technique — a completely different tool and structure, using a large-diameter rod (or thick knitting needle) to build up open lace loops in a Tunisian-adjacent two-pass sequence."
+          }
+        ]
+      }
+    ]
+  }
+}

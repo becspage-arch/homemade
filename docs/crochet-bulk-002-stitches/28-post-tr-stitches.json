@@ -1,0 +1,159 @@
+{
+  "slug": "crochet-post-tr-stitches",
+  "title": "FPTR and BPTR — front and back post treble",
+  "subtitle": "The taller post stitch — standard for crochet cables and deep ribs",
+  "excerpt": "Front-post treble (FPTR) and back-post treble (BPTR) work the same around-the-post principle as FPDC and BPDC, but with a treble — a taller stitch that creates a deeper, more defined raised column. FPTR and BPTR are the standard stitches for crochet cable panels and diamond-texture work.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-fptr", "crochet-bptr"],
+    "craftTechniqueTags": ["rib", "cables", "textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fptr",
+      "term": "FPTR",
+      "definition": "Front-post treble. A treble worked by inserting around the post of a stitch from the front, rather than into the top loops. The completed stitch raises as a column on the front face. The foundation of crochet cables."
+    },
+    {
+      "slug": "bptr",
+      "term": "BPTR",
+      "definition": "Back-post treble. A treble worked by inserting around the post from the back, pushing the post to the back face. From the front it reads as a recessed column — the counterpart to FPTR in cable and rib panels."
+    }
+  ],
+  "techniqueSlugs": ["crochet-post-tr-stitches"],
+  "criticalTechniques": ["crochet-post-tr-stitches"],
+  "aliases": ["FPTR", "BPTR", "front post treble", "back post treble", "post stitch treble"],
+  "heroPrompt": "A crochet swatch in cream aran yarn showing a simple two-column cable made with FPTR and BPTR, the raised cable twist visible clearly, close-up overhead view.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "FPTR hook path: from front-right around the treble post and out front-left, with yarn over in place", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fptr" } }],
+            "text": "FPTR"
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bptr" } }],
+            "text": "BPTR"
+          },
+          {
+            "type": "text",
+            "text": " are the taller cousins of FPDC and BPDC. The treble's extra height means the post stitch stands up further from the fabric, making the raised column more prominent. This depth is what makes FPTR and BPTR the standard choice for crochet cable patterns — the stitches cross over each other convincingly because each stitch is tall enough to be visible."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working FPTR" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard tr (or dc, depending on the pattern). Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 3. Yarn over. Insert the hook from front to back on the right side of the post of the stitch below." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the hook under the post and out to the front on the left side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, draw up a loop (4 loops on hook). [Yarn over, draw through 2 loops] twice. One FPTR made." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working BPTR" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over. Insert the hook from back to front on the right side of the post." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the hook in front of the post and out to the back on the left side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, draw up a loop (4 loops on hook). [Yarn over, draw through 2 loops] twice. One BPTR made." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Making a simple cable",
+          "body": "Foundation row: work dc. Cable row: skip 2 sts, FPTR around each of the next 2 dc below, then FPTR around each of the 2 skipped dc — crossing the second pair over the first. The posts cross and the cable twist is formed. Work BPTR on the return row over the same columns to push them back."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Cable stitches are too tight to cross",
+              "cause": "Hook size too small or tension too tight for the post-stitch wrap",
+              "fix": "Go up one hook size for cable rows. The post stitch needs to reach over the adjacent stitch — a tight tension makes this physically difficult."
+            },
+            {
+              "symptom": "The raised column leans or falls sideways",
+              "cause": "Working the FPTR into the wrong post, or off by one stitch",
+              "fix": "The FPTR post stitch goes into the post of the stitch directly below — skip over the top loops of that stitch without working into them, and insert around the post."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once FPTR and BPTR feel reliable, a 4-stitch cable panel (two FPTR crossing over two others) is a straightforward next step. Post stitches also combine with shell and V-stitch to make the textured raised-fan patterns in crochet stitch dictionaries."
+          }
+        ]
+      }
+    ]
+  }
+}

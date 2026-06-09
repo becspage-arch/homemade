@@ -1,0 +1,120 @@
+{
+  "slug": "crochet-hairpin-braid-join",
+  "title": "Hairpin braid join — linking the strips into fabric",
+  "subtitle": "Group and braid loops from adjacent strips to join them without visible seams",
+  "excerpt": "The hairpin braid join groups loops from two adjacent hairpin strips and pulls them through each other to lock them together. The groups of interlaced loops form a visible braid pattern between the strips. This is the standard method for assembling hairpin lace fabric from individual strips.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Vol. 2 (1887) — joining hairpin lace strips. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — loop-joining in hairpin and tatting work.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-hairpin-braid-join"],
+    "craftTechniqueTags": ["lace", "joining"],
+    "disciplineTags": ["discipline:hairpin"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hairpin-braid-join",
+      "term": "Hairpin braid join",
+      "definition": "A method of joining adjacent hairpin lace strips by taking groups of loops from each strip and threading them through each other in sequence. The interlaced loops form a braid that holds the strips together while leaving the outer loops free for the next strip or edge."
+    }
+  ],
+  "techniqueSlugs": ["crochet-hairpin-braid-join"],
+  "criticalTechniques": ["crochet-hairpin-braid-join"],
+  "aliases": ["hairpin join", "hairpin braid", "loop braid join", "strip join"],
+  "heroPrompt": "Two hairpin lace strips in pale pink DK yarn joined along one edge, the braided loop join visible as a decorative centre line between the two open strips, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "The first group of loops from strip 2 being pulled through the first group of loops from strip 1", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hairpin-braid-join" } }],
+            "text": "Hairpin braid join"
+          },
+          {
+            "type": "text",
+            "text": " links the inner loops of two strips by passing each group of loops through the previous group. The join is visible as a decorative braid and holds without any dc or chain stitching between the strips. Both outer edges remain free for adding more strips or an edging."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Basic braid join (2 loops per group)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay both strips parallel, with the inner edges (the edges you want to join) facing each other." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick up the first 2 loops from strip 1 (inner edge) on the hook or fingers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the first 2 loops from strip 2 through the 2 loops from strip 1." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the next 2 loops from strip 1 through the 2 loops now held from strip 2." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating: 2 from strip 2 through the held strip-1 loops, then 2 from strip 1 through the held strip-2 loops. The braid forms as you progress." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end, secure the final group with a sl st or a dc to prevent the braid unravelling." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Braid is pulling the strips unevenly — one side is bunched",
+              "cause": "Pulling the groups through with unequal tension",
+              "fix": "After each interlace, lay the strips flat and make sure the braid centre sits directly between the two strips. Don't pull one side tighter than the other."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a bolder braid, use 3 or 4 loops per group instead of 2. To edge the outer loops of a hairpin strip, dc through groups of loops as a finishing row — the same dc-through-all principle as broomstick cluster."
+          }
+        ]
+      }
+    ]
+  }
+}

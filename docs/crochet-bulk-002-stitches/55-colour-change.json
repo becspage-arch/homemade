@@ -1,0 +1,114 @@
+{
+  "slug": "crochet-colour-change-technique",
+  "title": "Colour change — switching yarn mid-work",
+  "subtitle": "Complete the stitch before the change with the new colour on the last pull-through",
+  "excerpt": "Colour changes in crochet happen on the last yarn-over pull-through of the stitch before the change, not at the start of the new stitch. Drawing through the final loops with the new yarn is what creates a clean colour transition. The old yarn is dropped and carried, or cut and rejoined, depending on the distance to the next use.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["colourwork"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "colour-change",
+      "term": "Colour change",
+      "definition": "Switching from one yarn colour to another during crochet. The change is made on the last pull-through of the last stitch in the old colour — draw the final loops through with the new yarn. The old colour is then carried (float) or cut and woven in."
+    }
+  ],
+  "techniqueSlugs": ["crochet-colour-change-technique"],
+  "criticalTechniques": ["crochet-colour-change-technique"],
+  "aliases": ["colour change", "color change", "yarn change", "joining new yarn"],
+  "heroPrompt": "A small crochet swatch in two colours — navy and cream DK yarn — showing a clean horizontal colour change between rows, close-up showing the change row.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "The last dc in old colour with 2 loops on hook, new colour yarn-over about to draw through both loops", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-change" } }],
+            "text": "Colour change"
+          },
+          {
+            "type": "text",
+            "text": " happens inside the last stitch of the old colour, not at the start of the new one. This counterintuitive timing is what makes the transition clean — the new colour is already on the hook when the first full stitch of the new section appears, so no colour bleeds forward from the old shade."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Changing colour on a dc" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the last dc in the old colour. Insert hook, yarn over with old colour, draw up a loop — 2 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drop the old yarn. Yarn over with the new colour. Draw through both loops on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The new colour is now on the hook. Continue with the new colour for the turning chain and the rest of the row." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Carrying vs cutting",
+          "body": "If the old colour returns within 3-4 stitches, carry it by working over the unused strand — the carried strand is enclosed inside the new stitches and hidden. If the old colour won't be needed for 5+ stitches or doesn't return at all, cut it and leave a 10 cm tail to weave in."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A fleck of the old colour shows at the start of the new section",
+              "cause": "Changing colour on the first stitch of the new row rather than the last stitch of the old row",
+              "fix": "Make the colour change one stitch earlier — change on the final draw-through of the last stitch before the colour section ends."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tapestry crochet carries two colours simultaneously in every stitch, working over the non-active colour to create colourwork patterns within a single row. Surface slip stitch applies colour lines to a finished piece without reworking the base fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

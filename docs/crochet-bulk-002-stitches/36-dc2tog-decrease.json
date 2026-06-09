@@ -1,0 +1,114 @@
+{
+  "slug": "crochet-dc2tog-decrease",
+  "title": "dc2tog — the standard visible decrease",
+  "subtitle": "Work two incomplete dc and close them together — one stitch becomes one",
+  "excerpt": "dc2tog (double crochet two together) works two partial double crochets into consecutive stitches, then closes both at once. The result removes one stitch from the count. It is the standard visible decrease for shaping garments, amigurumi, and anything that needs to reduce width in a clear, clean way.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-dc2tog"],
+    "craftTechniqueTags": ["shaping"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dc2tog",
+      "term": "dc2tog",
+      "definition": "Double crochet two together. Insert into the first stitch, draw up a loop (2 loops on hook). Insert into the next stitch, draw up a loop (3 loops on hook). Yarn over and draw through all 3 loops. Two stitches become one — stitch count decreases by one."
+    }
+  ],
+  "techniqueSlugs": ["crochet-dc2tog-decrease"],
+  "criticalTechniques": ["crochet-dc2tog-decrease"],
+  "aliases": ["dc2tog", "dc 2 tog", "double crochet two together", "dec", "sc2tog US"],
+  "heroPrompt": "A crochet swatch in soft blue DK yarn showing a row of dc with two visible dc2tog decreases creating a slight inward slope at the edges, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "Three loops on hook with hook about to draw through all three to complete dc2tog", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dc2tog" } }],
+            "text": "dc2tog"
+          },
+          {
+            "type": "text",
+            "text": " is the foundation decrease for shaped crochet. It merges two adjacent stitches into one by working each partway and closing both at the end. The joint top of the completed dc2tog sits slightly to one side of the pair, producing a visible diagonal that shows the fabric narrowing. This visibility is intentional in garment shaping, where the decrease line is a design feature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working dc2tog" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert hook into the next stitch. Yarn over, draw up a loop — 2 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Without finishing the dc, insert hook into the following stitch. Yarn over, draw up a loop — 3 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through all 3 loops at once. One dc2tog made — stitch count reduced by 1." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Decrease positioning for shaping",
+          "body": "For garment side shaping: work dc2tog 1 stitch in from each edge. For amigurumi closing rounds: work dc2tog evenly spaced around the final rounds to contract the opening. In both cases, the decrease line will be visible — place it deliberately."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stitch count is still the same after working dc2tog",
+              "cause": "Completing two full dc rather than one dc2tog — working each stitch to close before moving to the next",
+              "fix": "Stop after the first yarn-over draw-up — before the dc is closed. Then insert into the next stitch immediately. Only close all loops at the end."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Invisible decrease (also called magic decrease) removes a stitch through the front loops only and produces almost no visible trace of the decrease — the standard choice for the final closing rounds of amigurumi toys."
+          }
+        ]
+      }
+    ]
+  }
+}

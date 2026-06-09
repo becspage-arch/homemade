@@ -1,0 +1,110 @@
+{
+  "slug": "crochet-invisible-decrease-stitch",
+  "title": "Invisible decrease — the seamless decrease for amigurumi",
+  "subtitle": "Insert through the front loops of two stitches at once — almost no trace left",
+  "excerpt": "The invisible decrease inserts through the front loops only of two consecutive stitches simultaneously, then closes in one step. The back loops remain in place and effectively hide the join. Used for the closing rounds of amigurumi toys where a standard dc2tog would leave a visible seam-like gap.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-invisible-decrease"],
+    "craftTechniqueTags": ["shaping", "amigurumi"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "invisible-decrease",
+      "term": "Invisible decrease",
+      "definition": "A dc decrease where the hook inserts under the front loop only of the next stitch, then under the front loop only of the stitch after that, gathering both front loops at once. Yarn over and draw through both loops (2 loops on hook), yarn over and draw through both. The back loops form a smooth cover over the join."
+    }
+  ],
+  "techniqueSlugs": ["crochet-invisible-decrease-stitch"],
+  "criticalTechniques": ["crochet-invisible-decrease-stitch"],
+  "aliases": ["invisible decrease", "magic decrease", "flat dec", "inv dec"],
+  "heroPrompt": "Two small crochet spheres in white DK yarn side by side — one with dc2tog decreases showing gaps, one with invisible decreases showing a smooth surface, close-up comparison.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted under both front loops of two consecutive stitches simultaneously", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "invisible-decrease" } }],
+            "text": "Invisible decrease"
+          },
+          {
+            "type": "text",
+            "text": " picks up the front loops of two stitches simultaneously rather than working one stitch partway and then the other. The back loops of both stitches are left in place, and when the join closes they lie across the front of the completed stitch, covering the join. Compared to dc2tog, the surface stays smooth and the decrease is nearly invisible from the right side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working invisible decrease" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under the front loop only of the next stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Without pulling through, continue the insertion under the front loop only of the following stitch — both front loops are now on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through both front loops — 2 loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through the remaining 2 loops. One invisible decrease made — stitch count reduced by 1." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The decrease is still visible — a small bump or gap shows",
+              "cause": "Pulling the yarn-over loop through too loosely, or the back loops springing forward instead of lying flat",
+              "fix": "Ensure the draw-through is snug and the back loops of both stitches are held in place as the close-all completes. Stuffing amigurumi before the final rounds helps the fabric sit correctly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "dc2tog is the visible version of the same stitch reduction — used deliberately in garment shaping where the decrease line is meant to be seen. For increases, the standard approach is two dc into the same stitch (inc), and the invisible increase mirrors the invisible decrease by working into the back bar."
+          }
+        ]
+      }
+    ]
+  }
+}

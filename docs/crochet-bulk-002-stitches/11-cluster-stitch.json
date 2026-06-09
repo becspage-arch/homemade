@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-treble-cluster-stitch",
+  "title": "Cluster stitch — trebles joined at the top",
+  "subtitle": "Incomplete trebles worked across several stitches and closed together — the decrease that makes lace",
+  "excerpt": "A cluster is several incomplete trebles worked over multiple stitches or spaces and joined at the top with one yarn-over. Unlike a bobble (which works into one base stitch), a cluster spans several stitches and creates a subtle decrease with a joined dome top.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — cluster stitches in lace patterns. Weldon's Practical Crochet, Vol. 3 (1888) — treble clusters across multiple stitches.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-treble-cluster"],
+    "craftTechniqueTags": ["textured", "lace"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cluster",
+      "term": "Cluster",
+      "definition": "Several incomplete trebles worked across consecutive stitches or spaces and joined at the top with one yarn-over. The stitches converge to a single top point, creating a fanned shape and reducing the stitch count."
+    }
+  ],
+  "techniqueSlugs": ["crochet-treble-cluster-stitch"],
+  "criticalTechniques": ["crochet-treble-cluster-stitch"],
+  "aliases": ["cl", "cluster", "tr-cl", "treble cluster", "3tr-cl"],
+  "heroPrompt": "A swatch showing 3tr clusters separated by chain spaces in a shell-lace pattern, the joined tops of the clusters visible as a series of pointed arches, DK cotton in navy, close-up on linen.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 4, "description": "Four loops on hook — three incomplete trebles before the closing pull-through of a 3tr cluster", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cluster" } }],
+            "text": "Cluster stitch"
+          },
+          {
+            "type": "text",
+            "text": " joins several incomplete trebles — each worked into a different stitch — at the top into one point. The cluster converges rather than puffs out. It creates a decrease at the join point and a fan shape below. In lace patterns, clusters and chain spaces alternate to build arched mesh. In the granny square, a 3tr cluster into a chain space is the granny cluster."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a 3tr cluster across three stitches" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the first of the three stitches the cluster will span." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into first stitch, pull up a loop, yarn over, pull through two — two loops remain. First incomplete treble done." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into the next stitch, pull up a loop, yarn over, pull through two — three loops on hook. Second incomplete treble done." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into the next stitch, pull up a loop, yarn over, pull through two — four loops on hook. Third incomplete treble done." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through all four loops. The three stitches are joined at the top. One 3tr cluster made over three stitches." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Cluster into a chain space",
+          "body": "In granny squares and lace patterns, clusters work into a chain space (the gap between stitches) rather than into individual stitch tops. Push the hook under all the chains in the space, not into one specific chain. The whole cluster fans out from the open space below."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Cluster pulls the fabric unevenly",
+              "cause": "The incomplete trebles were worked at different tensions, making some legs of the cluster tighter than others",
+              "fix": "Work each incomplete treble at the same even tension. The legs should all fan out to the same width at the base."
+            },
+            {
+              "symptom": "The top of the cluster looks loose and open",
+              "cause": "The closing yarn-over and pull-through was not pulled through firmly",
+              "fix": "Pull the closing yarn-over snugly through all loops. The top of the cluster should close to a neat point."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shell stitch pairs clusters with fans — five trebles into a chain space after a cluster creates the shell-lace pattern. The granny cluster is the same move worked into a chain space specifically, the core technique of all granny-square patterns."
+          }
+        ]
+      }
+    ]
+  }
+}

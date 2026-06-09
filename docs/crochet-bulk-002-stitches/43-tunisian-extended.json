@@ -1,0 +1,111 @@
+{
+  "slug": "crochet-tunisian-extended-stitch",
+  "title": "Tunisian extended stitch — adding height to Tunisian rows",
+  "subtitle": "Chain 1 before closing each return-pass pair to make taller, more open rows",
+  "excerpt": "Tunisian extended stitch (TES) adds a single chain into the return pass before each yarn-over-pull-through-2 step. This raises the stitch height and opens up the fabric compared to standard Tunisian simple stitch, making it more suitable for shawls and draping projects where TSS would be too dense.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-extended"],
+    "craftTechniqueTags": ["tunisian", "openwork"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-extended-stitch",
+      "term": "Tunisian extended stitch",
+      "definition": "Abbreviated TES. The same as TSS on the forward pass. Return pass modified: yarn over, pull through 1 loop to start; then for each subsequent pair: chain 1, yarn over, pull through 2 loops. The chain 1 between each pull-through raises the row height."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-extended-stitch"],
+  "criticalTechniques": ["crochet-tunisian-extended-stitch"],
+  "aliases": ["TES", "Tunisian extended stitch", "Tunisian extended simple stitch"],
+  "heroPrompt": "A Tunisian extended stitch swatch in sky blue DK yarn, 6 rows, showing the taller, slightly more open fabric compared to standard TSS, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 4, "description": "Return pass showing the ch 1 step inserted between each yarn-over-pull-through-2 pair", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-extended-stitch" } }],
+            "text": "Tunisian extended stitch"
+          },
+          {
+            "type": "text",
+            "text": " makes one change to the TSS formula: a chain stitch is added to the return pass at each stitch position. This chain extends the height of each stitch by roughly one chain-stitch increment, producing a more open fabric and reducing the characteristic Tunisian curl. The forward pass is identical to TSS — only the return is modified."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working TES" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Forward pass: same as TSS — insert under each vertical bar, draw up a loop across the row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return pass — begin: yarn over, pull through 1 loop (first close, same as TSS)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chain 1. Then yarn over, pull through 2 loops." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat (ch 1, yarn over, pull through 2) for each remaining pair to the end of the row." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The forward pass doesn't find clear vertical bars to insert into",
+              "cause": "The ch 1 from the return pass creates extra chain loops that can obscure the bars",
+              "fix": "Look for the vertical bar slightly below the ch 1 loop on each stitch. The bar sits between the ch 1 above and the stitch below it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tunisian honeycomb applies a chequerboard of TKS and TPS to create a grid-texture fabric that combines two Tunisian stitch types in one piece. Broomstick lace is an entirely different large-loop technique that produces an open lace effect similar in drape to TES."
+          }
+        ]
+      }
+    ]
+  }
+}

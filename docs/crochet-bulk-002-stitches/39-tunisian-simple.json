@@ -1,0 +1,140 @@
+{
+  "slug": "crochet-tunisian-simple-stitch",
+  "title": "Tunisian simple stitch — the foundation of Tunisian crochet",
+  "subtitle": "Two-pass crochet: pick up all loops in the forward pass, return pass closes them",
+  "excerpt": "Tunisian simple stitch (TSS) is the entry point to Tunisian crochet. A forward pass picks up vertical bars across the row onto the hook, then a return pass works them off with yarn-over-pull-through pairs. The fabric is dense, stable, and slightly stiff — resembling woven fabric with a knit-like face.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-simple"],
+    "craftTechniqueTags": ["tunisian", "textured"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-simple-stitch",
+      "term": "Tunisian simple stitch",
+      "definition": "Abbreviated TSS. Forward pass: insert hook under the vertical bar of each stitch, draw up a loop — loops accumulate on the hook. Return pass: yarn over, pull through 1 loop; *yarn over, pull through 2 loops; repeat from *. Each two-pass cycle = one row of TSS."
+    },
+    {
+      "slug": "tunisian-hook",
+      "term": "Tunisian hook",
+      "definition": "A long crochet hook, usually with a stopper or cable extension, that holds all the loops of one row simultaneously. Standard Tunisian hooks are 20-35 cm long; cable-extension hooks (also called Afghan hooks) can hold rows of any length."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-simple-stitch"],
+  "criticalTechniques": ["crochet-tunisian-simple-stitch"],
+  "aliases": ["TSS", "Tunisian simple stitch", "Afghan stitch", "Afghan crochet"],
+  "heroPrompt": "A Tunisian simple stitch swatch in terracotta DK yarn, 8 rows, showing the woven-looking fabric surface and neat vertical bars, close-up with Tunisian hook visible at edge.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Forward pass: multiple loops accumulated on the long hook, each drawn from a vertical bar", "sourcePreference": "synthetic-chart-render" },
+    { "stepIndex": 5, "description": "Return pass: yarn-over-pull-through-2 motion working loops off the hook from right to left", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-simple-stitch" } }],
+            "text": "Tunisian simple stitch"
+          },
+          {
+            "type": "text",
+            "text": " uses a two-pass system. The forward pass goes right to left across the row, picking up one loop from each stitch vertical bar and leaving all loops waiting on the hook. The return pass then goes left to right, working the loops off two at a time. Each complete forward-return cycle makes one row of fabric. Tunisian crochet never turns between rows — the work always faces you."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "note",
+          "title": "You need a Tunisian hook",
+          "body": "A standard crochet hook is too short for Tunisian work — the accumulating loops won't fit. A Tunisian hook (also called an Afghan hook) is 20-35 cm long with a uniform shaft and stopper cap. For wider projects, a hook with a flexible cable extension holds as many loops as needed."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Foundation row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch the desired width. Insert hook into 2nd ch from hook, draw up a loop. Continue along the chain, drawing up one loop per chain — all loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return pass: yarn over, pull through 1 loop. *Yarn over, pull through 2 loops. Repeat from * to end. One loop remains on hook." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Subsequent rows (TSS)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Forward pass: skip the first vertical bar (the one at the edge). Insert hook under the next vertical bar from right to left, draw up a loop. Continue across — one loop per bar. Work the last stitch under both strands of the edge loop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return pass: yarn over, pull through 1. *Yarn over, pull through 2. Repeat to end." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Fabric curls badly",
+              "cause": "Tunisian simple stitch always biases toward the front",
+              "fix": "This curl is normal in TSS — it relaxes with blocking. Use a hook one size larger than the yarn label suggests. For fully flat fabric without blocking, combine TSS with Tunisian full stitch in the same piece."
+            },
+            {
+              "symptom": "Stitch count drops each row",
+              "cause": "Missing the last edge stitch on the forward pass",
+              "fix": "The last forward-pass stitch goes under both strands of the edge loop. This two-strand insertion is easy to skip — count stitches after the first few rows until the habit is established."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tunisian knit stitch inserts through the stitch at a different angle and produces a true knit-looking V surface on the face. Tunisian purl stitch brings the yarn to the front before inserting to create a purl-bump row — the basis of Tunisian rib."
+          }
+        ]
+      }
+    ]
+  }
+}

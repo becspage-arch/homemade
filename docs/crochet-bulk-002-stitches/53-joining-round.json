@@ -1,0 +1,143 @@
+{
+  "slug": "crochet-joining-round-technique",
+  "title": "Joining a round — sl st join vs invisible join",
+  "subtitle": "Two ways to close a round without a visible seam",
+  "excerpt": "Crochet rounds are closed with a slip stitch into the first stitch of the round. The standard slip stitch join leaves a small visible join line; the invisible join method uses a tapestry needle and yarn to mimic the top of the stitch, hiding the join completely. Both have their place depending on whether the join will show.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-slip-stitch"],
+    "craftTechniqueTags": ["in-the-round", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "invisible-join",
+      "term": "Invisible join",
+      "definition": "A method of closing a crochet round by cutting the yarn and threading the tail through the last stitch top, then under both loops of the first stitch and back under the last stitch — mimicking the V of a normal stitch top. No slip stitch needed; the join disappears into the fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-joining-round-technique"],
+  "criticalTechniques": ["crochet-joining-round-technique"],
+  "aliases": ["join round", "sl st join", "invisible join", "seamless join crochet"],
+  "heroPrompt": "A flat crochet circle in mustard DK yarn showing a completed round with the invisible join blending into the final stitch, close-up showing the join area before and after closing.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 4, "description": "The invisible join: tapestry needle passing under both loops of the first stitch to mimic the stitch top", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the end of each round, a join closes the circle and steps up to the next round. The standard method is a "
+          },
+          {
+            "type": "text",
+            "text": "slip stitch"
+          },
+          {
+            "type": "text",
+            "text": " into the first stitch of the round. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "invisible-join" } }],
+            "text": "invisible join"
+          },
+          {
+            "type": "text",
+            "text": " is used when the round ends the piece — usually the final round of a granny square or flat motif where the join line would otherwise be seen."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Standard slip stitch join" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the last stitch of the round." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert hook into both loops of the first stitch of the round (not the turning chain)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through the stitch and the loop on the hook in one motion — slip stitch made. Round joined." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Invisible join (final round)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the last stitch of the round. Cut yarn, leaving a 15 cm tail. Pull the tail through the last stitch loop to secure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tail onto a tapestry needle. Insert the needle under both loops of the first stitch of the round from the top." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle back into the top of the last stitch — under both loops from the outside — and pull the tail through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull gently to tension the join to match the surrounding stitches. Weave in the tail." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Join still visible after invisible join",
+              "cause": "Tail pulled too tight or left too loose — the mimic stitch doesn't match the tension of real stitches",
+              "fix": "Match the tension of the surrounding stitches by eye before weaving in. The fake stitch top should sit at the same height as the real stitches."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continuous spiral rounds (no joining, no turning) avoid the join altogether — common in amigurumi where the join stitch would interrupt the smooth surface of the piece. Use a stitch marker in the first stitch of each round to track position."
+          }
+        ]
+      }
+    ]
+  }
+}

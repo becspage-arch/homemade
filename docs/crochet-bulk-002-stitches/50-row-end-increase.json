@@ -1,0 +1,122 @@
+{
+  "slug": "crochet-row-end-increase",
+  "title": "Row-end increases — adding stitches at the edge",
+  "subtitle": "Work extra stitches at the row start or end to widen the piece intentionally",
+  "excerpt": "Row-end increases add one or more stitches at the beginning or end of a row, widening the piece. The two main methods are: working 2 stitches into the edge stitch, or turning-chain increases that add extra stitches before the first row stitch. Both are standard shaping techniques for garments, triangles, and shawls.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain"],
+    "craftTechniqueTags": ["shaping"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "row-end-increase",
+      "term": "Row-end increase",
+      "definition": "An increase worked at the start or end of a crochet row to add stitch width. At the end of a row: work 2 stitches into the final stitch. At the start: work extra turning chains and use them as new stitches, or work 2 dc into the first stitch."
+    }
+  ],
+  "techniqueSlugs": ["crochet-row-end-increase"],
+  "criticalTechniques": ["crochet-row-end-increase"],
+  "aliases": ["row increase", "edge increase", "inc at edge", "outside increase"],
+  "heroPrompt": "A triangular crochet swatch in sage green DK yarn, worked from bottom point up, showing the widening rows from increases at both edges, close-up.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "row-end-increase" } }],
+            "text": "Row-end increase"
+          },
+          {
+            "type": "text",
+            "text": " is the standard way to widen a piece that is worked back and forth. The method depends on which end needs the increase and how many stitches are to be added. A single stitch at each end is by far the most common — it produces a smooth diagonal edge used in sleeve shaping and triangle shawl panels."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Increasing at the end of a row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the last stitch of the row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work 2 dc (or tr, htr — whatever stitch the row uses) into the final stitch. One stitch added at the end edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Increasing at the start of a row (chain method)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the previous row, instead of turning, ch 2 extra (for a dc row: ch 3 instead of ch 1; for a tr row: ch 4 instead of ch 3)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn. Work a dc into the 2nd ch from hook (for dc row) — this creates one new stitch before the main row begins." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across the row normally. One stitch added at the start edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The edge develops a stepped instead of diagonal look",
+              "cause": "Adding increases only at the end of every other row rather than both edges and both rows",
+              "fix": "For a smooth diagonal, increase both edges on every row (or on specified rows per the pattern). Unequal spacing creates steps rather than a continuous slope."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For mid-row increases — adding width inside a row rather than at the edges — work 2 stitches into any single stitch at the required position. Raglan shaping uses a paired mid-row increase at four positions within each round."
+          }
+        ]
+      }
+    ]
+  }
+}

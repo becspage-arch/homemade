@@ -1,0 +1,108 @@
+{
+  "slug": "crochet-flo-htr-stitch",
+  "title": "Front-loop-only htr — FLO htr",
+  "subtitle": "The taller single-loop variant — a softer ridge with more drape",
+  "excerpt": "FLO htr inserts into the front loop only of each htr, leaving the back loop as a raised horizontal strand. Because the htr is taller than dc, the freed back loops create a more prominent ridge with a slightly softer drape — useful for textures where a dc ridge would be too dense.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-flo-htr"],
+    "craftTechniqueTags": ["textured", "rib"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flo-htr",
+      "term": "FLO htr",
+      "definition": "Half treble worked into the front loop only. Leaves the back loop free as a ridge. Produces a taller, slightly softer horizontal line than FLO dc — used where FLO dc would be too tight or dense."
+    }
+  ],
+  "techniqueSlugs": ["crochet-flo-htr-stitch"],
+  "criticalTechniques": ["crochet-flo-htr-stitch"],
+  "aliases": ["FLO htr", "front loop htr", "fl htr"],
+  "heroPrompt": "A crochet swatch in sage green DK yarn showing FLO htr rows, visible horizontal ridges with a softer, slightly airy texture compared to dc ribbing, close-up.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flo-htr" } }],
+            "text": "FLO htr"
+          },
+          {
+            "type": "text",
+            "text": " applies the front-loop-only technique to the half treble. Because htr is one step taller than dc, the freed back loops leave a slightly larger, looser ridge. The fabric has a little more drape than FLO dc ribbing and is a reasonable choice for shawl borders, lightweight garment edges, and any place where a gentler texture is wanted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working FLO htr" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard htr." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 2, turn. Yarn over. Insert the hook into the front loop only of the first htr top." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop (3 loops on hook). Yarn over and draw through all 3 loops." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue FLO htr across the row." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Fabric feels too loose or drapes more than expected",
+              "cause": "Htr is naturally taller and more open than dc; FLO htr amplifies this",
+              "fix": "Use a hook one size smaller to tighten up, or switch to FLO dc if the fabric needs to be firmer."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BLO htr is the reverse — ridge on the right side. The third-loop htr technique (camel stitch) works a completely different loop on the htr and produces a denser knit-like rib from the same stitch height."
+          }
+        ]
+      }
+    ]
+  }
+}

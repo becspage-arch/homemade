@@ -1,0 +1,138 @@
+{
+  "slug": "crochet-solomons-knot-stitch",
+  "title": "Solomon's knot — elongated chain with a lock stitch",
+  "subtitle": "The mesh backbone of open-weave shawls and bags",
+  "excerpt": "Solomon's knot is an elongated chain loop locked in place by a double crochet into its back bar. The result is a long, knotted mesh element used to build open-weave fabric for shawls, market bags, and lace wrap panels. It produces a distinctive large-holed net that's too open for standard stitch patterns but exactly right for its purpose.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — the Solomon's knot stitch in hairpin and open-mesh lace work. Weldon's Practical Crochet, Vol. 6 (1891) — Solomon's knot mesh for filet-style borders.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-solomons-knot"],
+    "craftTechniqueTags": ["lace", "openwork", "mesh"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "solomons-knot",
+      "term": "Solomon's knot",
+      "definition": "An elongated chain loop, stretched to 1-2 cm, with a dc worked into its single back bar to lock it in place. A pair of Solomon's knots with a dc between them is the repeating unit of open Solomon's knot mesh. Also called lover's knot or crazy knot."
+    }
+  ],
+  "techniqueSlugs": ["crochet-solomons-knot-stitch"],
+  "criticalTechniques": ["crochet-solomons-knot-stitch"],
+  "aliases": ["Solomon's knot", "lover's knot", "crazy knot", "SK"],
+  "heroPrompt": "A crochet swatch of Solomon's knot mesh in natural cotton, 4-5 rows, showing the open large-hole net with the distinctive knotted links clearly visible, close-up on dark surface.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "The back bar of a stretched chain loop with the hook inserted for the locking dc", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solomons-knot" } }],
+            "text": "Solomon's knot"
+          },
+          {
+            "type": "text",
+            "text": " is one of the oldest crochet lace stitches — a loop stretched long and pinned in place with a dc before moving on. Unlike other stitches, there is no row of foundation chain to work into. The knots build on each other to form a large-holed mesh that is simultaneously open and structural. Used for market bags it holds shape under weight; in shawls the large holes create a dramatic lace drape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making one Solomon's knot" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw up the loop on the hook to about 1-2 cm — much longer than a normal chain stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through the extended loop to chain it off (1 elongated chain made)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify the single back bar of this elongated chain — it runs along the back of the long loop. Insert the hook under this single back bar only." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop (2 loops on hook). Yarn over, draw through both loops — one dc made. This locks the knot." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Building Solomon's knot mesh" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a foundation row of Solomon's knots — pairs of knots separated by dc anchors." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn. Make 2 Solomon's knots (turning knots). Skip the first knot of the foundation row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a dc into the dc between the first and second knot of the row below. *Make 2 Solomon's knots, dc into the next between-knot dc. Repeat from *." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Can't find the back bar for the locking dc",
+              "cause": "Holding the elongated loop too tightly, closing the loop before the back bar is visible",
+              "fix": "After making the elongated chain, hold it flat and slightly taut between thumb and forefinger. The back bar is the single strand running along the back side of the loop — it becomes visible when the loop is held open."
+            },
+            {
+              "symptom": "Knots are all different sizes",
+              "cause": "Inconsistent loop extension when drawing up the elongated chain",
+              "fix": "Practice extending the loop to the same length each time. Many crocheters use a finger as a size guide — wrap the extended loop once around a finger to calibrate a consistent 1.5 cm length."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Picot chain is a similar open-mesh edging technique — smaller and lighter than Solomon's knot mesh. For structured open mesh at a larger scale, filet crochet (dc and ch-2 mesh on a grid) gives more control over the pattern layout."
+          }
+        ]
+      }
+    ]
+  }
+}

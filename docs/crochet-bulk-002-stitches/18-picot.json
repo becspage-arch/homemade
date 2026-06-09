@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-picot-edge",
+  "title": "Picot — the decorative loop edge",
+  "subtitle": "Three chains closed back to the first with a slip stitch — a tiny decorative point",
+  "excerpt": "Picot is three chains closed back into the first chain with a slip stitch. The result is a tiny raised loop — the standard decorative finish for shawl edges, lace borders, baby clothes, and collar edgings.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — picot edging in needlework and crochet lace. Weldon's Practical Crochet, Vol. 1 (1886) — the three-chain picot in edging work.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-picot"],
+    "craftTechniqueTags": ["edging"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "picot",
+      "term": "Picot",
+      "definition": "Three chains closed into the first chain with a slip stitch to form a small raised loop. Used as a decorative edge finish on shawls, lace, and garments. Abbreviated 'p' in pattern shorthand."
+    }
+  ],
+  "techniqueSlugs": ["crochet-picot-edge"],
+  "criticalTechniques": ["crochet-picot-edge"],
+  "aliases": ["p", "picot", "picot point", "picot edging"],
+  "heroPrompt": "Close-up of a crochet picot edging in white cotton thread, showing several evenly-spaced picot loops along an edge, delicate and clear against a dark background.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "The three chains made, with the hook about to insert back into the first chain to close", "sourcePreference": "public-domain" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "picot" } }],
+            "text": "Picot"
+          },
+          {
+            "type": "text",
+            "text": " is the simplest decorative crochet edge — three chains, then a slip stitch back into the first chain to close the loop into a small raised point. Done along the edge of a finished piece, regularly spaced between double crochet or slip stitch anchors, picots create the traditional frilled finish seen on shawls, doilies, and baby garments."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a picot edging row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a row of double crochet around the finished edge, evenly spaced." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On the picot row: *work 1 dc in each of the next 3 dc from the previous row, then make the picot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To make the picot: ch 3. Insert hook into the first of the 3 chains just made — that is, the chain furthest from the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through both the chain and the loop on the hook — slip stitch complete. The three chains form a small closed loop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue: *1 dc in each of the next 3 sts, picot. Repeat from * to end of edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Adjusting picot size",
+          "body": "Three chains make a small, tight picot point. Four or five chains make a larger loop with a looser drape — more like a scallop than a point. Match the picot chain count to the scale of the piece: three chains for fine cotton, four or five for DK or aran."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Picots face inward rather than outward",
+              "cause": "Closing the picot into the wrong chain — inserting into the chain nearest the hook instead of the farthest",
+              "fix": "The slip stitch goes into the first chain made, which is the one furthest from the hook. Count three chains back from the hook and insert there."
+            },
+            {
+              "symptom": "Picots are uneven — some larger, some smaller",
+              "cause": "Inconsistent chain tension or inconsistent spacing of the anchor dc stitches",
+              "fix": "Work all three chains at the same tension. Use a stitch marker to mark every 3rd anchor dc so the picots land at even intervals."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Picot chain is a row of picots separated by chain spaces rather than dc anchors — giving a more open, floating border. Both are Victorian-documented finishes that appear across the whole needlework record."
+          }
+        ]
+      }
+    ]
+  }
+}

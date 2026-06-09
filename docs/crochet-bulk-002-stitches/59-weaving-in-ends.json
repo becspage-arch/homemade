@@ -1,0 +1,112 @@
+{
+  "slug": "crochet-weaving-in-ends",
+  "title": "Weaving in ends — securing yarn tails without a knot",
+  "subtitle": "Duplicate the path of existing stitches with the tail to lock it without knots",
+  "excerpt": "Weaving in a crochet yarn tail means threading it through the bodies of surrounding stitches in a pattern that locks it under tension — not a knot. The tail should travel in at least two different directions through the stitches to prevent it pulling through. Done correctly, the tail is invisible and permanent.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["finishing"]
+  },
+  "recipeTools": [
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "weaving-in-ends",
+      "term": "Weaving in ends",
+      "definition": "Finishing technique where yarn tails are secured by threading them through the bodies of surrounding stitches with a tapestry needle. The tail travels in at least two directions through the fabric — typically forward along the stitch, then back — to prevent pull-through."
+    }
+  ],
+  "techniqueSlugs": ["crochet-weaving-in-ends"],
+  "criticalTechniques": ["crochet-weaving-in-ends"],
+  "aliases": ["weave in ends", "sew in ends", "darning in ends", "finishing ends"],
+  "heroPrompt": "A tapestry needle threading a cream yarn tail through the back of a crochet fabric in a zigzag path, close-up showing the needle entering and exiting stitch bodies.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weaving-in-ends" } }],
+            "text": "Weaving in ends"
+          },
+          {
+            "type": "text",
+            "text": " is the last step of any crochet project and the one most often done badly — too short, only in one direction, or knotted. Knots loosen and show through the fabric over time. A properly woven tail uses the friction of the stitch structure to hold the tail permanently without any knot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weaving in on the wrong side" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tail onto a tapestry needle. Work on the wrong side of the piece." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle through the back bar or the body of 4-5 adjacent stitches in one direction — for example, along the row horizontally." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Change direction: turn 90 degrees or reverse and pass the needle through 4-5 more stitch bodies. The tail now crosses its own path." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim the remaining tail close to the fabric — about 2-3 mm. The woven portion holds without a knot." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Tail works its way out during wear or washing",
+              "cause": "Woven only in one direction, or not long enough",
+              "fix": "The tail must travel in at least two different directions through the fabric body. The minimum woven length is about 5 cm — shorter tails will pull free, especially in smooth or slippery yarns."
+            },
+            {
+              "symptom": "Tail shows on the right side",
+              "cause": "Needle passing through the stitch and out the right-side surface",
+              "fix": "Work on the wrong side only. Insert the needle through stitch bodies sideways — through the stitch body itself, not through the open space between stitches."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For slippery yarns (silk, bamboo, linen), split the tail into individual plies and weave each ply separately in different directions — the separated plies grip the fabric better than the full strand. For superwash wool, a small knot is acceptable since superwash yarn is particularly slippery and single-direction weaving can fail."
+          }
+        ]
+      }
+    ]
+  }
+}

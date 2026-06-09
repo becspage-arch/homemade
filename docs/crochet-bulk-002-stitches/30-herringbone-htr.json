@@ -1,0 +1,110 @@
+{
+  "slug": "crochet-herringbone-htr-stitch",
+  "title": "Herringbone htr — the pull-through shortcut",
+  "subtitle": "Draw through all the loops at once instead of separately — flatter, denser, faster",
+  "excerpt": "Herringbone htr pulls the working yarn through two loops at once on the first draw-through instead of stopping at the usual three-loop htr stage. The result is a flatter, tighter-looking half treble that tiles into a herringbone V-pattern across the fabric. It works up faster and produces a denser, less holey fabric than standard htr.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-herringbone-htr"],
+    "craftTechniqueTags": ["textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "herringbone-htr",
+      "term": "Herringbone htr",
+      "definition": "A half treble variant where the initial yarn-over draw-through pulls through both the loop on the hook AND the yarn-over in one motion, leaving 2 loops. Then yarn over, draw through both. The stitch leans slightly and creates a herringbone V-diagonal texture across the fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-herringbone-htr-stitch"],
+  "criticalTechniques": ["crochet-herringbone-htr-stitch"],
+  "aliases": ["herringbone htr", "hbhtr", "herringbone half treble"],
+  "heroPrompt": "A crochet swatch in warm brown DK yarn showing 6 rows of herringbone htr, the diagonal V-herringbone pattern clearly visible against the fabric, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "The pull-through step: drawing yarn through both the loop and the yarn-over in one go, leaving just 2 loops on hook", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "herringbone-htr" } }],
+            "text": "Herringbone htr"
+          },
+          {
+            "type": "text",
+            "text": " modifies the standard htr sequence at the first draw-through step. In a normal htr, you yarn over, insert, draw up a loop (3 loops on hook), then yarn over and draw through all 3. In herringbone htr, that first draw-through goes through the loop on the hook AND the yarn-over simultaneously — skipping straight from 3 loops down to 2 in one motion. The stitch sits flatter against the fabric and the diagonal of each stitch creates the herringbone pattern."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working herringbone htr" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over. Insert the hook into the next stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through both the stitch AND the first loop already on the hook in one pull — 2 loops remain on hook. This is the key difference from standard htr." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw through both remaining loops. One herringbone htr made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across the row. The stitches lean slightly and align into a V-diagonal pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stitch comes out the same as standard htr",
+              "cause": "Drawing through only the stitch on the first pull, not through the stitch plus the yarn-over",
+              "fix": "On step 2, the hook must push through the stitch entrance and pull the yarn through both the stitch AND the yarn-over that's waiting on the hook in one continuous draw. Practice slowly until the motion becomes distinct from the normal htr."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Herringbone dc and herringbone tr follow the same principle — the pull-through-two trick applied to dc and treble. Each height produces a different scale of herringbone V texture."
+          }
+        ]
+      }
+    ]
+  }
+}

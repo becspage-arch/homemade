@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-dropped-stitch-fix",
+  "title": "Fixing a dropped stitch — catching it before it unravels",
+  "subtitle": "Identify where the stitch fell and work it back up with the hook",
+  "excerpt": "A dropped crochet stitch shows as a loose loop dangling from the fabric. Unlike knitting, a dropped crochet stitch generally will not ladder down on its own — but it will pull the surrounding fabric out of shape if left. Working back up through the rows to retrieve it is straightforward once you know the insertion sequence.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dropped-stitch",
+      "term": "Dropped stitch",
+      "definition": "A stitch that has slipped off the hook or been omitted during working, leaving a loose loop in the fabric. In crochet, dropped stitches usually stay in place (unlike knitting ladders) but create a gap or reduce the stitch count."
+    }
+  ],
+  "techniqueSlugs": ["crochet-dropped-stitch-fix"],
+  "criticalTechniques": ["crochet-dropped-stitch-fix"],
+  "aliases": ["dropped stitch", "lost stitch", "rescue dropped stitch"],
+  "heroPrompt": "A crochet swatch with one dropped stitch visible as a dangling loop, with a crochet hook positioned to catch it, close-up showing the fix in progress.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dropped-stitch" } }],
+            "text": "Dropped stitch"
+          },
+          {
+            "type": "text",
+            "text": " in crochet usually means a loop that slipped off the hook before the stitch was completed, or a stitch entirely missed during a row. Crochet stitches are self-supporting — each completed stitch closes with its top loop locked — so a dropped stitch typically stays where it is rather than unravelling further. The fix depends on how many rows back the drop occurred."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding the dropped stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count the stitches of the current row or round. If the count is one short, a stitch was dropped or skipped somewhere." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Look across the row below for a loose loop or a wider-than-usual gap between two stitches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If you can't see it from the current row, unravel back until you reach the dropped position." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Picking up a dropped dc" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook into the dropped loop from front to back." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Catch the horizontal strand of yarn running directly above the dropped loop (this is the unworked yarn from the row above)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull this strand through the dropped loop — one dc recovered." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If there are multiple rows to recover, repeat: catch the next horizontal strand and pull through. Work up one row at a time." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The recovered stitch looks too large or has a visible gap",
+              "cause": "Pulling the recovery strand too loosely",
+              "fix": "After recovery, use the hook tip to redistribute the excess yarn into the surrounding stitches — nudge the strand sideways into the neighbouring stitches until the tension matches."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Counting stitches at the end of every row is the only reliable way to catch drops before they are buried under further rows. Using a stitch counter and placing a marker every 10 stitches makes it fast to spot a loss early."
+          }
+        ]
+      }
+    ]
+  }
+}

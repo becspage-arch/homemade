@@ -1,0 +1,120 @@
+{
+  "slug": "crochet-tension-swatching",
+  "title": "Tension — why a swatch matters and how to adjust",
+  "subtitle": "Rows and columns per 10 cm, and what to do when yours don't match the pattern",
+  "excerpt": "Tension (or gauge) is the number of stitches and rows per 10 cm in a specific stitch with a specific yarn and hook. If your tension does not match the pattern's stated tension, the finished piece will be a different size. A swatch before starting a fitted project is the only way to know. This tutorial explains how to make and measure one.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": []
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tension-swatch",
+      "term": "Tension swatch",
+      "definition": "A test square of 15-20 stitches and rows worked in the same stitch and yarn as the main project, then measured to find the stitch and row count per 10 cm. Used to check that the hook size will produce the correct finished dimensions."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tension-swatching"],
+  "criticalTechniques": ["crochet-tension-swatching"],
+  "aliases": ["tension", "gauge", "swatch", "gauge square", "tension square"],
+  "heroPrompt": "A crochet tension swatch in sage green DK yarn with a ruler measuring 10 cm across, showing how stitches and rows per 10 cm are counted, close-up overhead view.",
+  "inlineDiagramTopics": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tension-swatch" } }],
+            "text": "Tension swatch"
+          },
+          {
+            "type": "text",
+            "text": " is the crochet equivalent of fitting before cutting. Crochet tension varies between individual makers — even using identical yarn and hook, one person's dc may be tighter than another's. A swatch tells you whether your tension matches the pattern's, and whether you need to adjust the hook size to compensate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making and measuring the swatch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a square of at least 15 stitches wide and 10 rows tall in the stitch and yarn the pattern specifies." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fasten off. Do not stretch. If the yarn is meant to be blocked, block the swatch first." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay flat. Place a ruler horizontally across the centre of the swatch. Count how many stitches fit in 10 cm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the ruler vertically. Count how many rows fit in 10 cm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compare to the pattern's stated tension: e.g. '18 sts and 22 rows = 10 cm in dc'." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Adjusting the hook size",
+          "body": "Too many stitches per 10 cm = tension is too tight — go up one hook size. Too few stitches per 10 cm = tension is too loose — go down one hook size. Make a new swatch with the adjusted hook and measure again. Hook size affects stitch count; your hand tension affects both."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Stitch count matches but row count doesn't",
+              "cause": "Stitch width and row height are independent — they can diverge",
+              "fix": "For garments where length matters as much as width, both need to match. Adjust hook size for the stitch count, then check whether working tighter or looser overall fixes the row count, or whether the pattern's row count can be adjusted."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For blankets and accessories where exact size matters less, a swatch is optional. For garments and anything sized to fit a body, it is the single most useful preparation step. Save the swatch — it can be washed to see how the yarn behaves, and compared against the finished piece later."
+          }
+        ]
+      }
+    ]
+  }
+}

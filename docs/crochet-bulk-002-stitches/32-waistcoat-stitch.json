@@ -1,0 +1,127 @@
+{
+  "slug": "crochet-waistcoat-stitch-in-depth",
+  "title": "Waistcoat stitch — the knit V that's really a dc",
+  "subtitle": "Insert into the vertical strands of the stitch instead of the top loops",
+  "excerpt": "Waistcoat stitch inserts the hook into the two vertical strands forming the V of each dc stitch, bypassing the top loops entirely. The top loops are pushed to the back. The result looks almost exactly like stocking stitch knitting — a V-knit surface without a knitting needle in sight.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-waistcoat-stitch"],
+    "craftTechniqueTags": ["textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "waistcoat-stitch",
+      "term": "Waistcoat stitch",
+      "definition": "A dc variant worked by inserting into the two vertical strands of the stitch V (rather than the top loops). The top loops are pushed to the back; the front surface shows a clean knit-V pattern. Also called knit stitch crochet or centre post dc."
+    }
+  ],
+  "techniqueSlugs": ["crochet-waistcoat-stitch-in-depth"],
+  "criticalTechniques": ["crochet-waistcoat-stitch-in-depth"],
+  "aliases": ["waistcoat stitch", "knit stitch crochet", "centre post dc", "centre-post dc"],
+  "heroPrompt": "A crochet swatch in oatmeal DK yarn showing 8 rows of waistcoat stitch, the surface resembling stocking stitch knitting with clean V-rows, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted into the two vertical strands of the stitch V, top loops visible above and pushed back", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "waistcoat-stitch" } }],
+            "text": "Waistcoat stitch"
+          },
+          {
+            "type": "text",
+            "text": " inserts into the V-shaped vertical strands on the body of each dc rather than the horizontal top loops. The usual two top loops are bypassed completely and pushed to the back, where they accumulate as a textured back side. On the front, the vertical V-loops of each stitch align into rows that look indistinguishable from knitted stocking stitch."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "note",
+          "title": "Where to insert the hook",
+          "body": "Look at a row of dc from the front. Each stitch has a small V visible on its surface — two vertical strands forming the sides of the V. Waistcoat stitch inserts the hook between these two strands, entering from the top and coming out the bottom. The horizontal top loops sit above this V and are left completely unworked."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working waistcoat stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard dc in the round (waistcoat stitch is worked in the round to maintain the right side facing)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify the V on the surface of the first dc of the previous round." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook into the centre of the V — between the two vertical strands — from top to bottom." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop. Yarn over, draw through both loops. One waistcoat dc made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue into the V of each stitch around. The top loops of the previous round are left unworked behind." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The V is hard to find, especially in fuzzy or dark yarn",
+              "cause": "Yarn texture obscures the vertical strands of the stitch",
+              "fix": "Use smooth DK or aran yarn in a light colour to learn the stitch. Once the insertion point is familiar, darker or textured yarns become manageable."
+            },
+            {
+              "symptom": "Fabric is very tight — hard to insert the hook",
+              "cause": "Waistcoat stitch is naturally tight because each insertion goes into the stitch body rather than the looser top loops",
+              "fix": "Go up one full hook size compared to standard dc. Waistcoat stitch needs room or the fabric becomes stiff."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Waistcoat stitch works best in the round — the right side stays facing and the knit-V surface builds consistently. For back-and-forth knit-look fabric, third-loop htr (camel stitch) is easier to control and also produces a knit-rib effect."
+          }
+        ]
+      }
+    ]
+  }
+}

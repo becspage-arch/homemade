@@ -1,0 +1,247 @@
+{
+  "slug": "crochet-chain-in-depth",
+  "title": "Chain — the starting line and the spacer",
+  "subtitle": "Foundation chain, turning chain, and the chains inside patterns all work differently",
+  "excerpt": "The chain is the first move every crocheter learns — and the most underestimated. The starting chain, the turning chain, and in-pattern chain spaces all behave differently. This tutorial covers all three.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — the starting chain as the foundation for all crochet pieces. Weldon's Practical Crochet, Vol. 1 (1886) — turning chains and their varying counts by stitch type.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain"],
+    "craftTechniqueTags": ["foundation-chain", "turning-chain"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "foundation-chain",
+      "term": "Foundation chain",
+      "definition": "The starting row of chains that acts as the base for a flat crochet piece. The number of chains determines the width of the first row."
+    },
+    {
+      "slug": "chain-space",
+      "term": "Chain space",
+      "definition": "A gap created by one or more chains between two stitches. In motifs and lace, stitches are often worked into the chain space rather than into individual stitches."
+    },
+    {
+      "slug": "turning-chain",
+      "term": "Turning chain",
+      "definition": "The short chain at the start of each new row that brings the working yarn to the height of the stitch being worked. Whether it counts as a stitch depends on the stitch type."
+    }
+  ],
+  "techniqueSlugs": ["crochet-chain-in-depth"],
+  "criticalTechniques": ["crochet-chain-in-depth"],
+  "aliases": ["ch", "chain stitch", "foundation chain"],
+  "heroPrompt": "A length of crochet foundation chain in cream DK cotton on a linen background, the chains slightly spread to show the V-shape of each link clearly, hook resting at the end.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "The three parts of a chain link — the V on top and the back bump below", "sourcePreference": "public-domain" },
+    { "stepIndex": 8, "description": "Chain space in a granny-square motif showing hook insertion", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chain does three different jobs in crochet — and which job it's doing changes how you work into it. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation-chain" } }],
+            "text": "foundation chain"
+          },
+          {
+            "type": "text",
+            "text": " is the starting base. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turning-chain" } }],
+            "text": "turning chain"
+          },
+          {
+            "type": "text",
+            "text": " lifts the working yarn to row height at the start of each new row. The in-pattern chain creates a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-space" } }],
+            "text": "chain space"
+          },
+          {
+            "type": "text",
+            "text": " that later stitches work into. Understanding the difference avoids the most common chain errors."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Anatomy of a chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each chain link has three surfaces. The front shows a V shape — two loops, one on top of the other. The back shows a single bump (called the back bump or the third loop). When you work stitches into a foundation chain for the first row, you usually go under both top loops of the V. Working into the back bump only leaves the V intact on the surface and gives a neater, stretchier starting edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The foundation chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every flat crochet piece starts with a foundation chain. The number of chains determines the width. Count the chains without the slip knot and without the loop currently on the hook."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a slip knot. Slide onto the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over — wrap the working yarn over the hook from back to front." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the yarn through the loop on the hook. One new chain made. One loop remains on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the number of chains the pattern specifies." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not count the loop on the hook as a chain. Do not count the slip knot as a chain." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "How tight is right",
+          "body": "Foundation chains that are too tight pull the first row hard and make it difficult to insert the hook cleanly. A common trick: use a hook one size larger for the foundation chain only, then switch to the pattern hook for row 1. The chain stays loose and even."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The turning chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the start of each new row you chain up to the height of the stitch you're about to work. The number of turning chains and whether they count as a stitch is the most argued detail in crochet patterns."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Standard turning chain counts: ch 1 for double crochet (does not count as a stitch); ch 2 for half treble (counts or doesn't — check the pattern); ch 3 for treble (counts as the first treble); ch 4 for double treble; ch 5 for triple treble. When a turning chain counts as a stitch, you skip the first stitch at the base of the chain and work into the second stitch. When it doesn't count, work into the first stitch at the base."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Chain spaces in patterns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A chain space is a gap left between two stitches where later stitches work into the gap rather than into individual stitches. In granny-square patterns, the corner is a ch-2 space that holds a whole cluster. In lace patterns, a ch-5 arch becomes the base for the next row of stitches."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the point where the pattern says 'ch N'." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the stated number of chains." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip the stated number of stitches beneath the chain (the pattern will tell you how many to skip)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue the row as stated. On the following row or round, stitches work into the chain space — push the hook under all the chains to work into the gap." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Foundation chain too tight to work into",
+              "cause": "Gripping the chain too firmly and working close to the tip of the hook",
+              "fix": "Work the chain higher up on the hook where the shaft is wider, or use a hook one size larger for the chain only."
+            },
+            {
+              "symptom": "Row count is off after several rows",
+              "cause": "Counting the turning chain as a stitch when it shouldn't be, or vice versa",
+              "fix": "Check the pattern's turning chain note at the start of the first pattern row. Mark the first stitch of each row with a stitch marker."
+            },
+            {
+              "symptom": "Work gets wider row by row",
+              "cause": "Working into the turning chain at the end of the return row when it isn't a stitch",
+              "fix": "At the end of each row, check whether the last stitch goes into the turning chain from the previous row. If the turning chain doesn't count as a stitch, skip it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chainless foundation treble eliminates the separate foundation chain entirely — it builds the first row as it chains up. Worth learning for any blanket or garment where the lower edge needs to stretch."
+          }
+        ]
+      }
+    ]
+  }
+}

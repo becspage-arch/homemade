@@ -1,0 +1,111 @@
+{
+  "slug": "crochet-tunisian-knit-stitch",
+  "title": "Tunisian knit stitch — the knit V from a crochet hook",
+  "subtitle": "Insert through the stitch from front to back to make a knit-looking V face",
+  "excerpt": "Tunisian knit stitch (TKS) inserts the hook through the body of each stitch from front to back — rather than under the vertical bar — on the forward pass. The change in insertion angle produces a knit V on the fabric face. TKS is the Tunisian stitch that most closely resembles stockinette knitting.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-knit"],
+    "craftTechniqueTags": ["tunisian", "textured"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-knit-stitch",
+      "term": "Tunisian knit stitch",
+      "definition": "Abbreviated TKS. Forward pass: insert hook from front to back through the centre of each stitch — between the front and back vertical bars — and draw up a loop. Return pass is the same as all Tunisian stitches: yarn over, pull through 1, then *yarn over, pull through 2 to end."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-knit-stitch"],
+  "criticalTechniques": ["crochet-tunisian-knit-stitch"],
+  "aliases": ["TKS", "Tunisian knit stitch", "twisted Tunisian", "knit-look Tunisian"],
+  "heroPrompt": "A Tunisian knit stitch swatch in navy DK yarn, 8 rows, the knit-V face clearly visible — looking indistinguishable from stocking stitch knitting, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted from front to back through the centre of the TKS stitch body (not under the surface bar)", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-knit-stitch" } }],
+            "text": "Tunisian knit stitch"
+          },
+          {
+            "type": "text",
+            "text": " is the most knit-like of the Tunisian stitches. The hook enters through the centre of each stitch's body — from front to back between the two vertical bars — rather than under the surface bar. This angle twists the new loop around the stitch in the same way a knit stitch crosses its yarn, and the result is a clean row of V-shapes on the fabric face."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working TKS" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of Tunisian simple stitch (TSS) to establish the vertical bars." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Forward pass (TKS): insert the hook from front to back through the centre of the first stitch body — the hook tip passes between the front bar and the back bar of the stitch, emerging on the back." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop. Continue across the row in this way — one loop per stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return pass: yarn over, pull through 1. *Yarn over, pull through 2. Repeat to end — same as all Tunisian return passes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The fabric looks identical to TSS — the knit V is not forming",
+              "cause": "Inserting under the front bar rather than through the stitch body",
+              "fix": "The hook tip must push all the way through the stitch and emerge at the back before the draw-up. A shorter, firmer insertion just under the surface bar produces TSS, not TKS."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Alternating TKS and Tunisian purl stitch rows produces a Tunisian rib that closely resembles 1x1 knit rib. Tunisian full stitch is a more complex Tunisian variant that reduces the curl that TKS shares with TSS."
+          }
+        ]
+      }
+    ]
+  }
+}

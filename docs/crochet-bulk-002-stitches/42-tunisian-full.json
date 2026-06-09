@@ -1,0 +1,111 @@
+{
+  "slug": "crochet-tunisian-full-stitch",
+  "title": "Tunisian full stitch — the reversible Tunisian fabric",
+  "subtitle": "Insert through two bars of the stitch above to make a reversible, non-curling panel",
+  "excerpt": "Tunisian full stitch (TFS) inserts through both the vertical bar and the horizontal bar of each stitch. Using both bars produces a denser, heavier fabric that does not curl and looks the same on both sides. It is the go-to choice when a flat, fully reversible Tunisian fabric is needed.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-full"],
+    "craftTechniqueTags": ["tunisian", "textured"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-full-stitch",
+      "term": "Tunisian full stitch",
+      "definition": "Abbreviated TFS. Forward pass: insert hook under both the vertical bar and the horizontal bar of each stitch simultaneously — both loops are captured. Draw up a loop as normal. Return pass is standard. The double-bar insertion makes a denser, flatter, reversible fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-full-stitch"],
+  "criticalTechniques": ["crochet-tunisian-full-stitch"],
+  "aliases": ["TFS", "Tunisian full stitch", "Tunisian double stitch"],
+  "heroPrompt": "A Tunisian full stitch swatch in burgundy DK yarn, 8 rows, showing the dense flat fabric with no curl at the edges, both faces of the swatch visible, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted under both the vertical bar and horizontal bar of the stitch simultaneously", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-full-stitch" } }],
+            "text": "Tunisian full stitch"
+          },
+          {
+            "type": "text",
+            "text": " solves two problems of standard Tunisian crochet: the curl and the single-sided look. By inserting under both the vertical bar (the main working bar of TSS) and the horizontal bar running across the stitch, the new stitch locks both into place. The fabric lies flat naturally and has an almost identical appearance on front and back."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working TFS" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Establish the fabric with a foundation row of TSS." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Forward pass (TFS): identify the vertical bar and the horizontal bar at the top of each stitch. The horizontal bar sits across the top of the stitch; the vertical bar runs down the front face." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under both bars simultaneously — the hook tip should pass under the horizontal bar first, then the vertical bar, or alongside both." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and draw up a loop. Continue across. Return pass: standard yarn-over-pull-through-2 sequence." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The fabric is very tight — hard to insert under both bars",
+              "cause": "TFS is inherently tighter than TSS due to the double-bar insertion",
+              "fix": "Use a hook one size larger than you would for TSS in the same yarn. Work the return pass with a deliberately loose tension to compensate."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tunisian extended stitch inserts one extra chain step into the return pass to add height to each stitch and produce a more open Tunisian fabric. Tunisian honeycomb combines TKS and TPS in alternating columns to make a textured grid pattern."
+          }
+        ]
+      }
+    ]
+  }
+}

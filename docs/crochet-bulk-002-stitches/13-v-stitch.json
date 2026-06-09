@@ -1,0 +1,125 @@
+{
+  "slug": "crochet-v-stitch",
+  "title": "V-stitch — two trebles and a chain",
+  "subtitle": "The lightest lacy stitch: two trebles into one base separated by a single chain",
+  "excerpt": "V-stitch is two trebles worked into the same base stitch or chain space with one chain between them. The pair forms a V shape. Rows of V-stitches create an open diamond mesh — the classic lacy blanket stitch.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Vol. 2 (1887) — open V-stitch mesh in lace crochet. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — the open treble mesh pattern.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-v-stitch"],
+    "craftTechniqueTags": ["lace", "openwork"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "v-stitch",
+      "term": "V-stitch",
+      "definition": "Two trebles worked into the same base stitch or chain space with one chain between them. The pair forms a V shape; rows of V-stitches create an open diamond lace mesh."
+    }
+  ],
+  "techniqueSlugs": ["crochet-v-stitch"],
+  "criticalTechniques": ["crochet-v-stitch"],
+  "aliases": ["V-st", "v-stitch", "lacy mesh stitch"],
+  "heroPrompt": "A swatch of V-stitch in cream DK cotton showing the open diamond mesh pattern, three rows visible, on a soft linen background with natural side light.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Two trebles into the same chain space with one chain between — the V-stitch shape", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "v-stitch" } }],
+            "text": "V-stitch"
+          },
+          {
+            "type": "text",
+            "text": " is two trebles with one chain between them, all worked into the same base point. Worked across a row with equal skips between, V-stitches create an open diamond mesh. On the next row, each new V-stitch works into the chain space at the centre of the previous row's V. The mesh stacks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a V-stitch swatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chain a multiple of 3 plus 4. This example uses ch 22 for 6 V-stitches."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation: ch 22." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1: ch 4 (counts as tr + ch 1). Skip 2 chains. *(tr, ch 1, tr) in next chain — one V-stitch made. Skip 2 chains. Repeat from * across. Tr in last chain. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2: ch 4 (counts as tr + ch 1). *(tr, ch 1, tr) in the ch-1 space at the centre of each V-stitch from the previous row. Repeat across. Tr in top of turning chain. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rows 3-5: repeat Row 2. Fasten off." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Work narrows row by row",
+              "cause": "Working into the sides of the V-stitches instead of the centre chain space",
+              "fix": "Every row's V-stitch goes into the ch-1 space at the centre of the V below. That space is the gap between the two trebles, not the top of either treble."
+            },
+            {
+              "symptom": "Rows don't line up — V-stitches stagger unexpectedly",
+              "cause": "Skipping the wrong number of stitches on the foundation row",
+              "fix": "On the foundation row, skip 2 chains between V-stitches. The V-stitch itself takes 3 chains (tr + ch 1 + tr). Count 2 + 3 = 5 chains per repeat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fan stitch expands the V into a full fan of seven trebles for a more decorative surface. The granny square uses the same 'work into the chain space' principle for the corner clusters. Solomon's knot creates a larger open diamond mesh using elongated loops rather than trebles."
+          }
+        ]
+      }
+    ]
+  }
+}

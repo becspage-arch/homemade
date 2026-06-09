@@ -1,0 +1,123 @@
+{
+  "slug": "crochet-foundation-chain-technique",
+  "title": "The foundation chain — counting, reading, and common mistakes",
+  "subtitle": "The starting chain is where most beginners gain or lose stitches before the first row",
+  "excerpt": "The foundation chain is the series of loops cast on before the first row. Getting the count right, reading which loop to insert into on the first row, and avoiding twisting the chain are the three things that most often go wrong at this stage. This tutorial covers all three.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain"],
+    "craftTechniqueTags": []
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "foundation-chain",
+      "term": "Foundation chain",
+      "definition": "The starting row of chain stitches made before the first working row. The foundation chain sets the width and is not counted as a row. The first row works into it, typically starting from the 2nd or 3rd chain from the hook depending on stitch height."
+    }
+  ],
+  "techniqueSlugs": ["crochet-foundation-chain-technique"],
+  "criticalTechniques": ["crochet-foundation-chain-technique"],
+  "aliases": ["foundation chain", "starting chain", "base chain", "ch cast on"],
+  "heroPrompt": "A crochet foundation chain of 20 stitches in cream DK yarn laid flat, showing the front V-loop surface and the back bar, close-up for reading the chains.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 3, "description": "A length of foundation chain showing the front V-loops on top and the back bar below, with hook position for first-row insertion", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation-chain" } }],
+            "text": "Foundation chain"
+          },
+          {
+            "type": "text",
+            "text": " problems are the most common source of a crooked or wrong-width first row. The three issues to address before starting the first row are: the chain is the right length, you know which loop to insert into, and the chain is not twisted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Counting chains correctly" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not count the slip knot. Do not count the loop currently on the hook. Count each V-shaped loop along the front of the chain — each V is one chain. The loop on the hook is always the working loop and is never counted as part of the chain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the chain — which loop to insert into" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The front of the chain shows a row of V-loops. The standard insertion for the first row is under the top strand of each V only — the loop closest to you." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The back of the chain has a single bump (back bar) behind each V. Inserting under this back bar instead of the V leaves the V-loop visible as a neat edge on the foundation — used when a tidy bottom edge matters." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert under both top strands of the V (under both loops of the V) for the most secure foundation — this is less common but the most stable." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Foundation chain is twisted when work begins",
+              "cause": "Chain allowed to spiral before the first row begins",
+              "fix": "Lay the chain flat on a surface before starting row 1. All V-loops should face the same direction. Start the row before picking the chain up."
+            },
+            {
+              "symptom": "First row is shorter than the chain count suggested",
+              "cause": "Accidentally skipping chains near the start, or starting from the wrong position",
+              "fix": "Count the chain after making it, before starting. For a dc row, the first dc goes into the 2nd chain from the hook. For a tr row, the first tr goes into the 4th chain from the hook."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foundation dc (also called chainless foundation dc) skips the chain entirely and works the foundation row and first row simultaneously. It produces a more elastic edge than a chain foundation and is the preferred start for garments that need stretch."
+          }
+        ]
+      }
+    ]
+  }
+}

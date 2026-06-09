@@ -1,0 +1,111 @@
+{
+  "slug": "crochet-tunisian-purl-stitch",
+  "title": "Tunisian purl stitch — purl bump from a crochet hook",
+  "subtitle": "Bring yarn to the front before inserting — the bump row in Tunisian rib",
+  "excerpt": "Tunisian purl stitch (TPS) brings the yarn to the front of the work before inserting under the vertical bar, creating a horizontal purl bump on the face. It is the Tunisian equivalent of a purl row and combines with Tunisian simple stitch or knit stitch to form Tunisian rib patterns.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-tunisian-purl"],
+    "craftTechniqueTags": ["tunisian", "rib"],
+    "disciplineTags": ["discipline:tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-purl-stitch",
+      "term": "Tunisian purl stitch",
+      "definition": "Abbreviated TPS. Forward pass: bring yarn to front of work. Insert hook under the vertical bar as for TSS, then bring yarn over hook from the back while holding working yarn in front. Draw loop through with yarn crossing in front. The working yarn remains in front until the insertion is complete."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-purl-stitch"],
+  "criticalTechniques": ["crochet-tunisian-purl-stitch"],
+  "aliases": ["TPS", "Tunisian purl", "Tunisian reverse stitch"],
+  "heroPrompt": "A Tunisian purl stitch swatch in olive DK yarn, 8 rows, showing the horizontal purl bumps across the fabric face resembling reverse stocking stitch, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook under the vertical bar with the working yarn held in front of the work", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-purl-stitch" } }],
+            "text": "Tunisian purl stitch"
+          },
+          {
+            "type": "text",
+            "text": " reverses the standard Tunisian loop formation by positioning the yarn at the front before the hook goes in. In a regular TSS forward pass, the yarn sits behind the work when inserting. In TPS, bringing the yarn to the front before inserting forces the loop to cross in front of the vertical bar, making a raised horizontal bump — the same bump as a purl stitch in knitting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working TPS" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the TPS stitch position: bring the working yarn to the front of the work (between the hook and the fabric face)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under the vertical bar from right to left, as in TSS." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over from the back of the work, catching the yarn that's been held at the front. Draw the loop through — the yarn crosses in front of the vertical bar, forming the purl bump." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After the draw-up, move the yarn back to the back position before the next stitch. Return pass is standard." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Purl bumps not appearing — fabric looks like TSS",
+              "cause": "Yarn not kept in front during the insertion and draw-up",
+              "fix": "Hold the yarn firmly at the front of the work with a finger as the hook inserts. The yarn must be at the front when the draw-up begins to create the crossing bump."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For Tunisian rib: alternate columns of TSS and TPS in each forward pass — TSS over the TSS columns of the row below and TPS over the TPS columns. The rib deepens with each row. Tunisian full stitch is the next more complex variation, producing a fully reversible fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

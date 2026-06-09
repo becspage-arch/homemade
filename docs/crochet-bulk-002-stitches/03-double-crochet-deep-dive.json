@@ -1,0 +1,189 @@
+{
+  "slug": "crochet-double-crochet-in-depth",
+  "title": "Double crochet — the densest basic stitch in depth",
+  "subtitle": "Two loops, two yarn-overs, the firm close-knit fabric behind amigurumi and baskets",
+  "excerpt": "Double crochet (UK) — US single crochet — is the smallest worked stitch. This tutorial goes beyond the beginner introduction into tension, shaping, texture variations, and the two-stitch-height loop system that makes it the most controllable stitch in crochet.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776 — the plain stitch as the foundation of Victorian crochet fabric. Weldon's Practical Crochet, Vol. 1 (1886) — double crochet worked flat and in the round.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["tension", "shaping"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-crochet",
+      "term": "Double crochet",
+      "definition": "UK term for the smallest worked stitch: insert hook, yarn over, pull through stitch, yarn over, pull through both loops. US patterns call the same move single crochet."
+    },
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over",
+      "definition": "Wrapping the working yarn over the hook from back to front before drawing through a loop. Abbreviated 'yo'. The basic move that builds every crochet stitch."
+    }
+  ],
+  "techniqueSlugs": ["crochet-double-crochet-in-depth"],
+  "criticalTechniques": ["crochet-double-crochet-in-depth"],
+  "aliases": ["dc", "double crochet", "sc", "single crochet"],
+  "heroPrompt": "A swatch of double crochet in natural cotton DK, eight rows of ten stitches, showing the dense V-stitch fabric clearly, flat on a pale wooden surface in daylight.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 4, "description": "The two loops on the hook mid-stitch before the final pull-through", "sourcePreference": "public-domain" },
+    { "stepIndex": 9, "description": "Where to insert the hook for a dc increase — both stitches into the same base", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-crochet" } }],
+            "text": "Double crochet"
+          },
+          {
+            "type": "text",
+            "text": " is the smallest worked stitch and the most controllable. Insert the hook, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-over" } }],
+            "text": "yarn over"
+          },
+          {
+            "type": "text",
+            "text": ", pull up a loop, yarn over, pull through two. The fabric is firm, dense, and holds its shape. Once you can work it evenly, most of crochet follows from it."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "The UK/US name",
+          "body": "UK 'double crochet' (dc) is the same stitch US patterns call 'single crochet' (sc). This tutorial uses UK terminology throughout. If you're following a US pattern, every 'sc' is a UK 'dc'."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a swatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chain 12. This is the foundation chain — 10 working stitches plus 2 extra chains because the first row's turning chain of 1 doesn't count as a stitch and you skip the chain immediately below the hook."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foundation: ch 12." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1: ch 1 (does not count as a stitch). Insert hook into the 2nd chain from the hook (the chain immediately next to the ch-1). Yarn over and pull up a loop — two loops on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through both loops. One double crochet made." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert hook into the next chain. Repeat the yarn-over, pull-up, yarn-over, pull-through sequence across. Work 1 dc in each chain — 10 dc in total. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2: ch 1 (does not count as a stitch). Work 1 dc in each dc across, inserting through both loops of the stitch below. 10 dc. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rows 3-8: repeat Row 2. Fasten off." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Getting even tension" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Even tension in double crochet comes from three things: where the hook sits on the shaft, how firmly you hold the working yarn, and how far you pull each loop up before yarning over again. The loop you pull up at step 2 should be roughly the same height as the stitch you're working into. If the loop is too short, the stitch pulls tight. If too long, the stitch rows out wide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shaping with double crochet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Increases: work 2 dc into the same stitch. For a gradual increase (shaping a hat or an amigurumi piece), the pattern will space increases evenly. Decreases: work dc2tog — insert hook into next st and pull up a loop, insert hook into following st and pull up a loop (three loops on hook), yarn over and pull through all three. One stitch reduced."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Row edges slant to the right",
+              "cause": "Missing the first stitch of each row and working into the turning chain instead",
+              "fix": "The ch-1 does not count as a stitch. Work the first dc into the stitch directly below the turning chain — place a stitch marker there at the start of the first row."
+            },
+            {
+              "symptom": "Fabric gets wider or narrower row by row",
+              "cause": "Accidentally adding or missing a stitch at the row ends",
+              "fix": "Count at the end of every row. 10 stitches should stay 10. Check both ends — the first stitch and the last stitch are the most commonly missed."
+            },
+            {
+              "symptom": "Stitches hard to insert hook into",
+              "cause": "Pulling the working yarn too tight as you finish each stitch",
+              "fix": "Let the completed stitch settle onto the widest part of the hook before tightening the yarn. The V on top of each stitch should look loose enough to insert the hook easily."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Front-loop and back-loop double crochet are the two immediate extensions — working into only one loop leaves the other free and creates texture and ribbing effects. The waistcoat stitch works into the vertical strands of the V rather than the horizontal loops, producing a fabric that looks knitted."
+          }
+        ]
+      }
+    ]
+  }
+}

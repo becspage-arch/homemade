@@ -1,0 +1,110 @@
+{
+  "slug": "crochet-flo-dc-stitch",
+  "title": "Front-loop-only dc — FLO dc",
+  "subtitle": "Work into the front loop only to leave a ridge on the back",
+  "excerpt": "Front-loop-only dc inserts the hook into the front loop only of each stitch, leaving the back loop free. The free back loops form a visible ridge on the wrong side and create a slight crease on the right side. Standard for creating fold lines, horizontal stripes in colourwork, and light ribbing.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-flo-dc"],
+    "craftTechniqueTags": ["textured", "rib"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flo-dc",
+      "term": "FLO dc",
+      "definition": "Double crochet worked into the front loop only of each stitch. Abbreviated FLO dc. Leaves the back loop free as a visible horizontal ridge; used for fold lines, ribbing, and colourwork stripe definition."
+    }
+  ],
+  "techniqueSlugs": ["crochet-flo-dc-stitch"],
+  "criticalTechniques": ["crochet-flo-dc-stitch"],
+  "aliases": ["FLO dc", "front loop only dc", "flo", "fl dc"],
+  "heroPrompt": "A crochet swatch in teal DK yarn showing alternating rows of standard dc and FLO dc, the horizontal ridges clearly visible, good side light, close-up.",
+  "inlineDiagramTopics": [
+    { "stepIndex": 2, "description": "Hook inserted under the front loop only with back loop visible and free", "sourcePreference": "synthetic-chart-render" }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flo-dc" } }],
+            "text": "FLO dc"
+          },
+          {
+            "type": "text",
+            "text": " works into one loop instead of two. Each double crochet top has a front loop (closest to you) and a back loop (away from you). FLO dc only uses the front loop, leaving the back loop as a raised strand across the fabric surface. A row of FLO dc produces a clear horizontal ridge that can be used as a fold line for bag bases, a colour-change crease, or a gentle rib across a garment yoke."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working FLO dc" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard dc." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 1, turn. Insert the hook into the front loop only of the first dc — the loop closest to you." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the dc normally: yarn over, pull through the loop (2 loops on hook), yarn over, pull through both loops." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue FLO dc across the row. The back loops of the previous row are now visible as a ridge on the back (wrong side) of the work." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Can't tell the front loop from the back loop",
+              "cause": "Looking at the stitch straight on without distinguishing which loop is nearest",
+              "fix": "Hold the work flat. The front loop is the V-strand that angles toward you. The back loop is the strand that angles away. On a turned row after ch 1, the front loop is still toward you as you hold the work."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BLO dc is the mirror: inserting into the back loop only leaves the front loop free as a ridge on the right side. Alternating FLO and BLO rows creates a ribbed texture used in crochet ribbing bands and sleeve cuffs."
+          }
+        ]
+      }
+    ]
+  }
+}
