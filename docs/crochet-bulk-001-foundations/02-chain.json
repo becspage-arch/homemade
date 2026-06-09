@@ -13,27 +13,69 @@
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-chain"],
+    "craftStitchSlugs": [
+      "crochet-chain"
+    ],
     "craftTechniqueTags": []
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "yarn-over", "term": "Yarn over", "definition": "Wrapping the working yarn around the hook from back to front. The single most-repeated move in crochet; every stitch uses at least one." },
-    { "slug": "foundation-chain", "term": "Foundation chain", "definition": "The starting chain of loops that anchors every flat piece of crochet. The first row of stitches is worked into this chain." }
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over",
+      "definition": "Wrapping the working yarn around the hook from back to front. The single most-repeated move in crochet; every stitch uses at least one."
+    },
+    {
+      "slug": "foundation-chain",
+      "term": "Foundation chain",
+      "definition": "The starting chain of loops that anchors every flat piece of crochet. The first row of stitches is worked into this chain."
+    }
   ],
-  "techniqueSlugs": ["crochet-chain-stitch"],
-  "criticalTechniques": ["crochet-chain-stitch"],
-  "aliases": ["ch", "chain stitch"],
+  "techniqueSlugs": [
+    "crochet-chain-stitch"
+  ],
+  "criticalTechniques": [
+    "crochet-chain-stitch"
+  ],
+  "aliases": [
+    "ch",
+    "chain stitch"
+  ],
   "heroPrompt": "A line of crochet chain stitches in plain cream DK cotton on a 4 mm hook, lying flat on a pale linen background, soft daylight from the side — the chain links are clearly defined as a row of stacked V-shapes.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Chain is the simplest stitch in crochet, and the one that makes everything else possible. You yarn over and pull a loop through the loop already on the hook. That's it. Repeat to build a foundation row; use it as a turning chain to begin a new row; use it as a chain-space to hold motifs apart." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "UK and US conventions agree on this one — chain is \"ch\" in both. The first stitch most crocheters learn, and the one your hands will make tens of thousands of times across a lifetime of crochet." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chain is the simplest stitch in crochet, and the one that makes everything else possible. You yarn over and pull a loop through the loop already on the hook. That's it. Repeat to build a foundation row; use it as a turning chain to begin a new row; use it as a chain-space to hold motifs apart."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK and US conventions agree on this one — chain is \"ch\" in both. The first stitch most crocheters learn, and the one your hands will make tens of thousands of times across a lifetime of crochet."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -42,37 +84,210 @@
           "body": "20 g of plain DK-weight cotton in a light colour. A 4 mm hook. Good light. The chain doesn't need a tapestry needle or scissors until you're sewing in the tail at the end."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a chain" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Start with a slip knot on the hook. The slip knot is the first loop and counts as zero chains, not one." }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working a chain"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start with a slip knot on the hook. The slip knot is the first loop and counts as zero chains, not one."
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the hook in your dominant hand. The slip knot loop sits on the hook shaft, close to the hook tip but not touching it." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "With your other hand, hold the working yarn between your thumb and index finger, with the yarn draped over your index finger so it falls down to your palm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over (wrap the working yarn around the hook from back to front). The hook now has the original loop and the new yarn wrapped around the shaft." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Catch the wrapped yarn under the hook tip and pull it through the loop on the hook. One new loop remains on the hook. That's one chain." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat steps 3 and 4 for each additional chain. Count as you go — \"one, two, three\". The slip knot doesn't count." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hold the hook in your dominant hand. The slip knot loop sits on the hook shaft, close to the hook tip but not touching it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "With your other hand, hold the working yarn between your thumb and index finger, with the yarn draped over your index finger so it falls down to your palm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yarn over (wrap the working yarn around the hook from back to front). The hook now has the original loop and the new yarn wrapped around the shaft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Catch the wrapped yarn under the hook tip and pull it through the loop on the hook. One new loop remains on the hook. That's one chain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeat steps 3 and 4 for each additional chain. Count as you go — \"one, two, three\". The slip knot doesn't count."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Counting chains" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A chain looks like a row of small V-shapes on the front side. To count, look at the front and count each V. The loop on the hook never counts as a chain (it's a live loop, not a finished one). The slip knot at the bottom of the chain never counts either." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "When a pattern asks for 12 chains, you make twelve V-shapes plus the live loop on the hook. If you count the slip knot or the live loop, you'll be off by one and the foundation row won't fit the stitch count." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Counting chains"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A chain looks like a row of small V-shapes on the front side. To count, look at the front and count each V. The loop on the hook never counts as a chain (it's a live loop, not a finished one). The slip knot at the bottom of the chain never counts either."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a pattern asks for 12 chains, you make twelve V-shapes plus the live loop on the hook. If you count the slip knot or the live loop, you'll be off by one and the foundation row won't fit the stitch count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When the chain doesn't look right",
           "intro": "Four common chain problems and the fix for each.",
           "items": [
-            { "symptom": "The chain is uneven — some chains tight, some loose", "cause": "Tension swings as you work because your hand grip changes. Common when learning.", "fix": "Slow down. Make each chain the same way: yarn over, pull through, settle the new loop, yarn over, pull through. Aim for the new loop to sit the same distance up the hook shaft every time." },
-            { "symptom": "The chain twists into a spiral", "cause": "You let the chain rotate between your fingers as you worked. The foundation chain wants to stay flat; if it twists, the first row of stitches won't anchor cleanly.", "fix": "Hold the chain flat with your non-hook hand. Pinch the V-shapes between your thumb and index finger as they come off the hook. If the chain has twisted, lay it flat on the table and untwist before working the first row." },
-            { "symptom": "The chain is too tight to work the first row into", "cause": "Your chain tension is firmer than your stitch tension. The first row of trebles needs to enter each chain; if the chain is wound tight, the hook won't fit.", "fix": "Make the foundation chain on a hook one size larger than the pattern hook. Swap back to the pattern hook for row 1. The chain stays loose enough to work into without changing the gauge of the piece." },
-            { "symptom": "Counted 12 chains, finished row 1, and the row is too short or too long", "cause": "You counted the slip knot or the live loop as a chain.", "fix": "Recount. The slip knot at the bottom doesn't count. The live loop on the hook doesn't count. Only the finished V-shapes between them count." }
+            {
+              "symptom": "The chain is uneven — some chains tight, some loose",
+              "cause": "Tension swings as you work because your hand grip changes. Common when learning.",
+              "fix": "Slow down. Make each chain the same way: yarn over, pull through, settle the new loop, yarn over, pull through. Aim for the new loop to sit the same distance up the hook shaft every time."
+            },
+            {
+              "symptom": "The chain twists into a spiral",
+              "cause": "You let the chain rotate between your fingers as you worked. The foundation chain wants to stay flat; if it twists, the first row of stitches won't anchor cleanly.",
+              "fix": "Hold the chain flat with your non-hook hand. Pinch the V-shapes between your thumb and index finger as they come off the hook. If the chain has twisted, lay it flat on the table and untwist before working the first row."
+            },
+            {
+              "symptom": "The chain is too tight to work the first row into",
+              "cause": "Your chain tension is firmer than your stitch tension. The first row of trebles needs to enter each chain; if the chain is wound tight, the hook won't fit.",
+              "fix": "Make the foundation chain on a hook one size larger than the pattern hook. Swap back to the pattern hook for row 1. The chain stays loose enough to work into without changing the gauge of the piece."
+            },
+            {
+              "symptom": "Counted 12 chains, finished row 1, and the row is too short or too long",
+              "cause": "You counted the slip knot or the live loop as a chain.",
+              "fix": "Recount. The slip knot at the bottom doesn't count. The live loop on the hook doesn't count. Only the finished V-shapes between them count."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once you can make a clean row of 20 chains with even tension, you're ready for the next foundational stitch — double crochet or treble — both of which work the first row directly into this " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation-chain" } }], "text": "foundation chain" }, { "type": "text", "text": ". For in-the-round patterns, the chain stays useful as the turning chain at the start of each round." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once you can make a clean row of 20 chains with even tension, you're ready for the next foundational stitch — double crochet or treble — both of which work the first row directly into this "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "foundation-chain"
+                }
+              }
+            ],
+            "text": "foundation chain"
+          },
+          {
+            "type": "text",
+            "text": ". For in-the-round patterns, the chain stays useful as the turning chain at the start of each round."
+          }
+        ]
+      }
     ]
   }
 }

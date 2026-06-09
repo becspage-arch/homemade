@@ -14,25 +14,65 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["blocking", "wet-blocking"]
+    "craftTechniqueTags": [
+      "blocking",
+      "wet-blocking"
+    ]
   },
   "recipeTools": [
-    { "slug": "blocking-mat", "isOptional": false },
-    { "slug": "blocking-pins", "isOptional": false },
-    { "slug": "measuring-tape-soft", "isOptional": false }
+    {
+      "slug": "blocking-mat",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "blocking-out", "term": "Blocking out", "definition": "Stretching a damp finished piece to its final dimensions and pinning it in place. The piece dries to that shape. Used especially on lace, where the open structure needs to be opened out to show its design." }
+    {
+      "slug": "blocking-out",
+      "term": "Blocking out",
+      "definition": "Stretching a damp finished piece to its final dimensions and pinning it in place. The piece dries to that shape. Used especially on lace, where the open structure needs to be opened out to show its design."
+    }
   ],
-  "techniqueSlugs": ["crochet-wet-blocking"],
-  "criticalTechniques": ["crochet-wet-blocking"],
-  "aliases": ["wet block", "soak blocking", "blocking by soaking"],
+  "techniqueSlugs": [
+    "crochet-wet-blocking"
+  ],
+  "criticalTechniques": [
+    "crochet-wet-blocking"
+  ],
+  "aliases": [
+    "wet block",
+    "soak blocking",
+    "blocking by soaking"
+  ],
   "heroPrompt": "A damp crochet doily pinned out flat on a foam blocking mat with rust-proof T-pins extending the points into a clear lace pattern — soft daylight, plain background, the lace clearly opening up under tension.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Wet blocking soaks the finished piece in cool water, then pins it to shape on a foam mat. The piece dries to the pinned shape, which holds permanently. The slowest method, the strongest set, the only safe choice for acrylic and the right choice for any piece where the stitch structure needs to open up." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Wet blocking is the standard for lace doilies, table runners, mandalas, and any piece with openwork that needs to lie flat and show its design. It's also the only method that works on acrylic without risking heat damage." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet blocking soaks the finished piece in cool water, then pins it to shape on a foam mat. The piece dries to the pinned shape, which holds permanently. The slowest method, the strongest set, the only safe choice for acrylic and the right choice for any piece where the stitch structure needs to open up."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet blocking is the standard for lace doilies, table runners, mandalas, and any piece with openwork that needs to lie flat and show its design. It's also the only method that works on acrylic without risking heat damage."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -41,35 +81,199 @@
           "body": "A foam blocking mat. Rust-proof T-pins. A clean basin or sink, large enough to lay the piece flat under water. A clean dry towel. A measuring tape. About 24 hours of undisturbed drying time."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Wet blocking a finished piece" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet blocking a finished piece"
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sew in all yarn tails before blocking. Wet fibres are easier to bury, but you want the tails set before the piece dries to its final shape." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill a basin or sink with cool water. A drop of wool wash (or plain water for cotton and acrylic) makes the fibres relax more readily, but plain water works fine." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Submerge the piece. Press down gently to release air bubbles. Leave to soak for 15-20 minutes — the yarn must be saturated, not just damp." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the piece out by supporting the whole shape with your hands. Do not wring or twist; this stretches the wet fibres and leaves them distorted. Squeeze gently to release excess water." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the piece flat on a dry towel. Roll the towel up with the piece inside and press gently to absorb more water. The piece should be damp, not dripping." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer to the foam blocking mat. Lay flat, smooth out. Pin to the target shape and dimensions. For lace, " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blocking-out" } }], "text": "block out" }, { "type": "text", "text": " each point of the lace pattern — extend the points outward to show the openwork. For solid pieces, pin every 5 cm along the edges." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to dry for 24 hours in a well-ventilated room. Do not unpin early. When the piece is fully dry to touch, remove the pins. The shape holds." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sew in all yarn tails before blocking. Wet fibres are easier to bury, but you want the tails set before the piece dries to its final shape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fill a basin or sink with cool water. A drop of wool wash (or plain water for cotton and acrylic) makes the fibres relax more readily, but plain water works fine."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Submerge the piece. Press down gently to release air bubbles. Leave to soak for 15-20 minutes — the yarn must be saturated, not just damp."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the piece out by supporting the whole shape with your hands. Do not wring or twist; this stretches the wet fibres and leaves them distorted. Squeeze gently to release excess water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay the piece flat on a dry towel. Roll the towel up with the piece inside and press gently to absorb more water. The piece should be damp, not dripping."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer to the foam blocking mat. Lay flat, smooth out. Pin to the target shape and dimensions. For lace, "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "blocking-out"
+                        }
+                      }
+                    ],
+                    "text": "block out"
+                  },
+                  {
+                    "type": "text",
+                    "text": " each point of the lace pattern — extend the points outward to show the openwork. For solid pieces, pin every 5 cm along the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to dry for 24 hours in a well-ventilated room. Do not unpin early. When the piece is fully dry to touch, remove the pins. The shape holds."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When wet blocking goes wrong",
           "intro": "Four common wet-blocking problems and the fix for each.",
           "items": [
-            { "symptom": "The piece is stretched too far and the stitches look strained", "cause": "Over-pinned — the shape was forced larger than the yarn wanted to go.", "fix": "Soak the piece again and re-block, this time pinning at the natural relaxed dimensions instead of forcing a target size. The first attempt should be guidance, not a stretch test." },
-            { "symptom": "The colours ran in the water", "cause": "Dye-bleeding yarn, common on dark cottons and hand-dyed indie yarns.", "fix": "Test for colour-fastness before wet-blocking a multi-colour piece — soak a small swatch alone. For bleeding yarns, use cold water only, soak for the shortest time needed, and rinse with vinegar (1 tablespoon per litre) to set the dye for future washes." },
-            { "symptom": "Mildew smell after drying", "cause": "Slow drying in a damp room. Wet wool especially can mildew if it stays damp for more than 36 hours.", "fix": "Re-soak and re-block in a well-ventilated space. Use a fan to speed drying if the room is humid. For thick wool pieces, consider drying flat in front of a radiator (not on top of it) to keep the air moving over the piece." },
-            { "symptom": "The piece comes out smaller than the pinned size", "cause": "Acrylic and superwash yarns can shrink slightly when wet-blocked.", "fix": "Block to the target size plus a small allowance (about 2-3%) for the relaxation after unpinning. The piece settles to roughly the target size once unpinned." }
+            {
+              "symptom": "The piece is stretched too far and the stitches look strained",
+              "cause": "Over-pinned — the shape was forced larger than the yarn wanted to go.",
+              "fix": "Soak the piece again and re-block, this time pinning at the natural relaxed dimensions instead of forcing a target size. The first attempt should be guidance, not a stretch test."
+            },
+            {
+              "symptom": "The colours ran in the water",
+              "cause": "Dye-bleeding yarn, common on dark cottons and hand-dyed indie yarns.",
+              "fix": "Test for colour-fastness before wet-blocking a multi-colour piece — soak a small swatch alone. For bleeding yarns, use cold water only, soak for the shortest time needed, and rinse with vinegar (1 tablespoon per litre) to set the dye for future washes."
+            },
+            {
+              "symptom": "Mildew smell after drying",
+              "cause": "Slow drying in a damp room. Wet wool especially can mildew if it stays damp for more than 36 hours.",
+              "fix": "Re-soak and re-block in a well-ventilated space. Use a fan to speed drying if the room is humid. For thick wool pieces, consider drying flat in front of a radiator (not on top of it) to keep the air moving over the piece."
+            },
+            {
+              "symptom": "The piece comes out smaller than the pinned size",
+              "cause": "Acrylic and superwash yarns can shrink slightly when wet-blocked.",
+              "fix": "Block to the target size plus a small allowance (about 2-3%) for the relaxation after unpinning. The piece settles to roughly the target size once unpinned."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once a flat piece blocks cleanly, three-dimensional pieces (hats, motif blankets, bags) need adapted blocking — for hats, stuff with a clean rolled towel and let dry; for motif blankets, block each motif individually before joining. Spray blocking is the middle-ground method for pieces that don't need full saturation." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once a flat piece blocks cleanly, three-dimensional pieces (hats, motif blankets, bags) need adapted blocking — for hats, stuff with a clean rolled towel and let dry; for motif blankets, block each motif individually before joining. Spray blocking is the middle-ground method for pieces that don't need full saturation."
+          }
+        ]
+      }
     ]
   }
 }

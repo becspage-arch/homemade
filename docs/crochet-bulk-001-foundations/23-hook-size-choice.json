@@ -14,64 +14,450 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["hooks", "materials"]
+    "craftTechniqueTags": [
+      "hooks",
+      "materials"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "hook-conversion", "term": "Hook conversion", "definition": "The translation between metric (4 mm), US lettered (G/6), and Japanese sizes. The same physical hook is named differently in different conventions. The CrochetHook table on every pattern page surfaces all three." }
+    {
+      "slug": "hook-conversion",
+      "term": "Hook conversion",
+      "definition": "The translation between metric (4 mm), US lettered (G/6), and Japanese sizes. The same physical hook is named differently in different conventions. The CrochetHook table on every pattern page surfaces all three."
+    }
   ],
-  "techniqueSlugs": ["crochet-hook-size-choice"],
-  "criticalTechniques": ["crochet-hook-size-choice"],
-  "aliases": ["hook size", "choosing a hook", "hook for DK"],
+  "techniqueSlugs": [
+    "crochet-hook-size-choice"
+  ],
+  "criticalTechniques": [
+    "crochet-hook-size-choice"
+  ],
+  "aliases": [
+    "hook size",
+    "choosing a hook",
+    "hook for DK"
+  ],
   "heroPrompt": "A row of crochet hooks of different sizes laid out from smallest (1.5 mm) to largest (10 mm) on a pale background, with a small swatch of cream DK cotton in the middle showing a 4 mm hook in use.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Hook size matches yarn weight. Yarn labels print a recommended hook range; patterns name a specific hook within that range. Your tension determines whether to step up or down within the range. The match controls the size of the finished piece and the drape of the fabric." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Yarn weight to hook size" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The standard recommendations:" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hook size matches yarn weight. Yarn labels print a recommended hook range; patterns name a specific hook within that range. Your tension determines whether to step up or down within the range. The match controls the size of the finished piece and the drape of the fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Yarn weight to hook size"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard recommendations:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace yarn — 1.5 to 2.5 mm hook." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fingering / 4-ply — 2.5 to 3.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sport / 5-ply — 3.5 to 4 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DK — 4 to 4.5 mm. The British default is 4 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aran / worsted — 5 to 5.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chunky — 6 to 8 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Super chunky — 9 to 15 mm." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lace yarn — 1.5 to 2.5 mm hook."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fingering / 4-ply — 2.5 to 3.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sport / 5-ply — 3.5 to 4 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "DK — 4 to 4.5 mm. The British default is 4 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aran / worsted — 5 to 5.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Chunky — 6 to 8 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Super chunky — 9 to 15 mm."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Within the range, what changes" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A smaller hook within the range gives tighter, denser fabric with more stitches per 10 cm. Used for structure-heavy pieces — bags, baskets, amigurumi, dishcloths that need to hold their shape." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A larger hook within the range gives looser, drapier fabric with fewer stitches per 10 cm. Used for blankets, shawls, garments where drape matters more than structure." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "When two ends of the range produce very different fabrics from the same yarn, both are correct — they're different design choices. Pick the hook to match the fabric you want." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Adjusting for tension" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "If your hands work the pattern's named hook too tight, go UP a size. If your hands work it too loose, go DOWN a size. The pattern's hook is the designer's recommendation; your hook is the one that produces the designer's gauge with your hands." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Half-sizes matter. 4.5 mm is between 4 mm and 5 mm; sometimes the right hook for a DK cotton is the 4.5 mm even when the yarn label says 4 mm. The swatch tells you. Quarter-sizes (3.75 mm, 4.25 mm) exist but most beginners can get away with full and half sizes." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Hook conversion across regions" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "British patterns use metric mm. American patterns use letter codes (B/1, C/2, D/3, ... J/10, K/10.5). Japanese patterns use Japanese-specific sizes. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hook-conversion" } }], "text": "Hook conversion" }, { "type": "text", "text": " between the three is not always one-to-one; the same physical hook may be labelled slightly differently by different manufacturers." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Common conversions for the British defaults:" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Within the range, what changes"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A smaller hook within the range gives tighter, denser fabric with more stitches per 10 cm. Used for structure-heavy pieces — bags, baskets, amigurumi, dishcloths that need to hold their shape."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A larger hook within the range gives looser, drapier fabric with fewer stitches per 10 cm. Used for blankets, shawls, garments where drape matters more than structure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When two ends of the range produce very different fabrics from the same yarn, both are correct — they're different design choices. Pick the hook to match the fabric you want."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjusting for tension"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If your hands work the pattern's named hook too tight, go UP a size. If your hands work it too loose, go DOWN a size. The pattern's hook is the designer's recommendation; your hook is the one that produces the designer's gauge with your hands."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Half-sizes matter. 4.5 mm is between 4 mm and 5 mm; sometimes the right hook for a DK cotton is the 4.5 mm even when the yarn label says 4 mm. The swatch tells you. Quarter-sizes (3.75 mm, 4.25 mm) exist but most beginners can get away with full and half sizes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hook conversion across regions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "British patterns use metric mm. American patterns use letter codes (B/1, C/2, D/3, ... J/10, K/10.5). Japanese patterns use Japanese-specific sizes. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hook-conversion"
+                }
+              }
+            ],
+            "text": "Hook conversion"
+          },
+          {
+            "type": "text",
+            "text": " between the three is not always one-to-one; the same physical hook may be labelled slightly differently by different manufacturers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Common conversions for the British defaults:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "3 mm = US D/3" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "3.5 mm = US E/4" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "4 mm = US G/6" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "4.5 mm = US 7" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "5 mm = US H/8" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "5.5 mm = US I/9" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "6 mm = US J/10" }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "3 mm = US D/3"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "3.5 mm = US E/4"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "4 mm = US G/6"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "4.5 mm = US 7"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "5 mm = US H/8"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "5.5 mm = US I/9"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "6 mm = US J/10"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The CrochetHook reference table on every pattern page surfaces the full conversion for any hook the pattern names." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Hook material — handle and head" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Metal hooks (aluminium, steel) slide easily through stitches and are the default for most modern crochet. Wooden and bamboo hooks have more grip on slippery yarn — useful for cotton and silk. Plastic hooks are lightweight and warm to the hand, common in cheaper beginner sets." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Handle shape matters more than material. A shaped handle (ergonomic, with a flat thumb-rest) reduces hand fatigue across long projects. A round-shaft hook (no handle) is faster for experienced crocheters but harder on the joints. For first hooks, ergonomic handles are worth the extra cost." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once a hook range is familiar for a yarn weight, the swatch confirms the choice. The reading on gauge swatching basics walks through the swatch in detail. For hand strain across long sessions, the reading on hook hold and ergonomics covers grip styles and rest breaks." }] }
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The CrochetHook reference table on every pattern page surfaces the full conversion for any hook the pattern names."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Hook material — handle and head"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Metal hooks (aluminium, steel) slide easily through stitches and are the default for most modern crochet. Wooden and bamboo hooks have more grip on slippery yarn — useful for cotton and silk. Plastic hooks are lightweight and warm to the hand, common in cheaper beginner sets."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handle shape matters more than material. A shaped handle (ergonomic, with a flat thumb-rest) reduces hand fatigue across long projects. A round-shaft hook (no handle) is faster for experienced crocheters but harder on the joints. For first hooks, ergonomic handles are worth the extra cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once a hook range is familiar for a yarn weight, the swatch confirms the choice. The reading on gauge swatching basics walks through the swatch in detail. For hand strain across long sessions, the reading on hook hold and ergonomics covers grip styles and rest breaks."
+          }
+        ]
+      }
     ]
   }
 }

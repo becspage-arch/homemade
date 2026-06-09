@@ -13,26 +13,65 @@
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-slip-stitch"],
+    "craftStitchSlugs": [
+      "crochet-slip-stitch"
+    ],
     "craftTechniqueTags": []
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "joining-a-round", "term": "Joining a round", "definition": "Finishing the last stitch of a round by working a slip stitch into the top of the first stitch, which closes the round into a ring." }
+    {
+      "slug": "joining-a-round",
+      "term": "Joining a round",
+      "definition": "Finishing the last stitch of a round by working a slip stitch into the top of the first stitch, which closes the round into a ring."
+    }
   ],
-  "techniqueSlugs": ["crochet-slip-stitch-tutorial"],
-  "criticalTechniques": ["crochet-slip-stitch-tutorial"],
-  "aliases": ["sl st", "slipstitch", "slip-stitch"],
+  "techniqueSlugs": [
+    "crochet-slip-stitch-tutorial"
+  ],
+  "criticalTechniques": [
+    "crochet-slip-stitch-tutorial"
+  ],
+  "aliases": [
+    "sl st",
+    "slipstitch",
+    "slip-stitch"
+  ],
   "heroPrompt": "A small swatch of crochet showing a row of slip stitches across the top of a treble row, cream DK cotton, 4 mm hook resting beside, plain pale background — the slip stitch line looks like a tight chain across the top of the previous row.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Slip stitch is the shortest stitch in crochet. You insert the hook into the next stitch, yarn over, and pull a single loop through both the stitch and the loop already on the hook. The hook ends with one loop, same as it started. No height added. The connector stitch." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Slip stitches do three jobs: they close a round (by joining the last stitch back to the first), they move the hook across the row without adding a new stitch, and they make a strong invisible seam between two pieces. The same move in all three cases." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slip stitch is the shortest stitch in crochet. You insert the hook into the next stitch, yarn over, and pull a single loop through both the stitch and the loop already on the hook. The hook ends with one loop, same as it started. No height added. The connector stitch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slip stitches do three jobs: they close a round (by joining the last stitch back to the first), they move the hook across the row without adding a new stitch, and they make a strong invisible seam between two pieces. The same move in all three cases."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -41,35 +80,166 @@
           "body": "Joining a round into a ring (\"sl st to top of beg ch-3\"), travelling across to a new working position without breaking off the yarn, and seaming finished pieces together when you want the seam to show as a decorative ridge. Most patterns use slip stitches mainly for joining; in continuous-spiral patterns (amigurumi), the slip stitch barely appears."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a slip stitch" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Start with a short row of double crochet or trebles so you have something to work into. The slip stitch is too small on its own to make a useful learning swatch." }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working a slip stitch"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start with a short row of double crochet or trebles so you have something to work into. The slip stitch is too small on its own to make a useful learning swatch."
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "With one loop on the hook, insert the hook from front to back through the next stitch, going under both top loops." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over (wrap the working yarn around the hook from back to front)." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the wrapped yarn back through the stitch AND through the loop already on the hook in one motion. One loop on the hook. The slip stitch is finished." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "With one loop on the hook, insert the hook from front to back through the next stitch, going under both top loops."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yarn over (wrap the working yarn around the hook from back to front)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull the wrapped yarn back through the stitch AND through the loop already on the hook in one motion. One loop on the hook. The slip stitch is finished."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Done correctly, the slip stitch barely shows — a small tight V-shape sitting flush with the row beneath. Done too tight, the row pulls in and the next stitch on top of the slip stitch is hard to work. Done too loose, the row sags. Aim for the same tension as your other stitches." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Joining a round with a slip stitch" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The most-common pattern instruction is \"sl st to top of beg ch-3\" — slip stitch into the top of the beginning chain-3 to join the round. When you reach the end of a round, you have one loop on the hook and the first stitch of the round (a 3-chain turning chain that counted as a treble) sits opposite you. Insert the hook into the top of that 3-chain (under both loops at the top of the V), yarn over, and pull through both the chain and the hook loop. The round is now a closed ring." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done correctly, the slip stitch barely shows — a small tight V-shape sitting flush with the row beneath. Done too tight, the row pulls in and the next stitch on top of the slip stitch is hard to work. Done too loose, the row sags. Aim for the same tension as your other stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Joining a round with a slip stitch"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most-common pattern instruction is \"sl st to top of beg ch-3\" — slip stitch into the top of the beginning chain-3 to join the round. When you reach the end of a round, you have one loop on the hook and the first stitch of the round (a 3-chain turning chain that counted as a treble) sits opposite you. Insert the hook into the top of that 3-chain (under both loops at the top of the V), yarn over, and pull through both the chain and the hook loop. The round is now a closed ring."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When the slip stitch doesn't behave",
           "intro": "Four common slip stitch problems and the fix for each.",
           "items": [
-            { "symptom": "The next row is impossible to work into because the slip stitch is so tight", "cause": "Slip stitches naturally sit tighter than every other stitch. The hook can't push through.", "fix": "Work slip stitches with a hook one size larger than the pattern hook. Swap back to the pattern hook for the next row. The slip stitches stay loose enough to work into." },
-            { "symptom": "When joining a round, the join sits to one side of the start", "cause": "You worked the slip stitch into the wrong place — either into the chain BELOW the top of the beginning chain-3, or into the first treble instead of the turning chain.", "fix": "Identify the top of the beginning chain-3 before you slip stitch. It's the topmost V at the start of the round. The slip stitch goes through both loops of that V." },
-            { "symptom": "The slip stitch row at the top of a piece curls", "cause": "Slip stitches are dense and pull tighter than the rows below. A border of slip stitches across the top curls the finished edge.", "fix": "For a border, use a row of double crochet instead. Reserve slip stitches for joining and for seam work, not for working as a finishing border." },
-            { "symptom": "You lost track of how many slip stitches you worked when travelling across", "cause": "Slip stitches are small and easy to miscount when working three or four in a row to reach a new position.", "fix": "Count out loud as you work each one. For longer travel runs (more than five slip stitches), place a stitch marker on the stitch you're aiming for so you know when to stop." }
+            {
+              "symptom": "The next row is impossible to work into because the slip stitch is so tight",
+              "cause": "Slip stitches naturally sit tighter than every other stitch. The hook can't push through.",
+              "fix": "Work slip stitches with a hook one size larger than the pattern hook. Swap back to the pattern hook for the next row. The slip stitches stay loose enough to work into."
+            },
+            {
+              "symptom": "When joining a round, the join sits to one side of the start",
+              "cause": "You worked the slip stitch into the wrong place — either into the chain BELOW the top of the beginning chain-3, or into the first treble instead of the turning chain.",
+              "fix": "Identify the top of the beginning chain-3 before you slip stitch. It's the topmost V at the start of the round. The slip stitch goes through both loops of that V."
+            },
+            {
+              "symptom": "The slip stitch row at the top of a piece curls",
+              "cause": "Slip stitches are dense and pull tighter than the rows below. A border of slip stitches across the top curls the finished edge.",
+              "fix": "For a border, use a row of double crochet instead. Reserve slip stitches for joining and for seam work, not for working as a finishing border."
+            },
+            {
+              "symptom": "You lost track of how many slip stitches you worked when travelling across",
+              "cause": "Slip stitches are small and easy to miscount when working three or four in a row to reach a new position.",
+              "fix": "Count out loud as you work each one. For longer travel runs (more than five slip stitches), place a stitch marker on the stitch you're aiming for so you know when to stop."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The slip stitch is most useful in the round, so the next step is a small in-the-round motif — a magic ring with a round of twelve trebles, joined with a slip stitch into the top of the turning chain. That's the first round of every granny square in the library. From there, the slip-stitch seam is worth practising on two finished motifs you want to join together." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The slip stitch is most useful in the round, so the next step is a small in-the-round motif — a magic ring with a round of twelve trebles, joined with a slip stitch into the top of the turning chain. That's the first round of every granny square in the library. From there, the slip-stitch seam is worth practising on two finished motifs you want to join together."
+          }
+        ]
+      }
     ]
   }
 }

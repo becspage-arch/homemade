@@ -14,24 +14,78 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["finishing", "weaving-in"]
+    "craftTechniqueTags": [
+      "finishing",
+      "weaving-in"
+    ]
   },
   "recipeTools": [
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "weaving-in", "term": "Weaving in", "definition": "The American term for sewing in tails. The two phrases mean the same finishing step — threading the loose yarn end into a tapestry needle and burying it through the back of the fabric." }
+    {
+      "slug": "weaving-in",
+      "term": "Weaving in",
+      "definition": "The American term for sewing in tails. The two phrases mean the same finishing step — threading the loose yarn end into a tapestry needle and burying it through the back of the fabric."
+    }
   ],
-  "techniqueSlugs": ["crochet-sewing-in-tails"],
-  "criticalTechniques": ["crochet-sewing-in-tails"],
-  "aliases": ["sewing in ends", "weaving in tails", "burying tails", "darning in ends"],
+  "techniqueSlugs": [
+    "crochet-sewing-in-tails"
+  ],
+  "criticalTechniques": [
+    "crochet-sewing-in-tails"
+  ],
+  "aliases": [
+    "sewing in ends",
+    "weaving in tails",
+    "burying tails",
+    "darning in ends"
+  ],
   "heroPrompt": "A finished crochet square with a tapestry needle threaded with the matching cream DK cotton yarn tail, the needle weaving through the back of the fabric — soft daylight, plain background, the tail almost completely buried.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Sewing in tails is the last step of every crochet piece. You thread the loose yarn end into a tapestry needle and weave it through the back of the fabric for about 5 cm, changing direction once to lock it in place. The piece holds together; the tail disappears." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "American patterns call the same step " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weaving-in" } }], "text": "weaving in" }, { "type": "text", "text": ". UK patterns prefer \"sewing in\" or \"darning in\". The technique is identical." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sewing in tails is the last step of every crochet piece. You thread the loose yarn end into a tapestry needle and weave it through the back of the fabric for about 5 cm, changing direction once to lock it in place. The piece holds together; the tail disappears."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "American patterns call the same step "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "weaving-in"
+                }
+              }
+            ],
+            "text": "weaving in"
+          },
+          {
+            "type": "text",
+            "text": ". UK patterns prefer \"sewing in\" or \"darning in\". The technique is identical."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -40,37 +94,197 @@
           "body": "A blunt tapestry needle with an eye big enough for the yarn. Sharp scissors. Good light. The piece itself, ideally blocked first so the fabric is relaxed."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Sewing in a tail" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sewing in a tail"
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the piece to the wrong side (the back). Find the loose tail. If the tail is shorter than 15 cm, this is harder — leave longer tails when you fasten off." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tail through the eye of the tapestry needle. If the eye is too small, use a needle threader, or wet the yarn end and twist it to a fine point." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "From the back, weave the needle through the back loops of about 4-5 stitches, following the line of the fabric. Stay on the back side; the front shouldn't show any change." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Change direction. Weave the needle BACK through another 3-4 stitches, in the opposite direction. This change of direction locks the tail — it can't slip out under tension." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the tail through so the buried section sits flush with the fabric. Cut the remaining tail close to the surface — but not flush; leave 1-2 mm sticking out. The yarn will retract slightly into the fabric when the piece relaxes." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the piece to the wrong side (the back). Find the loose tail. If the tail is shorter than 15 cm, this is harder — leave longer tails when you fasten off."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread the tail through the eye of the tapestry needle. If the eye is too small, use a needle threader, or wet the yarn end and twist it to a fine point."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "From the back, weave the needle through the back loops of about 4-5 stitches, following the line of the fabric. Stay on the back side; the front shouldn't show any change."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Change direction. Weave the needle BACK through another 3-4 stitches, in the opposite direction. This change of direction locks the tail — it can't slip out under tension."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull the tail through so the buried section sits flush with the fabric. Cut the remaining tail close to the surface — but not flush; leave 1-2 mm sticking out. The yarn will retract slightly into the fabric when the piece relaxes."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Sewing in colour-change tails" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "When you change colour mid-piece, you have a tail for both colours at the change point. Bury each tail into its OWN colour section — the green tail into the green stitches, the cream tail into the cream stitches. Burying a tail into a different-coloured area shows on the right side as a small flash of the wrong colour." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Slippery yarns and synthetic fibres" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Mercerised cotton, bamboo, and synthetic yarns are slippery. A standard 5 cm weave can slide out under washing. For these yarns, weave for 8-10 cm and change direction twice. For very slippery yarns, work a small drop of fabric glue or a tiny knot into the woven section before trimming." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sewing in colour-change tails"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When you change colour mid-piece, you have a tail for both colours at the change point. Bury each tail into its OWN colour section — the green tail into the green stitches, the cream tail into the cream stitches. Burying a tail into a different-coloured area shows on the right side as a small flash of the wrong colour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Slippery yarns and synthetic fibres"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mercerised cotton, bamboo, and synthetic yarns are slippery. A standard 5 cm weave can slide out under washing. For these yarns, weave for 8-10 cm and change direction twice. For very slippery yarns, work a small drop of fabric glue or a tiny knot into the woven section before trimming."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When tails won't behave",
           "intro": "Four common tail problems and the fix for each.",
           "items": [
-            { "symptom": "The tail keeps surfacing on the right side as you weave", "cause": "The needle is going through the full thickness of the fabric instead of weaving through the back layer only.", "fix": "Hold the piece flat and weave the needle through the BACK loops of the back side only — under the top of the V on the back, not through to the front. Working the back-loop weave keeps the front clean." },
-            { "symptom": "The tail pops loose after washing", "cause": "Not enough length buried, or no direction change to lock the tail.", "fix": "Re-bury the tail, this time for 6-7 cm with at least one direction change. For thick blankets that get heavy washing, two direction changes are worth the extra minute." },
-            { "symptom": "The tail leaves a visible lump on the right side", "cause": "Yarn is bunching at the start of the buried section because the first stitch was pulled too tight.", "fix": "Bury slowly. After weaving through the first few stitches, give the yarn a gentle stretch to settle it into the fabric. The bury should sit flat, not bunch up." },
-            { "symptom": "The tail is too short to thread the needle", "cause": "Fastened off with too little tail.", "fix": "There's no clean fix. The best workaround: thread the eye of the needle with a doubled length of sewing thread, slip the short tail into the thread's loop, then use the thread to pull the tail through the needle's eye. Always fasten off leaving at least 15 cm next time." }
+            {
+              "symptom": "The tail keeps surfacing on the right side as you weave",
+              "cause": "The needle is going through the full thickness of the fabric instead of weaving through the back layer only.",
+              "fix": "Hold the piece flat and weave the needle through the BACK loops of the back side only — under the top of the V on the back, not through to the front. Working the back-loop weave keeps the front clean."
+            },
+            {
+              "symptom": "The tail pops loose after washing",
+              "cause": "Not enough length buried, or no direction change to lock the tail.",
+              "fix": "Re-bury the tail, this time for 6-7 cm with at least one direction change. For thick blankets that get heavy washing, two direction changes are worth the extra minute."
+            },
+            {
+              "symptom": "The tail leaves a visible lump on the right side",
+              "cause": "Yarn is bunching at the start of the buried section because the first stitch was pulled too tight.",
+              "fix": "Bury slowly. After weaving through the first few stitches, give the yarn a gentle stretch to settle it into the fabric. The bury should sit flat, not bunch up."
+            },
+            {
+              "symptom": "The tail is too short to thread the needle",
+              "cause": "Fastened off with too little tail.",
+              "fix": "There's no clean fix. The best workaround: thread the eye of the needle with a doubled length of sewing thread, slip the short tail into the thread's loop, then use the thread to pull the tail through the needle's eye. Always fasten off leaving at least 15 cm next time."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Sewing in tails is the last step before blocking. Once the tails are buried, steam or wet block the piece — blocking flattens the fabric and disguises the bury further. For pieces with many tails (granny-square blankets where each square has its own tails), keep up with the burying as you finish each square rather than leaving them all to the end." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sewing in tails is the last step before blocking. Once the tails are buried, steam or wet block the piece — blocking flattens the fabric and disguises the bury further. For pieces with many tails (granny-square blankets where each square has its own tails), keep up with the burying as you finish each square rather than leaving them all to the end."
+          }
+        ]
+      }
     ]
   }
 }

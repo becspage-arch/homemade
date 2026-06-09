@@ -14,34 +14,177 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["slip-knot"]
+    "craftTechniqueTags": [
+      "slip-knot"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": true }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [
-    { "slug": "working-yarn", "term": "Working yarn", "definition": "The strand coming off the ball that you crochet with. The other end is the tail, which gets sewn in when the piece is finished." },
-    { "slug": "tail", "term": "Tail", "definition": "The short end of yarn left behind when you make the slip knot. Leave at least 15 cm so you can sew it in neatly later." }
+    {
+      "slug": "working-yarn",
+      "term": "Working yarn",
+      "definition": "The strand coming off the ball that you crochet with. The other end is the tail, which gets sewn in when the piece is finished."
+    },
+    {
+      "slug": "tail",
+      "term": "Tail",
+      "definition": "The short end of yarn left behind when you make the slip knot. Leave at least 15 cm so you can sew it in neatly later."
+    }
   ],
-  "techniqueSlugs": ["crochet-slip-knot"],
-  "criticalTechniques": ["crochet-slip-knot"],
-  "aliases": ["slipknot", "starting loop", "adjustable loop"],
+  "techniqueSlugs": [
+    "crochet-slip-knot"
+  ],
+  "criticalTechniques": [
+    "crochet-slip-knot"
+  ],
+  "aliases": [
+    "slipknot",
+    "starting loop",
+    "adjustable loop"
+  ],
   "heroPrompt": "A slip knot on a 4 mm crochet hook, plain cream DK cotton, soft daylight, plain pale background — the loop sits neatly against the hook with the working yarn falling down to the right and the tail to the left.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A slip knot is the first loop on the hook for any piece of crochet. You wrap the yarn into a small loose loop, pull a second loop through it, and slide it onto the hook. It tightens when you pull the working yarn; it loosens when you pull the tail. Half a minute to learn, and the move you'll make at the start of every project from now on." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "There is more than one way to make a slip knot. The version below is the one most British crochet books teach because it sits cleanly on the hook and won't slip apart while you're working the first chain. Once it feels familiar, your fingers will do it without looking." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Making the slip knot" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pull about 15 cm of yarn off the ball before you start, so you have a tail long enough to sew in later. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tail" } }], "text": "tail" }, { "type": "text", "text": " is the short end; the strand still attached to the ball is the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "working-yarn" } }], "text": "working yarn" }, { "type": "text", "text": "." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A slip knot is the first loop on the hook for any piece of crochet. You wrap the yarn into a small loose loop, pull a second loop through it, and slide it onto the hook. It tightens when you pull the working yarn; it loosens when you pull the tail. Half a minute to learn, and the move you'll make at the start of every project from now on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There is more than one way to make a slip knot. The version below is the one most British crochet books teach because it sits cleanly on the hook and won't slip apart while you're working the first chain. Once it feels familiar, your fingers will do it without looking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making the slip knot"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull about 15 cm of yarn off the ball before you start, so you have a tail long enough to sew in later. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tail"
+                }
+              }
+            ],
+            "text": "tail"
+          },
+          {
+            "type": "text",
+            "text": " is the short end; the strand still attached to the ball is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "working-yarn"
+                }
+              }
+            ],
+            "text": "working yarn"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the yarn across your palm with the tail hanging down on the right (assuming a right-handed hook). Loop the yarn over itself to make a small ring about the size of a 50-pence coin, with the working yarn crossing on top of the tail." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reach through the ring with your fingers and catch the working yarn. Pull a small loop of working yarn back through the ring." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the new loop onto the crochet hook. Pull the tail gently to draw the knot up against the hook." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the working yarn gently. The loop on the hook should slide closer to the hook shaft but stay loose enough to move freely. If it grips the hook tightly, the loop is too small; loosen it by tugging the tail." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hold the yarn across your palm with the tail hanging down on the right (assuming a right-handed hook). Loop the yarn over itself to make a small ring about the size of a 50-pence coin, with the working yarn crossing on top of the tail."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reach through the ring with your fingers and catch the working yarn. Pull a small loop of working yarn back through the ring."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the new loop onto the crochet hook. Pull the tail gently to draw the knot up against the hook."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull the working yarn gently. The loop on the hook should slide closer to the hook shaft but stay loose enough to move freely. If it grips the hook tightly, the loop is too small; loosen it by tugging the tail."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
@@ -52,22 +195,68 @@
           "body": "A correctly-sized slip knot loop sits snug against the hook but slides up and down the shaft when you push it with your finger. If the loop pinches the hook so you have to tug to move it, it's too tight; the first chain will fight you. If the loop hangs slack and the hook rattles around inside it, it's too loose; the first chain will pull out. Adjust by pulling the tail (tighter) or the working yarn (looser)."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When the slip knot doesn't behave",
           "intro": "Four things that go wrong with the slip knot, and the fix for each.",
           "items": [
-            { "symptom": "The knot falls apart when you pull the working yarn", "cause": "You pulled the tail through the ring instead of the working yarn. The knot that closes is the one that grips the working strand.", "fix": "Start over. The strand you pull through the ring is the strand still attached to the ball, not the short end." },
-            { "symptom": "The knot tightens onto the hook and you can't move it", "cause": "The loop is too small for the hook shaft, or you pulled both ends at once and locked the knot.", "fix": "Pull the tail to widen the loop. If the loop won't open, slide the hook out, undo the knot, and start again. A loop a finger-width across before sliding it on the hook is roughly right." },
-            { "symptom": "The slip knot slides off the hook when you start the first chain", "cause": "The loop is too loose and the knot hasn't seated properly against the hook.", "fix": "Pull the tail to draw the knot up tight against the hook. The knot itself sits at the back of the hook; only the loop sits on the shaft." },
-            { "symptom": "The tail is too short to sew in when you finish", "cause": "You started with the slip knot too close to the end of the yarn.", "fix": "Always leave at least 15 cm of tail before the slip knot. For a piece you'll seam or join, leave 30 cm. Long tails sew in; short tails fray loose." }
+            {
+              "symptom": "The knot falls apart when you pull the working yarn",
+              "cause": "You pulled the tail through the ring instead of the working yarn. The knot that closes is the one that grips the working strand.",
+              "fix": "Start over. The strand you pull through the ring is the strand still attached to the ball, not the short end."
+            },
+            {
+              "symptom": "The knot tightens onto the hook and you can't move it",
+              "cause": "The loop is too small for the hook shaft, or you pulled both ends at once and locked the knot.",
+              "fix": "Pull the tail to widen the loop. If the loop won't open, slide the hook out, undo the knot, and start again. A loop a finger-width across before sliding it on the hook is roughly right."
+            },
+            {
+              "symptom": "The slip knot slides off the hook when you start the first chain",
+              "cause": "The loop is too loose and the knot hasn't seated properly against the hook.",
+              "fix": "Pull the tail to draw the knot up tight against the hook. The knot itself sits at the back of the hook; only the loop sits on the shaft."
+            },
+            {
+              "symptom": "The tail is too short to sew in when you finish",
+              "cause": "You started with the slip knot too close to the end of the yarn.",
+              "fix": "Always leave at least 15 cm of tail before the slip knot. For a piece you'll seam or join, leave 30 cm. Long tails sew in; short tails fray loose."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once the slip knot sits cleanly on the hook, the next move is the chain stitch — the foundation row that anchors every flat piece. From there, the basic stitches (double crochet, half treble, treble) all start with a chain row, and the in-the-round patterns swap the chain for a magic ring. Either path starts with this loop." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the slip knot sits cleanly on the hook, the next move is the chain stitch — the foundation row that anchors every flat piece. From there, the basic stitches (double crochet, half treble, treble) all start with a chain row, and the in-the-round patterns swap the chain for a magic ring. Either path starts with this loop."
+          }
+        ]
+      }
     ]
   }
 }

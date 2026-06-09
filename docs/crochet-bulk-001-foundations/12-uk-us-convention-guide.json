@@ -13,60 +13,388 @@
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-double-uk", "crochet-half-treble", "crochet-treble", "crochet-double-treble"],
-    "craftTechniqueTags": ["uk-us-convention"]
+    "craftStitchSlugs": [
+      "crochet-double-uk",
+      "crochet-half-treble",
+      "crochet-treble",
+      "crochet-double-treble"
+    ],
+    "craftTechniqueTags": [
+      "uk-us-convention"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "convention-mismatch", "term": "Convention mismatch", "definition": "Working part of a pattern in UK convention and part in US convention. The result: stitches that should be the same height are different by a full step. The canonical crochet bug." }
+    {
+      "slug": "convention-mismatch",
+      "term": "Convention mismatch",
+      "definition": "Working part of a pattern in UK convention and part in US convention. The result: stitches that should be the same height are different by a full step. The canonical crochet bug."
+    }
   ],
-  "techniqueSlugs": ["crochet-uk-us-terminology-guide"],
-  "criticalTechniques": ["crochet-uk-us-terminology-guide"],
-  "aliases": ["UK vs US crochet", "British American crochet terms", "crochet translation", "convention conversion"],
+  "techniqueSlugs": [
+    "crochet-uk-us-terminology-guide"
+  ],
+  "criticalTechniques": [
+    "crochet-uk-us-terminology-guide"
+  ],
+  "aliases": [
+    "UK vs US crochet",
+    "British American crochet terms",
+    "crochet translation",
+    "convention conversion"
+  ],
   "heroPrompt": "A two-column printed reference card showing UK stitch names on the left, US equivalents on the right, in clear typography on a pale background — a 4 mm hook and a small swatch resting beside.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "UK and US crochet conventions name the same stitches differently. The moves are identical; the names are not. UK double crochet equals US single crochet. UK treble equals US double crochet. The translation table is short, but the consequence of mixing the two mid-pattern is a piece twice or half the intended size." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Homemade publishes in UK convention by default — UK names and abbreviations across all body prose. The reader-side terminology toggle in the page header flips abbreviations to US for readers who prefer the US set. Pick a convention before you start a pattern from elsewhere; the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "convention-mismatch" } }], "text": "convention mismatch" }, { "type": "text", "text": " bug is the most-common crochet error." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The translation table" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK and US crochet conventions name the same stitches differently. The moves are identical; the names are not. UK double crochet equals US single crochet. UK treble equals US double crochet. The translation table is short, but the consequence of mixing the two mid-pattern is a piece twice or half the intended size."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Homemade publishes in UK convention by default — UK names and abbreviations across all body prose. The reader-side terminology toggle in the page header flips abbreviations to US for readers who prefer the US set. Pick a convention before you start a pattern from elsewhere; the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "convention-mismatch"
+                }
+              }
+            ],
+            "text": "convention mismatch"
+          },
+          {
+            "type": "text",
+            "text": " bug is the most-common crochet error."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The translation table"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK chain (ch) = US chain (ch). The same name." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK slip stitch (sl st) = US slip stitch (sl st). The same name." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK double crochet (dc) = US single crochet (sc). The first famous shift." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK half treble (htr) = US half double crochet (hdc)." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK treble (tr) = US double crochet (dc). The second famous shift — US \"dc\" means something different from UK \"dc\"." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK double treble (dtr) = US treble (tr). Another full-step shift." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK triple treble (trtr) = US double treble (dtr)." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK chain (ch) = US chain (ch). The same name."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK slip stitch (sl st) = US slip stitch (sl st). The same name."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK double crochet (dc) = US single crochet (sc). The first famous shift."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK half treble (htr) = US half double crochet (hdc)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK treble (tr) = US double crochet (dc). The second famous shift — US \"dc\" means something different from UK \"dc\"."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK double treble (dtr) = US treble (tr). Another full-step shift."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "UK triple treble (trtr) = US double treble (dtr)."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to tell which convention a pattern uses" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The pattern usually says so at the top — \"written in UK terminology\" or \"US terms\". If the pattern doesn't say, the publisher gives it away:" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to tell which convention a pattern uses"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pattern usually says so at the top — \"written in UK terminology\" or \"US terms\". If the pattern doesn't say, the publisher gives it away:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "British publications (Pauline Turner, Stylecraft pattern leaflets, most UK magazines, anything from the British Library archive) write UK convention by default." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "American publications (Annie's, Leisure Arts, most US magazines, US Ravelry self-published patterns) write US convention by default." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "International publications (Japanese chart-driven books) usually use UK convention in the written instructions and the international symbol set in the charts." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "British publications (Pauline Turner, Stylecraft pattern leaflets, most UK magazines, anything from the British Library archive) write UK convention by default."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "American publications (Annie's, Leisure Arts, most US magazines, US Ravelry self-published patterns) write US convention by default."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "International publications (Japanese chart-driven books) usually use UK convention in the written instructions and the international symbol set in the charts."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "If a pattern uses the abbreviation \"sc\" anywhere, it's US convention. If it uses the abbreviation \"htr\" anywhere, it's UK convention. The single most reliable signal." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Translating a US pattern to UK convention" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Read the whole pattern through once first. Replace every abbreviation according to the translation table — \"sc\" becomes \"dc\", \"dc\" becomes \"tr\", \"hdc\" becomes \"htr\". Don't translate stitch by stitch as you work; that's where mistakes creep in. Translate the whole pattern on paper or in a notes app first, then work from the translated copy." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Watch for these gotchas: the turning chain count differs slightly between conventions for some stitches. UK treble takes a 3-chain turning chain that counts; US double crochet (the same stitch) sometimes takes a 2-chain turning chain that does not count, depending on the pattern's house style. Read the pattern's turning chain note carefully." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worked example — translation in action" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "US pattern: \"Row 2: ch 1 (does not count), sc in each st across (20 sts).\"" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "UK translation: \"Row 2: ch 1 (does not count), dc in each st across (20 sts).\"" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Same move, same height, same fabric. Only the abbreviation changed." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "US pattern: \"Round 1: in magic ring, ch 3 (counts as dc), 11 dc into ring. Sl st to top of beg ch-3. (12 dc.)\"" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "UK translation: \"Round 1: in magic ring, ch 3 (counts as tr), 11 tr into ring. Sl st to top of beg ch-3. (12 tr.)\"" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The US \"dc\" here is the UK \"tr\" — both name the same stitch (the workhorse pattern stitch of the granny square)." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once the translation table feels familiar, every published crochet pattern in the world is readable in either convention. The next surface is hook size conversion — UK hooks use metric (4 mm), US hooks use letter-and-number combinations (G/6), Japanese hooks use Japanese-specific sizing. The CrochetHook reference table on every pattern page surfaces all three." }] }
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If a pattern uses the abbreviation \"sc\" anywhere, it's US convention. If it uses the abbreviation \"htr\" anywhere, it's UK convention. The single most reliable signal."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Translating a US pattern to UK convention"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read the whole pattern through once first. Replace every abbreviation according to the translation table — \"sc\" becomes \"dc\", \"dc\" becomes \"tr\", \"hdc\" becomes \"htr\". Don't translate stitch by stitch as you work; that's where mistakes creep in. Translate the whole pattern on paper or in a notes app first, then work from the translated copy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Watch for these gotchas: the turning chain count differs slightly between conventions for some stitches. UK treble takes a 3-chain turning chain that counts; US double crochet (the same stitch) sometimes takes a 2-chain turning chain that does not count, depending on the pattern's house style. Read the pattern's turning chain note carefully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example — translation in action"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "US pattern: \"Row 2: ch 1 (does not count), sc in each st across (20 sts).\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK translation: \"Row 2: ch 1 (does not count), dc in each st across (20 sts).\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Same move, same height, same fabric. Only the abbreviation changed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "US pattern: \"Round 1: in magic ring, ch 3 (counts as dc), 11 dc into ring. Sl st to top of beg ch-3. (12 dc.)\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK translation: \"Round 1: in magic ring, ch 3 (counts as tr), 11 tr into ring. Sl st to top of beg ch-3. (12 tr.)\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The US \"dc\" here is the UK \"tr\" — both name the same stitch (the workhorse pattern stitch of the granny square)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the translation table feels familiar, every published crochet pattern in the world is readable in either convention. The next surface is hook size conversion — UK hooks use metric (4 mm), US hooks use letter-and-number combinations (G/6), Japanese hooks use Japanese-specific sizing. The CrochetHook reference table on every pattern page surfaces all three."
+          }
+        ]
+      }
     ]
   }
 }

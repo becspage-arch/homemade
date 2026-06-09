@@ -14,60 +14,334 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["reading-charts"]
+    "craftTechniqueTags": [
+      "reading-charts"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "chart-legend", "term": "Chart legend", "definition": "The key beside or below a chart that names each symbol — \"○ = chain, + = double crochet, T = treble\". The first thing to read on any new chart, before counting stitches." }
+    {
+      "slug": "chart-legend",
+      "term": "Chart legend",
+      "definition": "The key beside or below a chart that names each symbol — \"○ = chain, + = double crochet, T = treble\". The first thing to read on any new chart, before counting stitches."
+    }
   ],
-  "techniqueSlugs": ["crochet-reading-symbol-charts"],
-  "criticalTechniques": ["crochet-reading-symbol-charts"],
-  "aliases": ["chart reading", "symbol chart", "crochet diagram"],
+  "techniqueSlugs": [
+    "crochet-reading-symbol-charts"
+  ],
+  "criticalTechniques": [
+    "crochet-reading-symbol-charts"
+  ],
+  "aliases": [
+    "chart reading",
+    "symbol chart",
+    "crochet diagram"
+  ],
   "heroPrompt": "A printed crochet chart of a six-petal flower motif, in black ink on white paper, showing rings of stitches expanding outward — chain symbols as ovals, trebles as long T-shapes — a 4 mm hook resting beside.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A crochet symbol chart draws the pattern in pictures. One symbol per stitch, laid out in the position the stitch occupies in the finished piece. The pattern's shape is visible at a glance; the written instructions become a backup rather than the primary source." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Charts are particularly useful for in-the-round motifs (granny squares, hexagons, mandalas, doilies) where the layout shows the construction clearly. They're also the standard for international Japanese-style patterns, because the chart works across language barriers — the symbols are the same in Tokyo, London, and Buenos Aires." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The standard symbols" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Each chart includes a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chart-legend" } }], "text": "chart legend" }, { "type": "text", "text": " naming the symbols used. The widely-adopted convention:" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A crochet symbol chart draws the pattern in pictures. One symbol per stitch, laid out in the position the stitch occupies in the finished piece. The pattern's shape is visible at a glance; the written instructions become a backup rather than the primary source."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Charts are particularly useful for in-the-round motifs (granny squares, hexagons, mandalas, doilies) where the layout shows the construction clearly. They're also the standard for international Japanese-style patterns, because the chart works across language barriers — the symbols are the same in Tokyo, London, and Buenos Aires."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard symbols"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each chart includes a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chart-legend"
+                }
+              }
+            ],
+            "text": "chart legend"
+          },
+          {
+            "type": "text",
+            "text": " naming the symbols used. The widely-adopted convention:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "○ (oval) — chain. A row of ovals is a row of chains." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "● (filled circle) — slip stitch." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "+ or × — double crochet (UK). A small upright cross or plus." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "T with a single bar across the post — half treble (UK)." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "T with a single bar — treble (UK). The vertical post is longer than half treble." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "T with two bars — double treble (UK)." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cluster bracket joining the tops of several stitches — those stitches are worked together as a cluster, bobble, or popcorn." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "○ (oval) — chain. A row of ovals is a row of chains."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "● (filled circle) — slip stitch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "+ or × — double crochet (UK). A small upright cross or plus."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "T with a single bar across the post — half treble (UK)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "T with a single bar — treble (UK). The vertical post is longer than half treble."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "T with two bars — double treble (UK)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cluster bracket joining the tops of several stitches — those stitches are worked together as a cluster, bobble, or popcorn."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Reading direction" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Flat patterns read bottom-up. Row 1 sits at the bottom of the chart; row 2 above it; row 3 above that. Within each row, you read right-to-left for right-handed crocheters (the way you work the row), then left-to-right for the next row (the way you work after turning)." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "In-the-round patterns read inside-out. Round 1 sits at the centre; round 2 around it; each subsequent round wraps around the outside. Within each round, you read counter-clockwise for right-handed crocheters (the working direction), starting from the round's beginning chain." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Finding the starting point" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Every chart marks the starting point. On in-the-round charts, the starting chain or magic ring sits dead centre, with a small arrow or label naming the start. On flat charts, the starting chain runs along the bottom, with the chart's first row of stitches sitting on top of it. Find the start before counting any other stitches." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worked example — a six-treble first round" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A chart shows six tall T-shapes arranged in a hexagonal pattern around a small centre dot. The legend names the centre dot as a magic ring and the T-shapes as trebles. The reader works: magic ring, ch 3 (counts as first tr), 5 tr into the ring, sl st to top of beg ch-3 to join. The written and charted patterns agree." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "If you also have the written pattern, read both at once. Work each stitch with the chart in front of you, glance at the written instructions to confirm. Discrepancies between the two should be impossible — if they exist, the prose is canonical and the chart was drawn from it." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading direction"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat patterns read bottom-up. Row 1 sits at the bottom of the chart; row 2 above it; row 3 above that. Within each row, you read right-to-left for right-handed crocheters (the way you work the row), then left-to-right for the next row (the way you work after turning)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In-the-round patterns read inside-out. Round 1 sits at the centre; round 2 around it; each subsequent round wraps around the outside. Within each round, you read counter-clockwise for right-handed crocheters (the working direction), starting from the round's beginning chain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finding the starting point"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every chart marks the starting point. On in-the-round charts, the starting chain or magic ring sits dead centre, with a small arrow or label naming the start. On flat charts, the starting chain runs along the bottom, with the chart's first row of stitches sitting on top of it. Find the start before counting any other stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example — a six-treble first round"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A chart shows six tall T-shapes arranged in a hexagonal pattern around a small centre dot. The legend names the centre dot as a magic ring and the T-shapes as trebles. The reader works: magic ring, ch 3 (counts as first tr), 5 tr into the ring, sl st to top of beg ch-3 to join. The written and charted patterns agree."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you also have the written pattern, read both at once. Work each stitch with the chart in front of you, glance at the written instructions to confirm. Discrepancies between the two should be impossible — if they exist, the prose is canonical and the chart was drawn from it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When the chart doesn't make sense",
           "intro": "Three common chart-reading problems.",
           "items": [
-            { "symptom": "The chart symbols look identical at a quick glance", "cause": "Treble (T with one bar) and double treble (T with two bars) read similar at small sizes.", "fix": "Zoom in on a printed chart or use the page's chart-zoom view on screen. The number of bars across the post matters; one bar is treble, two bars is double treble." },
-            { "symptom": "Working out from the centre, the stitches don't line up with the chart positions", "cause": "Tension off, or magic ring not pulled tight before round 2.", "fix": "Charts are drawn to ideal tension; real crochet has give. The positions are guides, not exact placements. As long as your stitch count matches the round's count, the chart is on track." },
-            { "symptom": "Can't find the starting point on a complex in-the-round chart", "cause": "The starting point isn't labelled, or the chart has a non-standard layout.", "fix": "Look for the centre — the magic ring is always centred. From there, count the round-1 stitches; the round-1 starting chain is the one nearest the round-1 count label." }
+            {
+              "symptom": "The chart symbols look identical at a quick glance",
+              "cause": "Treble (T with one bar) and double treble (T with two bars) read similar at small sizes.",
+              "fix": "Zoom in on a printed chart or use the page's chart-zoom view on screen. The number of bars across the post matters; one bar is treble, two bars is double treble."
+            },
+            {
+              "symptom": "Working out from the centre, the stitches don't line up with the chart positions",
+              "cause": "Tension off, or magic ring not pulled tight before round 2.",
+              "fix": "Charts are drawn to ideal tension; real crochet has give. The positions are guides, not exact placements. As long as your stitch count matches the round's count, the chart is on track."
+            },
+            {
+              "symptom": "Can't find the starting point on a complex in-the-round chart",
+              "cause": "The starting point isn't labelled, or the chart has a non-standard layout.",
+              "fix": "Look for the centre — the magic ring is always centred. From there, count the round-1 stitches; the round-1 starting chain is the one nearest the round-1 count label."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once symbol charts read clearly, the granny-square anchor pattern is a useful exercise — work the pattern from the chart alone, ignoring the written instructions, and check at the end that the stitch count matches. From there, more complex motifs (six-petal flowers, lace doilies) become readable as chart-first patterns." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once symbol charts read clearly, the granny-square anchor pattern is a useful exercise — work the pattern from the chart alone, ignoring the written instructions, and check at the end that the stitch count matches. From there, more complex motifs (six-petal flowers, lace doilies) become readable as chart-first patterns."
+          }
+        ]
+      }
     ]
   }
 }

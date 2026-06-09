@@ -13,26 +13,85 @@
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-treble", "crochet-double-uk"],
-    "craftTechniqueTags": ["increase"]
+    "craftStitchSlugs": [
+      "crochet-treble",
+      "crochet-double-uk"
+    ],
+    "craftTechniqueTags": [
+      "increase"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "chain-space", "term": "Chain space", "definition": "The gap between two stitches created by working chain stitches in between. Patterns refer to working \"into the ch-2 sp\" — the hook enters the space, not into a stitch." }
+    {
+      "slug": "chain-space",
+      "term": "Chain space",
+      "definition": "The gap between two stitches created by working chain stitches in between. Patterns refer to working \"into the ch-2 sp\" — the hook enters the space, not into a stitch."
+    }
   ],
-  "techniqueSlugs": ["crochet-increase-basics"],
-  "criticalTechniques": ["crochet-increase-basics"],
-  "aliases": ["increase", "inc", "shaping", "stitch increase"],
+  "techniqueSlugs": [
+    "crochet-increase-basics"
+  ],
+  "criticalTechniques": [
+    "crochet-increase-basics"
+  ],
+  "aliases": [
+    "increase",
+    "inc",
+    "shaping",
+    "stitch increase"
+  ],
   "heroPrompt": "A triangular swatch of treble crochet in cream DK cotton, starting from a single stitch at the bottom and increasing to a wide row at the top — sits flat on a pale background, the angled edges shows the increase pattern clearly.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A crochet increase is two stitches worked into the same base stitch. The row gains one stitch in width — the increase stitch itself adds one extra. Modern British crochet pattern conventions favour the explicit move (\"2 tr in next st\") over the abbreviation \"inc\", because the explicit form names exactly where the second stitch lands." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Increases live in two places: on the stitch itself, and in the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-space" } }], "text": "chain space" }, { "type": "text", "text": " between stitches. Which one matters: working \"2 tr in next st\" lands both trebles on the same actual stitch; working \"2 tr in next ch-2 sp\" lands both trebles in the gap between stitches. Different positions, different fabric." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A crochet increase is two stitches worked into the same base stitch. The row gains one stitch in width — the increase stitch itself adds one extra. Modern British crochet pattern conventions favour the explicit move (\"2 tr in next st\") over the abbreviation \"inc\", because the explicit form names exactly where the second stitch lands."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Increases live in two places: on the stitch itself, and in the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chain-space"
+                }
+              }
+            ],
+            "text": "chain space"
+          },
+          {
+            "type": "text",
+            "text": " between stitches. Which one matters: working \"2 tr in next st\" lands both trebles on the same actual stitch; working \"2 tr in next ch-2 sp\" lands both trebles in the gap between stitches. Different positions, different fabric."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -41,34 +100,164 @@
           "body": "\"2 tr in next st\" means two trebles into the very next stitch — the increase. \"2 tr, 1 tr, 2 tr\" means: increase, plain stitch, increase, in consecutive stitches. \"(2 tr in next st) 6 times\" means six consecutive increases. \"2 tr in next ch-sp\" means both trebles go into the chain space, not the stitch."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working an increase" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working an increase"
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first stitch of the increase exactly as normal — yarn over, insert hook, complete the stitch. Don't pull it tighter than usual." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the second stitch into the same base stitch — yarn over, insert hook into the SAME stitch you just worked, complete the second stitch." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue with the next instruction of the pattern. The row now has one extra stitch compared to the row below." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the first stitch of the increase exactly as normal — yarn over, insert hook, complete the stitch. Don't pull it tighter than usual."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the second stitch into the same base stitch — yarn over, insert hook into the SAME stitch you just worked, complete the second stitch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue with the next instruction of the pattern. The row now has one extra stitch compared to the row below."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Increases at the start of a row" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "When the increase is the first stitch of a row, the pattern usually reads: \"ch 3 (counts as first tr), 1 tr in same st as turning ch.\" The turning chain counts as one treble; the worked treble into the same base stitch is the second treble of the increase. The row gains one stitch at the start, smoothly." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Multiple increases in a row" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "For a triangular shape or a circle, the row needs several increases. Distribute them evenly. A row with 4 increases on a 20-stitch row places one increase every 5 stitches; a row with 6 increases on a 36-stitch row places one every 6. Even spacing keeps the shape predictable. Pattern shorthand: \"*1 tr in next 4 sts, 2 tr in next st; repeat from * around\" — four plain, one increase, repeat." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Increases at the start of a row"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When the increase is the first stitch of a row, the pattern usually reads: \"ch 3 (counts as first tr), 1 tr in same st as turning ch.\" The turning chain counts as one treble; the worked treble into the same base stitch is the second treble of the increase. The row gains one stitch at the start, smoothly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Multiple increases in a row"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a triangular shape or a circle, the row needs several increases. Distribute them evenly. A row with 4 increases on a 20-stitch row places one increase every 5 stitches; a row with 6 increases on a 36-stitch row places one every 6. Even spacing keeps the shape predictable. Pattern shorthand: \"*1 tr in next 4 sts, 2 tr in next st; repeat from * around\" — four plain, one increase, repeat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When increases don't behave",
           "intro": "Three increase problems and the fix for each.",
           "items": [
-            { "symptom": "The shape grows unevenly — one side wider than the other", "cause": "Increases bunched on one side of the row. Common when an unstructured pattern (\"add 4 stitches across the row\") leaves the spacing to the reader.", "fix": "Mark the planned increase positions with stitch markers before starting the row. Even spacing matters more than exact placement; six increases on a 36-stitch row should sit roughly every six stitches." },
-            { "symptom": "The increase row pulls in tighter than the rest", "cause": "Both stitches of the increase worked too tight, or worked into a stitch already pulled tight by a previous increase.", "fix": "Loosen the second stitch of the increase slightly. If the row still pulls in, swap to a hook half a size larger for the next row. Once the shape stabilises, swap back." },
-            { "symptom": "When working into a chain space, the increase looks too loose and floppy", "cause": "Chain-space increases naturally sit looser than stitch increases. The trebles aren't anchored against a tight base — they sit on a gap.", "fix": "This is correct behaviour and reads as intentional lace on patterns that use it. If the looseness is unwanted, switch to working into the stitch itself instead of the chain space." }
+            {
+              "symptom": "The shape grows unevenly — one side wider than the other",
+              "cause": "Increases bunched on one side of the row. Common when an unstructured pattern (\"add 4 stitches across the row\") leaves the spacing to the reader.",
+              "fix": "Mark the planned increase positions with stitch markers before starting the row. Even spacing matters more than exact placement; six increases on a 36-stitch row should sit roughly every six stitches."
+            },
+            {
+              "symptom": "The increase row pulls in tighter than the rest",
+              "cause": "Both stitches of the increase worked too tight, or worked into a stitch already pulled tight by a previous increase.",
+              "fix": "Loosen the second stitch of the increase slightly. If the row still pulls in, swap to a hook half a size larger for the next row. Once the shape stabilises, swap back."
+            },
+            {
+              "symptom": "When working into a chain space, the increase looks too loose and floppy",
+              "cause": "Chain-space increases naturally sit looser than stitch increases. The trebles aren't anchored against a tight base — they sit on a gap.",
+              "fix": "This is correct behaviour and reads as intentional lace on patterns that use it. If the looseness is unwanted, switch to working into the stitch itself instead of the chain space."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Increases are half of the shaping toolkit. The other half is decreases — taking two stitches and working them as one. Once both moves feel natural, the granny square (corner increases), flat circles (evenly spaced rounds of increases), and beanies (decreases at the crown) all become readable as variations on the same theme." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Increases are half of the shaping toolkit. The other half is decreases — taking two stitches and working them as one. Once both moves feel natural, the granny square (corner increases), flat circles (evenly spaced rounds of increases), and beanies (decreases at the crown) all become readable as variations on the same theme."
+          }
+        ]
+      }
     ]
   }
 }

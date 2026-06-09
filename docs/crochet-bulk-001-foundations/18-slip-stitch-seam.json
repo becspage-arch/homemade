@@ -13,24 +13,62 @@
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["crochet-slip-stitch-seam"],
-    "craftTechniqueTags": ["joining", "slip-stitch-seam"]
+    "craftStitchSlugs": [
+      "crochet-slip-stitch-seam"
+    ],
+    "craftTechniqueTags": [
+      "joining",
+      "slip-stitch-seam"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
-  "techniqueSlugs": ["crochet-slip-stitch-seam-tutorial"],
-  "criticalTechniques": ["crochet-slip-stitch-seam-tutorial"],
-  "aliases": ["slip stitch seam", "sl st seam", "crochet hook join"],
+  "techniqueSlugs": [
+    "crochet-slip-stitch-seam-tutorial"
+  ],
+  "criticalTechniques": [
+    "crochet-slip-stitch-seam-tutorial"
+  ],
+  "aliases": [
+    "slip stitch seam",
+    "sl st seam",
+    "crochet hook join"
+  ],
   "heroPrompt": "Two granny squares joined with a slip stitch seam in a contrasting colour, photographed flat on a pale background — the seam shows as a small chain-shaped ridge running between the squares.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A slip stitch seam joins two crochet pieces with a row of slip stitches worked through matching stitches on both pieces. You hold the two pieces wrong sides together, insert the hook through both layers, and work slip stitches along the matching edges. The seam shows on the right side as a small chain-shaped ridge." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Slip stitch seams are the right choice when the seam should be part of the design — granny-square blankets where the joining line frames each square, jacket pieces where the seam adds a decorative line, or any piece where you want a visible structured join. For invisible flat joins, use whipstitch." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A slip stitch seam joins two crochet pieces with a row of slip stitches worked through matching stitches on both pieces. You hold the two pieces wrong sides together, insert the hook through both layers, and work slip stitches along the matching edges. The seam shows on the right side as a small chain-shaped ridge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slip stitch seams are the right choice when the seam should be part of the design — granny-square blankets where the joining line frames each square, jacket pieces where the seam adds a decorative line, or any piece where you want a visible structured join. For invisible flat joins, use whipstitch."
+          }
+        ]
+      },
       {
         "type": "infoPanel",
         "attrs": {
@@ -39,34 +77,171 @@
           "body": "A crochet hook one size smaller than the pieces were worked with (a smaller hook gives a tighter, neater seam). Matching or contrasting yarn — contrasting yarn turns the seam into a decorative line. Tapestry needle and scissors for finishing tails."
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a slip stitch seam" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working a slip stitch seam"
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the two pieces wrong sides together, edges matched, right sides facing out. The seam will show on the side facing you (the right sides)." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a slip knot on the hook with the joining yarn. Insert the hook through both layers at the first corner stitch — through the back loop of the front piece and the back loop of the back piece, both at once." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over with the joining yarn. Pull a loop back through both layers AND through the slip knot loop on the hook in one motion. One loop on the hook — the first slip stitch is done." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move to the next pair of matching stitches. Insert the hook through both layers (back loop of each). Yarn over, pull through both layers and through the hook loop. Continue along the seam." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the seam, fasten off. Sew the starting and ending tails through the back of the seam with a tapestry needle." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hold the two pieces wrong sides together, edges matched, right sides facing out. The seam will show on the side facing you (the right sides)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make a slip knot on the hook with the joining yarn. Insert the hook through both layers at the first corner stitch — through the back loop of the front piece and the back loop of the back piece, both at once."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yarn over with the joining yarn. Pull a loop back through both layers AND through the slip knot loop on the hook in one motion. One loop on the hook — the first slip stitch is done."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Move to the next pair of matching stitches. Insert the hook through both layers (back loop of each). Yarn over, pull through both layers and through the hook loop. Continue along the seam."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At the end of the seam, fasten off. Sew the starting and ending tails through the back of the seam with a tapestry needle."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Joining multiple granny squares" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "For a row of squares, work the seam continuously — when you reach the end of the first pair, slip-stitch into the corner of the next pair of squares without breaking off. The seams chain naturally along the row. For a full blanket, join all the rows first (vertical seams), then join the rows together (horizontal seams). The intersections look neatest when the same yarn carries through both directions." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Joining multiple granny squares"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a row of squares, work the seam continuously — when you reach the end of the first pair, slip-stitch into the corner of the next pair of squares without breaking off. The seams chain naturally along the row. For a full blanket, join all the rows first (vertical seams), then join the rows together (horizontal seams). The intersections look neatest when the same yarn carries through both directions."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When the slip stitch seam goes wrong",
           "intro": "Three common slip-stitch-seam problems and the fix for each.",
           "items": [
-            { "symptom": "The seam is too tight and the joined edge curls", "cause": "Slip stitches naturally pull tight. Worked with the same hook as the pieces, the seam is firmer than the pieces around it.", "fix": "Use a hook one size larger than the pieces for the seam (instead of one size smaller). The seam stays loose and the join sits flat." },
-            { "symptom": "The seam pops open at one end", "cause": "The starting or ending slip stitch wasn't fastened off properly.", "fix": "At the start and end, work the last slip stitch as a slip stitch joined back into itself — slip stitch, then chain 1, then cut and pull the tail through the loop and tighten. Sew the tail back through the seam by 5 cm." },
-            { "symptom": "The seam ridge looks chunky and uneven", "cause": "Inconsistent tension — some slip stitches tighter than others.", "fix": "Slow down. Pull each slip stitch through with the same amount of tension; aim for the new loop to sit the same height each time. Even tension is what makes the seam ridge clean." }
+            {
+              "symptom": "The seam is too tight and the joined edge curls",
+              "cause": "Slip stitches naturally pull tight. Worked with the same hook as the pieces, the seam is firmer than the pieces around it.",
+              "fix": "Use a hook one size larger than the pieces for the seam (instead of one size smaller). The seam stays loose and the join sits flat."
+            },
+            {
+              "symptom": "The seam pops open at one end",
+              "cause": "The starting or ending slip stitch wasn't fastened off properly.",
+              "fix": "At the start and end, work the last slip stitch as a slip stitch joined back into itself — slip stitch, then chain 1, then cut and pull the tail through the loop and tighten. Sew the tail back through the seam by 5 cm."
+            },
+            {
+              "symptom": "The seam ridge looks chunky and uneven",
+              "cause": "Inconsistent tension — some slip stitches tighter than others.",
+              "fix": "Slow down. Pull each slip stitch through with the same amount of tension; aim for the new loop to sit the same height each time. Even tension is what makes the seam ridge clean."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pair the slip stitch seam with a contrasting border colour for granny-square blankets — the seam becomes the visual structure of the piece. For invisible joins where the seam shouldn't show, swap to whipstitch. Both methods belong in the toolkit; pick by design intent." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pair the slip stitch seam with a contrasting border colour for granny-square blankets — the seam becomes the visual structure of the piece. For invisible joins where the seam shouldn't show, swap to whipstitch. Both methods belong in the toolkit; pick by design intent."
+          }
+        ]
+      }
     ]
   }
 }

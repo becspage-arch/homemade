@@ -14,60 +14,400 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["ergonomics", "hand-care"]
+    "craftTechniqueTags": [
+      "ergonomics",
+      "hand-care"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "knife-grip", "term": "Knife grip", "definition": "Hook held in the palm with the thumb on top, the way you hold a kitchen knife. The most common British grip." },
-    { "slug": "pencil-grip", "term": "Pencil grip", "definition": "Hook held between thumb and fingers, the way you hold a pen. Common in continental Europe and Japan." }
+    {
+      "slug": "knife-grip",
+      "term": "Knife grip",
+      "definition": "Hook held in the palm with the thumb on top, the way you hold a kitchen knife. The most common British grip."
+    },
+    {
+      "slug": "pencil-grip",
+      "term": "Pencil grip",
+      "definition": "Hook held between thumb and fingers, the way you hold a pen. Common in continental Europe and Japan."
+    }
   ],
-  "techniqueSlugs": ["crochet-hook-hold-and-ergonomics"],
-  "criticalTechniques": ["crochet-hook-hold-and-ergonomics"],
-  "aliases": ["hook grip", "crochet hand position", "preventing hand pain", "crochet ergonomics"],
+  "techniqueSlugs": [
+    "crochet-hook-hold-and-ergonomics"
+  ],
+  "criticalTechniques": [
+    "crochet-hook-hold-and-ergonomics"
+  ],
+  "aliases": [
+    "hook grip",
+    "crochet hand position",
+    "preventing hand pain",
+    "crochet ergonomics"
+  ],
   "heroPrompt": "Two close-up photos side by side on a pale background — one hand using a knife grip on a 4 mm crochet hook with cream DK cotton, the other using a pencil grip with the same hook and yarn.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "There are two main hook grips. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "knife-grip" } }], "text": "Knife grip" }, { "type": "text", "text": " holds the hook in the palm with the thumb on top, the way you hold a kitchen knife. " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pencil-grip" } }], "text": "Pencil grip" }, { "type": "text", "text": " holds the hook between thumb and fingers, the way you hold a pen. Either works. Most British crocheters use knife grip; continental Europe and Japan favour pencil grip. The hands choose; neither is wrong." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "What matters more than the grip itself is rest breaks, relaxed shoulders, and not gripping the hook harder than the work needs. Crochet is a repetitive hand movement; long sessions without breaks build into hand strain." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Knife grip" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the hook in the palm of the dominant hand, the handle pointing toward the wrist. Place the thumb on top of the flat thumb-rest on the hook (or on the shaft for hooks without a rest). The index finger curls around the front of the shaft. The hook tip emerges between the index finger and thumb." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pros: more leverage for tight yarn or stiff fibres; less hand strain over long projects; works well with ergonomic-handle hooks. Cons: takes more wrist movement, which can strain the wrist if grip is too tight." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Pencil grip" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the hook between thumb and index finger, like a pen. The middle finger rests under the hook for support. The shaft and hook tip extend beyond the fingers." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Pros: finer movement control; faster for small intricate work like amigurumi and lace; less wrist movement. Cons: harder on the thumb and finger joints across long sessions; less leverage for thick yarn." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Yarn-tension hand" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The non-hook hand controls the yarn tension. The standard hold: working yarn comes off the ball, wraps over the index finger, around or under the middle and ring fingers (for grip), and out across the work. Adjust by changing how the yarn wraps the fingers — more wraps gives more tension, fewer wraps gives less." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Don't grip the working yarn hard. The fingers guide; the work pulls. A tight grip on the yarn makes both hands tense and slows the work." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Rest breaks and pacing" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There are two main hook grips. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "knife-grip"
+                }
+              }
+            ],
+            "text": "Knife grip"
+          },
+          {
+            "type": "text",
+            "text": " holds the hook in the palm with the thumb on top, the way you hold a kitchen knife. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pencil-grip"
+                }
+              }
+            ],
+            "text": "Pencil grip"
+          },
+          {
+            "type": "text",
+            "text": " holds the hook between thumb and fingers, the way you hold a pen. Either works. Most British crocheters use knife grip; continental Europe and Japan favour pencil grip. The hands choose; neither is wrong."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "What matters more than the grip itself is rest breaks, relaxed shoulders, and not gripping the hook harder than the work needs. Crochet is a repetitive hand movement; long sessions without breaks build into hand strain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Knife grip"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the hook in the palm of the dominant hand, the handle pointing toward the wrist. Place the thumb on top of the flat thumb-rest on the hook (or on the shaft for hooks without a rest). The index finger curls around the front of the shaft. The hook tip emerges between the index finger and thumb."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pros: more leverage for tight yarn or stiff fibres; less hand strain over long projects; works well with ergonomic-handle hooks. Cons: takes more wrist movement, which can strain the wrist if grip is too tight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pencil grip"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the hook between thumb and index finger, like a pen. The middle finger rests under the hook for support. The shaft and hook tip extend beyond the fingers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pros: finer movement control; faster for small intricate work like amigurumi and lace; less wrist movement. Cons: harder on the thumb and finger joints across long sessions; less leverage for thick yarn."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Yarn-tension hand"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The non-hook hand controls the yarn tension. The standard hold: working yarn comes off the ball, wraps over the index finger, around or under the middle and ring fingers (for grip), and out across the work. Adjust by changing how the yarn wraps the fingers — more wraps gives more tension, fewer wraps gives less."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Don't grip the working yarn hard. The fingers guide; the work pulls. A tight grip on the yarn makes both hands tense and slows the work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest breaks and pacing"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Every twenty minutes, stop and stretch. Open and close the hands. Roll the wrists. Roll the shoulders." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Every hour, put the work down and move away from the seat for five minutes." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the hands ache, stop. Pain is the signal that the next hour of work would do more harm than good. Pick up the project the next day instead." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vary the projects. Switching between fine work (amigurumi at 3 mm hook) and chunky work (super-chunky throw at 10 mm hook) on alternate days uses the hands differently and reduces repetitive strain." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Every twenty minutes, stop and stretch. Open and close the hands. Roll the wrists. Roll the shoulders."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Every hour, put the work down and move away from the seat for five minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If the hands ache, stop. Pain is the signal that the next hour of work would do more harm than good. Pick up the project the next day instead."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Vary the projects. Switching between fine work (amigurumi at 3 mm hook) and chunky work (super-chunky throw at 10 mm hook) on alternate days uses the hands differently and reduces repetitive strain."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Posture" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Sit upright with the work supported on the lap or a small cushion. Shoulders relaxed and down — not pulled up toward the ears. Elbows close to the body, not jutting out. Head balanced over the spine, not craning forward over the work." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Lighting matters as much as posture. Working in dim light forces the head forward; the neck and upper back take the strain. A daylight-balanced task lamp positioned over the work shoulder removes this without the cost." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Pain signals" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Stop the session immediately if you feel:" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Posture"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sit upright with the work supported on the lap or a small cushion. Shoulders relaxed and down — not pulled up toward the ears. Elbows close to the body, not jutting out. Head balanced over the spine, not craning forward over the work."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lighting matters as much as posture. Working in dim light forces the head forward; the neck and upper back take the strain. A daylight-balanced task lamp positioned over the work shoulder removes this without the cost."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pain signals"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stop the session immediately if you feel:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sharp pain in the wrist or thumb base." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tingling or numbness in the fingers." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Persistent ache that doesn't ease with a short break." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stiffness in the fingers the next morning that doesn't pass within ten minutes of moving." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sharp pain in the wrist or thumb base."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tingling or numbness in the fingers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Persistent ache that doesn't ease with a short break."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stiffness in the fingers the next morning that doesn't pass within ten minutes of moving."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Persistent symptoms across several sessions warrant a chat with a GP or physiotherapist. Crochet should not hurt to do." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Try the opposite grip from your default for a small swatch. Many crocheters find one grip suits one type of work (knife for blankets, pencil for amigurumi). Knowing both means you can switch when the hands need a change. For long-arc projects, build in deliberate rest days — the work waits." }] }
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Persistent symptoms across several sessions warrant a chat with a GP or physiotherapist. Crochet should not hurt to do."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Try the opposite grip from your default for a small swatch. Many crocheters find one grip suits one type of work (knife for blankets, pencil for amigurumi). Knowing both means you can switch when the hands need a change. For long-arc projects, build in deliberate rest days — the work waits."
+          }
+        ]
+      }
     ]
   }
 }

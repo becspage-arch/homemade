@@ -14,66 +14,451 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["yarn-weights", "materials"]
+    "craftTechniqueTags": [
+      "yarn-weights",
+      "materials"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "wpi", "term": "WPI", "definition": "Wraps per inch. A measurement of yarn thickness — wrap the yarn around a ruler and count how many wraps fit in a 2.5 cm space. Useful for identifying an unlabelled yarn." }
+    {
+      "slug": "wpi",
+      "term": "WPI",
+      "definition": "Wraps per inch. A measurement of yarn thickness — wrap the yarn around a ruler and count how many wraps fit in a 2.5 cm space. Useful for identifying an unlabelled yarn."
+    }
   ],
-  "techniqueSlugs": ["crochet-yarn-weight-system"],
-  "criticalTechniques": ["crochet-yarn-weight-system"],
-  "aliases": ["yarn weight", "yarn thickness", "DK chunky 4ply", "yarn substitution"],
+  "techniqueSlugs": [
+    "crochet-yarn-weight-system"
+  ],
+  "criticalTechniques": [
+    "crochet-yarn-weight-system"
+  ],
+  "aliases": [
+    "yarn weight",
+    "yarn thickness",
+    "DK chunky 4ply",
+    "yarn substitution"
+  ],
   "heroPrompt": "Five balls of yarn arranged in a row on a pale background, from finest (lace) on the left to chunkiest on the right, each in plain cream — the thickness difference is clearly visible.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Yarn weights name the thickness of a yarn. A pattern asks for a specific weight; you can substitute any yarn of the same weight and the pattern still works. The fibre type changes the drape and warmth; the brand changes price and feel; but the weight controls the size of the stitches." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "British and American conventions name the weights differently. The translation table below covers the seven standard weights." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The seven standard weights" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yarn weights name the thickness of a yarn. A pattern asks for a specific weight; you can substitute any yarn of the same weight and the pattern still works. The fibre type changes the drape and warmth; the brand changes price and feel; but the weight controls the size of the stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "British and American conventions name the weights differently. The translation table below covers the seven standard weights."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The seven standard weights"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace (UK: 2-ply, US: lace). The finest. About 0.5 mm thick. Used for crochet lace and fine doilies. Hook size 1.5-2.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fingering (UK: 4-ply, US: fingering). About 0.8 mm. Used for fine cardigans, baby clothes, socks. Hook size 2.5-3.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sport (UK: 5-ply, US: sport). About 1 mm. Used for fine adult garments and lightweight blankets. Hook size 3.5-4 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DK (UK: DK or double knitting, US: light worsted). About 1.5 mm. The most-used British yarn weight. Used for everything from blankets and garments to amigurumi. Hook size 4-4.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aran (UK: aran, US: worsted). About 2 mm. Used for sweaters, hats, mittens, throws. Hook size 5-5.5 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chunky (UK: chunky, US: bulky). About 2.5-3 mm. Used for quick blankets, winter jumpers, scarves. Hook size 6-8 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Super chunky (UK: super chunky, US: super bulky). 3 mm and up. Used for the fastest projects — chunky throws, hot-water-bottle covers, statement scarves. Hook size 9-15 mm." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lace (UK: 2-ply, US: lace). The finest. About 0.5 mm thick. Used for crochet lace and fine doilies. Hook size 1.5-2.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fingering (UK: 4-ply, US: fingering). About 0.8 mm. Used for fine cardigans, baby clothes, socks. Hook size 2.5-3.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sport (UK: 5-ply, US: sport). About 1 mm. Used for fine adult garments and lightweight blankets. Hook size 3.5-4 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "DK (UK: DK or double knitting, US: light worsted). About 1.5 mm. The most-used British yarn weight. Used for everything from blankets and garments to amigurumi. Hook size 4-4.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aran (UK: aran, US: worsted). About 2 mm. Used for sweaters, hats, mittens, throws. Hook size 5-5.5 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Chunky (UK: chunky, US: bulky). About 2.5-3 mm. Used for quick blankets, winter jumpers, scarves. Hook size 6-8 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Super chunky (UK: super chunky, US: super bulky). 3 mm and up. Used for the fastest projects — chunky throws, hot-water-bottle covers, statement scarves. Hook size 9-15 mm."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Identifying an unlabelled yarn" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "For stash balls without labels, use the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wpi" } }], "text": "WPI" }, { "type": "text", "text": " test — wraps per inch. Wrap the yarn around a ruler with each wrap touching the next, and count how many wraps fit in 2.5 cm (1 inch):" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Identifying an unlabelled yarn"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For stash balls without labels, use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wpi"
+                }
+              }
+            ],
+            "text": "WPI"
+          },
+          {
+            "type": "text",
+            "text": " test — wraps per inch. Wrap the yarn around a ruler with each wrap touching the next, and count how many wraps fit in 2.5 cm (1 inch):"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace: 35 or more wraps per inch." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fingering / 4-ply: 19-22 wraps." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sport / 5-ply: 15-18 wraps." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DK: 11-14 wraps." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aran / worsted: 9-11 wraps." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chunky / bulky: 7-9 wraps." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Super chunky: 6 or fewer wraps." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lace: 35 or more wraps per inch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fingering / 4-ply: 19-22 wraps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sport / 5-ply: 15-18 wraps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "DK: 11-14 wraps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aran / worsted: 9-11 wraps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Chunky / bulky: 7-9 wraps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Super chunky: 6 or fewer wraps."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Substituting yarn" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "When a pattern names a specific brand, substitute within the same weight first. A DK cotton substitutes for another DK cotton with predictable results. A DK wool substitutes for DK cotton with a softer drape but the same dimensions. An aran substituted for a DK changes the finished size — the same pattern will be roughly 25% larger in aran than in DK." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Always swatch a substituted yarn against the pattern's gauge. Even within the same weight, different fibres have slightly different thicknesses; the swatch is the only way to confirm before starting the piece." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Yarn fibre and what it does" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Substituting yarn"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a pattern names a specific brand, substitute within the same weight first. A DK cotton substitutes for another DK cotton with predictable results. A DK wool substitutes for DK cotton with a softer drape but the same dimensions. An aran substituted for a DK changes the finished size — the same pattern will be roughly 25% larger in aran than in DK."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Always swatch a substituted yarn against the pattern's gauge. Even within the same weight, different fibres have slightly different thicknesses; the swatch is the only way to confirm before starting the piece."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Yarn fibre and what it does"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cotton — smooth, structured, doesn't stretch. Used for dishcloths, bags, summer garments, amigurumi. Shows stitches clearly; the right choice for learning swatches." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wool — warm, springy, takes blocking well. The classic blanket and garment fibre. Steam blocks beautifully." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Acrylic — machine-washable, lightweight, inexpensive. Used for blankets and children's items. Does not steam-block; use wet or spray blocking." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bamboo / silk / linen — drape-heavy, slippery, summer-weight. Used for shawls and garments where drape matters more than structure." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blends — combine the properties. Cotton-acrylic blends are washable and structured; wool-acrylic blends are warm and easy-care." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cotton — smooth, structured, doesn't stretch. Used for dishcloths, bags, summer garments, amigurumi. Shows stitches clearly; the right choice for learning swatches."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wool — warm, springy, takes blocking well. The classic blanket and garment fibre. Steam blocks beautifully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Acrylic — machine-washable, lightweight, inexpensive. Used for blankets and children's items. Does not steam-block; use wet or spray blocking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bamboo / silk / linen — drape-heavy, slippery, summer-weight. Used for shawls and garments where drape matters more than structure."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blends — combine the properties. Cotton-acrylic blends are washable and structured; wool-acrylic blends are warm and easy-care."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once the weight system reads clearly, the next surface is hook size — for any given weight, the recommended hook size sits in a small range. The reading on hook size choice walks through the matching rules and the cases where you'd intentionally go outside the recommended range." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the weight system reads clearly, the next surface is hook size — for any given weight, the recommended hook size sits in a small range. The reading on hook size choice walks through the matching rules and the cases where you'd intentionally go outside the recommended range."
+          }
+        ]
+      }
     ]
   }
 }

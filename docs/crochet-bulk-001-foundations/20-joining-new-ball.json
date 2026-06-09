@@ -14,63 +14,313 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["joining-yarn", "finishing"]
+    "craftTechniqueTags": [
+      "joining-yarn",
+      "finishing"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "tapestry-needle", "isOptional": false },
-    { "slug": "craft-scissors", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "yarn-change", "term": "Yarn change", "definition": "The transition from one ball of yarn (or one colour) to the next. Done at the end of a stitch so the new yarn becomes part of the next stitch from its start." }
+    {
+      "slug": "yarn-change",
+      "term": "Yarn change",
+      "definition": "The transition from one ball of yarn (or one colour) to the next. Done at the end of a stitch so the new yarn becomes part of the next stitch from its start."
+    }
   ],
-  "techniqueSlugs": ["crochet-joining-a-new-ball"],
-  "criticalTechniques": ["crochet-joining-a-new-ball"],
-  "aliases": ["join new yarn", "yarn change", "switching balls", "colour change"],
+  "techniqueSlugs": [
+    "crochet-joining-a-new-ball"
+  ],
+  "criticalTechniques": [
+    "crochet-joining-a-new-ball"
+  ],
+  "aliases": [
+    "join new yarn",
+    "yarn change",
+    "switching balls",
+    "colour change"
+  ],
   "heroPrompt": "A crochet swatch in progress showing a yarn change — the old yarn (cream) ends with a short tail, the new yarn (cream from the next ball) starts on the same stitch — the transition is barely visible.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Joining a new ball of yarn happens at the end of a stitch, not in the middle. You finish the previous stitch with the old yarn, leave a 15 cm tail, then start the next stitch by yarning over with the new yarn instead. The new yarn becomes part of the next stitch from its very first move; the fabric stays seamless." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The same method works for switching colours mid-piece. The " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-change" } }], "text": "yarn change" }, { "type": "text", "text": " is identical whether you're joining a fresh ball of the same colour or switching to a new colour." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to plan a join" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Joining a new ball of yarn happens at the end of a stitch, not in the middle. You finish the previous stitch with the old yarn, leave a 15 cm tail, then start the next stitch by yarning over with the new yarn instead. The new yarn becomes part of the next stitch from its very first move; the fabric stays seamless."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The same method works for switching colours mid-piece. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-change"
+                }
+              }
+            ],
+            "text": "yarn change"
+          },
+          {
+            "type": "text",
+            "text": " is identical whether you're joining a fresh ball of the same colour or switching to a new colour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to plan a join"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When you have less than about 30 cm of yarn left in the current ball. Don't try to work \"just one more stitch\" with a 10 cm tail; the stitch won't anchor properly." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of a stitch, not mid-stitch. Mid-stitch joins leave a small loose spot in the fabric." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Where the join will be hidden — at the edge of a row, in the back of a piece, or at a colour change where the visible transition explains the tails." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When you have less than about 30 cm of yarn left in the current ball. Don't try to work \"just one more stitch\" with a 10 cm tail; the stitch won't anchor properly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At the end of a stitch, not mid-stitch. Mid-stitch joins leave a small loose spot in the fabric."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Where the join will be hidden — at the edge of a row, in the back of a piece, or at a colour change where the visible transition explains the tails."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a yarn change" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working a yarn change"
+          }
+        ]
+      },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the previous stitch up to the last yarn-over. For a treble, this means three loops on the hook (or two for a double crochet). Stop there." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drop the old yarn at the back of the work, leaving a 15 cm tail." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick up the new yarn. Yarn over with the new yarn. Pull the new yarn through the last loops of the previous stitch (through three loops for a treble, two for a double crochet). The previous stitch is finished, but the top of the stitch is now made of new yarn." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue with the new yarn for the next stitch. The new ball is joined. Leave the old yarn's 15 cm tail and the new yarn's 15 cm starting tail to sew in later." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the previous stitch up to the last yarn-over. For a treble, this means three loops on the hook (or two for a double crochet). Stop there."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drop the old yarn at the back of the work, leaving a 15 cm tail."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick up the new yarn. Yarn over with the new yarn. Pull the new yarn through the last loops of the previous stitch (through three loops for a treble, two for a double crochet). The previous stitch is finished, but the top of the stitch is now made of new yarn."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue with the new yarn for the next stitch. The new ball is joined. Leave the old yarn's 15 cm tail and the new yarn's 15 cm starting tail to sew in later."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Joining at the end of a row" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "The cleanest place to switch is at the very end of a row. Finish the last stitch with the old yarn, fasten off as if the piece were complete, and start the new yarn at the beginning of the next row with a fresh slip knot. Both tails sit at the edge of the work and bury into the rows themselves. For colour-change stripes, this is the standard method." }] },
-      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Russian join — the no-tails alternative" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "For wool yarns (not slippery cotton or synthetic), the Russian join joins two yarn ends without leaving any tails to sew in. Thread the old yarn's tail through a tapestry needle. Pass the needle through the centre of the yarn itself, parallel to its length, for about 4 cm. Pull through. Repeat with the new yarn. The two ends are now spliced together inside themselves; pull gently to test the join. No tails, no sewing-in step. Works only with wool that grips itself; doesn't work on cotton or synthetic blends." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Joining at the end of a row"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The cleanest place to switch is at the very end of a row. Finish the last stitch with the old yarn, fasten off as if the piece were complete, and start the new yarn at the beginning of the next row with a fresh slip knot. Both tails sit at the edge of the work and bury into the rows themselves. For colour-change stripes, this is the standard method."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Russian join — the no-tails alternative"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For wool yarns (not slippery cotton or synthetic), the Russian join joins two yarn ends without leaving any tails to sew in. Thread the old yarn's tail through a tapestry needle. Pass the needle through the centre of the yarn itself, parallel to its length, for about 4 cm. Pull through. Repeat with the new yarn. The two ends are now spliced together inside themselves; pull gently to test the join. No tails, no sewing-in step. Works only with wool that grips itself; doesn't work on cotton or synthetic blends."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common mistakes"
+          }
+        ]
+      },
       {
         "type": "troubleshooter",
         "attrs": {
           "heading": "When yarn changes go wrong",
           "intro": "Three common yarn-change problems and the fix for each.",
           "items": [
-            { "symptom": "The fabric has a visible bump or loose spot at the join", "cause": "The yarn change happened mid-stitch instead of at the end of a stitch, or one of the tails wasn't pulled tight before continuing.", "fix": "Always change yarn during the final pull-through of the previous stitch. After pulling through with the new yarn, give both tails a gentle tug to settle them. The next stitch should sit flush with the surrounding fabric." },
-            { "symptom": "The tails came loose during washing", "cause": "Tails not buried with a direction change.", "fix": "When sewing in tails from a yarn change, weave for at least 6 cm and change direction once. Slippery yarns need a longer bury or a small knot inside the woven section." },
-            { "symptom": "On a colour change, the wrong colour shows up at the top of the previous stitch", "cause": "The colour change happened too early — the last yarn-over of the previous stitch used the new colour, so the top of the previous stitch is the new colour.", "fix": "This is correct behaviour for some patterns (where the colour change should sit slightly to the side). For a clean colour change at exactly the next stitch, work the last yarn-over of the previous stitch with the OLD colour, then start the next stitch with the new colour from its first yarn-over." }
+            {
+              "symptom": "The fabric has a visible bump or loose spot at the join",
+              "cause": "The yarn change happened mid-stitch instead of at the end of a stitch, or one of the tails wasn't pulled tight before continuing.",
+              "fix": "Always change yarn during the final pull-through of the previous stitch. After pulling through with the new yarn, give both tails a gentle tug to settle them. The next stitch should sit flush with the surrounding fabric."
+            },
+            {
+              "symptom": "The tails came loose during washing",
+              "cause": "Tails not buried with a direction change.",
+              "fix": "When sewing in tails from a yarn change, weave for at least 6 cm and change direction once. Slippery yarns need a longer bury or a small knot inside the woven section."
+            },
+            {
+              "symptom": "On a colour change, the wrong colour shows up at the top of the previous stitch",
+              "cause": "The colour change happened too early — the last yarn-over of the previous stitch used the new colour, so the top of the previous stitch is the new colour.",
+              "fix": "This is correct behaviour for some patterns (where the colour change should sit slightly to the side). For a clean colour change at exactly the next stitch, work the last yarn-over of the previous stitch with the OLD colour, then start the next stitch with the new colour from its first yarn-over."
+            }
           ]
         }
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once the basic end-of-stitch join feels natural, colour-change patterns open up — stripes, granny squares with multiple colours per round, tapestry crochet motifs. The same yarn-change move covers all of them. For projects that use small lengths of many colours (intarsia, motif inserts), the Russian join saves significant sewing-in time at the end." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the basic end-of-stitch join feels natural, colour-change patterns open up — stripes, granny squares with multiple colours per round, tapestry crochet motifs. The same yarn-change move covers all of them. For projects that use small lengths of many colours (intarsia, motif inserts), the Russian join saves significant sewing-in time at the end."
+          }
+        ]
+      }
     ]
   }
 }

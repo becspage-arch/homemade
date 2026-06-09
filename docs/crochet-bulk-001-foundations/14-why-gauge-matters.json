@@ -14,44 +14,247 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["gauge"]
+    "craftTechniqueTags": [
+      "gauge"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "measuring-tape-soft", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "size-drift", "term": "Size drift", "definition": "Small gauge mismatches accumulating across a piece — half a stitch off per 10 cm becomes several stitches off across the finished width." }
+    {
+      "slug": "size-drift",
+      "term": "Size drift",
+      "definition": "Small gauge mismatches accumulating across a piece — half a stitch off per 10 cm becomes several stitches off across the finished width."
+    }
   ],
-  "techniqueSlugs": ["crochet-why-gauge-matters", "crochet-gauge-swatching-basics"],
-  "criticalTechniques": ["crochet-gauge-swatching-basics"],
-  "aliases": ["gauge matters", "why swatch", "size drift"],
+  "techniqueSlugs": [
+    "crochet-why-gauge-matters",
+    "crochet-gauge-swatching-basics"
+  ],
+  "criticalTechniques": [
+    "crochet-gauge-swatching-basics"
+  ],
+  "aliases": [
+    "gauge matters",
+    "why swatch",
+    "size drift"
+  ],
   "heroPrompt": "Two identical crochet hat patterns photographed side by side on a pale background — one fits a head, one is twice the size and hanging loose, both in the same cream DK cotton — the gauge difference is visible.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Gauge is the single line of communication between the pattern's design and your hands. The designer worked the original piece at a specific stitches-per-10-cm count. If your stitch count differs, every measurement in the pattern shifts." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Half a stitch off per 10 cm sounds harmless. Across a one-metre blanket width, that's five whole stitches — about 3 cm of size drift. Across a 1.5 m throw, the drift is 4.5 cm. Across a garment chest measurement of 100 cm, it's 5 cm — the difference between a fitted top and a sloppy fit. The maths is unforgiving." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Where gauge mismatch hides" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Gauge mismatches come from three sources, and you can't fix them by trying harder mid-pattern." }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge is the single line of communication between the pattern's design and your hands. The designer worked the original piece at a specific stitches-per-10-cm count. If your stitch count differs, every measurement in the pattern shifts."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Half a stitch off per 10 cm sounds harmless. Across a one-metre blanket width, that's five whole stitches — about 3 cm of size drift. Across a 1.5 m throw, the drift is 4.5 cm. Across a garment chest measurement of 100 cm, it's 5 cm — the difference between a fitted top and a sloppy fit. The maths is unforgiving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where gauge mismatch hides"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge mismatches come from three sources, and you can't fix them by trying harder mid-pattern."
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hook size — your 4 mm hook produces a different stitch from the designer's 4 mm hook because different brands measure 4 mm slightly differently. A Clover Soft Touch and a Pony Easy-Grip both labelled 4 mm can vary by 0.1 mm." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tension — your hand grip on the working yarn, the pull-through speed, even the time of day. Some crocheters' tension loosens late in the evening; others tighten when stressed." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn substitution — even if the substitute is the same nominal weight (DK to DK), the actual yarn thickness varies between brands. Stylecraft Special DK and Drops Karisma DK both label as DK but tension to slightly different counts." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hook size — your 4 mm hook produces a different stitch from the designer's 4 mm hook because different brands measure 4 mm slightly differently. A Clover Soft Touch and a Pony Easy-Grip both labelled 4 mm can vary by 0.1 mm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tension — your hand grip on the working yarn, the pull-through speed, even the time of day. Some crocheters' tension loosens late in the evening; others tighten when stressed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yarn substitution — even if the substitute is the same nominal weight (DK to DK), the actual yarn thickness varies between brands. Stylecraft Special DK and Drops Karisma DK both label as DK but tension to slightly different counts."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The cost of skipping the swatch" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A swatch takes about half an hour. A garment that doesn't fit is anywhere from twenty to two hundred hours of work. A blanket that's 10 cm too short for the bed is fifty hours of work that needs a border or a redo. The arithmetic favours the swatch." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "On a quick item — a dishcloth, a coaster, a small bag — " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "size-drift" } }], "text": "size drift" }, { "type": "text", "text": " of a few centimetres is harmless. The piece still works. On a fitted garment or a sized blanket, drift is the difference between a finished piece and a wasted weekend." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worked example" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "A throw blanket pattern asks for 18 dc × 22 rows = 10 × 10 cm in DK cotton with a 4 mm hook. Your tension produces 16 dc × 22 rows on the same hook. The pattern's 200-stitch starting chain (designed for a 110 cm throw at 18 sts per 10 cm) becomes 125 cm wide on your tension. A 15 cm size drift — too wide for the sofa back, too wide for the lap." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Fixing this after row 5 means unravelling the whole piece. Fixing it before row 1 means swatching, dropping to a 3.75 mm hook, swatching again, then starting the throw at 18 sts per 10 cm. Half an hour against fifty." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When designers leave gauge out" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Some published patterns skip the gauge statement. This is bad practice; the pattern is incomplete. If you find a pattern with no gauge, you have two choices: work the pattern as written and accept that the finished size depends on your hands, or work a few rows and measure the result against your needs, adjusting hook size before continuing. For a fitted garment, skip the pattern altogether and pick one that quotes its gauge. The designer who can't tell you their gauge couldn't write the pattern with a fitted size in mind." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "If gauge swatching feels like extra work right now, start with non-fitted pieces — dishcloths, coasters, throws sized only to a rough target. Build the habit of measuring on those, and the swatch becomes automatic by the time you tackle a garment. The reading on gauge swatching basics walks through the practical mechanics of the swatch itself." }] }
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The cost of skipping the swatch"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A swatch takes about half an hour. A garment that doesn't fit is anywhere from twenty to two hundred hours of work. A blanket that's 10 cm too short for the bed is fifty hours of work that needs a border or a redo. The arithmetic favours the swatch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a quick item — a dishcloth, a coaster, a small bag — "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "size-drift"
+                }
+              }
+            ],
+            "text": "size drift"
+          },
+          {
+            "type": "text",
+            "text": " of a few centimetres is harmless. The piece still works. On a fitted garment or a sized blanket, drift is the difference between a finished piece and a wasted weekend."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A throw blanket pattern asks for 18 dc × 22 rows = 10 × 10 cm in DK cotton with a 4 mm hook. Your tension produces 16 dc × 22 rows on the same hook. The pattern's 200-stitch starting chain (designed for a 110 cm throw at 18 sts per 10 cm) becomes 125 cm wide on your tension. A 15 cm size drift — too wide for the sofa back, too wide for the lap."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixing this after row 5 means unravelling the whole piece. Fixing it before row 1 means swatching, dropping to a 3.75 mm hook, swatching again, then starting the throw at 18 sts per 10 cm. Half an hour against fifty."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When designers leave gauge out"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Some published patterns skip the gauge statement. This is bad practice; the pattern is incomplete. If you find a pattern with no gauge, you have two choices: work the pattern as written and accept that the finished size depends on your hands, or work a few rows and measure the result against your needs, adjusting hook size before continuing. For a fitted garment, skip the pattern altogether and pick one that quotes its gauge. The designer who can't tell you their gauge couldn't write the pattern with a fitted size in mind."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If gauge swatching feels like extra work right now, start with non-fitted pieces — dishcloths, coasters, throws sized only to a rough target. Build the habit of measuring on those, and the swatch becomes automatic by the time you tackle a garment. The reading on gauge swatching basics walks through the practical mechanics of the swatch itself."
+          }
+        ]
+      }
     ]
   }
 }

@@ -14,50 +14,302 @@
     "primaryHookSlug": "crochet-hook-4-0mm",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [],
-    "craftTechniqueTags": ["tension", "troubleshooting"]
+    "craftTechniqueTags": [
+      "tension",
+      "troubleshooting"
+    ]
   },
   "recipeTools": [
-    { "slug": "crochet-hook-4-0mm", "isOptional": false },
-    { "slug": "measuring-tape-soft", "isOptional": false }
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [
-    { "slug": "yarn-tension", "term": "Yarn tension", "definition": "The grip your hands have on the working yarn as you crochet. Too tight gives stiff fabric; too loose gives floppy fabric. Tension is mostly habit, learned over the first few projects." }
+    {
+      "slug": "yarn-tension",
+      "term": "Yarn tension",
+      "definition": "The grip your hands have on the working yarn as you crochet. Too tight gives stiff fabric; too loose gives floppy fabric. Tension is mostly habit, learned over the first few projects."
+    }
   ],
-  "techniqueSlugs": ["crochet-tension-troubleshooting"],
-  "criticalTechniques": ["crochet-tension-troubleshooting"],
-  "aliases": ["tension problems", "tight crochet", "loose crochet", "uneven stitches"],
+  "techniqueSlugs": [
+    "crochet-tension-troubleshooting"
+  ],
+  "criticalTechniques": [
+    "crochet-tension-troubleshooting"
+  ],
+  "aliases": [
+    "tension problems",
+    "tight crochet",
+    "loose crochet",
+    "uneven stitches"
+  ],
   "heroPrompt": "Three crochet swatches side by side on a pale background — one tight and curled, one loose and floppy, one even and flat — all in cream DK cotton with a 4 mm hook.",
   "body": {
     "type": "doc",
     "content": [
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Tension problems show up in the fabric. Too tight — the fabric is stiff, curls at the edges, the hook fights its way into each stitch. Too loose — the fabric is floppy, the stitches look spread out, the hook slides through too easily. Uneven — some rows tight, some loose, the fabric ripples." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Most " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-tension" } }], "text": "yarn tension" }, { "type": "text", "text": " problems are habit, not skill. The hands learn over the first few projects. The fixes below cover the common causes." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Too tight" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Signs: the fabric feels like cardboard. The hook needs a pull to enter each stitch. Curl appears at the edges, especially on double crochet. The piece feels heavier than the same square would feel from a shop." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Causes:" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tension problems show up in the fabric. Too tight — the fabric is stiff, curls at the edges, the hook fights its way into each stitch. Too loose — the fabric is floppy, the stitches look spread out, the hook slides through too easily. Uneven — some rows tight, some loose, the fabric ripples."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-tension"
+                }
+              }
+            ],
+            "text": "yarn tension"
+          },
+          {
+            "type": "text",
+            "text": " problems are habit, not skill. The hands learn over the first few projects. The fixes below cover the common causes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Too tight"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Signs: the fabric feels like cardboard. The hook needs a pull to enter each stitch. Curl appears at the edges, especially on double crochet. The piece feels heavier than the same square would feel from a shop."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Causes:"
+          }
+        ]
+      },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gripping the hook too hard. Common when learning — the hand tenses." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pulling the working yarn too tightly through the hand that controls tension." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Watching every stitch carefully — close attention often produces tight tension." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gripping the hook too hard. Common when learning — the hand tenses."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pulling the working yarn too tightly through the hand that controls tension."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Watching every stitch carefully — close attention often produces tight tension."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Fixes: relax the grip — both on the hook and on the working yarn. Try a hook one size larger (4.5 mm instead of 4 mm) for the same yarn. If the larger hook gives the right tension, default to it. Take a five-minute break every twenty minutes when learning; tension naturally tightens with fatigue." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Too loose" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Signs: the fabric drapes more than it should. Stitches look spread out — daylight visible through what should be a dense fabric. The hook slides through too easily. The piece feels lighter than expected." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Causes: not enough grip on the working yarn, or learning crochet after a strong knitting habit where the working yarn naturally sits loose. Less common than too-tight tension." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Fixes: wrap the working yarn one more time around the index finger of the non-hook hand. Try a hook one size smaller (3.5 mm instead of 4 mm). Check that you're not pulling the loop on the hook too far through — the pull-through should leave the loop at the same position on the hook each time." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Uneven across the row" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Signs: some stitches in a row are tight, some loose. The row tops are an uneven line. The piece ripples instead of sitting flat." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Causes: tension swings during the row — distraction, changing hand position, putting the work down mid-row. Common when learning multiple stitches in the same piece." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Fixes: work each stitch the same way. Don't change hand position mid-row. If you put the work down, mark the stitch you stopped on with a locking marker and resume with the same grip. For the first few projects, finish a row before stopping; the consistency teaches the hands faster than corrections do." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Tighter on one edge than the other" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Signs: the right edge of the piece sits higher or lower than the left edge. The shape becomes a parallelogram, not a rectangle." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Causes: the turning chain or the first stitch of each row is consistently tighter or looser than the rest. This is the most-common asymmetric problem for new crocheters." }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Fixes: work the first stitch of every row at the same tension as the middle of the row. Don't pull the turning chain extra-tight to \"anchor\" it. For double crochet (1-chain turning chain that doesn't count), the first dc enters the very first stitch — not skipped. For treble (3-chain turning chain that counts), the first worked tr skips the first stitch and goes into the second." }] },
-      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
-      { "type": "paragraph", "content": [{ "type": "text", "text": "Once tension is consistent on a 10 × 10 cm swatch, the next test is the gauge swatch — same swatch, but measured against a pattern's expected gauge. Tension and gauge are the same thing measured differently; consistent tension produces gauge that matches the pattern. If your tension is reliable but gauge is still off, the fix is a hook size change, not a tension change." }] }
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixes: relax the grip — both on the hook and on the working yarn. Try a hook one size larger (4.5 mm instead of 4 mm) for the same yarn. If the larger hook gives the right tension, default to it. Take a five-minute break every twenty minutes when learning; tension naturally tightens with fatigue."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Too loose"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Signs: the fabric drapes more than it should. Stitches look spread out — daylight visible through what should be a dense fabric. The hook slides through too easily. The piece feels lighter than expected."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Causes: not enough grip on the working yarn, or learning crochet after a strong knitting habit where the working yarn naturally sits loose. Less common than too-tight tension."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixes: wrap the working yarn one more time around the index finger of the non-hook hand. Try a hook one size smaller (3.5 mm instead of 4 mm). Check that you're not pulling the loop on the hook too far through — the pull-through should leave the loop at the same position on the hook each time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Uneven across the row"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Signs: some stitches in a row are tight, some loose. The row tops are an uneven line. The piece ripples instead of sitting flat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Causes: tension swings during the row — distraction, changing hand position, putting the work down mid-row. Common when learning multiple stitches in the same piece."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixes: work each stitch the same way. Don't change hand position mid-row. If you put the work down, mark the stitch you stopped on with a locking marker and resume with the same grip. For the first few projects, finish a row before stopping; the consistency teaches the hands faster than corrections do."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Tighter on one edge than the other"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Signs: the right edge of the piece sits higher or lower than the left edge. The shape becomes a parallelogram, not a rectangle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Causes: the turning chain or the first stitch of each row is consistently tighter or looser than the rest. This is the most-common asymmetric problem for new crocheters."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixes: work the first stitch of every row at the same tension as the middle of the row. Don't pull the turning chain extra-tight to \"anchor\" it. For double crochet (1-chain turning chain that doesn't count), the first dc enters the very first stitch — not skipped. For treble (3-chain turning chain that counts), the first worked tr skips the first stitch and goes into the second."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once tension is consistent on a 10 × 10 cm swatch, the next test is the gauge swatch — same swatch, but measured against a pattern's expected gauge. Tension and gauge are the same thing measured differently; consistent tension produces gauge that matches the pattern. If your tension is reliable but gauge is still off, the fix is a hook size change, not a tension change."
+          }
+        ]
+      }
     ]
   }
 }
