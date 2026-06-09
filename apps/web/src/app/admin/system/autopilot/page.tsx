@@ -154,7 +154,14 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
     UNVERIFIED: number
     REJECTED: number
     REJECTED_USED_PROCEDURAL: number
-  } = { VERIFIED: 0, UNVERIFIED: 0, REJECTED: 0, REJECTED_USED_PROCEDURAL: 0 }
+    SYNTHETIC_FALLBACK: number
+  } = {
+    VERIFIED: 0,
+    UNVERIFIED: 0,
+    REJECTED: 0,
+    REJECTED_USED_PROCEDURAL: 0,
+    SYNTHETIC_FALLBACK: 0,
+  }
   for (const g of verificationGroups) {
     verificationCounts[g.verificationStatus] = g._count._all
   }
@@ -162,7 +169,8 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
     verificationCounts.VERIFIED +
     verificationCounts.UNVERIFIED +
     verificationCounts.REJECTED +
-    verificationCounts.REJECTED_USED_PROCEDURAL
+    verificationCounts.REJECTED_USED_PROCEDURAL +
+    verificationCounts.SYNTHETIC_FALLBACK
   const verificationCoverage =
     verificationTotal > 0
       ? Math.round((verificationCounts.VERIFIED / verificationTotal) * 100)

@@ -140,7 +140,11 @@ async function main() {
 
     await prisma.tutorial.update({
       where: { id: row.id },
-      data: { body: { ...body, content }, sourceNotes },
+      data: {
+        body: { ...body, content },
+        sourceNotes,
+        diagramGenerationStatus: 'SUCCESS',
+      },
     })
 
     console.log(`  wired: ${slug} (+${newImages.length} image${newImages.length === 1 ? '' : 's'})`)
