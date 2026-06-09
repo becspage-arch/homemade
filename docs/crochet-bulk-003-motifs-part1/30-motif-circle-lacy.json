@@ -1,0 +1,674 @@
+{
+  "slug": "crochet-motif-circle-lacy",
+  "title": "Lacy circle motif",
+  "subtitle": "Treble shells and chain spaces in a snowflake-like disc",
+  "excerpt": "Four rounds of treble shells separated by chain-2 spaces produce a 14 cm open-work disc with six-point symmetry.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886). Weldon's Practical Crochet.",
+  "heroPrompt": "Lacy crocheted circle motif in white DK cotton, 14 cm diameter, on a pale blue linen background, soft natural light, top-down view showing open chain spaces",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "4 rounds in DK cotton = 14 cm diameter with a 4 mm hook.",
+    "finishedSizeText": "14 cm diameter (after blocking).",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Lacy circle motif chart",
+      "layout": "round",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Work outward from the magic ring. Chain loops form the open lattice of rounds 2 and 4.",
+      "rounds": [
+        {
+          "roundNumber": 1,
+          "stitches": [
+            {
+              "symbol": "magic-ring",
+              "count": 1
+            },
+            {
+              "symbol": "treble",
+              "count": 12
+            }
+          ],
+          "note": "MR, ch 3 (counts as first tr), 11 tr, sl st to top of ch 3. (12 tr.)"
+        },
+        {
+          "roundNumber": 2,
+          "stitches": [
+            {
+              "symbol": "chain",
+              "count": 36
+            }
+          ],
+          "note": "*Ch 3, sl st into next tr*; repeat around. (12 ch-3 loops.)"
+        },
+        {
+          "roundNumber": 3,
+          "stitches": [
+            {
+              "symbol": "double-crochet-uk",
+              "count": 12
+            },
+            {
+              "symbol": "half-treble",
+              "count": 24
+            },
+            {
+              "symbol": "treble",
+              "count": 12
+            }
+          ],
+          "note": "Into each ch-3 loop: (dc, htr, tr, htr, dc). (12 small shells.)"
+        },
+        {
+          "roundNumber": 4,
+          "stitches": [
+            {
+              "symbol": "chain",
+              "count": 48
+            }
+          ],
+          "note": "*Ch 4, sl st into tip of next shell*; repeat around. (12 ch-4 loops.)"
+        }
+      ]
+    },
+    "craftStitchSlugs": [
+      "crochet-magic-ring",
+      "crochet-chain",
+      "crochet-double-uk",
+      "crochet-half-treble",
+      "crochet-treble",
+      "crochet-slip-stitch"
+    ],
+    "craftTechniqueTags": [
+      "magic-ring",
+      "in-the-round",
+      "lace",
+      "blocking"
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "stitch-marker",
+      "isOptional": true
+    },
+    {
+      "slug": "blocking-mat",
+      "isOptional": true
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "definition": "An adjustable loop that closes tightly when the tail is pulled, leaving no hole at the centre of a worked-in-the-round piece.",
+      "slug": "magic-ring",
+      "term": "Magic ring"
+    },
+    {
+      "definition": "UK treble crochet (US double crochet): yarn over twice before inserting the hook, worked off in three stages.",
+      "slug": "treble",
+      "term": "Treble"
+    },
+    {
+      "definition": "UK half treble (US half double crochet): yarn over once, insert hook, pull through, yarn over and pull through all three loops.",
+      "slug": "half-treble",
+      "term": "Half treble"
+    },
+    {
+      "definition": "UK double crochet (US single crochet): insert hook, yarn over, pull through, yarn over, pull through both loops.",
+      "slug": "double-crochet-uk",
+      "term": "Double crochet (UK)"
+    },
+    {
+      "definition": "A joining stitch worked by inserting the hook and pulling yarn through both the stitch and the loop on the hook in one movement.",
+      "slug": "slip-stitch",
+      "term": "Slip stitch"
+    },
+    {
+      "definition": "Wetting or steaming a finished piece and pinning it to measurements so stitches open and the piece holds its shape when dry.",
+      "slug": "blocking",
+      "term": "Blocking"
+    }
+  ],
+  "techniqueSlugs": [
+    "magic-ring",
+    "working-in-the-round",
+    "blocking"
+  ],
+  "criticalTechniques": [
+    "magic-ring",
+    "blocking"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lacy circle replaces solid double crochet increases with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "treble"
+                }
+              }
+            ],
+            "text": "treble"
+          },
+          {
+            "type": "text",
+            "text": " shells separated by chain loops, so by round 4 the disc is mostly open space. The six-point symmetry of the increase distribution makes the finished motif look like a snowflake from above. Because lace crochet collapses until "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocking"
+                }
+              }
+            ],
+            "text": "blocked"
+          },
+          {
+            "type": "text",
+            "text": ", pinning is not optional: it opens the chain loops to their full width and sets the snowflake silhouette."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "materials"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Yarn: DK weight cotton, approximately 25 m per motif. Hook: 4 mm. Notions: tapestry needle, scissors, blocking mat, blocking pins."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "4 rounds in DK cotton with a 4 mm hook = 14 cm diameter after blocking. Before blocking the motif may measure only 10-11 cm; this is normal. Blocking is part of the construction process for lace motifs, not an optional finishing step."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "magic-ring"
+                        }
+                      }
+                    ],
+                    "text": "Magic ring"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (MR)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Chain (ch)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "double-crochet-uk"
+                        }
+                      }
+                    ],
+                    "text": "Double crochet"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (dc) — UK terminology"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "half-treble"
+                        }
+                      }
+                    ],
+                    "text": "Half treble"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (htr) — UK terminology"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "treble"
+                        }
+                      }
+                    ],
+                    "text": "Treble"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (tr) — UK terminology"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "slip-stitch"
+                        }
+                      }
+                    ],
+                    "text": "Slip stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (sl st)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 1"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-ring"
+                }
+              }
+            ],
+            "text": "magic ring"
+          },
+          {
+            "type": "text",
+            "text": ". Ch 3 (counts as first "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "treble"
+                }
+              }
+            ],
+            "text": "tr"
+          },
+          {
+            "type": "text",
+            "text": " throughout). Work 11 tr into the ring. Pull tail to close. Join with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "slip-stitch"
+                }
+              }
+            ],
+            "text": "sl st"
+          },
+          {
+            "type": "text",
+            "text": " to top of ch 3. (12 tr.)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 2"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "*Ch 3, sl st into next tr*; repeat from * to * around. (12 ch-3 loops.)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 3"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work into each ch-3 loop: (1 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "double-crochet-uk"
+                }
+              }
+            ],
+            "text": "dc"
+          },
+          {
+            "type": "text",
+            "text": ", 1 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "half-treble"
+                }
+              }
+            ],
+            "text": "htr"
+          },
+          {
+            "type": "text",
+            "text": ", 1 tr, 1 htr, 1 dc). Sl st to close each shell as you finish it if desired. (12 small shells of 5 sts each = 60 sts.)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 4"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "*Ch 4, sl st into the tip tr of next shell*; repeat from * to * around. Fasten off. (12 ch-4 loops.)"
+          }
+        ]
+      },
+      {
+        "type": "craftChart",
+        "attrs": {
+          "slug": "crochet-motif-circle-lacy"
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in the starting and finishing tails securely. Wet-block by soaking in cold water for 10 minutes, press out excess moisture in a clean towel, then pin each of the 12 chain loops open to a blocking mat. Use rust-proof pins. Leave overnight. The difference between an unblocked and a blocked lacy circle is dramatic; do not skip this step."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Joining"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Join lacy circles to each other by linking corresponding ch-4 loops with a short length of chain or a sl st join before the last round is complete. The open loops at round 4 provide natural attachment points without needing to sew through solid fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash in cool water with a small amount of mild detergent. Rinse gently without wringing. Block again after each wash if the shape needs resetting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The lacy circle is a good preparation for the lace square motif, which uses the same chain-arch technique but at square corners. You can also combine lacy circles with solid flat circles in the same blanket, alternating the two types for a textured, mixed look."
+          }
+        ]
+      }
+    ]
+  }
+}
