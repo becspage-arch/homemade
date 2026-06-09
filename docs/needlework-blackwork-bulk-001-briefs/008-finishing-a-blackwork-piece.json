@@ -1,0 +1,117 @@
+{
+  "slug": "finishing-a-blackwork-piece",
+  "title": "Finishing a blackwork piece",
+  "subtitle": "Washing, pressing, and mounting after the last stitch",
+  "excerpt": "A finished blackwork piece needs washing to remove hoop marks and hand oils, pressing to flatten and square the cloth, and mounting or framing to display it. Each step matters: a well-finished piece will still look clean in thirty years.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "blackwork",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Weldon's Practical Needlework (1880s to 1900s), finishing and mounting chapters. Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776.",
+  "recipeTools": [
+    { "slug": "embroidery-scissors", "isOptional": false },
+    { "slug": "embroidery-hoop-8", "isOptional": true }
+  ],
+  "techniqueSlugs": ["tying-off-cleanly", "mounting-fabric-in-hoop"],
+  "criticalTechniques": ["tying-off-cleanly"],
+  "aliases": ["finishing embroidery", "washing blackwork", "mounting embroidery", "framing blackwork"],
+  "glossaryTerms": [
+    { "slug": "tying-off-cleanly", "term": "Tying off cleanly", "definition": "Ending a thread by weaving the tail under several stitches on the back of the work so it cannot pull out. No knots." },
+    { "slug": "lacing-embroidery", "term": "Lacing embroidery", "definition": "Mounting a finished embroidery over a board by stitching the fabric edges together at the back, holding the cloth taut without glue." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the last stitch is in place and all threads are " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tying-off-cleanly", "label": "tied off cleanly" } }], "text": "tied off cleanly" },
+          { "type": "text", "text": ", the finishing sequence takes about thirty minutes and makes a measurable difference to the final result." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Washing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Remove the work from the hoop. Fill a basin with cool water and a small amount of gentle washing liquid." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Submerge the work and move it gently through the water. Do not wring or scrub. The aim is to lift oils and hoop marks, not to stress the thread." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Rinse in cool clean water until no trace of the washing liquid remains. Lift gently out, roll in a clean towel to absorb excess water, and lay flat to dry." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Place the work face down on a thick towel. The soft surface protects the stitching from being flattened by the iron." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Press with a warm iron using light steam while the cloth is still slightly damp. Move the iron slowly across the back; do not press hard. Linen may need a slightly higher heat than cotton evenweave." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Check that the corners are square and the grain is straight. Ease the cloth gently into shape while warm if needed." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mounting" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For framing, the most archivally stable method is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lacing-embroidery" } }], "text": "lacing" },
+          { "type": "text", "text": " the cloth over an acid-free board. Centre the design on the board, fold the edges over, and lace the flaps together with strong thread on the back, pulling alternately from top-to-bottom and side-to-side until the cloth sits evenly taut." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For display in a hoop, remove the inner ring, replace the work in a clean hoop without the outer screw ring bearing directly on the stitching, and tighten gently. Line the inner ring with cotton twill tape to protect the cloth from hoop marks in long-term display." }
+        ]
+      }
+    ]
+  }
+}

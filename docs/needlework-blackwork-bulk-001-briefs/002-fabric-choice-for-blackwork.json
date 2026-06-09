@@ -1,0 +1,134 @@
+{
+  "slug": "fabric-choice-for-blackwork",
+  "title": "Fabric choice for blackwork",
+  "subtitle": "Count and colour: two decisions before you buy cloth",
+  "excerpt": "Blackwork needs evenweave fabric so the stitches sit at even distances from each other. The fabric count determines the finished size; the fabric colour frames the black thread. Both decisions are made before you cut your cloth.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "blackwork",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Weldon's Practical Needlework series (1880s to 1900s), blackwork sampler chapters.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-26", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "mounting-fabric-in-hoop"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["blackwork fabric", "evenweave for blackwork", "fabric count blackwork", "cloth for counted embroidery"],
+  "glossaryTerms": [
+    { "slug": "evenweave", "term": "Evenweave", "definition": "Fabric woven with the same number of threads per centimetre in both directions. Blackwork is counted over these even intersections." },
+    { "slug": "fabric-count", "term": "Fabric count", "definition": "The number of threads per inch in each direction. Higher count means smaller stitches and finer detail." },
+    { "slug": "linen-28", "term": "28-count linen", "definition": "Linen woven at 28 threads per inch. A standard choice for blackwork, giving a finished stitch size of roughly 1 mm each." }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Blackwork is a counted stitch, so the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "evenweave" } }], "text": "evenweave" },
+          { "type": "text", "text": " fabric must have the same thread count in both directions. Warp and weft at different counts produce distorted stitches; the diagonal fills in fill patterns look wrong, and outlines that should be square end up as rectangles." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing a count" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fabric-count" } }], "text": "fabric count" },
+          { "type": "text", "text": " determines how large your finished stitches are. A 25-count cloth gives stitches roughly 1 mm across when worked over one thread. A 28-count cloth gives slightly smaller stitches. A 32-count cloth is fine work best seen under daylight." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a first blackwork piece, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "linen-28" } }], "text": "28-count linen" },
+          { "type": "text", "text": " is a reasonable starting point. The stitches are clear enough to count without magnification, and two strands of stranded cotton fill the holes without puckering." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Traditional blackwork uses black thread on white or cream cloth. The contrast lets the pattern read clearly. Antique linen has a warm cream tone that softens the black thread; bleached white linen gives a sharper, more graphic result." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Modern blackwork sometimes uses charcoal thread on coloured cloth, or dark red or navy on cream. These work well as long as there is strong contrast between thread and ground. A 50 per cent mid-tone ground with a mid-tone thread will produce a flat, hard-to-read result." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fabric preparation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Cut the cloth several centimetres larger than the finished design on all sides. You need working room around the stitched area for mounting in the hoop." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Oversew or tape the raw edges to prevent fraying during stitching. A zigzag stitch by machine works well; a whip stitch by hand is slower but equally effective." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Fold and press lightly to find the centre. Mark it with a pin or a tacking thread. This becomes your starting point when you are following " },
+              { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reading-a-counted-chart", "label": "reading a counted chart" } }], "text": "reading a counted chart" },
+              { "type": "text", "text": "." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Mount in a hoop. Blackwork worked in the hand tends to pull unevenly; the hoop keeps consistent tension." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "Fabric-related issues that show up early.",
+          "items": [
+            {
+              "symptom": "Stitches look uneven in one direction",
+              "cause": "The fabric is not a true evenweave; warp and weft thread counts differ.",
+              "fix": "Count threads along both axes before cutting. If the counts differ, choose a different fabric."
+            },
+            {
+              "symptom": "Thread puckers the fabric",
+              "cause": "Using too many strands for the fabric count.",
+              "fix": "On 28-count, two strands of stranded cotton is standard. On 32-count, drop to one strand."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
