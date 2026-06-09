@@ -81,6 +81,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     })
   }
+
+  // Group landings (Food / Make / Skills / Home — Mindset and Grow are
+  // 1:1 with their category and already covered by the category loop).
+  for (const path of ['/food', '/make', '/skills', '/home']) {
+    entries.push({
+      url: siteUrl(path),
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    })
+  }
   for (const path of [
     '/legal/privacy',
     '/legal/terms',

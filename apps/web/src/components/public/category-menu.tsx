@@ -50,13 +50,13 @@ const NAV_GROUPS: NavGroup[] = [
   {
     key: 'food',
     label: 'Food',
-    cta: { label: 'What are you cooking? →', href: '/cooking' },
+    cta: { label: 'See all food →', href: '/food' },
     slugs: ['cooking', 'baking', 'herbal-medicine'],
   },
   {
     key: 'make',
     label: 'Make',
-    cta: { label: 'Open the Studio →', href: '/cross-stitch' },
+    cta: { label: 'See all make →', href: '/make' },
     slugs: [
       'cross-stitch',
       'knitting',
@@ -69,7 +69,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     key: 'skills',
     label: 'Skills',
-    cta: { label: 'Start with foundations →', href: '/pottery-ceramics' },
+    cta: { label: 'See all skills →', href: '/skills' },
     slugs: ['wood-natural-craft', 'paper-word', 'pottery-ceramics'],
   },
   {
@@ -88,7 +88,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     key: 'home',
     label: 'Home',
-    cta: { label: 'What needs fixing? →', href: '/home-repair' },
+    cta: { label: 'See all home →', href: '/home' },
     slugs: [
       'home-repair',
       'animals-smallholding',

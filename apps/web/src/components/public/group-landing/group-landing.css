@@ -1,0 +1,277 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Group-landing pages (/food, /make, /skills, /home).
+   Editorial register: Fraunces / Lora, sage / cream / warm-taupe.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.group-landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.group-landing-hero-zone {
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 32px;
+}
+
+.group-landing-hero.home-hero-feature {
+  height: 64vh;
+  min-height: 420px;
+  max-height: 720px;
+}
+
+.group-landing-hero .home-hero-title {
+  font-size: 60px;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+}
+
+@media (min-width: 1440px) {
+  .group-landing-hero .home-hero-title {
+    font-size: 72px;
+  }
+}
+
+/* ── Per-category band ─────────────────────────────────────────────────── */
+
+.group-landing-category-section {
+  padding: 48px 0;
+  border-top: 0.5px solid var(--color-linen-grey);
+}
+
+.group-landing-category-section:first-of-type {
+  border-top: 0;
+  padding-top: 24px;
+}
+
+.group-landing-category-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.group-landing-category-title {
+  font-family: var(--font-fraunces);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.group-landing-category-lede {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  line-height: 1.55;
+  margin: 6px 0 0;
+  max-width: 60ch;
+}
+
+.group-landing-category-cta {
+  font-family: var(--font-lora);
+  font-size: 13.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  text-decoration: none;
+  white-space: nowrap;
+  align-self: center;
+  transition: color 0.15s ease;
+}
+
+.group-landing-category-cta:hover {
+  color: var(--color-espresso);
+}
+
+.group-landing-category-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px 16px;
+}
+
+/* ── Intro band (under hero, above the first category section) ────────── */
+
+.group-landing-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin: 24px 0 8px;
+  padding-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .group-landing-intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.group-landing-intro-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin: 0 0 8px;
+}
+
+.group-landing-intro-headline {
+  font-family: var(--font-fraunces);
+  font-size: 32px;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.group-landing-intro-body {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  margin: 0;
+}
+
+/* ── Cross-category seasonal / "made this week" band ──────────────────── */
+
+.group-landing-cross-rail {
+  margin: 24px 0;
+}
+
+/* ── Featured pull-block (used by /make for the Studio entry) ─────────── */
+
+.group-landing-feature-band {
+  margin: 48px 0;
+  padding: 40px;
+  background: var(--color-soft-parchment);
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .group-landing-feature-band {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
+.group-landing-feature-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin: 0 0 8px;
+}
+
+.group-landing-feature-title {
+  font-family: var(--font-fraunces);
+  font-size: 36px;
+  letter-spacing: -0.01em;
+  color: var(--color-espresso);
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.group-landing-feature-body {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  margin: 0 0 20px;
+}
+
+.group-landing-feature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.group-landing-feature-action {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-decoration: none;
+  border: 0.5px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.group-landing-feature-action.primary {
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border-color: var(--color-sage);
+}
+
+.group-landing-feature-action.primary:hover {
+  background: var(--color-espresso);
+  border-color: var(--color-espresso);
+}
+
+.group-landing-feature-action.ghost {
+  background: transparent;
+  color: var(--color-sage);
+  border-color: var(--color-linen-grey);
+}
+
+.group-landing-feature-action.ghost:hover {
+  background: var(--color-cream);
+  border-color: var(--color-sage);
+}
+
+.group-landing-feature-media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.group-landing-feature-media-tile {
+  aspect-ratio: 1;
+  background: var(--color-cream);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.group-landing-feature-media-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92);
+}
+
+@media (max-width: 900px) {
+  .group-landing { padding: 0 16px 64px; }
+  .group-landing-hero.home-hero-feature {
+    height: 56vh;
+    min-height: 360px;
+  }
+  .group-landing-hero .home-hero-title {
+    font-size: 38px;
+  }
+  .group-landing-category-section {
+    padding: 32px 0;
+  }
+  .group-landing-category-title {
+    font-size: 28px;
+  }
+  .group-landing-category-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px 12px;
+  }
+  .group-landing-intro-headline {
+    font-size: 24px;
+  }
+}
