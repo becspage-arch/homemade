@@ -4,7 +4,7 @@
 // shape primitives directly. This helper exposes a single entry point
 // for tooling that wants to switch shape dynamically.
 
-import type { AmigurumiGauge, AmigurumiPiece, AmigurumiShape } from './types'
+import type { AmigurumiGauge, AmigurumiPiece } from './types'
 import { sphere } from './shapes/sphere'
 import { cylinder } from './shapes/cylinder'
 import { cone } from './shapes/cone'

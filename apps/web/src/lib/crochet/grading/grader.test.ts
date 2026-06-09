@@ -168,7 +168,8 @@ for (const ref of REFERENCES) {
         divergence = `${(((act - exp) / exp) * 100).toFixed(1)}%`
       }
 
-      let yarnExp = '-', yarnAct = String(graded.yarnRequiredGrams)
+      let yarnExp = '-'
+      const yarnAct = String(graded.yarnRequiredGrams)
       if (ref.expected.yarnGramsLow !== undefined && ref.expected.yarnGramsHigh !== undefined) {
         yarnExp = `${ref.expected.yarnGramsLow}-${ref.expected.yarnGramsHigh}`
         assert.ok(
