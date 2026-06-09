@@ -4,10 +4,13 @@
  *
  *   - Tutorial body has at least one image from a known PD source folder
  *     (currently /tutorial-diagrams/crochet/{sub}/_sources/) → SUCCESS
- *   - Otherwise: status stays PENDING (we have NOT actively determined
- *     there is no source; the topic just hasn't been processed yet).
- *     The wiring scripts mark NO_SOURCE when they explicitly try a
- *     known source list and find no match (manifest gaps list).
+ *   - Foundations sub-category tutorials that don't have a Dillmont
+ *     diagram are flagged NO_SOURCE per the 2026-06-09 policy decision
+ *     (see feedback_image_strategy.md): modern techniques + maintenance /
+ *     seaming topics ship text-only, user-submitted photos fill the gap
+ *     over time, never commissioned, never AI-generated.
+ *   - Other sub-categories: status stays PENDING until their own source
+ *     coverage decision lands.
  *
  * Idempotent — safe to re-run after wiring scripts add new images.
  *
@@ -65,13 +68,26 @@ async function main() {
     return
   }
 
+  const foundationsSub = await prisma.subCategory.findFirst({
+    where: { categoryId: cat.id, slug: 'foundations' },
+    select: { id: true },
+  })
+
   const tutorials = await prisma.tutorial.findMany({
     where: { categoryId: cat.id, status: 'PUBLISHED' },
-    select: { id: true, slug: true, body: true, diagramGenerationStatus: true },
+    select: {
+      id: true,
+      slug: true,
+      subCategoryId: true,
+      body: true,
+      diagramGenerationStatus: true,
+    },
   })
 
   let flippedToSuccess = 0
   let alreadySuccess = 0
+  let flippedToNoSource = 0
+  let alreadyNoSource = 0
   let stayedPending = 0
 
   for (const t of tutorials) {
@@ -86,14 +102,31 @@ async function main() {
         data: { diagramGenerationStatus: 'SUCCESS' },
       })
       flippedToSuccess++
-      console.log(`  SUCCESS: ${t.slug}`)
+      console.log(`  SUCCESS:   ${t.slug}`)
+      continue
+    }
+
+    // No diagram. Foundations → NO_SOURCE per the 2026-06-09 policy.
+    // Other sub-categories stay PENDING until their own source decision.
+    const isFoundations = foundationsSub && t.subCategoryId === foundationsSub.id
+    if (isFoundations) {
+      if (t.diagramGenerationStatus === 'NO_SOURCE') {
+        alreadyNoSource++
+        continue
+      }
+      await prisma.tutorial.update({
+        where: { id: t.id },
+        data: { diagramGenerationStatus: 'NO_SOURCE' },
+      })
+      flippedToNoSource++
+      console.log(`  NO_SOURCE: ${t.slug}`)
     } else {
       stayedPending++
     }
   }
 
   console.log(
-    `\nDone. flippedToSuccess=${flippedToSuccess}  alreadySuccess=${alreadySuccess}  stayedPending=${stayedPending}  total=${tutorials.length}`,
+    `\nDone. flippedToSuccess=${flippedToSuccess}  alreadySuccess=${alreadySuccess}  flippedToNoSource=${flippedToNoSource}  alreadyNoSource=${alreadyNoSource}  stayedPending=${stayedPending}  total=${tutorials.length}`,
   )
   await prisma.$disconnect()
 }

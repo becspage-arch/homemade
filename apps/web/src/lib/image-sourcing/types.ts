@@ -19,7 +19,6 @@ export type ImageSource =
   | 'wikimedia'
   | 'pixabay'
   | 'flux-schnell'
-  | 'flux-dev-img2img'
   | 'procedural-card'
   | 'original'
   | 'manual-upload'
