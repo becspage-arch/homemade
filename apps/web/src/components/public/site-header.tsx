@@ -9,7 +9,15 @@ export async function SiteHeader() {
     prisma.category.findMany({
       where: { isPublicVisible: true },
       orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
-      select: { slug: true, name: true, archetype: true },
+      select: {
+        slug: true,
+        name: true,
+        archetype: true,
+        subCategories: {
+          orderBy: [{ order: 'asc' }, { name: 'asc' }],
+          select: { slug: true, name: true },
+        },
+      },
     }),
     getCurrentDbUser(),
   ])
@@ -18,6 +26,7 @@ export async function SiteHeader() {
     slug: c.slug,
     name: c.name,
     archetype: c.archetype,
+    subCategories: c.subCategories,
   }))
 
   const greeting = dbUser?.name?.split(' ')[0] ?? null

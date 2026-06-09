@@ -3,12 +3,18 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
+interface MenuSubCategory {
+  slug: string
+  name: string
+}
+
 interface MenuCategory {
   slug: string
   name: string
   /** Archetype is still used downstream for layout routing; we don't surface
    *  it in the nav, but we keep it on the interface so the wiring is honest. */
   archetype: string
+  subCategories: MenuSubCategory[]
 }
 
 interface CategoryMenuProps {
@@ -17,24 +23,28 @@ interface CategoryMenuProps {
   all: MenuCategory[]
 }
 
-type GroupKey = 'food' | 'make' | 'skills' | 'practice' | 'grow' | 'home'
+type GroupKey = 'food' | 'make' | 'skills' | 'mindset' | 'grow' | 'home'
 
 interface NavGroup {
   key: GroupKey
-  /** Short top-line label (Food / Make / Skills / Practice / Grow / Home). */
+  /** Short top-line label (Food / Make / Skills / Mindset / Grow / Home). */
   label: string
   /** Per-group anchor CTA in the dropdown footer. */
   cta: { label: string; href: string }
-  /** Ordered list of category slugs that belong to this group. */
+  /** Ordered list of category slugs that belong to this group. Ignored when
+   *  `expandSubsOf` is set. */
   slugs: string[]
+  /** Optional: when set, the dropdown shows the sub-categories of this
+   *  category as the menu items, each linking to /{slug}?sub={subSlug}. The
+   *  `slugs` array is ignored. The category's own page is reachable via
+   *  the dropdown CTA. */
+  expandSubsOf?: string
 }
 
 /**
  * Top-line nav groups. Decoupled from `Category.archetype` so the nav
  * grouping is an editorial decision, not a side effect of the layout
  * router. Categories not listed here are hidden from the nav.
- *
- * Order of `slugs` is the visible order inside each dropdown.
  */
 const NAV_GROUPS: NavGroup[] = [
   {
@@ -63,10 +73,11 @@ const NAV_GROUPS: NavGroup[] = [
     slugs: ['wood-natural-craft', 'paper-word', 'pottery-ceramics'],
   },
   {
-    key: 'practice',
-    label: 'Practice',
+    key: 'mindset',
+    label: 'Mindset',
     cta: { label: 'How are you feeling? →', href: '/mindset' },
     slugs: ['mindset'],
+    expandSubsOf: 'mindset',
   },
   {
     key: 'grow',
@@ -87,28 +98,51 @@ const NAV_GROUPS: NavGroup[] = [
   },
 ]
 
-interface ResolvedGroup extends NavGroup {
-  categories: MenuCategory[]
+interface MenuItem {
+  /** Display label. */
+  name: string
+  /** Resolved href (/cooking, /mindset?sub=tapping, etc.). */
+  href: string
+  /** Stable key for React. */
+  key: string
+}
+
+interface ResolvedGroup {
+  key: GroupKey
+  label: string
+  cta: { label: string; href: string }
+  items: MenuItem[]
 }
 
 function resolveGroups(all: MenuCategory[]): ResolvedGroup[] {
   const bySlug = new Map<string, MenuCategory>()
   for (const c of all) bySlug.set(c.slug, c)
-  return NAV_GROUPS.map((g) => ({
-    ...g,
-    categories: g.slugs
-      .map((slug) => bySlug.get(slug))
-      .filter((c): c is MenuCategory => c !== undefined),
-  })).filter((g) => g.categories.length > 0)
+
+  return NAV_GROUPS.map((g): ResolvedGroup => {
+    let items: MenuItem[] = []
+    if (g.expandSubsOf) {
+      const parent = bySlug.get(g.expandSubsOf)
+      if (parent) {
+        items = parent.subCategories.map((sc) => ({
+          name: sc.name,
+          href: `/${parent.slug}?sub=${sc.slug}`,
+          key: `${parent.slug}:${sc.slug}`,
+        }))
+      }
+    } else {
+      items = g.slugs
+        .map((slug) => bySlug.get(slug))
+        .filter((c): c is MenuCategory => c !== undefined)
+        .map((c) => ({ name: c.name, href: `/${c.slug}`, key: c.slug }))
+    }
+    return { key: g.key, label: g.label, cta: g.cta, items }
+  }).filter((g) => g.items.length > 0)
 }
 
 /**
  * Header category menu — six top-line nav groups on desktop, each opening
- * its own focused dropdown with the categories underneath. Hamburger-into-
- * sheet on mobile (accordion of the same groups).
- *
- * No archetype titles or ledes in the panels: the group name is the only
- * label the user needs.
+ * its own focused dropdown with the categories (or sub-categories)
+ * underneath. Hamburger-into-sheet on mobile (accordion of the same groups).
  */
 export function CategoryMenu({ all }: CategoryMenuProps) {
   const [openGroup, setOpenGroup] = useState<GroupKey | null>(null)
@@ -163,15 +197,15 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                   aria-label={group.label}
                 >
                   <ul className="header-archetype-panel-list">
-                    {group.categories.map((cat) => (
-                      <li key={cat.slug}>
+                    {group.items.map((item) => (
+                      <li key={item.key}>
                         <Link
-                          href={`/${cat.slug}`}
+                          href={item.href}
                           role="menuitem"
                           className="header-archetype-panel-link"
                           onClick={() => setOpenGroup(null)}
                         >
-                          {cat.name}
+                          {item.name}
                         </Link>
                       </li>
                     ))}
@@ -235,19 +269,19 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                   <summary className="header-nav-sheet-group-summary">
                     <span className="header-nav-sheet-group-title">{group.label}</span>
                     <span className="header-nav-sheet-group-count">
-                      {group.categories.length}
+                      {group.items.length}
                     </span>
                   </summary>
                   <div className="header-nav-sheet-group-body">
                     <nav className="header-nav-sheet-group-list" aria-label={group.label}>
-                      {group.categories.map((cat) => (
+                      {group.items.map((item) => (
                         <Link
-                          key={cat.slug}
-                          href={`/${cat.slug}`}
+                          key={item.key}
+                          href={item.href}
                           className="header-nav-sheet-group-link"
                           onClick={() => setSheetOpen(false)}
                         >
-                          {cat.name}
+                          {item.name}
                         </Link>
                       ))}
                     </nav>
