@@ -356,9 +356,9 @@ model Category {
   // routine falls back to the legacy `docs/{slug}-author.md` convention
   // (single prompt). Non-empty = the routine picks one type per fire
   // (weighted by coverage gap) and routes to
-  // `docs/{slug}-{type-lower}-author.md`. Crochet seeds with TECHNIQUE,
-  // STITCH, MOTIF, HOMEWARE; GARMENT + AMIGURUMI wait for Worker X2's
-  // grading library + shape math.
+  // `docs/{slug}-{type-lower}-author.md`. Crochet X1 seeded TECHNIQUE,
+  // STITCH, MOTIF, HOMEWARE; X2 (phase_crochet_x2_grading_001) adds
+  // GARMENT + AMIGURUMI once the grading + shape math libraries land.
   //
   // `techniqueSlugs`, `criticalTechniques`, `aliases` are the category-
   // level reference set per the pipeline-setup memory rule. Populated

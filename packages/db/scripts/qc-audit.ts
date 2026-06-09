@@ -84,6 +84,15 @@ export type QCRuleKind =
   | 'prose-prep-steps'
   | 'opening-pattern-missing-hook'
   | 'content-type-opening-mismatch'
+  // Crochet pattern rules (phase_crochet_x2)
+  | 'garment-grading-inconsistency'
+  | 'garment-stitch-count-vs-measurement-mismatch'
+  | 'garment-yardage-implausible'
+  | 'amigurumi-piece-count-mismatch'
+  | 'amigurumi-assembly-incomplete'
+  | 'amigurumi-shape-math-implausible'
+  | 'hook-yarn-weight-mismatch'
+  | 'gauge-out-of-range'
 
 export interface QCFinding {
   severity: QCSeverity
@@ -545,6 +554,217 @@ function walkGlossaryTooltipSlugs(body: unknown): string[] {
   return [...out]
 }
 
+// ─── Crochet pattern QC rules (phase_crochet_x2) ────────────────────────────
+//
+// These rules check the CrochetPattern shape attached to a Tutorial:
+// graded sizes consistency, stitch-count / measurement match, yardage
+// plausibility, amigurumi piece + assembly integrity, hook + yarn weight
+// pairing per the CYC standard, and gauge sanity. All rules are BLOCK
+// (per the no-warning-tiers project rule).
+
+interface GradedSize {
+  size?: string
+  bust?: number
+  body?: number
+  hemStitches?: number
+  bustStitches?: number
+  yarnRequiredGrams?: number
+  yarnRequiredYards?: number
+  finishedMeasurements?: { bust?: number; body?: number }
+  gauge?: { stitchesPer10cm?: number; rowsPer10cm?: number }
+  shape?: string
+}
+
+interface AmigurumiPieceDef {
+  name?: string
+  label?: string
+  sectionLabel?: string
+  makeQuantity?: number
+}
+
+const STITCH_BUST_TOLERANCE_CM = 1.5
+const SIZE_JUMP_TOLERANCE = 0.30
+const HOOK_RANGE_BY_WEIGHT: Record<number, { min: number; max: number }> = {
+  0: { min: 1.5, max: 2.5 },
+  1: { min: 2.0, max: 3.5 },
+  2: { min: 3.0, max: 4.5 },
+  3: { min: 3.5, max: 5.5 },
+  4: { min: 4.5, max: 6.5 },
+  5: { min: 6.0, max: 9.5 },
+  6: { min: 9.0, max: 15.5 },
+  7: { min: 15.0, max: 30.0 },
+}
+
+// Typical stitch count per 10 cm by yarn weight (single crochet, average
+// tension). Used by gauge-out-of-range to flag obviously implausible
+// gauges (e.g. 30 sts/10cm in aran, which would indicate a typo or wrong
+// weight pairing).
+const GAUGE_RANGE_BY_WEIGHT: Record<number, { stitchMin: number; stitchMax: number }> = {
+  0: { stitchMin: 28, stitchMax: 44 },
+  1: { stitchMin: 22, stitchMax: 32 },
+  2: { stitchMin: 19, stitchMax: 26 },
+  3: { stitchMin: 16, stitchMax: 22 },
+  4: { stitchMin: 12, stitchMax: 18 },
+  5: { stitchMin: 8, stitchMax: 14 },
+  6: { stitchMin: 6, stitchMax: 11 },
+  7: { stitchMin: 4, stitchMax: 8 },
+}
+
+function parseGauge(gaugeText: string | null): { stitchesPer10cm: number } | null {
+  if (!gaugeText) return null
+  const match = /(\d{1,3}(?:\.\d+)?)\s*(?:sts?|stitches?)\s*(?:per|\/|in|×)\s*10\s*cm/i.exec(gaugeText)
+  if (match) return { stitchesPer10cm: Number(match[1]) }
+  // Also accept "<n> sts × <m> rows = 10cm" form.
+  const altMatch = /(\d{1,3}(?:\.\d+)?)\s*sts?\s*×\s*\d/i.exec(gaugeText)
+  if (altMatch) return { stitchesPer10cm: Number(altMatch[1]) }
+  return null
+}
+
+function auditCrochetPattern(p: NonNullable<TutorialRow['crochetPattern']>): QCFinding[] {
+  const findings: QCFinding[] = []
+
+  // Garment-only checks: sizesGraded sanity.
+  if (p.shapeCategory === 'GARMENT' && Array.isArray(p.sizesGraded)) {
+    const graded = p.sizesGraded as GradedSize[]
+
+    // Cross-size monotonicity.
+    for (let i = 1; i < graded.length; i++) {
+      const prev = graded[i - 1]!
+      const curr = graded[i]!
+      const prevBust = prev.bustStitches ?? prev.hemStitches
+      const currBust = curr.bustStitches ?? curr.hemStitches
+      if (typeof prevBust === 'number' && typeof currBust === 'number') {
+        if (currBust < prevBust) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-grading-inconsistency',
+            message: `Cross-size: ${curr.size ?? `index ${i}`} has fewer bust stitches (${currBust}) than ${prev.size ?? `index ${i - 1}`} (${prevBust}); grading must not shrink.`,
+          })
+        } else if ((currBust - prevBust) / prevBust > SIZE_JUMP_TOLERANCE) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-grading-inconsistency',
+            message: `Cross-size: ${prev.size ?? `index ${i - 1}`} → ${curr.size ?? `index ${i}`} bust grows by ${Math.round(((currBust - prevBust) / prevBust) * 100)}% which exceeds the grading-jump tolerance.`,
+          })
+        }
+      }
+    }
+
+    // Per-size stitch count vs finished bust match.
+    for (const s of graded) {
+      const bustStitches = s.bustStitches ?? s.hemStitches
+      const finishedBust = s.finishedMeasurements?.bust ?? s.bust
+      const stitchesPer10cm = s.gauge?.stitchesPer10cm
+      if (typeof bustStitches === 'number' && typeof finishedBust === 'number' && typeof stitchesPer10cm === 'number' && s.shape !== 'SIDE_TO_SIDE') {
+        const computedBust = (bustStitches / stitchesPer10cm) * 10
+        if (Math.abs(computedBust - finishedBust) > STITCH_BUST_TOLERANCE_CM) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-stitch-count-vs-measurement-mismatch',
+            message: `Size ${s.size ?? '(unnamed)'}: bustStitches (${bustStitches}) at gauge ${stitchesPer10cm}sts/10cm implies ${computedBust.toFixed(1)}cm but finishedMeasurements.bust is ${finishedBust}cm  -  beyond ${STITCH_BUST_TOLERANCE_CM}cm tolerance.`,
+          })
+        }
+      }
+      // Yardage plausibility  -  yards per square cm of body × bust surface.
+      if (typeof s.yarnRequiredGrams === 'number' && typeof finishedBust === 'number') {
+        const finishedBody = s.finishedMeasurements?.body ?? s.body
+        if (typeof finishedBody === 'number') {
+          const surfaceSqCm = finishedBust * finishedBody
+          if (surfaceSqCm > 0) {
+            const gramsPerSqCm = s.yarnRequiredGrams / surfaceSqCm
+            if (gramsPerSqCm < 0.003 || gramsPerSqCm > 0.12) {
+              findings.push({
+                severity: 'BLOCK',
+                kind: 'garment-yardage-implausible',
+                message: `Size ${s.size ?? '(unnamed)'}: yarnRequiredGrams ${s.yarnRequiredGrams}g over ${surfaceSqCm.toFixed(0)}sq cm = ${(gramsPerSqCm * 100).toFixed(3)}g/100sq.cm which is outside the plausible 0.3-12g range.`,
+              })
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Amigurumi checks: piece count + buildOrder integrity.
+  if (p.shapeCategory === 'AMIGURUMI') {
+    const pieces = Array.isArray(p.pieces) ? (p.pieces as AmigurumiPieceDef[]) : []
+    const buildOrder = Array.isArray(p.buildOrder) ? (p.buildOrder as string[]) : []
+    const pieceNames = new Set(pieces.map(pc => pc.name ?? pc.label ?? pc.sectionLabel).filter((n): n is string => !!n))
+
+    for (const ref of buildOrder) {
+      if (typeof ref === 'string' && ref !== 'Assembly' && !pieceNames.has(ref)) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'amigurumi-piece-count-mismatch',
+          message: `buildOrder references "${ref}" but no piece in pieces[] has that name / label.`,
+        })
+      }
+    }
+    for (const name of pieceNames) {
+      if (!buildOrder.includes(name)) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'amigurumi-assembly-incomplete',
+          message: `Piece "${name}" is not referenced in buildOrder  -  pattern reader will not know when to make it.`,
+        })
+      }
+    }
+
+    // Shape math implausibility: each piece must declare a positive
+    // makeQuantity and a non-empty name.
+    for (const piece of pieces) {
+      const name = piece.name ?? piece.label ?? piece.sectionLabel
+      if (!name) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'amigurumi-shape-math-implausible',
+          message: 'A piece in pieces[] has no name / label / sectionLabel  -  every piece must be identifiable.',
+        })
+      }
+      if (typeof piece.makeQuantity === 'number' && piece.makeQuantity <= 0) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'amigurumi-shape-math-implausible',
+          message: `Piece "${name ?? '(unnamed)'}" has makeQuantity ${piece.makeQuantity} which is non-positive.`,
+        })
+      }
+    }
+  }
+
+  // Hook + yarn weight pairing.
+  if (p.primaryHook && p.primaryYarnWeight) {
+    const cat = p.primaryYarnWeight.standardCategory
+    const range = HOOK_RANGE_BY_WEIGHT[cat]
+    if (range) {
+      const mm = p.primaryHook.mmSize
+      if (mm < range.min || mm > range.max) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'hook-yarn-weight-mismatch',
+          message: `Hook size ${mm}mm sits outside the standard ${range.min}-${range.max}mm range for ${p.primaryYarnWeight.slug} (CYC category ${cat}).`,
+        })
+      }
+    }
+  }
+
+  // Gauge sanity.
+  if (p.primaryYarnWeight && p.gaugeText) {
+    const parsed = parseGauge(p.gaugeText)
+    if (parsed) {
+      const range = GAUGE_RANGE_BY_WEIGHT[p.primaryYarnWeight.standardCategory]
+      if (range && (parsed.stitchesPer10cm < range.stitchMin || parsed.stitchesPer10cm > range.stitchMax)) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'gauge-out-of-range',
+          message: `Gauge ${parsed.stitchesPer10cm}sts/10cm is outside the plausible ${range.stitchMin}-${range.stitchMax}sts/10cm range for ${p.primaryYarnWeight.slug} yarn.`,
+        })
+      }
+    }
+  }
+
+  return findings
+}
+
 // ─── Per-tutorial QC ────────────────────────────────────────────────────────
 
 interface TutorialRow {
@@ -572,6 +792,21 @@ interface TutorialRow {
   }>
   recipeTools: Array<{ id: string; toolId: string | null }>
   category: { slug: string }
+  crochetPattern: {
+    id: string
+    shapeCategory: string | null
+    construction: string | null
+    sizesGraded: unknown
+    yardageBySize: unknown
+    pieces: unknown
+    buildOrder: unknown
+    gaugeText: string | null
+    primaryYarnWeight: { slug: string; standardCategory: number } | null
+    primaryHook: {
+      mmSize: number
+      suitableYarnWeightSlugs: string[]
+    } | null
+  } | null
 }
 
 export function auditTutorial(t: TutorialRow): QCVerdict {
@@ -1001,6 +1236,11 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
     })
   }
 
+  // ─── Crochet pattern rules (phase_crochet_x2) ─────────────────────────────
+  if (t.crochetPattern) {
+    findings.push(...auditCrochetPattern(t.crochetPattern))
+  }
+
   // ─── Glossary integrity (BLOCK) ───────────────────────────────────────────
   // GlossaryTerm is a global table in this schema (not per-tutorial). The QC
   // rule is "every inline glossaryTooltip mark must resolve to a real
@@ -1102,6 +1342,20 @@ async function main(): Promise<void> {
       recipeIngredients: { select: { id: true, amount: true, unit: true, ingredientId: true } },
       recipeTools: { select: { id: true, toolId: true } },
       category: { select: { slug: true } },
+      crochetPattern: {
+        select: {
+          id: true,
+          shapeCategory: true,
+          construction: true,
+          sizesGraded: true,
+          yardageBySize: true,
+          pieces: true,
+          buildOrder: true,
+          gaugeText: true,
+          primaryYarnWeight: { select: { slug: true, standardCategory: true } },
+          primaryHook: { select: { mmSize: true, suitableYarnWeightSlugs: true } },
+        },
+      },
     },
     orderBy: { slug: 'asc' },
     take: flags.limit ?? undefined,
