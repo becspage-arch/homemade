@@ -870,6 +870,90 @@ model Tutorial {
   craftTechniqueTags String[] @default([])
 
   // ──────────────────────────────────────────────────────────────────────────
+  // Phase Knitting pipeline (phase_knitting_001) — knitting-specific
+  // Tutorial metadata. Set on rows where `type IN (STITCH, PATTERN)` and
+  // the tutorial sits under the `knitting` Category. Sized to cover the
+  // full knitting catalogue: garments, accessories, colourwork, lace,
+  // cable / Aran, brioche, and double-knit. All fields nullable so
+  // existing rows (and non-knitting rows) need no backfill.
+  //
+  // Method enums are stored as String? for forwards compatibility — adding
+  // a new cast-on or bind-off variant doesn't require a migration. The
+  // upload script validates against the canonical method vocabulary in
+  // `apps/web/src/lib/knitting/methods.ts`.
+  //
+  // `secondaryNeedleSizes` JSON shape:
+  //   [{ section: 'ribbing', needleSlug: 'needle-3-25-mm' },
+  //    { section: 'body',    needleSlug: 'needle-4-mm'   }]
+  // — many garment patterns use a smaller needle for ribbing. The primary
+  // needle on `primaryNeedleId` stays the body / main needle.
+  //
+  // `secondaryYarnWeightIds` carries additional YarnWeight IDs for
+  // colourwork patterns that hold two or more strands, or for fades.
+  //
+  // `easePresetSlug` links to the EasePreset table the crochet grading
+  // library introduced; knitting reuses the same vocabulary (`negative-
+  // ease-2cm`, `relaxed-fit-5cm`, `oversized-15cm`, etc.).
+  //
+  // `gaugeInPatternStitch` JSON shape:
+  //   { stitchesPer10cm: 22, rowsPer10cm: 30, stitchName: 'cable panel A',
+  //     blocked: true }
+  // — for cable / lace / brioche patterns where the stockinette gauge
+  // differs from the pattern gauge. `gaugeText` carries the human-
+  // readable phrasing; this column captures the structured numbers.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  /// Cast-on method: `LONG_TAIL`, `CABLE`, `GERMAN_TWISTED`,
+  /// `PROVISIONAL`, `ITALIAN_TUBULAR`, `OLD_NORWEGIAN`,
+  /// `BACKWARD_LOOP`, `JUDYS_MAGIC`, `KNITTED_ON`, `CROCHET_PROVISIONAL`.
+  castOnMethod String?
+
+  /// Bind-off method: `STANDARD`, `STRETCHY`, `TUBULAR`, `SEWN`,
+  /// `JENYS_SURPRISINGLY_STRETCHY`, `THREE_NEEDLE`, `I_CORD`,
+  /// `RUSSIAN_GRAFT`, `PICOT`, `SUSPENDED`.
+  bindOffMethod String?
+
+  /// In-the-round working method: `MAGIC_LOOP`, `TWO_CIRCULARS`, `DPN`,
+  /// `SHORT_CIRCULAR`, `STRAIGHT_FLAT`. Default authoring assumption is
+  /// `MAGIC_LOOP`; the Studio surfaces the others as toggles where the
+  /// pattern documents method-specific variants.
+  inTheRoundMethod String?
+
+  /// Per-section secondary needles. Null when the pattern uses one needle
+  /// throughout. JSON array of `{ section, needleSlug }` entries.
+  secondaryNeedleSizes Json?
+
+  /// Secondary yarn weights for multi-yarn patterns (colourwork,
+  /// stranded, fade). Empty array on single-yarn patterns. Slugs
+  /// reference the master `YarnWeight` table.
+  secondaryYarnWeightIds String[] @default([])
+
+  /// Slug of the EasePreset row this pattern grades from. Used by the
+  /// grading library to pick the right finished-bust offset.
+  easePresetSlug String?
+
+  /// Pattern-stitch gauge when it differs from stockinette gauge. JSON
+  /// `{ stitchesPer10cm, rowsPer10cm, stitchName, blocked }`.
+  gaugeInPatternStitch Json?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Cross-category Foundations (phase_knitting_001). Foundations tutorials
+  // that apply across crafts (blocking fundamentals, ergonomics, yarn
+  // substitution maths, ball-band reading) cross-list under multiple
+  // category landing pages without duplicating the row. The category page
+  // surfaces tutorials where the page's slug appears in either the
+  // tutorial's primary Category or in `crossCategoryWith`.
+  //
+  // Empty on the vast majority of tutorials. Set on the small set of
+  // genuinely cross-craft Foundations rows.
+  // ──────────────────────────────────────────────────────────────────────────
+
+  /// Category slugs this tutorial also appears under, beyond its primary
+  /// Category. e.g. `['crochet']` on a knitting blocking Foundations
+  /// tutorial that should also appear on the crochet Foundations page.
+  crossCategoryWith String[] @default([])
+
+  // ──────────────────────────────────────────────────────────────────────────
   // Phase Pottery & ceramics pipeline — equipment-barrier flags + master-
   // table slug references. Set on rows where `craftType = 'pottery-ceramics'`
   // (the discriminator pulls double-duty across the craft pipelines).
@@ -1042,6 +1126,12 @@ model Tutorial {
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
   @@index([type, terminologyConvention])
+  @@index([type, castOnMethod])
+  @@index([type, bindOffMethod])
+  @@index([type, inTheRoundMethod])
+  @@index([easePresetSlug])
+  @@index([secondaryYarnWeightIds], type: Gin)
+  @@index([crossCategoryWith], type: Gin)
   @@index([type, requiresKiln])
   @@index([type, requiresWheel])
   @@index([requiredClayBodies], type: Gin)

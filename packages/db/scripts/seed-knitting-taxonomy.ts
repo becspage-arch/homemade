@@ -5,10 +5,25 @@
  * (launchOrder 7). This script owns the sub-category list so the upload-
  * tutorial script has somewhere to land STITCH and PATTERN rows.
  *
- * Garment grading is out of scope at launch (no fitted-garment patterns
- * requiring pattern pieces / digitisation). A `garments` sub-category is
- * still seeded so the future graded-pattern work has a home without a
- * follow-up migration.
+ * Two axes co-exist:
+ *
+ *   - Project-shape sub-cats (stitches, foundations, scarves-shawls, hats,
+ *     dishcloths-homewares, baby, blankets, socks, garments) — primary
+ *     navigation matching how knitters actually search ("a hat", "a
+ *     blanket", "a sock").
+ *   - Technique-discipline sub-cats (colourwork, lace, cable-aran,
+ *     brioche-doubleknit, specialty) — secondary navigation for knitters
+ *     who search by technique ("Fair Isle hat", "Estonian lace shawl",
+ *     "brioche cowl").
+ *
+ * The two axes are not mutually exclusive — a colourwork hat sits under
+ * `hats` for project-shape browse and under `colourwork` for technique
+ * browse. `craftTechniqueTags` on the Tutorial row handles per-row
+ * cross-tagging beyond the sub-category assignment.
+ *
+ * Garment grading is in scope from K-8 onward (custom grading library +
+ * Patterns batch). The `garments` sub-category was seeded ahead of the
+ * grading work to avoid a follow-up migration.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-knitting-taxonomy.ts
@@ -102,6 +117,41 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Jumpers, cardigans, vests.',
     order: 90,
+  },
+  {
+    slug: 'colourwork',
+    name: 'Colourwork',
+    description:
+      'Fair Isle, Bohus, Scandinavian, Latvian, intarsia, stranded yokes.',
+    order: 100,
+  },
+  {
+    slug: 'lace',
+    name: 'Lace',
+    description:
+      'Shetland, Estonian, Russian, Faroese, Orenburg lace shawls and stoles.',
+    order: 110,
+  },
+  {
+    slug: 'cable-aran',
+    name: 'Cables & Aran',
+    description:
+      'Cabled sweaters, Aran jumpers, Bavarian twisted-stitch, Saxon and Celtic cable panels.',
+    order: 120,
+  },
+  {
+    slug: 'brioche-doubleknit',
+    name: 'Brioche & double-knit',
+    description:
+      'One-colour and two-colour brioche, double-knitting, reversible fabrics.',
+    order: 130,
+  },
+  {
+    slug: 'specialty',
+    name: 'Specialty',
+    description:
+      'Entrelac, modular and mitred work, beaded knitting, steeking projects.',
+    order: 140,
   },
 ]
 
