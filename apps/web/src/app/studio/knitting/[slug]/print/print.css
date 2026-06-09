@@ -1,0 +1,199 @@
+/* Knitting pattern print — server-rendered, browser-print-to-PDF.
+   Mirrors the crochet print sheet's shape with knitting-specific
+   chart sizing. */
+
+@page {
+  size: A4 portrait;
+  margin: 18mm 16mm;
+}
+
+.knit-print {
+  font-family: 'Lora', Georgia, serif;
+  color: #2b2b2b;
+  line-height: 1.55;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.knit-print-controls {
+  background: #faf6ef;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.knit-print-controls strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.knit-print-controls p {
+  margin: 0.4rem 0;
+  font-size: 0.92rem;
+  color: #5c5347;
+}
+
+.knit-print-controls code {
+  background: rgba(60, 47, 34, 0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.knit-print-article {
+  background: #fff;
+}
+
+.knit-print-header {
+  border-bottom: 1px solid #d8cfbc;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+}
+
+.knit-print-header h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0 0 4px;
+}
+
+.knit-print-designer {
+  color: #5c5347;
+  font-style: italic;
+  margin: 0 0 6px;
+}
+
+.knit-print-description {
+  margin: 0;
+  color: #5c5347;
+}
+
+.knit-print-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.knit-print-meta h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5c5347;
+}
+
+.knit-print-meta p,
+.knit-print-meta ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+.knit-print-meta li {
+  margin-bottom: 4px;
+}
+
+.knit-print-abbreviations {
+  margin: 20px 0;
+}
+
+.knit-print-abbreviations dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 16px;
+  font-size: 0.88rem;
+}
+
+.knit-print-abbreviations div {
+  display: flex;
+  gap: 6px;
+}
+
+.knit-print-abbreviations dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  min-width: 3em;
+}
+
+.knit-print-abbreviations dd {
+  margin: 0;
+  color: #5c5347;
+}
+
+.knit-print-pattern {
+  margin: 24px 0;
+}
+
+.knit-print-pattern h2,
+.knit-print-chart h2,
+.knit-print-abbreviations h2 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #d8cfbc;
+  padding-bottom: 4px;
+  margin: 20px 0 12px;
+}
+
+.knit-print-section h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 14px 0 6px;
+}
+
+.knit-print-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.knit-print-rows li {
+  padding: 6px 0;
+  border-bottom: 1px dashed #ecdfca;
+  font-size: 0.93rem;
+}
+
+.knit-print-row-count {
+  color: #5c5347;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.knit-print-chart {
+  margin-top: 24px;
+  page-break-inside: avoid;
+}
+
+.knit-print-chart--nokey .craft-chart__legend {
+  display: none;
+}
+
+.knit-print--bw .craft-chart {
+  filter: grayscale(1);
+}
+
+.knit-print-footer {
+  margin-top: 30px;
+  padding-top: 12px;
+  border-top: 1px solid #d8cfbc;
+  font-size: 0.78rem;
+  color: #8a8276;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.06em;
+}

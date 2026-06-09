@@ -1,0 +1,1159 @@
+/* ---------------------------------------------------------------------------
+   Knitting Studio — content-first surface for /studio/knitting.
+   Inherits the warm-neutral palette from the cross-stitch / crochet Studio
+   (declared as CSS variables on .studio-root) but uses a deeper sage-blue
+   accent to differentiate the category at a glance.
+
+   Visual contract carries through across the Studios:
+   - rounded corners, never sharp
+   - shadows for elevation, never 1px borders alone
+   - hover = 8–12% darken, never colour change
+   - one accent: sage-blue for primary action
+   - Fraunces for headings, Lora for body, JetBrains Mono for numerics
+--------------------------------------------------------------------------- */
+
+.knitting-studio-surface {
+  --knit-accent: #6b8a9b;
+  --knit-accent-strong: #4f6c7e;
+  --knit-accent-soft: rgba(107, 138, 155, 0.12);
+  --knit-current-band: rgba(107, 138, 155, 0.16);
+  --knit-complete-fade: rgba(60, 47, 34, 0.45);
+  --knit-rs: #b48a4e;
+  --knit-ws: #6a7c93;
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--studio-bg, #f5f0e8);
+  color: var(--studio-ink, #3d2f22);
+  font-family: var(--studio-font-body, 'Lora', Georgia, serif);
+  overflow: hidden;
+}
+
+/* ===== Empty state ==================================================== */
+
+.knitting-studio-empty-surface {
+  overflow-y: auto;
+  padding: 4rem 5vw 6rem;
+}
+
+.knitting-studio-empty {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.knitting-studio-empty-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.knitting-studio-empty-overline {
+  font-family: var(--studio-font-mono, monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--studio-ink-mute, #8a8276);
+  margin: 0 0 1rem;
+}
+
+.knitting-studio-empty-heading {
+  font-family: var(--studio-font-display, 'Fraunces', serif);
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: var(--studio-ink, #3d2f22);
+}
+
+.knitting-studio-empty-lede {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--studio-ink-soft, #5c5347);
+}
+
+.knitting-studio-empty-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.knitting-studio-empty-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: var(--studio-surface, #fafaf6);
+  border: none;
+  border-radius: var(--studio-radius-l, 14px);
+  padding: 1.4rem;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--studio-shadow-soft);
+  transition: transform 180ms var(--studio-easing-out), box-shadow 180ms var(--studio-easing-out),
+    background 180ms var(--studio-easing-out);
+  color: var(--studio-ink);
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.knitting-studio-empty-card:hover,
+.knitting-studio-empty-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--studio-shadow-pop);
+  background: var(--studio-surface-2, #f0e9da);
+  outline: none;
+}
+
+.knitting-studio-empty-card.primary {
+  background: var(--knit-accent);
+  color: #fff;
+}
+
+.knitting-studio-empty-card.primary:hover,
+.knitting-studio-empty-card.primary:focus-visible {
+  background: var(--knit-accent-strong);
+}
+
+.knitting-studio-empty-card-title {
+  font-family: var(--studio-font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.knitting-studio-empty-card-sub {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+.knitting-studio-empty-carrots {
+  margin-top: 3rem;
+  padding: 1.5rem 1.8rem;
+  background: var(--knit-accent-soft);
+  border-radius: var(--studio-radius-l);
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--studio-ink-soft);
+}
+
+.knitting-studio-empty-carrots strong {
+  color: var(--studio-ink);
+}
+
+/* ===== My projects ==================================================== */
+
+.knitting-studio-my-projects {
+  max-width: 1080px;
+  margin: 4rem auto 0;
+}
+
+.knitting-studio-my-projects-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.knitting-studio-my-projects-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.knitting-studio-my-projects-card {
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-m);
+  overflow: hidden;
+  box-shadow: var(--studio-shadow-soft);
+  transition: transform 160ms var(--studio-easing-out), box-shadow 160ms var(--studio-easing-out);
+}
+
+.knitting-studio-my-projects-card:hover,
+.knitting-studio-my-projects-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--studio-shadow-pop);
+}
+
+.knitting-studio-my-projects-card-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  color: inherit;
+  font-family: inherit;
+}
+
+.knitting-studio-my-projects-name {
+  font-family: var(--studio-font-display);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.knitting-studio-my-projects-sub {
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft);
+  margin-bottom: 0.3rem;
+}
+
+.knitting-studio-my-projects-time {
+  font-family: var(--studio-font-mono);
+  font-size: 0.72rem;
+  color: var(--studio-ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ===== Toolbar ======================================================== */
+
+.knitting-studio-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--studio-surface);
+  border-bottom: 1px solid var(--studio-line);
+  flex-wrap: wrap;
+}
+
+.knitting-studio-toolbar-title {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.knitting-studio-toolbar-name {
+  font-family: var(--studio-font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.knitting-studio-toolbar-designer {
+  font-size: 0.8rem;
+  color: var(--studio-ink-mute);
+  margin-top: 0.1rem;
+}
+
+.knitting-studio-toolbar-modes {
+  display: inline-flex;
+  background: var(--studio-bg);
+  border-radius: var(--studio-radius-m);
+  padding: 0.2rem;
+  gap: 0.15rem;
+}
+
+.knitting-studio-toolbar-mode {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--studio-radius-s);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft);
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+
+.knitting-studio-toolbar-mode:hover:not(:disabled),
+.knitting-studio-toolbar-mode:focus-visible {
+  background: var(--studio-surface-2);
+  outline: none;
+}
+
+.knitting-studio-toolbar-mode.is-active {
+  background: var(--studio-surface);
+  color: var(--studio-ink);
+  box-shadow: 0 1px 2px rgba(60, 47, 34, 0.06);
+}
+
+.knitting-studio-toolbar-mode:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.knitting-studio-toolbar-prefs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.knitting-studio-toolbar-action {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--studio-radius-s);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft);
+  text-decoration: none;
+  transition: background 140ms var(--studio-easing-out);
+}
+
+.knitting-studio-toolbar-action:hover,
+.knitting-studio-toolbar-action:focus-visible {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+  outline: none;
+}
+
+.knitting-studio-toolbar-action.is-active {
+  background: var(--knit-accent-soft);
+  color: var(--knit-accent-strong);
+}
+
+.knitting-studio-toolbar-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--studio-ink-mute);
+  display: inline-flex;
+  transition: background 140ms var(--studio-easing-out);
+}
+
+.knitting-studio-toolbar-close:hover,
+.knitting-studio-toolbar-close:focus-visible {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+  outline: none;
+}
+
+/* ===== Active project layout ========================================== */
+
+.knitting-studio-active {
+  flex: 1;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.knitting-studio-active.notes-open {
+  grid-template-columns: 1fr 320px;
+}
+
+.knitting-studio-active-main {
+  position: relative;
+  overflow: auto;
+  padding: 1.5rem;
+}
+
+.knitting-studio-active-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1.25rem;
+  background: var(--studio-surface);
+  border-top: 1px solid var(--studio-line);
+  font-size: 0.85rem;
+}
+
+.knitting-studio-active-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+
+.knitting-studio-active-progress-label {
+  font-family: var(--studio-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--studio-ink-mute);
+}
+
+.knitting-studio-active-footer-actions {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.knitting-studio-active-errata {
+  display: inline-flex;
+}
+
+.knitting-studio-notes-drawer {
+  background: var(--studio-surface);
+  border-left: 1px solid var(--studio-line);
+  padding: 1rem;
+  overflow-y: auto;
+  grid-row: 1 / -1;
+}
+
+/* ===== Chart viewport ================================================= */
+
+.knitting-chart-viewport {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--studio-radius-l);
+  background: var(--studio-surface);
+  overflow: hidden;
+  box-shadow: var(--studio-shadow-soft);
+}
+
+.knitting-chart-viewport-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0.9rem;
+  background: var(--studio-bg);
+  border-bottom: 1px solid var(--studio-line);
+  font-size: 0.8rem;
+}
+
+.knitting-chart-viewport-control-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.knitting-chart-viewport-iconbutton {
+  appearance: none;
+  border: none;
+  background: var(--studio-surface);
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--studio-radius-s);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.knitting-chart-viewport-iconbutton:hover,
+.knitting-chart-viewport-iconbutton:focus-visible {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+  outline: none;
+}
+
+.knitting-chart-viewport-iconbutton.is-active {
+  background: var(--knit-accent-soft);
+  color: var(--knit-accent-strong);
+}
+
+.knitting-chart-viewport-zoom-readout {
+  font-family: var(--studio-font-mono);
+  font-size: 0.78rem;
+  color: var(--studio-ink-mute);
+  min-width: 3.2em;
+  text-align: center;
+}
+
+.knitting-chart-viewport-canvas {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(60, 47, 34, 0.06) 1px, transparent 0)
+    0 0 / 12px 12px var(--studio-bg);
+  cursor: grab;
+}
+
+.knitting-chart-viewport-canvas.is-panning {
+  cursor: grabbing;
+}
+
+.knitting-chart-viewport-inner {
+  display: inline-block;
+  transform-origin: 0 0;
+  padding: 1.5rem;
+}
+
+.knitting-chart-viewport-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ===== Counter panel ================================================== */
+
+.knitting-counter-panel {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  box-shadow: var(--studio-shadow-pop);
+  padding: 0.9rem 1rem;
+  min-width: 240px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.knitting-counter-panel.is-collapsed {
+  padding: 0.5rem 0.7rem;
+  min-width: auto;
+}
+
+.knitting-counter-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--studio-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--studio-ink-mute);
+}
+
+.knitting-counter-panel-collapse {
+  margin-left: auto;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--studio-ink-mute);
+  padding: 0.2rem;
+  border-radius: var(--studio-radius-s);
+}
+
+.knitting-counter-panel-collapse:hover {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+}
+
+.knitting-counter-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.knitting-counter-row-label {
+  font-size: 0.8rem;
+  color: var(--studio-ink-soft);
+}
+
+.knitting-counter-row-value {
+  font-family: var(--studio-font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--studio-ink);
+  text-align: center;
+  min-width: 2em;
+}
+
+.knitting-counter-step-button {
+  appearance: none;
+  border: none;
+  background: var(--studio-bg);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--studio-ink-soft);
+  transition: background 140ms var(--studio-easing-out);
+}
+
+.knitting-counter-step-button:hover,
+.knitting-counter-step-button:focus-visible {
+  background: var(--knit-accent-soft);
+  color: var(--knit-accent-strong);
+  outline: none;
+}
+
+.knitting-counter-step-button.advance {
+  background: var(--knit-accent);
+  color: #fff;
+}
+
+.knitting-counter-step-button.advance:hover {
+  background: var(--knit-accent-strong);
+}
+
+.knitting-counter-rs-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--studio-font-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--studio-radius-s);
+}
+
+.knitting-counter-rs-marker.is-rs {
+  background: rgba(180, 138, 78, 0.18);
+  color: var(--knit-rs);
+}
+
+.knitting-counter-rs-marker.is-ws {
+  background: rgba(106, 124, 147, 0.18);
+  color: var(--knit-ws);
+}
+
+.knitting-counter-keyboard-hint {
+  font-family: var(--studio-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--studio-ink-mute);
+  text-align: center;
+}
+
+/* ===== Cable needle tracker =========================================== */
+
+.knitting-cable-tracker {
+  background: var(--studio-bg);
+  border-radius: var(--studio-radius-m);
+  padding: 0.6rem 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.knitting-cable-tracker-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--studio-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--studio-ink-mute);
+  margin-bottom: 0.4rem;
+}
+
+.knitting-cable-tracker-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.knitting-cable-tracker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.45rem;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-s);
+  font-size: 0.78rem;
+}
+
+.knitting-cable-tracker-item-desc {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.knitting-cable-tracker-item-position {
+  font-family: var(--studio-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--studio-ink-mute);
+}
+
+.knitting-cable-tracker-item-clear {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--studio-ink-mute);
+  padding: 0.15rem;
+  border-radius: var(--studio-radius-s);
+}
+
+.knitting-cable-tracker-item-clear:hover {
+  background: var(--studio-bg);
+  color: var(--studio-ink);
+}
+
+.knitting-cable-tracker-empty {
+  font-size: 0.75rem;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+}
+
+.knitting-cable-tracker-add {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.knitting-cable-tracker-add input {
+  flex: 1;
+  border: 1px solid var(--studio-line);
+  background: var(--studio-surface);
+  padding: 0.3rem 0.45rem;
+  border-radius: var(--studio-radius-s);
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: var(--studio-ink);
+}
+
+.knitting-cable-tracker-add input:focus-visible {
+  outline: 2px solid var(--knit-accent-soft);
+  border-color: var(--knit-accent);
+}
+
+.knitting-cable-tracker-add button {
+  appearance: none;
+  border: none;
+  background: var(--knit-accent);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--studio-radius-s);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+}
+
+.knitting-cable-tracker-add button:hover {
+  background: var(--knit-accent-strong);
+}
+
+/* ===== Project setup card ============================================ */
+
+.knitting-studio-project-setup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.knitting-studio-project-setup-card {
+  position: relative;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  box-shadow: var(--studio-shadow-pop);
+  padding: 1.8rem 2rem;
+  width: 100%;
+  max-width: 560px;
+}
+
+.knitting-studio-project-setup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--studio-ink-mute);
+  padding: 0.4rem;
+  border-radius: 50%;
+}
+
+.knitting-studio-project-setup-close:hover {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+}
+
+.knitting-studio-project-setup-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.knitting-studio-project-setup-lede {
+  color: var(--studio-ink-soft);
+  margin: 0 0 1.4rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.knitting-studio-project-setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1rem;
+}
+
+.knitting-studio-project-setup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.knitting-studio-project-setup-field.full {
+  grid-column: 1 / -1;
+}
+
+.knitting-studio-project-setup-field input,
+.knitting-studio-project-setup-field select {
+  border: 1px solid var(--studio-line);
+  background: var(--studio-bg);
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--studio-radius-s);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--studio-ink);
+}
+
+.knitting-studio-project-setup-field input:focus-visible,
+.knitting-studio-project-setup-field select:focus-visible {
+  outline: 2px solid var(--knit-accent-soft);
+  border-color: var(--knit-accent);
+}
+
+.knitting-studio-project-setup-field.colour input[type='color'] {
+  height: 36px;
+  padding: 0;
+}
+
+.knitting-studio-project-setup-swatch {
+  margin-top: 1.2rem;
+}
+
+.knitting-studio-project-setup-swatch-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--studio-ink-soft);
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+}
+
+.knitting-studio-project-setup-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.knitting-studio-project-setup-primary {
+  appearance: none;
+  border: none;
+  background: var(--knit-accent);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--studio-radius-m);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.knitting-studio-project-setup-primary:hover:not(:disabled) {
+  background: var(--knit-accent-strong);
+}
+
+.knitting-studio-project-setup-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.knitting-studio-project-setup-secondary {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--studio-ink-soft);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--studio-radius-m);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.knitting-studio-project-setup-secondary:hover {
+  color: var(--studio-ink);
+}
+
+.knitting-studio-project-setup-pattern-gauge {
+  grid-column: 1 / -1;
+  background: var(--knit-accent-soft);
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--studio-radius-s);
+  font-size: 0.82rem;
+  color: var(--studio-ink-soft);
+  margin: 0;
+}
+
+/* ===== Schematic view + substitution banner =========================== */
+
+.knitting-schematic-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  box-shadow: var(--studio-shadow-soft);
+}
+
+.knitting-schematic-view-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.knitting-schematic-view-image {
+  width: 100%;
+  background: var(--studio-bg);
+  border-radius: var(--studio-radius-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  color: var(--studio-ink-mute);
+  font-style: italic;
+}
+
+.knitting-schematic-view-sizes {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.knitting-schematic-view-size-chip {
+  appearance: none;
+  border: 1px solid var(--studio-line);
+  background: var(--studio-bg);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--studio-radius-s);
+  font-family: var(--studio-font-mono);
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--studio-ink-soft);
+}
+
+.knitting-schematic-view-size-chip.is-active {
+  background: var(--knit-accent);
+  border-color: var(--knit-accent);
+  color: #fff;
+}
+
+.knitting-schematic-view-measurements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.knitting-schematic-view-measurement-label {
+  display: block;
+  color: var(--studio-ink-mute);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.knitting-schematic-view-measurement-value {
+  font-family: var(--studio-font-mono);
+  font-size: 1.05rem;
+}
+
+/* ===== Yarn substitution calculator =================================== */
+
+.knitting-substitution {
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--studio-shadow-soft);
+  max-width: 720px;
+  margin: 1rem auto;
+}
+
+.knitting-substitution-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.knitting-substitution-lede {
+  color: var(--studio-ink-soft);
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+}
+
+.knitting-substitution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 1rem;
+}
+
+.knitting-substitution-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.knitting-substitution-field input,
+.knitting-substitution-field select {
+  border: 1px solid var(--studio-line);
+  background: var(--studio-bg);
+  padding: 0.4rem 0.55rem;
+  border-radius: var(--studio-radius-s);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--studio-ink);
+}
+
+.knitting-substitution-result {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--knit-accent-soft);
+  border-radius: var(--studio-radius-m);
+  font-size: 0.92rem;
+}
+
+.knitting-substitution-result.is-warning {
+  background: rgba(212, 142, 80, 0.16);
+  color: #8a4f1f;
+}
+
+.knitting-substitution-result-line {
+  font-family: var(--studio-font-mono);
+  font-size: 1.05rem;
+  margin: 0.3rem 0 0;
+}
+
+/* ===== Written view (simple list) ===================================== */
+
+.knitting-written-view {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--studio-surface);
+  border-radius: var(--studio-radius-l);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--studio-shadow-soft);
+}
+
+.knitting-written-section-heading {
+  font-family: var(--studio-font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.4rem 0 0.7rem;
+}
+
+.knitting-written-section-heading:first-of-type {
+  margin-top: 0;
+}
+
+.knitting-written-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.7rem;
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid var(--studio-line);
+  align-items: baseline;
+}
+
+.knitting-written-row.is-current {
+  background: var(--knit-current-band);
+  border-radius: var(--studio-radius-s);
+  margin: 0 -0.4rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-bottom-color: transparent;
+}
+
+.knitting-written-row.is-complete {
+  color: var(--knit-complete-fade);
+}
+
+.knitting-written-row-label {
+  font-family: var(--studio-font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--studio-ink-mute);
+  white-space: nowrap;
+}
+
+.knitting-written-row-instruction {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.knitting-written-row-stitchcount {
+  font-family: var(--studio-font-mono);
+  font-size: 0.82rem;
+  color: var(--studio-ink-mute);
+  white-space: nowrap;
+}
+
+.knitting-written-row-rs {
+  display: inline-block;
+  font-family: var(--studio-font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.knitting-written-row-rs.is-rs {
+  background: rgba(180, 138, 78, 0.18);
+  color: var(--knit-rs);
+}
+
+.knitting-written-row-rs.is-ws {
+  background: rgba(106, 124, 147, 0.18);
+  color: var(--knit-ws);
+}
+
+.knitting-written-row-toggle {
+  appearance: none;
+  border: 1px solid var(--studio-line);
+  background: var(--studio-bg);
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--studio-radius-s);
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--studio-ink-soft);
+}
+
+.knitting-written-row-toggle.is-complete {
+  background: var(--knit-accent-soft);
+  color: var(--knit-accent-strong);
+  border-color: var(--knit-accent-soft);
+}

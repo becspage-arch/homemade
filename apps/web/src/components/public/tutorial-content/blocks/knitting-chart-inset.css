@@ -1,0 +1,51 @@
+/* Knitting chart inset — embedded chart block inside tutorial bodies.
+   Visual register matches the other tutorial blocks (calm card on a
+   warm surface, no marketing chrome). */
+
+.knitting-chart-inset {
+  background: #fafaf6;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 2rem 0;
+  box-shadow: 0 1px 3px rgba(60, 47, 34, 0.06);
+}
+
+.knitting-chart-inset-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+  color: #3d2f22;
+}
+
+.knitting-chart-inset-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.knitting-chart-inset-caption {
+  margin: 12px 0 0;
+  font-size: 0.92rem;
+  color: #5c5347;
+  font-style: italic;
+}
+
+.knitting-chart-inset-actions {
+  margin-top: 14px;
+}
+
+.knitting-chart-inset-cta {
+  display: inline-block;
+  background: #6b8a9b;
+  color: #fff;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.knitting-chart-inset-cta:hover {
+  background: #4f6c7e;
+}

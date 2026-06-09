@@ -1,0 +1,232 @@
+/* ---------------------------------------------------------------------------
+   Stash page — yarn + needle inventory grid. Shared shell for the knitting
+   stash today and the crochet stash when it lands; pages mount their own
+   client component but share these styles.
+--------------------------------------------------------------------------- */
+
+.stash-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  font-family: 'Lora', Georgia, serif;
+  color: #3d2f22;
+}
+
+.stash-page-header {
+  margin-bottom: 1.4rem;
+}
+
+.stash-page-overline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a8276;
+  margin: 0 0 0.4rem;
+}
+
+.stash-page-heading {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+
+.stash-page-lede {
+  color: #5c5347;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.stash-page-add-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.4rem 0;
+}
+
+.stash-page-add-button {
+  appearance: none;
+  border: 1px solid #d8cfbc;
+  background: #fafaf6;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #3d2f22;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stash-page-add-button:hover {
+  background: #f0e9da;
+}
+
+.stash-add-form {
+  background: #fafaf6;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(60, 47, 34, 0.06);
+}
+
+.stash-add-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 1rem;
+}
+
+.stash-add-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.stash-add-form-grid input,
+.stash-add-form-grid select {
+  border: 1px solid #d8cfbc;
+  background: #fff;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #3d2f22;
+}
+
+.stash-add-form-grid input[type='color'] {
+  height: 36px;
+  padding: 0;
+}
+
+.stash-add-form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.stash-add-form-primary {
+  appearance: none;
+  border: none;
+  background: #6b8a9b;
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.stash-add-form-primary:hover {
+  background: #4f6c7e;
+}
+
+.stash-add-form-secondary {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #5c5347;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.stash-section {
+  margin: 2rem 0;
+}
+
+.stash-section-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stash-empty {
+  color: #8a8276;
+  font-style: italic;
+  margin: 0;
+}
+
+.stash-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.stash-card {
+  background: #fafaf6;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 1px 3px rgba(60, 47, 34, 0.06);
+}
+
+.stash-card-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.stash-card-row-yarn {
+  gap: 0.6rem;
+}
+
+.stash-card-colour-pip {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #d8cfbc;
+  flex-shrink: 0;
+}
+
+.stash-card-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stash-card-delete {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #8a8276;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+
+.stash-card-delete:hover {
+  background: #f0e9da;
+  color: #3d2f22;
+}
+
+.stash-card-meta {
+  font-size: 0.85rem;
+  color: #5c5347;
+  margin: 0.15rem 0;
+  line-height: 1.4;
+}
+
+.stash-page-footer-note {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #8a8276;
+  text-align: center;
+  font-style: italic;
+}
