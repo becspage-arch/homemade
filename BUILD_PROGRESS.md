@@ -1946,6 +1946,56 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## K-2 knitting chart engine extension (2026-06-09)
+
+K-2 knitting chart engine extension.
+`apps/web/src/lib/knitting/renderer/` ships colourwork + lace + cable
++ brioche chart renderers. Full knitting stitch symbol vocabulary
+(knit / purl / yarn-over / decrease variants k2tog / ssk / cdd /
+k3tog / sssk / slip / cable crossings C4F / C4B / C6F / C6B / T2L /
+T2R / T3L / T3R / brioche notation brk / brp / brkyobrk / br-k2tog /
+br-ssk / sl1-yo / structural no-stitch + bind-off + special M1L /
+M1R / kfb / ktbl / ptbl / pattern-repeat — 32 symbols total).
+
+Cable layout engine handles crossings spanning multiple cells: each
+CableCrossing record consumes the cells it occupies (so the
+underlying grid skips them) and renders as a single composite shape
+showing which stitches cross over which. Cable type labels (C4F /
+C4B / C6F / C6B) render below the crossing.
+
+Reading-direction markers: RS / WS labels for flat-knit charts (RS
+on the right edge for odd rows, WS on the left edge for even rows by
+default); in-the-round charts suppress WS entirely and every row
+shows RS on the right.
+
+Public API contract locked at `types.ts`: `KnittingChartData`,
+`RenderOptions`, `RenderedChart`, `renderKnittingChart`. K-3 builds
+against this. Includes a synchronous `renderKnittingChartSvg` for
+client renders + tests where sharp isn't in scope.
+
+Test suite: 14 of 14 passing. Covers all four chart types (Fair Isle
+diamond motif, Shetland triangular lace with no-stitch shaping,
+4-stitch cable repeat on purl ground, two-colour brioche stripe),
+direction markers (flat vs in-the-round), and edge cases (empty grid
+/ out-of-bounds cells / unknown symbols / cable bounds clipping).
+
+Sample renders shipped at `apps/web/public/knitting-samples/`:
+- https://homemade.education/knitting-samples/colourwork.svg + .png
+- https://homemade.education/knitting-samples/lace.svg + .png
+- https://homemade.education/knitting-samples/cable.svg + .png
+- https://homemade.education/knitting-samples/brioche.svg + .png
+
+Architectural decision worth flagging: in COLOURWORK charts the
+cell's `s` field identifies the palette colour, not the stitch
+symbol — the underlying stitch is always knit. To avoid every
+colourwork chart triggering "unknown symbol slug" verifier warnings
+for its palette keys, the grid-layout module picked up a
+`forceSymbolSlug` option that the colourwork chart-type module sets
+to 'knit'. Cells still index the palette by their original slug;
+only the symbol lookup is overridden.
+
+No AI image generation involved.
+
 ## Crochet finished-piece chart-engine renderer (2026-06-09)
 
 Crochet finished-piece chart-engine renderer.
