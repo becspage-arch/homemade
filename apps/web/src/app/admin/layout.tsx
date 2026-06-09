@@ -64,6 +64,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/creators', label: 'Creator applications', minRole: UserRole.EDITOR },
       { href: '/admin/creators/moderation', label: 'Creator moderation', minRole: UserRole.EDITOR },
       { href: '/admin/patterns', label: 'Pattern tests', minRole: UserRole.EDITOR },
+      { href: '/admin/user-pattern-photos', label: 'User photos', minRole: UserRole.EDITOR },
     ],
   },
   {

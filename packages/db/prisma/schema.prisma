@@ -287,6 +287,10 @@ model User {
   needleworkPatterns        NeedleworkPattern[]         @relation("NeedleworkPatternOwner")
   needleworkProjectProgress NeedleworkProjectProgress[]
 
+  // User pattern photo submissions (phase_user_pattern_photo_001).
+  userPatternPhotos       UserPatternPhoto[] @relation("UserPatternPhotoOwner")
+  userPatternPhotoReviews UserPatternPhoto[] @relation("UserPhotoReviewer")
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -1255,6 +1259,9 @@ model Media {
 
   // Crochet image pipeline (phase_crochet_image_pipeline).
   stitchPreviews Stitch[] @relation("StitchPreview")
+
+  // User pattern photo submissions (phase_user_pattern_photo_001).
+  userPatternPhotos UserPatternPhoto[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -3753,6 +3760,13 @@ model Pattern {
   // describe the verdict the retrofit reached.
   heroGenerationStatus ImageGenerationStatus @default(PENDING)
 
+  // User-submitted finished-piece photos (phase_user_pattern_photo_001).
+  // When preferUserPhotoForHero is true and an isHero=true UserPatternPhoto
+  // exists for this pattern, the renderer uses that instead of heroMediaId.
+  // Note: relation is via raw patternId/patternType on UserPatternPhoto --
+  // no Prisma relation field here because patternId is shared across two models.
+  preferUserPhotoForHero Boolean @default(false)
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   tutorialsInset Tutorial[]            @relation("TutorialPattern")
@@ -4017,6 +4031,11 @@ model CrochetPattern {
   sourceTutorial   Tutorial?        @relation("CrochetPatternSourceTutorial", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
   subCategoryId    String?
   subCategory      SubCategory?     @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+
+  // User-submitted finished-piece photos (phase_user_pattern_photo_001).
+  // patternId/patternType on UserPatternPhoto are raw FKs, not a Prisma relation,
+  // because patternId is shared across Pattern and CrochetPattern.
+  preferUserPhotoForHero Boolean @default(false)
 
   license        CrochetPatternLicense?
   progress       CrochetProjectProgress[]
@@ -4408,6 +4427,50 @@ enum NeedleworkFrameType {
   Q_SNAPS
   STRETCHER_BARS
   NONE
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// UserPatternPhoto — user-submitted finished-piece photos
+// (phase_user_pattern_photo_001)
+// ────────────────────────────────────────────────────────────────────────────
+
+/// A finished-piece photo submitted by a Maker for a cross-stitch Pattern or
+/// CrochetPattern. Flows through an admin approval queue. When approved and
+/// flagged isHero=true, and the parent pattern has preferUserPhotoForHero=true,
+/// this photo replaces the generated hero on the pattern detail page and card.
+model UserPatternPhoto {
+  id          String      @id @default(cuid())
+  userId      String
+  user        User        @relation("UserPatternPhotoOwner", fields: [userId], references: [id], onDelete: Cascade)
+  patternId   String
+  patternType PatternType
+  mediaId     String
+  media       Media       @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+  caption     String?
+
+  status           UserPhotoStatus @default(PENDING)
+  reviewedAt       DateTime?
+  reviewedByUserId String?
+  reviewedBy       User?           @relation("UserPhotoReviewer", fields: [reviewedByUserId], references: [id], onDelete: SetNull)
+  reviewNotes      String?
+
+  // When true, this photo is featured in the pattern gallery.
+  isFeatured Boolean @default(false)
+  // When true and the parent pattern has preferUserPhotoForHero=true,
+  // this photo is used as the pattern card and detail hero.
+  isHero     Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@index([patternId, status])
+  @@index([userId])
+}
+
+enum UserPhotoStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  RESCINDED
 }
 
 enum NeedleworkProjectPhase {

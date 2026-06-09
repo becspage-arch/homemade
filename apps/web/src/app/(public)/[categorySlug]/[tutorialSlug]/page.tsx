@@ -56,6 +56,7 @@ import {
   shouldShowDidYouMakeThisPrompt,
 } from '@/lib/did-you-make-this'
 
+import { DiagramPendingMarker } from '@/components/tutorial/DiagramPendingMarker'
 import '@/components/public/tutorial-reader/tutorial-reader.css'
 import '@/components/public/ugc/ugc.css'
 
@@ -667,6 +668,9 @@ export default async function TutorialPage({ params }: PageProps) {
                 : null
             }
           />
+          {tutorial.diagramGenerationStatus === 'NO_SOURCE' && (
+            <DiagramPendingMarker />
+          )}
         </>
       }
       heroActionsSlot={heroActionsSlot}

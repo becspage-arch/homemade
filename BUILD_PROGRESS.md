@@ -3199,4 +3199,6 @@ publish-hook flip + queue SKILL.md + per-stream crons disabled.
 - `5030d8f` — content(cooking): bulk-006 — 5 PUBLISHED, halted on schema drift
 - `2e2ac5e` — content(mindset): bulk-001 — 20 briefs drafted, voice-checked, upload blocked by DB drift
 
+Hero photo audit + UserPatternPhoto schema. Audit ran across all pattern heroes (37 CLEAN, 0 WATERMARKED, 7 MISSING with no thumbnails either), findings at docs/hero-photo-audit-2026-06-09.md. UserPatternPhoto schema + Pattern.preferUserPhotoForHero shipped (migration: phase_user_pattern_photo_001, applied via db push + resolve). Admin approval queue at /admin/user-pattern-photos (approve, feature, hero actions + bulk select). NO_SOURCE renderer marker (DiagramPendingMarker) integrated into tutorial detail page. img2img codebase audit at docs/img2img-codebase-audit-2026-06-09.md (finding: zero img2img calls, all Fal calls are flux-schnell text-to-image). Null-subCategoryId crochet tutorial cleanup script at packages/db/scripts/fix-crochet-null-subcategory.ts -- ran and found zero null-subcat PUBLISHED crochet tutorials, all already classified.
+
 Earlier milestones → [docs/archive/build-progress-history.md](docs/archive/build-progress-history.md).
