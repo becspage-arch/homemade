@@ -1946,6 +1946,45 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Crochet finished-piece chart-engine renderer (2026-06-09)
+
+Crochet finished-piece chart-engine renderer.
+`apps/web/src/lib/crochet/renderer/` ships per-stitch SVG shape
+definitions (47 stitches across foundation, textured, decorative,
+post, decrease, Tunisian, broomstick, hairpin, crocodile, Solomon's
+knot, Irish motif, spider, joining methods), round + row + motif
+layout engines with square / hexagon corner detection, palette
+colour application, SVG composer, PNG rasteriser via sharp, and a
+verifier. Test suite covers anchor render (granny three-round), each
+motif shape, three stitch swatches, and edge cases (empty / single /
+large / unknown) — 15 of 15 passing.
+
+At-scale runners landed at
+`packages/db/scripts/render-crochet-motif-heroes.ts` and
+`packages/db/scripts/render-crochet-stitch-swatches.ts`. Idempotent
+re-runs; skip rows that already have a READY Media row attached.
+
+Initial run published 1 motif hero
+(`granny-square-basic-three-round`, the only MOTIF currently in
+`CrochetPattern`) and 3 stitch swatches for the three joining-method
+rows whose `chartSymbol` is null. Pipeline B (Fal img2img heroes)
+stays killed; the renderer is its replacement and is the only path
+from chartData to a finished-piece image.
+
+Author prompts updated to reference the renderer
+(`docs/crochet-motif-author.md`, `docs/crochet-homeware-author.md`,
+`docs/crochet-technique-author.md`).
+
+Note on the worker brief: it assumed 120 motif Patterns and 19
+Stitch rows without chartSymbol. Actual state is 1 motif and 3
+joining-method stitches; the brief's "19" was a count of the
+existing chart-symbols library entries, not the missing ones. The
+renderer library is built for the full target and the at-scale
+scripts are idempotent — future motifs picked up by Worker C will be
+rendered automatically with no further code change.
+
+No AI image generation involved.
+
 ## Bug-fix bundle — Clerk auth error on tutorial pages + public error boundaries + analytics loose ends (2026-05-13)
 
 Six-item bundle clearing one production Sentry issue, adding the

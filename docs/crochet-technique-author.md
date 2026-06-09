@@ -32,6 +32,16 @@ candidate ladder (public-domain Victorian plates, Wikimedia, Pexels,
 Unsplash, procedural card as last-resort fallback). See
 `memory/feedback_image_strategy.md` for the locked policy.
 
+For stitch / technique tutorials that map to a `Stitch` master-table
+row, the in-house chart engine at
+`apps/web/src/lib/crochet/renderer/` can render a small stitch swatch
+that doubles as the Stitch row's `previewMediaId`. Two pipelines:
+`render-stitch-previews.ts` (chartSymbol glyph at 256×256) and
+`render-crochet-stitch-swatches.ts` (4-row swatch in context at
+400×400, used for joining methods + stitches where the glyph alone
+doesn't read). The author populates the Stitch row + chartSymbol;
+the renderer produces the preview.
+
 ## Inline glossary coverage — HARD RULE
 
 Every entry in `glossaryTerms[]` must appear inline at least once

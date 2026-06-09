@@ -22,6 +22,14 @@ is. Voice spec §3.5 worked rewrite is the template.
 Authoring NEVER generates images. Set `hero` unset on every draft.
 See `memory/feedback_image_strategy.md`.
 
+When a homeware pattern includes a `chartData` block (motif-style
+panels, repeating blanket squares, mandala-style tablecloths), the
+in-house chart engine at `apps/web/src/lib/crochet/renderer/` can
+render the hero from chartData. Run
+`pnpm --filter "@homemade/db" exec tsx scripts/render-crochet-motif-heroes.ts --confirm`
+after upload. Authors populate chartData; the renderer produces the
+hero.
+
 ## Inline glossary coverage — HARD RULE
 
 Every entry in `glossaryTerms[]` appears inline at least once

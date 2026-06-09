@@ -25,6 +25,15 @@ Authoring NEVER generates images. Set `hero` unset on every draft.
 The image-sourcing worker batches heroes pre-launch from the locked
 candidate ladder. See `memory/feedback_image_strategy.md`.
 
+For motif patterns, the hero is rendered automatically by the in-house
+chart engine at `apps/web/src/lib/crochet/renderer/`. It reads the
+`chartData` JSON the author writes and outputs a finished-piece SVG +
+PNG with yarn-shaped stitches laid out per the chart's geometry. No AI
+involvement. As an author, your job is to populate `chartData` accurately;
+the renderer produces the hero from it.
+
+Run with: `pnpm --filter "@homemade/db" exec tsx scripts/render-crochet-motif-heroes.ts --confirm`.
+
 ## Inline glossary coverage — HARD RULE
 
 Every entry in `glossaryTerms[]` must appear inline at least once
