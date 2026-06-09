@@ -1948,6 +1948,70 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## K-4 knitting pipeline-setup (2026-06-09)
+
+K-4 knitting pipeline-setup. `KnittingPattern` + `KnittingProjectProgress`
++ `KnittingStash` models shipped (Prisma migration
+`phase_knitting_pipeline_001`). Six new enums on the pattern model:
+`KnittingProjectShape`, `KnittingTechniqueDiscipline` (multi-valued),
+`CastOnMethod`, `BindOffMethod`, `InTheRoundMethod`,
+`KnittingYarnWeightStandard` (named distinct from the existing
+`YarnWeight` model — both stay, the enum drives fast library filters,
+the model holds canonical brand data).
+
+Progress + stash APIs wired to persist for signed-in users.
+`/api/studio/knitting/progress/[knittingPatternId]` now GET-returns
+the persisted row and PATCH-upserts the delta against
+`KnittingProjectProgress`. `/api/studio/knitting/stash` lists and
+creates; `/api/studio/knitting/stash/[id]` updates and soft-archives
+(`archivedAt` rather than hard delete so the Studio can offer an
+undo affordance). Per the locked free-tier-sign-in-carrots rule
+both routes are FREE — no premium gate. Signed-out users continue
+to hit local-only storage via the Studio's existing fallback.
+
+11 master author prompt files at `docs/knitting-*`:
+- 6 fully-guided project-shape prompts: `scarf-cowl`, `hat`,
+  `mitt-glove`, `shawl-wrap`, `blanket`, `accessory-other`.
+- 5 technique-discipline reference guides + matching routing-wrapper
+  author prompts: `colourwork`, `lace`, `cable-aran`,
+  `brioche-doubleknit`, `specialty`. The wrappers route the
+  autopilot to a project-shape author prompt by smallest tagged
+  count and combine the discipline guide into the brief.
+- 3 stubs for K-5-dependent shapes: `sweater-cardigan`, `vest`,
+  `sock`. All three reference the future
+  `apps/web/src/lib/knitting/grading/` library that K-5 will ship.
+
+Pipeline-setup standards populated on `Category.knitting`:
+`targetTutorialCount = 5000`, 93 `techniqueSlugs[]`, 9
+`criticalTechniques[]` (knit, purl, long-tail cast on, standard
+bind off, gauge swatch, reading pattern, knit-vs-purl distinction,
+yarn over, decrease basics), 174 `aliases[]` covering UK / US
+yarn-weight terminology forks and abbreviation aliases.
+
+Sub-category taxonomy reconciled. `seed-knitting-taxonomy.ts`
+extended to include the K-4 spec's 14 sub-cats alongside the K-1
+legacy slugs (kept for back-compat with the 3 already-authored
+tutorials). 11 of 14 K-4 sub-cats flipped to
+`autopilotEnabled = true`: `scarf-cowl`, `hat`, `mitt-glove`,
+`shawl-wrap`, `blanket`, `accessory-other`, `colourwork`, `lace`,
+`cable-aran`, `brioche-doubleknit`, `specialty`. 3 stayed off:
+`sweater-cardigan`, `vest`, `sock` — wait for K-5 grading library.
+
+Autopilot SKILL routing extended to document knitting's two-axis
+taxonomy. Project-shape sub-cats route to standalone author
+prompts; technique-discipline sub-cats route to wrapper prompts
+that combine the discipline guide with a project-shape prompt.
+
+`Category.knitting.pipelineStatus = READY`. Per the autopilot
+null-sort rule, `lastAutopilotRunAt` stayed `null` — the SKILL's
+`ASC NULLS FIRST` ordering puts knitting at the head of the
+queue, so it fires on the next cron tick.
+
+`apps/web/src/lib/knitting/load-pattern.ts` updated. The Studio
+now resolves a slug against `KnittingPattern` first and falls
+back to `Tutorial` for back-compat. Same return shape; the K-3
+Studio surface is unchanged. Demo mode (`?demo=1`) untouched.
+
 ## K-2 knitting chart engine extension (2026-06-09)
 
 K-2 knitting chart engine extension.

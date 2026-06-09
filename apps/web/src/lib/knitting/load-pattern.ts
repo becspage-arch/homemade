@@ -1,37 +1,170 @@
 /**
- * Server-side loaders that map a Tutorial row (or a hand-crafted
- * demo) onto the KnittingPatternData shape the Studio consumes. The
- * loaders shape the same data Tutorial.body contains, plus the
- * knitting-specific K-1 fields, into a typed pattern object.
+ * Server-side loaders that map a KnittingPattern row (or a Tutorial
+ * row, or a hand-crafted demo) onto the KnittingPatternData shape
+ * the Studio consumes.
  *
- * v1 status: the dedicated KnittingPattern model is K-4 follow-on.
- * Until it lands, knitting patterns live as Tutorial rows under the
- * `knitting` Category with type=PATTERN.
+ * Order of resolution:
+ *   1. KnittingPattern by slug (K-4 canonical source).
+ *   2. Tutorial fallback by id or slug (K-1 + K-3 source — kept for
+ *      back-compat with Tutorial rows authored before K-4 shipped
+ *      the dedicated pattern model).
+ *   3. Demo fallback handled by `loadDemoKnittingPattern` at the page
+ *      level.
  */
 
 import { prisma } from '@homemade/db'
+import type { Decimal } from '@prisma/client/runtime/library'
 
 import type {
   CastOnMethod,
   BindOffMethod,
   InTheRoundMethod,
   KnittingPatternData,
+  KnittingShape,
   MyKnittingProjectListItem,
+  PatternRow,
 } from '@/components/studio/knitting/types'
+import type { KnittingChartData } from '@/lib/knitting/renderer/types'
 
 interface LoadArgs {
   tutorialId?: string
   slug?: string
 }
 
+// CYC yarn-weight category integer per the standard chart (0 = lace,
+// 7 = jumbo). Maps the KnittingYarnWeightStandard enum onto the
+// renderer's existing numeric `primaryYarnWeightCategory` field so
+// the Studio doesn't need to learn the enum.
+const YARN_WEIGHT_CATEGORY: Record<string, number> = {
+  LACE: 0,
+  FINGERING: 1,
+  SPORT: 2,
+  DK: 3,
+  WORSTED: 4,
+  ARAN: 4,
+  BULKY: 5,
+  SUPER_BULKY: 6,
+  JUMBO: 7,
+}
+
+// Human-readable name for the enum slug. Mirrors the CYC labels.
+const YARN_WEIGHT_NAME: Record<string, string> = {
+  LACE: 'Lace (CYC 0)',
+  FINGERING: 'Fingering (CYC 1)',
+  SPORT: 'Sport (CYC 2)',
+  DK: 'DK (CYC 3)',
+  WORSTED: 'Worsted (CYC 4)',
+  ARAN: 'Aran (CYC 4)',
+  BULKY: 'Bulky (CYC 5)',
+  SUPER_BULKY: 'Super bulky (CYC 6)',
+  JUMBO: 'Jumbo (CYC 7)',
+}
+
+function decimalToNumber(value: Decimal | null | undefined): number | null {
+  if (value === null || value === undefined) return null
+  return Number(value)
+}
+
 export async function loadKnittingPatternForStudio(
   args: LoadArgs,
 ): Promise<KnittingPatternData | null> {
   if (!args.tutorialId && !args.slug) return null
+
+  // 1. Try the K-4 canonical source first.
+  if (args.slug) {
+    const pattern = await prisma.knittingPattern.findUnique({
+      where: { slug: args.slug },
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        description: true,
+        rowByRow: true,
+        chartData: true,
+        schematicMediaId: true,
+        thumbnailMediaId: true,
+        heroMediaId: true,
+        projectShape: true,
+        techniqueDisciplines: true,
+        castOnMethod: true,
+        bindOffMethod: true,
+        inTheRoundMethod: true,
+        gaugeText: true,
+        finishedSizeText: true,
+        sizesGraded: true,
+        yardageBySize: true,
+        abbreviationsUsed: true,
+        specialStitchesUsed: true,
+        craftStitchSlugs: true,
+        craftTechniqueTags: true,
+        repeatRowGroups: true,
+        difficulty: true,
+        premium: true,
+        yarnWeightStandard: true,
+        needleSizeMm: true,
+        designer: { select: { slug: true, displayName: true } },
+        tutorial: {
+          select: { id: true, slug: true, category: { select: { slug: true } } },
+        },
+      },
+    })
+    if (pattern) {
+      const inTheRound = pattern.inTheRoundMethod
+      return {
+        id: pattern.id,
+        slug: pattern.slug,
+        name: pattern.name,
+        description: pattern.description,
+        rowsStructured: (Array.isArray(pattern.rowByRow)
+          ? (pattern.rowByRow as unknown as PatternRow[])
+          : []),
+        chartData: (pattern.chartData as unknown as KnittingChartData | null) ?? null,
+        schematicMediaId: pattern.schematicMediaId,
+        thumbnailMediaId: pattern.thumbnailMediaId ?? pattern.heroMediaId,
+        construction:
+          inTheRound && inTheRound !== 'STRAIGHT_FLAT' ? 'IN_THE_ROUND' : 'FLAT',
+        shapeCategory: mapProjectShape(pattern.projectShape),
+        sizesGraded: (pattern.sizesGraded as KnittingPatternData['sizesGraded']) ?? null,
+        yardageBySize:
+          (pattern.yardageBySize as KnittingPatternData['yardageBySize']) ?? null,
+        gaugeText: pattern.gaugeText,
+        finishedSizeText: pattern.finishedSizeText,
+        abbreviationsUsed: pattern.abbreviationsUsed,
+        specialStitchesUsed: pattern.specialStitchesUsed,
+        craftStitchSlugs: pattern.craftStitchSlugs,
+        craftTechniqueTags: pattern.craftTechniqueTags,
+        repeatRowGroups:
+          (pattern.repeatRowGroups as KnittingPatternData['repeatRowGroups']) ??
+          null,
+        difficulty: pattern.difficulty,
+        premium: pattern.premium,
+        designerSlug: pattern.designer?.slug ?? null,
+        designerName: pattern.designer?.displayName ?? null,
+        sourceTutorialSlug: pattern.tutorial?.slug ?? null,
+        sourceTutorialCategorySlug: pattern.tutorial?.category?.slug ?? null,
+        sourceTutorialId: pattern.tutorial?.id ?? null,
+        primaryYarnWeightCategory: pattern.yarnWeightStandard
+          ? YARN_WEIGHT_CATEGORY[pattern.yarnWeightStandard] ?? null
+          : null,
+        primaryYarnWeightName: pattern.yarnWeightStandard
+          ? YARN_WEIGHT_NAME[pattern.yarnWeightStandard] ?? null
+          : null,
+        primaryNeedleMm: decimalToNumber(pattern.needleSizeMm),
+        primaryNeedleName: null,
+        castOnMethod: pattern.castOnMethod
+          ? mapKnittingPatternCastOn(pattern.castOnMethod)
+          : null,
+        bindOffMethod: pattern.bindOffMethod
+          ? mapKnittingPatternBindOff(pattern.bindOffMethod)
+          : null,
+        inTheRoundMethod: inTheRound as InTheRoundMethod | null,
+      }
+    }
+  }
+
+  // 2. Tutorial fallback for K-1 / K-3 rows authored before K-4.
   const tutorial = await prisma.tutorial.findFirst({
-    where: args.tutorialId
-      ? { id: args.tutorialId }
-      : { slug: args.slug ?? '' },
+    where: args.tutorialId ? { id: args.tutorialId } : { slug: args.slug ?? '' },
     select: {
       id: true,
       slug: true,
@@ -63,7 +196,7 @@ export async function loadKnittingPatternForStudio(
     schematicMediaId: null,
     thumbnailMediaId: tutorial.heroMediaId,
     construction:
-      (tutorial.inTheRoundMethod && tutorial.inTheRoundMethod !== 'STRAIGHT_FLAT')
+      tutorial.inTheRoundMethod && tutorial.inTheRoundMethod !== 'STRAIGHT_FLAT'
         ? 'IN_THE_ROUND'
         : 'FLAT',
     shapeCategory: null,
@@ -89,9 +222,45 @@ export async function loadKnittingPatternForStudio(
     primaryNeedleName: tutorial.primaryNeedle?.canonicalName ?? null,
     castOnMethod: (tutorial.castOnMethod as CastOnMethod | null) ?? null,
     bindOffMethod: (tutorial.bindOffMethod as BindOffMethod | null) ?? null,
-    inTheRoundMethod:
-      (tutorial.inTheRoundMethod as InTheRoundMethod | null) ?? null,
+    inTheRoundMethod: (tutorial.inTheRoundMethod as InTheRoundMethod | null) ?? null,
   }
+}
+
+function mapProjectShape(shape: string | null | undefined): KnittingShape | null {
+  if (!shape) return null
+  switch (shape) {
+    case 'SCARF':
+      return 'ACCESSORY'
+    case 'HAT':
+      return 'HAT'
+    case 'SHAWL':
+      return 'SHAWL'
+    case 'BLANKET':
+      return 'BLANKET'
+    case 'MITT_GLOVE':
+      return 'ACCESSORY'
+    case 'SOCK':
+      return 'SOCKS'
+    case 'SWEATER':
+    case 'CARDIGAN':
+    case 'VEST':
+      return 'GARMENT'
+    case 'OTHER':
+    default:
+      return 'ACCESSORY'
+  }
+}
+
+// KnittingPattern.castOnMethod (Prisma enum) → Studio CastOnMethod
+// (string union). Same value set; the enum is a superset of K-1's
+// Tutorial.castOnMethod string vocabulary so every enum value is
+// safely cast.
+function mapKnittingPatternCastOn(value: string): CastOnMethod | null {
+  return value as CastOnMethod
+}
+
+function mapKnittingPatternBindOff(value: string): BindOffMethod | null {
+  return value as BindOffMethod
 }
 
 /**

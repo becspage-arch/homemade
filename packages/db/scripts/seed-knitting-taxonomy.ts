@@ -55,11 +55,15 @@ interface SubCatSpec {
 }
 
 const SUB_CATEGORIES: SubCatSpec[] = [
+  // ──────────────────────────────────────────────────────────────────────────
+  // Content-type sub-cats (kept from K-1). STITCH and TECHNIQUE / FOUNDATION
+  // typed tutorials sit here, not under project-shape sub-cats. Both pre-
+  // date K-4 and stay because they have authored content under them.
+  // ──────────────────────────────────────────────────────────────────────────
   {
     slug: 'stitches',
     name: 'Stitches',
-    description:
-      'Single-stitch tutorials — knit, purl, k2tog, cables, lace.',
+    description: 'Single-stitch tutorials — knit, purl, k2tog, cables, lace.',
     order: 10,
   },
   {
@@ -69,89 +73,156 @@ const SUB_CATEGORIES: SubCatSpec[] = [
       'Casting on, casting off, reading a chart, choosing yarn and needles, gauge swatching, blocking.',
     order: 20,
   },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Project-shape sub-cats (K-4 spec). One sub-cat per finished-piece shape.
+  // Each one maps to its own author prompt under `docs/knitting-<slug>-
+  // author.md`. Six are fully-guided and autopilot-enabled now; three
+  // (sweater-cardigan, vest, sock) wait for K-5's grading library.
+  // ──────────────────────────────────────────────────────────────────────────
   {
-    slug: 'scarves-shawls',
-    name: 'Scarves & shawls',
-    description:
-      'Garter scarves, ribbed scarves, lace shawls, triangular shawls.',
+    slug: 'scarf-cowl',
+    name: 'Scarves & cowls',
+    description: 'Scarves, infinity scarves, hooded cowls, classic cowls.',
     order: 30,
   },
   {
-    slug: 'hats',
+    slug: 'hat',
     name: 'Hats',
-    description:
-      'Ribbed hats, watch caps, slouch hats, berets, baby bonnets.',
+    description: 'Beanies, slouchy hats, fitted hats, bucket hats, berets, watchcaps, earflap hats.',
     order: 40,
   },
   {
-    slug: 'dishcloths-homewares',
-    name: 'Dishcloths & homewares',
+    slug: 'mitt-glove',
+    name: 'Mitts & gloves',
     description:
-      'Dishcloths, washcloths, tea cosies, coasters, cushion covers.',
+      'Fingerless mitts, full mittens, gloves with fingers, convertible mitts, wrist warmers.',
     order: 50,
   },
   {
-    slug: 'baby',
-    name: 'Baby',
+    slug: 'shawl-wrap',
+    name: 'Shawls & wraps',
     description:
-      'Baby blankets, booties, bonnets, cardigans.',
+      'Triangular, semicircular, asymmetric, Faroese, half-pi shawls, rectangular stoles.',
     order: 60,
   },
   {
-    slug: 'blankets',
+    slug: 'blanket',
     name: 'Blankets',
     description:
-      'Throws, lap blankets, modular blankets, mitred-square projects.',
+      'Afghans, throws, baby blankets, modular mitred-square blankets, log-cabin blankets.',
     order: 70,
   },
   {
-    slug: 'socks',
-    name: 'Socks',
-    description:
-      'Cuff-down and toe-up socks, fingering-weight and worsted-weight variants, heel constructions.',
+    slug: 'accessory-other',
+    name: 'Accessories (other)',
+    description: 'Bags, headbands, leg warmers, scrunchies, bookmarks, mug cosies, phone pouches.',
     order: 80,
   },
   {
-    slug: 'garments',
-    name: 'Garments',
-    description:
-      'Jumpers, cardigans, vests.',
+    slug: 'sweater-cardigan',
+    name: 'Sweaters & cardigans',
+    description: 'Pullovers and cardigans. Authoring deferred to K-5 (garment grading library).',
     order: 90,
   },
   {
+    slug: 'vest',
+    name: 'Vests',
+    description: 'Sleeveless garments. Authoring deferred to K-5 (garment grading library).',
+    order: 100,
+  },
+  {
+    slug: 'sock',
+    name: 'Socks',
+    description:
+      'Cuff-down and toe-up socks, knee-high socks. Authoring deferred to K-5 (sock-specific grading).',
+    order: 110,
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Technique-discipline sub-cats (K-1 added; K-4 makes autopilot-routable).
+  // Cross-cut with project-shape sub-cats: a Fair Isle hat sits under `hat`
+  // for project-shape browse and under `colourwork` for technique browse.
+  // ──────────────────────────────────────────────────────────────────────────
+  {
     slug: 'colourwork',
     name: 'Colourwork',
-    description:
-      'Fair Isle, Bohus, Scandinavian, Latvian, intarsia, stranded yokes.',
-    order: 100,
+    description: 'Fair Isle, Bohus, Scandinavian, Latvian, intarsia, mosaic, stranded yokes.',
+    order: 200,
   },
   {
     slug: 'lace',
     name: 'Lace',
-    description:
-      'Shetland, Estonian, Russian, Faroese, Orenburg lace shawls and stoles.',
-    order: 110,
+    description: 'Shetland, Estonian, Russian, Faroese, Orenburg lace shawls and stoles.',
+    order: 210,
   },
   {
     slug: 'cable-aran',
     name: 'Cables & Aran',
     description:
       'Cabled sweaters, Aran jumpers, Bavarian twisted-stitch, Saxon and Celtic cable panels.',
-    order: 120,
+    order: 220,
   },
   {
     slug: 'brioche-doubleknit',
     name: 'Brioche & double-knit',
-    description:
-      'One-colour and two-colour brioche, double-knitting, reversible fabrics.',
-    order: 130,
+    description: 'One-colour and two-colour brioche, double-knitting, reversible fabrics.',
+    order: 230,
   },
   {
     slug: 'specialty',
     name: 'Specialty',
-    description:
-      'Entrelac, modular and mitred work, beaded knitting, steeking projects.',
-    order: 140,
+    description: 'Entrelac, modular and mitred work, magic loop, short rows, i-cord, steeking.',
+    order: 240,
+  },
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // K-1 project-shape sub-cats kept for back-compat with already-authored
+  // rows (currently 3 tutorials sit under `foundations` and
+  // `dishcloths-homewares`). New autopilot fires route to the K-4 spec sub-
+  // cats above. autopilotEnabled stays false on these.
+  // ──────────────────────────────────────────────────────────────────────────
+  {
+    slug: 'scarves-shawls',
+    name: 'Scarves & shawls (legacy)',
+    description: 'Pre-K-4 catch-all for scarves and shawls. New rows route to scarf-cowl or shawl-wrap.',
+    order: 300,
+  },
+  {
+    slug: 'hats',
+    name: 'Hats (legacy)',
+    description: 'Pre-K-4 hats sub-cat. New rows route to hat.',
+    order: 310,
+  },
+  {
+    slug: 'dishcloths-homewares',
+    name: 'Dishcloths & homewares (legacy)',
+    description: 'Pre-K-4 catch-all. New rows route to accessory-other.',
+    order: 320,
+  },
+  {
+    slug: 'baby',
+    name: 'Baby (legacy)',
+    description: 'Pre-K-4 baby catch-all. New rows route to the appropriate project-shape sub-cat.',
+    order: 330,
+  },
+  {
+    slug: 'blankets',
+    name: 'Blankets (legacy)',
+    description: 'Pre-K-4 blankets sub-cat. New rows route to blanket.',
+    order: 340,
+  },
+  {
+    slug: 'socks',
+    name: 'Socks (legacy)',
+    description: 'Pre-K-4 socks sub-cat. New rows route to sock (autopilot off pending K-5).',
+    order: 350,
+  },
+  {
+    slug: 'garments',
+    name: 'Garments (legacy)',
+    description: 'Pre-K-4 garments catch-all. New rows route to sweater-cardigan or vest (autopilot off pending K-5).',
+    order: 360,
   },
 ]
 

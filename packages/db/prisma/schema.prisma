@@ -287,6 +287,11 @@ model User {
   needleworkPatterns        NeedleworkPattern[]         @relation("NeedleworkPatternOwner")
   needleworkProjectProgress NeedleworkProjectProgress[]
 
+  // Knitting Studio reverse relations (phase_knitting_pipeline_001).
+  knittingPatterns        KnittingPattern[]         @relation("KnittingPatternOwner")
+  knittingProjectProgress KnittingProjectProgress[]
+  knittingStash           KnittingStash[]
+
   // User pattern photo submissions (phase_user_pattern_photo_001).
   userPatternPhotos       UserPatternPhoto[] @relation("UserPatternPhotoOwner")
   userPatternPhotoReviews UserPatternPhoto[] @relation("UserPhotoReviewer")
@@ -420,6 +425,7 @@ model SubCategory {
   patterns           Pattern[]
   crochetPatterns    CrochetPattern[]
   needleworkPatterns NeedleworkPattern[]
+  knittingPatterns   KnittingPattern[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -1086,6 +1092,11 @@ model Tutorial {
   needleworkPatternsSourced NeedleworkPattern[] @relation("NeedleworkPatternSourcedFrom")
   needleworkPatternsInset   NeedleworkPattern[] @relation("NeedleworkPatternSourceTutorial")
 
+  // Knitting Studio (phase_knitting_pipeline_001). KnittingPattern.tutorialId
+  // points back here. The Tutorial row carries the introductory editorial
+  // content; KnittingPattern carries the row-by-row + chart + grading.
+  knittingPatternsInset KnittingPattern[] @relation("TutorialKnittingPattern")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -1346,6 +1357,11 @@ model Media {
   needleworkPatternThumbnails NeedleworkPattern[]   @relation("NeedleworkPatternThumbnail")
   needleworkPatternHeroes     NeedleworkPattern[]   @relation("NeedleworkPatternHero")
   crochetGaugeSwatchPhotos    CrochetProjectGauge[] @relation("CrochetGaugeSwatchPhoto")
+
+  // Knitting Studio (phase_knitting_pipeline_001).
+  knittingPatternThumbnails KnittingPattern[] @relation("KnittingPatternThumbnail")
+  knittingPatternSchematics KnittingPattern[] @relation("KnittingPatternSchematic")
+  knittingPatternHeros      KnittingPattern[] @relation("KnittingPatternHero")
 
   // Crochet image pipeline (phase_crochet_image_pipeline).
   stitchPreviews Stitch[] @relation("StitchPreview")
@@ -3782,6 +3798,7 @@ model Designer {
   patterns           Pattern[]
   crochetPatterns    CrochetPattern[]    @relation("DesignerCrochetPatterns")
   needleworkPatterns NeedleworkPattern[] @relation("DesignerNeedleworkPatterns")
+  knittingPatterns   KnittingPattern[]   @relation("DesignerKnittingPatterns")
 
   createdAt DateTime @default(now())
 
@@ -4568,4 +4585,376 @@ enum NeedleworkProjectPhase {
   TRANSFER
   STITCHING
   FINISHING
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase Knitting pipeline-setup (phase_knitting_pipeline_001) — KnittingPattern
+// + KnittingProjectProgress + KnittingStash.
+//
+// Sibling family to CrochetPattern / NeedleworkPattern. Same shape rationale:
+// knitting patterns carry enough category-specific structure (row-by-row
+// written data with per-size variants, optional chart data per K-2's locked
+// `KnittingChartData` contract, multi-piece garments, garment grading with
+// bust / waist / hip measurements, gauge in both stockinette and pattern
+// stitch, cable / lace / brioche / colourwork techniques) that a single
+// union with Pattern or CrochetPattern would be 40 %+ NULL.
+//
+// Models:
+//   KnittingPattern               — the pattern row.
+//   KnittingProjectProgress       — per-(user, knittingPattern) project state.
+//   KnittingStash                 — per-user yarn + needle inventory.
+//
+// Enums in this section:
+//   KnittingProjectShape          — finished-piece shape. Single-valued.
+//   KnittingTechniqueDiscipline   — multi-valued; a single hat can carry
+//                                   COLOURWORK + CABLE_ARAN.
+//   CastOnMethod / BindOffMethod  — proper Prisma enums; Tutorial keeps the
+//   / InTheRoundMethod              K-1 String? columns unchanged so existing
+//                                   knitting tutorial rows need no backfill.
+//   KnittingYarnWeightStandard    — CYC weight category. Named to avoid the
+//                                   collision with `model YarnWeight` (the
+//                                   master yarn-weight table). Pattern carries
+//                                   the enum for cheap WHERE filters; richer
+//                                   data (brand-name examples, gauge ranges)
+//                                   stays on the YarnWeight model.
+// ────────────────────────────────────────────────────────────────────────────
+
+model KnittingPattern {
+  id          String  @id @default(cuid())
+  slug        String? @unique
+  name        String
+  description String?
+
+  /// Optional Tutorial that introduces this pattern. Distinct from
+  /// `forkedFromId` (which references another KnittingPattern).
+  tutorialId String?
+  tutorial   Tutorial? @relation("TutorialKnittingPattern", fields: [tutorialId], references: [id], onDelete: SetNull)
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Body data — structured rows, chart, schematic.
+  //
+  // rowByRow shape (TipTap JSON): the row-by-row written instructions.
+  //   Mirrors crochet `rowsStructured` but as TipTap so the admin editor
+  //   handles glossaryTooltip / techniqueLink / orderedList marks inline.
+  //
+  // chartData shape: matches K-2's locked `KnittingChartData` shape (see
+  //   apps/web/src/lib/knitting/renderer/types.ts).
+  // ──────────────────────────────────────────────────────────────────────────
+  chartData        Json?
+  rowByRow         Json?
+  schematicMediaId String?
+  schematic        Media?  @relation("KnittingPatternSchematic", fields: [schematicMediaId], references: [id], onDelete: SetNull)
+  thumbnailMediaId String?
+  thumbnail        Media?  @relation("KnittingPatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
+
+  heroMediaId            String?
+  hero                   Media?                @relation("KnittingPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
+  heroGenerationStatus   ImageGenerationStatus @default(PENDING)
+  preferUserPhotoForHero Boolean               @default(false)
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Project taxonomy. `projectShape` is the finished-piece category. A
+  // KnittingPattern carries exactly one shape. `techniqueDisciplines` is a
+  // multi-valued list — a single colourwork-and-cable hat carries
+  // [COLOURWORK, CABLE_ARAN]. The two axes co-exist in navigation per
+  // phase_knitting_001's sub-cat expansion.
+  // ──────────────────────────────────────────────────────────────────────────
+  projectShape         KnittingProjectShape
+  techniqueDisciplines KnittingTechniqueDiscipline[] @default([])
+
+  // Method enums — proper Prisma enums on KnittingPattern. Tutorial keeps
+  // the K-1 `String?` shape for backwards compatibility; the upload script
+  // validates the Tutorial string against this enum's value set.
+  castOnMethod     CastOnMethod?
+  bindOffMethod    BindOffMethod?
+  inTheRoundMethod InTheRoundMethod?
+
+  /// Pattern-stitch gauge when it differs from stockinette gauge. JSON
+  /// `{ stitchesPer10cm, rowsPer10cm, stitchName, blocked }`. Mirrors the
+  /// shape from K-1's Tutorial.gaugeInPatternStitch.
+  gaugeInPatternStitch Json?
+
+  /// Per-section secondary needle sizes (mm × 10 — 50 = 5.0 mm, 275 = 2.75
+  /// mm). Many garment patterns switch to a smaller needle for ribbing.
+  /// The primary needle lives in `needleSizeMm`. Empty array on patterns
+  /// with a single needle throughout.
+  secondaryNeedleSizes Int[] @default([])
+
+  /// Secondary yarn weight slugs for multi-yarn patterns (colourwork,
+  /// stranded, fade). Empty array on single-yarn patterns. Slugs reference
+  /// the master `YarnWeight` table.
+  secondaryYarnWeightIds String[] @default([])
+
+  /// Slug of the EasePreset row this pattern grades from. Mirrors the
+  /// crochet grading library's preset vocabulary.
+  easePresetSlug String?
+
+  /// CYC yarn weight standard. Enum kept distinct from `model YarnWeight`
+  /// (the master brand-name + gauge-range table) by name to avoid a Prisma
+  /// collision. Pattern carries the enum for cheap library filters; canonical
+  /// brand-level data stays on YarnWeight.
+  yarnWeightStandard KnittingYarnWeightStandard?
+
+  /// Primary needle size in mm. Decimal(4, 2) so 2.25 / 2.75 half-sizes
+  /// round-trip cleanly.
+  needleSizeMm Decimal? @db.Decimal(4, 2)
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Sizing.
+  //
+  // sizesGraded shape:
+  //   [{ name: "M", bust: 92, waist: 76, hip: 96, length: 60,
+  //      sleeveLength: 45, shoulderWidth: 38 }, ...]
+  //   Null on non-graded patterns (blankets, accessories).
+  //
+  // yardageBySize shape:
+  //   { "XS": 800, "S": 900, "M": 1000, ... } per graded size
+  //   { "default": 350 } for non-graded patterns
+  //
+  // gaugeText / finishedSizeText carry the human-readable phrasing the
+  // author writes; `gaugeInPatternStitch` carries the structured numbers.
+  // ──────────────────────────────────────────────────────────────────────────
+  sizesGraded           Json?
+  yardageBySize         Json?
+  constructionDirection ConstructionDirection?
+  gaugeText             String?
+  finishedSizeText      String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Multi-piece patterns (seamed garments, mitten thumbs).
+  // Same shape as CrochetPattern.pieces / buildOrder / assemblyInstructions.
+  // ──────────────────────────────────────────────────────────────────────────
+  pieces               Json?
+  buildOrder           Json?
+  assemblyInstructions Json?
+
+  // Stitches + techniques used.
+  abbreviationsUsed   String[] @default([])
+  specialStitchesUsed String[] @default([])
+  craftStitchSlugs    String[] @default([])
+  craftTechniqueTags  String[] @default([])
+
+  // UK / US terminology. Knitting differs less than crochet; "tension" vs
+  // "gauge" is the main slip. Per-user toggle overrides at view time.
+  terminologyConvention String @default("uk")
+
+  /// Per-row repeat groups for the repeat counter. Same shape as
+  /// CrochetPattern.repeatRowGroups.
+  repeatRowGroups Json?
+
+  // Standard cataloguing.
+  difficulty     Difficulty?
+  estimatedHours Int?
+  premium        Boolean     @default(false)
+  visibility     Visibility  @default(PRIVATE)
+  publishedAt    DateTime?
+
+  // Relations.
+  designerId    String?
+  designer      Designer?         @relation("DesignerKnittingPatterns", fields: [designerId], references: [id], onDelete: SetNull)
+  ownerUserId   String?
+  owner         User?             @relation("KnittingPatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+  forkedFromId  String?
+  forkedFrom    KnittingPattern?  @relation("KnittingPatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
+  forks         KnittingPattern[] @relation("KnittingPatternForks")
+  subCategoryId String?
+  subCategory   SubCategory?      @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+
+  // Reverse relations.
+  progress      KnittingProjectProgress[]
+  stashAssigned KnittingStash[]           @relation("KnittingStashAssignedProject")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([projectShape, publishedAt])
+  @@index([subCategoryId, publishedAt])
+  @@index([designerId])
+  @@index([ownerUserId, updatedAt])
+  @@index([visibility, publishedAt])
+  @@index([forkedFromId])
+  @@index([tutorialId])
+  @@index([heroMediaId])
+  @@index([craftStitchSlugs], type: Gin)
+  @@index([craftTechniqueTags], type: Gin)
+  @@index([techniqueDisciplines], type: Gin)
+}
+
+/// Per-(user, knittingPattern) project state. Mirrors CrochetProjectProgress
+/// shape but adds knitting-specific counters (round / repeat /
+/// stitch-in-row / RS-WS marker) per K-3's autosave path.
+model KnittingProjectProgress {
+  id                String          @id @default(cuid())
+  userId            String
+  user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  knittingPatternId String
+  knittingPattern   KnittingPattern @relation(fields: [knittingPatternId], references: [id], onDelete: Cascade)
+
+  // Linear position counters.
+  currentRow         Int     @default(1)
+  currentRound       Int     @default(1)
+  currentRepeat      Int     @default(1)
+  currentStitchInRow Int     @default(1)
+  isOnRightSide      Boolean @default(true)
+  currentSection     String?
+  completedRows      Json    @default("{}")
+  notes              String?
+  perRowNotes        Json    @default("{}")
+
+  /// Cable needles in flight — JSON array of
+  /// `{ id, description, stitchCount, holdInFront, addedAt }`. Matches the
+  /// CableNeedleEntry shape in
+  /// `apps/web/src/components/studio/knitting/types.ts`.
+  cableNeedles Json @default("[]")
+
+  /// Free-text notes on the cable needles in flight. Captures "second
+  /// cable, two stitches held in front" before crossing.
+  cableNeedleNotes String?
+
+  // User overrides for this project.
+  selectedSize       String?
+  selectedYarn       String?
+  selectedNeedleSize Decimal? @db.Decimal(4, 2)
+
+  /// Project setup — yarn / needles / cast on / swatch. Mirrors
+  /// CrochetProjectProgress.projectSetup JSON shape, with needles + cast-on
+  /// + in-the-round method replacing hook.
+  projectSetup Json?
+
+  startedAt    DateTime  @default(now())
+  lastWorkedAt DateTime  @default(now())
+  completedAt  DateTime?
+  updatedAt    DateTime  @updatedAt
+
+  @@unique([userId, knittingPatternId])
+  @@index([userId, lastWorkedAt])
+  @@index([knittingPatternId])
+}
+
+/// Personal yarn + needle stash. One row per yarn entry (a colour of one
+/// brand at one weight). `needleSizesOwned` carries every needle size the
+/// user owns at the stash level — distinct from the per-project needle on
+/// KnittingProjectProgress.selectedNeedleSize.
+model KnittingStash {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  yarnName       String
+  brand          String?
+  colourway      String?
+  weight         KnittingYarnWeightStandard
+  yardsPerSkein  Int?
+  metresPerSkein Int?
+  skeinsOwned    Int                        @default(1)
+  fibre          String?
+
+  /// Needle sizes owned, stored as mm × 10 (50 = 5.0 mm, 25 = 2.5 mm,
+  /// 275 = 2.75 mm). Integer storage avoids floating-point comparison
+  /// surprises when matching against a pattern's required needle.
+  needleSizesOwned Int[] @default([])
+
+  notes String?
+
+  /// Optional reservation against a specific KnittingPattern. The user can
+  /// say "this Drops Karisma is for the cardigan project" and the Studio
+  /// hides it from substitution candidates for other projects.
+  projectAssignedToId String?
+  projectAssignedTo   KnittingPattern? @relation("KnittingStashAssignedProject", fields: [projectAssignedToId], references: [id], onDelete: SetNull)
+
+  /// Soft-delete stamp — DELETE on /api/studio/knitting/stash sets this
+  /// rather than dropping the row so the Studio can offer a brief undo
+  /// affordance.
+  archivedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, updatedAt])
+  @@index([projectAssignedToId])
+}
+
+enum KnittingProjectShape {
+  SCARF
+  HAT
+  SHAWL
+  BLANKET
+  MITT_GLOVE
+  SOCK
+  SWEATER
+  CARDIGAN
+  VEST
+  OTHER
+}
+
+enum KnittingTechniqueDiscipline {
+  COLOURWORK
+  LACE
+  CABLE_ARAN
+  BRIOCHE_DOUBLEKNIT
+  SPECIALTY
+}
+
+/// Cast-on method. Superset of the K-1 Tutorial.castOnMethod string
+/// vocabulary plus the prompt's KNITTED_ON + OTHER catch-alls so existing
+/// Tutorial string values round-trip cleanly into this enum.
+enum CastOnMethod {
+  LONG_TAIL
+  CABLE
+  GERMAN_TWISTED
+  PROVISIONAL
+  ITALIAN_TUBULAR
+  OLD_NORWEGIAN
+  BACKWARD_LOOP
+  JUDYS_MAGIC
+  KNITTED_ON
+  CROCHET_PROVISIONAL
+  OTHER
+}
+
+/// Bind-off method. Superset of the K-1 Tutorial.bindOffMethod string
+/// vocabulary plus SEWN_TUBULAR + ICELANDIC + KITCHENER + OTHER.
+enum BindOffMethod {
+  STANDARD
+  STRETCHY
+  TUBULAR
+  SEWN
+  SEWN_TUBULAR
+  JENYS_SURPRISINGLY_STRETCHY
+  ICELANDIC
+  THREE_NEEDLE
+  KITCHENER
+  I_CORD
+  RUSSIAN_GRAFT
+  PICOT
+  SUSPENDED
+  OTHER
+}
+
+/// In-the-round working method. Superset of the K-1 Tutorial.inTheRoundMethod
+/// string vocabulary. STRAIGHT_FLAT is the sentinel for flat work captured
+/// alongside in-the-round patterns.
+enum InTheRoundMethod {
+  DPN
+  MAGIC_LOOP
+  TWO_CIRCULARS
+  FIXED_CIRCULAR
+  SHORT_CIRCULAR
+  STRAIGHT_FLAT
+}
+
+/// CYC yarn weight standard. Distinct from `model YarnWeight` (the master
+/// brand-name + gauge-range table). KnittingPattern.yarnWeightStandard
+/// holds the enum for cheap library filters; the master YarnWeight row
+/// holds the canonical record.
+enum KnittingYarnWeightStandard {
+  LACE
+  FINGERING
+  SPORT
+  DK
+  WORSTED
+  ARAN
+  BULKY
+  SUPER_BULKY
+  JUMBO
 }
