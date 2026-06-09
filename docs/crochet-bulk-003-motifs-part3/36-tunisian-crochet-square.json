@@ -1,0 +1,146 @@
+{
+  "slug": "crochet-tunisian-square",
+  "title": "Tunisian crochet square",
+  "subtitle": "A square motif worked in Tunisian simple stitch on a long hook, producing a dense woven fabric",
+  "excerpt": "Tunisian crochet uses a long hook to pick up all stitches across the row in the forward pass, then works them off one by one in the return pass. The result is a dense, flat fabric with a distinctive woven grid on the surface. A 20-stitch by 20-row square in DK cotton gives a firm 10 cm tile.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tunisian (Afghan) crochet is documented in Weldon's Practical Needlework, Volume 1 (1885), Afghan stitch chapter (Internet Archive). Therese de Dillmont, Encyclopedia of Needlework (1886), Afghan crochet section.",
+  "heroPrompt": "A Tunisian simple stitch crochet square in warm oatmeal DK cotton on a pale linen background, photographed flat from above in soft daylight. Dense woven-grid surface texture, slight curl corrected by blocking, 10 cm square.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 60,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "INTERMEDIATE"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-5-0mm",
+    "gaugeText": "Finished Tunisian square measures 10 × 10 cm in DK-weight cotton with a 5 mm Tunisian hook.",
+    "finishedSizeText": "10 × 10 cm per motif.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Tunisian crochet square",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Each row shown as forward pass (Tss picks) and return pass (yo, pull through). 20 sts × 20 rows.",
+      "rows": [
+        { "rowNumber": 1, "label": "Foundation chain", "stitches": [{ "symbol": "chain", "count": 20, "label": "ch 20" }] },
+        { "rowNumber": 2, "label": "Row 1 Forward (Tss)", "stitches": [{ "symbol": "tunisian-simple-stitch", "count": 20, "label": "Tss in each ch — 20 loops on hook" }] },
+        { "rowNumber": 3, "label": "Row 1 Return", "stitches": [{ "symbol": "chain", "count": 1 }, { "symbol": "slip-stitch", "label": "yo + draw through 2 loops, repeat to end" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-chain", "crochet-tunisian-simple"],
+    "craftTechniqueTags": ["tunisian", "afghan-stitch", "forward-return", "dense-fabric"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tunisian-simple-stitch",
+      "term": "Tunisian simple stitch (Tss)",
+      "definition": "Insert hook from right to left through the vertical bar of the stitch below, yarn over and pull up a loop. Leave all loops on the hook (forward pass). On the return pass: yarn over, pull through 2 loops at a time to end."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-simple"],
+  "criticalTechniques": ["crochet-tunisian-simple"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Tunisian square uses "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tunisian-simple-stitch" } }],
+            "text": "Tunisian simple stitch"
+          },
+          {
+            "type": "text",
+            "text": " to build a dense, flat fabric with a woven-grid surface. The forward pass picks up all 20 loops across the row; the return pass works them off two at a time. Unlike standard crochet, the work is never turned."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tunisian fabric naturally curls at the edges before blocking. A 5 mm hook on DK yarn (larger than you would normally use) compensates for the tight gauge Tunisian produces. Block firmly on a mat — the fabric becomes flat and stable once wet-blocked." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 14 g of DK-weight cotton. A 5 mm Tunisian (Afghan) hook — 30 cm long. Blocking mat."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Foundation chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ch 20." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 1 forward pass" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Insert hook into 2nd ch from hook, yo, draw up loop (leave on hook). Rep in each ch to end. (20 loops on hook.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 1 return pass" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ch 1. *Yo, draw through 2 loops.* Rep from * to end. (1 loop remains on hook — the start of the next forward pass.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rows 2–20" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Forward pass: insert hook through the vertical bar of each Tss below, draw up a loop for each. Return pass as above. After row 20: work a dc bindoff row along the top edge. Fasten off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For colour patterns in Tunisian, try alternating yarn colours on the forward pass rows. Or work the interlocking crochet square for a different two-colour technique that avoids carrying yarn." }]
+      }
+    ]
+  }
+}

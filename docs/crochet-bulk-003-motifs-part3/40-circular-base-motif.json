@@ -1,0 +1,156 @@
+{
+  "slug": "crochet-circular-base-motif",
+  "title": "Circular base motif",
+  "subtitle": "A solid flat circle used as a base for bags, hats, and amigurumi, worked in dc increases",
+  "excerpt": "The circular base motif is the foundational flat-circle construction that underlies bags, bowls, berets, and amigurumi. It works 6 increases per round distributed evenly, giving a flat circle without any spiral distortion. The same increase formula works in any yarn weight — the number of stitches and the hook change; the geometry stays the same.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Flat-circle construction by even increases is described in Weldon's Practical Crochet, Volume 1 (1885), circular foundation chapter (Internet Archive). Therese de Dillmont, Encyclopedia of Needlework (1886), circular crochet section.",
+  "heroPrompt": "A circular base crochet motif in natural oatmeal DK cotton on a pale linen background, photographed flat from above in soft daylight. A smooth flat circle with no visible increases or spiral distortion, 12 cm across.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 25,
+  "tags": {
+    "shape": "CIRCLE",
+    "theme": "GEOMETRIC",
+    "complexity": "BEGINNER"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Finished circular base measures 12 cm across at 6 rounds in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "12 cm across at 6 rounds.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Circular base motif",
+      "layout": "round",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "6 increases per round. Increases shift position by 1 stitch each round to avoid visible spiral ridges.",
+      "rounds": [
+        { "roundNumber": 1, "label": "Rnd 1", "stitches": [{ "symbol": "magic-ring" }, { "symbol": "double-crochet", "count": 6, "label": "6dc" }, { "symbol": "slip-stitch", "label": "join" }] },
+        { "roundNumber": 2, "label": "Rnd 2", "stitches": [{ "symbol": "double-crochet", "count": 2, "label": "2dc in every st" }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "slip-stitch", "label": "join" }] },
+        { "roundNumber": 3, "label": "Rnd 3", "stitches": [{ "symbol": "double-crochet", "count": 2, "label": "2dc in first st" }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 1 }, { "symbol": "slip-stitch", "label": "join" }] },
+        { "roundNumber": 6, "label": "Rnd 6", "stitches": [{ "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2, "label": "increase" }, { "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "double-crochet", "count": 4 }, { "symbol": "double-crochet", "count": 2 }, { "symbol": "slip-stitch", "label": "join" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-magic-ring", "crochet-double-uk", "crochet-slip-stitch"],
+    "craftTechniqueTags": ["in-the-round", "flat-circle", "increasing", "foundation"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flat-circle-formula",
+      "term": "Flat circle formula",
+      "definition": "Start with 6 dc in the magic ring. Add 6 increases per round, shifting the increase position by 1 stitch each round to avoid ridges. Stitch count: 6, 12, 18, 24, 30, 36 for rounds 1–6."
+    }
+  ],
+  "techniqueSlugs": ["crochet-magic-ring", "crochet-working-a-flat-circle"],
+  "criticalTechniques": ["crochet-magic-ring"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The circular base motif applies the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flat-circle-formula" } }],
+            "text": "flat circle formula"
+          },
+          {
+            "type": "text",
+            "text": " — 6 increases per round, position shifted by 1 stitch each round — to produce a smooth circle without spiral ridges or visible increase lines. Six rounds give a 12 cm circle; nine rounds give 18 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This pattern is the foundation for bags (stop here and work straight sides upward), berets (stop at the right diameter and begin decreasing), amigurumi bodies (stop here, stuff, and continue), and flat trivets (stop here and fasten off). The same formula works in any weight yarn with any hook — only the finished size changes." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 10 g of DK-weight cotton for a 12 cm circle. A 4 mm hook. Tapestry needle and scissors."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 1" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Magic ring. 6 dc into ring. Sl st to join. Pull ring closed. (6 dc.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 2" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "2 dc into every dc around. Sl st to join. (12 dc.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 3" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "*2 dc into next dc. 1 dc into next dc.* Rep from * around. Sl st to join. (18 dc.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rounds 4–6" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rnd 4: *2dc, 1dc, 1dc* × 6. (24 dc.) Rnd 5: *2dc, 1dc, 1dc, 1dc* × 6. (30 dc.) Rnd 6: *2dc, 1dc, 1dc, 1dc, 1dc* × 6. (36 dc.) Sl st and fasten off. (Formula: 1 extra plain dc between increases per round.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Continuing upward" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "To continue into a bag or bowl, work 1 dc into every dc around (no increases) from round 7 onward. The sides grow straight upward from the flat base." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For a decorative circular motif, use this base and continue with the five-petal flower round or the vintage fan round to add pattern on top of the solid circle." }]
+      }
+    ]
+  }
+}

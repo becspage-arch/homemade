@@ -1,0 +1,130 @@
+{
+  "slug": "crochet-join-as-you-go-square",
+  "title": "Join-as-you-go square",
+  "subtitle": "A granny square that attaches to its neighbours on the final round rather than sewing up afterward",
+  "excerpt": "Join-as-you-go replaces the chain-2 corner spaces on the final round of each new square with a slip-stitch join into the matching corner space of the adjacent finished square. Working the join during crochet rather than sewing eliminates seaming and keeps the wrong side flat with no ridges.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The join-as-you-go technique is documented in Weldon's Practical Crochet, Volume 3 (1888) and appears in early American crochet booklets throughout the 1890s as a method for assembling afghan squares without a tapestry needle.",
+  "heroPrompt": "Four granny squares joined together with the join-as-you-go method, photographed flat from above in soft daylight. Clean flat seams between the squares with no ridge on the right side. Two shades of dusty blue DK cotton.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 50,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "INTERMEDIATE"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Each square measures 10 × 10 cm in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "10 × 10 cm per square. Four joined squares: 20 × 20 cm.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Join-as-you-go square",
+      "layout": "round",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Rounds 1–3 complete normally. On round 4, replace ch-2 corner spaces on joining edges with sl-st join into the adjacent square's matching corner. Replace side ch-1 spaces with sl-st joins.",
+      "rounds": [
+        { "roundNumber": 1, "label": "Rnd 1–3", "stitches": [{ "symbol": "treble", "count": 3 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 3 }, { "symbol": "chain", "count": 1 }] },
+        { "roundNumber": 4, "label": "Rnd 4 (join edge)", "stitches": [{ "symbol": "treble", "count": 3 }, { "symbol": "chain", "count": 1, "label": "ch 1" }, { "symbol": "slip-stitch", "label": "sl st into adj square corner" }, { "symbol": "chain", "count": 1 }, { "symbol": "treble", "count": 3 }, { "symbol": "chain", "count": 1 }, { "symbol": "slip-stitch", "label": "sl st into adj side sp" }, { "symbol": "chain", "count": 1 }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-magic-ring", "crochet-chain", "crochet-treble", "crochet-slip-stitch"],
+    "craftTechniqueTags": ["in-the-round", "joining", "jayg", "granny-construction"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "jayg",
+      "term": "JAYG (join-as-you-go)",
+      "definition": "A joining method where the final round of each new motif is worked with slip stitch joins into the adjacent finished motif rather than completing the round independently and sewing up afterward."
+    }
+  ],
+  "techniqueSlugs": ["crochet-joining-methods", "crochet-magic-ring", "crochet-jayg"],
+  "criticalTechniques": ["crochet-jayg"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jayg" } }],
+            "text": "JAYG"
+          },
+          {
+            "type": "text",
+            "text": " method works all rounds of a new square independently through round 3, then joins on round 4 by replacing the two chain stitches in each corner space with one chain, one slip stitch into the adjacent square's corner, one chain. Side ch-1 spaces get the same treatment: ch 1, sl st, ch 1."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work the first square fully through all 4 rounds (or 3 rounds for smaller motifs). For each subsequent square in the layout, complete rounds 1 to 3 normally, then on round 4 join along each shared edge. Corner joins at the intersection of four squares place the sl st through all four meeting corner spaces." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials",
+          "body": "DK-weight cotton, any quantity. A 4 mm hook. No tapestry needle needed for joining — that is the point of the technique."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Square pattern (4 rounds)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rounds 1–3: standard granny square (see granny-square-three-round for the full pattern). Finish round 3 normally. Fasten off if this is the anchor square; do not fasten off for joining squares." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 4 — free edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sl st to corner sp. *3 tr, ch 2, 3 tr into corner. Ch 1, 3 tr into side sp. Ch 1.* Rep from * on free edges as standard." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 4 — joining edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At each joining corner: work 3 tr. Ch 1. Sl st into the adjacent square's ch-2 corner sp. Ch 1. Work 3 tr into same corner sp on new square. At each joining side: ch 1. Sl st into adjacent square's ch-1 side sp. Ch 1. Work 3 tr into next sp on new square." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Once JAYG is reliable, try the granny stripe panel, which uses the same principle along a continuous join to build a striped panel without any seaming." }]
+      }
+    ]
+  }
+}

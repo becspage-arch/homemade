@@ -1,0 +1,123 @@
+{
+  "slug": "crochet-filet-motif",
+  "title": "Filet crochet motif",
+  "subtitle": "A lace grid motif worked from a chart of filled and open squares",
+  "excerpt": "Filet crochet builds a grid of open chain squares with treble posts, filling selected squares with extra trebles to form a pattern from the contrast between filled and empty cells. Any image that reads as a pixel grid — letters, simple animals, geometric shapes — can be translated to a filet chart and crocheted.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Filet crochet is one of the oldest documented crochet techniques; it appears extensively in Therese de Dillmont, Encyclopedia of Needlework (1886) and Weldon's Practical Crochet from Volume 1 (1885) onward.",
+  "heroPrompt": "A filet crochet square motif in fine white cotton thread on a pale linen background, photographed flat from above in soft daylight. A simple heart chart visible in the filet grid, open cells against filled treble cells, 10 cm square.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 70,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "INTERMEDIATE"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "fingering",
+    "primaryHookSlug": "crochet-hook-2-5mm",
+    "gaugeText": "Finished filet motif measures 10 × 10 cm in 4-ply cotton with a 2.5 mm hook.",
+    "finishedSizeText": "10 × 10 cm per motif.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Filet crochet motif",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Open cell: 2 tr + ch 2. Filled cell: 4 tr. Heart chart shown: 9 cells wide × 9 rows deep.",
+      "rows": [
+        { "rowNumber": 1, "label": "Foundation", "stitches": [{ "symbol": "chain", "count": 29, "label": "ch 29 (9 cells × 3 + 2)" }] },
+        { "rowNumber": 2, "label": "Row 1 (open)", "stitches": [{ "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2, "label": "open cell" }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }] },
+        { "rowNumber": 5, "label": "Row 4 (heart chart)", "stitches": [{ "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 4, "label": "filled cell" }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 4 }, { "symbol": "treble", "count": 2 }, { "symbol": "chain", "count": 2 }, { "symbol": "treble", "count": 2 }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-chain", "crochet-treble"],
+    "craftTechniqueTags": ["rows", "filet-crochet", "lace", "chart-reading"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": false },
+    { "slug": "blocking-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "filet-cell",
+      "term": "Filet cell",
+      "definition": "The basic unit of a filet grid. An open cell is two trebles with a chain-2 space between them. A filled cell is four trebles with no gap. Combining open and filled cells creates patterns from their contrast."
+    }
+  ],
+  "techniqueSlugs": ["crochet-working-in-rows", "crochet-chart-reading", "crochet-filet-construction"],
+  "criticalTechniques": ["crochet-filet-construction"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Filet crochet builds patterns by alternating open and filled "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "filet-cell" } }],
+            "text": "filet cells"
+          },
+          {
+            "type": "text",
+            "text": " in a regular grid. An open cell is two trebles with a chain-2 gap; a filled cell is four trebles with no gap. The chart reads like a pixel grid — shaded squares are filled cells, white squares are open. Any pattern that works as a pixel image translates directly to filet."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This motif uses a simple 9 × 9 heart chart. Block the finished piece firmly — wet-blocking opens the chain spaces and gives the grid its characteristic crisp lace appearance. Without blocking, the chain spaces collapse and the pattern is hard to read." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 8 g of 4-ply cotton thread. A 2.5 mm hook. Blocking mat and pins."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Foundation chain: ch 29. (9 cells × 3 ch per cell + 2 turning ch.)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Row 1: tr in 4th ch from hook. *Ch 2, skip 2 ch, tr in next ch.* Rep across. Turn. (9 open cells.)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Row 2 onward: ch 5 (counts as tr + ch 2). *For open cell: tr in next tr, ch 2. For filled cell: tr in each of the 2 skipped ch, tr in next tr (4 tr total, no ch 2).* Work per heart chart rows 1–9. Fasten off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work the bruges lace tile for a different lace construction using strip-based rather than grid-based assembly." }]
+      }
+    ]
+  }
+}

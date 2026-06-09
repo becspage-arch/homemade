@@ -1,0 +1,113 @@
+{
+  "slug": "crochet-tapestry-square",
+  "title": "Tapestry crochet square",
+  "subtitle": "A two-colour geometric square where both yarns are carried simultaneously across each row",
+  "excerpt": "Tapestry crochet carries both yarn colours across every row, crocheting over the unused colour so it is caught inside the stitches. Switching between colours mid-row produces crisp geometric pixel patterns with a neat, reversible wrong side. This square works a simple diamond chart in dc.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Tapestry crochet with carried yarn is documented in South American craft traditions and appears in early 20th-century American crochet handbooks. The carry-yarn principle in European crochet appears in Weldon's Practical Crochet, Volume 5 (1890).",
+  "heroPrompt": "A tapestry crochet square in cream and terracotta DK cotton on a pale linen background, photographed flat from above in soft daylight. Geometric diamond pattern across the dc surface, clean edges, 12 cm square.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 75,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "INTERMEDIATE"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Finished tapestry square measures 12 × 12 cm in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "12 × 12 cm per motif.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Tapestry crochet square",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Both colours carried every row. Each cell represents one dc stitch in colour A or colour B per the diamond chart. 15 sts × 15 rows.",
+      "rows": [
+        { "rowNumber": 1, "label": "Row 1", "stitches": [{ "symbol": "double-crochet", "count": 15, "colour": "A" }] },
+        { "rowNumber": 8, "label": "Row 8 (diamond peak)", "stitches": [{ "symbol": "double-crochet", "count": 7, "colour": "A" }, { "symbol": "double-crochet", "count": 1, "colour": "B" }, { "symbol": "double-crochet", "count": 7, "colour": "A" }] },
+        { "rowNumber": 15, "label": "Row 15", "stitches": [{ "symbol": "double-crochet", "count": 15, "colour": "A" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk"],
+    "craftTechniqueTags": ["rows", "tapestry-crochet", "two-colour", "carry-yarn"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "carry-yarn",
+      "term": "Carry yarn",
+      "definition": "To hold the unused colour yarn along the top of the previous row and work the current row's stitches over it, catching it inside the dc tops. The carried yarn is hidden inside the stitches but available for instant colour switching."
+    }
+  ],
+  "techniqueSlugs": ["crochet-colour-change", "crochet-working-in-rows", "crochet-carry-yarn"],
+  "criticalTechniques": ["crochet-carry-yarn"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tapestry crochet keeps both colours in hand at all times, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carry-yarn" } }],
+            "text": "carrying the yarn"
+          },
+          {
+            "type": "text",
+            "text": " not in use over the top of the previous row. Colour switches happen within the dc stitch itself: work the stitch until the final pull-through, drop one colour and pick up the other. The carried yarn is completely hidden inside the stitches when done correctly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tension is the main challenge. The carried colour must stay relaxed — not pulled tight enough to pucker the fabric, not so loose it shows as a loop on the surface. Work a 5-stitch swatch carrying one colour over the other before starting the motif." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 10 g colour A and 6 g colour B in DK-weight cotton. A 4 mm hook. Tapestry needle and scissors."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ch 16 in colour A. Row 1: dc in 2nd ch from hook and in each ch to end, carrying colour B but not working it. (15 dc.) Turn. Continue for 15 rows, following a 15 × 15 diamond chart. Diamond peak is at position 8, row 8. From row 2, begin introducing colour B at the chart positions: switch at the last pull-through, carry the unused colour inside all dc until the next switch." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work the filet crochet motif for a different approach to geometric pattern making — using chain spaces and trebles rather than solid dc." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "slug": "crochet-interlocking-square",
+  "title": "Interlocking crochet square",
+  "subtitle": "Two independent mesh layers worked simultaneously and locked together by chain-space insertion",
+  "excerpt": "Interlocking crochet works two separate open-mesh grids in different colours simultaneously, with each round of one grid inserting through the chain spaces of the other. The two grids interlock without any stitch catching or yarn carrying — they are structurally independent but visually inseparable.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Interlocking crochet is documented in 20th-century craft publications and has precursors in Victorian double-mesh crochet described in Weldon's Practical Needlework, Volume 6 (1891).",
+  "heroPrompt": "An interlocking crochet square in deep teal and cream DK cotton on a pale linen background, photographed flat from above in soft daylight. Two interlocked open-mesh grids in contrasting colours, 12 cm square.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 100,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "ADVANCED"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Finished interlocking square measures 12 × 12 cm in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "12 × 12 cm per motif.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Interlocking crochet square",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Grid A (colour A) worked first in open mesh. Grid B (colour B) worked through the chain spaces of grid A, inserting rather than working on top.",
+      "rows": [
+        { "rowNumber": 1, "label": "Grid A Row 1", "stitches": [{ "symbol": "double-crochet", "count": 1, "colour": "A" }, { "symbol": "chain", "count": 2, "colour": "A" }, { "symbol": "double-crochet", "count": 1, "colour": "A" }, { "symbol": "chain", "count": 2, "colour": "A" }] },
+        { "rowNumber": 2, "label": "Grid B Row 1 (through A)", "stitches": [{ "symbol": "double-crochet", "count": 1, "label": "dc through ch-2 sp of Grid A", "colour": "B" }, { "symbol": "chain", "count": 2, "colour": "B" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk", "crochet-slip-stitch"],
+    "craftTechniqueTags": ["rows", "interlocking", "two-colour", "double-mesh", "advanced"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "interlocking-mesh",
+      "term": "Interlocking mesh",
+      "definition": "Two open-mesh crochet grids where each grid's stitches pass through the chain spaces of the other grid, locking them together without any yarn connection between them."
+    }
+  ],
+  "techniqueSlugs": ["crochet-working-in-rows", "crochet-interlocking"],
+  "criticalTechniques": ["crochet-interlocking"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two independent open-mesh grids form an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interlocking-mesh" } }],
+            "text": "interlocking mesh"
+          },
+          {
+            "type": "text",
+            "text": " by inserting each grid's stitches through the chain spaces of the other. The grids never share yarn — they are structurally separate but physically locked together. Each grid is a simple 1 dc + 2 ch mesh."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work grid A first across all rows. Then work grid B with the wrong side of grid A facing: each dc of grid B inserts through a chain space of grid A, not on top of it. The two grids sit in different planes of the fabric, visible from their respective right sides." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 10 g colour A and 10 g colour B in DK-weight cotton. A 4 mm hook."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Grid A (colour A)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ch 25 (foundation for 8-stitch mesh + turning). Row 1: dc in 3rd ch from hook, *ch 2, skip 2 ch, dc.* Rep to end. Turn. Row 2: ch 3, dc in next ch-2 sp, *ch 2, dc in next ch-2 sp.* Rep. Turn. Rep rows 1–2 for 12 rows total. Fasten off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Grid B (colour B)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Turn grid A so the ch-2 spaces of row 1 face upward. Join colour B at the bottom left corner. *Insert hook THROUGH a ch-2 space of grid A from below, dc through the space. Ch 2, insert hook through the next ch-2 space.* Rep across, and continue building up through all 12 rows by inserting through grid A's spaces. Fasten off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Work the advanced snowflake for a lace construction that uses spike and chain techniques in a very different way." }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-corner-to-corner-diamond",
+  "title": "Corner-to-corner diamond motif",
+  "subtitle": "A two-colour diamond worked diagonally using the corner-to-corner technique",
+  "excerpt": "The corner-to-corner technique builds a diamond by increasing on both diagonal axes, placing one colour in the centre and another in the four outer quadrants. No colour changes mid-row — each dc-block tile is fully one colour, making the technique straightforward once the diagonal increase and decrease logic is clear.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Corner-to-corner construction appears in American craft manuals from the 1880s and is documented in British needlework publications from the same period. Weldon's Practical Crochet, Volume 4 (1889).",
+  "heroPrompt": "A corner-to-corner diamond crochet motif in cream and sage DK cotton on a pale linen background, photographed flat from above in soft daylight. A central sage diamond on a cream background, the square at 45 degrees, 13 cm across.",
+  "heroMediaId": null,
+  "designerId": null,
+  "patternLicense": "LIBRARY_FREE",
+  "attributionRequired": false,
+  "commercialUseAllowed": false,
+  "estimatedMinutes": 80,
+  "tags": {
+    "shape": "SQUARE",
+    "theme": "GEOMETRIC",
+    "complexity": "INTERMEDIATE"
+  },
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Finished C2C square measures 13 × 13 cm in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "13 × 13 cm (square set on point).",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Corner-to-corner diamond motif",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Each cell is a ch-3 + 3dc tile. The motif increases by one tile per diagonal row up to the midpoint, then decreases. Diamond chart shows colour placement.",
+      "rows": [
+        { "rowNumber": 1, "label": "Row 1 (start corner)", "stitches": [{ "symbol": "chain", "count": 6, "label": "ch 6", "colour": "A" }, { "symbol": "double-crochet", "count": 3, "label": "3dc into 4th ch", "colour": "A" }] },
+        { "rowNumber": 2, "label": "Row 2 (increase)", "stitches": [{ "symbol": "chain", "count": 6, "colour": "A" }, { "symbol": "double-crochet", "count": 3, "colour": "A" }, { "symbol": "chain", "count": 3 }, { "symbol": "double-crochet", "count": 3 }] },
+        { "rowNumber": 7, "label": "Row 7 (midpoint)", "stitches": [{ "symbol": "chain", "count": 6, "colour": "B", "label": "diamond colour starts" }, { "symbol": "double-crochet", "count": 3, "colour": "B" }] },
+        { "rowNumber": 13, "label": "Final row", "stitches": [{ "symbol": "double-crochet", "count": 3, "label": "1 tile only", "colour": "A" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk", "crochet-slip-stitch"],
+    "craftTechniqueTags": ["corner-to-corner", "diagonal-construction", "colour-work"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "c2c-tile",
+      "term": "C2C tile",
+      "definition": "The basic unit of corner-to-corner crochet: chain 3, then work 3 double crochet into the resulting loop or into a previous tile's chain space. Each tile occupies one cell of the diagonal grid."
+    }
+  ],
+  "techniqueSlugs": ["crochet-corner-to-corner"],
+  "criticalTechniques": ["crochet-corner-to-corner"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Corner-to-corner crochet works from one corner of a square to the opposite corner, building a grid of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "c2c-tile" } }],
+            "text": "C2C tiles"
+          },
+          {
+            "type": "text",
+            "text": ". Each diagonal row increases by one tile until the midpoint, then decreases symmetrically. The diamond pattern places the contrast colour in the centre tiles of the grid, with the background colour filling the outer tiles."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Each tile is complete in one colour before moving to the next, so colour changes are clean. Use a grid chart — the pattern below gives a 13-diagonal-row square with the diamond spanning the middle 7 rows. Adjust the diamond placement by shifting the contrast colour start row." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 10 g colour A and 6 g colour B in DK-weight cotton. A 4 mm hook. A printed grid chart helps track tile placement."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Increase section (rows 1–7)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Row 1: ch 6 in colour A. 3 dc into 4th ch from hook. (1 tile.) Row 2: ch 6, turn. 3 dc into ch-3 sp of row 1 tile. Ch 3, 3 dc into same sp. (2 tiles.) Continue adding 1 tile per row until row 7 (7 tiles per row). From row 4, change the centre tiles to colour B for the diamond." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Decrease section (rows 8–13)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Row 8: sl st across first tile to the second ch-3 sp. Begin working tiles from the second sp. (6 tiles.) Continue reducing by 1 tile per row through row 13 (1 tile). Fasten off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Try the mosaic crochet square for a different approach to two-colour geometric patterns. Or work the tapestry crochet square to carry two colours simultaneously across each row." }]
+      }
+    ]
+  }
+}
