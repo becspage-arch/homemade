@@ -1,0 +1,75 @@
+{
+  "slug": "crochet-continuous-spirals",
+  "title": "Working in continuous spirals",
+  "subtitle": "Skip the join, mark the round, keep spiralling — the amigurumi method",
+  "excerpt": "Continuous spirals skip the round-end slip stitch and turning chain. The work climbs gently outward instead of stacking in distinct rounds. The amigurumi method — invisible round changes, no diagonal join seam.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Modern amigurumi adopted the continuous-spiral method to disguise the round-end seam; Edie Eckman, The Crochet Answer Book, sets out the standard technique. The geometry traces back to Victorian needle-bag and small-purse patterns in Weldon's Practical Crochet.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-3-5mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk", "crochet-magic-ring"],
+    "craftTechniqueTags": ["continuous-spiral", "amigurumi", "magic-ring"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook-3-5mm", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "round-marker", "term": "Round marker", "definition": "A locking stitch marker or short piece of contrast yarn placed in the first stitch of each new round. The only way to track round position when working a continuous spiral with no join." }
+  ],
+  "techniqueSlugs": ["crochet-continuous-spirals", "crochet-magic-ring"],
+  "criticalTechniques": ["crochet-magic-ring"],
+  "aliases": ["spiral crochet", "amigurumi method", "no-join rounds"],
+  "heroPrompt": "A small amigurumi-style sphere shape, cream DK cotton, photographed from the side on a pale background — the rounds spiral smoothly without a visible join seam, a stitch marker sits in the first stitch of the current round.",
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Continuous spirals skip the round-end slip stitch and the turning chain that begins each new round. Instead of stacking discrete rounds, the work climbs gently outward — round 2 starts directly above round 1's first stitch, round 3 above round 2's first stitch, and so on. The amigurumi standard, because there's no diagonal seam to spoil the look of a finished ball or animal." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The catch: without a join, there's nothing to tell you where one round ends and the next begins. The fix is a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "round-marker" } }], "text": "round marker" }, { "type": "text", "text": " — a locking stitch marker placed in the first stitch of each new round, moved up as you work. Don't try to track rounds by eye on spiral work; the count drifts after three rounds." }] },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "When continuous spirals are the right choice",
+          "body": "Amigurumi animals, spherical or tubular shapes, bag bases, beanies worked top-down. Anywhere you want the rounds to look identical without a visible seam. Avoid continuous spirals on multi-colour stripe patterns — the colour change shows up as a diagonal jog. For striped pieces, work in joined rounds."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a continuous spiral" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The example below is a small ball — round 1 has 6 stitches in a magic ring, doubled each round to a max width, then decreased to close. The same technique applies to any continuous-spiral piece." }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 1: into a magic ring, work 6 dc. Do NOT join with a slip stitch. Place a locking stitch marker in the first dc of the round." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 2: work 2 dc in each st around. (12 sts.) When you reach the marker, you've finished the round. Pull the marker out, work the first stitch of the next round, place the marker back in the new stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 3: *1 dc in next st, 2 dc in next st; repeat from * around. (18 sts.) Same marker move at the round join — pull marker, work first stitch, replace marker." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue increasing by 6 sts per round until the diameter reaches the size you want. Work two rounds plain (no increases) at the maximum width, then start decreasing by 6 sts per round to close. Stuff before the opening closes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the opening is about 1 cm across, fasten off leaving a long tail. Thread the tail through a tapestry needle and run the needle through the front loop of each remaining stitch. Pull tight to close the hole. Bury the tail in the stuffing." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When the spiral goes wrong",
+          "intro": "Four common continuous-spiral problems and the fix for each.",
+          "items": [
+            { "symptom": "The round count drifts — round 4 has 23 sts, not 24", "cause": "The marker fell out or got missed during a round, and you can't tell where the round started. One stitch missed or added is hard to spot in a spiral.", "fix": "Use a locking stitch marker rather than a loop of yarn — it clamps shut and won't slip. After each round, count the stitches in the round and compare to the expected count. Catch the drift in round 4, not in round 10." },
+            { "symptom": "The work has a visible seam climbing diagonally up one side", "cause": "You accidentally joined a round with a slip stitch and continued. The slip stitch breaks the spiral.", "fix": "Pull back to before the slip stitch and continue without joining. There's no other way to recover — the seam stays visible if you let it through." },
+            { "symptom": "The piece has small visible gaps at the centre, not a clean closed dome", "cause": "Tension too loose, or the magic ring wasn't pulled tight before round 2.", "fix": "Use a hook one size smaller than the yarn label recommends. For DK cotton, 3.5 mm instead of 4 mm. The tighter tension closes amigurumi-style fabric properly." },
+            { "symptom": "When stuffing, the stuffing pokes through the stitches", "cause": "Same as above — tension too loose for stuffing.", "fix": "Use a smaller hook from the start, or line the inside with a thin piece of fabric before stuffing. For toys destined for children, tight tension matters for safety as well as appearance." }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A small spiral ball is the foundation of every amigurumi animal. Once a clean closed sphere works, the next step is an oval (start by working into both sides of a foundation chain, then spiral around) or a tube (work straight rounds with no increase). The same marker-and-spiral logic carries through every continuous-round project." }] }
+    ]
+  }
+}

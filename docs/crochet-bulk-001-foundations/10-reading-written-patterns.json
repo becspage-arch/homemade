@@ -1,0 +1,75 @@
+{
+  "slug": "crochet-reading-written-patterns",
+  "title": "Reading a written crochet pattern",
+  "subtitle": "Row instructions, stitch counts, asterisks, brackets, and the bit at the end in brackets",
+  "excerpt": "A written crochet pattern is a row-by-row script in standard shorthand. Once you can read the abbreviations and the punctuation, every published pattern in the library opens up. The handful of conventions that unlock the rest.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — comprehensive modern reference on pattern shorthand. Weldon's Practical Crochet — the Victorian publishing convention that shaped modern British pattern style.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["reading-patterns"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook-4-0mm", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pattern-repeat", "term": "Pattern repeat", "definition": "A sequence of stitches inside asterisks or brackets that the reader works multiple times to make up a row or round. \"*1 tr, ch 1, skip 1 st; repeat from * across\" means work that three-stitch sequence over and over until the row ends." },
+    { "slug": "stitch-count", "term": "Stitch count", "definition": "The total number of stitches in a finished row or round, written at the end of the instruction in brackets. \"(40 sts)\" tells the reader to expect 40 stitches at the end of that row. The reader's verification anchor." }
+  ],
+  "techniqueSlugs": ["crochet-reading-written-patterns"],
+  "criticalTechniques": ["crochet-reading-written-patterns"],
+  "aliases": ["reading a pattern", "pattern shorthand", "crochet abbreviations"],
+  "heroPrompt": "An open notebook with a hand-written crochet pattern on the right page in standard shorthand (ch 3, *1 tr, ch 1, skip 1*, etc.), a 4 mm hook and a small swatch of treble crochet on the left, soft daylight, plain background.",
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A written crochet pattern is a row-by-row script in standard shorthand. Once you can read the abbreviations and the punctuation, every published pattern in the library opens up. The handful of conventions below cover ninety per cent of British crochet patterns from the late nineteenth century to today." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The standard abbreviations" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "British modern crochet writes abbreviations in lowercase. The core set:" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "ch — chain. \"ch 3\" means three chains." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sl st — slip stitch. \"sl st to top of beg ch-3\" means slip stitch into the top of the beginning 3-chain to join a round." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dc — double crochet (UK; the US equivalent of the same move is sc, single crochet)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "htr — half treble (UK; US hdc, half double crochet)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "tr — treble (UK; US dc, double crochet — the canonical confusion)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dtr — double treble (UK; US tr, treble)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "MR — magic ring." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sp — space (the gap between two stitches, usually a chain-space)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sk — skip the next stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sts — stitches (used at the end of a row in the stitch count)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "beg — beginning (used in \"top of beg ch-3\" — the beginning chain-3)." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Asterisks, brackets, and the punctuation that controls repeats" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Crochet patterns use three forms of " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pattern-repeat" } }], "text": "pattern repeat" }, { "type": "text", "text": " notation:" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "*…repeat from *. Anything between the asterisks is the repeat unit. \"*1 tr, ch 1, skip 1 st; repeat from * across\" means work the three-stitch sequence (1 tr, ch 1, skip 1 st) over and over until the row ends." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "[…] N times. Anything inside square brackets is repeated the named number of times. \"[2 tr in next st] 6 times\" means work two trebles into a single stitch, then move on to the next stitch and do it again, six times in total." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "(…). Parentheses group a sub-sequence inside a larger repeat, or describe a stitch combination worked into the same base. \"Into each corner ch-2 sp, work (3 tr, ch 2, 3 tr)\" means work three trebles, two chains, three trebles, all into the same chain-space." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stitch counts in brackets at the end of each row" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Every row in a well-written pattern ends with the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-count" } }], "text": "stitch count" }, { "type": "text", "text": " in brackets. \"(40 sts)\" tells you to expect 40 stitches at the end of that row. Count after every row. The point of the bracket is to catch a drift before it cascades into the next row." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For motif patterns where the stitch count varies by round, every round names its own count: \"Round 1: 12 sts. Round 2: 24 sts. Round 3: 36 sts.\"" }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "The turning chain instruction" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The turning chain controls row height. The convention is that the turning chain is the very first thing on each row instruction: \"Row 2: ch 3 (counts as first tr), 1 tr in each st across (40 sts).\" The bit in parentheses says whether the turning chain counts as a stitch. UK trebles take a 3-chain turning chain that counts; UK double crochet takes a 1-chain that does not count. The pattern always states which." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worked example — reading a granny-square pattern" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "\"Round 2: ch 3 (counts as first tr), 2 tr in same sp, ch 2, *3 tr in next ch-2 sp, ch 2; repeat from * twice more, 3 tr in beg ch-2 sp again. Sl st to top of beg ch-3. (12 tr + 4 corner ch-2 sps.)\"" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Reads as: start the round with a 3-chain turning chain (it's your first treble). Work two more trebles into the same chain-space you're starting from. Chain 2 (this makes the corner). Now the repeat: three trebles into the next chain-2 space, then chain 2 — do that twice more (so you've now worked all four corners except the last). Finish with three trebles back into the beginning chain-2 space — that completes the fourth corner. Close the round with a slip stitch into the top of the beginning 3-chain. The round should have 12 trebles plus 4 corner spaces." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Once written patterns read clearly, the next surface is symbol charts — the visual version of the same instructions. Charts are particularly useful for in-the-round motifs (granny squares, hexagons, mandalas) where the layout shows the construction at a glance. Most published patterns include both the written and the charted version; reading both at once is how experienced crocheters double-check their place." }] }
+    ]
+  }
+}

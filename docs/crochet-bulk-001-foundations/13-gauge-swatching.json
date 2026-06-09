@@ -1,0 +1,70 @@
+{
+  "slug": "crochet-gauge-swatching-basics",
+  "title": "Gauge swatching for crochet",
+  "subtitle": "Work a 15 cm square, measure the middle, compare against the pattern",
+  "excerpt": "A gauge swatch is a small square of crochet worked in the pattern's main stitch with the pattern's yarn and hook. Measured against the pattern's gauge, it tells you whether your hands will produce a piece the right size. The half-hour that saves the weekend.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book, gauge swatching chapter. Modern Craft Yarn Council gauge standards.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["gauge", "swatching"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook-4-0mm", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "gauge", "term": "Gauge", "definition": "The number of stitches and rows in a fixed area of crochet (usually 10 × 10 cm). The communication between the pattern's design and the reader's hands." },
+    { "slug": "tension-square", "term": "Tension square", "definition": "The British synonym for a gauge swatch. Older UK patterns and most British crochet books use \"tension\" instead of \"gauge\"; the two are interchangeable." }
+  ],
+  "techniqueSlugs": ["crochet-gauge-swatching-basics"],
+  "criticalTechniques": ["crochet-gauge-swatching-basics"],
+  "aliases": ["gauge swatch", "tension square", "swatching crochet"],
+  "heroPrompt": "A small 15 cm square crochet swatch in cream DK cotton sitting flat on a pale background, a soft tape measure laid across the middle showing the 10 cm measurement, a 4 mm hook resting beside.",
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A gauge swatch is a small square of crochet worked in the pattern's main stitch, with the pattern's named yarn weight and hook. Measured against the pattern's quoted " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge" } }], "text": "gauge" }, { "type": "text", "text": ", it tells you whether your hands will produce a piece the right size. The half-hour that saves the weekend." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "British crochet books often call the same swatch a " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tension-square" } }], "text": "tension square" }, { "type": "text", "text": ". The terms are interchangeable." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to swatch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use the pattern's named yarn (same weight, same fibre type) and the pattern's named hook. Don't substitute — the swatch tells you what your hands do with this specific combination." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a square at least 15 × 15 cm. Smaller swatches don't give a true reading because the edges pull tighter than the centre." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the swatch in the pattern's main stitch — if the pattern is mostly trebles, swatch trebles. If it's a mix, swatch the stitch that dominates the body. For blankets, that's usually one specific stitch; for garments, often a single stitch panel of the body." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fasten off. Block the swatch the same way you'll block the finished piece (steam, wet, spray, or none). The swatch's gauge before blocking is not the gauge after." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the centre — place a soft tape measure across the middle of the swatch. Count stitches in 10 cm. Count rows in 10 cm. Both numbers." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Comparing to the pattern" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The pattern quotes its gauge as something like \"18 tr × 10 rows = 10 × 10 cm in DK cotton with a 4 mm hook, after a light steam-block\". Compare:" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If your swatch matches the pattern's count within ±1 stitch and ±1 row, you're on gauge. Go ahead with the pattern hook." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If your swatch has FEWER stitches than the pattern in 10 cm (e.g. 16 instead of 18), your stitches are bigger. Go DOWN a hook size to a 3.75 mm and swatch again." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If your swatch has MORE stitches (e.g. 20 instead of 18), your stitches are smaller. Go UP a hook size to a 4.5 mm and swatch again." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Adjust until the stitch count matches within ±1. The row count usually follows. If only the stitch count matches and the row count doesn't, the fabric will be slightly more or less drapey than the designer intended but the size will be right." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Worked example" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Pattern gauge: 18 dc × 22 rows = 10 × 10 cm in DK cotton with a 4 mm hook, after a light steam-block." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Reader's swatch: 16 dc × 21 rows = 10 × 10 cm with the same yarn and hook." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Reading: stitch count is two short — the reader's stitches are bigger than the designer's. Adjust by going down to a 3.75 mm hook. Re-swatch. The 3.75 mm swatch reads 18 dc × 22 rows in 10 × 10 cm. On gauge. Switch to the 3.75 mm hook for the project." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to skip swatching" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "On items where exact size doesn't matter — a dishcloth, a small bag, a one-piece scarf — the size can drift a few centimetres without ruining the piece. Swatching is optional. On garments, blankets sized to fit a specific bed, and anything where finished size matters, swatching is not optional. Two hours of swatching saves a weekend of unravelling." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Once a single swatch reads cleanly, work a second swatch with the same yarn but a different stitch — half treble or treble — to see how the same hook produces different tensions across different stitch heights. Useful preparation for any pattern with multiple stitches in the body." }] }
+    ]
+  }
+}

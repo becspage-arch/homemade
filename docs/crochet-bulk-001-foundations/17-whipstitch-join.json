@@ -1,0 +1,74 @@
+{
+  "slug": "crochet-whipstitch-join-tutorial",
+  "title": "Whipstitch join",
+  "subtitle": "A tapestry-needle seam through the back loops — the classic flat join for granny squares",
+  "excerpt": "A whipstitch join sews two pieces of crochet together with a tapestry needle, working through the back loops only of matching stitches. The seam sits flat and barely shows. The traditional method for joining granny-square blankets.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet — the standard Victorian-era joining method for square-motif coverlets and blankets. Pauline Turner, How to Crochet, modern phrasing.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-whipstitch-join"],
+    "craftTechniqueTags": ["joining", "whipstitch"]
+  },
+  "recipeTools": [
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "back-loop", "term": "Back loop", "definition": "The back strand of the two-strand V at the top of a stitch. Working through back loops only leaves the front loops free and creates a horizontal ridge along the join." }
+  ],
+  "techniqueSlugs": ["crochet-whipstitch-join-tutorial"],
+  "criticalTechniques": ["crochet-whipstitch-join-tutorial"],
+  "aliases": ["whipstitch", "whip stitch seam", "yarn-needle join", "motif seam"],
+  "heroPrompt": "Two granny squares being joined side by side with a tapestry needle and matching cream DK cotton, the whipstitch seam progressing along the matching edges — the seam is visible as small diagonal stitches between the squares.",
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A whipstitch join sews two pieces of crochet together with a tapestry needle and a length of matching yarn. You work through the " }, { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-loop" } }], "text": "back loop" }, { "type": "text", "text": " of one piece and the back loop of the matching stitch on the second piece, taking the needle from front to back through both, then bringing it back over the top to the next stitch. The seam sits flat. The traditional method for joining granny-square blankets." }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Whipstitch is the right join when you want a flat seam that doesn't add bulk and barely shows from the right side. For seams that should show as a decorative ridge, use slip-stitch seam instead. For a one-pass join that happens while you work, use join-as-you-go." }] },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "What you need",
+          "body": "A blunt tapestry needle (yarn needle) with an eye big enough for your yarn. Matching yarn — same colour and same weight as the pieces being joined. Sharp scissors. A flat surface to work on."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a whipstitch join" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the two pieces side by side, right sides facing up, edges touching. The stitches along the matching edges should line up one-for-one." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a length of matching yarn about three times the seam length. Thread the tapestry needle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle from back to front through the back loop only of the first corner stitch on the left piece, leaving a 15 cm tail. Then insert the needle from back to front through the back loop only of the matching stitch on the right piece. Both back loops are now caught on the needle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the yarn through, leaving the tail at the back. Bring the needle over the top of the seam, back to the back side." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for each pair of matching stitches along the seam — back to front through the back loop of the left stitch, back to front through the back loop of the right stitch, over the top, repeat. The yarn forms small diagonal stitches between the pieces." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the last stitch, sew the tail into the back of the seam for about 5 cm to anchor it. Trim. Repeat at the start with the leftover 15 cm tail." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Joining granny squares in a row" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "When joining a long row of squares, use one continuous length of yarn rather than starting a new join at each square. Whipstitch one side of the first pair, then continue without breaking the yarn to the next pair. The continuous join is faster and the seam lines up better. Plan the yarn length: a 10 × 10 cm granny square seam needs about 50 cm of yarn; a 30-square seam needs about 15 m." }] },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When the whipstitch join goes wrong",
+          "intro": "Three common whipstitch problems and the fix for each.",
+          "items": [
+            { "symptom": "The seam puckers — pulls one piece tighter than the other", "cause": "Tension on the joining yarn is too tight, or one piece's stitch count doesn't match the other.", "fix": "Lay the joined pieces flat on a table and check that no row pulls in. If a row pulls, undo a few stitches and re-join with looser tension. The seam should sit at the same tension as the pieces themselves." },
+            { "symptom": "The seam doesn't line up at the end — one piece runs longer than the other", "cause": "Stitch counts on the joining edges weren't identical. Granny squares with consistent round counts should match, but blocking can shift them.", "fix": "Block both pieces before joining. Match stitch-for-stitch along the join; if the counts genuinely differ by one or two, distribute the difference evenly along the seam rather than concentrating it at the end." },
+            { "symptom": "The seam is visible from the right side as a thick line", "cause": "Working through both top loops instead of back loop only, or using yarn thicker than the pieces themselves.", "fix": "Whipstitch through back loops only. Use the exact same yarn as the pieces — same weight, same fibre. A thinner contrasting yarn would also work for an intentional decorative join, but for invisible joins, match exactly." }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Once whipstitch joins read cleanly, the slip-stitch seam adds a visible decorative ridge for pieces where the seam should show. Join-as-you-go skips the seam stage entirely and joins motifs on the final round of each. Each method suits different finishes; the whipstitch is the safest first choice." }] }
+    ]
+  }
+}
