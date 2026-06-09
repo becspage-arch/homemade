@@ -111,16 +111,8 @@ jobs:
       - name: Run database migrations
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        # Strip `-pooler` from the Neon host so Prisma migrate connects
-        # directly to the compute endpoint instead of through pgbouncer.
-        # Prisma's migration advisory lock is session-scoped, but pgbouncer
-        # keeps the underlying connection alive past process exit — so a
-        # previous failed/cancelled CI run can leave the lock held and the
-        # next migration times out at `pg_advisory_lock` (P1002). Direct
-        # connection avoids that.
-        run: |
-          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
-          pnpm --filter @homemade/db migrate:deploy
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+        run: pnpm --filter @homemade/db migrate:deploy
 
       # Pattern Studio data backfills (phase_pattern_studio_001).
       # Both scripts are idempotent: the seed upserts on Pattern.slug,
