@@ -350,6 +350,25 @@ model Category {
   lastAutopilotRunAt DateTime?
   autopilotWeight    Int            @default(1)
 
+  // Crochet autopilot foundation (phase_crochet_autopilot_foundation_001).
+  // `autopilotContentTypesEnabled` lists the content-type slugs the
+  // single-queue autopilot may author for this category. Empty = the
+  // routine falls back to the legacy `docs/{slug}-author.md` convention
+  // (single prompt). Non-empty = the routine picks one type per fire
+  // (weighted by coverage gap) and routes to
+  // `docs/{slug}-{type-lower}-author.md`. Crochet seeds with TECHNIQUE,
+  // STITCH, MOTIF, HOMEWARE — GARMENT + AMIGURUMI wait for Worker X2's
+  // grading library + shape math.
+  //
+  // `techniqueSlugs`, `criticalTechniques`, `aliases` are the category-
+  // level reference set per the pipeline-setup memory rule. Authoring
+  // reads them so per-tutorial Tutorial.techniqueSlugs /
+  // criticalTechniques / aliases stay consistent across the library.
+  autopilotContentTypesEnabled String[] @default([])
+  techniqueSlugs               String[] @default([])
+  criticalTechniques           String[] @default([])
+  aliases                      String[] @default([])
+
   // Landing-page archetype. Drives /[categorySlug] layout selection.
   // RECIPE   → cooking, baking, herbal-medicine, natural-home
   // PATTERN  → cross-stitch, knitting, crochet, needlework, sewing
@@ -3883,6 +3902,23 @@ model CrochetPattern {
   construction  CrochetConstruction?
   shapeCategory CrochetShape?
 
+  // Crochet autopilot foundation (phase_crochet_autopilot_foundation_001).
+  // `constructionDirection` is the build-direction axis on its own,
+  // separate from `construction` which conflates direction with seam
+  // treatment. New autopilot rows populate it; legacy rows leave it
+  // null and read direction from `construction` (e.g. TOP_DOWN_SEAMLESS
+  // implies TOP_DOWN).
+  // `bodyShape` is the amigurumi geometric primitive (sphere, cylinder,
+  // cone, ...). Null on non-amigurumi rows. Distinct from `shapeCategory`
+  // which is the finished-piece category (BLANKET, GARMENT, AMIGURUMI,
+  // MOTIF, ...).
+  // `gradingNotes` carries the designer's free-text notes for graders
+  // (e.g. "Skip every other increase between sizes M and L to keep the
+  // sleeve cap proportional.") that don't fit the `sizesGraded` JSON.
+  constructionDirection ConstructionDirection?
+  bodyShape             BodyShape?
+  gradingNotes          String?
+
   // ──────────────────────────────────────────────────────────────────────────
   // Sizing.
   //
@@ -4180,6 +4216,36 @@ enum CrochetShape {
   HAT
   SCARF
   SHAWL
+}
+
+/// Build-direction axis for a CrochetPattern. Separate from
+/// `CrochetConstruction` which conflates direction with seam treatment
+/// (TOP_DOWN_SEAMLESS, BOTTOM_UP_SEAMLESS, SEAMED, ...). This enum is
+/// direction only, so the renderer can answer "which way does this
+/// build" without parsing seam state.
+enum ConstructionDirection {
+  TOP_DOWN
+  BOTTOM_UP
+  SIDE_TO_SIDE
+  MOTIF_ASSEMBLED
+  MULTI_PIECE
+  SINGLE_PIECE
+}
+
+/// Amigurumi geometric primitive. Distinct from `CrochetShape` which is
+/// the finished-piece category (BLANKET, GARMENT, AMIGURUMI, MOTIF,
+/// ...). Null on every non-amigurumi pattern. NONE is set when the
+/// amigurumi shape doesn't reduce to a primitive (e.g. abstract
+/// freeform sculpture).
+enum BodyShape {
+  SPHERE
+  CYLINDER
+  CONE
+  OVAL
+  CAPSULE
+  PEAR
+  COMPOSITE
+  NONE
 }
 
 // ────────────────────────────────────────────────────────────────────────────
