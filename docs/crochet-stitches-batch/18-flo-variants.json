@@ -1,0 +1,159 @@
+{
+  "slug": "crochet-front-loop-only",
+  "title": "Front loop only (FLO)",
+  "subtitle": "Working into one loop to leave the other as a visible ridge",
+  "excerpt": "Front loop only means inserting the hook under just the front loop of the stitch below instead of both loops. The unworked back loop stays visible as a raised ridge, creating the ribbed or ridged texture behind cowl necklines, bag bases, and textured stripe work.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "FLO technique synthesised from standard modern crochet teaching convention. The technique is referenced in Weldon's Practical Crochet for rib and ridge effects (Internet Archive).",
+  "heroPrompt": "A swatch showing several rows of FLO double crochet, the raised ridge lines of unworked back loops clearly visible on the fabric surface, cream DK cotton, natural background.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-front-loop-only"],
+    "craftTechniqueTags": ["textured", "ribbing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "front-loop-only",
+      "term": "Front loop only (FLO)",
+      "definition": "A modifier instruction meaning the hook goes under the front loop of the stitch only, leaving the back loop unworked. The unworked back loops form a visible ridge on the opposite face of the fabric. Abbreviated FLO."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["FLO", "front loop", "front loop only dc", "flo dc"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every standard stitch goes under both top loops of the previous row. ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "Front loop only",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "front-loop-only" } }]
+          },
+          {
+            "type": "text",
+            "text": " changes the insertion point to one loop. The unworked loop becomes a ridge across the face of the fabric, running horizontally between each row. That ridge is what creates the crochet ribbed effect."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identifying the front loop" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the work with the right side facing you. The two top loops of each stitch form a V. The front loop is the leg of the V closest to you; the back loop is the leg furthest from you. FLO inserts under the near leg only."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working FLO double crochet" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row in standard dc. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 1. Insert the hook under the FRONT loop only of the first stitch below (not under both loops)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the dc normally: yarn over, pull through the front loop, yarn over, pull through both loops on hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat across the row. Each FLO dc leaves the back loop of the stitch below standing as a ridge on the right side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "FLO creates the ridge on the OPPOSITE face",
+          "body": "When you work FLO from the right side, the unworked back loops appear as a ridge on the right side (visible). When you work FLO from the wrong side, the ridge appears on the wrong side. Most rib patterns work FLO from the wrong side to push the ridge forward on the public face."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "FLO treble and half treble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "FLO applies to any stitch: FLO treble, FLO half treble. The instruction always means insert under the front loop only; the rest of the stitch is worked normally. FLO treble creates a more dramatic ridge because the taller stitch leaves a more visible back loop behind."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "FLO problems",
+          "intro": "Two problems with FLO stitches.",
+          "items": [
+            {
+              "symptom": "The ridge appears on the wrong face of the fabric",
+              "cause": "Working FLO from the right side when the pattern intends the ridge on the public face (which requires working from the wrong side).",
+              "fix": "Check whether the row is worked from the RS or WS. FLO from the WS pushes the ridge to the RS (public face)."
+            },
+            {
+              "symptom": "The FLO stitch is harder to work than normal",
+              "cause": "The hook is going under the back loop by mistake.",
+              "fix": "Tilt the work slightly away from you. The front loop should be the very first loop the hook encounters when coming from the front."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Back loop only (BLO) is the mirror instruction — insert under the back loop, leave the front loop as a ridge. Alternating FLO and BLO rows creates the look of two-sided ribbing. Post stitches (FPDC and BPDC) are a related technique that goes around the post of the stitch entirely rather than into either loop."
+          }
+        ]
+      }
+    ]
+  }
+}

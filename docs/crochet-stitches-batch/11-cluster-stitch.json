@@ -1,0 +1,150 @@
+{
+  "slug": "crochet-cluster-stitch",
+  "title": "Cluster stitch",
+  "subtitle": "Multiple incomplete trebles drawn together at the top",
+  "excerpt": "A cluster groups two, three, or four incomplete trebles worked across different stitches or chain spaces and closes them at the top. This pulls the top of the group together into a V-shape, creating the closed fan that anchors shell patterns, lace, and many motif joins.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), crochet chapter (Project Gutenberg #20776). Weldon's Practical Crochet, Volume 2. Cluster stitch as a lace-making and shell-pattern element.",
+  "heroPrompt": "A swatch of three-treble cluster stitch in cream cotton, showing the V-shaped closed tops, natural background, close-up showing the inverted fan shape of the clusters.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-treble-cluster"],
+    "craftTechniqueTags": ["textured", "lace"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cluster",
+      "term": "Cluster",
+      "definition": "Two, three, or four incomplete trebles worked across consecutive stitches (or into a single stitch) and closed together at the top. The legs of the cluster spread across the base; the top closes to a single point. Abbreviated cl or 3tr-cl for a three-treble cluster."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["cl", "3tr-cl", "cluster", "treble cluster"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cluster",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cluster" } }]
+          },
+          {
+            "type": "text",
+            "text": " works the opposite way from a bobble or puff. Instead of fanning out at the top and closing at the base, a cluster spreads at the base and pinches together at the top. The three legs occupy three consecutive stitches below; the single closed top holds them together above."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a 3-treble cluster" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into next stitch, yarn over, pull through. Three loops on hook. Yarn over, pull through two. Two loops remain. Stop (first incomplete treble done)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into the NEXT stitch (different stitch from step 1), yarn over, pull through. Four loops on hook. Yarn over, pull through two. Three loops remain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert into the NEXT stitch, yarn over, pull through. Five loops on hook. Yarn over, pull through two. Four loops remain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through all four loops. One loop. The 3-treble cluster is complete." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Cluster into one stitch vs across stitches",
+          "body": "A cluster worked into the same stitch is structurally a bobble (all legs into one base, top pulled together). A cluster worked across different stitches is the V-pointed shape described here. Pattern instructions distinguish them: \"3tr-cl in next 3 sts\" means spread across three stitches; \"3tr-cl in next st\" means all legs into one stitch."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cluster in lace and motif patterns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The granny square uses clusters of three trebles into chain spaces rather than across stitches. This is a specialised cluster variation where the legs go into the same chain space (like a bobble) but are usually described as a cluster by granny-square patterns. The same closed-top logic applies: three trebles, three loops remaining after the second pull-through steps, then one yarn over through all three."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Cluster problems",
+          "intro": "Three issues with clusters.",
+          "items": [
+            {
+              "symptom": "The cluster top has a visible gap instead of closing cleanly",
+              "cause": "The final pull-through through all loops was too loose.",
+              "fix": "Pull the closing yarn-over firmly. The top should close flat against the loops below."
+            },
+            {
+              "symptom": "The fabric puckers at the cluster base",
+              "cause": "The three legs pulled the base stitches together too tightly.",
+              "fix": "Work each incomplete treble at a relaxed tension. The legs should be long enough to stand upright without straining the base."
+            },
+            {
+              "symptom": "The count is lost mid-cluster when working across many stitches",
+              "cause": "Not keeping track of which stitches already have legs.",
+              "fix": "Place a stitch marker in each base stitch before working the cluster. Remove as each leg is placed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shell stitch is the inverse of the cluster: five trebles spread from the same base stitch (opening at the top instead of closing). Most shell and cluster patterns alternate between the two, with shell stitches sitting above cluster points and cluster points sitting above shell fans."
+          }
+        ]
+      }
+    ]
+  }
+}

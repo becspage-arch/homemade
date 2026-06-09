@@ -1,0 +1,141 @@
+{
+  "slug": "crochet-back-loop-only",
+  "title": "Back loop only (BLO)",
+  "subtitle": "The mirror of FLO — leaves the front loop visible as a ridge",
+  "excerpt": "Back loop only inserts the hook under the back loop of each stitch instead of both loops. The unworked front loops create a ridge on the face of the work. BLO is the stitch behind ribbed sock cuffs, tapestry crochet joins, and the clean row lines of reversible ribbing.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BLO technique synthesised from standard crochet teaching convention. Referenced in Weldon's Practical Crochet for ridged and ribbed stitch effects (Internet Archive).",
+  "heroPrompt": "A swatch of BLO double crochet showing the horizontal front-loop ridges on the right side of the fabric, cream DK cotton on natural background.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-back-loop-only"],
+    "craftTechniqueTags": ["textured", "ribbing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "back-loop-only",
+      "term": "Back loop only (BLO)",
+      "definition": "A modifier instruction meaning the hook goes under the back loop of the stitch only, leaving the front loop unworked. The unworked front loops form a visible ridge on the right side of the fabric. Abbreviated BLO."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["BLO", "back loop", "back loop only dc", "blo dc"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Where front loop only (FLO) leaves the back loop as a ridge, ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "back loop only",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-loop-only" } }]
+          },
+          {
+            "type": "text",
+            "text": " (BLO) leaves the front loop. The visual result is similar: a horizontal ridge along each row. The difference is which face the ridge sits on and how the fabric stretches. BLO rows worked from the right side produce the ridge on the right side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working BLO double crochet" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row in standard dc. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 1. Look at the top V of the first stitch. Identify the back loop — the leg of the V furthest from you." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under the back loop only (not under both loops)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the dc normally. The front loop of the stitch below remains unworked, standing as a ridge on the right side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across. Turn and repeat for as many rows as needed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "BLO in tapestry crochet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tapestry crochet uses BLO to create a flat, even surface for colourwork by keeping the carried yarn tucked behind the back loop. Working through the back loop only traps the non-working yarn inside the stitch and leaves the front smooth. This technique produces the dense fabric needed for bags and baskets in tapestry crochet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "BLO problems",
+          "intro": "Two problems with BLO.",
+          "items": [
+            {
+              "symptom": "The ridges are on the wrong side of the work",
+              "cause": "Confusing which loop is front and which is back relative to the working direction.",
+              "fix": "The front loop is the one nearest you when the right side faces you. The back loop is the one away from you. BLO from the RS produces a RS ridge; BLO from the WS produces a WS ridge."
+            },
+            {
+              "symptom": "The BLO row feels harder to work than standard",
+              "cause": "The back loop is slightly harder to reach because it sits deeper inside the stitch V.",
+              "fix": "Tilt the work slightly toward you so the back loop opens up. It becomes easier with practice."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Alternating FLO and BLO rows in the same piece creates ribbing that looks the same from both sides. Post stitches (FPDC, BPDC) go around the whole post of the stitch, creating a deeper, more textured rib than loop-only techniques. See the post stitch tutorial in this library."
+          }
+        ]
+      }
+    ]
+  }
+}

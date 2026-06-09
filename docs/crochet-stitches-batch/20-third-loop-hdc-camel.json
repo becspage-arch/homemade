@@ -1,0 +1,139 @@
+{
+  "slug": "crochet-camel-stitch",
+  "title": "Camel stitch (third-loop htr)",
+  "subtitle": "Working into the third loop of half treble to create a knit-look fabric",
+  "excerpt": "The camel stitch inserts the hook into the third loop of the half treble — the horizontal bar that sits at the back of the stitch — rather than the top V. The front loops stay visible on the surface, stacked vertically to create a fabric that reads remarkably like knitting.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Camel stitch / third-loop htr technique synthesised from modern crochet teaching sources. The third-loop characteristic of half treble stitches is inherent to the stitch structure.",
+  "heroPrompt": "A swatch of camel stitch (third-loop htr) in cream DK cotton showing the knit-look vertical columns on the right side, natural background.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-half-treble"],
+    "craftTechniqueTags": ["textured", "ribbing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "camel-stitch",
+      "term": "Camel stitch",
+      "definition": "Half treble worked into the third loop (the horizontal bar at the back of the stitch) rather than the top V loops. The front V loops remain unworked on the surface, stacking vertically to create a fabric that resembles knitting."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["camel stitch", "third-loop htr", "third loop half treble", "knit stitch crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "camel stitch",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "camel-stitch" } }]
+          },
+          {
+            "type": "text",
+            "text": " uses the half treble's unique structure to its advantage. Every half treble has three loops at the top instead of two. The standard instruction works into the front two; the camel stitch works into the third, hidden one at the back. The front V loops then float on the surface, stacking row by row to look like knit stitches."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Finding the third loop",
+          "body": "After completing a row of standard half trebles, tilt the work away from you. The third loop sits as a horizontal bar just behind and slightly below the top V of each stitch. It is easier to see from an angle than from straight on."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working camel stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation row of standard half treble. Count the stitches. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ch 2 (turning chain; whether it counts depends on pattern — most camel stitch patterns use ch 2 not counted, first htr into the first stitch)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tilt the work. Identify the third loop of the first stitch — the horizontal bar behind the top V." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert the hook under the third loop only." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the half treble: yarn over, pull through, three loops on hook, yarn over, pull through all three. One loop remains." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across, working every stitch into the third loop. The V-loops from the previous row float on the surface." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Camel stitch problems",
+          "intro": "Two issues with the camel stitch.",
+          "items": [
+            {
+              "symptom": "The fabric is very tight and the third loop is hard to enter",
+              "cause": "The foundation half treble row was worked at a tight tension.",
+              "fix": "Work the foundation row with a hook one size larger. The third loop needs to be accessible; tight stitches lock it closed."
+            },
+            {
+              "symptom": "The knit-look columns do not appear",
+              "cause": "Working into the back loop of the top V rather than the true third loop.",
+              "fix": "The third loop sits slightly lower and further back than the back loop of the V. Tilt the work more aggressively to locate it before inserting the hook."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The waistcoat stitch achieves a similar knit-look through a different mechanism: working the hook around the post of the stitch below, between the two legs of the V. Both produce a vertically columned fabric; the camel stitch is easier for beginners; the waistcoat stitch is better for dense, reversible fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

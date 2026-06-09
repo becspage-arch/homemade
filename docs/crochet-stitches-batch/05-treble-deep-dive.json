@@ -1,0 +1,218 @@
+{
+  "slug": "crochet-treble-deep-dive",
+  "title": "Treble in depth",
+  "subtitle": "UK tr — the standard pattern stitch and the UK/US naming shift",
+  "excerpt": "UK treble (US double crochet) is the stitch that most British patterns rely on. This tutorial covers the two-yarn-over sequence, the chain-3 turning chain, working treble in granny squares and flat rows, and the tension control that keeps a treble fabric even.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), crochet chapter (Project Gutenberg #20776). Weldon's Practical Crochet, Volume 1. Treble as the granny square stitch and the British pattern standard.",
+  "heroPrompt": "A flat swatch of treble crochet in cream DK cotton showing the open, airy fabric with clear V-column structure. 4 mm hook alongside, natural background.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-treble"],
+    "craftTechniqueTags": ["granny-square", "in-the-round"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "treble",
+      "term": "Treble (UK tr)",
+      "definition": "The standard pattern stitch in UK crochet. Yarn over before inserting the hook, pull through a loop, then work off two loops twice. UK treble equals US double crochet (dc) — not US treble, which is a taller stitch."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["tr", "UK treble", "double crochet US", "dc US"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The UK ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "treble",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treble" } }]
+          },
+          {
+            "type": "text",
+            "text": " is the stitch most British patterns mean when they say nothing else. Most granny squares use it. Most simple blankets use it. The abbreviation is tr; the US equivalent is dc (double crochet) — the exact same move with different names on either side of the Atlantic."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a treble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over once (wrap the working yarn around the hook from back to front) before inserting the hook into the next stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook under both top loops of the stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over again and pull a loop back through the stitch. Three loops on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through the first two loops on the hook. Two loops remain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through the remaining two loops. One loop remains. The treble is complete." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two \"work off two loops\" steps at the end are the defining feature of the treble. The first yarn over goes on before insertion; then it is a matter of pulling off pairs. Taller stitches (double treble, triple treble) follow the same logic, starting with more initial yarn overs."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The chain-3 turning chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A treble row opens with ch 3 (turning chain), which counts as the first treble of the row. That means:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip the first stitch at the base of the turning chain. Work the second treble into the second stitch from the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the return row, work the last treble into the top of the chain-3 turning chain from the previous row. That V-shape at the top of the chain is the target." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a swatch in rows" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foundation chain: 17 ch. Turn."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1: ch 3 (counts as first tr), skip 1 ch (the ch at the base of the turning chain), tr in each chain across (15 tr + turning chain = 15 tr equivalent). Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2: ch 3 (counts as first tr), skip the first stitch at the base of the turning chain, tr in each stitch across, tr into top of turning chain (15 tr). Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat row 2 for 8 rows total. Fasten off." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treble in granny squares" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Granny squares group trebles into clusters of three, worked into chain spaces rather than into individual stitches. Each cluster is 3 tr worked consecutively into the same chain space, with the top of each treble sitting side by side. A corner is two clusters separated by ch 2. This is the standard granny square construction and it assumes the chain-3 turning chain does NOT count as a stitch when working rounds; the first treble of each cluster goes directly into the chain space."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Treble problems",
+          "intro": "Four problems that repeat across treble rows.",
+          "items": [
+            {
+              "symptom": "The sides of the swatch lean left or right",
+              "cause": "The chain-3 is treated inconsistently — sometimes as a stitch and sometimes not — so one extra stitch appears or disappears at the edge.",
+              "fix": "Decide and stick to one rule. Either always work the last tr into the top of the turning chain at the end of the return row, or never do so. Consistency is what keeps the edges parallel."
+            },
+            {
+              "symptom": "The fabric looks too open and lacey",
+              "cause": "The hook size is too large for the yarn weight, or the tension is very loose.",
+              "fix": "Try one hook size smaller. A DK yarn on a 3.5 mm hook produces a firm but not stiff treble fabric."
+            },
+            {
+              "symptom": "The initial yarn over slips off before the hook enters the stitch",
+              "cause": "Holding the hook at too acute an angle.",
+              "fix": "Keep the hook shaft roughly horizontal as you yarn over and insert. A slight forward tilt of the hook tip is enough to keep the yarn over in place."
+            },
+            {
+              "symptom": "The treble leans forward at the top",
+              "cause": "Pulling the final yarn-through at too tight a tension.",
+              "fix": "Draw the last pull-through gently so the stitch sits vertically. The top V should be centred above the base of the stitch."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The treble cluster (three trebles into the same stitch, joined or open at the top) is the direct next step. From there, the V-stitch (two trebles with one chain between them, into the same stitch) and the shell stitch (five trebles into one stitch) both build on the same treble move worked in multiples."
+          }
+        ]
+      }
+    ]
+  }
+}

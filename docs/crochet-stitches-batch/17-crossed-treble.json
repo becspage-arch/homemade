@@ -1,0 +1,159 @@
+{
+  "slug": "crochet-crossed-treble",
+  "title": "Crossed treble",
+  "subtitle": "Two trebles worked in reverse order so the second crosses in front",
+  "excerpt": "The crossed treble works the second treble first (skipping the next stitch), then the first treble into the skipped stitch — so it reaches back and crosses in front. The crossing creates a woven X pattern across the fabric surface.",
+  "type": "STITCH",
+  "categorySlug": "crochet",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Volumes 3 and 4 (Internet Archive). Crossed stitch variations in Victorian lace and textured crochet panels. Therese de Dillmont, Encyclopedia of Needlework (1886).",
+  "heroPrompt": "A swatch of crossed treble stitch showing the X-pattern formed by crossing treble pairs, cream DK cotton, natural background, close up showing the cross shape clearly.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-cross-stitch-crochet"],
+    "craftTechniqueTags": ["textured"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "crossed-treble",
+      "term": "Crossed treble",
+      "definition": "Two trebles worked in reverse order: the second treble is worked into the stitch one position ahead (skipping one), then the first treble works into the skipped stitch, so it crosses over the front of the second. Creates a woven X on the fabric surface."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["cr-tr", "crossed double crochet", "cr-dc US", "cross stitch crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "crossed treble",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crossed-treble" } }]
+          },
+          {
+            "type": "text",
+            "text": " is a two-stitch combination that creates an X on the fabric surface. The key is the working order: skip one stitch, work the second treble, then reach back and work the first treble into the skipped stitch. That backward reach lays the first treble across the front of the second."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a crossed treble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip the next stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over, insert hook into the stitch AFTER the skipped stitch (the second stitch from the hook), yarn over, pull through, yarn over, pull through 2, yarn over, pull through 2. First treble of the pair placed into stitch 2." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Now yarn over, insert the hook back into the SKIPPED stitch (stitch 1), yarn over, pull through, yarn over, pull through 2, yarn over, pull through 2. Second treble placed into stitch 1, crossing in front of the first." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two trebles occupy two consecutive stitch positions, but they cross each other because of the reversed order. One stitch count is consumed per pair."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Crossed treble in a row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Foundation: ch 22 (even number). Turn."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1: ch 3 (counts as tr), *cross-tr (skip 1, tr in next, tr in skipped st); repeat from * across, tr in last ch (10 cross-tr pairs + 2 edge trs). Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2: ch 3, *cross-tr; repeat from * across, tr at end. Turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat row 2." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Crossed treble problems",
+          "intro": "Two problems with crossed trebles.",
+          "items": [
+            {
+              "symptom": "The cross does not form — both trebles lean the same way",
+              "cause": "Both trebles were worked in forward order rather than reversing the sequence.",
+              "fix": "Remember: first stitch is skipped, second treble goes into stitch 2, then first treble goes back to stitch 1. The backward second movement is what creates the cross."
+            },
+            {
+              "symptom": "The stitch count is wrong after crossed treble rows",
+              "cause": "Treating each arm of the cross as a separate stitch count.",
+              "fix": "A crossed treble pair counts as two stitches (occupying two stitch positions). Plan the foundation chain as an even number."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The crossed double treble uses the same reversed-sequence logic over a longer stitch, so the cross arms are taller and the fabric more open. Post stitches (FPDC and BPDC) are another way to create texture across the surface without changing the stitch count."
+          }
+        ]
+      }
+    ]
+  }
+}
