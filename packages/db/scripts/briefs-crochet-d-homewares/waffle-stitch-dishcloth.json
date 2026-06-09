@@ -1,36 +1,38 @@
 {
-  "slug": "fan-stitch-baby-blanket",
-  "title": "Fan stitch baby blanket",
-  "subtitle": "Seven-treble fans spread from single base stitches to make an arc-pattern blanket.",
-  "excerpt": "A seven-treble fan opened from one base stitch gives a wide semicircular shape. Rows of fans in alternating positions fill a 75 x 90 cm baby blanket in DK cotton.",
+  "slug": "waffle-stitch-dishcloth",
+  "title": "Waffle stitch dishcloth",
+  "subtitle": "Front loop dc and treble columns make a grid that looks and acts like waffle weave.",
+  "excerpt": "Waffle stitch uses dc in the back loop and trebles in the front loop in a grid pattern. The raised columns make a textured surface that scrubs well.",
   "type": "PATTERN",
   "categorySlug": "crochet",
   "subCategorySlug": "homewares",
   "difficulty": "BEGINNER",
   "sourceType": "PUBLIC_DOMAIN",
-  "sourceNotes": "Fan stitch from Weldon's Practical Crochet (series 1, 1880s). Internet Archive.",
+  "sourceNotes": "Waffle stitch from Weldon's Practical Crochet (series 3, 1880s), described as a ribbed dishcloth pattern. Internet Archive.",
   "techniqueSlugs": [
-    "crochet-fan-stitch",
-    "crochet-treble"
+    "crochet-flo-dc",
+    "crochet-blo-dc",
+    "crochet-double-uk"
   ],
   "criticalTechniques": [
-    "crochet-fan-stitch"
+    "crochet-flo-dc",
+    "crochet-blo-dc"
   ],
   "aliases": [
-    "fan stitch blanket",
-    "seven treble fan",
-    "arc stitch baby blanket"
+    "waffle stitch cloth",
+    "waffle crochet dishcloth",
+    "textured cotton dishcloth"
   ],
   "glossaryTerms": [
     {
-      "slug": "fan-st",
-      "term": "Fan stitch",
-      "definition": "Seven trebles worked into the same base stitch, spreading out in a wide arc or semicircle. Each fan takes one base stitch."
+      "slug": "flo-dc",
+      "term": "FLO dc",
+      "definition": "Double crochet worked into the front loop only. Leaves the back loop as a visible bar on the surface."
     },
     {
-      "slug": "turning-chain",
-      "term": "Turning chain",
-      "definition": "Four chains at the start of each fan row to reach the height of the first treble in the fan."
+      "slug": "blo-dc",
+      "term": "BLO dc",
+      "definition": "Double crochet worked into the back loop only. Leaves the front loop as a bar."
     },
     {
       "slug": "weaving-in-ends",
@@ -41,17 +43,20 @@
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-4-0mm",
-    "gaugeText": "5 fans x 7 rows = 10 x 10 cm in DK cotton with a 4 mm hook.",
-    "finishedSizeText": "Baby blanket, 75 x 90 cm.",
+    "gaugeText": "16 sts x 10 rows = 10 x 10 cm in DK cotton with a 4 mm hook, waffle pattern.",
+    "finishedSizeText": "Square dishcloth, 20 x 20 cm.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
       "crochet-chain",
+      "crochet-double-uk",
       "crochet-treble",
-      "crochet-fan-stitch"
+      "crochet-flo-dc",
+      "crochet-blo-dc"
     ],
     "craftTechniqueTags": [
-      "crochet-fan-stitch",
-      "crochet-treble"
+      "crochet-flo-dc",
+      "crochet-blo-dc",
+      "crochet-double-uk"
     ]
   },
   "recipeTools": [
@@ -80,7 +85,7 @@
         "content": [
           {
             "type": "text",
-            "text": "A "
+            "text": "A waffle stitch dishcloth is 20 x 20 cm. The pattern works "
           },
           {
             "type": "text",
@@ -88,15 +93,31 @@
               {
                 "type": "glossaryTooltip",
                 "attrs": {
-                  "termSlug": "fan-st"
+                  "termSlug": "flo-dc"
                 }
               }
             ],
-            "text": "fan stitch"
+            "text": "FLO dc"
           },
           {
             "type": "text",
-            "text": " baby blanket is 75 x 90 cm. Seven trebles opened from one base stitch make a fan arc. In DK cotton on a 4 mm hook each fan is about 2 cm wide."
+            "text": " in one stitch and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blo-dc"
+                }
+              }
+            ],
+            "text": "BLO dc"
+          },
+          {
+            "type": "text",
+            "text": " in the next, alternating across the row. The offset on the return row creates raised squares."
           }
         ]
       },
@@ -105,7 +126,7 @@
         "content": [
           {
             "type": "text",
-            "text": "The fans stack in a brick pattern: each row offsets the fans by half a repeat so every fan crown sits between two fans below. Total yardage is around 280 g. The fan stitch uses less yarn than a solid dc fabric of the same size."
+            "text": "The waffle grid is more absorbent than plain dc and scrubs more effectively. DK cotton on a 4 mm hook. Total yarn needed is around 30 m."
           }
         ]
       },
@@ -128,7 +149,7 @@
           "items": [
             {
               "name": "DK cotton yarn",
-              "qty": "280 g"
+              "qty": "30 m (about 25 g)"
             },
             {
               "name": "4 mm crochet hook",
@@ -153,27 +174,6 @@
         "content": [
           {
             "type": "text",
-            "text": "How to work one fan"
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "Work 7 tr into the same base stitch. One fan made. Skip 3 ch (or sts) after the base before the next fan."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": {
-          "level": 2
-        },
-        "content": [
-          {
-            "type": "text",
             "text": "Gauge"
           }
         ]
@@ -183,7 +183,7 @@
         "content": [
           {
             "type": "text",
-            "text": "5 fans x 7 rows = 10 x 10 cm. One fan repeat = 4 stitches (1 base + 3 skipped). Foundation chain must be a multiple of 4 plus 4 edge chains."
+            "text": "16 sts x 10 rows = 10 x 10 cm in DK cotton with a 4 mm hook, working waffle pattern. The waffle draws in slightly; check swatch for exact row count."
           }
         ]
       },
@@ -204,7 +204,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Chain 152 (37 fans of 4 sts + 4 edge)."
+            "text": "Chain 33."
           }
         ]
       },
@@ -225,19 +225,7 @@
         "content": [
           {
             "type": "text",
-            "marks": [
-              {
-                "type": "glossaryTooltip",
-                "attrs": {
-                  "termSlug": "turning-chain"
-                }
-              }
-            ],
-            "text": "Turning chain"
-          },
-          {
-            "type": "text",
-            "text": " of ch 4. *7 tr into next ch (fan). Skip 3 ch*. Dc into last ch. Turn. (37 fans.)"
+            "text": "Ch 1. *1 FLO dc, 1 BLO dc*. Repeat across. Turn. (32 sts.)"
           }
         ]
       },
@@ -249,7 +237,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Row 2 (offset)"
+            "text": "Row 2"
           }
         ]
       },
@@ -258,7 +246,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Ch 4. Work fan into the 4th tr of each fan below. Dc between fans. Turn."
+            "text": "Ch 1. *1 BLO dc, 1 FLO dc*. Repeat across. Turn."
           }
         ]
       },
@@ -270,7 +258,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Continuing"
+            "text": "Rows 3 onward"
           }
         ]
       },
@@ -279,7 +267,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Alternate Row 1 and Row 2 until piece measures 90 cm. Fasten off."
+            "text": "Alternate Row 1 and Row 2 for 20 rows total (approximately 20 cm). Fasten off."
           }
         ]
       },
@@ -316,7 +304,7 @@
           },
           {
             "type": "text",
-            "text": ". Block lightly to open the fan arcs."
+            "text": ". No edging needed."
           }
         ]
       },
@@ -337,7 +325,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Machine wash 30 degrees gentle. Dry flat."
+            "text": "Machine wash 60 degrees normal. Tumble dry or hang. Cotton handles high wash temperatures well."
           }
         ]
       },
@@ -358,7 +346,7 @@
         "content": [
           {
             "type": "text",
-            "text": "The petal stitch throw uses pairs of five-treble shells for a similar arc pattern with more overlap. Or try the shell stitch baby blanket for a five-treble version."
+            "text": "The basic dc dishcloth is the simpler starter version. Or try the moss stitch dishcloth for a raised-dot surface."
           }
         ]
       }
