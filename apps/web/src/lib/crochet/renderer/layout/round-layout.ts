@@ -54,12 +54,13 @@ function resolveColour(
   roundIndex: number,
   palette: RendererPalette,
 ): string {
-  if (st.colourKey && palette.byKey[st.colourKey]) {
-    return palette.byKey[st.colourKey]
+  if (st.colourKey) {
+    const explicit = palette.byKey[st.colourKey]
+    if (explicit) return explicit
   }
   const cycle = palette.perRound
   if (cycle.length === 0) return '#7a6a5a'
-  return cycle[roundIndex % cycle.length]
+  return cycle[roundIndex % cycle.length] ?? '#7a6a5a'
 }
 
 /**
@@ -105,8 +106,8 @@ export function buildRoundLayout(
 
   const placements: StitchPlacement[] = []
   for (let ringIdx = 0; ringIdx < expanded.length; ringIdx++) {
-    const ring = expanded[ringIdx]
-    const bounds = ringBounds[ringIdx]
+    const ring = expanded[ringIdx]!
+    const bounds = ringBounds[ringIdx]!
     const count = ring.stitches.length
     if (count === 0) continue
 
@@ -115,7 +116,7 @@ export function buildRoundLayout(
     // and its top reaches `bounds.outer`.
     // The shape's own scale is set so the stitch's height fills the ring.
     for (let i = 0; i < count; i++) {
-      const st = ring.stitches[i]
+      const st = ring.stitches[i]!
       const shape = getStitchShape(st.symbol)
       if (!shape) {
         opts.onUnknownSymbol?.(st.symbol, ring.roundNumber)

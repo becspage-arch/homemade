@@ -31,12 +31,13 @@ function resolveColour(
   rowIndex: number,
   palette: RendererPalette,
 ): string {
-  if (st.colourKey && palette.byKey[st.colourKey]) {
-    return palette.byKey[st.colourKey]
+  if (st.colourKey) {
+    const explicit = palette.byKey[st.colourKey]
+    if (explicit) return explicit
   }
   const cycle = palette.perRound
   if (cycle.length === 0) return '#7a6a5a'
-  return cycle[rowIndex % cycle.length]
+  return cycle[rowIndex % cycle.length] ?? '#7a6a5a'
 }
 
 export function buildRowLayout(
@@ -78,13 +79,13 @@ export function buildRowLayout(
 
   let cumulativeHeight = 0
   for (let rowIdx = 0; rowIdx < expanded.length; rowIdx++) {
-    const row = expanded[rowIdx]
-    const rowHeight = rowHeightsPx[rowIdx]
+    const row = expanded[rowIdx]!
+    const rowHeight = rowHeightsPx[rowIdx]!
     const rowBaseY = baseY - cumulativeHeight
     cumulativeHeight += rowHeight
 
     for (let stIdx = 0; stIdx < row.stitches.length; stIdx++) {
-      const st = row.stitches[stIdx]
+      const st = row.stitches[stIdx]!
       const shape = getStitchShape(st.symbol)
       if (!shape) {
         opts.onUnknownSymbol?.(st.symbol, row.rowNumber)

@@ -62,8 +62,9 @@ function findCornerGroups(stitches: ReadonlyArray<ChartStitch>): number[][] {
   const groups: number[][] = []
   let current: number[] | null = null
   for (let i = 0; i < stitches.length; i++) {
-    if (isCentre(stitches[i])) continue
-    if (isChain(stitches[i])) {
+    const st = stitches[i]!
+    if (isCentre(st)) continue
+    if (isChain(st)) {
       if (current) current.push(i)
       else current = [i]
     } else if (current) {
@@ -90,7 +91,7 @@ function findCornerGroups(stitches: ReadonlyArray<ChartStitch>): number[][] {
 export function inferMotifShape(rounds: ReadonlyArray<ChartRound>): MotifShape {
   if (rounds.length === 0) return { kind: 'round' }
   for (let i = 0; i < rounds.length; i++) {
-    const expanded = expandStitches(rounds[i].stitches)
+    const expanded = expandStitches(rounds[i]!.stitches)
     const groups = findCornerGroups(expanded)
     if (groups.length === 4) return { kind: 'square' }
     if (groups.length === 6) return { kind: 'hexagon' }
@@ -103,12 +104,13 @@ function resolveColour(
   roundIndex: number,
   palette: RendererPalette,
 ): string {
-  if (st.colourKey && palette.byKey[st.colourKey]) {
-    return palette.byKey[st.colourKey]
+  if (st.colourKey) {
+    const explicit = palette.byKey[st.colourKey]
+    if (explicit) return explicit
   }
   const cycle = palette.perRound
   if (cycle.length === 0) return '#7a6a5a'
-  return cycle[roundIndex % cycle.length]
+  return cycle[roundIndex % cycle.length] ?? '#7a6a5a'
 }
 
 /**
@@ -154,8 +156,8 @@ function buildPolygonLayout(
   const placements: StitchPlacement[] = []
 
   for (let ringIdx = 0; ringIdx < expanded.length; ringIdx++) {
-    const ring = expanded[ringIdx]
-    const bounds = ringBounds[ringIdx]
+    const ring = expanded[ringIdx]!
+    const bounds = ringBounds[ringIdx]!
     const ringHeight = bounds.outer - bounds.inner
     const circumradius = bounds.inner
 
@@ -176,18 +178,18 @@ function buildPolygonLayout(
         // Map original index → index within nonCentre.
         let mapped = 0
         for (let k = 0; k < idx; k++) {
-          if (!isCentre(ring.stitches[k])) mapped++
+          if (!isCentre(ring.stitches[k]!)) mapped++
         }
         cornerLookup.add(mapped)
       }
     }
     for (let i = 0; i < nonCentre.length; i++) {
       const t = i / Math.max(1, nonCentre.length)
-      renderable.push({ st: nonCentre[i], t, isCorner: cornerLookup.has(i) })
+      renderable.push({ st: nonCentre[i]!, t, isCorner: cornerLookup.has(i) })
     }
 
     for (let i = 0; i < renderable.length; i++) {
-      const { st, t } = renderable[i]
+      const { st, t } = renderable[i]!
       const shape = getStitchShape(st.symbol)
       if (!shape) opts.onUnknownSymbol?.(st.symbol, ring.roundNumber)
       const resolved = shape ?? UNKNOWN_STITCH
@@ -196,8 +198,8 @@ function buildPolygonLayout(
       const sideF = t * sides
       const sideIdx = Math.floor(sideF) % sides
       const along = sideF - Math.floor(sideF) // 0..1 along this side
-      const vA = vertexAngles[sideIdx]
-      const vB = vertexAngles[(sideIdx + 1) % sides]
+      const vA = vertexAngles[sideIdx]!
+      const vB = vertexAngles[(sideIdx + 1) % sides]!
       const xA = Math.cos(vA) * circumradius
       const yA = Math.sin(vA) * circumradius
       const xB = Math.cos(vB) * circumradius

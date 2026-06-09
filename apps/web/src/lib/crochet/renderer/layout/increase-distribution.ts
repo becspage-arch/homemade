@@ -45,8 +45,8 @@ export function distributeIncreases(
 export function sanityCheckRoundProgression(counts: ReadonlyArray<number>): string[] {
   const warnings: string[] = []
   for (let i = 1; i < counts.length; i++) {
-    const prev = counts[i - 1]
-    const curr = counts[i]
+    const prev = counts[i - 1]!
+    const curr = counts[i]!
     if (curr < prev) {
       warnings.push(
         `Round ${i + 1} stitch count ${curr} is lower than round ${i} count ${prev}; ` +
