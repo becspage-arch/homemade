@@ -3129,6 +3129,7 @@ publish-hook flip + queue SKILL.md + per-stream crons disabled.
 
 ## Commit history milestones (last 20)
 
+- `<sha>` — content(crochet): bulk-002 Foundations — 33 more tutorials PUBLISHED (files 25-57). Library now at 60 Foundation tutorials, target met. Covers: yarn-over, double-treble, FLO/BLO, joined rounds, magic-ring-vs-chain, granny square, top-down/bottom-up, chainless foundation, rows/rounds, schematics, pattern repeats, stitch markers, round gauge, tension adjustment, spray blocking, blocking acrylic, JAYG, mattress stitch, invisible fasten off, colour changes, carrying yarn, twisted chain, miscounted stitches, dropped stitch, frogging, tinking, yarn fibre, hook materials, first project, reading crochet, practice, notions, washing symbols.
 - `<sha>` — content(crochet): bulk-001 Foundations — 24 tutorials PUBLISHED across basic stitches, round work, construction, reading patterns, gauge, blocking, joining, finishing, troubleshooting, materials, wellbeing. Library now at 27 Foundation tutorials (3 anchors + 24 new). Image generation (Worker E) follows. recipeTools use generic crochet-hook slug (specific size lives on primaryHookSlug).
 - `<sha>` — feat(autopilot): single-queue switchover — round-robin schema + COMPLETE flip + queue SKILL.md
 - `b71ceca` — feat(content): phase_8_content_integration_001 — image two-pass + audit rules + halt signals

@@ -1,0 +1,135 @@
+{
+  "slug": "crochet-granny-square-basics",
+  "title": "The granny square",
+  "subtitle": "A four-round motif worked in the round — the foundation of a hundred pattern uses",
+  "excerpt": "The traditional granny square is four rounds worked into a chain ring, building corner chain spaces and treble clusters. It is the entry point for motif crochet: joinable, portable, and useful in every size from coaster to blanket.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet — the square motif pattern, first published in the late Victorian series. Therese de Dillmont, Encyclopedia of Needlework (1886).",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-treble"],
+    "craftTechniqueTags": ["motifs", "granny-square", "colour-work"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "treble-cluster",
+      "term": "Treble cluster",
+      "definition": "A group of three treble stitches worked into the same space, with their tops joined into one. The basic building block of the granny square's side panels."
+    },
+    {
+      "slug": "corner-chain-space",
+      "term": "Corner chain space",
+      "definition": "The ch-2 space at each corner of a granny square, worked between two treble clusters. Corner chain spaces are used in subsequent rounds to build the square outward."
+    }
+  ],
+  "techniqueSlugs": ["crochet-granny-square-basics"],
+  "criticalTechniques": ["crochet-granny-square-basics"],
+  "aliases": ["granny square", "traditional square motif", "Afghan square"],
+  "heroPrompt": "A finished four-round granny square in DK cotton, three rounds in muted terracotta and a cream border round, sitting flat on a pale linen surface — the four corner chain spaces and treble clusters clearly visible.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The traditional granny square is four rounds: a chain ring centre, four corner "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "corner-chain-space" } }],
+            "text": "corner chain spaces"
+          },
+          {
+            "type": "text",
+            "text": ", and side panels built from "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treble-cluster" } }],
+            "text": "treble clusters"
+          },
+          {
+            "type": "text",
+            "text": ". Each additional round adds one more cluster to each side. The same structure scales from a small coaster (3 rounds) to a full blanket section (12+ rounds)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The pattern (4 rounds, DK cotton, 4 mm hook)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 4, join with a sl st to form a ring."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 1: Ch 3 (counts as first tr), 2 tr into ring, ch 2 (first corner space). *3 tr into ring, ch 2. Repeat from * twice more. Join with sl st to top of ch-3. (4 clusters, 4 corner spaces.)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 2: Sl st into first corner space. Ch 3, 2 tr into same corner space, ch 2, 3 tr into same corner space (first corner made). *3 tr into side space between clusters, then into next corner space work [3 tr, ch 2, 3 tr] (corner made). Repeat from * twice more. 3 tr into remaining side space. Join with sl st. (8 clusters, 4 corner spaces.)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 3: Work as Round 2, adding one more 3-tr cluster per side (into the ch-1 space between clusters). Each side now has 2 clusters; each corner has the standard [3 tr, ch 2, 3 tr]. (12 clusters.)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Round 4: Repeat the same pattern. Each side now has 3 clusters; each corner unchanged. Fasten off and sew in tails. (16 clusters.)" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working with colour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each round can be a different colour. Join the new colour with a slip stitch at the corner space at the start of each new round; fasten off and weave in at the end. For a tidy join, start each new colour with a standing treble instead of a ch-3."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Joining squares" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Granny squares are usually joined after completing all the individual squares. Three standard joins: whipstitch through back loops (soft, visible seam), slip-stitch seam (raised seam as a design feature), or join-as-you-go during the final round. The whipstitch join is the easiest for a first blanket."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "crochet-changing-colour",
+  "title": "Changing colour",
+  "subtitle": "When and how to introduce a new colour mid-work",
+  "excerpt": "Colour changes in crochet happen at the last yarn-over of the stitch before the change: complete the stitch with the new colour, not the old one. The logic is the same whether you are changing at the end of a row, mid-row, or at the start of a new round.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pauline Turner, How to Crochet — colour work. Therese de Dillmont, Encyclopedia of Needlework (1886) — multiple-colour crochet technique.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["colour-work", "stripes", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "colour-change",
+      "term": "Colour change",
+      "definition": "Introducing a new yarn colour at a specific point in the work. In crochet, the change is made on the final yarn-over of the last stitch in the old colour, so the new colour forms the top of that stitch."
+    },
+    {
+      "slug": "yarn-join",
+      "term": "Yarn join",
+      "definition": "The point at which a new ball of yarn or a new colour is attached to the working yarn. Several joining methods exist; the choice depends on whether the join needs to be invisible or secure against working stress."
+    }
+  ],
+  "techniqueSlugs": ["crochet-changing-colour"],
+  "criticalTechniques": ["crochet-changing-colour"],
+  "aliases": ["colour change", "changing yarn colour", "stripes crochet", "new colour"],
+  "heroPrompt": "A small striped crochet swatch in DK cotton — three rows of dusty blue, three rows of cream, with the colour-change edge clearly showing the clean stripe boundary at each row end.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The rule for a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-change" } }],
+            "text": "colour change"
+          },
+          {
+            "type": "text",
+            "text": " is always the same: complete the last yarn-over of the last stitch in the old colour with the new colour. The stitch body is the old colour; the top of the stitch is the new colour. The next stitch onwards uses the new colour throughout."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Changing colour at the end of a row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the last stitch of the row to its final yarn-over: e.g. for double crochet, two loops on the hook, ready for the last pull-through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drop the old colour. Pick up the new colour and pull it through to complete the stitch. One loop on the hook in the new colour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the work. Chain the turning chain in the new colour. Continue the next row with the new colour." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Carrying the old colour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For stripes worked every 2 rows, you can carry the old colour up the side edge rather than cutting it — wrap the old colour around the working yarn once per row turn to keep it tensioned at the edge, then pick it back up when the stripe sequence returns to it. For stripes of 4+ rows, cutting and re-joining produces a neater edge than a long float up the side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Changing colour mid-row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Same rule: on the stitch immediately before the colour change, complete the last yarn-over with the new colour. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-join" } }],
+            "text": "yarn join"
+          },
+          {
+            "type": "text",
+            "text": " is made here. Work over the tails of both the old and new colours for the next several stitches to secure them without weaving in separately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Changing colour in rounds" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At the end of a round, complete the join slip stitch with the new colour. Chain the starting chain for the new round in the new colour. On a granny square where colour changes happen every round, cut the old colour at the end of each round and re-join the new one at the start of the next from the corner chain space."
+          }
+        ]
+      }
+    ]
+  }
+}

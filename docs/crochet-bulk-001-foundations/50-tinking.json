@@ -1,0 +1,137 @@
+{
+  "slug": "crochet-tinking",
+  "title": "Tinking",
+  "subtitle": "Removing stitches one at a time to back up to a mistake",
+  "excerpt": "Tinking is 'knit' backwards — undoing stitches one by one rather than pulling out whole rows. In crochet it means inserting the hook back into the stitch below the current one and pulling the working yarn out. Slower than frogging but more controlled for small corrections.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — stitch repair. Standard crochet craft terminology.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["troubleshooting", "repair", "undoing-stitches"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tinking",
+      "term": "Tinking",
+      "definition": "Removing crochet stitches one at a time by inserting the hook into the stitch below the last completed one and pulling the working yarn back through. 'Tink' is 'knit' spelled backward."
+    },
+    {
+      "slug": "undoing-a-stitch",
+      "term": "Undoing a stitch",
+      "definition": "Inserting the hook tip into the stitch immediately below and behind the current working loop, pulling the working yarn to release the top of the completed stitch and restore the previous state."
+    }
+  ],
+  "techniqueSlugs": ["crochet-tinking"],
+  "criticalTechniques": ["crochet-tinking"],
+  "aliases": ["tinking", "undoing stitches", "backing up crochet", "un-crocheting"],
+  "heroPrompt": "Close-up of hands tinking a crochet swatch in cream DK cotton — the hook tip inserted back into the stitch below the last complete stitch, one working loop visible on the hook.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tinking is the controlled alternative to frogging for small corrections. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tinking" } }],
+            "text": "Tinking"
+          },
+          {
+            "type": "text",
+            "text": " undoes stitches one at a time — you go back exactly as many stitches as needed and no further. The right tool when the mistake is close by and you don't want to risk overshooting with a frog."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to tink a double crochet" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The working loop is on the hook after the last completed stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook tip from front to back into the stitch directly below the working loop — the stitch body of the last completed double crochet, entering at the point where the last yarn-over pulled through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "text": "Use the "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "undoing-a-stitch" } }],
+                "text": "undoing"
+              },
+              {
+                "type": "text",
+                "text": " action: pull the working yarn backward through the loop to release the stitch top. The two loops of the stitch top unzip back to the state before the last yarn-over."
+              }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The hook is now back in the position before the last double crochet was made. Repeat for each stitch you need to undo." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tinking trebles and taller stitches" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trebles and double trebles are worked in multiple stages. To tink one treble, you undo each close-down stage in reverse order: find the stitch body two loops below the current working loop, insert the hook, pull back through to restore the previous multi-loop state. Work backwards through each yarn-over stage. It is slower than tinkling a double crochet but the same principle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to tink versus frog" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tink: mistake is 1-5 stitches back in the current row. Controlled, exact." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Frog: mistake is more than half a row back, or in a previous row. Faster at scale, needs careful stopping." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fuzzy or mohair yarns: tink wherever possible. Frogging is hard to control on hairy yarn." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

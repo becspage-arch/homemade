@@ -1,0 +1,118 @@
+{
+  "slug": "crochet-miscounted-stitches",
+  "title": "Dealing with miscounted stitches",
+  "subtitle": "Why stitch count drifts, how to find where it went wrong, and when to fix it",
+  "excerpt": "A stitch count that doesn't match the pattern at the end of a row means a stitch was added or lost somewhere. Most drifting counts come from two places: working into the turning chain as a stitch when it isn't, or missing the first or last stitch of a row.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — counting and stitch problems. Pauline Turner, How to Crochet.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["troubleshooting", "counting", "tension"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stitch-drift",
+      "term": "Stitch drift",
+      "definition": "A gradual change in stitch count across multiple rows, where the row edges grow narrower or wider. Caused by consistently adding or losing one stitch per row."
+    },
+    {
+      "slug": "tally-count",
+      "term": "Tally count",
+      "definition": "A running count of stitches made by adding a mark (on paper, phone notepad, or using a tally counter) for each completed stitch, used when the stitch count per row is too high to hold in working memory."
+    }
+  ],
+  "techniqueSlugs": ["crochet-miscounted-stitches"],
+  "criticalTechniques": ["crochet-miscounted-stitches"],
+  "aliases": ["miscounted stitches", "lost stitches", "stitch count wrong", "row count drift"],
+  "heroPrompt": "A crochet swatch in cream DK cotton showing clearly narrowing edges after five rows — the stitch drift visible as the piece becomes slightly trapezoid rather than rectangular.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common sign of a miscounted row is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-drift" } }],
+            "text": "stitch drift"
+          },
+          {
+            "type": "text",
+            "text": ": the edges of the work slowly growing narrower or wider each row. Count the stitches at the end of every row until counting becomes automatic — early detection is much faster to fix than discovering the problem ten rows later."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The two most common causes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Stitch count problems",
+          "intro": "The majority of counting errors come from these two places.",
+          "items": [
+            {
+              "symptom": "Piece narrows row by row (losing stitches)",
+              "cause": "Missing the first stitch of each new row — the stitch directly below the turning chain. The turning chain brings the yarn up but the first actual stitch beside it is being skipped.",
+              "fix": "After turning and chaining, work the first stitch into the stitch immediately beside the turning chain — not into the chain itself (unless the pattern specifies the turning chain counts as a stitch). Lay the work flat and look: the V-shaped top of the first stitch should be clearly visible to the right of the turning chain."
+            },
+            {
+              "symptom": "Piece widens row by row (gaining stitches)",
+              "cause": "Working an extra stitch into the turning chain of the previous row. On double crochet patterns where the turning chain does NOT count as a stitch, the chain top looks like a stitch and new crocheters often work into it.",
+              "fix": "Identify the last real stitch of each row by counting back from the edge. The last stitch is the V-top directly beside the turning chain — the chain itself should not receive a stitch. Mark the last stitch with a stitch marker until the habit is established."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Counting reliably" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count by touching each V-top lightly with a finger as you count. Counting by eye across 30+ stitches is unreliable." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "text": "For long rows, use a "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tally-count" } }],
+                "text": "tally count"
+              },
+              {
+                "type": "text",
+                "text": ": place stitch markers every 10 stitches as you work. Count the groups of 10 at the end of the row rather than counting 200 stitches continuously."
+              }
+            ] }]
+          }
+        ]
+      }
+    ]
+  }
+}

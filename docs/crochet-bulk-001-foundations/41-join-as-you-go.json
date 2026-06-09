@@ -1,0 +1,121 @@
+{
+  "slug": "crochet-join-as-you-go",
+  "title": "Join-as-you-go",
+  "subtitle": "Connecting motifs during the last round so no seaming is needed",
+  "excerpt": "Join-as-you-go (JAYG) connects each new motif to its neighbours during the final round — replacing a separate seaming step with a join worked into the edge of the adjacent piece. The result is a neat, flat join with no finishing seams.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — motif joining methods. Standard modern British crochet finishing technique.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["joining", "motifs", "granny-squares", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "jayg",
+      "term": "JAYG",
+      "definition": "Abbreviation for join-as-you-go. A technique for joining crochet motifs during the last round of each new motif, by working a slip stitch or chain-slip-stitch into the corresponding chain space of the adjacent finished motif."
+    },
+    {
+      "slug": "joining-chain-space",
+      "term": "Joining chain space",
+      "definition": "The chain space on a finished motif into which a JAYG join is worked. On a granny square this is typically the corner ch-2 space or the side chain-1 space between clusters."
+    }
+  ],
+  "techniqueSlugs": ["crochet-join-as-you-go"],
+  "criticalTechniques": ["crochet-join-as-you-go"],
+  "aliases": ["JAYG", "join as you go", "motif joining", "no-sew join"],
+  "heroPrompt": "Two granny squares in cream and dusty blue DK cotton side by side on a pale surface, with their shared edge joined flat by a JAYG chain-slip-stitch join — the neat central line of the join visible between them.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard way to finish a granny-square blanket is to complete all the squares, then seam them together. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jayg" } }],
+            "text": "JAYG"
+          },
+          {
+            "type": "text",
+            "text": " skips the separate seaming step: as you work the final round of each new square, you connect it to the finished squares already in the blanket by working into their "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joining-chain-space" } }],
+            "text": "joining chain spaces"
+          },
+          {
+            "type": "text",
+            "text": ". The motifs are joined as they are made."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Basic JAYG method (chain-slip-stitch join)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On the final round of the new square, wherever a chain space falls against an edge of an adjacent finished square: work half the chain, then insert the hook into the corresponding chain space of the finished square and work a slip stitch, then complete the remaining chain. Example, replacing a ch-2 corner space: ch 1, sl st into corner ch-2 space of adjacent square, ch 1 (the two ch-1 halves stand in for the ch-2)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning the layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before starting, lay all the finished squares (those that will be complete before the JAYG row begins) on a flat surface in the correct layout. Work row by row: the first row of squares is completed normally. From the second row onward, each new square joins to one or more finished neighbours as it is made. Corner-to-corner joins need a three-way join at the meeting of four squares — work a sl st into the existing corner join rather than the chain space of any single square."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When JAYG is not the right choice" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When you want a raised decorative seam on the right side (use slip-stitch seam instead)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the motifs are irregular shapes where the join positions vary per motif (seaming after is more flexible)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the blanket layout may change mid-project — JAYG is committed, seaming after is adjustable." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

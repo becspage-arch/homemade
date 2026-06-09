@@ -1,0 +1,145 @@
+{
+  "slug": "crochet-reading-schematics",
+  "title": "Reading crochet schematics",
+  "subtitle": "How to read the small diagram that shows the finished shape",
+  "excerpt": "A crochet schematic is a scaled line-drawing of the finished piece with measurements labelled. It doesn't tell you how to crochet — it shows you what the finished shape should look like and how the pieces relate to each other.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pauline Turner, How to Crochet — pattern reading chapter. Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["pattern-reading", "schematics"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "schematic",
+      "term": "Schematic",
+      "definition": "A scaled outline drawing of a finished crochet piece, with measurements written in at key points. Shows the shape of the blocked, finished item — not the construction sequence."
+    },
+    {
+      "slug": "blocked-measurement",
+      "term": "Blocked measurement",
+      "definition": "The dimension of a piece after it has been blocked. Schematic measurements are always blocked measurements. An unblocked piece is typically smaller; blocking relaxes the yarn and opens the stitches to the intended size."
+    }
+  ],
+  "techniqueSlugs": ["crochet-reading-schematics"],
+  "criticalTechniques": ["crochet-reading-schematics"],
+  "aliases": ["crochet diagram", "garment schematic", "pattern diagram", "construction drawing"],
+  "heroPrompt": "A simple hand-drawn style schematic of a crochet jumper front — a rectangle with measurement annotations at the bust, length, and armhole depth positions, on a clean white background.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "schematic" } }],
+            "text": "schematic"
+          },
+          {
+            "type": "text",
+            "text": " is the map of the finished piece. It shows the final shape — not the rows and stitches, just the outline — with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blocked-measurement" } }],
+            "text": "blocked measurements"
+          },
+          {
+            "type": "text",
+            "text": " labelled at key points. Read the schematic before you start the pattern, not after — it tells you whether the finished size matches your body measurements and where adjustments need to happen."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a garment schematic shows" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Finished bust or chest (measured at the widest point, includes ease)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Body length from hem to underarm, and underarm to shoulder." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Armhole depth (the vertical distance from the underarm join to the shoulder seam)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sleeve length and cuff width." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Neckline width and depth." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use the schematic before you start" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Compare the schematic's bust measurement to your own bust measurement plus the ease allowance you prefer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the body length. If the schematic shows 60 cm from hem to shoulder and you need 65 cm, you will add rows to the body section before the armhole shaping begins." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check sleeve length separately — sleeve length and body length adjustments are independent." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Multi-size patterns" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a pattern covers multiple sizes, the schematic often shows all sizes on one diagram — measurements for each size separated by a slash or listed in brackets (e.g. 45/48/51/54 cm). Match the measurements to the size column you are working. The schematic is more useful than the size label alone: the labels (S/M/L/XL) are not standardised across designers."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "No schematic in the pattern?",
+          "body": "Write your own. List the finished measurements from the pattern (or calculate them from row counts and gauge), draw a rough rectangle for each piece, and label it. Even a rough sketch clarifies where length adjustments fit in the construction sequence."
+        }
+      }
+    ]
+  }
+}

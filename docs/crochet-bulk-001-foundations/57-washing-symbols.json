@@ -1,0 +1,153 @@
+{
+  "slug": "crochet-washing-and-care-symbols",
+  "title": "Washing and care symbols",
+  "subtitle": "How to read the care label on the yarn band",
+  "excerpt": "The yarn band carry care symbols that tell you how to wash, dry, iron, and dry-clean the finished piece. A garment washed incorrectly can shrink, felt, or lose its shape permanently. Reading the care symbols before you start means no surprises when the piece needs washing.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Standard GINETEX/ISO textile care labelling system. Yarn care symbols are standardised internationally and derived from the same set.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["materials", "care", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "care-symbol",
+      "term": "Care symbol",
+      "definition": "A standardised icon on a yarn band (or garment label) indicating how the item should be washed, dried, ironed, and treated. Part of the GINETEX international system."
+    },
+    {
+      "slug": "hand-wash",
+      "term": "Hand wash",
+      "definition": "Washing by hand in cool or lukewarm water, without agitation — gently squeezing the water through the fabric rather than wringing or rubbing. Required for most non-superwash animal fibres."
+    }
+  ],
+  "techniqueSlugs": ["crochet-washing-and-care-symbols"],
+  "criticalTechniques": ["crochet-washing-and-care-symbols"],
+  "aliases": ["yarn care symbols", "washing crochet", "care labels yarn", "how to wash crochet"],
+  "heroPrompt": "Close-up of a yarn band showing the standard care symbols row: wash tub, iron, triangle, circle, and hand icons, on a cream band wrapped around a DK cotton ball.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every yarn band carries a row of "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "care-symbol" } }],
+            "text": "care symbols"
+          },
+          {
+            "type": "text",
+            "text": ". These tell you exactly how to handle the finished piece. Keep one ball band per project so you can check the symbols when it comes time to wash. The symbols follow an international standard, so they are the same whether the yarn is from the UK, Europe, or Japan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The wash symbol (tub)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tub with a number (30, 40, 60): machine wash at that temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "text": "Tub with a hand: "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hand-wash" } }],
+                "text": "hand wash"
+              },
+              {
+                "type": "text",
+                "text": " only, cool water, gentle squeezing."
+              }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tub with an X: do not wash with water. Dry clean only." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The iron symbol (iron shape)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One dot: cool iron only (suitable for acrylic, nylon)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Two dots: medium iron (suitable for wool, polyester blends)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Three dots: hot iron (cotton, linen)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Iron with X: do not iron." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying symbols (square)" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Square with circle: tumble dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Square with X through circle: do not tumble dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Square with horizontal lines: dry flat. Important for wool and anything that could stretch on a hanger." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "When in doubt, hand wash cool and dry flat",
+          "body": "If you cannot read the band (it's worn, missing, or in a language you don't know), default to hand wash in cool water and dry flat. This is gentle enough for most fibres and reversible — you haven't destroyed anything. A hot machine wash of an unknown fibre is not reversible."
+        }
+      }
+    ]
+  }
+}

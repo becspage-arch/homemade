@@ -1,0 +1,134 @@
+{
+  "slug": "crochet-adjusting-tension-for-gauge",
+  "title": "Adjusting tension for gauge",
+  "subtitle": "What to change when the swatch stitch count is wrong",
+  "excerpt": "Gauge is off. The options are: change hook size, change yarn tension, or accept the discrepancy and adjust row counts. Hook size is the first lever to pull. Tension technique is the second. Recounting the pattern for a different gauge is the last resort.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — gauge adjustment. Pauline Turner, How to Crochet.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["gauge", "tension", "sizing"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tight-gauge",
+      "term": "Tight gauge",
+      "definition": "More stitches per 10 cm than the pattern specifies. The fabric is denser and firmer than intended, and the finished piece will be smaller."
+    },
+    {
+      "slug": "loose-gauge",
+      "term": "Loose gauge",
+      "definition": "Fewer stitches per 10 cm than the pattern specifies. The fabric is more open and drapey than intended, and the finished piece will be larger."
+    }
+  ],
+  "techniqueSlugs": ["crochet-adjusting-tension-for-gauge"],
+  "criticalTechniques": ["crochet-adjusting-tension-for-gauge"],
+  "aliases": ["gauge adjustment", "fixing gauge", "tension for gauge", "changing hook size for gauge"],
+  "heroPrompt": "Three small swatches of the same DK cotton in a row on a pale surface, each worked with a different hook size (3.5 mm, 4 mm, 4.5 mm), showing progressively more open stitches. A small ruler placed below all three.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern gauge: 20 sts over 10 cm. Your swatch: 22 sts over 10 cm. That is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tight-gauge" } }],
+            "text": "tight gauge"
+          },
+          {
+            "type": "text",
+            "text": " — more stitches than specified, meaning your fabric is denser and your finished piece will be smaller. Pattern gauge: 20 sts. Your swatch: 18 sts. That is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loose-gauge" } }],
+            "text": "loose gauge"
+          },
+          {
+            "type": "text",
+            "text": " — fewer stitches, fabric more open, finished piece larger. Both are fixable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "First lever: hook size" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Too many stitches (tight gauge): go up one hook size (e.g. from 4 mm to 4.5 mm). A larger hook creates larger loops, giving fewer stitches per 10 cm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Too few stitches (loose gauge): go down one hook size (e.g. from 4 mm to 3.5 mm). A smaller hook creates smaller loops, giving more stitches per 10 cm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Re-swatch after every hook change. It is normal to go through two or three swatches before landing on the correct gauge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Second lever: working tension" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If changing hook size doesn't solve the problem (or if you are already near the edges of the hook range for the yarn weight), the tension technique can be adjusted. Consciously relax the yarn-tension hand to open the stitches. Or tighten it slightly for smaller stitches. This is harder to maintain consistently across a large project — hook size is a more reliable fix."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Third option: recount the pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you cannot match the pattern gauge exactly but the difference is small (half a stitch per 10 cm), recounting is sometimes practical: calculate what your stitch count would produce in centimetres and decide whether the size difference matters for the project. A dishcloth half a centimetre off in either direction is fine. A jumper half a size out is not."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Gauge affects row count too",
+          "body": "If your row gauge is also off (more or fewer rows per 10 cm), you will need to adjust the row count for length. Work the body until it measures the schematic length rather than following the pattern's row number — for most garments, measuring is more reliable than counting rows."
+        }
+      }
+    ]
+  }
+}

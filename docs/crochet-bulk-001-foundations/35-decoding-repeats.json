@@ -1,0 +1,134 @@
+{
+  "slug": "crochet-decoding-pattern-repeats",
+  "title": "Decoding pattern repeats",
+  "subtitle": "What the asterisks, brackets, and parentheses in written patterns actually mean",
+  "excerpt": "Crochet patterns use asterisks and brackets to mark sections of instructions that repeat. Once you know what each symbol means, a page of abbreviations becomes a clear sequence of actions.",
+  "type": "READING",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — pattern notation chapter. Standard British crochet pattern conventions.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["pattern-reading", "abbreviations"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "asterisk-repeat",
+      "term": "Asterisk repeat",
+      "definition": "A pattern section marked with * at the start and a phrase like 'repeat from * to end' or 'repeat from * 3 more times'. Everything between the first asterisk and the end marker repeats the stated number of times."
+    },
+    {
+      "slug": "bracket-repeat",
+      "term": "Bracket repeat",
+      "definition": "A pattern section enclosed in square brackets or parentheses with a multiplication note immediately after, e.g. [3 tr, ch 2] 4 times. The contents of the bracket repeat exactly the stated number of times."
+    }
+  ],
+  "techniqueSlugs": ["crochet-decoding-pattern-repeats"],
+  "criticalTechniques": ["crochet-decoding-pattern-repeats"],
+  "aliases": ["pattern repeats", "reading pattern notation", "crochet abbreviations", "asterisk in pattern"],
+  "heroPrompt": "A close-up of a printed crochet pattern page with a single line of abbreviated instructions and one asterisk repeat highlighted in yellow marker, on a pale background.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A written crochet pattern condenses long sequences of identical actions using notation shorthand. The two most common forms are the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "asterisk-repeat" } }],
+            "text": "asterisk repeat"
+          },
+          {
+            "type": "text",
+            "text": " and the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bracket-repeat" } }],
+            "text": "bracket repeat"
+          },
+          {
+            "type": "text",
+            "text": ". Both mean \"do this section again\". They are not interchangeable in a single pattern — read the pattern notes to see which convention the designer is using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Asterisk repeats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Example: \"*1 dc, ch 1, skip 1. Repeat from * to last 2 sts.\" This means: work [1 dc, ch 1, skip 1] over and over across the row, stopping when only 2 stitches remain. Count the stitches per repeat (here: 3 stitches consumed each time) and check the stitch count at the end of the row to confirm you worked the right number of repeats."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Bracket repeats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Example: \"[3 tr into corner space, ch 2] 4 times.\" This means: work [3 tr, ch 2] exactly four times in sequence. The bracket repeat is unambiguous about count — no need to calculate how many times to repeat based on row length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Nested repeats" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Some patterns have both. Example: \"*[1 dc, ch 2, 1 dc] into corner sp, 3 dc across side. Repeat from * 3 more times.\" Read the bracket first (it's a sub-action within the larger repeat), then the asterisk repeat wraps the whole sequence. Work the inside bracket actions, then the outside repeat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitch counts at the end of a row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After a repeat section, most patterns state the expected stitch count in brackets: e.g. \"(48 sts)\". Count your stitches when you reach this marker. If your count doesn't match, the repeat count is wrong — too few or too many repeats before the pattern moved to the end stitches. Fix the count before continuing, not after completing several more rows."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Mark your place in a row",
+          "body": "For long repeating rows, use a small sticky note under the line you are currently working. Move it down as you finish each row. With complex repeat patterns, also make a tick mark (pencil on paper, or a phone notepad) each time you complete one full repeat — a mis-count on row 30 is much faster to diagnose if you know which repeat you were on."
+        }
+      }
+    ]
+  }
+}

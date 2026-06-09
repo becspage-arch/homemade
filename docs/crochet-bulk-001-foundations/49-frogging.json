@@ -1,0 +1,122 @@
+{
+  "slug": "crochet-frogging",
+  "title": "Frogging",
+  "subtitle": "Pulling out rows of crochet and starting a section again",
+  "excerpt": "Frogging means unravelling a section of crochet by pulling the working yarn. Named for the 'rip it, rip it' sound. Faster than tinking but uncontrolled — you pull back to before the problem and re-work from there. The trick is stopping at the right row.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Standard crochet craft terminology. Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["troubleshooting", "repair", "unravelling"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "frogging",
+      "term": "Frogging",
+      "definition": "Unravelling crochet by pulling the working yarn, removing multiple rows or rounds at once. From 'rip it, rip it'. Faster than tinking but requires re-picking up the live loop from a previous row."
+    },
+    {
+      "slug": "live-loop",
+      "term": "Live loop",
+      "definition": "The working loop currently on the hook, or the loop at the end of the last completed stitch after frogging — the point where work can resume."
+    }
+  ],
+  "techniqueSlugs": ["crochet-frogging"],
+  "criticalTechniques": ["crochet-frogging"],
+  "aliases": ["frogging", "ripping out crochet", "unravelling crochet", "tearing back"],
+  "heroPrompt": "A crochet swatch in DK cotton mid-frog — several rows of yarn pulled out and sitting loose, with the live loop held on the hook at the row where the frog stopped.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The word 'frogging' is crafter slang: because you 'rip it, rip it, rip it'. Pulling the working yarn unravels the stitches back through whatever rows you want to remove. Faster than tinking (stitch-by-stitch) and the right tool when you need to go back more than a few stitches — but it needs a controlled stop to avoid unravelling past the target row."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to frog without losing your place" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify the row you want to return to — the last correct row before the mistake." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the hook from the working loop and gently pull the working yarn to unravel the rows above the target." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              {
+                "type": "text",
+                "text": "Stop ONE ROW above the target row. The "
+              },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "live-loop" } }],
+                "text": "live loop"
+              },
+              {
+                "type": "text",
+                "text": " should be at the start of the row you want to remove. Insert the hook carefully into each stitch of this row one at a time, pulling gently to release the remaining row. This controlled unravelling prevents overshooting."
+              }
+            ] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once back to the last correct row, re-insert the hook under the last stitch loop of that row and resume work." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When frogging is the right call" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A mistake more than 5-6 stitches back in the current row, or in a previous row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A pattern error discovered 2+ rows after it occurred." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gauge or sizing problems discovered early enough that reworking is faster than finishing and seaming a piece that won't fit." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Yarn gets fuzzy from frogging",
+          "body": "Wool and mohair develop a halo from repeated working and unravelling — the fibres loosen and stick to themselves. If you are working with a fuzzy yarn, frogging back more than a few times can make the yarn too fluffy to re-work cleanly. Cotton and smooth acrylic recover better."
+        }
+      }
+    ]
+  }
+}

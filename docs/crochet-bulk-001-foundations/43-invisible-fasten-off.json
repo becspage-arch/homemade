@@ -1,0 +1,132 @@
+{
+  "slug": "crochet-invisible-fasten-off",
+  "title": "Invisible fasten off",
+  "subtitle": "Closing the last round without a visible join",
+  "excerpt": "The standard fasten off leaves a slight jog where the last stitch meets the first. The invisible fasten off mimics the top of a stitch using the yarn tail and a tapestry needle, closing the round cleanly. Useful on any round piece where the join would otherwise show.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — fasten off techniques. Standard modern crochet finishing.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["finishing", "fasten-off", "rounds"]
+  },
+  "recipeTools": [
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "invisible-fasten-off",
+      "term": "Invisible fasten off",
+      "definition": "A finishing technique where the yarn tail is threaded on a tapestry needle and woven under the top loops of the adjacent stitch to simulate a complete stitch top, hiding the end of the last round."
+    },
+    {
+      "slug": "jog-in-round",
+      "term": "Jog",
+      "definition": "The visible step that occurs when the end of a round meets the beginning of the same round, because the last stitch and the first stitch are worked at slightly different heights."
+    }
+  ],
+  "techniqueSlugs": ["crochet-invisible-fasten-off"],
+  "criticalTechniques": ["crochet-invisible-fasten-off"],
+  "aliases": ["invisible fasten off", "no-seam fasten off", "grafted fasten off", "seamless finish"],
+  "heroPrompt": "Close-up of the top round of a hat in cream DK cotton — the last round completed with an invisible fasten off, the join between the first and last stitch of the round completely hidden.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When you work the last round of a hat or flat motif and close with a normal slip-stitch join, the join creates a small "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jog-in-round" } }],
+            "text": "jog"
+          },
+          {
+            "type": "text",
+            "text": " — the last stitch is slightly taller than the first because of the starting chain. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "invisible-fasten-off" } }],
+            "text": "invisible fasten off"
+          },
+          {
+            "type": "text",
+            "text": " corrects this by threading the tail through the loops of the neighbouring stitch to mimic a complete stitch top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Steps (for a treble crochet round)" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Complete the last stitch of the round. Do not join with a slip stitch. Cut the yarn, leaving a 20 cm tail, and pull the tail through the live loop to secure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tail on a tapestry needle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle from front to back under BOTH loops of the first stitch of the round (the one that followed the starting chain). Pull through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle back down through the back loop only of the last stitch you made (the one the tail is coming out of). Pull through snugly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The tail now forms a false stitch top that mirrors the other stitches in the round. Weave in the tail on the wrong side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The last round of a hat brim where the join will be visible in wear." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The last border round of a flat motif where a visible join would break the pattern." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Any colour change in rounds where the colour join needs to be invisible." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On flat pieces worked in rows (scarves, blankets, garment panels), the standard fasten off is sufficient — there is no circular join to disguise."
+          }
+        ]
+      }
+    ]
+  }
+}

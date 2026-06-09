@@ -1,0 +1,135 @@
+{
+  "slug": "crochet-chainless-foundation-row",
+  "title": "Chainless foundation row",
+  "subtitle": "Skip the starting chain — build stitches and foundation in one pass",
+  "excerpt": "The chainless foundation row creates the foundation chain and first row of stitches simultaneously. The result stretches more than a standard chain and lies flatter at the cast-on edge — the usual fix for items with tight lower edges.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — chainless foundations section. Standard modern British and American crochet reference texts.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-double-uk"],
+    "craftTechniqueTags": ["foundation", "cast-on", "edges"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "foundation-double-crochet",
+      "term": "Foundation double crochet",
+      "definition": "A chainless cast-on technique that creates one chain and one double crochet simultaneously. Abbreviated fdc. The resulting edge has the same stretch as a worked row, not the tighter pull of a chain foundation."
+    },
+    {
+      "slug": "cast-on-edge",
+      "term": "Cast-on edge",
+      "definition": "The very first row or foundation of a crochet piece — the equivalent of a knitting cast-on. On crochet items this is often the lower hem or the start of a sleeve."
+    }
+  ],
+  "techniqueSlugs": ["crochet-chainless-foundation-row"],
+  "criticalTechniques": ["crochet-chainless-foundation-row"],
+  "aliases": ["fdc", "foundation dc", "chainless cast-on", "foundation double crochet", "foundation row"],
+  "heroPrompt": "Two strips of crochet flat on a pale surface side by side — the left strip has a standard chain foundation (slightly ruffled at the lower edge), the right strip uses a chainless foundation row (flat, even edge). Both in cream DK cotton.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A standard crochet piece starts with a chain, then the first row of stitches works back along that chain. The problem: the chain is often tighter or looser than the rest of the fabric, which makes the lower edge pucker or ruffle. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation-double-crochet" } }],
+            "text": "foundation double crochet"
+          },
+          {
+            "type": "text",
+            "text": " (fdc) solves this by building the chain and first row together in one action, creating a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cast-on-edge" } }],
+            "text": "cast-on edge"
+          },
+          {
+            "type": "text",
+            "text": " that has the same stretch and drape as the rest of the fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to work a foundation double crochet" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start with a slip knot and 2 chains. Each stitch adds itself to the chain as it is made."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the hook into the second chain from the hook. Yarn over and pull up a loop. Two loops on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through ONE loop only (this creates the chain portion of the stitch). Now two loops remain on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over and pull through BOTH remaining loops (this completes the double crochet portion). One loop remains. First fdc complete." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For each subsequent fdc, insert the hook under the two loops of the chain just created at the bottom of the stitch just made (not into the top V at the working row level). Repeat steps 2 and 3." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Finding the chain loops",
+          "body": "After each fdc, look at the bottom of the stitch you just made. The chain loop is the small oval sitting below the post. Insert the hook under both threads of this oval for the next stitch. It takes 5-10 stitches to get a feel for where the insertion point is — slow down on the first row."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use it" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hats — the brim edge should stretch over the head easily; a tight chain foundation creates a rigid ring." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blankets — the foundation edge is very long; any chain-tightness issue is magnified." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Garment hems — the lower edge of a cardigan or jumper needs the same drape as the body." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}

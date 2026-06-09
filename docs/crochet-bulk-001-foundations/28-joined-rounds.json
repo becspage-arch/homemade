@@ -1,0 +1,124 @@
+{
+  "slug": "crochet-joined-rounds-technique",
+  "title": "Working in joined rounds",
+  "subtitle": "How to close each round and start the next without a seam showing",
+  "excerpt": "Joined rounds use a slip stitch to close the circle, then a chain to rise to the next round height. The join is visible — it creates a seam. Learning where it falls and how to disguise it is what separates neat round work from lumpy round work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886) — joined rounds in the medallion section. Weldon's Practical Crochet — motif construction technique.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["rounds", "join", "motifs"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "join-slip-stitch",
+      "term": "Join slip stitch",
+      "definition": "A slip stitch worked into the first stitch of the round to close the circle at the end of each joined round. It creates a visible seam on the fabric."
+    },
+    {
+      "slug": "standing-stitch",
+      "term": "Standing stitch",
+      "definition": "A technique for starting a new colour or new round without a chain: the first stitch is made by holding the working yarn at the hook as if it were already inserted, then completing the stitch normally. Avoids a chain-1 bump at the round start."
+    }
+  ],
+  "techniqueSlugs": ["crochet-joined-rounds-technique"],
+  "criticalTechniques": ["crochet-joined-rounds-technique"],
+  "aliases": ["joined rounds", "closed rounds", "working in the round", "crochet in the round"],
+  "heroPrompt": "A flat granny-square motif in the round, four rounds worked in DK cotton in cream and dusty blue, sitting on a light linen background — the join seam just visible as a slightly raised line at one edge.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Joined rounds are the standard way to work granny squares, motifs, and round hats. Each round ends with a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "join-slip-stitch" } }],
+            "text": "join slip stitch"
+          },
+          {
+            "type": "text",
+            "text": " into the first stitch of the round, then a chain to rise to the height of the next round's stitches. The join creates a small seam that runs vertically up the work. Managing where this seam falls and how visible it is makes a real difference to how the finished piece looks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Starting a joined round" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin each round by chaining the height: ch1 for double crochet rounds, ch2 for half treble rounds, ch3 for treble rounds. Most patterns count this chain as the first stitch of the round; check the notes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a stitch marker in the chain-1 (or chain-3) if counting as a stitch — this marks where the round ends and the join will go." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the stitches of the round. Do not count the starting chain in your running stitch count." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the round, insert the hook into the top of the starting chain (or the first stitch of the round if the chain doesn't count) and work a slip stitch to close." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The join seam" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The join creates a visible column where the slip stitch and starting chain meet. On a hat, it runs straight up the back. On a flat motif, it falls at one edge. To minimise visibility: work the join slip stitch loosely (a tight join puckers), and keep the starting chain in the same position each round."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Compared to spiral working" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Joined rounds produce a flat seam and a clear round structure — each round is complete before the next begins. Continuous spirals (no join) avoid the seam entirely but produce a gradual step at the round boundary. Joined rounds are standard for motifs, granny squares, and any pattern where colour changes happen at round ends. Spirals are standard for amigurumi and seamless tubes. The two techniques are not interchangeable without adjusting the stitch pattern."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Standing stitch to eliminate the chain bump",
+          "body": "A standing stitch starts a new colour round without a chain-1 bump. Hold the new yarn at the hook position, treat it as if the hook is already inserted, and complete the stitch. The start looks identical to every other stitch in the round. Worth learning once you are comfortable with the basic join."
+        }
+      }
+    ]
+  }
+}

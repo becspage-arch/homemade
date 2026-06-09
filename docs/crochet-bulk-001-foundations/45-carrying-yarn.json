@@ -1,0 +1,120 @@
+{
+  "slug": "crochet-carrying-yarn",
+  "title": "Carrying yarn",
+  "subtitle": "How to manage a second colour that isn't in use for several stitches",
+  "excerpt": "When a colour pattern requires switching colours mid-row, the unused colour is either cut and re-joined or carried behind the work as a float. Carrying avoids multiple tails to weave in, but the float must be caught so it doesn't loop loose on the wrong side.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886) — multi-colour crochet. Standard colour-work carrying technique.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["colour-work", "floats", "tapestry-crochet"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "float-crochet",
+      "term": "Float",
+      "definition": "The strand of a carried colour that runs across the wrong side of the work between the points where it is in use. Floats need to be caught every few stitches to prevent loose loops that can snag."
+    },
+    {
+      "slug": "tapestry-crochet",
+      "term": "Tapestry crochet",
+      "definition": "A colourwork technique where the unused colour is carried inside the stitch bodies rather than as a float behind the work, completely encasing the strand. Produces a thicker, reversible fabric."
+    }
+  ],
+  "techniqueSlugs": ["crochet-carrying-yarn"],
+  "criticalTechniques": ["crochet-carrying-yarn"],
+  "aliases": ["carrying yarn", "floats crochet", "stranding crochet", "intarsia crochet"],
+  "heroPrompt": "Wrong side of a two-colour crochet swatch showing a neatly carried float — the unused yarn running in short even strands across the back, caught every few stitches to lie flat.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a colour pattern uses two colours in the same row, the unused colour can be cut and re-joined at each switch — which produces a clean result but many tails to weave in — or carried behind the stitches as a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float-crochet" } }],
+            "text": "float"
+          },
+          {
+            "type": "text",
+            "text": ". Floats are the standard approach when colour switches occur frequently. The key requirement: catch the float every 2-4 stitches so it doesn't hang loose on the wrong side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Carrying method: float behind stitches" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When you switch to the working colour, let the old colour hang at the back (wrong side) of the work." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Every 2-4 stitches, insert the hook through the stitch as normal but also over the carried strand — so the carried strand is enclosed inside the stitch top as you complete it. This catches the float without using it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To switch back to the carried colour, pick it up on the final yarn-over of the last stitch in the current colour and continue with it." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tapestry crochet: fully encasing the float" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tapestry-crochet" } }],
+            "text": "tapestry crochet"
+          },
+          {
+            "type": "text",
+            "text": " the unused colour is carried inside every stitch — not just every few stitches. The float is completely hidden inside the stitch body. The fabric is firmer and denser than standard colourwork crochet, and both sides look the same. Used for bags, baskets, and geometric-pattern pieces."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tension while carrying" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the carried colour at the same tension as the working yarn. If the float is too tight, it pulls the fabric in and distorts the stitch pattern. If too loose, the float hangs on the wrong side and can snag. A light, even tension on the carried strand as you work the covering stitches is what keeps the fabric flat."
+          }
+        ]
+      }
+    ]
+  }
+}

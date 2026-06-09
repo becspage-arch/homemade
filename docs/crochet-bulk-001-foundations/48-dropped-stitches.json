@@ -1,0 +1,128 @@
+{
+  "slug": "crochet-recovering-dropped-stitch",
+  "title": "Recovering a dropped stitch",
+  "subtitle": "How to rescue a stitch that has fallen off the hook before completion",
+  "excerpt": "A dropped stitch in crochet falls off the hook mid-stitch and unravels down through the rows below if not caught quickly. The recovery method depends on whether the dropped stitch is still in the current row or has already run down.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book — dropped stitch recovery. Pauline Turner, How to Crochet.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [],
+    "craftTechniqueTags": ["troubleshooting", "dropped-stitch", "repair"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dropped-stitch",
+      "term": "Dropped stitch",
+      "definition": "A stitch that has slipped off the crochet hook before being completed, leaving a live loop that may unravel down through previous rows."
+    },
+    {
+      "slug": "running-down",
+      "term": "Running down",
+      "definition": "When a dropped stitch unravels through consecutive rows, creating a ladder of loose horizontal bars down the fabric. Most common in open-stitch patterns where stitches are less locked to their neighbours."
+    }
+  ],
+  "techniqueSlugs": ["crochet-recovering-dropped-stitch"],
+  "criticalTechniques": ["crochet-recovering-dropped-stitch"],
+  "aliases": ["dropped stitch crochet", "fixing dropped stitch", "picking up dropped stitch"],
+  "heroPrompt": "Close-up of a crochet swatch in cream DK cotton with one stitch clearly pulled loose and hanging below the work, with a crochet hook poised to re-insert into the dropped loop.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When the hook slips out of the working loop, you have a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dropped-stitch" } }],
+            "text": "dropped stitch"
+          },
+          {
+            "type": "text",
+            "text": ". Don't panic and don't put the work down — crochet fabric is less prone to "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "running-down" } }],
+            "text": "running down"
+          },
+          {
+            "type": "text",
+            "text": " than knitting because each crochet stitch is its own closed loop, but it can happen on open-stitch patterns."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dropped stitch in the current row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Notice the dropped loop immediately. Do not work further stitches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Re-insert the hook from front to back through the dropped loop. Make sure the loop is not twisted on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the stitch was mid-completion (multiple loops on the hook when it was dropped), check how many loops there were and re-enter the stitch at that point in the sequence. Work the remaining close-down steps to complete the stitch." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Dropped stitch that has run down" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the dropped stitch has unravelled one or more rows, you'll see a loose horizontal bar (the unworked strand) below a gap in the fabric. To repair: insert the hook from front to back into the live loop at the bottom of the gap. Catch the loose horizontal bar above it with the hook throat and pull it through the live loop to recreate the stitch. Repeat for each row the stitch has run down. The repair stitches will be slightly looser than the surrounding fabric; block after finishing to even them out."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preventing dropped stitches" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work at a consistent pace — rushing increases hook slippage." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When putting the work down mid-row, insert the hook further onto the hook shaft to secure the loop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On very slippery yarn (silk, polished cotton), a hook with a slight grip at the shaft rather than a fully polished surface helps retain the loop." }] }]
+          }
+        ]
+      }
+    ]
+  }
+}
