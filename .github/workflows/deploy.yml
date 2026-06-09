@@ -112,7 +112,10 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
-        run: pnpm --filter @homemade/db migrate:deploy
+        run: |
+          # Fall back to stripping -pooler from DATABASE_URL if DIRECT_URL secret not yet set.
+          export DIRECT_URL="${DIRECT_URL:-${DATABASE_URL/-pooler./.}}"
+          pnpm --filter @homemade/db migrate:deploy
 
       # Pattern Studio data backfills (phase_pattern_studio_001).
       # Both scripts are idempotent: the seed upserts on Pattern.slug,
