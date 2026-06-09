@@ -179,6 +179,22 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/flip-crochet-public.ts
 
+      # Needlework pipeline-setup (phase_needlework_pipeline_setup_001).
+      # Sets Category.needlework targetTutorialCount, techniqueSlugs,
+      # criticalTechniques, aliases, isPublicVisible, pipelineStatus
+      # READY; flips SubCategory.autopilotEnabled per discipline (7 true,
+      # 3 false for specialist curation). Idempotent: re-runs every
+      # deploy so the canonical values in the script remain the source
+      # of truth. Depends on the migration step above having added
+      # SubCategory.autopilotEnabled and Category.techniqueSlugs /
+      # criticalTechniques / aliases columns.
+      - name: Flip needlework READY + pipeline-setup standards (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/flip-needlework-ready.ts
+
       # Photographic demo patterns — pulls 3 public-domain Wikimedia
       # photos through the live photo-to-chart pipeline at ~120 cells
       # / ~36 colours so the library shows what dense subject matter

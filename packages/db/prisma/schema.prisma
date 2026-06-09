@@ -284,8 +284,8 @@ model User {
   needleworkDisciplinePreference String?
 
   // Needlework Studio reverse relations.
-  needleworkPatterns         NeedleworkPattern[]         @relation("NeedleworkPatternOwner")
-  needleworkProjectProgress  NeedleworkProjectProgress[]
+  needleworkPatterns        NeedleworkPattern[]         @relation("NeedleworkPatternOwner")
+  needleworkProjectProgress NeedleworkProjectProgress[]
 
   @@index([role])
   @@index([isSuspended])
@@ -357,13 +357,17 @@ model Category {
   // (single prompt). Non-empty = the routine picks one type per fire
   // (weighted by coverage gap) and routes to
   // `docs/{slug}-{type-lower}-author.md`. Crochet seeds with TECHNIQUE,
-  // STITCH, MOTIF, HOMEWARE — GARMENT + AMIGURUMI wait for Worker X2's
+  // STITCH, MOTIF, HOMEWARE; GARMENT + AMIGURUMI wait for Worker X2's
   // grading library + shape math.
   //
   // `techniqueSlugs`, `criticalTechniques`, `aliases` are the category-
-  // level reference set per the pipeline-setup memory rule. Authoring
-  // reads them so per-tutorial Tutorial.techniqueSlugs /
-  // criticalTechniques / aliases stay consistent across the library.
+  // level reference set per the pipeline-setup memory rule. Populated
+  // by each category's pipeline-setup worker. Used by the autopilot
+  // routine so per-tutorial Tutorial.techniqueSlugs / criticalTechniques
+  // / aliases stay consistent across the library, and by future
+  // cross-category sweeps. Crochet seeded by
+  // phase_crochet_autopilot_foundation_001; needlework seeded by
+  // phase_needlework_pipeline_setup_001.
   autopilotContentTypesEnabled String[] @default([])
   techniqueSlugs               String[] @default([])
   criticalTechniques           String[] @default([])
@@ -394,6 +398,16 @@ model SubCategory {
   name        String
   description String?
   order       Int     @default(0)
+
+  // Sub-cat-level autopilot gate (phase_needlework_pipeline_setup_001).
+  // When true, the autopilot routine may pick this sub-cat as the target
+  // for a batch within its parent category. When false, the routine skips
+  // it. Used by needlework to enable the 7 fully-guided disciplines while
+  // leaving goldwork, ribbon-embroidery, and stumpwork to specialist
+  // curation workers. Categories that don't use sub-cat-level routing
+  // leave every row at the default false; the routine then falls back to
+  // the category-level author prompt.
+  autopilotEnabled Boolean @default(false)
 
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
@@ -1232,11 +1246,11 @@ model Media {
   designerAvatars   Designer[]
 
   // Crochet Studio (phase_crochet_pattern_001).
-  crochetPatternThumbnails    CrochetPattern[]    @relation("CrochetPatternThumbnail")
-  crochetPatternSchematics    CrochetPattern[]    @relation("CrochetPatternSchematic")
-  crochetPatternHeros         CrochetPattern[]    @relation("CrochetPatternHero")
-  needleworkPatternThumbnails NeedleworkPattern[] @relation("NeedleworkPatternThumbnail")
-  needleworkPatternHeroes     NeedleworkPattern[] @relation("NeedleworkPatternHero")
+  crochetPatternThumbnails    CrochetPattern[]      @relation("CrochetPatternThumbnail")
+  crochetPatternSchematics    CrochetPattern[]      @relation("CrochetPatternSchematic")
+  crochetPatternHeros         CrochetPattern[]      @relation("CrochetPatternHero")
+  needleworkPatternThumbnails NeedleworkPattern[]   @relation("NeedleworkPatternThumbnail")
+  needleworkPatternHeroes     NeedleworkPattern[]   @relation("NeedleworkPatternHero")
   crochetGaugeSwatchPhotos    CrochetProjectGauge[] @relation("CrochetGaugeSwatchPhoto")
 
   // Crochet image pipeline (phase_crochet_image_pipeline).
@@ -3668,7 +3682,7 @@ model Designer {
   user            User?   @relation("DesignerUser", fields: [userId], references: [id], onDelete: SetNull)
   patternCount    Int     @default(0)
 
-  patterns        Pattern[]
+  patterns           Pattern[]
   crochetPatterns    CrochetPattern[]    @relation("DesignerCrochetPatterns")
   needleworkPatterns NeedleworkPattern[] @relation("DesignerNeedleworkPatterns")
 
@@ -3730,14 +3744,14 @@ model Pattern {
   // Heroes (heroMediaId) take the primary card slot; gallery is the
   // supporting detail-page strip. Populated by the Stitching Mama catalogue
   // import (Phase C) and by the admin upload flow.
-  galleryMediaIds       Json         @default("[]")
+  galleryMediaIds Json @default("[]")
 
   // Crochet image pipeline retrofit pass — tracks the Pipeline B outcome
   // when the optional cross-stitch retrofit runs (Stitching Mama mockups
   // → Fal img2img photoreal upgrade). PENDING on rows that haven't been
   // touched by the retrofit; SUCCESS / FAILED_VERIFICATION / SYNTHETIC_FALLBACK
   // describe the verdict the retrofit reached.
-  heroGenerationStatus  ImageGenerationStatus @default(PENDING)
+  heroGenerationStatus ImageGenerationStatus @default(PENDING)
 
   license        PatternLicense?
   userProgress   UserPatternProgress[]
@@ -3878,12 +3892,12 @@ model CrochetPattern {
   // chartData shape: vector — { rounds: [...], grid: [...], symbols: [...] }
   //   consumed by `apps/web/src/lib/craft-charts/svg-chart.tsx`.
   // ──────────────────────────────────────────────────────────────────────────
-  rowsStructured       Json
-  chartData            Json?
-  schematicMediaId     String?
-  schematic            Media?  @relation("CrochetPatternSchematic", fields: [schematicMediaId], references: [id], onDelete: SetNull)
-  thumbnailMediaId     String?
-  thumbnail            Media?  @relation("CrochetPatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
+  rowsStructured   Json
+  chartData        Json?
+  schematicMediaId String?
+  schematic        Media?  @relation("CrochetPatternSchematic", fields: [schematicMediaId], references: [id], onDelete: SetNull)
+  thumbnailMediaId String?
+  thumbnail        Media?  @relation("CrochetPatternThumbnail", fields: [thumbnailMediaId], references: [id], onDelete: SetNull)
 
   // Crochet image pipeline B — photoreal hero generated by Fal img2img
   // from the synthetic chart render. Null on rows where Pipeline B has
@@ -3892,7 +3906,7 @@ model CrochetPattern {
   // heroGenerationStatus records the verdict; the renderer never reads
   // it, so changing the status does not change visible output.
   heroMediaId          String?
-  hero                 Media?  @relation("CrochetPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
+  hero                 Media?                @relation("CrochetPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
   heroGenerationStatus ImageGenerationStatus @default(PENDING)
 
   assemblyInstructions Json?
@@ -4084,7 +4098,7 @@ model CrochetProjectProgress {
   /// Captured by the Studio's project setup card on first open.
   /// Surfaces in the footer once filled. Optional — patterns without
   /// gauge concerns can skip the prompt.
-  projectSetup        Json?
+  projectSetup Json?
 
   startedAt    DateTime  @default(now())
   lastWorkedAt DateTime  @default(now())
@@ -4284,14 +4298,14 @@ model NeedleworkPattern {
   heroMediaId      String?
   hero             Media?  @relation("NeedleworkPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
 
-  fabricSpec           Json?
-  threadTypes          String[]             @default([])
-  frameType            NeedleworkFrameType?
-  culturalAttribution  String?
+  fabricSpec          Json?
+  threadTypes         String[]             @default([])
+  frameType           NeedleworkFrameType?
+  culturalAttribution String?
 
-  widthCells   Int?
-  heightCells  Int?
-  colourCount  Int     @default(0)
+  widthCells  Int?
+  heightCells Int?
+  colourCount Int  @default(0)
 
   difficulty     Difficulty?
   estimatedHours Int?
@@ -4302,16 +4316,16 @@ model NeedleworkPattern {
   galleryMediaIds Json @default("[]")
 
   designerId       String?
-  designer         Designer?          @relation("DesignerNeedleworkPatterns", fields: [designerId], references: [id], onDelete: SetNull)
+  designer         Designer?           @relation("DesignerNeedleworkPatterns", fields: [designerId], references: [id], onDelete: SetNull)
   ownerUserId      String?
-  owner            User?              @relation("NeedleworkPatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+  owner            User?               @relation("NeedleworkPatternOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
   forkedFromId     String?
   forkedFrom       NeedleworkPattern?  @relation("NeedleworkPatternForks", fields: [forkedFromId], references: [id], onDelete: SetNull)
   forks            NeedleworkPattern[] @relation("NeedleworkPatternForks")
   sourceTutorialId String?
-  sourceTutorial   Tutorial?          @relation("NeedleworkPatternSourcedFrom", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
+  sourceTutorial   Tutorial?           @relation("NeedleworkPatternSourcedFrom", fields: [sourceTutorialId], references: [id], onDelete: SetNull)
   subCategoryId    String?
-  subCategory      SubCategory?       @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  subCategory      SubCategory?        @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
 
   license          NeedleworkPatternLicense?
   userProgress     NeedleworkProjectProgress[]
