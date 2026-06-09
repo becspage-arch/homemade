@@ -12,7 +12,6 @@ import { buildRowLayout } from './layout/row-layout'
 import { defaultPalette } from './palette/apply-colours'
 import { composeSvg } from './output/svg-composer'
 import type {
-  LayoutResult,
   MotifShape,
   RenderOptions,
   StitchPlacement,
