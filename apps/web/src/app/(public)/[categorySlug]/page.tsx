@@ -27,6 +27,7 @@ import '@/components/public/category-layouts/skill-layout.css'
 import '@/components/public/category-layouts/practice-layout.css'
 import '@/components/public/category-layouts/plant-layout.css'
 import '@/components/public/category-layouts/fix-layout.css'
+import '@/app/(public)/cross-stitch/patterns/patterns.css'
 
 export const dynamic = 'force-dynamic'
 

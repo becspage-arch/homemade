@@ -1,106 +1,117 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
-
-type Archetype = 'RECIPE' | 'PATTERN' | 'SKILL' | 'PRACTICE' | 'PLANT' | 'FIX'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 interface MenuCategory {
   slug: string
   name: string
-  archetype: Archetype
+  /** Archetype is still used downstream for layout routing; we don't surface
+   *  it in the nav, but we keep it on the interface so the wiring is honest. */
+  archetype: string
 }
 
 interface CategoryMenuProps {
-  /** All categories — used to populate each archetype dropdown. */
+  /** All public categories. The menu picks which group each one belongs to
+   *  via NAV_GROUPS below. Anything not listed is hidden from the nav. */
   all: MenuCategory[]
 }
 
-interface ArchetypeGroup {
-  archetype: Archetype
-  /** Top-line nav label — short noun verb-ish. */
+type GroupKey = 'food' | 'make' | 'skills' | 'practice' | 'grow' | 'home'
+
+interface NavGroup {
+  key: GroupKey
+  /** Short top-line label (Food / Make / Skills / Practice / Grow / Home). */
   label: string
-  /** Dropdown panel title — slightly fuller phrasing. */
-  title: string
-  /** One-line lede inside the panel. */
-  lede: string
-  /** Per-archetype CTA — points at the most representative entry. */
+  /** Per-group anchor CTA in the dropdown footer. */
   cta: { label: string; href: string }
+  /** Ordered list of category slugs that belong to this group. */
+  slugs: string[]
+}
+
+/**
+ * Top-line nav groups. Decoupled from `Category.archetype` so the nav
+ * grouping is an editorial decision, not a side effect of the layout
+ * router. Categories not listed here are hidden from the nav.
+ *
+ * Order of `slugs` is the visible order inside each dropdown.
+ */
+const NAV_GROUPS: NavGroup[] = [
+  {
+    key: 'food',
+    label: 'Food',
+    cta: { label: 'What are you cooking? →', href: '/cooking' },
+    slugs: ['cooking', 'baking', 'herbal-medicine'],
+  },
+  {
+    key: 'make',
+    label: 'Make',
+    cta: { label: 'Open the Studio →', href: '/cross-stitch' },
+    slugs: [
+      'cross-stitch',
+      'knitting',
+      'crochet',
+      'needlework',
+      'sewing',
+      'fibre-arts',
+    ],
+  },
+  {
+    key: 'skills',
+    label: 'Skills',
+    cta: { label: 'Start with foundations →', href: '/pottery-ceramics' },
+    slugs: ['wood-natural-craft', 'paper-word', 'pottery-ceramics'],
+  },
+  {
+    key: 'practice',
+    label: 'Practice',
+    cta: { label: 'How are you feeling? →', href: '/mindset' },
+    slugs: ['mindset'],
+  },
+  {
+    key: 'grow',
+    label: 'Grow',
+    cta: { label: 'What can I sow this month? →', href: '/garden' },
+    slugs: ['garden'],
+  },
+  {
+    key: 'home',
+    label: 'Home',
+    cta: { label: 'What needs fixing? →', href: '/home-repair' },
+    slugs: [
+      'home-repair',
+      'animals-smallholding',
+      'sustainability',
+      'natural-home',
+    ],
+  },
+]
+
+interface ResolvedGroup extends NavGroup {
   categories: MenuCategory[]
 }
 
-const ARCHETYPE_ORDER: Archetype[] = [
-  'RECIPE',
-  'PATTERN',
-  'SKILL',
-  'PRACTICE',
-  'PLANT',
-  'FIX',
-]
-
-const ARCHETYPE_META: Record<
-  Archetype,
-  Pick<ArchetypeGroup, 'label' | 'title' | 'lede' | 'cta'>
-> = {
-  RECIPE: {
-    label: 'Food',
-    title: 'Make food & remedies',
-    lede: 'Recipe-led: cook, bake, brew, blend.',
-    cta: { label: 'What are you cooking? →', href: '/cooking' },
-  },
-  PATTERN: {
-    label: 'Make',
-    title: 'Make things',
-    lede: 'Pattern + Studio: stitch, knit, sew.',
-    cta: { label: 'Open the Studio →', href: '/cross-stitch' },
-  },
-  SKILL: {
-    label: 'Skills',
-    title: 'Build a skill',
-    lede: 'Craft + technique: hands, tools, time.',
-    cta: { label: 'Start with foundations →', href: '/fibre-arts' },
-  },
-  PRACTICE: {
-    label: 'Practice',
-    title: 'Daily practice',
-    lede: 'Mood + habit-led: turn up regularly.',
-    cta: { label: 'How are you feeling? →', href: '/mindset' },
-  },
-  PLANT: {
-    label: 'Grow',
-    title: 'Grow',
-    lede: 'Plant + season-aware: what to sow now.',
-    cta: { label: 'What can I sow this month? →', href: '/garden' },
-  },
-  FIX: {
-    label: 'Fix',
-    title: 'Fix it',
-    lede: 'Search-first: something is broken.',
-    cta: { label: 'What needs fixing? →', href: '/home-repair' },
-  },
-}
-
-function groupByArchetype(all: MenuCategory[]): ArchetypeGroup[] {
-  const buckets = new Map<Archetype, MenuCategory[]>()
-  for (const cat of all) {
-    const list = buckets.get(cat.archetype) ?? []
-    list.push(cat)
-    buckets.set(cat.archetype, list)
-  }
-  return ARCHETYPE_ORDER.map((arch) => ({
-    archetype: arch,
-    ...ARCHETYPE_META[arch],
-    categories: buckets.get(arch) ?? [],
+function resolveGroups(all: MenuCategory[]): ResolvedGroup[] {
+  const bySlug = new Map<string, MenuCategory>()
+  for (const c of all) bySlug.set(c.slug, c)
+  return NAV_GROUPS.map((g) => ({
+    ...g,
+    categories: g.slugs
+      .map((slug) => bySlug.get(slug))
+      .filter((c): c is MenuCategory => c !== undefined),
   })).filter((g) => g.categories.length > 0)
 }
 
 /**
- * Header category menu — six archetype top-line items on desktop, each
- * opening its own focused dropdown panel with the categories underneath.
- * Hamburger-into-sheet on mobile (still archetype-grouped accordion).
+ * Header category menu — six top-line nav groups on desktop, each opening
+ * its own focused dropdown with the categories underneath. Hamburger-into-
+ * sheet on mobile (accordion of the same groups).
+ *
+ * No archetype titles or ledes in the panels: the group name is the only
+ * label the user needs.
  */
 export function CategoryMenu({ all }: CategoryMenuProps) {
-  const [openArchetype, setOpenArchetype] = useState<Archetype | null>(null)
+  const [openGroup, setOpenGroup] = useState<GroupKey | null>(null)
   const [sheetOpen, setSheetOpen] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
 
@@ -108,11 +119,11 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
     function onClick(e: MouseEvent) {
       if (!navRef.current) return
       if (e.target instanceof Node && navRef.current.contains(e.target)) return
-      setOpenArchetype(null)
+      setOpenGroup(null)
     }
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setOpenArchetype(null)
+        setOpenGroup(null)
         setSheetOpen(false)
       }
     }
@@ -124,23 +135,21 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
     }
   }, [])
 
-  const groups = groupByArchetype(all)
+  const groups = useMemo(() => resolveGroups(all), [all])
 
   return (
     <>
       <nav className="header-nav-desktop" aria-label="Categories" ref={navRef}>
         {groups.map((group) => {
-          const isOpen = openArchetype === group.archetype
+          const isOpen = openGroup === group.key
           return (
-            <div key={group.archetype} className="header-nav-archetype">
+            <div key={group.key} className="header-nav-archetype">
               <button
                 type="button"
                 className={`header-nav-link header-nav-archetype-trigger${isOpen ? ' is-open' : ''}`}
                 aria-haspopup="menu"
                 aria-expanded={isOpen}
-                onClick={() =>
-                  setOpenArchetype(isOpen ? null : group.archetype)
-                }
+                onClick={() => setOpenGroup(isOpen ? null : group.key)}
               >
                 {group.label}
                 <span className="header-nav-archetype-chev" aria-hidden="true">
@@ -151,10 +160,8 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                 <div
                   className="header-archetype-panel"
                   role="menu"
-                  aria-label={group.title}
+                  aria-label={group.label}
                 >
-                  <p className="header-archetype-panel-eyebrow">{group.title}</p>
-                  <p className="header-archetype-panel-lede">{group.lede}</p>
                   <ul className="header-archetype-panel-list">
                     {group.categories.map((cat) => (
                       <li key={cat.slug}>
@@ -162,7 +169,7 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                           href={`/${cat.slug}`}
                           role="menuitem"
                           className="header-archetype-panel-link"
-                          onClick={() => setOpenArchetype(null)}
+                          onClick={() => setOpenGroup(null)}
                         >
                           {cat.name}
                         </Link>
@@ -172,7 +179,7 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                   <Link
                     href={group.cta.href}
                     className="header-archetype-panel-cta"
-                    onClick={() => setOpenArchetype(null)}
+                    onClick={() => setOpenGroup(null)}
                   >
                     {group.cta.label}
                   </Link>
@@ -224,16 +231,15 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
             </div>
             <div className="header-nav-sheet-groups">
               {groups.map((group) => (
-                <details key={group.archetype} className="header-nav-sheet-group">
+                <details key={group.key} className="header-nav-sheet-group">
                   <summary className="header-nav-sheet-group-summary">
-                    <span className="header-nav-sheet-group-title">{group.title}</span>
+                    <span className="header-nav-sheet-group-title">{group.label}</span>
                     <span className="header-nav-sheet-group-count">
                       {group.categories.length}
                     </span>
                   </summary>
                   <div className="header-nav-sheet-group-body">
-                    <p className="header-nav-sheet-group-lede">{group.lede}</p>
-                    <nav className="header-nav-sheet-group-list" aria-label={group.title}>
+                    <nav className="header-nav-sheet-group-list" aria-label={group.label}>
                       {group.categories.map((cat) => (
                         <Link
                           key={cat.slug}
