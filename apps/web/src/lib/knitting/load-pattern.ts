@@ -13,7 +13,6 @@
  */
 
 import { prisma } from '@homemade/db'
-import type { Decimal } from '@prisma/client/runtime/library'
 
 import type {
   CastOnMethod,
@@ -25,6 +24,14 @@ import type {
   PatternRow,
 } from '@/components/studio/knitting/types'
 import type { KnittingChartData } from '@/lib/knitting/renderer/types'
+
+// Prisma Decimal serialises with .toString(). The runtime type lives at
+// `@prisma/client/runtime/library` but that sub-path is not exposed
+// reliably through the package's exports config in pnpm monorepos.
+// The structural type below is enough for the converter below.
+interface PrismaDecimalLike {
+  toString(): string
+}
 
 interface LoadArgs {
   tutorialId?: string
@@ -60,9 +67,9 @@ const YARN_WEIGHT_NAME: Record<string, string> = {
   JUMBO: 'Jumbo (CYC 7)',
 }
 
-function decimalToNumber(value: Decimal | null | undefined): number | null {
+function decimalToNumber(value: PrismaDecimalLike | null | undefined): number | null {
   if (value === null || value === undefined) return null
-  return Number(value)
+  return Number(value.toString())
 }
 
 export async function loadKnittingPatternForStudio(
