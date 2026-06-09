@@ -13,7 +13,7 @@
 
 import Link from 'next/link'
 
-import { renderKnittingChartSvg } from '@/lib/knitting/renderer'
+import { renderKnittingChartSvg } from '@/lib/knitting/renderer/client'
 import type { KnittingChartData } from '@/lib/knitting/renderer/types'
 
 interface KnittingChartInsetProps {
