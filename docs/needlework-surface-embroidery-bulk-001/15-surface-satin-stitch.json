@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-surface-satin-stitch",
+  "title": "Surface satin stitch",
+  "subtitle": "Satin stitch worked on the surface only to economise on thread at the back",
+  "excerpt": "Surface satin stitch produces a similar front appearance to flat satin stitch but uses much less thread. Instead of a full stitch spanning the back of the fabric, a tiny pick-up stitch is taken at each edge, so the thread mass stays on the surface. It is efficient for covering large areas with expensive silk or gold thread.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), economy stitches chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 5 (1889), surface satin entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "satin-fill-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-8", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "pick-up-stitch", "term": "Pick-up stitch", "definition": "The tiny stitch at each edge of a surface satin stitch row. Instead of taking the needle all the way through and back across the full shape, the needle picks up just a few fabric threads at the edge and returns to the surface." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["Japanese satin stitch", "economy satin", "surface stitch"],
+  "heroPrompt": "Surface satin stitch filling a large oval in pale blue stranded cotton on white linen, showing smooth surface coverage, close-up, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Surface satin stitch substitutes a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pick-up-stitch" } }], "text": "pick-up stitch" },
+        { "type": "text", "text": " at each edge for the full back transit of flat satin stitch. The thread goes across the shape, the needle picks up just two or three fabric threads at the edge, then the thread is carried back across. Only a tiny anchor at each edge is hidden; the rest lies on the surface." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, silk, or gold thread (the method is used when thread is precious)" },
+        { "label": "Fabric", "value": "Closely woven linen" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "20 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the thread up at the left edge of the shape and carry it across to the right edge." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the right edge, pick up just two or three fabric threads with the needle and pull through. The thread is now on the surface at the right edge." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Carry the thread back across the shape to the left edge and pick up a few threads there." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue back and forth. The stitches build up on the surface; the back of the fabric shows only small edge stitches." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When surface satin stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The edge stitches show as a ridge", "cause": "The edge pick-up stitches are too large.", "fix": "Pick up just two to three fabric threads at each edge. The edge stitch should be invisible when the work is viewed from the front." },
+        { "symptom": "The surface threads slip", "cause": "The edge pick-up stitches do not grip the fabric firmly.", "fix": "Make sure the edge pick-up goes through the fabric, not just under the previous thread. A firmer pick-up anchors the surface thread." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Surface satin stitch is the standard method in Chinese silk embroidery, where precious silk threads are conserved. The same principle applies in goldwork, where the expensive metal thread stays entirely on the surface with couching stitches to hold it." }] }
+    ]
+  }
+}

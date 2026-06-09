@@ -1,0 +1,59 @@
+{
+  "slug": "surface-embroidery-pekinese-stitch",
+  "title": "Pekinese stitch",
+  "subtitle": "A looped interlaced stitch based on back stitch, producing a braid-like surface",
+  "excerpt": "Pekinese stitch interlaces a second thread through back stitch in overlapping loops, building a dense braid-like effect along the line. It is thicker and more decorative than threaded back stitch and gives a strong visual texture.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Chinese embroidery chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), Pekinese stitch entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "interlacing-loop", "term": "Interlacing loop", "definition": "The looped path the second thread takes through the foundation stitches: threading through and back to form an overlapping loop before moving to the next stitch." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["Chinese stitch", "blind stitch (historical)"],
+  "heroPrompt": "Pekinese stitch in cream silk over dark indigo back stitch on deep blue linen, showing the dense braid-like interlaced surface, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Pekinese stitch builds its braid by running " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interlacing-loop" } }], "text": "interlacing loops" },
+        { "type": "text", "text": " through the back stitch foundation. The second thread goes through one stitch from below, loops back through the previous stitch from above, then moves forward to the next stitch. This back-and-forth action produces overlapping loops that cover the foundation line." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Foundation thread", "value": "Stranded cotton, 2 strands in colour A" },
+        { "label": "Interlacing thread", "value": "Stranded cotton 3 strands or perle 8 in colour B for the braid" },
+        { "label": "Needles", "value": "Embroidery needle for foundation; blunt tapestry needle for interlacing" },
+        { "label": "Fabric", "value": "Linen or closely woven cotton" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a line of even back stitch with colour A." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tapestry needle with colour B. Bring it up at the start of the line." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the needle upward through the second stitch, then downward through the first stitch. Pull through to form a loop." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move forward: slide upward through the third stitch, downward through the second. Continue this pattern." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Let the loops settle at a consistent size. Do not pull tight." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When Pekinese stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The loops are too tight and the braid is flat", "cause": "Pulling the interlacing thread too hard.", "fix": "Leave each loop loose before proceeding to the next. The braid builds from the loops, not from tension." },
+        { "symptom": "Losing track of the over-under sequence", "cause": "The back-and-forth path is disorienting at first.", "fix": "Work slowly and say the sequence aloud: up through the forward stitch, down through the back stitch. Rhythm makes it automatic." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Pekinese stitch is a showpiece composite stitch that demonstrates how a plain back stitch foundation can be transformed into rich decorative texture. It is used for wide border lines in Chinese-influenced embroidery styles." }] }
+    ]
+  }
+}

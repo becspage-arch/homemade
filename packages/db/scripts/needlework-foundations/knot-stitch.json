@@ -1,0 +1,131 @@
+{
+  "slug": "knot-stitch-needlework",
+  "title": "French knot",
+  "subtitle": "The two-wrap knot that sits on the surface as a raised dot.",
+  "excerpt": "A French knot is formed by wrapping the thread twice around the needle before pushing it back through the cloth. It produces a small raised dot on the surface and is used for eyes, flower centres, and textured fill.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Knot stitches and raised work.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. French knot entry.",
+  "aliases": ["French knot", "knot stitch", "dot stitch", "raised knot"],
+  "techniqueSlugs": ["knot-stitch-needlework"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "french-knot",
+      "term": "French knot",
+      "definition": "A raised embroidery stitch formed by wrapping the thread twice around the needle, then pushing the needle back through the cloth close to where it emerged. The wrapped thread forms a small tight knot on the surface."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "french-knot" } }],
+            "text": "French knot"
+          },
+          { "type": "text", "text": " is worked two wraps only. Three or more wraps makes a loose blob rather than a tight knot. The key technique is keeping the thread taut around the needle as it re-enters the cloth, so the wraps grip before the needle pulls through." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery hoop, 6 inch", "slug": "embroidery-hoop-6", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Stranded cotton, 2 strands", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the thread and bring the needle up at the knot position." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the thread taut with the non-needle hand, about 3 cm from the cloth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wrap the thread twice around the needle shaft in one direction." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the needle back down into the cloth one thread away from where it emerged. Do not go back through the same hole or the knot will disappear to the back." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep the thread taut with the left hand while pulling the needle through with the right. The wraps tighten and set as the needle goes through." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "French knot problems.",
+          "items": [
+            {
+              "symptom": "The knot disappears to the back of the cloth",
+              "cause": "The needle went back through the same hole it emerged from, carrying the knot through.",
+              "fix": "Go back down one thread away from the emergence point, never into the same hole."
+            },
+            {
+              "symptom": "The knot comes out loose and lumpy",
+              "cause": "Too many wraps, or the thread was not held taut while the needle pulled through.",
+              "fix": "Two wraps only. Keep the thread under tension in the non-needle hand all the way until the needle is fully through."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "French knots are used for animal eyes, flower centres, and textured fill in surface embroidery and crewel work. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "knot-stitch-needlework", "label": "French knot technique" } }],
+            "text": "French knot technique"
+          },
+          { "type": "text", "text": " also underpins colonial knots and bullion knots, which share the same wrap-and-pull logic." }
+        ]
+      }
+    ]
+  }
+}

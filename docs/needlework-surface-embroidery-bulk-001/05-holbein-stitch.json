@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-holbein-stitch",
+  "title": "Holbein stitch",
+  "subtitle": "A double-running stitch that looks identical on both sides of the fabric",
+  "excerpt": "Holbein stitch produces a solid running-stitch line that is reversible: the front and back look identical. It works in two passes, filling gaps on the return journey. It is the foundation stitch of blackwork embroidery.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882), Holbein stitch entry. Therese de Dillmont, Encyclopaedia of Needlework (1886), double running stitch section (Project Gutenberg #20776).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-10", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "double-running", "term": "Double running", "definition": "A stitch technique worked in two journeys: the first pass leaves even gaps; the second pass fills those gaps on the return trip, giving a solid line." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["double running stitch", "punto scritto", "two-sided stitch"],
+  "heroPrompt": "Holbein stitch in black thread on white evenweave linen, a geometric interlocking pattern, showing identical appearance on both sides, daylight.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Holbein stitch uses a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-running" } }], "text": "double running" },
+        { "type": "text", "text": " technique: the first pass lays alternating stitches and spaces along the line; the return pass fills the spaces exactly, completing the solid line. The thread on the reverse mirrors the front." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 1 strand for fine work, 2 strands for bolder" },
+        { "label": "Fabric", "value": "Evenweave linen or Aida for counted work; any fabric for freestyle" },
+        { "label": "Needle", "value": "Embroidery needle size 10" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice line" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work evenly spaced running stitches along the line, leaving gaps equal to each stitch length." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the line, turn and work back, filling each gap with a stitch of exactly the same length." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The return stitches share the same holes as the end points of the outward stitches." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep both the stitch length and the gap length identical throughout both passes." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When Holbein stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The return pass does not line up with the gaps", "cause": "Outward stitches and gaps are not equal length.", "fix": "Count threads or use marked intervals. Every stitch and every gap must be the same length." },
+        { "symptom": "The back of the fabric looks different from the front", "cause": "Stitches are overlapping rather than filling exact gaps.", "fix": "Share the exact hole at each stitch end. The needle should enter the same hole the previous stitch exited." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Holbein stitch is the foundation of blackwork embroidery, where geometric patterns are built from reversible lines. The two-pass double running method is also used in counted thread work and Assisi embroidery." }] }
+    ]
+  }
+}

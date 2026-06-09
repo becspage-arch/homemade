@@ -10,17 +10,47 @@
   "sourceType": "SYNTHESISED",
   "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Mrs Beeton, Book of Needlework (1870), Project Gutenberg #16746.",
   "recipeTools": [
-    { "slug": "tapestry-needle-26", "isOptional": false },
-    { "slug": "embroidery-scissors", "isOptional": false }
+    {
+      "slug": "tapestry-needle-26",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
   ],
-  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "techniqueSlugs": [
+    "reading-a-counted-chart",
+    "tying-off-cleanly"
+  ],
   "criticalTechniques": [],
-  "aliases": ["blackwork thread", "silk vs cotton blackwork", "stranded cotton blackwork", "embroidery thread weight"],
+  "aliases": [
+    "blackwork thread",
+    "silk vs cotton blackwork",
+    "stranded cotton blackwork",
+    "embroidery thread weight"
+  ],
   "glossaryTerms": [
-    { "slug": "stranded-cotton", "term": "Stranded cotton", "definition": "A divisible embroidery thread made of six loosely twisted strands. Separate the strands and recombine the number you need for the fabric count." },
-    { "slug": "perle-cotton", "term": "Perle cotton", "definition": "A twisted, non-divisible embroidery thread with a slight sheen. Comes in sizes 5, 8, and 12; size 8 suits 25 to 28-count evenweave." },
-    { "slug": "embroidery-silk", "term": "Embroidery silk", "definition": "A fine, lustrous thread traditionally used for blackwork. Gives a shinier result than cotton and lies flat against the fabric surface." },
-    { "slug": "tying-off-cleanly", "term": "Tying off cleanly", "definition": "Ending a thread by weaving the tail under several stitches on the back of the work so it cannot pull out. No knots." }
+    {
+      "slug": "stranded-cotton",
+      "term": "Stranded cotton",
+      "definition": "A divisible embroidery thread made of six loosely twisted strands. Separate the strands and recombine the number you need for the fabric count."
+    },
+    {
+      "slug": "perle-cotton",
+      "term": "Perle cotton",
+      "definition": "A twisted, non-divisible embroidery thread with a slight sheen. Comes in sizes 5, 8, and 12; size 8 suits 25 to 28-count evenweave."
+    },
+    {
+      "slug": "embroidery-silk",
+      "term": "Embroidery silk",
+      "definition": "A fine, lustrous thread traditionally used for blackwork. Gives a shinier result than cotton and lies flat against the fabric surface."
+    },
+    {
+      "slug": "tying-off-cleanly",
+      "term": "Tying off cleanly",
+      "definition": "Ending a thread by weaving the tail under several stitches on the back of the work so it cannot pull out. No knots."
+    }
   ],
   "body": {
     "type": "doc",
@@ -28,82 +58,200 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The thread you choose for blackwork shapes the character of the finished piece more than almost any other decision." }
+          {
+            "type": "text",
+            "text": "The thread you choose for blackwork shapes the character of the finished piece more than almost any other decision."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Stranded cotton" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stranded-cotton" } }], "text": "Stranded cotton" },
-          { "type": "text", "text": " (DMC or Anchor, both widely available) is the standard choice for most blackwork. It is divisible, so you can adjust the weight to match the fabric count. Two strands suit 25 to 28-count evenweave. One strand suits 32-count and finer. The matte finish makes fill patterns easy to read because there is no sheen to create confusing highlights." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Perle cotton" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "perle-cotton" } }], "text": "Perle cotton" },
-          { "type": "text", "text": " is a twisted, non-divisible thread with a slight sheen. Size 8 works well on 25 and 28-count cloth for bolder fills and outlines. It is not suitable for fine work on 32-count or above because it is too thick to pass through the holes cleanly." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Embroidery silk" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "embroidery-silk" } }], "text": "Embroidery silk" },
-          { "type": "text", "text": " was the traditional choice for Tudor and Elizabethan blackwork. It is more expensive than cotton, slightly harder to handle (it tangles more readily), and produces a noticeably shinier result. The sheen can be an advantage on pieces designed to catch the light, such as worked borders on clothing." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Choosing for your project" }]
-      },
-      {
-        "type": "orderedList",
+        "attrs": {
+          "level": 2
+        },
         "content": [
           {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Check the fabric count. Fine cloth (32-count) needs one strand of stranded cotton or fine silk. Medium cloth (25 to 28-count) takes two strands of stranded cotton or size 8 perle." }]
-            }]
-          },
-          {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Stitch a small sample on a spare scrap of your actual fabric before committing. The thread should cover the fabric threads without puckering or leaving gaps." }]
-            }]
-          },
-          {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Check that the black you are using is a true black and not a very dark navy. Hold it next to a known black thread in daylight. Mismatched blacks are visible in finished work." }]
-            }]
+            "type": "text",
+            "text": "Stranded cotton"
           }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "End each thread by " },
-          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tying-off-cleanly", "label": "tying off cleanly" } }], "text": "tying off cleanly" },
-          { "type": "text", "text": " under several stitches on the back. Knots lift the fabric surface on fine cloth and are visible from the front on 32-count and above." }
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stranded-cotton"
+                }
+              }
+            ],
+            "text": "Stranded cotton"
+          },
+          {
+            "type": "text",
+            "text": " (DMC or Anchor, both widely available) is the standard choice for most blackwork. It is divisible, so you can adjust the weight to match the fabric count. Two strands suit 25 to 28-count evenweave. One strand suits 32-count and finer. The matte finish makes fill patterns easy to read because there is no sheen to create confusing highlights."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Perle cotton"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "perle-cotton"
+                }
+              }
+            ],
+            "text": "Perle cotton"
+          },
+          {
+            "type": "text",
+            "text": " is a twisted, non-divisible thread with a slight sheen. Size 8 works well on 25 and 28-count cloth for bolder fills and outlines. It is not suitable for fine work on 32-count or above because it is too thick to pass through the holes cleanly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Embroidery silk"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "embroidery-silk"
+                }
+              }
+            ],
+            "text": "Embroidery silk"
+          },
+          {
+            "type": "text",
+            "text": " was the traditional choice for Tudor and Elizabethan blackwork. It is more expensive than cotton, slightly harder to handle (it tangles more readily), and produces a noticeably shinier result. The sheen can be an advantage on pieces designed to catch the light, such as worked borders on clothing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Choosing for your project"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the fabric count. Fine cloth (32-count) needs one strand of stranded cotton or fine silk. Medium cloth (25 to 28-count) takes two strands of stranded cotton or size 8 perle."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stitch a small sample on a spare scrap of your actual fabric before committing. The thread should cover the fabric threads without puckering or leaving gaps."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check that the black you are using is a true black and not a very dark navy. Hold it next to a known black thread in daylight. Mismatched blacks are visible in finished work."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "End each thread by "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "tying-off-cleanly",
+                  "label": "tying off cleanly"
+                }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tying-off-cleanly"
+                }
+              }
+            ],
+            "text": "tying off cleanly"
+          },
+          {
+            "type": "text",
+            "text": " under several stitches on the back. Knots lift the fabric surface on fine cloth and are visible from the front on 32-count and above."
+          }
         ]
       }
     ]

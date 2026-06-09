@@ -308,6 +308,12 @@
                   "techniqueSlug": "holbein-stitch",
                   "label": "Holbein stitch"
                 }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "holbein-stitch"
+                }
               }
             ],
             "text": "Holbein stitch"
@@ -355,7 +361,23 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Start at the centre and work horizontal runs of the first tile using Holbein stitch."
+                    "text": "Start at the centre and work horizontal runs of the first tile using "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "holbein-stitch"
+                        }
+                      }
+                    ],
+                    "text": "Holbein stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
                   }
                 ]
               }
@@ -369,7 +391,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Complete the Holbein return pass before moving to the next row of tiles."
+                    "text": "Finish the return pass before moving to the next row."
                   }
                 ]
               }
@@ -383,7 +405,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Work diagonal and vertical elements after the horizontal runs are complete."
+                    "text": "Add diagonal lines once the main runs are done."
                   }
                 ]
               }

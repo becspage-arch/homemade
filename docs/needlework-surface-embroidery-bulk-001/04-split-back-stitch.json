@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-split-back-stitch",
+  "title": "Split back stitch",
+  "subtitle": "Back stitch worked by piercing the previous stitch for a tighter chain",
+  "excerpt": "Split back stitch works like back stitch but the emerging needle pierces the thread of the previous stitch rather than emerging beside it. The result is a tighter, more chain-like line that hugs curves precisely.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882), split back stitch entry. Therese de Dillmont, Encyclopaedia of Needlework (1886), outline variations chapter (Project Gutenberg #20776).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "chain-link", "term": "Chain link", "definition": "The interlocked appearance produced when each stitch pierces the thread of the last, rather than emerging cleanly beside it." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["thorn stitch outline", "cable stitch outline"],
+  "heroPrompt": "Split back stitch in burgundy stranded cotton on pale linen, a tight curved outline showing the chain-like joins, close view, daylight.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Split back stitch creates a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-link" } }], "text": "chain link" },
+        { "type": "text", "text": " outline by combining the backwards motion of back stitch with the piercing action of split stitch. Every stitch goes back to meet the previous one and splits through it, locking them together." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 2 strands" },
+        { "label": "Fabric", "value": "Linen or cotton muslin" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice line" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the thread up at A and take a forward stitch to B. Pull through." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the midpoint of the AB stitch, piercing the thread strands." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert backwards to B (sharing the stitch hole), emerge at the midpoint of this new stitch." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue: each stitch goes backward to the previous hole and splits through the previous stitch on emergence." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When split back stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The outline looks like plain back stitch, no chain effect", "cause": "Needle is emerging beside the previous stitch rather than through it.", "fix": "The emerging needle must physically pierce the thread bundle. Work slowly until the piercing action is reliable." },
+        { "symptom": "The line is uneven", "cause": "Inconsistent stitch length.", "fix": "Mark stitch-length intervals on the transfer line with small dots before starting." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Split back stitch is preferred for very fine curved outlines where split stitch alone is not tight enough. It is used in whitework and goldwork for precise border lines." }] }
+    ]
+  }
+}

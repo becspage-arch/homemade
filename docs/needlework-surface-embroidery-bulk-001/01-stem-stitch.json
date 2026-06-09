@@ -1,0 +1,60 @@
+{
+  "slug": "surface-embroidery-stem-stitch",
+  "title": "Stem stitch",
+  "subtitle": "The standard outline stitch for curves and fine lines",
+  "excerpt": "Stem stitch builds a smooth twisted outline by working overlapping angled stitches along any drawn line. Once the rhythm is set, curves follow naturally. It is the foundation outline stitch of surface embroidery.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), outline stitches chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), stem stitch entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "working-thread", "term": "Working thread", "definition": "The strand in the needle that you are actively stitching with." },
+    { "slug": "transfer-line", "term": "Transfer line", "definition": "The drawn or traced line on the fabric that guides where the stitches go." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly", "choosing-thread"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["crewel stitch", "rope stitch", "outline stitch"],
+  "heroPrompt": "Stem stitch in deep navy stranded cotton on cream linen, a curved flowing line, close view showing the twisted rope texture, daylight.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Stem stitch works along a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "transfer-line" } }], "text": "transfer line" },
+        { "type": "text", "text": " with the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "working-thread" } }], "text": "working thread" },
+        { "type": "text", "text": " kept consistently to one side of the needle. Each stitch overlaps the previous one by half its length, building a smooth twisted cord." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 2 strands for fine lines, 3 strands for bolder outlines" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice line" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draw a curved line on your fabric with a water-soluble pen. Bring the needle up at the left end of the line (point A)." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle a stitch-length ahead (point B) and bring it up halfway back at the midpoint (point C). Keep the thread below the needle." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull through. For the next stitch, insert a full stitch-length ahead of B and bring up at B." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue along the line, keeping the thread consistently on the same side of the needle throughout." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When stem stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The line looks bumpy rather than smooth", "cause": "Thread is switching sides between stitches.", "fix": "Choose above or below at the first stitch and hold it there consistently throughout." },
+        { "symptom": "Curves pull to one side", "cause": "Stitch length too long for the curve radius.", "fix": "Shorten the stitch length on tight curves. Smaller stitches follow the curve more accurately." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Stem stitch is the primary outline stitch for floral embroidery, crewelwork stems, and monogram outlines. It also works as a dense fill when rows are packed side by side." }] }
+    ]
+  }
+}

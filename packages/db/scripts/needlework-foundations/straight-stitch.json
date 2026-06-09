@@ -1,0 +1,130 @@
+{
+  "slug": "straight-stitch-needlework",
+  "title": "Straight stitch",
+  "subtitle": "A single surface stitch worked in any direction as a building block for larger motifs.",
+  "excerpt": "A straight stitch is a single stitch of any length worked in any direction. Groups of straight stitches form stars, sunbursts, leaf veins, and fill patterns. Keeping them flat and at even tension is what makes them look good.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Straight stitch and laid work.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Straight stitch entry.",
+  "aliases": ["straight stitch", "single stitch", "stroke stitch", "seed stitch", "individual stitch"],
+  "techniqueSlugs": ["straight-stitch-needlework"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "straight-stitch-def",
+      "term": "Straight stitch",
+      "definition": "A single surface stitch: the needle emerges at one point and re-enters at another, leaving one stitch of thread on the surface. Multiple straight stitches can be placed in any direction to build patterns."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "straight-stitch-def" } }],
+            "text": "straight stitch"
+          },
+          { "type": "text", "text": " is the simplest surface stitch: one thread laid on the surface of the cloth. Groups of straight stitches radiate from a centre for a star, fan out from a central vein for a leaf, or scatter across a background. Tension is the critical quality: a straight stitch that pulls the cloth puckers; one that lies too loosely catches and loops." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Fabric, mounted in hoop", "isOptional": false },
+            { "name": "Stranded cotton, 2 strands", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the thread on the back with a few running stitches in the margin, or use an away knot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the start point of the stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the needle back down at the end point of the stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the thread through gently until the stitch lies flat on the surface without pulling the cloth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a group of stitches, bring the needle up at the start of each new stitch and carry the thread on the back from one stitch to the next." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Straight stitch problems.",
+          "items": [
+            {
+              "symptom": "The stitch loops and doesn't lie flat",
+              "cause": "The thread was pulled too loosely.",
+              "fix": "After bringing the needle up, smooth the stitch flat with a fingernail before completing the pull."
+            },
+            {
+              "symptom": "The cloth puckers around the stitch",
+              "cause": "The thread was pulled too tight.",
+              "fix": "Ease the thread slightly so the stitch lies on the surface without distorting the weave."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Straight stitches form the basis of star fill, seeding, and many surface embroidery patterns. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "straight-stitch-needlework", "label": "Straight stitch" } }],
+            "text": "Straight stitch"
+          },
+          { "type": "text", "text": " tension technique carries directly to satin stitch, where many parallel straight stitches need to lie flat side by side." }
+        ]
+      }
+    ]
+  }
+}

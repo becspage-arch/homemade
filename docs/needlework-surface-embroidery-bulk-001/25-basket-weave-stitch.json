@@ -1,0 +1,58 @@
+{
+  "slug": "surface-embroidery-basket-weave-fill",
+  "title": "Basket weave fill",
+  "subtitle": "A laid-work fill that crosses threads at right angles to give a woven basket texture",
+  "excerpt": "Basket weave fill creates a woven texture by laying two sets of threads at right angles and then couching them at each crossing. The finished surface resembles a woven basket or chequerboard and covers large areas quickly with a matte, structured look.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), laid work chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 3 (1887), woven filling entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "couching-laid-work"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-8", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "laid-work", "term": "Laid work", "definition": "A filling technique where threads are laid parallel across a shape and held down at intervals by crossing threads or couching stitches. The laid threads cover the fabric quickly with minimal thread use." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["woven trellis fill", "crossed laid work", "lattice fill"],
+  "heroPrompt": "Basket weave fill in two tones of rust and cream thread on cream linen, showing the interlocked crossing pattern, square motif, daylight.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Basket weave fill is a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laid-work" } }], "text": "laid work" },
+        { "type": "text", "text": " fill that lays two grids of parallel threads at right angles, then ties each crossing with a tiny couching stitch. The tied crossings can alternate in a pattern to give a chequer or a plain grid depending on the design." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread (laid threads)", "value": "Stranded cotton 3 strands or crewel wool for the main grid" },
+        { "label": "Thread (couching)", "value": "Stranded cotton 1 to 2 strands, same or contrasting colour" },
+        { "label": "Fabric", "value": "Crewel twill or linen" },
+        { "label": "Needle", "value": "Embroidery needle size 9; tapestry needle size 24 for couching" },
+        { "label": "Hoop", "value": "20 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the first set of parallel threads horizontally across the shape, spacing them evenly at about 4 to 5 mm apart." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the second set of parallel threads vertically across the first set at the same spacing. A grid of crossings is now visible." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread a fine needle with the couching thread. At each crossing, take a tiny diagonal stitch over the crossing point to hold both threads to the fabric." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Alternate the diagonal direction of the couching stitches between crossings for a chequer pattern, or keep all the same direction for a plain grid." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When basket weave fill goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The grid bows or distorts", "cause": "Laid threads under uneven tension.", "fix": "Lay all threads with consistent light tension. The fabric must be drum-tight in the hoop before starting." },
+        { "symptom": "The couching stitches show too prominently", "cause": "Couching thread too thick or too contrasting.", "fix": "Use a finer couching thread in a close colour match when the grid not the couching is the feature." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Basket weave fill is the standard background fill in Jacobean crewelwork. It uses far less thread than satin fill and allows the light fabric to show through the grid. More complex trellis fills use the same principle with more elaborate couching patterns at the crossings." }] }
+    ]
+  }
+}

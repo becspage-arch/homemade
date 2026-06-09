@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-encroaching-satin-stitch",
+  "title": "Encroaching satin stitch",
+  "subtitle": "Rows of satin stitch that overlap into the previous row for soft tonal blending",
+  "excerpt": "Encroaching satin stitch fills shapes with rows of satin stitch where each row slightly overlaps into the previous row, creating a soft transition between colours. It is simpler than long and short stitch and produces a faster, less subtle blend.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), shading stitches chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), encroaching stitch entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "satin-fill-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-8", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "encroach", "term": "Encroach", "definition": "The action of bringing the new row of stitches slightly into the space occupied by the previous row. The new stitches overlap the base of the old ones rather than meeting at a hard edge." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["overlapping satin stitch", "interlocking satin stitch"],
+  "heroPrompt": "Encroaching satin stitch filling a large oval shape with three rows shading from dark plum to pale lilac, on cream linen, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Encroaching satin stitch uses the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "encroach" } }], "text": "encroach" },
+        { "type": "text", "text": " action to soften the join between rows. Each new row of parallel stitches starts 2 to 3 mm inside the previous row rather than beginning at its base. This overlapping placement blends the colours where the rows meet." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton 2 to 3 strands in two or three tonal shades" },
+        { "label": "Fabric", "value": "Linen or closely woven cotton" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "20 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first row of satin stitch along one edge of the shape in colour A." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin the second row in colour B, bringing the needle up 2 to 3 mm inside the first row. Each stitch goes down at the far edge of the shape." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue with colour C if needed, encroaching into the second row in the same way." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep all stitches running at the same angle throughout all rows." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When encroaching satin stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "A hard colour line shows between rows", "cause": "The encroach is too small or absent.", "fix": "The new row must overlap at least 2 mm into the previous row. More overlap gives a softer blend." },
+        { "symptom": "The stitch direction shifts between rows", "cause": "Each row being angled slightly differently.", "fix": "All stitches in all rows of a single shape run at exactly the same angle. Lay a ruler along the stitch direction before each new row to check." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Encroaching satin stitch is a stepping stone toward long and short shading. It is used for quick tonal fills in crewelwork designs where a fully blended long-and-short effect is not required." }] }
+    ]
+  }
+}

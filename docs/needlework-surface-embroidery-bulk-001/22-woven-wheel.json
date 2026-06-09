@@ -1,0 +1,59 @@
+{
+  "slug": "surface-embroidery-woven-wheel",
+  "title": "Woven wheel",
+  "subtitle": "A raised circular motif woven over spokes for flower and button effects",
+  "excerpt": "A woven wheel is a small circular motif built by first laying an odd number of straight spokes and then weaving the thread over and under the spokes in a spiral until the wheel is full. The finished wheel is raised and textured, resembling a small rose or a woven button.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), wheel and raised stitch chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 2 (1886), woven circle entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "detached-decorative-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "spoke-foundation", "term": "Spoke foundation", "definition": "The straight foundation stitches laid in a wheel pattern before weaving. An odd number of spokes is required so the weaving alternates correctly as it spirals." }
+  ],
+  "techniqueSlugs": ["mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["mounting-fabric-in-hoop"],
+  "aliases": ["ribbed wheel", "woven circle", "woven rose"],
+  "heroPrompt": "Woven wheel in deep crimson perle cotton on cream linen, a fully woven raised circular motif, close view from slightly above, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "A woven wheel begins with a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "spoke-foundation" } }], "text": "spoke foundation" },
+        { "type": "text", "text": " of five or seven straight stitches radiating from a central point. The weaving thread then spirals outward, going over one spoke and under the next without entering the fabric, until the spokes are covered and the wheel is full." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Perle 8 or stranded cotton 3 strands; the weaving thread can be the same or contrasting" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle 1", "value": "Embroidery needle size 9 for spokes" },
+        { "label": "Needle 2", "value": "Tapestry needle size 24 (blunt) for weaving" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work five straight stitches radiating from one central hole, evenly spaced around a circle of the desired finished size." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the weaving thread up through the centre hole beside the spokes." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the blunt needle over one spoke and under the next, working in a spiral outward from the centre." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue spiralling until the spokes are fully covered to their tips." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take the needle down through the fabric at the edge of the last spoke and fasten off at the back." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When woven wheels go wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The weaving loses the over-under alternation", "cause": "An even number of spokes was used.", "fix": "Always use an odd number of spokes (5 or 7). Odd numbers keep the over-under alternation cycling forward." },
+        { "symptom": "The wheel is lumpy at the centre and flat at the edge", "cause": "Too much weaving thread packed at the centre before spreading outward.", "fix": "Work the first few spiral rows with lighter tension, nudging them outward gently with the needle tip before adding the next row." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Woven wheels make quick, effective flower motifs and are often combined with lazy daisy petals around them. The same spoke-and-weave principle gives the spider's web stitch its structure." }] }
+    ]
+  }
+}

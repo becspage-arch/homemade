@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-flat-satin-stitch",
+  "title": "Flat satin stitch",
+  "subtitle": "Straight parallel stitches that cover a shape with a smooth satin surface",
+  "excerpt": "Flat satin stitch fills a shape with straight parallel stitches placed side by side, covering the fabric completely. The smooth surface catches the light and gives a lustrous silk-like finish. It is the foundation fill stitch of surface embroidery.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), satin stitch chapter (Project Gutenberg #20776). Mrs Beeton, Book of Needlework (1870), satin stitch section (Project Gutenberg #16746).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "satin-fill-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "satin-stitch-angle", "term": "Satin stitch angle", "definition": "The direction the stitches run across a shape. Choosing the angle before starting determines how the light catches the finished surface." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly", "choosing-thread"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["satin stitch", "damask stitch"],
+  "heroPrompt": "Flat satin stitch in pale gold stranded cotton filling a leaf shape on cream linen, showing the smooth lustrous surface, close-up, raking light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Flat satin stitch runs parallel stitches at a chosen " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "satin-stitch-angle" } }], "text": "satin stitch angle" },
+        { "type": "text", "text": " from one edge of the shape to the other. Each stitch lies exactly alongside the previous one with no gaps and no overlaps. The angle is decided before starting and kept constant throughout the shape." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 3 to 4 strands; or silk thread for maximum lustre" },
+        { "label": "Fabric", "value": "Closely woven linen or cotton" },
+        { "label": "Needle", "value": "Embroidery needle size 7 or 8" },
+        { "label": "Hoop", "value": "15 cm or 20 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer the shape outline onto the fabric. Decide the stitch angle (usually 45 degrees to the grain)." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at one edge of the shape and insert at the opposite edge. Pull through smoothly." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring up immediately alongside the first stitch and repeat, filling the shape from one side to the other." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep each stitch at the same angle and pack them tightly so no fabric shows through." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When flat satin stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The surface looks ridged or uneven", "cause": "Stitches are not lying parallel or tension varies between them.", "fix": "Lay each stitch at exactly the same angle. Pull each through with consistent gentle tension." },
+        { "symptom": "The shape edge is ragged", "cause": "The stitches are not meeting the outline exactly.", "fix": "Work split stitch or back stitch around the outline first. Satin stitches taken to the edge of this padding line give a crisp border." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Flat satin stitch is the base for padded satin stitch, encroaching satin stitch, and long-and-short stitch. It is used to fill petals, leaves, and geometric shapes throughout embroidery traditions worldwide." }] }
+    ]
+  }
+}

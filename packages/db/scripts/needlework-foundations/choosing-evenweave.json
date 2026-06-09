@@ -1,0 +1,127 @@
+{
+  "slug": "choosing-evenweave",
+  "title": "Choosing evenweave fabric",
+  "subtitle": "The single-thread grid fabric stitched over two threads for a fine, even result.",
+  "excerpt": "Evenweave has single threads running in both directions, unlike Aida's grouped blocks. You stitch over two threads in each direction, which gives a smoother surface and finer stitch definition than Aida at the same effective count.",
+  "type": "READING",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Fabric types for counted-thread work.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Evenweave and linen for embroidery.",
+  "aliases": ["evenweave", "even weave fabric", "jobelan", "28 count evenweave", "32 count evenweave"],
+  "techniqueSlugs": ["choosing-fabric"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "tapestry-needle-24", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "evenweave",
+      "term": "Evenweave",
+      "definition": "A plain-weave fabric where the warp and weft threads are the same thickness and equally spaced, producing a grid of individual threads. Cross-stitch on evenweave is worked over two threads in each direction."
+    },
+    {
+      "slug": "over-two-threads",
+      "term": "Over two threads",
+      "definition": "The standard technique for working cross-stitch on evenweave: each half-stitch spans two warp threads horizontally and two weft threads vertically. Working over two threads on 28-count evenweave produces the same stitch size as 14-count Aida."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Evenweave fabric has a grid of individual threads rather than Aida's grouped blocks. When you stitch " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "over-two-threads" } }],
+            "text": "over two threads"
+          },
+          { "type": "text", "text": " on " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "evenweave" } }],
+            "text": "evenweave"
+          },
+          { "type": "text", "text": ", the finished stitch size matches Aida at half the thread count: 28-count evenweave stitched over two = 14-count Aida in effective stitch size. The surface is smoother and the finished fabric has a better drape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common evenweave counts" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "25-count evenweave stitched over two threads: effective stitch size matches 12.5-count Aida. A good step up from 14-count Aida for those ready to try evenweave." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "28-count evenweave stitched over two threads: effective stitch size matches 14-count Aida. The most popular evenweave count. A 14-count Aida pattern transfers directly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "32-count evenweave stitched over two threads: effective stitch size matches 16-count Aida. Finer detail; needs magnification in some light conditions." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Differences from Aida" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The holes on evenweave are not pre-formed like those on Aida. The needle parts the individual threads on the way through, so the path through the cloth is less distinct. Beginners find Aida easier to count; evenweave becomes intuitive once you can see the individual thread grid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Evenweave-specific problems.",
+          "items": [
+            {
+              "symptom": "Stitches are inconsistent in size",
+              "cause": "The needle is going over one thread in some stitches and two in others.",
+              "fix": "Count the threads per stitch carefully. Two threads each way for every stitch: no exceptions."
+            },
+            {
+              "symptom": "The fabric is hard to count under poor light",
+              "cause": "Individual threads on evenweave are finer and less distinct than Aida squares.",
+              "fix": "Use a daylight task lamp. A magnifier loupe also helps on 28-count and finer."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Evenweave is the fabric of choice for advanced cross-stitch, Hardanger, and most surface embroidery sampler work. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "choosing-fabric", "label": "fabric choice" } }],
+            "text": "fabric choice"
+          },
+          { "type": "text", "text": " principles here apply equally to linen evenweave." }
+        ]
+      }
+    ]
+  }
+}

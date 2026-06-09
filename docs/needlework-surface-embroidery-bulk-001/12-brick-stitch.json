@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-brick-stitch",
+  "title": "Brick stitch",
+  "subtitle": "Rows of straight stitches offset like brickwork to cover large areas evenly",
+  "excerpt": "Brick stitch fills a shape with rows of straight stitches where each row offsets by half a stitch length, like bricks in a wall. The result is a flat, even fill that covers the fabric without the lustrous sheen of satin stitch. It is efficient for large backgrounds.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), flat filling stitches chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 2 (1886), brick filling entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "satin-fill-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-8", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "half-drop-offset", "term": "Half-drop offset", "definition": "The alternating alignment of each row of stitches, where the start of each row is set half a stitch length back from the one above. This creates the brick-like interlocking pattern." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["brick fill", "offset satin", "brickwork stitch"],
+  "heroPrompt": "Brick stitch in two tones of rust and terracotta stranded cotton filling a square ground area, showing the offset brick pattern and even coverage, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Brick stitch achieves its even coverage through a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "half-drop-offset" } }], "text": "half-drop offset" },
+        { "type": "text", "text": " between rows. The first row sets the stitch length. Every subsequent row begins half a stitch length in from the row above, staggering the joins so they look like laid brickwork." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton 2 to 3 strands" },
+        { "label": "Fabric", "value": "Linen or cotton" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "20 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first row of straight stitches across the top of the shape, spacing them evenly at the chosen stitch length." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin the second row half a stitch length in from the first stitch of row one. Work stitches of the same length." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Begin the third row aligned with the first row. Continue alternating the offset each row." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring each stitch up between the bases of the row above to keep the coverage solid." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When brick stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "Gaps appear between rows", "cause": "The second row is starting at the wrong position.", "fix": "The needle for each row must emerge between the bases of the stitches above. If the row below has gaps at its base, the coverage will fail." },
+        { "symptom": "The staggered pattern is lost", "cause": "The half-drop offset is not being maintained consistently.", "fix": "Mark the start points of each row on the fabric before stitching. A ruler and water-soluble pen make this fast." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Brick stitch is widely used as a background fill in crewelwork and canvas work. When worked in graduated colours from one row to the next, it gives a striped shaded effect similar to long and short stitch but with harder colour breaks." }] }
+    ]
+  }
+}

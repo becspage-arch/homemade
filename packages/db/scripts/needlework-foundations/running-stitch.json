@@ -1,0 +1,130 @@
+{
+  "slug": "running-stitch-needlework",
+  "title": "Running stitch",
+  "subtitle": "The simplest stitch in needlework: equal stitches and spaces in a straight or curved line.",
+  "excerpt": "Running stitch is a series of equal-length stitches with equal gaps between them. It is the basis for gathering, quilting, and basic outline work, and the first stitch most people learn.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Running stitch and its applications.\nMrs Beeton, Book of Needlework (1870), Project Gutenberg #16746. Basic stitch descriptions.",
+  "aliases": ["running stitch", "straight running stitch", "basting stitch", "gathering stitch"],
+  "techniqueSlugs": ["basic-running-stitch"],
+  "criticalTechniques": ["basic-running-stitch"],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "running-stitch-def",
+      "term": "Running stitch",
+      "definition": "A stitch formed by passing the needle in and out of the cloth at regular intervals, creating a broken line of equal stitches and spaces."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "running-stitch-def" } }],
+            "text": "running stitch"
+          },
+          { "type": "text", "text": " is worked by passing the needle in and out of the cloth in a regular rhythm. The stitch is as long as the gap, and both should be the same size for an even appearance. On Aida, count the squares to keep the stitches even; on other fabrics, judge by eye or against a ruler." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Fabric, prepared and mounted", "isOptional": false },
+            { "name": "Stranded cotton, 2 strands", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the thread with a loop start or away knot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up through the cloth at the start point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the needle down through the cloth one stitch length ahead." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle back up one stitch length ahead of that, leaving a gap." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue along the line, keeping stitches and gaps even." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Running stitch problems.",
+          "items": [
+            {
+              "symptom": "Stitches are uneven in length",
+              "cause": "The stitch length was judged by eye without counting threads.",
+              "fix": "On Aida, count the squares. On evenweave, count the threads. On plain fabric, mark a guideline with a water-soluble pen."
+            },
+            {
+              "symptom": "The line curves when it should be straight",
+              "cause": "The needle is being pushed through the cloth at a slight angle each time.",
+              "fix": "Check the angle of the needle before each push. For a straight line, keep the needle exactly perpendicular to the cloth."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Running stitch is the foundation of Sashiko pattern work and is used for basting, gathering, and outline embroidery across all disciplines. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "basic-running-stitch", "label": "Running stitch" } }],
+            "text": "Running stitch"
+          },
+          { "type": "text", "text": " also forms the basis of back stitch when alternate gaps are filled in on a second pass." }
+        ]
+      }
+    ]
+  }
+}

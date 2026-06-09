@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-back-stitch",
+  "title": "Back stitch",
+  "subtitle": "A solid, gapless outline stitch worked in reverse",
+  "excerpt": "Back stitch produces a solid continuous line with no gaps between stitches. Each stitch goes back to meet the end of the last, giving a neat joined outline. It is the tightest and most precise of the basic outline stitches.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), outline stitches chapter (Project Gutenberg #20776). Mrs Beeton, Book of Needlework (1870), back stitch entry (Project Gutenberg #16746).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "stitch-hole", "term": "Stitch hole", "definition": "The exact hole in the fabric where the needle enters or exits. Sharing a stitch hole with the previous stitch creates a gapless join." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["punto indietro", "point de pique", "seam stitch"],
+  "heroPrompt": "Back stitch in dark red stranded cotton on white linen, a straight geometric border line showing gapless joins, close-up, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Back stitch works by going backwards to share the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-hole" } }], "text": "stitch hole" },
+        { "type": "text", "text": " of the previous stitch. The needle emerges ahead of the working position, then enters backwards to meet the end of the last stitch. The result is a continuous joined line with no gaps." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 2 strands" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice line" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one stitch-length ahead of the start point (point B)." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle back at the start point (point A) and bring it up one stitch-length ahead of B (point C)." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert back at B, come up at a new point ahead. Each stitch fills the gap left by the forward movement." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep all stitches the same length for a regular, even line." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When back stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "Small gaps appear between stitches", "cause": "The needle is not entering exactly the previous stitch hole.", "fix": "Use the tip of the needle to locate the exact previous hole before inserting. Sharing the hole closes the gap." },
+        { "symptom": "The line wavers on curves", "cause": "Stitch length too long for the curve.", "fix": "Shorten each stitch on curves. Back stitch follows tight curves well when the stitches are small." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Back stitch is the base for whipped back stitch, threaded back stitch, and Pekinese stitch. It is also the structural stitch in Holbein stitch." }] }
+    ]
+  }
+}

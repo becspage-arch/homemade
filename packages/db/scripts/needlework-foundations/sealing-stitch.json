@@ -1,0 +1,132 @@
+{
+  "slug": "sealing-stitch",
+  "title": "Sealing stitch",
+  "subtitle": "How to work a securing stitch that locks a thread end in place on the back.",
+  "excerpt": "A sealing stitch (sometimes called a securing stitch) locks a thread end on the back by passing the needle under one existing stitch and then back through the loop it forms. It is a reliable alternative to the run-under method when the surrounding stitches are sparse.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Thread ending and securing techniques.\nWeldon's Practical Needlework, volume 1 (1886), Internet Archive. Thread securing methods.",
+  "aliases": ["securing stitch", "locking stitch", "whip knot", "thread lock"],
+  "techniqueSlugs": ["sealing-stitch"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "tapestry-needle-24", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sealing-stitch-def",
+      "term": "Sealing stitch",
+      "definition": "A self-locking stitch worked by passing the needle under an existing stitch on the back and then back through the loop formed, creating a tight knot-like hold without a true knot."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sealing-stitch-def" } }],
+            "text": "sealing stitch"
+          },
+          { "type": "text", "text": " is used when the run-under method is not available, for example when ending thread in an area with only one or two stitches nearby. It creates a self-locking hold by threading back through the loop of its own pass." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Tapestry needle, size 24", "slug": "tapestry-needle-24", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the sealing stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "End the last stitch and bring the needle to the back." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the needle under a nearby existing stitch on the back without catching the cloth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull through slowly, leaving a small loop of thread." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle back through the loop before pulling the thread fully taut." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull firm. The loop closes around the needle passage and locks the thread end." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trim the tail flush with the surface of the back." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Sealing stitch problems.",
+          "items": [
+            {
+              "symptom": "The lock doesn't hold and the thread pulls free",
+              "cause": "The needle passed through the loop before the loop was properly formed.",
+              "fix": "Leave a loose loop before passing through it. The needle must pass through the circular loop, not through the tail end."
+            },
+            {
+              "symptom": "The stitch pulls the nearby stitches out of position",
+              "cause": "The nearby stitch under which the needle was passed was too small or delicate.",
+              "fix": "Choose a larger, more robust nearby stitch to anchor under, or work two sealing stitches in different directions."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The sealing stitch is useful in all sparse areas of needlework where the run-under method is impractical. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "sealing-stitch", "label": "Sealing stitch" } }],
+            "text": "Sealing stitch"
+          },
+          { "type": "text", "text": " is also used in Sashiko to end a long running-stitch line without disturbing the pattern spacing." }
+        ]
+      }
+    ]
+  }
+}

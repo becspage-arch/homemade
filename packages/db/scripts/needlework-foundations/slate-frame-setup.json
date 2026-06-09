@@ -1,0 +1,131 @@
+{
+  "slug": "slate-frame-setup",
+  "title": "Setting up a slate frame",
+  "subtitle": "The four-sided professional frame for large embroidery and Goldwork.",
+  "excerpt": "A slate frame holds large pieces flat under even tension on all four sides. Setting it up takes longer than a hoop but produces a surface that stays true over months of work.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Slate frame and stretcher frame setup.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Frame types and mounting.",
+  "aliases": ["slate frame", "stretcher frame", "dress frame", "square embroidery frame", "professional embroidery frame"],
+  "techniqueSlugs": ["slate-frame-setup"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "slate-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "slate-frame-roller",
+      "term": "Slate frame roller",
+      "definition": "The two horizontal bars of a slate frame, each with a length of webbing along the top edge to which the fabric is attached by oversewing. The rollers are threaded onto the side bars and pegged at the correct working length."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A slate frame gives the flattest, most even tension of any framing method. The fabric is stitched to the top and bottom rollers, then laced to the side bars on each side. Once set up, a slate frame needs no adjustment during stitching, and the cloth stays square even after months of work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Slate frame", "slug": "slate-frame", "isOptional": false },
+            { "name": "Strong thread or fine string for lacing and stitching", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Blunt needle for lacing", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the frame" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hem or tape the top and bottom edges of the fabric. The hemmed edges are where the fabric stitches to the " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slate-frame-roller" } }], "text": "slate frame rollers" },
+              { "type": "text", "text": "." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Oversew the top hemmed edge firmly to the top roller webbing, starting from the centre of the fabric and working outward. Stitch through both the fabric and the webbing tape." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the bottom roller, keeping the grain straight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the side bars through the ends of the rollers. Adjust to a working height that keeps the cloth flat (not so tight it distorts, not so loose it sags). Peg or screw the rollers in place." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace the side edges of the fabric to the side bars: thread a blunt needle with string, work through the side hem of the cloth every 2 to 3 cm, loop around the bar, and continue. Tie off." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check all four sides are taut and the grain is square before beginning." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Slate frame setup problems.",
+          "items": [
+            {
+              "symptom": "The cloth sags in the centre after mounting",
+              "cause": "The side bars were pegged at too wide a setting, or the lacing was not taut enough.",
+              "fix": "Tighten the lacing thread. Re-peg the side bars slightly narrower if the sag persists."
+            },
+            {
+              "symptom": "The fabric grain is skewed in the frame",
+              "cause": "The fabric was not stitched to the roller evenly, or more was stitched to one side than the other.",
+              "fix": "Unpick the roller stitching and remount from the centre, working outward equally on each side."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The slate frame is the traditional frame for Goldwork, large canvas needlepoint, and professional embroidery commissions. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "slate-frame-setup", "label": "Slate frame setup" } }],
+            "text": "Slate frame setup"
+          },
+          { "type": "text", "text": " is also recommended for any piece where the finished work will be displayed in the frame or mounted under glass." }
+        ]
+      }
+    ]
+  }
+}

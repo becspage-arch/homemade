@@ -1,0 +1,130 @@
+{
+  "slug": "back-stitch-foundations",
+  "title": "Back stitch",
+  "subtitle": "The outline stitch that produces a solid, continuous line.",
+  "excerpt": "Back stitch produces a solid unbroken line on the surface of the cloth. Each stitch fills the gap left by the previous one, working backward from the end of the last stitch. It is the standard outline stitch for all needlework disciplines.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Back stitch technique and applications.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Back stitch entry.",
+  "aliases": ["back stitch", "backstitch", "outline stitch", "stem stitch alternative"],
+  "techniqueSlugs": ["back-stitch"],
+  "criticalTechniques": ["back-stitch"],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "back-stitch-def",
+      "term": "Back stitch",
+      "definition": "An outline stitch worked by inserting the needle backward into the end of the last stitch, then bringing it forward two stitch lengths ahead. Produces a solid continuous line on the surface."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-stitch-def" } }],
+            "text": "back stitch"
+          },
+          { "type": "text", "text": " is worked by going backward with the needle each time: the needle comes up two stitch lengths ahead, then goes back into the end of the last stitch. The result is a solid unbroken line on the front of the cloth, with the stitches overlapping on the back." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Fabric, mounted in hoop", "isOptional": false },
+            { "name": "Stranded cotton, 1 or 2 strands", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the thread and bring the needle up at the start point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the needle back down one stitch length behind the start point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up two stitch lengths ahead of the start point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the needle back down into the end of the previous stitch (one stitch length back). This is the 'back' in back stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue bringing the needle up one stitch length ahead and going back down into the end of the previous stitch." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Back stitch problems.",
+          "items": [
+            {
+              "symptom": "The line looks broken with small gaps",
+              "cause": "The needle didn't go exactly into the end of the previous stitch, leaving a tiny gap.",
+              "fix": "Before pushing the needle back down, check that it is entering exactly at the end of the last stitch, not next to it."
+            },
+            {
+              "symptom": "The line curves or wobbles",
+              "cause": "The stitch length varied between stitches.",
+              "fix": "Count threads on evenweave or Aida. On plain fabric, draw a light guideline with a water-soluble pen."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Back stitch is used for outlines on cross-stitch pieces and as the foundation for blackwork patterns. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "back-stitch", "label": "Back stitch" } }],
+            "text": "Back stitch"
+          },
+          { "type": "text", "text": " is also used in Hardanger and can be worked in a single strand for fine linear detail in surface embroidery." }
+        ]
+      }
+    ]
+  }
+}

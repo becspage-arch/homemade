@@ -10,18 +10,56 @@
   "sourceType": "PUBLIC_DOMAIN",
   "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776, counted embroidery fill patterns. Weldon's Practical Needlework series (1880s to 1900s).",
   "recipeTools": [
-    { "slug": "tapestry-needle-26", "isOptional": false },
-    { "slug": "embroidery-hoop-8", "isOptional": false },
-    { "slug": "embroidery-scissors", "isOptional": false }
+    {
+      "slug": "tapestry-needle-26",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-hoop-8",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
   ],
-  "techniqueSlugs": ["reading-a-counted-chart", "holbein-stitch", "back-stitch", "mounting-fabric-in-hoop", "tying-off-cleanly"],
-  "criticalTechniques": ["reading-a-counted-chart", "holbein-stitch"],
-  "aliases": ["diamond blackwork", "diamond fill embroidery", "blackwork diamond repeat"],
+  "techniqueSlugs": [
+    "reading-a-counted-chart",
+    "holbein-stitch",
+    "back-stitch",
+    "mounting-fabric-in-hoop",
+    "tying-off-cleanly"
+  ],
+  "criticalTechniques": [
+    "reading-a-counted-chart",
+    "holbein-stitch"
+  ],
+  "aliases": [
+    "diamond blackwork",
+    "diamond fill embroidery",
+    "blackwork diamond repeat"
+  ],
   "glossaryTerms": [
-    { "slug": "holbein-stitch", "term": "Holbein stitch", "definition": "Double-running stitch worked along a counted path so the thread looks identical on both sides of the fabric." },
-    { "slug": "evenweave", "term": "Evenweave", "definition": "Fabric woven with the same number of threads per centimetre in both directions." },
-    { "slug": "fill-pattern", "term": "Fill pattern", "definition": "A small repeating geometric unit worked inside an outline shape in blackwork." },
-    { "slug": "reading-a-counted-chart", "term": "Reading a counted chart", "definition": "Understanding that each grid square represents one stitch position and navigating the grid to place stitches correctly." }
+    {
+      "slug": "holbein-stitch",
+      "term": "Holbein stitch",
+      "definition": "Double-running stitch worked along a counted path so the thread looks identical on both sides of the fabric."
+    },
+    {
+      "slug": "evenweave",
+      "term": "Evenweave",
+      "definition": "Fabric woven with the same number of threads per centimetre in both directions."
+    },
+    {
+      "slug": "fill-pattern",
+      "term": "Fill pattern",
+      "definition": "A small repeating geometric unit worked inside an outline shape in blackwork."
+    },
+    {
+      "slug": "reading-a-counted-chart",
+      "term": "Reading a counted chart",
+      "definition": "Understanding that each grid square represents one stitch position and navigating the grid to place stitches correctly."
+    }
   ],
   "body": {
     "type": "doc",
@@ -29,50 +67,162 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The diamond " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fill-pattern" } }], "text": "fill pattern" },
-          { "type": "text", "text": " is eight stitches arranged in a repeating diamond on " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "evenweave" } }], "text": "evenweave" },
-          { "type": "text", "text": ". Two strands of black stranded cotton on 28-count evenweave. Finished chart size: 40 by 40 stitches (approximately 7 by 7 cm)." }
+          {
+            "type": "text",
+            "text": "The diamond "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "fill-pattern"
+                }
+              }
+            ],
+            "text": "fill pattern"
+          },
+          {
+            "type": "text",
+            "text": " is eight stitches arranged in a repeating diamond on "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "evenweave"
+                }
+              }
+            ],
+            "text": "evenweave"
+          },
+          {
+            "type": "text",
+            "text": ". Two strands of black stranded cotton on 28-count evenweave. Finished chart size: 40 by 40 stitches (approximately 7 by 7 cm)."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "suppliesCard",
         "attrs": {
           "heading": "Materials",
           "items": [
-            { "name": "28-count evenweave or linen", "qty": "20 by 20 cm" },
-            { "name": "DMC 310 black stranded cotton", "qty": "1 skein" },
-            { "name": "Tapestry needle size 26", "qty": "1" },
-            { "name": "Embroidery hoop 10 cm", "qty": "1" },
-            { "name": "Embroidery scissors", "qty": "1" }
+            {
+              "name": "28-count evenweave or linen",
+              "qty": "20 by 20 cm"
+            },
+            {
+              "name": "DMC 310 black stranded cotton",
+              "qty": "1 skein"
+            },
+            {
+              "name": "Tapestry needle size 26",
+              "qty": "1"
+            },
+            {
+              "name": "Embroidery hoop 10 cm",
+              "qty": "1"
+            },
+            {
+              "name": "Embroidery scissors",
+              "qty": "1"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Working method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working method"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Work this fill using " },
-          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "holbein-stitch", "label": "Holbein stitch" } }], "text": "Holbein stitch" },
-          { "type": "text", "text": " for a reversible result. The diamond repeat is four units wide and four units tall. Two strands on 28-count. Work outward from the centre of the fabric area, starting from the centre mark identified when " },
-          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "reading-a-counted-chart", "label": "reading a counted chart" } }], "text": "reading a counted chart" },
-          { "type": "text", "text": "." }
+          {
+            "type": "text",
+            "text": "Work this fill using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "holbein-stitch",
+                  "label": "Holbein stitch"
+                }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "holbein-stitch"
+                }
+              }
+            ],
+            "text": "Holbein stitch"
+          },
+          {
+            "type": "text",
+            "text": " for a reversible result. The diamond repeat is four units wide and four units tall. Two strands on 28-count. Work outward from the centre of the fabric area, starting from the centre mark identified when "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "reading-a-counted-chart",
+                  "label": "reading a counted chart"
+                }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reading-a-counted-chart"
+                }
+              }
+            ],
+            "text": "reading a counted chart"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Chart" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Chart"
+          }
+        ]
       },
       {
         "type": "crossStitchChart",
@@ -96,26 +246,106 @@
               }
             ],
             "cells": [
-              { "x": 4, "y": 0, "paletteKey": "black" },
-              { "x": 5, "y": 0, "paletteKey": "black" },
-              { "x": 3, "y": 1, "paletteKey": "black" },
-              { "x": 6, "y": 1, "paletteKey": "black" },
-              { "x": 2, "y": 2, "paletteKey": "black" },
-              { "x": 7, "y": 2, "paletteKey": "black" },
-              { "x": 1, "y": 3, "paletteKey": "black" },
-              { "x": 8, "y": 3, "paletteKey": "black" },
-              { "x": 0, "y": 4, "paletteKey": "black" },
-              { "x": 9, "y": 4, "paletteKey": "black" },
-              { "x": 0, "y": 5, "paletteKey": "black" },
-              { "x": 9, "y": 5, "paletteKey": "black" },
-              { "x": 1, "y": 6, "paletteKey": "black" },
-              { "x": 8, "y": 6, "paletteKey": "black" },
-              { "x": 2, "y": 7, "paletteKey": "black" },
-              { "x": 7, "y": 7, "paletteKey": "black" },
-              { "x": 3, "y": 8, "paletteKey": "black" },
-              { "x": 6, "y": 8, "paletteKey": "black" },
-              { "x": 4, "y": 9, "paletteKey": "black" },
-              { "x": 5, "y": 9, "paletteKey": "black" }
+              {
+                "x": 4,
+                "y": 0,
+                "paletteKey": "black"
+              },
+              {
+                "x": 5,
+                "y": 0,
+                "paletteKey": "black"
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "paletteKey": "black"
+              },
+              {
+                "x": 6,
+                "y": 1,
+                "paletteKey": "black"
+              },
+              {
+                "x": 2,
+                "y": 2,
+                "paletteKey": "black"
+              },
+              {
+                "x": 7,
+                "y": 2,
+                "paletteKey": "black"
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "paletteKey": "black"
+              },
+              {
+                "x": 8,
+                "y": 3,
+                "paletteKey": "black"
+              },
+              {
+                "x": 0,
+                "y": 4,
+                "paletteKey": "black"
+              },
+              {
+                "x": 9,
+                "y": 4,
+                "paletteKey": "black"
+              },
+              {
+                "x": 0,
+                "y": 5,
+                "paletteKey": "black"
+              },
+              {
+                "x": 9,
+                "y": 5,
+                "paletteKey": "black"
+              },
+              {
+                "x": 1,
+                "y": 6,
+                "paletteKey": "black"
+              },
+              {
+                "x": 8,
+                "y": 6,
+                "paletteKey": "black"
+              },
+              {
+                "x": 2,
+                "y": 7,
+                "paletteKey": "black"
+              },
+              {
+                "x": 7,
+                "y": 7,
+                "paletteKey": "black"
+              },
+              {
+                "x": 3,
+                "y": 8,
+                "paletteKey": "black"
+              },
+              {
+                "x": 6,
+                "y": 8,
+                "paletteKey": "black"
+              },
+              {
+                "x": 4,
+                "y": 9,
+                "paletteKey": "black"
+              },
+              {
+                "x": 5,
+                "y": 9,
+                "paletteKey": "black"
+              }
             ]
           }
         }
@@ -123,67 +353,125 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The chart shows one complete 10 by 10 tile. Each marked cell is one stitch worked over two threads of the evenweave (one hole to the next). Repeat the tile in both horizontal and vertical directions to fill the desired area. The tick marks at every 10 stitches on the printed chart help you keep count." }
+          {
+            "type": "text",
+            "text": "The chart shows one complete 10 by 10 tile. Each marked cell is one stitch worked over two threads of the evenweave (one hole to the next). Repeat the tile in both horizontal and vertical directions to fill the desired area. The tick marks at every 10 stitches on the printed chart help you keep count."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Working the piece" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working the piece"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Mount the fabric in the hoop. Find and mark the centre." }]
-            }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mount the fabric in the hoop. Find and mark the centre."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Thread two strands of DMC 310. Work the horizontal runs of each diamond row first using Holbein stitch, travelling left to right." }]
-            }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread two strands of DMC 310. Work the horizontal runs of each diamond row first using Holbein stitch, travelling left to right."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Return along each row, filling the gaps to complete the Holbein double-running pass." }]
-            }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return along each row, filling the gaps to complete the Holbein double-running pass."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Work the diagonal sides of each diamond in the same two-pass method." }]
-            }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the diagonal sides of each diamond in the same two-pass method."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Finishing" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Wash in cool water, press face-down on a thick towel, and frame or mount. Finished size at 28-count: each 10-stitch tile measures approximately 9 mm. A 40 by 40 stitch area measures approximately 7 by 7 cm." }
+          {
+            "type": "text",
+            "text": "Wash in cool water, press face-down on a thick towel, and frame or mount. Finished size at 28-count: each 10-stitch tile measures approximately 9 mm. A 40 by 40 stitch area measures approximately 7 by 7 cm."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to try next" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The diamond fill sits at a medium density. Try the lattice fill for an open result or the square knot fill for a denser one." }
+          {
+            "type": "text",
+            "text": "The diamond fill sits at a medium density. Try the lattice fill for an open result or the square knot fill for a denser one."
+          }
         ]
       }
     ]

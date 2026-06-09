@@ -1,0 +1,131 @@
+{
+  "slug": "padded-straight-stitch",
+  "title": "Padded straight stitch",
+  "subtitle": "How to build a raised, rounded surface for satin stitch by laying thread beneath.",
+  "excerpt": "Padded straight stitch raises a surface for embroidery by laying filling stitches in one direction and covering them with stitches in the opposite direction. The result is a rounded, sculptural surface.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Padding techniques for raised embroidery.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Padding and raised work methods.",
+  "aliases": ["padded satin stitch", "raised satin stitch", "padding embroidery", "laid padding", "padding stitch"],
+  "techniqueSlugs": ["padded-straight-stitch"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "padding-layer",
+      "term": "Padding layer",
+      "definition": "A layer of stitches worked first, in a direction opposite to the final surface stitches, to build up the fabric surface and create a rounded, raised effect when the final layer covers them."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Padded straight stitch builds a raised surface by first covering the shape with stitches running in one direction, then covering those with stitches in the opposite direction. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "padding-layer" } }],
+            "text": "padding layer"
+          },
+          { "type": "text", "text": " underneath pushes the surface stitches up into a rounded, sculptural form." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery hoop, 6 inch", "slug": "embroidery-hoop-6", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Stranded cotton, 2 strands for padding, 2 strands for surface", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working padded straight stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outline the shape to be padded with a single strand of back stitch or chain stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the shape with straight stitches running horizontally, placed side by side until the whole shape is covered. These are the padding stitches and do not need to be perfectly smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover the padding layer with straight stitches running vertically (at 90 degrees to the first layer), placed closely together so they touch. These are the surface stitches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep each surface stitch taut but not tight: the stitch should lie on the padding, not dig into it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a higher dome, work a second padding layer before the surface stitches." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Padding problems.",
+          "items": [
+            {
+              "symptom": "The surface stitches don't look rounded",
+              "cause": "The padding layer was too sparse.",
+              "fix": "Work the padding stitches closely together, touching. A thinner padding is better than no padding, but to get the dome effect the surface needs a full pad beneath."
+            },
+            {
+              "symptom": "The edges of the shape look uneven",
+              "cause": "The surface stitches didn't stop at the outline edge.",
+              "fix": "Use the back-stitch outline as a guide. Each surface stitch should reach just to the outline, not past it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Padded satin stitch is the standard technique for leaves, petals, and geometric shapes in surface embroidery and crewel work. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "padded-straight-stitch", "label": "Padded straight stitch" } }],
+            "text": "Padded straight stitch"
+          },
+          { "type": "text", "text": " is also the base for goldwork over-wrapping, where the padding is built from felt or string before the metal thread is applied." }
+        ]
+      }
+    ]
+  }
+}

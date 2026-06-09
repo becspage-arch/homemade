@@ -1,0 +1,129 @@
+{
+  "slug": "slip-stitch-needlework",
+  "title": "Slip stitch",
+  "subtitle": "An almost-invisible stitch for closing seams and attaching lining inside finished needlework.",
+  "excerpt": "Slip stitch closes a turned seam or attaches a lining with barely a thread showing on the right side. It is worked by catching the fold of one fabric and a thread or two of the other alternately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Joining stitches and lining application.\nMrs Beeton, Book of Needlework (1870), Project Gutenberg #16746. Slip stitch method.",
+  "aliases": ["slip stitch", "invisible stitch", "ladder stitch", "blind stitch", "ladder hemstitch"],
+  "techniqueSlugs": ["slip-stitch-needlework"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "slip-stitch-def",
+      "term": "Slip stitch",
+      "definition": "A nearly invisible stitch formed by alternately catching a few threads of one fabric and slipping through the fold of the other. Used to close openings and attach linings without visible stitching on the right side."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slip-stitch-def" } }],
+            "text": "slip stitch"
+          },
+          { "type": "text", "text": " joins two folded fabric edges with almost no visible thread on either surface. It is used to close the opening in a finished needlework cushion, to attach backing fabric to a framed piece, or to join a hem edge to the front of a project." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Thread matching the fabric", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the seam allowance under on both pieces and align the folds face to face." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Anchor the thread with a small knot hidden inside the fold at one end." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slip the needle along inside the fold of the front fabric for about 5 mm, then emerge at the fold edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cross to the opposite fold and pick up 2 or 3 threads, then slip along inside that fold for 5 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating between the two folds. The thread between them is almost invisible when the seam is gently pulled closed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Slip stitch problems.",
+          "items": [
+            {
+              "symptom": "The stitching shows on the right side",
+              "cause": "The needle picked up fabric on the right side instead of slipping inside the fold.",
+              "fix": "The needle must travel inside the fold, not through it. Approach at a very shallow angle."
+            },
+            {
+              "symptom": "The seam puckers when pulled closed",
+              "cause": "The stitches were too tight.",
+              "fix": "Leave the thread slightly loose between stitches. Pull up after every 5 or 6 stitches, not after every individual stitch."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slip stitch is essential for finishing needlework cushions, pincushions, and any project where an opening must be closed cleanly after the piece is turned. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "slip-stitch-needlework", "label": "Slip stitch" } }],
+            "text": "Slip stitch"
+          },
+          { "type": "text", "text": " is also used to attach the backing of a finished tapestry or Hardanger piece." }
+        ]
+      }
+    ]
+  }
+}

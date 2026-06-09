@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-french-knot",
+  "title": "French knot",
+  "subtitle": "A small raised knot formed by wrapping thread around the needle once or twice",
+  "excerpt": "French knot is a small, firm raised knot formed by wrapping the thread around the needle before inserting it back into the fabric. Clusters of French knots fill shapes with a textured dotted surface, or single knots mark flower centres and berry details.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), knotted stitches chapter (Project Gutenberg #20776). Mrs Beeton, Book of Needlework (1870), French knot entry (Project Gutenberg #16746).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "knot-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "wrap", "term": "Wrap", "definition": "One complete loop of thread around the needle before insertion. One wrap gives a small tight knot; two wraps give a slightly larger, softer knot." }
+  ],
+  "techniqueSlugs": ["mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["mounting-fabric-in-hoop"],
+  "aliases": ["French dot", "knotted stitch", "twisted knot"],
+  "heroPrompt": "French knots in cream perle cotton clustered thickly to fill a round floral shape on deep blue linen, showing the raised textured surface, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "French knot forms a raised dot by pulling the thread through a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wrap" } }], "text": "wrap" },
+        { "type": "text", "text": " held on the needle. The thread is looped around the needle once, the needle is inserted back into the fabric close to the exit point, and the thread is pulled through while the wrap is held against the fabric surface." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton 2 to 3 strands, or perle 8 for larger knots" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle", "value": "Embroidery needle size 8 or 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the thread up at the knot position. Hold the thread taut with the non-stitching hand." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wrap the thread once around the needle (twice for a larger knot). Hold the wrap against the fabric with a thumb." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle back into the fabric one or two threads from the exit point (not the same hole)." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the thread through, keeping the thumb on the wrap until the knot tightens against the fabric." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When French knots go wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The knot pulls through to the back", "cause": "The needle is re-entering the same hole the thread came out of.", "fix": "Always insert the needle one or two fabric threads away from the exit point. The knot needs a fabric bridge to sit on." },
+        { "symptom": "The knots are uneven in size", "cause": "Varying the number of wraps or the thread tension.", "fix": "Decide on one wrap or two and stick to it. Hold the thread consistently taut while wrapping." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "French knots are used for flower centres, textured fills, and detail dots throughout embroidery traditions. Colonial knot and bullion knot are close relatives; all three belong to the knotted stitch family." }] }
+    ]
+  }
+}

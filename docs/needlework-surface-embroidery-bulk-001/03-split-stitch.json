@@ -1,0 +1,57 @@
+{
+  "slug": "surface-embroidery-split-stitch",
+  "title": "Split stitch",
+  "subtitle": "An outline stitch with a plaited surface made by splitting the previous stitch",
+  "excerpt": "Split stitch produces a fine plaited line by piercing the centre of the previous stitch with each new one. It lies flatter than stem stitch and follows curves with precision. It is also used as padding under satin stitch to raise and sharpen the edge.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), outline stitches chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 1 (1886), split stitch entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "split-point", "term": "Split point", "definition": "The midpoint of the previous stitch where the needle pierces the thread to divide it and lock the stitches together." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["Kensington outline stitch", "split outline stitch"],
+  "heroPrompt": "Split stitch in soft olive green stranded cotton on cream linen, a curved botanical stem line showing the fine plaited texture, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Split stitch pierces the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "split-point" } }], "text": "split point" },
+        { "type": "text", "text": " of the previous stitch with every new stitch. This locks the stitches together and creates a fine plaited chain effect. It lies flatter than stem stitch and is the preferred outline for Jacobean crewelwork shapes." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 2 strands (even number so the needle can split evenly)" },
+        { "label": "Fabric", "value": "Linen or cotton muslin" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice line" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the thread up at the start (A). Take a forward stitch the full stitch length to B. Pull through." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the midpoint of the first stitch, piercing directly through the thread strands." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take the next forward stitch, then come up through the midpoint of that stitch. Continue along the line." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep the split point exactly at the thread centre. An off-centre split produces an uneven surface." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When split stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The plait is uneven", "cause": "The needle is splitting off-centre.", "fix": "Use an even number of strands and pierce exactly through the middle of the bundle." },
+        { "symptom": "The line looks like stem stitch", "cause": "Not piercing the previous stitch, just surfacing beside it.", "fix": "The needle must go through the thread, not alongside it. You should feel slight resistance as the needle divides the strands." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Split stitch is used as a padding row around satin stitch areas: working split stitch along the outline before filling raises and sharpens the edge. It is also the main outline in medieval opus anglicanum embroidery." }] }
+    ]
+  }
+}

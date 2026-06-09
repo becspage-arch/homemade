@@ -1,0 +1,140 @@
+{
+  "slug": "light-box-transfer",
+  "title": "Light box design transfer",
+  "subtitle": "Tracing a design through fabric using a backlit surface.",
+  "excerpt": "A light box illuminates the design from beneath so it shows through the fabric above it. You trace the lines directly onto the cloth with a water-soluble pen. The fastest transfer method for any fabric fine enough to see through.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique using contemporary equipment (LED light pads). Design transfer principles consistent with Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776, which describes window-light tracing.",
+  "aliases": ["light box", "light pad tracing", "backlight transfer", "window transfer"],
+  "techniqueSlugs": ["transferring-patterns", "light-box-transfer"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "light-box-a4", "isOptional": false },
+    { "slug": "water-soluble-pen", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "light-box-panel",
+      "term": "Light box",
+      "definition": "A flat LED panel that illuminates from beneath, making designs visible through fabric or paper placed on top. Used for tracing and design transfer."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "light-box-panel" } }],
+            "text": "light box"
+          },
+          { "type": "text", "text": " is the fastest transfer method for thin fabrics. Place the design on the lit surface, lay the fabric over it, and trace the design lines with a water-soluble pen. The backlight makes the design visible through the cloth even if the design would normally be too faint to see." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Light box, A4", "slug": "light-box-a4", "isOptional": false },
+            { "name": "Water-soluble pen", "slug": "water-soluble-pen", "isOptional": false },
+            { "name": "Design printed or drawn on paper", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use a light box for transfer" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Switch on the light box and dim the room lighting if possible." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the printed design on the light box surface, right side up." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the fabric over the design and tape both in position so neither can move." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Trace the design lines onto the fabric with the water-soluble pen. Use a light touch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the fabric from the light box, mount in a hoop, and stitch." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Alternative: window tracing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On a bright day, tape the design to a clean window, lay the fabric over it, and trace. This is the original light-box method and works for thin fabrics and simple designs. Keep the room dim behind you to increase the contrast." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Light box transfer problems.",
+          "items": [
+            {
+              "symptom": "The design is not visible through the fabric",
+              "cause": "The fabric is too thick or opaque for light-box tracing.",
+              "fix": "Use carbon paper or prick-and-pounce for heavier fabrics. Light box transfer works only for thin fabric, roughly light to medium weight cotton or linen."
+            },
+            {
+              "symptom": "The traced lines shift from the design",
+              "cause": "The fabric moved during tracing.",
+              "fix": "Tape both the design and the fabric to the light box surface before beginning."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Light box transfer is the default method in most surface embroidery workshops because it is fast and accurate. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "transferring-patterns", "label": "Transferring patterns" } }],
+            "text": "Transferring patterns"
+          },
+          { "type": "text", "text": " by light box leaves no residue and is safe for all thin-to-medium fabrics." }
+        ]
+      }
+    ]
+  }
+}

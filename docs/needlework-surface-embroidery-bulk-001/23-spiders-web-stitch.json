@@ -1,0 +1,59 @@
+{
+  "slug": "surface-embroidery-spiders-web-stitch",
+  "title": "Spider's web stitch",
+  "subtitle": "A woven wheel variant where back-stitch weaving creates a ridged, ribbed surface",
+  "excerpt": "Spider's web stitch works over the same spoke foundation as a woven wheel but uses a back-stitch weaving motion that twists each round and gives a ridged, ribbed surface. The finished circle has a more pronounced texture and dimensional quality than the smoother woven wheel.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), wheel stitch chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), spider's web entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "detached-decorative-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "back-stitch-weave", "term": "Back-stitch weave", "definition": "A weaving motion where the needle goes back over the spoke it just passed, then forward under two spokes, repeating around the wheel. This twist gives the spider's web its ribbed appearance." }
+  ],
+  "techniqueSlugs": ["mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["mounting-fabric-in-hoop"],
+  "aliases": ["ribbed spider's web", "whipped wheel", "back-stitch wheel"],
+  "heroPrompt": "Spider's web stitch in rust orange perle cotton on cream linen, showing the ribbed ridged surface, close-up, natural side light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Spider's web stitch uses a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-stitch-weave" } }], "text": "back-stitch weave" },
+        { "type": "text", "text": " over the spoke foundation, going back over one spoke and forward under two on each move. This gives the wheel a more pronounced rib than the simple over-under weaving of a plain woven wheel. Five or seven spokes, same as before; any odd number works." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Perle 8 or stranded cotton 3 strands" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle 1", "value": "Embroidery needle size 9 for spokes" },
+        { "label": "Needle 2", "value": "Tapestry needle size 24 (blunt) for weaving" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay five spokes radiating from a centre point, identical to the woven wheel setup." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the weaving thread up close to the centre." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass the needle back over the spoke to the right, then forward under that same spoke and the next one (going under two spokes). Pull through." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat: go back over the last spoke passed, then forward under it and the next. The weaving spirals outward." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue until the spokes are fully covered. Fasten off at the back." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When spider's web stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The ribs are not visible", "cause": "The back-stitch move is not going back far enough.", "fix": "Make sure the needle goes back over a full spoke before going forward under two. If the back step is too small, the weaving flattens out like a plain woven wheel." },
+        { "symptom": "The wheel is uneven", "cause": "Spoke lengths vary.", "fix": "Check all spokes are the same length from the centre before beginning to weave." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Spider's web stitch and the woven wheel are the two main approaches to circular woven motifs in surface embroidery. The spider's web gives more visible texture and is preferred for flower centres where the ribbed surface adds visual interest." }] }
+    ]
+  }
+}

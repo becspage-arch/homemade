@@ -1,0 +1,131 @@
+{
+  "slug": "anchored-straight-stitch",
+  "title": "Anchored straight stitch",
+  "subtitle": "How to lay a long thread flat and hold it in place with a tiny couching stitch.",
+  "excerpt": "A long straight stitch tends to loop above the surface of the cloth. Anchoring it with a small couching stitch across its centre keeps it flat and prevents snagging.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Long and short stitch, laid work.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Couching and laid stitch entries.",
+  "aliases": ["couched straight stitch", "long laid stitch", "anchored stitch", "couching stitch"],
+  "techniqueSlugs": ["anchored-straight-stitch"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "embroidery-needle-7", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "couching-stitch",
+      "term": "Couching stitch",
+      "definition": "A small stitch worked across a laid thread to hold it flat against the cloth surface. The laid thread is not pulled through the cloth itself; the couching stitches anchor it from above."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Any straight stitch longer than about 8 mm will lift above the surface of the cloth and snag if not anchored. A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "couching-stitch" } }],
+            "text": "couching stitch"
+          },
+          { "type": "text", "text": " over the centre of a long straight stitch holds it flat without distorting the main stitch." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "name": "Embroidery needle, size 7", "slug": "embroidery-needle-7", "isOptional": false },
+            { "name": "Embroidery hoop, 6 inch", "slug": "embroidery-hoop-6", "isOptional": false },
+            { "name": "Embroidery scissors", "slug": "embroidery-scissors", "isOptional": false },
+            { "name": "Stranded cotton, 2 strands for the main stitch, 1 strand for anchoring", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the main straight stitch at the desired length, but do not pull it tight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring a second needle threaded with a finer thread up at the midpoint of the main stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a tiny stitch (1 to 2 mm wide) across the main thread, going back into the cloth on the other side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the couching stitch snug, not tight: it should hold the main thread flat without dimpling it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For very long stitches, add anchoring stitches every 8 to 10 mm along the length." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Anchored stitch problems.",
+          "items": [
+            {
+              "symptom": "The anchoring stitch is visible and detracts from the main stitch",
+              "cause": "The anchoring stitch thread is the same weight as the main stitch.",
+              "fix": "Use one strand for anchoring when the main stitch uses two or more. Match the colour of the anchoring thread to the cloth if the stitch is part of a fill."
+            },
+            {
+              "symptom": "The main stitch still lifts despite anchoring",
+              "cause": "Only one anchoring point was used for a very long stitch.",
+              "fix": "Add anchoring stitches every 8 to 10 mm for stitches longer than 2 cm."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Anchored straight stitch is the basis of all laid work and couching techniques in surface embroidery and Goldwork. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "anchored-straight-stitch", "label": "Anchored straight stitch" } }],
+            "text": "Anchored straight stitch"
+          },
+          { "type": "text", "text": " is also how metallic thread is applied in goldwork: the stiff metal thread is laid on the surface and couched down with fine matching thread." }
+        ]
+      }
+    ]
+  }
+}

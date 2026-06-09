@@ -1,0 +1,147 @@
+{
+  "slug": "fabric-counts-explained",
+  "title": "Fabric counts explained",
+  "subtitle": "How the count number on needlework fabric translates to stitch size and finished dimensions.",
+  "excerpt": "The count number on a fabric label tells you how many stitches fit in one inch. A higher count means more stitches per inch and a smaller finished size. Understanding this lets you adapt any chart to any cloth.",
+  "type": "READING",
+  "categorySlug": "needlework",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), Project Gutenberg #20776. Fabric selection and stitch size guidance.\nCaulfeild and Saward, Dictionary of Needlework (1882), Internet Archive. Count and ground cloth principles.",
+  "aliases": ["fabric count", "stitch count", "cross stitch count", "what does count mean", "counts per inch", "fabric guide"],
+  "techniqueSlugs": ["choosing-fabric"],
+  "criticalTechniques": [],
+  "recipeTools": [
+    { "slug": "tapestry-needle-24", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stitches-per-inch",
+      "term": "Stitches per inch",
+      "definition": "The number of cross-stitches that fit in one inch of fabric. On Aida, this is the fabric count number. On evenweave stitched over two threads, this is half the fabric count."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The count number on a fabric label tells you how many " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitches-per-inch" } }],
+            "text": "stitches per inch"
+          },
+          { "type": "text", "text": " the cloth will give. On Aida, 14-count means 14 stitches per inch. On evenweave, 28-count means 14 stitches per inch when you stitch over two threads. The same chart will produce different finished sizes on different counts." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to calculate finished size" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Find the chart's stitch count: the number of stitches across the width and down the height. Most charts print this." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide each number by the effective stitch count of your chosen cloth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The result is the design size in inches. Multiply by 2.54 to get centimetres." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add at least 5 cm on each side for the hoop or framing border." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Quick reference: effective stitch counts" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "11-count Aida: 11 stitches per inch. Stitch is approximately 2.3 mm square." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "14-count Aida: 14 stitches per inch. Stitch is approximately 1.8 mm square." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "16-count Aida: 16 stitches per inch. Stitch is approximately 1.6 mm square." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "18-count Aida: 18 stitches per inch. Stitch is approximately 1.4 mm square." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "25-count evenweave over two threads: 12.5 stitches per inch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "28-count evenweave over two threads: 14 stitches per inch. Matches 14-count Aida in stitch size." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "32-count linen over two threads: 16 stitches per inch." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common mistakes" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "What goes wrong",
+          "intro": "Count-related sizing problems.",
+          "items": [
+            {
+              "symptom": "The finished piece is much smaller than the chart specified",
+              "cause": "The chart's specified count was different from the cloth used, or the evenweave count was not halved for the over-two calculation.",
+              "fix": "Check the chart's stated count. A chart for 14-count Aida stitched on 18-count Aida produces a piece 78% of the intended size."
+            },
+            {
+              "symptom": "There isn't enough fabric to finish the design",
+              "cause": "Not enough border margin was added when cutting.",
+              "fix": "Add at least 5 cm margin on all sides when cutting. For a framed piece, 8 cm is safer."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What this underpins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Count arithmetic underpins every pattern in the library. Understanding " },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "choosing-fabric", "label": "fabric count" } }],
+            "text": "fabric count"
+          },
+          { "type": "text", "text": " lets you substitute fabric freely and calculate how much cloth to buy without guesswork." }
+        ]
+      }
+    ]
+  }
+}

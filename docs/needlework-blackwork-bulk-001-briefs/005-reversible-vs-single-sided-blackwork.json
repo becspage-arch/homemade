@@ -10,15 +10,39 @@
   "sourceType": "SYNTHESISED",
   "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882). Weldon's Practical Needlework (1880s to 1900s), blackwork sampler instructions.",
   "recipeTools": [
-    { "slug": "tapestry-needle-26", "isOptional": false },
-    { "slug": "embroidery-scissors", "isOptional": false }
+    {
+      "slug": "tapestry-needle-26",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
   ],
-  "techniqueSlugs": ["holbein-stitch", "back-stitch"],
-  "criticalTechniques": ["holbein-stitch"],
-  "aliases": ["reversible blackwork", "single-sided blackwork", "back stitch blackwork", "Holbein stitch blackwork"],
+  "techniqueSlugs": [
+    "holbein-stitch",
+    "back-stitch"
+  ],
+  "criticalTechniques": [
+    "holbein-stitch"
+  ],
+  "aliases": [
+    "reversible blackwork",
+    "single-sided blackwork",
+    "back stitch blackwork",
+    "Holbein stitch blackwork"
+  ],
   "glossaryTerms": [
-    { "slug": "holbein-stitch", "term": "Holbein stitch", "definition": "Double-running stitch worked along a counted path so the thread looks identical on both sides of the fabric. The traditional outline stitch for reversible blackwork." },
-    { "slug": "back-stitch", "term": "Back stitch", "definition": "A stitch worked by bringing the needle up one stitch length ahead, then inserting it back at the end of the previous stitch. Forms a solid line; single-pass, not reversible." }
+    {
+      "slug": "holbein-stitch",
+      "term": "Holbein stitch",
+      "definition": "Double-running stitch worked along a counted path so the thread looks identical on both sides of the fabric. The traditional outline stitch for reversible blackwork."
+    },
+    {
+      "slug": "back-stitch",
+      "term": "Back stitch",
+      "definition": "A stitch worked by bringing the needle up one stitch length ahead, then inserting it back at the end of the previous stitch. Forms a solid line; single-pass, not reversible."
+    }
   ],
   "body": {
     "type": "doc",
@@ -26,98 +50,216 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The difference between reversible and single-sided blackwork comes down to one choice: " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "holbein-stitch" } }], "text": "Holbein stitch" },
-          { "type": "text", "text": " or " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-stitch" } }], "text": "back stitch" },
-          { "type": "text", "text": "." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "When reversibility matters" }]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Reversible blackwork is appropriate when both sides of the cloth are visible: on clothing edges, collars, cuffs, and detached borders where the fabric turns and shows the back. It is also the historically correct approach for embroidery on garments, where the black thread must look the same from inside and outside the collar." }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          { "type": "text", "text": "Framed work, cushions, and items with a lining do not need reversibility. Single-sided back stitch is faster and covers ground more quickly." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The Holbein stitch path for reversible work" }]
-      },
-      {
-        "type": "orderedList",
-        "content": [
           {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Plan the path of each line before stitching. A reversible fill pattern needs a continuous path that can be worked as a running stitch out and a filling running stitch back, without any section requiring a back-stitch overlap." }]
-            }]
+            "type": "text",
+            "text": "The difference between reversible and single-sided blackwork comes down to one choice: "
           },
           {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Work the first pass as an even running stitch along each line. Leave a gap between each stitch equal to the length of the stitch itself." }]
-            }]
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "holbein-stitch"
+                }
+              }
+            ],
+            "text": "Holbein stitch"
           },
           {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Return along the same path, filling every gap. Enter the same holes the first pass used; do not create new holes beside the existing ones." }]
-            }]
+            "type": "text",
+            "text": " or "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "back-stitch"
+                }
+              }
+            ],
+            "text": "back stitch"
+          },
+          {
+            "type": "text",
+            "text": "."
           }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The back stitch path for single-sided work" }]
-      },
-      {
-        "type": "orderedList",
+        "attrs": {
+          "level": 2
+        },
         "content": [
           {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Bring the needle up one stitch length ahead of the start of the line." }]
-            }]
-          },
-          {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Insert the needle at the start of the line (going backwards), and bring it up one stitch length further ahead." }]
-            }]
-          },
-          {
-            "type": "listItem",
-            "content": [{
-              "type": "paragraph",
-              "content": [{ "type": "text", "text": "Continue, always inserting one stitch back and emerging one stitch ahead. Back stitch is faster than Holbein stitch but leaves an irregular knot on the back of the cloth." }]
-            }]
+            "type": "text",
+            "text": "When reversibility matters"
           }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "If you are unsure which to use, look at the finished piece. Will anyone ever see the back? If the answer is no, back stitch is fine. If the answer is possibly, use " },
-          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "holbein-stitch", "label": "Holbein stitch" } }], "text": "Holbein stitch" },
-          { "type": "text", "text": " and the question will not matter." }
+          {
+            "type": "text",
+            "text": "Reversible blackwork makes sense when both sides of the cloth will be seen: collar edges, cuffs, and borders where the fabric folds back. It is also the traditional approach for garment embroidery, where the thread needs to look clean from both sides."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Framed work and cushions do not need a tidy back. Back stitch alone is faster to work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The Holbein stitch path for reversible work"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Plan the path of each line before stitching. A reversible fill pattern needs a continuous path that can be worked as a running stitch out and a filling running stitch back, without any section requiring a back-stitch overlap."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the first pass as an even running stitch along each line. Leave a gap between each stitch equal to the length of the stitch itself."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return along the same path, filling every gap. Enter the same holes the first pass used; do not create new holes beside the existing ones."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The back stitch path for single-sided work"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the needle up one stitch length ahead of the start of the line."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insert the needle at the start of the line (going backwards), and bring it up one stitch length further ahead."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue, always inserting one stitch back and emerging one stitch ahead. Back stitch is faster than Holbein stitch but leaves an irregular knot on the back of the cloth."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are unsure which to use, look at the finished piece. Will anyone ever see the back? If the answer is no, back stitch is fine. If the answer is possibly, use "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "techniqueLink",
+                "attrs": {
+                  "techniqueSlug": "holbein-stitch",
+                  "label": "Holbein stitch"
+                }
+              }
+            ],
+            "text": "Holbein stitch"
+          },
+          {
+            "type": "text",
+            "text": " and the question will not matter."
+          }
         ]
       }
     ]

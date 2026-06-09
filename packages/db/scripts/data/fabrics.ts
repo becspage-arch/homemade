@@ -532,6 +532,52 @@ export const FABRICS: FabricSeed[] = [
     notes:
       '40 threads per inch on linen. Fine work — miniatures, antique-sampler reproductions. One strand of floss, daylight bulb, magnifier loupe.',
   },
+  // ── Needlework foundations extras (phase_needlework_foundations_seed).
+  // Fabrics referenced by the foundations tutorial batch.
+  {
+    slug: 'hardanger-22',
+    name: 'Hardanger fabric, 22-count',
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['hardanger', 'cross-stitch'],
+    category: 'specialty',
+    notes:
+      '22 threads per inch on an even-weave cotton with a firm structure. Used for the Hardanger technique of drawn and cut work. The paired threads (Kloster blocks) sit square; the cloth holds its shape well once the threads are withdrawn.',
+  },
+  {
+    slug: 'cotton-muslin',
+    name: 'Cotton muslin',
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'flowing',
+    suitableFor: ['embroidery', 'quilting'],
+    category: 'woven-natural',
+    notes:
+      'Plain-weave fine cotton. Too loosely woven for counted-thread work but a good ground for surface embroidery and transferring designs with a light box. Use the tighter calico-weight for any work that requires pulling thread through.',
+  },
+  {
+    slug: 'indigo-cotton',
+    name: 'Indigo-dyed cotton',
+    weightCategory: 'medium',
+    fibreContent: ['cotton'],
+    drape: 'flowing',
+    suitableFor: ['sashiko'],
+    category: 'woven-natural',
+    notes:
+      'Woven cotton cloth dyed to a deep navy-blue with indigo. The traditional Sashiko ground. Pre-wash to remove excess dye before stitching; white thread on indigo is the canonical palette.',
+  },
+  {
+    slug: 'quilters-cotton',
+    name: "Quilter's cotton",
+    weightCategory: 'light',
+    fibreContent: ['cotton'],
+    drape: 'structured',
+    suitableFor: ['surface-embroidery', 'quilting'],
+    category: 'woven-natural',
+    notes:
+      'Tightly woven medium-weight cotton, 100% cotton, sold at quilting width (110 cm). A reliable ground for surface embroidery and iron-on transfers. The consistent weave makes it forgiving for beginners.',
+  },
   {
     slug: 'needlepoint-canvas-mono-13',
     name: 'Needlepoint canvas, mono 13-count',

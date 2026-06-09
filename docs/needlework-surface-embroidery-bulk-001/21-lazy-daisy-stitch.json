@@ -1,0 +1,58 @@
+{
+  "slug": "surface-embroidery-lazy-daisy-stitch",
+  "title": "Lazy daisy stitch",
+  "subtitle": "A single detached chain loop used for petals and leaves",
+  "excerpt": "Lazy daisy stitch is a single chain loop that is anchored at its tip with a small tacking stitch. Each loop forms one petal or leaf shape, and a ring of loops around a central point makes the classic daisy flower. It is one of the most versatile simple stitches in surface embroidery.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), chain stitch chapter (Project Gutenberg #20776). Mrs Beeton, Book of Needlework (1870), detached chain entry (Project Gutenberg #16746).",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "detached-decorative-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "detached-chain-loop", "term": "Detached chain loop", "definition": "A single chain loop not connected to a previous or following stitch. It is anchored at its tip with a short tacking stitch and stands alone on the fabric." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns"],
+  "aliases": ["detached chain stitch", "daisy stitch", "loop stitch"],
+  "heroPrompt": "A ring of lazy daisy stitches in pale yellow stranded cotton forming a small daisy flower on white cotton muslin, close view, soft daylight.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Lazy daisy is a single " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "detached-chain-loop" } }], "text": "detached chain loop" },
+        { "type": "text", "text": " anchored at the tip. The needle comes up, the thread is held down as a loop, the needle re-enters the same hole, emerges at the tip of the petal inside the loop, and a small tacking stitch secures the loop. Make eight loops around a central point and you have a daisy; scatter single loops and you have small leaves." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Thread", "value": "Stranded cotton, 2 strands" },
+        { "label": "Fabric", "value": "Cotton muslin or linen" },
+        { "label": "Needle", "value": "Embroidery needle size 9" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the base of the petal (point A). Hold the thread to form a loop." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle back into point A (or one thread beside it). Bring it up at the tip of the petal (point B), inside the loop." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the thread through, letting the loop settle on the fabric." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take a small tacking stitch over the tip of the loop to hold it flat. Bring the needle up at the base of the next petal." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When lazy daisy stitch goes wrong", "intro": "Three common problems.", "items": [
+        { "symptom": "The loop puckers or twists", "cause": "Thread tension too tight when forming the loop.", "fix": "Let the loop lie naturally on the fabric before taking the tacking stitch. Pull the thread through gently, not sharply." },
+        { "symptom": "The petals in a daisy are all different lengths", "cause": "Point B varies in distance from point A.", "fix": "Mark the petal tip positions lightly on the fabric before starting. All B points should be the same distance from the centre." },
+        { "symptom": "The loop pops out of the tacking stitch over time", "cause": "The tacking stitch is too small or too loose.", "fix": "Make the tacking stitch at least 2 mm long, going firmly over the loop so it cannot escape." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Lazy daisy is the unit for building simple flower motifs throughout embroidery traditions. Rings of petals, scattered leaves, and grouped flower heads all use the same stitch. The woven wheel and spider's web are more complex detached stitches built on the same idea of a loop that is woven without entering the fabric." }] }
+    ]
+  }
+}

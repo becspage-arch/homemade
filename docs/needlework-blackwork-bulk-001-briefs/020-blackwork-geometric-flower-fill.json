@@ -48,11 +48,6 @@
       "slug": "evenweave",
       "term": "Evenweave",
       "definition": "Fabric woven with the same number of threads per centimetre in both directions."
-    },
-    {
-      "slug": "fill-pattern",
-      "term": "Fill pattern",
-      "definition": "A small repeating geometric unit worked inside an outline shape in blackwork."
     }
   ],
   "body": {
@@ -276,6 +271,12 @@
                   "techniqueSlug": "holbein-stitch",
                   "label": "Holbein stitch"
                 }
+              },
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "holbein-stitch"
+                }
               }
             ],
             "text": "Holbein stitch"
@@ -340,7 +341,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Thread two strands of DMC 310. Work all horizontal and vertical runs first using Holbein stitch."
+                    "text": "Thread two strands of DMC 310. Work the row runs first, then fill the return pass."
                   }
                 ]
               }
@@ -354,7 +355,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Complete diagonal elements last, again with the Holbein double-running two-pass method."
+                    "text": "Add any diagonal lines last."
                   }
                 ]
               }

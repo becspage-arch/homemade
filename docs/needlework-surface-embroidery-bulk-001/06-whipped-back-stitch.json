@@ -1,0 +1,58 @@
+{
+  "slug": "surface-embroidery-whipped-back-stitch",
+  "title": "Whipped back stitch",
+  "subtitle": "Back stitch wrapped with a contrasting thread for a raised cord effect",
+  "excerpt": "Whipped back stitch wraps a second thread around a foundation line of back stitch without entering the fabric. The wrapping thread creates a smooth twisted cord with a different colour or texture from the base stitch.",
+  "type": "STITCH",
+  "categorySlug": "needlework",
+  "subCategorySlug": "surface-embroidery",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), composite stitches chapter (Project Gutenberg #20776). Weldon's Practical Needlework, Vol. 2 (1886), whipped stitch entry.",
+  "crochet": { "craftStitchSlugs": [], "craftTechniqueTags": ["surface-embroidery", "outline-stitches"] },
+  "recipeTools": [
+    { "slug": "embroidery-needle-9", "isOptional": false },
+    { "slug": "embroidery-hoop-6", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "whipping-thread", "term": "Whipping thread", "definition": "The second thread that spirals over the foundation stitches without entering the fabric. A blunt tapestry needle prevents splitting the foundation thread." }
+  ],
+  "techniqueSlugs": ["transferring-patterns", "mounting-fabric-in-hoop", "tying-off-cleanly"],
+  "criticalTechniques": ["transferring-patterns", "mounting-fabric-in-hoop"],
+  "aliases": ["whipped stitch", "corded back stitch"],
+  "heroPrompt": "Whipped back stitch in deep teal wrapping thread over rust back stitch on cream linen, showing the twisted cord effect, close view, natural light.",
+  "heroMediaId": null,
+  "body": {
+    "type": "doc",
+    "content": [
+      { "type": "paragraph", "content": [
+        { "type": "text", "text": "Whipped back stitch uses a " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "whipping-thread" } }], "text": "whipping thread" },
+        { "type": "text", "text": " carried on a blunt tapestry needle to spiral over the back stitch foundation. The whipping never enters the fabric; it slides under each stitch in one direction only to create a consistent twisted cord." }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      { "type": "suppliesCard", "attrs": { "items": [
+        { "label": "Foundation thread", "value": "Stranded cotton, 2 strands in colour A" },
+        { "label": "Whipping thread", "value": "Stranded cotton, 2 strands in colour B; or perle 12 for a rounder cord" },
+        { "label": "Fabric", "value": "Linen or cotton muslin" },
+        { "label": "Needles", "value": "Embroidery needle size 9 for foundation; tapestry needle size 24 for whipping" },
+        { "label": "Hoop", "value": "15 cm embroidery hoop" }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working a practice piece" }] },
+      { "type": "orderedList", "content": [
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a line of back stitch along the transfer line with colour A." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the tapestry needle with colour B. Bring it up at the start of the back stitch line, under the first stitch." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the blunt needle under each back stitch in turn, from the same side each time. Do not enter the fabric." }] }] },
+        { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue to the end of the line and fasten off under the last few whipping loops at the back." }] }] }
+      ]},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Common mistakes" }] },
+      { "type": "troubleshooter", "attrs": { "heading": "When whipped back stitch goes wrong", "intro": "Two common problems.", "items": [
+        { "symptom": "The whipping thread splits the foundation stitches", "cause": "Using a sharp needle for whipping.", "fix": "Always use a blunt tapestry needle for the whipping pass. The blunt tip slides under the foundation rather than piercing it." },
+        { "symptom": "The cord looks loose on one side", "cause": "The whipping needle is going under stitches from alternating sides.", "fix": "Pick a direction and stay with it for the whole line." }
+      ]}},
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What it underpins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Whipped back stitch is the simplest of the whipped composite stitches. Whipped chain stitch, whipped stem stitch, and whipped split stitch all use the same spiral wrapping principle with a different foundation." }] }
+    ]
+  }
+}
