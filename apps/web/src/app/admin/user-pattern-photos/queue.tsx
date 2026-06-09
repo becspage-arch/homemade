@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import Link from 'next/link'
 import { reviewUserPatternPhoto } from './actions'
 
 interface PhotoItem {
