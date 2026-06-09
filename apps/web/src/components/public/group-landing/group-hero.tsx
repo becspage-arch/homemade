@@ -11,13 +11,10 @@ interface GroupHeroProps {
 }
 
 /**
- * Group-landing hero. Full-bleed photograph with a sage scrim and
- * editorial-register text block bottom-left. Matches the homepage
- * .home-hero-feature register so the brand reads consistently from
- * the homepage through each group landing.
- *
- * No CTA on the hero itself — the section bands below are the action
- * surface, identical to how CategoryHero behaves on /[categorySlug].
+ * Group-landing hero. Full-bleed photograph with the gradient + sage scrim
+ * text band the homepage already uses. Reuses the .home-hero-* classes
+ * from home-cards.css so the brand reads identically across homepage and
+ * group landings; no bespoke hero styling here.
  */
 export function GroupHero({ heroMedia, eyebrow, title, lede }: GroupHeroProps) {
   const card = heroMedia ? mediaSrcSet(heroMedia, 'hero', ['public']) : null
@@ -25,7 +22,7 @@ export function GroupHero({ heroMedia, eyebrow, title, lede }: GroupHeroProps) {
     <section className="group-landing-hero-zone">
       <div className="home-hero-feature group-landing-hero">
         <span className="home-hero-image-wrap">
-          {card && (
+          {card ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               className="home-hero-image"
@@ -37,15 +34,16 @@ export function GroupHero({ heroMedia, eyebrow, title, lede }: GroupHeroProps) {
               fetchPriority="high"
               decoding="async"
             />
+          ) : (
+            <span className="home-hero-image procedural" aria-hidden="true" />
           )}
         </span>
-        <div className="home-hero-overlay">
-          <div className="home-hero-text">
-            <span className="home-hero-overline">{eyebrow}</span>
-            <h1 className="home-hero-title">{title}</h1>
-            <p className="home-hero-excerpt">{lede}</p>
-          </div>
-        </div>
+        <span className="home-hero-gradient" aria-hidden="true" />
+        <span className="home-hero-content-bottom">
+          <span className="home-hero-eyebrow">{eyebrow}</span>
+          <h1 className="home-hero-title">{title}</h1>
+          <p className="home-hero-excerpt">{lede}</p>
+        </span>
       </div>
     </section>
   )
