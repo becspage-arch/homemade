@@ -1,24 +1,15 @@
 /**
  * One-off seed for the Needlework taxonomy.
  *
- * Inserts (or no-ops on conflict):
- *   Category   needlework               "Needlework"
- *   SubCat     cross-stitch             "Cross-stitch"             (under needlework)
- *   SubCat     needlepoint              "Needlepoint"              (under needlework)
- *   SubCat     tatting                  "Tatting"                  (under needlework)
- *   SubCat     lacemaking               "Lacemaking"               (under needlework)
+ * Inserts (or no-ops on conflict) sub-categories under the existing
+ * `needlework` Category. The Category itself was seeded by
+ * `seed-categories.ts`. This script is idempotent and slug-keyed.
  *
- * Four sub-categories per the locked Needlework breakdown in the
- * pipeline-setup brief. The upload-tutorial script requires both the
- * Category and any referenced SubCategory to exist before Needlework
- * rows can be inserted.
- *
- * Category itself was seeded earlier by `seed-categories.ts`. This script
- * is idempotent and slug-keyed; it never re-creates the category and
- * never touches `pipelineStatus`. The READY flip lives in
- * `flip-needlework-ready.ts` and is run as a separate auditable step
- * after the rest of the pipeline scaffolding is committed and deployed
- * green.
+ * Sub-disciplines per the Needlework analysis memo (2026-06-09).
+ * Two Studio archetypes:
+ *   - Counted thread: blackwork, hardanger, needlepoint, sashiko
+ *   - Surface / freehand: surface-embroidery, goldwork, ribbon-embroidery,
+ *     stumpwork, candlewicking
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-needlework-taxonomy.ts
@@ -31,15 +22,23 @@ import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-for (const candidate of [
-  resolve(__dirname, '../../..', '.env.credentials'),
-  resolve(__dirname, '../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../..', '.env.credentials'),
-  resolve(__dirname, '../../../../../..', '.env.credentials'),
-]) {
-  if (existsSync(candidate)) {
-    loadEnv({ path: candidate })
-    break
+{
+  let dir = __dirname
+  let found = false
+  for (let depth = 0; depth < 8; depth++) {
+    const candidate = resolve(dir, '.env.credentials')
+    if (existsSync(candidate)) {
+      loadEnv({ path: candidate, override: true })
+      found = true
+      break
+    }
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  if (!found) {
+    const cwdCandidate = resolve(process.cwd(), '.env.credentials')
+    if (existsSync(cwdCandidate)) loadEnv({ path: cwdCandidate, override: true })
   }
 }
 
@@ -51,33 +50,78 @@ interface SubCatSpec {
 }
 
 const SUB_CATEGORIES: SubCatSpec[] = [
+  // ── Counted-thread disciplines (grid / chart engine) ─────────────────────
   {
-    slug: 'cross-stitch',
-    name: 'Cross-stitch',
+    slug: 'blackwork',
+    name: 'Blackwork',
     description:
-      'Counted cross-stitch on Aida, evenweave, and linen, plus stamped cross-stitch on pre-printed cloth. Includes blackwork, Assisi, and miniature work.',
+      'Counted repeating geometric patterns worked in black thread on even-weave fabric. Fill patterns tile within an outline shape at varying density. Tudor English origin, worked on 28-count evenweave with a tapestry needle.',
     order: 10,
+  },
+  {
+    slug: 'hardanger',
+    name: 'Hardanger',
+    description:
+      'Norwegian counted embroidery combining Kloster block satin stitch with drawn-thread cutwork and open-weave filling stitches. Worked on 22-count Hardanger fabric with pearl cotton in sizes 8 and 12.',
+    order: 20,
   },
   {
     slug: 'needlepoint',
     name: 'Needlepoint',
     description:
-      'Worked on canvas with wool or stranded cotton — canvaswork, bargello flame stitch, and petit point.',
-    order: 20,
-  },
-  {
-    slug: 'tatting',
-    name: 'Tatting',
-    description:
-      'Knotted lace worked with a shuttle or a tatting needle. Rings and chains build edgings, doilies, motifs.',
+      'Embroidery on open-weave canvas covering every hole with wool or silk thread. Uses tent stitch, bargello, basketweave, scotch stitch, and dozens of other canvas stitches. Charted and painted-canvas patterns both.',
     order: 30,
   },
   {
-    slug: 'lacemaking',
-    name: 'Lacemaking',
+    slug: 'sashiko',
+    name: 'Sashiko',
     description:
-      'Bobbin lace worked on a pillow with bobbins, pricked patterns, and pins; needle lace built up from a couched thread skeleton.',
+      'Japanese running-stitch embroidery in white thread on indigo cloth. Patterns are geometric, derived from traditional regional designs including asanoha, nowaki, and shippou. Originally stitched to reinforce and insulate worn fabric in northern Japan.',
     order: 40,
+  },
+  // ── Surface and freehand disciplines (vector / outline engine) ────────────
+  {
+    slug: 'surface-embroidery',
+    name: 'Surface embroidery',
+    description:
+      'Freehand decorative stitching on fabric surface following a transferred line drawing. Includes crewel work in wool thread, redwork outline embroidery, botanical studies, and general surface stitching in stranded cotton or silk.',
+    order: 50,
+  },
+  {
+    slug: 'goldwork',
+    name: 'Goldwork',
+    description:
+      'Embroidery using real or imitation gold thread couched onto the fabric surface. Thread types include purl, passing, jap gold, and check thread. Requires a slate frame. Historically associated with ecclesiastical and ceremonial work.',
+    order: 60,
+  },
+  {
+    slug: 'ribbon-embroidery',
+    name: 'Ribbon embroidery',
+    description:
+      'Embroidery using silk ribbon to create dimensional petal shapes, leaves, and floral forms that stand away from the fabric surface. Worked with a chenille needle on firm ground fabric.',
+    order: 70,
+  },
+  {
+    slug: 'stumpwork',
+    name: 'Stumpwork',
+    description:
+      'Raised English embroidery combining padding, wire frames, and needlelace to create three-dimensional elements that stand off the fabric. Requires solid surface embroidery skills as a foundation.',
+    order: 80,
+  },
+  {
+    slug: 'candlewicking',
+    name: 'Candlewicking',
+    description:
+      'American colonial embroidery tradition using heavy cotton thread on muslin ground. Colonial knots, bullion stitches, and padded satin stitch in single-colour designs. An accessible entry point to surface embroidery.',
+    order: 90,
+  },
+  // ── Foundations ────────────────────────────────────────────────────────────
+  {
+    slug: 'foundations',
+    name: 'Foundations',
+    description:
+      'Core skills that underpin all needlework disciplines: setting up a hoop or frame, starting and finishing thread, transferring a design, reading a chart, choosing fabric and needle for the discipline.',
+    order: 100,
   },
 ]
 

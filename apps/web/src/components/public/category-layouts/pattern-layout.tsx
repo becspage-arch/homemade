@@ -67,9 +67,11 @@ const SEARCH_SUGGESTIONS: Record<string, { label: string; q: string }[]> = {
     { label: 'Beginner', q: 'beginner' },
   ],
   needlework: [
-    { label: 'Lace edging', q: 'lace' },
-    { label: 'Needlepoint', q: 'needlepoint' },
-    { label: 'Tatting', q: 'tatting' },
+    { label: 'Blackwork', q: 'blackwork' },
+    { label: 'Hardanger', q: 'hardanger' },
+    { label: 'Sashiko', q: 'sashiko' },
+    { label: 'Surface embroidery', q: 'embroidery' },
+    { label: 'Beginner', q: 'beginner' },
   ],
   sewing: [
     { label: 'Aprons', q: 'apron' },
@@ -89,7 +91,9 @@ const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; s
     primary: { label: 'Open the Crochet Studio', href: '/studio/crochet' },
   },
   knitting: {},
-  needlework: {},
+  needlework: {
+    primary: { label: 'Open the Needlework Studio', href: '/studio/needlework' },
+  },
   sewing: {},
 }
 
@@ -526,7 +530,7 @@ function patternHeaderTitle(slug: string): string {
     case 'cross-stitch': return 'Stitch something beautiful.'
     case 'knitting': return 'Knit something quietly extraordinary.'
     case 'crochet': return 'Hook something heirloom.'
-    case 'needlework': return 'Slow stitching, made simple.'
+    case 'needlework': return 'Thread a needle, pick a discipline.'
     case 'sewing': return 'Sew something well-made.'
     default: return 'Make something with your hands.'
   }
@@ -541,7 +545,7 @@ function patternHeaderLede(slug: string): string {
     case 'crochet':
       return 'Row-by-row patterns with UK and US terminology, gauge logging, and per-size grading in the Crochet Studio.'
     case 'needlework':
-      return 'Patterns and reference for cross-stitch, needlepoint, tatting, and lacemaking.'
+      return 'Blackwork, hardanger, needlepoint, sashiko, surface embroidery, goldwork and more. Open any pattern in the Needlework Studio to follow it stitch by stitch.'
     case 'sewing':
       return 'Patterns from independent designers with grading, fabric requirements, and finished measurements. Studio coming.'
     default:
@@ -675,7 +679,7 @@ function emptyPatternBody(slug: string, hasFoundations: boolean): string {
       case 'sewing':
         return 'Designer sewing patterns are landing as we sign more designers. The Techniques sub-category above is the place to start in the meantime.'
       case 'needlework':
-        return 'Needlepoint, tatting and lacemaking patterns are arriving with the Needlework Studio. The reference tutorials above are live.'
+        return 'Needlework patterns are arriving across all sub-disciplines. The Needlework Studio is live — open it to follow along with any pattern already in the library.'
       case 'cross-stitch':
         return 'More patterns from independent designers are joining the library each week. Browse what is there above, or start your own from a photo.'
       default:
@@ -686,7 +690,7 @@ function emptyPatternBody(slug: string, hasFoundations: boolean): string {
     case 'sewing':
       return 'Independent sewing designers are joining as we open the Studio for sewing. Until then, the rest of the site has plenty to make.'
     case 'needlework':
-      return 'Needlepoint, tatting and lacemaking patterns are arriving with the Needlework Studio. Until then, the rest of the site has plenty to make.'
+      return 'Needlework patterns are being added across all sub-disciplines. Open the Needlework Studio to browse what is already there.'
     default:
       return 'Patterns will arrive here as the catalogue grows. Check back soon.'
   }

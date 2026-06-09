@@ -1,5 +1,54 @@
 # Needlework authoring — worker prompt template
 
+<!-- Updated 2026-06-09: new sub-discipline taxonomy, Studio data shapes,
+     sashiko cultural voice note. The sub-categories and Studio architecture
+     were established in the Needlework analysis session (phase_needlework_001). -->
+
+## Sub-categories (phase_needlework_001)
+
+These sub-categories now exist under the `needlework` Category in the DB.
+Every tutorial must reference one. The `foundations` sub-category is for
+technique tutorials that apply across all disciplines.
+
+| Slug | Discipline | Studio archetype |
+|---|---|---|
+| `blackwork` | Blackwork | Counted grid |
+| `hardanger` | Hardanger | Counted grid |
+| `needlepoint` | Needlepoint | Counted grid |
+| `sashiko` | Sashiko | Counted / route |
+| `surface-embroidery` | Surface embroidery, crewel, redwork, whitework | Surface vector |
+| `goldwork` | Goldwork | Surface vector |
+| `ribbon-embroidery` | Ribbon embroidery | Surface vector |
+| `stumpwork` | Stumpwork | Surface vector |
+| `candlewicking` | Candlewicking | Surface vector |
+| `foundations` | Cross-cutting techniques | Tutorials only |
+
+## Sashiko cultural voice note
+
+Sashiko comes from the Tohoku working tradition in northern Japan. The first
+tutorial in each sashiko pattern group acknowledges this: the function
+(reinforcement and insulation of worn cloth), the regional origin, and the
+pattern vocabulary. Individual stitch or pattern tutorials after that use
+the standard §3.4 register without repeating the preamble. The craft is
+practical and functional first — treat it that way. No "ancient wisdom",
+no "meditative practice".
+
+## Sources hierarchy for needlework
+
+Standing source set for the Sources block (§3.4 voice-spec convention):
+
+1. Therese de Dillmont, *Encyclopaedia of Needlework* (1886) — broadest
+   single-volume coverage; over 50 stitches described
+2. Caulfeild & Saward, *Dictionary of Needlework* (1882) — encyclopaedic
+   reference for Victorian technique nomenclature
+3. Mrs Beeton, *Book of Household Management* (1880) — includes needlework
+4. Weldon's Practical Needlework (1880s–1900s series) — strong on hardanger
+   and surface embroidery
+5. Nihon Vogue publishers / Takako Sudo — for sashiko where English
+   translations exist; cite the original where not
+
+---
+
 <!-- voice-spec-quick-reference-injected -->
 
 ## Voice — MANDATORY pre-read

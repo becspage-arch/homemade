@@ -1,0 +1,586 @@
+/* ── Needlework Studio layout ────────────────────────────────────────────── */
+
+.needlework-studio-surface {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--colour-bg);
+}
+
+/* Empty state */
+.needlework-studio-empty-surface {
+  align-items: center;
+}
+
+.needlework-studio-empty {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.needlework-studio-empty-hero {
+  margin-bottom: 2.5rem;
+}
+
+.needlework-studio-empty-overline {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--colour-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.needlework-studio-empty-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--colour-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.needlework-studio-empty-lede {
+  font-size: 1rem;
+  color: var(--colour-text-muted);
+  margin: 0;
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+/* Discipline selector grid */
+.needlework-studio-discipline-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--colour-text-muted);
+  margin: 0 0 1rem;
+}
+
+.needlework-studio-empty-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 540px) {
+  .needlework-studio-empty-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.needlework-studio-empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem 1.125rem;
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.needlework-studio-empty-card:hover {
+  border-color: var(--colour-text-muted);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.needlework-studio-empty-card.primary {
+  border-color: var(--colour-sage-600, #5b7c5b);
+  background: var(--colour-sage-50, #f4f7f4);
+}
+
+.needlework-studio-empty-card.primary:hover {
+  border-color: var(--colour-sage-700, #4a6b4a);
+  background: var(--colour-sage-100, #e8ede8);
+}
+
+.needlework-studio-empty-card-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--colour-text);
+  line-height: 1.3;
+}
+
+.needlework-studio-empty-card-sub {
+  font-size: 0.8125rem;
+  color: var(--colour-text-muted);
+  line-height: 1.45;
+}
+
+.needlework-studio-empty-card-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  background: var(--colour-surface-raised, #f0ede8);
+  color: var(--colour-text-muted);
+  margin-top: 0.125rem;
+}
+
+.needlework-studio-empty-card-tag.counted {
+  background: var(--colour-sage-100, #e8ede8);
+  color: var(--colour-sage-700, #4a6b4a);
+}
+
+.needlework-studio-empty-card-tag.surface {
+  background: var(--colour-warm-100, #f5f0e8);
+  color: var(--colour-warm-700, #7a6040);
+}
+
+/* Library browse CTA */
+.needlework-studio-library-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.125rem;
+  background: transparent;
+  border: 1px solid var(--colour-border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 120ms ease;
+  width: 100%;
+}
+
+.needlework-studio-library-cta:hover {
+  border-color: var(--colour-text-muted);
+}
+
+.needlework-studio-library-cta-body {
+  flex: 1;
+}
+
+.needlework-studio-library-cta-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--colour-text);
+}
+
+.needlework-studio-library-cta-sub {
+  font-size: 0.8125rem;
+  color: var(--colour-text-muted);
+  margin-top: 0.125rem;
+}
+
+/* My projects grid */
+.needlework-studio-my-projects {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.needlework-studio-my-projects-heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--colour-text-muted);
+  margin: 0 0 1rem;
+}
+
+.needlework-studio-my-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.needlework-studio-project-card {
+  padding: 0.875rem;
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 120ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.needlework-studio-project-card:hover {
+  border-color: var(--colour-text-muted);
+}
+
+.needlework-studio-project-card-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--colour-text);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.needlework-studio-project-card-meta {
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
+}
+
+/* ── Active project surface ──────────────────────────────────────────────── */
+
+.needlework-studio-active-surface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────── */
+
+.needlework-studio-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--colour-border);
+  background: var(--colour-bg);
+  min-height: 48px;
+  flex-shrink: 0;
+}
+
+.needlework-studio-toolbar-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--colour-text);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.needlework-studio-toolbar-discipline {
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--colour-border);
+  border-radius: 4px;
+}
+
+.needlework-studio-toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--colour-text-muted);
+  transition: color 100ms, background 100ms;
+}
+
+.needlework-studio-toolbar-btn:hover {
+  color: var(--colour-text);
+  background: var(--colour-surface);
+  border-color: var(--colour-border);
+}
+
+.needlework-studio-toolbar-btn.active {
+  color: var(--colour-text);
+  background: var(--colour-surface);
+  border-color: var(--colour-border);
+}
+
+/* ── Grid / counted view ─────────────────────────────────────────────────── */
+
+.needlework-grid-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.needlework-grid-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--colour-border);
+  background: var(--colour-surface);
+  font-size: 0.8125rem;
+  color: var(--colour-text-muted);
+  flex-shrink: 0;
+}
+
+.needlework-grid-info-bar strong {
+  color: var(--colour-text);
+  font-weight: 600;
+}
+
+/* Progress bar */
+.needlework-progress-bar-track {
+  height: 3px;
+  background: var(--colour-border);
+  border-radius: 2px;
+  flex: 1;
+  max-width: 120px;
+  overflow: hidden;
+}
+
+.needlework-progress-bar-fill {
+  height: 100%;
+  background: var(--colour-sage-600, #5b7c5b);
+  border-radius: 2px;
+  transition: width 300ms ease;
+}
+
+/* Hardanger cutwork info */
+.needlework-hardanger-notice {
+  margin: 0.75rem 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--colour-warm-50, #fdf9f4);
+  border: 1px solid var(--colour-warm-200, #e8d8c0);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  color: var(--colour-text-muted);
+  line-height: 1.5;
+}
+
+.needlework-hardanger-notice strong {
+  color: var(--colour-text);
+}
+
+/* ── Surface view ────────────────────────────────────────────────────────── */
+
+.needlework-surface-view {
+  flex: 1;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+.needlework-surface-canvas-area {
+  flex: 1;
+  overflow: auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.needlework-surface-svg-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.needlework-surface-svg-wrapper svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.needlework-surface-region-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Annotations panel */
+.needlework-surface-annotations {
+  width: 260px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--colour-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+@media (max-width: 700px) {
+  .needlework-surface-view {
+    flex-direction: column;
+  }
+  .needlework-surface-annotations {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--colour-border);
+    max-height: 240px;
+  }
+}
+
+.needlework-surface-annotations-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--colour-text-muted);
+  padding: 0.875rem 1rem 0.5rem;
+  position: sticky;
+  top: 0;
+  background: var(--colour-bg);
+  border-bottom: 1px solid var(--colour-border);
+}
+
+.needlework-surface-annotation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.needlework-surface-annotation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--colour-border);
+  cursor: pointer;
+  transition: background 100ms;
+}
+
+.needlework-surface-annotation-item:hover {
+  background: var(--colour-surface);
+}
+
+.needlework-surface-annotation-item.completed {
+  opacity: 0.5;
+}
+
+.needlework-surface-annotation-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.needlework-surface-annotation-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.needlework-surface-annotation-stitch {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--colour-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.needlework-surface-annotation-thread {
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
+  margin-top: 0.0625rem;
+}
+
+.needlework-surface-annotation-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--colour-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 100ms, background 100ms;
+}
+
+.needlework-surface-annotation-item.completed .needlework-surface-annotation-check {
+  background: var(--colour-sage-600, #5b7c5b);
+  border-color: var(--colour-sage-600, #5b7c5b);
+}
+
+/* Upload / empty surface state */
+.needlework-surface-upload-prompt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--colour-text-muted);
+  gap: 1rem;
+}
+
+.needlework-surface-upload-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--colour-text);
+}
+
+.needlework-surface-upload-body {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 36ch;
+}
+
+/* Notes panel */
+.needlework-notes-panel {
+  border-top: 1px solid var(--colour-border);
+  padding: 1rem;
+  background: var(--colour-bg);
+}
+
+.needlework-notes-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--colour-text);
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: 6px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.needlework-notes-textarea:focus {
+  outline: none;
+  border-color: var(--colour-text-muted);
+}
+
+/* Cultural attribution notice */
+.needlework-cultural-notice {
+  margin: 0 1rem 0.75rem;
+  padding: 0.625rem 0.875rem;
+  background: var(--colour-sage-50, #f4f7f4);
+  border: 1px solid var(--colour-sage-200, #c8d8c8);
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  color: var(--colour-text-muted);
+  line-height: 1.5;
+}
+
+/* Phase tracker (goldwork / stumpwork) */
+.needlework-phase-tracker {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--colour-border);
+  background: var(--colour-surface);
+  flex-shrink: 0;
+}
+
+.needlework-phase-step {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--colour-text-muted);
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 100ms, border-color 100ms;
+}
+
+.needlework-phase-step.active {
+  color: var(--colour-text);
+  border-bottom-color: var(--colour-sage-600, #5b7c5b);
+}
+
+.needlework-phase-step.completed {
+  color: var(--colour-sage-600, #5b7c5b);
+}
