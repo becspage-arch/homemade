@@ -1,0 +1,77 @@
+{
+  "slug": "double-heddle-rigid-heddle-weaving",
+  "title": "Double-heddle weaving on a rigid heddle loom",
+  "subtitle": "Adding a second heddle for finer setts and pick-up patterns",
+  "excerpt": "A second rigid heddle slotted onto the same loom doubles the number of working sheds and allows a finer sett than a single heddle can achieve. It is the standard way to weave double-weave, finer sett, and some lace and pick-up patterns on a rigid heddle loom.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from standard rigid heddle weaving practice. Double-heddle setup for rigid heddle looms is widely taught in UK guild workshops and detailed in modern rigid heddle weaving publications.",
+  "recipeTools": [
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "weaving-pick-up-stick", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "sett", "term": "Sett", "definition": "The number of warp threads per centimetre (or per inch). A finer sett packs more threads into the same width and produces a denser cloth." },
+    { "slug": "heddle", "term": "Heddle", "definition": "The slotted rigid frame on a rigid heddle loom through which the warp threads pass. Lifting or pressing the heddle opens the shed." },
+    { "slug": "shed", "term": "Shed", "definition": "The triangular opening between groups of raised and lowered warp threads through which the shuttle passes." },
+    { "slug": "warp", "term": "Warp", "definition": "The lengthwise threads on a loom, set up under tension before weaving begins." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["double heddle rigid heddle", "two heddle weaving", "rigid heddle double heddle setup"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A second " },
+          { "type": "text", "text": "heddle", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heddle" } }] },
+          { "type": "text", "text": " on a rigid heddle loom allows a finer " },
+          { "type": "text", "text": "sett", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sett" } }] },
+          { "type": "text", "text": " and more pattern options than a single heddle. The " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": " threads pass through both heddles in sequence. The four " },
+          { "type": "text", "text": "shed", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shed" } }] },
+          { "type": "text", "text": "s that result (front up, front down, back up, back down) match the sheds on a basic four-shaft loom." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Rigid heddle loom with dual heddle slot (check your loom model supports two heddles)", "qty": "1" },
+            { "name": "Two heddles at the desired combined sett", "qty": "1 pair" },
+            { "name": "Warp yarn at the sett the double heddle will produce", "qty": "as calculated" },
+            { "name": "Boat shuttle and weft yarn", "qty": "as required" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Check loom compatibility" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Not all rigid heddle looms accept two heddles simultaneously. Check that your loom's heddle block has two slots, or that a second heddle block can be fitted. Most modern looms designed for the double-heddle setup have this provision; older looms may not. The two heddles must sit in parallel slots close enough that a single warp thread can pass through a slot or hole in each without crossing other threads." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Threading the two heddles" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Wind the warp as usual. Thread alternating threads through the front heddle and the back heddle: thread 1 goes through the front heddle, thread 2 through the back heddle, thread 3 through the front heddle, and so on. This alternating threading is the standard 1/1 setup. For double weave or other structures, the threading sequence changes; refer to a double-heddle draft chart for those patterns." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "The four sheds" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "With both heddles in neutral, four sheds are available: front heddle up (raises odd threads), front heddle down (lowers odd threads), back heddle up (raises even threads), back heddle down (lowers even threads). For plain weave, alternate front up and back up. For twill and other structures, combine positions: front up with back in neutral; back down with front in neutral; and so on. A pick-up stick between the heddles can add a fifth shed for simple lace patterns." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Tension and beat" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Two heddles introduce more friction at the heddle eyes than a single heddle, which increases the tension required for a clear shed. If the shed is not fully open, try tensioning the warp slightly more than usual. Beat with the shuttle and then press the heddle forward; the dual-heddle friction means the beat sometimes needs a firm press from the heddle block rather than the shuttle alone." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The shed does not open fully with both heddles in position", "cause": "The threads passing through the second heddle are catching on adjacent threads in the first heddle because the heddles are not perfectly parallel", "fix": "Check that both heddles are level and parallel. Adjust the heddle blocks so that the heddle slots are exactly aligned front to back. Some looms require a small spacer block between the heddles to prevent them touching." },
+            { "problem": "Threads break frequently at the heddle eyes", "cause": "The double-heddle friction is too high for the warp yarn, particularly if using a thin or weakly-twisted yarn", "fix": "Use a stronger warp yarn or reduce the tension slightly. Wax the warp threads where they pass through the heddle eyes to reduce friction." }
+          ]
+        }
+      }
+    ]
+  }
+}

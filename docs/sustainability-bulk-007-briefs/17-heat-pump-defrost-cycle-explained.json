@@ -1,0 +1,254 @@
+{
+  "slug": "heat-pump-defrost-cycle-explained",
+  "title": "Understanding the heat pump defrost cycle",
+  "subtitle": "Why the outdoor unit frosts up, what the system does about it, and when to be concerned",
+  "excerpt": "When outdoor air is between -5°C and +5°C and humidity is high, the heat pump's outdoor coil drops below 0°C and frost builds up on the fins. The unit detects this and runs a defrost cycle, reversing the refrigerant flow briefly to melt the ice. This is normal and expected. Knowing what a defrost looks like, how often it should happen, and what abnormal defrosting means prevents unnecessary service calls and explains the occasional cold blast from the unit.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mitsubishi Electric Ecodan installer and user guide 2024. Vaillant arotherm plus technical data sheet. Heat Pump Association UK owner guidance 2024.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "defrost-cycle",
+      "term": "Defrost cycle",
+      "definition": "A period during which the heat pump reverses its refrigerant flow to heat the outdoor coil and melt accumulated ice. Typically lasts 3–8 minutes. During defrost, the unit draws heat from the house rather than delivering it."
+    },
+    {
+      "slug": "refrigerant-reversal",
+      "term": "Refrigerant reversal",
+      "definition": "In a heat pump, the refrigerant circuit can be reversed so heat is extracted from the indoor side and discharged to the outdoor coil. This is used for air conditioning in summer and for defrosting in winter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The outdoor unit of an air source heat pump extracts heat from outside air by drawing it over a refrigerant-filled coil. When the coil surface temperature falls below 0°C, which it does whenever outdoor temperature is below about +5°C and humidity is above 80%, moisture in the air freezes on the fins. A thin layer of frost increases thermal resistance and reduces airflow, cutting efficiency. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "defrost-cycle"
+                }
+              }
+            ],
+            "text": "defrost cycle"
+          },
+          {
+            "type": "text",
+            "text": " removes this frost before it builds up to the point where performance degrades significantly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What happens during a defrost"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The controller detects that defrost is needed. It uses either a timer (every 30 to 90 minutes in frosting conditions) or a temperature sensor on the coil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The outdoor fan stops. The system reverses the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "refrigerant-reversal"
+                        }
+                      }
+                    ],
+                    "text": "refrigerant flow"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": hot refrigerant from the compressor is directed to the outdoor coil rather than the indoor unit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The outdoor coil heats up to above 0°C. The ice melts. Water drips from the unit, this is normal and explains why there is a condensate tray and drain beneath the outdoor unit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The controller detects the coil is clear (by temperature or time), reverses back to normal heating mode, and restarts the outdoor fan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you observe inside"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a system with a buffer cylinder, a defrost cycle is nearly invisible indoors. The buffer holds a small reserve of hot water. The heating circuit keeps running from the buffer while the heat pump defrosts, and room temperatures barely move. Without a buffer, or with a very small one, you may notice the backup element cutting in (if fitted), the room temperature dropping 0.5 to 1°C, and a steam cloud from the outdoor unit as the frost melts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Normal versus abnormal defrosting"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Normal: defrost occurs every 30 to 90 minutes during frost (typically 0°C to +4°C). Each cycle lasts 3 to 8 minutes. The unit resumes heating promptly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Concern: defrost cycles more than once every 20 minutes, or any cycle lasting over 15 minutes, point to a problem. Possible causes: the unit is recirculating its own cold exhaust air, the condensate drain is blocked causing ice build-up at the base, or there is a refrigerant pressure fault."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Action: check the condensate drain is clear and draining away from the unit. Confirm at least 300 mm clearance on all sides. Make sure the unit is not in a corner, alcove, or against a wall that bounces cold wet air back to the inlet."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The efficiency cost of defrosting"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A unit in continuous frost conditions (0°C outdoor temperature, 90% humidity) may defrost every 45 minutes, losing 8 minutes out of every 45 to defrost. That is roughly 18% downtime on the heating output. The heat drawn from the house during defrost further reduces the effective seasonal COP. In UK climate modelling, the defrost penalty is typically included in the published SCOP figure, so the published number is the real seasonal average, not an optimistic number before accounting for defrost."
+          }
+        ]
+      }
+    ]
+  }
+}

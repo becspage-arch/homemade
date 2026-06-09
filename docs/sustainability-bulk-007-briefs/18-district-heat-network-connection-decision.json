@@ -1,0 +1,236 @@
+{
+  "slug": "district-heat-network-connection-decision",
+  "title": "Should you connect to a district heat network?",
+  "subtitle": "Evaluating a heat network connection offer for your home",
+  "excerpt": "District heat networks pipe heat from a central source, a combined heat and power plant, a large heat pump, or waste industrial heat, to homes and businesses. They are expanding in many UK cities, and some households receive an offer or requirement to connect. The economics, running costs, and contractual terms vary widely. This tutorial explains what to check before signing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Networks Regulation: Heat Network (Metering and Billing) Regulations 2020. OFGEM District Heat Networks Consumer Protection from 2024. Citizen's Advice heat network guidance 2024. CIBSE Heat Networks Code of Practice.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "heat-interface-unit",
+      "term": "Heat interface unit",
+      "definition": "The equipment inside a connected property that takes hot water from the district network and transfers heat to the home's heating and hot water system. Similar in function to a boiler; typically wall-mounted and maintained by the network operator."
+    },
+    {
+      "slug": "standing-charge",
+      "term": "Standing charge",
+      "definition": "A fixed daily or annual charge for being connected to a district heat network, regardless of how much heat is used. Often expressed in p/day or £/year."
+    },
+    {
+      "slug": "heat-supply-agreement",
+      "term": "Heat supply agreement",
+      "definition": "The contract between a heat network operator and a consumer. Unlike an electricity or gas tariff, heat network contracts are typically long-term (5–10 years) with limited price-regulation. Ofgem becomes the regulator of heat networks in 2024 under the Energy Act 2023."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A district heat network delivers hot water to your home from a central plant via buried insulated pipes. Inside your home, a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-interface-unit"
+                }
+              }
+            ],
+            "text": "heat interface unit"
+          },
+          {
+            "type": "text",
+            "text": " (HIU) replaces the boiler. You get space heating and hot water in the same way as before, but the heat source is communal. This can be a good deal, or a restrictive long-term contract, depending on the network's heat source, the pricing structure, and the terms of the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "heat-supply-agreement"
+                }
+              }
+            ],
+            "text": "heat supply agreement"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to ask about the heat source"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The environmental case for a heat network depends entirely on its heat source. A network powered by a gas-fired combined heat and power plant typically produces heat at around 200 to 250 g CO₂e per kWh, similar to a modern condensing gas boiler. A network powered by large-scale heat pumps fed by the grid or waste industrial heat can deliver heat at 40 to 80 g CO₂e per kWh, 60 to 80% lower carbon than individual boilers. Ask the operator:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "What is the current primary heat source and when is it scheduled to transition to low-carbon?"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "What is the current heat cost in p/kWh, and what is the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "standing-charge"
+                        }
+                      }
+                    ],
+                    "text": "standing charge"
+                  },
+                  {
+                    "type": "text",
+                    "text": "? Compare this to the equivalent gas cost (gas p/kWh × boiler efficiency)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "What is the contract length and what price-escalation clause applies?"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "text": "standing charge problem"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat networks usually include a standing charge for HIU maintenance, pipe upkeep, and network costs. This charge varies by network and can push the effective heat cost well above a gas boiler for a well-insulated home with low consumption. For a poorly insulated home with high consumption, the unit rate matters more than the standing charge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Consumer protections from 2024"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Under the Energy Act 2023, Ofgem regulates heat networks from 2024, with rules on pricing transparency, billing, and service standards. If you get an offer to connect, the operator must give you a pricing summary, contract terms, and the complaints process. You can switch heat network suppliers if more than one serves your area, and can challenge billing disputes through Ofgem."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When connection is not optional"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In some new builds, planning or the lease requires heat network connection. The resident cannot fit their own boiler or heat pump. If you are in this position with concerns about pricing or contract terms, contact Ofgem or Citizens Advice. The Consumer Advocacy Forum for Heat Networks (CAFoH) also takes individual complaints."
+          }
+        ]
+      }
+    ]
+  }
+}

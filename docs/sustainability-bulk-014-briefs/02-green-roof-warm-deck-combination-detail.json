@@ -1,0 +1,144 @@
+{
+  "slug": "green-roof-warm-deck-combination-detail",
+  "title": "Combining a green roof with warm-deck insulation",
+  "subtitle": "How the insulation, root barrier, and planting layers work together on a flat or shallow-pitched roof",
+  "excerpt": "A sedum or wildflower green roof works best over a properly insulated warm deck. The growing medium adds thermal mass and the plants slow storm runoff, but the root barrier and drainage layer must sit in the right order or the insulation gets waterlogged.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "GRO Green Roof Code (2011, updated 2014) — UK industry standard for extensive and intensive green roofs; BS 6229 flat roof code; NHBC guidance on warm deck construction; BRE IP 11/88 flat roof performance studies.",
+  "approximateCostGbp": 1200,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "warm-deck",
+      "term": "Warm deck",
+      "definition": "A flat roof construction where insulation sits above the structural deck and below the waterproofing membrane, keeping the deck within the warm envelope of the building."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how well a building element conducts heat. Measured in W/m²·K — lower is better."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane that restricts moisture vapour movement through a building element, preventing interstitial condensation."
+    },
+    {
+      "slug": "root-barrier",
+      "term": "Root barrier",
+      "definition": "A membrane placed over flat-roof waterproofing to prevent plant roots penetrating and damaging the waterproof layer."
+    }
+  ],
+  "techniqueSlugs": ["flat-roof-insulation-options", "pir-board-flat-roof-warm-deck", "flat-roof-cold-deck-remediation"],
+  "criticalTechniques": ["flat-roof-insulation-options"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A green roof planted over a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warm-deck" } }], "text": "warm deck" },
+          { "type": "text", "text": " is the standard combination for a flat garage, extension, or porch roof. The insulation goes on top of the structural deck; the waterproofing membrane goes on top of the insulation; the root barrier and growing layers stack above that. Done in the right order the result sheds water well, insulates reliably, and carries lightweight sedum planting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The layer stack, from deck to sky" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Structural deck (timber or concrete). Check the deck for deflection: a flat roof needs no more than L/200 deflection under load for the waterproofing layer to remain intact." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Vapour control layer (" },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }], "text": "VCL" },
+            { "type": "text", "text": "). A 500-gauge polythene sheet or bituminous felt VCL immediately above the deck. Laps 150 mm minimum at joints; taped at penetrations." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "PIR insulation board. Achieve the target " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }], "text": "U-value" },
+            { "type": "text", "text": " of 0.18 W/m²·K (Building Regs Part L standard for existing flat roofs) — approximately 100 mm of PIR at lambda 0.022. Two offset layers of 50 mm are better than one 100 mm layer because the offset eliminates through-joints at board edges." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Single-ply waterproofing membrane or hot-melt felt. The waterproof layer carries the most risk; for a green roof this layer must be mechanically tested and rated for root resistance or an additional root barrier is mandatory." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Root barrier membrane. A proprietary " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "root-barrier" } }], "text": "root barrier" },
+            { "type": "text", "text": " if the waterproof layer is not itself root-resistant. Laps 300 mm at joints; sealed at upstands." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drainage layer. 20–50 mm of reservoir cups or porous gravel. Retains some moisture for the plants in dry weather; allows excess to drain to the roof outlet." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Filter fleece. A geotextile layer between drainage and growing medium that stops fine particles migrating down and blocking the drainage layer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Growing medium. For an extensive sedum roof: 75–100 mm of lightweight crushed brick, perlite, and compost mix. Total loaded weight typically 80–130 kg/m². Check the roof structural loading before ordering." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the insulation gains from the green roof" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A green roof adds roughly 0.1–0.2 W/m²·K to the effective thermal performance of a flat roof compared to a bare membrane, because the growing medium has some insulating value and the plants shade the membrane in summer. The more significant benefit in the UK is storm-water attenuation: an extensive sedum roof retains 50–90% of light rainfall and delays peak runoff by 30–120 minutes, reducing the load on gutters and drains." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "New waterproofing on an existing flat roof is notifiable work under Building Regs if the roof area exceeds 25 m² and the thermal performance is being materially improved. A roofing contractor carrying the work notifies through a Competent Person scheme; if you are managing the work yourself, notify Building Control before starting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Insulation laid in two offset layers with no through-joints. Waterproof membrane fully bonded with upstands 150 mm minimum. Drainage layer draining freely to the outlet — no ponding visible 48 hours after heavy rain. Sedum establishing evenly across the medium." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done badly looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Insulation boards butting together in a single layer with joints running through the full thickness. VCL missing or laid above the insulation instead of below. Root barrier laps untaped, allowing roots to eventually find the waterproofing. Growing medium piled against the upstand without a standoff gap, holding moisture against the membrane." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Water ponding on roof surface weeks after rain", "cause": "Drainage layer blocked or outlet partially blocked by fine particles", "fix": "Lift a section of growing medium near the outlet and check that the filter fleece is not clogged. Replace the fleece and flush the outlet." },
+            { "symptom": "Sedum browning off in patches", "cause": "Growing medium too shallow or drainage layer retaining too little moisture", "fix": "Top up the growing medium to 100 mm where shallow; consider a reservoir cup drainage layer if the existing layer is straight gravel." },
+            { "symptom": "Ceiling damp in the room below", "cause": "Waterproof layer or upstand detail has failed", "fix": "Requires a specialist flat-roof survey; do not add more growing medium over a leaking membrane." }
+          ]
+        }
+      }
+    ]
+  }
+}

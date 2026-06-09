@@ -1,0 +1,231 @@
+{
+  "slug": "understanding-thermal-mass-in-retrofits",
+  "title": "Understanding thermal mass in retrofit insulation decisions",
+  "subtitle": "How the heat storage capacity of walls interacts with insulation choices",
+  "excerpt": "A thick masonry wall stores heat during the day and releases it slowly overnight, evening out temperature swings. Where to put the insulation, inside, outside, or not at all, changes how that thermal mass behaves in the home. Understanding the interaction stops you making choices that increase heating bills rather than cutting them.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pat Borer and Cindy Harris, The Whole House Book (2005), chapter on thermal mass. CIBSE Guide A Table 3.4 thermal mass parameters. Building Research Establishment (BRE) BR 443 for U-value calculations with thermal mass correction.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": true
+  },
+  "glossaryTerms": [
+    {
+      "slug": "thermal-mass",
+      "term": "Thermal mass",
+      "definition": "The capacity of a material to absorb, store, and release heat. High thermal mass (concrete, brick, stone) slows temperature swings. Low thermal mass (timber frame, plasterboard) responds quickly to heating and cooling."
+    },
+    {
+      "slug": "decrement-delay",
+      "term": "Decrement delay",
+      "definition": "The time it takes for a temperature change on one face of a wall to be felt on the other face. A 225 mm brick wall has a decrement delay of around 8–10 hours. A 300 mm stone wall can be 14–16 hours."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 225 mm solid brick wall has a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-mass"
+                }
+              }
+            ],
+            "text": "thermal mass"
+          },
+          {
+            "type": "text",
+            "text": " of around 200 kJ/m2K. On a winter day in Bristol with intermittent sun, the wall absorbs heat during the warmer part of the day and releases it slowly through the evening, reducing the heating load during the release period by perhaps 5 to 10 percent. This buffering effect is real but modest in a UK climate; it matters more in climates with large diurnal temperature swings."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where you put the insulation changes the story"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thermal mass only moderates temperature if the wall surface is in contact with the room air. The surface must absorb heat from warm indoor air and release it back later. Where the insulation goes determines whether the masonry is part of the indoor environment or cut off from it:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "External insulation (EWI): the masonry is inside the insulation layer. It is now part of the thermally conditioned space, absorbs heat from the room, and buffers temperature swings. This is the optimal position for thermal mass. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "decrement-delay"
+                        }
+                      }
+                    ],
+                    "text": "decrement delay"
+                  },
+                  {
+                    "type": "text",
+                    "text": " now protects against outdoor temperature peaks."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Internal insulation (dry-lining): the insulation sits between the room and the masonry. The plasterboard surface has almost no thermal mass; the masonry is now outside the insulation layer and is cold. The room responds quickly to heating inputs but loses the overnight buffering the brick previously provided. This can increase peak heating demand even while reducing average heat loss."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cavity fill (cavity wall): insulation goes into the cavity, masonry on both leaves remains in place. The inner leaf is still in contact with the room, so most of the thermal mass benefit is preserved. This is why cavity fill is the preferred retrofit for most post-1920 houses."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example: Victorian solid-wall terrace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 1890s 225 mm solid brick terrace in Leeds. Current wall U-value: 2.1 W/m2K. Two options are being compared:"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Internal dry-lining with 70 mm PIR: U-value improves to 0.26 W/m2K (excellent). The masonry is now outside the insulation. The room heats faster from a cold start but loses the evening temperature buffer. Suitable for a house occupied intermittently, where fast heat-up matters more than stored heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "External EWI with 90 mm EPS: U-value improves to 0.27 W/m2K (similar). The masonry is now inside the insulation layer. The room takes longer to heat up from cold but holds heat overnight more effectively. Better for a continuously occupied home."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Both routes reduce annual heat loss by a similar amount. The thermal mass difference affects comfort and peak heating demand, but not the annual fuel bill by much. The real decision factors are: planning constraints (EWI changes the appearance; dry-lining does not), disruption (dry-lining requires emptying every room), and cost (EWI is typically 30 to 50% more expensive but lasts longer)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When thermal mass is the deciding factor"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thermal mass matters most in two cases: a building with large south-facing glass that captures lots of solar gain, and a climate with a daily temperature swing above 15°C. In UK domestic retrofit, thermal mass rarely decides the choice between internal and external insulation. U-value, cost, planning, and disruption do. Understand what thermal mass does; do not let it override the practical logic."
+          }
+        ]
+      }
+    ]
+  }
+}

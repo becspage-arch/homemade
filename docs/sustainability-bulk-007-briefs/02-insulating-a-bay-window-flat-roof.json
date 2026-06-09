@@ -1,0 +1,444 @@
+{
+  "slug": "insulating-a-bay-window-flat-roof",
+  "title": "Insulating a bay window flat roof from below",
+  "subtitle": "Adding rigid board to the underside of a bay window ceiling",
+  "excerpt": "The flat roof of a projecting bay window is one of the most common cold patches in Victorian and Edwardian terraces. Without insulation, the ceiling surface drops to near-outdoor temperature on cold nights and the room below loses heat steadily through it. A 75 mm PIR board fixed to the joists from inside, with a new plasterboard and skim finish, brings the U-value to 0.25 W/m2K in a weekend.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "gov.uk Building Regulations Part L1B 2022 for flat roof refurbishment U-value target of 0.25 W/m2K. CIBSE Guide A thermal performance data. NHBC Technical Standards for inverted and warm flat roofs.",
+  "approximateCostGbp": 320,
+  "paybackYears": 7,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "tape-measure-5m",
+      "isOptional": false
+    },
+    {
+      "slug": "utility-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "drill-driver",
+      "isOptional": false
+    },
+    {
+      "slug": "spirit-level-1200mm",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pir-board",
+      "term": "PIR board",
+      "definition": "Polyisocyanurate rigid foam insulation board. High lambda value of 0.022–0.023 W/mK means less depth is needed for the same U-value compared with mineral wool. Typically foil-faced on both sides."
+    },
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how fast heat passes through a building element. Expressed in W/m2K. Lower is better: a well-insulated flat roof might be 0.25; an uninsulated one is around 1.5."
+    },
+    {
+      "slug": "cold-roof",
+      "term": "Cold roof",
+      "definition": "A flat roof construction where the insulation sits at ceiling level and a ventilated air gap separates it from the roof membrane above. Condensation risk is managed by cross-ventilating the void between insulation and deck."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bay windows on pre-1919 terraces are almost always uninsulated at the flat roof level. The joist void above the ceiling is open to the cold, and the ceiling boards act as the only barrier between the warm room and near-outdoor air. The surface temperature of that ceiling on a 0°C night can drop to 5°C, driving heat loss at roughly 1.5 W/m2K through the uninsulated span. A typical 4 m2 bay loses around 400 kWh per winter through that one surface. Adding 75 mm of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pir-board"
+                }
+              }
+            ],
+            "text": "PIR board"
+          },
+          {
+            "type": "text",
+            "text": " brings the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "u-value"
+                }
+              }
+            ],
+            "text": "U-value"
+          },
+          {
+            "type": "text",
+            "text": " to 0.25 W/m2K."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Cold roof or warm roof?"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "A bay window flat roof is typically a "
+              },
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "cold-roof"
+                    }
+                  }
+                ],
+                "text": "cold roof"
+              },
+              {
+                "type": "text",
+                "text": ": insulation at ceiling level, ventilated void above. This tutorial covers the cold-roof approach from below. If the roof is being re-felted at the same time, a warm-roof approach (insulation on top of the deck) is simpler and removes the condensation risk entirely, see the flat-roof insulation options tutorial for that decision."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Materials for a typical 4 m2 bay:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "75 mm PIR insulation boards (foil-faced), 5 m2 to allow for cutting waste"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "12.5 mm plasterboard, 5 m2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "PIR board adhesive or low-expansion foam, 1 canister"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Galvanised drywall screws 75 mm, 50 No."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Foil tape, 1 roll (for sealing PIR board joints)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Joint compound and scrim tape for plasterboard joints, 2.5 kg compound"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparation checklist"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Before you cut or drill"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Eye protection for every cut. Do not wear gloves when operating a saw or drill. Check for cables with a cable detector before fixing into any ceiling. A confirmed clear zone is required before every screw location."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strip the existing ceiling. Remove the plasterboard or lath-and-plaster ceiling of the bay. Wear a dust mask rated FFP2 minimum, the lath-and-plaster generation of bays often has loose asbestos-containing materials (AIB) in the decorative coving. If you see chalky boards or textured coving, stop and test before disturbing further."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Inspect the joist void. Confirm the void is ventilated: there should be a clear path for air from the eaves at the front of the bay to the house wall at the back. If the void is sealed, open ventilation slots (25 mm × 25 mm per joist bay minimum) before proceeding."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure joist spacing. Mark all joist positions on the wall and on the front barge board. Measure the clear span in each bay, this is the cutting dimension for the PIR board."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut the PIR boards to fit between the joists. Use a sharp utility knife and a straight-edge. Cut slightly undersized (3 to 5 mm per side) so the board can be pushed up tight without needing to be compressed. Clean cuts do not need rasping."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fix the boards. Apply a continuous bead of PIR adhesive around the perimeter of the board and two diagonal beads across the face. Press firmly up against the underside of the roof deck and hold with a temporary props or braces while the adhesive has set (typically 30 minutes). Drive two 75 mm screws through each board into the joists as additional fixings once the adhesive has tacked."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape all board joints with foil tape. Run the tape over every joint between boards to close the air leakage path. Press firmly and smooth to full adhesion."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fix the new plasterboard ceiling. Screw 12.5 mm plasterboard to the underside of the joists at 300 mm centres. Stagger the joints. Tape and fill the joints with joint compound."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Skim and redecorate. Once the joint compound is fully dry (24 hours minimum), apply a skim coat of finishing plaster and decorate to match the room."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What it looks like done well versus done badly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done well: the PIR boards sit tightly between joists with no gaps, all joints are foil-taped, the ventilated void above is clear, and the new plasterboard ceiling is flat and smooth. The bay ceiling temperature should match the main room ceiling within a degree or two in cold weather."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Done badly: boards have gaps at the edges because they were cut too small. Joints are untaped. The void above is stuffed with mineral wool, which blocks ventilation and risks condensation. The new ceiling has visible joint lines where the paper tape was left out."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Cold stripe visible at joist locations on thermal image after insulation",
+              "cause": "Boards installed between joists but no insulation over the joists themselves (thermal bridging through the timber)",
+              "fix": "Add a second layer of insulation running perpendicular to the joists to break the thermal bridge; the combined depth must still allow the plasterboard ceiling to be fixed"
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Condensation forming on the top of the PIR boards (visible when void is inspected)",
+              "cause": "Ventilation path through the void is blocked, warm moist air from the room is diffusing upward through gaps in the insulation",
+              "fix": "Clear the ventilation path; reseal all board joints with foil tape; add a vapour control layer below the insulation if the problem persists"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

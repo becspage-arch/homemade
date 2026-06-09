@@ -1,0 +1,381 @@
+{
+  "slug": "shampoo-bar-basic",
+  "title": "Basic shampoo bar",
+  "subtitle": "Solid shampoo for normal to oily hair",
+  "excerpt": "A solid hair cleanser made with cocoa butter, coconut, castor, and olive oils, shaped and cured like a bar of soap. It lathers and rinses like a bar soap but conditions without a separate conditioner for most hair types. Makes seven bars; cure four to six weeks before first use.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Shampoo bar formulation in Kathy Miller, The Complete Idiot's Guide to Making Natural Soaps (2010). Castor oil at 10% for lather; high coconut oil percentage (40%) for cleansing strength. SAP values: coconut oil 0.190, castor oil 0.128, cocoa butter 0.137, olive oil 0.134. 5% superfat. Water 33% of oil weight. Apple cider vinegar rinse recommended in Organic Beauty by Margo Marrone (2013).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "7 bars (~130 g each after 6-week cure)",
+    "prepMinutes": 60,
+    "cookMinutes": 0,
+    "restingMinutes": 60480,
+    "totalMinutes": 60540,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any weight change through a lye calculator. Keep at 500 g to 1 kg oil batches.",
+    "makeAheadNotes": "Cure for a full six weeks. Freshly cut shampoo bars can leave a light waxy residue; the cure removes this. An apple cider vinegar rinse (1 tbsp in 1 cup of water) after washing removes any soap residue and closes the cuticle.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Stores two years in a cool dry cupboard. Keep the bar dry between washes, a slatted soap dish prevents softening. Discard if DOS (dreaded orange spots) appear or the bar smells rancid."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "isOptional": false
+    },
+    {
+      "slug": "safety-goggles",
+      "isOptional": false
+    },
+    {
+      "slug": "nitrile-gloves",
+      "isOptional": false
+    },
+    {
+      "slug": "lye-pitcher-hdpe",
+      "isOptional": false
+    },
+    {
+      "slug": "stick-blender",
+      "isOptional": false
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value, the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "trace",
+      "term": "Trace",
+      "definition": "The point at which soap batter thickens so that a drizzle on the surface briefly holds its shape. Signals the oils and lye have emulsified and the batter is ready to pour."
+    }
+  ],
+  "techniqueSlugs": [
+    "working-with-lye-safely",
+    "cold-process-soap-method"
+  ],
+  "criticalTechniques": [
+    "working-with-lye-safely"
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 2,
+      "title": "Unmould and cut",
+      "body": "Turn out the loaf after 48 hours. The bar is still caustic, wear gloves. Cut into bars and set on a rack with space between them."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 42,
+      "title": "Six-week cure complete",
+      "body": "A fully cured shampoo bar is hard and white. The lather is rich and the bar has shed the initial waxy feel that can make fresh shampoo bars feel heavy on hair."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A shampoo bar is a solid hair cleanser made with cocoa butter, coconut, castor, and olive oils, cured exactly like a bar of soap. It lathers well, rinses cleanly, and conditions without a separate conditioner bar for most hair types. Makes seven bars; cure four to six weeks before first use"
+          },
+          {
+            "type": "text",
+            "text": ". The process is called "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and goggles before handling lye. An apple cider vinegar rinse after washing closes the hair cuticle and removes any residue, worth building into the routine for the first few weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 200,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "40% of oil weight; primary cleanser; melt before use"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 150,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "30% of oil weight; conditioning base"
+            },
+            {
+              "ingredientSlug": "cocoa-butter",
+              "amount": 100,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "20% of oil weight; hardens the bar and smooths the texture; melt before use"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "10% of oil weight; lather booster"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 76,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "NaOH at 99% purity; calculated for 5% superfat on this oil blend"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "33% of oil weight"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lye solution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a ventilated space, wearing gloves and goggles, pour the distilled water into the HDPE pitcher. Add the sodium hydroxide in a steady stream while stirring. Never add water to lye. Set aside to cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt and prepare the oils"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil and cocoa butter together over a low heat. Combine with the olive and castor oils in a heatproof bowl. Cool to 38 to 42°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Blend to trace"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in a thin stream, stirring as you go. Stick-blend in short bursts until the batter reaches a light "
+          },
+          {
+            "type": "text",
+            "text": "trace",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trace"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Cocoa butter can push trace faster than an all-liquid oil batch; work efficiently."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour and insulate"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour into the silicone loaf mould, smooth the top, and wrap in a towel to insulate for 24 hours. Unwrap and leave for a further 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould, cut, and cure"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn out the loaf after 48 hours wearing gloves. Cut into bars and cure on a rack in a cool, dry space for six weeks. The high cocoa butter content means shampoo bars benefit from the full cure before first use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "First use"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet hair and rub the bar directly on the scalp and through the length, or lather in the hands first. Rinse thoroughly. Follow with an apple cider vinegar rinse (1 tablespoon in 250 ml of water) for the first few weeks until hair adjusts to the different wash routine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the bar on a draining soap dish between washes, sitting in water softens it quickly. Two years in a cool dry cupboard. Discard if rancid patches (DOS) appear or the bar smells sharp."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "insulating-masonry-arch-cellar-ceiling",
+  "title": "Insulating a masonry arch or brick-vaulted cellar ceiling",
+  "subtitle": "Fitting insulation to a curved ceiling in an old cellar or undercroft",
+  "excerpt": "Victorian and Georgian cellars often have brick barrel vaults as the ceiling rather than flat timber joists. Fitting insulation to a curved masonry vault requires either a sprayed system or cut-to-fit rigid boards held in place while adhesive cures. The approach chosen depends on the vault radius and the required thickness.",
+  "type": "PATTERN",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "STBA guidance on insulating traditional basements; BRE Good Building Guide GBG 56 parts 1 and 2 on damp basements; English Heritage guidance on energy efficiency in traditional buildings.",
+  "approximateCostGbp": 400,
+  "paybackYears": 6,
+  "recipeTools": [
+    { "slug": "tape-measure", "isOptional": false },
+    { "slug": "cordless-drill", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "barrel-vault",
+      "term": "Barrel vault",
+      "definition": "A curved masonry ceiling formed by a continuous arch running along the length of a space, common in Victorian and Georgian cellar construction."
+    },
+    {
+      "slug": "phenolic-foam",
+      "term": "Phenolic foam",
+      "definition": "A rigid closed-cell insulation board with higher thermal resistance per mm than PIR and better fire performance, used where thin profiles are needed."
+    }
+  ],
+  "techniqueSlugs": ["basement-and-cellar-insulation", "cellar-ceiling-insulation-rigid-board"],
+  "criticalTechniques": [],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Template and cut first boards",
+      "body": "Make cardboard templates for the curved vault face. Cut the first run of insulation boards to the template and test-fit before bonding.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Bond remaining boards",
+      "body": "Continue bonding boards across the vault, working from the crown outward toward the springing line. Allow each board to cure 24 hours under support before releasing.",
+      "surfaceAs": "RAIL_CARD"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A brick " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "barrel-vault" } }], "text": "barrel vault" },
+          { "type": "text", "text": " in a Victorian cellar is a common ceiling type in terrace and semi-detached houses built before 1880. The vault is usually one-brick thick and uninsulated, meaning the floor above it — often a kitchen or sitting room — is resting on a cold masonry slab." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Insulating it from below is the only option where the room above cannot be disrupted. The curved profile means standard flat rigid board does not lie flat; either a flexible sheet product, a sprayed foam, or boards cut to fit the curve are needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The moisture check first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A cellar vault that is actively damp — wet patches, efflorescence, spalling mortar — must be investigated and dried before insulation. Insulating over active damp traps moisture in the masonry and accelerates decay. Check the drainage around the building perimeter; if the cellar takes in surface water, address the external drainage first." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: sprayed rigid foam" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A contractor-applied closed-cell spray foam at 40–75 mm conforms perfectly to the vault curve. The foam bonds directly to the masonry and achieves a U-value of approximately 0.4–0.6 W/m²·K depending on thickness. Fire-rated versions are available. This is the least labour-intensive method for a multi-bay vaulted cellar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: cut-and-fit rigid boards" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a cardboard template of the vault cross-section at several points along its length. Victorian vaults vary in radius from bay to bay; check each bay separately." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Cut " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "phenolic-foam" } }], "text": "phenolic foam" },
+            { "type": "text", "text": " or PIR boards into narrow strips (100–150 mm wide) that flex enough to follow the vault curve without cracking. A heat gun applied briefly to PIR softens it enough to bend around a vault with a radius of 600 mm or more." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply PU adhesive foam to the masonry vault surface and press the board strips into position. Use temporary props (cut timber off-cuts wedged between the floor and the board) to hold each strip in compression while the foam cures." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all board joints with aluminium tape once the adhesive has cured (after 24 hours minimum)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a plaster skim coat over the insulation if the cellar is a habitable space; leave bare foam if it is a utility area." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Continuous insulation coverage across the full vault surface with no gaps at the springing line (where the vault meets the wall). Joints taped and sealed. The floor above is noticeably warmer underfoot and heating demand in the room above falls." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Board strips bow away from the vault surface as the adhesive cures", "cause": "Board is too stiff for the vault radius; adhesive applied in too small an amount", "fix": "Increase the number of temporary props; apply adhesive in a full-coverage pattern rather than a bead." },
+            { "symptom": "Spray foam insulation coating shows surface cracks after 12 months", "cause": "UV exposure (if the cellar has light wells) or thermal movement", "fix": "Surface cracking on closed-cell spray foam is cosmetic; seal with a breathable masonry sealant if it opens to more than 1 mm." }
+          ]
+        }
+      }
+    ]
+  }
+}

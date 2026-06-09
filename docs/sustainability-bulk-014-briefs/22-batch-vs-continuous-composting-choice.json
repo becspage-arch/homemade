@@ -1,0 +1,106 @@
+{
+  "slug": "batch-vs-continuous-composting-choice",
+  "title": "Batch composting versus continuous composting: which to choose",
+  "subtitle": "Understanding how the two methods work and which fits your garden's waste pattern",
+  "excerpt": "Batch composting fills a bay all at once and leaves it to mature, producing ready compost in 4–8 weeks with a managed hot phase. Continuous composting adds material over time to a single bin and harvests from the bottom, taking 6–18 months. Neither is better in all cases — the choice depends on how your waste arrives.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP home composting guidance; RHS composting advice; US Composting Council hot and cold composting comparison.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot compost",
+      "definition": "A composting method where the heap is managed to reach and maintain temperatures of 55–70°C, which kills weed seeds and pathogens and breaks down material in 4–8 weeks."
+    },
+    {
+      "slug": "cold-compost",
+      "term": "Cold compost",
+      "definition": "A slow composting method where material is added to a heap or bin over time without active temperature management, breaking down over 6–18 months."
+    }
+  ],
+  "techniqueSlugs": ["three-bin-hot-compost-system", "cold-compost-heap-from-pallets", "hot-composting-activation-sequence"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Batch composting collects all your material at once — a lawn mow, a border clear-out, a delivery of horse manure — builds the heap in one session, and leaves it alone to mature." },
+          { "type": "text", "text": " " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "Hot composting" },
+          { "type": "text", "text": " requires this batch method; the mass and the C:N balance need to be right from the start." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Continuous composting — the standard black bin — adds kitchen and garden waste incrementally day by day. The bin never heats because there is never enough fresh material all at once. It produces " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-compost" } }], "text": "cold compost" },
+          { "type": "text", "text": " slowly. Both methods produce usable compost; the right choice depends on your garden's waste pattern." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When batch composting makes sense" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You have large volumes of material arriving in pulses: grass mowings, autumn leaves, a hedge trim, a stable delivery of horse manure. These are natural batch inputs." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You want to kill weed seeds. A batch that reaches 55°C for 3 consecutive days (with turning) kills most annual weed seeds. A cold continuous bin does not." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You want finished compost on a predictable timeline — 4–8 weeks for a well-managed hot batch versus 6–18 months for a cold continuous bin." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When continuous composting makes sense" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You have a steady trickle of kitchen waste and small amounts of garden material arriving daily. This is the most common domestic situation." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You do not want to manage the process: no turning schedule, no temperature monitoring, minimal thought." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You have limited space and cannot justify two or three bays." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The hybrid — most gardens use both" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard two-bay or three-bay system uses the batch method: the first bay fills over several weeks and then rests while the second bay fills. This is not quite a pure batch (material arrives over days not all at once) but is close enough to generate some heat and produces compost in 3–6 months." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Adding a black dalek bin to a batch setup provides a continuous outlet for daily kitchen waste that is not part of the hot heap. The kitchen bin feeds the dalek; the seasonal garden material feeds the hot bay." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Batch heap never reaches 45°C despite sufficient volume", "cause": "Material arrived over too long a period — the first-in material has cooled before enough new material arrives to sustain heat", "fix": "For the next batch, collect and store material until you have at least 0.5 m³ before building the heap in one session." }
+          ]
+        }
+      }
+    ]
+  }
+}

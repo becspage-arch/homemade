@@ -1,0 +1,242 @@
+{
+  "slug": "ashp-winter-performance-and-cop",
+  "title": "Air source heat pump winter performance: what to expect and how to manage it",
+  "subtitle": "How a heat pump behaves below 5°C and what to do when it struggles",
+  "excerpt": "An air source heat pump works hardest when it is coldest outside, exactly when you need the most heat. At 0°C outdoor temperature, the coefficient of performance of a well-designed system drops to around 2.5, compared with 3.5 at 7°C. The heat pump still produces more heat than it consumes, but less efficiently. Understanding the pattern lets you manage the system intelligently rather than fighting it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Pump Association UK SCOP data for residential ASHP 2024. Energy Saving Trust heat pump performance guide. Mitsubishi Ecodan and Vaillant arotherm performance curves. Building Research Establishment field trial data.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "energy-monitor",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cop",
+      "term": "COP",
+      "definition": "Coefficient of Performance. The ratio of heat output to electricity input at a specific moment. A COP of 3.0 means 3 kWh of heat for every 1 kWh of electricity. COP varies continuously with outdoor temperature."
+    },
+    {
+      "slug": "scop",
+      "term": "SCOP",
+      "definition": "Seasonal Coefficient of Performance. The average COP across an entire heating season, accounting for the variation in outdoor temperature throughout the year. UK heat pumps typically achieve SCOP 2.8–4.0 depending on design and flow temperature."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature of the water leaving the heat pump and entering the heating circuit. Lower flow temperatures (35–40°C) give higher COP; higher flow temperatures (55–60°C for legacy radiators) reduce efficiency."
+    },
+    {
+      "slug": "defrost-cycle",
+      "term": "Defrost cycle",
+      "definition": "When outdoor temperature is near 0°C and the air is humid, frost builds up on the outdoor unit's heat exchanger. The heat pump periodically reverses the refrigerant cycle to melt the frost. During a defrost cycle, which lasts 3–8 minutes, the unit draws heat from the house rather than delivering it."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heat pump's "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cop"
+                }
+              }
+            ],
+            "text": "COP"
+          },
+          {
+            "type": "text",
+            "text": " falls as outdoor temperature falls because the refrigerant cycle must work harder to extract heat from colder air. A system with a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "scop"
+                }
+              }
+            ],
+            "text": "SCOP"
+          },
+          {
+            "type": "text",
+            "text": " of 3.5 across the year might run at COP 4.0 on a 10°C spring morning, COP 3.0 on a 0°C January morning, and COP 2.2 on a -5°C cold snap night. It is still delivering 2.2 units of heat per unit of electricity, far more than a gas boiler's 0.9 effective heat output, but less than its rated performance."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The defrost cycle: what it is and why it matters"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Between -2°C and +4°C outdoor temperature with relative humidity above 70%, frost forms on the outdoor coil. The heat pump detects this, either by timing or by temperature sensor, and initiates a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "defrost-cycle"
+                }
+              }
+            ],
+            "text": "defrost cycle"
+          },
+          {
+            "type": "text",
+            "text": ". For 3 to 8 minutes, the system draws heat from the house to melt the frost. You may notice the heating pause and the house temperature dip slightly. Modern heat pumps typically manage this with a buffer cylinder that provides heat during the defrost, but on systems without a buffer, the flow temperature can drop."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Managing cold weather performance"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave the heat pump running continuously in cold weather rather than switching it off overnight. A heat pump that runs at low power for 24 hours in cold weather is more efficient than one that repeatedly heats a cold house from scratch. The setback temperature (reducing the thermostat by 1 to 2°C overnight) can save energy during mild weather; in a cold snap it typically costs more than it saves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the outdoor unit is clear. In frost conditions, the unit draws air over the coil. Snowdrift, leaves, or debris blocking the airflow reduces performance dramatically. Keep a 300 mm clearance around all sides and the top of the unit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "flow-temperature"
+                        }
+                      }
+                    ],
+                    "text": "flow temperature"
+                  },
+                  {
+                    "type": "text",
+                    "text": " correctly. The heat pump should be on weather compensation, flow temperature rises automatically as outdoor temperature falls. If your installer set a fixed high flow temperature year-round, ask them to enable weather compensation; it can improve SCOP by 0.5 to 1.0."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Do not set all thermostatic radiator valves (TRVs) to maximum in cold weather. A heat pump circulates a large volume of water at moderate temperature, not the small volume of very hot water a boiler produces. All radiators need to contribute. If some TRVs are fully closed, the unmet demand drives the flow temperature up, reducing efficiency."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When performance is inadequate"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the heat pump cannot keep target temperature on cold days (below -3°C is the UK design condition in most areas), two causes are common. First, the heat pump may have been undersized at design. Second, the house may lose more heat than the calculation assumed, due to settled insulation, worse draughts, or smaller radiators than specified. Track electricity use and indoor temperature with a clamp meter and room sensors over a cold week. This shows whether the system is running at capacity. An MCS-registered installer can do a full performance check."
+          }
+        ]
+      }
+    ]
+  }
+}

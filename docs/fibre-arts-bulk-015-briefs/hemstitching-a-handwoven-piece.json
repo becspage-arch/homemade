@@ -1,0 +1,71 @@
+{
+  "slug": "hemstitching-a-handwoven-piece",
+  "title": "Hemstitching a handwoven piece",
+  "subtitle": "The standard loom-hem technique for securing woven edges before cutting off",
+  "excerpt": "Hemstitching is the most common way to secure the weft at the beginning and end of a woven piece before it is cut from the loom. The stitches lock groups of warp threads together, creating a decorative and functional hem that does not unravel when cut.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Hemstitching is documented across Edwardian and mid-20th century weaving manuals. Hooper, Hand-Loom Weaving (1910), Internet Archive, describes the loom-hem method for securing woven cloth before cutting off.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-18", "isOptional": false },
+    { "slug": "rigid-heddle-loom", "isOptional": false },
+    { "slug": "floor-loom-4-shaft", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "hemstitch", "term": "Hemstitch", "definition": "A hand-sewn finishing technique applied at the loom to secure weft rows and lock groups of warp threads before cutting the cloth off the loom." },
+    { "slug": "weft", "term": "Weft", "definition": "The crosswise thread that passes over and under the warp threads on a loom to build the cloth." },
+    { "slug": "warp", "term": "Warp", "definition": "The lengthwise threads on a loom, held under tension during weaving." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["hemstitch weaving", "loom hemstitch", "hemstitching handwoven cloth"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hemstitching secures the " },
+          { "type": "text", "text": "weft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }] },
+          { "type": "text", "text": " at the start and end of a woven piece before cutting it from the loom. The needle passes under a group of two to four " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": " threads, then wraps back through the last weft row to lock those threads in a small bundle. The " },
+          { "type": "text", "text": "hemstitch", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hemstitch" } }] },
+          { "type": "text", "text": " produces a clean, decorative selvedge that can be left as-is on a scarf or twill sampler, or turned under as a proper hem on a table runner. Use the same weft yarn for the stitching to make it nearly invisible." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Blunt darning needle", "qty": "1" },
+            { "name": "Weft yarn (same as the cloth, for invisible hemstitch)", "qty": "a short length" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "When to hemstitch" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Hemstitch at two points: after the first two or three weft picks at the start of the weaving, and after the last two or three weft picks before cutting off. Hemstitching at both ends means the cloth is secure before it leaves the loom. Work on the loom while the warp is still tensioned: the tension makes it much easier to see the individual warp groups and work the needle between them." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Threading the needle" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Thread a short length of weft yarn (about 50 cm for a 30 cm-wide cloth) onto the blunt darning needle. Start at the right selvedge if right-handed, left selvedge if left-handed. The stitching moves toward the opposite selvedge." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "The hemstitch sequence" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up between the last weft row and the previous weft row at the selvedge edge. Pass the needle under two or three warp threads (grouping depends on the sett and desired fringe effect), going from front to back. Then bring the needle back through the last weft row at the selvedge edge, going from back to front. Pull snugly; this locks the warp group together. Move along by the same number of warp threads and repeat to the opposite selvedge." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Grouped vs ladder hemstitch" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Straight hemstitch groups the warp threads into equal bundles along one weft row. Ladder hemstitch groups the same bundles on both the first and last rows, producing a small ladder-like gap between the two rows of stitching. For a scarf, ladder hemstitch on both ends creates a tidy fringe row ready for knotting; for a table runner that will be hemmed, straight hemstitch at each end is sufficient." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The hemstitch thread shows as a different colour against the cloth", "cause": "A contrasting weft yarn was used for the hemstitching, or the yarn was thicker than the weft", "fix": "Use the same yarn as the weft for invisible hemstitching. If the weft colour is unavoidable, a matching linen or silk thread in a closer colour reads less prominently." },
+            { "problem": "The stitch pulls the warp groups out of the cloth surface", "cause": "The stitches were pulled too tightly, distorting the weft rows near the edge", "fix": "Pull each stitch snug but not tight. The stitch locks the group, not compresses it; the warp threads should remain on the plane of the cloth surface rather than puckering forward." }
+          ]
+        }
+      }
+    ]
+  }
+}

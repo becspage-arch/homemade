@@ -1,0 +1,104 @@
+{
+  "slug": "solar-balcony-plug-in-pv-uk",
+  "title": "Balcony and plug-in solar PV: what is now legal in the UK",
+  "subtitle": "Understanding the 2024 rule change that allows small plug-in solar panels without an electrician",
+  "excerpt": "From 2024, the UK allows households to plug a small solar panel directly into a standard 13-amp socket without a registered electrician, provided the system meets specific requirements. These balcony or plug-in solar systems are widely used in Germany and France and are now a legal option for UK flats and houses without a south-facing roof.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Government consultation response on microgeneration permitted development (2024); BS 7671 Amendment 4 on plug-in microgeneration; Ofgem Smart Export Guarantee guidance on sub-800W systems.",
+  "approximateCostGbp": 300,
+  "paybackYears": 3,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic panels that convert sunlight into electricity directly, as distinct from solar thermal collectors that heat water."
+    },
+    {
+      "slug": "micro-inverter",
+      "term": "Micro-inverter",
+      "definition": "A small inverter attached directly to a single solar panel, converting DC output to AC mains voltage. Used in balcony solar systems to allow direct connection to a household circuit."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof", "solar-pv-planning-conservation-area"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A plug-in solar system is one or two " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " panels connected to a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "micro-inverter" } }], "text": "micro-inverter" },
+          { "type": "text", "text": " that converts the panel output to 230 V AC and feeds it into a standard household socket. These systems are very common in Germany (called Balkonkraftwerk) and France. A 2024 UK legislative change and updated wiring standards have made them legal here for systems up to 800 W connected to a standard 13-amp socket." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the 2024 change allows" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Systems up to 800 W connected to a standard 13-amp socket — no notifiable electrical work required." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The system must use a Schuko or UK-plug-style connection with anti-back-feed protection built into the inverter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The socket used must be in good condition; do not plug into an extension lead or a socket that shows signs of loose pins." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Notify your electricity network operator if the system is in a property covered by a G98 area (most urban properties are). This is a simple online registration, not an approval process." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Realistic generation from a balcony system" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A single 400 W panel on a south-facing balcony rail at 30–40° tilt generates approximately 300–400 kWh per year in southern England. At 27p/kWh that represents around £80–110 of electricity savings per year, assuming most generation displaces import rather than being exported. The savings are higher if the panel is running during peak-tariff hours on a time-of-use tariff." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Limitations and what to check first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leasehold flats: check the lease before attaching anything to a balcony railing. External attachments are typically in the common-parts demise and require freeholder consent." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Conservation areas: a panel on a balcony facing a highway may need planning permission. The same rules apply to balcony panels as to roof panels (see solar-pv-planning-conservation-area)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Smart meter: if you have a non-smart meter, the meter cannot measure export and you will not be paid for any surplus electricity sent back to the grid. With a SMETS2 meter and SEG registration, even a sub-800W system can earn export payments." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Panel mounted at 30–40° tilt on a purpose-built balcony bracket with stainless fixings. Inverter cable managed with cable clips rather than hanging loose. Plug connected to a dedicated socket, not a shared extension. Monitoring app showing generation matches expected output for the angle and season." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Micro-inverter does not appear online despite being connected", "cause": "Inverter requires 2.4 GHz Wi-Fi to report data; some home networks only broadcast 5 GHz", "fix": "Enable the 2.4 GHz band on your router (most modern routers broadcast both simultaneously but may need enabling in settings)." },
+            { "symptom": "Household energy monitor shows import not falling during daylight generation", "cause": "Loads in the house exceed generation; the panel output is consumed silently at source", "fix": "This is normal and correct operation. Generation reduces import; it does not drive import to zero unless the panel output exceeds all current loads." }
+          ]
+        }
+      }
+    ]
+  }
+}

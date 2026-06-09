@@ -1,0 +1,271 @@
+{
+  "slug": "lpg-backup-heating-for-off-grid",
+  "title": "LPG backup heating for off-grid properties",
+  "subtitle": "Sizing, siting, and maintaining a propane system as a backup heating source",
+  "excerpt": "A wood stove or electric heat pump is the primary heating source in most UK off-grid properties, but in extended cold spells or when the primary source fails, a backup is valuable. Liquefied petroleum gas (LPG, usually propane) fills this role efficiently: high energy density, readily available, and compatible with small portable heaters and gas cookers. This tutorial covers cylinder sizing, placement, regulator maintenance, and the safety rules that differ from mains gas.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UKLPG (UK LP Gas Association) Code of Practice 1 Part 1 for small fixed storage. HSE LPG safety guidance (HSG34). Energy Saving Trust LPG tariff and efficiency data 2024.",
+  "approximateCostGbp": 200,
+  "paybackYears": null,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "lpg",
+      "term": "LPG",
+      "definition": "Liquefied petroleum gas. Typically propane (for UK static installation) or butane (for portable use above 7°C). Propane remains liquid down to -42°C; butane stops vapourising below about 0°C, making propane the correct choice for outdoor cylinders in UK winter."
+    },
+    {
+      "slug": "regulator",
+      "term": "Regulator",
+      "definition": "A pressure-reducing valve fitted to an LPG cylinder. It reduces the high cylinder pressure (5–8 bar for propane) to the appliance working pressure (typically 37 mbar for domestic appliances). Regulators must be replaced every 10 years (UKLPG guidance)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lpg"
+                }
+              }
+            ],
+            "text": "LPG"
+          },
+          {
+            "type": "text",
+            "text": " holds about 25 kWh per kilogram of propane, far more energy-dense than any practical battery. A 47 kg propane cylinder contains about 1,175 kWh of heat, enough to run a 5 kW space heater for about 10 days. For a weekend cabin or rarely used off-grid home, one 47 kg cylinder topped up each year covers backup heating and cooking with room to spare."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Gas regulations"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "In England and Wales, fitting a permanent gas installation in a new dwelling (or a major extension) constitutes gas work that must be carried out by a Gas Safe registered engineer under Building Regulations. Connecting a portable cylinder to a portable appliance (a camping stove, a portable propane heater) is not regulated work. The boundary is at 'fixed pipework'. Know which side of that line your installation falls."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Choosing cylinder size"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "6 kg cylinder, camping and occasional portable use. Enough for 5 to 8 days of cooking at typical use."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "13 kg cylinder, the standard domestic portable cylinder. Suitable for a portable space heater run 2 to 3 hours per day over a few cold weeks. Refilled at most LPG suppliers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "47 kg cylinder, the standard fixed outdoor installation cylinder. Requires a fixed "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "regulator"
+                        }
+                      }
+                    ],
+                    "text": "regulator"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and is delivered by tanker or cylinder exchange. Suitable for a backup boiler or a permanently installed gas cooker."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Siting outdoor cylinders"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stand cylinders upright on a firm, level surface outdoors. Keep them away from drains, gratings, and low spots where gas vapour (heavier than air) could collect."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Minimum distances: 1 m from any opening in a building (door, window, vent), 2 m from a heat source or ignition point, 2.5 m from a property boundary."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Keep cylinders away from vegetation that could be a fire hazard in a cylinder failure event. Do not store inside a building unless in a purpose-built ventilated gas store."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Annual checks"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Regulator: check the date stamp. Replace every 10 years or immediately if it shows corrosion, damage, or a loose connection. Apply soapy water to all connections with the gas on; bubbles indicate a leak. If a leak is found, turn off the cylinder valve immediately."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flexible hose: replace any hose older than 5 years, or any hose showing cracking, kinking, or discolouration."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gas appliance burners: clean annually with a soft brush to remove debris from the burner jets. A partially blocked jet produces a lazy orange flame, correct combustion produces a steady blue flame. An orange or yellow flicker indicates incomplete combustion."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

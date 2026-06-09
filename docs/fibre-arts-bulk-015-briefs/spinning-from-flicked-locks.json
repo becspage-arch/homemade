@@ -1,0 +1,75 @@
+{
+  "slug": "spinning-from-flicked-locks",
+  "title": "Spinning from flicked locks",
+  "subtitle": "Preparing individual wool locks with a flicker brush before spinning",
+  "excerpt": "Flicking individual locks with a flicker brush opens the cut and tip ends without combing the whole lock into a top. It is faster than full combing, preserves lock length, and suits medium breeds like Corriedale or Down crosses. The resulting preparation spins semi-worsted.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from standard guild workshop practice for lock-by-lock wool preparation. The flicker brush technique is a practical home alternative to full hand-combing for medium and long-staple breeds.",
+  "recipeTools": [
+    { "slug": "flicker-brush", "isOptional": false },
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "drop-spindle-top-whorl", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual wool lock from cut end to tip." },
+    { "slug": "flicking", "term": "Flicking", "definition": "A preparation method for individual wool locks using a stiff-bristled flicker brush. Each end of the lock is flicked open to remove vm and tangles without full combing." },
+    { "slug": "vm", "term": "VM", "definition": "Vegetable matter: seeds, grass, and plant debris trapped in a raw fleece during the sheep's grazing year." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["flicked lock spinning", "spinning flicked locks", "flicker brush wool prep"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Flicking a wool lock opens its cut and tip ends without disturbing the fibre alignment along the " },
+          { "type": "text", "text": "staple", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " length. The tool is the " },
+          { "type": "text", "text": "flicker brush", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flicking" } }] },
+          { "type": "text", "text": ", a small stiff-bristled pad on a short handle. One or two flicks at each end of the lock releases the matted tip, removes loose " },
+          { "type": "text", "text": "VM", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vm" } }] },
+          { "type": "text", "text": ", and opens the fibres so they draft cleanly at the wheel. Flicking is faster than hand combing and more fibre-preserving than drum carding." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Flicking releases fibre dust and VM particles. Work in a ventilated space and damp-mop the floor when done." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Washed wool fleece with intact locks", "qty": "as required" },
+            { "name": "Flicker brush", "qty": "1" },
+            { "name": "Spinning wheel or drop spindle", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Flicking the cut end" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the lock near its tip end with the cut end hanging free. Rest the cut end against the palm of the holding hand or against your knee with a leather pad for protection. Flick the brush downward through the cut end two or three times with a quick wrist snap. The matted cut end will open into a fan of loose fibres. Stop once the fibres are open; over-flicking shortens the lock and blurs the worsted alignment." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Flicking the tip end" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Transfer the lock so the tip end hangs free. Flick the tip end in the same way. The tip is often more matted than the cut end because it has been exposed to weather; it may need three or four flicks to open fully. If the tip is heavily felted (the fibres have matted together rather than just lying in a clump), the lock is from a fleece that has been stored too long and may draft poorly. Discard heavily felted tips." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Spinning from flicked locks" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Hold the flicked lock by one end and present the other end to the wheel orifice. Draft with a semi-worsted draw: allow twist to run up to the front hand, then release to draw back. The flicked lock drafts in one direction only: from the open flicked end backward into the body of the lock. Spinning from tip to cut or cut to tip gives different surface results; most spinners prefer cut to tip for a slightly smoother yarn." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The lock keeps pulling apart while drafting", "cause": "The lock was over-flicked or the fibres were already short due to lock damage or breakage", "fix": "Check the raw fleece for weak spots by pulling a small amount of the lock sharply: a sound lock resists the pull. Avoid flicking more than three to four times per end." },
+            { "problem": "VM falls out onto the wheel and yarn", "cause": "The flicking only opened the ends; heavy VM in the mid-lock remains until it reaches the orifice", "fix": "For heavily VM-loaded fleece, pick the locks by hand to remove obvious seeds and chaff before flicking. The flicker brush is most effective on clean or lightly soiled fleece." }
+          ]
+        }
+      }
+    ]
+  }
+}

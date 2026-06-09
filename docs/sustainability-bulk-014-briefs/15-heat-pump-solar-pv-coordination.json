@@ -1,0 +1,127 @@
+{
+  "slug": "heat-pump-solar-pv-coordination",
+  "title": "Coordinating a heat pump with solar PV generation",
+  "subtitle": "Running the heat pump during solar peak to maximise self-consumption and cut running costs",
+  "excerpt": "A heat pump running off solar generation rather than grid electricity can cut its running cost by 50–70% on a good summer day. The coordination is done through the inverter or heat pump controller — some systems do it automatically; others need a simple timer or smart plug.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solar PV and heat pump integration guidance from Energy Systems Catapult (2023); Ofgem smart tariff coordination guidance; Solis, Growatt, and Vaillant integration documentation.",
+  "approximateCostGbp": 50,
+  "paybackYears": 1,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic panels that convert sunlight into electricity directly, as distinct from solar thermal collectors that heat water."
+    },
+    {
+      "slug": "cop",
+      "term": "COP (Coefficient of Performance)",
+      "definition": "A ratio of useful heat output to electrical energy input for a heat pump. A COP of 3 means 1 kWh of electricity produces 3 kWh of heat."
+    },
+    {
+      "slug": "heat-pump",
+      "term": "Heat pump",
+      "definition": "A device that moves heat from outside air or the ground into a building using a refrigerant cycle, consuming electrical energy to run the compressor."
+    },
+    {
+      "slug": "self-consumption",
+      "term": "Self-consumption",
+      "definition": "The proportion of solar PV generation used on-site rather than exported to the grid."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-system-monitoring", "heat-pump-controls-and-scheduling", "solar-immersion-diverter-guide"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-pump" } }], "text": "heat pump" },
+          { "type": "text", "text": " is one of the largest loads in a well-insulated home. It also happens to run well at the times a solar array generates most. Running the heat pump during peak solar output, rather than running it at night or during low-irradiance periods, improves " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "self-consumption" } }], "text": "self-consumption" },
+          { "type": "text", "text": " and reduces the effective running cost." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How much the maths helps" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 5 kWp solar array on a south-facing roof generates approximately 25–30 kWh on a clear summer day. A 5 kW heat pump with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }], "text": "COP" },
+          { "type": "text", "text": " of 3 running for 4 hours in the solar peak uses roughly 6–8 kWh of electricity to produce 18–24 kWh of heat. At 2025/26 UK electricity rates (27p/kWh grid, 5–15p/kWh SEG export), running on solar rather than exporting means avoiding paying 27p and earning 5–15p — a saving of 12–22p/kWh on those hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Coordination methods" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Method 1 — Simple timer override" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set the heat pump's hot water boost to run between 10:00 and 14:00 in spring, summer, and autumn. This captures most of the solar generation window without any smart integration. The control is weather-naive — it runs the heat pump even on overcast days — but over a heating season this simple shift can increase self-consumption by 20–35%." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Method 2 — Solar diverter relay to heat pump boost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Some solar diverters (Eddi, Solic 200) have a relay output that fires when export exceeds a threshold — typically 1–2 kW. If the heat pump has a boost input, wiring this relay to the boost input forces a hot water charge whenever the solar generation is surplus. This method is weather-responsive but requires an electrician to make the relay connection." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Method 3 — Inverter API and heat pump automation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Modern inverters (Solis, Growatt, SolarEdge, Fronius) expose a local API. Home automation platforms (Home Assistant, Homey) can read the current generation figure and trigger the heat pump via its own API or a smart plug. This is the most flexible method: the rule can be as sophisticated as "run heat pump if forecast generation for the next hour exceeds current demand by at least 2 kW". Requires setup time but gives full weather-responsive control." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winter heat demand" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In winter, solar generation in the UK is too low to run a heat pump meaningfully on solar alone. Winter heat demand peak (early morning and evening) also falls outside the solar window. The coordination strategy is most valuable in spring, late summer, and autumn — when heating demand is modest and solar generation is reasonable. In mid-winter, accept that the heat pump runs on grid power and focus coordination effort on hot water rather than space heating." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Heat pump consistently generates a high COP during solar hours but the hot water cylinder temperature overshoots the setpoint and heating shuts off", "cause": "Hot water tank is too small to absorb the available solar energy; tank hits setpoint and stops the heat pump before solar generation peaks", "fix": "Check the tank volume — a heat pump hot water cylinder should be at least 200 litres for a 5 kW heat pump. Consider adding a secondary coil or a larger tank if self-consumption is a priority." },
+            { "symptom": "Self-consumption has not improved despite setting the timer correctly", "cause": "Space heating load is low in the season when the coordination is active; the heat pump is satisfying the demand quickly and switching off", "fix": "Add hot water production to the coordination window — force a hot water boost in addition to any space heating demand. Hot water stores the heat for later use even if the house doesn't need immediate warming." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "spinning-ryeland-wool",
+  "title": "Spinning Ryeland wool",
+  "subtitle": "A soft, medium-staple British heritage breed suited to handspun knitting yarns",
+  "excerpt": "Ryeland is one of the oldest British native breeds, with a soft, dense fleece and a staple of 8 to 12 cm. The fibre is finer than most down breeds and spins easily into a balanced, soft yarn well suited to garments and next-to-skin fabric.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional British wool-spinning practice. The Ryeland is documented as a Herefordshire native breed from the medieval period; spinning characteristics draw on standard UK guild workshop guidance.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "drop-spindle-top-whorl", "isOptional": true },
+    { "slug": "hand-cards", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "bobbin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual lock of wool from the fleece, measured from cut end to tip." },
+    { "slug": "woollen-draw", "term": "Woollen draw", "definition": "A spinning method where carded fibres are drafted with twist entering the drafting zone, producing a lofty, air-filled yarn. Suitable for medium breeds like Ryeland." },
+    { "slug": "rolag", "term": "Rolag", "definition": "A cylinder of carded wool ready for woollen-draw spinning. Fibres lie in a loose, random orientation inside the rolag." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["ryeland spinning", "spinning ryeland", "ryeland handspun"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ryeland has a medium " },
+          { "type": "text", "text": "staple length", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " of 8 to 12 cm and a relatively fine, soft fibre for a British native breed. It can be spun either worsted-style from combed top or woollen-style from carded " },
+          { "type": "text", "text": "rolags", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rolag" } }] },
+          { "type": "text", "text": ". The " },
+          { "type": "text", "text": "woollen draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "woollen-draw" } }] },
+          { "type": "text", "text": " produces a lofty, soft yarn well suited to knitting; the worsted draw gives a smoother, stronger yarn for weaving or sock knitting. Both approaches work well with this breed, which is forgiving to beginners." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Carding throws fine fibre dust. Work in a ventilated space and damp-mop the floor when done." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Ryeland fleece or prepared top", "qty": "as required for the project" },
+            { "name": "Spinning wheel or top-whorl drop spindle", "qty": "1" },
+            { "name": "Hand cards (for woollen preparation)", "qty": "optional" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For woollen-style spinning, card the washed Ryeland fleece on hand cards to form rolags. The Ryeland staple length allows efficient carding without the fibres wrapping the card wires. For worsted-style spinning, comb or draw the fleece into a short top. Ryeland top is readily available from specialist fibre suppliers if you do not have raw fleece." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Spinning at the wheel" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to an 8:1 to 10:1 ratio for a medium DK weight yarn. Ryeland drafts smoothly from rolags using the woollen draw: hold the rolag in the back hand, allow twist to run just ahead of the front hand, and open the front hand to let the drafting zone move backward into the rolag. The fibre is soft enough to draft without significant resistance. For a worsted approach, draft ahead of the twist with the front hand acting as a check point." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two singles together for a balanced 2-ply knitting yarn. Skein on the niddy-noddy, soak in warm water, and snap the skein to set the twist. Dry flat or hanging. Ryeland softens noticeably after washing; the finished yarn feels noticeably softer than the raw locks, which is characteristic of the breed." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The singles keep breaking during spinning", "cause": "Drafting too thin in a section with short or broken fibres, or the twist is not running into the drafting zone soon enough", "fix": "Draft a shorter length before releasing the twist, and check the fleece for breaks by holding a lock up to the light. A sound Ryeland lock should not break when tugged moderately along its length." },
+            { "problem": "The finished yarn feels coarse rather than soft", "cause": "The fibre was not washed before spinning, or was spun from the unwashed cut end rather than the clean tip end", "fix": "Always spin from top or from washed fleece. Ryeland's softness is masked by lanolin and vegetable matter in the raw fleece; washing first makes the difference." }
+          ]
+        }
+      }
+    ]
+  }
+}

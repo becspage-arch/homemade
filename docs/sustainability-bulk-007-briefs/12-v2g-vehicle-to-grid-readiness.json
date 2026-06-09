@@ -1,0 +1,266 @@
+{
+  "slug": "v2g-vehicle-to-grid-readiness",
+  "title": "Vehicle-to-grid (V2G): what it is and whether your setup can use it",
+  "subtitle": "Using your electric vehicle battery as home energy storage",
+  "excerpt": "Vehicle-to-grid technology lets a compatible EV discharge power back into the home or the grid. At current UK tariff structures, V2G can save significantly by charging the car on cheap night-rate electricity and discharging it during peak hours. The constraints, car compatibility, charger hardware, tariff availability, are strict. This tutorial explains what is actually available now and what to watch for as the technology matures.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Octopus Energy Powerloop V2G trial data 2024. Volkswagen ID.3 and ID.4 V2G technical specification. Ohme, Indra, and Wallbox V2G charger specifications 2025. Ofgem Smart Export Guarantee guidance.",
+  "approximateCostGbp": 1800,
+  "paybackYears": 6,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "v2g",
+      "term": "V2G",
+      "definition": "Vehicle-to-grid. Technology that allows a bidirectional EV charger to draw power from the car battery and export it to the home (V2H — vehicle-to-home) or to the electricity grid."
+    },
+    {
+      "slug": "v2h",
+      "term": "V2H",
+      "definition": "Vehicle-to-home. A subset of V2G where the car battery discharges into the house electrical system rather than exporting to the grid. Requires a compatible car and a bidirectional EV charger."
+    },
+    {
+      "slug": "smart-export-guarantee",
+      "term": "Smart Export Guarantee",
+      "definition": "The UK scheme requiring licensed electricity suppliers with 150,000+ customers to offer a tariff for exporting excess electricity. V2G export qualifies under SEG but at typically lower rates than avoided import."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A 60 kWh EV battery that sits on a driveway for 22 hours a day is an expensive asset doing nothing. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "v2g"
+                }
+              }
+            ],
+            "text": "V2G"
+          },
+          {
+            "type": "text",
+            "text": " technology turns that sitting battery into an energy buffer. On a time-of-use tariff such as Octopus Go or Agile, electricity costs 7 to 12p/kWh overnight and 25 to 35p/kWh in the peak evening period. Charge the car overnight; discharge 20 kWh into the house during the peak period. The arbitrage is 15 to 25p/kWh on each cycle. Done 250 times a year, the arbitrage adds up to a meaningful annual saving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Current compatibility constraints"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As of 2025/26, V2G in the UK is available on a limited set of combinations:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cars with CHAdeMO V2G capability, primarily the Nissan Leaf (Gen 2 with at least a 40 kWh battery). CHAdeMO is being phased out and new V2G cars are moving to CCS bidirectional."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cars with CCS V2G, Volkswagen ID.3 and ID.4 from mid-2024 model year with bidirectional charging enabled via OTA update, Hyundai IONIQ 5 and 6. CCS V2G chargers are entering the UK market through Indra, Wallbox, and others."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "v2h"
+                        }
+                      }
+                    ],
+                    "text": "V2H"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (vehicle-to-home, not grid export) is a simpler and cheaper option. A V2L adapter plugs into the car charging port and provides a standard 240V 3.6 kW socket. This works on Hyundai IONIQ 5 and Kia EV6. It does not need a special charger installation."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What a full V2H installation involves"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A bidirectional EV charger (specialist installation required). The charger must be specified for the car type and protocol (CHAdeMO or CCS)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A gateway unit or energy management system to read household consumption and control when the car charges or discharges. This is usually specific to the charger brand."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "An export tariff. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "smart-export-guarantee"
+                        }
+                      }
+                    ],
+                    "text": "Smart Export Guarantee"
+                  },
+                  {
+                    "type": "text",
+                    "text": " export qualifies for V2G export, but the economics are better for self-consumption (displacing expensive import) than export (paid at 5 to 15p/kWh)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A household in Leeds with a VW ID.3 (58 kWh), a CCS bidirectional charger, and an Agile Octopus tariff. The car charges 20 kWh overnight on cheap rate electricity. Between 4 pm and 7 pm it discharges 20 kWh into the home, displacing peak-rate imports. Repeated over 250 cycles per year, this generates a meaningful annual saving. Accounting for battery degradation and installation cost, payback is approximately 5 to 6 years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Battery health caution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every charge-discharge cycle adds wear to the battery. Modern EV batteries are rated for 1,500 to 2,000 cycles to 80% capacity. Most manufacturer warranties do not cover extra wear from V2G cycling. Check the warranty before you install. Volkswagen has confirmed V2G is within warranty on ID-series cars. Nissan Leaf second-generation batteries carry no manufacturer warranty from new."
+          }
+        ]
+      }
+    ]
+  }
+}

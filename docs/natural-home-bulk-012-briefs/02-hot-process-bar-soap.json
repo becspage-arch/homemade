@@ -1,0 +1,385 @@
+{
+  "slug": "hot-process-bar-soap",
+  "title": "Hot-process bar soap",
+  "subtitle": "Basic bar soap cooked to completion in a slow cooker",
+  "excerpt": "A basic bar soap made by cooking oils and lye together in a slow cooker, completing most of the reaction during the make. Unlike cold-process soap, where the bars cure for weeks, hot-process bars are usable within a week of cutting. Makes seven bars from a 500 g oil batch.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Hot-process method described in Susan Miller Cavitch, The Natural Soap Book (1995) and The Soapmaker's Companion (1997). Lye calculations: SoapCalc v3.0 at 0% superfat during cook, then 5% superfatting oil added at applesauce stage. Olive oil SAP 0.134, coconut oil SAP 0.190, castor oil SAP 0.128.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "7 bars (~130 g each after 1-week cure)",
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 10080,
+    "totalMinutes": 10170,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any weight change through a lye calculator. Hot-process scales well to 1 kg; keep the water-to-oil ratio the same.",
+    "makeAheadNotes": "The bars are usable after one week and improve slightly over a month as any remaining moisture evaporates fully.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "Stores two years or more in a cool dark cupboard. Discard if orange rancid patches (DOS) appear or the bar smells sharp and paint-like."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "isOptional": false
+    },
+    {
+      "slug": "safety-goggles",
+      "isOptional": false
+    },
+    {
+      "slug": "nitrile-gloves",
+      "isOptional": false
+    },
+    {
+      "slug": "lye-pitcher-hdpe",
+      "isOptional": false
+    },
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-loaf-mould",
+      "isOptional": false
+    },
+    {
+      "slug": "soap-cutter-wire",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hot-process-soap",
+      "term": "Hot process",
+      "definition": "A soap-making method where the oils and lye solution are cooked together in a slow cooker or double boiler, completing most of the saponification reaction during the make. Produces a rustic-textured bar that is usable within days rather than weeks."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and sodium hydroxide that produces soap and glycerine. Each oil has a SAP value, the grams of lye needed to fully saponify one gram of that oil."
+    },
+    {
+      "slug": "superfat",
+      "term": "Superfat",
+      "definition": "The percentage of fat left unreacted in the finished bar, added at the end of the hot-process cook to stay conditioning rather than being absorbed into the reaction."
+    }
+  ],
+  "techniqueSlugs": [
+    "working-with-lye-safely",
+    "hot-process-soap-method"
+  ],
+  "criticalTechniques": [
+    "working-with-lye-safely"
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "surfaceAs": "RAIL_CARD",
+      "offsetDays": 1,
+      "title": "Unmould and cut",
+      "body": "Hot-process soap sets firm within 24 hours. Turn out the loaf and cut into bars wearing gloves, the bars are safe to touch but fresh HP soap can still irritate sensitive skin. Set on a rack to finish drying."
+    },
+    {
+      "stepNumber": 2,
+      "surfaceAs": "HERO",
+      "offsetDays": 7,
+      "title": "Ready to use",
+      "body": "After a week the bars have lost their surface moisture and lather fully. The texture is chunkier and more rustic than cold-process soap, this is characteristic, not a defect."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hot-process soap is a basic bar soap made by cooking olive, coconut, and castor oils with the lye solution in a slow cooker rather than moulding the raw batter as in cold process. The cook completes most of the reaction during the make, so the bars are ready to use within a week of cutting. Makes seven bars from a 500 g oil batch"
+          },
+          {
+            "type": "text",
+            "text": ". The process is called "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and goggles before handling lye. Read the lye-handling method fully before starting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 300,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "60% of oil weight"
+            },
+            {
+              "ingredientSlug": "coconut-oil",
+              "amount": 150,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "30% of oil weight; melt before adding to slow cooker"
+            },
+            {
+              "ingredientSlug": "castor-oil",
+              "amount": 50,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "10% of oil weight; lather stabiliser"
+            },
+            {
+              "ingredientSlug": "sodium-hydroxide",
+              "amount": 73,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "NaOH at 99% purity; calculated at 0% superfat for the cook"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 165,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "33% of oil weight"
+            },
+            {
+              "ingredientSlug": "sweet-almond-oil",
+              "amount": 25,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "5% superfatting oil, added at the end of the cook after the paste reaches applesauce stage"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lye solution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a ventilated space, wearing gloves and goggles, pour the distilled water into the HDPE pitcher. Add the sodium hydroxide in a steady stream while stirring. Never add water to lye. The solution heats sharply; set aside to cool to 60 to 70°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the oils"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the coconut oil in the slow cooker on the low setting. Add the olive and castor oils. The oil blend should be around 60°C when the lye solution is added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the soap"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the lye solution into the oils in the slow cooker. Stick-blend to a medium trace. Put the lid on the slow cooker and cook on low, stirring every 15 minutes. The batter will go through several stages: liquid, pudding, then a thick, glossy, chunky paste that pulls from the sides, this is the applesauce stage that signals the cook is done. It typically takes 45 to 60 minutes on low."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Superfat and mould"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the heat. Stir the sweet almond oil into the hot paste, this is the "
+          },
+          {
+            "type": "text",
+            "text": "superfat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "superfat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " oil that stays conditioning rather than being absorbed into the reaction. Work quickly and pack the paste firmly into the silicone loaf mould, pressing out air pockets. Smooth the top as best you can. "
+          },
+          {
+            "type": "text",
+            "text": "hot-process",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hot-process-soap"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " bars are naturally more textured and rustic than cold-process. Leave uncovered for 24 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Unmould, cut, and cure"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After 24 hours the bars will be firm. Turn out the loaf and cut into seven bars wearing gloves. Set on a rack for one week to allow surface moisture to evaporate. After a week the bars lather fully and are ready to use. A further two to four weeks of curing hardens them and extends their life in the shower."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Store on a rack in a cool, dry cupboard. Two years or more. Discard if orange rancid patches (DOS) appear or the bar smells sharp and paint-like."
+          }
+        ]
+      }
+    ]
+  }
+}

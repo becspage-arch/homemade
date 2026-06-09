@@ -1,0 +1,74 @@
+{
+  "slug": "tapestry-shapes-and-outlines",
+  "title": "Shaping and outlining forms in tapestry weaving",
+  "subtitle": "How to build clean curves, diagonals, and outlines in tapestry weft",
+  "excerpt": "Shaping in tapestry weaving uses stepped diagonals and eccentric weft to build curves and outlines. This entry covers the standard methods: stepped diagonal lines, interlocked shapes with a shared slit, and soumak outline stitches to define the boundary between colour areas.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional tapestry weaving practice. Shaping and outlining techniques are documented across the tapestry tradition from the Gobelin workshops to the Navajo and Andean traditions. The stepped-diagonal method described here follows standard European and studio tapestry guild teaching.",
+  "recipeTools": [
+    { "slug": "tapestry-loom-upright", "isOptional": false },
+    { "slug": "frame-loom", "isOptional": true },
+    { "slug": "tapestry-bobbins", "isOptional": false },
+    { "slug": "tapestry-comb", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "weft", "term": "Weft", "definition": "The horizontal thread in weaving that passes over and under the warp threads to build the cloth." },
+    { "slug": "warp", "term": "Warp", "definition": "The vertical threads on the loom, under tension and held in position while the weft is woven through." },
+    { "slug": "slit", "term": "Slit", "definition": "A gap in tapestry cloth where two adjacent colour areas have been woven independently at the same warp thread, without interlocking. Slits are the characteristic join method of many tapestry traditions." },
+    { "slug": "soumak", "term": "Soumak", "definition": "A supplementary weft technique where the weft wraps around individual warp threads in a forward-and-back sequence, producing a ridged outline or decorative cord-like surface." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["tapestry shaping curves", "outlining tapestry shapes", "tapestry diagonal steps"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shaping in tapestry uses stepped diagonal lines for angles and " },
+          { "type": "text", "text": "soumak", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soumak" } }] },
+          { "type": "text", "text": " outlining for defined boundaries. A stepped diagonal is produced by shifting the colour boundary by one " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": " thread every two picks or every pick, depending on how steep the angle needs to be. A " },
+          { "type": "text", "text": "slit", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slit" } }] },
+          { "type": "text", "text": " where two colours meet can be left open (as in Kelim) or interlocked (the wefts loop around each other at the shared warp thread). Understanding which join to use for which shape is the main skill in tapestry composition." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Upright tapestry or frame loom", "qty": "1" },
+            { "name": "Tapestry bobbins loaded with two or more weft colours", "qty": "as required" },
+            { "name": "Tapestry comb for beating", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Stepped diagonal lines" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "To build a diagonal line moving one warp thread per pick, weave colour A for two picks across its zone, then move the boundary by one warp thread on the third pick. The resulting step-line at a 45-degree angle is the standard tapestry diagonal. Steeper angles (moving two warp threads per pick) produce more pixelated diagonals; shallower angles (moving one warp thread every three or four picks) produce curves that read as smooth from a distance." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Interlocking vs open slit joins" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "When two weft colours meet at the same warp thread, the join is either a slit or an interlock. A slit leaves the two wefts meeting at the shared warp thread without connecting: each weft simply turns back at that thread. A short slit (three to five warp threads) is strong enough to leave open; a longer slit will gape and needs either interlocking or soumak stitching to stabilise it. Interlocking: on each pick where the two colours share a warp boundary, loop the two weft threads around each other before each returns to its zone." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Soumak outline" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "A soumak outline is woven as a supplementary pass after the main colour areas of a shape are complete. Pass the soumak thread over two or three warp threads and back under one, moving in one direction across the boundary of the shape. The soumak wrapping produces a raised cord that sits on top of the main weft surface and defines the shape boundary clearly. It is the standard way to outline representational forms in European studio tapestry." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Curves from eccentric weft" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "True curves in tapestry are built from eccentric weft: the weft is placed at varying heights within the same shed, following the curve of the shape rather than lying horizontally. Lay the weft in a low arc at the centre of the curved shape and a higher arc at the sides, then beat so the weft follows the arc. This technique requires more experience but produces flowing curves that stepped diagonals cannot achieve." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The diagonal steps look jagged rather than smooth", "cause": "The step is too large: moving two or more warp threads per pick rather than one", "fix": "Slow the diagonal by moving only one warp thread per pick, or add a transitional half-step at the corner of each step." },
+            { "problem": "The slit at the colour boundary gapes and will not close during beating", "cause": "The slit is too long (more than five to six warp threads) and the interlocking is missing", "fix": "Add interlocking loops at the shared warp thread on every other pick to gradually close the slit. For a slit longer than 1 cm, soumak stitching over the gap after weaving is the most reliable repair." }
+          ]
+        }
+      }
+    ]
+  }
+}

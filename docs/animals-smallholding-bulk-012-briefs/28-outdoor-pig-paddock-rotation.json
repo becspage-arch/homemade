@@ -1,0 +1,72 @@
+{
+  "slug": "outdoor-pig-paddock-rotation",
+  "title": "Outdoor pig paddock rotation",
+  "subtitle": "How to plan and manage a paddock system that prevents overgrazing and disease build-up.",
+  "excerpt": "Pigs left in one paddock will turn it into bare compacted mud within weeks. A rotation system maintains some vegetation, reduces worm burden, and gives the land time to recover between occupancy.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, outdoor pig management guide. Soil Association, organic pig production standards. NADIS, pig parasite management in outdoor systems.",
+  "glossaryTerms": [
+    { "slug": "stocking-density-pigs", "term": "Stocking density (pigs)", "definition": "The number of pigs per unit area of paddock. At too high a density, vegetation is destroyed quickly and soil becomes heavily contaminated with worm eggs and pathogens. As a rough guide, each Large White or Landrace-cross sow with litter needs approximately 1,000 to 2,000 square metres of paddock area at minimum." },
+    { "slug": "pig-worm-burden", "term": "Worm burden (pigs)", "definition": "The accumulated population of gastrointestinal parasites in pigs maintained on the same ground. Paddocks left empty rest for at least 6 months to reduce larval contamination. Pigs moved to clean ground immediately have a lower worm burden than those on permanent plots." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig paddock system", "rotating pigs", "outdoor pig management"],
+  "recipeTools": [
+    { "slug": "electric-fence-energiser", "isOptional": false },
+    { "slug": "electric-fence-stake", "isOptional": false },
+    { "slug": "pig-board", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A three or four-paddock rotation is the standard approach for outdoor pigs. One or two paddocks are occupied at any time; the others are resting and re-establishing vegetation. The rotation period depends on ", "marks": [] }, { "type": "text", "text": "stocking density", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stocking-density-pigs" } }] }, { "type": "text", "text": " and season; wet winters destroy vegetation faster than summer grazing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up paddocks with electric fencing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs are contained reliably with two strands of electric fence. The lower strand should sit at approximately 20 cm from the ground, the upper at 40 to 50 cm. Use a mains energiser rated for the total fence length where possible; battery energisers are fine for small paddocks and temporary moves but require regular voltage checks. Electric fencing stakes can be pushed in by hand or with a post hammer for temporary divisions." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Training pigs to respect electric fencing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pigs new to electric fencing need to be trained before they are relied upon to respect it. Put them into a small paddock with solid sides or stock netting outside the electric fence for the first few days; a pig that breaks through before it has had a few minor shocks will not learn quickly and may not stay in." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rest periods" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A minimum rest of 6 months between pig occupancies is the practical standard for reducing ", "marks": [] }, { "type": "text", "text": "worm burden", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pig-worm-burden" } }] }, { "type": "text", "text": " on the ground. Ploughing or reseeding a rested paddock speeds vegetation recovery. Do not graze pigs on paddocks that were used for cattle or sheep in the same year without a rest period; cross-species parasite contamination is limited but some species are shared." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Moving pigs between paddocks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A pig board is useful for directing pigs through a gate rather than trying to herd them with your body. Pigs follow the edge of a solid barrier and can usually be guided through a gap by holding the board across the space you do not want them to go. Move to new ground when the existing paddock has been reduced to a heavily rooted, muddy state, not when it is completely destroyed." }]
+      }
+    ]
+  }
+}

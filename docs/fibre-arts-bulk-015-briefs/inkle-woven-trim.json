@@ -1,0 +1,70 @@
+{
+  "slug": "inkle-woven-trim",
+  "title": "Inkle-woven braid trim",
+  "subtitle": "A narrow warp-faced band for garment or bag decoration on an inkle loom",
+  "excerpt": "An inkle-woven trim is a narrow, dense warp-faced band about 2 to 3 cm wide, woven in a simple alternating colour stripe. One metre of trim takes about an hour to weave once the loom is dressed. The finished braid is firm and durable, suitable for binding bag edges, decorating garments, or wrapping gifts.",
+  "type": "PATTERN",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Warp-faced band weaving on peg looms and band looms is documented across medieval European textile records and in early 20th century craft manuals. The inkle loom format described here follows standard guild workshop teaching.",
+  "recipeTools": [
+    { "slug": "inkle-loom", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "warp-faced", "term": "Warp-faced", "definition": "A weave structure where the warp threads cover the weft entirely, producing a fabric that shows only warp colour on the surface." },
+    { "slug": "shed", "term": "Shed", "definition": "The opening between groups of raised and lowered warp threads through which the shuttle or weft carrier passes." },
+    { "slug": "warp", "term": "Warp", "definition": "The lengthwise threads on a loom, under tension during weaving." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["inkle loom trim", "inkle woven braid", "warp faced band weaving"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An inkle-woven trim is a " },
+          { "type": "text", "text": "warp-faced", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp-faced" } }] },
+          { "type": "text", "text": " band in which the " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": " threads carry all the pattern and the weft is hidden inside the structure. The inkle loom uses a set of pegs and heddle loops to separate the warp into two " },
+          { "type": "text", "text": "shed", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shed" } }] },
+          { "type": "text", "text": " positions, alternating between them on each pass of the weft carrier. A stripe pattern in two or more colours is the straightforward starting project; pick-up patterns are possible once the basic setup is mastered." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Warp yarn in two or more colours (8/2 or 5/2 cotton is standard)", "qty": "about 50 g per colour for 1 metre of trim" },
+            { "name": "Inkle loom", "qty": "1" },
+            { "name": "Finger shuttle or flat stick shuttle", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Setting up the loom" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Wind the warp in alternating colours around the inkle loom pegs following the threading route specific to your loom model. Every alternate thread passes through a heddle loop; the other threads run free above the heddle bar. The number of warp threads determines the width: 24 to 36 threads produce a trim of about 2 to 3 cm. Check that the heddle-threaded and free-running threads alternate correctly by lifting the heddle bar: the two sheds should open cleanly." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Weaving the band" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Open the first shed by lifting the heddle bar. Pass the shuttle through from left to right with the weft yarn, leaving a short tail to weave in. Advance the heddle bar to the second position and pass the shuttle back. Beat each pick firmly with your fingers or the edge of the shuttle: inkle weaving needs a firm beat to pack the weft out of sight. The warp-faced surface is only achieved if the weft is fully hidden." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Advancing the warp" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "As you weave, the work moves toward you and the unworked warp moves away. Advance the warp by releasing the tension peg and rolling the woven section around the back of the loom (or the loom's take-up peg if it has one). Keep the tension consistent after each advance; loose tension produces a floppy section in the finished band." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "When the warp is almost used up, cut the band off the loom. Thread the weft tail onto a blunt darning needle and weave it back through the last few picks to secure. Secure the starting tail in the same way. Cut the warp loops at the starting end to produce fringe, or knot them close to the last woven pick for a fringed trim." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The weft shows as a visible line through the band", "cause": "The beat is too light and the warp threads are not covering the weft completely", "fix": "Beat each pick much more firmly. On an inkle loom, the beat is done by pressing the shuttle flat against the last pick and pushing; it takes more force than rigid heddle or floor loom beating." },
+            { "problem": "The band is narrowing as you weave", "cause": "The weft is being pulled too tight on entry, drawing the selvedge threads inward", "fix": "Let the weft lay across the shed at a slight angle before beating; this creates enough length to fill the shed width without drawing in." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "spinning-for-fair-isle",
+  "title": "Spinning yarn for Fair Isle knitting",
+  "subtitle": "Consistent 2-ply fingering weight with matched tension across all colours",
+  "excerpt": "Fair Isle knitting requires yarn that is consistent in weight, twist, and tension across every colour in the palette. Small variations between skeins distort the pattern. This entry covers how to spin a matched set of fingering-weight 2-ply singles in multiple colours for a Fair Isle project.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional Shetland and Fair Isle handspinning practice. The technique of spinning matched-tension yarn sets for stranded colourwork is documented in Shetland textile tradition; the practical guidance here draws on standard UK guild workshop teaching.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "bobbin", "isOptional": false },
+    { "slug": "ball-winder", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "wraps-per-inch", "term": "Wraps per inch", "definition": "A measurement of yarn thickness: wrap the yarn around a ruler and count how many wraps fit in one inch. Used to match yarn weight across different skeins and colours." },
+    { "slug": "twist-angle", "term": "Twist angle", "definition": "The angle at which fibres wrap around the core of a yarn, measured from the vertical axis. Higher twist angle means more twist per unit length." },
+    { "slug": "singles", "term": "Singles", "definition": "A single strand of yarn that has been spun but not plied. Two singles plied together make a 2-ply yarn." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["spinning for stranded colourwork", "fair isle handspun", "spinning matched yarn set"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fair Isle yarn must match across every colour in the palette. Each colour must produce " },
+          { "type": "text", "text": "singles", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "singles" } }] },
+          { "type": "text", "text": " at the same " },
+          { "type": "text", "text": "wraps per inch", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wraps-per-inch" } }] },
+          { "type": "text", "text": " and the same " },
+          { "type": "text", "text": "twist angle", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "twist-angle" } }] },
+          { "type": "text", "text": " so each colour behaves the same when plied and knitted. A difference of two or three wraps per inch between colours causes visible striping and uneven floats in the finished piece." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Spinning fine yarn in quantity throws fibre dust. Work in a ventilated space." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Merino or Shetland top in each project colour", "qty": "as calculated for the project" },
+            { "name": "Spinning wheel set to a consistent ratio (16:1 to 20:1 for fingering weight)", "qty": "1" },
+            { "name": "Ruler for wraps-per-inch measurements", "qty": "1" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Establish a reference skein" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Spin a reference skein of 20 to 30 g in the primary colour first. Ply it and measure the wraps per inch: for fingering-weight Fair Isle yarn, 18 to 22 wraps per inch is the usual range. Note the wheel ratio, treadle cadence, and draft length you used to produce this skein. Every subsequent colour skein must match these settings." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Consistency across colours" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Each colour you spin should be measured against the reference skein before it is plied. Spin a short test length (1 to 2 metres) and measure its wraps per inch. If the count is off, adjust your drafting speed before spinning the full bobbin. Different colours, even from the same breed, can draft differently because dye affects the fibre's surface and the way it drafts: acid-dyed top often drafts slightly faster than natural-coloured top. Account for this by testing each colour before committing." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply each colour as a matched 2-ply at the same plying tension. Skein each colour and measure its wraps per inch against the reference skein after plying. A matched set should all sit within one or two wraps per inch of each other. Wash and finish all skeins in the same bath at the same time to ensure identical blocking; differential blocking causes more variation than differential spinning in some fibre types." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Calculating yardage" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Measure the length of the reference skein before and after finishing to calculate the shrinkage ratio. Apply this ratio to calculate the yardage you need to spin for each colour in the project. For Fair Isle with many small colour sections, spin about 20 per cent more than the calculated requirement for each colour to allow for gauge swatching and tension adjustment." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The knitted colour bands are visibly different widths even though the pattern is the same", "cause": "The yarn in some colours is finer or heavier than in others, causing those colours to knit at a different row height", "fix": "Measure all skeins against the reference skein before knitting. Reskein and re-ply any skein that is significantly out of range rather than trying to adjust tension at the needle." },
+            { "problem": "The two-colour floats are tight and the fabric puckers", "cause": "The plied yarn is over-twisted relative to the knitting tension, causing the yarn to draw up as it passes behind the work", "fix": "Test the plying twist with a drape test: a well-balanced 2-ply should hang straight with no residual kink. If the skein still kinks after wet-finishing, ply at a lower twist." }
+          ]
+        }
+      }
+    ]
+  }
+}

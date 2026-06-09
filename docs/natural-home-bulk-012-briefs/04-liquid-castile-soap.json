@@ -1,0 +1,304 @@
+{
+  "slug": "liquid-castile-soap",
+  "title": "Liquid Castile soap",
+  "subtitle": "Concentrated olive oil liquid soap from potassium lye",
+  "excerpt": "A concentrated olive oil liquid soap made with potassium hydroxide rather than the sodium hydroxide used for bars, producing a thick golden paste that dilutes into anything from hand soap to floor cleaner. One 500 g oil batch makes enough paste for three to four litres of finished product. The paste keeps two years in a sealed jar.",
+  "type": "RECIPE",
+  "categorySlug": "natural-home",
+  "subCategorySlug": "soap",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Liquid soap method and KOH calculations in Susan Miller Cavitch, The Soapmaker's Companion (1997) and Lisa Bronner (Dr. Bronner's technical notes, publicly available 2022). Olive oil KOH SAP value: 0.190 (potassium hydroxide per gram of oil at 90% KOH purity). 3% superfat applied. Water as 2.5× lye weight for the initial cook.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "~500 g of soap paste, dilutes to 3 to 4 litres of liquid soap",
+    "prepMinutes": 45,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "totalMinutes": 225,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Run any weight change through a KOH lye calculator. Liquid soap batches work best at 500 g to 1 kg oil weight; the paste is thick and heavy beyond that.",
+    "makeAheadNotes": "The paste keeps indefinitely in a sealed jar. Dilute to the consistency you want just before bottling; thin soap (1:8 paste-to-water) for hand soap, thicker (1:4) for a body wash.",
+    "dietaryFlags": [],
+    "cuisine": null,
+    "mealType": null,
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true,
+    "shelfLifeDays": 730,
+    "shelfLifeNotes": "The undiluted paste keeps two years in a sealed jar at room temperature. Diluted soap keeps six months in a pump bottle. Discard if the diluted soap turns cloudy, develops an off smell, or shows any visible growth."
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scale-precision",
+      "isOptional": false
+    },
+    {
+      "slug": "safety-goggles",
+      "isOptional": false
+    },
+    {
+      "slug": "nitrile-gloves",
+      "isOptional": false
+    },
+    {
+      "slug": "lye-pitcher-hdpe",
+      "isOptional": false
+    },
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "potassium-hydroxide",
+      "term": "Potassium hydroxide (KOH)",
+      "definition": "The lye used to make liquid soap, as opposed to sodium hydroxide (NaOH) used for bar soap. Potassium hydroxide produces a paste or liquid rather than a hard bar. Sold as flakes or pellets at 90 to 100% purity; adjust lye calculations for the actual purity stated on the packet."
+    },
+    {
+      "slug": "saponification",
+      "term": "Saponification",
+      "definition": "The chemical reaction between fat and lye that produces soap and glycerine. For liquid soap, potassium hydroxide is used; for bar soap, sodium hydroxide."
+    }
+  ],
+  "techniqueSlugs": [
+    "working-with-lye-safely"
+  ],
+  "criticalTechniques": [
+    "working-with-lye-safely"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liquid Castile soap is a concentrated olive oil soap made with "
+          },
+          {
+            "type": "text",
+            "text": "potassium hydroxide",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "potassium-hydroxide"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " rather than the sodium hydroxide used for bars, producing a thick golden paste that stays liquid at room temperature and dilutes into anything from hand soap to floor cleaner. One 500 g oil batch makes enough paste for three to four litres of finished product. The paste keeps two years in a sealed jar"
+          },
+          {
+            "type": "text",
+            "text": ". The process is called "
+          },
+          {
+            "type": "text",
+            "text": "saponification",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saponification"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wear protective gloves and goggles before handling potassium hydroxide. The cook takes two to three hours on the lowest heat setting until the paste turns glossy and translucent and pulls cleanly from the pot sides."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 500,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "100% of oil weight; extra-light grade produces a paler paste"
+            },
+            {
+              "ingredientSlug": "potassium-hydroxide",
+              "amount": 93,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "KOH at 90% purity; calculated for 3% superfat on pure olive oil (SAP 0.190 at 100%; divide by actual purity). Adjust if using 100% KOH flakes."
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 230,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "2.5× lye weight; the cook will evaporate some of this"
+            },
+            {
+              "ingredientSlug": "distilled-water",
+              "amount": 500,
+              "unit": "g",
+              "isOptional": false,
+              "prepNote": "For dilution: add to the cooked paste after removing from heat, to taste"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lye solution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In a ventilated space, wearing gloves and goggles, pour the 230 g of distilled water into the HDPE pitcher. Add the potassium hydroxide flakes in a thin stream while stirring. The solution heats and may fizz; stir until fully dissolved. Cool slightly before adding to the oils, around 70°C is fine for hot-process liquid soap."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the paste"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the olive oil into the slow cooker on low. Pour in the KOH solution and stick-blend to a thick pudding trace. Put the lid on and cook on low, stirring every 20 to 30 minutes. The paste will go through a waxy, clumpy stage before it smooths out. At completion, typically 2.5 to 3 hours, the paste is translucent, golden, and glossy, with no white or opaque streaks. A small piece dissolved in a glass of water will produce a clear, not cloudy, solution when fully cooked."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Test for completion"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The water clarity test: dissolve a pea-sized piece of paste in 30 ml of warm distilled water. If the water is clear or lightly golden, the cook is done. If it's cloudy or milky, cook for another 30 minutes and test again."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dilute"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turn off the heat. Slowly add the dilution water to the hot paste, stirring as you go. The paste will thin and dissolve; it may look cloudy at first and clear as it cools. Add water gradually until the soap is slightly thicker than your target final consistency, it thins a little more as it cools. For hand soap, a 1:3 or 1:4 paste-to-water ratio is typical. Pour into jars to store, or into pump bottles to use."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage and shelf life"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The undiluted paste keeps two years in a sealed jar at room temperature. Diluted soap in a pump bottle keeps six months. Discard if the diluted soap turns permanently cloudy, develops an off smell, or shows any visible growth."
+          }
+        ]
+      }
+    ]
+  }
+}

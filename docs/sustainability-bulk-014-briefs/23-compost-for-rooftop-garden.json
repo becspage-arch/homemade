@@ -1,0 +1,106 @@
+{
+  "slug": "compost-for-rooftop-garden",
+  "title": "Sourcing and using compost in a rooftop garden",
+  "subtitle": "Managing weight limits and compost quality when you are growing above ground level",
+  "excerpt": "A rooftop garden grows in containers or raised beds with no connection to ground soil. The growing medium degrades faster than in-ground beds and must be replenished from an external source. Weight, drainage, and the absence of earthworms shape every decision about what compost to use.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British Standard BS 8616 on growing media; RHS guidance on container growing; GRO Green Roof Code on growing media specification for extensive and intensive green roofs.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "peat-free",
+      "term": "Peat-free",
+      "definition": "A growing medium or compost that contains no peat, using alternatives such as coir, bark, green compost, or wood fibre to provide structure and moisture retention."
+    },
+    {
+      "slug": "worm-castings",
+      "term": "Worm castings",
+      "definition": "The solid excretions of compost worms — a finished, fine-textured compost with a higher available nutrient content than standard compost."
+    }
+  ],
+  "techniqueSlugs": ["compost-for-container-growing", "making-compost-based-potting-mix", "balcony-indoor-composting-options"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rooftop containers and raised beds compact and lose fertility faster than in-ground beds because there are no earthworms cycling material, no subsoil to buffer drying, and the growing medium flushes nutrients quickly with regular irrigation. Annual top-dressing and periodic medium replacement are the two maintenance requirements." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weight is the primary constraint" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A structural rooftop typically carries 150–250 kg/m² of imposed load. A standard peat-free growing medium weighs approximately 350–500 kg/m³ when saturated. A 200 mm deep raised bed of standard compost weighs 70–100 kg/m² when wet. For many rooftops, that is close to the structural limit. Never add compost to a rooftop growing system without confirming the roof's imposed-load rating with a structural engineer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lightweight growing medium options" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Green roof extensive medium: crushed brick and perlite with 15–20% organic material. Weighs 90–130 kg/m³ dry. " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peat-free" } }], "text": "Peat-free" },
+            { "type": "text", "text": " and drains freely. Only suitable for drought-tolerant plants." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Perlite and coir mix: 1 part perlite to 2 parts coir by volume. Approximately 200–280 kg/m³ saturated. Needs regular liquid feeding as it holds few nutrients on its own." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Commercial lightweight growing media (e.g. Seramis, expanded clay aggregate mixes): specifically designed for container growing with reduced wet weight." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual top-dressing routine" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "In spring, apply a 20–30 mm layer of mature " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worm-castings" } }], "text": "worm castings" },
+            { "type": "text", "text": " or green compost to the top of each container. Do not dig it in — surface application allows it to mix in gradually without disturbing roots." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Every 3–4 years, replace 30–50% of the growing medium in permanent containers. Remove old compacted medium and replace with fresh lightweight mix." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sourcing compost without a ground garden" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Council green-waste compost: most UK councils sell PAS 100-certified green compost by the bag or bulk bag. Call the local depot — bulk bags are usually cheaper per litre than garden-centre bags." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wormery on the roof or balcony: a stacking wormery processes kitchen waste into castings in the same space where the growing happens. Even a single small wormery produces enough castings to top-dress 2–4 m² of growing area per year." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Growing medium sags and compacts within one season", "cause": "High proportion of fine compost particles settling under repeated irrigation; no structural amendment", "fix": "Mix in 20–30% perlite or fine grit by volume when replacing the medium. This keeps drainage channels open as organic matter breaks down." }
+          ]
+        }
+      }
+    ]
+  }
+}

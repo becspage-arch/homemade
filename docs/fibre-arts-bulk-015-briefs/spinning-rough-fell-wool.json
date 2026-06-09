@@ -1,0 +1,75 @@
+{
+  "slug": "spinning-rough-fell-wool",
+  "title": "Spinning Rough Fell wool",
+  "subtitle": "A coarse, weather-resistant Cumbrian hill breed for durable outerwear and rug yarns",
+  "excerpt": "Rough Fell is a hardy Cumbrian hill breed with a coarse, kempy fleece and a distinctive creamy-white colour. The fibre is not soft but it is strong: spun thick it makes durable rug yarn and outerwear fabric that sheds water well.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional British hill-breed spinning practice. The Rough Fell is documented as a Cumbrian breed from the 17th century; spinning characteristics draw on guild workshop guidance for kempy and coarse breeds.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "drum-carder", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "bobbin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "kemp", "term": "Kemp", "definition": "Short, coarse, medullated fibres found in some breed fleeces. Kemp does not take dye and adds a characteristic white fleck to spun and dyed yarn." },
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual lock of wool from cut end to tip." },
+    { "slug": "woollen-draw", "term": "Woollen draw", "definition": "A spinning method where carded fibres are drafted with twist entering the zone, producing a lofty, air-filled yarn." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["rough fell spinning", "spinning rough fell", "cumbrian hill wool spinning"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rough Fell has a long " },
+          { "type": "text", "text": "staple length", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " of 15 to 25 cm and a fleece that contains a proportion of " },
+          { "type": "text", "text": "kemp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kemp" } }] },
+          { "type": "text", "text": ". The kemp does not dye and adds white fleck to dyed yarn, an effect that can be used deliberately in tweeds and outerwear fabric. Spin with a " },
+          { "type": "text", "text": "woollen draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "woollen-draw" } }] },
+          { "type": "text", "text": " from a drum-carded batt or with a semi-worsted draw from combed locks. The yarn is not suitable for garments worn against the skin, but for rugs and outerwear it is practical and long-lasting." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Carding and combing coarse fleece throws fibre dust and kemp particles. Work in a ventilated space and damp-mop afterwards." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Rough Fell fleece (washed)", "qty": "as required" },
+            { "name": "Spinning wheel with a low ratio (5:1 to 6:1)", "qty": "1" },
+            { "name": "Drum carder or hand cards", "qty": "for preparation" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Washing and preparation" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Wash the raw fleece in hot water with a small amount of wool wash, without agitation, and let it drain rather than squeezing. Coarse fleeces tolerate a higher wash temperature than fine breeds. Open the washed locks by hand before carding; the long fibres card more easily when the locks are pulled open along their length. Card into a thick batt and pull off in strips for spinning." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Spinning setup" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Use a low drive ratio (5:1 to 6:1) and a firm take-up. Rough Fell needs more twist per inch than fine wool to hold the long, coarse fibres together. Draft with a woollen draw from the batt, keeping a short drafting zone (8 to 12 cm) relative to the staple length so the longer fibres do not draft out of the zone without catching twist. The kemp fibres will project from the yarn surface; this is normal." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two or three singles together for a robust rug or outerwear yarn. Thick plying increases the yarn's ability to hold its structure in heavy use. Skein, wet, snap, and dry. Rough Fell yarn shrinks very little in finishing; the finished skein is close to the spun diameter. For rug use, a thicker 3-ply yarn holds up better to foot traffic than a 2-ply of the same weight." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The singles break every few centimetres", "cause": "The kemp and coarse fibres are pulling out of the singles because the twist is not high enough to hold them in", "fix": "Increase twist by reducing draft speed or increasing wheel speed. Coarse and kempy breeds need substantially more twist than fine breeds to produce stable singles." },
+            { "problem": "The yarn surface is very rough and prickly", "cause": "Normal for this breed at a fine yarn count; Rough Fell is not suitable for fine yarns or next-to-skin use", "fix": "Spin thicker: a rug-weight or bulky yarn makes the most of the breed's durability. If softness is the priority, Rough Fell is not the right fibre." }
+          ]
+        }
+      }
+    ]
+  }
+}

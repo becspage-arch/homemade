@@ -1,0 +1,68 @@
+{
+  "slug": "peg-loom-rug-basics",
+  "title": "Peg loom rug basics",
+  "subtitle": "How to weave a rug on a peg loom using rag strips or thick yarn",
+  "excerpt": "A peg loom is a simple wooden board with a row of pegs that supports a warp and allows basic plain weave without a full loom. It is an accessible way to make small rugs and mats from rag strips or thick yarn. The finished mat is 30 to 40 cm wide and as long as the warp allows.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "rug-making",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional British peg-loom weaving practice. Peg looms are documented in British folk textile traditions from the 18th century onward as a portable, low-cost weaving tool for rag-rug production.",
+  "recipeTools": [
+    { "slug": "rug-binding-tape", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "peg-loom", "term": "Peg loom", "definition": "A weaving tool consisting of a row of pegs set into a board or frame. The warp threads loop around the pegs; the weaver passes the weft through the alternate shed created by lifting alternate pegs." },
+    { "slug": "warp", "term": "Warp", "definition": "The lengthwise threads on a loom, held under tension during weaving." },
+    { "slug": "weft", "term": "Weft", "definition": "The crosswise thread or strip that passes over and under the warp threads to build the fabric." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["peg loom weaving", "peg loom rug", "peg weaving basics"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "peg loom", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peg-loom" } }] },
+          { "type": "text", "text": " has a row of pegs set at regular intervals: the " },
+          { "type": "text", "text": "warp", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warp" } }] },
+          { "type": "text", "text": " threads loop up and over each peg to create two shed positions. Passing the " },
+          { "type": "text", "text": "weft", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weft" } }] },
+          { "type": "text", "text": " (rag strips, thick yarn, or torn fabric) alternately in front of and behind successive pegs builds the rug row by row. The work is finished by pushing the woven rows down off the pegs as the rug grows. No special equipment beyond the peg loom is needed." }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Peg loom (commercial or home-made from a length of wood and dowels)", "qty": "1" },
+            { "name": "Warp cord (strong cotton or linen twine)", "qty": "enough to loop the full loom length twice" },
+            { "name": "Rag strips or thick rug yarn for weft", "qty": "as required" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Setting up the warp" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Knot the warp cord to the first peg. Loop it forward to loop over the second peg, back to loop over the first peg again, forward to the third peg, and so on, in a figure-of-eight path around each peg pair. This figure-of-eight creates two distinct sheds: the weft can pass through the gap between the two layers of warp on one pass and through the reversed gap on the return pass." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Weaving the rug" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Pass the rag strip or weft yarn in front of the first peg, behind the second, in front of the third, and so on to the end of the row. Return in the opposite shed: behind the first peg, in front of the second. Push each row of weft down toward the base of the pegs after passing it. The rows build up from the base; when the pegs are full, push the woven section off the bottoms of the pegs while keeping the warp attached at the tops." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Finishing the rug" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "When the rug reaches the desired length, cut the warp cord at each peg and tie the warp ends in pairs to secure the last row. Trim to a short fringe of 4 to 5 cm. Fold the fringe under and stitch it to the back of the rug with strong thread for a clean hemmed edge. A rug binding tape sewn over the edge is the most durable finish for a floor rug." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The rug is pulling in at the sides and narrowing as it grows", "cause": "The weft strips are being pulled too tightly on entry, drawing the selvedge inward", "fix": "Leave a slight loop of weft at each selvedge before beating down. The weft should arc slightly across the shed rather than lying taut between the edge pegs." },
+            { "problem": "The two warp layers are not separating cleanly into two sheds", "cause": "The figure-of-eight warping was not threaded correctly around each peg pair, so the two layers cross each other in places", "fix": "Re-warp carefully, checking that the cord loops cleanly over each peg in the correct sequence without tangling between pegs." }
+          ]
+        }
+      }
+    ]
+  }
+}

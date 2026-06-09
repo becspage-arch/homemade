@@ -1,0 +1,122 @@
+{
+  "slug": "solar-panel-degradation-and-replacement",
+  "title": "Solar panel degradation: what to expect and when to replace panels",
+  "subtitle": "Understanding the gradual loss of output over a panel's 25-year life",
+  "excerpt": "Solar PV panels degrade slowly every year. A standard crystalline silicon panel loses roughly 0.5% of its rated output annually, giving around 88% of original capacity after 25 years. Knowing what is normal degradation and what signals a fault helps you decide when to investigate a drop in generation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NREL (National Renewable Energy Laboratory) study on PV degradation rates, Lawrence Berkeley National Laboratory; IEC 61215 crystalline silicon module qualification testing; MCS panel warranty guidance.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic panels that convert sunlight into electricity directly, as distinct from solar thermal collectors that heat water."
+    },
+    {
+      "slug": "pv-degradation",
+      "term": "PV degradation",
+      "definition": "The gradual, irreversible reduction in a solar panel's power output over time, caused by light-induced degradation, thermal cycling, and material ageing."
+    },
+    {
+      "slug": "light-induced-degradation",
+      "term": "Light-induced degradation (LID)",
+      "definition": "An initial rapid drop in solar panel output in the first few days of operation as the silicon material stabilises under sunlight, typically 1–3% for standard silicon modules."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-annual-maintenance-checklist", "solar-pv-inverter-fault-diagnosis", "solar-pv-system-monitoring"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " panel does not wear out the way a mechanical part does. It degrades gradually, losing a small fraction of its rated power each year. Standard crystalline silicon panels degrade at around 0.5% per year after the initial " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "light-induced-degradation" } }], "text": "light-induced degradation" },
+          { "type": "text", "text": " period. This is normal " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pv-degradation" } }], "text": "PV degradation" },
+          { "type": "text", "text": " and is factored into the manufacturer's power warranty — most panels are warranted to produce at least 80–87% of rated power at year 25." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Worked example — what to expect over 25 years" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 4 kWp system (10 × 400 W panels) installed in 2024. Assuming 0.5%/year degradation and starting generation of 3,500 kWh/year:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Year 1 (after LID): ~3,430 kWh" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Year 10: ~3,270 kWh (~93.5% of year 1)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Year 25: ~2,990 kWh (~87% of year 1)" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What is a fault versus what is normal degradation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A gradual decline of 0.5–1% per year is normal. A sudden drop of 5–20% in a single year is a fault, not normal ageing. Common causes of sudden generation loss:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Micro-crack propagation — invisible fractures in the silicon cell that cause open-circuit strings. Shows up as one or more panels reading near-zero output in per-panel monitoring." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Potential-induced degradation (PID) — voltage stress causing charge accumulation at the glass surface, particularly in systems without proper grounding. Can cause 15–25% generation loss but is often reversible with a PID recovery unit." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Delamination — the EVA encapsulant layer separates from the glass, visible as bubbles or yellowing. Typically irreversible." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to replace panels" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Panels rarely need replacing at the end of their 25-year power warranty — the system still generates at 80–87% capacity and replacement makes sense only if the economics of new higher-efficiency panels outweigh the cost and disruption. Replace individual panels when a panel fails a fault test, shows delamination, or has degraded to below 70% of rated capacity while other panels in the string are still above 80%." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking generation with year-on-year comparison" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Compare generation month-by-month against the same month in the previous year rather than against an absolute target. Weather varies year to year; a year-on-year comparison of the same calendar month controls for irradiance differences better than comparing against an annual average." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Generation has dropped more than 10% year-on-year", "cause": "Possible fault: PID, micro-cracks, or a failed DC optimiser or microinverter", "fix": "Check per-panel monitoring if available; commission a drone thermal survey or a panel IV-curve test to identify underperforming panels." },
+            { "symptom": "Generation lower than expected from year one", "cause": "Panels were installed with a known LID but the installer modelled pre-LID output; or system is shaded by a new structure", "fix": "Compare actual output against the MCS prediction document the installer provided; check for new shading sources (tree growth, new building)." }
+          ]
+        }
+      }
+    ]
+  }
+}

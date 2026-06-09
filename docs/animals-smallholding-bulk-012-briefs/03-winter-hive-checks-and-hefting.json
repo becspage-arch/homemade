@@ -1,0 +1,84 @@
+{
+  "slug": "winter-hive-checks-and-hefting",
+  "title": "Winter hive checks and hefting",
+  "subtitle": "How to monitor a colony through winter without opening the hive.",
+  "excerpt": "You do not open a beehive in winter. But you do check it. A short walk to the apiary once a fortnight tells you whether the colony is alive, whether stores are running low, and whether the entrance is blocked. This is what to do and what to do if something looks wrong.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "National Bee Unit, Beekeeper's Toolkit (2024), winter hive management section. BBKA Good Practice Guide. Frank Pearson, Bee-keeping for All (1923), Internet Archive, winter management chapter.",
+  "glossaryTerms": [
+    { "slug": "winter-cluster", "term": "Winter cluster", "definition": "The tight ball of bees that forms inside the hive when temperatures drop below about 10°C. The cluster generates heat by vibrating their flight muscles, consuming honey stores to fuel the process. The queen stays at the warmest centre of the cluster." },
+    { "slug": "hefting", "term": "Hefting", "definition": "The practice of judging the weight of a hive by lifting one side slightly from below with both hands. A heavy hive has good stores; a hive that lifts easily is running low. Experienced beekeepers can estimate stores to within a few kilograms by feel." },
+    { "slug": "fondant", "term": "Fondant", "definition": "A solid block of sugar paste fed to bees in winter and early spring when liquid syrup cannot be offered. The colony breaks it down without adding water, which is critical in cold weather when extra moisture would chill the cluster." }
+  ],
+  "techniqueSlugs": ["spring-fondant-emergency-feeding"],
+  "criticalTechniques": [],
+  "aliases": ["winter beekeeping checks", "hive hefting", "monitoring hives in winter"],
+  "recipeTools": [
+    { "slug": "bee-veil", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "From November to late February, the colony is clustered and you leave it undisturbed. But you still visit, once a fortnight is enough, to listen, lift, and look at the entrance. The " }, { "type": "text", "text": "winter cluster", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "winter-cluster" } }] }, { "type": "text", "text": " is a self-regulating system; your job is not to manage it, just to catch the two things that can kill it: starvation and a blocked entrance." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A veil. Nothing else is required for a winter check. Do not open the hive. Do not use the smoker unless you are adding emergency fondant, in which case a veil and gloves are enough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three checks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Stand at the entrance. A live cluster is audible from the outside on a cold still day, producing a low hum or rustle when you tap the side of the hive gently with your knuckle. Silence combined with no dead bees at the entrance and the hive feeling very light is more worrying than silence alone." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Check the entrance. Clear any dead bees blocking it with a twig. A pile of dead bees at the entrance in winter is normal; the colony constantly removes corpses from within the cluster. A solid plug of dead bees jammed into the entrance block is not normal; clear it or the living bees cannot ventilate the hive." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Heft the hive. Slide both hands under the floor at the front of the hive and lift gently from one side. You are not trying to weigh it precisely; you are feeling whether it is noticeably lighter than it was last month. A National hive with a healthy store weighs around 18 to 25 kg in October; a hive that lifts in one hand by January is near starvation. " }, { "type": "text", "text": "Hefting", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hefting" } }] }, { "type": "text", "text": " is a skill you calibrate over several seasons, but even a first-year beekeeper can feel the difference between a reassuringly heavy hive and one that feels empty." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "If the hive feels dangerously light" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "On a day above 5°C, crack the crown board just enough to slide a block of baking " }, { "type": "text", "text": "fondant", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fondant" } }] }, { "type": "text", "text": " directly onto the top bars above the cluster. Replace the crown board and close up immediately. Do not expose the cluster to cold air for more than a few seconds. A 500 g to 1 kg block of baker's fondant is enough to keep a colony alive for two to three weeks while the weather stays cold." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "When fondant is not enough", "body": "If you can hear no sound at all, the entrance has no dead bees, and the hive lifts in one hand, the colony may have died. Do not open the hive in cold weather to check. Wait for a day above 12°C, then open briefly. Dead colonies can be cleaned up in spring; a cold inspection of a weak colony does more damage than the knowledge is worth." },
+        "content": []
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Other winter tasks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fit a mouse guard across the entrance in October and remove it in March. Keep the area in front of the hive clear of long grass, which causes the bees to cluster at the entrance on warm days and impedes the ventilation the hive needs." }]
+      }
+    ]
+  }
+}

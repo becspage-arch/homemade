@@ -1,0 +1,177 @@
+{
+  "slug": "macaron-raspberry",
+  "title": "Raspberry macaron",
+  "subtitle": "Pink French macarons with a sharp raspberry buttercream or ganache filling",
+  "excerpt": "French macarons with a raspberry filling, shell made from almond flour, icing sugar, and aged egg whites, filled with a sharp raspberry buttercream or white chocolate raspberry ganache. The shells are naturally gluten-free. The keys are aged whites, precise folding, and full drying before baking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "biscuits",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "French macarons (not to be confused with macaroons) are a Paris patisserie staple. The meringue-based shell technique is documented in French confectionery tradition.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "About 20 assembled macarons",
+    "prepMinutes": 60,
+    "cookMinutes": 15,
+    "restingMinutes": 120,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled macarons in a single layer, then box them. Defrost for 1 hour at room temperature before serving. The shells soften slightly but remain good.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Macaron shells can be made 2 days ahead and stored in an airtight tin. Fill on the day or the day before serving.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "french",
+    "mealType": "snack",
+    "mood": ["makeAhead"],
+    "temperatureCelsius": 150,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": null,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 150,
+      "bakeTemperatureNote": "conventional oven; fan 130°C, macarons need steady heat with no hot spots",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "piping-bag", "isOptional": false },
+    { "slug": "piping-tips", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "baking-mat", "isOptional": true },
+    { "slug": "baking-paper", "isOptional": false },
+    { "slug": "hand-mixer", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "macaronage", "term": "Macaronage", "definition": "The folding technique used to incorporate dry almond mixture into French macaron meringue. The aim is to deflate the meringue slightly until the batter flows from the spatula in a slow, thick ribbon. Too much macaronage and the shells spread flat; too little and they dome and crack." },
+    { "slug": "feet-macaron", "term": "Feet", "definition": "The ruffled band that forms at the base of a properly made macaron shell during baking. Feet are a sign of correct batter consistency and adequate resting time before baking." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Raspberry macarons use the same shell as the classic French macaron, almond flour, icing sugar, and meringue, with a small amount of red or pink gel colouring added. The filling is a sharp raspberry buttercream or a white chocolate and raspberry ganache that contrasts with the almond sweetness of the shell. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feet-macaron" } }],
+            "text": "Feet"
+          },
+          { "type": "text", "text": " form when the batter is right and the shell has dried before baking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": { "servings": 40 },
+        "content": [
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "ground-almonds", "amount": 150, "unit": "g", "display": "ground almonds (extra-fine)", "prepNote": "sifted" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "icing-sugar", "amount": 150, "unit": "g", "display": "icing sugar", "prepNote": "sifted" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "egg-whites", "amount": 110, "unit": "g", "display": "egg whites", "prepNote": "aged at room temperature for 24 hours (about 4 medium eggs)" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "caster-sugar", "amount": 150, "unit": "g", "display": "caster sugar", "prepNote": "for the meringue" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "water", "amount": 45, "unit": "ml", "display": "water", "prepNote": "for the Italian meringue syrup" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "unsalted-butter", "amount": 150, "unit": "g", "display": "unsalted butter", "prepNote": "softened, for the filling" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "icing-sugar", "amount": 100, "unit": "g", "display": "icing sugar", "prepNote": "for the filling" }
+          },
+          {
+            "type": "ingredient",
+            "attrs": { "slug": "raspberry-jam", "amount": 60, "unit": "g", "display": "raspberry jam", "prepNote": "strained, for the filling" }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make the Italian meringue" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cook 150 g caster sugar with 45 ml water in a small saucepan to 118°C (soft-ball stage). While the syrup cooks, whisk 55 g of the aged egg whites to soft peaks. Pour the hot syrup in a thin stream into the egg whites while whisking constantly. Continue whisking until the meringue is stiff, glossy, and cooled to room temperature." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Macaronage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Combine the sifted almond flour and icing sugar with the remaining 55 g raw egg whites and the colouring. Stir to a rough paste. Fold the Italian meringue into the paste in three additions. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "macaronage" } }],
+            "text": "macaronage"
+          },
+          { "type": "text", "text": " is complete when the batter flows from the spatula in a slow, thick ribbon that disappears back into itself after about 10 seconds. Pipe 3.5 cm rounds onto parchment-lined trays. Bang the tray on the bench twice to pop surface bubbles." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rest and bake" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leave the piped shells to rest at room temperature for 45 to 60 minutes until a skin forms on the surface, touch lightly and the batter should not stick to your finger. Bake at 150°C (conventional) for 14 to 15 minutes. The shells should have formed feet and come away from the paper cleanly when cool. Leave to cool completely on the tray before filling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make the filling and assemble" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beat 150 g softened butter with 100 g icing sugar until pale. Fold in the strained raspberry jam. Pipe a small mound of filling onto the flat side of one shell, then press another shell on top. The macarons benefit from a few hours in the fridge before serving, the shells soften slightly and the flavour deepens." }
+        ]
+      }
+    ]
+  }
+}

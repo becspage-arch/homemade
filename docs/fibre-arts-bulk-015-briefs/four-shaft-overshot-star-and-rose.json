@@ -1,0 +1,97 @@
+{
+  "slug": "four-shaft-overshot-star-and-rose",
+  "title": "Four-shaft overshot: star and rose threading",
+  "subtitle": "The classic American coverlet threading pattern on a four-shaft floor loom",
+  "excerpt": "Star and rose is one of the two foundational American overshot patterns, alongside monk's belt. The threading produces a geometric star alternating with a rose diamond in the drawdown. The draft is straightforward on a four-shaft loom; the challenge is in the treadling and tabby tie-down picks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "weaving",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Overshot threading patterns are documented extensively in Mary Atwater's weaving pattern books (1920s-1930s) and in the Handweaver's Pattern Book by Marguerite Porter Davison (1944); some early Atwater publications are in the public domain in the US. The star-and-rose threading is one of the oldest American coverlet patterns.",
+  "recipeTools": [
+    { "slug": "floor-loom-4-shaft", "isOptional": false },
+    { "slug": "warping-board", "isOptional": false },
+    { "slug": "boat-shuttle", "isOptional": false },
+    { "slug": "end-feed-shuttle", "isOptional": true },
+    { "slug": "weaving-heddles", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "overshot", "term": "Overshot", "definition": "A supplementary weft weave structure in which pattern weft floats extend over several warp threads to form geometric shapes, tied down periodically by tabby picks." },
+    { "slug": "tabby", "term": "Tabby", "definition": "Plain weave: each weft thread over one warp thread, under the next. In overshot weaving, tabby picks between pattern picks hold the floats in place." },
+    { "slug": "threading", "term": "Threading", "definition": "The sequence in which warp threads are drawn through the heddle eyes of the loom's shafts." },
+    { "slug": "treadling", "term": "Treadling", "definition": "The sequence in which treadles are pressed during weaving, determining which shafts lift and what pattern appears in the cloth." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["star and rose overshot", "overshot star rose draft", "four shaft overshot draft"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Star and rose " },
+          { "type": "text", "text": "overshot", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "overshot" } }] },
+          { "type": "text", "text": " is a four-shaft draft where the " },
+          { "type": "text", "text": "threading", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "threading" } }] },
+          { "type": "text", "text": " produces a star motif alternating with a rose diamond in the drawdown. The pattern weft floats over three or four warp threads at a time, creating the raised geometric surface. A " },
+            { "type": "text", "text": "tabby", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabby" } }] },
+          { "type": "text", "text": " pick follows each pattern pick to lock the float in place. The " },
+          { "type": "text", "text": "treadling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treadling" } }] },
+          { "type": "text", "text": " sequence builds the star and rose units in turn by following the 'as-drawn-in' sequence." }
+        ]
+      },
+      {
+        "type": "weavingDraft",
+        "attrs": {
+          "definition": {
+            "title": "Star and rose overshot — standard threading repeat",
+            "loomType": "four-shaft",
+            "threading": [1, 2, 1, 2, 3, 2, 3, 4, 3, 4, 3, 4, 1, 4, 1, 2],
+            "tieUp": [
+              [1, 1, 0, 0],
+              [0, 1, 1, 0],
+              [0, 0, 1, 1],
+              [1, 0, 0, 1]
+            ],
+            "treadling": [1, 1, 2, 2, 3, 3, 4, 4, 3, 3, 2, 2, 1, 1, 4, 4]
+          }
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The draft above shows a single 16-thread threading repeat. The tie-up assigns shafts to treadles for the pattern picks. In traditional overshot the tie-up also includes a tabby tie-up for the tie-down picks: add treadles 5 and 6 connected to shafts 1+3 and 2+4 respectively for the tabby picks." }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Four-shaft floor loom with at least 8 treadles", "qty": "1" },
+            { "name": "Fine warp thread (10/2 or 8/2 cotton)", "qty": "as calculated for the sett and width" },
+            { "name": "Pattern weft (2-ply wool at about double the warp weight)", "qty": "as required" },
+            { "name": "Tabby weft (same as warp, for tie-down picks)", "qty": "as required" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Threading and sett" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "The standard sett for overshot is 15 to 20 ends per cm (epc) for 10/2 cotton warp. Thread the 16-thread repeat as many times as needed for the desired width. Begin and end each threading unit with the first thread of the repeat (shaft 1) to ensure the pattern meets cleanly at the selvedge." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Treadling the pattern" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "For each pattern pick, press the pattern treadle, pass the pattern shuttle, and then immediately press a tabby treadle (alternating treadles 5 and 6) and pass the tabby shuttle. The tabby pick sandwiches the float and locks it at the correct height. Work the treadling sequence in the as-drawn-in order: treadles 1, 2, 3, 4, 3, 2, 1, 4 with a tabby pick between each. One full sequence produces one diamond repeat in the drawdown." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Float length and beat" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Check the float length in the sample: in star and rose, the longest floats should be four or five threads long. Floats longer than six threads at normal sett are a sign that the threading or tie-up has an error. Beat the pattern picks more gently than the tabby picks; overshot pattern weft should sit on the surface of the cloth, not be beaten into it." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The star and rose pattern is not forming — only random floats appear", "cause": "A threading error in the repeat, usually a shaft mis-threaded in the transition between the star and rose units", "fix": "Check the threading against the draft thread by thread across the repeat. A mis-threaded shaft causes every repeat unit to corrupt, so the error shows early." },
+            { "problem": "The tabby picks show as raised ridges between the pattern rows", "cause": "The tabby is being beaten too firmly, pushing it above the level of the pattern weft", "fix": "Use a finer tabby weft (one sett weight lighter than the pattern weft) and beat it less firmly than the pattern picks." }
+          ]
+        }
+      }
+    ]
+  }
+}

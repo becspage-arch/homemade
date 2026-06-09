@@ -1,0 +1,75 @@
+{
+  "slug": "spinning-leicester-longwool",
+  "title": "Spinning Leicester Longwool",
+  "subtitle": "A foundational British longwool breed with excellent lock structure and strong lustre",
+  "excerpt": "Leicester Longwool is the parent breed of much of the modern British longwool flock. The locks are long (15 to 25 cm), well-defined, and highly lustrous. Spun worsted it gives an exceptionally smooth, strong yarn; left loosely spun it makes a striking textural yarn for tapestry.",
+  "type": "TECHNIQUE",
+  "categorySlug": "fibre-arts",
+  "subCategorySlug": "spinning",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from traditional British longwool spinning practice. The Leicester Longwool breed was developed in the 18th century and is documented in the agricultural literature from Bakewell onward; spinning characteristics draw on standard guild workshop guidance for longwool breeds.",
+  "recipeTools": [
+    { "slug": "spinning-wheel-castle", "isOptional": false },
+    { "slug": "hackle", "isOptional": true },
+    { "slug": "niddy-noddy", "isOptional": false },
+    { "slug": "bobbin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "worsted-draw", "term": "Worsted draw", "definition": "A spinning technique where fibres are combed parallel before spinning and drafting happens ahead of the twist, producing a smooth, strong yarn." },
+    { "slug": "staple-length", "term": "Staple length", "definition": "The length of an individual lock or aligned group of fibres, measured from the cut end to the tip." },
+    { "slug": "lustre", "term": "Lustre", "definition": "The natural sheen of a longwool fibre, produced by the flat scale structure of the outer cuticle. More light reflects off a flat scale than a corrugated one." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["spinning leicester longwool", "leicester wool spinning", "improved leicester wool"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Leicester Longwool gives defined, long-" },
+          { "type": "text", "text": "staple", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "staple-length" } }] },
+          { "type": "text", "text": " locks with a high " },
+          { "type": "text", "text": "lustre", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lustre" } }] },
+          { "type": "text", "text": " and an open lock structure that is easy to prepare. Spin it with the " },
+          { "type": "text", "text": "worsted draw", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worsted-draw" } }] },
+          { "type": "text", "text": " for a smooth, durable yarn. The Leicester Longwool is the ancestral breed for the New Leicester and Border Leicester lines; the original Improved Leicester, developed by Robert Bakewell, established the longwool type that now runs through most British commercial wool." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Wool dust", "body": "Combing and prepping longwool throws fibre dust. Work in a ventilated space and damp-mop the floor afterwards." }
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "What you need",
+          "items": [
+            { "name": "Leicester Longwool fleece or top", "qty": "as required for the project" },
+            { "name": "Spinning wheel with a moderate ratio (6:1 to 8:1)", "qty": "1" },
+            { "name": "Hackle", "qty": "optional, for lock alignment" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Method" }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Preparing the locks" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Leicester Longwool locks are well-defined and often clean enough to spin directly from the raw fleece after a hand wash. Align each lock by drawing it through a hackle once from the cut end toward the tip. The locks pull out easily because the fibres are smooth and long; unlike fine wools they do not snag or pill during preparation. If you are spinning from commercially-prepared top, draw the top into a continuous pencil-thickness rope before spinning." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Drafting zone and twist" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Set the wheel to a ratio of 6:1 to 8:1 and use a moderate scotch-tension take-up. The drafting zone is long (15 to 20 cm) because the fibre length demands it. Draft with the worsted method, keeping the twist behind the front hand until a full draft length has been drawn. The Leicester's lock structure drafts cleanly; the main risk is adding too much twist, which makes the yarn stiff. Spin at a pace that keeps the twist moderate." }] },
+      { "type": "heading", "attrs": { "level": 3 }, "content": [{ "type": "text", "text": "Plying and finishing" }] },
+      { "type": "paragraph", "content": [{ "type": "text", "text": "Ply two singles together at a ratio slightly below the singles twist, so the finished yarn is balanced. Leicester Longwool yarn should feel strong and smooth, not wiry. Skein on the niddy-noddy, soak in warm water, snap to set, and dry hanging under slight tension to preserve the lustre. The yarn blooms very little after washing." }] },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "problem": "The yarn is stiff and wiry", "cause": "Over-twist: the long fibres grip well without much twist, and adding too much makes the yarn inelastic and stiff", "fix": "Reduce treadle speed or increase draft speed so less twist enters each length of fibre. Test by letting a short length of singles twist back on itself: it should coil softly, not spring back hard." },
+            { "problem": "The finished yarn has little lustre", "cause": "The fibre was carded rather than combed, scrambling the fibre alignment and reducing the surface reflectivity", "fix": "Prepare by hackling or drawing straight from the lock. Carding is appropriate for woollen-spun breeds; for lustre longwools it destroys the quality that makes them worth spinning." }
+          ]
+        }
+      }
+    ]
+  }
+}

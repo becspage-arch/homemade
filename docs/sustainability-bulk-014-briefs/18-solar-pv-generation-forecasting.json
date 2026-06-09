@@ -1,0 +1,104 @@
+{
+  "slug": "solar-pv-generation-forecasting",
+  "title": "Using solar PV generation forecasts to plan energy use",
+  "subtitle": "Reading tomorrow's forecast to decide when to run the dishwasher, charge the car, or heat the water",
+  "excerpt": "Free solar generation forecasting tools use weather data and your system specification to predict tomorrow's output, hour by hour. Reading the forecast the night before and shifting dishwasher, washing machine, and EV charging to the forecast peak hours can save 10–20% of grid import over a year.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Solcast API documentation and accuracy studies (2023); Forecast.Solar service documentation; Carbon Intensity API from National Grid ESO; Energy Systems Catapult smart home dispatch studies.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Solar photovoltaic panels that convert sunlight into electricity directly, as distinct from solar thermal collectors that heat water."
+    },
+    {
+      "slug": "grid-carbon-intensity",
+      "term": "Grid carbon intensity",
+      "definition": "The average carbon dioxide emitted per kilowatt-hour of electricity supplied by the national grid, expressed in grams per kWh (g/kWh). Changes hourly based on the mix of generation sources."
+    }
+  ],
+  "techniqueSlugs": ["solar-pv-system-monitoring", "heat-pump-solar-pv-coordination", "demand-response-smart-tariff"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }], "text": "solar PV" },
+          { "type": "text", "text": " generation forecast uses cloud-cover, irradiance, and temperature data from weather models to predict how much your system will generate, hour by hour, for the next 24–72 hours. Reading the forecast each evening and moving flexible loads to the peak solar window costs no money and no hardware." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Free tools" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Forecast.Solar — enter your system's latitude, longitude, roof angle (tilt), and azimuth (orientation). The API returns an hourly forecast for your specific array. A free account allows up to 12 requests per hour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Solcast — more accurate than Forecast.Solar for overcast days; free tier allows two free API calls per day. Used by home automation integrations." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Octopus Energy Agile and Go tariff apps — include a next-day price forecast linked to grid conditions. The forecast cheapest hours typically align with the peak solar window on good days." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to use the forecast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the forecast the evening before. Identify the peak generation window — typically 10:00–14:00 but narrower on winter days or partly cloudy forecasts." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the dishwasher and washing machine to start 30 minutes before the forecast peak, using the appliance's delay-start feature." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the EV charger to run during the peak window if the car needs charging during the day, rather than overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On a forecast high-generation day (over 20 kWh for a 4 kWp system), also schedule the heat pump hot water boost during the peak to store thermal energy." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Grid carbon intensity as a secondary signal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On days when solar generation is low, the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "grid-carbon-intensity" } }], "text": "grid carbon intensity" },
+          { "type": "text", "text": " forecast from carbonintensity.org.uk gives a second reason to shift load. Grid intensity is lowest in the middle of the day (when solar farms are producing) and highest in the evening peak. Running the dishwasher at 11:00 rather than 18:00 on an overcast day can halve the carbon of that load, even with no solar generation of your own." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Automating the forecast" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Home Assistant, Node-RED, and Homey can integrate with Solcast and Forecast.Solar APIs to automate appliance scheduling based on tomorrow's forecast. The automation is more reliable than manual checking but requires an afternoon of setup. For most households, checking the forecast manually and setting delay timers is the practical starting point." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            { "symptom": "Forecast shows 20 kWh but actual generation was only 12 kWh", "cause": "Cloud cover arrived earlier than forecast; forecast accuracy drops for mixed-cloud days", "fix": "Treat forecast as a probability, not a guarantee. Load shifting still makes sense in expectation: on average a day forecast at 20 kWh generates 15–18 kWh, which is still better than a 10-kWh overcast day." },
+            { "symptom": "Forecast.Solar output does not match inverter monitoring data at all", "cause": "System tilt or azimuth entered incorrectly on Forecast.Solar", "fix": "Recheck the tilt (angle from horizontal) and azimuth (degrees clockwise from north — south = 180, southwest = 225) for your specific array." }
+          ]
+        }
+      }
+    ]
+  }
+}

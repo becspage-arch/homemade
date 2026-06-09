@@ -1,0 +1,221 @@
+{
+  "slug": "trv-sizing-for-heat-pump-systems",
+  "title": "TRVs in heat pump systems: why they behave differently and how to set them",
+  "subtitle": "Setting thermostatic radiator valves correctly when the heat source is a heat pump, not a boiler",
+  "excerpt": "The thermostatic radiator valves fitted to gas-boiler radiators are designed for high-flow-temperature systems. A heat pump runs at 35 to 45°C flow, not 70 to 80°C, and needs a different approach to TRV use. Closing TRVs in unused rooms forces the flow temperature up to overcome the increased pressure, reducing heat pump efficiency. Understanding how to set TRVs for a heat pump system avoids this common problem.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Heat Pump Association UK best practice guide for TRV settings 2024. Energy Saving Trust radiator and TRV guidance for heat pump systems. Ground Source Heat Pump Association (GSHPA) Technical Standards.",
+  "approximateCostGbp": 120,
+  "paybackYears": 2,
+  "recipe": {
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "thermostatic-radiator-valve-fitting",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "trv",
+      "term": "TRV",
+      "definition": "Thermostatic Radiator Valve. A valve fitted to a radiator that opens and closes in response to room temperature, reducing flow when the room is warm and opening fully when it is cold."
+    },
+    {
+      "slug": "flow-temperature",
+      "term": "Flow temperature",
+      "definition": "The temperature of the water entering the radiator from the heat pump. A heat pump runs at 35–45°C flow; a gas boiler runs at 65–75°C. For the same heat output, a lower flow temperature requires a larger radiator surface."
+    },
+    {
+      "slug": "bypass-valve",
+      "term": "Bypass valve",
+      "definition": "A valve that opens to allow water to circulate when all TRVs are closed. Required in any central heating system with TRVs to prevent the circulating pump running against a closed circuit."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A gas boiler forces hot water at 70 to 75°C through radiators. The high temperature means a relatively small radiator area provides the required heat output, and closing a few TRVs has little effect on the system pressure or flow rate. A heat pump circulates water at 35 to 45°C, often less than half the temperature. The same radiator at "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "flow-temperature"
+                }
+              }
+            ],
+            "text": "flow temperature"
+          },
+          {
+            "type": "text",
+            "text": " of 40°C gives roughly 40% of the heat output it gives at 75°C. This means the whole radiator area in the house is needed, closing "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "trv"
+                }
+              }
+            ],
+            "text": "TRVs"
+          },
+          {
+            "type": "text",
+            "text": " in spare rooms significantly reduces the total emitter surface and forces the heat pump to compensate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The pressure problem with closed TRVs"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When TRVs close, the hydraulic resistance of the circuit increases. In a gas boiler system, the boiler modulates the flow rate and the effect is modest. In a heat pump system, many units are designed to maintain a minimum flow rate, they will increase the circulating pump speed and raise the flow temperature to overcome the resistance. Both actions reduce efficiency: the pump uses more electricity and the higher flow temperature reduces the heat pump's COP. The compressor runs harder to achieve what better-distributed flow would provide cheaply."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to set TRVs in a heat pump system"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Open all TRVs fully in rooms that are being heated. The heat pump heats all rooms to the setpoint; the living space thermostat controls when the system turns off, not the TRVs."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For permanently unused rooms (a spare bedroom), set the TRV to the lowest frost-protection setting (usually star or 1) rather than closing it fully. This maintains a small flow and reduces the hydraulic resistance spike."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Confirm a "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "bypass-valve"
+                        }
+                      }
+                    ],
+                    "text": "bypass valve"
+                  },
+                  {
+                    "type": "text",
+                    "text": " is fitted. Any system with TRVs requires a bypass valve to prevent a dead-leg when TRVs close. If no bypass was fitted when TRVs were installed, ask your heating engineer to add one. Its presence protects the pump and prevents a high-pressure fault on the heat pump controller."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Consider replacing standard TRVs with lower-temperature head types rated for 35 to 45°C systems. Standard TRVs have a temperature range of around 7 to 28°C, which is compatible with heat pump flow temperatures, but the head calibration may not be optimised for it. Ask your heat pump installer to confirm compatibility."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Radiator sizing and upgrade"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Radiators designed for a gas boiler at 70°C flow may be too small for a heat pump at 40°C flow. A radiator producing 1,500 W at 70°C gives roughly 640 W at 40°C, less than half. If a room stays cold, fitting a larger or second radiator is often the right fix rather than raising the flow temperature. Your MCS installer should have done a room-by-room sizing check at design; ask for that document."
+          }
+        ]
+      }
+    ]
+  }
+}
