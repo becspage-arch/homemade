@@ -1,0 +1,183 @@
+{
+  "slug": "crochet-flower-dahlia",
+  "title": "Dahlia motif",
+  "subtitle": "A multi-layer petal flower with three concentric rings, 13 cm",
+  "excerpt": "The dahlia builds three concentric petal rings outward from a small treble-cluster centre, each ring with more petals than the last. The inner petals stand upright, the middle petals angle outward, and the outer petals lie flat, replicating the layered ball-dahlia profile. At 13 cm in DK cotton it is the largest flower motif in this set.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "motifs",
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Crochet, Volume 8 (1893), large composite flower motif chapter (Internet Archive). Therese de Dillmont, Encyclopedia of Needlework (1886), dahlia and multi-layer crochet flower.",
+  "heroPrompt": "A crochet dahlia motif in deep burgundy DK cotton with three concentric rings of petals, 13 cm across, photographed flat on natural linen in soft daylight. Petals clearly graduate from short inner ring to broad outer ring.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "Each finished dahlia motif measures 13 cm across in DK-weight cotton with a 4 mm hook.",
+    "finishedSizeText": "13 cm across.",
+    "terminologyConvention": "uk",
+    "chartDefinition": {
+      "title": "Dahlia motif",
+      "layout": "round",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Three petal rings. Centre cluster (Rnd 1). Inner petal ring: htr arches (Rnd 2). Mid petal ring: tr arches into front loops of centre (Rnd 3). Outer petal ring: dtr arches into back loops of centre (Rnd 4).",
+      "rounds": [
+        { "roundNumber": 1, "label": "Centre cluster", "stitches": [{ "symbol": "magic-ring" }, { "symbol": "treble-cluster", "count": 8 }, { "symbol": "chain", "count": 2 }, { "symbol": "slip-stitch" }] },
+        { "roundNumber": 2, "label": "Inner petals (8)", "stitches": [{ "symbol": "chain", "count": 5 }, { "symbol": "half-treble", "count": 3 }, { "symbol": "slip-stitch" }] },
+        { "roundNumber": 3, "label": "Mid petals (8) — front loops", "stitches": [{ "symbol": "chain", "count": 6 }, { "symbol": "treble", "count": 4 }, { "symbol": "slip-stitch" }] },
+        { "roundNumber": 4, "label": "Outer petals (8) — back loops", "stitches": [{ "symbol": "chain", "count": 7 }, { "symbol": "double-treble", "count": 5 }, { "symbol": "slip-stitch" }] }
+      ]
+    },
+    "craftStitchSlugs": ["crochet-magic-ring", "crochet-treble-cluster", "crochet-half-treble", "crochet-treble", "crochet-double-treble", "crochet-chain", "crochet-slip-stitch", "crochet-front-loop-only", "crochet-back-loop-only"],
+    "craftTechniqueTags": ["magic-ring", "in-the-round"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "treble-cluster",
+      "term": "Treble cluster",
+      "definition": "Multiple trebles worked into the same space and drawn together at the top. The dahlia centre is a ring of eight treble clusters."
+    }
+  ],
+  "techniqueSlugs": ["crochet-magic-ring"],
+  "criticalTechniques": ["crochet-magic-ring"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dahlia uses the same layered petal trick as the freestanding rose: the inner and outer petal rings are both worked into the centre dc ring, but into different loops. The inner petals use "
+          },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "treble-cluster" } }], "text": "treble cluster" },
+          { "type": "text", "text": " spokes around a magic ring, with htr arches for the first (innermost) petal ring, tr arches into the front loops of the cluster tops for the middle ring, and dtr arches into the back loops for the outermost ring. The three petal rings are automatically positioned at different radii, producing the dahlia's characteristic concentric depth." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials for one motif",
+          "body": "About 20 g of DK cotton in one colour or two (a darker centre, lighter outer petals works well). A 4 mm hook. Tapestry needle. Scissors."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Each finished dahlia motif measures 13 cm across in DK-weight cotton with a 4 mm hook." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "chain (ch), slip stitch (sl st), magic ring (MR) — UK and US shared." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "half treble (htr) — UK; US \"half double crochet.\"" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "treble (tr) — UK; US \"double crochet.\"" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "double treble (dtr) — UK; US \"treble.\"" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "treble cluster (3tr-cl) — three trebles drawn together." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "front loop only (FLO), back loop only (BLO) — to separate petal rings." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 1 — centre" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Form a magic ring. Ch 3 (counts as first tr). 2tr into ring, draw together (first 3tr-cl). *Ch 2. 3tr-cl into ring.* Repeat 6 more times. Ch 2. Sl st to top of first cluster. (8 clusters, 8 ch-2 spaces.) Pull ring tail to close." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 2 — inner petals" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Into each ch-2 space: Ch 5. 3htr into the ch-5 arch. Sl st back into the ch-2 space. Repeat for all 8 spaces. (8 inner petals.) Do not fasten off — continue to round 3." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 3 — middle petals (front loops)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Working into the front loops of the cluster tops only: *Ch 6. 4tr into the ch-6 arch. Sl st back into the cluster top FLO.* Repeat for all 8 clusters. (8 middle petals.)" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Round 4 — outer petals (back loops)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Working into the back loops of the cluster tops (the loops left unworked in round 3): *Ch 7. 5dtr into the ch-7 arch. Sl st back into the cluster top BLO.* Repeat for all 8 clusters. (8 outer petals.) Fasten off." }]
+      },
+      {
+        "type": "craftChart",
+        "attrs": {
+          "definition": {
+            "title": "Dahlia motif",
+            "layout": "round",
+            "craft": "crochet",
+            "terminologyConvention": "uk",
+            "caption": "8 treble clusters in magic ring. Inner petals (ch-5/3htr) into ch-2 spaces. Mid petals (ch-6/4tr) into cluster FLO. Outer petals (ch-7/5dtr) into cluster BLO.",
+            "rounds": [
+              { "roundNumber": 1, "label": "Centre", "stitches": [{ "symbol": "magic-ring" }, { "symbol": "treble-cluster", "count": 8 }, { "symbol": "chain", "count": 2 }, { "symbol": "slip-stitch" }] },
+              { "roundNumber": 2, "label": "Inner petals", "stitches": [{ "symbol": "chain", "count": 5 }, { "symbol": "half-treble", "count": 3 }, { "symbol": "slip-stitch" }] },
+              { "roundNumber": 3, "label": "Mid petals (FLO)", "stitches": [{ "symbol": "chain", "count": 6 }, { "symbol": "treble", "count": 4 }, { "symbol": "slip-stitch" }] },
+              { "roundNumber": 4, "label": "Outer petals (BLO)", "stitches": [{ "symbol": "chain", "count": 7 }, { "symbol": "double-treble", "count": 5 }, { "symbol": "slip-stitch" }] }
+            ]
+          }
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fasten off and weave in all ends. The three petal layers will cascade outward — the inner petals stand upright, the outer petals lie flat, which is the intended effect without pinning. Steam-block the outer petals only if needed to flatten." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Handwash in cool water with mild soap. Reshape the petal layers while damp. Lay flat to dry." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The lotus motif (crochet-flower-lotus) uses a smaller version of the three-layer construction with eight pointed petals. The freestanding rose (crochet-rose-freestanding) uses the same front-loop/back-loop petal trick with a chain-ring base." }]
+      }
+    ]
+  }
+}
