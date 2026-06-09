@@ -25,7 +25,7 @@ export function NeedleworkActiveProject({
   pattern,
   initialProgress,
   notesOpen,
-  onClose,
+  onClose: _onClose,
 }: NeedleworkActiveProjectProps) {
   const [progress, setProgress] = useState<NeedleworkProjectProgressData>(() => ({
     currentPhase: initialProgress?.currentPhase ?? 'STITCHING',

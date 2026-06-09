@@ -1,6 +1,6 @@
 'use client'
 
-import { X, StickyNote, ExternalLink, Printer } from 'lucide-react'
+import { X, StickyNote, ExternalLink } from 'lucide-react'
 import { DISCIPLINE_LABELS, type NeedleworkDiscipline } from './types'
 
 interface NeedleworkStudioToolbarProps {

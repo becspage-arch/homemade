@@ -14,8 +14,7 @@
  * that the feature is coming and direct to the library.
  */
 
-import { useState, useCallback } from 'react'
-import { CheckCircle, Circle } from 'lucide-react'
+import { useState, useCallback, useMemo } from 'react'
 import type { NeedleworkPatternData, NeedleworkProjectProgressData, NeedleworkRegionAnnotation } from './types'
 
 interface NeedleworkSurfaceViewProps {
@@ -28,12 +27,12 @@ interface NeedleworkSurfaceViewProps {
 export function NeedleworkSurfaceView({
   pattern,
   progress,
-  notesOpen,
+  notesOpen: _notesOpen,
   onRegionToggle,
 }: NeedleworkSurfaceViewProps) {
-  const [hoveredRegion, setHoveredRegion] = useState<string | null>(null)
+  const [, setHoveredRegion] = useState<string | null>(null)
 
-  const completedRegions = progress?.completedRegions ?? {}
+  const completedRegions = useMemo(() => progress?.completedRegions ?? {}, [progress])
   const annotations: NeedleworkRegionAnnotation[] = pattern.regionAnnotations ?? []
   const vectorData = pattern.vectorData
 

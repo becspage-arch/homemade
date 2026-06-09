@@ -14,7 +14,7 @@
  *   - BLACKWORK / NEEDLEPOINT: no extra overlay in v1.
  */
 
-import { useState, useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import { parsePatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '@/components/studio/chart/ChartViewport'
 import type { NeedleworkPatternData, NeedleworkProjectProgressData } from './types'
@@ -29,8 +29,8 @@ interface NeedleworkCountedViewProps {
 export function NeedleworkCountedView({
   pattern,
   progress,
-  notesOpen,
-  onProgressChange,
+  notesOpen: _notesOpen,
+  onProgressChange: _onProgressChange,
 }: NeedleworkCountedViewProps) {
   const parsedPattern = useMemo(() => {
     if (!pattern.gridData) return null
