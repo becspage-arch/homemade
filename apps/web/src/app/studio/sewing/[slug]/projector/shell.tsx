@@ -18,6 +18,7 @@ export function SewingProjectorShell({
     <ProjectorView
       pattern={pattern}
       selectedSize={selectedSize}
+      freesewingSvg={pattern.freesewingShowcaseSvg}
       onExit={() => router.push(`/studio/sewing/${encodeURIComponent(pattern.slug)}`)}
     />
   )

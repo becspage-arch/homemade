@@ -138,6 +138,8 @@ interface PatternRow {
   fabricRequirementsCm: unknown
   cuttingLayouts: unknown
   attributionText: string | null
+  isFreesewingDesign: boolean
+  freesewingDesignSlug: string | null
 }
 
 function sanitiseRow(row: PatternRow): SewingPatternData {
@@ -162,6 +164,11 @@ function sanitiseRow(row: PatternRow): SewingPatternData {
     fabricRequirements: sanitiseFabricRequirements(row.fabricRequirementsCm),
     cuttingLayouts: sanitiseCuttingLayouts(row.cuttingLayouts),
     attributionText: row.attributionText,
+    isFreesewingDesign: row.isFreesewingDesign === true,
+    freesewingDesignSlug: row.freesewingDesignSlug ?? null,
+    // Server-page enriches these after load via getFreesewingShowcase.
+    freesewingShowcaseSvg: null,
+    freesewingShowcaseCacheKey: null,
   }
 }
 

@@ -22,6 +22,10 @@ import { PDFDocument, StandardFonts, rgb, type PDFPage } from 'pdf-lib'
 
 import type { SewingPatternData, SewingPiece } from '@/components/studio/sewing/types'
 import {
+  parseFreesewingSvg,
+  parsedSvgToPieces,
+} from '@/lib/sewing/grading/svg-to-polylines'
+import {
   buildTileMap,
   mmToPt,
   PAPER,
@@ -36,6 +40,24 @@ interface BuildPdfArgs {
   marginMm?: number
 }
 
+/**
+ * Resolve the polyline pieces this PDF should print. For S-1
+ * hand-crafted patterns this is just `pattern.pieces`. For S-5a
+ * freesewing-backed patterns we sample the rendered SVG into pseudo-
+ * pieces so the existing tile pipeline keeps working without forking.
+ */
+function resolvePieces(pattern: SewingPatternData): SewingPiece[] {
+  if (
+    pattern.isFreesewingDesign &&
+    typeof pattern.freesewingShowcaseSvg === 'string' &&
+    pattern.freesewingShowcaseSvg.length > 0
+  ) {
+    const parsed = parseFreesewingSvg(pattern.freesewingShowcaseSvg)
+    return parsedSvgToPieces(parsed)
+  }
+  return pattern.pieces
+}
+
 const INK = rgb(0, 0, 0)
 const SEAM = rgb(0.45, 0.45, 0.45)
 const FOLD = rgb(0.4, 0.3, 0.55)
@@ -47,7 +69,8 @@ export async function buildSewingPatternPdf({
   overlapMm,
   marginMm,
 }: BuildPdfArgs): Promise<Uint8Array> {
-  const bounds = computePatternBounds(pattern)
+  const pieces = resolvePieces(pattern)
+  const bounds = computePatternBounds(pieces)
   const tileMap = buildTileMap({ bounds, paper, overlapMm, marginMm })
   const dims = PAPER[paper]
 
@@ -62,7 +85,7 @@ export async function buildSewingPatternPdf({
     const page = pdf.addPage([mmToPt(dims.widthMm), mmToPt(dims.heightMm)])
     drawRegistrationMarks(page, dims, tile.contentMarginMm)
     drawPageFooter(page, pattern, tile, tileMap.cols, tileMap.rows, font, fontBold)
-    drawTileContent(page, pattern.pieces, tile)
+    drawTileContent(page, pieces, tile)
     if (tile.pageNumber === 1) {
       drawAssemblyMap(page, dims, tileMap, font)
       drawTestSquare(page, dims, font, fontBold)
@@ -352,27 +375,63 @@ function drawScaleWarning(
   })
 }
 
-function computePatternBounds(pattern: SewingPatternData): {
+function computePatternBounds(pieces: SewingPiece[]): {
   minX: number
   minY: number
   widthMm: number
   heightMm: number
 } {
-  if (pattern.pieces.length === 0) return { minX: 0, minY: 0, widthMm: 200, heightMm: 200 }
-  // Lay pieces in a row with 40mm gaps so each piece prints separately.
+  if (pieces.length === 0) return { minX: 0, minY: 0, widthMm: 200, heightMm: 200 }
+  // Direct bounding box of every piece in its native coordinates. The
+  // S-1 hand-crafted pieces share an origin near (0,0) per piece, so the
+  // layout was previously laying them out side-by-side. Freesewing
+  // pieces come pre-positioned (the engine bin-packs them). Detect which
+  // case we're in by checking whether more than one piece has a minX > 0.
+  let anyPreLayout = false
+  let zeroOriginCount = 0
+  for (const p of pieces) {
+    if (pieceMinX(p) > 50) anyPreLayout = true
+    if (pieceMinX(p) < 5) zeroOriginCount++
+  }
+
+  if (anyPreLayout && zeroOriginCount <= 1) {
+    let minX = Infinity
+    let minY = Infinity
+    let maxX = -Infinity
+    let maxY = -Infinity
+    for (const p of pieces) {
+      for (const pt of p.pathPoints) {
+        if (pt.x < minX) minX = pt.x
+        if (pt.y < minY) minY = pt.y
+        if (pt.x > maxX) maxX = pt.x
+        if (pt.y > maxY) maxY = pt.y
+      }
+    }
+    if (!Number.isFinite(minX)) return { minX: 0, minY: 0, widthMm: 200, heightMm: 200 }
+    return {
+      minX,
+      minY,
+      widthMm: maxX - minX,
+      heightMm: maxY - minY,
+    }
+  }
+
+  // S-1 fallback: pieces share a (0,0) origin so we tile them in a row
+  // with 40mm gaps. Caller (drawTileContent) is responsible for applying
+  // the same cursor offset.
   let cursorX = 0
   let maxY = 0
   let minX = 0
   let minY = 0
   let maxX = 0
   let first = true
-  for (const piece of pattern.pieces) {
+  for (const piece of pieces) {
     const w = pieceBboxWidth(piece)
     const h = pieceBboxHeight(piece)
-    const pieceMinX = cursorX
+    const pieceMinX_ = cursorX
     const pieceMaxX = cursorX + w
     if (first) {
-      minX = pieceMinX
+      minX = pieceMinX_
       minY = 0
       first = false
     }
@@ -386,6 +445,12 @@ function computePatternBounds(pattern: SewingPatternData): {
     widthMm: maxX - minX,
     heightMm: maxY - minY,
   }
+}
+
+function pieceMinX(piece: SewingPiece): number {
+  let m = Infinity
+  for (const p of piece.pathPoints) if (p.x < m) m = p.x
+  return Number.isFinite(m) ? m : 0
 }
 
 function pieceBboxWidth(piece: SewingPiece): number {

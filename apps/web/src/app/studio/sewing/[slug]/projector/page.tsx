@@ -7,6 +7,7 @@ import {
   loadDemoSewingPattern,
 } from '@/lib/sewing/demo-pattern'
 import { loadSewingPatternForStudio } from '@/lib/sewing/load-pattern'
+import { getFreesewingShowcase } from '@/lib/sewing/grading/showcase'
 
 export const dynamic = 'force-dynamic'
 
@@ -32,6 +33,13 @@ export default async function SewingProjectorPage({ params, searchParams }: Page
       ? loadDemoSewingPattern()
       : await loadSewingPatternForStudio({ slug })
   if (!pattern) notFound()
+  if (pattern.isFreesewingDesign && pattern.freesewingDesignSlug) {
+    const showcase = await getFreesewingShowcase(pattern.freesewingDesignSlug)
+    if (showcase) {
+      pattern.freesewingShowcaseSvg = showcase.svg
+      pattern.freesewingShowcaseCacheKey = showcase.cacheKey
+    }
+  }
   const size =
     sp.size && pattern.supportedSizes.some((s) => s.name === sp.size)
       ? sp.size

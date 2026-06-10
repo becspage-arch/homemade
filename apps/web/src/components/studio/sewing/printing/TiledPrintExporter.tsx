@@ -20,12 +20,13 @@ import {
   PAPER,
   type PaperSize,
 } from '@/lib/sewing/printing/page-tiles'
+import { parseFreesewingSvg } from '@/lib/sewing/grading/svg-to-polylines'
 
 interface TiledPrintExporterProps {
   pattern: SewingPatternData
 }
 
-type PaperChoice = 'A4' | 'LETTER'
+type PaperChoice = 'A4' | 'LETTER' | 'A3' | 'LEGAL' | 'A0'
 
 export function TiledPrintExporter({ pattern }: TiledPrintExporterProps) {
   const [paper, setPaper] = useState<PaperChoice>('A4')
@@ -71,6 +72,9 @@ export function TiledPrintExporter({ pattern }: TiledPrintExporterProps) {
         >
           <option value="A4">A4 (210 × 297 mm)</option>
           <option value="LETTER">Letter (216 × 279 mm)</option>
+          <option value="A3">A3 (297 × 420 mm)</option>
+          <option value="LEGAL">Legal (216 × 356 mm)</option>
+          <option value="A0">A0 single-sheet (841 × 1189 mm)</option>
         </select>
         <button
           type="button"
@@ -153,6 +157,21 @@ function computeBounds(pattern: SewingPatternData): {
   widthMm: number
   heightMm: number
 } {
+  if (
+    pattern.isFreesewingDesign &&
+    typeof pattern.freesewingShowcaseSvg === 'string' &&
+    pattern.freesewingShowcaseSvg.length > 0
+  ) {
+    const parsed = parseFreesewingSvg(pattern.freesewingShowcaseSvg)
+    if (parsed.parts.length > 0 && parsed.widthMm > 0) {
+      return {
+        minX: parsed.bounds.minX,
+        minY: parsed.bounds.minY,
+        widthMm: parsed.widthMm,
+        heightMm: parsed.heightMm,
+      }
+    }
+  }
   if (pattern.pieces.length === 0) return { minX: 0, minY: 0, widthMm: 200, heightMm: 200 }
   let cursorX = 0
   let maxY = 0

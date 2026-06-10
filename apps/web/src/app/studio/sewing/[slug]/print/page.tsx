@@ -7,6 +7,7 @@ import {
   loadDemoSewingPattern,
 } from '@/lib/sewing/demo-pattern'
 import { loadSewingPatternForStudio } from '@/lib/sewing/load-pattern'
+import { getFreesewingShowcase } from '@/lib/sewing/grading/showcase'
 import '@/components/studio/sewing/sewing-studio.css'
 
 export const dynamic = 'force-dynamic'
@@ -32,6 +33,16 @@ export default async function SewingPrintPage({ params }: PageProps) {
       ? loadDemoSewingPattern()
       : await loadSewingPatternForStudio({ slug })
   if (!pattern) notFound()
+  if (pattern.isFreesewingDesign && pattern.freesewingDesignSlug) {
+    const showcase = await getFreesewingShowcase(pattern.freesewingDesignSlug)
+    if (showcase) {
+      pattern.freesewingShowcaseSvg = showcase.svg
+      pattern.freesewingShowcaseCacheKey = showcase.cacheKey
+      if (!pattern.attributionText && showcase.attribution) {
+        pattern.attributionText = showcase.attribution
+      }
+    }
+  }
   return (
     <div className="sewing-studio-surface" style={{ position: 'relative', overflow: 'auto' }}>
       <header style={{ padding: '1.5rem 2rem 0' }}>

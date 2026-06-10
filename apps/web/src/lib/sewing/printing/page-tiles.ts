@@ -8,7 +8,7 @@
  * A0, and the wider matrix of edge cases.
  */
 
-export type PaperSize = 'A4' | 'LETTER' | 'A3' | 'LEGAL'
+export type PaperSize = 'A4' | 'LETTER' | 'A3' | 'LEGAL' | 'A0'
 
 export interface PaperDimensions {
   /** Width in mm. */
@@ -22,6 +22,10 @@ export const PAPER: Record<PaperSize, PaperDimensions> = {
   LETTER: { widthMm: 216, heightMm: 279.4 },
   A3: { widthMm: 297, heightMm: 420 },
   LEGAL: { widthMm: 216, heightMm: 355.6 },
+  // A0 single-sheet — for large-format plotter print at a copy shop. Pieces
+  // typically fit on one page so the user doesn't need to tape. The tile
+  // machinery still applies (a single 1×1 tile is fine).
+  A0: { widthMm: 841, heightMm: 1189 },
 }
 
 /**

@@ -18,12 +18,16 @@ import type { SewingPatternData, SewingPiece } from '../types'
 interface ProjectorViewProps {
   pattern: SewingPatternData
   selectedSize: string
+  /** Optional freesewing-rendered SVG to project at 1:1 instead of pieces[]. */
+  freesewingSvg?: string | null
   onExit: () => void
 }
 
-export function ProjectorView({ pattern, onExit }: ProjectorViewProps) {
+export function ProjectorView({ pattern, freesewingSvg, onExit }: ProjectorViewProps) {
   const [showGrid, setShowGrid] = useState(true)
   const [activePieceIdx, setActivePieceIdx] = useState(0)
+
+  const usingFreesewing = pattern.isFreesewingDesign && typeof freesewingSvg === 'string' && freesewingSvg.length > 0
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -35,9 +39,9 @@ export function ProjectorView({ pattern, onExit }: ProjectorViewProps) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onExit()
-      else if (e.key === 'ArrowRight') {
+      else if (!usingFreesewing && e.key === 'ArrowRight') {
         setActivePieceIdx((i) => Math.min(i + 1, pattern.pieces.length - 1))
-      } else if (e.key === 'ArrowLeft') {
+      } else if (!usingFreesewing && e.key === 'ArrowLeft') {
         setActivePieceIdx((i) => Math.max(i - 1, 0))
       } else if (e.key === 'g') {
         setShowGrid((v) => !v)
@@ -45,7 +49,7 @@ export function ProjectorView({ pattern, onExit }: ProjectorViewProps) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [onExit, pattern.pieces.length])
+  }, [onExit, pattern.pieces.length, usingFreesewing])
 
   const piece = pattern.pieces[activePieceIdx]
   const bounds = piece ? bboxFor(piece) : { width: 600, height: 600 }
@@ -60,29 +64,39 @@ export function ProjectorView({ pattern, onExit }: ProjectorViewProps) {
           Exit
         </button>
         <div style={{ flex: 1, textAlign: 'center', fontSize: '0.85rem' }}>
-          {piece?.name ?? 'No pieces to project'} - piece {activePieceIdx + 1} of{' '}
-          {pattern.pieces.length}
+          {usingFreesewing
+            ? `${pattern.name} - freesewing render`
+            : `${piece?.name ?? 'No pieces to project'} - piece ${activePieceIdx + 1} of ${pattern.pieces.length}`}
         </div>
-        <button
-          type="button"
-          onClick={() => setActivePieceIdx((i) => Math.max(i - 1, 0))}
-        >
-          Previous
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            setActivePieceIdx((i) => Math.min(i + 1, pattern.pieces.length - 1))
-          }
-        >
-          Next
-        </button>
+        {!usingFreesewing && (
+          <>
+            <button
+              type="button"
+              onClick={() => setActivePieceIdx((i) => Math.max(i - 1, 0))}
+            >
+              Previous
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setActivePieceIdx((i) => Math.min(i + 1, pattern.pieces.length - 1))
+              }
+            >
+              Next
+            </button>
+          </>
+        )}
         <button type="button" onClick={() => setShowGrid((v) => !v)}>
           {showGrid ? 'Hide grid' : 'Show grid'}
         </button>
       </div>
       <div className="sew-projector-canvas">
-        {piece ? (
+        {usingFreesewing ? (
+          <FreesewingProjectorSvg
+            svg={freesewingSvg!}
+            showGrid={showGrid}
+          />
+        ) : piece ? (
           <svg
             viewBox={viewBox}
             preserveAspectRatio="xMidYMid meet"
@@ -130,6 +144,31 @@ export function ProjectorView({ pattern, onExit }: ProjectorViewProps) {
           <div style={{ color: '#fff' }}>No pattern pieces to project.</div>
         )}
       </div>
+    </div>
+  )
+}
+
+/**
+ * Project the freesewing-rendered SVG at 1:1 scale with the calibration
+ * grid overlaid. The SVG already carries `width="Xmm"` so the browser
+ * lays it out in physical mm at the projector's calibrated throw
+ * distance. Grid is 100mm × 100mm divisions, same as the polyline path.
+ */
+function FreesewingProjectorSvg({
+  svg,
+  showGrid,
+}: {
+  svg: string
+  showGrid: boolean
+}) {
+  return (
+    <div className="sew-projector-freesewing">
+      {showGrid && <div className="sew-projector-grid-overlay" aria-hidden />}
+      <div
+        className="sew-projector-freesewing-svg"
+        // SVG from the wrapper inside our own codebase, never user input.
+        dangerouslySetInnerHTML={{ __html: svg }}
+      />
     </div>
   )
 }

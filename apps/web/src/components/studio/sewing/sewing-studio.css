@@ -870,3 +870,65 @@
   color: var(--studio-ink);
   border-bottom-color: var(--sew-accent);
 }
+
+
+/* ===== Freesewing render surfaces (S-5b) ============================== */
+
+.sew-freesewing-svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.sew-freesewing-svg svg {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: var(--studio-radius-m, 10px);
+}
+
+.sew-freesewing-attribution {
+  font-size: 0.72rem;
+  color: var(--studio-ink-soft);
+  padding: 0.6rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--sew-rule);
+  line-height: 1.4;
+}
+
+.sew-projector-freesewing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  color: #ffffff;
+}
+
+.sew-projector-freesewing-svg {
+  position: relative;
+  z-index: 1;
+}
+
+.sew-projector-freesewing-svg svg {
+  display: block;
+  background: transparent;
+  /* Freesewing emits black-on-white; flip to white-on-black via CSS invert
+     so the projector paints bright lines on dark fabric. */
+  filter: invert(1) hue-rotate(180deg) saturate(0);
+}
+
+/* 100mm × 100mm calibration grid, drawn via CSS background-image so it
+   stays at 1:1 with the SVG underneath. The dimensions are real mm thanks
+   to the projector setting CSS pixels equal to mm at its throw distance. */
+.sew-projector-grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px);
+  background-size: 100mm 100mm;
+}

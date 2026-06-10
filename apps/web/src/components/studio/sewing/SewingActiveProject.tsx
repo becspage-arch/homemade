@@ -17,6 +17,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useAutosave } from '@/lib/studio/use-autosave'
 import { CreditCardCalibration } from './CreditCardCalibration'
 import { CuttingLayoutViewer } from './CuttingLayoutViewer'
+import { FreesewingPatternViewer } from './FreesewingPatternViewer'
 import { MaterialsCalculator } from './MaterialsCalculator'
 import { SewingInstructionsPanel } from './SewingInstructionsPanel'
 import { SewingPatternViewer } from './SewingPatternViewer'
@@ -122,7 +123,15 @@ export function SewingActiveProject({
 
       <div className="sewing-studio-active">
         <div className="sewing-studio-viewer-panel">
-          <SewingPatternViewer pattern={pattern} selectedSize={selectedSize} />
+          {pattern.isFreesewingDesign && pattern.freesewingShowcaseSvg ? (
+            <FreesewingPatternViewer
+              svg={pattern.freesewingShowcaseSvg}
+              patternName={pattern.name}
+              attribution={pattern.attributionText}
+            />
+          ) : (
+            <SewingPatternViewer pattern={pattern} selectedSize={selectedSize} />
+          )}
         </div>
 
         <div className="sewing-studio-side-panel">

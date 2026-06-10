@@ -215,6 +215,18 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/web exec tsx scripts/seed-demo-sewing-pattern.ts
 
+      # S-5b/c smoke-test row: Bella body block backed by the freesewing
+      # engine wrapper at apps/web/src/lib/sewing/grading/. Idempotent on
+      # slug; isFreesewingDesign=true so the Studio dispatches to the
+      # SVG-aware viewer + tile pipeline. Non-blocking.
+      - name: Seed freesewing showcase patterns (idempotent, non-blocking)
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/web exec tsx scripts/seed-freesewing-showcase-patterns.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match

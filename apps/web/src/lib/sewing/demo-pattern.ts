@@ -309,5 +309,9 @@ export function loadDemoSewingPattern(): SewingPatternData {
       M: [cuttingLayout140NoNap, cuttingLayout140Nap],
     },
     attributionText: 'Drafted by Homemade. Free to share with attribution.',
+    isFreesewingDesign: false,
+    freesewingDesignSlug: null,
+    freesewingShowcaseSvg: null,
+    freesewingShowcaseCacheKey: null,
   }
 }
