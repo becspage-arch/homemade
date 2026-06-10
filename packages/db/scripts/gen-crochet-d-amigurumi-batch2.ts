@@ -70,10 +70,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-colour-change', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-colour-change']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'colour-change', definition: 'Switching yarn mid-round or at the end of a round to create a two-tone effect.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'colour-change', term: 'Colour Change', definition: 'Switching yarn mid-round or at the end of a round to create a two-tone effect.' },
   ]
 
   const body_content = [
@@ -143,10 +143,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-assembly', 'amigurumi-spike-stitch']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-spike-stitch']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'spike-stitch', definition: 'A stitch worked by inserting the hook one or more rows below the current row, creating a raised spike effect on the fabric surface.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'spike-stitch', term: 'Spike Stitch', definition: 'A stitch worked by inserting the hook one or more rows below the current row, creating a raised spike effect on the fabric surface.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
@@ -210,10 +210,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-assembly', 'amigurumi-fluffy-yarn']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-fluffy-yarn']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'fluffy-yarn', definition: 'A yarn with a hairy or bouclé texture used to add a tactile, furry finish to amigurumi pieces.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'fluffy-yarn', term: 'Fluffy Yarn', definition: 'A yarn with a hairy or bouclé texture used to add a tactile, furry finish to amigurumi pieces.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
@@ -281,10 +281,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-assembly', 'amigurumi-wire-armature']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-wire-armature']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'wire-armature', definition: 'A length of craft wire threaded through limbs or antlers to allow posing and add structural support.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'wire-armature', term: 'Wire Armature', definition: 'A length of craft wire threaded through limbs or antlers to allow posing and add structural support.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
@@ -351,10 +351,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-colour-change', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-colour-change']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'colour-change', definition: 'Switching yarn at a specified point to create distinct colour sections within a single piece.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'colour-change', term: 'Colour Change', definition: 'Switching yarn at a specified point to create distinct colour sections within a single piece.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
@@ -421,10 +421,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-surface-embroidery', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-surface-embroidery']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'surface-embroidery', definition: 'Decorative stitching applied on top of finished crochet fabric to add detail such as feather markings.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'surface-embroidery', term: 'Surface Embroidery', definition: 'Decorative stitching applied on top of finished crochet fabric to add detail such as feather markings.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
@@ -490,10 +490,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
-    { slug: 'slip-stitch-join', definition: 'A slip stitch used to join the final stitch of a round to the first, keeping the join invisible on the right side.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'slip-stitch-join', term: 'Slip Stitch Join', definition: 'A slip stitch used to join the final stitch of a round to the first, keeping the join invisible on the right side.' },
   ]
 
   const body_content = [
@@ -559,10 +559,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
-    { slug: 'half-double-crochet', definition: 'A stitch of medium height worked with one yarn-over, producing a softer, denser fabric than treble crochet.' },
-    { slug: 'slip-stitch-join', definition: 'A slip stitch used to close a round invisibly.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'half-double-crochet', term: 'Half Double Crochet', definition: 'A stitch of medium height worked with one yarn-over, producing a softer, denser fabric than treble crochet.' },
+    { slug: 'slip-stitch-join', term: 'Slip Stitch Join', definition: 'A slip stitch used to close a round invisibly.' },
   ]
 
   const body_content = [
@@ -622,10 +622,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-assembly']
   const criticalTechniques = ['amigurumi-magic-ring']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
-    { slug: 'back-loop-only', definition: 'Working through the back loop of each stitch only, leaving the front loop free and creating a visible ridge on the right side.' },
-    { slug: 'slip-stitch-join', definition: 'A slip stitch used to close a round invisibly.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'back-loop-only', term: 'Back Loop Only', definition: 'Working through the back loop of each stitch only, leaving the front loop free and creating a visible ridge on the right side.' },
+    { slug: 'slip-stitch-join', term: 'Slip Stitch Join', definition: 'A slip stitch used to close a round invisibly.' },
   ]
 
   const body_content = [
@@ -687,10 +687,10 @@ function makeOut(fields: object) {
   const techniqueSlugs = ['amigurumi-magic-ring', 'amigurumi-increases', 'amigurumi-decreases', 'amigurumi-safety-eyes', 'amigurumi-assembly', 'amigurumi-surface-embroidery']
   const criticalTechniques = ['amigurumi-magic-ring', 'amigurumi-surface-embroidery']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
-    { slug: 'surface-embroidery', definition: 'Decorative stitching worked on top of finished crochet fabric to add spiral or texture detail.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
-    { slug: 'amigurumi-decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
+    { slug: 'magic-ring', term: 'Magic Ring', definition: 'An adjustable start loop that closes to leave no hole at the centre of a piece.' },
+    { slug: 'surface-embroidery', term: 'Surface Embroidery', definition: 'Decorative stitching worked on top of finished crochet fabric to add spiral or texture detail.' },
+    { slug: 'safety-eyes', term: 'Safety Eyes', definition: 'Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards.' },
+    { slug: 'amigurumi-decrease', term: 'Invisible Decrease', definition: 'An invisible decrease worked through the front loops only to reduce stitch count without a visible gap.' },
   ]
 
   const body_content = [
