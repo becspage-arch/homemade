@@ -1955,6 +1955,20 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Small cleanups bundle (2026-06-10)
+
+Renderer barrel splits: knitting `index-client.ts` (renamed from `client.ts`, 3 consumers updated); crochet `index-client.ts` (created, excludes sharp-dependent rasteriser). Cross-stitch chart engine has no barrel and no sharp imports; no split needed.
+
+Shared autosave hook at `apps/web/src/lib/studio/use-autosave.ts`. Crochet and knitting Studios updated to import from the shared hook; localStorage sync in knitting extracted to a separate `useEffect`.
+
+Shared `<StashGrid>` + `<StashCard>` at `apps/web/src/components/stash/StashGrid.tsx` + `stash-grid.css`. Knitting and crochet stash pages updated to use them; crochet-specific card layout preserved via `.crochet-stash-card-inner` modifier.
+
+Legacy `needlework/cross-stitch` SubCategory deleted (autopilotEnabled=false, 0 Tutorial references). Remaining needlework subcategories: blackwork, hardanger, needlepoint, sashiko, surface-embroidery, goldwork, ribbon-embroidery, stumpwork, candlewicking, foundations.
+
+Crochet diagram manifest `sourceFile` fields backfilled for all 15 Dillmont 1886 figures using the confirmed +11 Gutenberg filename offset.
+
+Unicode smart quotes (U+2018/U+2019) replaced with ASCII single quotes in `packages/db/scripts/seed-baking-taxonomy.ts` and `packages/db/scripts/seed-fibre-arts-taxonomy.ts`; these broke `pnpm typecheck`.
+
 ## K-4.2 knitting PD diagram pipeline (2026-06-10)
 
 Knitting K-4.2 PD diagram pipeline extending

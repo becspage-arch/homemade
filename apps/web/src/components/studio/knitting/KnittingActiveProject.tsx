@@ -16,7 +16,9 @@
  * the Studio behaves as if sync succeeded so the maker isn't blocked.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { useAutosave } from '@/lib/studio/use-autosave'
 
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 
@@ -96,47 +98,21 @@ export function KnittingActiveProject({
     !state.completedAt
   const setupVisible = !state.projectSetup && projectIsBlank && !setupSkipped
 
-  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const pendingState = useRef<ProgressState | null>(null)
+  const { pendingState, scheduleSave } = useAutosave<ProgressState>({
+    url: `/api/studio/knitting/progress/${pattern.id}`,
+    enabled: signedIn,
+    debounceMs: SAVE_DEBOUNCE_MS,
+  })
 
-  const flush = useCallback(async () => {
-    if (!pendingState.current) return
-    const snapshot = pendingState.current
-    pendingState.current = null
-
-    // Mirror progress to localStorage — works for signed-out makers
-    // and acts as a local cache while server sync catches up.
+  // Mirror progress to localStorage — works for signed-out makers and acts
+  // as a local cache while server sync catches up.
+  useEffect(() => {
     try {
-      window.localStorage.setItem(localStorageKey(pattern.id), JSON.stringify(snapshot))
+      window.localStorage.setItem(localStorageKey(pattern.id), JSON.stringify(state))
     } catch {
       // ignore
     }
-
-    if (!signedIn) return
-    try {
-      await fetch(`/api/studio/knitting/progress/${pattern.id}`, {
-        method: 'PATCH',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(snapshot),
-      })
-    } catch {
-      // silent — next change retries
-    }
-  }, [pattern.id, signedIn])
-
-  const scheduleSave = useCallback(() => {
-    if (saveTimer.current) clearTimeout(saveTimer.current)
-    saveTimer.current = setTimeout(() => {
-      void flush()
-    }, SAVE_DEBOUNCE_MS)
-  }, [flush])
-
-  useEffect(() => {
-    return () => {
-      if (saveTimer.current) clearTimeout(saveTimer.current)
-      void flush()
-    }
-  }, [flush])
+  }, [state, pattern.id])
 
   // ───── Counter logic ─────
 

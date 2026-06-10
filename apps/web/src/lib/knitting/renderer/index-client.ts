@@ -1,13 +1,8 @@
 /**
- * Client-safe entry into the knitting chart renderer. Mirrors
- * `renderKnittingChartSvg` from `./render-chart.ts` but avoids
- * importing the PNG rasteriser, which pulls in `sharp` — a Node
- * native module that breaks the client bundle.
- *
- * Public-facing surfaces (KnittingChartViewport, KnittingChartInset,
- * the print page chart inset) call into this module. Server-side
- * code that needs PNG output keeps using `./index.ts` /
- * `./render-chart.ts`.
+ * Client-safe barrel for the knitting chart renderer. Excludes the PNG
+ * rasteriser which pulls in `sharp` (a Node native module). Client-side
+ * surfaces (KnittingChartViewport, KnittingChartInset, print page) import
+ * from here. Server-side code that needs PNG output keeps using `./index.ts`.
  */
 
 import { layoutBrioche } from './chart-types/brioche'

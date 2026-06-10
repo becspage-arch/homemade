@@ -83,28 +83,17 @@
   text-align: center;
 }
 
-.crochet-stash-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 0.9rem;
-}
+@import '../../../../components/stash/stash-grid.css';
 
-.crochet-stash-card {
-  background: #fafaf6;
-  border-radius: 12px;
-  padding: 1rem;
+/* Crochet-specific card inner layout — applied via .crochet-stash-card-inner
+   on the stash-card li. The .stash-card base styles (background, radius,
+   shadow, hover) come from stash-grid.css. */
+
+.crochet-stash-card-inner {
   display: flex;
   gap: 0.7rem;
   align-items: flex-start;
-  box-shadow: 0 4px 18px rgba(60, 47, 34, 0.06), 0 1px 2px rgba(60, 47, 34, 0.04);
-  transition: transform 160ms ease;
-}
-
-.crochet-stash-card:hover {
-  transform: translateY(-2px);
+  padding: 1rem;
 }
 
 .crochet-stash-card-pip {

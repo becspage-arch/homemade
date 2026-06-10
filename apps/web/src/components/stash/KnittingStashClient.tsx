@@ -22,6 +22,7 @@
 import { useCallback, useState } from 'react'
 import { Plus, Circle, Ruler, Trash2 } from 'lucide-react'
 
+import { StashGrid, StashCard } from './StashGrid'
 import './stash.css'
 
 type StashKind = 'yarn' | 'needle'
@@ -156,9 +157,9 @@ export function KnittingStashClient({ yarnWeights, needles }: Props) {
         {yarnEntries.length === 0 ? (
           <p className="stash-empty">No yarn in your stash yet.</p>
         ) : (
-          <ul className="stash-grid">
+          <StashGrid>
             {yarnEntries.map((entry) => (
-              <li key={entry.id} className="stash-card">
+              <StashCard key={entry.id}>
                 <div className="stash-card-row stash-card-row-yarn">
                   {entry.colourHex && (
                     <span
@@ -193,9 +194,9 @@ export function KnittingStashClient({ yarnWeights, needles }: Props) {
                     ? ` · ${entry.skeins * entry.yardagePerSkein} yd total`
                     : ''}
                 </div>
-              </li>
+              </StashCard>
             ))}
-          </ul>
+          </StashGrid>
         )}
       </section>
 
@@ -206,9 +207,9 @@ export function KnittingStashClient({ yarnWeights, needles }: Props) {
         {needleEntries.length === 0 ? (
           <p className="stash-empty">No needles in your stash yet.</p>
         ) : (
-          <ul className="stash-grid">
+          <StashGrid>
             {needleEntries.map((entry) => (
-              <li key={entry.id} className="stash-card">
+              <StashCard key={entry.id}>
                 <div className="stash-card-row">
                   <div className="stash-card-title">{entry.label}</div>
                   <button
@@ -224,9 +225,9 @@ export function KnittingStashClient({ yarnWeights, needles }: Props) {
                   {entry.mmSize} mm · {styleLabel(entry.style)}
                   {entry.length ? ` · ${entry.length} cm` : ''}
                 </div>
-              </li>
+              </StashCard>
             ))}
-          </ul>
+          </StashGrid>
         )}
       </section>
 

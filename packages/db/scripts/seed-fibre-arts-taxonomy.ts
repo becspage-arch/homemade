@@ -88,7 +88,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     slug: 'macrame',
     name: 'Macramé',
     description:
-      ‘Square, alternating square, half-hitch, double half-hitch, lark\’s head, gathering, overhand, and figure-8 knots, plus plant hangers, wall hangings, and belts.’,
+      'Square, alternating square, half-hitch, double half-hitch, lark\'s head, gathering, overhand, and figure-8 knots, plus plant hangers, wall hangings, and belts.',
     order: 50,
   },
   {

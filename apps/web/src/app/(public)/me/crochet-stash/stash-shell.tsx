@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Plus, Trash2 } from 'lucide-react'
 
+import { StashGrid, StashCard } from '@/components/stash/StashGrid'
+
 interface StashYarn {
   id: string
   label: string
@@ -80,9 +82,9 @@ export function CrochetStashShell({ yarns, hooks, allHooks, yarnWeights }: Props
         {yarns.length === 0 ? (
           <p className="crochet-stash-empty">No yarns logged yet.</p>
         ) : (
-          <ul className="crochet-stash-grid">
+          <StashGrid>
             {yarns.map((y) => (
-              <li key={y.id} className="crochet-stash-card">
+              <StashCard key={y.id} className="crochet-stash-card-inner">
                 {y.colourHex && (
                   <span
                     className="crochet-stash-card-pip"
@@ -114,9 +116,9 @@ export function CrochetStashShell({ yarns, hooks, allHooks, yarnWeights }: Props
                 >
                   <Trash2 size={14} strokeWidth={1.5} />
                 </button>
-              </li>
+              </StashCard>
             ))}
-          </ul>
+          </StashGrid>
         )}
       </section>
 
@@ -148,9 +150,9 @@ export function CrochetStashShell({ yarns, hooks, allHooks, yarnWeights }: Props
         {hooks.length === 0 ? (
           <p className="crochet-stash-empty">No hooks logged yet.</p>
         ) : (
-          <ul className="crochet-stash-grid">
+          <StashGrid>
             {hooks.map((h) => (
-              <li key={h.slug} className="crochet-stash-card">
+              <StashCard key={h.slug} className="crochet-stash-card-inner">
                 <div className="crochet-stash-card-body">
                   <div className="crochet-stash-card-title">{h.canonicalName}</div>
                   <div className="crochet-stash-card-sub">
@@ -170,9 +172,9 @@ export function CrochetStashShell({ yarns, hooks, allHooks, yarnWeights }: Props
                 >
                   <Trash2 size={14} strokeWidth={1.5} />
                 </button>
-              </li>
+              </StashCard>
             ))}
-          </ul>
+          </StashGrid>
         )}
       </section>
     </div>

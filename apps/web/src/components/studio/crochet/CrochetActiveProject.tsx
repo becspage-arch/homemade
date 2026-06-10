@@ -10,7 +10,9 @@
  * same call as marking round N complete from the chart view.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+
+import { useAutosave } from '@/lib/studio/use-autosave'
 
 import { CrochetWrittenView } from './CrochetWrittenView'
 import { CrochetChartView } from './CrochetChartView'
@@ -95,51 +97,16 @@ export function CrochetActiveProject({
     !state.completedAt
   const setupVisible = !state.projectSetup && projectIsBlank && !setupSkipped
 
-  // Debounced autosave. Mirrors the cross-stitch Studio progress
-  // autosave shape — coalesce fast taps, write at most once per
-  // SAVE_DEBOUNCE_MS.
-  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const pendingState = useRef<ProgressState | null>(null)
-  const pendingPrefs = useRef<{
+  type CrochetPrefs = {
     preferredView?: ViewMode
     terminologyOverride?: TerminologyMode | null
     leftHandedOverride?: boolean | null
-  }>({})
+  }
 
-  const flush = useCallback(async () => {
-    if (!pendingState.current && Object.keys(pendingPrefs.current).length === 0) return
-    const body = {
-      ...(pendingState.current ?? {}),
-      ...pendingPrefs.current,
-    }
-    pendingState.current = null
-    pendingPrefs.current = {}
-    try {
-      await fetch(`/api/studio/crochet/progress/${pattern.id}`, {
-        method: 'PATCH',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(body),
-      })
-    } catch {
-      // Silent — next change retries.
-    }
-  }, [pattern.id])
-
-  const scheduleSave = useCallback(() => {
-    if (saveTimer.current) clearTimeout(saveTimer.current)
-    saveTimer.current = setTimeout(() => {
-      void flush()
-    }, SAVE_DEBOUNCE_MS)
-  }, [flush])
-
-  useEffect(() => {
-    return () => {
-      // Best-effort flush on unmount; sendBeacon would be ideal but
-      // not all the payload fits in form-encoding; settle for fetch.
-      if (saveTimer.current) clearTimeout(saveTimer.current)
-      void flush()
-    }
-  }, [flush])
+  const { pendingState, pendingPrefs, scheduleSave } = useAutosave<ProgressState, CrochetPrefs>({
+    url: `/api/studio/crochet/progress/${pattern.id}`,
+    debounceMs: SAVE_DEBOUNCE_MS,
+  })
 
   // Mark the current view as preferred (debounced).
   useEffect(() => {

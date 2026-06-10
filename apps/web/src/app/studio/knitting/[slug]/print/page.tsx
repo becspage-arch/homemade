@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { renderKnittingChartSvg } from '@/lib/knitting/renderer/client'
+import { renderKnittingChartSvg } from '@/lib/knitting/renderer/index-client'
 import {
   loadKnittingPatternForStudio,
   loadDemoKnittingPattern,

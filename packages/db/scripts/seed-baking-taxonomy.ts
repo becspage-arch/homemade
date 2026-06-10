@@ -51,7 +51,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   {
     slug: 'bread',
     name: 'Bread',
-    description: ‘Tin loaves, sourdough, focaccia, soda bread, enriched doughs.’,
+    description: 'Tin loaves, sourdough, focaccia, soda bread, enriched doughs.',
     order: 10,
   },
   {

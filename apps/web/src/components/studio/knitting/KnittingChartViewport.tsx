@@ -25,7 +25,7 @@ import {
   ArrowLeftRight,
 } from 'lucide-react'
 
-import { renderKnittingChartSvg } from '@/lib/knitting/renderer/client'
+import { renderKnittingChartSvg } from '@/lib/knitting/renderer/index-client'
 import type { KnittingChartData, KnittingChartType } from '@/lib/knitting/renderer/types'
 
 interface KnittingChartViewportProps {
