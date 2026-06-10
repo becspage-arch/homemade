@@ -27,6 +27,10 @@ import { PhotoToChartPanel } from './PhotoToChartPanel'
 import { MyPatternsGrid } from './MyPatternsGrid'
 import { useStudioAutosave } from './use-studio-autosave'
 import { BrandSwapDialog } from './BrandSwapDialog'
+import {
+  StudioRecentlyAddedRail,
+  type RailCard,
+} from '../StudioLandingRails'
 
 export type StudioStartMode = 'empty' | 'pattern' | 'new-blank' | 'new-photo'
 
@@ -39,6 +43,13 @@ export interface MyPatternListItem {
   colourCount: number
 }
 
+export interface RecentlyAddedListItem {
+  id: string
+  slug: string | null
+  name: string
+  thumbnailUrl: string | null
+}
+
 interface StudioShellProps {
   startMode: StudioStartMode
   signedIn: boolean
@@ -47,6 +58,7 @@ interface StudioShellProps {
   pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null
   stitchedKeys: string[]
   myPatterns: MyPatternListItem[]
+  recentlyAdded?: RecentlyAddedListItem[]
 }
 
 export function StudioShell({
@@ -57,6 +69,7 @@ export function StudioShell({
   pattern,
   stitchedKeys,
   myPatterns,
+  recentlyAdded = [],
 }: StudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -113,6 +126,14 @@ export function StudioShell({
         />
       )
     }
+    const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
+      id: p.id,
+      name: p.name,
+      thumbnailUrl: p.thumbnailUrl,
+      href: p.slug
+        ? `/cross-stitch/patterns/${p.slug}`
+        : `/studio/cross-stitch?patternId=${p.id}`,
+    }))
     return (
       <div className="studio-empty-surface">
         <StudioEmptyState
@@ -128,6 +149,10 @@ export function StudioShell({
             onOpen={(id) => router.push(`/studio/cross-stitch?patternId=${id}`)}
           />
         )}
+        <StudioRecentlyAddedRail
+          category="cross-stitch"
+          items={recentlyAddedRailItems}
+        />
       </div>
     )
   }

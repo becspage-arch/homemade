@@ -3,6 +3,7 @@ import { prisma, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { CrochetStudioShell } from '@/components/studio/crochet/CrochetStudioShell'
 import type { CrochetPatternData, MyCrochetProjectListItem } from '@/components/studio/crochet/types'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
@@ -195,6 +196,34 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
     ? 'new-ai-assisted'
     : 'empty'
 
+  // Recently added to the library - surfaced on the Studio landing as a
+  // taste of what's in the library, with a link out to /crochet for the
+  // full browse. Empty when nothing's published yet; the rail hides
+  // itself in that case.
+  const recentlyAddedRows = pattern
+    ? []
+    : await prisma.crochetPattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: Visibility.PUBLIC,
+          publishedAt: { not: null },
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: 6,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          thumbnail: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+  const recentlyAdded = recentlyAddedRows.map((p) => ({
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    thumbnailUrl: mediaUrl(p.thumbnail, 'card'),
+  }))
+
   return (
     <CrochetStudioShell
       startMode={startMode}
@@ -207,6 +236,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
       progress={progress}
       myProjects={myProjects}
       yarnWeights={yarnWeights}
+      recentlyAdded={recentlyAdded}
     />
   )
 }

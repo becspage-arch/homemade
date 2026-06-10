@@ -1,0 +1,135 @@
+/* StudioTopNav  -  slim 48px sticky band sat at the top of every Studio
+   page. Sage / warm taupe horizontal divider beneath, generous padding,
+   small-scale lowercase Fraunces wordmark. */
+
+.studio-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 48px;
+  padding: 0 1.25rem;
+  background: var(--studio-surface, #fdfaf5);
+  border-bottom: 1px solid var(--studio-divider, rgba(196, 133, 107, 0.18));
+  font-family: var(--studio-font-body, 'Lora', Georgia, serif);
+  font-size: 14px;
+  color: var(--studio-ink, #463126);
+}
+
+.studio-topnav-crumbs {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-topnav-home {
+  font-family: var(--studio-font-display, 'Fraunces', Georgia, serif);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.005em;
+  color: var(--studio-ink, #463126);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.studio-topnav-home:hover {
+  color: var(--studio-accent, #c4856b);
+}
+
+.studio-topnav-sep {
+  color: var(--studio-ink-mute, rgba(70, 49, 38, 0.45));
+  font-weight: 300;
+}
+
+.studio-topnav-category {
+  color: var(--studio-ink, #463126);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.studio-topnav-category:hover {
+  color: var(--studio-accent, #c4856b);
+}
+
+.studio-topnav-current {
+  color: var(--studio-ink-mute, rgba(70, 49, 38, 0.55));
+}
+
+.studio-topnav-user {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.studio-topnav-user-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--studio-ink, #463126);
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+
+.studio-topnav-user-link:hover {
+  background: rgba(196, 133, 107, 0.08);
+}
+
+.studio-topnav-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--studio-accent, #c4856b);
+  color: #fff;
+  font-family: var(--studio-font-display, 'Fraunces', Georgia, serif);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.studio-topnav-username {
+  font-size: 14px;
+}
+
+.studio-topnav-signin {
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--studio-accent, #c4856b);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.studio-topnav-signin:hover {
+  background: var(--studio-accent-strong, #a96b52);
+}
+
+@media (max-width: 640px) {
+  .studio-topnav {
+    padding: 0 0.9rem;
+    height: 44px;
+    font-size: 13px;
+  }
+  .studio-topnav-crumbs {
+    gap: 0.45rem;
+  }
+  .studio-topnav-home {
+    font-size: 16px;
+  }
+  .studio-topnav-username {
+    display: none;
+  }
+}

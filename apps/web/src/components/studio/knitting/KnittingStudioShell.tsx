@@ -26,7 +26,18 @@ import type {
   MyKnittingProjectListItem,
   ViewMode,
 } from './types'
+import {
+  StudioRecentlyAddedRail,
+  type RailCard,
+} from '../StudioLandingRails'
 import './knitting-studio.css'
+
+export interface RecentlyAddedKnittingItem {
+  id: string
+  slug: string | null
+  name: string
+  thumbnailUrl: string | null
+}
 
 export type KnittingStudioStartMode = 'empty' | 'pattern'
 
@@ -39,6 +50,7 @@ interface KnittingStudioShellProps {
   progress: KnittingProjectProgressData | null
   myProjects: MyKnittingProjectListItem[]
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
+  recentlyAdded?: RecentlyAddedKnittingItem[]
 }
 
 export function KnittingStudioShell({
@@ -49,6 +61,7 @@ export function KnittingStudioShell({
   progress,
   myProjects,
   yarnWeights,
+  recentlyAdded = [],
 }: KnittingStudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -93,6 +106,14 @@ export function KnittingStudioShell({
 
   // ───── Empty state ─────
   if (startMode === 'empty' || !pattern) {
+    const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
+      id: p.id,
+      name: p.name,
+      thumbnailUrl: p.thumbnailUrl,
+      href: p.slug
+        ? `/knitting/patterns/${p.slug}`
+        : `/studio/knitting?knittingPatternId=${p.id}`,
+    }))
     return (
       <div className="knitting-studio-surface knitting-studio-empty-surface">
         <KnittingEmptyState
@@ -105,6 +126,7 @@ export function KnittingStudioShell({
         {signedIn && myProjects.length > 0 && (
           <MyKnittingProjectsGrid projects={myProjects} onOpen={openProject} />
         )}
+        <StudioRecentlyAddedRail category="knitting" items={recentlyAddedRailItems} />
       </div>
     )
   }

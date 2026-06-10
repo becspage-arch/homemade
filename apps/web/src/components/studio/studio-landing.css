@@ -1,0 +1,184 @@
+/* Shared Studio landing styles  -  hero, action card layout, and the
+   rails (Continue / Recently added / Designer spotlight) that give the
+   landing page visual rhythm below the action cards. */
+
+.studio-landing {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.studio-landing-hero {
+  text-align: left;
+}
+
+.studio-landing-eyebrow {
+  margin: 0 0 0.6rem;
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--studio-accent, #c4856b);
+  text-transform: uppercase;
+}
+
+.studio-landing-heading {
+  margin: 0 0 1rem;
+  font-family: var(--studio-font-display, 'Fraunces'), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--studio-ink, #463126);
+}
+
+.studio-landing-lede {
+  margin: 0;
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.55;
+  color: rgba(70, 49, 38, 0.78);
+  max-width: 60ch;
+}
+
+/* Rails  -  shared layout for Continue / Recently added / Designer
+   spotlight. Each rail is a header + horizontal card grid; on narrow
+   viewports the grid wraps. */
+
+.studio-landing-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.studio-landing-rail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.studio-landing-rail-eyebrow {
+  margin: 0;
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--studio-accent, #c4856b);
+}
+
+.studio-landing-rail-title {
+  margin: 0;
+  font-family: var(--studio-font-display, 'Fraunces'), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  color: var(--studio-ink, #463126);
+}
+
+.studio-landing-rail-sub {
+  margin: 0.25rem 0 0;
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(70, 49, 38, 0.7);
+  max-width: 56ch;
+}
+
+.studio-landing-rail-link {
+  margin-top: 0.4rem;
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--studio-accent, #c4856b);
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.studio-landing-rail-link:hover {
+  text-decoration: underline;
+}
+
+.studio-landing-rail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-landing-rail-card {
+  margin: 0;
+}
+
+.studio-landing-rail-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--studio-ink, #463126);
+  transition: transform 140ms ease;
+}
+
+.studio-landing-rail-card a:hover {
+  transform: translateY(-2px);
+}
+
+.studio-landing-rail-card-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4ece2;
+  border: 1px solid rgba(196, 133, 107, 0.16);
+}
+
+.studio-landing-rail-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.studio-landing-rail-card-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(196, 133, 107, 0.12),
+    rgba(196, 133, 107, 0.04)
+  );
+}
+
+.studio-landing-rail-card-name {
+  font-family: var(--studio-font-body, 'Lora'), Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--studio-ink, #463126);
+}
+
+.studio-landing-rail-card-meta {
+  font-size: 0.8rem;
+  color: rgba(70, 49, 38, 0.55);
+}
+
+/* Spotlight variant  -  softer ambient background to set it apart. */
+.studio-landing-spotlight {
+  padding: 1.5rem;
+  background: rgba(196, 133, 107, 0.05);
+  border-radius: 14px;
+  border: 1px solid rgba(196, 133, 107, 0.16);
+}
+
+@media (max-width: 640px) {
+  .studio-landing {
+    padding: 1.5rem 1rem 3rem;
+    gap: 2rem;
+  }
+  .studio-landing-rail-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+  }
+}

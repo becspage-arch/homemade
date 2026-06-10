@@ -10,6 +10,7 @@
  */
 
 import { LibraryBig, Image as ImageIcon, FilePlus2 } from 'lucide-react'
+import { StudioLandingHero } from '../StudioLandingHero'
 
 interface StudioEmptyStateProps {
   signedIn: boolean
@@ -28,19 +29,16 @@ export function StudioEmptyState({
 }: StudioEmptyStateProps) {
   return (
     <section className="studio-empty">
-      <div className="studio-empty-hero">
-        <p className="studio-empty-overline">Cross-stitch Studio</p>
-        <h1 className="studio-empty-heading">
-          {signedIn
-            ? `Welcome back${userName ? `, ${userName.split(' ')[0]}` : ''}.`
-            : 'Stitch something beautiful.'}
-        </h1>
-        <p className="studio-empty-lede">
-          {signedIn
+      <StudioLandingHero
+        category="cross-stitch"
+        signedIn={signedIn}
+        userName={userName}
+        lede={
+          signedIn
             ? 'Open a pattern below, browse the library, or start fresh from a photo.'
-            : 'Browse the library, turn a photo into a chart, or start with a blank canvas. Mark stitched as you go, switch fabric counts, swap floss brands, and print a clean PDF when you are ready.'}
-        </p>
-      </div>
+            : 'Browse the library, turn a photo into a chart, or start with a blank canvas. Mark stitched as you go, switch fabric counts, swap floss brands, and print a clean PDF when you are ready.'
+        }
+      />
 
       <div className="studio-empty-actions">
         <button type="button" className="studio-empty-card primary" onClick={onBrowseLibrary}>

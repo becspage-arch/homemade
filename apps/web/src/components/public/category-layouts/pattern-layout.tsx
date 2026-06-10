@@ -5,6 +5,8 @@ import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
+import { CategoryStudioCTA } from '@/components/category/CategoryStudioCTA'
+import { isStudioCategorySlug } from '@/lib/studio/category-config'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
@@ -316,6 +318,18 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
           </ul>
         )}
       </header>
+
+      {isStudioCategorySlug(category.slug) && (() => {
+        const ctaHero = anchorPatterns[0]
+        return (
+          <CategoryStudioCTA
+            category={category.slug}
+            heroImageUrl={
+              ctaHero ? patternHeroUrl({ id: ctaHero.id, hero: ctaHero.hero }, 'card') : null
+            }
+          />
+        )
+      })()}
 
       <CategoryScopedSearch
         categorySlug={category.slug}

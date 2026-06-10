@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { prisma, parsePatternData, type PatternData, Visibility } from '@homemade/db'
+import { prisma, parsePatternData, type PatternData, PatternType, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { StudioShell } from '@/components/studio/shell/StudioShell'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
 export const dynamic = 'force-dynamic'
 
@@ -95,6 +96,35 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
     })
   }
 
+  // Recently added to the library - shown on the Studio landing as a
+  // taste of what's been published lately, with a link back to the full
+  // library on /cross-stitch. Always rendered when there's published
+  // pattern data, regardless of sign-in state.
+  const recentlyAddedRows = pattern
+    ? []
+    : await prisma.pattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: Visibility.PUBLIC,
+          publishedAt: { not: null },
+          type: PatternType.CROSS_STITCH,
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: 6,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          hero: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+  const recentlyAdded = recentlyAddedRows.map((p) => ({
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
+  }))
+
   const startMode: 'empty' | 'pattern' | 'new-blank' | 'new-photo' = pattern
     ? 'pattern'
     : sp.new === 'blank'
@@ -119,6 +149,7 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
         heightCells: p.heightCells,
         colourCount: p.colourCount,
       }))}
+      recentlyAdded={recentlyAdded}
     />
   )
 }

@@ -59,6 +59,15 @@ interface ChartViewportProps {
    * inspecting, not editing.
    */
   interactive?: boolean
+  /**
+   * Force the centre crosshairs on or off, overriding the layers toggle
+   * in the chart store. Used by the photo-to-chart preview where the
+   * crosshair is visual noise obscuring the user's photo and we want a
+   * local default of OFF without disturbing the user's stored
+   * preference for the actual stitching Studio. Leave undefined to
+   * use the store's layer toggle (the normal in-Studio behaviour).
+   */
+  centreCrosshairsOverride?: boolean
 }
 
 export function ChartViewport({
@@ -68,6 +77,7 @@ export function ChartViewport({
   onRequestIsolate,
   onPickColour,
   interactive = true,
+  centreCrosshairsOverride,
 }: ChartViewportProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
@@ -623,8 +633,11 @@ export function ChartViewport({
             </g>
           )}
 
-          {/* Centre crosshairs — confident, no-doubt-where-the-centre-is. */}
-          {layers.centreCrosshairs && (
+          {/* Centre crosshairs - confident, no-doubt-where-the-centre-is.
+              The photo-to-chart preview passes centreCrosshairsOverride
+              to keep crosshairs off by default; everywhere else the
+              chart store's layer toggle wins. */}
+          {(centreCrosshairsOverride ?? layers.centreCrosshairs) && (
             <g
               className="chart-centre-crosshairs"
               stroke="#c4856b"

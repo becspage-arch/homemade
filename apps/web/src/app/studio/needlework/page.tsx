@@ -10,6 +10,7 @@ import type {
   NeedleworkPatternFormat,
   NeedleworkProjectPhase,
 } from '@/components/studio/needlework/types'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
@@ -156,6 +157,32 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
     }))
   }
 
+  // Recently added needlework patterns from the library. Hides itself
+  // when nothing has been published yet.
+  const recentlyAddedRows = pattern
+    ? []
+    : await prisma.needleworkPattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: Visibility.PUBLIC,
+          publishedAt: { not: null },
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: 6,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          thumbnail: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+  const recentlyAdded = recentlyAddedRows.map((p) => ({
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    thumbnailUrl: mediaUrl(p.thumbnail, 'card'),
+  }))
+
   const startMode = pattern ? 'pattern' : 'empty'
 
   return (
@@ -167,6 +194,7 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
       pattern={pattern}
       progress={progress}
       myProjects={myProjects}
+      recentlyAdded={recentlyAdded}
     />
   )
 }

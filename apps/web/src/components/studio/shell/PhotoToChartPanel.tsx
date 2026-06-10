@@ -71,6 +71,12 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
   const [name, setName] = useState('Untitled photo pattern')
   const [saving, setSaving] = useState(false)
   const [dragOver, setDragOver] = useState(false)
+  // Centre crosshairs default OFF in the conversion preview. They're
+  // visual noise obscuring the user's photo. The user can flip them on
+  // to check chart centring against the photo's subject; the toggle
+  // persists for the session but doesn't affect the saved pattern's
+  // preference when the user opens it in the stitching Studio.
+  const [showCentreGuides, setShowCentreGuides] = useState(false)
   const inflight = useRef<AbortController | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -208,7 +214,12 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
       <div className="studio-p2c-preview">
         {showChart ? (
           <div className="studio-p2c-preview-canvas">
-            <ChartViewport pattern={pattern} mode="view" interactive={false} />
+            <ChartViewport
+              pattern={pattern}
+              mode="view"
+              interactive={false}
+              centreCrosshairsOverride={showCentreGuides}
+            />
           </div>
         ) : previewUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -383,6 +394,22 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
                 onChange={(e) => update({ backgroundRemoval: e.target.checked })}
               />
               <span>Bump saturation and remove flat backgrounds</span>
+            </label>
+
+            <label className="studio-p2c-checkbox">
+              <input
+                type="checkbox"
+                checked={showCentreGuides}
+                onChange={(e) => setShowCentreGuides(e.target.checked)}
+              />
+              <span>
+                Show centre guides
+                <span className="studio-p2c-checkbox-hint">
+                  The horizontal and vertical lines through the centre of the chart.
+                  Useful for checking your subject is centred; off by default so the
+                  preview stays clean.
+                </span>
+              </span>
             </label>
 
             <div className="studio-dialog-actions">

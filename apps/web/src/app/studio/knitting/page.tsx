@@ -7,7 +7,8 @@ import {
   loadKnittingProjectsForUser,
   loadDemoKnittingPattern,
 } from '@/lib/knitting/load-pattern'
-import { prisma } from '@homemade/db'
+import { prisma, PatternType, Visibility } from '@homemade/db'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
 export const dynamic = 'force-dynamic'
 
@@ -71,6 +72,33 @@ export default async function KnittingStudioPage({ searchParams }: PageProps) {
 
   const myProjects = user && !pattern ? await loadKnittingProjectsForUser(user.id) : []
 
+  // Recently added knitting patterns from the library. Falls back to no
+  // rail when there's nothing published. The rail hides itself.
+  const recentlyAddedRows = pattern
+    ? []
+    : await prisma.pattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: Visibility.PUBLIC,
+          publishedAt: { not: null },
+          type: PatternType.KNITTING_CHART,
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: 6,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          hero: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+  const recentlyAdded = recentlyAddedRows.map((p) => ({
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
+  }))
+
   const startMode: 'empty' | 'pattern' = pattern ? 'pattern' : 'empty'
 
   return (
@@ -83,6 +111,7 @@ export default async function KnittingStudioPage({ searchParams }: PageProps) {
       progress={null}
       myProjects={myProjects}
       yarnWeights={yarnWeights}
+      recentlyAdded={recentlyAdded}
     />
   )
 }

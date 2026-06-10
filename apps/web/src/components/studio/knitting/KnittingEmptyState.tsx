@@ -11,6 +11,7 @@
  */
 
 import { LibraryBig, FolderPlus, Link2 } from 'lucide-react'
+import { StudioLandingHero } from '../StudioLandingHero'
 
 interface KnittingEmptyStateProps {
   signedIn: boolean
@@ -27,22 +28,18 @@ export function KnittingEmptyState({
   onStartFromUrl,
   onStartNewProject,
 }: KnittingEmptyStateProps) {
-  const firstName = userName?.split(' ')[0] ?? null
   return (
     <section className="knitting-studio-empty">
-      <div className="knitting-studio-empty-hero">
-        <p className="knitting-studio-empty-overline">Knitting Studio</p>
-        <h1 className="knitting-studio-empty-heading">
-          {signedIn
-            ? `Welcome back${firstName ? `, ${firstName}` : ''}.`
-            : 'Knit your first finished thing.'}
-        </h1>
-        <p className="knitting-studio-empty-lede">
-          {signedIn
+      <StudioLandingHero
+        category="knitting"
+        signedIn={signedIn}
+        userName={userName}
+        lede={
+          signedIn
             ? 'Open a project, browse the library, or start something new.'
-            : 'Open a pattern, mark each row as you go, switch between written and chart. Your place is saved as you work.'}
-        </p>
-      </div>
+            : 'Open a pattern, mark each row as you go, switch between written and chart. Your place is saved as you work.'
+        }
+      />
 
       <div className="knitting-studio-empty-actions">
         <button

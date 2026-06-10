@@ -48,6 +48,16 @@
 
 /* ===== Layout ============================================================ */
 
+/* Wrapper sat below the persistent top-nav; provides a positioned
+   container so the per-Studio surfaces (which use position: absolute;
+   inset: 0) fill the remaining space without overlapping the nav. */
+.studio-root-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  width: 100%;
+}
+
 .studio-layout {
   display: grid;
   grid-template-rows: 52px 1fr 42px;

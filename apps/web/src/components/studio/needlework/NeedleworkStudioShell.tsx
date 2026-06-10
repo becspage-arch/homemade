@@ -25,7 +25,18 @@ import type {
   MyNeedleworkProjectListItem,
   NeedleworkDiscipline,
 } from './types'
+import {
+  StudioRecentlyAddedRail,
+  type RailCard,
+} from '../StudioLandingRails'
 import './needlework-studio.css'
+
+export interface RecentlyAddedNeedleworkItem {
+  id: string
+  slug: string | null
+  name: string
+  thumbnailUrl: string | null
+}
 
 export type NeedleworkStudioStartMode = 'empty' | 'pattern'
 
@@ -37,6 +48,7 @@ interface NeedleworkStudioShellProps {
   pattern: NeedleworkPatternData | null
   progress: NeedleworkProjectProgressData | null
   myProjects: MyNeedleworkProjectListItem[]
+  recentlyAdded?: RecentlyAddedNeedleworkItem[]
 }
 
 export function NeedleworkStudioShell({
@@ -46,6 +58,7 @@ export function NeedleworkStudioShell({
   pattern,
   progress,
   myProjects,
+  recentlyAdded = [],
 }: NeedleworkStudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -90,6 +103,14 @@ export function NeedleworkStudioShell({
 
   // ── Empty state ────────────────────────────────────────────────────────────
   if (startMode === 'empty' || !pattern) {
+    const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
+      id: p.id,
+      name: p.name,
+      thumbnailUrl: p.thumbnailUrl,
+      href: p.slug
+        ? `/needlework/${p.slug}`
+        : `/studio/needlework?needleworkPatternId=${p.id}`,
+    }))
     return (
       <div className="needlework-studio-surface needlework-studio-empty-surface">
         <NeedleworkEmptyState
@@ -101,6 +122,7 @@ export function NeedleworkStudioShell({
         {signedIn && myProjects.length > 0 && (
           <MyNeedleworkProjectsGrid projects={myProjects} onOpen={openProject} />
         )}
+        <StudioRecentlyAddedRail category="needlework" items={recentlyAddedRailItems} />
       </div>
     )
   }

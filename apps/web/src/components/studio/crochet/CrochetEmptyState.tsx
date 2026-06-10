@@ -9,6 +9,7 @@
  */
 
 import { LibraryBig, Sparkles, ImageDown, Wand2 } from 'lucide-react'
+import { StudioLandingHero } from '../StudioLandingHero'
 
 interface CrochetEmptyStateProps {
   signedIn: boolean
@@ -29,19 +30,16 @@ export function CrochetEmptyState({
 }: CrochetEmptyStateProps) {
   return (
     <section className="crochet-studio-empty">
-      <div className="crochet-studio-empty-hero">
-        <p className="crochet-studio-empty-overline">Crochet Studio</p>
-        <h1 className="crochet-studio-empty-heading">
-          {signedIn
-            ? `Welcome back${userName ? `, ${userName.split(' ')[0]}` : ''}.`
-            : 'Pick up your hook.'}
-        </h1>
-        <p className="crochet-studio-empty-lede">
-          {signedIn
+      <StudioLandingHero
+        category="crochet"
+        signedIn={signedIn}
+        userName={userName}
+        lede={
+          signedIn
             ? 'Open a project below, browse the library, or start something new.'
-            : 'Browse the library, follow patterns row by row, save your place, switch between written and chart. Print a clean PDF whenever the work goes off-screen.'}
-        </p>
-      </div>
+            : 'Browse the library, follow patterns row by row, save your place, switch between written and chart. Print a clean PDF whenever the work goes off-screen.'
+        }
+      />
 
       <div className="crochet-studio-empty-actions">
         <button

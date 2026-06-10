@@ -30,7 +30,18 @@ import type {
   CrochetProjectProgressData,
   MyCrochetProjectListItem,
 } from './types'
+import {
+  StudioRecentlyAddedRail,
+  type RailCard,
+} from '../StudioLandingRails'
 import './crochet-studio.css'
+
+export interface RecentlyAddedCrochetItem {
+  id: string
+  slug: string | null
+  name: string
+  thumbnailUrl: string | null
+}
 
 export type CrochetStudioStartMode =
   | 'empty'
@@ -50,6 +61,7 @@ interface CrochetStudioShellProps {
   progress: CrochetProjectProgressData | null
   myProjects: MyCrochetProjectListItem[]
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
+  recentlyAdded?: RecentlyAddedCrochetItem[]
 }
 
 export function CrochetStudioShell({
@@ -62,6 +74,7 @@ export function CrochetStudioShell({
   progress,
   myProjects,
   yarnWeights,
+  recentlyAdded = [],
 }: CrochetStudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -130,6 +143,14 @@ export function CrochetStudioShell({
 
   // ───── Empty state ─────
   if (startMode === 'empty' || !pattern) {
+    const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
+      id: p.id,
+      name: p.name,
+      thumbnailUrl: p.thumbnailUrl,
+      href: p.slug
+        ? `/crochet/patterns/${p.slug}`
+        : `/studio/crochet?crochetPatternId=${p.id}`,
+    }))
     return (
       <div className="crochet-studio-surface crochet-studio-empty-surface">
         <CrochetEmptyState
@@ -149,6 +170,7 @@ export function CrochetStudioShell({
         {signedIn && myProjects.length > 0 && (
           <MyCrochetProjectsGrid projects={myProjects} onOpen={openProject} />
         )}
+        <StudioRecentlyAddedRail category="crochet" items={recentlyAddedRailItems} />
       </div>
     )
   }

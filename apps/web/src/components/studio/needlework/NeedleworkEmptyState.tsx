@@ -8,6 +8,7 @@ import {
   DISCIPLINE_DESCRIPTIONS,
   type NeedleworkDiscipline,
 } from './types'
+import { StudioLandingHero } from '../StudioLandingHero'
 
 interface NeedleworkEmptyStateProps {
   signedIn: boolean
@@ -24,19 +25,16 @@ export function NeedleworkEmptyState({
 }: NeedleworkEmptyStateProps) {
   return (
     <section className="needlework-studio-empty">
-      <div className="needlework-studio-empty-hero">
-        <p className="needlework-studio-empty-overline">Needlework Studio</p>
-        <h1 className="needlework-studio-empty-heading">
-          {signedIn
-            ? `Welcome back${userName ? `, ${userName.split(' ')[0]}` : ''}.`
-            : 'Thread a needle.'}
-        </h1>
-        <p className="needlework-studio-empty-lede">
-          {signedIn
+      <StudioLandingHero
+        category="needlework"
+        signedIn={signedIn}
+        userName={userName}
+        lede={
+          signedIn
             ? 'Open a project below, browse the library, or pick a discipline to start.'
-            : 'Follow patterns stitch by stitch. Track counted work on the grid or annotate a surface design. Save your place, add notes, print a clean PDF.'}
-        </p>
-      </div>
+            : 'Follow patterns stitch by stitch. Track counted work on the grid or annotate a surface design. Save your place, add notes, print a clean PDF.'
+        }
+      />
 
       <button
         type="button"
