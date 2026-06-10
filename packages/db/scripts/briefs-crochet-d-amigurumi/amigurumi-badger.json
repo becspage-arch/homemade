@@ -1,0 +1,775 @@
+{
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "amigurumi",
+  "sourceType": "SYNTHESISED",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-3-5mm",
+    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "crochet-chain",
+      "crochet-double-uk",
+      "crochet-slip-stitch",
+      "crochet-dc2tog"
+    ],
+    "craftTechniqueTags": [
+      "amigurumi-magic-ring",
+      "amigurumi-increases",
+      "amigurumi-decreases",
+      "amigurumi-safety-eyes",
+      "amigurumi-colour-change",
+      "amigurumi-assembly"
+    ],
+    "finishedSizeText": "Approximately 12 cm long, 9 cm tall when assembled."
+  },
+  "recipeTools": [
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "slug": "amigurumi-badger",
+  "title": "Badger Amigurumi",
+  "subtitle": "",
+  "excerpt": "A stocky black-and-white badger with signature facial stripes worked in colour changes on a sphere head and low oval body.",
+  "difficulty": "INTERMEDIATE",
+  "sourceNotes": "Synthesised from standard amigurumi construction principles.",
+  "techniqueSlugs": [
+    "amigurumi-magic-ring",
+    "amigurumi-increases",
+    "amigurumi-decreases",
+    "amigurumi-safety-eyes",
+    "amigurumi-colour-change",
+    "amigurumi-assembly"
+  ],
+  "criticalTechniques": [
+    "amigurumi-magic-ring",
+    "amigurumi-colour-change"
+  ],
+  "aliases": [
+    "badger amigurumi",
+    "crochet badger",
+    "woodland badger plushie"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-ring",
+      "definition": "An adjustable start loop that closes to leave no hole at the centre of a piece."
+    },
+    {
+      "slug": "colour-change",
+      "definition": "Switching yarn at a specified point to create distinct colour sections within a single piece."
+    },
+    {
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer; secure before stuffing as they cannot be added afterwards."
+    },
+    {
+      "slug": "amigurumi-decrease",
+      "definition": "An invisible decrease worked through the front loops only to reduce stitch count without a visible gap."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The badger is a stocky, low-slung figure with a sphere head and an oval body, both worked in its signature grey-and-white pattern. Two black stripes run along the head from snout to crown using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "colour-change"
+                }
+              }
+            ],
+            "text": "colour changes"
+          },
+          {
+            "type": "text",
+            "text": ". Start every piece with a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-ring"
+                }
+              }
+            ],
+            "text": "magic ring"
+          },
+          {
+            "type": "text",
+            "text": ". The badger sits about 12 cm long and 9 cm tall."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Materials"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "DK yarn: 50 g grey, 20 g white, 15 g black. 3.5 mm crochet hook. Pair of 9 mm "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "safety-eyes"
+                }
+              }
+            ],
+            "text": "safety eyes"
+          },
+          {
+            "type": "text",
+            "text": ". Polyester stuffing. Tapestry needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "24 sts × 28 rows = 10 × 10 cm in dc on a 3.5 mm hook."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Head"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work rounds 1 to 5 in white. On round 6, begin black "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "colour-change"
+                }
+              }
+            ],
+            "text": "colour changes"
+          },
+          {
+            "type": "text",
+            "text": " at the centre-front 8 stitches to form the two facial stripes. Continue the stripe pattern up to round 14, then switch back to grey for the crown."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 1: 6 sc in magic ring (6 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 2: [inc] × 6 (12 st) (12 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 3: [2 sc, inc] × 6 (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 4: [3 sc, inc] × 6 (24 st) (24 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 5: [4 sc, inc] × 6 (30 st) (30 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 6: [5 sc, inc] × 6 (36 st) (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 7: [6 sc, inc] × 6 (42 st) (42 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 8: [7 sc, inc] × 6 (48 st) (48 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 9: [8 sc, inc] × 6 (54 st) (54 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 10: sc in each st (54 st) (54 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 11: sc in each st (54 st) (54 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 12: [7 sc, dec] × 6 (48 st) (48 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 13: [6 sc, dec] × 6 (42 st) (42 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 14: [5 sc, dec] × 6 (36 st) (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 15: [4 sc, dec] × 6 (30 st) (30 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 16: [3 sc, dec] × 6 (24 st) (24 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 17: [2 sc, dec] × 6 (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 18: [1 sc, dec] × 6 (12 st) (12 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 19: [dec] × 6 (6 st). FO leaving 15 cm tail for closure. (6 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work the body in grey with a white underside. Change to white for the lower third of the oval, creating a pale belly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 1: Chain 9. Working along chain: 2 sc in 2nd ch from hook, sc in next 6 ch, 3 sc in last ch, rotate. Along opposite side: sc in next 6 ch, 2 sc in last ch (20 st) (20 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 2: Increase 6 stitches evenly around (26 st) (26 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 3: Increase 6 stitches evenly around (32 st) (32 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 4: Increase 6 stitches evenly around (38 st) (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 5: Increase 6 stitches evenly around (44 st) (44 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 6: Increase 6 stitches evenly around (50 st) (50 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 7: Increase 6 stitches evenly around (56 st) (56 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 8: Increase 6 stitches evenly around (62 st) (62 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 9: Increase 6 stitches evenly around (68 st) (68 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 10: sc in each st (68 st) (68 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 11: sc in each st (68 st) (68 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 12: sc in each st (68 st) (68 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 13: sc in each st (68 st) (68 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 14: Decrease 6 stitches evenly around (62 st) (62 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 15: Decrease 6 stitches evenly around (56 st) (56 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 16: Decrease 6 stitches evenly around (50 st) (50 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 17: Decrease 6 stitches evenly around (44 st) (44 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 18: Decrease 6 stitches evenly around (38 st) (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 19: Decrease 6 stitches evenly around (32 st) (32 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 20: Decrease 6 stitches evenly around (26 st) (26 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 21: Decrease 6 stitches evenly around (20 st). FO leaving 15 cm tail for closure. (20 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Legs (make 4)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 1: 6 sc in magic ring (6 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 2: [inc] × 6 (12 st) (12 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 3: [2 sc, inc] × 6 (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 4: sc in each st (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 5: sc in each st (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 6: sc in each st (18 st) (18 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 7: [1 sc, dec] × 6 (12 st) (12 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Round 8: [dec] × 6 (6 st). FO leaving 15 cm tail for closure. (6 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assembly"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Insert "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "safety-eyes"
+                }
+              }
+            ],
+            "text": "safety eyes"
+          },
+          {
+            "type": "text",
+            "text": " between rounds 9 and 10, 2.5 cm apart, above the white facial area. Stuff all pieces. Sew the head to one end of the body. Attach the legs to the underside, keeping them short so the badger sits low."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Embroider the nose in black using satin stitch over the white muzzle tip. Thread the needle with black yarn and carry it under the surface to start each stripe section without cutting. Weave in all ends. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "amigurumi-decrease"
+                }
+              }
+            ],
+            "text": "invisible decrease"
+          },
+          {
+            "type": "text",
+            "text": " keeps the stripe edges clean where the colours meet."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "What to make next: the amigurumi-hedgehog has a similar low-profile build, or the amigurumi-mushroom makes a quick companion piece."
+          }
+        ]
+      }
+    ]
+  }
+}
