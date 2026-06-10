@@ -29,34 +29,34 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease that removes a stitch without leaving a visible gap on the right side."
+      "slug": "invisible-decrease",
+      "definition": "A decrease that removes a stitch without leaving a visible gap on the right side of the fabric."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer, used in amigurumi to give a secure, professional finish."
     },
     {
-      "termSlug": "sc",
-      "definition": "Single crochet (UK: double crochet) — the main stitch in amigurumi."
+      "slug": "sc",
+      "definition": "Single crochet (UK: double crochet) — the main stitch in amigurumi construction."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     },
     {
-      "termSlug": "surface-embroidery",
-      "definition": "Embroidery worked on the surface of a finished crocheted piece to add details."
+      "slug": "surface-embroidery",
+      "definition": "Embroidery worked directly on the surface of a finished crocheted piece to add fine detail."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 20 cm tall seated.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -112,7 +112,7 @@
         "content": [
           {
             "type": "text",
-            "text": "You need about 80 g of golden dk-weight yarn plus a small amount of dark brown for nose embroidery. Use a 3.5 mm hook, two 14 mm amber "
+            "text": "About 80 g of golden dk-weight yarn plus a small amount of dark brown for nose embroidery. Use a 3.5 mm hook, two 14 mm amber "
           }
         ]
       },
@@ -133,7 +133,7 @@
           },
           {
             "type": "text",
-            "text": ", polyester stuffing, and a tapestry needle."
+            "text": ", polyester stuffing, and one tapestry needle."
           }
         ]
       },
@@ -170,7 +170,23 @@
           },
           {
             "type": "text",
-            "text": " with 6 sc. Pull the tail to close the ring snugly."
+            "text": " with 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": ". Pull the tail to close the ring snugly."
           }
         ]
       },
@@ -1252,7 +1268,23 @@
           },
           {
             "type": "text",
-            "text": " to add a dark oval nose on the muzzle. Insert safety eyes between rounds 7 and 8 on the head, spaced 6 stitches apart. Weave in all ends."
+            "text": " to add a dark oval nose on the muzzle. Insert the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "invisible-decrease"
+                }
+              }
+            ],
+            "text": "invisible decrease"
+          },
+          {
+            "type": "text",
+            "text": " technique at the closing round to get a neat seam. Weave in all ends."
           }
         ]
       }

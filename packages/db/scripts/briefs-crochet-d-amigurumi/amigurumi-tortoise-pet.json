@@ -30,38 +30,38 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease worked through the front loops only to avoid a visible gap."
+      "slug": "invisible-decrease",
+      "definition": "A decrease worked through the front loops only to avoid a visible gap on the right side."
     },
     {
-      "termSlug": "colour-change",
-      "definition": "Swapping yarn colour on the last pull-through of a stitch."
+      "slug": "colour-change",
+      "definition": "Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch."
     },
     {
-      "termSlug": "surface-embroidery",
-      "definition": "Embroidery worked on the surface of a finished crocheted piece to add details such as shell segments."
+      "slug": "surface-embroidery",
+      "definition": "Embroidery worked directly on the surface of a finished crocheted piece to add shell segment markings."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi for a secure, professional finish."
     },
     {
-      "termSlug": "sc",
+      "slug": "sc",
       "definition": "Single crochet (UK: double crochet) — the main amigurumi stitch."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 14 cm long, 8 cm tall.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -119,7 +119,12 @@
           {
             "type": "text",
             "text": "About 60 g of dark green or brown dk yarn for the shell. Use olive green or khaki for the head, legs, and tail. A 3.5 mm hook, two 8 mm dark "
-          },
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
             "type": "text",
             "marks": [
@@ -134,7 +139,7 @@
           },
           {
             "type": "text",
-            "text": ", stuffing, and a tapestry needle. Dark brown yarn for "
+            "text": ", stuffing, and one tapestry needle. Dark brown yarn for "
           },
           {
             "type": "text",
@@ -187,7 +192,7 @@
           },
           {
             "type": "text",
-            "text": " as a sphere, then flattened slightly at the base. The tortoise body parts — head, legs, and tail — use a lighter khaki yarn with "
+            "text": " as a sphere, then flattened slightly at the base. The head, legs, and tail use a lighter khaki yarn with "
           },
           {
             "type": "text",
@@ -203,7 +208,23 @@
           },
           {
             "type": "text",
-            "text": " where the skin meets the shell edge."
+            "text": " where the skin meets the shell edge. Use "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": " throughout."
           }
         ]
       },
@@ -614,7 +635,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Insert "
+            "text": "Insert the "
           },
           {
             "type": "text",
@@ -946,7 +967,7 @@
           },
           {
             "type": "text",
-            "text": " throughout. Sew or glue the base piece inside to close the shell neatly."
+            "text": " throughout. Sew the base piece inside to close the shell neatly."
           }
         ]
       },
@@ -967,7 +988,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Add hexagonal or pentagonal shell markings with "
+            "text": "Add hexagonal shell markings with "
           },
           {
             "type": "text",
@@ -983,7 +1004,7 @@
           },
           {
             "type": "text",
-            "text": " using straight stitch in dark brown. The classic tortoise pattern uses a large centre pentagon surrounded by hexagons. Use "
+            "text": " using straight stitch in dark brown. Use the "
           },
           {
             "type": "text",
@@ -999,7 +1020,7 @@
           },
           {
             "type": "text",
-            "text": " shaping where the neck emerges from the shell for a smooth join. Weave in all ends."
+            "text": " method where the neck emerges from the shell for a smooth join. Weave in all ends."
           }
         ]
       }

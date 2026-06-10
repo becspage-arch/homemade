@@ -29,34 +29,34 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease worked through the front loops only to avoid a visible gap."
+      "slug": "invisible-decrease",
+      "definition": "A decrease worked through the front loops only to avoid a visible gap on the right side."
     },
     {
-      "termSlug": "colour-change",
-      "definition": "Swapping yarn colour on the last pull-through of a stitch."
+      "slug": "colour-change",
+      "definition": "Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi for a secure, professional finish."
     },
     {
-      "termSlug": "sc",
+      "slug": "sc",
       "definition": "Single crochet (UK: double crochet) — the main amigurumi stitch."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 16 cm long, 10 cm tall.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -112,7 +112,7 @@
         "content": [
           {
             "type": "text",
-            "text": "About 65 g of dk yarn in two or three colours for a patchy coat. Guinea pigs often have black, white, and brown patches, so work in "
+            "text": "About 65 g of dk yarn in two or three colours for a patchy coat. Use "
           },
           {
             "type": "text",
@@ -129,7 +129,12 @@
           {
             "type": "text",
             "text": " or carry colours across rounds. A 3.5 mm hook, two 10 mm dark "
-          },
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
             "type": "text",
             "marks": [
@@ -144,7 +149,7 @@
           },
           {
             "type": "text",
-            "text": ", stuffing, and a tapestry needle."
+            "text": ", stuffing, and one tapestry needle."
           }
         ]
       },
@@ -181,7 +186,23 @@
           },
           {
             "type": "text",
-            "text": " of 6 sc. The guinea pig has no visible neck: the head sits directly against the body oval."
+            "text": " of 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": ". The guinea pig has no visible neck: the head sits directly against the body oval."
           }
         ]
       },
@@ -374,31 +395,6 @@
           {
             "type": "text",
             "text": "Round 20: [dec] × 6 (6 st). FO leaving 15 cm tail for closure."
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "content": [
-          {
-            "type": "text",
-            "text": "Insert "
-          },
-          {
-            "type": "text",
-            "marks": [
-              {
-                "type": "glossaryTooltip",
-                "attrs": {
-                  "termSlug": "safety-eyes"
-                }
-              }
-            ],
-            "text": "safety eyes"
-          },
-          {
-            "type": "text",
-            "text": " between rounds 6 and 7. Stuff firmly and close."
           }
         ]
       },
@@ -900,7 +896,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Use "
+            "text": "Apply the "
           },
           {
             "type": "text",
@@ -916,7 +912,7 @@
           },
           {
             "type": "text",
-            "text": " shaping on the muzzle area if a softer edge is needed. Embroider a small V-shaped nose and weave in all ends."
+            "text": " method at the body closing round for a smooth seam. Embroider a small V-shaped nose and weave in all ends."
           }
         ]
       }

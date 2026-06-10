@@ -29,34 +29,34 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease worked through the front loops only to avoid a visible gap."
+      "slug": "invisible-decrease",
+      "definition": "A decrease worked through the front loops only to avoid a visible gap on the right side."
     },
     {
-      "termSlug": "stuffing-technique",
-      "definition": "The method of filling an amigurumi piece firmly and evenly with polyester fibrefill."
+      "slug": "stuffing-technique",
+      "definition": "The method of filling an amigurumi piece firmly and evenly with polyester fibrefill to hold its shape."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi for a secure, professional finish."
     },
     {
-      "termSlug": "sc",
+      "slug": "sc",
       "definition": "Single crochet (UK: double crochet) — the main amigurumi stitch."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 12 cm tall seated.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -113,7 +113,12 @@
           {
             "type": "text",
             "text": "About 55 g of sandy or golden dk yarn plus a small amount of cream for the belly. A 3.5 mm hook, two 8 mm black "
-          },
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
             "type": "text",
             "marks": [
@@ -128,7 +133,7 @@
           },
           {
             "type": "text",
-            "text": ", plenty of stuffing for the chubby cheeks, and a tapestry needle."
+            "text": ", plenty of stuffing for the chubby cheeks, and one tapestry needle."
           }
         ]
       },
@@ -165,7 +170,23 @@
           },
           {
             "type": "text",
-            "text": " of 6 sc. The hamster head and body are both spheres; the head is worked with extra stuffing at the sides to suggest full cheek pouches. Good "
+            "text": " of 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": ". The hamster head and body are both spheres. Good "
           },
           {
             "type": "text",
@@ -391,7 +412,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Before closing: insert "
+            "text": "Before closing: insert the "
           },
           {
             "type": "text",

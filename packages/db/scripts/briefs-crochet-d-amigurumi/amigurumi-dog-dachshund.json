@@ -28,30 +28,30 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease that removes a stitch without leaving a visible gap."
+      "slug": "invisible-decrease",
+      "definition": "A decrease that removes a stitch without leaving a visible gap on the right side."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi for a secure finish."
     },
     {
-      "termSlug": "sc",
+      "slug": "sc",
       "definition": "Single crochet (UK: double crochet) — the main amigurumi stitch."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 22 cm long, 10 cm tall seated.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -107,7 +107,12 @@
           {
             "type": "text",
             "text": "Around 70 g of brown dk-weight yarn. A small amount of tan for the snout and paw pads. A 3.5 mm hook, two 10 mm dark "
-          },
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
             "type": "text",
             "marks": [
@@ -122,7 +127,7 @@
           },
           {
             "type": "text",
-            "text": ", stuffing, and a tapestry needle."
+            "text": ", stuffing, and one tapestry needle."
           }
         ]
       },
@@ -159,7 +164,23 @@
           },
           {
             "type": "text",
-            "text": " of 6 sc. The dachshund body is a long cylinder that gives the breed its signature silhouette."
+            "text": " of 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": ". The dachshund body is a long cylinder that gives the breed its signature silhouette."
           }
         ]
       },
@@ -1171,7 +1192,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Embroider a dark oval nose on the snout tip. Insert "
+            "text": "Embroider a dark oval nose on the snout tip. Use the "
           },
           {
             "type": "text",
@@ -1179,15 +1200,15 @@
               {
                 "type": "glossaryTooltip",
                 "attrs": {
-                  "termSlug": "safety-eyes"
+                  "termSlug": "invisible-decrease"
                 }
               }
             ],
-            "text": "safety eyes"
+            "text": "invisible decrease"
           },
           {
             "type": "text",
-            "text": " at rounds 5 and 6, spaced 4 stitches apart. Weave in all ends and trim neatly."
+            "text": " method at the body closing round for a smooth seam. Weave in all ends and trim neatly."
           }
         ]
       }

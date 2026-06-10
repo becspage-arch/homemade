@@ -29,34 +29,34 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease worked through the front loops only to avoid a visible gap."
+      "slug": "invisible-decrease",
+      "definition": "A decrease worked through the front loops only to avoid a visible gap on the right side."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi for a secure, professional finish."
     },
     {
-      "termSlug": "flat-piece",
-      "definition": "A crocheted piece worked flat (not stuffed) that is sewn on as a fin or ear."
+      "slug": "flat-piece",
+      "definition": "A crocheted piece worked without stuffing, sewn flat onto the main body as a fin or ear."
     },
     {
-      "termSlug": "sc",
+      "slug": "sc",
       "definition": "Single crochet (UK: double crochet) — the main amigurumi stitch."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
-      "definition": "A seaming technique that joins stuffed pieces invisibly."
+      "slug": "assembly-ladder-stitch",
+      "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 14 cm long.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -113,7 +113,12 @@
           {
             "type": "text",
             "text": "About 40 g of bright orange dk yarn plus white for the belly. A 3.5 mm hook, two 8 mm black "
-          },
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
           {
             "type": "text",
             "marks": [
@@ -128,7 +133,7 @@
           },
           {
             "type": "text",
-            "text": ", light stuffing for the body, and a tapestry needle."
+            "text": ", light stuffing for the body, and one tapestry needle."
           }
         ]
       },
@@ -181,7 +186,23 @@
           },
           {
             "type": "text",
-            "text": " of 6 sc."
+            "text": " of 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": "."
           }
         ]
       },
@@ -364,7 +385,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Insert "
+            "text": "Insert the "
           },
           {
             "type": "text",
@@ -762,7 +783,7 @@
         "content": [
           {
             "type": "text",
-            "text": "Use "
+            "text": "Use the "
           },
           {
             "type": "text",
@@ -778,7 +799,7 @@
           },
           {
             "type": "text",
-            "text": " to smooth any bumps where fins join the body. Weave in all ends. The white belly is added by embroidering a few straight stitches along the underside."
+            "text": " method to smooth any bumps where fins join the body. Weave in all ends. The white belly is added by embroidering a few straight stitches along the underside."
           }
         ]
       }

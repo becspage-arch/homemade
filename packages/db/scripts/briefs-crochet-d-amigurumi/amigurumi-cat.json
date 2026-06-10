@@ -2,7 +2,7 @@
   "slug": "amigurumi-cat",
   "title": "Amigurumi Tabby Cat",
   "subtitle": "",
-  "excerpt": "A striped tabby cat with cone ears, a long tail, and a curious expression. Worked in dk yarn at tight tension for a firm, pose-able result.",
+  "excerpt": "A striped tabby cat with cone ears, a long tail, and a curious expression. Worked in dk yarn at tight tension for a firm, poseable result.",
   "type": "PATTERN",
   "categorySlug": "crochet",
   "subCategorySlug": "amigurumi",
@@ -29,30 +29,30 @@
   ],
   "glossaryTerms": [
     {
-      "termSlug": "magic-ring",
-      "definition": "An adjustable loop used to start amigurumi pieces with a tight centre."
+      "slug": "magic-ring",
+      "definition": "An adjustable loop used to start amigurumi pieces with a tight, hole-free centre."
     },
     {
-      "termSlug": "invisible-decrease",
-      "definition": "A decrease that removes a stitch without leaving a visible gap on the right side."
+      "slug": "invisible-decrease",
+      "definition": "A decrease that removes a stitch without leaving a visible gap on the right side of the fabric."
     },
     {
-      "termSlug": "safety-eyes",
-      "definition": "Plastic eyes with a locking washer used in amigurumi."
+      "slug": "safety-eyes",
+      "definition": "Plastic eyes with a locking washer used in amigurumi to give a secure, professional finish."
     },
     {
-      "termSlug": "sc",
-      "definition": "Single crochet (UK: double crochet) — the main stitch in amigurumi."
+      "slug": "sc",
+      "definition": "Single crochet (UK: double crochet) — the main stitch in amigurumi construction."
     },
     {
-      "termSlug": "assembly-ladder-stitch",
+      "slug": "assembly-ladder-stitch",
       "definition": "A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches."
     }
   ],
   "crochet": {
     "primaryYarnWeightSlug": "dk",
     "primaryHookSlug": "crochet-hook-3-5mm",
-    "gaugeText": "24 dc × 28 rows = 10 × 10 cm in dk yarn on a 3.5 mm hook.",
+    "gaugeText": "24 dc x 28 rows = 10 x 10 cm in dk yarn on a 3.5 mm hook.",
     "finishedSizeText": "Approx. 18 cm tall seated.",
     "terminologyConvention": "uk",
     "craftStitchSlugs": [
@@ -129,7 +129,7 @@
           },
           {
             "type": "text",
-            "text": " (two green for the cat, two small black for the nose triangle), polyester stuffing, and a tapestry needle complete the kit."
+            "text": " (two green for the cat, two small black for the nose triangle), polyester stuffing, and one tapestry needle complete the kit."
           }
         ]
       },
@@ -166,7 +166,23 @@
           },
           {
             "type": "text",
-            "text": " and work 6 sc into it to start every piece. Pull the ring closed before continuing."
+            "text": " and work 6 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sc"
+                }
+              }
+            ],
+            "text": "sc"
+          },
+          {
+            "type": "text",
+            "text": " into it to start every piece. Pull the ring closed before continuing."
           }
         ]
       },
@@ -376,10 +392,18 @@
         "content": [
           {
             "type": "text",
-            "text": "Attach safety eyes between rounds 8 and 9, spaced 5 stitches apart. Stuff the head firmly, then close with an "
+            "text": "Attach the eyes between rounds 8 and 9, spaced 5 stitches apart. Stuff the head firmly, then close with an "
           },
           {
             "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "invisible-decrease"
+                }
+              }
+            ],
             "text": "invisible decrease"
           },
           {
