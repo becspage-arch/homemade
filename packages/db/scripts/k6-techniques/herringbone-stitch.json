@@ -1,0 +1,141 @@
+{
+  "slug": "herringbone-stitch",
+  "title": "Herringbone stitch",
+  "subtitle": "A woven-look knitted fabric made by slipping and picking up stitches in a characteristic V pattern.",
+  "excerpt": "Herringbone stitch in knitting creates a dense, woven-looking fabric by knitting two stitches together through the back loop and then replacing the dropped stitch back on the left needle. The resulting fabric shows diagonal lines running in alternating directions, resembling the spine and ribs of a herring.",
+  "type": "STITCH",
+  "categorySlug": "knitting",
+  "subCategorySlug": "stitches",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Herringbone stitch described in Weldon's Practical Knitter, Series 2 (1887), as a close-woven pattern stitch for warm outer garments. Mary Thomas's Knitting Book (1938) includes the herringbone family among textured stitch patterns.",
+  "heroPrompt": "Close-up of a herringbone-stitch knitted swatch in a single colour, the diagonal V lines crossing the fabric in a chevron weave pattern.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["knitting-knit-tbl", "knitting-purl", "knitting-knit"],
+    "craftTechniqueTags": ["flat-construction"],
+    "chartDefinition": null
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "herringbone-stitch-knitting",
+      "term": "Herringbone stitch",
+      "definition": "A knitting stitch pattern that creates a woven diagonal texture by working two stitches together through the back loop and returning one stitch to the left needle to be worked again."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["knit herringbone", "herringbone pattern knitting", "woven herringbone knit"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "herringbone-stitch-knitting" } }],
+            "text": "Herringbone stitch"
+          },
+          {
+            "type": "text",
+            "text": " produces a dense, flat fabric with diagonal lines that cross in alternating directions, mimicking the interlocked bones of a herring. The construction requires knitting two stitches together through the back loop and then returning the second stitch to the left needle, so that each stitch is worked into twice in succession. The resulting fabric has very little stretch compared to standard stocking stitch and an attractive woven-like surface. Difficulty: intermediate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aran or DK yarn in any smooth, plain fibre (the pattern reads most clearly on a smooth yarn)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Needles one size larger than the yarn's standard recommendation, as herringbone runs tight" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The technique, step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cast on an even number of stitches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1 (RS): Insert the right needle through the back loops of the first two stitches on the left needle as if to knit two together through the back loop (k2tog tbl). Draw a loop through but do not slide either stitch off the needle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slip only the first stitch off the left needle. The second stitch remains. Insert the needle through the back loop of this remaining stitch and the next stitch together, and draw a loop through again." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slip only the first stitch off. Continue along the row: each pair of stitches is worked together tbl, then the trailing stitch becomes the first of the next pair. The last stitch of the row is worked alone through the back loop (k1tbl)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2 (WS): Work the wrong side in an equivalent manner: p2tog through the front loops, return the trailing stitch to the left needle, and repeat across. End with p1." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat rows 1 and 2 for the body of the piece." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where you will use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Herringbone stitch appears in scarves, cowls, and heavy outer-garment panels where a non-elastic, dense fabric is an advantage. Cushion covers and bags worked in herringbone take on a sturdy, almost woven quality. The stitch also works well in two colours when alternate rows are worked in different colours, producing a tweed-like herringbone fabric."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common mistakes",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The stitch count increases across the row",
+              "cause": "Both stitches were slipped off the needle after each pair rather than retaining the second",
+              "fix": "After each k2tog tbl, slide only the first stitch off the left needle. Hold the trailing stitch in place as the needle re-enters for the next pair."
+            },
+            {
+              "symptom": "The fabric is very tight and difficult to work",
+              "cause": "Needles too small for the yarn weight",
+              "fix": "Go up at least one needle size. Herringbone stitch always produces a tighter fabric than standard stocking stitch on the same needle."
+            },
+            {
+              "symptom": "The herringbone pattern is not visible and the fabric looks like garter stitch",
+              "cause": "The tbl (through back loop) element was omitted",
+              "fix": "Check that every pair is entered through the back loops. The twist is what creates the diagonal characteristic of the stitch."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

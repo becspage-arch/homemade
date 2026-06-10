@@ -1,0 +1,492 @@
+{
+  "slug": "infinity-cowl",
+  "title": "Infinity cowl",
+  "subtitle": "A long stocking-stitch tube that loops twice around the neck.",
+  "excerpt": "A long cowl knitted in the round in stocking stitch on 5.5 mm needles with aran-weight yarn, finishing at 60 cm circumference and 60 cm tall. The tube is worn doubled around the neck as a warm two-layer loop, with the knit face on the outside. A 1x1 rib at each opening keeps the edges flat.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Long looping cowls and neckwear tubes worked in the round draw on the circular knitting techniques documented in Mary Thomas's Knitting Book (1938), citations only. Weldon's Practical Knitter (1880s-1900s), Internet Archive, documents circular comforter construction.",
+  "heroPrompt": "A finished infinity cowl in warm rust aran-weight yarn, draped doubled around the neck against a plain background, showing the two loops of stocking stitch fabric resting on the shoulders and chest.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-5mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STRETCHY",
+    "inTheRoundMethod": "FIXED_CIRCULAR",
+    "gaugeText": "16 sts x 22 rounds = 10 x 10 cm in stocking stitch in the round on 5.5 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "60 cm circumference x 60 cm tall.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-stocking-stitch",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          96
+        ],
+        "label": "After cast-on: 96 stitches on needle"
+      },
+      {
+        "rowOrRound": 66,
+        "expected": [
+          96
+        ],
+        "label": "At halfway mark (round 66 of 132 body rounds): still 96 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fixed-circular",
+      "term": "Fixed circular needle",
+      "definition": "A circular needle with a fixed cable length. For an infinity cowl at 60 cm circumference, a 60 cm cable is the minimum comfortable length; 80 cm is easier to handle."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on forming a neat elastic edge by using the tail and working yarn over two fingers simultaneously."
+    },
+    {
+      "slug": "stretchy-bind-off",
+      "term": "Stretchy bind-off",
+      "definition": "A bind-off that produces a looser, more elastic edge than the standard bind-off."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "knitting-in-the-round",
+    "stretchy-bind-off"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "knitting-in-the-round"
+  ],
+  "aliases": [
+    "infinity cowl",
+    "long looping cowl",
+    "double loop cowl"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a long cowl knitted in the round in stocking stitch on 5.5 mm needles, finishing at 60 cm circumference and 60 cm tall. The tube is worn looped twice around the neck, which gives two full layers of fabric across the chest and neck area. The knit face sits on the outside automatically when knitting in the round, and a four-round 1x1 rib at each opening keeps the edges from rolling."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In-the-round construction was chosen because a seamless tube of this length would need a seam running the full 60 cm height if worked flat, which would be visible through stocking stitch. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "fixed-circular"
+                }
+              }
+            ],
+            "text": "fixed circular needle"
+          },
+          {
+            "type": "text",
+            "text": " at 60 to 80 cm is the most comfortable option for the 96-stitch count. The finished cowl needs about 400 m (approximately 250 g) of aran-weight yarn. Worn doubled, it sits warm around the neck without being heavy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight wool or wool-blend yarn",
+              "qty": "250 g (approx. 400 m)",
+              "substitutions": "Any aran-weight yarn. Wool gives the warmest doubled cowl."
+            },
+            {
+              "name": "5.5 mm circular needle, 60–80 cm (UK 5 / US 9)",
+              "qty": "1",
+              "substitutions": "Magic loop on an 80 cm needle also works."
+            },
+            {
+              "name": "Stitch marker",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "16 sts x 22 rounds = 10 x 10 cm in stocking stitch in the round on 5.5 mm needles, blocked. One stitch per 10 cm off gauge shifts the finished circumference by approximately 3.75 cm at this stitch count: 17 sts per 10 cm gives about 56 cm circumference; 15 sts per 10 cm gives about 64 cm. Round gauge drift across the full 132 body rounds changes the finished height by up to 12 cm, which significantly affects how the cowl doubles around the neck."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit): right needle from left to right through front of stitch, wrap yarn counterclockwise, draw loop through. Every body round is all knit for stocking stitch in the round."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "P (purl): used in the rib sections at each opening."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 96 stitches on the needle. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 5.5 mm needles (circumference approximately 17.3 mm) and 96 stitches: (17.3 x 96) / 10 + 15 = 166.1 + 15 = about 181 cm. Leave a tail of at least 181 cm; wind it loosely before the slip knot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 96 stitches on the needle. Join carefully to work in the round without twisting. Place a stitch marker for the beginning of the round."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rib section (4 rounds): *K1, P1; repeat from * to end. (96 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Body (132 rounds): K all stitches every round. (96 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work the body until the cowl tube measures 58 cm from the cast-on edge. At the halfway mark (approximately round 66 of the body), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at round 66 of the body you should have 96 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Closing rib section (4 rounds): *K1, P1; repeat from * to end. (96 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stretchy-bind-off"
+                }
+              }
+            ],
+            "text": "Stretchy bind-off"
+          },
+          {
+            "type": "text",
+            "text": " in rib pattern. Work K2tog tbl, slip the result back to the left needle, repeat to end. The bound-off edge must be as open as the cast-on edge for the cowl to double around the neck without restriction."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Twisted join at the cast-on. The most common error in the first round of any in-the-round project. Before joining, confirm that all 96 stitches hang below the needle in the same orientation with the cast-on edge running around the needle in an even ring without any twist."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cowl too short to double comfortably. If in doubt, knit 10 cm more than you think is needed. A cowl that is 5 cm too short when doubled sits awkwardly against the chin; one that is 5 cm too long simply makes a looser double loop."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bound-off edge narrower than cast-on. Use the stretchy bind-off or bind off on a needle one size larger to match the cast-on edge stretch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in both tails at the cast-on join and bind-off edge. Block by wetting and laying flat or over a rolled towel to set the round shape. Leave to dry fully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Lay flat to dry over a rolled towel or blocking aid. Do not hang."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The basic cowl is the same tube at half the height and worn as a single loop. The slouchy cowl works in a looser gauge or with more stitches for an oversized drape. The ribbed cowl uses the same tube construction but with a rib pattern for the full body height."
+          }
+        ]
+      }
+    ]
+  }
+}

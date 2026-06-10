@@ -1,0 +1,489 @@
+{
+  "slug": "lace-eyelet-scarf",
+  "title": "Eyelet lace scarf",
+  "subtitle": "A simple two-row repeat of yarn-overs and K2tog for beginner lace.",
+  "excerpt": "A flat scarf worked in a simple eyelet repeat of yarn-overs and K2tog decreases on 4 mm needles with DK yarn, finishing at 20 cm wide by 175 cm long. The two-row repeat is the simplest possible lace structure and a reliable first lace project.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Simple eyelet patterns using alternating yarn-overs and knit-two-together are among the oldest knitting lace structures, documented in Weldon's Practical Knitter and Beeton's Book of Needlework (1870) for shawls and scarves.",
+  "heroPrompt": "An eyelet lace scarf in warm honey DK wool, showing the regular small holes of the YO-K2tog repeat along the length, with the fabric pinned flat after blocking.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles. Eyelet fabric reads approximately 20 sts per 10 cm after blocking.",
+    "finishedSizeText": "20 cm wide x 175 cm long, blocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "lacework"
+    ],
+    "chartDefinition": {
+      "title": "Eyelet repeat — 4 sts x 2 rows",
+      "layout": "flat",
+      "craft": "knitting",
+      "terminologyConvention": "uk",
+      "rows": [
+        {
+          "rowNumber": 1,
+          "rightSide": true,
+          "stitches": [
+            {
+              "symbol": "yarn-over"
+            },
+            {
+              "symbol": "k2tog"
+            },
+            {
+              "symbol": "yarn-over"
+            },
+            {
+              "symbol": "k2tog"
+            }
+          ]
+        },
+        {
+          "rowNumber": 2,
+          "rightSide": false,
+          "stitches": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        }
+      ],
+      "caption": "4-stitch eyelet repeat. RS: (YO, K2tog) repeat. WS: purl across. Stitch count remains constant. A 2-stitch garter border is added each side."
+    },
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          44
+        ],
+        "label": "After cast-on: 44 stitches (2 border + 40 pattern + 2 border)"
+      },
+      {
+        "rowOrRound": 263,
+        "expected": [
+          44
+        ],
+        "label": "Halfway mark: still 44 stitches"
+      }
+    ],
+    "lifelinePoints": [
+      100,
+      200,
+      300,
+      400
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-mat",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over (YO)",
+      "definition": "Wrapping the yarn over the needle before the next stitch to create a new stitch and a small eyelet hole."
+    },
+    {
+      "slug": "k2tog",
+      "term": "K2tog",
+      "definition": "Knit two stitches together as one. A right-leaning decrease that paired with a yarn-over keeps the stitch count constant."
+    },
+    {
+      "slug": "blocking",
+      "term": "Blocking",
+      "definition": "Wetting and pinning the finished lace piece to open the eyelets and set the dimensions."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "yarn-over",
+    "k2tog",
+    "blocking"
+  ],
+  "criticalTechniques": [
+    "yarn-over",
+    "k2tog",
+    "blocking"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a flat scarf worked from one short end to the other. It uses a simple eyelet repeat with alternating yarn-overs and K2tog decreases on 4 mm needles with DK yarn. It finishes at 20 cm wide and 175 cm long after blocking. The eyelet scarf is a good first lace project: there are only two different rows, and only one needs attention."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because the two-row repeat is worked in rows. The pattern row uses (YO, K2tog) across: every yarn-over adds a stitch and the matching K2tog immediately removes one, so the stitch count stays constant. The wrong-side rows are all purl. The scarf uses about 175 g (395 m / 432 yards) of DK yarn. Blocking opens the eyelets significantly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool or cotton yarn",
+              "qty": "175 g (approx. 395 m / 432 yards)",
+              "substitutions": "Wool blocks well. Cotton gives a stiffer, crisper eyelet. Avoid very hairy yarns that obscure the holes."
+            },
+            {
+              "name": "4 mm needles (UK 8 / US 6)",
+              "qty": "1 pair or 1 circular",
+              "substitutions": ""
+            },
+            {
+              "name": "Blocking mat and rust-proof pins",
+              "qty": "required",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry or darning needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles. The eyelet fabric opens to approximately 20 sts per 10 cm after blocking. Each stitch off gauge changes the finished width by about 1 cm. Blocking can add 10 to 20 percent to both width and length; swatch in pattern and measure after blocking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit), P (purl), YO (yarn over), K2tog. On the RS row, work YO, K2tog alternately across the pattern section. On WS rows, purl across."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on 44 stitches using the long-tail method: 2 garter border stitches each side and 40 pattern stitches (a multiple of 2). Tail length: (12.6 x 44) / 10 + 15 = about 70 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: 44 stitches after the cast-on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS): K2 (border), (YO, K2tog) 20 times, K2 (border). (44 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): K2, P40, K2. (44 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat Rows 1 and 2 until the scarf measures 175 cm from the cast-on edge (blocked estimate). Work to approximately 155 cm off the needles to allow for blocking expansion. At the halfway mark (about 87 cm off the needles), count: still 44 stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off on a WS row using the standard method. Work loosely."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Holes appearing in the wrong places. On a WS row, a yarn-over from the previous RS row must be purled as a single stitch; if it is accidentally knitted together with the next stitch, it closes the eyelet. Purl each YO loop cleanly as one stitch on the WS rows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count growing. On the RS row, each YO must be followed immediately by a K2tog. If a K2tog is missed, the YO remains as an extra stitch. Count before and after every RS row."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eyelets barely visible. The scarf needs blocking; unblocked eyelet fabric looks compressed and flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Wet "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocking"
+                }
+              }
+            ],
+            "text": "blocking"
+          },
+          {
+            "type": "text",
+            "text": " is required: soak, press out moisture, and pin flat to the stated 20 x 175 cm. The eyelets open clearly after a thorough block."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash wool in cool water and lay flat to dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The broken rib lace scarf combines a rib structure with periodic eyelet rows for a more complex texture. The feather and fan scarf uses a more elaborate pattern row."
+          }
+        ]
+      }
+    ]
+  }
+}

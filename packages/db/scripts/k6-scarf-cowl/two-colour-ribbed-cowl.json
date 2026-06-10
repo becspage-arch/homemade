@@ -1,0 +1,492 @@
+{
+  "slug": "two-colour-ribbed-cowl",
+  "title": "Two-colour ribbed cowl",
+  "subtitle": "A striped ribbed cowl in two colours worked alternately in the round.",
+  "excerpt": "A cowl knitted in the round in 2x2 rib on 5 mm needles with worsted-weight yarn, finishing at 52 cm circumference and 25 cm tall. Two colours alternate in two-round stripes; both yarns are carried up the same point on the needle without cutting, giving a clean stripe sequence in rib fabric. The rib colourwork is reversible.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Striped ribbed cowls and mufflers appear in Victorian knitting manuals including Weldon's Practical Knitter (1880s-1900s), Internet Archive. Two-round colour stripes in rib worked in the round is a modern iteration of that tradition.",
+  "heroPrompt": "A finished two-colour ribbed cowl in alternating cream and charcoal 2x2 rib stripes, photographed as a flat circle on a plain surface showing the clean stripe sequence and the reversible rib texture.",
+  "knitting": {
+    "primaryYarnWeightSlug": "worsted",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STRETCHY",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "18 sts x 24 rounds = 10 x 10 cm in stocking stitch in the round on 5 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 14,
+      "rowsPer10cm": 22,
+      "stitchName": "2x2 rib relaxed in the round",
+      "blocked": false
+    },
+    "finishedSizeText": "52 cm circumference x 25 cm tall, unblocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-2x2",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "two-colour-knitting"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          72
+        ],
+        "label": "After cast-on: 72 stitches on needle"
+      },
+      {
+        "rowOrRound": 28,
+        "expected": [
+          72
+        ],
+        "label": "At halfway mark (round 28 of 55 body rounds): still 72 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "2x2-rib",
+      "term": "2x2 rib",
+      "definition": "A rib pattern alternating two knit stitches with two purl stitches on every round, giving a stretchy, reversible fabric."
+    },
+    {
+      "slug": "two-round-stripe",
+      "term": "Two-round stripe",
+      "definition": "Working two complete rounds in one colour before switching to another. In the round, two-round stripes are jog-free if the second round begins at the same position as the first. Both yarns can be carried at the round marker without cutting."
+    },
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "Knitting a small circumference in the round on one long circular needle by pulling a loop of cable through the stitches at the halfway point."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on forming a neat elastic edge by using the tail and working yarn over two fingers simultaneously."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knitting-in-the-round",
+    "2x2-rib",
+    "two-round-stripe"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "2x2-rib"
+  ],
+  "aliases": [
+    "striped ribbed cowl",
+    "two colour cowl",
+    "rib stripe cowl"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a cowl knitted in the round in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "2x2-rib"
+                }
+              }
+            ],
+            "text": "2x2 rib"
+          },
+          {
+            "type": "text",
+            "text": " on 5 mm needles with worsted-weight yarn, finishing at 52 cm circumference and 25 cm tall. Two colours alternate in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "two-round-stripe"
+                }
+              }
+            ],
+            "text": "two-round stripes"
+          },
+          {
+            "type": "text",
+            "text": ". Both yarns hang at the round marker and are picked up alternately; neither is cut between colour changes. The 2x2 rib is reversible so both the inside and outside of the cowl show the stripe sequence equally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In-the-round construction was chosen because seamless rib is the most comfortable fabric against the neck. Two-round stripes in the round return each yarn to the round marker before the other is picked up, which keeps both yarn ends tidy at one point. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " on an 80 cm circular needle handles the 72 cast-on stitches comfortably. Each colour needs about 110 m (approximately 65 g) of worsted-weight yarn."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Worsted-weight yarn, colour A",
+              "qty": "65 g (approx. 110 m)",
+              "substitutions": "Any worsted-weight yarn. High contrast makes the stripes graphic; low contrast makes a tonal effect."
+            },
+            {
+              "name": "Worsted-weight yarn, colour B",
+              "qty": "65 g (approx. 110 m)",
+              "substitutions": ""
+            },
+            {
+              "name": "5 mm circular needle, 80 cm (UK 6 / US 8)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Stitch marker",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 24 rounds = 10 x 10 cm in stocking stitch in the round on 5 mm needles, blocked. In 2x2 rib relaxed in the round the gauge is approximately 14 sts per 10 cm. Swatch the rib in the round and measure unstretched. One stitch per 10 cm off gauge shifts the finished circumference by approximately 3.7 cm at this stitch count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " in colour A to place 72 stitches on the needle. The stitch count is a multiple of 4 for 2x2 rib. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 5 mm needles (circumference approximately 15.7 mm) and 72 stitches: (15.7 x 72) / 10 + 15 = 113 + 15 = about 128 cm. Leave at least 128 cm of colour A tail."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 72 stitches on the needle. Join to work in the round without twisting. Place a stitch marker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rounds 1–2 (colour A): *K2, P2; repeat from * to end. (72 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rounds 3–4 (colour B): join colour B at the marker. *K2, P2; repeat from * to end. (72 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat [rounds 1–4] until the cowl measures 25 cm. Both yarns hang at the stitch marker at the end of every two-round pair. Pick up whichever colour is needed without cutting the other. At the halfway mark (approximately round 28 of 55 body rounds), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at round 28 you should have 72 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a stretchy bind-off in the colour at the marker on a round that completes a two-round pair. Bind off in pattern (K the knit stitches, P the purl stitches). Both edges must stretch to pass over the head easily."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colour jog at the stripe boundary. A two-round stripe in the round has a half-stitch jog at the round marker where each colour switches. In rib fabric the jog is less visible than in stocking stitch, but if it bothers you, slip the first stitch of the second round of each colour (do not work it) and then work normally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yarn tangling at the stitch marker. The two hanging yarn balls will wrap around each other after several rounds. Every 8 to 10 rounds, let the cowl hang freely and untwist both balls before continuing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rib alignment drifting. Rib in the round must begin at the same stitch of the repeat at the marker every round. If the marker is placed mid-repeat by accident, the rib columns will be misaligned at the beginning of every round. Move the marker to the start of a K2 group before proceeding."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in the cast-on tail from colour A and the join tail from colour B at the round marker. Weave in the bind-off tail. The rib does not need blocking but can be lightly steamed to even the stripes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Lay flat to dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The helix-stripe cowl uses the same two-colour in-the-round approach but staggers the join points to create a continuous spiral. The ribbed cowl is the single-colour version of this same 2x2 rib tube."
+          }
+        ]
+      }
+    ]
+  }
+}

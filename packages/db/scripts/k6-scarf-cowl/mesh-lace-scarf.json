@@ -1,0 +1,579 @@
+{
+  "slug": "mesh-lace-scarf",
+  "title": "Mesh lace scarf",
+  "subtitle": "An open mesh worked from a single two-row repeat.",
+  "excerpt": "A straight scarf knitted flat in a repeating yarn-over mesh on 4 mm needles with sport-weight yarn. The two-row lace pattern is the simplest route into openwork knitting and finishes at 18 cm wide by 165 cm long after blocking. One stitch of garter at each edge keeps the long sides from rolling.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Simple mesh and trellis lace patterns appear in Weldon's Practical Knitter (1880s-1900s), Internet Archive, and in Cornelia Mee, A Manual of Knitting and Crochet (1846), Internet Archive.",
+  "heroPrompt": "A finished mesh lace scarf in pale grey sport-weight yarn, pinned open on a white blocking mat with even eyelet holes visible, photographed from above in natural daylight.",
+  "knitting": {
+    "primaryYarnWeightSlug": "sport",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "SUSPENDED",
+    "inTheRoundMethod": null,
+    "gaugeText": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 20,
+      "rowsPer10cm": 26,
+      "stitchName": "mesh lace",
+      "blocked": true
+    },
+    "finishedSizeText": "18 cm wide x 165 cm long, after blocking.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "blocking-wet",
+      "lace"
+    ],
+    "chartDefinition": {
+      "title": "Mesh lace repeat (2 rows x 2 sts)",
+      "layout": "flat",
+      "craft": "knitting",
+      "terminologyConvention": "uk",
+      "rows": [
+        {
+          "rowNumber": 1,
+          "side": "RS",
+          "cells": [
+            {
+              "symbol": "yarn-over"
+            },
+            {
+              "symbol": "k2tog"
+            }
+          ]
+        },
+        {
+          "rowNumber": 2,
+          "side": "WS",
+          "cells": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        }
+      ],
+      "caption": "Chart shows one 2-stitch, 2-row mesh repeat. RS rows read right to left; WS rows read left to right. Work 2-stitch garter border at each edge on every row, then repeat the chart across the remaining centre stitches."
+    },
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          40
+        ],
+        "label": "After cast-on: 40 stitches on needle"
+      },
+      {
+        "rowOrRound": 215,
+        "expected": [
+          40
+        ],
+        "label": "At halfway mark (row 215 of 430): still 40 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-mat",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over",
+      "definition": "Wrapping the working yarn around the right needle between two stitches to create a new stitch and an eyelet. UK abbreviation yfwd (yarn forward) or yon (yarn over needle); US abbreviation yo."
+    },
+    {
+      "slug": "k2tog",
+      "term": "K2tog",
+      "definition": "Knit two stitches together as one. A right-leaning decrease that removes one stitch."
+    },
+    {
+      "slug": "blocking-wet",
+      "term": "Wet blocking",
+      "definition": "Soaking the finished piece in cool water, pressing out the excess, and pinning to the stated dimensions on a flat surface until fully dry."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on using the tail and working yarn together over two fingers, producing a neat elastic edge and one row of knitting at the same time."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "yarn-over",
+    "k2tog",
+    "blocking-wet",
+    "lace-knitting"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "yarn-over",
+    "k2tog",
+    "blocking-wet"
+  ],
+  "aliases": [
+    "mesh lace scarf",
+    "simple lace scarf",
+    "openwork scarf"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a straight scarf knitted flat from one short end to the other in a two-row yarn-over mesh, finishing at 18 cm wide and 165 cm long after blocking. The entire lace pattern is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "yarn-over"
+          },
+          {
+            "type": "text",
+            "text": " paired with a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "k2tog"
+                }
+              }
+            ],
+            "text": "k2tog"
+          },
+          {
+            "type": "text",
+            "text": " on right-side rows, with all wrong-side rows purled straight across. If you can work a yarn-over and a decrease, you can make this scarf."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because it allows a simple two-row repeat with no tracking of a round count, and the lace opens fully after blocking into a clean mesh grid. The finished scarf needs about 300 m (approximately 85 g) of sport-weight yarn and drapes easily around the neck with the eyelet rows stacked into a regular diagonal grid. A garter border of one stitch on each long side holds the edges flat without adding bulk."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Sport-weight yarn, wool or wool blend",
+              "qty": "85 g (approx. 300 m)",
+              "substitutions": "Any sport-weight yarn. Wool or a wool-silk blend blocks cleanly. Pure cotton works but the fabric will be heavier."
+            },
+            {
+              "name": "4 mm needles, straight or circular (UK 8 / US 6)",
+              "qty": "1 pair or 1 circular 60 cm or longer",
+              "substitutions": "Go up to 4.5 mm for a more open mesh."
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Blocking mat and rust-proof pins",
+              "qty": "required",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. In mesh lace, the gauge is approximately 20 sts per 10 cm because the yarn-overs open the fabric slightly wider than stocking stitch. Swatch at least 8 cm, block, and measure across the dry swatch. One stitch per 10 cm off gauge shifts the finished width by approximately 1 cm: 21 sts per 10 cm gives 17 cm width; 19 sts per 10 cm gives 19 cm. Row gauge drift across the full 430 rows of this scarf adds or removes up to 12 cm of finished length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit): insert right needle from left to right through the front of the stitch, wrap yarn counterclockwise, draw loop through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "P (purl): insert right needle from right to left through the front of the stitch with yarn in front, wrap yarn, draw loop to back."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "YO (yarn over, UK: yfwd between knit stitches): bring yarn to the front, then carry over the right needle tip before the next knit stitch. One new stitch, one eyelet."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K2tog: knit two stitches together as one. Right-leaning decrease; removes one stitch to compensate for the yarn-over."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 40 stitches on the needle. The 40 stitches give you 2 garter border stitches at each edge plus 36 centre stitches (18 pairs of YO, K2tog per right-side row). Before beginning, calculate the tail length: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 4 mm needles (circumference approximately 12.6 mm) and 40 stitches: (12.6 x 40) / 10 + 15 = 50.4 + 15 = about 65 cm. Leave a tail of at least 65 cm before the slip knot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on, count your stitches. You should have 40 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS): K2, [YO, K2tog] 18 times, K2. (40 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): K2, P36, K2. (40 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat rows 1 and 2 until the scarf measures 165 cm from the cast-on edge, measured along the straight grain with the piece lying flat. At the halfway mark (approximately row 215), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at row 215 you should have 40 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a suspended bind-off on a right-side row for a loose, elastic finish: K2, *slip both stitches back to the left needle, K2tog, K1; repeat from * to the end. The suspended bind-off gives a longer, loopier edge that pins open as easily as the cast-on. A standard bind-off on lace typically cinches the edge and resists blocking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count rising by one or two on right-side rows. The most common cause is carrying the yarn over the needle without immediately working the matching K2tog. Every YO in the mesh repeat must be followed immediately by a K2tog in the same row. Check by counting pairs as you work each repeat: YO, K2tog is one unit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mesh looking closed before blocking. This is normal for any lace. The eyelet holes close during knitting because the fabric is still compressed. Wet blocking opens the mesh dramatically. Do not increase needle size to compensate before blocking."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Uneven eyelet sizes across the row. This happens when the yarn-overs are worked at inconsistent tension. Try consciously keeping the yarn-over loose as you lay it over the needle, rather than pulling it snug before the next stitch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in both tails along the back of the garter border, changing direction after 4 or 5 stitches to secure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocking-wet"
+                }
+              }
+            ],
+            "text": "Wet blocking"
+          },
+          {
+            "type": "text",
+            "text": " opens the mesh. Soak the scarf in cool water for 20 minutes, press out the water without wringing, roll in a clean towel, and pin to the blocking mat at 18 cm wide and 165 cm long. Pin the long edges first to set the width, then pin the short ends. Leave flat to dry fully before unpinning."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Support the wet weight of the piece at all times. Roll in a towel, then pin flat to dry. Do not wring or tumble dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the mesh repeat is comfortable, try the leaf lace scarf, which builds a shaped motif out of the same yarn-over and decrease tools, or the summer lace scarf worked in cotton for a lighter warm-weather version. A second skein cast on to 60 stitches makes a generous shawlette on the same two-row repeat."
+          }
+        ]
+      }
+    ]
+  }
+}

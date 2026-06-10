@@ -1,0 +1,514 @@
+{
+  "slug": "mock-cable-scarf",
+  "title": "Mock cable scarf",
+  "subtitle": "A cable-look texture worked without a cable needle.",
+  "excerpt": "A straight scarf knitted flat in a mock cable stitch on 5 mm needles with aran-weight yarn, finishing at 20 cm wide by 175 cm long. The mock cable crosses stitches by knitting them out of order rather than using a cable needle, giving a rope-like texture that is faster to work than a true cable and needs no extra equipment.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mock cable techniques (knitting the second stitch before the first without a cable needle) appear in Victorian needlework samplers and Weldon's Practical Knitter (1880s). The technique is a simplified derivative of cable knitting documented in Mary Thomas's Knitting Book (1938), citations only.",
+  "heroPrompt": "A finished mock cable scarf in warm rust aran-weight yarn, laid flat on a linen surface showing the regular raised twist columns running along the length.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "18 sts x 24 rows = 10 x 10 cm in stocking stitch on 5 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 17,
+      "rowsPer10cm": 22,
+      "stitchName": "mock cable rib",
+      "blocked": false
+    },
+    "finishedSizeText": "20 cm wide x 175 cm long, unblocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          36
+        ],
+        "label": "After cast-on: 36 stitches on needle"
+      },
+      {
+        "rowOrRound": 194,
+        "expected": [
+          36
+        ],
+        "label": "At halfway mark (row 194 of 388): still 36 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mock-cable",
+      "term": "Mock cable",
+      "definition": "A twisted-stitch technique that produces a rope-like texture without a cable needle. The second stitch on the left needle is knitted before the first, crossing the stitches in the opposite order without removing them from the needle first."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on that forms a neat elastic edge by using the tail and working yarn simultaneously over two fingers."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "mock-cable"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "mock-cable"
+  ],
+  "aliases": [
+    "mock cable scarf",
+    "twisted stitch scarf",
+    "cable-look scarf"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a straight scarf knitted flat from one short end to the other in a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mock-cable"
+                }
+              }
+            ],
+            "text": "mock cable"
+          },
+          {
+            "type": "text",
+            "text": " rib pattern on 5 mm needles, finishing at 20 cm wide and 175 cm long. The mock cable cross happens every fourth row by knitting the second stitch on the left needle before the first, then knitting the first, without moving any stitches to a cable needle. The result is a series of raised twisting columns that look like a two-stitch rope cable."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because a ribbed mock cable fabric sits flat without a border and has a reversible texture that looks neat on both faces. No cable needle is needed, which makes it beginner-accessible. The finished scarf needs about 320 m (approximately 180 g) of aran-weight yarn and wraps comfortably around the neck once."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight wool or wool-blend yarn",
+              "qty": "180 g (approx. 320 m)",
+              "substitutions": "Any aran-weight yarn. Wool gives a slightly bouncier mock cable than acrylic."
+            },
+            {
+              "name": "5 mm needles, straight or circular (UK 6 / US 8)",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 24 rows = 10 x 10 cm in stocking stitch on 5 mm needles, blocked. In mock cable rib the gauge draws in slightly to approximately 17 sts per 10 cm. Swatch at least 6 cm in pattern, measure without stretching. One stitch per 10 cm off gauge shifts the finished width by about 1 cm at this stitch count. Row gauge drift across the full 388 rows changes the finished length by up to 15 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit): right needle from left to right through front of stitch, wrap yarn counterclockwise, draw loop through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "P (purl): right needle from right to left through front of stitch with yarn in front, wrap yarn, draw loop through to back."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mock cable cross (MC): skip the first stitch on the left needle and knit the second stitch through the front loop, leaving it on the needle. Now knit the first stitch normally. Drop both stitches off the left needle together. The two stitches cross with the second stitch moving in front of the first."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 36 stitches on the needle. The stitch count needs to be a multiple of 4 plus 2 edge stitches: 36 = (8 x 4) + 4 edge. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 5 mm needles (circumference approximately 15.7 mm) and 36 stitches: (15.7 x 36) / 10 + 15 = 56.5 + 15 = about 72 cm. Leave at least 72 cm of tail before the slip knot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 36 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set-up row (WS): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS, plain): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 3 (RS, plain): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 4 (WS): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 5 (RS, cross row): K2, [P2, MC] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 6 (WS): K2, [P2, K2] to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat rows 1 to 6 (or equivalently: work 4 plain rows, then a cross row, then a plain WS row) until the scarf measures 175 cm from the cast-on edge. At the halfway mark (approximately row 194, around 87 cm), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at row 194 you should have 36 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a standard bind-off in pattern on a right-side row: work each stitch in pattern (purl the purl stitches, knit the knit stitches) and pass the previous stitch over. Work loosely: a tight bind-off will curl the top edge inward on a rib."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mock cable cross in the wrong direction. Skipping the first stitch and knitting the second first crosses the second stitch in front of the first. If you knit the first stitch first, then thread the yarn behind to knit the second, the cross goes the other way. Stay consistent across the full scarf: always skip one, knit two, drop both."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cross row appearing too frequently or not often enough. The cross happens on every sixth row of the 6-row repeat, which is row 5. It can help to mark cross rows with a row counter or a stitch marker on the needle that you move forward every 6 rows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count drifting up on cross rows. When you knit the second stitch first, be careful not to also knit through the first stitch at the same time. The cross is a two-step action: knit stitch 2 without removing it, then knit stitch 1, then drop both off the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in both tails along the back of the rib columns and trim. The mock cable rib lies flat without blocking on most yarns. If the scarf has grown in length during knitting and needs settling, lay it flat and pin the width. Steam lightly with a steam iron held above the surface. Do not press down."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Lay flat to dry. The rib fabric should not be hung to dry as the wet weight will stretch it lengthwise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the mock cable cross is comfortable, the simple cable scarf introduces a real six-stitch cable needle cross, which produces the same rope shape with crisper definition. The cable-and-rib scarf combines both a true cable and flanking rib columns."
+          }
+        ]
+      }
+    ]
+  }
+}

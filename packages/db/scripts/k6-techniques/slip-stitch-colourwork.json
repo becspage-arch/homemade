@@ -1,0 +1,163 @@
+{
+  "slug": "slip-stitch-colourwork",
+  "title": "Slip-stitch colourwork basics",
+  "subtitle": "Working two-colour patterns by slipping stitches rather than stranding yarn across the row.",
+  "excerpt": "Slip-stitch colourwork creates two-colour patterns by carrying only one yarn at a time and slipping certain stitches from the previous colour to show them on the right side. The technique is far simpler than stranded colourwork because only one yarn is ever active per row.",
+  "type": "STITCH",
+  "categorySlug": "knitting",
+  "subCategorySlug": "stitches",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Slip-stitch colourwork documented in Mary Thomas's Knitting Book (1938) and Barbara Walker's stitch dictionaries (referenced; not reproduced verbatim). The technique appears in Weldon's Practical Knitter in the context of harlequin and mosaic patterns.",
+  "heroPrompt": "Close-up of a knitted swatch in two colours showing a geometric mosaic pattern formed by slip-stitch colourwork, the two colours forming clean diagonal or chequered motifs.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["knitting-knit", "knitting-purl", "knitting-slip-stitch"],
+    "craftTechniqueTags": ["colorwork", "flat-construction"],
+    "chartDefinition": null
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "slip-stitch-colourwork",
+      "term": "Slip-stitch colourwork",
+      "definition": "A two-colour knitting technique in which stitches are slipped purlwise with yarn at the back, allowing the colour from a previous row to show through on the right side without stranding yarn across the row."
+    },
+    {
+      "slug": "mosaic-knitting",
+      "term": "Mosaic knitting",
+      "definition": "A family of slip-stitch colourwork patterns in which geometric motifs are formed by slipping alternate stitches in each row, working one colour per row pair. Associated with Barbara Walker's development of the technique."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["mosaic knitting", "slip stitch colour patterns", "one-yarn-at-a-time colourwork"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slip-stitch-colourwork" } }],
+            "text": "Slip-stitch colourwork"
+          },
+          {
+            "type": "text",
+            "text": " (sometimes called "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mosaic-knitting" } }],
+            "text": "mosaic knitting"
+          },
+          {
+            "type": "text",
+            "text": " when worked in geometric patterns) uses two colours but only one at a time. Each pair of rows is worked entirely in one colour; the second colour's stitches appear on the right side because they were slipped on the previous round or row without being worked. The result is a geometric or textured pattern with no floats on the back. The technique is significantly simpler than Fair Isle stranding and a good first step into colourwork for intermediate knitters. Difficulty: beginner (once the slip convention is understood)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DK yarn in two contrasting colours (colour A and colour B)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Needles in the appropriate size for the yarn" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A chart or written pattern for the slip-stitch design" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The technique, step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cast on with colour A (the background colour) and work any set-up rows the pattern requires." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 1 (RS, colour A): Work across the row following the pattern. Where the pattern indicates, knit the stitch normally. Where the pattern indicates a slip, move the yarn to the back (wyib) and slip the stitch purlwise without working it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Row 2 (WS, colour A): Work back across in pattern. Slipped stitches are again slipped with yarn in front (wyif on the WS row, which keeps the yarn on the non-public side)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Join colour B. Work rows 3 and 4 in colour B, knitting the stitches the pattern designates and slipping the rest purlwise wyib (RS) or wyif (WS)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating two rows of colour A and two rows of colour B, following the slip pattern for each colour. Do not break yarn at each change; carry the unused colour up the side edge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Yarn position when slipping",
+          "body": "Always slip with yarn held on the wrong side (the side away from you). On a RS row that means yarn held to the back (wyib). On a WS row that means yarn held to the front (wyif). Getting this wrong puts a float on the right side of the work."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where you will use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slip-stitch colourwork appears in hats, cowls, cushions, and accessories where a two-colour geometric pattern is wanted without the complexity of stranded knitting. It produces a thicker, denser fabric than standard stocking stitch because each stitch spans two rows; this makes it well suited to bags, hot-water bottle covers, and anything that benefits from a firmer hand."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common mistakes",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A long float appears on the right side of the work",
+              "cause": "The yarn was held to the front (public side) when slipping on a RS row",
+              "fix": "Move the yarn to the back before slipping on all RS rows. On WS rows the yarn goes to the front (which is still the wrong side from the public perspective)."
+            },
+            {
+              "symptom": "The fabric pulls in vertically and is much shorter than the gauge swatch",
+              "cause": "The slipped stitches are pulling the rows together",
+              "fix": "Slip the stitches loosely. Do not tug the yarn after slipping; leave a small amount of slack so the vertical gauge is not compressed."
+            },
+            {
+              "symptom": "The colour pattern looks wrong and the motifs do not match the chart",
+              "cause": "The slip was worked on the wrong stitches, or the wrong colour row was used",
+              "fix": "Mark the start of the repeat with a stitch marker and count carefully. Each two-row block in one colour should slip the same set of stitches on both rows."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

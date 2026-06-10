@@ -1,0 +1,171 @@
+{
+  "slug": "picking-up-sts-vertical",
+  "title": "Picking up stitches along a vertical edge",
+  "subtitle": "Adding live stitches from a row-by-row edge for button bands and side borders.",
+  "excerpt": "Picking up stitches along a vertical edge draws new loops through the selvedge stitches. Because row height is greater than stitch width, the standard rate is 3 stitches for every 4 rows: pick up through 3 consecutive rows, skip 1, and repeat along the edge.",
+  "type": "STITCH",
+  "categorySlug": "knitting",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard UK knitting pattern convention for vertical pick-up rates. Mary Thomas's Knitting Book (1938) and general UK pattern writing practice describe the 3-in-4 row rate.",
+  "heroPrompt": "A knitting needle picking up stitches through the selvedge edge of a cardigan front, the new stitches appearing evenly spaced along the vertical edge.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["knitting-knit"],
+    "craftTechniqueTags": ["flat-construction"],
+    "chartDefinition": null
+  },
+  "recipeTools": [],
+  "glossaryTerms": [
+    {
+      "slug": "selvedge",
+      "term": "Selvedge",
+      "definition": "The self-finished side edge of a flat knitted piece, formed by the first and last stitches of every row."
+    },
+    {
+      "slug": "pick-up-and-knit",
+      "term": "Pick up and knit",
+      "definition": "To insert the needle through an existing edge of the fabric and draw a new loop of yarn through it, creating a live stitch ready to be worked in the next row."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pick up stitches side seam", "button band pick-up", "vertical edge pick-up"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pick-up-and-knit" } }],
+            "text": "Picking up and knitting"
+          },
+          {
+            "type": "text",
+            "text": " along a vertical edge draws new stitches through the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "selvedge" } }],
+            "text": "selvedge"
+          },
+          {
+            "type": "text",
+            "text": " stitches that run up the side of the piece. Because a knitted stitch is wider than it is tall (rows are shorter in height than stitches are wide), picking up one stitch from every row would create too many stitches and the border would flute. The standard UK rate is 3 stitches for every 4 rows. Difficulty: beginner."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The finished knitted piece with a vertical selvedge edge ready" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A knitting needle in the correct diameter for the border" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Working yarn attached or a new length ready to join" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch markers to section the edge (helpful for long borders)" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The technique, step by step" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the piece with the right side facing you and the vertical edge running up the left side. Join the yarn at the lower corner." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle tip between the selvedge stitch and the stitch next to it, from front to back. Wrap the yarn and draw a new loop through to the front." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pick up through the next 2 rows in the same way (3 stitches picked up across 3 rows so far)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skip 1 row entirely. This is the 4th row in the cycle, and it is deliberately missed to keep the ratio correct." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat the 3-pick-up, 1-skip pattern to the top of the edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count the stitches on the needle and compare to the pattern's stated count. Adjust the pick-up rate slightly if the total is significantly off." }] }]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Check against the pattern count",
+          "body": "The 3-in-4 rate is a guide, not a rule. Patterns that give a specific stitch count for the border take precedence. If the pattern says 'pick up 82 sts along the front edge', divide your edge into equal sections and distribute the pick-ups evenly to hit that number."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where you will use it" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vertical pick-up is used for button bands on cardigans, for the garter stitch borders picked up along the sides of a flat-knitted shawl, and for side borders on bags and cushions. The same technique applies wherever a flat-knitted piece needs a border added after the main body is complete."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common mistakes",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The border ripples or waves along the edge",
+              "cause": "Too many stitches picked up; the rate was too close to 1:1",
+              "fix": "Rip back and re-pick at the 3-in-4 rate, or decrease across the first row of the border to bring the count down."
+            },
+            {
+              "symptom": "The border pulls the main fabric inward",
+              "cause": "Too few stitches picked up",
+              "fix": "Increase across the first row of the border, or re-pick at a slightly higher rate."
+            },
+            {
+              "symptom": "The pick-ups look uneven, with gaps and bunched areas",
+              "cause": "Skips were not evenly spaced along the edge",
+              "fix": "Divide the edge into groups of 4 rows before starting and mark each group with a pin. Pick up 3, skip 1 in each group to keep the rhythm consistent."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

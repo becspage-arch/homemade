@@ -1,0 +1,556 @@
+{
+  "slug": "brioche-scarf",
+  "title": "Brioche scarf",
+  "subtitle": "A single-colour brioche rib worked flat in DK-weight yarn.",
+  "excerpt": "A straight scarf knitted flat in single-colour brioche stitch on 5 mm needles with DK-weight yarn, finishing at 20 cm wide by 170 cm long. Brioche builds its lofty rib by slipping a stitch with a yarn-over on one row and then knitting or purling that stitch together with its yarn-over on the next row. The result is a plush, reversible fabric significantly thicker and lighter than its cast-on stitch count suggests.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Brioche stitch appears under various names in Weldon's Practical Knitter (1880s-1900s), Internet Archive, including 'brioche rib' and 'sailor's rib'. The combination of slip-stitch with yarn-over and a subsequent knit-together is documented in Mary Thomas's Knitting Book (1938), citations only.",
+  "heroPrompt": "A finished brioche scarf in dusty rose DK-weight yarn, folded loosely on a pale surface to show the lofty puffed rib texture on both faces, natural daylight.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STRETCHY",
+    "inTheRoundMethod": null,
+    "gaugeText": "16 sts x 22 rows = 10 x 10 cm in single-colour brioche on 5 mm needles, unblocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 16,
+      "rowsPer10cm": 22,
+      "stitchName": "single-colour brioche",
+      "blocked": false
+    },
+    "finishedSizeText": "20 cm wide x 170 cm long, unblocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-brioche",
+      "knitting-slip-stitch",
+      "knitting-yarn-over",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          34
+        ],
+        "label": "After cast-on: 34 stitches on needle"
+      },
+      {
+        "rowOrRound": 186,
+        "expected": [
+          34
+        ],
+        "label": "At halfway mark (row 186 of 374): still 34 stitches (yarn-overs count as stitches while on the needle)"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "brioche",
+      "term": "Brioche stitch",
+      "definition": "A stitch pattern in which every alternate stitch is slipped with a yarn-over on one pass, then the slipped stitch and its yarn-over are worked together as one stitch on the following pass. This creates a tall, pillowy rib column that is twice the depth of a standard rib."
+    },
+    {
+      "slug": "brk",
+      "term": "BrK (brioche knit)",
+      "definition": "Knit the slipped stitch together with the yarn-over from the row below as a single stitch. This is worked on the knit side of the brioche rib."
+    },
+    {
+      "slug": "brp",
+      "term": "BrP (brioche purl)",
+      "definition": "Purl the slipped stitch together with the yarn-over from the row below as a single stitch. This is worked on the purl side of the brioche rib."
+    },
+    {
+      "slug": "slip-with-yo",
+      "term": "Sl1yo (slip one with yarn-over)",
+      "definition": "Bring yarn to the front, slip the next stitch purlwise from left needle to right needle, then bring yarn over the right needle tip to the back. The yarn-over and the slipped stitch sit together on the right needle."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on forming a neat elastic edge by using the tail and working yarn over two fingers simultaneously."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "brioche-stitch",
+    "brk",
+    "brp"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "brioche-stitch",
+    "brk"
+  ],
+  "aliases": [
+    "brioche scarf",
+    "brioche rib scarf",
+    "single colour brioche scarf"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a straight scarf knitted flat from one short end to the other in single-colour "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "brioche"
+                }
+              }
+            ],
+            "text": "brioche stitch"
+          },
+          {
+            "type": "text",
+            "text": ", finishing at 20 cm wide and 170 cm long. The brioche pattern builds from two operations: a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "slip-with-yo"
+                }
+              }
+            ],
+            "text": "sl1yo"
+          },
+          {
+            "type": "text",
+            "text": " (slip one with yarn-over) on alternate stitches, and a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "brk"
+                }
+              }
+            ],
+            "text": "brK"
+          },
+          {
+            "type": "text",
+            "text": " or "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "brp"
+                }
+              }
+            ],
+            "text": "brP"
+          },
+          {
+            "type": "text",
+            "text": " (brioche knit or brioche purl) on the return pass that consumes each slipped stitch and its yarn-over together as one. The fabric is fully reversible and about twice as thick as a plain 1x1 rib in the same yarn and needle size."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because single-colour brioche on straight needles uses the same two-row repeat for the full length, without the complexity of maintaining two active colours. The finished scarf needs about 420 m (approximately 160 g) of DK-weight yarn; DK on 5 mm needles gives an intentionally airy brioche rather than a dense one. The scarf wraps twice around the neck and stays in place without pinning."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool or wool-blend yarn",
+              "qty": "160 g (approx. 420 m)",
+              "substitutions": "Any DK-weight yarn. Wool gives the best bounce and loft for brioche. Acrylic works but the fabric may feel slightly flatter."
+            },
+            {
+              "name": "5 mm needles, straight or circular (UK 6 / US 8)",
+              "qty": "1 pair or 1 circular 60 cm or longer",
+              "substitutions": "Go up a needle size if your tension runs tight."
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "16 sts x 22 rows = 10 x 10 cm in single-colour brioche on 5 mm needles, unblocked. The brioche gauge counts the working stitches only, not the yarn-overs sitting on the needle between them. Swatch at least 8 cm in the brioche pattern, measure the working stitch columns across the centre, not the yarn-over slots. One stitch per 10 cm off gauge shifts the finished width by about 1.25 cm at this stitch count. Row gauge drift across the full 374 rows changes the finished length by up to 15 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit): right needle from left to right through front of stitch, wrap yarn counterclockwise, draw loop through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sl1yo: bring yarn to the front between the needle tips, slip the next stitch purlwise to the right needle, carry the yarn over the right needle tip to the back ready to knit. The slipped stitch and its yarn-over sit together on the right needle as a paired unit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BrK: insert right needle knitwise through the slipped stitch and its paired yarn-over together, wrap yarn, draw through. One stitch is consumed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BrP: bring yarn to front, insert right needle purlwise through the slipped stitch and its paired yarn-over together, wrap yarn, draw through to back. One stitch is consumed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 34 stitches on the needle. The stitch count must be even plus 2 for the edge: 34 = (16 x 2) + 2. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 5 mm needles (circumference approximately 15.7 mm) and 34 stitches: (15.7 x 34) / 10 + 15 = 53.4 + 15 = about 68 cm. Leave a tail of at least 68 cm before the slip knot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 34 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set-up row (WS): K1 (edge), *Sl1yo, P1; repeat from * to last stitch, K1 (edge). (34 sts with yarn-overs sitting on needle)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS): K1 (edge), *BrK, Sl1yo; repeat from * to last stitch, K1 (edge). (34 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): K1 (edge), *Sl1yo, BrP; repeat from * to last stitch, K1 (edge). (34 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat rows 1 and 2 until the scarf measures 170 cm from the cast-on edge. When measuring brioche, lay the piece flat and relax the rib; brioche can lengthen 10 to 15 percent when the rib is allowed to expand. Measure in the relaxed state. At the halfway mark (approximately row 186, around 85 cm), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at row 186 you should have 34 working stitches on the needle (not counting the yarn-overs as separate stitches)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a stretchy bind-off on a right-side row: BrK the first brioche stitch, *slip the resulting stitch back to the left needle, K2tog through back loops, repeat from * until all stitches are bound off. Cut the yarn and draw through the last loop. The stretchy bind-off keeps the bound-off edge as elastic as the cast-on edge, which matters for a brioche scarf because a tight bind-off pulls the end in visibly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count rising across rows. The yarn-over in sl1yo must sit as a paired unit with the slipped stitch on every row. If a yarn-over is worked but no slip follows (or vice versa), the count drifts up by one. Check by counting working stitch columns at the end of every 20 rows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brioche looking flat and thin. This happens when the needle size is too small for the yarn, or when the yarn-over is being pulled too tight before the slip. The yarn-over should be a relaxed loop that sits loosely on the needle; do not tighten it before the next stitch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "BrK accidentally worked as a standard k2tog. The BrK inserts the needle through the slipped stitch and its yarn-over together, which sit as a visible paired unit above the stitch below. If you accidentally knit only the slipped stitch without the yarn-over, the fabric loses the loft and the row looks different from those above it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in both tails along the wrong-side edge and trim. Brioche does not benefit from blocking. Wet blocking flattens the loft permanently. If the piece needs evening out, lay flat and allow the rib to expand to its natural width."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Press out water gently and lay flat to dry. Do not stretch the brioche rib lengthwise while damp. Do not tumble dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once single-colour brioche feels familiar, the two-colour brioche scarf adds a contrast yarn on alternating rows for a stripe effect that appears different on each face. The brioche cowl is a smaller project in the same stitch pattern, worked in the round."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "slug": "why-gauge-matters",
+  "title": "Why gauge changes the fit",
+  "subtitle": "What a single stitch per 10 cm does to the size of a finished garment.",
+  "excerpt": "Missing gauge by one stitch per 10 cm adds or subtracts several centimetres from the finished width of a sweater, hat, or sock. This entry explains the arithmetic and how to use it.",
+  "type": "STITCH",
+  "categorySlug": "knitting",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mary Thomas's Knitting Book (1938), pp. 18-22. Weldon's Practical Knitter, Series 1 (1886). Craft Yarn Council tension standards.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-stocking-stitch"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ]
+  },
+  "glossaryTerms": [
+    {
+      "slug": "tension-swatch",
+      "term": "Tension swatch",
+      "definition": "A knitted sample used to measure how many stitches and rows you produce per 10 cm. The UK equivalent of the US gauge swatch."
+    }
+  ],
+  "techniqueSlugs": [
+    "gauge-swatch-basics"
+  ],
+  "criticalTechniques": [],
+  "aliases": [
+    "gauge importance",
+    "why tension matters",
+    "tension and fit"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge, or "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tension-swatch"
+                }
+              }
+            ],
+            "text": "tension"
+          },
+          {
+            "type": "text",
+            "text": ", is the link between your knitting and the pattern's numbers. A pattern designed for 22 stitches per 10 cm and knitted at 20 stitches per 10 cm will come out wider than intended, because each stitch is taking up more horizontal space. The relationship is a simple ratio, and the numbers quickly become concrete: one stitch per 10 cm off gauge is not a small rounding error. On a fitted sweater it is enough to change the size by a full size."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The arithmetic"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If a pattern is written for 22 sts per 10 cm and you cast on 220 stitches, the pattern assumes the width will be 100 cm. At 20 sts per 10 cm, those 220 stitches will produce 110 cm. You gain 10 cm of width from one stitch per 10 cm of difference. For a hat with 100 sts cast on: at 22 sts / 10 cm the brim circumference is 45 cm; at 20 sts / 10 cm it is 50 cm, which fits a significantly larger head."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A worked and blocked swatch in your project yarn and stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A ruler"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The pattern's stated tension"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the numbers, step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Count your stitches per 10 cm in the centre of the blocked swatch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the pattern's cast-on count by the pattern's stated stitches per 10 cm. This gives the intended finished width in 10 cm units. Multiply by 10 for centimetres."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the same cast-on count by your actual stitches per 10 cm. This gives your finished width."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The difference tells you how far off the finished piece will be. Adjust needle size and reswatch until the numbers match."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where you will see it"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every pattern that carries a finished measurement relies on gauge. Garments (sweaters, cardigans, hats, socks, mittens) are the most sensitive. Blankets and scarves can absorb small differences without a visible problem."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common mistakes",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Gauge matches on the swatch but not on the finished piece",
+              "cause": "Tension changes when working a larger piece or when knitting in the round versus flat",
+              "fix": "Work the swatch in the same construction as the pattern (in the round for circular patterns). If your tension loosens over a long project, try going down half a needle size."
+            },
+            {
+              "symptom": "Half a stitch per 10 cm off gauge, ignored",
+              "cause": "Assuming small differences do not matter",
+              "fix": "Half a stitch per 10 cm over a 200-stitch cast-on adds about 4.5 cm to the width. On a fitted hat or sock that is the difference between sizes. Match gauge exactly."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recipeTools": []
+}

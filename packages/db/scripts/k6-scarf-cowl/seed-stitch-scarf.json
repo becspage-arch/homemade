@@ -1,0 +1,442 @@
+{
+  "slug": "seed-stitch-scarf",
+  "title": "Seed-stitch scarf",
+  "subtitle": "A textured, flat-lying scarf that needs no border.",
+  "excerpt": "A straight scarf worked flat in seed stitch on 4.5 mm needles with DK yarn, finishing at 20 cm wide and 175 cm long. The alternating knit and purl stitches swap positions on every row, producing a bumpy, stable fabric that lies flat without any garter border.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Seed stitch (called moss stitch in UK tradition, though the terms differ by region) is documented in Weldon's Practical Knitter and throughout Victorian knitting instruction as a basic fabric stitch suitable for scarves and borders. Cornelia Mee, A Manual of Knitting and Crochet (1846), Internet Archive. Note: in UK terminology, seed stitch and moss stitch refer to different fabric structures; this pattern uses the alternating single-row pattern known as seed stitch in the US and rice stitch in some UK sources.",
+  "heroPrompt": "A seed-stitch scarf in oat-coloured DK wool, showing the bumpy, pebbly texture of the alternating knit and purl pattern, laid flat on a wooden surface.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-5mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "20 sts x 28 rows = 10 x 10 cm in seed stitch on 4.5 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 20,
+      "rowsPer10cm": 28,
+      "stitchName": "seed stitch",
+      "blocked": true
+    },
+    "finishedSizeText": "20 cm wide x 175 cm long.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-seed-stitch",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          41
+        ],
+        "label": "After cast-on: 41 stitches (odd number for seed stitch)"
+      },
+      {
+        "rowOrRound": 245,
+        "expected": [
+          41
+        ],
+        "label": "Halfway mark: still 41 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-mat",
+      "isOptional": true
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "seed-stitch",
+      "term": "Seed stitch",
+      "definition": "A fabric stitch formed by alternating one knit and one purl stitch across each row, then knitting over the purl stitches and purling over the knit stitches on the following row. The stitches alternate each row, producing a pebbly, non-stretchy fabric that lies flat. Called rice stitch in some UK sources; different from UK double moss stitch."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on method using the tail and working yarn together to form an elastic, neat edge."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "seed-stitch"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "seed-stitch"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a flat scarf worked from one short end to the other entirely in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "seed-stitch"
+                }
+              }
+            ],
+            "text": "seed stitch"
+          },
+          {
+            "type": "text",
+            "text": " on 4.5 mm needles with DK yarn, finishing at 20 cm wide and 175 cm long. Seed stitch lies flat without any border and looks the same on both sides, so there is no need to track a right side or wrong side."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because seed stitch is already non-rolling: the alternating knit and purl stitches hold the fabric stable without needing an edging. An odd stitch count (41) makes the pattern symmetrical so both edges are identical. The finished scarf uses about 165 g (375 m / 410 yards) of DK-weight yarn."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool or wool-blend yarn",
+              "qty": "165 g (approx. 375 m / 410 yards)",
+              "substitutions": "Any DK yarn. Seed stitch shows well in plain or semi-solid colours."
+            },
+            {
+              "name": "4.5 mm needles (UK 7 / US 7)",
+              "qty": "1 pair or 1 circular",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry or darning needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Blocking mat and rust-proof pins",
+              "qty": "optional",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "20 sts x 28 rows = 10 x 10 cm in seed stitch on 4.5 mm needles, blocked. Seed stitch does not stretch or compress the way rib does, so gauge readings are stable. Each stitch off gauge changes the finished width by about 1 cm; each two rows off gauge across the full 490-row scarf adds or removes about 7 cm of finished length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit), P (purl). In seed stitch, you knit the purl stitches and purl the knit stitches as they face you. On the needle, a V-shape facing you is a knit stitch; purl it. A bump facing you is a purl stitch; knit it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 41 stitches. The odd number ensures the pattern starts and ends with a knit stitch on every row, making symmetrical edges. Tail length: (14.1 x 41) / 10 + 15 = about 73 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: 41 stitches after the cast-on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every row: (K1, P1) to last st, K1. (41 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Because the stitch count is odd, every row is the same instruction. Seed stitch looks identical from both sides: the knit stitches of one side are the purl bumps of the other. Work until the scarf measures 175 cm from the cast-on edge. At the halfway mark (about 87 cm), count: still 41 stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off in pattern (K the knits, P the purls) using the standard method. Work at the same tension as the body. If the cast-off pulls in, use a needle one size larger."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rib columns forming instead of seed pattern. This means the knit and purl stitches are being worked in the same position every row instead of swapped. In seed stitch, the rule is: knit what looks like a purl, purl what looks like a knit. If the fabric starts looking like rib, look at the stitch on the needle: if you see a bump, knit it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count growing. The same yarn-position error as in rib: always move the yarn between the needles cleanly before each stitch change."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fabric feels stiff or dense. Seed stitch uses slightly more yarn than stocking stitch or garter stitch at the same needle size. If the fabric is uncomfortably stiff, go up half a millimetre in needle size and rework the swatch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Wet blocking is optional for seed stitch in wool: a gentle soak and flat dry will even out any uneven tension without flattening the texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash wool in cool water and lay flat to dry. Cotton: gentle machine wash cool and lay flat. Acrylic: cool gentle machine wash, no tumble dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The moss-stitch scarf uses a two-row repeat rather than the single-row repeat of seed stitch, producing a slightly larger, more defined bump texture. Or try the basketweave scarf for alternating blocks of knit and purl squares."
+          }
+        ]
+      }
+    ]
+  }
+}

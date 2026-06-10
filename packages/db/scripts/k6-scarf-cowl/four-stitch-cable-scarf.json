@@ -1,0 +1,596 @@
+{
+  "slug": "four-stitch-cable-scarf",
+  "title": "Four-stitch cable scarf",
+  "subtitle": "A panel of narrow four-stitch cables in worsted-weight yarn.",
+  "excerpt": "A straight scarf knitted flat in a repeating panel of four-stitch rope cables on 4.5 mm needles with worsted-weight yarn, finishing at 20 cm wide by 175 cm long. The four-stitch cross happens every four rows and produces a tighter, faster rope than a six-stitch cable with the same satisfying twist. Three cable panels run side by side with a purl column between each.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Four-stitch cable patterns appear in Weldon's Practical Knitter (1880s-1900s), Internet Archive, where narrow rope cables are described as suit pattern for scarves and borders. Mary Thomas's Knitting Book (1938) documents the four-stitch cable cross, citations only.",
+  "heroPrompt": "A finished four-stitch cable scarf in dark navy worsted-weight yarn, laid flat showing three parallel rope cable columns running the full length of the scarf against a purl ground.",
+  "knitting": {
+    "primaryYarnWeightSlug": "worsted",
+    "primaryNeedleSlug": "knitting-needle-4-5mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "20 sts x 26 rows = 10 x 10 cm in stocking stitch on 4.5 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 18,
+      "rowsPer10cm": 24,
+      "stitchName": "four-stitch cable panel",
+      "blocked": false
+    },
+    "finishedSizeText": "20 cm wide x 175 cm long, unblocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-cable-4-front",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "cables",
+      "blocking-steam"
+    ],
+    "chartDefinition": {
+      "title": "Four-stitch rope cable (4 rows x 4 sts)",
+      "layout": "flat",
+      "craft": "knitting",
+      "terminologyConvention": "uk",
+      "rows": [
+        {
+          "rowNumber": 1,
+          "side": "RS",
+          "cells": [
+            {
+              "symbol": "cable-4-front"
+            }
+          ]
+        },
+        {
+          "rowNumber": 2,
+          "side": "WS",
+          "cells": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        },
+        {
+          "rowNumber": 3,
+          "side": "RS",
+          "cells": [
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            }
+          ]
+        },
+        {
+          "rowNumber": 4,
+          "side": "WS",
+          "cells": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        }
+      ],
+      "caption": "Chart shows the 4-stitch cable panel only. C4F (cable 4 front) crosses on row 1 of each repeat. Purl stitches between panels are not shown; work them as P2 between each cable panel on RS rows and K2 on WS rows."
+    },
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          38
+        ],
+        "label": "After cast-on: 38 stitches on needle"
+      },
+      {
+        "rowOrRound": 210,
+        "expected": [
+          38
+        ],
+        "label": "At halfway mark (row 210 of 420): still 38 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cable-4-front",
+      "term": "C4F (cable four front)",
+      "definition": "Slip 2 stitches to a cable needle and hold at the front of the work. Knit the next 2 stitches from the left needle. Knit the 2 stitches from the cable needle. The cable crosses to the left."
+    },
+    {
+      "slug": "reverse-stocking-stitch",
+      "term": "Reverse stocking stitch",
+      "definition": "Stocking stitch with the purl face as the right side, used here as the ground between cable columns."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on forming a neat elastic edge by using the tail and working yarn over two fingers simultaneously."
+    },
+    {
+      "slug": "blocking-steam",
+      "term": "Steam blocking",
+      "definition": "Holding a steam iron above the finished piece without touching it, allowing steam to open the fabric. Preferred over wet blocking for cables to preserve their raised definition."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "cable-4-front",
+    "blocking-steam"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "cable-4-front"
+  ],
+  "aliases": [
+    "four stitch cable scarf",
+    "4 stitch cable scarf",
+    "narrow cable scarf"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a straight scarf knitted flat in a three-panel "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cable-4-front"
+                }
+              }
+            ],
+            "text": "C4F"
+          },
+          {
+            "type": "text",
+            "text": " cable arrangement on 4.5 mm needles with worsted-weight yarn, finishing at 20 cm wide and 175 cm long. Three four-stitch rope cables run side by side from cast-on to bind-off, separated by two-stitch purl columns on a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reverse-stocking-stitch"
+                }
+              }
+            ],
+            "text": "reverse stocking stitch"
+          },
+          {
+            "type": "text",
+            "text": " ground. The cable cross happens every four rows: two rows plain knit, two rows with the cross."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because a multi-cable scarf worked flat holds its shape without seaming and the cables sit symmetrically across the width. The finished scarf needs about 380 m (approximately 185 g) of worsted-weight yarn. The three-cable panel is denser and slightly narrower than the cast-on stitch count in plain fabric would suggest; the cables pull the width in by about 10 percent. The scarf wraps once around the neck with a satisfying firm drape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Worsted-weight wool or wool-blend yarn",
+              "qty": "185 g (approx. 380 m)",
+              "substitutions": "Wool gives the crispest cable definition. Acrylic works but cables will be slightly softer in appearance."
+            },
+            {
+              "name": "4.5 mm needles, straight or circular (UK 7 / US 7)",
+              "qty": "1 pair or 1 circular 60 cm or longer",
+              "substitutions": ""
+            },
+            {
+              "name": "Cable needle",
+              "qty": "1",
+              "substitutions": "A short double-pointed needle in a similar size works."
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "20 sts x 26 rows = 10 x 10 cm in stocking stitch on 4.5 mm needles, blocked. In the four-stitch cable panel the gauge pulls in to approximately 18 sts per 10 cm. Swatch the full cable + purl-column arrangement, measure unstretched. One stitch per 10 cm off gauge shifts the finished width by about 1 cm. Row gauge drift across the full 420 rows changes the finished length by up to 15 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit), P (purl), C4F: slip 2 to cable needle, hold at front, K2 from left needle, K2 from cable needle. Cable crosses to the left."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 38 stitches on the needle. The stitch layout is: P2 border, [C4F panel (4 sts), P2 separator] x 3, P2 border = 2 + (4+2) x 3 + 2 = 22 + 14 + 2 = 38 sts. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 4.5 mm needles (circumference approximately 14.1 mm) and 38 stitches: (14.1 x 38) / 10 + 15 = 53.6 + 15 = about 69 cm. Leave a tail of at least 69 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 38 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS, cable row): P2, [C4F, P2] 3 times, P2. (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): K2, [P4, K2] 3 times, K2. (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 3 (RS, plain): P2, [K4, P2] 3 times, P2. (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 4 (WS): K2, [P4, K2] 3 times, K2. (38 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat rows 1 to 4 until the scarf measures 175 cm from the cast-on edge. At the halfway mark (approximately row 210, around 87 cm), count your stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at row 210 you should have 38 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a standard bind-off in pattern on a right-side row (purl the purl stitches, knit the cable stitches). Work at relaxed tension to avoid a tight bind-off edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cable panels crossing in opposite directions. All three C4F crosses should twist to the left. If one panel twists right, the cable needle was held at the back instead of the front during that cross. Check: cable needle at front for a left-leaning cross."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Purl columns between cables looking different widths. The purl columns between cable panels can tighten or loosen depending on how the yarn is managed after each cable cross. Aim for consistent tension on the first purl stitch after every C4F."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Missing a cable row. With a four-row repeat the cross comes around quickly. Mark cross rows with a row counter or a clip on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in both tails along the back of a purl column and trim close."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocking-steam"
+                }
+              }
+            ],
+            "text": "Steam blocking"
+          },
+          {
+            "type": "text",
+            "text": " lifts the cables slightly and evens out the purl ground. Hold the iron 3 cm above the surface, do not press down. Leave flat to dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Lay flat to dry without stretching the cables lengthwise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The six-stitch cable scarf uses the same construction with a wider rope cross, and the cable-and-rib scarf combines a cable panel with flanking rib for a different texture arrangement."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "slug": "striped-scarf",
+  "title": "Simple striped scarf",
+  "subtitle": "Garter-stitch stripes in two colours worked flat.",
+  "excerpt": "A garter-stitch scarf worked in regular ten-row stripes alternating two colours, knitted on 5 mm needles with aran yarn. Finished dimensions are 20 cm wide by 175 cm long. Carrying the unused yarn up the side edge avoids cutting and rejoining at every stripe.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Striped garter scarves are described throughout Weldon's Practical Knitter as a beginner project for learning colour changes. Cornelia Mee, A Manual of Knitting and Crochet (1846), Internet Archive, covers the technique of carrying yarn up the selvedge for regular stripe patterns.",
+  "heroPrompt": "A striped garter scarf with ten-row stripes alternating deep charcoal and soft cream aran wool, laid flat showing the regular stripe pattern and the carried yarn selvedge on one edge.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "18 sts x 36 rows = 10 x 10 cm in garter stitch on 5 mm needles, blocked.",
+    "finishedSizeText": "20 cm wide x 175 cm long.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-garter-stitch",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ],
+    "chartDefinition": null,
+    "dominantColour": "MC",
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          36
+        ],
+        "label": "After cast-on: 36 stitches"
+      },
+      {
+        "rowOrRound": 315,
+        "expected": [
+          36
+        ],
+        "label": "Halfway mark: still 36 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "carrying-yarn-up-selvedge",
+      "term": "Carrying yarn up the selvedge",
+      "definition": "When alternating two colours in stripes, rather than cutting and rejoining yarn at every stripe change, the unused yarn is carried loosely up the side edge. Every time you swap colours at the beginning of a right-side row, wrap the new yarn around the strand of the carried colour before starting the first stitch to lock it in."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on using the tail and working yarn together to form an elastic, neat edge."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "carrying-yarn-up-selvedge"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "carrying-yarn-up-selvedge"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a flat garter-stitch scarf worked in ten-row stripes alternating two colours, knitted on 5 mm needles with aran yarn, finishing at 20 cm wide and 175 cm long. The unused yarn is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "carrying-yarn-up-selvedge"
+                }
+              }
+            ],
+            "text": "carried up the selvedge"
+          },
+          {
+            "type": "text",
+            "text": " rather than cut at each colour change, which means fewer ends to weave in and a neater inside edge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction was chosen because stripes in flat knitting alternate at a predictable rate: swap colours every ten rows. Because garter stitch uses an even number of rows to complete one ridge, a ten-row stripe always finishes at the right end of the work for carrying the yarn. The finished scarf uses about 100 g (180 m / 197 yards) of each colour, approximately 200 g total."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight yarn, Colour A (main)",
+              "qty": "100 g (approx. 180 m / 197 yards)",
+              "substitutions": "Any aran yarn. Solid tones show the stripe clearly; a gradient or speckled yarn in one colour alongside a solid in the other gives a more dynamic stripe."
+            },
+            {
+              "name": "Aran-weight yarn, Colour B (contrast)",
+              "qty": "100 g (approx. 180 m / 197 yards)",
+              "substitutions": "Colour B should contrast clearly with A."
+            },
+            {
+              "name": "5 mm needles (UK 6 / US 8)",
+              "qty": "1 pair or 1 circular",
+              "substitutions": ""
+            },
+            {
+              "name": "Row counter",
+              "qty": "optional but helpful",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry or darning needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 36 rows = 10 x 10 cm in garter stitch on 5 mm needles, blocked. Each stitch off gauge changes the finished width by about 1.1 cm; each two rows off gauge across the full 630-row scarf adds or removes about 5 cm of finished length. Because the stripe is ten rows, row gauge also affects stripe width: at 34 rows per 10 cm the stripes read 2.9 cm tall; at 38 rows per 10 cm they read 2.6 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit). Every row is a knit row."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using Colour A and the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": ", cast on 36 stitches. Tail length: (15.7 x 36) / 10 + 15 = about 72 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: 36 stitches after the cast-on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 1-10 (Colour A): K to end every row. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colour change: at the start of Row 11, drop Colour A to the side of the work. Pick up Colour B. Before working the first stitch, wrap Colour B around the Colour A strand once to lock the carried yarn against the selvedge. K to end. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 11-20 (Colour B): K to end every row. (36 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Continue alternating ten rows of Colour A and ten rows of Colour B, carrying the unused yarn up the selvedge at each colour change, until the scarf measures 175 cm from the cast-on edge. At the halfway mark (about 87 cm), count: still 36 stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off in the current colour using the standard method. Work loosely."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carried yarn pulling in the selvedge. This happens when the float is carried too tightly up the edge. Hold the carried strand loosely when wrapping and keep it long enough to span the ten rows without tension."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colour jog at the stripe change. In flat knitting the colour change always happens at the same edge (the right selvedge on right-side rows), so there is no visible jog as in circular knitting. If a step is visible, check that you are always changing colour at the start of a right-side row, not mid-row or at the start of a wrong-side row."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Losing count of the stripe rows. Use a row counter and reset it at each colour change. Ten rows of garter stitch produces five ridges on the right side, which is a quick visual check."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in the cast-on and cast-off tails. The carried selvedge floats need no weaving in. Wet block to even the tension."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water and lay flat to dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Try a helix-stripe cowl worked in the round, which avoids the colour jog entirely. Or try the contrast-tip scarf for a simpler two-colour piece with contrasting short ends."
+          }
+        ]
+      }
+    ]
+  }
+}

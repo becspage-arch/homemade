@@ -1,0 +1,379 @@
+{
+  "slug": "long-tail-cast-on-deep-dive",
+  "title": "Long-tail cast-on",
+  "subtitle": "A two-strand foundation that builds the first row and the edge in a single pass.",
+  "excerpt": "The long-tail cast-on is the default opening for most UK knitting patterns. This deep dive covers the tail length formula, the thumb-and-finger grip, common tension faults, and the k-tbl variant used in German twisted cast-on.",
+  "type": "STITCH",
+  "categorySlug": "knitting",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Knitter, Series 1 (1886), opening cast-on chapter. Mary Thomas's Knitting Book (1938), pp. 24-28, cast-on methods. Craft Yarn Council needle and yarn weight standards.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-long-tail-cast-on",
+      "knitting-knit"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ]
+  },
+  "glossaryTerms": [
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A two-strand cast-on method worked with a tail of yarn and the working end. Produces the first row of loops and a neat, elastic edge in one pass."
+    },
+    {
+      "slug": "cast-on-tail",
+      "term": "Cast-on tail",
+      "definition": "The length of yarn measured out before casting on. For the long-tail method, this tail forms half the stitches; the formula tail_cm = (needle circumference mm x stitch count) / 10 + 15 gives a safe length."
+    },
+    {
+      "slug": "knit-tbl",
+      "term": "Knit through the back loop",
+      "definition": "Inserting the needle into the back leg of the stitch rather than the front. Twists the stitch on the needle, producing a firmer, slightly tighter fabric."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on-deep-dive"
+  ],
+  "criticalTechniques": [],
+  "aliases": [
+    "long tail cast on",
+    "thumb cast on",
+    "slingshot cast on"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " (abbreviated lt-co) is the foundation edge for the majority of UK knitting patterns. Unlike the cable or knitted-on cast-on, it works two strands simultaneously: the tail over the left thumb forms the body of each stitch, and the working yarn over the left index finger locks it onto the needle. The result is a firm, springy row of loops that look and behave like a worked knit row. Difficulty: beginner, though the first few attempts feel like a conjuring trick."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "One ball of DK yarn (any smooth wool or wool-blend reads the stitch cleanly)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "4 mm straight or circular needles"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A tape measure for calculating the tail"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating the tail"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Running short mid-cast-on is the most common frustration. The safe formula for the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cast-on-tail"
+                }
+              }
+            ],
+            "text": "cast-on tail"
+          },
+          {
+            "type": "text",
+            "text": ": length in cm = (needle circumference in mm x stitch count) / 10 + 15. For a 4 mm needle and 40 stitches: (4 x 40) / 10 + 15 = 31 cm. For 100 stitches on the same needle: (4 x 100) / 10 + 15 = 55 cm. Add 10 cm if unsure of your tension."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The cast-on, step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure and pull out the required tail. Make a slip knot at that point and place it on the needle. This counts as the first stitch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hold the needle in your right hand. With your left hand, spread the thumb and index finger apart and catch both strands: tail over the left thumb, working yarn over the index finger. The remaining fingers close around both strands to anchor the tension."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rotate the thumb towards you so the yarn forms a loop. Insert the needle tip upward through this thumb loop, from below."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Swing the needle over and catch the index-finger strand, drawing it back through the thumb loop."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slip the thumb loop off and gently tug the tail to snug the new stitch onto the needle. Not too tight: you will need to work into this stitch on the next row."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Re-form the thumb loop and repeat until you have the required number of stitches."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The k-tbl variant"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a firmer, twisted edge, work step 3 by inserting the needle through the back of the thumb loop rather than the front. This is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "knit-tbl"
+                }
+              }
+            ],
+            "text": "knit through the back loop"
+          },
+          {
+            "type": "text",
+            "text": " principle applied at cast-on. The resulting edge is noticeably tighter and more structured. The German twisted cast-on uses exactly this move throughout."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where you will see it"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The long-tail cast-on opens the great majority of hat, scarf, and sweater patterns in UK print publications. Weldon's Practical Knitter uses a near-identical method under the name 'thumb cast-on'. When a pattern says 'cast on' without specifying a method, the long-tail is the safe default."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "It is not suited to provisional cast-ons or to mid-row increases. For those, the cable cast-on or knitted-on cast-on works more cleanly."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common mistakes",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Running out of tail before finishing",
+              "cause": "Tail measured too short, or tension tighter than expected",
+              "fix": "Use the formula above and add a 10 cm buffer. If you run out, unknit back to the slip knot and start again with a longer tail."
+            },
+            {
+              "symptom": "Stitches too tight to work into on the first row",
+              "cause": "Thumb loop snugged down too hard at step 5",
+              "fix": "Cast on over two needles held together, then remove one before the first row. This leaves the stitches slightly looser."
+            },
+            {
+              "symptom": "Edge looks loose and loopy on one side",
+              "cause": "Tail and working yarn swapped: tail should be over the thumb, working yarn over the index finger",
+              "fix": "Check your setup at step 2. The tail side (thumb) produces the bottom bar of each stitch; swapping them reverses the structure."
+            },
+            {
+              "symptom": "First stitch (slip knot) noticeably larger than the rest",
+              "cause": "The slip knot creates a visible loop that differs from the cast-on stitches",
+              "fix": "On the first row, knit the slip knot through the back loop to tighten it, or count the slip knot as a separate stitch and cast on one fewer with the long-tail method."
+            },
+            {
+              "symptom": "Cast-on edge curls or rolls",
+              "cause": "Normal behaviour on stocking stitch: the first row of plain knit stitches curls",
+              "fix": "This is the fabric structure, not a cast-on fault. Ribbing, garter, or seed stitch worked for the first few rows will prevent curl."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recipeTools": []
+}

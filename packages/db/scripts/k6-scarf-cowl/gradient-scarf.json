@@ -1,0 +1,451 @@
+{
+  "slug": "gradient-scarf",
+  "title": "Gradient scarf",
+  "subtitle": "A striped scarf that blends gradually from one colour to another.",
+  "excerpt": "A scarf knitted flat in two alternating yarn colours on 5 mm needles with aran-weight yarn, finishing at 20 cm wide by 155 cm long. Two yarn balls — one starting at full main colour and one at full contrast — are alternated two rows at a time to produce a gradual visual blend from one colour to the other across the length.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Graduated colour striping by alternating yarn rows appears in Victorian knitting manuals including Weldon's Practical Knitter (1880s-1900s), Internet Archive, described as a method of shading one colour into another.",
+  "heroPrompt": "A finished gradient scarf in aran-weight yarn that fades from deep indigo at one end through teal to pale sky blue at the other, photographed draped over a wooden railing showing the full colour gradient.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "18 sts x 24 rows = 10 x 10 cm in stocking stitch on 5 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "20 cm wide x 155 cm long.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-stocking-stitch",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "gradient-stripe",
+      "colour-blending"
+    ],
+    "chartDefinition": null,
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          36
+        ],
+        "label": "After cast-on: 36 stitches on needle"
+      },
+      {
+        "rowOrRound": 186,
+        "expected": [
+          36
+        ],
+        "label": "At halfway mark (row 186 of 372 body rows): still 36 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gradient-stripe",
+      "term": "Gradient stripe",
+      "definition": "A colour-blending technique in which two yarn colours are alternated in pairs of rows. As balls of different colourways are introduced, the visual proportion of each colour shifts gradually across the length, creating a smooth gradient."
+    },
+    {
+      "slug": "two-row-stripe",
+      "term": "Two-row stripe",
+      "definition": "Working two rows in one colour before switching to another. Two-row stripes return each yarn to the same edge where it was last used, so neither yarn needs to be cut — they can both be carried up the same selvedge."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on forming a neat elastic edge by using the tail and working yarn over two fingers simultaneously."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "two-row-stripe",
+    "gradient-stripe"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "two-row-stripe"
+  ],
+  "aliases": [
+    "gradient scarf",
+    "ombre scarf",
+    "fade scarf",
+    "colour blend scarf"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a scarf knitted flat in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "two-row-stripe"
+                }
+              }
+            ],
+            "text": "two-row stripes"
+          },
+          {
+            "type": "text",
+            "text": " on 5 mm needles with aran-weight yarn, finishing at 20 cm wide and 155 cm long. The scarf uses a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gradient-stripe"
+                }
+              }
+            ],
+            "text": "gradient stripe"
+          },
+          {
+            "type": "text",
+            "text": " approach: two or more yarn balls of different colourways are alternated in sequence to produce a gradual colour shift from one end of the scarf to the other. The simplest version uses one main colour and one contrast, replacing the contrast ball with progressively lighter or darker shades as the scarf grows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two-row stripes were chosen because both yarns return to the same edge after every two rows, so neither needs to be cut between colour changes. Both yarn tails hang at the right selvedge and are carried up the edge loosely when not in use. The finished scarf uses approximately 370 m across all colours; the split between shades depends on how many gradient steps are worked."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight yarn in gradient colourway (2 to 5 balls)",
+              "qty": "Total approx. 220 g (370 m) across all shades",
+              "substitutions": "Use balls from a gradient set or plan your own shade sequence. With 2 balls: cast on in A, alternate A and B for the full length. With 3 or more balls, introduce each new shade after approximately 50 cm of alternating rows."
+            },
+            {
+              "name": "5 mm needles, straight or circular (UK 6 / US 8)",
+              "qty": "1 pair or 1 circular",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 24 rows = 10 x 10 cm in stocking stitch on 5 mm needles, blocked. The gradient stripe fabric knits at the same gauge as plain stocking stitch. One stitch per 10 cm off gauge shifts the finished width by approximately 1.1 cm at this stitch count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " in colour A to place 36 stitches on the needle. Before beginning, calculate the tail: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For 5 mm needles (circumference approximately 15.7 mm) and 36 stitches: (15.7 x 36) / 10 + 15 = 56.5 + 15 = about 72 cm. Leave at least 72 cm of colour A tail."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: after the cast-on you should have 36 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 1–2 (colour A): Row 1 (RS): K36. Row 2 (WS): P36. Slide colour A to the right edge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 3–4 (colour B): Row 3 (RS): K36. Row 4 (WS): P36. Slide colour B to the right edge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat [rows 1–4] alternating colours A and B until the first shade section is complete (approximately 50 cm), then replace colour A with colour C (the next shade in the gradient) and continue alternating C and B; replace colour B with colour D when the next section is done, and so on. Continue until the scarf reaches 155 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: at the halfway mark (approximately row 186 of 372 body rows) you should have 36 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bind off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a standard bind-off in the final active colour on a RS row."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ladder forming at the selvedge where colours are carried. Carry the resting colour up the right selvedge every 4 rows by wrapping it loosely around the working yarn at the edge before picking it up. Do not carry it more than 4 rows without catching, or the edge ladder becomes visible."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gradient sections unequal in length. Plan the total number of rows before casting on: 372 body rows ÷ 3 gradient sections = 124 rows per section. Mark the transition rows on a sticky note."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colour change jog at the right edge. Two-row stripes produce a very short jog of half a stitch height at each colour switch. This is visible up close but nearly invisible on a worn scarf. If a completely jog-free edge is desired, splice one colour into the other with a Russian join before knitting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in all tails from colour changes along the selvedge or into the wrong side. Block flat to 20 x 155 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with wool wash. Lay flat to dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The contrast-tip scarf uses only two colours with a single clean join at each end rather than alternating rows throughout. The marled scarf blends two colours simultaneously in every stitch rather than alternating rows."
+          }
+        ]
+      }
+    ]
+  }
+}
