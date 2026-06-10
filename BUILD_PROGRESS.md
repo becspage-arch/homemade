@@ -1952,6 +1952,46 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## K-4.3 parametric knitting schematic renderer (2026-06-10)
+
+Knitting K-4.3 — parametric `SchematicRenderer` component at
+[apps/web/src/components/knitting/SchematicRenderer.tsx](apps/web/src/components/knitting/SchematicRenderer.tsx).
+Templates implemented for SCARF, BLANKET, HAT, MITT_GLOVE, and SHAWL
+(with `shawlStyle` prop covering TRIANGLE_TOP_DOWN, TRIANGLE_BOTTOM_UP,
+SEMICIRCLE, HALF_PI, ASYMMETRIC, FAROESE, SQUARE, RECTANGULAR_STOLE).
+SWEATER / CARDIGAN / VEST render as K-5 placeholders; SOCK + OTHER as
+deferred placeholders. Architecture separates the pure geometry math
+(template functions return `OutlinePrimitive[]` + `MeasurementLabel[]`
+data, no React) from the SVG composition layer, so the templates are
+testable via `computeSchematicSummary` without a React render loop.
+Coordinate system is `1 SVG unit = 1 cm` per the cm-canonical units
+memory. Letter-keyed measurement labels (A through E) drive a side
+table — the industry convention working knitting designers use.
+Studio pattern viewer at
+[KnittingSchematicView.tsx](apps/web/src/components/studio/knitting/KnittingSchematicView.tsx)
+now branches: parametric renderer when `projectShape` is present,
+legacy `schematicMediaId` image as the fallback, "no schematic yet"
+placeholder for patterns with neither. `KnittingPatternData` extended
+with `projectShape: KnittingProjectShape | null`, `needleBySection:
+NeedleBySection[] | null`, and an optional `shawlStyle` metadata
+prop; the loader populates all three from the K-4.1 schema columns.
+Dev showcase at [/dev/knitting-schematics](apps/web/src/app/dev/knitting-schematics/page.tsx)
+renders every template with example inputs, guarded by `notFound()`
+when `NODE_ENV === 'production'` so it never serves traffic on
+homemade.education. `printFriendly` prop strips colour and constrains
+to A4-fitting dimensions for the pattern PDF. Studio CSS at
+[knitting-studio.css](apps/web/src/components/studio/knitting/knitting-studio.css)
+adds the renderer's outline / arrow / letter / table / print styles
+under the existing knitting sage-blue accent. tsx-runnable snapshot
+test suite at
+[SchematicRenderer.test.ts](apps/web/src/components/knitting/SchematicRenderer.test.ts) —
+23 / 23 passing, covering every template's measurement set + viewBox +
+the finishedSizeText fallback parser (handles cm, m, in, ", " x ",
+" by ", "×"). No new dependencies; pure SVG, no `d3-shape` or
+similar. K-4.1's `KnittingPattern.schematicMediaId` column stays —
+patterns that still upload a hand-drawn schematic continue to render
+that image; parametric is preferred when `projectShape` is present.
+
 ## K-4 knitting pipeline-setup (2026-06-09)
 
 K-4 knitting pipeline-setup. `KnittingPattern` + `KnittingProjectProgress`

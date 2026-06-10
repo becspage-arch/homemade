@@ -449,6 +449,9 @@ export function KnittingActiveProject({
             sizesGraded={pattern.sizesGraded}
             gradedSize={null}
             finishedSizeText={pattern.finishedSizeText}
+            projectShape={pattern.projectShape}
+            needleBySection={pattern.needleBySection}
+            shawlStyle={pattern.shawlStyle}
           />
         )}
 

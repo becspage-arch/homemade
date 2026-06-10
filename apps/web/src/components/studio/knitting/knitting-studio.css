@@ -988,6 +988,166 @@
   font-size: 1.05rem;
 }
 
+/* ===== Parametric schematic renderer (K-4.3) ========================== */
+
+.schematic-renderer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--studio-surface, #fafaf6);
+  border-radius: var(--studio-radius-m, 10px);
+  padding: 1rem;
+  color: var(--studio-ink, #3d2f22);
+}
+
+.schematic-renderer-svg {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  background: var(--studio-bg, #f5f0e8);
+  border-radius: var(--studio-radius-s, 6px);
+  padding: 0.8rem;
+}
+
+.schematic-renderer-svg .schematic-outline {
+  fill: none;
+  stroke: var(--studio-ink, #3d2f22);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.schematic-renderer-svg .schematic-outline-thin {
+  fill: none;
+  stroke: var(--studio-ink-mute, #8a8276);
+  stroke-width: 0.6;
+  stroke-dasharray: 1.5 1.2;
+}
+
+.schematic-renderer-svg .schematic-outline-dashed {
+  fill: var(--studio-bg, #f5f0e8);
+  stroke: var(--studio-ink-mute, #8a8276);
+  stroke-width: 1;
+  stroke-dasharray: 2 1.5;
+}
+
+.schematic-renderer-svg .schematic-arrow {
+  stroke: var(--knit-accent-strong, #4f6c7e);
+  stroke-width: 0.6;
+  fill: none;
+}
+
+.schematic-renderer-svg marker path {
+  fill: var(--knit-accent-strong, #4f6c7e);
+}
+
+.schematic-renderer-svg .schematic-letter-bg {
+  fill: var(--studio-surface, #fafaf6);
+  stroke: var(--knit-accent-strong, #4f6c7e);
+  stroke-width: 0.5;
+}
+
+.schematic-renderer-svg .schematic-letter {
+  font-family: var(--studio-font-mono, monospace);
+  font-size: 3.2px;
+  font-weight: 600;
+  fill: var(--knit-accent-strong, #4f6c7e);
+}
+
+.schematic-renderer-svg .schematic-stub-label {
+  font-family: var(--studio-font-body, 'Lora', Georgia, serif);
+  font-size: 4px;
+  fill: var(--studio-ink-mute, #8a8276);
+  font-style: italic;
+}
+
+.schematic-renderer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.schematic-renderer-table-caption {
+  font-family: var(--studio-font-mono, monospace);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--studio-ink-mute, #8a8276);
+  text-align: left;
+  padding-bottom: 0.4rem;
+}
+
+.schematic-renderer-table th,
+.schematic-renderer-table td {
+  text-align: left;
+  padding: 0.32rem 0.5rem;
+  border-bottom: 1px solid var(--studio-line, rgba(60, 47, 34, 0.08));
+}
+
+.schematic-renderer-table th {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--studio-ink-mute, #8a8276);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.schematic-renderer-table-letter {
+  font-family: var(--studio-font-mono, monospace);
+  font-weight: 600;
+  color: var(--knit-accent-strong, #4f6c7e);
+  width: 2.6em;
+}
+
+.schematic-renderer-table-value {
+  font-family: var(--studio-font-mono, monospace);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.schematic-renderer-needles {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--studio-ink-soft, #5c5347);
+}
+
+.schematic-renderer-needles-label {
+  font-family: var(--studio-font-mono, monospace);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--studio-ink-mute, #8a8276);
+}
+
+.schematic-renderer.is-print {
+  background: #fff;
+  color: #000;
+  padding: 0;
+}
+
+.schematic-renderer.is-print .schematic-renderer-svg {
+  background: #fff;
+}
+
+.schematic-renderer.is-print .schematic-outline {
+  stroke: #000;
+}
+
+.schematic-renderer.is-print .schematic-arrow,
+.schematic-renderer.is-print marker path,
+.schematic-renderer.is-print .schematic-letter,
+.schematic-renderer.is-print .schematic-letter-bg {
+  stroke: #000;
+  fill: #000;
+}
+
+.schematic-renderer.is-print .schematic-letter-bg {
+  fill: #fff;
+}
+
+.schematic-renderer.is-print .schematic-renderer-table-letter {
+  color: #000;
+}
+
 /* ===== Yarn substitution calculator =================================== */
 
 .knitting-substitution {

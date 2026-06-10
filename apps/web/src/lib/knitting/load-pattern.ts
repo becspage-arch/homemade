@@ -19,8 +19,10 @@ import type {
   BindOffMethod,
   InTheRoundMethod,
   KnittingPatternData,
+  KnittingProjectShape,
   KnittingShape,
   MyKnittingProjectListItem,
+  NeedleBySection,
   PatternRow,
 } from '@/components/studio/knitting/types'
 import type { KnittingChartData } from '@/lib/knitting/renderer/types'
@@ -99,6 +101,7 @@ export async function loadKnittingPatternForStudio(
         gaugeText: true,
         finishedSizeText: true,
         sizesGraded: true,
+        needleBySection: true,
         yardageBySize: true,
         abbreviationsUsed: true,
         specialStitchesUsed: true,
@@ -131,6 +134,9 @@ export async function loadKnittingPatternForStudio(
         construction:
           inTheRound && inTheRound !== 'STRAIGHT_FLAT' ? 'IN_THE_ROUND' : 'FLAT',
         shapeCategory: mapProjectShape(pattern.projectShape),
+        projectShape: pattern.projectShape as KnittingProjectShape,
+        needleBySection:
+          (pattern.needleBySection as NeedleBySection[] | null) ?? null,
         sizesGraded: (pattern.sizesGraded as KnittingPatternData['sizesGraded']) ?? null,
         yardageBySize:
           (pattern.yardageBySize as KnittingPatternData['yardageBySize']) ?? null,
@@ -207,6 +213,8 @@ export async function loadKnittingPatternForStudio(
         ? 'IN_THE_ROUND'
         : 'FLAT',
     shapeCategory: null,
+    projectShape: null,
+    needleBySection: null,
     sizesGraded: null,
     yardageBySize: null,
     gaugeText: tutorial.gaugeText,
@@ -321,7 +329,16 @@ export function loadDemoKnittingPattern(): KnittingPatternData {
     thumbnailMediaId: null,
     construction: 'IN_THE_ROUND',
     shapeCategory: 'HAT',
-    sizesGraded: null,
+    projectShape: 'HAT',
+    needleBySection: [
+      { section: 'ribbing', needleMm: 4.0 },
+      { section: 'body', needleMm: 4.5 },
+    ],
+    sizesGraded: [
+      { name: 'S', bust: 52, length: 20 },
+      { name: 'M', bust: 56, length: 22 },
+      { name: 'L', bust: 60, length: 23 },
+    ],
     yardageBySize: { default: 220 },
     gaugeText: '22 sts × 30 rows = 10 cm in stockinette',
     finishedSizeText: '56 cm head circumference',

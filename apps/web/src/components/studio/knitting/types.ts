@@ -94,6 +94,29 @@ export interface KnittingPatternData {
    *  handled identically. */
   shapeCategory: KnittingShape | null
 
+  /** K-4.1 project-shape enum (KnittingPattern.projectShape). The
+   *  SchematicRenderer reads this to pick a geometry template; null
+   *  on Tutorial-sourced patterns and demo rows. */
+  projectShape: KnittingProjectShape | null
+
+  /** K-4.1 needle-by-section JSON. Surfaced as a small annotation
+   *  under the parametric schematic. Null on patterns with one
+   *  needle throughout. */
+  needleBySection: NeedleBySection[] | null
+
+  /** Optional shawl-style metadata carried in pattern JSON — drives
+   *  the parametric shawl template. Schema enum is deferred until
+   *  there's content volume to filter by it. */
+  shawlStyle?:
+    | 'TRIANGLE_TOP_DOWN'
+    | 'TRIANGLE_BOTTOM_UP'
+    | 'SEMICIRCLE'
+    | 'HALF_PI'
+    | 'ASYMMETRIC'
+    | 'FAROESE'
+    | 'SQUARE'
+    | 'RECTANGULAR_STOLE'
+
   /** Graded sizes (garments only). */
   sizesGraded:
     | Array<{
@@ -156,6 +179,29 @@ export type KnittingShape =
   | 'HOME'
   | 'AMIGURUMI'
   | 'SAMPLER'
+
+/**
+ * K-4.1 schema enum mirror. Drives the parametric SchematicRenderer.
+ * Distinct from `KnittingShape` (the older categorisation the Studio
+ * shell already keys on); the loader populates both.
+ */
+export type KnittingProjectShape =
+  | 'SCARF'
+  | 'HAT'
+  | 'SHAWL'
+  | 'BLANKET'
+  | 'MITT_GLOVE'
+  | 'SOCK'
+  | 'SWEATER'
+  | 'CARDIGAN'
+  | 'VEST'
+  | 'OTHER'
+
+/** Per-section needle assignment — K-4.1 `needleBySection` shape. */
+export interface NeedleBySection {
+  section: string
+  needleMm: number
+}
 
 /**
  * One row of the rowsStructured JSON. Mirrors the crochet PatternRow
