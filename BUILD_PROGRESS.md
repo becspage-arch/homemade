@@ -1956,6 +1956,10 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Sewing S-4 home patterns (2026-06-10)
+
+Sewing S-4 sub-session Home. 10 patterns published (pillowcase, cushion cover, tea towel, cross-back apron, pot holder + oven mitt set, table runner, rod-pocket curtain, eyelet curtain, throw blanket, drum lampshade cover). House-original content; freesewing personalisation lands via S-5a. Seed script at `packages/db/scripts/seed-sewing-home-patterns.ts`, idempotent upsert on slug. All 10: visibility=PUBLIC, premium=false, heroMediaId=null, isFreesewingDesign=false, sourceLicence=PROPRIETARY_HOMEMADE. Category.sewing pipelineStatus and isPublicVisible unchanged (NOT_READY / false).
+
 ## Sewing S-4 sub-session N-Bags (2026-06-10)
 
 Sewing S-4 sub-session N-Bags — 8 bags patterns published. House-original content; freesewing personalisation lands later via S-5a.
