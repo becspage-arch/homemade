@@ -307,6 +307,10 @@ model User {
   sewingMeasurements UserSewingMeasurements?
   sewingPlans        UserSewingPlan[]
 
+  // Sewing S-2 reverse relations.
+  sewingPatternProjects         SewingPatternProject[]
+  sewingPatternPersonalisations SewingPatternPersonalisation[]
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -437,6 +441,7 @@ model SubCategory {
   crochetPatterns    CrochetPattern[]
   needleworkPatterns NeedleworkPattern[]
   knittingPatterns   KnittingPattern[]
+  sewingPatterns     SewingPattern[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -1108,6 +1113,10 @@ model Tutorial {
   // content; KnittingPattern carries the row-by-row + chart + grading.
   knittingPatternsInset KnittingPattern[] @relation("TutorialKnittingPattern")
 
+  // Sewing S-2 (phase_sewing_schema_001). SewingPattern.tutorialId points
+  // back here so a pattern can hang off an introductory tutorial.
+  sewingPatternsInset SewingPattern[] @relation("TutorialSewingPattern")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -1373,6 +1382,9 @@ model Media {
   knittingPatternThumbnails KnittingPattern[] @relation("KnittingPatternThumbnail")
   knittingPatternSchematics KnittingPattern[] @relation("KnittingPatternSchematic")
   knittingPatternHeros      KnittingPattern[] @relation("KnittingPatternHero")
+
+  // Sewing S-2 (phase_sewing_schema_001).
+  sewingPatternHeros SewingPattern[] @relation("SewingPatternHero")
 
   // Crochet image pipeline (phase_crochet_image_pipeline).
   stitchPreviews Stitch[] @relation("StitchPreview")
@@ -3810,6 +3822,7 @@ model Designer {
   crochetPatterns    CrochetPattern[]    @relation("DesignerCrochetPatterns")
   needleworkPatterns NeedleworkPattern[] @relation("DesignerNeedleworkPatterns")
   knittingPatterns   KnittingPattern[]   @relation("DesignerKnittingPatterns")
+  sewingPatterns     SewingPattern[]     @relation("DesignerSewingPatterns")
 
   createdAt DateTime @default(now())
 
@@ -5083,8 +5096,13 @@ model UserSewingPlan {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   title       String
-  patternId   String? // future link to a sewing pattern row; null for blank plans
-  patternSlug String? // freeform for plans not yet patterned
+  // Link to a catalogued SewingPattern. Promoted to a proper FK in S-2
+  // (phase_sewing_schema_001). Null on blank plans or plans linked only by
+  // slug. patternSlug remains the free-form fallback for plans the user
+  // started before the pattern existed in the catalogue.
+  patternId   String?
+  pattern     SewingPattern? @relation(fields: [patternId], references: [id], onDelete: SetNull)
+  patternSlug String?
 
   // Materials. Free-form JSON arrays at v1: schema sketched but not
   // enforced. The editor writes a known shape and a future migration
@@ -5117,6 +5135,7 @@ model UserSewingPlan {
 
   @@index([userId, updatedAt])
   @@index([userId, status])
+  @@index([patternId])
 }
 
 enum SewingPlanStatus {
@@ -5125,4 +5144,381 @@ enum SewingPlanStatus {
   PAUSED
   COMPLETED
   ARCHIVED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Sewing S-2: catalogued pattern + per-user project + custom personalisation.
+// phase_sewing_schema_001 (2026-06-10).
+//
+// All fields up-front per the locked schema rule. The pipeline-setup worker
+// (S-3) populates SubCategory targets and author prompts on top of this
+// schema. Studio v1 (S-1) renders SewingPattern rows. The freesewing wrapper
+// at apps/web/src/lib/sewing/grading/ (S-5a) populates engineCacheKey on
+// SewingPattern and the output fields on SewingPatternPersonalisation; this
+// migration only carves the room for those fields, it does not install or
+// import @freesewing/*.
+//
+// Category.sewing stays NOT_READY and isPublicVisible stays false through
+// S-2 through S-5 per the no-phased-rollout lock; everything flips together
+// once the full surface is live.
+// ────────────────────────────────────────────────────────────────────────────
+
+model SewingPattern {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String?
+
+  // Designer and provenance. `isFreesewingDesign` flags rows whose draft
+  // path goes through the S-5a wrapper layer over @freesewing/*. Non
+  // freesewing rows (in-house designs, indie designer submissions) leave
+  // the package and version fields null and source draft data from the
+  // pattern body. `attributionText` is the voice-checked footer credit
+  // rendered on tiled-print and browse-only output.
+  designerId            String?
+  designer              Designer? @relation("DesignerSewingPatterns", fields: [designerId], references: [id], onDelete: SetNull)
+  isFreesewingDesign    Boolean   @default(false)
+  freesewingPackageName String?
+  freesewingVersion     String?
+  freesewingDesignSlug  String?
+  sourceLicence         SewingSourceLicence?
+  sourceUrl             String?
+  attributionText       String?
+
+  // Categorisation. `garmentCategory` is the headline taxonomy axis.
+  // `garmentType` is free-text ("wrap dress", "raglan tee") for finer
+  // grouping inside a category. `subCategoryId` ties into the shared
+  // SubCategory taxonomy used across crafts.
+  garmentCategory SewingGarmentCategory
+  garmentType     String?
+  subCategoryId   String?
+  subCategory     SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  skillLevel      SewingSkillLevel @default(IMPROVER)
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Sizing.
+  //
+  // supportedSizes shape:
+  //   [{ name: "XS", body: { bust: 81, waist: 64, hip: 87, height: 162 } }, ...]
+  //   Body measurements stored in cm canonical per the units rule; the
+  //   renderer reconciles cm and inches at render time.
+  //
+  // requiredMeasurements + optionalMeasurements carry measurement keys
+  //   from the saved-measurements vocabulary (bustChestCm, waistCm, hipCm,
+  //   bodyHeightCm, inseamCm, plus the advanced-disclosure set). The
+  //   Studio uses these to drive the advanced-disclosure prompt.
+  // ──────────────────────────────────────────────────────────────────────────
+  supportedSizes       Json     @default("[]")
+  defaultEaseCm        Decimal? @db.Decimal(6, 2)
+  sizingNotes          String?
+  requiredMeasurements String[] @default([])
+  optionalMeasurements String[] @default([])
+
+  // Body and finished garment charts. Per-size body and finished
+  // dimensions. The S-5a wrapper uses bodyMeasurementChart as the input
+  // baseline; finishedGarmentChart is the renderer's output ground truth
+  // (and the basis for the user-facing finished measurements table).
+  bodyMeasurementChart Json?
+  finishedGarmentChart Json?
+
+  // Seam allowance and construction. seamAllowanceIncluded toggles
+  // whether pattern pieces already include the seam allowance (typical
+  // for indie patterns) or expect the user to add it (typical for
+  // freesewing output).
+  seamAllowanceIncluded Boolean  @default(true)
+  seamAllowanceCm       Decimal? @db.Decimal(4, 2)
+  constructionDirection String?
+  hasLining             Boolean  @default(false)
+  hasInterfacing        Boolean  @default(false)
+  hasClosure            Boolean  @default(false)
+  closureType           String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Materials.
+  //
+  // recommendedFabrics shape:
+  //   [{ type: "linen", weight: "medium", widthCm: 140, notes: "..." }, ...]
+  //
+  // recommendedNotions shape:
+  //   [{ name: "invisible zipper", spec: "20cm", quantity: 1, notes: "..." }, ...]
+  //
+  // fabricRequirementsCm shape:
+  //   { [sizeName]: { [fabricWidthCm]: totalLengthCm } }
+  //   The materials calculator surfaces this per selected size and chosen
+  //   fabric width.
+  // ──────────────────────────────────────────────────────────────────────────
+  recommendedFabrics   Json @default("[]")
+  recommendedNotions   Json @default("[]")
+  fabricRequirementsCm Json @default("{}")
+
+  // Instructions (TipTap-style document with steps and linked technique
+  // tutorials). Same shape as Tutorial body. Rendered by the public
+  // TipTap-free renderer that walks the JSON.
+  instructionsBody Json?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Cutting and layout.
+  //
+  // cuttingLayouts shape:
+  //   { [sizeName]: { [fabricWidthCm]: { layoutPaths: [...], notes: "..." } } }
+  //
+  // pieceList shape:
+  //   [{ name: "Front", cut: 2, fold: "on-fold", grainline: "lengthwise" }, ...]
+  // ──────────────────────────────────────────────────────────────────────────
+  cuttingLayouts Json @default("{}")
+  pieceList      Json @default("[]")
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Adjustments and variants.
+  //
+  // adjustmentGuides shape:
+  //   [{ adjustmentName: "FBA", tutorialSlug: "...", appliesTo: ["bust-larger-than-D"] }, ...]
+  //   "FBA" = full bust adjustment. Adjustments are the per-pattern guide
+  //   pointers; the grade-between-sizes flow (S-5) is separate. Never use
+  //   the indie slang "mash" anywhere.
+  //
+  // patternHacks shape:
+  //   [{ hackName: "Lengthen into dress", description: "...", premiumGated: true }, ...]
+  //   The premiumGated flag is read by Worker F's cross-category gating
+  //   pass; this migration does not enforce it.
+  // ──────────────────────────────────────────────────────────────────────────
+  adjustmentGuides Json @default("[]")
+  patternHacks     Json @default("[]")
+
+  // Output formats supported by this pattern. The Studio download UI
+  // filters available paths against this list. All four calibration
+  // paths from the locked sewing decisions map onto these formats.
+  availableFormats SewingFormat[] @default([])
+
+  // Engine cache key. The S-5a wrapper hashes (designSlug, measurements,
+  // options, calibrationMode) and writes the hash here so subsequent
+  // identical drafts return the cached SVG. This migration does not
+  // populate the field.
+  engineCacheKey String?
+
+  // Standard cataloguing (mirrors crochet, knitting, cross-stitch).
+  // `difficulty` overlaps `skillLevel`; the former is the cross-craft
+  // shared axis used by library filters, the latter is the sewing
+  // specific seven-step scale.
+  difficulty             Difficulty?
+  estimatedHoursPerSize  Json?
+  heroMediaId            String?
+  hero                   Media?                @relation("SewingPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
+  heroGenerationStatus   ImageGenerationStatus @default(PENDING)
+  preferUserPhotoForHero Boolean               @default(false)
+  premium                Boolean               @default(false)
+  visibility             Visibility            @default(PRIVATE)
+  publishedAt            DateTime?
+
+  // Errata and credits. `errataLog` is an append-only log of corrections
+  // since the version was cut; the Studio shows it in the pattern footer.
+  // `testerCredits` carries the role-and-credit pairs surfaced in the
+  // attribution block.
+  errataVersion String @default("1.0.0")
+  errataLog     Json   @default("[]")
+  testerCredits Json   @default("[]")
+
+  // Optional tutorial that introduces this pattern.
+  tutorialId String?
+  tutorial   Tutorial? @relation("TutorialSewingPattern", fields: [tutorialId], references: [id], onDelete: SetNull)
+
+  // Reverse relations.
+  projects         SewingPatternProject[]
+  personalisations SewingPatternPersonalisation[]
+  plansLinked      UserSewingPlan[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([garmentCategory, publishedAt])
+  @@index([subCategoryId, publishedAt])
+  @@index([designerId])
+  @@index([isFreesewingDesign])
+  @@index([skillLevel])
+  @@index([heroMediaId])
+  @@index([tutorialId])
+  @@index([visibility, publishedAt])
+}
+
+/// Per-(user, sewingPattern) project state. One row per pattern per user
+/// at any time. Re-making the same pattern in a new fabric branches via
+/// the fork pattern (covered in S-1 Studio v1), not by allowing multiple
+/// rows here.
+model SewingPatternProject {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  patternId String
+  pattern   SewingPattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+
+  // Status reuses the SewingPlanStatus enum (DRAFT, ACTIVE, PAUSED,
+  // COMPLETED, ARCHIVED) introduced by the pre-S-2 measurements migration.
+  status       SewingPlanStatus @default(DRAFT)
+  selectedSize String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Personalisation choices.
+  //
+  // fabricChoice shape:
+  //   { fabric: "linen", widthCm: 140, lengthCm: 280, lengthwiseGrain: true }
+  //
+  // notionsChoices shape:
+  //   user's selection from recommendedNotions
+  //
+  // measurementsSnapshot shape:
+  //   snapshot of UserSewingMeasurements at project start so subsequent
+  //   measurement edits do not silently re-grade an in-progress make.
+  // ──────────────────────────────────────────────────────────────────────────
+  fabricChoice         Json?
+  notionsChoices       Json?
+  easeOverrideCm       Decimal? @db.Decimal(6, 2)
+  measurementsSnapshot Json?
+
+  // Step tracking. stepsProgress shape: { [stepIndex]: { completedAt, notes } }.
+  stepsProgress Json @default("{}")
+
+  // Free notes and user-submitted progress / finished photos. Photo
+  // moderation rides on the existing UGC photo flow.
+  notes             String?
+  userPhotoMediaIds String[] @default([])
+
+  startedAt    DateTime  @default(now())
+  lastWorkedAt DateTime  @default(now())
+  completedAt  DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Reverse relation for personalisation requests linked to this project.
+  personalisations SewingPatternPersonalisation[]
+
+  @@unique([userId, patternId])
+  @@index([userId, status])
+  @@index([patternId])
+}
+
+/// Premium custom-grading request. The user provides their saved
+/// measurements plus per-design options; the S-5a wrapper renders a
+/// personalised SVG and writes it back here. Gated by config flag for
+/// now; Worker F wires the gating. This migration carves the room
+/// without building the wrapper itself.
+model SewingPatternPersonalisation {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  patternId String
+  pattern   SewingPattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  projectId String?
+  project   SewingPatternProject? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+
+  // Measurement snapshot at request time. Freezing the values here keeps
+  // the rendered SVG reproducible even if the user later edits their
+  // saved measurements. measurementsPreferenceSnapshot records whether
+  // the user was viewing in "cm" or "inches" at request time so the
+  // delivered output matches the surface they came from.
+  measurementsSnapshot           Json
+  measurementsPreferenceSnapshot String
+
+  // Personalisation request. designOptions shape: keyed by freesewing
+  // design option ({ neckline: "scoop", sleeveLength: "short" }).
+  designOptions  Json     @default("{}")
+  easePreference Decimal? @db.Decimal(6, 2)
+
+  // Output. Filled by the S-5a wrapper. outputSvg is the rendered SVG
+  // string; outputCacheKey matches SewingPattern.engineCacheKey when the
+  // wrapper hit its cache. errorMessage is set on FAILED rows.
+  status         PersonalisationStatus @default(PENDING)
+  outputSvg      String?
+  outputCacheKey String?
+  generatedAt    DateTime?
+  errorMessage   String?
+
+  // Delivery. Flipped true once the output is attached to the linked
+  // SewingPatternProject (or downloaded directly if there is no project).
+  deliveredToProject Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([patternId])
+  @@index([status])
+}
+
+/// Garment taxonomy axis for SewingPattern. Distinct from the shared
+/// SubCategory taxonomy: garmentCategory groups for "shop by who and
+/// where", subCategoryId groups for "shop by craft technique."
+enum SewingGarmentCategory {
+  WOMENS_TOPS
+  WOMENS_DRESSES
+  WOMENS_BOTTOMS
+  WOMENS_OUTERWEAR
+  WOMENS_INTIMATES
+  MENS_TOPS
+  MENS_BOTTOMS
+  MENS_OUTERWEAR
+  KIDS
+  BABIES
+  UNISEX
+  ACCESSORIES
+  BAGS
+  HOME
+  COSTUME
+  SPECIALTY
+}
+
+/// Sewing-specific skill ladder. Wider than the shared Difficulty enum
+/// (BEGINNER, INTERMEDIATE, ADVANCED) because the sewing community uses
+/// finer gradations (absolute-beginner vs improver vs confident-beginner).
+/// SewingPattern carries both: skillLevel for sewing surfaces,
+/// difficulty for cross-craft library filters.
+enum SewingSkillLevel {
+  ABSOLUTE_BEGINNER
+  BEGINNER
+  IMPROVER
+  CONFIDENT_BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+}
+
+/// Download / render path supported by a SewingPattern. Maps onto the
+/// four calibration paths locked in the sewing strategy memo: printer
+/// tiled (A4, Letter, Legal, A3) plus single-sheet A0, projector grid,
+/// layered PDF for size-by-size colour selection, and browse-only inline
+/// render. The Studio download UI filters against availableFormats.
+enum SewingFormat {
+  A4_TILED
+  LETTER_TILED
+  LEGAL_TILED
+  A3_TILED
+  A0
+  PROJECTOR
+  LAYERED_PDF
+  BROWSE_ONLY
+}
+
+/// Source licence for catalogued patterns. PROPRIETARY_HOMEMADE covers
+/// in-house designs; INDIE_DESIGNER_SUBMISSION covers patterns onboarded
+/// through the S-7 designer flow. freesewing-derived rows carry MIT.
+enum SewingSourceLicence {
+  MIT
+  GPL_V3
+  CC_BY
+  CC_BY_SA
+  PROPRIETARY_HOMEMADE
+  INDIE_DESIGNER_SUBMISSION
+  PUBLIC_DOMAIN
+}
+
+/// Lifecycle of a SewingPatternPersonalisation request. The S-5a wrapper
+/// flips PENDING into GENERATING, then SUCCESS or FAILED. REJECTED is
+/// reserved for measurements that the wrapper refuses to draft
+/// (out-of-range, mutually inconsistent).
+enum PersonalisationStatus {
+  PENDING
+  GENERATING
+  SUCCESS
+  FAILED
+  REJECTED
 }
