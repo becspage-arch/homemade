@@ -5285,6 +5285,15 @@ model SewingPattern {
   adjustmentGuides Json @default("[]")
   patternHacks     Json @default("[]")
 
+  // Technique cross-references. Same semantics as Tutorial.techniqueSlugs /
+  // criticalTechniques: techniqueSlugs is every technique the pattern body
+  // references; criticalTechniques is the subset without which the pattern
+  // cannot be completed. Powers "patterns using this technique" rails.
+  // aliases carries search synonyms (UK/US sewing terminology, shop terms).
+  techniqueSlugs     String[] @default([])
+  criticalTechniques String[] @default([])
+  aliases            String[] @default([])
+
   // Output formats supported by this pattern. The Studio download UI
   // filters available paths against this list. All four calibration
   // paths from the locked sewing decisions map onto these formats.
