@@ -42,7 +42,9 @@ phone-pouch / tech-sleeve patterns, knitted toys (basic shapes
 only — full amigurumi is a separate workstream). Sub-category is
 `accessory-other`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09).
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the K-4.1
+cross-cutting requirements and the Persona stuck-check.
 
 ## Sizing — per pattern
 
@@ -142,22 +144,60 @@ context plainly:
 1. **Opening sentence** — name the finished piece, the
    construction direction, the rough finished dimensions.
 2. **Orientation paragraph** — one paragraph. Construction
-   direction, rough yardage, one practical use note.
+   direction AND one clause naming why it was chosen for this
+   accessory. Rough yardage. One practical use note.
+
+   For knitted-toy patterns: name the intended age range. State
+   the child-safety constraint plainly: "If this toy is intended
+   for a child under three, work the eyes in embroidered yarn
+   not safety eyes; stuff with washable toy stuffing; choose
+   superwash yarn if the toy will be hugged often." Toy patterns
+   without an age-and-safety call-out fail this prompt.
+
+   For bag patterns: name the intended hardware (handles, lining,
+   inner pocket) up front. Bags without structured handles or
+   lining sag under contents; state which the pattern includes
+   and which the maker adds.
+
+   For phone-pouch patterns: do not pin to a specific phone
+   model year. State the fit by dimensions ("fits a phone up to
+   80 × 165 × 9 mm") and instruct the maker to measure her phone
+   before casting on. Phone models change every year; the pattern
+   does not.
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    yardage, needle size, tapestry needle, scissors, and anything
    project-specific (hair tie for a scrunchie, bag handle hardware
    for a tote, mug for sizing a cosy).
 4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, swatch
-   instructions.
+   instructions. State the concrete numeric consequence in cm
+   for this accessory type — bookmarks get 2-3 mm of slack per
+   stitch-per-10cm of drift, totes get visible centimetres of
+   handle-droop drift, phone pouches get the difference between
+   a fit and a stretched-thin pouch. Write the actual number,
+   not "wrong size".
 5. **Stitches used** — H2 "Stitches used". UK and US
    abbreviations.
 6. **Pattern** — H2 "Pattern":
-   - **Cast on** — method and count.
+   - **Cast on** — method and count. For long-tail cast-on, state
+     the formula `tail_cm ≈ (needleCircumferenceMm × stitchCount)
+     / 10 + 15` AND a worked number for the cast-on count.
    - **Body** — row-by-row or round-by-round to the finished
      dimensions. Stitch counts at row ends.
    - **Construction** — for bags, leg warmers, scrunchies and
      similar: any shaping, picked-up handles, etc.
    - **Bind off** — method.
+   - **Stitch count check-in.** At least one structural prose
+     entry in the Pattern section, at a logical mid-point or
+     before the bind-off. Populate
+     `knitting.stitchCountCheckpoints` with the matching data.
+     Skip on flat-and-trivial pieces like a bookmark.
+   - **Common faults** — `### Common faults` H3 inside the
+     Pattern section. For most accessories: cast-on tighter than
+     working tension producing a curled hem; bind-off too tight
+     producing a curled top; bag handles sagging under intended
+     contents because the handle pickup count was wrong; cotton
+     phone pouch stretching out of fit after one week of pocket
+     wear.
 7. **Assembly or finishing** — H2 "Finishing". Seaming (where
    needed), threading hair-tie elastic (scrunchies), attaching
    bag handles, weaving in ends.
@@ -228,10 +268,13 @@ additions:
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Tote bags that stretch out of shape
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern with
+  a structural prose H3. Tote bags that stretch out of shape
   under heavy contents; non-superwash knitted toys that felt in
-  the wash; cotton bookmarks that go yellow over time. Name the
-  failure mode.
+  the wash; cotton bookmarks that go yellow over time — state
+  the failure mode and the cause as named prose, not as a photo
+  reference.
 - **One concrete use note** — close with "Holds a paperback plus
   a small notebook" or "Fits a standard pint glass" rather than
   marketing language.
@@ -271,3 +314,36 @@ totes) set `sourceType: "SYNTHESISED"`.
 8. `gaugeText` quoted verbatim in the Gauge section.
 9. Sizing context stated for the specific accessory type.
 10. External-item substitution flagged where relevant.
+11. K-4.1 cross-cutting:
+    - Orientation paragraph names construction AND justifies the
+      choice.
+    - Knitted toy: child-safety constraint stated (eyes, stuffing,
+      yarn choice).
+    - Bag: lining + handle hardware stated up front.
+    - Phone pouch: sized by dimensions ("up to 80 × 165 × 9 mm")
+      with measure-your-phone instruction; no model-year pinning.
+    - Gauge section names concrete numeric consequence in cm,
+      not "wrong size".
+    - Long-tail cast-on: tail-length formula AND worked number
+      present.
+    - At least one stitch count check-in (skip on a bookmark).
+      `knitting.stitchCountCheckpoints` populated where present.
+    - `### Common faults` H3 present in Pattern section with
+      2-4 named failure modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+12. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops.
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built.
+    - **Master (Walker / Zimmermann literature):** flag where the
+      pattern violates an established convention.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document why it
+    was intentional. Future iteration: when an unpaid tester pool
+    exists post-launch, the stuck-check becomes pre-publication
+    verification.

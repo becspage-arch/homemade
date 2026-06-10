@@ -54,8 +54,10 @@ or COWL pattern. Covers classic scarves, infinity scarves, hooded
 cowls, cowls worked flat and seamed, and cowls worked in the round.
 Sub-category is `scarf-cowl`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09). Bump
-on iteration.
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the
+K-4.1 cross-cutting requirements and the Persona stuck-check.
+Bump on iteration.
 
 ## How a drafting session uses this file
 
@@ -180,25 +182,42 @@ Rules:
 
 1. **Opening sentence** — name the finished piece, the construction
    direction, the rough finished dimensions. Voice spec §3.5.
-2. **Orientation paragraph** — one paragraph. Construction direction,
-   the rough yardage estimate, and one practical line on the
-   piece's drape or wear context.
+2. **Orientation paragraph** — one paragraph. Construction direction
+   AND one clause naming why it was chosen for this piece (a flat
+   scarf reads as a flat scarf; an in-the-round cowl avoids the seam
+   at the join). The rough yardage estimate. One practical line on
+   the piece's drape or wear context.
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    grams, needle size, tapestry needle, scissors, measuring tape,
    blocking mat and pins if blocking is appropriate.
-4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, then one
-   sentence on how to swatch. For a scarf or cowl the gauge sets
-   the finished width and length, so do the swatch.
+4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim. State one
+   sentence on how to swatch. State the concrete numeric
+   consequence of being off — for a scarf or cowl, in cm of
+   finished width (gauge sets width directly) and in cm per row
+   (gauge drift makes the finished scarf longer or shorter than
+   `finishedSizeText`). Write the actual number, not "wrong size".
 5. **Stitches used** — H2 "Stitches used". Stitch name with UK and
    US abbreviation in brackets. Every `craftStitchSlugs` entry
    shows up.
 6. **Pattern** — H2 "Pattern". Sub-headings as needed:
-   - **Cast on** — state the cast-on method and the stitch count
-     for the finished width.
+   - **Cast on** — state the cast-on method, the stitch count for
+     the finished width, AND (for long-tail cast-ons) the cast-on
+     tail-length formula `tail_cm ≈ (needleCircumferenceMm ×
+     stitchCount) / 10 + 15` together with a worked number for
+     the largest size in this pattern.
    - **Body** — row-by-row or round-by-round. Number the rows.
      Stitch counts at row ends.
    - **Bind off** — state the bind-off method and one line on
      tension.
+   - **Stitch count check-in** — at least two structural check-ins
+     across the pattern, e.g. after the cast-on rib and at the
+     halfway mark. Populate `knitting.stitchCountCheckpoints` with
+     the same data as `[{rowOrRound, expected, label}]`.
+   - **Common faults** — `### Common faults` H3 with 2-4 named
+     failure modes for the piece type in prose. For a scarf or
+     cowl: edge curl from stockinette without a border; visible
+     gauge drift across the length if the swatch was skipped;
+     bind-off too tight that flips the top edge.
 7. **Finishing** — H2 "Finishing". Fastening off, weaving in ends,
    blocking. Block lace and colourwork wet; block cables steamed;
    block ribbed pieces gently or not at all.
@@ -334,9 +353,14 @@ Count body prose only.
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Acrylic that pills under a coat seam;
-  wool that loses memory at the bind-off; lace that drinks the
-  blocking water — name the failure mode where it's a known bug.
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern (which
+  depended on photography we don't have) with a structural prose H3
+  inside the Pattern section. Name 2-4 failure modes per piece —
+  acrylic that pills under a coat seam; wool that loses memory at
+  the bind-off; lace that drinks the blocking water. State the
+  failure mode and the cause; the chart engine + PD line drawings
+  cover what a photograph used to.
 - **One concrete drape note** — close with "Wraps twice around the
   neck" or "Pulls up over the chin" rather than "perfect for
   every wardrobe".
@@ -385,3 +409,34 @@ samplers).
 9. Cast-on and bind-off methods named in the body.
 10. Stitch counts at every row or round end.
 11. Cultural attribution is respectful and bounded.
+12. K-4.1 cross-cutting:
+    - Orientation paragraph states construction direction AND
+      justifies the choice in one clause.
+    - Gauge section names the concrete numeric consequence (cm of
+      finished width AND cm per row), not a vague "wrong size".
+    - Long-tail cast-on: tail-length formula AND worked number
+      present.
+    - Pattern section contains at least two stitch-count
+      check-ins. `knitting.stitchCountCheckpoints` populated with
+      the same data.
+    - `### Common faults` H3 present in Pattern section with
+      2-4 named failure modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+13. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader. Best self-critique we can run without a tester pool.
+    Future iteration: when an unpaid tester pool exists post-launch
+    the stuck-check becomes pre-publication verification.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops because a skill
+      or term is assumed she hasn't built.
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built or where the chart doesn't say what to do.
+    - **Master (Walker / Bush / Miller / Zimmermann literature):**
+      flag where the pattern violates an established convention or
+      omits something a competent designer would always include.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document in
+    sourceNotes why the flag was intentional.

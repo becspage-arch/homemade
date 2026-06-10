@@ -2,6 +2,19 @@
 
 **Status:** Stub. Authoring deferred to K-5.
 
+**K-4.1 inheritance note (2026-06-10):** when K-5 lands the
+grading library, the K-5 sweater + cardigan prompt inherits the
+K-4.1 cross-cutting prompt requirements (circle your size,
+concrete gauge consequence, cast-on tail formula, construction-
+direction-WHY, stitch count check-ins, no external video / photo
+dependencies, `### Common faults` H3, Persona stuck-check) AND
+populates the K-4.1 schema fields (`stitchCountCheckpoints`,
+`needleBySection`, `lifelinePoints` where lace yokes warrant,
+`errataVersion`, `errataLog`, `dominantColour` for Fair Isle
+yokes, `recommendedSwatchSizeCm = 20` for cabled sweaters). See
+`docs/knitting-author.md` § "K-4.1 cross-cutting prompt
+requirements" for the canonical list.
+
 Sweater and cardigan authoring requires the knitting grading
 library that K-5 ships. The grading library covers:
 

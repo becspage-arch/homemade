@@ -1,5 +1,11 @@
 # Knitting brioche and double-knit — technique discipline guide
 
+**Guide version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 adds the K-4.1
+prose surfaces (yardage 50% extra, dropped-stitch warning +
+lifeline, chart-engine render of the set-up row, brioche
+edge-stitch HARD body rule).
+
 Reference guide for any project-shape author prompt that carries
 `KnittingTechniqueDiscipline.BRIOCHE_DOUBLEKNIT`. Not a standalone
 author prompt — read this alongside the appropriate shape prompt
@@ -64,6 +70,52 @@ Standard set-up:
 
 State the set-up row plainly in the body. Brioche is the
 technique where readers most often get stuck on the start.
+
+**Chart-engine render of the set-up row, not a photo sequence.**
+The K-4.1 prompt requires the set-up row to ship as a K-2 chart
+showing the symbolic structure (k, sl1yo, k, sl1yo, k...). The
+chart is what the maker reads as she works the first row. Do not
+write "see photo sequence" or "watch the set-up video". The
+chart engine carries this content. State this hard rule at the
+start of the brioche guide section in the body.
+
+## Yardage 50% extra
+
+A K-4.1 prose surface for every brioche pattern:
+
+Brioche eats yarn — roughly 50% more than the equivalent
+stockinette pattern of the same dimensions. State plainly in the
+"What you need" section: "Brioche uses roughly 50% more yarn than
+the same dimensions worked in stockinette. The yardage given
+here accounts for this; don't substitute on stockinette estimates."
+
+## Dropped stitch + lifeline
+
+A K-4.1 prose surface for every brioche pattern:
+
+A dropped stitch in brioche is hard to recover. The paired
+brk-or-brp + yarn-over structure means rolling back a stitch
+loses the column AND the carrying yarn-over above and below the
+drop. State plainly: "Place a lifeline every 6 to 10 rows. If
+you drop a brioche stitch, rip back to the lifeline; trying to
+ladder back up a brioche column is the failure mode this lifeline
+catches." Populate `knitting.lifelinePoints` with the row numbers.
+
+## Brioche edge stitch — HARD body rule
+
+The K-4.1 prompt makes the brioche edge-stitch convention a HARD
+body-prose requirement, not a soft one. Without an edge stitch
+that joins the two layers of brioche, the layers separate at the
+edge into two distinct selvedges that look ragged. State the
+edge convention plainly in the Pattern section:
+
+- The first stitch of each row is slipped with both yarns held
+  together at the front.
+- The last stitch of each row is knit (or purl) through both
+  yarns held together.
+
+A brioche pattern without an edge-stitch convention is rejected
+by the K-4.1 prompt requirements.
 
 ## Two-colour brioche mechanics
 
@@ -196,11 +248,15 @@ Modern reference sources (cite, do not reproduce):
 
 Add to the parent shape prompt's self-critique pass:
 
-1. Set-up row stated plainly.
-2. Brioche abbreviations in `abbreviationsUsed` and the chart
-   key.
+1. Set-up row stated plainly AND shipped as a K-2 chart, not a
+   photo sequence.
+2. Brioche abbreviations in `abbreviationsUsed` and the chart key.
 3. Two-colour pass-A pass-B convention stated where applicable.
 4. Brioche gauge captured in `gaugeInPatternStitch`.
-5. Edge stitch convention stated.
-6. Lifelines named.
-7. Cultural attribution respectful and bounded.
+5. Edge-stitch convention stated as a HARD body rule, not soft.
+6. Yardage 50% extra surfaced in the "What you need" section.
+7. Lifelines named in body AND `knitting.lifelinePoints`
+   populated with row numbers.
+8. Dropped-stitch warning surfaced in body prose with the
+   rip-to-lifeline failure-mode cause.
+9. Cultural attribution respectful and bounded.

@@ -40,7 +40,9 @@ SHAWL or WRAP pattern. Covers triangular shawls, semicircular
 shawls, asymmetric shawls, Faroese shawls, half-pi shawls, square
 shawls, rectangular stoles. Sub-category is `shawl-wrap`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09).
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the K-4.1
+cross-cutting requirements and the Persona stuck-check.
 
 ## Shawl shape reference
 
@@ -158,31 +160,72 @@ marketing.
    direction, the rough wingspan or finished dimensions. Voice
    spec §3.5.
 2. **Orientation paragraph** — one paragraph. Construction
-   direction, the lace tradition (if any), rough yardage,
-   blocked-not-unblocked finished dimensions.
+   direction AND one clause naming why it was chosen for this
+   shawl (top-down lets the knitter try the wingspan against her
+   shoulders as it grows; bottom-up keeps the lace edge crisp;
+   half-pi tessellates the increase maths). The lace tradition (if
+   any), rough yardage, blocked-not-unblocked finished dimensions.
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    yardage, needle size (a sentence on why a larger needle than
    standard), stitch markers, tapestry needle, blocking wires and
    pins, blocking mat.
 4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim. For lace,
    include the pattern-stitch gauge. State that gauge is taken
-   blocked.
+   blocked. State the concrete numeric consequence: for most
+   fingering-weight lace shawls, "1 row per 10 cm tight finishes
+   ≈ 6 cm shorter on a 180 cm wingspan; the centre-back depth
+   shortens correspondingly." Write the actual number, not "wrong
+   size".
 5. **Stitches used** — H2 "Stitches used". UK and US abbreviations.
 6. **Chart key** — H2 "Chart key". When a chart is included, list
    the symbols with their meaning. Reading direction (RS rows
-   right to left, WS rows left to right for flat work).
+   right to left, WS rows left to right for flat work). The chart
+   key repeats at the start of every Pattern sub-section that
+   contains a chart — the knitter shouldn't need to scroll back
+   to a section ten pages prior to remember what `yo` looks like
+   on this chart. Sanity-check the chart against a printed A4
+   black-and-white draft before publication: the K-2 renderer
+   outputs colour and screen-friendly contrast; the printed-mono
+   version is what most lace knitters work from. If a `yo` and a
+   `k2tog` are visually indistinguishable in monochrome, change
+   one of the symbols.
 7. **Pattern** — H2 "Pattern":
+   - **Circle your size** — for graded shawls only. Many shawls
+     ship a single wingspan; on those, skip this step.
    - **Cast on** — state the cast-on method and stitch count. For
-     garter-tab cast-on, walk through the tab construction.
+     garter-tab cast-on, walk through the tab construction. For
+     long-tail cast-on (bottom-up triangles): state the formula
+     `tail_cm ≈ (needleCircumferenceMm × stitchCount) / 10 + 15`
+     and the worked number for the wingspan cast-on count.
    - **Set-up rows** — any garter or stockinette setup before the
      lace pattern.
-   - **Body** — row-by-row or chart-driven. Lifelines every chart
-     repeat. Stitch counts at row ends where they change.
+   - **Body** — row-by-row or chart-driven. Lifelines at every
+     chart-repeat boundary. Populate `knitting.lifelinePoints`
+     with the row numbers — the Studio surfaces a "thread a
+     lifeline?" prompt at each one. Stitch counts at row ends
+     where they change.
+   - **Stitch count check-in (mid-chart and end-of-chart).** Two
+     structural prose entries inside the Pattern section, after
+     the first full chart repeat and at the end of the body
+     before the bind-off. Populate
+     `knitting.stitchCountCheckpoints` with the matching data.
    - **Repeat the chart** — state how many full chart repeats are
      worked.
    - **Edging** — when the shawl has a separately-knitted edging,
      walk through joining or knitted-on edging row-by-row.
-   - **Bind off** — stretchy bind-off, named.
+   - **Bind off** — stretchy bind-off, named. State plainly that
+     a standard bind-off on a lace shawl is a known failure mode:
+     the bind-off controls the blocked wingspan, and a non-
+     stretchy bind-off will not give as the lace opens up, leaving
+     a scalloped, uneven top edge. Default to
+     `JENYS_SURPRISINGLY_STRETCHY` for lace; default to `PICOT`
+     where a decorative edge fits the tradition.
+   - **Common faults** — `### Common faults` H3 inside the Pattern
+     section. For most lace shawls: twisted yarn-overs (the eyelet
+     closes on the next row instead of staying open); lost stitch
+     count from a missed yo or doubled decrease; tight bind-off
+     leaving a scalloped top edge; hairy yarn that obscures the
+     eyelets so the pattern reads muddy after blocking.
 8. **Blocking** — H2 "Blocking". Pin out to the dimensions stated
    in `finishedSizeText`. Wires through the edge, pins at the
    points. Cold soak with no-rinse wool wash. Press out water with
@@ -255,10 +298,13 @@ additions:
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Tight lace on a small needle that
-  won't open; cobweb yarn that snaps under pinning tension;
-  superwash that grows three sizes after blocking and never
-  recovers. Name the failure mode.
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern with
+  a structural prose H3. Tight lace on a small needle that won't
+  open; cobweb yarn that snaps under pinning tension; superwash
+  that grows three sizes after blocking and never recovers — state
+  the failure mode and the cause as named prose in the H3, not
+  as a photo reference.
 - **One concrete drape note** — close with "Drapes across the
   shoulders held at the centre back" or "Pins around the
   shoulders with a brooch" rather than marketing language.
@@ -309,3 +355,46 @@ half-circles) set `sourceType: "SYNTHESISED"`.
 10. Lifelines named where warranted.
 11. Blocking is a structured section.
 12. Cultural attribution respectful and bounded.
+13. K-4.1 cross-cutting:
+    - Orientation paragraph names construction direction AND
+      justifies the choice.
+    - Gauge section names the concrete numeric consequence in
+      cm, not "wrong size".
+    - Long-tail cast-on (bottom-up shapes): tail-length formula
+      AND worked number present.
+    - Chart key repeats at the start of every Pattern sub-section
+      that contains a chart; printed-A4-monochrome sanity check
+      noted.
+    - `knitting.lifelinePoints` populated with row numbers at
+      every chart-repeat boundary.
+    - Stitch count check-ins (mid-chart and end-of-chart) present
+      in prose AND mirrored in `stitchCountCheckpoints`.
+    - Stretchy bind-off named; the consequence of a standard
+      (non-stretchy) bind-off stated as a failure mode.
+    - `### Common faults` H3 present in Pattern section with
+      2-4 named failure modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+14. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops because a skill
+      or term is assumed she hasn't built. (Lace shawls rarely
+      target beginners; the flag here is more about where the
+      pattern assumes "you know what a yo is" without saying so.)
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the chart key isn't clear, where the
+      lifeline cadence is wrong, where the bind-off choice isn't
+      justified.
+    - **Master (Miller / Bush / Walker / Galina Khmeleva
+      literature):** flag where the pattern violates an established
+      convention or omits something a competent lace designer
+      would always include (blocked dimensions, wires-not-just-
+      pins for the long edges, the tradition's cultural attribution
+      done with care).
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document why it
+    was intentional. Future iteration: when an unpaid tester pool
+    exists post-launch, the stuck-check becomes pre-publication
+    verification.

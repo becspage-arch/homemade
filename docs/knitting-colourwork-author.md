@@ -1,5 +1,11 @@
 # Knitting colourwork authoring — two-axis routing wrapper
 
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 inherits the K-4.1
+cross-cutting requirements + Persona stuck-check from the picked
+project-shape prompt; the colourwork-specific additions live in
+`docs/knitting-colourwork-guide.md` v2.
+
 This prompt fires when the autopilot picks the `colourwork`
 sub-category for the knitting category. It is a routing wrapper,
 not a standalone author prompt — colourwork is a technique

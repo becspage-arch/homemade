@@ -1,5 +1,12 @@
 # Knitting brioche and double-knit authoring — two-axis routing wrapper
 
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 inherits the K-4.1
+cross-cutting requirements + Persona stuck-check from the picked
+project-shape prompt; the brioche-doubleknit-specific additions
+live in `docs/knitting-brioche-doubleknit-guide.md` v2, which
+makes the brioche edge-stitch convention a HARD body rule.
+
 This prompt fires when the autopilot picks the
 `brioche-doubleknit` sub-category for the knitting category. It is
 a routing wrapper, not a standalone author prompt — brioche and

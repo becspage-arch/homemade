@@ -2,6 +2,13 @@
 
 **Status:** Stub. Authoring deferred to K-5.
 
+**K-4.1 inheritance note (2026-06-10):** when K-5 lands, the K-5
+vest prompt inherits the K-4.1 cross-cutting prompt requirements
+and schema fields. See `docs/knitting-author.md` § "K-4.1
+cross-cutting prompt requirements" and
+`docs/knitting-sweater-cardigan-author.md` for the same
+inheritance note in fuller form.
+
 Vests are sleeveless garments and share most of the sweater +
 cardigan grading rules:
 

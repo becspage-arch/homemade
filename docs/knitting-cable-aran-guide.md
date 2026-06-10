@@ -1,5 +1,16 @@
 # Knitting cables and Aran — technique discipline guide
 
+**Guide version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 adds the K-4.1
+prose surfaces (compare-to-chart cadence, cable-needle alternatives,
+"knit first stitch after the cross loosely") and HARDENS the
+"cable panel gauge in body" requirement: when the discipline
+includes CABLE_ARAN, the cable panel gauge in
+`gaugeInPatternStitch` AND in body prose is a HARD requirement,
+not soft. v2 also sets `knitting.recommendedSwatchSizeCm = 20`
+on cabled patterns (cables need a 20 cm × 20 cm swatch; the
+default 15 cm × 15 cm doesn't show the full cable repeat).
+
 Reference guide for any project-shape author prompt that carries
 `KnittingTechniqueDiscipline.CABLE_ARAN`. Not a standalone author
 prompt — read this alongside the appropriate shape prompt
@@ -69,16 +80,64 @@ once practised but risks dropping a stitch. State which method
 the pattern teaches in the body. Default to the cn method for
 beginner-friendly patterns.
 
+## Cable-needle alternatives
+
+When the knitter is between tools, a cable needle isn't required.
+The K-4.1 prompt surfaces these alternatives in body prose for
+any cabled pattern that recommends the cable-needle method:
+
+- **A chopstick** — wooden, smooth, slightly tapered. The taper
+  helps recover dropped stitches.
+- **A paperclip** — large paperclip, opened to a single bend.
+  Best for narrow cables (C4F / C4B); awkward on wide cables.
+- **A spare double-pointed needle (DPN)** — same diameter as the
+  working needles. Best because the stitch sits cleanly.
+- **A bobby pin** — small enough for fine cables, slightly
+  springy.
+
+State at least one alternative in the body for any cabled pattern
+that recommends the cable-needle method. The maker won't always
+have a dedicated cable needle in her bag.
+
+## Knit the first stitch after the cross loosely
+
+A K-4.1 body-prose surface for every cabled pattern:
+
+The first stitch worked after a cable crossing is the visible
+tension point. If the maker knits it at her usual tension, the
+crossing pulls in and shows a small horizontal "tension scar"
+across the cable. State plainly in the body: "Knit the first
+stitch immediately after each cable cross slightly looser than
+the rest of the row. The crossing pulls the working yarn back
+under the stitches; the loose first stitch absorbs the tension
+without showing." Once is enough; place this at the first cable
+cross in the Pattern section.
+
+## Compare to chart every cable round
+
+A verification cadence the K-4.1 prompt surfaces in body prose:
+
+After every cable round, hold the work up next to the chart and
+compare visually before knitting on. Cables get reversed (C4F
+read as C4B) more often than any other knitting error and the
+visual confirmation catches it in one round, not ten rounds
+later. State this plainly in the Pattern section.
+
 ## Stitch counts and gauge
 
 Cables pull the fabric in.
 
 - Cabled fabric runs narrower than its plain-stockinette stitch
   count would suggest — by 10 to 25% depending on density.
-- Gauge swatch the cable pattern, not just the stockinette,
-  when the cable panel is the main feature.
-- State the cable panel's gauge in `gaugeInPatternStitch` as
-  the canonical structured record.
+- Gauge swatch the cable pattern at 20 cm × 20 cm, not the
+  default 15 cm × 15 cm. Cable panels need the larger swatch to
+  show the full repeat. Populate
+  `knitting.recommendedSwatchSizeCm = 20` on cabled patterns.
+- HARD body requirement: when the discipline includes CABLE_ARAN,
+  the cable panel gauge in `gaugeInPatternStitch` AND in body
+  prose is a hard requirement, not soft. State both in the Gauge
+  section. A cabled pattern without a cable-panel gauge is
+  rejected by the K-4.1 prompt requirements.
 
 ## Reading cable charts
 
@@ -201,9 +260,18 @@ Add to the parent shape prompt's self-critique pass:
 
 1. Cable notation matches the chart key.
 2. Cable-needle convention (with or without) stated.
-3. Cable panel gauge captured in `gaugeInPatternStitch` where
-   the pattern is cable-led.
-4. WS row convention stated in the chart key.
-5. Block-with-steam stated in Finishing section.
-6. No Aran clan-pattern attribution claims.
-7. Cultural attribution respectful and bounded.
+3. At least one cable-needle alternative named (chopstick / DPN
+   / paperclip / bobby pin).
+4. "Knit first stitch after the cross loosely" surfaced in body
+   prose at first cable cross.
+5. "Compare to chart every cable round" verification cadence
+   surfaced in body prose.
+6. Cable panel gauge captured in `gaugeInPatternStitch` AND in
+   body prose. HARD requirement when discipline includes
+   CABLE_ARAN.
+7. `knitting.recommendedSwatchSizeCm` set to 20 on cabled
+   patterns.
+8. WS row convention stated in the chart key.
+9. Block-with-steam stated in Finishing section.
+10. No Aran clan-pattern attribution claims.
+11. Cultural attribution respectful and bounded.

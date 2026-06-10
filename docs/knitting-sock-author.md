@@ -2,6 +2,18 @@
 
 **Status:** Stub. Authoring deferred to K-5.
 
+**K-4.1 inheritance note (2026-06-10):** when K-5 lands the sock
+grading library, the K-5 sock prompt inherits the K-4.1
+cross-cutting prompt requirements (circle your size, concrete
+gauge consequence — for socks, in cm of foot circumference per
+stitch-per-10cm of drift; cast-on tail formula; stitch count
+check-ins at the heel turn and at the toe; no external video or
+photo dependencies; `### Common faults` H3; Persona stuck-check)
+AND populates the K-4.1 schema fields (`stitchCountCheckpoints`
+at the heel turn and toe, `needleBySection` for ribbed cuffs).
+See `docs/knitting-author.md` § "K-4.1 cross-cutting prompt
+requirements".
+
 Sock authoring needs its own grading rule set distinct from the
 sweater + cardigan rules. K-5 will ship sock-specific grading at
 `apps/web/src/lib/knitting/grading/socks.ts`.

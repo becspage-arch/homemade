@@ -1,5 +1,11 @@
 # Knitting specialty techniques — discipline guide
 
+**Guide version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 adds the K-4.1
+prose surfaces (i-cord cast-on, tubular cast-on / bind-off
+walk-through, pick-up-stitch direction guidance for curved edges,
+centre-pull-vs-outside-pull ball mention).
+
 Reference guide for any project-shape author prompt that carries
 `KnittingTechniqueDiscipline.SPECIALTY`. Not a standalone author
 prompt — read this alongside the appropriate shape prompt.
@@ -157,6 +163,96 @@ into a round tube.
 Standard uses: drawstrings, ties, applied i-cord edging,
 strap-decorations. State the i-cord use case in the body.
 
+## I-cord cast-on
+
+A K-4.1 prose surface for any pattern that begins with an i-cord
+edge (top-down shawls, throws, bags):
+
+I-cord cast-on starts the piece with an applied i-cord already in
+place at the cast-on edge. Procedure:
+
+1. Cast on 3 stitches using long-tail or the cable cast-on.
+2. Knit 2 stitches.
+3. Slip the right needle's stitches back to the left needle.
+4. Repeat steps 2-3 for the number of stitches needed.
+5. The "third stitch" each time is a yarn-over that becomes the
+   permanent edge.
+
+The K-4.1 prompt requires patterns that recommend i-cord edges
+to walk through the i-cord cast-on once at the first appearance.
+
+## Tubular cast-on and bind-off walk-through
+
+A K-4.1 prose surface for ribbed pieces:
+
+Tubular cast-on and tubular bind-off match each other and produce
+a polished, stretchy rib edge that flows directly into the
+ribbing pattern. Standard for sock cuffs, glove cuffs, hat brims
+where the rib is the design feature.
+
+**Italian tubular cast-on (most common):**
+1. Cast on half the stitch count needed using a waste yarn long-
+   tail or backwards-loop cast-on.
+2. With the working yarn, knit one row.
+3. Knit the next row with the working yarn lifting alternating
+   strands from the waste yarn, making the working stitches
+   double the count.
+4. Drop the waste yarn.
+5. Begin the ribbing with k1, p1 alternation.
+
+**Tubular bind-off (matches the cast-on):**
+1. With a tapestry needle, set up the live stitches in a knit-
+   purl alternation matching the rib.
+2. Graft as if using Kitchener stitch, but alternating between
+   the front (knit) layer and the back (purl) layer.
+
+State the matching cast-on and bind-off plainly in the body
+where the pattern uses ribbed edges. The K-4.1 prompt requires
+this walk-through once at first use of the tubular method.
+
+## Pick-up-stitch direction guidance for curved edges
+
+A K-4.1 prose surface for patterns with curved-edge pickup
+(hat crowns, sock heels, neckband, sleeve cap):
+
+Direction matters when picking up stitches along a curved or
+diagonal edge. State the direction plainly:
+
+- Working from RS, insert the needle from front to back through
+  the edge stitch.
+- Pull the loop through to the right side.
+- Move to the next stitch in the rate stated in the pattern.
+
+State the pickup ratio (e.g. "pick up 2 stitches in every 3 row
+ends") for diagonal edges and "1 stitch per edge stitch" for
+straight edges. Picking up wrong-side-out flips the visible
+texture and produces a visible band of WS stitches showing on
+the RS — a common silent failure mode.
+
+State the direction and ratio plainly at every pick-up step in
+the Pattern section.
+
+## Centre-pull versus outside-pull ball
+
+A K-4.1 prose surface for body voice in the "What you need"
+section, especially for large blanket or shawl patterns:
+
+Yarn comes off a ball or skein two ways:
+
+- **Centre-pull** — the ball doesn't roll; the yarn comes from
+  the inside. Many cake-wound yarns ship this way. The end can
+  be hard to find the first time and a partial collapse of the
+  centre produces a tangled clump.
+- **Outside-pull** — the ball or skein rolls as the yarn comes
+  off the outside. Cleaner unwinding but the ball needs space
+  to roll.
+
+For long projects (blankets, large shawls) name which pull the
+pattern assumes in the "What you need" section. State the
+trade-off in one sentence: "This pattern is written for an
+outside-pull skein wound into a swift or a yarn bowl. Centre-pull
+cakes work too but check the cake hasn't collapsed mid-project."
+
 ## Provisional cast-on variants
 
 Provisional cast-ons let you recover live stitches at the
@@ -246,4 +342,12 @@ Add to the parent shape prompt's self-critique pass:
 3. Short-row method named where used.
 4. Provisional cast-on variant named where used.
 5. Cable length and cable type stated for magic loop.
-6. Cultural attribution respectful and bounded.
+6. I-cord cast-on walked through where the pattern uses an
+   i-cord edge.
+7. Tubular cast-on AND tubular bind-off walked through where
+   the pattern uses the tubular method.
+8. Pick-up-stitch direction and ratio stated at every pick-up
+   step.
+9. Centre-pull vs outside-pull mentioned in "What you need" for
+   long-yardage patterns.
+10. Cultural attribution respectful and bounded.

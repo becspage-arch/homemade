@@ -1,5 +1,12 @@
 # Knitting lace — technique discipline guide
 
+**Guide version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 adds the K-4.1
+prose surfaces (first-time chart-reading walk-through, stitch-marker
+placement between repeats, reading-on-phone-vs-paper practical
+note) + `knitting.lifelinePoints` schema field that the lace
+prompt now populates.
+
 Reference guide for any project-shape author prompt that carries
 `KnittingTechniqueDiscipline.LACE`. Not a standalone author
 prompt — read this alongside the appropriate shape prompt
@@ -65,7 +72,67 @@ row, you can rip back to the lifeline without losing your place.
   Not the working yarn — the lifeline must stand out.
 
 State a lifeline recommendation in the body for any lace
-pattern more than 20 rows long.
+pattern more than 20 rows long AND populate
+`knitting.lifelinePoints` with the row numbers per the K-4.1
+schema. The Studio surfaces a "thread a lifeline?" prompt at each
+listed row.
+
+## First-time chart reading walk-through
+
+The K-4.1 prompt requires lace patterns to include a one-paragraph
+first-time chart-reading walk-through at the start of the Pattern
+section the first time the pattern uses a chart. The walk-through
+covers, in plain prose:
+
+- The chart reads bottom to top — row 1 is the first row worked,
+  at the bottom of the chart.
+- Flat work, right-side rows: read right to left. Match the way
+  the stitches face on the needle.
+- Flat work, wrong-side rows: read left to right.
+- In-the-round: every row reads right to left.
+- Each cell is one stitch. The symbol in the cell is the
+  instruction.
+- A `no-stitch` cell (diagonal stripes in the K-2 renderer) means
+  "skip; this column doesn't carry a stitch on this row" — common
+  in shaped lace where the row count varies across the row.
+
+Land this walk-through once at the start of the Pattern section
+on every lace pattern. Subsequent chart references can lean on
+it.
+
+## Stitch markers between repeats
+
+Stitch markers between every pattern repeat keep the count steady
+when the eyelets blur visually. State this in the body for any
+lace pattern with a repeat unit:
+
+- Place a stitch marker before the first stitch of each pattern
+  repeat across the row.
+- After each repeat, the count between markers should equal the
+  unit count. If it doesn't, the error sits inside that one
+  repeat — rip back to the marker, not to the lifeline.
+- Use locking markers on lace; ring markers slip too freely
+  through yarn-overs and can pop off.
+
+State the marker placement plainly in the Pattern section at the
+first chart appearance.
+
+## Reading on a phone versus paper
+
+A practical note the K-4.1 prompt surfaces in body prose:
+
+Lace chart layouts read very differently between a printed A4
+page and a phone screen. State plainly:
+
+- A printed A4 chart lets the knitter trace the full row with a
+  finger and see surrounding rows in peripheral vision.
+- A phone screen zooms in on one or two rows. The maker loses
+  the visual context around the active row.
+
+Recommendation in the body: print the chart at A4 (or larger if
+the chart is dense), use a row-by-row magnetic chart-keeper or a
+sticky-note as a row marker. The Studio's chart highlight surfaces
+the active row when the maker is reading off-screen.
 
 ## Blocking
 
@@ -185,10 +252,15 @@ Modern reference sources (cite, do not reproduce):
 Add to the parent shape prompt's self-critique pass:
 
 1. Yarn-over notation matches the chart.
-2. Lifeline recommendation in the body.
-3. Blocking stated as essential, not optional.
-4. Finished dimensions are blocked dimensions.
-5. `no-stitch` cells in the chart key when stitch count varies.
-6. WS row convention stated in the chart key.
-7. Nupps walked through step-by-step where used.
-8. Cultural attribution respectful and bounded.
+2. Lifeline recommendation in the body AND
+   `knitting.lifelinePoints` populated with row numbers.
+3. First-time chart-reading walk-through present at the start of
+   the Pattern section.
+4. Stitch marker placement between repeats stated in body.
+5. Reading-on-phone-vs-paper practical note present.
+6. Blocking stated as essential, not optional.
+7. Finished dimensions are blocked dimensions.
+8. `no-stitch` cells in the chart key when stitch count varies.
+9. WS row convention stated in the chart key.
+10. Nupps walked through step-by-step where used.
+11. Cultural attribution respectful and bounded.

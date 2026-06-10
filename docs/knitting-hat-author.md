@@ -41,7 +41,9 @@ Canonical input for any autopilot fire that drafts a knitting HAT
 pattern. Covers beanies, slouchy hats, fitted hats, bucket hats,
 berets, watchcaps, earflap hats. Sub-category is `hat`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09).
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the
+K-4.1 cross-cutting requirements and the Persona stuck-check.
 
 ## How a drafting session uses this file
 
@@ -186,29 +188,68 @@ Rules:
    construction direction, the head circumference. Voice spec §3.5.
 2. **Orientation paragraph** — one paragraph. Construction (worked
    in the round from the brim, top-down, or in the round from a
-   provisional cast-on), the rough yardage estimate, one practical
-   wear note.
+   provisional cast-on) AND one clause naming why it was chosen
+   for this hat (bottom-up keeps the ribbed brim crisp; top-down
+   lets the knitter try the hat on as she works). The rough
+   yardage estimate. One practical wear note.
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    grams, primary needle, secondary needle for the brim if used,
    stitch markers, tapestry needle.
-4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, then one
-   sentence on swatching. Gauge sets the finished circumference;
-   a tight knitter on the same yarn gets a child's hat instead of
-   an adult one.
+4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, one sentence
+   on swatching, then the concrete numeric consequence: state in
+   centimetres how much the brow finishes off-target per stitch-
+   per-10cm of gauge drift on this yarn weight. For most adult
+   hats: "21 sts per 10 cm vs 20 sts per 10 cm finishes 2 cm tight
+   at the brow — adult M becomes adult S". Write the actual
+   number, not a vague "wrong size" gesture.
 5. **Stitches used** — H2 "Stitches used". UK and US abbreviations.
 6. **Pattern** — H2 "Pattern":
-   - **Cast on** — state the cast-on method and the cast-on count
-     for each size, "Cast on 96 (100, 104) sts on 3.75 mm needles".
+   - **Circle your size** — one sentence near the top of the
+     Pattern section instructing the knitter to circle the size
+     she'll work in the printed pattern. "Before you cast on,
+     circle your size in the figures below — every count and
+     measurement in this pattern reads S (M, L)."
+   - **Cast on** — state the cast-on method, the cast-on count
+     for each size, "Cast on 96 (100, 104) sts on 3.75 mm
+     needles". For long-tail cast-on, state the tail-length
+     formula `tail_cm ≈ (needleCircumferenceMm × stitchCount) /
+     10 + 15` AND a worked number for the largest size. Example:
+     "For size L on a 3.75 mm needle, cast on 104 sts ≈ tail of
+     (3.75 × 104) / 10 + 15 ≈ 54 cm of tail plus 15 cm working
+     end ≈ 69 cm. Round up to 75 cm to be safe."
    - **Brim** — row count for the ribbed band, switch needle size
      where applicable.
    - **Body** — round-by-round to the start of crown shaping.
      Mention the stitch pattern, repeat structure, length to the
      decrease start.
-   - **Crown shaping** — number every decrease round. Stitch counts
-     at the end of every decrease round. End at 8 to 12 stitches
-     for a grafted top, or at 6 to 8 stitches for a gathered top.
+   - **M1 explained inline at first appearance.** When the body
+     uses `m1` (make one) for the first time, walk through the
+     exact action in the body prose at that point: "Lift the
+     horizontal strand between the stitch on the right needle and
+     the stitch on the left needle from front to back; knit
+     through the back loop. That's `m1r`. `m1l` lifts the strand
+     from back to front and knits through the front loop." Do
+     this once at first appearance; later uses can refer back.
+   - **Stitch count check-in (after brim).** Structural prose
+     entry: "After completing the brim, you should have N (N, N)
+     stitches on the needle." Populate
+     `knitting.stitchCountCheckpoints` with the matching entry.
+   - **Crown shaping** — number every decrease round. Stitch
+     counts at the end of every decrease round. End at 8 to 12
+     stitches for a grafted top, or at 6 to 8 stitches for a
+     gathered top.
+   - **Stitch count check-in (after crown).** Structural prose
+     entry: "After the final decrease round, you should have N
+     stitches on the needle, ready to graft / gather." Populate
+     `stitchCountCheckpoints` with the matching entry.
    - **Finishing the top** — gather the remaining stitches onto a
      yarn tail, draw up, fasten on the inside.
+   - **Common faults** — `### Common faults` H3. For most hats:
+     ribbed brim too loose (cast-on tension); crown decreases
+     stacking visibly in one column (decrease round started
+     mid-section); top gather puckers (gather too tight); brim
+     curls under (k1 p1 ribbing on too few stitches for the
+     pattern stitch chosen).
 7. **Finishing** — H2 "Finishing". Weaving in ends, blocking.
    Beanies block lightly; berets block aggressively over a plate.
 8. **Care** — H2 "Care". Fibre-specific.
@@ -303,10 +344,13 @@ additions:
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Acrylic crowns that stretch out under
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern (which
+  depended on photography we don't have) with a structural prose H3
+  inside the Pattern section. Acrylic crowns that stretch out under
   weight; cotton hats that lose elasticity at the brim; superwash
-  merino that grows two sizes in the wash — name the failure
-  mode where it's known.
+  merino that grows two sizes in the wash — state the failure mode
+  and the cause as named prose, not a photo reference.
 - **One concrete fit note** — close with "Sits at the brow line"
   or "Slouches three fingers behind the crown" rather than
   marketing language.
@@ -347,4 +391,38 @@ high-fashion berets) set `sourceType: "SYNTHESISED"`.
 10. Crown-shaping decreases numbered with stitch counts at every
     decrease round.
 11. In-the-round method named in orientation.
+12. K-4.1 cross-cutting:
+    - Orientation paragraph states construction direction AND
+      justifies the choice in one clause.
+    - "Circle your size" instruction present near the top of the
+      Pattern section.
+    - Gauge section names the concrete numeric brow consequence,
+      not "wrong size".
+    - Long-tail cast-on: tail-length formula AND worked number
+      present for the largest size.
+    - `m1` walked through inline on first appearance.
+    - Stitch count check-in after the brim AND after the crown.
+      `knitting.stitchCountCheckpoints` populated with the same
+      data.
+    - `### Common faults` H3 present in the Pattern section with
+      2-4 named failure modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+13. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops because a skill
+      or term is assumed she hasn't built.
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built or where the chart doesn't say what to do.
+    - **Master (Walker / Bush / Miller / Zimmermann literature):**
+      flag where the pattern violates an established convention or
+      omits something a competent designer would always include.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document in
+    sourceNotes why the flag was intentional. Future iteration:
+    when an unpaid tester pool exists post-launch, the stuck-check
+    becomes pre-publication verification.
 12. Cultural attribution respectful and bounded.

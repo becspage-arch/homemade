@@ -41,6 +41,11 @@ export type FindingKind =
   | 'clinical-vocab'
   | 'grade-level'
   | 'missing-node-type'
+  // Added 2026-06-10 (knitting K-4.1 author-prompt update).
+  | 'knitting-external-visual'
+  | 'knitting-unknown-image-src'
+  | 'knitting-missing-common-faults'
+  | 'knitting-missing-stitch-checkpoints'
 
 export interface Finding {
   severity: Severity
@@ -661,6 +666,185 @@ function checkSafetyInfoPanels(body: unknown, report: VoiceCheckReport): void {
   walk(doc.content, 'body')
 }
 
+// ─── Knitting K-4.1 author-prompt rules ─────────────────────────────────────
+
+/**
+ * Knitting K-4.1 rules. Applied only when the input is identifiably a
+ * knitting tutorial — either `categorySlug === 'knitting'` or a top-level
+ * `knitting` block exists.
+ *
+ * Rules:
+ *   1. Body containing "see video" / "watch the video" / "see the photo of
+ *      the swatch" / "watch this" — block. No external-visual gestures.
+ *   2. Body referencing an image src that isn't a chart, parametric
+ *      schematic, or PD-attributed illustration — warn. (We don't yet have
+ *      an image library to verify against; tighten when the PD diagram
+ *      pipeline lands.)
+ *   3. PATTERN body without a "Common faults" H3 — warn. (Graduates to
+ *      block in a later iteration once the back-catalogue is current.)
+ *   4. PATTERN body with shaping (sizesGraded non-null OR pieces non-null)
+ *      missing populated `knitting.stitchCountCheckpoints` — warn.
+ *      (Graduates to block later.)
+ */
+const KNITTING_EXTERNAL_VISUAL_PATTERNS: { regex: RegExp; phrase: string; severity: Severity }[] = [
+  { regex: /\bsee\s+(?:the\s+)?video\b/i, phrase: 'see video', severity: 'error' },
+  { regex: /\bwatch\s+(?:the\s+)?video\b/i, phrase: 'watch the video', severity: 'error' },
+  { regex: /\bwatch\s+this\s+video\b/i, phrase: 'watch this video', severity: 'error' },
+  {
+    regex: /\bsee\s+(?:the\s+)?photo\s+of\b/i,
+    phrase: 'see the photo of',
+    severity: 'error',
+  },
+  {
+    regex: /\bsee\s+(?:the\s+)?photograph\s+of\b/i,
+    phrase: 'see the photograph of',
+    severity: 'error',
+  },
+  {
+    regex: /\bsee\s+(?:the\s+)?picture\s+of\b/i,
+    phrase: 'see the picture of',
+    severity: 'error',
+  },
+  { regex: /\bwatch\s+(?:the\s+)?tutorial\b/i, phrase: 'watch the tutorial', severity: 'error' },
+]
+
+function isKnittingInput(root: Record<string, unknown>): boolean {
+  if (typeof root.categorySlug === 'string' && root.categorySlug === 'knitting') return true
+  if (root.knitting && typeof root.knitting === 'object') return true
+  return false
+}
+
+function isPatternType(root: Record<string, unknown>): boolean {
+  return typeof root.type === 'string' && root.type.toUpperCase() === 'PATTERN'
+}
+
+function hasShaping(root: Record<string, unknown>): boolean {
+  const knitting = root.knitting as Record<string, unknown> | undefined
+  if (!knitting) return false
+  if (knitting.sizesGraded !== null && knitting.sizesGraded !== undefined) return true
+  if (knitting.pieces !== null && knitting.pieces !== undefined) return true
+  return false
+}
+
+function stitchCheckpointsPopulated(root: Record<string, unknown>): boolean {
+  const knitting = root.knitting as Record<string, unknown> | undefined
+  if (!knitting) return false
+  const cps = knitting.stitchCountCheckpoints
+  return Array.isArray(cps) && cps.length > 0
+}
+
+function bodyContainsCommonFaultsHeading(body: unknown): boolean {
+  if (!body || typeof body !== 'object') return false
+  const doc = body as TipTapNode
+  if (!Array.isArray(doc.content)) return false
+
+  let found = false
+  function walk(nodes: TipTapNode[]): void {
+    for (const node of nodes) {
+      if (found) return
+      if (node.type === 'heading') {
+        const text = flattenInline(node).toLowerCase().trim()
+        if (text === 'common faults' || text.startsWith('common faults')) {
+          found = true
+          return
+        }
+      }
+      if (Array.isArray(node.content)) walk(node.content)
+    }
+  }
+  walk(doc.content)
+  return found
+}
+
+const APPROVED_IMAGE_SRC_PATTERNS: RegExp[] = [
+  /chart/i,
+  /schematic/i,
+  /diagram/i,
+  /illustration/i,
+  /\bpd-/i,
+  /public[-_]?domain/i,
+]
+
+function collectImageSrcs(body: unknown): { src: string; path: string }[] {
+  if (!body || typeof body !== 'object') return []
+  const doc = body as TipTapNode
+  if (!Array.isArray(doc.content)) return []
+  const results: { src: string; path: string }[] = []
+
+  function walk(nodes: TipTapNode[], parentPath: string): void {
+    nodes.forEach((node, idx) => {
+      const path = `${parentPath} > ${nodeLabel(node, idx)}`
+      if (node.type === 'image' && node.attrs && typeof node.attrs.src === 'string') {
+        results.push({ src: node.attrs.src, path })
+      }
+      if (Array.isArray(node.content)) walk(node.content, path)
+    })
+  }
+  walk(doc.content, 'body')
+  return results
+}
+
+function checkKnittingK41(root: Record<string, unknown>, report: VoiceCheckReport): void {
+  if (!isKnittingInput(root)) return
+  const body = root.body
+
+  // Rule 1: external-visual gestures in body prose. Walk paragraph chunks.
+  const chunks = extractProseChunks(body)
+  for (const chunk of chunks) {
+    if (!chunk.path.startsWith('body')) continue
+    for (const rule of KNITTING_EXTERNAL_VISUAL_PATTERNS) {
+      const match = rule.regex.exec(chunk.text)
+      if (match) {
+        const finding: Finding = {
+          severity: rule.severity,
+          kind: 'knitting-external-visual',
+          message: `body contains "${match[0]}" — knitting patterns must be complete without external video or photo. Use a chart (K-2 engine) or PD line-drawing illustration. See docs/knitting-author.md § K-4.1 cross-cutting prompt requirements item 6.`,
+          path: chunk.path,
+          snippet: match[0],
+        }
+        if (rule.severity === 'error') report.errors.push(finding)
+        else report.warnings.push(finding)
+      }
+    }
+  }
+
+  // Rule 2: image src that isn't an approved category.
+  const images = collectImageSrcs(body)
+  for (const { src, path } of images) {
+    const ok = APPROVED_IMAGE_SRC_PATTERNS.some((re) => re.test(src))
+    if (!ok) {
+      report.warnings.push({
+        severity: 'warn',
+        kind: 'knitting-unknown-image-src',
+        message: `image src "${src}" is not recognisably a chart, schematic, diagram, illustration, or PD-attributed image. K-4.1 expects every knitting image to come from one of those pipelines; tighten the rule when the PD diagram pipeline lands.`,
+        path,
+        snippet: src,
+      })
+    }
+  }
+
+  // Rule 3 + 4 — apply only to PATTERN bodies.
+  if (!isPatternType(root)) return
+
+  if (!bodyContainsCommonFaultsHeading(body)) {
+    report.warnings.push({
+      severity: 'warn',
+      kind: 'knitting-missing-common-faults',
+      message: `PATTERN body has no "Common faults" H3 inside the Pattern section. K-4.1 replaces the "show the failed swatch" pattern with a structural prose H3 listing 2-4 named failure modes. See docs/knitting-author.md § K-4.1 item 7.`,
+      path: 'body',
+    })
+  }
+
+  if (hasShaping(root) && !stitchCheckpointsPopulated(root)) {
+    report.warnings.push({
+      severity: 'warn',
+      kind: 'knitting-missing-stitch-checkpoints',
+      message: `PATTERN with shaping (sizesGraded or pieces) has no populated knitting.stitchCountCheckpoints. K-4.1 requires structural stitch-count check-ins on every shaped pattern; populate the array. See docs/knitting-author.md § K-4.1 item 5.`,
+      path: 'knitting.stitchCountCheckpoints',
+    })
+  }
+}
+
 // ─── Rule application ───────────────────────────────────────────────────────
 
 export function runVoiceCheck(input: unknown): VoiceCheckReport {
@@ -690,6 +874,7 @@ export function runVoiceCheck(input: unknown): VoiceCheckReport {
     checkSafetyInfoPanels(root.body, report)
     checkTipTapTextNodeType(root.body, report)
     checkInlineClinicalVocab(root.body, report)
+    checkKnittingK41(root, report)
   } else {
     checkSafetyInfoPanels(body, report)
     checkTipTapTextNodeType(body, report)

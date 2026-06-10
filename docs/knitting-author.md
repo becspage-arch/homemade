@@ -33,9 +33,12 @@ Read this whole file alongside `docs/crochet-author.md` — the body
 shape, voice rules, and chart conventions are the same. This file
 covers the knitting-specific deltas.
 
-**Prompt version:** 1 (Knitting pipeline scaffold — 2026-05-17). Bump
-on iteration. Inherits the v5 content-integration appendix from the
-cooking template unchanged.
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline scaffold (2026-05-17). v2 lands the
+K-4.1 cross-cutting prompt requirements + the Persona stuck-check
+self-critique heuristic per the K-4 reference-pattern audit
+(priceless-tharp-8808ff). Inherits the v5 content-integration
+appendix from the cooking template unchanged.
 
 ## How a drafting session uses this file
 
@@ -323,6 +326,88 @@ Knitting is always charted `layout: 'flat'` even when the pattern is
 knit in the round — knitting publishing convention shows the chart as
 a flat repeat regardless of construction.
 
+## K-4.1 cross-cutting prompt requirements (ALL project shapes)
+
+These requirements emerged from the K-4 reference-pattern audit
+(priceless-tharp-8808ff, 2026-06-10). Every project-shape author
+prompt (scarf-cowl, hat, mitt-glove, shawl-wrap, blanket,
+accessory-other) inherits them; per-shape prompts add shape-specific
+items on top. The schema carries structured fields for the items
+that need machine-readable data; the body carries the prose
+version of the same content.
+
+1. **Circle your size before you begin.** Graded patterns: in the
+   body structure, near the top of the Pattern section, instruct
+   the knitter to circle the size she will work in the printed
+   pattern. State once. Skip for ungraded patterns (most blankets,
+   most accessories).
+2. **Concrete consequence of gauge.** In the Gauge section, follow
+   the gauge value with one sentence stating the actual numeric
+   impact of being off — for this piece type, in this measurement.
+   Don't write "the piece will be the wrong size"; write the
+   number ("21 sts vs 20 sts per 10 cm finishes 2 cm tight at the
+   brow", "a scarf knit 1 row per 10 cm too loose finishes 18 cm
+   longer than planned").
+3. **Cast-on tail length pre-calculation.** For long-tail
+   cast-ons (the default for most shapes), state the formula
+   `tail_cm ≈ (needleCircumferenceMm × stitchCount) / 10 + 15`
+   AND a worked number for the largest size in the pattern.
+   Skip for non-long-tail cast-ons.
+4. **Construction direction — WHY.** In the orientation paragraph,
+   name the construction direction AND state in one clause why it
+   was chosen for this piece. Not just stated; justified. ("Top-
+   down lets the knitter try the hat on as she works." "Bottom-up
+   keeps the ribbed brim crisp.")
+5. **Stitch count check-in — structural body element.** Embed at
+   least two "stitch count check-in" entries in the Pattern
+   section, placed after every major shaping step (yoke increases,
+   heel turn, crown decreases, gusset). Populate
+   `knitting.stitchCountCheckpoints` with the same data as JSON
+   (array of `{rowOrRound, expected, label}` per K-4.1 schema).
+   The prose and the schema surface the count together. Required
+   on any pattern with shaping.
+6. **HARD RULE — no external video or photo dependencies.** The
+   pattern must be complete without "see video", "watch the
+   video", "see photo of the finished swatch", or any other
+   external-content gesture. The in-house chart engine
+   (`apps/web/src/lib/knitting/renderer/`), the parametric
+   schematic SVG, and the public-domain line-drawing illustrations
+   the diagram pipeline ships cover every visual need. Do not
+   write "see video" or "watch the video" anywhere. The
+   `voice-check` CLI blocks the string.
+7. **Common faults — H3 inside Pattern.** A `### Common faults`
+   sub-heading inside the Pattern section listing 2-4 named
+   failure modes for the piece type, in prose. Replaces the
+   "show the failed swatch" pattern that depended on
+   photography. The voice-check CLI warns when a PATTERN body
+   lacks this H3.
+
+### Schema fields the K-4.1 prompt populates
+
+The author populates these on the `knitting` block where the piece
+type calls for them:
+
+- `stitchCountCheckpoints` — array of
+  `[{ rowOrRound, expected: [int per size], label }]`. Populate
+  on every graded pattern with shaping.
+- `needleBySection` — array of `[{ section, needleMm }]`. Populate
+  on every multi-needle pattern (most hats with ribbed brim,
+  most colourwork yokes). Replaces `secondaryNeedleSizes` (kept
+  for K-3 back-compat).
+- `lifelinePoints` — array of row numbers at which the Studio
+  prompts the knitter to thread a lifeline. Populate on lace
+  shawls, brioche patterns, any chart-repeat boundary worth a
+  lifeline.
+- `errataVersion` — semver. Set to `"1.0.0"` on first publication.
+- `errataLog` — array of `[{ version, date, change }]`. Empty
+  array at first publication; populated by the errata flow later.
+- `finishedWeightGrams` — declared finished weight for blankets
+  and large shawls.
+- `dominantColour` — `"MC"`, `"CC1"`, `"CC2"` for colourwork
+  patterns. Null on single-colour.
+- `recommendedSwatchSizeCm` — default 15 cm × 15 cm; cables 20 cm.
+  Populate where the swatch size differs from the default.
+
 ## Voice rules — hard
 
 Same hard rules as the cooking template (`docs/tutorial-author.md`).
@@ -433,6 +518,40 @@ any flagged line in place.
     knitting always uses `layout: 'flat'`.
 12. **Skill ladder explicit.** Difficulty named in the intro and
     matches the `difficulty` metadata.
+13. **K-4.1 cross-cutting checks.** Walk the K-4.1 cross-cutting
+    requirements above. Specifically:
+    - Graded PATTERN: "circle your size" instruction present.
+    - Gauge section: concrete numeric consequence stated, not a
+      vague "wrong size" gesture.
+    - Long-tail cast-on: tail-length formula AND worked number
+      present for the largest size.
+    - Orientation: construction direction stated AND justified.
+    - Pattern with shaping: at least two stitch-count check-ins
+      in prose, mirrored by populated `stitchCountCheckpoints`.
+    - No occurrences of "see video", "watch the video", "see the
+      photo", or any external-visual gesture.
+    - `### Common faults` H3 present inside Pattern section with
+      2-4 named failure modes in prose.
+14. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each time as a different
+    reader. This is the best self-critique we can do without a
+    tester pool. Future iteration: when an unpaid tester pool
+    exists post-launch, the stuck-check becomes pre-publication
+    verification.
+    - **Beginner reader (cast on + first knit / first purl only):**
+      flag every step where a first-time knitter stops because a
+      skill or term is assumed she hasn't built.
+    - **Intermediate reader (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built or where the chart doesn't say what to do.
+    - **Master reader (Walker / Bush / Miller / Zimmermann
+      literature):** flag where the pattern violates an established
+      convention or omits something a competent designer would
+      always include.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document in the
+    sourceNotes why the flag was intentional.
 
 The deterministic `voice-check` CLI is the final gate.
 

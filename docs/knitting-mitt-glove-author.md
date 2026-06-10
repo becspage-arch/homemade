@@ -38,7 +38,9 @@ or GLOVE pattern. Covers fingerless mitts, full mittens, gloves
 with fingers, convertible mitts, wrist warmers. Sub-category is
 `mitt-glove`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09).
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the
+K-4.1 cross-cutting requirements and the Persona stuck-check.
 
 ## Mitt and glove sizing — single-axis grading
 
@@ -63,16 +65,20 @@ are safe to author now.
 
 ## Thumb gusset reference
 
-**Afterthought thumb.** Knit a piece of waste yarn across the
-thumb stitches at the thumb position. Continue past. After binding
-off the hand, pick up the live stitches above and below the waste
-yarn, remove the waste, work the thumb. Cleanest visual.
+**Afterthought thumb (recommended default for first-time mitt
+makers).** Knit a piece of waste yarn across the thumb stitches at
+the thumb position. Continue past. After binding off the hand,
+pick up the live stitches above and below the waste yarn, remove
+the waste, work the thumb. Cleanest visual; no in-flight increase
+maths to track; the thumb position can be fine-tuned by where
+the waste yarn lands. Default to this construction on BEGINNER
+patterns.
 
 **Gusseted thumb.** Increase a wedge of stitches alongside the
 thumb position over several rounds. Slip the gusset stitches onto
 waste yarn when the hand reaches the thumb base. Work the hand
 past. Return to the gusset stitches and work the thumb in the
-round. Most ergonomic fit.
+round. Most ergonomic fit. INTERMEDIATE and up.
 
 **Side-of-palm thumb.** Common in vintage patterns. Increase one
 stitch on each side of a centre stitch at the thumb edge of the
@@ -170,19 +176,35 @@ mitt as you go. Pick up around it later. Suits seamed designs.
 
 1. **Opening sentence** — name the finished piece, the
    construction direction, the hand circumference. Voice spec §3.5.
-2. **Orientation paragraph** — one paragraph. Construction
-   direction, thumb-gusset type, rough yardage, one practical wear
-   note (driving, mobile-phone use, photography).
+2. **Orientation paragraph** — one paragraph. Construction direction
+   AND one clause naming why it was chosen for this mitt or glove
+   (in-the-round avoids the seam at the palm where wear would tell;
+   flat-and-seamed suits a beginner who hasn't met magic loop).
+   Thumb-gusset type and why it was chosen (afterthought is the
+   recommended default for first-timers; gusseted is the most
+   ergonomic fit). Rough yardage. One practical wear note (driving,
+   mobile-phone use, photography).
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    grams (account for the second mitt; gloves use more), needle
    size, stitch markers, waste yarn (for afterthought thumbs and
    set-aside gusset stitches), tapestry needle.
-4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, swatch
-   instructions.
+4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim. Swatch
+   instructions. State the concrete numeric consequence — for
+   most mitts and gloves at fingering-to-DK weight, "1 stitch
+   per 10 cm tight finishes ≈ 1 cm narrower at the palm; over an
+   18 cm circumference that's the difference between snug and a
+   mitt that won't stay on." Write the actual number, not a
+   vague "wrong size".
 5. **Stitches used** — H2 "Stitches used". UK and US abbreviations.
 6. **Pattern** — H2 "Pattern":
+   - **Circle your size** — one sentence near the top of the
+     Pattern section: "Before you cast on, circle your size in the
+     figures below — every count and measurement reads S (M, L)."
    - **Cast on and cuff** — cast-on method, cast-on count for each
-     size, cuff stitch pattern, cuff depth.
+     size, cuff stitch pattern, cuff depth. For long-tail cast-on:
+     state the tail-length formula `tail_cm ≈
+     (needleCircumferenceMm × stitchCount) / 10 + 15` and a
+     worked number for the largest size in this pattern.
    - **Hand** — round-by-round to the thumb gusset start. State
      the thumb position (right or left mitt, or "place at stitch
      X").
@@ -199,10 +221,32 @@ mitt as you go. Pick up around it later. Suits seamed designs.
      round, close at the tip. State the order (index, middle,
      ring, little) and the number of bridging stitches between
      fingers.
-7. **Second mitt or glove** — note any mirroring required (right
-   mitt vs. left mitt thumb position).
+7. **Second mitt or glove — mirror the thumb position.** Mitts
+   and gloves are paired. State plainly that the second mitt
+   mirrors the first: thumb gusset on the opposite side. Include
+   a one-sentence sanity check: "Hold the first mitt up palm-out;
+   the thumb sits on your right. The second mitt's thumb sits on
+   your left. If both thumbs end up on the same side, you've
+   knitted two right mitts." For paired gloves with fingers, name
+   the order (index, middle, ring, little) AND state that the
+   second glove reverses the order so the fingers match the
+   anatomical hand.
+   - **Stitch count check-in (after gusset).** Structural prose
+     entry: "After the final gusset increase round, you should
+     have N (N, N) sts on the hand needle and N (N, N) sts set
+     aside for the thumb." Populate
+     `knitting.stitchCountCheckpoints` with the matching entry.
+   - **Stitch count check-in (after hand decreases or bind-off).**
+     Same structure for full mittens at the top of the mitten.
 8. **Finishing** — H2 "Finishing". Weaving in ends (palms get a
    lot of wear), light blocking.
+   - **Common faults** — `### Common faults` H3 inside the Pattern
+     section (place above Finishing). For most mitts and gloves:
+     two-of-the-same-hand (both thumbs on the right); thumb gusset
+     pulled tight where the increases stacked at the seam line
+     instead of the gusset edge; cuff sagging after one wear (cuff
+     cast on or bound off too loosely); finger join holes (pick-up
+     stitches not snugged at the bridge).
 9. **Care** — H2 "Care". Fibre-specific.
 10. **What to try next** — variations or related projects.
 
@@ -281,9 +325,12 @@ additions:
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Mitts that sag at the cuff after a
-  wash; gloves that pinch at the gusset; superwash wool that grows
-  after the first wash. Name the failure mode where it's known.
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern with
+  a structural prose H3. Mitts that sag at the cuff after a wash,
+  gloves that pinch at the gusset, superwash wool that grows
+  after the first wash — state the failure mode and the cause as
+  named prose in the H3, not as a photo reference.
 - **One concrete wear note** — close with "Fits under a coat
   cuff" or "Works for taking photos with a phone" rather than
   marketing language.
@@ -326,3 +373,40 @@ set `sourceType: "SYNTHESISED"`.
 10. Gusset increases numbered with stitch counts at each round.
 11. Thumb position stated for mirrored gussets.
 12. Cultural attribution respectful and bounded.
+13. K-4.1 cross-cutting:
+    - Orientation paragraph names construction direction AND
+      justifies the choice. Thumb-gusset type AND why.
+    - "Circle your size" instruction near the top of the Pattern
+      section.
+    - Gauge section names the concrete numeric consequence at the
+      palm, not "wrong size".
+    - Long-tail cast-on: tail-length formula AND worked number
+      present.
+    - "Mirror your second mitt" callout present, with the palm-
+      out sanity check sentence.
+    - Stitch count check-in after the gusset AND after the hand
+      decreases (full mittens) or bind-off (fingerless).
+      `knitting.stitchCountCheckpoints` populated.
+    - BEGINNER patterns default to afterthought thumb.
+    - `### Common faults` H3 present with 2-4 named failure
+      modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+14. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops because a skill
+      or term is assumed she hasn't built.
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built or where the chart doesn't say what to do.
+    - **Master (Walker / Bush / Brown-Reinsel / Hiatt
+      literature):** flag where the pattern violates an established
+      convention or omits something a competent designer would
+      always include.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document why it
+    was intentional. Future iteration: when an unpaid tester pool
+    exists post-launch, the stuck-check becomes pre-publication
+    verification.

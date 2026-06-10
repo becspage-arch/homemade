@@ -271,3 +271,47 @@ expects to see.
   **Why:** Walker's books are still in print and her estate enforces.
   **How to fix:** Cite Walker as reference for the structure; describe
   the stitch in your own words and draw a fresh chart.
+
+## K-4.1 cross-cutting (audit-driven)
+
+- **External video or photo dependency** `[block]` `[needs-voice-check]`
+  Pattern: body prose containing "see video", "watch the video", "see
+  the photo of the swatch", "watch this", or any other "go elsewhere
+  for the visual" gesture. Includes references to YouTube, Instagram
+  reels, blog photos.
+  **Why:** Homemade ships no video and no photography pipeline. The
+  in-house chart engine, the parametric schematic SVG, and the public-
+  domain line-drawing illustrations cover every visual need. A pattern
+  that depends on an external visual is incomplete in this catalogue.
+  **How to fix:** Replace the visual gesture with a chart (use the K-2
+  renderer), a schematic SVG (Worker C's pipeline), or a PD illustration
+  (Worker B's pipeline). For the failure modes the "show the failed
+  swatch" pattern used to cover, write a named `### Common faults` H3
+  inside the Pattern section listing 2-4 failure modes in prose.
+
+- **Procedural-SVG illustration of a stitch step** `[block]`
+  Pattern: a PATTERN or STITCH body containing a hand-rolled procedural
+  SVG diagram of a stitch in progress (yarn over needle, working leg
+  through, etc.) outside the K-2 chart engine.
+  **Why:** Earlier procedural-SVG attempts at stitch-level illustrations
+  were terrible (see worker memo, 2026-06-10). The chart engine handles
+  symbolic stitch representation; PD line-drawing plates handle the
+  "here is yarn going over needle" diagrams. Mixing fresh procedural
+  SVGs back in produces inconsistent, low-quality art.
+  **How to fix:** Use a K-2 chart for symbolic-stitch representation.
+  Use a PD-attributed line-drawing illustration (Worker B's pipeline)
+  for technique-step diagrams. Do not draft new procedural SVGs for
+  stitch-level mechanics.
+
+- **Self-critique without Persona stuck-check** `[block]`
+  Pattern: a draft whose Self-critique pass output names the mechanical
+  checks (em-dashes, banned phrases, glossary coverage) but skips the
+  three-persona walk-through.
+  **Why:** We have no in-house knitter. The Persona stuck-check is the
+  best quality-pass heuristic we can run before publication; skipping it
+  is a regression to a quality bar we can't afford to hold.
+  **How to fix:** The drafting worker explicitly walks the three
+  personas (beginner / intermediate / master), produces flags with row
+  or section references, and either fixes every flag or documents in
+  sourceNotes why a flag was intentional. The Self-critique pass output
+  must show the persona walk-through happened.

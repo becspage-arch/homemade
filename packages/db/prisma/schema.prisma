@@ -4678,7 +4678,18 @@ model KnittingPattern {
   /// mm). Many garment patterns switch to a smaller needle for ribbing.
   /// The primary needle lives in `needleSizeMm`. Empty array on patterns
   /// with a single needle throughout.
+  ///
+  /// Kept for back-compat with K-3 callers. New patterns populate
+  /// `needleBySection` instead (the K-4.1 prompt update).
   secondaryNeedleSizes Int[] @default([])
+
+  /// Per-section needle assignment as labelled JSON. K-4.1 replacement for
+  /// the bare `secondaryNeedleSizes` array. Shape:
+  ///   [{ section: "ribbing", needleMm: 4.0 },
+  ///    { section: "body",    needleMm: 4.5 }, ...]
+  /// The K-4.1 prompt populates this on every multi-needle pattern; older
+  /// rows fall back to `secondaryNeedleSizes`.
+  needleBySection Json?
 
   /// Secondary yarn weight slugs for multi-yarn patterns (colourwork,
   /// stranded, fade). Empty array on single-yarn patterns. Slugs reference
@@ -4741,6 +4752,43 @@ model KnittingPattern {
   /// Per-row repeat groups for the repeat counter. Same shape as
   /// CrochetPattern.repeatRowGroups.
   repeatRowGroups Json?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // K-4.1 author-prompt additions. Each field corresponds to a prompt
+  // requirement surfaced in the Stage 2 reference-pattern audit:
+  //
+  // stitchCountCheckpoints — structural "stitch count check-in" entries
+  //   the author populates so the Studio + the pattern body both surface
+  //   "you should have N stitches here". Shape:
+  //     [{ rowOrRound: 23, expected: [88, 96, 104, 112],
+  //        label: "After yoke increases" }, ...]
+  //   `expected` is one int per graded size, parallel to sizesGraded order.
+  //
+  // lifelinePoints — row numbers at which Studio prompts the knitter to
+  //   thread a lifeline (lace + brioche + chart repeats). Empty array for
+  //   patterns without lifeline prompts.
+  //
+  // errataVersion / errataLog — pattern versioning so corrections are
+  //   user-visible without a slug change. Seed migration backfills "1.0.0".
+  //
+  // finishedWeightGrams — declared finished weight for blankets and large
+  //   shawls; helps the Studio show a yarn-runs-out warning and helps the
+  //   user pick a yarn substitute.
+  //
+  // dominantColour — for colourwork patterns, names which yarn ID
+  //   ("MC" / "CC1" / "CC2") should be held below (dominant) when
+  //   stranding. Null on single-colour patterns.
+  //
+  // recommendedSwatchSizeCm — default 15 cm × 15 cm; cables 20 cm × 20 cm.
+  //   Surfaced in the gauge section + the Studio swatch prompt.
+  // ──────────────────────────────────────────────────────────────────────────
+  stitchCountCheckpoints Json?
+  lifelinePoints         Int[] @default([])
+  errataVersion          String?
+  errataLog              Json?
+  finishedWeightGrams    Int?
+  dominantColour         String?
+  recommendedSwatchSizeCm Int?
 
   // Standard cataloguing.
   difficulty     Difficulty?

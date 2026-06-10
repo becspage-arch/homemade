@@ -1,5 +1,12 @@
 # Knitting colourwork — technique discipline guide
 
+**Guide version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 adds the K-4.1
+prose surfaces (float-catch cadence, magic-loop vs DPN for stranded,
+"the back looks messy and that's OK") + the
+`knitting.dominantColour` schema field which colourwork patterns
+now populate.
+
 Reference guide for any project-shape author prompt that carries
 `KnittingTechniqueDiscipline.COLOURWORK`. Not a standalone author
 prompt — read this alongside the appropriate shape prompt
@@ -88,21 +95,62 @@ Two rules:
 - If the pattern's dominance breaks halfway through, the colour
   shift is visible — even on machine wash.
 
-State the dominance choice in the body.
+State the dominance choice in the body AND populate
+`knitting.dominantColour` with `"MC"`, `"CC1"`, or `"CC2"` per
+the K-4.1 schema. The Studio's render of the chart key surfaces
+the dominance flag automatically when the schema field is set.
 
 ## Float tension
 
 Floats are the strands of yarn carried behind unworked stitches.
 
 - Standard rule: catch the float every 4 to 5 stitches on the
-  back so loops don't catch on jewellery and fingers.
+  back so loops don't catch on jewellery and fingers. The K-4.1
+  prompt surfaces this rule in body prose for every stranded
+  pattern, not just as a footnote — the cadence is what stops
+  finger-snags after the piece is finished.
 - Tension: floats stretched too tight pucker the front of the
   work; too loose and they sag inside a garment. Catch the float
   with a "ladder back" on a longer run — see Annichen Sibbern
   Bøhn's notes.
 
 State a float guideline in the body where the design has runs
-longer than 5 stitches.
+longer than 5 stitches. Include the "catch every 4 to 5 stitches"
+rule in body prose at first appearance of stranded colourwork in
+the Pattern section.
+
+## The back looks messy and that's OK
+
+A reassurance the K-4.1 prompt surfaces in body prose for every
+stranded pattern:
+
+The back of stranded colourwork looks messier than the front.
+Floats criss-cross. Catches show. The knitter holding the work
+in progress will see the messy back and worry the piece is
+ruined. State plainly in the body that the back of stranded work
+isn't expected to look tidy — only the front needs to. A neat
+back is a fine ambition for the maker who learns to weave floats
+as she goes, but a tidy back is not the bar for a finished piece.
+
+## Magic loop vs DPN for stranded
+
+State which in-the-round method the pattern is written for, and
+why. For stranded colourwork:
+
+- **Magic loop** suits the maker who already owns one long
+  circular needle and wants one tool for all in-the-round sizes.
+  The pull-through at the halfway point can pull stranded floats
+  tight at the changeover. Loosen the float before the pull
+  through to avoid a vertical pucker line down the piece.
+- **DPN (double-pointed needles)** suits the traditional Selbu /
+  Sanquhar / Fair Isle reader. The float tension stays even
+  because there's no mid-round pull-through. The downside is
+  managing four or five needles in stranded colourwork.
+- **Two circulars** is an alternative; tension stays even but the
+  needle juggling adds time.
+
+State the recommended method in the orientation paragraph and
+name the trade-off plainly.
 
 ## Intarsia mechanics
 
@@ -193,11 +241,15 @@ Modern reference sources (cite, do not reproduce):
 
 Add to the parent shape prompt's self-critique pass:
 
-1. Dominance convention stated.
-2. Float-carry convention stated where runs exceed 5 stitches.
-3. Chart symbol slugs are colourwork symbols (`forceSymbolSlug`
+1. Dominance convention stated in body AND
+   `knitting.dominantColour` populated.
+2. Float-carry convention stated, including the "catch every 4 to
+   5 stitches" rule in body prose.
+3. "The back looks messy and that's OK" reassurance present.
+4. Magic loop vs DPN trade-off named in orientation paragraph.
+5. Chart symbol slugs are colourwork symbols (`forceSymbolSlug`
    where needed).
-4. Palette entries match the symbol slugs used.
-5. Two-handed instruction included where the pattern carries two
+6. Palette entries match the symbol slugs used.
+7. Two-handed instruction included where the pattern carries two
    yarns at once.
-6. Cultural attribution respectful and bounded.
+8. Cultural attribution respectful and bounded.

@@ -38,7 +38,9 @@ BLANKET pattern. Covers afghans, throws, baby blankets, modular
 mitred-square blankets, log-cabin blankets, woven-stitch blankets,
 heirloom layette blankets. Sub-category is `blanket`.
 
-**Prompt version:** 1 (Knitting pipeline-setup — 2026-06-09).
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10).
+v1 shipped with K-1 pipeline-setup (2026-06-09); v2 adds the K-4.1
+cross-cutting requirements and the Persona stuck-check.
 
 ## Blanket sizing reference
 
@@ -165,19 +167,43 @@ self-striping yarn and stash use.
 
 1. **Opening sentence** — name the finished piece, the
    construction direction, the rough finished dimensions.
-2. **Orientation paragraph** — one paragraph. Construction,
-   rough yardage, one practical use note (cot, pram, sofa, lap).
+2. **Orientation paragraph** — one paragraph. Construction AND
+   one clause naming why it was chosen for this blanket (single
+   panel suits a beginner, fewer ends to weave in; modular squares
+   let the maker use up stash; log cabin uses up partial skeins
+   without dye-lot worry). Rough yardage. One practical use note
+   (cot, pram, sofa, lap). For striped or modular blankets, a
+   plain-English finishing-time estimate ("the joining will take
+   roughly as long as the knitting"); blankets are the project
+   most readers under-estimate.
 3. **What you need** — `suppliesCard` block. Yarn weight + total
    grams (a blanket needs a lot — give a clear "for the size
-   shown" total), needle size, tapestry needle, scissors,
-   measuring tape.
+   shown" total). State the finished weight in grams (populate
+   `knitting.finishedWeightGrams`) — readers picking yarn benefit
+   from knowing the finished blanket weighs ≈ 600 g. Needle size,
+   tapestry needle, scissors, measuring tape. **Dye-lot warning
+   when total yarn exceeds one skein.** State plainly: "Buy all
+   the yarn at once in matched dye lots. A blanket showing a dye-
+   lot shift mid-row is the most common knitting-blanket
+   disappointment." Mention the safer-yarn-substitute path:
+   alternate skeins every two rows so any drift averages out.
 4. **Gauge** — H2 "Gauge". Quote `gaugeText` verbatim, then one
-   sentence on swatching. Blankets forgive small gauge drift on
-   width, less so on length — say so.
+   sentence on swatching. State the concrete numeric consequence:
+   "Blankets forgive a stitch per 10 cm of width drift; they don't
+   forgive row-per-10cm drift on length. Two rows per 10 cm loose
+   over a 180 cm cot blanket finishes ≈ 7 cm shorter than
+   `finishedSizeText`." Write the actual number, not "wrong size".
 5. **Stitches used** — H2 "Stitches used". UK and US abbreviations.
 6. **Pattern** — H2 "Pattern":
    - For single-panel rectangle: cast-on count, row-by-row or
-     repeat block, finished row count.
+     repeat block, finished row count. For long-tail cast-on:
+     state the formula `tail_cm ≈ (needleCircumferenceMm ×
+     stitchCount) / 10 + 15` AND a worked number — blanket cast-
+     ons are long enough that an under-counted tail forces a
+     restart. Example: "For a 90 cm cot blanket on 4 mm needles
+     with 198 sts, cast on tail of (4 × 198) / 10 + 15 ≈ 94 cm
+     of tail plus 15 cm working end ≈ 110 cm. Round up to 130 cm
+     to be safe."
    - For modular squares: pattern for one square, count of
      squares for the size shown, join order.
    - For strip-and-seam: pattern for one strip, strip count,
@@ -185,6 +211,25 @@ self-striping yarn and stash use.
    - For centre-out square: cast-on, increase rounds, finished
      round count.
    - For log cabin: starting strip, pickup-and-rotate sequence.
+   - **You can set this down for weeks and pick it back up.**
+     One sentence acknowledging blankets are long projects. The
+     Studio's find-your-place feature lands here later; in prose
+     for now: "When you set this aside between sessions, jot the
+     row number in the notes panel or place a marker; the
+     pattern resumes cleanly from any row."
+   - **Stitch count check-in (mid-blanket and pre-bind-off).**
+     Two structural prose entries inside the Pattern section, at
+     the halfway mark and immediately before the bind-off.
+     Populate `knitting.stitchCountCheckpoints` with the matching
+     data. For modular blankets, one check-in per square plus
+     one at the finished count of joined squares.
+   - **Common faults** — `### Common faults` H3 inside the Pattern
+     section. For most blankets: dye-lot shift mid-row (yarn was
+     bought in batches; skeins not alternated); puckered seams on
+     modular blankets (mattress stitch pulled too tight); cast-
+     on tighter than the rest of the blanket (cast-on tension
+     differs from working tension); centre-pull-ball collapse
+     producing tangles partway through a long blanket session.
 7. **Joining or seaming** — H2 "Joining" if the blanket joins
    motifs or seams strips. Mattress stitch, three-needle
    bind-off, join-as-you-go, slip-stitch seam.
@@ -261,10 +306,13 @@ additions:
 
 ## Voice rules — soft
 
-- **Show the failed swatch.** Acrylic baby blanket that pills
-  under crawl traffic; cotton blanket that drinks dye on the first
-  wash; superwash wool that stretches two sizes after one
-  blocking and doesn't recover. Name the failure mode.
+- **Named failure modes go in the `### Common faults` H3.** The
+  K-4.1 update replaces the "show the failed swatch" pattern with
+  a structural prose H3. Acrylic baby blanket that pills under
+  crawl traffic; cotton blanket that drinks dye on the first
+  wash; superwash wool that stretches two sizes after one blocking
+  and doesn't recover — state the failure mode and the cause as
+  named prose, not as a photo reference.
 - **One concrete use note** — close with "Folded across a cot
   end" or "Drapes a two-seater armrest" rather than marketing
   language.
@@ -306,3 +354,42 @@ they're known today) set `sourceType: "SYNTHESISED"`.
 9. Total yardage stated clearly.
 10. Joining method named when the blanket isn't a single panel.
 11. Baby-safe flag in Care section where applicable.
+12. K-4.1 cross-cutting:
+    - Orientation paragraph names construction AND justifies the
+      choice. Plain-English finishing-time estimate for striped
+      or modular blankets.
+    - Dye-lot warning present where the project uses more than
+      one skein of any colour.
+    - `knitting.finishedWeightGrams` populated.
+    - Gauge section names the concrete numeric consequence in
+      cm, not "wrong size".
+    - Long-tail cast-on: tail-length formula AND worked number
+      present (blanket cast-ons make this load-bearing).
+    - "You can set this down and pick it back up" sentence
+      present.
+    - Stitch count check-in at the halfway mark AND before
+      bind-off (or per-square + at finished count for modular).
+      `knitting.stitchCountCheckpoints` populated.
+    - `### Common faults` H3 present with 2-4 named failure
+      modes in prose.
+    - No "see video" / "watch the video" / "see photo" anywhere.
+13. **Persona stuck-check (self-critique heuristic — we have no
+    in-house knitter, so this is a quality pass, not a verification
+    pass).** Read the draft three times, each as a different
+    reader.
+    - **Beginner (cast on + first knit / first purl only):** flag
+      every step where a first-time knitter stops because a skill
+      or term is assumed she hasn't built. Blanket patterns are a
+      common first-finished-object and deserve real beginner
+      kindness in the cast-on and bind-off rows.
+    - **Intermediate (k / p / dec / inc, learning charts +
+      shaping):** flag where the pattern assumes a skill not yet
+      built or where the joining or seaming instructions skip a
+      step.
+    - **Master (Walker / Zimmermann / Brocket literature):** flag
+      where the pattern violates an established convention.
+    Each flag carries a row or section reference and a one-line
+    fix. Fix every flag before voice-check, or document why it
+    was intentional. Future iteration: when an unpaid tester pool
+    exists post-launch, the stuck-check becomes pre-publication
+    verification.

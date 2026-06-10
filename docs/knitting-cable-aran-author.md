@@ -1,5 +1,13 @@
 # Knitting cables and Aran authoring — two-axis routing wrapper
 
+**Prompt version:** 2 (K-4.1 author-prompt update — 2026-06-10). v1
+shipped with K-1 pipeline-setup (2026-06-09). v2 inherits the K-4.1
+cross-cutting requirements + Persona stuck-check from the picked
+project-shape prompt; the cable-aran-specific additions live in
+`docs/knitting-cable-aran-guide.md` v2, which hardens the
+cable-panel-gauge body requirement and sets
+`knitting.recommendedSwatchSizeCm = 20`.
+
 This prompt fires when the autopilot picks the `cable-aran`
 sub-category for the knitting category. It is a routing wrapper,
 not a standalone author prompt — cabling is a technique discipline
