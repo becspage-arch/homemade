@@ -103,26 +103,26 @@ export function CrochetActiveProject({
     leftHandedOverride?: boolean | null
   }
 
-  const { pendingState, pendingPrefs, scheduleSave } = useAutosave<ProgressState, CrochetPrefs>({
+  const { setPendingState, setPendingPref, scheduleSave } = useAutosave<ProgressState, CrochetPrefs>({
     url: `/api/studio/crochet/progress/${pattern.id}`,
     debounceMs: SAVE_DEBOUNCE_MS,
   })
 
   // Mark the current view as preferred (debounced).
   useEffect(() => {
-    pendingPrefs.current.preferredView = viewMode
+    setPendingPref('preferredView', viewMode)
     scheduleSave()
-  }, [viewMode, scheduleSave])
+  }, [viewMode, scheduleSave, setPendingPref])
 
   useEffect(() => {
-    pendingPrefs.current.terminologyOverride = terminology
+    setPendingPref('terminologyOverride', terminology)
     scheduleSave()
-  }, [terminology, scheduleSave])
+  }, [terminology, scheduleSave, setPendingPref])
 
   useEffect(() => {
-    pendingPrefs.current.leftHandedOverride = leftHanded
+    setPendingPref('leftHandedOverride', leftHanded)
     scheduleSave()
-  }, [leftHanded, scheduleSave])
+  }, [leftHanded, scheduleSave, setPendingPref])
 
   const markRowComplete = useCallback(
     (section: string, rowNumber: number) => {
@@ -144,12 +144,12 @@ export function CrochetActiveProject({
           currentSection: section,
           currentRow: next ?? rowNumber,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [rows, scheduleSave],
+    [rows, scheduleSave, setPendingState],
   )
 
   const unmarkRow = useCallback(
@@ -167,12 +167,12 @@ export function CrochetActiveProject({
           currentRow: rowNumber,
           currentSection: section,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const frogToRow = useCallback(
@@ -191,12 +191,12 @@ export function CrochetActiveProject({
           currentRow: rowNumber,
           currentSection: section,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const setCurrentSection = useCallback(
@@ -212,24 +212,24 @@ export function CrochetActiveProject({
           currentSection: section,
           currentRow: next ?? sectionRows[0] ?? 0,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [rows, scheduleSave],
+    [rows, scheduleSave, setPendingState],
   )
 
   const updateNotes = useCallback(
     (notes: string) => {
       setState((prev) => {
         const newState = { ...prev, notes: notes || null }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const updatePerRowNote = useCallback(
@@ -239,33 +239,33 @@ export function CrochetActiveProject({
         if (note) perRowNotes[rowKey] = note
         else delete perRowNotes[rowKey]
         const newState = { ...prev, perRowNotes }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const markProjectComplete = useCallback(() => {
     setState((prev) => {
       const newState = { ...prev, completedAt: new Date().toISOString() }
-      pendingState.current = newState
+      setPendingState(newState)
       return newState
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const saveProjectSetup = useCallback(
     (setup: ProjectSetup) => {
       setState((prev) => {
         const newState = { ...prev, projectSetup: setup }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const totalRows = rows.length

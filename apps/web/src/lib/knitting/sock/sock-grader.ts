@@ -19,8 +19,6 @@
 import type {
   SockGradedPattern,
   SockGradeInput,
-  SockConstruction,
-  SockHeelStyle,
 } from './types'
 import type { FootSizeName } from './sock-sizes'
 import { gradeCuffDownSock } from './construction/cuff-down'

@@ -98,7 +98,7 @@ export function KnittingActiveProject({
     !state.completedAt
   const setupVisible = !state.projectSetup && projectIsBlank && !setupSkipped
 
-  const { pendingState, scheduleSave } = useAutosave<ProgressState>({
+  const { setPendingState, scheduleSave } = useAutosave<ProgressState>({
     url: `/api/studio/knitting/progress/${pattern.id}`,
     enabled: signedIn,
     debounceMs: SAVE_DEBOUNCE_MS,
@@ -133,11 +133,11 @@ export function KnittingActiveProject({
         currentStitch: 1,
         completedRows,
       }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave, sections])
+  }, [scheduleSave, sections, setPendingState])
 
   const stepRowBack = useCallback(() => {
     setState((prev) => {
@@ -148,20 +148,20 @@ export function KnittingActiveProject({
         rightSide: !prev.rightSide,
         currentStitch: 1,
       }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const advanceRound = useCallback(() => {
     setState((prev) => {
       const next: ProgressState = { ...prev, currentRound: prev.currentRound + 1 }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const stepRoundBack = useCallback(() => {
     setState((prev) => {
@@ -169,20 +169,20 @@ export function KnittingActiveProject({
         ...prev,
         currentRound: Math.max(0, prev.currentRound - 1),
       }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const advanceRepeat = useCallback(() => {
     setState((prev) => {
       const next: ProgressState = { ...prev, currentRepeat: prev.currentRepeat + 1 }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const stepRepeatBack = useCallback(() => {
     setState((prev) => {
@@ -190,20 +190,20 @@ export function KnittingActiveProject({
         ...prev,
         currentRepeat: Math.max(0, prev.currentRepeat - 1),
       }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const stepStitchForward = useCallback(() => {
     setState((prev) => {
       const next: ProgressState = { ...prev, currentStitch: prev.currentStitch + 1 }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const stepStitchBack = useCallback(() => {
     setState((prev) => {
@@ -211,11 +211,11 @@ export function KnittingActiveProject({
         ...prev,
         currentStitch: Math.max(1, prev.currentStitch - 1),
       }
-      pendingState.current = next
+      setPendingState(next)
       return next
     })
     scheduleSave()
-  }, [scheduleSave])
+  }, [scheduleSave, setPendingState])
 
   const markRowComplete = useCallback(
     (section: string, rowNumber: number) => {
@@ -235,12 +235,12 @@ export function KnittingActiveProject({
           currentRow: next ?? rowNumber,
           rightSide: prev.rightSide,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [rows, scheduleSave],
+    [rows, scheduleSave, setPendingState],
   )
 
   const unmarkRow = useCallback(
@@ -258,12 +258,12 @@ export function KnittingActiveProject({
           currentRow: rowNumber,
           currentSection: section,
         }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const addCableNeedle = useCallback(
@@ -280,12 +280,12 @@ export function KnittingActiveProject({
           ...prev,
           cableNeedles: [...prev.cableNeedles, entry],
         }
-        pendingState.current = next
+        setPendingState(next)
         return next
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const clearCableNeedle = useCallback(
@@ -295,24 +295,24 @@ export function KnittingActiveProject({
           ...prev,
           cableNeedles: prev.cableNeedles.filter((c) => c.id !== id),
         }
-        pendingState.current = next
+        setPendingState(next)
         return next
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   const saveProjectSetup = useCallback(
     (setup: ProjectSetup) => {
       setState((prev) => {
         const newState = { ...prev, projectSetup: setup }
-        pendingState.current = newState
+        setPendingState(newState)
         return newState
       })
       scheduleSave()
     },
-    [scheduleSave],
+    [scheduleSave, setPendingState],
   )
 
   // ───── Keyboard shortcuts (Spacebar / Right Arrow advance row; Left

@@ -12,16 +12,16 @@ const DEFAULT_DEBOUNCE_MS = 700
  * immediately on unmount so in-flight changes aren't lost.
  *
  * Usage:
- *   const { pendingState, scheduleSave } = useAutosave({
+ *   const { setPendingState, scheduleSave } = useAutosave({
  *     url: `/api/studio/knitting/progress/${pattern.id}`,
  *   })
  *   // On each state mutation:
- *   pendingState.current = nextState
+ *   setPendingState(nextState)
  *   scheduleSave()
  *
- * If your surface also tracks pref changes (view mode, terminology) as a
- * separate object, pass `pendingPrefs` and the hook will merge both into
- * the PATCH body.
+ * If your surface tracks pref changes (view mode, terminology) as a
+ * separate object, pass `pendingPrefs` and the hook merges both into the
+ * PATCH body.
  */
 export function useAutosave<TState, TPrefs extends Record<string, unknown> = Record<string, never>>({
   url,
@@ -36,6 +36,14 @@ export function useAutosave<TState, TPrefs extends Record<string, unknown> = Rec
   const pendingState = useRef<TState | null>(null)
   const pendingPrefs = useRef<Partial<TPrefs>>({} as Partial<TPrefs>)
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const setPendingState = useCallback((state: TState | null) => {
+    pendingState.current = state
+  }, [])
+
+  const setPendingPref = useCallback(<K extends keyof TPrefs>(key: K, value: TPrefs[K]) => {
+    pendingPrefs.current = { ...pendingPrefs.current, [key]: value }
+  }, [])
 
   const flush = useCallback(async () => {
     const hasState = pendingState.current !== null
@@ -73,5 +81,5 @@ export function useAutosave<TState, TPrefs extends Record<string, unknown> = Rec
     }
   }, [flush])
 
-  return { pendingState, pendingPrefs, scheduleSave, flush }
+  return { setPendingState, setPendingPref, scheduleSave, flush }
 }

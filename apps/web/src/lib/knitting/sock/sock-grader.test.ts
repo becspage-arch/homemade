@@ -14,7 +14,6 @@ import assert from 'node:assert/strict'
 import { gradeSock, gradeAllFootSizes } from './sock-grader'
 import { verifyGradedSock } from './verifier'
 import type { SockConstruction, SockHeelStyle } from './types'
-import type { FootSizeName } from './sock-sizes'
 import type { Gauge } from '../grading/gauge'
 import { listAllFootSizes } from './sock-sizes'
 
@@ -169,7 +168,9 @@ for (const ref of REFERENCES) {
       options: opts,
     })
 
-    let legExp = '-', legAct = String(graded.legStitchCount), divergence = '-'
+    let legExp = '-'
+    let divergence = '-'
+    const legAct = String(graded.legStitchCount)
     if (ref.expected.legStitchCount !== undefined) {
       const exp = ref.expected.legStitchCount
       legExp = String(exp)
