@@ -1,0 +1,653 @@
+{
+  "slug": "slouchy-beanie",
+  "title": "Slouchy beanie",
+  "subtitle": "A relaxed beanie with extra length that drapes behind the crown.",
+  "excerpt": "A bottom-up slouchy beanie in stocking stitch worked in the round on a 80 cm circular needle. Extra rounds of plain fabric before the crown create the characteristic overhang. Fits adult heads of 54 to 61 cm.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Slouchy beanie silhouette developed in contemporary knitwear. Construction method (bottom-up in the round, extended body length) is standard practice in modern hat knitting.",
+  "heroPrompt": "A finished slouchy beanie in oatmeal DK wool, sitting on a wooden surface with the extra fabric drooping behind the crown, showing the smooth stocking-stitch body and minimal ribbed brim.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-3-75mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "GATHERED",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Total height 28 cm (slouch of 8 cm behind crown).",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-1x1",
+      "knitting-stocking-stitch",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop",
+      "crown-decreases-star"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [],
+    "chartDefinition": null,
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          120,
+          124,
+          128
+        ],
+        "label": "After cast-on: 120 (124, 128) stitches on needle"
+      },
+      {
+        "rowOrRound": 8,
+        "expected": [
+          120,
+          124,
+          128
+        ],
+        "label": "After brim: 120 (124, 128) stitches, ready for body"
+      },
+      {
+        "rowOrRound": 8,
+        "expected": [
+          16,
+          16,
+          16
+        ],
+        "label": "After final decrease round: 16 stitches remain"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point. One needle replaces a set of double-pointed needles."
+    },
+    {
+      "slug": "stocking-stitch",
+      "term": "Stocking stitch",
+      "definition": "The fabric produced by knitting every round when working in the round. The right side shows smooth V-shaped stitches; the wrong side shows horizontal purl bumps."
+    },
+    {
+      "slug": "negative-ease",
+      "term": "Negative ease",
+      "definition": "When a knitted item is worked to a circumference smaller than the body measurement it will cover. The fabric stretches to fit, producing a close-fitting, snug result."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "k2tog",
+    "ssk",
+    "crown-shaping"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "k2tog"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This slouchy beanie is worked in the round from the brim upward in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stocking-stitch"
+                }
+              }
+            ],
+            "text": "stocking stitch"
+          },
+          {
+            "type": "text",
+            "text": ", fitting adult heads of 54 (56, 58) cm. Extra fabric hangs loosely behind the crown for the slouchy look."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The hat is worked bottom-up because starting at the brim lets you build the exact depth you want before beginning the crown, and the slouch length is easy to adjust by adding or removing a few rounds. Unlike a fitted beanie, this pattern uses positive ease rather than "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "negative-ease"
+                }
+              }
+            ],
+            "text": "negative ease"
+          },
+          {
+            "type": "text",
+            "text": ": the cast-on count is larger than the head circumference so the fabric blooms above the brim and creates the drooping silhouette. Using the magic loop method keeps the tension even throughout. The hat takes about 100 g (220 m) of DK yarn. It drapes three fingers behind the crown when on the head."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK weight wool or wool-blend yarn",
+              "qty": "100 g (approx. 220 m)",
+              "substitutions": "A yarn with some drape gives the best slouch; avoid stiff cottons."
+            },
+            {
+              "name": "4 mm circular needle, 80 cm cable (UK 8 / US 6)",
+              "qty": "1",
+              "substitutions": "Or 4 mm DPNs for the crown decrease rounds."
+            },
+            {
+              "name": "3.75 mm circular needle, 80 cm cable (UK 9 / US 5)",
+              "qty": "1",
+              "substitutions": "For the brim only."
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "9 (1 BOR + 8 for decreases)",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. Swatch in the round. If your gauge runs to 23 sts per 10 cm, size S finishes at roughly 52 cm -- it will still fit most adult heads but the slouch will be proportionally tighter. If you get 21 sts, size L finishes at about 61 cm with a roomier, more exaggerated drape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "p -- purl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k2tog -- knit two together (right-leaning decrease)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size in the figures below -- every count and measurement in this pattern reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method on the 3.75 mm needle, cast on 120 (124, 128) sts using the long-tail cast-on. Tail formula: tail_cm = (needle mm x stitch count) / 10 + 15. For size L on 3.75 mm needle: (3.75 x 128) / 10 + 15 = 48 + 15 = 63 cm; round up to 72 cm. Place a beginning-of-round marker and join, being careful not to twist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 8 rounds of 1 x 1 rib: *k1, p1; repeat from * to end. After completing the brim, you should have 120 (124, 128) stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch to the 4 mm needle. Knit every round until the hat measures 25 cm from the cast-on edge. This produces the extra length needed for the slouch. Try the hat on at 22 cm and add or remove rounds to suit your preferred drape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place a marker after every 15 (15.5, 16) stitches to divide into 8 sections."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat from * 8 times. 112 (116, 120) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: knit all sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 3: *k to 2 sts before marker, k2tog; repeat from * 8 times. 104 (108, 112) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 4: knit all sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue: alternate a decrease round and a plain round until 40 sts remain, then work decrease rounds every round until 16 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 16 stitches on the needle, ready to gather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut the yarn with a 20 cm tail, thread onto the tapestry needle, draw through all 16 live stitches, pull gently to close, and fasten off on the inside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "No slouch: the extra stitches are only useful if the gauge is loose enough for the fabric to drape. If your tension is very tight, the hat may knit up closer to the head and the extra length will simply make a tall beanie rather than a drooping one. Recheck gauge and go up a needle size if necessary."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Twisted join: a hat joined with a twist will be unwearable. Lay the cast-on flat on a table before placing the first stitch marker and confirming none of the stitches are twisted around the cable."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim curls outward: 1 x 1 rib with too few rounds will curl if the work is not blocked. Add 2 to 4 extra rounds if needed or switch to 2 x 2 rib which is more stable on a short brim depth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Block by dampening and shaping over a bowl, allowing the extra length to drape naturally from the brim. Leave to dry completely before wearing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wool: hand wash cool, squeeze without wringing, dry flat. Superwash merino can go in a gentle machine cycle; check the yarn label."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The oversized slouchy hat uses a larger needle and bulkier yarn for a more exaggerated drape. The fisherman's rib beanie uses the same shape but substitutes fisherman's rib for the body stitch, producing a thicker, warmer, reversible fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

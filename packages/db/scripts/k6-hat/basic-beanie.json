@@ -1,0 +1,763 @@
+{
+  "slug": "basic-beanie",
+  "title": "Basic knitted beanie",
+  "subtitle": "A bottom-up, in-the-round beanie for adults in three sizes.",
+  "excerpt": "A plain stocking-stitch beanie worked from the ribbed brim upward on a 40 cm circular needle in aran-weight wool. The hat fits adult heads from 54 to 61 cm and takes about 100 g of yarn.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Weldon's Practical Knitter, Series 1 (1886), plain cap instructions. Mary Thomas's Knitting Book (1938), pp. 78-80, stocking-stitch hats. Craft Yarn Council standard head circumference table.",
+  "heroPrompt": "A finished plain stocking-stitch beanie in oatmeal aran-weight wool, sitting on a wooden surface, showing the ribbed brim and smooth body, photographed from a slight angle.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-4-5mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "GATHERED",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "18 sts x 24 rounds = 10 x 10 cm in stocking stitch on 5 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Brim depth 5 cm. Total height 22 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-2x2",
+      "knitting-stocking-stitch",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop",
+      "crown-decreases-star"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [],
+    "chartDefinition": null,
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          96,
+          100,
+          104
+        ],
+        "label": "After cast-on: 96 (100, 104) stitches on needle"
+      },
+      {
+        "rowOrRound": 12,
+        "expected": [
+          96,
+          100,
+          104
+        ],
+        "label": "After brim: 96 (100, 104) stitches, ready to switch to body needle"
+      },
+      {
+        "rowOrRound": 8,
+        "expected": [
+          16,
+          16,
+          16
+        ],
+        "label": "After final decrease round: 16 stitches remain"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point. One needle replaces a set of double-pointed needles."
+    },
+    {
+      "slug": "stocking-stitch",
+      "term": "Stocking stitch",
+      "definition": "The fabric produced by knitting every round when working in the round (or alternating knit and purl rows when working flat). The right side shows smooth V-shaped stitches; the wrong side shows horizontal purl bumps."
+    },
+    {
+      "slug": "k2tog",
+      "term": "K2tog",
+      "definition": "Knit two together: insert the needle into two stitches at once and knit them as one. Produces a right-leaning decrease that removes one stitch."
+    },
+    {
+      "slug": "ssk",
+      "term": "SSK",
+      "definition": "Slip, slip, knit: slip two stitches knitwise one at a time, then insert the left needle through the fronts of both and knit them together. Produces a left-leaning decrease."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "k2tog",
+    "ssk",
+    "crown-shaping"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "k2tog",
+    "ssk"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This beanie is worked in the round from the cast-on edge upward in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stocking-stitch"
+                }
+              }
+            ],
+            "text": "stocking stitch"
+          },
+          {
+            "type": "text",
+            "text": ", fitting adult heads of 54 (56, 58) cm circumference."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The hat is worked bottom-up, starting at the brim rib and finishing at the crown, which is the most common construction for adult beanies because it lets you try the hat on before you start decreasing and adjust the depth to your preference. Worked on a 80 cm circular needle using the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method, you need just one needle from start to finish. The hat takes about 100 g (180 m) of aran-weight yarn. It sits at the brow line with a firm, close fit; the 2 x 2 ribbed brim hugs the head without flipping outward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight wool or wool-blend yarn",
+              "qty": "100 g (approx. 180 m)",
+              "substitutions": "Any aran-weight yarn that matches gauge. Wool or wool-blend gives the best warmth and elasticity."
+            },
+            {
+              "name": "5 mm circular needle, 80 cm cable (UK 6 / US 8)",
+              "qty": "1",
+              "substitutions": "Or a 40 cm short circular; or 5 mm DPNs for the crown decrease rounds."
+            },
+            {
+              "name": "4.5 mm circular needle, 80 cm cable (UK 7 / US 7)",
+              "qty": "1",
+              "substitutions": "For the ribbed brim only. Skip if you naturally knit ribbing tighter than your stocking stitch."
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "8 (one colour for BOR, seven the same for decreases)",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 24 rounds = 10 x 10 cm in stocking stitch on 5 mm needles, blocked. Swatch in the round (a flat swatch reads differently). If your gauge is 19 sts per 10 cm instead of 18, size S finishes at roughly 51 cm circumference and fits as a child's hat rather than an adult S. If your gauge is 17 sts per 10 cm, size L finishes at around 61 cm -- correct size name but the fit will be noticeably looser. Adjust needle size to hit gauge before you cast on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit (UK and US both)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "p -- purl (UK and US both)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "k2tog"
+                        }
+                      }
+                    ],
+                    "text": "k2tog"
+                  },
+                  {
+                    "type": "text",
+                    "text": " -- knit two together (right-leaning decrease)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "ssk"
+                        }
+                      }
+                    ],
+                    "text": "ssk"
+                  },
+                  {
+                    "type": "text",
+                    "text": " -- slip, slip, knit (left-leaning decrease)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size in the figures below -- every count and measurement in this pattern reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method on the 4.5 mm needle, cast on 96 (100, 104) sts using the long-tail cast-on. The tail formula: tail_cm = (needle circumference mm x stitch count) / 10 + 15. For size L on a 4.5 mm needle: (4.5 x 104) / 10 + 15 = 46.8 + 15 = 61.8 cm. Round up to 70 cm of tail to be safe. Place a unique beginning-of-round marker and join to work in the round, being careful not to twist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 12 rounds of 2 x 2 rib: *k2, p2; repeat from * to end. The 4.5 mm needle gives slightly tighter ribbing that grips the head well. After completing the brim, you should have 96 (100, 104) stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch to the 5 mm needle. Work every round in knit (stocking stitch in the round) until the hat measures 18 cm from the cast-on edge, or to your preferred depth before crown shaping."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set-up: divide the stitches into 8 equal sections by placing a marker after every 12 (12.5, 13) stitches. Note: if your stitch count does not divide exactly into 8, place markers after groups of stitches as evenly as possible. The star-decrease method produces 8 decrease lines that converge at the crown."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat from * 8 times. 88 (92, 96) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: knit all sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 3: *k to 2 sts before marker, k2tog; repeat from * 8 times. 80 (84, 88) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 4: knit all sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 5: *k to 2 sts before marker, k2tog; repeat from * 8 times. 72 (76, 80) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 6: *k to 2 sts before marker, k2tog; repeat from * 8 times. 64 (68, 72) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 7: *k to 2 sts before marker, k2tog; repeat from * 8 times. 56 (60, 64) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 8: *k to 2 sts before marker, k2tog; repeat from * 8 times. 48 (52, 56) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue working a decrease round every round (no plain round) until 16 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 16 stitches on the needle, ready to gather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut the yarn, leaving a 20 cm tail. Thread the tail onto the tapestry needle and draw it through all 16 live stitches. Remove the knitting needle, pull the tail gently but firmly to close the hole, and fasten off on the inside with two small stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim too loose at the cast-on edge: the long-tail cast-on is more elastic than it looks; if you cast on loosely, the brim flares outward. Cast on with your thumb and index finger held closer together, or go down one needle size for the cast-on only and switch immediately to the brim needle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown decreases stacking in one visible column: this happens when the decrease round starts mid-section rather than at the section boundary. Check your marker placement after round 1 of the crown and re-position if the columns are uneven."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Top gather puckers outward: caused by pulling the gather tail too hard, drawing a ring of fabric rather than a flat star. Draw the tail through slowly, easing each stitch off the needle in turn, then pull gently and fasten from the inside."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hat too short or too long: the length to the start of crown shaping is adjustable. Measure the hat against your head or a head model before beginning the crown and adjust the plain-round count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in all ends on the wrong side using the tapestry needle. For a plain stocking-stitch beanie, light blocking is optional but recommended: damp the hat, shape it over a head-sized bowl or balloon, and leave to dry. This sets the stitch definition and evens out any slight tension irregularities around the magic-loop halfway point."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wool: hand wash in cool water with a wool wash, squeeze gently without wringing, and dry flat. Most superwash merino is machine-washable on a wool cycle; check your yarn label. Acrylic aran: machine wash on a cool gentle cycle; do not tumble-dry at high heat as the fibres can felt slightly with heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once you are comfortable with this basic shape, try the ribbed beanie (all rib, no plain stocking stitch) for a hat with more stretch and a different surface texture. The slouchy beanie uses the same cast-on count but adds extra length and works a looser gauge for a relaxed, draped look."
+          }
+        ]
+      }
+    ]
+  }
+}

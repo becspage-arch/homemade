@@ -1,0 +1,545 @@
+{
+  "slug": "lace-headband",
+  "title": "Lace headband",
+  "subtitle": "A delicate eyelet headband worked flat in DK yarn.",
+  "excerpt": "A flat-knitted lace headband in DK yarn on 4 mm needles with a simple eyelet-rib pattern. Seamed into a loop. One size fits most adult heads.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Eyelet rib headbands appear in Weldon's Practical Knitter Series 5 (1887) under 'knitted headbands and fascinators'.",
+  "heroPrompt": "A finished lace headband in cream DK yarn showing the eyelet rib pattern across the width, photographed flat with the seam visible.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "secondaryNeedleSlugs": [],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Length: 56 cm (unstretched). Width: 8 cm. One size fits adult heads 54 to 58 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat",
+      "seamed",
+      "lace",
+      "headband"
+    ],
+    "projectShape": "HEADBAND",
+    "techniqueDisciplines": [
+      "LACE"
+    ],
+    "chartDefinition": {
+      "width": 6,
+      "height": 2,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "symbol": "k2"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "symbol": "yarn-over"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "symbol": "k2tog"
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "symbol": "k2"
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "symbol": "yarn-over"
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "symbol": "k2tog"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "symbol": "purl"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "symbol": "purl"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "symbol": "purl"
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "symbol": "purl"
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "symbol": "purl"
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "symbol": "purl"
+        }
+      ],
+      "legend": {
+        "k2": "Knit 2 stitches",
+        "yarn-over": "Yarn over -- creates eyelet",
+        "k2tog": "Knit 2 together",
+        "purl": "Purl stitch"
+      }
+    },
+    "sizesGraded": [
+      {
+        "name": "One size",
+        "headCircumference": 56
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          18
+        ],
+        "label": "After cast-on: 18 stitches"
+      },
+      {
+        "rowOrRound": 168,
+        "expected": [
+          18
+        ],
+        "label": "At end of last row before bind-off: 18 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over (yo)",
+      "definition": "Wrap the yarn once over the right needle before working the next stitch. Creates a new stitch and a decorative eyelet hole."
+    },
+    {
+      "slug": "mattress-stitch",
+      "term": "Mattress stitch",
+      "definition": "An invisible seaming technique worked from the right side of the fabric, picking up horizontal bars between the edge and the first full stitch on each side alternately."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "knit-stitch",
+    "purl-stitch",
+    "yarn-over",
+    "k2tog",
+    "mattress-stitch"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "yarn-over",
+    "k2tog",
+    "mattress-stitch"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This lace headband is worked flat across 18 stitches with an all-over eyelet-rib pattern, then seamed into a loop to fit adult heads of 54 to 58 cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction is used because the short row count and narrow width make flat faster than in-the-round for a headband; the seam at the back is barely noticeable once blocked. Each "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "yarn over"
+          },
+          {
+            "type": "text",
+            "text": " pairs with a k2tog to keep the stitch count constant throughout. About 40 g (90 m) of DK yarn. Blocks to a noticeably more open, delicate fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool or wool-blend yarn",
+              "qty": "40 g (approx. 90 m)",
+              "substitutions": ""
+            },
+            {
+              "name": "4 mm straight or circular needle, any length (UK 8 / US 6)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle and scissors",
+              "qty": "1 each",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. At 24 sts per 10 cm the headband is 7.5 cm wide instead of 8 cm -- not critical for a headband, but check if you want a precise width. The length is governed by row count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit; p -- purl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "yo -- yarn over (creates eyelet, adds 1 stitch)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k2tog -- knit 2 together (right-leaning decrease, balances yarn over)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "mattress stitch -- invisible right-side seam for finishing"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the long-tail cast-on, cast on 18 sts. Tail formula: tail_cm = (needle mm x stitch count) / 10 + 15. For 18 sts on a 4 mm needle: (4 x 18) / 10 + 15 = 22 cm. After cast-on, you should have 18 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Eyelet rib body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS): *k2, yo, k2tog; repeat from * to last 2 sts, k2. Row 2 (WS): purl all. Repeat rows 1 and 2 until piece measures 56 cm from cast-on. After the last row, you should have 18 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off all 18 sts on a WS purl row."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count growing: a yarn over was worked on a WS row by mistake, or the k2tog was missed on the RS row. Unpick to the error and re-work with the paired decrease."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eyelets not opening after blocking: the headband was not wet-blocked. Soak in cool water for 5 minutes and lay flat to dry; the eyelets open significantly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Seam visible at back: "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mattress-stitch"
+                }
+              }
+            ],
+            "text": "mattress stitch"
+          },
+          {
+            "type": "text",
+            "text": " worked through both layers instead of picking up the horizontal bar only. Work through the bar between edge and first stitch on each side alternately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wet-block the strip before seaming. Once dry, join the cast-on and cast-off edges using mattress stitch. Weave in ends."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash cool, reshape and dry flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The openwork beanie uses the same eyelet repeat worked in the round for a full hat."
+          }
+        ]
+      }
+    ]
+  }
+}

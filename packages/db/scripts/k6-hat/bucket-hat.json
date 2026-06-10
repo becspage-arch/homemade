@@ -1,0 +1,654 @@
+{
+  "slug": "bucket-hat",
+  "title": "Knitted bucket hat",
+  "subtitle": "A structured bucket hat with a knitted brim, worked flat and seamed.",
+  "excerpt": "A knitted bucket hat with a structured downward-facing brim, worked in DK yarn on 4 mm needles. The crown is worked in the round and the brim is picked up and worked outward, finishing in three adult sizes.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Knitted bucket hats appear in 1970s and 1980s craft publications. Modern construction typically picks up the brim from the base of the crown rather than sewing on a separate piece.",
+  "heroPrompt": "A finished knitted bucket hat in terracotta DK yarn showing the structured downward brim and rounded crown, photographed from above on a flat surface.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-3-5mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Brim depth 6 cm. Total height 18 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-1x1",
+      "knitting-stocking-stitch",
+      "knitting-make-1",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop",
+      "pick-up-and-knit"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [],
+    "chartDefinition": null,
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          116,
+          120,
+          128
+        ],
+        "label": "After cast-on: 116 (120, 128) stitches"
+      },
+      {
+        "rowOrRound": 20,
+        "expected": [
+          116,
+          120,
+          128
+        ],
+        "label": "After crown body: 116 (120, 128) stitches"
+      },
+      {
+        "rowOrRound": 35,
+        "expected": [
+          8,
+          8,
+          8
+        ],
+        "label": "After crown shaping: 8 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point."
+    },
+    {
+      "slug": "make-one",
+      "term": "M1 (make one)",
+      "definition": "An increase that lifts the horizontal strand between two stitches and knits through the back loop to close the gap and form a new stitch."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "make-1",
+    "k2tog",
+    "pick-up-and-knit"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "pick-up-and-knit"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This knitted bucket hat is worked bottom-up in the round, with the crown worked first and the brim picked up and worked outward afterward, fitting adult heads of 54 (56, 58) cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottom-up construction with a picked-up brim is chosen over a separate knitted-on brim because it produces a seamless join between the crown and the outward-projecting brim. The increases on the brim rounds push the brim outward and downward. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method works the full hat on one needle. About 100 g (220 m) of DK yarn. Sits at the brow line with the brim angled downward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight cotton or cotton-blend yarn",
+              "qty": "100 g (approx. 220 m)",
+              "substitutions": "Wool DK works but cotton holds the brim shape better"
+            },
+            {
+              "name": "4 mm circular needle, 80 cm (UK 8 / US 6)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "3.5 mm circular needle, 80 cm (UK 9 / US 4) -- for the brim edge",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "9 (1 BOR + 8 crown)",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle and scissors",
+              "qty": "1 each",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. Swatch in the round. At 23 sts per 10 cm size S closes at 52 cm instead of 54 cm -- the hat will sit 2 cm too tight at the brow. For a structured bucket hat this is more critical than for a stretchy beanie; go up half a needle size if your swatch is tight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "p -- purl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "m1r / m1l -- make one right / make one left (increase)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k2tog -- knit two together, right-leaning decrease"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "ssk -- slip, slip, knit, left-leaning decrease"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size -- every count reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " on the 4 mm needle, cast on 116 (120, 128) sts using long-tail cast-on. Tail formula: tail_cm = (needle mm x stitch count) / 10 + 15. For size L on a 4 mm needle: (4 x 128) / 10 + 15 = 66 cm; round up to 72 cm. Join without twisting, place BOR marker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown band"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 4 rounds of k1 p1 rib. Continue in stocking stitch until hat measures 14 cm from cast-on edge. After completing the crown body, you should have 116 (120, 128) stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place 8 markers dividing into 8 equal sections."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat from * 8 times. 108 (112, 120) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: knit all."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue alternating decrease and plain rounds until 32 sts remain, then decrease every round until 8 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 8 stitches on the needle, ready to gather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut yarn with 20 cm tail, draw through all 8 sts, pull firmly, and fasten on the inside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "With the right side facing and the 4 mm needle, pick up and knit 116 (120, 128) sts around the cast-on edge at a rate of 1 st per cast-on st. Place BOR marker, join."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Increase round: *k8, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "make-one"
+                }
+              }
+            ],
+            "text": "m1r"
+          },
+          {
+            "type": "text",
+            "text": "; repeat from * to end. To work m1r: lift the horizontal strand between the stitch on the right needle and the stitch on the left needle from front to back; knit through the back loop. That closes the gap without a hole. Work 4 increase rounds with 4 plain rounds between each, adding the same number of stitches each time. The brim will begin to angle outward and downward. Switch to 3.5 mm needle for the final 4 rounds to create a firm edge. Cast off loosely with STANDARD cast-off."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim curls upward instead of projecting outward: too few increase rounds or increases too far apart. The brim needs sufficient stitches to overcome the natural tendency of stocking stitch to curl inward."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim edge is wavy and uneven: cast-off tension is inconsistent. Work the cast-off a needle size larger than the brim and make each stitch deliberately before passing it over."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown too tall for a bucket hat silhouette: a bucket hat crown sits no more than 12 to 14 cm deep. Shorten the body section if the hat reads as a beanie rather than a bucket."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Block over a bowl for the crown and shape the brim flat; dry completely before removing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash cool or machine wash on a gentle cycle in a mesh bag. Dry flat and reshape the brim over a plate while damp."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The knitted sun hat takes the bucket hat silhouette and extends the brim to a full sun-shielding width."
+          }
+        ]
+      }
+    ]
+  }
+}

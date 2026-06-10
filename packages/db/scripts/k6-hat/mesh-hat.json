@@ -1,0 +1,661 @@
+{
+  "slug": "mesh-hat",
+  "title": "Mesh summer hat",
+  "subtitle": "An all-over mesh lace hat in DK cotton for warm weather.",
+  "excerpt": "A bottom-up mesh hat in DK cotton on 4 mm needles with an all-over k1 yo k2tog repeat for maximum openness. Fits adult heads of 54 to 58 cm.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mesh and net stitch patterns appear in Mary Thomas's Book of Knitting Patterns (1943, now public domain in many jurisdictions). The 3-stitch mesh repeat is among the simplest all-over patterns.",
+  "heroPrompt": "A finished mesh summer hat in undyed natural cotton DK yarn showing the open mesh pattern across the body, photographed in bright natural light.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-3-5mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "GATHERED",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Total height 22 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-2x2",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop",
+      "lace",
+      "cotton"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [
+      "LACE"
+    ],
+    "chartDefinition": {
+      "width": 3,
+      "height": 2,
+      "cells": [
+        {
+          "row": 0,
+          "col": 0,
+          "symbol": "knit"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "symbol": "yarn-over"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "symbol": "k2tog"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "symbol": "yarn-over"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "symbol": "k2tog"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "symbol": "knit"
+        }
+      ],
+      "legend": {
+        "knit": "Knit stitch",
+        "yarn-over": "Yarn over -- creates mesh hole",
+        "k2tog": "Knit 2 together -- balancing decrease"
+      }
+    },
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          120,
+          123,
+          126
+        ],
+        "label": "After cast-on: 120 (123, 126) stitches"
+      },
+      {
+        "rowOrRound": 10,
+        "expected": [
+          120,
+          123,
+          126
+        ],
+        "label": "After brim: 120 (123, 126) stitches"
+      },
+      {
+        "rowOrRound": 40,
+        "expected": [
+          8,
+          8,
+          8
+        ],
+        "label": "After crown: 8 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point."
+    },
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over (yo)",
+      "definition": "Wrap the yarn once over the right needle before working the next stitch. Creates a new stitch and a mesh hole in the fabric."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "yarn-over",
+    "k2tog"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "yarn-over",
+    "k2tog"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This mesh summer hat is worked bottom-up in the round with an all-over k1 yo k2tog mesh on the body, fitting adult heads of 54 (56, 58) cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottom-up construction lets the 2 x 2 rib brim anchor the mesh body. Every round of the mesh section uses a single stitch-count-neutral 3-stitch repeat: knit 1, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "yarn over"
+          },
+          {
+            "type": "text",
+            "text": ", k2tog. This is the most open possible mesh achievable without slipping stitches. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method handles the full circumference. About 80 g (175 m) of DK cotton. Cotton is chosen over wool because it does not felt or fray at mesh holes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight cotton or cotton-linen yarn",
+              "qty": "80 g (approx. 175 m)",
+              "substitutions": ""
+            },
+            {
+              "name": "4 mm circular needle, 80 cm (UK 8 / US 6)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "3.5 mm circular needle, 80 cm (UK 9 / US 4) -- for brim",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "9 (1 BOR + 8 crown)",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle and scissors",
+              "qty": "1 each",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles. The mesh pattern opens the fabric; the finished crown may measure 1 to 2 cm wider than your gauge swatch. At 23 sts per 10 cm the crown is 55 cm for size S -- still fits with slight stretch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit; p -- purl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "yo -- yarn over (creates mesh hole, adds 1 stitch)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k2tog -- knit 2 together (right-leaning decrease, balances yarn over)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size -- every count reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " on the 3.5 mm needle, cast on 120 (123, 126) sts (must be a multiple of 3). Tail formula: tail_cm = (needle mm x stitch count) / 10 + 15. For size L on 3.5 mm: (3.5 x 126) / 10 + 15 = 59 cm; round up to 65 cm. Join without twisting, place BOR marker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 10 rounds of 2 x 2 rib: *k2, p2; repeat to end (any extra sts at end: k). Switch to 4 mm needle. After the brim, you should have 120 (123, 126) stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mesh body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every round: *k1, yo, k2tog; repeat from * to end. Work until hat measures 20 cm from cast-on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Knit one transition round. Place 8 markers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat from * 8 times. 112 (115, 118) sts -- round to nearest multiple of 8 for even sections."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: knit all."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue alternating until 32 sts, then every round until 8 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 8 stitches on the needle, ready to gather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut yarn with 20 cm tail. Draw through all 8 sts, pull firmly, fasten on inside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count growing: a yarn over was worked but the k2tog was missed. In a continuous mesh repeat it is easy to lose the pairing; use a stitch marker to divide the round into groups of 12 (four repeats) and check each group ends correctly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mesh holes closing up: the yarn tension is too tight for cotton. Cotton does not spring back like wool; try a needle half a size up or consciously loosen tension on yarn overs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping lumpy: the transition from a 3-stitch mesh repeat to an 8-marker star decrease requires one plain round first. Skip that round and the crown will not lie flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Wet the hat and reshape over a bowl, opening the mesh holes with a needle while still damp."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Machine wash cool on a gentle cycle or hand wash. Reshape and dry flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Fair Isle beanie uses a colourwork stranded technique in a similar beanie shape, for winter wear instead of summer."
+          }
+        ]
+      }
+    ]
+  }
+}

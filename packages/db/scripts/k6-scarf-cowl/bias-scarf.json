@@ -1,0 +1,584 @@
+{
+  "slug": "bias-scarf",
+  "title": "Bias-knit scarf",
+  "subtitle": "A diagonal-grain scarf that drapes differently from a straight-knit piece.",
+  "excerpt": "A flat scarf worked diagonally using paired yarn-overs and decreases to create the bias grain, knitted on 4 mm needles with DK yarn, finishing at 22 cm wide by 160 cm long. The diagonal fabric drapes with a twist and lies softly across the shoulders.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "scarf-cowl",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Bias knitting uses paired increases and decreases on alternate edges to create a diagonal fabric. The technique is well-established in knitting literature; Mary Thomas's Knitting Book (1938) describes biased fabric formation. Adapts principles from Weldon's Practical Knitter for triangular shawl-front construction applied to a rectangular scarf shape.",
+  "heroPrompt": "A bias-knit scarf in dusty rose DK yarn, showing the diagonal stitch lines across the fabric width, with one end draped over the other to reveal the twist in the drape.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "STANDARD",
+    "inTheRoundMethod": null,
+    "gaugeText": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. Bias fabric reads slightly looser at the same needle size.",
+    "finishedSizeText": "22 cm wide x 160 cm long.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-stocking-stitch",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction"
+    ],
+    "chartDefinition": {
+      "title": "Bias stocking stitch repeat — 4 rows",
+      "layout": "flat",
+      "craft": "knitting",
+      "terminologyConvention": "uk",
+      "rows": [
+        {
+          "rowNumber": 1,
+          "rightSide": true,
+          "stitches": [
+            {
+              "symbol": "yarn-over"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "ssk"
+            }
+          ]
+        },
+        {
+          "rowNumber": 2,
+          "rightSide": false,
+          "stitches": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        },
+        {
+          "rowNumber": 3,
+          "rightSide": true,
+          "stitches": [
+            {
+              "symbol": "yarn-over"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "knit"
+            },
+            {
+              "symbol": "ssk"
+            }
+          ]
+        },
+        {
+          "rowNumber": 4,
+          "rightSide": false,
+          "stitches": [
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            },
+            {
+              "symbol": "purl"
+            }
+          ]
+        }
+      ],
+      "caption": "Bias repeat over 5 stitches. YO at start increases stitch count; SSK at end restores it. All WS rows purled. Stitch count remains constant."
+    },
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          48
+        ],
+        "label": "After cast-on: 48 stitches"
+      },
+      {
+        "rowOrRound": 240,
+        "expected": [
+          48
+        ],
+        "label": "Halfway mark: still 48 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    },
+    {
+      "slug": "blocking-mat",
+      "isOptional": true
+    },
+    {
+      "slug": "blocking-pins",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yarn-over",
+      "term": "Yarn over (YO)",
+      "definition": "Bringing the yarn over the needle from front to back before working the next stitch. Creates a new stitch and a small eyelet hole. In a bias scarf, it is paired with a decrease to keep the stitch count constant while shifting the fabric diagonal."
+    },
+    {
+      "slug": "ssk",
+      "term": "SSK (slip, slip, knit)",
+      "definition": "A left-leaning decrease. Slip two stitches knitwise, one at a time, then insert the left needle through the front loops and knit them together. Pairs with yarn-over in the bias pattern to maintain stitch count."
+    },
+    {
+      "slug": "long-tail-cast-on",
+      "term": "Long-tail cast-on",
+      "definition": "A cast-on using the tail and working yarn together to form an elastic, neat edge."
+    },
+    {
+      "slug": "blocking",
+      "term": "Blocking",
+      "definition": "Wetting or steaming and pinning the finished piece to set the stitches and open the fabric to its finished dimensions."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "yarn-over",
+    "ssk",
+    "blocking"
+  ],
+  "criticalTechniques": [
+    "yarn-over",
+    "ssk"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a flat scarf worked diagonally in stocking stitch, finishing at 22 cm wide and 160 cm long. A yarn-over at the start and a decrease at the end of each right-side row push the grain onto the bias. The diagonal grain gives the scarf a gentle twist and a drape quite different from a straight-knit piece."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat construction on straight needles works well for bias because the increases and decreases always sit on the same edge of each right-side row. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yarn-over"
+                }
+              }
+            ],
+            "text": "yarn over"
+          },
+          {
+            "type": "text",
+            "text": " at the start of each RS row increases the stitch count by one, and an "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ssk"
+                }
+              }
+            ],
+            "text": "SSK"
+          },
+          {
+            "type": "text",
+            "text": " at the end restores it. The stitch count therefore stays constant throughout while the visual line of the YO column moves diagonally across the body. The scarf uses about 175 g (395 m / 432 yards) of DK yarn."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool or silk-blend yarn",
+              "qty": "175 g (approx. 395 m / 432 yards)",
+              "substitutions": "A silk or bamboo blend drapes beautifully on the bias. Pure wool also works well."
+            },
+            {
+              "name": "4 mm needles (UK 8 / US 6)",
+              "qty": "1 pair or 1 circular",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry or darning needle",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Scissors",
+              "qty": "1 pair",
+              "substitutions": ""
+            },
+            {
+              "name": "Measuring tape",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Blocking mat and pins",
+              "qty": "strongly recommended",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rows = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. Bias fabric reads slightly looser than the straight-grain swatch at the same needle size; swatch in the bias stitch pattern and measure after blocking. Each stitch off gauge changes the finished width by about 1 cm; row gauge drift across the full 480-row scarf adds or removes about 8 cm of finished length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "K (knit), P (purl), YO (yarn over), SSK (slip, slip, knit). YO adds one stitch; SSK removes one stitch. The stitch count stays at 48 throughout."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "long-tail-cast-on"
+                }
+              }
+            ],
+            "text": "long-tail cast-on"
+          },
+          {
+            "type": "text",
+            "text": " to place 48 stitches. Tail length: (12.6 x 48) / 10 + 15 = about 75 cm. (4 mm needle circumference is approximately 12.6 mm.)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count check-in: 48 stitches after the cast-on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 1 (RS): YO, K to last 2 sts, SSK. (48 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Row 2 (WS): P to end. (48 sts)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat Rows 1 and 2 until the scarf measures 160 cm from the cast-on edge, measured along the straight grain (not along the diagonal edge). At the halfway mark (80 cm), count: still 48 stitches."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast off"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "On a WS row, cast off purlwise using the standard method. Work at normal tension so the cast-off edge does not pull in relative to the body width."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitch count changing. The YO and SSK must appear together on every RS row; skipping one without the other changes the stitch count. Check at the end of every RS row that you still have 48 stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "YO column not visible or appearing as an undulation rather than a hole. In a bias scarf worked in plain stocking stitch, the YO creates a small eyelet rather than a decorative hole; the fabric effect is the diagonal tilt, not the lace. If the YO disappears into the fabric, it is being worked correctly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scarf twisting when worn. This is the nature of bias fabric and is correct. The scarf lies flat when blocked but picks up a gentle twist in wear."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in ends. Wet "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocking"
+                }
+              }
+            ],
+            "text": "blocking"
+          },
+          {
+            "type": "text",
+            "text": " is important for a bias scarf: soak in cool water, press out moisture, and pin the scarf flat to the blocking mat pulling gently on the diagonal to set the width and length. The bias grain relaxes and the scarf opens to its full dimensions after a good block."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water and lay flat to dry. Bias fabric is more prone to stretching when wet than straight-grain fabric: always support the full weight of the piece when lifting it from the water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The drop-stitch scarf uses a different kind of controlled eyelet to create an open, airy fabric. Or try lace scarves, which use yarn-overs and decreases in more complex arrangements to make patterned openwork fabric."
+          }
+        ]
+      }
+    ]
+  }
+}

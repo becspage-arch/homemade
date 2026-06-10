@@ -1,0 +1,590 @@
+{
+  "slug": "gradient-hat",
+  "title": "Gradient hat",
+  "subtitle": "A beanie that fades from one colour to another using held-together strands.",
+  "excerpt": "A bottom-up beanie in DK yarn on 4 mm needles where two colours are blended by holding strands together and gradually shifting proportions from brim to crown. Fits adult heads of 54 to 58 cm.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The held-together gradient blend is a modern knitting technique. Gradient yarn sets and the held-together fade method have been widely shared in the maker community since the 2010s.",
+  "heroPrompt": "A finished gradient hat in DK yarn fading from deep teal at the brim through mid-teal to pale sea-green at the crown, photographed on a hat form.",
+  "knitting": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-3-5mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "GATHERED",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Total height 22 cm.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-2x2",
+      "knitting-stocking-stitch",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop",
+      "colourwork",
+      "gradient",
+      "colour-fade"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [
+      "COLOURWORK"
+    ],
+    "chartDefinition": null,
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          120,
+          124,
+          128
+        ],
+        "label": "After cast-on: 120 (124, 128) stitches"
+      },
+      {
+        "rowOrRound": 10,
+        "expected": [
+          120,
+          124,
+          128
+        ],
+        "label": "After brim: 120 (124, 128) stitches"
+      },
+      {
+        "rowOrRound": 40,
+        "expected": [
+          8,
+          8,
+          8
+        ],
+        "label": "After crown: 8 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point."
+    },
+    {
+      "slug": "held-together",
+      "term": "Held together",
+      "definition": "Two strands of yarn used simultaneously through the same needle to create a blended colour or a thicker yarn weight. Used here to fade one colour into another by gradually replacing one strand."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "k2tog",
+    "ssk",
+    "held-together-fade"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "k2tog"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This gradient hat is worked bottom-up in the round in DK yarn. It fades from a dark colour at the brim to a light colour at the crown using the held-together blend method. Fits adult heads of 54 (56, 58) cm."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottom-up construction is the natural choice for a gradient: the darkest colour starts at the brim, and each section shifts the blend ratio one step closer to the light colour. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "held-together"
+                }
+              }
+            ],
+            "text": "held-together"
+          },
+          {
+            "type": "text",
+            "text": " method replaces one strand gradually rather than a hard colour change, producing a smooth fade. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method handles the full circumference. About 100 g each of two DK colours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "DK-weight wool yarn, Colour A (dark)",
+              "qty": "100 g (approx. 220 m)",
+              "substitutions": ""
+            },
+            {
+              "name": "DK-weight wool yarn, Colour B (light)",
+              "qty": "100 g (approx. 220 m)",
+              "substitutions": ""
+            },
+            {
+              "name": "4 mm circular needle, 80 cm (UK 8 / US 6)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "3.5 mm circular needle, 80 cm (UK 9 / US 4) -- for brim",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "9 (1 BOR + 8 crown)",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle and scissors",
+              "qty": "1 each",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "22 sts x 30 rounds = 10 x 10 cm in stocking stitch on 4 mm needles, blocked. When two strands are held together, gauge does not change as long as each strand is DK weight. At 23 sts per 10 cm the crown is 55 cm for size S -- still fits."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gradient plan"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The hat body is 26 rounds from brim to crown start. Divide into 5 sections of approximately 5 to 6 rounds each: Section 1 (2 strands A), Section 2 (1.5 strands A + 0.5 strands B -- alternate strands every 2 rounds), Section 3 (1 strand A + 1 strand B held together), Section 4 (0.5 strands A + 1.5 strands B), Section 5 (2 strands B)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size -- every count reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " on the 3.5 mm needle with two strands of Colour A held together, cast on 120 (124, 128) sts. Tail formula per strand: tail_cm = (needle mm x stitch count) / 10 + 15. For size L on 3.5 mm: (3.5 x 128) / 10 + 15 = 60 cm per strand. Cut two tails each 65 cm. Join without twisting, place BOR marker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 10 rounds of 2 x 2 rib in Colour A single strand (brim uses single DK strand on 3.5 mm to maintain flexibility). After the brim, you should have 120 (124, 128) stitches on the needle. Switch to 4 mm needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gradient body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rounds 1 to 5 (Section 1): knit with 2 strands A. Rounds 6 to 10 (Section 2): alternate 2 strands A and 1A+1B every 2 rounds. Rounds 11 to 16 (Section 3): knit with 1 strand A + 1 strand B held together. Rounds 17 to 21 (Section 4): alternate 1A+1B and 2 strands B every 2 rounds. Rounds 22 to 26 (Section 5): knit with 2 strands B."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place 8 markers dividing sts into 8 equal sections. Continue in 2 strands B."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat from * 8 times. 112 (116, 120) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: knit all."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue alternating until 32 sts, then every round until 8 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 8 stitches on the needle, ready to gather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut yarn with 20 cm tail per strand. Draw through all 8 sts, pull firmly, fasten on inside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Abrupt colour change instead of gradient: the transition sections were skipped. Work the alternating rounds exactly as written, even though it means changing strands every 2 rounds."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge too thick: two strands of DK held together is equivalent to aran weight. If using a commercially sold gradient set that is labelled DK but is on the heavy end, go up half a needle size."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ends multiply: each strand-swap adds two ends. Use the Russian join or spit-splice to eliminate ends in the gradient zone."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in all ends. Block over a bowl."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash cool, reshape and dry flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The child's striped beanie uses hard stripe changes in aran yarn for a bold two-colour effect."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,696 @@
+{
+  "slug": "pompom-beanie",
+  "title": "Pompom beanie",
+  "subtitle": "A ribbed beanie topped with a full pompom, in aran yarn.",
+  "excerpt": "A bottom-up aran beanie with an all-over 2 x 2 rib body topped with a hand-made pompom. The rib produces a dense, stretchy hat that fits adults from 54 to 61 cm. A pompom maker or two forks produce the trim.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "hat",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Pompom-trimmed hats appear throughout Weldon's Practical Knitter (1880s onward). Mary Thomas's Knitting Book (1938), pp. 80-81, describes ribbed hat construction and pompom trim.",
+  "heroPrompt": "A finished ribbed beanie in red aran wool with a large red pompom on top, sitting on a wooden surface, showing the all-over 2 x 2 rib texture and the gathered crown.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "secondaryNeedleSlugs": [
+      "knitting-needle-4-5mm"
+    ],
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "GATHERED",
+    "inTheRoundMethod": "MAGIC_LOOP",
+    "gaugeText": "18 sts x 24 rounds = 10 x 10 cm in 2 x 2 rib (relaxed) on 5 mm needles.",
+    "gaugeInPatternStitch": null,
+    "finishedSizeText": "Crown circumference 54 (56, 58) cm. Total height 22 cm plus pompom.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-rib-2x2",
+      "knitting-k2tog",
+      "knitting-long-tail-cast-on",
+      "knitting-cast-off"
+    ],
+    "craftTechniqueTags": [
+      "in-the-round",
+      "magic-loop"
+    ],
+    "projectShape": "HAT",
+    "techniqueDisciplines": [],
+    "chartDefinition": null,
+    "sizesGraded": [
+      {
+        "name": "S",
+        "headCircumference": 54
+      },
+      {
+        "name": "M",
+        "headCircumference": 56
+      },
+      {
+        "name": "L",
+        "headCircumference": 58
+      }
+    ],
+    "stitchCountCheckpoints": [
+      {
+        "rowOrRound": 1,
+        "expected": [
+          96,
+          100,
+          104
+        ],
+        "label": "After cast-on: 96 (100, 104) stitches"
+      },
+      {
+        "rowOrRound": 12,
+        "expected": [
+          96,
+          100,
+          104
+        ],
+        "label": "After brim: 96 (100, 104) stitches"
+      },
+      {
+        "rowOrRound": 8,
+        "expected": [
+          16,
+          16,
+          16
+        ],
+        "label": "After final decrease round: 16 stitches"
+      }
+    ],
+    "errataVersion": "1.0.0",
+    "errataLog": []
+  },
+  "recipeTools": [
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magic-loop",
+      "term": "Magic loop",
+      "definition": "A method of knitting a small circumference on one long circular needle by pulling a loop of cable through the work at the halfway point."
+    },
+    {
+      "slug": "pompom",
+      "term": "Pompom",
+      "definition": "A spherical yarn trim made by wrapping yarn around a card or pompom maker, tying off the centre, and cutting the loops. The tied centre secures the trim to the hat crown."
+    },
+    {
+      "slug": "rib-stitch",
+      "term": "2 x 2 rib",
+      "definition": "A stitch pattern alternating two knit stitches and two purl stitches. The columns of knit and purl stack vertically, producing a stretchy, vertically ridged fabric."
+    }
+  ],
+  "techniqueSlugs": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch",
+    "k2tog",
+    "pompom-making"
+  ],
+  "criticalTechniques": [
+    "long-tail-cast-on",
+    "magic-loop",
+    "knit-stitch",
+    "purl-stitch"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This pompom beanie is worked bottom-up in the round in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rib-stitch"
+                }
+              }
+            ],
+            "text": "2 x 2 rib"
+          },
+          {
+            "type": "text",
+            "text": " throughout, fitting adult heads of 54 (56, 58) cm, with a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pompom"
+                }
+              }
+            ],
+            "text": "pompom"
+          },
+          {
+            "type": "text",
+            "text": " sewn to the crown."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bottom-up construction keeps the rib columns unbroken from brim to crown, which gives a clean finish when the hat is worn. Using the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " method means one needle serves from cast-on to crown. The whole hat takes about 100 g (180 m) of aran yarn. The pompom is made from the same yarn and adds another 15 to 20 g."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {
+              "name": "Aran-weight wool or wool-blend yarn",
+              "qty": "120 g (approx. 215 m, including pompom)",
+              "substitutions": ""
+            },
+            {
+              "name": "5 mm circular needle, 80 cm (UK 6 / US 8)",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "4.5 mm circular needle, 80 cm (UK 7 / US 7)",
+              "qty": "1",
+              "substitutions": "For brim only."
+            },
+            {
+              "name": "Stitch markers",
+              "qty": "9 (1 BOR + 8 crown)",
+              "substitutions": ""
+            },
+            {
+              "name": "Pompom maker or two pieces of card",
+              "qty": "1",
+              "substitutions": ""
+            },
+            {
+              "name": "Tapestry needle and scissors",
+              "qty": "1 each",
+              "substitutions": ""
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Gauge"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 sts x 24 rounds = 10 x 10 cm in 2 x 2 rib (relaxed, not stretched) on 5 mm needles. Rib gauge is measured with the fabric relaxed. At 19 sts per 10 cm, size S finishes at about 51 cm and fits as a child's hat. Check gauge before casting on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k -- knit"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "p -- purl"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "k2tog -- knit two together"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before you cast on, circle your size -- every count reads S (M, L)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cast on"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "magic-loop"
+                }
+              }
+            ],
+            "text": "magic loop"
+          },
+          {
+            "type": "text",
+            "text": " on 4.5 mm needle, cast on 96 (100, 104) sts using long-tail cast-on. Tail formula: tail_cm = (needle mm x stitch count) / 10 + 15. For size L on 4.5 mm: (4.5 x 104) / 10 + 15 = 62 cm; round to 70 cm. Join without twisting, place BOR marker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brim"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work 12 rounds of 2 x 2 rib: *k2, p2; repeat from * to end. After completing the brim, you should have 96 (100, 104) stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Body"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch to 5 mm needle. Continue in 2 x 2 rib until hat measures 20 cm from cast-on edge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Crown shaping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place markers to divide into 8 sections of 12 (12.5, 13) sts."
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decrease round 1: *k to 2 sts before marker, k2tog; repeat * 8 times. 88 (92, 96) sts."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Round 2: work in rib pattern as set."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue alternating a decrease round and a rib round until 40 sts remain, then decrease every round until 16 sts remain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After the final decrease round, you should have 16 stitches on the needle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Top finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut yarn with 25 cm tail, thread on tapestry needle, draw through all 16 live stitches, pull to close, and fasten off. Leave the tail long enough to attach the pompom."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making and attaching the pompom"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wind yarn around a pompom maker or two pieces of card (about 7 cm wide) until the wound yarn is dense -- about 150 wraps for a 6 cm pompom."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide a length of yarn between the card layers and tie as tightly as possible at the centre. Cut the loops on both sides of the card, shake out the pompom, and trim to a round shape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Using the long tying strand, thread through the crown gather and sew through the hat from outside to inside several times. Fasten off firmly on the inside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common faults"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rib columns disrupted at the crown: as the section count decreases, the k2, p2 repeat will break. Switch to all knit for the last 2 or 3 decrease rounds for a clean gather rather than forcing a broken rib pattern to close neatly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pompom falls off: the tying knot must be pulled extremely tight. Use a slip knot pulled through itself twice, then sew the pompom tails into the hat several times. A pompom that is only tacked on will come loose in the wash."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pompom too sparse: fewer than about 120 wraps on a 7 cm card produces a flat, thin pompom. Wind until the card layers are thick before tying."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in all ends except the pompom tails, which are used to attach the pompom. Block the hat body over a bowl; leave the pompom unblocked (steam can deflate it)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Care"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hand wash cool. Gently squeeze the pompom dry. Do not wring. Dry flat. The pompom may need a light shake when dry to restore its shape."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The same hat in a contrast colour for the pompom produces a striking two-tone result. The brimmed beanie uses the same construction with a folded brim for extra warmth."
+          }
+        ]
+      }
+    ]
+  }
+}
