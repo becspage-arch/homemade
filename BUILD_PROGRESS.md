@@ -2023,6 +2023,77 @@ alongside the K-2 chart engine and the K-4.3 parametric schematic
 renderer as the third permitted visual surface per the K-4.1
 no-external-visuals hard rule.
 
+## K-5 knitting grading + sock math + author prompts (2026-06-10)
+
+Knitting K-5. The expensive worker: grading library + sock math
+library + replaced 3 stub author prompts + 8 BLOCK-tier QC rules +
+autopilot enabled for the remaining 3 knitting sub-cats.
+
+Grading library at [apps/web/src/lib/knitting/grading/](apps/web/src/lib/knitting/grading/)
+covers six construction shapes: TOP_DOWN_RAGLAN, TOP_DOWN_YOKE
+(with German short rows lifting the back neck), BOTTOM_UP_SET_IN,
+DROP_SHOULDER, SIDE_TO_SIDE, CONTIGUOUS_SET_IN (the Susie Myers
+method). The seven locked K-5 sweater grading keys —
+`yokeDepth`, `neckCircumference`, `armholeDepth`, `sleeveCapDepth`,
+`upperArmCircumference`, `wristCircumference`,
+`sleeveCuffCircumference` — populate verbatim on every
+`GradedPattern` so the schema's `sizesGraded` JSON column and the
+K-4.3 `SchematicRenderer` `SizeRow` type read the same numbers.
+Fabric-aware adjustments via `DominantFabric` (eight types:
+STOCKINETTE, GARTER, RIB_1X1, RIB_2X2, CABLE, LACE, BRIOCHE,
+COLOURWORK_STRANDED) carry both body-stitch multipliers (1.20×
+for cables, 1.30× for brioche) and yarn multipliers (1.7× for
+stranded colourwork, 2.0× for brioche, 1.15× for cables). 23/23
+tests passing covering 10 published-pattern reference comparisons
+(Drops Design, PetiteKnit Sophie Yoke, Brooklyn Tweed set-in
+aran, indie drop-shoulder + side-to-side + contiguous + worsted
++ kids), 6 cross-size verifier monotonicity runs, 7 spot checks.
+
+Sock + foot math library at [apps/web/src/lib/knitting/sock/](apps/web/src/lib/knitting/sock/)
+covers two construction directions (CUFF_DOWN, TOE_UP) × five
+heel styles (FLAP_AND_GUSSET, SHORT_ROW_GERMAN,
+SHORT_ROW_JAPANESE, SHORT_ROW_DUTCH, AFTERTHOUGHT) — all ten
+combinations supported. Foot sizes carry UK + EU + US shoe-size
+numbers in a single slug (`W_6UK_39EU_8US`) across kids, youth,
+women, men adult bands. Sock yarn factor (2.8× garment
+consumption) accounts for the denser high-twist sock-yarn
+gauge knitters use for durability. 19/19 tests passing across
+10 reference patterns (Drops free socks, indie cuff-down +
+toe-up + afterthought + knee-high + sport weight + Dutch +
+Japanese variants), 3 verifier monotonicity runs, 6 spot checks.
+
+Three replaced author prompts at
+[docs/knitting-sweater-cardigan-author.md](docs/knitting-sweater-cardigan-author.md),
+[docs/knitting-vest-author.md](docs/knitting-vest-author.md),
+[docs/knitting-sock-author.md](docs/knitting-sock-author.md). Each
+inherits the K-4.1 cross-cutting requirements (circle-your-size,
+concrete gauge consequence, cast-on tail formula, construction-
+direction WHY, stitch-count check-ins, no external visuals,
+`### Common faults` H3, Persona stuck-check). Each calls the
+appropriate grading library rather than hand-authoring per-size
+maths. UK terminology canonical, no em dashes, no marketing
+language, no academic register.
+
+8 BLOCK-tier QC rules added to
+[packages/db/scripts/qc-audit.ts](packages/db/scripts/qc-audit.ts) via
+the new `auditKnittingPattern` function:
+`garment-grading-inconsistency`,
+`garment-stitch-count-vs-measurement-mismatch`,
+`garment-sleeve-cap-depth-implausible` (new),
+`garment-yarn-requirement-implausible` (new),
+`sock-foot-math-inconsistent` (new),
+`sock-heel-style-mismatch` (new),
+`needle-yarn-weight-mismatch` (new),
+`gauge-out-of-range`. Per the no-warning-tiers rule, all
+binary BLOCK. `KnittingYarnWeightStandard` enum is mapped to CYC
+category integer for the needle + gauge pairing checks.
+
+Autopilot enabled for `sweater-cardigan`, `vest`, `sock` via
+[packages/db/scripts/flip-knitting-subcat-autopilot.ts](packages/db/scripts/flip-knitting-subcat-autopilot.ts).
+All 14 K-4-spec knitting sub-cats now `autopilotEnabled = true`;
+the 9 legacy back-compat sub-cats stay `false` so they don't
+collect new rows.
+
 ## K-4.3 parametric knitting schematic renderer (2026-06-10)
 
 Knitting K-4.3 — parametric `SchematicRenderer` component at

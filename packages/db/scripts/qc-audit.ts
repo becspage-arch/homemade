@@ -93,6 +93,12 @@ export type QCRuleKind =
   | 'amigurumi-shape-math-implausible'
   | 'hook-yarn-weight-mismatch'
   | 'gauge-out-of-range'
+  // Knitting pattern rules (K-5)
+  | 'garment-sleeve-cap-depth-implausible'
+  | 'garment-yarn-requirement-implausible'
+  | 'sock-foot-math-inconsistent'
+  | 'sock-heel-style-mismatch'
+  | 'needle-yarn-weight-mismatch'
 
 export interface QCFinding {
   severity: QCSeverity
@@ -765,6 +771,331 @@ function auditCrochetPattern(p: NonNullable<TutorialRow['crochetPattern']>): QCF
   return findings
 }
 
+// ─── Knitting pattern QC rules (K-5) ───────────────────────────────────────
+//
+// Eight BLOCK-tier rules at the publish gate:
+//
+//   - garment-grading-inconsistency (reused from crochet)
+//   - garment-stitch-count-vs-measurement-mismatch (reused)
+//   - garment-sleeve-cap-depth-implausible (new)
+//   - garment-yarn-requirement-implausible (new)
+//   - sock-foot-math-inconsistent (new)
+//   - sock-heel-style-mismatch (new)
+//   - needle-yarn-weight-mismatch (new)
+//   - gauge-out-of-range (reused)
+//
+// Knitting analog of auditCrochetPattern. Knit fabric uses different
+// gauge ranges and a different needle table from crochet, so the
+// knitting rules carry their own KNITTING_GAUGE_RANGE + KNITTING_
+// NEEDLE_RANGE maps.
+
+interface KnittingGradedSize {
+  size?: string
+  name?: string
+  bust?: number
+  bustStitchCount?: number
+  hemStitchCount?: number
+  yokeDepth?: number
+  armholeDepth?: number
+  sleeveCapDepth?: number
+  upperArmCircumference?: number
+  sleeveCuffCircumference?: number
+  yarnRequiredGrams?: number
+  finishedMeasurements?: { bust?: number; body?: number; armholeDepth?: number; sleeveCapDepth?: number }
+  gauge?: { stitchesPer10cm?: number; rowsPer10cm?: number }
+  shape?: string
+  // K-3/K-4 core keys.
+  length?: number
+  sleeveLength?: number
+  shoulderWidth?: number
+}
+
+interface SockGradedSize {
+  size?: string
+  name?: string
+  legStitchCount?: number
+  footStitchCount?: number
+  heelFlapRows?: number
+  heelTurnRows?: number
+  gussetRows?: number
+  gussetPeakStitchCount?: number
+  finishedMeasurements?: {
+    footLengthCm?: number
+    footCircumferenceCm?: number
+    legLengthCm?: number
+  }
+  gauge?: { stitchesPer10cm?: number }
+  heelStyle?: string
+}
+
+// Knitting needle range (mm) per CYC yarn weight category. Distinct
+// from crochet hook ranges.
+const KNITTING_NEEDLE_RANGE_BY_WEIGHT: Record<number, { min: number; max: number }> = {
+  0: { min: 1.5, max: 2.25 },
+  1: { min: 2.25, max: 3.25 },
+  2: { min: 3.25, max: 3.75 },
+  3: { min: 3.75, max: 4.5 },
+  4: { min: 4.5, max: 5.5 },
+  5: { min: 5.5, max: 8.0 },
+  6: { min: 8.0, max: 12.75 },
+  7: { min: 12.75, max: 25.0 },
+}
+
+// Knit stockinette gauge ranges (sts/10cm) per CYC weight category.
+const KNITTING_GAUGE_RANGE_BY_WEIGHT: Record<number, { stitchMin: number; stitchMax: number }> = {
+  0: { stitchMin: 32, stitchMax: 44 },
+  1: { stitchMin: 26, stitchMax: 36 },
+  2: { stitchMin: 22, stitchMax: 28 },
+  3: { stitchMin: 20, stitchMax: 24 },
+  4: { stitchMin: 16, stitchMax: 22 },
+  5: { stitchMin: 12, stitchMax: 16 },
+  6: { stitchMin: 7, stitchMax: 11 },
+  7: { stitchMin: 5, stitchMax: 8 },
+}
+
+const KNIT_STITCH_BUST_TOLERANCE_CM = 1.5
+const KNIT_SIZE_JUMP_TOLERANCE = 0.30
+const KNIT_SLEEVE_CAP_TOLERANCE_CM = 4.0
+
+function auditKnittingPattern(p: TutorialRow['knittingPatternsInset'][number]): QCFinding[] {
+  const findings: QCFinding[] = []
+
+  // Garment grading checks — apply when projectShape is sweater /
+  // cardigan / vest / contiguous-set-in and sizesGraded is populated.
+  const garmentShapes = new Set(['SWEATER', 'CARDIGAN', 'VEST', 'PULLOVER'])
+  if (
+    p.projectShape &&
+    garmentShapes.has(p.projectShape) &&
+    Array.isArray(p.sizesGraded)
+  ) {
+    const graded = p.sizesGraded as KnittingGradedSize[]
+
+    // Cross-size monotonicity.
+    for (let i = 1; i < graded.length; i++) {
+      const prev = graded[i - 1]!
+      const curr = graded[i]!
+      const prevBust = prev.bustStitchCount ?? prev.hemStitchCount
+      const currBust = curr.bustStitchCount ?? curr.hemStitchCount
+      if (typeof prevBust === 'number' && typeof currBust === 'number') {
+        if (currBust < prevBust) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-grading-inconsistency',
+            message: `Cross-size: ${curr.size ?? curr.name ?? `index ${i}`} has fewer bust stitches (${currBust}) than ${prev.size ?? prev.name ?? `index ${i - 1}`} (${prevBust}); knitting grading must not shrink.`,
+          })
+        } else if ((currBust - prevBust) / prevBust > KNIT_SIZE_JUMP_TOLERANCE) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-grading-inconsistency',
+            message: `Cross-size: ${prev.size ?? prev.name ?? `index ${i - 1}`} -> ${curr.size ?? curr.name ?? `index ${i}`} bust grows by ${Math.round(((currBust - prevBust) / prevBust) * 100)}% which exceeds the grading-jump tolerance.`,
+          })
+        }
+      }
+    }
+
+    // Per-size stitch count vs finished bust + sleeve cap implausibility +
+    // yarn requirement implausibility.
+    for (const s of graded) {
+      const bustStitches = s.bustStitchCount ?? s.hemStitchCount
+      const finishedBust = s.finishedMeasurements?.bust ?? s.bust
+      const stitchesPer10cm = s.gauge?.stitchesPer10cm
+      if (
+        typeof bustStitches === 'number' &&
+        typeof finishedBust === 'number' &&
+        typeof stitchesPer10cm === 'number' &&
+        s.shape !== 'SIDE_TO_SIDE'
+      ) {
+        const computedBust = (bustStitches / stitchesPer10cm) * 10
+        if (Math.abs(computedBust - finishedBust) > KNIT_STITCH_BUST_TOLERANCE_CM) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-stitch-count-vs-measurement-mismatch',
+            message: `Size ${s.size ?? s.name ?? '(unnamed)'}: bustStitchCount (${bustStitches}) at gauge ${stitchesPer10cm}sts/10cm implies ${computedBust.toFixed(1)}cm but finishedMeasurements.bust is ${finishedBust}cm - beyond ${KNIT_STITCH_BUST_TOLERANCE_CM}cm tolerance.`,
+          })
+        }
+      }
+
+      // Sleeve cap depth must fit inside armhole depth.
+      const armhole = s.armholeDepth ?? s.finishedMeasurements?.armholeDepth
+      const sleeveCap = s.sleeveCapDepth ?? s.finishedMeasurements?.sleeveCapDepth
+      if (typeof armhole === 'number' && typeof sleeveCap === 'number' && sleeveCap > 0) {
+        if (sleeveCap > armhole + KNIT_SLEEVE_CAP_TOLERANCE_CM) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-sleeve-cap-depth-implausible',
+            message: `Size ${s.size ?? s.name ?? '(unnamed)'}: sleeveCapDepth (${sleeveCap}cm) exceeds armholeDepth (${armhole}cm) - cap will not fit the armscye.`,
+          })
+        }
+        if (sleeveCap < 0) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'garment-sleeve-cap-depth-implausible',
+            message: `Size ${s.size ?? s.name ?? '(unnamed)'}: sleeveCapDepth (${sleeveCap}cm) is negative.`,
+          })
+        }
+      }
+
+      // Yarn requirement plausibility — grams per square cm.
+      if (typeof s.yarnRequiredGrams === 'number' && typeof finishedBust === 'number') {
+        const finishedBody = s.finishedMeasurements?.body ?? s.length
+        if (typeof finishedBody === 'number') {
+          const surfaceSqCm = finishedBust * finishedBody
+          if (surfaceSqCm > 0) {
+            const gramsPer100SqCm = (s.yarnRequiredGrams * 100) / surfaceSqCm
+            if (gramsPer100SqCm < 0.3 || gramsPer100SqCm > 12.0) {
+              findings.push({
+                severity: 'BLOCK',
+                kind: 'garment-yarn-requirement-implausible',
+                message: `Size ${s.size ?? s.name ?? '(unnamed)'}: yarnRequiredGrams ${s.yarnRequiredGrams}g over ${surfaceSqCm.toFixed(0)}sq cm = ${gramsPer100SqCm.toFixed(2)}g/100sq.cm which is outside the plausible 0.3-12g/100sq.cm range for knit fabric.`,
+              })
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Sock-specific checks — apply when projectShape is SOCK and
+  // sizesGraded is populated.
+  if (p.projectShape === 'SOCK' && Array.isArray(p.sizesGraded)) {
+    const socks = p.sizesGraded as SockGradedSize[]
+
+    // Cross-size monotonicity on leg stitches.
+    for (let i = 1; i < socks.length; i++) {
+      const prev = socks[i - 1]!
+      const curr = socks[i]!
+      if (typeof prev.legStitchCount === 'number' && typeof curr.legStitchCount === 'number') {
+        const growth = (curr.legStitchCount - prev.legStitchCount) / prev.legStitchCount
+        if (curr.legStitchCount < prev.legStitchCount) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-foot-math-inconsistent',
+            message: `Cross-size: ${curr.size ?? curr.name ?? `index ${i}`} has fewer leg stitches (${curr.legStitchCount}) than ${prev.size ?? prev.name ?? `index ${i - 1}`} (${prev.legStitchCount}); sock grading must not shrink.`,
+          })
+        } else if (growth > KNIT_SIZE_JUMP_TOLERANCE) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-foot-math-inconsistent',
+            message: `Cross-size: ${prev.size ?? prev.name ?? `index ${i - 1}`} -> ${curr.size ?? curr.name ?? `index ${i}`} leg stitches grow by ${Math.round(growth * 100)}% which exceeds the sock-grading-jump tolerance.`,
+          })
+        }
+      }
+    }
+
+    // Per-size foot math + heel-style mismatch.
+    for (const s of socks) {
+      // Foot circumference × gauge ≈ leg stitches.
+      const stitchesPer10cm = s.gauge?.stitchesPer10cm
+      const footCirc = s.finishedMeasurements?.footCircumferenceCm
+      if (typeof s.legStitchCount === 'number' && typeof stitchesPer10cm === 'number' && typeof footCirc === 'number') {
+        const computed = (s.legStitchCount / stitchesPer10cm) * 10
+        if (Math.abs(computed - footCirc) > 2.5) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-foot-math-inconsistent',
+            message: `Sock size ${s.size ?? s.name ?? '(unnamed)'}: legStitchCount (${s.legStitchCount}) at gauge ${stitchesPer10cm}sts/10cm implies ${computed.toFixed(1)}cm but footCircumferenceCm is ${footCirc}cm.`,
+          })
+        }
+      }
+      if (typeof s.legStitchCount === 'number' && s.legStitchCount % 4 !== 0) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'sock-foot-math-inconsistent',
+          message: `Sock size ${s.size ?? s.name ?? '(unnamed)'}: legStitchCount (${s.legStitchCount}) is not a multiple of 4 - rib + heel split will not align.`,
+        })
+      }
+
+      // Heel-style consistency.
+      if (s.heelStyle === 'FLAP_AND_GUSSET') {
+        if (typeof s.heelFlapRows === 'number' && s.heelFlapRows <= 0) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-heel-style-mismatch',
+            message: `Sock size ${s.size ?? '(unnamed)'}: heelStyle=FLAP_AND_GUSSET but heelFlapRows is ${s.heelFlapRows} - the heel flap is missing.`,
+          })
+        }
+        if (typeof s.gussetRows === 'number' && s.gussetRows <= 0) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-heel-style-mismatch',
+            message: `Sock size ${s.size ?? '(unnamed)'}: heelStyle=FLAP_AND_GUSSET but gussetRows is ${s.gussetRows} - the gusset is missing.`,
+          })
+        }
+      } else if (
+        s.heelStyle === 'SHORT_ROW_GERMAN' ||
+        s.heelStyle === 'SHORT_ROW_JAPANESE' ||
+        s.heelStyle === 'SHORT_ROW_DUTCH' ||
+        s.heelStyle === 'AFTERTHOUGHT'
+      ) {
+        if (typeof s.heelFlapRows === 'number' && s.heelFlapRows > 0) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-heel-style-mismatch',
+            message: `Sock size ${s.size ?? '(unnamed)'}: heelStyle=${s.heelStyle} should have zero heel-flap rows but has ${s.heelFlapRows}.`,
+          })
+        }
+        if (typeof s.gussetRows === 'number' && s.gussetRows > 0) {
+          findings.push({
+            severity: 'BLOCK',
+            kind: 'sock-heel-style-mismatch',
+            message: `Sock size ${s.size ?? '(unnamed)'}: heelStyle=${s.heelStyle} should have zero gusset rows but has ${s.gussetRows}.`,
+          })
+        }
+      }
+    }
+  }
+
+  const cat = cycCategoryFor(p.yarnWeightStandard)
+
+  // Needle + yarn weight pairing.
+  if (p.needleSizeMm !== null && p.needleSizeMm !== undefined && cat !== null) {
+    const range = KNITTING_NEEDLE_RANGE_BY_WEIGHT[cat]
+    if (range) {
+      const mm = Number(p.needleSizeMm)
+      if (mm < range.min || mm > range.max) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'needle-yarn-weight-mismatch',
+          message: `Needle size ${mm}mm sits outside the standard ${range.min}-${range.max}mm range for ${p.yarnWeightStandard} (CYC category ${cat}).`,
+        })
+      }
+    }
+  }
+
+  // Gauge sanity.
+  if (cat !== null && p.gaugeText) {
+    const parsed = parseGauge(p.gaugeText)
+    if (parsed) {
+      const range = KNITTING_GAUGE_RANGE_BY_WEIGHT[cat]
+      if (range && (parsed.stitchesPer10cm < range.stitchMin || parsed.stitchesPer10cm > range.stitchMax)) {
+        findings.push({
+          severity: 'BLOCK',
+          kind: 'gauge-out-of-range',
+          message: `Gauge ${parsed.stitchesPer10cm}sts/10cm is outside the plausible ${range.stitchMin}-${range.stitchMax}sts/10cm range for ${p.yarnWeightStandard} knit on standard needles.`,
+        })
+      }
+    }
+  }
+
+  return findings
+}
+
+// Map KnittingYarnWeightStandard enum to CYC category integer.
+function cycCategoryFor(s: string | null): number | null {
+  switch (s) {
+    case 'LACE': return 0
+    case 'FINGERING': return 1
+    case 'SPORT': return 2
+    case 'DK': return 3
+    case 'WORSTED': return 4
+    case 'ARAN': return 4
+    case 'BULKY': return 5
+    case 'SUPER_BULKY': return 6
+    case 'JUMBO': return 7
+    default: return null
+  }
+}
+
 // ─── Per-tutorial QC ────────────────────────────────────────────────────────
 
 interface TutorialRow {
@@ -807,6 +1138,16 @@ interface TutorialRow {
       suitableYarnWeightSlugs: string[]
     } | null
   } | null
+  knittingPatternsInset: Array<{
+    id: string
+    projectShape: string | null
+    constructionDirection: string | null
+    sizesGraded: unknown
+    yardageBySize: unknown
+    gaugeText: string | null
+    needleSizeMm: unknown
+    yarnWeightStandard: string | null
+  }>
 }
 
 export function auditTutorial(t: TutorialRow): QCVerdict {
@@ -1241,6 +1582,13 @@ export function auditTutorial(t: TutorialRow): QCVerdict {
     findings.push(...auditCrochetPattern(t.crochetPattern))
   }
 
+  // ─── Knitting pattern rules (K-5) ─────────────────────────────────────────
+  // A Tutorial can carry multiple KnittingPattern rows (Tutorial ->
+  // knittingPatternsInset[]). Audit each.
+  for (const kp of t.knittingPatternsInset ?? []) {
+    findings.push(...auditKnittingPattern(kp))
+  }
+
   // ─── Glossary integrity (BLOCK) ───────────────────────────────────────────
   // GlossaryTerm is a global table in this schema (not per-tutorial). The QC
   // rule is "every inline glossaryTooltip mark must resolve to a real
@@ -1354,6 +1702,18 @@ async function main(): Promise<void> {
           gaugeText: true,
           primaryYarnWeight: { select: { slug: true, standardCategory: true } },
           primaryHook: { select: { mmSize: true, suitableYarnWeightSlugs: true } },
+        },
+      },
+      knittingPatternsInset: {
+        select: {
+          id: true,
+          projectShape: true,
+          constructionDirection: true,
+          sizesGraded: true,
+          yardageBySize: true,
+          gaugeText: true,
+          needleSizeMm: true,
+          yarnWeightStandard: true,
         },
       },
     },

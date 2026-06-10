@@ -1,22 +1,19 @@
 /**
- * Knitting sub-category autopilot enablement (K-4).
+ * Knitting sub-category autopilot enablement (K-4 + K-5).
  *
  * Flips `SubCategory.autopilotEnabled` for each of the 14 knitting
- * sub-cats. 10 are enabled now; 4 wait for K-5's grading library.
+ * sub-cats. K-4 enabled 11; K-5 (2026-06-10) ships the grading
+ * library + sock math + three replaced author prompts and enables
+ * the last three.
  *
- * Enabled (10):
+ * Enabled (14, post-K-5):
  *   - scarf-cowl, hat, mitt-glove, shawl-wrap, blanket,
- *     accessory-other          (project-shape sub-cats; safe to author
- *                                with single-axis sizing)
+ *     accessory-other, sweater-cardigan, vest, sock
+ *                                (project-shape sub-cats)
  *   - colourwork, lace, cable-aran, brioche-doubleknit, specialty
- *                                (technique-discipline sub-cats; author
- *                                applies the discipline across any
- *                                enabled project shape)
+ *                                (technique-discipline sub-cats)
  *
- * Disabled (4 — wait for K-5):
- *   - sweater-cardigan          (needs garment grading)
- *   - vest                      (needs garment grading)
- *   - sock                      (needs sock-specific grading)
+ * Disabled: none.
  *
  * Idempotent. Re-running on an already-correct row is a no-op.
  * Reports any sub-cats that the seed-knitting-taxonomy script hasn't
@@ -56,6 +53,9 @@ const ENABLED_SLUGS = [
   'shawl-wrap',
   'blanket',
   'accessory-other',
+  'sweater-cardigan',
+  'vest',
+  'sock',
   'colourwork',
   'lace',
   'cable-aran',
@@ -63,7 +63,7 @@ const ENABLED_SLUGS = [
   'specialty',
 ]
 
-const DISABLED_SLUGS = ['sweater-cardigan', 'vest', 'sock']
+const DISABLED_SLUGS: string[] = []
 
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')

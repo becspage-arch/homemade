@@ -75,10 +75,10 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   },
 
   // ──────────────────────────────────────────────────────────────────────────
-  // Project-shape sub-cats (K-4 spec). One sub-cat per finished-piece shape.
-  // Each one maps to its own author prompt under `docs/knitting-<slug>-
-  // author.md`. Six are fully-guided and autopilot-enabled now; three
-  // (sweater-cardigan, vest, sock) wait for K-5's grading library.
+  // Project-shape sub-cats (K-4 spec, K-5 lifted the sweater / vest / sock
+  // gate). One sub-cat per finished-piece shape. Each maps to its own
+  // author prompt under `docs/knitting-<slug>-author.md`. All nine
+  // project-shape sub-cats are now fully-guided and autopilot-enabled.
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: 'scarf-cowl',
@@ -122,20 +122,20 @@ const SUB_CATEGORIES: SubCatSpec[] = [
   {
     slug: 'sweater-cardigan',
     name: 'Sweaters & cardigans',
-    description: 'Pullovers and cardigans. Authoring deferred to K-5 (garment grading library).',
+    description: 'Pullovers and cardigans across six construction shapes: top-down raglan, top-down circular yoke, bottom-up set-in, drop-shoulder, side-to-side, contiguous set-in.',
     order: 90,
   },
   {
     slug: 'vest',
     name: 'Vests',
-    description: 'Sleeveless garments. Authoring deferred to K-5 (garment grading library).',
+    description: 'Sleeveless garments: yoke vests, set-in armhole vests, tabards.',
     order: 100,
   },
   {
     slug: 'sock',
     name: 'Socks',
     description:
-      'Cuff-down and toe-up socks, knee-high socks. Authoring deferred to K-5 (sock-specific grading).',
+      'Cuff-down and toe-up socks across five heel constructions: flap-and-gusset, German short-row, Japanese short-row, Dutch short-row, afterthought.',
     order: 110,
   },
 
