@@ -14,8 +14,15 @@
     "primaryYarnWeightSlug": "dk",
     "primaryNeedleSlug": "knitting-needle-4-0mm",
     "terminologyConvention": "uk",
-    "craftStitchSlugs": ["knitting-k2tog", "knitting-ssk", "knitting-knit"],
-    "craftTechniqueTags": ["lacework", "flat-construction"],
+    "craftStitchSlugs": [
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-knit"
+    ],
+    "craftTechniqueTags": [
+      "lacework",
+      "flat-construction"
+    ],
     "chartDefinition": null
   },
   "recipeTools": [],
@@ -24,16 +31,16 @@
       "slug": "cdd",
       "term": "CDD (centred double decrease)",
       "definition": "A decrease that removes two stitches by slipping two together knitwise, knitting one, then passing the two slipped stitches over the knitted stitch. The decrease leans neither left nor right and is used for symmetrical shaping."
-    },
-    {
-      "slug": "double-decrease",
-      "term": "Double decrease",
-      "definition": "Any decrease that removes two stitches in one operation, reducing a stitch count by two. Examples include CDD (centred), sk2p (left-leaning), and k3tog (right-leaning)."
     }
   ],
   "techniqueSlugs": [],
   "criticalTechniques": [],
-  "aliases": ["sl2 k1 p2sso", "centred decrease", "symmetric double decrease", "sl2tog k1 psso"],
+  "aliases": [
+    "sl2 k1 p2sso",
+    "centred decrease",
+    "symmetric double decrease",
+    "sl2tog k1 psso"
+  ],
   "body": {
     "type": "doc",
     "content": [
@@ -42,7 +49,14 @@
         "content": [
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cdd" } }],
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cdd"
+                }
+              }
+            ],
             "text": "CDD (centred double decrease)"
           },
           {
@@ -53,49 +67,133 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Any yarn and needles appropriate for the project" }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Any yarn and needles appropriate for the project"
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A practice swatch of at least 15 stitches in stocking stitch to see the result clearly" }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A practice swatch of at least 15 stitches in stocking stitch to see the result clearly"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The technique, step by step" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The technique, step by step"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work to the point where the decrease is to be placed." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work to the point where the decrease is to be placed."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the right needle into the first two stitches simultaneously as if to knit two together (entering both stitches at once from left to right). Slip them both onto the right needle together without working them. This is the key move: slipping the two stitches knitwise keeps them oriented correctly for the finish." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insert the right needle into the first two stitches simultaneously as if to knit two together (entering both stitches at once from left to right). Slip them both onto the right needle together without working them. This is the key move: slipping the two stitches knitwise keeps them oriented correctly for the finish."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Knit the next stitch (the third of the three) in the normal way." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Knit the next stitch (the third of the three) in the normal way."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the left needle tip from left to right through the fronts of the two slipped stitches on the right needle. Pass both slipped stitches over the knitted stitch and off the right needle." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insert the left needle tip from left to right through the fronts of the two slipped stitches on the right needle. Pass both slipped stitches over the knitted stitch and off the right needle."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One stitch remains where three existed. The central stitch of the original three now sits on top." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "One stitch remains where three existed. The central stitch of the original three now sits on top."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -109,15 +207,22 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where you will use it" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where you will use it"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
           {
             "type": "text",
-            "text": "CDD appears at the centre of symmetrical shaping: the apex of a V-neckline where decreases on both sides meet, the top of a lace diamond or triangle motif, the centre of a mitre-square corner, and any pattern note that specifies 'work a centred double decrease' or 'cdd'. It pairs with yarn overs in lace to maintain stitch count while shaping the motif outline."
+            "text": "CDD appears at the centre of symmetrical shaping. Use it at the apex of a V-neckline where decreases on both sides meet. Use it at the top of a lace diamond or triangle motif. It also sits at the centre of a mitre-square corner. In lace, CDD pairs with yarn overs to hold the stitch count steady while shaping the motif outline."
           }
         ]
       },
