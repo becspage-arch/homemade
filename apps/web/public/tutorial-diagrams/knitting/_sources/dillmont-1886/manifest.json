@@ -4,7 +4,7 @@
   "retrievedFrom": "https://www.gutenberg.org/files/20776/20776-h/20776-h.htm",
   "imageBase": "https://www.gutenberg.org/files/20776/20776-h/images/",
   "creditPattern": "Fig. {NNN}, Encyclopaedia of Needlework (Thérèse de Dillmont, 1886). Public domain.",
-  "batchNotes": "K-4.2 pause-point batch (10 figures). Filename convention: fig-{figureNumber}-{slug}.jpg. The Project Gutenberg image filenames (352.jpg, 353.jpg, ...) are sequential and do NOT match figure numbers; the cross-reference is in each entry's sourceFile.",
+  "batchNotes": "K-4.2 batch totals 20 figures across two rounds. Round 1 (pause batch): 10 figures covering position-of-hands, 3 cast-on variants, knit, purl, k tbl, yarn-over, sock heel, plaited stitch. Round 2 (extension): 10 more covering remaining Dillmont cast-on variants, purl tbl, knot stitch (bobble ancestor), brioche x 2, two-colour colorwork, drop-stitch lace. Filename convention: fig-{figureNumber}-{slug}.jpg. The Project Gutenberg image filenames (352.jpg, 353.jpg, ...) are sequential and do NOT match figure numbers; the cross-reference is in each entry's sourceFile.",
   "figures": {
     "fig-341-position-of-the-hands.jpg": {
       "sourceFile": "images/352.jpg",
@@ -54,16 +54,72 @@
     "fig-382-plaited-stitch.jpg": {
       "sourceFile": "images/393.jpg",
       "caption": "Plaited stitch (the Victorian forerunner of modern cabling)",
+      "suggestedTopics": ["cable-basics-c4f-and-c4b", "cabled-dishcloth"]
+    },
+    "fig-343-double-crossed-casting-on.jpg": {
+      "sourceFile": "images/354.jpg",
+      "caption": "Double crossed casting on (a denser variant of the long-tail cast-on)",
+      "suggestedTopics": []
+    },
+    "fig-344-crossed-casting-on-forming-a-chain.jpg": {
+      "sourceFile": "images/355.jpg",
+      "caption": "Crossed casting on, forming a chain (a chain-edge cast-on variant)",
+      "suggestedTopics": []
+    },
+    "fig-346-casting-on-with-slip-loops.jpg": {
+      "sourceFile": "images/357.jpg",
+      "caption": "Casting on with slip loops (the Continental / German cast-on family)",
+      "suggestedTopics": []
+    },
+    "fig-347-casting-on-with-double-slip-loops.jpg": {
+      "sourceFile": "images/358.jpg",
+      "caption": "Casting on with double slip loops (a stretchier slip-loop variant for open patterns)",
+      "suggestedTopics": []
+    },
+    "fig-352-back-stitch-from-behind-purl-tbl.jpg": {
+      "sourceFile": "images/363.jpg",
+      "caption": "Back or seam-stitch taken from behind (the modern purl through back loop, p tbl)",
+      "suggestedTopics": []
+    },
+    "fig-354-knot-stitch.jpg": {
+      "sourceFile": "images/365.jpg",
+      "caption": "Knot stitch (the Victorian forerunner of the modern bobble / popcorn)",
+      "suggestedTopics": []
+    },
+    "fig-380-plain-patent-brioche.jpg": {
+      "sourceFile": "images/391.jpg",
+      "caption": "Plain patent knitting, or brioche pattern (the foundational brioche stitch)",
+      "suggestedTopics": []
+    },
+    "fig-381-double-patent-brioche.jpg": {
+      "sourceFile": "images/392.jpg",
+      "caption": "Double patent knitting (the two-colour brioche variant)",
+      "suggestedTopics": []
+    },
+    "fig-386-two-colour-stranded-colorwork.jpg": {
+      "sourceFile": "images/397.jpg",
+      "caption": "Knitting pattern with two threads (Victorian stranded two-colour colorwork, the Fair Isle / Selbu ancestor)",
+      "suggestedTopics": []
+    },
+    "fig-387-dropped-stitch-pattern.jpg": {
+      "sourceFile": "images/398.jpg",
+      "caption": "Knitting pattern with dropped stitches (a Victorian drop-stitch lace technique)",
       "suggestedTopics": []
     }
   },
   "coverageNotes": {
     "covered": [
-      "Cast-on (multiple variants): crossed / long-tail, knitted-on, picot",
-      "Knit stitch",
-      "Purl stitch",
-      "Knit through back loop",
-      "Yarn-over",
+      "Cast-on (7 Dillmont variants): crossed / long-tail (single, double, chain), knitted-on, picot, slip-loop, double slip-loop",
+      "Knit stitch (plain stitch)",
+      "Purl stitch (back / seam-stitch)",
+      "Knit through back loop (plain stitch from behind)",
+      "Purl through back loop (back stitch from behind)",
+      "Yarn-over (overs)",
+      "Knot stitch (bobble / popcorn ancestor)",
+      "Plain brioche (plain patent knitting)",
+      "Double brioche (double patent knitting)",
+      "Two-colour stranded colorwork (Fair Isle / Selbu ancestor)",
+      "Drop-stitch lace",
       "Sock heel construction",
       "Plaited stitch (cable ancestor)"
     ],

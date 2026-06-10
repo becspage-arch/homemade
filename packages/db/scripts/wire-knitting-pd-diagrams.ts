@@ -7,10 +7,11 @@
  * deploy live to the CDN before quality review; this script is the second
  * step (embed into tutorial bodies) and only runs once approval lands.
  *
- * Coverage: 3 of the 10 K-4.2 batch figures map cleanly to existing knitting
- * tutorial slugs. The remaining 7 figures require either a new Tutorial
- * record to wire into (separate worker) or stay on the CDN as orphaned
- * library assets the next pipeline phase can pick up.
+ * Coverage (expanded 2026-06-10): the 20-figure K-4.2 batch maps into all 8
+ * existing knitting tutorial slugs. Unmapped figures (the second-batch
+ * additions covering brioche, colorwork, drop-stitch lace, the rest of the
+ * cast-on family, knot stitch, p tbl) stay on the CDN as library assets the
+ * next pipeline phase picks up once the matching tutorial records exist.
  *
  * Run (only after Rebecca approves quality):
  *   pnpm --filter "@homemade/db" exec tsx scripts/wire-knitting-pd-diagrams.ts
@@ -85,6 +86,48 @@ const WIRINGS: Array<{ figFile: string; caption: string; figNum: string; tutoria
     caption: 'Position of the hands in knitting (English / French style)',
     figNum: '341',
     tutorialSlug: 'knit-and-purl-the-foundation-stitches',
+  },
+  {
+    figFile: 'fig-349-plain-stitch-knit.jpg',
+    caption: "Plain stitch (Dillmont's name; the modern knit stitch)",
+    figNum: '349',
+    tutorialSlug: 'stocking-stitch-dishcloth',
+  },
+  {
+    figFile: 'fig-350-back-or-seam-stitch-purl.jpg',
+    caption: "Back or seam-stitch (Dillmont's name; the modern purl stitch)",
+    figNum: '350',
+    tutorialSlug: 'stocking-stitch-dishcloth',
+  },
+  {
+    figFile: 'fig-349-plain-stitch-knit.jpg',
+    caption: "Plain stitch (Dillmont's name; the modern knit stitch)",
+    figNum: '349',
+    tutorialSlug: 'garter-stitch-scarf',
+  },
+  {
+    figFile: 'fig-349-plain-stitch-knit.jpg',
+    caption: "Plain stitch (Dillmont's name; the modern knit stitch)",
+    figNum: '349',
+    tutorialSlug: 'simple-ribbed-hat',
+  },
+  {
+    figFile: 'fig-350-back-or-seam-stitch-purl.jpg',
+    caption: "Back or seam-stitch (Dillmont's name; the modern purl stitch)",
+    figNum: '350',
+    tutorialSlug: 'simple-ribbed-hat',
+  },
+  {
+    figFile: 'fig-382-plaited-stitch.jpg',
+    caption: 'Plaited stitch (the Victorian forerunner of modern cabling)',
+    figNum: '382',
+    tutorialSlug: 'cable-basics-c4f-and-c4b',
+  },
+  {
+    figFile: 'fig-382-plaited-stitch.jpg',
+    caption: 'Plaited stitch (the Victorian forerunner of modern cabling)',
+    figNum: '382',
+    tutorialSlug: 'cabled-dishcloth',
   },
 ]
 
