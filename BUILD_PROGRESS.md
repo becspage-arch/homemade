@@ -1956,6 +1956,10 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Sewing S-4 home patterns (2026-06-10)
+
+Sewing S-4 sub-session Home. 10 patterns published (pillowcase, cushion cover, tea towel, cross-back apron, pot holder + oven mitt set, table runner, rod-pocket curtain, eyelet curtain, throw blanket, drum lampshade cover). House-original content; freesewing personalisation lands via S-5a. Seed script at `packages/db/scripts/seed-sewing-home-patterns.ts`, idempotent upsert on slug. All 10: visibility=PUBLIC, premium=false, heroMediaId=null, isFreesewingDesign=false, sourceLicence=PROPRIETARY_HOMEMADE. Category.sewing pipelineStatus and isPublicVisible unchanged (NOT_READY / false).
+
 ## Sewing S-1 Studio v1 (2026-06-10)
 
 Sewing S-1 Studio v1. `/studio/sewing` shell + viewer + instructions + materials calculator + cutting layout + 4 calibration paths (printer / credit-card / projector / browse-only). One demo SewingPattern seeded for end-to-end smoke testing at `?demo=1` and at `/studio/sewing/demo-a-line-skirt`. Sewing Studio accent colour: warm terracotta (`#c97551`). `/me/sewing-projects` added. Category.sewing stays NOT_READY + isPublicVisible=false per the no-phased-rollout lock; Studio routes respond but public nav doesn't surface. Tiled print covers A4 + Letter end-to-end (S-5c rounds out the full matrix). Browse-only mode is the default fallback.
