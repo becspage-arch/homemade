@@ -1956,6 +1956,10 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Sewing S-4 sub-session N-Bags (2026-06-10)
+
+Sewing S-4 sub-session N-Bags — 8 bags patterns published. House-original content; freesewing personalisation lands later via S-5a.
+
 ## Sewing S-4 sub-session N-Accessories (2026-06-10)
 
 Sewing S-4 accessories + babies/kids patterns — 8 accessories + 4 babies/kids patterns published. House-original content; freesewing personalisation lands later via S-5a. Seed script: `packages/db/scripts/seed-sewing-accessories-babies-patterns.ts`. Category.sewing stays NOT_READY + isPublicVisible=false.
