@@ -48,13 +48,28 @@ export type ShawlStyle =
 
 export interface SizeRow {
   name: string
+
+  // K-3 / K-4.1 core keys.
   bust?: number
   waist?: number
   hip?: number
   length?: number
   sleeveLength?: number
   shoulderWidth?: number
-  /** Extra arbitrary measurements (yokeDepth, neckCircumference, ...). */
+
+  // K-5 sweater / cardigan / vest grading keys — named here ahead of
+  // the K-5 grading library so the JSON shape stays canonical and the
+  // author prompt knows exactly which keys to populate. All optional
+  // so older patterns and non-garment shapes leave them undefined.
+  yokeDepth?: number
+  neckCircumference?: number
+  armholeDepth?: number
+  sleeveCapDepth?: number
+  upperArmCircumference?: number
+  wristCircumference?: number
+  sleeveCuffCircumference?: number
+
+  /** Index signature for any extras a designer hand-rolls. */
   [extra: string]: number | string | undefined
 }
 

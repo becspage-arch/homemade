@@ -117,7 +117,12 @@ export interface KnittingPatternData {
     | 'SQUARE'
     | 'RECTANGULAR_STOLE'
 
-  /** Graded sizes (garments only). */
+  /** Graded sizes (garments only). Extra keys (yokeDepth, neckCircumference,
+   *  armholeDepth, sleeveCapDepth, upperArmCircumference, wristCircumference,
+   *  sleeveCuffCircumference) land at K-5 when the grading library + sweater
+   *  construction templates need them; named here ahead of K-5 to keep the
+   *  Json shape canonical across author prompt + renderer + grading. All
+   *  optional — older patterns and non-garment shapes leave them undefined. */
   sizesGraded:
     | Array<{
         name: string
@@ -127,6 +132,13 @@ export interface KnittingPatternData {
         length?: number
         sleeveLength?: number
         shoulderWidth?: number
+        yokeDepth?: number
+        neckCircumference?: number
+        armholeDepth?: number
+        sleeveCapDepth?: number
+        upperArmCircumference?: number
+        wristCircumference?: number
+        sleeveCuffCircumference?: number
       }>
     | null
 

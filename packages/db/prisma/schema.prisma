@@ -4726,7 +4726,11 @@ model KnittingPattern {
   //
   // sizesGraded shape:
   //   [{ name: "M", bust: 92, waist: 76, hip: 96, length: 60,
-  //      sleeveLength: 45, shoulderWidth: 38 }, ...]
+  //      sleeveLength: 45, shoulderWidth: 38,
+  //      // K-5 sweater grading keys (optional until K-5 lands):
+  //      yokeDepth?, neckCircumference?, armholeDepth?,
+  //      sleeveCapDepth?, upperArmCircumference?,
+  //      wristCircumference?, sleeveCuffCircumference? }, ...]
   //   Null on non-graded patterns (blankets, accessories).
   //
   // yardageBySize shape:
