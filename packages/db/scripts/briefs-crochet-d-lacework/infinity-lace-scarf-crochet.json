@@ -28,9 +28,9 @@
   ],
   "glossaryTerms": [
     {
-      "slug": "magic-ring",
-      "term": "Magic ring",
-      "definition": "An adjustable loop used to start crocheting in the round so the centre can be pulled tight, leaving no hole."
+      "slug": "chain-ring",
+      "term": "Chain ring",
+      "definition": "A foundation ring made by chaining a set number of stitches and slip-stitching the last chain to the first, forming a circle to work into."
     },
     {
       "slug": "joining-round",
@@ -330,7 +330,16 @@
         "content": [
           {
             "type": "text",
-            "text": "Foundation: chain 51. Sl st to the first ch to form a ring. Be careful not to twist."
+            "text": "Foundation: "
+        },
+        {
+          "type": "text",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-ring" } }],
+          "text": "chain 51 and sl st to the first ch"
+        },
+        {
+          "type": "text",
+          "text": " to form a ring. Be careful not to twist."
           }
         ]
       },
