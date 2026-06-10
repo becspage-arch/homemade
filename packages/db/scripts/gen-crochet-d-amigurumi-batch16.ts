@@ -25,8 +25,10 @@ const TOOLS = [
 
 const GAUGE = { stitchesPer10cm: 24, rowsPer10cm: 28 }
 
-function savePattern(slug: string, out: object) {
-  writeFileSync(join(OUT, `${slug}.json`), JSON.stringify(out, null, 2))
+function savePattern(slug: string, out: Record<string, unknown>) {
+  const body = out.body
+  const wrapped = { ...out, body: { type: 'doc', content: body } }
+  writeFileSync(join(OUT, `${slug}.json`), JSON.stringify(wrapped, null, 2))
   console.log(`Written: ${slug}.json`)
 }
 

@@ -43,11 +43,11 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'colour-change', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'assembly-ladder-stitch']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side of the fabric.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi to give a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main stitch in amigurumi construction.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side of the fabric.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi to give a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main stitch in amigurumi construction.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -107,12 +107,12 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'safety-eyes', 'surface-embroidery', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'assembly-ladder-stitch']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side of the fabric.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer, used in amigurumi to give a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main stitch in amigurumi construction.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
-    { slug: 'surface-embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add fine detail.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side of the fabric.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer, used in amigurumi to give a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main stitch in amigurumi construction.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'surface-embroidery', term: 'surface embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add fine detail.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -171,11 +171,11 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'assembly-ladder-stitch']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease that removes a stitch without leaving a visible gap on the right side.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -234,12 +234,12 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'colour-change', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'colour-change']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'colour-change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'colour-change', term: 'colour change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -297,12 +297,12 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'safety-eyes', 'stuffing-technique', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'stuffing-technique']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'stuffing-technique', definition: 'The method of filling an amigurumi piece firmly and evenly with polyester fibrefill to hold its shape.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'stuffing-technique', term: 'stuffing technique', definition: 'The method of filling an amigurumi piece firmly and evenly with polyester fibrefill to hold its shape.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -359,12 +359,12 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'colour-change', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'colour-change']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'colour-change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'colour-change', term: 'colour change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -419,13 +419,13 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'colour-change', 'safety-eyes', 'surface-embroidery', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'colour-change', 'surface-embroidery']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'colour-change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'surface-embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add fine feather detail.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'colour-change', term: 'colour change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'surface-embroidery', term: 'surface embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add fine feather detail.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -480,12 +480,12 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'safety-eyes', 'flat-piece', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease', 'flat-piece']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'flat-piece', definition: 'A crocheted piece worked without stuffing, sewn flat onto the main body as a fin or ear.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'flat-piece', term: 'flat piece', definition: 'A crocheted piece worked without stuffing, sewn flat onto the main body as a fin or ear.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -541,13 +541,13 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'colour-change', 'surface-embroidery', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'surface-embroidery', 'colour-change']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'colour-change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
-    { slug: 'surface-embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add shell segment markings.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'colour-change', term: 'colour change', definition: 'Swapping yarn colour on the last pull-through of a stitch so the new colour appears cleanly at the start of the next stitch.' },
+    { slug: 'surface-embroidery', term: 'surface embroidery', definition: 'Embroidery worked directly on the surface of a finished crocheted piece to add shell segment markings.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('Materials'),
@@ -604,11 +604,11 @@ function write(slug: string, out: object) {
   const techniqueSlugs = ['magic-ring', 'working-in-the-round', 'invisible-decrease', 'safety-eyes', 'assembly-ladder-stitch']
   const criticalTechniques = ['magic-ring', 'invisible-decrease']
   const glossaryTerms = [
-    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
-    { slug: 'invisible-decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
-    { slug: 'safety-eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
-    { slug: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
-    { slug: 'assembly-ladder-stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
+    { slug: 'magic-ring', term: 'magic ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight, hole-free centre.' },
+    { slug: 'invisible-decrease', term: 'invisible decrease', definition: 'A decrease worked through the front loops only to avoid a visible gap on the right side.' },
+    { slug: 'safety-eyes', term: 'safety eyes', definition: 'Plastic eyes with a locking washer used in amigurumi for a secure, professional finish.' },
+    { slug: 'sc', term: 'sc', definition: 'Single crochet (UK: double crochet) — the main amigurumi stitch.' },
+    { slug: 'assembly-ladder-stitch', term: 'assembly ladder stitch', definition: 'A seaming technique that joins stuffed pieces invisibly by weaving through alternating stitches.' },
   ]
   const bodyContent = [
     h2('About this pattern'),

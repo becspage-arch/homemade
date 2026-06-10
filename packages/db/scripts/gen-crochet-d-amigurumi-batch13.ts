@@ -25,6 +25,8 @@ const TOOLS = [
 
 const GAUGE = { stitchesPer10cm: 24, rowsPer10cm: 28 }
 
+function doc(nodes: object[]) { return { type: 'doc', content: nodes } }
+
 function savePattern(slug: string, out: object) {
   writeFileSync(join(OUT, `${slug}.json`), JSON.stringify(out, null, 2))
   console.log(`Written: ${slug}.json`)
@@ -91,7 +93,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -151,7 +153,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -211,7 +213,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -271,7 +273,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -331,7 +333,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -391,7 +393,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -453,7 +455,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -510,7 +512,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -566,7 +568,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 
@@ -618,7 +620,7 @@ function savePattern(slug: string, out: object) {
       craftStitchSlugs: ['crochet-chain', 'crochet-double-uk', 'crochet-slip-stitch', 'crochet-dc2tog'],
       craftTechniqueTags: techniqueSlugs,
     },
-    recipeTools: TOOLS, body: bodyNodes,
+    recipeTools: TOOLS, body: doc(bodyNodes),
   })
 }
 

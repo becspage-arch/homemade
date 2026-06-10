@@ -105,7 +105,7 @@ function makeOut(fields: object) {
     p(t('Work the white muzzle patch in satin stitch over the lower face. Add the white chest patch over the front of the body and the white tail-tip over the last 3 cm of the tail.')),
     h2('Finishing'),
     p(t('Weave in all ends. Use black yarn to '), gt('amigurumi-decrease', 'embroider'), t(' the nose tip on the cone and the mouth curve below it. Trim stray fibres. Mist with water and shape by hand to finish.')),
-    p(t('Next up: the amigurumi-squirrel shares the pear body shape, or the amigurumi-deer adds a taller figure to the set.')),
+    p(t('Try the squirrel next, which shares the pear body shape, or the deer for a taller figure.')),
   ]
 
   const out = makeOut({
@@ -170,7 +170,7 @@ function makeOut(fields: object) {
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' on the head between rounds 7 and 8, 2.5 cm apart. Stuff both pieces firmly. Use '), gt('amigurumi-decrease', 'ladder stitch'), t(' to sew the head to the front of the body, angling it slightly downward so the snout points forward.')),
     h2('Finishing'),
     p(t('Embroider the nose with a small triangle of black yarn. Weave in all ends. Give the spike-stitch rows a gentle finger-press outward so the spines stand proud of the body.')),
-    p(t('Next up: the amigurumi-mouse-woodland has a similar sphere head, or the amigurumi-acorn is a quick companion piece.')),
+    p(t('Try the woodland mouse next for a similar sphere head, or make the acorn as a prop piece.')),
   ]
 
   const out = makeOut({
@@ -241,7 +241,7 @@ function makeOut(fields: object) {
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' between rounds 8 and 9, 2.5 cm apart. Stuff the head and body firmly. Leave the tail lightly stuffed so it curves naturally. Sew the head to the top of the body. Attach arms to either side of the body at round 4 from the top. Pin the tail in a curve at the back before sewing down; catch it at the base and at the midpoint with tacking stitches.')),
     h2('Finishing'),
     p(t('Embroider the nose in cream with a small oval. Add tiny cream ear patches using satin stitch. Weave in all ends. Brush the '), gt('amigurumi-decrease', 'fluffy tail'), t(' lightly with a soft-bristle brush to lift the fibres.')),
-    p(t('Next up: the amigurumi-fox shares the pear body shape, or the amigurumi-acorn makes a good prop to sit with your squirrel.')),
+    p(t('Try the fox next for a similar pear body, or make the acorn as a prop for your squirrel.')),
   ]
 
   const out = makeOut({
@@ -311,8 +311,8 @@ function makeOut(fields: object) {
     h2('Assembly'),
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' on the head between rounds 6 and 7, 3 cm apart. Stuff the head and body. Skip stuffing the antlers; the wire holds their shape. Sew the head to the body. Push leg wires into the body base and sew the leg tops to the underside. Attach antlers to the crown, angling them outward at about 20 degrees.')),
     h2('Finishing'),
-    p(t('Embroider a small white tail patch at the rear of the body using satin stitch. Add white spots across the back using French knots if desired. Weave in all ends. Bend the '), gt('amigurumi-decrease', 'wire legs'), t(' gently into the desired pose.')),
-    p(t('Next up: the amigurumi-fox or amigurumi-squirrel add friends to the set, or the amigurumi-mushroom is a quick prop piece.')),
+    p(t('Add a small white tail patch at the back in satin stitch. Weave in all ends. Bend the '), gt('amigurumi-decrease', 'wire legs'), t(' into the pose you want.')),
+    p(t('Try the fox or the squirrel to add friends to the set, or the mushroom as a quick prop.')),
   ]
 
   const out = makeOut({
@@ -378,10 +378,10 @@ function makeOut(fields: object) {
     h2('Legs (make 4)'),
     ...roundsToBody(leg.rowByRow),
     h2('Assembly'),
-    p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' between rounds 9 and 10, 2.5 cm apart, above the white facial area. Stuff all pieces. Sew the head to one end of the body. Attach the legs to the underside, keeping them short so the badger sits low.')),
+    p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' between rounds 9 and 10, 2.5 cm apart, above the white stripe. Stuff all pieces. Sew the head to one end of the body. Sew the legs short to the base so the badger sits low.')),
     h2('Finishing'),
     p(t('Embroider the nose in black using satin stitch over the white muzzle tip. Thread the needle with black yarn and carry it under the surface to start each stripe section without cutting. Weave in all ends. The '), gt('amigurumi-decrease', 'invisible decrease'), t(' keeps the stripe edges clean where the colours meet.')),
-    p(t('Next up: the amigurumi-hedgehog has a similar low shape, or the amigurumi-mushroom is a quick piece to add to the set.')),
+    p(t('Try the hedgehog next for a similar low shape, or make the mushroom as a quick extra piece.')),
   ]
 
   const out = makeOut({
@@ -451,7 +451,7 @@ function makeOut(fields: object) {
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' between rounds 9 and 10, 3 cm apart. Stuff the head and body. Sew the head to the top of the body. Centre the beak just below the eyes and sew it on. Pin the wings flat to either side at round 3 from the top, then sew down.')),
     h2('Finishing'),
     p(t('Work '), gt('surface-embroidery', 'surface embroidery'), t(' in cream around each eye for the facial disc. Add V-shaped feather marks in dark brown across the chest. Embroider small talon marks at the base. Use the '), gt('amigurumi-decrease', 'invisible decrease'), t(' technique throughout the pieces to keep the fabric neat. Weave in all ends.')),
-    p(t('Next up: the amigurumi-mushroom makes a perch for your owl, or the amigurumi-deer adds a tall figure to the set.')),
+    p(t('Try the mushroom next as a perch for your owl, or the deer for a tall piece in the set.')),
   ]
 
   const out = makeOut({
@@ -520,8 +520,8 @@ function makeOut(fields: object) {
     h2('Assembly'),
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' between rounds 8 and 9, 2 cm apart. Stuff the head and body. Sew the head to the top of the body. Flatten the ears and sew them to the crown at round 3, angling outward. Thread the tail chain through the body base from inside before closing the opening.')),
     h2('Finishing'),
-    p(t('Embroider the nose in pink: 3 straight stitches meeting at a point. Thread a 15 cm length of white thread through the muzzle, knot at the centre, then trim to 3 cm each side for whiskers. Weave in all ends. Use '), gt('amigurumi-decrease', 'ladder stitch'), t(' to close any gaps.')),
-    p(t('Next up: the amigurumi-acorn is a good prop piece, or the amigurumi-hedgehog is about the same size and a natural pair.')),
+    p(t('Embroider the nose in pink with 3 stitches at a point. Add whiskers: thread white thread through the muzzle, knot at centre, trim to 3 cm per side. Weave in all ends. Use '), gt('amigurumi-decrease', 'ladder stitch'), t(' to close any gaps.')),
+    p(t('Try the acorn as a prop, or the hedgehog for a piece of similar size.')),
   ]
 
   const out = makeOut({
@@ -584,7 +584,7 @@ function makeOut(fields: object) {
     p(t('Stuff the cap firmly so it keeps its dome shape. Stuff the stem lightly. Position the open base of the cap over the top of the stem, overlapping by about 1 cm. Sew around the join with '), gt('slip-stitch-join', 'whip stitch'), t(', making sure the cap overhang is even all the way round.')),
     h2('Finishing'),
     p(t('Cut six 1.5 cm white felt circles for the spots. Tack each one to the cap top with a single stitch at the centre, spacing them evenly. Or embroider them in white using '), gt('half-double-crochet', 'satin stitch'), t('. Weave in all ends.')),
-    p(t('Next up: the amigurumi-acorn is another quick piece, or the amigurumi-snail adds a creature to the set.')),
+    p(t('Try the acorn next for another quick piece, or the snail to add a creature to the set.')),
   ]
 
   const out = makeOut({
@@ -646,10 +646,10 @@ function makeOut(fields: object) {
     h2('Stalk'),
     p(t('Chain 5 in green. Work 1 '), gt('slip-stitch-join', 'slip stitch'), t(' in each chain. Fasten off, leaving a 10 cm tail for sewing.')),
     h2('Assembly'),
-    p(t('Stuff the body lightly to hold its oval shape. Leave the cap unstuffed. Set the cap base over the top third of the body and sew it down with '), gt('amigurumi-decrease', 'whip stitch'), t(' all round. Thread the stalk through the cap top and knot it on the inside with a few back stitches.')),
+    p(t('Stuff the body lightly. Leave the cap flat. Set the cap over the top of the body and sew it with '), gt('amigurumi-decrease', 'whip stitch'), t(' all round. Thread the stalk through the cap and knot it inside.')),
     h2('Finishing'),
     p(t('Weave in all ends. The acorn can be made in multiples as props for the squirrel or as Christmas tree decorations by adding a loop of thread at the stalk end.')),
-    p(t('Next up: the amigurumi-mushroom is another quick piece, or the amigurumi-squirrel is a natural pair with the acorn.')),
+    p(t('Try the mushroom for another quick piece, or the squirrel for a natural pair with the acorn.')),
   ]
 
   const out = makeOut({
@@ -716,7 +716,7 @@ function makeOut(fields: object) {
     p(t('Insert '), gt('safety-eyes', 'safety eyes'), t(' at the front tip of the body, 1.5 cm apart. Stuff the body so the wide base sits flat. Stuff the shell firmly. Set the shell on the upper back of the body with about one third of its base resting on the body. Sew the shell down with '), gt('amigurumi-decrease', 'ladder stitch'), t(', catching both layers all the way round. Attach the antennae 1 cm apart at the crown.')),
     h2('Finishing'),
     p(t('Work '), gt('surface-embroidery', 'surface embroidery'), t(' in cream from the shell centre outward in loose chain stitches. Two or three rotations make a clear spiral. Weave in all ends. Add two straight stitches in black at each antenna tip for eyes if stalk eyes are not available.')),
-    p(t('Next up: the amigurumi-mushroom pairs well with the snail, or the amigurumi-hedgehog is another small creature in the set.')),
+    p(t('Try the mushroom next as a scene prop, or the hedgehog for another small creature.')),
   ]
 
   const out = makeOut({
