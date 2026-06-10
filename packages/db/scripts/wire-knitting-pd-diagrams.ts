@@ -2,12 +2,11 @@
  * Wire Dillmont 1886 PD knitting diagrams into existing Knitting Tutorial DB
  * records. Mirrors `wire-crochet-foundations-diagrams.ts`.
  *
- * Status: SCAFFOLD. Do not run until Rebecca has reviewed the 10 sample image
- * URLs at the K-4.2 pause point and approved the quality. The 10 PD files
- * deploy live to the CDN before quality review; this script is the second
- * step (embed into tutorial bodies) and only runs once approval lands.
+ * K-4.2 approval received. K-4.4 expanded WIRINGS array to cover the new
+ * STITCH tutorials authored in that phase.
  *
- * Coverage (expanded 2026-06-10): the 20-figure K-4.2 batch maps into all 8
+ * Coverage (K-4.4): the 20-figure K-4.2 Dillmont batch plus 11 K-4.4 wirings
+ * maps into the 8 original + 11 new STITCH tutorial slugs. The
  * existing knitting tutorial slugs. Unmapped figures (the second-batch
  * additions covering brioche, colorwork, drop-stitch lace, the rest of the
  * cast-on family, knot stitch, p tbl) stay on the CDN as library assets the
@@ -128,6 +127,73 @@ const WIRINGS: Array<{ figFile: string; caption: string; figNum: string; tutoria
     caption: 'Plaited stitch (the Victorian forerunner of modern cabling)',
     figNum: '382',
     tutorialSlug: 'cabled-dishcloth',
+  },
+  // K-4.4 additions — new STITCH tutorials authored in this phase
+  {
+    figFile: 'fig-345-knitting-on-stitches.jpg',
+    caption: "Knitting on stitches (Dillmont's name; the modern knitted-on cast-on)",
+    figNum: '345',
+    tutorialSlug: 'knitted-on-cast-on',
+  },
+  {
+    figFile: 'fig-348-casting-on-with-picots.jpg',
+    caption: 'Casting on with picots (decorative cast-on for lace edges)',
+    figNum: '348',
+    tutorialSlug: 'picot-cast-on',
+  },
+  {
+    figFile: 'fig-351-plain-stitch-taken-from-behind.jpg',
+    caption: 'Plain stitch taken from behind (the modern knit through back loop, k tbl)',
+    figNum: '351',
+    tutorialSlug: 'knit-through-back-loop',
+  },
+  {
+    figFile: 'fig-353-overs-yarn-over.jpg',
+    caption: "Overs (Dillmont's name; the modern yarn-over)",
+    figNum: '353',
+    tutorialSlug: 'yarn-over',
+  },
+  {
+    figFile: 'fig-352-back-stitch-from-behind-purl-tbl.jpg',
+    caption: 'Back or seam-stitch taken from behind (the modern purl through back loop, p tbl)',
+    figNum: '352',
+    tutorialSlug: 'purl-through-back-loop',
+  },
+  {
+    figFile: 'fig-357-common-heel.jpg',
+    caption: 'Common heel construction (sock heel turn)',
+    figNum: '357',
+    tutorialSlug: 'sock-heel-turn',
+  },
+  {
+    figFile: 'fig-382-plaited-stitch.jpg',
+    caption: 'Plaited stitch (the Victorian forerunner of modern cabling)',
+    figNum: '382',
+    tutorialSlug: 'plaited-stitch',
+  },
+  {
+    figFile: 'fig-354-knot-stitch.jpg',
+    caption: 'Knot stitch (the Victorian forerunner of the modern bobble / popcorn)',
+    figNum: '354',
+    tutorialSlug: 'knot-stitch-and-bobble',
+  },
+  {
+    figFile: 'fig-380-plain-patent-brioche.jpg',
+    caption: 'Plain patent knitting, or brioche pattern (the foundational brioche stitch)',
+    figNum: '380',
+    tutorialSlug: 'brioche-one-colour',
+  },
+  {
+    figFile: 'fig-381-double-patent-brioche.jpg',
+    caption: 'Double patent knitting (the two-colour brioche variant)',
+    figNum: '381',
+    tutorialSlug: 'brioche-two-colour',
+  },
+  {
+    figFile: 'fig-387-dropped-stitch-pattern.jpg',
+    caption: 'Knitting pattern with dropped stitches (a Victorian drop-stitch lace technique)',
+    figNum: '387',
+    tutorialSlug: 'drop-stitch-lace',
   },
 ]
 

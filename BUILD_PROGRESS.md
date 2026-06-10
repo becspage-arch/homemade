@@ -3505,3 +3505,39 @@ publish-hook flip + queue SKILL.md + per-stream crons disabled.
 Hero photo audit + UserPatternPhoto schema. Audit ran across all pattern heroes (37 CLEAN, 0 WATERMARKED, 7 MISSING with no thumbnails either), findings at docs/hero-photo-audit-2026-06-09.md. UserPatternPhoto schema + Pattern.preferUserPhotoForHero shipped (migration: phase_user_pattern_photo_001, applied via db push + resolve). Admin approval queue at /admin/user-pattern-photos (approve, feature, hero actions + bulk select). NO_SOURCE renderer marker (DiagramPendingMarker) integrated into tutorial detail page. img2img codebase audit at docs/img2img-codebase-audit-2026-06-09.md (finding: zero img2img calls, all Fal calls are flux-schnell text-to-image). Null-subCategoryId crochet tutorial cleanup script at packages/db/scripts/fix-crochet-null-subcategory.ts -- ran and found zero null-subcat PUBLISHED crochet tutorials, all already classified.
 
 Earlier milestones → [docs/archive/build-progress-history.md](docs/archive/build-progress-history.md).
+
+## K-4.4 knitting technique tutorials + Weldon's sourcing pass (2026-06-10)
+
+Knitting K-4.4 — 14 STITCH technique tutorials authored to K-4.1 voice spec and uploaded as DRAFT. 4 K-4.2 anchor tutorials fixed and uploaded. Wire script extended and run; all 19 tutorial slots now wired (not-found=0).
+
+**14 new STITCH tutorials authored and uploaded (DRAFT):**
+- `knitted-on-cast-on` (foundations) — fig-345 Dillmont embedded
+- `picot-cast-on` (foundations) — fig-348 Dillmont embedded
+- `knit-through-back-loop` (stitches) — fig-351 Dillmont embedded
+- `yarn-over` (stitches) — fig-353 Dillmont embedded
+- `purl-through-back-loop` (stitches) — fig-352 Dillmont embedded
+- `sock-heel-turn` (sock) — fig-357 Dillmont embedded
+- `plaited-stitch` (stitches) — fig-382 Dillmont embedded
+- `knot-stitch-and-bobble` (stitches) — fig-354 Dillmont embedded
+- `brioche-one-colour` (brioche-doubleknit) — fig-380 Dillmont embedded
+- `brioche-two-colour` (brioche-doubleknit) — fig-381 Dillmont embedded
+- `intarsia-colourwork-intro` (colourwork) — no figure (modern technique; chart engine sufficient)
+- `drop-stitch-lace` (lace) — fig-387 Dillmont embedded
+- `ssk-decrease` (foundations) — no figure (Weldon's sourcing pending, see below)
+- `k2tog-decrease` (foundations) — no figure (Weldon's sourcing pending)
+
+All 14 voice-checked clean (0 errors, 0 warnings). Glossary coverage verified. UK English. No em/en dashes. Common faults H3 present on all. termSlug attribute used throughout.
+
+**4 K-4.2 anchor tutorials fixed and uploaded (DRAFT):**
+- `knit-and-purl-the-foundation-stitches` — glossary coverage fixed, em dash removed
+- `simple-ribbed-hat` — Common faults H3 added, em dash removed
+- `cable-basics-c4f-and-c4b` — em dash removed
+- `cabled-dishcloth` — Common faults H3 added, americanism fixed
+
+**Wire script (`wire-knitting-pd-diagrams.ts`) extended:**
+11 new K-4.4 wirings added covering the new STITCH tutorials. Run 2026-06-10: wired=13 (9 new + 4 previously not-found anchors), already-wired=15, not-found=0. All wired tutorials have diagramGenerationStatus=SUCCESS and Dillmont figure citations in sourceNotes.
+
+**Weldon's sourcing pass — BLOCKED:**
+The primary Internet Archive digitisation of Weldon's Practical Knitter (krl3423423423, held by the Knitting Reference Library, University of Southampton) carries a CC BY-NC-ND 3.0 licence on the scans. This is incompatible with the project's CC republishing policy (CC-BY / CC0 / PD only). A manifest stub is committed at `apps/web/public/tutorial-diagrams/knitting/_sources/weldons-practical-knitter/manifest.json` documenting the blocked state and candidate alternative sources (HathiTrust US university scans, British Library, fresh physical scan). No figures committed yet. The `ssk-decrease` and `k2tog-decrease` tutorials have correct bodies but no PD figure until a valid source is found.
+
+Source JSON files at `packages/db/scripts/phase-1-content/knitting/` (14 new) and `packages/db/scripts/anchor-tutorials/knitting/` (4 fixed).
