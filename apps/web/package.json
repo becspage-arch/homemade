@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "seed:photo-patterns": "tsx --tsconfig tsconfig.json scripts/seed-photographic-patterns.ts"
+    "seed:photo-patterns": "tsx --tsconfig tsconfig.json scripts/seed-photographic-patterns.ts",
+    "seed:demo-sewing-pattern": "tsx --tsconfig tsconfig.json scripts/seed-demo-sewing-pattern.ts"
   },
   "dependencies": {
     "@aws-sdk/client-rekognition": "^3.717.0",

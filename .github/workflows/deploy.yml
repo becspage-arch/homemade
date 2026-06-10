@@ -204,6 +204,17 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/web exec tsx scripts/seed-photographic-patterns.ts
 
+      # Seed the demo sewing pattern row so /studio/sewing/demo-a-line-skirt
+      # and ?demo=1 both resolve. Idempotent on slug. Non-blocking like the
+      # photographic seed — a failure shouldn't gate the rollout.
+      - name: Seed demo sewing pattern (idempotent, non-blocking)
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/web exec tsx scripts/seed-demo-sewing-pattern.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match

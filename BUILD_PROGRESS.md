@@ -1956,6 +1956,28 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## Sewing S-1 Studio v1 (2026-06-10)
+
+Sewing S-1 Studio v1. `/studio/sewing` shell + viewer + instructions + materials calculator + cutting layout + 4 calibration paths (printer / credit-card / projector / browse-only). One demo SewingPattern seeded for end-to-end smoke testing at `?demo=1` and at `/studio/sewing/demo-a-line-skirt`. Sewing Studio accent colour: warm terracotta (`#c97551`). `/me/sewing-projects` added. Category.sewing stays NOT_READY + isPublicVisible=false per the no-phased-rollout lock; Studio routes respond but public nav doesn't surface. Tiled print covers A4 + Letter end-to-end (S-5c rounds out the full matrix). Browse-only mode is the default fallback.
+
+Routes wired:
+- `/studio/sewing` for the shell, empty and signed-in projects grid
+- `/studio/sewing?demo=1` to load the A-line skirt sample in-memory
+- `/studio/sewing/[slug]` to load a real SewingPattern row by slug
+- `/studio/sewing/[slug]/print` for the tiled PDF exporter (A4 + Letter, pdf-lib)
+- `/studio/sewing/[slug]/projector` for the full-screen 1:1 projector view
+- `/studio/sewing/[slug]/instructions/print` for an instructions-only print
+- `/me/sewing-projects` for the user's SewingPatternProject list
+- `PATCH /api/studio/sewing/progress/:patternId` for autosave
+
+Components added under `apps/web/src/components/studio/sewing/`: `SewingStudioShell`, `SewingActiveProject`, `SewingEmptyState`, `MySewingProjectsGrid`, `SewingPatternViewer`, `SewingInstructionsPanel`, `MaterialsCalculator`, `CuttingLayoutViewer`, `CreditCardCalibration`, `projector/ProjectorView`, `printing/TiledPrintExporter`. CSS lives in `sewing-studio.css`.
+
+Lib added under `apps/web/src/lib/sewing/`: `load-pattern.ts` (row sanitiser + project loader), `demo-pattern.ts` (A-line skirt definition), `printing/page-tiles.ts` (pure tile maths for A4/Letter/A3/Legal), `printing/build-pdf.ts` (pdf-lib walker with Liang-Barsky line clipping).
+
+Seed script `apps/web/scripts/seed-demo-sewing-pattern.ts` idempotent on slug; wired into `.github/workflows/deploy.yml` as a non-blocking step after the existing photo-pattern seed. Sewing Studio added to the shared `category-config.ts` so the persistent top-nav resolves on every /studio/sewing/* path.
+
+Held to the no-S-5a-coupling lock: `@freesewing/*` not installed, `apps/web/src/lib/sewing/grading/` not created, no freesewing wrapper code, no custom grading flow, no hack composer. The A-line skirt demo is hand-crafted SVG per the image policy.
+
 ## Small cleanups bundle (2026-06-10)
 
 Renderer barrel splits: knitting `index-client.ts` (renamed from `client.ts`, 3 consumers updated); crochet `index-client.ts` (created, excludes sharp-dependent rasteriser). Cross-stitch chart engine has no barrel and no sharp imports; no split needed.

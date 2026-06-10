@@ -7,7 +7,7 @@
  * file only describes the wrapper-level shell, not the editor itself.
  */
 
-export type StudioCategorySlug = 'cross-stitch' | 'crochet' | 'knitting' | 'needlework'
+export type StudioCategorySlug = 'cross-stitch' | 'crochet' | 'knitting' | 'needlework' | 'sewing'
 
 export interface StudioCategoryConfig {
   slug: StudioCategorySlug
@@ -72,6 +72,17 @@ export const STUDIO_CATEGORY_CONFIG: Record<StudioCategorySlug, StudioCategoryCo
     studioHref: '/studio/needlework',
     categoryHref: '/needlework',
     libraryHref: '/needlework',
+  },
+  sewing: {
+    slug: 'sewing',
+    displayName: 'Sewing',
+    studioName: 'Sewing Studio',
+    continueVerb: 'sewing',
+    ctaBody:
+      'Open a pattern, work out fabric and notions, plan your cutting layout, print to paper or project onto fabric. Free to use.',
+    studioHref: '/studio/sewing',
+    categoryHref: '/sewing',
+    libraryHref: '/sewing/patterns',
   },
 }
 
