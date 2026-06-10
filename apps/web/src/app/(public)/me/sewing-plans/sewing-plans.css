@@ -1,0 +1,201 @@
+.sp-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+  font-family: 'Lora', Georgia, serif;
+  color: #3d2f22;
+}
+
+.sp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.sp-header-text {
+  max-width: 640px;
+}
+
+.sp-overline {
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: #8a8276;
+  margin: 0 0 0.5rem;
+}
+
+.sp-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+}
+
+.sp-lede {
+  color: #5c5347;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sp-new-cta {
+  appearance: none;
+  border: none;
+  background: #7d957d;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.sp-new-cta:hover,
+.sp-new-cta:focus-visible {
+  background: #5d7959;
+  outline: none;
+}
+
+.sp-new-form {
+  background: #fafaf6;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.sp-new-form label {
+  font-size: 0.88rem;
+  color: #5c5347;
+}
+
+.sp-new-form input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+}
+
+.sp-new-form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sp-new-form-actions button {
+  appearance: none;
+  border: none;
+  background: rgba(60, 47, 34, 0.06);
+  color: #5c5347;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.sp-new-form-actions button.primary {
+  background: #7d957d;
+  color: #fff;
+}
+
+.sp-new-form-actions button.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sp-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sp-filters button {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: #5c5347;
+  cursor: pointer;
+}
+
+.sp-filters button.active {
+  background: #3d2f22;
+  color: #fff;
+  border-color: #3d2f22;
+}
+
+.sp-empty {
+  background: rgba(60, 47, 34, 0.03);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #5c5347;
+  font-style: italic;
+}
+
+.sp-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.sp-card {
+  background: #fafaf6;
+  border-radius: 12px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.sp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(60, 47, 34, 0.08);
+}
+
+.sp-card-link {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sp-card-status {
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  color: #7d957d;
+  margin-bottom: 0.5rem;
+}
+
+.sp-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.sp-card-meta {
+  font-size: 0.85rem;
+  color: #8a8276;
+}
+
+@media (max-width: 600px) {
+  .sp-header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,252 @@
+.sm-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+  font-family: 'Lora', Georgia, serif;
+  color: #3d2f22;
+}
+
+.sm-header {
+  margin-bottom: 2rem;
+}
+
+.sm-overline {
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: #8a8276;
+  margin: 0 0 0.5rem;
+}
+
+.sm-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+  color: #3d2f22;
+}
+
+.sm-lede {
+  color: #5c5347;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 600px;
+}
+
+.sm-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(60, 47, 34, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.sm-pref {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sm-pref-label {
+  font-size: 0.88rem;
+  color: #8a8276;
+}
+
+.sm-pref-toggle {
+  display: inline-flex;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sm-pref-toggle button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: #5c5347;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.sm-pref-toggle button.active {
+  background: #7d957d;
+  color: #fff;
+}
+
+.sm-save-indicator {
+  font-size: 0.85rem;
+  color: #5c5347;
+  min-height: 1.2em;
+}
+
+.sm-save-muted {
+  color: #8a8276;
+}
+
+.sm-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sm-section-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.sm-section-sub {
+  color: #8a8276;
+  font-size: 0.92rem;
+  margin: 0 0 1.2rem;
+  max-width: 540px;
+}
+
+.sm-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.sm-field {
+  background: #fafaf6;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.sm-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sm-field-label {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3d2f22;
+}
+
+.sm-howto-toggle {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: #7d957d;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sm-howto-toggle:hover,
+.sm-howto-toggle:focus-visible {
+  color: #5d7959;
+  outline: none;
+}
+
+.sm-field-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.sm-field-input-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sm-field-input-wrap input {
+  font-family: inherit;
+  font-size: 1.05rem;
+  padding: 0.55rem 2.4rem 0.55rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+  width: 7.5rem;
+}
+
+.sm-field-unit {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 0.85rem;
+  color: #8a8276;
+  pointer-events: none;
+}
+
+.sm-field-partner {
+  font-size: 0.88rem;
+  color: #8a8276;
+  font-family: ui-monospace, monospace;
+}
+
+.sm-howto-body {
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
+  color: #5c5347;
+  line-height: 1.5;
+  padding: 0.7rem 0.9rem;
+  background: rgba(125, 149, 125, 0.08);
+  border-radius: 6px;
+}
+
+.sm-advanced-toggle {
+  margin: 1.5rem 0;
+}
+
+.sm-advanced-toggle button {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #5c5347;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+}
+
+.sm-advanced-toggle button:hover,
+.sm-advanced-toggle button:focus-visible {
+  border-color: #7d957d;
+  color: #3d2f22;
+  outline: none;
+}
+
+.sm-notes {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.98rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+  resize: vertical;
+}
+
+@media (max-width: 540px) {
+  .sm-field-row {
+    flex-wrap: wrap;
+  }
+  .sm-field-inputs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .sm-field-input-wrap input {
+    width: 100%;
+  }
+}

@@ -296,6 +296,17 @@ model User {
   userPatternPhotos       UserPatternPhoto[] @relation("UserPatternPhotoOwner")
   userPatternPhotoReviews UserPatternPhoto[] @relation("UserPhotoReviewer")
 
+  // Sewing pre-S-2 (phase_sewing_measurements_planner_001). User-wide
+  // measurement display preference applied across every renderer that
+  // shows a body / fabric measurement. Canonical storage stays cm + mm
+  // everywhere per the locked units rule; this flag only switches the
+  // displayed unit at render time. Null = default to cm.
+  measurementPreference String?
+
+  // Sewing pre-S-2 reverse relations.
+  sewingMeasurements UserSewingMeasurements?
+  sewingPlans        UserSewingPlan[]
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -4782,12 +4793,12 @@ model KnittingPattern {
   // recommendedSwatchSizeCm — default 15 cm × 15 cm; cables 20 cm × 20 cm.
   //   Surfaced in the gauge section + the Studio swatch prompt.
   // ──────────────────────────────────────────────────────────────────────────
-  stitchCountCheckpoints Json?
-  lifelinePoints         Int[] @default([])
-  errataVersion          String?
-  errataLog              Json?
-  finishedWeightGrams    Int?
-  dominantColour         String?
+  stitchCountCheckpoints  Json?
+  lifelinePoints          Int[]   @default([])
+  errataVersion           String?
+  errataLog               Json?
+  finishedWeightGrams     Int?
+  dominantColour          String?
   recommendedSwatchSizeCm Int?
 
   // Standard cataloguing.
@@ -5005,4 +5016,109 @@ enum KnittingYarnWeightStandard {
   BULKY
   SUPER_BULKY
   JUMBO
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Sewing pre-S-2: saved body measurements + printable sewing planner.
+// phase_sewing_measurements_planner_001 (2026-06-10).
+//
+// Two free-tier-signed-in surfaces that flow into the rest of the sewing
+// roadmap:
+//
+//   UserSewingMeasurements: the 3-5 default body measurements (bust /
+//   chest, waist, hip, body height, inseam) plus 10 advanced disclosure
+//   fields (bust point, back / front waist length, shoulder, arm,
+//   wrist, thigh, calf, ankle, neck). Stored in cm canonical per the
+//   locked units rule; the renderer reconciles cm and inches at view
+//   time from User.measurementPreference. The S-5 freesewing wrapper
+//   translates these field names into freesewing's measurement keys at
+//   its boundary; nothing in this model is freesewing-aware.
+//
+//   UserSewingPlan: the printable / saveable project plan. Materials
+//   (fabric / notions / thread), cutting plan, step checklist, free
+//   notes, status. Powers /me/sewing-plans and its /print companion.
+// ────────────────────────────────────────────────────────────────────────────
+
+model UserSewingMeasurements {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // 3-5 default profile (per the sewing locks). Every field nullable,
+  // since a user may have only some of these.
+  bustChestCm  Decimal? @db.Decimal(6, 2)
+  waistCm      Decimal? @db.Decimal(6, 2)
+  hipCm        Decimal? @db.Decimal(6, 2)
+  bodyHeightCm Decimal? @db.Decimal(6, 2)
+  inseamCm     Decimal? @db.Decimal(6, 2)
+
+  // Advanced disclosure (shown inline when garment-specific).
+  bustPointCm          Decimal? @db.Decimal(6, 2)
+  backWaistLengthCm    Decimal? @db.Decimal(6, 2)
+  frontWaistLengthCm   Decimal? @db.Decimal(6, 2)
+  shoulderWidthCm      Decimal? @db.Decimal(6, 2)
+  armLengthCm          Decimal? @db.Decimal(6, 2)
+  wristCircumferenceCm Decimal? @db.Decimal(6, 2)
+  thighCircumferenceCm Decimal? @db.Decimal(6, 2)
+  calfCircumferenceCm  Decimal? @db.Decimal(6, 2)
+  ankleCircumferenceCm Decimal? @db.Decimal(6, 2)
+  neckCircumferenceCm  Decimal? @db.Decimal(6, 2)
+
+  notes         String?
+  lastUpdatedAt DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model UserSewingPlan {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  title       String
+  patternId   String? // future link to a sewing pattern row; null for blank plans
+  patternSlug String? // freeform for plans not yet patterned
+
+  // Materials. Free-form JSON arrays at v1: schema sketched but not
+  // enforced. The editor writes a known shape and a future migration
+  // promotes to real tables if query patterns demand it.
+  // fabricList:  [{ name, fabricType, widthCm, lengthCm, notes }]
+  // notionsList: [{ name, quantity, notes }]
+  // threadList:  [{ colour, weight, notes }]
+  fabricList  Json?
+  notionsList Json?
+  threadList  Json?
+
+  // Cutting plan sketched by the user. Refined when the plan is
+  // promoted into the S-5 layout planner.
+  // cuttingPlan: { layoutNotes, fabricWidthCm, totalLengthCm, pieceList }
+  cuttingPlan Json?
+
+  // Steps + progress.
+  // stepsList: [{ id, stepText, isComplete, completedAt, notes }]
+  stepsList Json?
+
+  // Free notes section.
+  notes String?
+
+  status      SewingPlanStatus @default(DRAFT)
+  startedAt   DateTime?
+  completedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, updatedAt])
+  @@index([userId, status])
+}
+
+enum SewingPlanStatus {
+  DRAFT
+  ACTIVE
+  PAUSED
+  COMPLETED
+  ARCHIVED
 }

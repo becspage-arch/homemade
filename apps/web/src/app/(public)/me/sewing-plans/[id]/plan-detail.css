@@ -1,0 +1,427 @@
+.pd-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 5rem;
+  font-family: 'Lora', Georgia, serif;
+  color: #3d2f22;
+}
+
+.pd-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pd-back {
+  color: #5c5347;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.pd-back:hover,
+.pd-back:focus-visible {
+  color: #3d2f22;
+  outline: none;
+}
+
+.pd-toolbar-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pd-save-indicator {
+  font-size: 0.85rem;
+  color: #5c5347;
+}
+
+.pd-save-muted {
+  color: #8a8276;
+}
+
+.pd-print-cta {
+  appearance: none;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.pd-print-cta:hover,
+.pd-print-cta:focus-visible {
+  border-color: #7d957d;
+  color: #5d7959;
+  outline: none;
+}
+
+.pd-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(60, 47, 34, 0.1);
+}
+
+.pd-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: text;
+  text-align: left;
+  margin: 0 0 0.8rem;
+  display: block;
+  color: #3d2f22;
+}
+
+.pd-title:hover,
+.pd-title:focus-visible {
+  color: #5d7959;
+  outline: none;
+}
+
+.pd-title-edit {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 500;
+  background: #fafaf6;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  margin: 0 0 0.8rem;
+  width: 100%;
+  color: #3d2f22;
+}
+
+.pd-status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pd-status-label {
+  font-size: 0.92rem;
+  color: #8a8276;
+}
+
+.pd-status-row select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+}
+
+.pd-section {
+  margin: 2.5rem 0;
+}
+
+.pd-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pd-section-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.pd-section-sub {
+  color: #8a8276;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.pd-add {
+  appearance: none;
+  border: 1px solid #7d957d;
+  background: transparent;
+  color: #5d7959;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.pd-add:hover,
+.pd-add:focus-visible {
+  background: #7d957d;
+  color: #fff;
+  outline: none;
+}
+
+.pd-empty {
+  color: #8a8276;
+  font-style: italic;
+  background: rgba(60, 47, 34, 0.03);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.pd-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.pd-row {
+  background: #fafaf6;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pd-row-fabric {
+  grid-template-columns: 2fr 1.2fr 0.9fr 0.9fr 1.6fr auto;
+}
+
+.pd-row-notion {
+  grid-template-columns: 2fr 0.8fr 1.6fr auto;
+}
+
+.pd-row-thread {
+  grid-template-columns: 1.5fr 1fr 1.6fr auto;
+}
+
+.pd-row-piece {
+  grid-template-columns: 1fr auto;
+}
+
+.pd-row input {
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid rgba(60, 47, 34, 0.14);
+  background: #fff;
+  color: #3d2f22;
+  min-width: 0;
+}
+
+.pd-remove {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #8a8276;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+
+.pd-remove:hover,
+.pd-remove:focus-visible {
+  background: rgba(60, 47, 34, 0.06);
+  color: #3d2f22;
+  outline: none;
+}
+
+.pd-cutting-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.pd-cutting-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  color: #5c5347;
+}
+
+.pd-cutting-input input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+}
+
+.pd-cutting-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  color: #5c5347;
+  margin-bottom: 1.5rem;
+}
+
+.pd-cutting-notes textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+  resize: vertical;
+}
+
+.pd-pieces-header h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.pd-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pd-step {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem;
+  align-items: start;
+  background: #fafaf6;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+}
+
+.pd-step.is-complete .pd-step-body textarea {
+  text-decoration: line-through;
+  color: #8a8276;
+}
+
+.pd-step input[type='checkbox'] {
+  margin-top: 0.4rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.pd-step-body {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.pd-step-body textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid rgba(60, 47, 34, 0.14);
+  background: #fff;
+  color: #3d2f22;
+  resize: vertical;
+  min-height: 2.2rem;
+}
+
+.pd-step-notes {
+  font-size: 0.88rem;
+  color: #5c5347;
+}
+
+.pd-step-actions {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.pd-step-actions button {
+  appearance: none;
+  border: 1px solid rgba(60, 47, 34, 0.14);
+  background: #fff;
+  color: #5c5347;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.pd-step-actions button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pd-step-actions button:not(:disabled):hover {
+  background: rgba(60, 47, 34, 0.06);
+}
+
+.pd-notes {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.98rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(60, 47, 34, 0.18);
+  background: #fff;
+  color: #3d2f22;
+  resize: vertical;
+}
+
+.pd-danger {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(60, 47, 34, 0.1);
+}
+
+.pd-archive {
+  appearance: none;
+  border: 1px solid rgba(196, 96, 76, 0.4);
+  background: transparent;
+  color: #b35846;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.pd-archive:hover,
+.pd-archive:focus-visible {
+  background: rgba(196, 96, 76, 0.08);
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  .pd-row-fabric,
+  .pd-row-notion,
+  .pd-row-thread {
+    grid-template-columns: 1fr auto;
+  }
+  .pd-row-fabric input,
+  .pd-row-notion input,
+  .pd-row-thread input {
+    grid-column: 1 / -1;
+  }
+  .pd-row-fabric .pd-remove,
+  .pd-row-notion .pd-remove,
+  .pd-row-thread .pd-remove {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .pd-cutting-fields {
+    grid-template-columns: 1fr;
+  }
+}
