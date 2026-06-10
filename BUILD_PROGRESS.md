@@ -1952,6 +1952,60 @@ Generate heroes (and inline illustrations where the page design calls for them) 
 
 Sessions newer than 2026-05-12, in the order they landed. Phase entries older than this and shipped infra / analytics rollouts are in the [archive](docs/archive/build-progress-history.md).
 
+## K-4.2 knitting PD diagram pipeline (2026-06-10)
+
+Knitting K-4.2 PD diagram pipeline extending
+the crochet Foundations pattern (commits ca5d813e + d8dd22aa) to knitting.
+20 Thérèse de Dillmont *Encyclopaedia of Needlework* (1886) Knitting-chapter
+figures pulled from Project Gutenberg eBook #20776 and committed under
+[apps/web/public/tutorial-diagrams/knitting/_sources/dillmont-1886/](apps/web/public/tutorial-diagrams/knitting/_sources/dillmont-1886/)
+across two batches: round 1 (10 figures) covering position-of-hands, 3
+cast-on variants, knit, purl, k tbl, yarn-over, sock heel, plaited stitch;
+round 2 (10 more) covering the remaining Dillmont cast-on variants, p tbl,
+knot stitch (bobble / popcorn ancestor), plain + double brioche, two-colour
+stranded colorwork, drop-stitch lace. Each figure carries its caption +
+suggested-topics mapping in the source manifest, plus a `sourceFile`
+cross-reference because Project Gutenberg's image filenames are
+sequential and do NOT match figure numbers (a wrinkle the crochet
+manifest didn't surface because its offset was uniform). Files are
+hand-engraved Victorian line drawings, individual figures (no
+multi-figure cropping needed), 10-43 KB JPGs each.
+
+Wire script at
+[packages/db/scripts/wire-knitting-pd-diagrams.ts](packages/db/scripts/wire-knitting-pd-diagrams.ts)
+mirrors `wire-crochet-foundations-diagrams.ts` with 13 wirings across the
+8 existing knitting tutorial slugs. Ran 2026-06-10. 3 wired (5 image
+embeddings across `long-tail-cast-on`, `how-to-work-a-knit-stitch`,
+`stocking-stitch-dishcloth`), 5 NOT FOUND because those slugs
+(`knit-and-purl-the-foundation-stitches`, `cable-basics-c4f-and-c4b`,
+`cabled-dishcloth`, `garter-stitch-scarf`, `simple-ribbed-hat`) exist as
+JSON anchor drafts at `packages/db/scripts/anchor-tutorials/knitting/`
+but are not yet published. The wire script is idempotent: re-running
+after those anchors land will pick up their wirings automatically.
+Spot-check confirmed: `diagramGenerationStatus = SUCCESS` on all 3 wired
+tutorials, sourceNotes carries the Dillmont citation, image src matches
+the `/diagram/i` voice-check approved-pattern via the `tutorial-diagrams`
+path segment.
+
+Coverage gaps documented in the manifest's `coverageNotes.notCovered`:
+bind-off illustration (Dillmont's "Casting off" section is text-only),
+modern named decreases (ssk / k2tog / cdd; Dillmont describes "intakes"
+inline within stocking instructions), modern named increases beyond
+yarn-over (M1 / kfb / lifted), Kitchener stitch (1914), magic loop and
+two-circulars (20th-century), provisional + German-twisted +
+backward-loop cast-ons, mattress-stitch seam, blocking. Next sources to
+try (separate worker): Weldon's Practical Knitter volumes on Internet
+Archive for bind-off + modern named decreases; in-house parametric
+schematic SVG for the 20th-century-invented techniques.
+
+Image-source path now predictable across knitting; the K-4.1 voice-check
+`knitting-unknown-image-src` rule (currently warn-only) can graduate
+from warn to block in a follow-up once the 5 anchor tutorials upload
+and the rest of the knitting tutorial creation catches up. K-4.2 sits
+alongside the K-2 chart engine and the K-4.3 parametric schematic
+renderer as the third permitted visual surface per the K-4.1
+no-external-visuals hard rule.
+
 ## K-4.3 parametric knitting schematic renderer (2026-06-10)
 
 Knitting K-4.3 — parametric `SchematicRenderer` component at
