@@ -5205,8 +5205,8 @@ model SewingPattern {
   // pattern body. `attributionText` is the voice-checked footer credit
   // rendered on tiled-print and browse-only output.
   designerId            String?
-  designer              Designer? @relation("DesignerSewingPatterns", fields: [designerId], references: [id], onDelete: SetNull)
-  isFreesewingDesign    Boolean   @default(false)
+  designer              Designer?            @relation("DesignerSewingPatterns", fields: [designerId], references: [id], onDelete: SetNull)
+  isFreesewingDesign    Boolean              @default(false)
   freesewingPackageName String?
   freesewingVersion     String?
   freesewingDesignSlug  String?
@@ -5221,8 +5221,8 @@ model SewingPattern {
   garmentCategory SewingGarmentCategory
   garmentType     String?
   subCategoryId   String?
-  subCategory     SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
-  skillLevel      SewingSkillLevel @default(IMPROVER)
+  subCategory     SubCategory?          @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  skillLevel      SewingSkillLevel      @default(IMPROVER)
 
   // ──────────────────────────────────────────────────────────────────────────
   // Sizing.
@@ -5441,11 +5441,11 @@ model SewingPatternProject {
 /// now; Worker F wires the gating. This migration carves the room
 /// without building the wrapper itself.
 model SewingPatternPersonalisation {
-  id        String        @id @default(cuid())
+  id        String                @id @default(cuid())
   userId    String
-  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
   patternId String
-  pattern   SewingPattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+  pattern   SewingPattern         @relation(fields: [patternId], references: [id], onDelete: Cascade)
   projectId String?
   project   SewingPatternProject? @relation(fields: [projectId], references: [id], onDelete: SetNull)
 
@@ -5559,4 +5559,33 @@ enum PersonalisationStatus {
   SUCCESS
   FAILED
   REJECTED
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Sewing S-5a: shared draft cache for the freesewing wrapper.
+// phase_sewing_draft_cache_001 (2026-06-10).
+//
+// The wrapper hashes (designSlug, measurements, options, calibrationMode,
+// freesewingVersion) into cacheKey and writes the rendered SVG here so
+// subsequent identical drafts return the cached SVG without re-running
+// freesewing. Entries are kept indefinitely; a freesewing version bump
+// invalidates the entire prior set automatically (the version is part of
+// the hash). Periodic eviction based on lastAccessedAt is a future concern.
+// ────────────────────────────────────────────────────────────────────────────
+model SewingPatternDraftCache {
+  id                String   @id @default(cuid())
+  cacheKey          String   @unique
+  designSlug        String
+  measurementsHash  String
+  optionsHash       String
+  calibrationMode   String
+  svgOutput         String
+  freesewingVersion String
+  generatedAt       DateTime @default(now())
+  lastAccessedAt    DateTime @default(now())
+  accessCount       Int      @default(0)
+
+  @@index([cacheKey])
+  @@index([designSlug])
+  @@index([lastAccessedAt])
 }
