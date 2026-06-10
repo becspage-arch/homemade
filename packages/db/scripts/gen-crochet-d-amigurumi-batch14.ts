@@ -89,12 +89,12 @@ function savePattern(slug: string, out: Record<string, unknown>) {
   const techniqueSlugs = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease', 'working-in-the-round', 'stuffing-and-closing', 'surface-crochet']
   const criticalTechniques = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease']
   const glossaryTerms = [
-    { termSlug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
-    { termSlug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
-    { termSlug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
-    { termSlug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
-    { termSlug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
-    { termSlug: 'surface-crochet', definition: 'Working slip stitches through the surface of a finished piece to add texture or detail.' },
+    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
+    { slug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
+    { slug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
+    { slug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
+    { slug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
+    { slug: 'surface-crochet', definition: 'Working slip stitches through the surface of a finished piece to add texture or detail.' },
   ]
 
   const bodyNodes: object[] = [
@@ -208,7 +208,8 @@ function savePattern(slug: string, out: Record<string, unknown>) {
     p(t(`Rounds: ${nose.totalRounds}. Begin at the tip with a `), gt('magic-ring', 'magic ring'), t(' and '), gt('amigurumi-increase', 'increase'), t(' outward to the base diameter. Stuff lightly and leave the base open to join the body.')),
     ...nose.rowByRow.map(r => p(t(`Round ${r.round}: ${r.instructions}`))),
     h2('Fins (make 4)'),
-    p(t(`Rounds: ${fin.totalRounds} per fin. Work each cone without stuffing and sew flat. The fin base attaches to the lower body, angled outward at 90-degree intervals.`)),
+    p(t(`Rounds: ${fin.totalRounds} per fin. Work each cone from the tip. Do not stuff and sew flat before sewing to the lower body.`)),
+    p(gt('amigurumi-decrease', 'Decrease'), t(' rounds at the tip of each fin cone taper it naturally to a point.')),
     ...fin.rowByRow.map(r => p(t(`Round ${r.round}: ${r.instructions}`))),
     h2('Assembly'),
     p(t('Sew the nose cone to the top of the body. '), gt('stuffing-and-closing', 'Stuff and close'), t(' the body before adding the fins. Position four fins evenly around the base, pointing outward and slightly downward. Embroider a circular porthole window in a contrasting colour.')),
@@ -315,7 +316,7 @@ function savePattern(slug: string, out: Record<string, unknown>) {
     h2('About this pattern'),
     p(t('An intermediate astronaut with a white sphere helmet, a cylinder body suit, and two capsule arms. A visor panel is worked in gold yarn using '), gt('colour-change', 'colour change'), t(' on the front of the helmet. Small cylinder legs attach to the base of the body.')),
     h2('Helmet'),
-    p(t(`Rounds: ${helmet.totalRounds}. Begin with a `), gt('magic-ring', 'magic ring'), t(' in white and '), gt('amigurumi-increase', 'increase'), t(' to the equator. Change to gold yarn for three rounds across the front to form the visor, then continue in white. Stuff firmly before closing.')),
+    p(t(`Rounds: ${helmet.totalRounds}. Begin with a `), gt('magic-ring', 'magic ring'), t(' in white and '), gt('amigurumi-increase', 'increase'), t(' to the equator. Change to gold yarn for three rounds across the front to form the visor, then continue in white. '), gt('amigurumi-decrease', 'Decrease'), t(' to close; stuff firmly before the final round.')),
     ...helmet.rowByRow.map(r => p(t(`Round ${r.round}: ${r.instructions}`))),
     h2('Body suit'),
     p(t(`Rounds: ${bodyPiece.totalRounds}. Work the cylinder in white using a `), gt('magic-ring', 'magic ring'), t(' at the base. Add flag patches and detail bands using '), gt('colour-change', 'colour change'), t(' in grey or red. Leave the top open to join the helmet.')),
@@ -407,11 +408,11 @@ function savePattern(slug: string, out: Record<string, unknown>) {
   const techniqueSlugs = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease', 'working-in-the-round', 'stuffing-and-closing']
   const criticalTechniques = ['magic-ring', 'amigurumi-decrease']
   const glossaryTerms = [
-    { termSlug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
-    { termSlug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
-    { termSlug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
-    { termSlug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
-    { termSlug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
+    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
+    { slug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
+    { slug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
+    { slug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
+    { slug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
   ]
 
   const bodyNodes: object[] = [
@@ -456,11 +457,11 @@ function savePattern(slug: string, out: Record<string, unknown>) {
   const techniqueSlugs = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease', 'working-in-the-round', 'stuffing-and-closing']
   const criticalTechniques = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease']
   const glossaryTerms = [
-    { termSlug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
-    { termSlug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
-    { termSlug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
-    { termSlug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
-    { termSlug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
+    { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
+    { slug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
+    { slug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
+    { slug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
+    { slug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
   ]
 
   const bodyNodes: object[] = [
@@ -501,11 +502,10 @@ function savePattern(slug: string, out: Record<string, unknown>) {
   const mainTube = cylinder({ diameterCm: 6, heightCm: 14, gauge: GAUGE, closeBothEnds: false, label: 'Main tube' })
   const eyepiece = cylinder({ diameterCm: 3, heightCm: 5, gauge: GAUGE, closeBothEnds: false, label: 'Eyepiece tube' })
 
-  const techniqueSlugs = ['magic-ring', 'amigurumi-increase', 'amigurumi-decrease', 'working-in-the-round', 'stuffing-and-closing', 'colour-change']
-  const criticalTechniques = ['magic-ring', 'amigurumi-increase', 'stuffing-and-closing']
+  const techniqueSlugs = ['magic-ring', 'amigurumi-decrease', 'working-in-the-round', 'stuffing-and-closing', 'colour-change']
+  const criticalTechniques = ['magic-ring', 'stuffing-and-closing']
   const glossaryTerms = [
     { slug: 'magic-ring', definition: 'An adjustable loop used to start amigurumi pieces with a tight centre.' },
-    { slug: 'amigurumi-increase', definition: 'Two double crochet worked into the same stitch to widen a round.' },
     { slug: 'amigurumi-decrease', definition: 'Two stitches crocheted together to narrow a round.' },
     { slug: 'working-in-the-round', definition: 'Crocheting in a continuous spiral without turning.' },
     { slug: 'stuffing-and-closing', definition: 'Filling a piece with toy stuffing then drawing the final stitches tight.' },
