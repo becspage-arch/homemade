@@ -3563,3 +3563,40 @@ All 14 voice-checked clean (0 errors, 0 warnings). Glossary coverage verified. U
 The primary Internet Archive digitisation of Weldon's Practical Knitter (krl3423423423, held by the Knitting Reference Library, University of Southampton) carries a CC BY-NC-ND 3.0 licence on the scans. This is incompatible with the project's CC republishing policy (CC-BY / CC0 / PD only). A manifest stub is committed at `apps/web/public/tutorial-diagrams/knitting/_sources/weldons-practical-knitter/manifest.json` documenting the blocked state and candidate alternative sources (HathiTrust US university scans, British Library, fresh physical scan). No figures committed yet. The `ssk-decrease` and `k2tog-decrease` tutorials have correct bodies but no PD figure until a valid source is found.
 
 Source JSON files at `packages/db/scripts/phase-1-content/knitting/` (14 new) and `packages/db/scripts/anchor-tutorials/knitting/` (4 fixed).
+
+## Garden pipeline-setup + READY flip (2026-06-10)
+
+Garden category pipeline-setup landed; status flipped to READY. Garden was the last non-craft category sitting at NOT_READY; with this flip every category in the build is either READY (autopilot rotation), COMPLETE (target hit), or NOT_READY pending its own dedicated worker (sewing only, S-5 in flight).
+
+**Taxonomy reconciled (17 sub-cats):**
+The existing 9 sub-cats (`vegetables`, `fruit`, `herbs`, `flowers`, `permaculture`, `microgreens`, `hydroponics`, `mushroom-growing`, `foraging`) are preserved because the 4 PUBLISHED anchor tutorials (`growing-rosemary-from-cuttings`, `growing-strawberries`, `growing-tomatoes-from-seed`, `growing-calendula`) reference them. The pipeline-setup pass added 8 cross-cutting / activity sub-cats: `soil-compost`, `propagation`, `pest-disease-management`, `seasonal-care`, `tools-equipment`, `indoor-gardening` (autopilot ENABLED), plus `garden-design` and `wildlife-gardening` (specialist stubs, autopilotEnabled=false). Total 17 sub-cats; 15 autopilot-enabled, 2 paused for future specialist workers (per `feedback_designer_onboarding_timing.md` for `garden-design`, and the region-strict species-list research burden for `wildlife-gardening`).
+
+Seed script: `packages/db/scripts/seed-garden-taxonomy.ts` (idempotent upsert, 9 updates + 8 creates on this run).
+
+**17 author prompts + umbrella update:**
+`docs/garden-author.md` rewritten as an index-style umbrella per the needlework pattern: sub-cat table mapping slug → scope → per-sub-cat prompt → autopilot status, shared sub-topic body shapes (8 axes: sowing / growing / harvesting / saving-seed / pruning / pest-management / season-extension / variety-selection), shared voice rules, canonical region-aware metadata explanation. The 15 full per-sub-cat author prompts are self-contained: scope, status, materials master list, critical techniques, output contract, body shape with sub-cat-specific tweaks, sub-cat voice rules, sources, length guidance, self-critique pass additions, worked example. The 2 specialist stubs explain why autopilot is paused and what the future dedicated worker will do.
+
+Files:
+- `docs/garden-author.md` (umbrella, rewritten)
+- `docs/garden-vegetables-author.md`, `docs/garden-fruit-author.md`, `docs/garden-herbs-author.md`, `docs/garden-flowers-author.md`
+- `docs/garden-permaculture-author.md`, `docs/garden-microgreens-author.md`, `docs/garden-hydroponics-author.md`, `docs/garden-mushroom-growing-author.md`, `docs/garden-foraging-author.md`
+- `docs/garden-soil-compost-author.md`, `docs/garden-propagation-author.md`, `docs/garden-pest-disease-management-author.md`, `docs/garden-seasonal-care-author.md`, `docs/garden-tools-equipment-author.md`, `docs/garden-indoor-gardening-author.md`
+- `docs/garden-garden-design-author.md` (stub), `docs/garden-wildlife-gardening-author.md` (stub)
+
+**Region-aware authoring baked in:**
+Every full prompt instructs authors to populate the existing `garden` block (`plantSlug`, `subTopic`, `plantingMonths`, `harvestMonths`, `containerFriendly`, `indoorFriendly`, `regionsApplicable`) with UK-canonical metadata. The umbrella documents the deeper Tutorial location-system columns (`hemisphere`, `climateZones[]`, `usdaHardinessZones[]`, `rhsHardinessZones[]`, `growingMonthsByHemisphere`, `frostSensitivity`, `dayLengthSensitive`, `primaryRegionWrittenFor`, `alsoGrowsIn`) that landed earlier as schema scaffold; the upload-input wiring for those is out of scope for this worker and will land separately. Until then authors carry the schedule honestly in `regionsApplicable` and body prose; the renderer composes the "Where this works best" card from the structured fields once wired. Voice rules forbid em dashes, "perfect for", therapeutic claims, "easy" without conditions, padded `regionsApplicable`, brand pinning.
+
+**Category pipeline-setup standards populated:**
+`packages/db/scripts/populate-garden-pipeline-setup.ts` consolidates from the 17 per-sub-cat prompts:
+- `Category.garden.targetTutorialCount = 4000` (already set; unchanged)
+- `Category.garden.techniqueSlugs[] = 279 entries` covering sowing + propagation + cuttings + grafting + watering + soil + compost + no-dig + permaculture + pruning + plant management + pollination + IPM + frost + harvest + seed saving + microgreens + hydroponics + mushroom + foraging + indoor / houseplant + tools + lawn / garden-wide seasonal
+- `Category.garden.criticalTechniques[] = 10 entries` (subset): `reading-a-seed-packet`, `sowing-depth`, `spacing-fundamentals`, `hardening-off-seedlings`, `watering-deep-infrequent`, `frost-protection-fleece`, `pricking-out`, `soil-testing-pH`, `crop-rotation`, `last-frost-date-uk-by-region`
+- `Category.garden.aliases[] = 92 entries` covering UK / US name swaps (`courgette` ↔ `zucchini`, `aubergine` ↔ `eggplant`, `swede` ↔ `rutabaga`, `coriander` ↔ `cilantro`, `rocket` ↔ `arugula`, `mangetout` ↔ `snow-pea` and more), method aliases (`no-dig` ↔ `no-till`, `sheet-mulch` ↔ `lasagne-gardening`), tool aliases, pest synonyms, fruit rootstock codes (`M9`, `M27`, `MM106`, `M25`)
+
+**READY flip:**
+`packages/db/scripts/flip-garden-ready.ts` set `Category.garden.pipelineStatus = READY` (was NOT_READY). Garden's `lastAutopilotRunAt` (2026-05-17, from the anchor batch) puts it at **position 1** in the autopilot round-robin queue — it will fire FIRST on the next cycle, ahead of `wood-natural-craft` (2026-05-29), `pottery-ceramics` (2026-05-30), and the 2026-06-02 cluster. The four NULL-fire categories (crochet, knitting, needlework, cross-stitch) sit at the back of the queue per Postgres `NULLS LAST` ordering.
+
+**Autopilot routing:**
+No code change required. The autopilot routine picks a sub-cat by `SubCategory.autopilotEnabled = true AND categoryId = <garden>` ordered by `SubCategory.order` and loads `docs/garden-<sub-cat-slug>-author.md` as the master prompt for the batch (per needlework precedent). 15 sub-cats in the pool; the 2 specialist stubs are skipped. Inspection at `packages/db/scripts/_inspect-garden-queue.ts` confirms the routing.
+
+Garden is the last category to flip READY in the build. All category-readiness work is now complete; only sewing remains at NOT_READY pending S-5 sub-worker split.

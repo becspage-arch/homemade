@@ -1,27 +1,31 @@
 /**
- * One-off seed for the Garden taxonomy.
+ * Seed (or upsert) the Garden taxonomy.
  *
  * Inserts (or no-ops on conflict):
- *   Category   garden                     "Garden"
- *   SubCat     vegetables                 "Vegetables"               (under garden)
- *   SubCat     fruit                      "Fruit"                    (under garden)
- *   SubCat     herbs                      "Herbs"                    (under garden)
- *   SubCat     flowers                    "Flowers"                  (under garden)
- *   SubCat     permaculture               "Permaculture"             (under garden)
- *   SubCat     microgreens                "Microgreens"              (under garden)
- *   SubCat     hydroponics                "Hydroponics"              (under garden)
- *   SubCat     mushroom-growing           "Mushroom growing"         (under garden)
- *   SubCat     foraging                   "Foraging"                 (under garden)
  *
- * Sub-categories match the description seeded in `seed-categories.ts`. The
- * upload-tutorial script requires both the Category and any referenced
- * SubCategory to exist before Garden rows can be inserted.
+ *   Plant-family + specialist-system sub-cats (the original 9, kept so the
+ *   4 PUBLISHED tutorials authored under them continue to resolve):
+ *     vegetables, fruit, herbs, flowers, permaculture, microgreens,
+ *     hydroponics, mushroom-growing, foraging
  *
- * Category itself was seeded earlier by `seed-categories.ts`. This script
- * is idempotent and slug-keyed; it never re-creates the category and
- * never touches `pipelineStatus`. The READY flip lives in
- * `flip-garden-ready.ts` and is run as a separate auditable step after
- * the rest of the pipeline scaffolding is committed and deployed green.
+ *   Activity / cross-cutting sub-cats (added by the pipeline-setup pass,
+ *   2026-06-10):
+ *     soil-compost, propagation, pest-disease-management, seasonal-care,
+ *     tools-equipment, indoor-gardening, garden-design, wildlife-gardening
+ *
+ * Total: 17 sub-cats. Fifteen run on autopilot; two (`garden-design`,
+ * `wildlife-gardening`) are specialist stubs with `autopilotEnabled=false`
+ * and will be authored by future dedicated workers.
+ *
+ * Per the autopilot-null-sort memory: newly-flipped Category.garden lands at
+ * the back of the round-robin queue with `lastAutopilotRunAt` NULL; do not
+ * backdate. The script does not touch `pipelineStatus`; the READY flip lives
+ * in `flip-garden-ready.ts` and runs as a separate auditable step after the
+ * rest of the Garden pipeline scaffolding is committed and deployed green.
+ *
+ * The script is idempotent and slug-keyed. It upserts the descriptions and
+ * autopilot flags on each run, so re-running picks up tweaks without
+ * duplicating rows.
  *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-garden-taxonomy.ts
@@ -59,15 +63,18 @@ interface SubCatSpec {
   name: string
   description: string
   order: number
+  autopilotEnabled: boolean
 }
 
 const SUB_CATEGORIES: SubCatSpec[] = [
+  // Plant-family sub-cats (original 9; preserved to keep PUBLISHED tutorials linked).
   {
     slug: 'vegetables',
     name: 'Vegetables',
     description:
       'Beans, brassicas, alliums, roots, salads, fruiting vegetables. Sowing windows, spacing, harvesting cues, pest management.',
     order: 10,
+    autopilotEnabled: true,
   },
   {
     slug: 'fruit',
@@ -75,6 +82,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Soft fruit, tree fruit, cane fruit. Rootstocks, pruning, pollination groups, netting against birds.',
     order: 20,
+    autopilotEnabled: true,
   },
   {
     slug: 'herbs',
@@ -82,6 +90,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Mediterranean (rosemary, thyme, sage) and tender (basil, coriander) culinary herbs. Drainage, light, replacement cycles.',
     order: 30,
+    autopilotEnabled: true,
   },
   {
     slug: 'flowers',
@@ -89,6 +98,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Edible flowers, cut-flower beds, companion-planting workhorses. Annuals and perennials, sowing windows, deadheading.',
     order: 40,
+    autopilotEnabled: true,
   },
   {
     slug: 'permaculture',
@@ -96,6 +106,7 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Forest gardens, polycultures, no-dig, sheet mulching, perennial vegetables, water harvesting.',
     order: 50,
+    autopilotEnabled: true,
   },
   {
     slug: 'microgreens',
@@ -103,27 +114,99 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     description:
       'Tray-grown seedlings cut at the cotyledon-to-first-true-leaf stage. Indoor, year-round, high yield per square metre.',
     order: 60,
+    autopilotEnabled: true,
   },
   {
     slug: 'hydroponics',
     name: 'Hydroponics',
     description:
-      'Soilless growing — nutrient film, deep water culture, ebb-and-flow, Dutch buckets. Indoor and greenhouse systems.',
+      'Soilless growing (nutrient film, deep water culture, ebb-and-flow, Dutch buckets). Indoor and greenhouse systems.',
     order: 70,
+    autopilotEnabled: true,
   },
   {
     slug: 'mushroom-growing',
     name: 'Mushroom growing',
     description:
-      'Oyster, shiitake, lion\'s mane on logs and bags. Inoculation, fruiting conditions, harvest cues, safety.',
+      "Oyster, shiitake, lion's mane on logs and bags. Inoculation, fruiting conditions, harvest cues, safety.",
     order: 80,
+    autopilotEnabled: true,
   },
   {
     slug: 'foraging',
     name: 'Foraging',
     description:
-      'Wild food identification — UK hedgerow, woodland, coastline. Absolute-beginner safety rules.',
+      'Wild food identification (UK hedgerow, woodland, coastline). Absolute-beginner safety rules.',
     order: 90,
+    autopilotEnabled: true,
+  },
+
+  // Activity / cross-cutting sub-cats (added 2026-06-10, pipeline-setup pass).
+  {
+    slug: 'soil-compost',
+    name: 'Soil and compost',
+    description:
+      'Soil testing (pH, nutrient, texture), hot and cold composting, leaf mould, green manures, mulching, no-dig beds.',
+    order: 100,
+    autopilotEnabled: true,
+  },
+  {
+    slug: 'propagation',
+    name: 'Propagation',
+    description:
+      'Seed sowing, softwood / semi-ripe / hardwood cuttings, division, layering, simple grafting. Plant-agnostic propagation method guides.',
+    order: 110,
+    autopilotEnabled: true,
+  },
+  {
+    slug: 'pest-disease-management',
+    name: 'Pest and disease management',
+    description:
+      'Integrated pest management, beneficial insects, organic controls, common pest identification, common plant diseases. Cross-plant guides.',
+    order: 120,
+    autopilotEnabled: true,
+  },
+  {
+    slug: 'seasonal-care',
+    name: 'Seasonal care',
+    description:
+      'Month-by-month tasks, pruning windows, planting calendars, frost protection, autumn clear-down, winter maintenance.',
+    order: 130,
+    autopilotEnabled: true,
+  },
+  {
+    slug: 'tools-equipment',
+    name: 'Tools and equipment',
+    description:
+      'Hand tools, power tools, maintenance, storage, sharpening. Choosing kit, looking after it, when to upgrade.',
+    order: 140,
+    autopilotEnabled: true,
+  },
+  {
+    slug: 'indoor-gardening',
+    name: 'Indoor gardening',
+    description:
+      'Houseplants, windowsill herbs, microgreen trays, sprouting, light-only growing. Indoor-only methods that do not need outdoor space.',
+    order: 150,
+    autopilotEnabled: true,
+  },
+
+  // Specialist stubs (autopilot off; future dedicated workers will commission).
+  {
+    slug: 'garden-design',
+    name: 'Garden design',
+    description:
+      'Layout planning, plant combinations, garden rooms, cottage / formal / modern styles, hard landscaping basics. Aesthetic judgement work, paused for specialist authoring.',
+    order: 160,
+    autopilotEnabled: false,
+  },
+  {
+    slug: 'wildlife-gardening',
+    name: 'Wildlife gardening',
+    description:
+      'Pollinator gardens, habitat creation, native plants, bird-friendly, hedgehog highways. Region-specific species lists paused for specialist authoring.',
+    order: 170,
+    autopilotEnabled: false,
   },
 ]
 
@@ -139,9 +222,10 @@ async function main(): Promise<void> {
     )
     process.exit(2)
   }
-  console.log(`[seed] garden → ${garden.id}`)
+  console.log(`[seed] garden -> ${garden.id}`)
 
   let created = 0
+  let updated = 0
   let unchanged = 0
 
   for (const spec of SUB_CATEGORIES) {
@@ -151,7 +235,7 @@ async function main(): Promise<void> {
 
     if (!existing) {
       if (DRY_RUN) {
-        console.log(`  [would create] garden/${spec.slug}`)
+        console.log(`  [would create] garden/${spec.slug} autopilot=${spec.autopilotEnabled}`)
       } else {
         const sub = await prisma.subCategory.create({
           data: {
@@ -160,19 +244,45 @@ async function main(): Promise<void> {
             description: spec.description,
             order: spec.order,
             categoryId: garden.id,
+            autopilotEnabled: spec.autopilotEnabled,
           },
         })
-        console.log(`[seed] garden/${spec.slug} → ${sub.id}`)
+        console.log(`[seed] CREATED garden/${spec.slug} -> ${sub.id} autopilot=${spec.autopilotEnabled}`)
       }
       created += 1
       continue
     }
 
-    unchanged += 1
+    const needsUpdate =
+      existing.name !== spec.name ||
+      existing.description !== spec.description ||
+      existing.order !== spec.order ||
+      existing.autopilotEnabled !== spec.autopilotEnabled
+
+    if (!needsUpdate) {
+      unchanged += 1
+      continue
+    }
+
+    if (DRY_RUN) {
+      console.log(`  [would update] garden/${spec.slug} autopilot=${spec.autopilotEnabled}`)
+    } else {
+      await prisma.subCategory.update({
+        where: { id: existing.id },
+        data: {
+          name: spec.name,
+          description: spec.description,
+          order: spec.order,
+          autopilotEnabled: spec.autopilotEnabled,
+        },
+      })
+      console.log(`[seed] UPDATED garden/${spec.slug} autopilot=${spec.autopilotEnabled}`)
+    }
+    updated += 1
   }
 
   console.log(
-    `\n[seed] garden-taxonomy: created=${created} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
+    `\n[seed] garden-taxonomy: created=${created} updated=${updated} unchanged=${unchanged} total=${SUB_CATEGORIES.length}${DRY_RUN ? ' (dry-run)' : ''}`,
   )
   await prisma.$disconnect()
 }
