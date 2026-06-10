@@ -25,7 +25,6 @@ the batch.
 | `microgreens` | Tray-grown seedlings, indoor year-round, high yield per square metre | [garden-microgreens-author.md](garden-microgreens-author.md) | ENABLED |
 | `hydroponics` | Soilless growing systems (NFT, DWC, ebb-and-flow, Dutch buckets) | [garden-hydroponics-author.md](garden-hydroponics-author.md) | ENABLED |
 | `mushroom-growing` | Oyster, shiitake, lion's mane on logs and bags | [garden-mushroom-growing-author.md](garden-mushroom-growing-author.md) | ENABLED |
-| `foraging` | Wild food identification (UK hedgerow, woodland, coastline) | [garden-foraging-author.md](garden-foraging-author.md) | ENABLED |
 | `soil-compost` | Soil testing, hot + cold composting, leaf mould, green manures, mulching, no-dig | [garden-soil-compost-author.md](garden-soil-compost-author.md) | ENABLED |
 | `propagation` | Plant-agnostic method guides: sowing, cuttings, division, layering, simple grafting | [garden-propagation-author.md](garden-propagation-author.md) | ENABLED |
 | `pest-disease-management` | Cross-plant IPM, beneficial insects, organic controls, pest + disease ID | [garden-pest-disease-management-author.md](garden-pest-disease-management-author.md) | ENABLED |
@@ -35,11 +34,21 @@ the batch.
 | `garden-design` | Layout planning, plant combinations, garden rooms, hard landscaping basics | [garden-garden-design-author.md](garden-garden-design-author.md) | SPECIALIST STUB |
 | `wildlife-gardening` | Pollinator gardens, habitat creation, native plants, bird-friendly | [garden-wildlife-gardening-author.md](garden-wildlife-gardening-author.md) | SPECIALIST STUB |
 
-Fifteen sub-cats are enabled for autopilot authoring. Two
+Fourteen sub-cats are enabled for autopilot authoring. Two
 (`garden-design`, `wildlife-gardening`) are stubs that explain why a
 dedicated specialist worker is needed before autopilot fires against
 them. Their `SubCategory.autopilotEnabled` rows are set to false; the
 autopilot routine skips them when picking a sub-cat target.
+
+**Foraging moved to sustainability** (2026-06-10). Foraging is
+wild-food harvesting + plant ID + safety — the opposite of
+cultivation — and now lives under
+[sustainability/foraging](sustainability-foraging-author.md). The
+old `garden/foraging` sub-cat row is kept (referential integrity)
+but `autopilotEnabled=false` and its description carries a "moved to
+sustainability/foraging" note so the admin UI surfaces the move. No
+PUBLISHED garden/foraging tutorials existed at the time of the move,
+so no content migration was needed.
 
 ## How the autopilot routine uses this
 
@@ -89,7 +98,16 @@ render time; the author does not write region-specific prose.
 Authors populate the existing `garden` block on
 `TutorialUploadInput`:
 
-- `garden.plantSlug` — required. Must exist in `PlantVariety`.
+- `garden.plantSlug` — optional. Required on plant-bearing sub-cats
+  (vegetables, fruit, herbs, flowers, permaculture, microgreens,
+  hydroponics, mushroom-growing, indoor-gardening). REJECTED by the
+  validator on activity-axis sub-cats (soil-compost, propagation,
+  pest-disease-management, seasonal-care, tools-equipment) — those
+  guides aren't about one species and the old "use a representative
+  plant" workaround polluted plant-keyed analytics. When set, must
+  exist in the master `Species` table (renamed from PlantVariety in
+  `phase_species_kingdom_001`). On mushroom-growing the slug must
+  resolve against a Species row whose `kingdom` is `FUNGI`.
 - `garden.subTopic` — one of `sowing` / `growing` / `harvesting` /
   `saving-seed` / `pruning` / `pest-management` / `season-extension` /
   `variety-selection`.
@@ -342,7 +360,7 @@ Body H2s:
   "sourceType": "PUBLIC_DOMAIN",
   "sourceNotes": "<plain-text references>",
   "garden": {
-    "plantSlug": "<must exist in PlantVariety>",
+    "plantSlug": "<plant-bearing sub-cats only; must exist in Species>",
     "subTopic": "<one of the 8 sub-topic axes>",
     "plantingMonths": ["february", "march"],
     "harvestMonths": ["july", "august"],
@@ -405,8 +423,13 @@ invent a citation.
 1. Walk every banned-phrase / banned-opener / em-dash / safety / price /
    wrap-up / glossary-coverage check from this prompt and
    `docs/garden-anti-tells.md`.
-2. Plant-slug sanity. `garden.plantSlug` resolves against
-   `packages/db/scripts/data/plants.ts`.
+2. Plant-slug sanity. On plant-bearing sub-cats `garden.plantSlug`
+   resolves against `packages/db/scripts/data/plants.ts`. On
+   activity-axis sub-cats (soil-compost / propagation /
+   pest-disease-management / seasonal-care / tools-equipment) the
+   field stays null / omitted — the validator rejects it. On
+   mushroom-growing the slug must resolve against a Species row with
+   `kingdom: 'FUNGI'`.
 3. Region check. `garden.regionsApplicable` includes `UK` always. Add
    only where the schedule genuinely applies.
 4. Calendar sanity. The months in `plantingMonths` / `harvestMonths`

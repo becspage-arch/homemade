@@ -1,19 +1,26 @@
-# Garden / Foraging authoring
+# Sustainability / Foraging authoring
 
 Canonical input for any worker session that drafts a tutorial under
-`garden/foraging`. Wild food identification: UK hedgerow, woodland,
-coastline. Absolute-beginner safety rules. Plants only; mushroom
-foraging is its own separate scope.
+`sustainability/foraging`. Wild food identification: UK hedgerow,
+woodland, coastline. Absolute-beginner safety rules. Plants only;
+mushroom foraging is its own separate scope.
+
+Moved from `garden/foraging` 2026-06-10 (garden cleanup A). Foraging
+is wild-food harvesting, not cultivation, and belongs alongside the
+sustainability surface (lower-impact eating + traditional skills +
+local ecology) rather than under garden.
 
 ## Status
 
-`SubCategory.autopilotEnabled = true` for `garden/foraging`.
+`SubCategory.autopilotEnabled = true` for `sustainability/foraging`.
+The old `garden/foraging` row is retained for referential integrity
+but disabled.
 
 ## Pre-read (MANDATORY)
 
-- `docs/garden-author.md` umbrella.
+- `docs/sustainability-author.md` umbrella.
 - `docs/voice-spec-2026-05-21.md`, `docs/voice-spec-quick-reference.md`.
-- `docs/garden-anti-tells.md`, `docs/common-issues.md`.
+- `docs/common-issues.md`.
 
 ## Scope (what belongs here)
 
@@ -53,13 +60,18 @@ foraging is its own separate scope.
 
 ## Region-aware metadata
 
-- `garden.plantingMonths` — left empty (foraging, not planting).
-- `garden.harvestMonths` — the foraging window for the species.
-- `garden.containerFriendly` — false.
-- `garden.indoorFriendly` — false.
-- `garden.regionsApplicable` — strict. UK hedgerow guides apply to
-  UK + EU where species range overlaps; sea-foraging guides apply
-  to the coastline they're written for. Do not pad.
+Foraging tutorials live under sustainability and carry the
+sustainability shape (no `garden` block — that's
+GROWING_GUIDE-only). Regional applicability is expressed in body
+prose ("UK hedgerow"; "south-coast salt-spray range") rather than
+in a structured field. The seasonal window is named in body prose
+("March to May for wild garlic leaves") rather than a structured
+`harvestMonths` array.
+
+If structured region / window metadata is wanted later, the
+sustainability pipeline can extend its schema; for now the
+sustainability + garden metadata shapes stay distinct and foraging
+follows sustainability.
 
 ## Critical techniques
 
@@ -99,11 +111,24 @@ foraging is its own separate scope.
 
 ## Output contract
 
-`subCategorySlug: 'foraging'`. `type: 'GROWING_GUIDE'`. Garden block
-per umbrella. `plantSlug` is the wild plant species (must exist in
-the master table; many wild species may need adding to
-`data/plants.ts` with a `wild: true` flag; flag in brief return if
-missing).
+`categorySlug: 'sustainability'`. `subCategorySlug: 'foraging'`.
+`type: 'TECHNIQUE'` (foraging guides are reference / how-to content,
+not a built thing — TECHNIQUE matches the sustainability shape for
+decision and reference pieces). Do NOT set a `garden` block;
+foraging now lives under sustainability and the garden block is
+GROWING_GUIDE-only.
+
+`approximateCostGbp: null` (foraging has no cash outlay; the basket
++ a pruning knife are listed as recipeTools but the gear isn't
+quoted in the column). `paybackYears: null` (foraging is not a
+payback question). `regionFocus: 'UK'` (sustainability default).
+
+Wild plant species names appear in body prose with their Latin
+binomial on first mention; they are not slugged against the master
+Species table (the table holds cultivated plants, and a "wild: true"
+escape hatch on Species was rejected at design time because the
+species themselves are different from cultivated). If a future
+worker wants slugged wild species, that's its own schema pass.
 
 ## Body shape
 
@@ -198,18 +223,19 @@ Per umbrella. Foraging-specific notes:
 {
   "slug": "foraging-wild-garlic-uk",
   "title": "Foraging wild garlic in the UK",
-  "type": "GROWING_GUIDE",
-  "categorySlug": "garden",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
   "subCategorySlug": "foraging",
   "difficulty": "BEGINNER",
-  "garden": {
-    "plantSlug": "wild-garlic",
-    "subTopic": "harvesting",
-    "harvestMonths": ["march", "april", "may"],
-    "containerFriendly": false,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
-  },
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Richard Mabey, Food for Free (1972); John Wright, The Forager's Calendar (2019); BSBI species accounts; UK Wildlife and Countryside Act 1981.",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "pruning-knife", "isOptional": false },
+    { "slug": "wicker-basket", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
   "techniqueSlugs": ["rule-of-three-id-confirmation", "wild-garlic-id-vs-lily-of-valley", "wild-garlic-id-vs-autumn-crocus", "foraging-legal-uk-summary", "safe-quantity-rule-of-thirds"],
   "criticalTechniques": ["rule-of-three-id-confirmation", "wild-garlic-id-vs-lily-of-valley"]
 }
@@ -224,7 +250,7 @@ visible. Verified against the Latin binomial.
 
 ## See also
 
-- `docs/garden-author.md` umbrella.
+- `docs/sustainability-author.md` umbrella.
 - `docs/garden-mushroom-growing-author.md` (NOT mushroom foraging;
   cultivated mushrooms only).
 - Herbal category for medicinal use of foraged plants.

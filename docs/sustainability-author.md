@@ -109,6 +109,13 @@ hit roughly:
 - **Off-grid ~8%**. Compost toilets, wood stoves, twelve-volt systems,
   rainwater-only supply, off-grid electrical sizing, planning-
   permission realities. Smaller readership; longer pieces.
+- **Foraging (moved from garden 2026-06-10).** Wild food
+  identification — hedgerow, woodland, coastline — plus
+  beginner-safety + UK foraging law. Plants only; mushroom foraging
+  stays out of scope until a specialist worker covers it. The
+  per-sub-cat brief is in `docs/sustainability-foraging-author.md`;
+  the umbrella mix percentage will be re-calibrated on the next
+  pipeline-setup pass.
 
 This is a fortnight target, not a per-batch target. A batch of 20 may
 land 12 insulation + 8 solar and the next batch may correct.

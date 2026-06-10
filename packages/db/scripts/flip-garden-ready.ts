@@ -5,7 +5,7 @@
  * single-queue autopilot picks Garden up on its next round-robin fire.
  * Run after the rest of the Garden pipeline-setup work has shipped:
  *   - `docs/garden-author.md`
- *   - `packages/db/scripts/seed-plants.ts` (master PlantVariety rows)
+ *   - `packages/db/scripts/seed-plants.ts` (master Species rows)
  *   - `packages/db/scripts/seed-garden-taxonomy.ts`
  *
  * Idempotent: re-running on an already-READY row is a no-op. Safe to

@@ -103,10 +103,15 @@ On logs, bags, straw, woodchip.
 
 `subCategorySlug: 'mushroom-growing'`. `type: 'GROWING_GUIDE'`. Garden
 block per umbrella. `garden.plantSlug` is the mushroom species slug
-(must exist in the master table — confirm before authoring; many
-mushroom species may need adding to `data/plants.ts` with a
-`kingdom: 'fungi'` or equivalent annotation; flag in brief return if
-missing).
+and is required (mushroom-growing is a species-keyed sub-cat). The
+slug must resolve against a `Species` row whose `kingdom` is `FUNGI`
+(the Species table — renamed from PlantVariety in
+`phase_species_kingdom_001` — carries a kingdom discriminator so
+mushroom rows sit beside plants without conflating at the
+kingdom-level filter). If the species isn't yet in
+`packages/db/scripts/data/plants.ts`, add it there with
+`kingdom: 'FUNGI'` and reseed before uploading; flag in brief return
+if missing.
 
 ## Body shape
 

@@ -407,17 +407,20 @@ export async function uploadTutorial(
   const crochet = input.crochet ?? null
   const knitting = input.knitting ?? null
 
-  // Resolve garden.plantSlug against the master `PlantVariety` table. Unknown
-  // slugs fail up-front rather than silently inserting a tutorial with a
-  // dangling plant reference.
-  if (garden) {
-    const plantRow = await prisma.plantVariety.findUnique({
+  // Resolve garden.plantSlug against the master `Species` table when set.
+  // plantSlug is optional on activity-axis sub-cats per the cleanup-A
+  // validator update; the structural require / forbid rules live in
+  // validateUploadInput. Here we only resolve a plantSlug that is present —
+  // unknown slugs fail up-front rather than silently inserting a tutorial
+  // with a dangling species reference.
+  if (garden?.plantSlug) {
+    const plantRow = await prisma.species.findUnique({
       where: { slug: garden.plantSlug },
       select: { slug: true },
     })
     if (!plantRow) {
       throw new Error(
-        `garden.plantSlug "${garden.plantSlug}" is not in the master PlantVariety table. ` +
+        `garden.plantSlug "${garden.plantSlug}" is not in the master Species table. ` +
         `Add it to packages/db/scripts/data/plants.ts and reseed before uploading.`,
       )
     }

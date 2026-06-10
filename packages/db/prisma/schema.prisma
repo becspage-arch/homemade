@@ -3099,33 +3099,48 @@ model AnalyticsRollupRun {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Garden — master taxonomy (phase_garden_pipeline_001)
+// Garden — master taxonomy (phase_garden_pipeline_001 + phase_species_kingdom_001)
 //
-// PlantVariety is the Garden master entity (analogous to Ingredient for
-// Cooking / Baking). PlantPest + CompanionPlanting are reference tables that
-// growing-guide tutorials cross-link. Tutorials reference plants by slug in
-// body prose rather than through a structured relation — same pattern as
-// the existing ingredient / tool master tables.
+// Species is the Garden master entity (analogous to Ingredient for
+// Cooking / Baking). Renamed from PlantVariety in phase_species_kingdom_001
+// + a `kingdom` discriminator (PLANTAE / FUNGI) so mushroom species can sit
+// in the same master table without conflating with plants at the
+// kingdom-level filter. PlantPest + CompanionPlanting are reference tables
+// that growing-guide tutorials cross-link. Tutorials reference species by
+// slug in body prose rather than through a structured relation — same
+// pattern as the existing ingredient / tool master tables.
 // ────────────────────────────────────────────────────────────────────────────
 
-/// Companion-planting relationship between two plant varieties.
+/// Companion-planting relationship between two species.
 enum CompanionRelationship {
   BENEFICIAL
   NEUTRAL
   HARMFUL
 }
 
-model PlantVariety {
+/// Taxonomic kingdom for a Species row. Drives kingdom-level filters and
+/// any "related content" rail that should not cross plants and fungi.
+enum Kingdom {
+  PLANTAE
+  FUNGI
+}
+
+model Species {
   id            String  @id @default(cuid())
   slug          String  @unique
   commonName    String
   latinBinomial String?
 
+  /// PLANTAE for plants (vegetables, fruit, herbs, flowers, shrubs, trees);
+  /// FUNGI for mushrooms. Defaults PLANTAE so existing inserts continue to
+  /// work without a backfill pass.
+  kingdom Kingdom @default(PLANTAE)
+
   /// Self-referential pointer to the parent species when this row is a
   /// named variety ("Brandywine" → "tomato"). Null on species-level rows.
   parentSpeciesId String?
-  parentSpecies   PlantVariety?  @relation("PlantVarietyChildren", fields: [parentSpeciesId], references: [id], onDelete: SetNull)
-  varieties       PlantVariety[] @relation("PlantVarietyChildren")
+  parentSpecies   Species?  @relation("SpeciesChildren", fields: [parentSpeciesId], references: [id], onDelete: SetNull)
+  varieties       Species[] @relation("SpeciesChildren")
 
   /// vegetable / fruit / herb / flower / shrub / tree / other. Free-form
   /// string so authors can add categories without a follow-up migration —
@@ -3177,6 +3192,7 @@ model PlantVariety {
   asCompanion CompanionPlanting[] @relation("CompanionAsCompanion")
 
   @@index([category])
+  @@index([kingdom])
   @@index([isStaple])
   @@index([isPerennial])
   @@index([parentSpeciesId])
@@ -3184,14 +3200,14 @@ model PlantVariety {
 
 /// Common garden pest or disease. Reference table; the public
 /// pest-management surfaces cross-link these rows from growing-guide
-/// tutorials. `affectedPlants` is a free-form string array of PlantVariety
+/// tutorials. `affectedPlants` is a free-form string array of Species
 /// slugs (same pattern as `Ingredient.commonSubstitutes`).
 model PlantPest {
   id   String @id @default(cuid())
   slug String @unique
   name String
 
-  /// PlantVariety slugs the pest affects.
+  /// Species slugs the pest affects.
   affectedPlants String[] @default([])
 
   symptoms             String?
@@ -3218,10 +3234,10 @@ model CompanionPlanting {
   id String @id @default(cuid())
 
   plantId String
-  plant   PlantVariety @relation("CompanionAsPlant", fields: [plantId], references: [id], onDelete: Cascade)
+  plant   Species @relation("CompanionAsPlant", fields: [plantId], references: [id], onDelete: Cascade)
 
   companionId String
-  companion   PlantVariety @relation("CompanionAsCompanion", fields: [companionId], references: [id], onDelete: Cascade)
+  companion   Species @relation("CompanionAsCompanion", fields: [companionId], references: [id], onDelete: Cascade)
 
   relationship CompanionRelationship
   notes        String?

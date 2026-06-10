@@ -125,9 +125,11 @@ across plant families.
 ## Output contract
 
 `subCategorySlug: 'pest-disease-management'`. `type: 'GROWING_GUIDE'`.
-Garden block per umbrella. `plantSlug` is the pest's typical host
-plant or a representative host; the pest itself isn't in the master
-Plant table (use the most-affected plant).
+Garden block per umbrella. `garden.plantSlug` stays null / omitted —
+pest-disease-management is an activity-axis sub-cat and the upload
+validator rejects a plantSlug here. The pest's typical hosts are
+named in body prose (broad-bean aphid, brassica whitefly) and
+cross-link to the plant sub-cats; no plant slug on the row.
 
 ## Body shape
 
@@ -214,7 +216,6 @@ adaptations:
   "subCategorySlug": "pest-disease-management",
   "difficulty": "BEGINNER",
   "garden": {
-    "plantSlug": "broad-bean",
     "subTopic": "pest-management",
     "containerFriendly": null,
     "indoorFriendly": false,

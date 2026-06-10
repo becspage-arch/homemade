@@ -12,7 +12,7 @@ for (let depth = 0; depth < 12; depth++) {
 async function main() {
   const { prisma } = await import('../src/index.js')
   for (const s of ['calendula', 'rosemary']) {
-    const p = await prisma.plantVariety.findUnique({ where: { slug: s }, select: { slug: true, commonName: true } })
+    const p = await prisma.species.findUnique({ where: { slug: s }, select: { slug: true, commonName: true } })
     console.log(s + ': ' + (p ? 'OK ' + p.commonName : 'MISSING'))
   }
   await prisma.$disconnect()

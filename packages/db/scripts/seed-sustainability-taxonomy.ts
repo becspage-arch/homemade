@@ -118,6 +118,17 @@ const SUB_CATEGORIES: SubCatSpec[] = [
       'Compost toilets, wood stoves, twelve-volt systems, rainwater-only supply, off-grid electrical sizing, planning-permission realities.',
     order: 60,
   },
+  // Foraging — moved here from garden 2026-06-10 (garden cleanup A).
+  // Wild-food harvesting is the opposite of cultivation; it belongs with
+  // the lower-impact-eating + traditional-skills + local-ecology surface
+  // sustainability already carries.
+  {
+    slug: 'foraging',
+    name: 'Foraging',
+    description:
+      'Wild food identification (UK hedgerow, woodland, coastline). Absolute-beginner safety rules. Plants only; mushroom foraging is its own separate scope.',
+    order: 70,
+  },
 ]
 
 // ────────────────────────────────────────────────────────────────────────────

@@ -1,6 +1,7 @@
 /**
  * Idempotent upsert of the master plant list from
- * `packages/db/scripts/data/plants.ts` into the `PlantVariety` table.
+ * `packages/db/scripts/data/plants.ts` into the `Species` table
+ * (renamed from PlantVariety in phase_species_kingdom_001).
  *
  * Re-runs cleanly: created / updated / unchanged counts reported at end.
  * Validates every entry against the literal unions before any DB writes
@@ -69,6 +70,8 @@ const VALID_RHS_ZONES = new Set([
   'H1a', 'H1b', 'H1c', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7',
 ])
 
+const VALID_KINGDOMS = new Set(['PLANTAE', 'FUNGI'])
+
 function validate(rows: PlantSeed[]): void {
   const seen = new Set<string>()
   const knownSlugs = new Set(rows.map((r) => r.slug))
@@ -83,6 +86,9 @@ function validate(rows: PlantSeed[]): void {
     }
     if (!VALID_CATEGORIES.has(row.category)) {
       errors.push(`${row.slug}: invalid category "${row.category}"`)
+    }
+    if (row.kingdom && !VALID_KINGDOMS.has(row.kingdom)) {
+      errors.push(`${row.slug}: invalid kingdom "${row.kingdom}"`)
     }
     if (row.sunRequirement && !VALID_SUN.has(row.sunRequirement)) {
       errors.push(`${row.slug}: invalid sunRequirement "${row.sunRequirement}"`)
@@ -153,12 +159,13 @@ async function main(): Promise<void> {
   let unchanged = 0
 
   for (const row of PLANTS) {
-    const existing = await prisma.plantVariety.findUnique({ where: { slug: row.slug } })
+    const existing = await prisma.species.findUnique({ where: { slug: row.slug } })
 
     const data = {
       slug: row.slug,
       commonName: row.commonName,
       latinBinomial: row.latinBinomial ?? null,
+      kingdom: row.kingdom ?? 'PLANTAE',
       category: row.category,
       rhsHardinessZone: row.rhsHardinessZone ?? [],
       usdaHardinessZone: row.usdaHardinessZone ?? [],
@@ -177,7 +184,7 @@ async function main(): Promise<void> {
     }
 
     if (!existing) {
-      await prisma.plantVariety.create({ data })
+      await prisma.species.create({ data })
       created++
       continue
     }
@@ -185,6 +192,7 @@ async function main(): Promise<void> {
     const fieldsEqual =
       existing.commonName === data.commonName &&
       existing.latinBinomial === data.latinBinomial &&
+      existing.kingdom === data.kingdom &&
       existing.category === data.category &&
       JSON.stringify(existing.rhsHardinessZone) === JSON.stringify(data.rhsHardinessZone) &&
       JSON.stringify(existing.usdaHardinessZone) === JSON.stringify(data.usdaHardinessZone) &&
@@ -206,14 +214,14 @@ async function main(): Promise<void> {
       continue
     }
 
-    await prisma.plantVariety.update({ where: { slug: row.slug }, data })
+    await prisma.species.update({ where: { slug: row.slug }, data })
     updated++
   }
 
   // Pass 2 — resolve parent-species links now every row is in the DB.
   const allSlugs = new Set(PLANTS.map((r) => r.slug))
   const idBySlug = new Map<string, string>()
-  const dbRows = await prisma.plantVariety.findMany({
+  const dbRows = await prisma.species.findMany({
     where: { slug: { in: [...allSlugs] } },
     select: { id: true, slug: true, parentSpeciesId: true },
   })
@@ -227,7 +235,7 @@ async function main(): Promise<void> {
     const dbRow = dbRows.find((r) => r.slug === row.slug)
     if (!dbRow) continue
     if (dbRow.parentSpeciesId === desiredParentId) continue
-    await prisma.plantVariety.update({
+    await prisma.species.update({
       where: { slug: row.slug },
       data: { parentSpeciesId: desiredParentId },
     })

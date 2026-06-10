@@ -205,14 +205,47 @@ bulk batches surface recurring tells.
   Pattern: a draft with a `plantSlug` that doesn't resolve against
   `packages/db/scripts/data/plants.ts`. The upload script rejects
   it.
-  **Why:** The master `PlantVariety` table is the source of truth
-  for plant metadata (hardiness, sun, water, soil). The growing
-  guide references the row; an unknown slug means there's no row
-  to reference.
+  **Why:** The master `Species` table (renamed from PlantVariety in
+  `phase_species_kingdom_001`) is the source of truth for plant +
+  fungus metadata (hardiness, sun, water, soil, kingdom). The
+  growing guide references the row; an unknown slug means there's
+  no row to reference.
   **How to fix:** Look up the exact slug in `data/plants.ts`. If
-  the plant is genuinely missing, add it to `plants.ts`, run
-  `pnpm --filter "@homemade/db" exec tsx scripts/seed-plants.ts`,
+  the species is genuinely missing, add it to `plants.ts` (set
+  `kingdom: 'FUNGI'` on mushroom rows; leave default PLANTAE on
+  plants), run `pnpm --filter "@homemade/db" exec tsx scripts/seed-plants.ts`,
   and re-attempt the upload.
+
+- **`garden.plantSlug` set on an activity-axis sub-cat** `[block]`
+  Pattern: a draft for `soil-compost`, `propagation`,
+  `pest-disease-management`, `seasonal-care` or `tools-equipment`
+  with a `garden.plantSlug` populated (a comfrey slug on a
+  hot-compost guide; a rose slug on a secateurs guide). The
+  validator now rejects this.
+  **Why:** Activity-axis guides aren't about one species. The old
+  "use a representative plant" workaround polluted plant-keyed
+  analytics, recommendations, and any future "what plants does
+  this user grow?" rail. Plant context belongs in body prose, not
+  as a structured slug.
+  **How to fix:** Drop the `plantSlug` from the `garden` block. If
+  the guide names a worked-example species in prose (a clover
+  green-manure guide), keep that in prose — no metadata change
+  needed. Plant-bearing sub-cats (vegetables, fruit, herbs,
+  flowers, permaculture, microgreens, hydroponics, mushroom-growing,
+  indoor-gardening) still require `plantSlug`.
+
+- **Foraging guide written under `garden/foraging`** `[block]`
+  Pattern: a new draft under `categorySlug: garden`,
+  `subCategorySlug: foraging`. The garden sub-cat is now deprecated
+  (autopilotEnabled=false) and the foraging surface lives under
+  sustainability.
+  **Why:** Foraging is wild-food harvesting + plant ID + safety —
+  the opposite of cultivation — and was moved to
+  `sustainability/foraging` on 2026-06-10 (garden cleanup A).
+  **How to fix:** Re-author as
+  `categorySlug: sustainability`, `subCategorySlug: foraging`,
+  `type: TECHNIQUE`, dropping the `garden` block. The new author
+  brief is `docs/sustainability-foraging-author.md`.
 
 ## Source-attribution issues
 

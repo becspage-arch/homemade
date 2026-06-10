@@ -103,9 +103,11 @@ storage, sharpening. Choosing kit, looking after it, when to upgrade.
 ## Output contract
 
 `subCategorySlug: 'tools-equipment'`. `type: 'GROWING_GUIDE'`. Garden
-block per umbrella. `plantSlug` is a representative plant for any
-tool-against-plant guide (secateurs comparison uses rose pruning as
-the worked example) — note the constraint in the brief.
+block per umbrella. `garden.plantSlug` stays null / omitted —
+tools-equipment is an activity-axis sub-cat and the upload validator
+rejects a plantSlug here. A tool-against-plant worked example (a
+secateurs guide that demonstrates rose pruning) names the plant in
+body prose only; no plant slug on the row.
 
 ## Body shape
 
@@ -196,7 +198,6 @@ cited references.
   "subCategorySlug": "tools-equipment",
   "difficulty": "BEGINNER",
   "garden": {
-    "plantSlug": "rose",
     "subTopic": "growing",
     "containerFriendly": null,
     "indoorFriendly": false,

@@ -103,9 +103,11 @@ maintenance. The cross-plant calendar sub-cat.
 ## Output contract
 
 `subCategorySlug: 'seasonal-care'`. `type: 'GROWING_GUIDE'`. Garden
-block per umbrella. `plantSlug` is a representative plant for the
-month (March: pea sowing; August: tomato side-shoots); the brief
-notes the constraint.
+block per umbrella. `garden.plantSlug` stays null / omitted —
+seasonal-care is an activity-axis sub-cat and the upload validator
+rejects a plantSlug here. Plant-specific month-by-month tasks (March
+pea sowing, August tomato side-shoots) cross-link to the plant
+sub-cats in body prose; no plant slug on the row.
 
 ## Body shape
 
@@ -194,7 +196,6 @@ Per umbrella with adaptations:
   "subCategorySlug": "seasonal-care",
   "difficulty": "BEGINNER",
   "garden": {
-    "plantSlug": "broad-bean",
     "subTopic": "season-extension",
     "plantingMonths": ["march"],
     "harvestMonths": ["march"],

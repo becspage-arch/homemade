@@ -107,10 +107,12 @@ layering, simple grafting. Methods that work across plant families.
 
 ## Output contract
 
-`subCategorySlug: 'propagation'`. `type: 'GROWING_GUIDE'`. Garden block
-per umbrella. `plantSlug` is a representative plant used in the worked
-example (a softwood-cuttings guide may use rosemary as the worked
-example plant) — note the constraint in the brief.
+`subCategorySlug: 'propagation'`. `type: 'GROWING_GUIDE'`. Garden
+block per umbrella. `garden.plantSlug` stays null / omitted —
+propagation is an activity-axis sub-cat and the upload validator
+rejects a plantSlug here. If the method has a worked-example species
+(softwood cuttings worked through with lavender), name the species
+in body prose only.
 
 ## Body shape
 
@@ -194,7 +196,6 @@ Per umbrella. Propagation-specific notes:
   "subCategorySlug": "propagation",
   "difficulty": "BEGINNER",
   "garden": {
-    "plantSlug": "lavender",
     "subTopic": "growing",
     "plantingMonths": ["july", "august", "september"],
     "containerFriendly": true,

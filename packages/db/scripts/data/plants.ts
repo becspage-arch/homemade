@@ -1,5 +1,6 @@
 /**
- * Master plant list — single source of truth for `PlantVariety`.
+ * Master plant list — single source of truth for the `Species` table
+ * (renamed from PlantVariety in phase_species_kingdom_001).
  *
  * Seeded via `packages/db/scripts/seed-plants.ts` (idempotent upsert).
  * Starter set of ~50 entries covering the highest-traffic UK garden

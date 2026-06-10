@@ -110,10 +110,10 @@ maintenance. The cross-cutting fertility sub-cat.
 ## Output contract
 
 `subCategorySlug: 'soil-compost'`. `type: 'GROWING_GUIDE'`. Garden
-block per umbrella. `plantSlug` is a representative plant when the
-guide ties to a plant (a clover green manure guide names clover); a
-generic system guide uses a placeholder and notes the constraint in
-the brief.
+block per umbrella. `garden.plantSlug` stays null / omitted —
+soil-compost is an activity-axis sub-cat and the upload validator
+rejects a plantSlug here. If a guide ties to one species (a clover
+green-manure guide), name the species in body prose only.
 
 ## Body shape
 
@@ -199,7 +199,6 @@ Per umbrella. Soil-compost-specific notes:
   "subCategorySlug": "soil-compost",
   "difficulty": "INTERMEDIATE",
   "garden": {
-    "plantSlug": "comfrey",
     "subTopic": "growing",
     "plantingMonths": ["march", "april", "may", "june", "july", "august", "september"],
     "containerFriendly": false,

@@ -132,13 +132,19 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     order: 80,
     autopilotEnabled: true,
   },
+  // Foraging moved to sustainability 2026-06-10 (garden cleanup A). The
+  // row is preserved for referential integrity; autopilotEnabled=false
+  // and the description carries the move note so the admin UI surfaces
+  // the shift. The seed `packages/db/scripts/move-foraging-to-sustainability.ts`
+  // is the canonical migration; this entry stays in lockstep so a
+  // future re-run of seed-garden-taxonomy doesn't undo the move.
   {
     slug: 'foraging',
     name: 'Foraging',
     description:
-      'Wild food identification (UK hedgerow, woodland, coastline). Absolute-beginner safety rules.',
+      'Wild food identification (UK hedgerow, woodland, coastline). Absolute-beginner safety rules. [moved to sustainability/foraging 2026-06-10]',
     order: 90,
-    autopilotEnabled: true,
+    autopilotEnabled: false,
   },
 
   // Activity / cross-cutting sub-cats (added 2026-06-10, pipeline-setup pass).

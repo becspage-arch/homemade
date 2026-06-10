@@ -12,7 +12,7 @@ for (let depth = 0; depth < 12; depth++) {
 async function main() {
   const { prisma } = await import('../src/index.js')
   console.log('Plants matching strawberr/tomato:')
-  const ps = await prisma.plantVariety.findMany({
+  const ps = await prisma.species.findMany({
     where: { OR: [{ slug: { contains: 'strawberr' } }, { slug: { contains: 'tomato' } }] },
     select: { slug: true, commonName: true },
   })

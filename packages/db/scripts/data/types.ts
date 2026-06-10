@@ -144,10 +144,13 @@ export interface ToolSeed {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// PlantVariety — Garden master entity. Free-form strings for category /
+// Species — Garden master entity (renamed from PlantVariety in
+// phase_species_kingdom_001). Free-form strings for category /
 // sunRequirement / waterRequirement / soilType so authors can add values
 // without a schema migration, with the literal unions below as a spelling
-// gate at seed time.
+// gate at seed time. The `kingdom` column (PLANTAE / FUNGI) lives on the
+// row at the DB layer; PlantSeed objects default PLANTAE — author the
+// override only on mushroom rows.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type PlantCategory =
@@ -173,6 +176,10 @@ export type SoilType =
 
 export type EdiblePart = 'fruit' | 'leaf' | 'root' | 'stem' | 'flower' | 'seed'
 
+/** Taxonomic kingdom for a Species row. Defaults PLANTAE in the DB; set
+ * 'FUNGI' on mushroom rows. */
+export type SpeciesKingdom = 'PLANTAE' | 'FUNGI'
+
 export interface PlantSeed {
   /** lower-kebab, unique across the master list. */
   slug: string
@@ -180,6 +187,8 @@ export interface PlantSeed {
   commonName: string
   /** Botanical binomial ("Solanum lycopersicum"). Optional. */
   latinBinomial?: string
+  /** PLANTAE (default) for plants; FUNGI for mushrooms. */
+  kingdom?: SpeciesKingdom
   /**
    * Slug of the parent species when this row is a named variety
    * ("brandywine" → parent "tomato"). Must resolve against another entry in
@@ -210,7 +219,7 @@ export interface PlantSeed {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Fabric — Sewing master entity. Same free-form-string-with-literal-union
-// spelling-gate pattern as Ingredient + PlantVariety.
+// spelling-gate pattern as Ingredient + Species.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type FabricWeightCategory = 'light' | 'medium' | 'heavy' | 'upholstery'

@@ -3612,3 +3612,52 @@ Every full prompt instructs authors to populate the existing `garden` block (`pl
 No code change required. The autopilot routine picks a sub-cat by `SubCategory.autopilotEnabled = true AND categoryId = <garden>` ordered by `SubCategory.order` and loads `docs/garden-<sub-cat-slug>-author.md` as the master prompt for the batch (per needlework precedent). 15 sub-cats in the pool; the 2 specialist stubs are skipped. Inspection at `packages/db/scripts/_inspect-garden-queue.ts` confirms the routing.
 
 Garden is the last category to flip READY in the build. All category-readiness work is now complete; only sewing remains at NOT_READY pending S-5 sub-worker split.
+
+## Garden cleanup A — Species + Kingdom + plantSlug nullable + foraging → sustainability (2026-06-10)
+
+Two related data-model gaps surfaced in the 2026-06-10 post-pipeline audit (`project_garden_schema_gaps.md` items #1 + #2) bundled into one worker because they touch the same surfaces — master species table, upload validator, author prompts.
+
+**Schema migration `phase_species_kingdom_001`:**
+- New `Kingdom` enum (`PLANTAE`, `FUNGI`). ANIMALIA deliberately not seeded; honey / fish / game (if ever added) likely live in their own entity, not under Species.
+- Physical table `PlantVariety` renamed to `Species` via `ALTER TABLE PlantVariety RENAME TO Species`. Indexes + the self-FK constraint renamed to match (`Species_pkey`, `Species_slug_key`, `Species_category_idx`, `Species_isStaple_idx`, `Species_isPerennial_idx`, `Species_parentSpeciesId_idx`, `Species_parentSpeciesId_fkey`). Postgres preserves FK relationships across `ALTER TABLE RENAME` (target is OID-resolved) so CompanionPlanting + the self-FK keep working without a drop / re-add.
+- New `Species.kingdom Kingdom NOT NULL DEFAULT 'PLANTAE'` column + `Species_kingdom_idx`. Existing rows default to PLANTAE so the application keeps reading without a backfill pass.
+- Data step: defensive UPDATE shifts known mushroom slugs (`oyster-mushroom`, `shiitake`, `lions-mane`, `wine-cap`, `chestnut-mushroom`, `reishi`) to FUNGI. The current seed (`packages/db/scripts/data/plants.ts`, 52 plant entries) carries zero mushroom rows, so the UPDATE matches zero rows today; the SQL stays as a forward-compatibility hook for the first mushroom-growing autopilot batch.
+
+**Application-side updates:**
+- `packages/db/prisma/schema.prisma`: `model PlantVariety` → `model Species`, self-relation renamed `SpeciesChildren`, `kingdom Kingdom @default(PLANTAE)` field, `@@index([kingdom])`. `CompanionPlanting` relations updated to point at `Species`. PlantPest docstring updated.
+- `packages/db/src/index.ts`: re-exports `* from '@prisma/client'`, so `prisma.species` lands automatically; no manual barrel change.
+- Scripts updated to `prisma.species`: `seed-plants.ts`, `upload-tutorial.ts`, `_check-plants-fabrics.ts`, `_check-2-plants.ts`.
+- `seed-plants.ts` honours the new optional `kingdom?: SpeciesKingdom` field on `PlantSeed` (defaults `PLANTAE`), validated against the literal union before any DB write. Equality comparator widened to include kingdom so the unchanged / updated counter stays correct.
+- `packages/db/scripts/data/types.ts`: added `SpeciesKingdom = 'PLANTAE' | 'FUNGI'` + optional `kingdom?: SpeciesKingdom` on `PlantSeed`. Doc comment block updated.
+
+**Validator: garden.plantSlug nullable for activity-axis sub-cats:**
+- `GardenMetadata.plantSlug` widened from `string` to `string | undefined` in `upload-tutorial-types.ts`.
+- `validateInput`: plantSlug now required only on plant-bearing sub-cats (`vegetables`, `fruit`, `herbs`, `flowers`, `permaculture`, `microgreens`, `hydroponics`, `mushroom-growing`, `indoor-gardening`). Activity-axis sub-cats (`soil-compost`, `propagation`, `pest-disease-management`, `seasonal-care`, `tools-equipment`) REJECT a populated plantSlug with a clean error ("garden.plantSlug is not used on activity-axis guides; remove from input"). Specialist stubs (`garden-design`, `wildlife-gardening`) skip the requirement entirely.
+- `upload-tutorial.ts`: Species-table resolution now guarded by `if (garden?.plantSlug)`; unknown slugs still fail up-front when set, omitted slugs no-op cleanly.
+
+**Author prompts updated (5 activity + mushroom + umbrella):**
+- `garden-soil-compost-author.md`, `garden-propagation-author.md`, `garden-pest-disease-management-author.md`, `garden-seasonal-care-author.md`, `garden-tools-equipment-author.md`: dropped the "use a representative plant" workaround language; output contract reads "plantSlug stays null / omitted, validator rejects it on activity sub-cats"; worked-example JSON drops the plantSlug field.
+- `garden-mushroom-growing-author.md`: output contract clarifies that plantSlug remains required AND must resolve against a `Species` row whose `kingdom` is `FUNGI`. Mushroom species missing from `data/plants.ts` add with `kingdom: 'FUNGI'`.
+- `garden-author.md`: output-contract bullet rewritten to explain plantSlug is required on plant-bearing sub-cats and rejected on activity sub-cats; worked-example placeholder updated; self-critique step 2 expanded to cover all three cases (required / rejected / FUNGI).
+
+**Foraging moved from garden to sustainability:**
+Foraging is wild-food harvesting + plant ID + safety — the opposite of cultivation. With 0 PUBLISHED foraging tutorials the move is cheap.
+- New `sustainability/foraging` SubCategory seeded (`autopilotEnabled=true`, order 70). `seed-sustainability-taxonomy.ts` extended so future re-runs stay idempotent.
+- `garden/foraging` SubCategory kept for referential integrity, set to `autopilotEnabled=false`, description appended with " [moved to sustainability/foraging 2026-06-10]" so the admin UI surfaces the move. `seed-garden-taxonomy.ts` updated in lockstep.
+- Migration script `packages/db/scripts/move-foraging-to-sustainability.ts` runs both updates idempotently.
+- `docs/garden-foraging-author.md` moved to `docs/sustainability-foraging-author.md`. Pre-read updated to point at the sustainability umbrella. Status references sustainability/foraging. Output contract rewritten — `categorySlug: sustainability`, `subCategorySlug: foraging`, `type: TECHNIQUE` (reference / how-to content), no garden block, sustainability fields (`approximateCostGbp: null`, `paybackYears: null`, `recipeTools`, `recipe.foundational: false`). Worked example updated end-to-end.
+- `docs/garden-author.md`: foraging row removed from the 17-row sub-cat table (now 16 rows); 4-row "Foraging moved to sustainability" note added below the table; enabled count corrected from "Fifteen" to "Fourteen".
+- `docs/sustainability-author.md`: 1 short bullet added to the category-mix section pointing at the new sub-cat author file; full mix-percentage re-calibration deferred to the next sustainability pipeline-setup pass.
+
+**Mushroom-growing stays in garden.**
+The kingdom column tells the truth at the data level (FUNGI rows sit beside PLANTAE rows without conflating at kingdom-level filters); the user mental model of "growing food at home" includes mushrooms; cultivation methods (cycle management, harvest cues, contamination ID, fruiting conditions) parallel vegetables / fruit closely. No category move.
+
+**Anti-tells updated (`docs/garden-anti-tells.md`):**
+- Existing `plantSlug-not-in-master-table` entry rewritten to reference `Species` instead of `PlantVariety` + FUNGI kingdom guidance.
+- New `[block]`-tier entry: "`garden.plantSlug` set on an activity-axis sub-cat" — explains the validator change and the "use a representative plant" workaround is gone.
+- New `[block]`-tier entry: "Foraging guide written under `garden/foraging`" — points at `sustainability/foraging` going forward.
+
+**Sub-cat counts after the move:**
+Garden: 16 sub-cats total (was 17). 14 autopilot-enabled (was 15; foraging now disabled). 2 specialist stubs (unchanged). The 4 PUBLISHED garden tutorials (rosemary, strawberries, tomatoes, calendula) carry no garden/foraging links and continue to render unchanged.
+
+Sustainability: 7 sub-cats total (was 6). All autopilot-enabled. The mix-percentage paragraph in the umbrella will be re-calibrated when sustainability next runs pipeline-setup.

@@ -164,10 +164,17 @@ export type GardenRegion =
  */
 export interface GardenMetadata {
   /**
-   * Slug of the canonical PlantVariety this guide covers. Must exist in
-   * the master `PlantVariety` table. Required.
+   * Slug of the canonical Species this guide covers. When set, must exist
+   * in the master `Species` table (renamed from PlantVariety in
+   * phase_species_kingdom_001). Required on plant-bearing sub-cats
+   * (vegetables, fruit, herbs, flowers, permaculture, microgreens,
+   * hydroponics, mushroom-growing, indoor-gardening). Optional and
+   * SHOULD be left unset on activity-axis sub-cats (soil-compost,
+   * propagation, pest-disease-management, seasonal-care, tools-equipment) —
+   * those guides aren't about one species. On mushroom-growing the
+   * slug must resolve against a Species row whose kingdom is FUNGI.
    */
-  plantSlug: string
+  plantSlug?: string
 
   /**
    * Sub-topic within the growing guide. The author docs describe what each
@@ -649,9 +656,12 @@ export interface TutorialUploadInput {
    * Garden growing-guide metadata. Required when `type === 'GROWING_GUIDE'`.
    * Maps onto the `Tutorial.plantingMonths / harvestMonths / containerFriendly /
    * indoorFriendly / regionsApplicable` columns added by the
-   * `phase_garden_pipeline_001` migration. The `plantSlug` must exist in the
-   * master `PlantVariety` table — the upload script validates this.
-   * Null / omitted on every other tutorial type.
+   * `phase_garden_pipeline_001` migration. When set, the `plantSlug` must
+   * exist in the master `Species` table — the upload script validates this.
+   * `plantSlug` is only required for plant-bearing sub-cats; activity-axis
+   * sub-cats (soil-compost, propagation, pest-disease-management,
+   * seasonal-care, tools-equipment) skip plantSlug per the cleanup-A
+   * validator update. Null / omitted on every other tutorial type.
    */
   garden?: GardenMetadata | null
 
@@ -1019,9 +1029,41 @@ export function validateInput(
   }
 
   if (input.garden) {
-    if (!input.garden.plantSlug || !SLUG_PATTERN.test(input.garden.plantSlug)) {
+    // plantSlug rules:
+    //  - Required on plant-bearing sub-cats (a vegetable / fruit / herb /
+    //    flower / permaculture / microgreens / hydroponics /
+    //    mushroom-growing / indoor-gardening guide is about one species).
+    //  - Forbidden on activity-axis sub-cats (soil-compost / propagation /
+    //    pest-disease-management / seasonal-care / tools-equipment); the
+    //    earlier "use a representative plant" workaround polluted
+    //    plant-keyed analytics, so the validator now rejects it.
+    //  - Specialist stubs (garden-design, wildlife-gardening) are paused
+    //    for specialist authoring and skip the requirement.
+    //  - When set, must match the slug pattern + be resolved against the
+    //    master Species table in upload-tutorial.ts.
+    const PLANT_BEARING_SUBCATS = new Set([
+      'vegetables', 'fruit', 'herbs', 'flowers',
+      'permaculture', 'microgreens', 'hydroponics',
+      'mushroom-growing', 'indoor-gardening',
+    ])
+    const ACTIVITY_AXIS_SUBCATS = new Set([
+      'soil-compost', 'propagation', 'pest-disease-management',
+      'seasonal-care', 'tools-equipment',
+    ])
+    const subCat = input.subCategorySlug ?? null
+    if (subCat && ACTIVITY_AXIS_SUBCATS.has(subCat) && input.garden.plantSlug) {
       throw new Error(
-        `garden.plantSlug "${input.garden.plantSlug}" must match the slug pattern (looked up against the PlantVariety master table).`,
+        `garden.plantSlug is not used on activity-axis guides (subCategorySlug "${subCat}"); remove from input.`,
+      )
+    }
+    if (subCat && PLANT_BEARING_SUBCATS.has(subCat) && !input.garden.plantSlug) {
+      throw new Error(
+        `garden.plantSlug is required on plant-bearing guides (subCategorySlug "${subCat}").`,
+      )
+    }
+    if (input.garden.plantSlug && !SLUG_PATTERN.test(input.garden.plantSlug)) {
+      throw new Error(
+        `garden.plantSlug "${input.garden.plantSlug}" must match the slug pattern (looked up against the Species master table).`,
       )
     }
     const validSubTopics = [
