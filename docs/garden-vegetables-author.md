@@ -69,10 +69,12 @@ vegetables specifically:
 - `garden.indoorFriendly` — true for windowsill salads, microleaf
   versions of brassicas. False for the headline crop (tomato outdoors
   in fruit; brassicas need scale).
-- `garden.regionsApplicable` — `['UK']` default. Add `EU` for similar
-  oceanic-temperate climates; `US_NORTH` (Pacific NW, New England),
-  `US_SOUTH` (mid-Atlantic, southern US); `AU_NZ` and `ZA` only when
-  the schedule body explicitly handles hemisphere flip.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the master species + the guide's
+  `hemisphere` / `climateZones` / `usdaHardinessZones` /
+  `rhsHardinessZones` / `frostSensitivity` fields. Set
+  `garden.regionsApplicableOverride` only when the derived answer is
+  wrong for this specific guide.
 
 `frostSensitivity` (master Plant column when wired) divides the
 schedule: hardy crops (parsnip, leek, kale) tolerate UK winter; half-
@@ -207,8 +209,7 @@ In addition to the umbrella checklist:
     "plantingMonths": ["april", "may"],
     "harvestMonths": ["july", "august", "september", "october"],
     "containerFriendly": true,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["hardening-off-seedlings", "module-sowing", "watering-deep-infrequent", "mulching"],
   "criticalTechniques": ["hardening-off-seedlings", "watering-deep-infrequent"]

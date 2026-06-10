@@ -63,7 +63,9 @@ storage, sharpening. Choosing kit, looking after it, when to upgrade.
 - `garden.containerFriendly` — null.
 - `garden.indoorFriendly` — false for outdoor tools; true for
   greenhouse / propagation kit.
-- `garden.regionsApplicable` — broad. Tool principles travel.
+- `garden.regionsApplicable` — leave null. Tool principles are
+  region-independent and the renderer derives a wide applicability
+  set from the master species + climate-neutral metadata.
 
 ## Critical techniques
 
@@ -200,8 +202,7 @@ cited references.
   "garden": {
     "subTopic": "growing",
     "containerFriendly": null,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU", "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["sharpening-secateurs-with-whetstone", "lubricating-secateur-pivot", "cleaning-tools-after-use"],
   "criticalTechniques": ["sharpening-secateurs-with-whetstone"]

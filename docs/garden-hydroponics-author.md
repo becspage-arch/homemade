@@ -55,8 +55,9 @@ greenhouse.
 - `garden.harvestMonths` — year-round.
 - `garden.containerFriendly` — true (system is the container).
 - `garden.indoorFriendly` — true.
-- `garden.regionsApplicable` — universal; lighting + temperature
-  controllable. Populate broadly.
+- `garden.regionsApplicable` — leave null. Indoor hydroponics is
+  region-independent and the renderer derives a wide applicability
+  set from the master species + indoor / climate-neutral metadata.
 - `dayLengthSensitive` — relevant; lettuce bolts under long days.
   Mention in guides for bolting-prone crops.
 
@@ -188,8 +189,7 @@ sources will be thin. Most guides will set `sourceType:
     "plantingMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "harvestMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "containerFriendly": true,
-    "indoorFriendly": true,
-    "regionsApplicable": ["UK", "EU", "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]
+    "indoorFriendly": true
   },
   "techniqueSlugs": ["seedling-start-in-rockwool", "nutrient-solution-mixing-two-part", "ec-measurement", "ph-measurement", "dwc-air-stone-sizing"],
   "criticalTechniques": ["nutrient-solution-mixing-two-part", "ph-measurement"]

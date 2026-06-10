@@ -50,7 +50,12 @@ import { CookingModeToggle } from '@/components/public/cooking-mode/cooking-mode
 import { MadeByMakers } from '@/components/public/tutorial-reader/made-by-makers'
 import { DidYouMakeThisPrompt } from '@/components/public/tutorial-reader/did-you-make-this-prompt'
 import { RegionGuidanceCard } from '@/components/public/region-guidance/region-guidance-card'
+import { GardenRegionGuidanceCard } from '@/components/public/region-guidance/garden-region-guidance-card'
 import { composeRegionGuidance } from '@/lib/region-guidance'
+import {
+  composeContainerLabel,
+  composeIndoorLabel,
+} from '@/components/public/tutorial-reader/tutorial-info-strip'
 import {
   recordTutorialVisit,
   shouldShowDidYouMakeThisPrompt,
@@ -480,37 +485,74 @@ export default async function TutorialPage({ params }: PageProps) {
     (project?.status === UserProjectStatus.IN_PROGRESS ||
       project?.status === UserProjectStatus.COMPLETED)
 
-  // Above-body region guidance (phase_location_climate_paper_001).
-  // The "Where this works best" card shows when the tutorial carries
-  // climate metadata AND the reader hasn't set a location. Once a
-  // location is on file, the renderer drops the card and (follow-up
-  // worker) silently rewrites month / frost-date copy to match.
-  const regionGuidance = composeRegionGuidance(
-    {
-      hemisphere: tutorial.hemisphere,
-      climateZones: tutorial.climateZones,
-      primaryRegionWrittenFor: tutorial.primaryRegionWrittenFor,
-      alsoGrowsIn: tutorial.alsoGrowsIn,
-      frostSensitivity: tutorial.frostSensitivity,
-      dayLengthSensitive: tutorial.dayLengthSensitive,
-    },
-    currentUser
-      ? {
-          homeCountryCode: currentUser.homeCountryCode,
-          hemisphere: currentUser.hemisphere,
-          koppenZone: currentUser.koppenZone,
-        }
-      : null,
-  )
+  // Above-body region guidance.
+  //
+  // Garden GROWING_GUIDE tutorials use the new derivation helper
+  // (`deriveGardenRegions`), which composes the card from the tutorial's
+  // climate metadata + the user's coarse location. Free for everyone per
+  // [[feedback_premium_translation_is_free]] — no premium gate on month
+  // translation or on the friendly hint copy.
+  //
+  // Non-garden tutorials with climate metadata keep using the original
+  // `composeRegionGuidance` helper so the existing card / silent-banner
+  // shape isn't disturbed for surfaces that haven't been re-modelled.
+  const isGardenGrowingGuide = tutorial.type === TutorialType.GROWING_GUIDE
+  const regionGuidance = !isGardenGrowingGuide
+    ? composeRegionGuidance(
+        {
+          hemisphere: tutorial.hemisphere,
+          climateZones: tutorial.climateZones,
+          primaryRegionWrittenFor: tutorial.primaryRegionWrittenFor,
+          alsoGrowsIn: tutorial.alsoGrowsIn,
+          frostSensitivity: tutorial.frostSensitivity,
+          dayLengthSensitive: tutorial.dayLengthSensitive,
+        },
+        currentUser
+          ? {
+              homeCountryCode: currentUser.homeCountryCode,
+              hemisphere: currentUser.hemisphere,
+              koppenZone: currentUser.koppenZone,
+            }
+          : null,
+      )
+    : null
 
   // Above-body social proof. Pinterest pattern — makers who've already
   // made this tutorial render as a small rail just above the body.
   const preBodySlot = (
     <>
-      {regionGuidance.mode === 'card' && regionGuidance.card && (
+      {isGardenGrowingGuide && (
+        <GardenRegionGuidanceCard
+          tutorial={{
+            hemisphere: tutorial.hemisphere,
+            frostSensitivity: tutorial.frostSensitivity,
+            growingMonthsByHemisphere:
+              (tutorial.growingMonthsByHemisphere as Record<string, string[]> | null) ?? null,
+            climateZones: tutorial.climateZones,
+            usdaHardinessZones: tutorial.usdaHardinessZones,
+            rhsHardinessZones: tutorial.rhsHardinessZones,
+            plantingMonths: tutorial.plantingMonths,
+            harvestMonths: tutorial.harvestMonths,
+            regionsApplicableOverride:
+              tutorial.regionsApplicable && tutorial.regionsApplicable.length > 0
+                ? tutorial.regionsApplicable
+                : null,
+          }}
+          species={{ usdaHardinessZone: [], rhsHardinessZone: [] }}
+          user={
+            currentUser
+              ? {
+                  country: currentUser.homeCountryCode,
+                  hemisphere: currentUser.hemisphere,
+                }
+              : null
+          }
+        />
+      )}
+      {regionGuidance?.mode === 'card' && regionGuidance.card && (
         <RegionGuidanceCard card={regionGuidance.card} />
       )}
-      {regionGuidance.mode === 'silent' && regionGuidance.silentBanner && (
+      {regionGuidance?.mode === 'silent' && regionGuidance.silentBanner && (
         <p
           className="region-guidance-silent-banner"
           data-testid="region-guidance-silent-banner"
@@ -636,6 +678,27 @@ export default async function TutorialPage({ params }: PageProps) {
       }}
       requiresKiln={tutorial.requiresKiln}
       requiresWheel={tutorial.requiresWheel}
+      containerLabel={
+        isGardenGrowingGuide
+          ? composeContainerLabel({
+              // `Tutorial` doesn't currently carry a plantSlug FK link
+              // so the precise `Species.minimumContainerLitres` value
+              // isn't reachable here yet. The helper falls back to the
+              // boolean badge; the precise label lights up automatically
+              // once a Tutorial → Species join is wired into the loader.
+              minimumContainerLitres: null,
+              containerFriendly: tutorial.containerFriendly,
+            })
+          : null
+      }
+      indoorLabel={
+        isGardenGrowingGuide
+          ? composeIndoorLabel({
+              minimumDailyDirectSunHours: null,
+              indoorFriendly: tutorial.indoorFriendly,
+            })
+          : null
+      }
       body={
         <>
           {didYouMakeThis?.show && (

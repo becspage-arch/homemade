@@ -60,9 +60,9 @@ Indoor-only methods that don't need outdoor space.
 - `garden.containerFriendly` — true (everything indoors is in a
   container).
 - `garden.indoorFriendly` — true.
-- `garden.regionsApplicable` — broad; populate all six regions
-  honestly because indoor schedules really do work everywhere with
-  the right light + temperature.
+- `garden.regionsApplicable` — leave null. Indoor schedules are
+  region-independent and the renderer derives a wide applicability
+  set from the master species + indoor / climate-neutral metadata.
 - `dayLengthSensitive`: relevant for short-day flowering houseplants
   (Christmas cactus, kalanchoe) — name in the body.
 
@@ -217,8 +217,7 @@ Houseplant care as a category has accelerated in the last decade
     "subTopic": "growing",
     "plantingMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "containerFriendly": true,
-    "indoorFriendly": true,
-    "regionsApplicable": ["UK", "EU", "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]
+    "indoorFriendly": true
   },
   "techniqueSlugs": ["houseplant-light-by-window-orientation", "houseplant-watering-by-finger-test", "houseplant-feed-by-season", "monstera-aerial-root-management"],
   "criticalTechniques": ["houseplant-watering-by-finger-test"]

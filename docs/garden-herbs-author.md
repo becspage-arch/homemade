@@ -69,8 +69,10 @@ chives, lemon balm, lovage, tarragon).
 - `garden.indoorFriendly` — true for windowsill basil, parsley,
   chives; false for woody Mediterraneans (need outdoor light + cold
   dormancy).
-- `garden.regionsApplicable` — `['UK']` default. Mediterranean herbs
-  travel well to `EU`, `US_NORTH` (with winter protection), `AU_NZ`.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the master species + the guide's hardiness
+  metadata. Set `garden.regionsApplicableOverride` only when the
+  derivation is wrong for this guide.
 - `frostSensitivity` (master): hardy (rosemary, sage, thyme, mint,
   chives), half-hardy (lavender outdoors in cold UK), tender (basil,
   coriander, lemon verbena).
@@ -187,8 +189,7 @@ Per umbrella. Herbs-specific notes:
     "subTopic": "sowing",
     "plantingMonths": ["march", "april", "may", "june"],
     "containerFriendly": true,
-    "indoorFriendly": true,
-    "regionsApplicable": ["UK", "EU", "US_NORTH"]
+    "indoorFriendly": true
   },
   "techniqueSlugs": ["module-sowing", "pricking-out", "pinching-out", "hardening-off-seedlings"],
   "criticalTechniques": ["pinching-out"]

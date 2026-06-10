@@ -92,8 +92,10 @@ prompt restates this.
 ## Region-aware authoring (canonical metadata)
 
 Garden tutorials are written once and read globally. The renderer
-composes the "Where this works best" card from structured metadata at
-render time; the author does not write region-specific prose.
+composes applicable regions, the "Where this works best" card, and
+hemisphere month-translation at render time from the master species
+row plus the guide's structured climate metadata. The author does
+not write region-specific prose and does not pad a regions array.
 
 Authors populate the existing `garden` block on
 `TutorialUploadInput`:
@@ -112,31 +114,40 @@ Authors populate the existing `garden` block on
   `saving-seed` / `pruning` / `pest-management` / `season-extension` /
   `variety-selection`.
 - `garden.plantingMonths` / `garden.harvestMonths` — lower-case month
-  arrays for the UK schedule (canonical).
-- `garden.containerFriendly` / `garden.indoorFriendly` — booleans /
-  null.
-- `garden.regionsApplicable` — defaults to `['UK']`. Add `EU` /
-  `US_NORTH` / `US_SOUTH` / `AU_NZ` / `ZA` only where the schedule
-  genuinely applies.
+  arrays for the canonical (UK-default) schedule.
+- `garden.containerFriendly` / `garden.indoorFriendly` — coarse
+  booleans kept for back-compat. The renderer prefers the master
+  species row's `minimumContainerLitres` /
+  `minimumDailyDirectSunHours` when populated and falls back to these
+  flags when not. Leave them null on rows where you don't know.
+
+Leave `regionsApplicable` null. The renderer derives the answer.
+
+**Override only when the derivation is wrong.** Set
+`garden.regionsApplicableOverride` (an array of region-group keys)
+when the master derivation gets it wrong for a specific case — for
+example an heirloom variety adapted outside its species' normal
+hardiness range, or a UK-only cultivar that doesn't translate to USDA
+zones. The renderer uses the override verbatim and skips derivation.
 
 The Tutorial table also carries deeper region columns wired up by
 `phase_location_climate_paper_001`: `hemisphere`, `climateZones[]`
 (Köppen, e.g. `['Cfb']` for oceanic UK), `usdaHardinessZones[]`,
 `rhsHardinessZones[]`, `growingMonthsByHemisphere` (Json),
 `frostSensitivity` (`hardy` / `half-hardy` / `tender`),
-`dayLengthSensitive`, `primaryRegionWrittenFor` (human-readable, e.g.
-`'UK and Northern Europe'`), `alsoGrowsIn` (human-readable). These
-fields are populated by the upload pipeline from the master
-`PlantVariety` row when the upload input wires them in (separate
-worker); for now authors carry the schedule honestly in the body and
-in `regionsApplicable`.
+`dayLengthSensitive`. These drive the derivation and should be set
+on every growing guide. `primaryRegionWrittenFor` and `alsoGrowsIn`
+exist for back-compat but are no longer authored — the renderer
+composes them.
 
 **The renderer is doing the translation, not the author.** Authors
-write the canonical UK / Köppen-Cfb / USDA-9 schedule. Premium users
-see month auto-translation and frost-date warnings against their
-location silently. Free users see the friendly card
-("Best for UK and Northern Europe. Not in the UK? See how to adjust
-your timing."). Either way the source is the same canonical metadata.
+write the canonical UK / Köppen-Cfb / USDA-9 schedule. The renderer
+shows the friendly card, the silent month flip for opposite-
+hemisphere readers, and the country-specific hint. All of these are
+free for every user per
+[[feedback_premium_translation_is_free]] — derivation, translation
+and calculation stay free; only per-user saved-state personalization
+(postcode frost dates, saved sown dates) is fair game for premium.
 
 ## Category-level pipeline-setup standards
 
@@ -365,8 +376,7 @@ Body H2s:
     "plantingMonths": ["february", "march"],
     "harvestMonths": ["july", "august"],
     "containerFriendly": true,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "glossaryTerms": [
     { "slug": "hardening-off", "term": "Hardening off", "definition": "..." }
@@ -430,8 +440,11 @@ invent a citation.
    field stays null / omitted — the validator rejects it. On
    mushroom-growing the slug must resolve against a Species row with
    `kingdom: 'FUNGI'`.
-3. Region check. `garden.regionsApplicable` includes `UK` always. Add
-   only where the schedule genuinely applies.
+3. Region check. Leave `regionsApplicable` null; the renderer derives
+   from the master species + the guide's `hemisphere` /
+   `climateZones` / `usdaHardinessZones` / `rhsHardinessZones` /
+   `frostSensitivity`. Set `regionsApplicableOverride` only when the
+   derived answer is wrong for this specific guide.
 4. Calendar sanity. The months in `plantingMonths` / `harvestMonths`
    align with the body prose.
 5. Pest claims grounded. Companion-planting and pest-management claims

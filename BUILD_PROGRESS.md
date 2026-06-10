@@ -3576,6 +3576,55 @@ The primary Internet Archive digitisation of Weldon's Practical Knitter (krl3423
 
 Source JSON files at `packages/db/scripts/phase-1-content/knitting/` (14 new) and `packages/db/scripts/anchor-tutorials/knitting/` (4 fixed).
 
+## Garden cleanup B — derived regions + container granularity (2026-06-10)
+
+Follow-up to garden pipeline-setup, addressing schema-gaps items #3 + #4 from `project_garden_schema_gaps.md`. Implements the locked principle in [[feedback_premium_translation_is_free]] — region-aware derivation, translation, and the "Where this works best" card are free for every user; only per-user saved-state personalization can be premium.
+
+**Schema migration — `phase_species_container_granularity_001`:**
+- `Species.minimumContainerLitres Int?` and `Species.minimumDailyDirectSunHours Int?` added (idempotent IF NOT EXISTS). Migration runs immediately after Worker A's `phase_species_kingdom_001` rename so the target table name is already `Species` by the time this fires.
+- The coarse `Tutorial.containerFriendly` / `indoorFriendly` booleans stay during transition for backwards compatibility — search filters, admin chrome and the new badge renderer all fall back to them when the species int is null.
+
+**Backfill — master plants table:**
+~47 of the 53 species in `packages/db/scripts/data/plants.ts` carry `minimumContainerLitres` and (where applicable) `minimumDailyDirectSunHours` values drawn from RHS / Cornell extension service references. Examples: tomato 25 L / 6 h, beefsteak tomato variant 40 L (future), courgette 30 L / 5 h, strawberry 12 L / 6 h, rosemary 15 L / 6 h, basil 5 L / 4 h, calendula 8 L / 4 h, lettuce 5 L / 3 h. Apples / pears / plums / cherries set 45 L for compact-rootstock container forms.
+
+**Derivation helper — `deriveGardenRegions`:**
+New `apps/web/src/lib/garden-region-derivation.ts` composes `applicableRegions` (`UK_NEUROPE` / `US_NORTH` / `US_SOUTH` / `CANADA` / `EU_MEDITERRANEAN` / `AU_NZ` / `SOUTHERN_AFRICA` country-group keys), human-readable `primaryRegionWrittenFor`, `alsoGrowsIn`, and hemisphere month translation from the tutorial's `hemisphere` / `climateZones` / `usdaHardinessZones` / `rhsHardinessZones` / `frostSensitivity` / `growingMonthsByHemisphere` fields plus the species' hardiness range. Pure server-renderable function. `formatMonthRange` helper composes contiguous month groups ("march to may", "september to november and february to april"). 11 unit tests in `garden-region-derivation.test.ts`.
+
+**"Where this works best" card — free for every user:**
+New `GardenRegionGuidanceCard` server component composes the card from `deriveGardenRegions`. UK reader of UK guide: card hidden (schedule matches). AU reader of UK guide: card visible with translated months ("For your hemisphere, sow august to november. Harvest january to april."). US reader of UK guide: silent banner with friendly hint ("Written for the UK and Northern Europe. Also grows in the northern United States on the same schedule."). Anonymous reader: card describes region + sign-in nudge. NO premium gate on translation or on the card.
+
+**Upload validator — override-only:**
+`garden.regionsApplicable` renamed to `garden.regionsApplicableOverride` in `GardenMetadata`. The legacy field name is still accepted at the validator with a deprecation warning to stderr; existing JSON sources keep uploading without an edit. `upload-tutorial.ts` persists the override when set, falls back to the legacy field when set, and otherwise leaves `Tutorial.regionsApplicable` empty so the renderer derives. The "must include UK" constraint dropped.
+
+**Author prompt updates:**
+`docs/garden-author.md` "Region-aware authoring" section rewritten — authors leave `regionsApplicable` null and let the renderer derive; override only when the derivation is wrong (heirloom adapted outside the species' normal hardiness range). All 15 per-sub-cat author prompts dropped their regionsApplicable population guidance and their worked-example JSON. `docs/garden-anti-tells.md` "regionsApplicable padded" entry removed (no longer authorable). Self-critique step rewritten to point at the override field.
+
+**Container + indoor badges — TutorialInfoStrip:**
+`TutorialInfoStrip` extended with optional `containerLabel` + `indoorLabel` props rendered as info-strip badges with new container / sun glyphs. `composeContainerLabel` + `composeIndoorLabel` helpers prefer the master species int ("Container: 25 L minimum", "Indoor: 4 hours of direct sun") and fall back to the boolean ("Container: yes", "Indoor: no"). Wired into the public tutorial page for GROWING_GUIDE tutorials; precise int values become reachable once Worker A's plantSlug persistence on Tutorial lands.
+
+**Legacy overrides — 4 PUBLISHED garden tutorials:**
+`growing-tomatoes-from-seed`, `growing-strawberries`, `growing-rosemary-from-cuttings`, `growing-calendula` keep their existing `regionsApplicable` arrays as legacy overrides (the upload validator now treats them as override values, surfaced in the renderer verbatim). No re-upload required; the 4 render unchanged.
+
+Files:
+- `packages/db/prisma/migrations/20260911100000_phase_species_container_granularity_001/migration.sql` (runs after Worker A's `phase_species_kingdom_001` rename)
+- `packages/db/prisma/schema.prisma` (Species int columns added)
+- `packages/db/scripts/data/types.ts` (PlantSeed extended)
+- `packages/db/scripts/data/plants.ts` (~47 species backfilled)
+- `packages/db/scripts/seed-plants.ts` (persist new fields)
+- `packages/db/scripts/upload-tutorial-types.ts` (regionsApplicableOverride + deprecation warning)
+- `packages/db/scripts/upload-tutorial.ts` (override / legacy coalesce)
+- `apps/web/src/lib/garden-region-derivation.ts` (new helper)
+- `apps/web/src/lib/garden-region-derivation.test.ts` (11 unit tests)
+- `apps/web/src/components/public/region-guidance/garden-region-guidance-card.tsx` (new card)
+- `apps/web/src/components/public/tutorial-reader/tutorial-info-strip.tsx` (badges + compose helpers)
+- `apps/web/src/components/public/tutorial-chrome.tsx` (passthrough props)
+- `apps/web/src/app/(public)/[categorySlug]/[tutorialSlug]/page.tsx` (wire-up)
+- `docs/garden-author.md` (region section rewritten + worked example trimmed)
+- `docs/garden-anti-tells.md` (regionsApplicable entries removed / rewritten)
+- `docs/garden-{vegetables,fruit,herbs,flowers,permaculture,microgreens,hydroponics,mushroom-growing,foraging,indoor-gardening,pest-disease-management,propagation,seasonal-care,soil-compost,tools-equipment}-author.md` (15 prompts updated)
+
+Items #3 + #4 in `project_garden_schema_gaps.md` flipped to SHIPPED. Items #5 (projectSchedule) + #6 (Studio strategic call) stay queued.
+
 ## Garden pipeline-setup + READY flip (2026-06-10)
 
 Garden category pipeline-setup landed; status flipped to READY. Garden was the last non-craft category sitting at NOT_READY; with this flip every category in the build is either READY (autopilot rotation), COMPLETE (target hit), or NOT_READY pending its own dedicated worker (sewing only, S-5 in flight).

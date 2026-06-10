@@ -88,6 +88,10 @@ export interface TutorialChromeProps {
   requiresKiln?: boolean
   /** Pottery equipment-barrier flag. Set true on tutorials needing a wheel. */
   requiresWheel?: boolean
+  /** Garden container badge label (composed by `composeContainerLabel`). */
+  containerLabel?: string | null
+  /** Garden indoor / windowsill badge label (composed by `composeIndoorLabel`). */
+  indoorLabel?: string | null
   /** The rendered tutorial body. */
   body: ReactNode
   /**
@@ -203,6 +207,8 @@ export function TutorialChrome(props: TutorialChromeProps) {
           timeMinutes={totalForBar}
           difficulty={difficulty}
           equipmentLabel={equipmentLabel}
+          containerLabel={props.containerLabel ?? null}
+          indoorLabel={props.indoorLabel ?? null}
           dietaryFlags={isRecipe ? recipeMeta?.dietaryFlags : undefined}
           servingsCell={
             isRecipe && recipeMeta ? (

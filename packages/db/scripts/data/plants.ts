@@ -49,6 +49,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 25,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'potato',
@@ -68,6 +70,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 30,
   },
   {
     slug: 'courgette',
@@ -87,6 +90,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 30,
+    minimumDailyDirectSunHours: 5,
   },
   {
     slug: 'runner-bean',
@@ -106,6 +111,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 25,
   },
   {
     slug: 'broad-bean',
@@ -144,6 +150,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['july', 'august', 'september'],
+    minimumContainerLitres: 15,
+    minimumDailyDirectSunHours: 5,
   },
   {
     slug: 'pea',
@@ -163,6 +171,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['june', 'july', 'august'],
+    minimumContainerLitres: 20,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'carrot',
@@ -182,6 +192,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 15,
   },
   {
     slug: 'onion',
@@ -220,6 +231,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['july', 'august'],
+    minimumContainerLitres: 8,
   },
   {
     slug: 'leek',
@@ -239,6 +251,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['october', 'november', 'december', 'january', 'february', 'march'],
+    minimumContainerLitres: 15,
   },
   {
     slug: 'lettuce',
@@ -258,6 +271,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 3,
   },
   {
     slug: 'rocket',
@@ -277,6 +292,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['april', 'may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 3,
   },
   {
     slug: 'spinach',
@@ -296,6 +313,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['april', 'may', 'june', 'september', 'october'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 3,
   },
   {
     slug: 'kale',
@@ -315,6 +334,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['october', 'november', 'december', 'january', 'february', 'march'],
+    minimumContainerLitres: 15,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'cabbage',
@@ -372,6 +393,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 10,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'parsnip',
@@ -410,6 +433,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['april', 'may', 'june', 'july', 'august', 'september'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'cucumber',
@@ -429,6 +454,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['july', 'august', 'september'],
+    minimumContainerLitres: 25,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'sweet-pepper',
@@ -448,6 +475,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['august', 'september', 'october'],
+    minimumContainerLitres: 15,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'chilli',
@@ -467,6 +496,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['august', 'september', 'october'],
+    minimumContainerLitres: 10,
+    minimumDailyDirectSunHours: 6,
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -490,6 +521,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['june', 'july'],
+    minimumContainerLitres: 12,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'raspberry',
@@ -509,6 +542,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 25,
   },
   {
     slug: 'blackcurrant',
@@ -528,6 +562,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['july', 'august'],
+    minimumContainerLitres: 30,
   },
   {
     slug: 'redcurrant',
@@ -547,6 +582,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['july'],
+    minimumContainerLitres: 30,
   },
   {
     slug: 'gooseberry',
@@ -566,6 +602,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['june', 'july'],
+    minimumContainerLitres: 30,
   },
   {
     slug: 'apple',
@@ -584,6 +621,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['august', 'september', 'october', 'november'],
+    minimumContainerLitres: 45,
   },
   {
     slug: 'pear',
@@ -602,6 +640,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['august', 'september', 'october'],
+    minimumContainerLitres: 45,
   },
   {
     slug: 'plum',
@@ -620,6 +659,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['august', 'september'],
+    minimumContainerLitres: 45,
   },
   {
     slug: 'cherry',
@@ -638,6 +678,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['july'],
+    minimumContainerLitres: 45,
   },
   {
     slug: 'fig',
@@ -656,6 +697,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['august', 'september'],
+    minimumContainerLitres: 40,
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -678,6 +720,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+    minimumContainerLitres: 15,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'thyme',
@@ -696,6 +740,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'mint',
@@ -714,6 +760,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: true,
     seasonality: ['april', 'may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'basil',
@@ -733,6 +781,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'parsley',
@@ -752,6 +802,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: true,
     isPerennial: false,
     seasonality: ['may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'coriander',
@@ -771,6 +823,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['may', 'june', 'july', 'august', 'september'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'chives',
@@ -789,6 +843,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['april', 'may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'dill',
@@ -808,6 +864,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['may', 'june', 'july', 'august', 'september'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 5,
   },
   {
     slug: 'sage',
@@ -826,6 +884,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['april', 'may', 'june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 10,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'oregano',
@@ -844,6 +904,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['june', 'july', 'august', 'september'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 6,
   },
 
   // ────────────────────────────────────────────────────────────────────────
@@ -866,6 +928,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['june', 'july', 'august'],
+    minimumContainerLitres: 15,
+    minimumDailyDirectSunHours: 6,
   },
   {
     slug: 'chamomile',
@@ -885,6 +949,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august'],
+    minimumContainerLitres: 8,
   },
   {
     slug: 'calendula',
@@ -904,6 +969,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 8,
+    minimumDailyDirectSunHours: 4,
   },
   {
     slug: 'nasturtium',
@@ -923,6 +990,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september'],
+    minimumContainerLitres: 10,
+    minimumDailyDirectSunHours: 5,
   },
   {
     slug: 'marigold',
@@ -942,6 +1011,8 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september', 'october'],
+    minimumContainerLitres: 5,
+    minimumDailyDirectSunHours: 5,
   },
   {
     slug: 'sunflower',
@@ -961,6 +1032,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['july', 'august', 'september'],
+    minimumContainerLitres: 10,
   },
   {
     slug: 'sweet-pea',
@@ -980,6 +1052,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september'],
+    minimumContainerLitres: 20,
   },
   {
     slug: 'dahlia',
@@ -998,6 +1071,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: true,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 15,
   },
   {
     slug: 'borage',
@@ -1017,6 +1091,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['june', 'july', 'august', 'september'],
+    minimumContainerLitres: 10,
   },
   {
     slug: 'cosmos',
@@ -1036,5 +1111,7 @@ export const PLANTS: PlantSeed[] = [
     isStaple: false,
     isPerennial: false,
     seasonality: ['july', 'august', 'september', 'october'],
+    minimumContainerLitres: 10,
+    minimumDailyDirectSunHours: 5,
   },
 ]

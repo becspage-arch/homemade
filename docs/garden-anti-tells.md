@@ -83,9 +83,10 @@ bulk batches surface recurring tells.
   spring" line confuses the Southern-Hemisphere reader.
   **How to fix:** Use specific months (e.g. "late February to mid-
   April"). Reference the cue underneath (e.g. "soil temperature
-  reaches 12°C", "after the last expected frost"). Populate
-  `garden.regionsApplicable` honestly — `UK` always, others only
-  where the schedule applies.
+  reaches 12°C", "after the last expected frost"). The renderer
+  derives applicable regions and translates months for opposite-
+  hemisphere readers from the guide's structured climate metadata
+  — authors don't set the regions array directly.
 
 ## Precision issues
 
@@ -174,20 +175,6 @@ bulk batches surface recurring tells.
   variety sold widely in UK).
 
 ## Metadata issues
-
-- **`garden.regionsApplicable` padded** `[block]`
-  Pattern: a UK-specific tomato sowing schedule with `["UK", "EU",
-  "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]` flagged. The schedule
-  doesn't apply to USDA-3 or to ZA Southern-Hemisphere.
-  **Why:** The regions flag drives downstream renderer behaviour
-  — the calendar shifts for Southern Hemisphere, the frost-date
-  copy shifts for US-North. Padding the flag with regions where
-  the schedule fails sends bad advice to those readers.
-  **How to fix:** Be honest about which regions the schedule
-  genuinely applies to. UK + EU for most British schedules. Add
-  US_NORTH if the climate is similar (Pacific NW, New England).
-  Don't add the Southern-Hemisphere flags unless the body explicitly
-  handles the hemisphere flip.
 
 - **Empty `garden.plantingMonths` / `harvestMonths` on a sowing or
   harvesting guide** `[block]`

@@ -72,8 +72,10 @@ for flower.
   petunia, half-hardy annuals; mixed for perennials (size matters).
 - `garden.indoorFriendly` — false in general; some bulbs force
   indoors (paperwhite, hyacinth).
-- `garden.regionsApplicable` — UK + EU default; perennial hardiness
-  varies widely so US zones added cautiously.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the master species + the guide's hardiness
+  metadata. Set `garden.regionsApplicableOverride` only when the
+  derivation is wrong for this guide.
 - `frostSensitivity`: hardy (most spring bulbs, hardy perennials,
   hardy annuals), half-hardy (cosmos, antirrhinum), tender (dahlia
   tuber after first frost; lift or mulch).
@@ -200,8 +202,7 @@ Per umbrella. Flowers-specific notes:
     "plantingMonths": ["march", "april", "may"],
     "harvestMonths": ["july", "august", "september", "october"],
     "containerFriendly": true,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["module-sowing", "pricking-out", "hardening-off-seedlings", "pinching-out", "deadheading"],
   "criticalTechniques": ["pinching-out", "deadheading"]

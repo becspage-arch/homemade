@@ -63,8 +63,9 @@ layering, simple grafting. Methods that work across plant families.
 - `garden.containerFriendly` — true for most propagation methods
   (modules, trays, pots).
 - `garden.indoorFriendly` — true for indoor-start methods.
-- `garden.regionsApplicable` — broad. Method principles work
-  everywhere; timing translates by hemisphere.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  from the master species + the guide's hardiness metadata; the
+  derivation also handles hemisphere translation for timing.
 
 ## Critical techniques
 
@@ -199,8 +200,7 @@ Per umbrella. Propagation-specific notes:
     "subTopic": "growing",
     "plantingMonths": ["july", "august", "september"],
     "containerFriendly": true,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU", "US_NORTH"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["taking-cuttings-semi-ripe", "hardening-off-seedlings", "rooting-hormone-use-and-skip"],
   "criticalTechniques": ["taking-cuttings-semi-ripe"]

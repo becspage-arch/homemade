@@ -69,9 +69,12 @@ across plant families.
 - `garden.containerFriendly` — null.
 - `garden.indoorFriendly` — true for greenhouse / polytunnel /
   houseplant pest guides; false for outdoor-only pests.
-- `garden.regionsApplicable` — UK + EU as default. Pest pressure
-  varies widely; some pests (carrot fly) are universal in temperate
-  zones, others (Colorado beetle) are region-restricted.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  from the master species + the guide's hardiness metadata. Set
+  `garden.regionsApplicableOverride` when the pest is region-
+  restricted in a way the species derivation can't capture (e.g.
+  Colorado beetle, which is excluded from UK but present across
+  continental Europe + the US).
 - `frostSensitivity` (master Plant) doesn't apply.
 
 ## Critical techniques
@@ -218,8 +221,7 @@ adaptations:
   "garden": {
     "subTopic": "pest-management",
     "containerFriendly": null,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["aphid-id-by-host-plant", "aphid-control-soft-soap-spray", "aphid-control-ladybird-release", "ipm-monitoring-yellow-trap"],
   "criticalTechniques": ["aphid-id-by-host-plant", "aphid-control-soft-soap-spray"]

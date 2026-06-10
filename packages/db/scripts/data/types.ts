@@ -215,6 +215,19 @@ export interface PlantSeed {
   isPerennial: boolean
   /** Lower-case month names — when in season (sown / harvested / blooming). */
   seasonality?: string[]
+  /**
+   * Minimum container size that supports a normal crop, in litres. Leave
+   * unset when the data isn't reliably knowable. Replaces the
+   * `Tutorial.containerFriendly` boolean — a cherry tomato fits in 25 L;
+   * a beefsteak needs 40 L.
+   */
+  minimumContainerLitres?: number
+  /**
+   * Minimum daily direct sun, in hours, for a windowsill / indoor
+   * placement. Leave unset when the data isn't known. 4 distinguishes a
+   * basil pot from a low-light sansevieria.
+   */
+  minimumDailyDirectSunHours?: number
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

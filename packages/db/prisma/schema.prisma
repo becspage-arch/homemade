@@ -3167,6 +3167,19 @@ model Species {
   spacingCm      Int?
   heightCm       Int?
 
+  /// Minimum container size that supports a normal crop, in litres. Null
+  /// when the data isn't known. Replaces the coarse
+  /// `Tutorial.containerFriendly` boolean: a cherry tomato fits in 25 L;
+  /// a beefsteak needs 40 L. Set by
+  /// `phase_species_container_granularity_001`.
+  minimumContainerLitres Int?
+
+  /// Minimum direct sun the plant tolerates indoors (hours per day).
+  /// Null when the data isn't known. Distinguishes a 4-hour basil from
+  /// a low-light sansevieria. Set by
+  /// `phase_species_container_granularity_001`.
+  minimumDailyDirectSunHours Int?
+
   /// Which parts the kitchen uses: 'fruit' / 'leaf' / 'root' / 'stem' /
   /// 'flower' / 'seed'. Empty on purely ornamental rows; multi-valued where
   /// more than one part is edible.

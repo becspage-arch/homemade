@@ -58,10 +58,13 @@ hazel, cobnut), unusual fruit (medlar, chokeberry, sea buckthorn).
   for full-size tree fruit.
 - `garden.indoorFriendly` — false for all but the occasional fig in a
   conservatory.
-- `garden.regionsApplicable` — UK default. Add US zones with care;
-  rootstock and frost-hardiness vary widely.
+- `garden.regionsApplicable` — leave null. The renderer derives from
+  the master species + the guide's `hemisphere` / `climateZones` /
+  `usdaHardinessZones` / `rhsHardinessZones` / `frostSensitivity`. Set
+  `garden.regionsApplicableOverride` only when the derivation gets
+  this specific cultivar wrong.
 - Master `PlantVariety.usdaHardinessZone` / `koppenZone` carry the
-  cultivar-specific bounds.
+  cultivar-specific bounds and feed the derivation.
 
 ## Critical techniques
 
@@ -182,8 +185,7 @@ Per umbrella. Fruit-specific notes:
     "plantingMonths": ["november", "december", "january", "february", "march"],
     "harvestMonths": ["july", "august"],
     "containerFriendly": false,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["planting-bare-root", "blackcurrant-renewal-pruning", "netting-against-birds", "mulching-fruit-bush"],
   "criticalTechniques": ["planting-bare-root", "blackcurrant-renewal-pruning"]

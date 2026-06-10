@@ -10,6 +10,19 @@ interface TutorialInfoStripProps {
   dietaryFlags?: string[]
   /** Pottery equipment label. */
   equipmentLabel?: string | null
+  /**
+   * Garden container badge. Prefers the master species' precise litres
+   * (`Species.minimumContainerLitres`) when set; falls back to the
+   * coarse `Tutorial.containerFriendly` boolean otherwise. Pass null to
+   * hide the badge (non-garden tutorials).
+   */
+  containerLabel?: string | null
+  /**
+   * Garden indoor / windowsill badge. Prefers
+   * `Species.minimumDailyDirectSunHours` when set, falls back to
+   * the coarse `Tutorial.indoorFriendly` boolean. Pass null to hide.
+   */
+  indoorLabel?: string | null
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -50,6 +63,8 @@ export function TutorialInfoStrip({
   servingsCell,
   dietaryFlags = [],
   equipmentLabel,
+  containerLabel,
+  indoorLabel,
 }: TutorialInfoStripProps) {
   const dietary = dietaryFlags.filter((flag) => DIETARY_GLYPH[flag])
   const difficultyLabel = DIFFICULTY_LABEL[difficulty] ?? difficulty.toLowerCase()
@@ -78,6 +93,18 @@ export function TutorialInfoStrip({
           <span>{equipmentLabel}</span>
         </span>
       )}
+      {containerLabel && (
+        <span className="tutorial-info-item" data-testid="container-badge">
+          <ContainerIcon />
+          <span>{containerLabel}</span>
+        </span>
+      )}
+      {indoorLabel && (
+        <span className="tutorial-info-item" data-testid="indoor-badge">
+          <SunIcon />
+          <span>{indoorLabel}</span>
+        </span>
+      )}
       {dietary.length > 0 && (
         <span className="tutorial-info-dietary">
           {dietary.map((flag) => (
@@ -89,6 +116,39 @@ export function TutorialInfoStrip({
       )}
     </div>
   )
+}
+
+/**
+ * Compose the container badge label from the precise species value
+ * (preferred) plus the coarse tutorial-level boolean fallback. Returns
+ * null when nothing useful can be said.
+ */
+export function composeContainerLabel(input: {
+  minimumContainerLitres: number | null | undefined
+  containerFriendly: boolean | null | undefined
+}): string | null {
+  if (typeof input.minimumContainerLitres === 'number' && input.minimumContainerLitres > 0) {
+    return `Container: ${input.minimumContainerLitres} L minimum`
+  }
+  if (input.containerFriendly === true) return 'Container: yes'
+  if (input.containerFriendly === false) return 'Container: no'
+  return null
+}
+
+/**
+ * Compose the indoor / windowsill badge from the precise species sun-
+ * hours value, falling back to the coarse boolean.
+ */
+export function composeIndoorLabel(input: {
+  minimumDailyDirectSunHours: number | null | undefined
+  indoorFriendly: boolean | null | undefined
+}): string | null {
+  if (typeof input.minimumDailyDirectSunHours === 'number' && input.minimumDailyDirectSunHours > 0) {
+    return `Indoor: ${input.minimumDailyDirectSunHours} hours of direct sun`
+  }
+  if (input.indoorFriendly === true) return 'Indoor: yes'
+  if (input.indoorFriendly === false) return 'Indoor: no'
+  return null
 }
 
 function ClockIcon() {
@@ -121,6 +181,24 @@ function ToolIcon() {
   return (
     <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4">
       <path d="M4 12.8l5-5M11 6.5L13.5 4l-1.2-1.2L9.8 5.3M3 13l-1.2 1.2M9.5 6.2l-2 2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ContainerIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4">
+      <path d="M3 5h10l-1 8.4a1 1 0 0 1-1 .8H5a1 1 0 0 1-1-.8L3 5z" strokeLinejoin="round" />
+      <path d="M5 5V3.5h6V5" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function SunIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4">
+      <circle cx="8" cy="8" r="3.2" />
+      <path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.6 3.6l1.2 1.2M11.2 11.2l1.2 1.2M3.6 12.4l1.2-1.2M11.2 4.8l1.2-1.2" strokeLinecap="round" />
     </svg>
   )
 }

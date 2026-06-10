@@ -58,10 +58,11 @@ maintenance. The cross-plant calendar sub-cat.
   level).
 - `garden.indoorFriendly` — false (most calendar guidance is
   outdoor).
-- `garden.regionsApplicable` — strict UK + EU on UK-month calendars.
-  Don't pad to US / AU; the schedules don't translate cleanly. A
-  separate guide can be written for the Northern-Hemisphere US
-  zones or Southern Hemisphere; do not muddy this one.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the guide's hardiness metadata and
+  silently translates months for opposite-hemisphere readers. Set
+  `garden.regionsApplicableOverride` only when the UK-month
+  calendar genuinely doesn't translate (most calendars do).
 - `frostSensitivity` (master Plant): not relevant at this level.
 - `dayLengthSensitive`: not relevant.
 
@@ -200,8 +201,7 @@ Per umbrella with adaptations:
     "plantingMonths": ["march"],
     "harvestMonths": ["march"],
     "containerFriendly": null,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["last-frost-date-uk-by-region", "frost-protection-fleece", "succession-sowing-monthly-window", "mulch-application-spring"],
   "criticalTechniques": ["last-frost-date-uk-by-region"]

@@ -700,10 +700,17 @@ export async function uploadTutorial(
     harvestMonths: garden?.harvestMonths ?? [],
     containerFriendly: garden?.containerFriendly ?? null,
     indoorFriendly: garden?.indoorFriendly ?? null,
+    // `regionsApplicableOverride` is the canonical author field; the
+    // legacy `regionsApplicable` is still accepted with a deprecation
+    // warning emitted by the validator. When both are empty the column
+    // is left empty so the renderer's `deriveGardenRegions` derives the
+    // answer from the master species + hardiness metadata.
     regionsApplicable: garden
-      ? (garden.regionsApplicable && garden.regionsApplicable.length > 0
-          ? (garden.regionsApplicable as string[])
-          : ['UK'])
+      ? (garden.regionsApplicableOverride && garden.regionsApplicableOverride.length > 0
+          ? (garden.regionsApplicableOverride as string[])
+          : garden.regionsApplicable && garden.regionsApplicable.length > 0
+            ? (garden.regionsApplicable as string[])
+            : [])
       : [],
     // Herbal metadata (Phase 8 Herbal pipeline scaffold). Null on rows
     // that aren't REMEDY / HERB_PROFILE.

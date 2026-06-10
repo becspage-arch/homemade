@@ -181,6 +181,8 @@ async function main(): Promise<void> {
       isStaple: row.isStaple,
       isPerennial: row.isPerennial,
       seasonality: row.seasonality ?? [],
+      minimumContainerLitres: row.minimumContainerLitres ?? null,
+      minimumDailyDirectSunHours: row.minimumDailyDirectSunHours ?? null,
     }
 
     if (!existing) {
@@ -207,7 +209,9 @@ async function main(): Promise<void> {
       existing.notes === data.notes &&
       existing.isStaple === data.isStaple &&
       existing.isPerennial === data.isPerennial &&
-      JSON.stringify(existing.seasonality) === JSON.stringify(data.seasonality)
+      JSON.stringify(existing.seasonality) === JSON.stringify(data.seasonality) &&
+      existing.minimumContainerLitres === data.minimumContainerLitres &&
+      existing.minimumDailyDirectSunHours === data.minimumDailyDirectSunHours
 
     if (fieldsEqual) {
       unchanged++

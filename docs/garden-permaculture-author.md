@@ -65,8 +65,10 @@ external inputs.
 - `garden.containerFriendly` — false for system-level guides;
   permaculture is land-based.
 - `garden.indoorFriendly` — false.
-- `garden.regionsApplicable` — system principles travel well; the
-  plant lists are region-specific. UK + EU default.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the master species + the guide's hardiness
+  metadata. Set `garden.regionsApplicableOverride` only when the
+  derivation is wrong for this guide.
 
 ## Critical techniques
 
@@ -192,8 +194,7 @@ Per umbrella. Permaculture-specific notes:
     "subTopic": "growing",
     "plantingMonths": ["october", "november", "march", "april"],
     "containerFriendly": false,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU", "US_NORTH"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["sheet-mulching", "no-dig-bed-setup", "no-dig-ongoing-mulch"],
   "criticalTechniques": ["sheet-mulching", "no-dig-ongoing-mulch"]

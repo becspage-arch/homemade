@@ -61,8 +61,10 @@ On logs, bags, straw, woodchip.
   log + woodchip.
 - `garden.indoorFriendly` — true for bag / kit; false for log
   cultivation (needs outdoor shade + humidity).
-- `garden.regionsApplicable` — temperate widely. Adjust spawn
-  strains for warm climates.
+- `garden.regionsApplicable` — leave null. The renderer derives
+  applicable regions from the master species + the guide's hardiness
+  metadata. Set `garden.regionsApplicableOverride` only when the
+  derivation is wrong for this specific strain.
 
 ## Critical techniques
 
@@ -202,8 +204,7 @@ public-domain.
     "plantingMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "harvestMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "containerFriendly": true,
-    "indoorFriendly": true,
-    "regionsApplicable": ["UK", "EU", "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]
+    "indoorFriendly": true
   },
   "techniqueSlugs": ["straw-pasteurisation", "bag-inoculation-sterile", "fruiting-conditions-temperature-humidity", "harvest-cut-at-base"],
   "criticalTechniques": ["straw-pasteurisation", "fruiting-conditions-temperature-humidity"]

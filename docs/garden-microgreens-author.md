@@ -59,9 +59,9 @@ metre. A reliable beginner-to-grow + culinary-leverage crop.
 - `garden.harvestMonths` — also year-round; populate all twelve.
 - `garden.containerFriendly` — true (tray is the container).
 - `garden.indoorFriendly` — true. Microgreens are an indoor crop.
-- `garden.regionsApplicable` — universal; light + warmth are
-  controllable indoors. Populate `['UK', 'EU', 'US_NORTH', 'US_SOUTH',
-  'AU_NZ', 'ZA']` honestly because the schedule does work everywhere.
+- `garden.regionsApplicable` — leave null. Indoor microgreens are
+  region-independent and the renderer derives a wide applicability
+  set from the master species + indoor / climate-neutral metadata.
 - `frostSensitivity`: not relevant (indoor).
 - `dayLengthSensitive`: false in general; supplementary lighting
   (LED grow light) carries through dark UK winters.
@@ -182,8 +182,7 @@ sources will be thin and many guides will set `sourceType:
     "plantingMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "harvestMonths": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"],
     "containerFriendly": true,
-    "indoorFriendly": true,
-    "regionsApplicable": ["UK", "EU", "US_NORTH", "US_SOUTH", "AU_NZ", "ZA"]
+    "indoorFriendly": true
   },
   "techniqueSlugs": ["sowing-microgreen-tray", "microgreen-blackout-stack", "bottom-watering", "microgreen-cutting-with-scissors"],
   "criticalTechniques": ["microgreen-blackout-stack", "bottom-watering"]

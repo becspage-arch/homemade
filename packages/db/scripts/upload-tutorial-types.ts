@@ -205,9 +205,24 @@ export interface GardenMetadata {
   indoorFriendly?: boolean | null
 
   /**
-   * Regions the schedule applies to. Defaults to ['UK'] at upload time when
-   * omitted. Add EU / US_NORTH / US_SOUTH / AU_NZ / ZA when the schedule
-   * translates cleanly.
+   * Author escape hatch for the rare case where the renderer's
+   * `deriveGardenRegions` derivation gets the wrong answer (e.g. an
+   * heirloom variety adapted outside its species' normal hardiness
+   * range). When set, the renderer uses this verbatim and skips
+   * derivation. Leave null / omit for everything else — the renderer
+   * composes the regions, "primary region", and "also grows in" copy
+   * from the master species row + the guide's hardiness fields.
+   *
+   * See `apps/web/src/lib/garden-region-derivation.ts`.
+   */
+  regionsApplicableOverride?: GardenRegion[] | string[] | null
+
+  /**
+   * @deprecated Use `regionsApplicableOverride`. Still accepted at the
+   * validator layer so existing JSON sources keep uploading without an
+   * edit; the value is treated identically to
+   * `regionsApplicableOverride` and a one-line deprecation warning
+   * prints to stderr.
    */
   regionsApplicable?: GardenRegion[] | string[]
 }
@@ -1093,10 +1108,24 @@ export function validateInput(
         )
       }
     }
-    for (const r of input.garden.regionsApplicable ?? []) {
+    if (input.garden.regionsApplicable && input.garden.regionsApplicable.length > 0) {
+      // Deprecation warning — the field has been replaced by
+      // `regionsApplicableOverride`. The validator still accepts the old
+      // name so existing JSON sources don't need editing. The upload
+      // script coalesces the two when persisting.
+      console.warn(
+        `[upload-tutorial] garden.regionsApplicable is deprecated on tutorial "${input.slug}". ` +
+          `Rename to garden.regionsApplicableOverride; the renderer derives applicable regions from the master species + the guide's hardiness fields when the override is omitted.`,
+      )
+    }
+    const overrideEntries = [
+      ...(input.garden.regionsApplicableOverride ?? []),
+      ...(input.garden.regionsApplicable ?? []),
+    ]
+    for (const r of overrideEntries) {
       if (typeof r !== 'string' || r.length === 0) {
         throw new Error(
-          `garden.regionsApplicable entries must be non-empty strings (got "${r}").`,
+          `garden.regionsApplicableOverride entries must be non-empty strings (got "${r}").`,
         )
       }
     }

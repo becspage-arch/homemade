@@ -63,8 +63,9 @@ maintenance. The cross-cutting fertility sub-cat.
   composting is land-based or system-based.
 - `garden.indoorFriendly` — true for worm bin, bokashi; false for
   pile-based composting.
-- `garden.regionsApplicable` — broad. Compost biology is universal;
-  schedules adjust by season.
+- `garden.regionsApplicable` — leave null. Compost biology is
+  region-independent; the renderer derives a broad applicability
+  set from the master species + indoor / climate-neutral metadata.
 
 ## Critical techniques
 
@@ -202,8 +203,7 @@ Per umbrella. Soil-compost-specific notes:
     "subTopic": "growing",
     "plantingMonths": ["march", "april", "may", "june", "july", "august", "september"],
     "containerFriendly": false,
-    "indoorFriendly": false,
-    "regionsApplicable": ["UK", "EU", "US_NORTH"]
+    "indoorFriendly": false
   },
   "techniqueSlugs": ["hot-composting-c-n-ratio", "hot-composting-turn-cadence", "compost-turning-three-bin-system"],
   "criticalTechniques": ["hot-composting-c-n-ratio", "hot-composting-turn-cadence"]
