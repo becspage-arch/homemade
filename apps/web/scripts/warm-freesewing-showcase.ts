@@ -8,10 +8,7 @@
  * calibrationMode, freesewingVersion) → identical cacheKey → no DB write.
  */
 
-import {
-  listDesigns,
-  getDesignDefaults,
-} from '../src/lib/sewing/grading/design-registry'
+import { listDesigns } from '../src/lib/sewing/grading/design-registry'
 import { draftPattern } from '../src/lib/sewing/grading/grader'
 import { prisma } from '@homemade/db'
 import type { MeasurementsPayload } from '../src/lib/sewing/measurements'
