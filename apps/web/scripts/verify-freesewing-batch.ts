@@ -36,7 +36,7 @@ async function main(): Promise<void> {
       const output = await draftPattern({
         designSlug: d.slug,
         measurements: {},
-        designOptions: defaults,
+        options: { designOptions: defaults },
         calibrationMode: 'PRINT',
       })
       const svgBytes = output.svg.length
