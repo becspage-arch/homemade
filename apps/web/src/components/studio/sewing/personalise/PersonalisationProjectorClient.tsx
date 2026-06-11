@@ -10,7 +10,7 @@
  * spotty network.
  */
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { ProjectorView } from '@/components/studio/sewing/projector/ProjectorView'
@@ -21,30 +21,35 @@ interface Props {
   designName: string
 }
 
+type StashedPayload =
+  | { kind: 'loading' }
+  | { kind: 'missing' }
+  | { kind: 'ready'; svg: string; attribution: string | null }
+
+function readStash(): StashedPayload {
+  if (typeof window === 'undefined') return { kind: 'loading' }
+  try {
+    const raw = window.sessionStorage.getItem('sew-pers-projector-svg')
+    if (!raw) return { kind: 'missing' }
+    const parsed = JSON.parse(raw) as {
+      svg: string
+      name: string
+      attribution: string | null
+    }
+    return { kind: 'ready', svg: parsed.svg, attribution: parsed.attribution }
+  } catch {
+    return { kind: 'missing' }
+  }
+}
+
 export function PersonalisationProjectorClient({ designSlug, designName }: Props) {
   const router = useRouter()
-  const [svg, setSvg] = useState<string | null>(null)
-  const [attribution, setAttribution] = useState<string | null>(null)
-  const [missing, setMissing] = useState<boolean>(false)
-
-  useEffect(() => {
-    try {
-      const raw = sessionStorage.getItem('sew-pers-projector-svg')
-      if (!raw) {
-        setMissing(true)
-        return
-      }
-      const parsed = JSON.parse(raw) as {
-        svg: string
-        name: string
-        attribution: string | null
-      }
-      setSvg(parsed.svg)
-      setAttribution(parsed.attribution)
-    } catch {
-      setMissing(true)
-    }
-  }, [])
+  // Lazy initialiser — runs once on first render; safe for SSR because
+  // we don't touch window outside the client guard.
+  const [payload] = useState<StashedPayload>(() => readStash())
+  const svg = payload.kind === 'ready' ? payload.svg : null
+  const attribution = payload.kind === 'ready' ? payload.attribution : null
+  const missing = payload.kind === 'missing'
 
   if (missing) {
     return (
