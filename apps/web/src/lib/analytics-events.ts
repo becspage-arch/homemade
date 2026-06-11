@@ -105,6 +105,21 @@ export type PosthogEvent =
   | 'ingredient_created_inline'
   // Acquisition
   | 'acquisition_captured'
+  // Sewing personalisation funnel (S-5e)
+  | 'sewing_design_picked'
+  | 'sewing_measurements_edited'
+  | 'sewing_options_changed'
+  | 'sewing_personalisation_started'
+  | 'sewing_personalisation_completed'
+  | 'sewing_personalisation_failed'
+  | 'sewing_personalisation_saved_to_project'
+  | 'sewing_download_print'
+  | 'sewing_download_projector'
+  | 'sewing_download_browse'
+  | 'sewing_signin_cta_shown'
+  | 'sewing_signin_cta_clicked'
+  | 'sewing_premium_gate_encountered'
+  | 'sewing_premium_gate_cta_shown'
 
 const EVENT_CATEGORIES: Record<string, string> = {
   acquisition_captured: 'acquisition',
@@ -191,6 +206,20 @@ const EVENT_CATEGORIES: Record<string, string> = {
   signup_rejected_not_allowlisted: 'friction',
   signup_allowlist_email_added: 'account',
   signup_allowlist_email_removed: 'account',
+  sewing_design_picked: 'engagement',
+  sewing_measurements_edited: 'engagement',
+  sewing_options_changed: 'engagement',
+  sewing_personalisation_started: 'engagement',
+  sewing_personalisation_completed: 'engagement',
+  sewing_personalisation_failed: 'friction',
+  sewing_personalisation_saved_to_project: 'engagement',
+  sewing_download_print: 'engagement',
+  sewing_download_projector: 'engagement',
+  sewing_download_browse: 'engagement',
+  sewing_signin_cta_shown: 'activation',
+  sewing_signin_cta_clicked: 'activation',
+  sewing_premium_gate_encountered: 'engagement',
+  sewing_premium_gate_cta_shown: 'engagement',
 }
 
 export function categoryFor(event: string): string {

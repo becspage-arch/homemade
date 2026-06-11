@@ -14,6 +14,7 @@
 import { useCallback, useMemo, useState } from 'react'
 
 import type { MeasurementField } from '@/lib/sewing/measurements'
+import { captureClientEvent } from '@/lib/client-analytics'
 
 const CM_PER_INCH = 2.54
 
@@ -185,7 +186,16 @@ export function MeasurementsConfirmStep({
           cm = Math.round(cm * 100) / 100
         }
       }
-      setMeasurements((prev) => ({ ...prev, [field]: cm }))
+      setMeasurements((prev) => {
+        const previous = prev[field]
+        if (previous !== cm) {
+          captureClientEvent('sewing_measurements_edited', {
+            fields_changed: [field],
+            userType: 'signed_in',
+          })
+        }
+        return { ...prev, [field]: cm }
+      })
       void persistField(field, cm)
     },
     [preference, persistField, setMeasurements],

@@ -11,6 +11,8 @@ import {
   STUDIO_PREMIUM_GATING_ENABLED,
   checkStudioGate,
 } from '@/lib/studio/premium-gates'
+import { captureEvent } from '@/lib/server-analytics'
+import { getOrCreateSessionId } from '@/lib/analytics-session'
 import { PersonaliseFlow } from '@/components/studio/sewing/personalise/PersonaliseFlow'
 import type {
   SewingDesignSummary,
@@ -45,6 +47,20 @@ export default async function PersonaliseDesignPage({ params }: PageProps) {
   const user = await getCurrentDbUser()
   const showcase = await getFreesewingShowcase(designSlug).catch(() => null)
 
+  // Emit sewing_design_picked at page load. Fire-and-forget per the
+  // server-analytics pattern — never blocks the render.
+  const sessionId = await getOrCreateSessionId().catch(() => 'server')
+  void captureEvent({
+    event: 'sewing_design_picked',
+    distinctId: user?.clerkId ?? `anon:${sessionId}`,
+    properties: {
+      designSlug,
+      userType: user ? 'signed_in' : 'anon',
+    },
+  }).catch(() => {
+    // analytics never blocks the render
+  })
+
   let saved: SavedMeasurements = { fields: {}, notes: null }
   let preference: 'cm' | 'inches' = 'cm'
 
@@ -70,6 +86,15 @@ export default async function PersonaliseDesignPage({ params }: PageProps) {
   // moment instead of the flow. The flag defaults off during the build
   // phase per the locked premium philosophy.
   if (STUDIO_PREMIUM_GATING_ENABLED && !gate.allowed) {
+    void captureEvent({
+      event: 'sewing_premium_gate_encountered',
+      distinctId: user?.clerkId ?? `anon:${sessionId}`,
+      properties: {
+        gate_key: 'SEWING_PERSONALISATION',
+        signed_in: Boolean(user),
+        would_upgrade: false,
+      },
+    }).catch(() => {})
     return (
       <div className="sew-pers-surface">
         <header className="sew-pers-header">

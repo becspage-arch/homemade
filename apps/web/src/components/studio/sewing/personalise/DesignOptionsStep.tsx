@@ -19,6 +19,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import type { MeasurementField } from '@/lib/sewing/measurements'
 import type { SewingDesignSummary } from './types'
 import { FreesewingPatternViewer } from '@/components/studio/sewing/FreesewingPatternViewer'
+import { captureClientEvent } from '@/lib/client-analytics'
 
 interface Props {
   design: SewingDesignSummary
@@ -152,9 +153,14 @@ export function DesignOptionsStep({
               name={name}
               meta={meta}
               value={options[name]}
-              onChange={(v) =>
+              onChange={(v) => {
+                captureClientEvent('sewing_options_changed', {
+                  designSlug: design.slug,
+                  option_name: name,
+                  option_value: typeof v === 'number' ? v : String(v),
+                })
                 setOptions((prev) => ({ ...prev, [name]: v }))
-              }
+              }}
             />
           ))}
           <button

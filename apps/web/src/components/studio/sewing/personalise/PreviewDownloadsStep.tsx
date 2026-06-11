@@ -19,6 +19,11 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { FreesewingPatternViewer } from '@/components/studio/sewing/FreesewingPatternViewer'
 import type { MeasurementField } from '@/lib/sewing/measurements'
+import { captureClientEvent } from '@/lib/client-analytics'
+import {
+  STUDIO_PREMIUM_GATING_ENABLED,
+  checkStudioGate,
+} from '@/lib/studio/premium-gates'
 import type { SewingDesignSummary } from './types'
 
 interface Props {
@@ -26,6 +31,7 @@ interface Props {
   measurements: Partial<Record<MeasurementField, number | null>>
   measurementsPreference: 'cm' | 'inches'
   designOptions: Record<string, number | string | boolean>
+  signedIn: boolean
   onBack: () => void
 }
 
@@ -48,8 +54,15 @@ export function PreviewDownloadsStep({
   measurements,
   measurementsPreference,
   designOptions,
+  signedIn,
   onBack,
 }: Props) {
+  const layeredPdfGate = checkStudioGate('SEWING_PERSONALISATION_LAYERED_PDF', {
+    signedIn,
+    isPremium: false,
+  })
+  const layeredPdfBlocked =
+    STUDIO_PREMIUM_GATING_ENABLED && !layeredPdfGate.allowed
   const [draft, setDraft] = useState<DraftStatus>({ tag: 'drafting' })
   const [save, setSave] = useState<SaveStatus>({ tag: 'idle' })
   const [paper, setPaper] = useState<PaperSize>('A4')
@@ -66,6 +79,11 @@ export function PreviewDownloadsStep({
   useEffect(() => {
     if (startedRef.current) return
     startedRef.current = true
+    captureClientEvent('sewing_personalisation_started', {
+      designSlug: design.slug,
+      signed_in: signedIn,
+    })
+    const startTs = Date.now()
     ;(async () => {
       try {
         const res = await fetch('/api/studio/sewing/personalisation', {
@@ -85,6 +103,14 @@ export function PreviewDownloadsStep({
             message:
               body.errorMessage ?? 'Personalisation failed. Try changing an option.',
           })
+          captureClientEvent('sewing_personalisation_failed', {
+            designSlug: design.slug,
+            error_class: body.errorClass ?? 'unknown',
+            error_message_truncated:
+              typeof body.errorMessage === 'string'
+                ? body.errorMessage.slice(0, 200)
+                : null,
+          })
           return
         }
         setDraft({
@@ -93,14 +119,28 @@ export function PreviewDownloadsStep({
           svg: body.svg,
           attribution: body.attribution ?? null,
         })
+        captureClientEvent('sewing_personalisation_completed', {
+          designSlug: design.slug,
+          draft_duration_ms: Date.now() - startTs,
+          cache_hit: Boolean(body.cacheHit),
+        })
+        captureClientEvent('sewing_download_browse', {
+          designSlug: design.slug,
+        })
       } catch (err) {
         setDraft({
           tag: 'failed',
           message: err instanceof Error ? err.message : 'Personalisation failed.',
         })
+        captureClientEvent('sewing_personalisation_failed', {
+          designSlug: design.slug,
+          error_class: 'network',
+          error_message_truncated:
+            err instanceof Error ? err.message.slice(0, 200) : null,
+        })
       }
     })()
-  }, [design.slug, measurements, designOptions, measurementsPreference])
+  }, [design.slug, measurements, designOptions, measurementsPreference, signedIn])
 
   const onSaveToProjects = useCallback(async () => {
     if (draft.tag !== 'ready') return
@@ -119,17 +159,29 @@ export function PreviewDownloadsStep({
         return
       }
       setSave({ tag: 'saved', projectId: body.projectId })
+      captureClientEvent('sewing_personalisation_saved_to_project', {
+        designSlug: design.slug,
+        project_id: body.projectId,
+      })
     } catch (err) {
       setSave({
         tag: 'error',
         message: err instanceof Error ? err.message : 'Save failed.',
       })
     }
-  }, [draft])
+  }, [draft, design.slug])
 
   const tiledPdfDownload = useCallback(
     async (mode: 'tiled' | 'a0' | 'nested') => {
       if (draft.tag !== 'ready') return
+      if (mode === 'nested' && layeredPdfBlocked) {
+        captureClientEvent('sewing_premium_gate_encountered', {
+          gate_key: 'SEWING_PERSONALISATION_LAYERED_PDF',
+          signed_in: signedIn,
+          would_upgrade: false,
+        })
+        return
+      }
       setDownloading(mode)
       setDownloadError(null)
       try {
@@ -149,6 +201,11 @@ export function PreviewDownloadsStep({
           }
           const blob = await res.blob()
           downloadBlob(blob, `${design.slug}-nested.pdf`)
+          captureClientEvent('sewing_download_print', {
+            designSlug: design.slug,
+            paper_size: paper,
+            layered: true,
+          })
         } else {
           // For tiled and A0, build the PDF in the browser via the
           // existing pdf-lib pipeline. The SewingPatternData shape is
@@ -168,6 +225,11 @@ export function PreviewDownloadsStep({
             blob,
             `${design.slug}-${(mode === 'a0' ? 'A0' : paper).toLowerCase()}.pdf`,
           )
+          captureClientEvent('sewing_download_print', {
+            designSlug: design.slug,
+            paper_size: mode === 'a0' ? 'A0' : paper,
+            layered: false,
+          })
         }
       } catch (err) {
         setDownloadError(
@@ -177,7 +239,7 @@ export function PreviewDownloadsStep({
         setDownloading(null)
       }
     },
-    [draft, design, paper],
+    [draft, design, paper, layeredPdfBlocked, signedIn],
   )
 
   const openProjector = useCallback(() => {
@@ -193,6 +255,9 @@ export function PreviewDownloadsStep({
         attribution: draft.attribution,
       }),
     )
+    captureClientEvent('sewing_download_projector', {
+      designSlug: design.slug,
+    })
     window.open(
       `/studio/sewing/personalise/${encodeURIComponent(design.slug)}/projector`,
       '_blank',
@@ -240,10 +305,27 @@ export function PreviewDownloadsStep({
                 <input
                   type="checkbox"
                   checked={nested}
-                  onChange={(e) => setNested(e.target.checked)}
+                  disabled={layeredPdfBlocked}
+                  onChange={(e) => {
+                    setNested(e.target.checked)
+                    if (e.target.checked && layeredPdfBlocked) {
+                      captureClientEvent('sewing_premium_gate_cta_shown', {
+                        gate_key: 'SEWING_PERSONALISATION_LAYERED_PDF',
+                      })
+                    }
+                  }}
                 />
-                <span>Layered PDF (advanced) — nest your size with adjacent CYC sizes</span>
+                <span>
+                  Layered PDF (advanced): nest your size with adjacent
+                  standard sizes
+                  {layeredPdfBlocked ? ' (Premium)' : ''}
+                </span>
               </label>
+              {layeredPdfBlocked ? (
+                <p className="sew-pers-download-gate">
+                  {layeredPdfGate.message} {layeredPdfGate.rationale}
+                </p>
+              ) : null}
               <button
                 type="button"
                 disabled={!isReady || downloading !== null}

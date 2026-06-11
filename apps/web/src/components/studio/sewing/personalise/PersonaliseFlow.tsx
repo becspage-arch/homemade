@@ -12,11 +12,12 @@
  * signed-in (free) feature per the locked sign-in carrots.
  */
 
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 
 import { FreesewingPatternViewer } from '@/components/studio/sewing/FreesewingPatternViewer'
 import type { MeasurementField } from '@/lib/sewing/measurements'
+import { captureClientEvent } from '@/lib/client-analytics'
 import type {
   SewingDesignSummary,
   SavedMeasurements,
@@ -142,6 +143,7 @@ export function PersonaliseFlow({
           measurements={measurements}
           measurementsPreference={preference}
           designOptions={designOptions}
+          signedIn={signedIn}
           onBack={() => backTo(2)}
         />
       )}
@@ -186,6 +188,16 @@ function SignInGateBlock({
   attribution: string | null
   designName: string
 }) {
+  useEffect(() => {
+    captureClientEvent('sewing_signin_cta_shown', {
+      source: 'step_1_measurements',
+    })
+  }, [])
+  const onClickSignIn = useCallback(() => {
+    captureClientEvent('sewing_signin_cta_clicked', {
+      source: 'step_1_measurements',
+    })
+  }, [])
   return (
     <div className="sew-pers-signin-gate">
       <div className="sew-pers-signin-copy">
@@ -199,6 +211,7 @@ function SignInGateBlock({
           <Link
             className="sew-pers-card-cta primary"
             href={`/sign-in?redirect_url=/studio/sewing/personalise/${encodeURIComponent(designName.toLowerCase())}`}
+            onClick={onClickSignIn}
           >
             Sign in
           </Link>

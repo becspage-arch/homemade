@@ -30,6 +30,21 @@ The freesewing packages embedded in Homemade as of this writing:
 - `@freesewing/bella` 4.9.0 — women's body block
 - `@freesewing/brian` 4.9.0 — men's body block
 - `@freesewing/aaron` 4.9.0 — knit T-shirt
+- `@freesewing/bee` 4.9.0 — women's bikini top
+- `@freesewing/bent` 4.9.0 — men's body block with two-part sleeve
+- `@freesewing/carlita` 4.9.0 — women's long coat
+- `@freesewing/carlton` 4.9.0 — men's long coat
+- `@freesewing/cathrin` 4.9.0 — women's underbust corset
+- `@freesewing/charlie` 4.9.0 — men's chinos
+- `@freesewing/diana` 4.9.0 — women's draped top
+- `@freesewing/huey` 4.9.0 — unisex zip-up hoodie
+- `@freesewing/noble` 4.9.0 — women's princess seam bodice
+- `@freesewing/onyx` 4.9.0 — unisex one-piece garment
+- `@freesewing/penelope` 4.9.0 — women's pencil skirt
+- `@freesewing/sandy` 4.9.0 — women's circle skirt
+- `@freesewing/simon` 4.9.0 — men's button-down shirt
+- `@freesewing/titan` 4.9.0 — unisex trouser block
+- `@freesewing/waralee` 4.9.0 — unisex wrap pants
 - `@freesewing/plugin-bundle` 2.22.2
 - `@freesewing/plugin-bust` 4.9.0
 - `@freesewing/plugin-transform` 4.9.0

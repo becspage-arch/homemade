@@ -33,6 +33,9 @@ export type StudioGateFeature =
   | 'CUSTOM_PAPER_SIZES'
   | 'PUBLIC_SUBMISSION'
   | 'SEWING_PERSONALISATION'
+  | 'SEWING_PERSONALISATION_LAYERED_PDF'
+  | 'SEWING_HACK_COMPOSER'
+  | 'SEWING_PATTERN_COMBINATION'
 
 interface UserContext {
   signedIn: boolean
@@ -88,6 +91,37 @@ const COPY: Record<StudioGateFeature, { message: string; rationale: string }> = 
     rationale:
       'You can keep using the showcase patterns at standard sizing for free, or upgrade to grade any design to your saved measurements.',
   },
+  SEWING_PERSONALISATION_LAYERED_PDF: {
+    message:
+      'The layered PDF download is part of Homemade Premium.',
+    rationale:
+      'Premium nests your size alongside the adjacent standard sizes on a single PDF so you can grade between sizes for a closer fit.',
+  },
+  SEWING_HACK_COMPOSER: {
+    message:
+      'The visual hack composer is part of Homemade Premium.',
+    rationale:
+      'Premium lets you lengthen, shorten, swap sleeves, change necklines, and add pockets to a design without drafting from scratch.',
+  },
+  SEWING_PATTERN_COMBINATION: {
+    message:
+      'Combining two patterns into one is part of Homemade Premium.',
+    rationale:
+      'Premium lets you take the sleeve from one design and the body from another so the finished pattern fits your idea, not a single template.',
+  },
+}
+
+/**
+ * Read the gate's display copy without consulting the feature flag.
+ * Stub routes that always show the copy (e.g. hack composer "Coming soon")
+ * use this so the user sees the gate rationale even before
+ * STUDIO_PREMIUM_GATING_ENABLED flips on.
+ */
+export function getStudioGateCopy(feature: StudioGateFeature): {
+  message: string
+  rationale: string
+} {
+  return COPY[feature]
 }
 
 export function checkStudioGate(feature: StudioGateFeature, user: UserContext): GateResult {
