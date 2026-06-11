@@ -23,6 +23,13 @@ async function main() {
   // Sewing category state
   const sewingCat = await prisma.category.findUnique({ where: { slug: 'sewing' }, select: { pipelineStatus: true, isPublicVisible: true } })
   console.log('Category.sewing:', sewingCat)
+  // Freesewing-backed SewingPattern rows seeded by deploy.
+  const fsRows = await prisma.sewingPattern.findMany({
+    where: { isFreesewingDesign: true },
+    select: { slug: true, name: true, freesewingDesignSlug: true, freesewingVersion: true, sourceLicence: true, visibility: true, availableFormats: true },
+  })
+  console.log(`Freesewing-backed SewingPattern rows: ${fsRows.length}`)
+  for (const r of fsRows) console.log('  ', r)
   await prisma.$disconnect()
 }
 main().catch((e) => { console.error(e); process.exit(1) })
