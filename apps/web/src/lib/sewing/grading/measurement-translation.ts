@@ -10,7 +10,7 @@
 // versa), the gap is documented in code and the function falls back to
 // freesewing's CYC default for that key.
 
-import type { MeasurementsPayload } from '../measurements'
+import type { MeasurementField, MeasurementsPayload } from '../measurements'
 
 /**
  * Freesewing's measurement keys are documented as part of the engine API:
@@ -192,6 +192,28 @@ export function homemadeToFreesewing(
     fallbacksUsed: fallbacks,
     unmappedHomemadeKeys: unmapped,
   }
+}
+
+/**
+ * For UI use: given freesewing-side keys, return the set of Homemade
+ * measurement field names that map to them. Used by the personalisation
+ * Studio so the measurement form can mark fields "required for this
+ * design" without exposing freesewing's vocabulary to the rest of the
+ * codebase.
+ */
+export function homemadeFieldsFor(
+  freesewingKeys: string[],
+): MeasurementField[] {
+  const wanted = new Set(freesewingKeys)
+  const hits: MeasurementField[] = []
+  for (const row of HOMEMADE_TO_FREESEWING) {
+    if (row.freesewingKeys.some((k) => wanted.has(k))) {
+      // Only the numeric measurement keys flow through this surface;
+      // the row never targets `notes` / `measurementPreference`.
+      hits.push(row.homemadeKey as MeasurementField)
+    }
+  }
+  return hits
 }
 
 /** Test-only re-export: lets the test suite verify the full key map. */

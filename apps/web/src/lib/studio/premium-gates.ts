@@ -32,6 +32,7 @@ export type StudioGateFeature =
   | 'PALETTE_ABOVE_24'
   | 'CUSTOM_PAPER_SIZES'
   | 'PUBLIC_SUBMISSION'
+  | 'SEWING_PERSONALISATION'
 
 interface UserContext {
   signedIn: boolean
@@ -80,6 +81,12 @@ const COPY: Record<StudioGateFeature, { message: string; rationale: string }> = 
   PUBLIC_SUBMISSION: {
     message: 'Submitting to the public library is a Homemade Premium feature.',
     rationale: 'Premium opens the path to publish your patterns to the Homemade library and start earning credits.',
+  },
+  SEWING_PERSONALISATION: {
+    message:
+      'Personalising a sewing pattern to your exact measurements is part of Homemade Premium.',
+    rationale:
+      'You can keep using the showcase patterns at standard sizing for free, or upgrade to grade any design to your saved measurements.',
   },
 }
 

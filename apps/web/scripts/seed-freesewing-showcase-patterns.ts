@@ -49,6 +49,26 @@ const SEEDS: ShowcaseSeed[] = [
     freesewingPackageName: '@freesewing/bella',
     freesewingDesignSlug: 'bella',
   },
+  {
+    slug: 'freesewing-brian-body-block',
+    name: 'Brian body block',
+    description:
+      "Brian is a men's body block from the freesewing project. Use it as a starting point for shirts, tunics, and outerwear or as a fit check before cutting your own design.",
+    garmentCategory: 'MENS_TOPS',
+    garmentType: 'body block',
+    freesewingPackageName: '@freesewing/brian',
+    freesewingDesignSlug: 'brian',
+  },
+  {
+    slug: 'freesewing-aaron-knit-a-shirt',
+    name: 'Aaron knit A-shirt',
+    description:
+      "Aaron is a simple knit A-shirt from the freesewing project. Beginner-friendly. Works in light jersey or stretch fabrics.",
+    garmentCategory: 'UNISEX',
+    garmentType: 'knit top',
+    freesewingPackageName: '@freesewing/aaron',
+    freesewingDesignSlug: 'aaron',
+  },
 ]
 
 async function main(): Promise<void> {
@@ -64,7 +84,7 @@ async function main(): Promise<void> {
       freesewingVersion: '4.9.0',
       freesewingDesignSlug: seed.freesewingDesignSlug,
       sourceLicence: 'MIT' as const,
-      sourceUrl: 'https://freesewing.org/designs/bella',
+      sourceUrl: `https://freesewing.org/designs/${seed.freesewingDesignSlug}`,
       attributionText:
         'This pattern was drafted using freesewing. The freesewing project is MIT-licensed open-source software created by Joost De Cock. https://freesewing.org',
       seamAllowanceIncluded: false,

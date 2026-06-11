@@ -17,11 +17,62 @@ export type SewingSkillLevelTier =
   | 'ADVANCED'
   | 'EXPERT'
 
+/**
+ * Per-design option metadata. Mirrors freesewing's documented option
+ * shape (https://freesewing.dev/reference/api/option) but narrowed to
+ * the subset the personalisation Studio needs to render controls:
+ *
+ *   - `pct`  : percentage slider (stored as a fraction; min/max in pct)
+ *   - `mm`   : millimetre slider
+ *   - `bool` : toggle
+ *   - `enum` : dropdown of named options
+ *
+ * Freesewing's engine accepts options as a Record<string, primitive>; we
+ * pass the raw value through unchanged. The renderer reads `type` to
+ * pick the control, the freesewing pattern reads the value to draft.
+ */
+export type SewingDesignOptionMeta =
+  | {
+      type: 'pct'
+      label: string
+      description?: string
+      /** Default expressed as a percentage (e.g. 4 for "4%"). */
+      default: number
+      min: number
+      max: number
+      step?: number
+    }
+  | {
+      type: 'mm'
+      label: string
+      description?: string
+      /** Default in millimetres. */
+      default: number
+      min: number
+      max: number
+      step?: number
+    }
+  | {
+      type: 'bool'
+      label: string
+      description?: string
+      default: boolean
+    }
+  | {
+      type: 'enum'
+      label: string
+      description?: string
+      default: string
+      values: { value: string; label: string }[]
+    }
+
 export interface SewingDesignConfig {
   /** Stable slug. Used everywhere outside the wrapper. */
   slug: string
   /** Display name shown in catalogue listings + Studio. */
   name: string
+  /** One-paragraph blurb shown on the design picker card. */
+  description?: string
   /** npm package the design lives in. Recorded on SewingPattern rows. */
   freesewingPackage: string
   /** Lazy import returning the freesewing module namespace. */
@@ -38,6 +89,13 @@ export interface SewingDesignConfig {
   optionalMeasurements: string[]
   /** Per-design ease tolerance for verifier output (default 0.05). */
   verifyTolerance?: number
+  /**
+   * Surfaceable design options. The renderer walks this map in entry
+   * order so authors control which option appears first in the panel.
+   * Keys match freesewing's option names exactly so the wrapper can
+   * forward without translation.
+   */
+  options?: Record<string, SewingDesignOptionMeta>
 }
 
 export interface DrafterOptions {
