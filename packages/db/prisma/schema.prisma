@@ -311,6 +311,9 @@ model User {
   sewingPatternProjects         SewingPatternProject[]
   sewingPatternPersonalisations SewingPatternPersonalisation[]
 
+  // Sewing S-6 reverse relations.
+  sewingPatternHacks SewingPatternHack[]
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -5363,6 +5366,7 @@ model SewingPattern {
   // Reverse relations.
   projects         SewingPatternProject[]
   personalisations SewingPatternPersonalisation[]
+  hacks            SewingPatternHack[]
   plansLinked      UserSewingPlan[]
 
   createdAt DateTime @default(now())
@@ -5430,6 +5434,9 @@ model SewingPatternProject {
   // Reverse relation for personalisation requests linked to this project.
   personalisations SewingPatternPersonalisation[]
 
+  // Reverse relation for hacks promoted into this project (S-6).
+  hacksSavedHere SewingPatternHack[] @relation("HackSavedToProject")
+
   @@unique([userId, patternId])
   @@index([userId, status])
   @@index([patternId])
@@ -5481,6 +5488,58 @@ model SewingPatternPersonalisation {
   @@index([userId])
   @@index([patternId])
   @@index([status])
+}
+
+/// Saved hack composer state. A row represents a named bookmark of a
+/// freesewing design with a specific option set (e.g. Bella with
+/// neckline=scoop, bodyLength=+50mm). Different from
+/// SewingPatternPersonalisation in intent: a Personalisation is a draft
+/// the user downloads or attaches to a project; a Hack is a saved
+/// configuration the user comes back to and iterates on. Same shape
+/// otherwise so the wrapper can render either path. Gated by the
+/// SEWING_HACK_COMPOSER config flag (default off); Worker F flips it.
+model SewingPatternHack {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  parentPatternId String
+  parentPattern   SewingPattern @relation(fields: [parentPatternId], references: [id], onDelete: Cascade)
+
+  /// User-named, defaults to "Hack of <pattern name>" client-side at
+  /// save time.
+  name String?
+
+  /// Saved freesewing option set. Same keying as
+  /// SewingPatternPersonalisation.designOptions.
+  hackOptions Json @default("{}")
+
+  /// Frozen at save time so a later edit to UserSewingMeasurements does
+  /// not silently re-grade the hack.
+  measurementsSnapshot           Json
+  measurementsPreferenceSnapshot String
+
+  /// Output cache. outputCacheKey matches the wrapper's content hash so
+  /// re-draws hit SewingPatternDraftCache.
+  outputSvg      String?
+  outputCacheKey String?
+  generatedAt    DateTime?
+
+  /// Optional promotion to a SewingPatternProject.
+  savedToProjectId String?
+  savedToProject   SewingPatternProject? @relation("HackSavedToProject", fields: [savedToProjectId], references: [id], onDelete: SetNull)
+
+  notes String?
+
+  /// Lifecycle mirrors PersonalisationStatus so the same wrapper path
+  /// can populate either model.
+  status PersonalisationStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([parentPatternId])
+  @@index([userId, updatedAt])
 }
 
 /// Garment taxonomy axis for SewingPattern. Distinct from the shared

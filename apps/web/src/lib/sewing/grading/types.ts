@@ -66,6 +66,41 @@ export type SewingDesignOptionMeta =
       values: { value: string; label: string }[]
     }
 
+/**
+ * Visual hack handle metadata. A handle binds one freesewing option to a
+ * spot on the pattern viewer so the user can drag a piece edge or click
+ * a region instead of moving an abstract slider.
+ *
+ * `attachTo` names a structural region of the design — the renderer maps
+ * it to viewer coordinates per-design. `range` describes the slider the
+ * handle drives (unit + min/max/step in freesewing's option terms).
+ *
+ * The handle list is additive: designs without a `hackHandles` entry
+ * still show every option as a slider in the left panel. Handles only
+ * exist so the most common length / neckline / pocket tweaks have a
+ * visual target on the pattern viewer.
+ */
+export type SewingHackHandleAttachment =
+  | 'bodyHem'
+  | 'sleeveCuff'
+  | 'neckline'
+  | 'pocket'
+  | 'waistline'
+  | 'hem'
+
+export interface SewingHackHandle {
+  /** Freesewing option key the handle drives. */
+  optionKey: string
+  /** Visual anchor on the pattern viewer. */
+  attachTo: SewingHackHandleAttachment
+  /** Slider range. `unit` matches the wrapper's expected option value. */
+  range: { min: number; max: number; step: number; unit: 'mm' | 'cm' | 'pct' }
+  /** Short label shown above the handle and in the right-panel summary. */
+  label: string
+  /** Drag axis. Vertical handles slide up / down; horizontal slide left / right. */
+  axis: 'vertical' | 'horizontal'
+}
+
 export interface SewingDesignConfig {
   /** Stable slug. Used everywhere outside the wrapper. */
   slug: string
@@ -96,6 +131,13 @@ export interface SewingDesignConfig {
    * forward without translation.
    */
   options?: Record<string, SewingDesignOptionMeta>
+  /**
+   * Optional list of drag-handle bindings for the visual hack composer.
+   * Each entry surfaces one option as a visual control on the pattern
+   * viewer. Designs without a `hackHandles` entry still get the option
+   * sliders in the composer's left panel; handles are additive.
+   */
+  hackHandles?: SewingHackHandle[]
 }
 
 export interface DrafterOptions {

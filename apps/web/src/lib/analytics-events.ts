@@ -120,6 +120,12 @@ export type PosthogEvent =
   | 'sewing_signin_cta_clicked'
   | 'sewing_premium_gate_encountered'
   | 'sewing_premium_gate_cta_shown'
+  // Sewing visual hack composer (S-6)
+  | 'sewing_hack_composer_opened'
+  | 'sewing_hack_operation_applied'
+  | 'sewing_hack_saved'
+  | 'sewing_hack_loaded_from_saved'
+  | 'sewing_hack_premium_gate_encountered'
 
 const EVENT_CATEGORIES: Record<string, string> = {
   acquisition_captured: 'acquisition',
@@ -220,6 +226,11 @@ const EVENT_CATEGORIES: Record<string, string> = {
   sewing_signin_cta_clicked: 'activation',
   sewing_premium_gate_encountered: 'engagement',
   sewing_premium_gate_cta_shown: 'engagement',
+  sewing_hack_composer_opened: 'engagement',
+  sewing_hack_operation_applied: 'engagement',
+  sewing_hack_saved: 'engagement',
+  sewing_hack_loaded_from_saved: 'engagement',
+  sewing_hack_premium_gate_encountered: 'engagement',
 }
 
 export function categoryFor(event: string): string {

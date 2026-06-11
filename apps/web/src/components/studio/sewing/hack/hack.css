@@ -1,0 +1,377 @@
+/* ----------------------------------------------------------------------
+   Visual hack composer surface. Three-panel layout reusing the
+   personalise.css base palette (terracotta sewing accent #c97551).
+---------------------------------------------------------------------- */
+
+.sew-hack-surface {
+  --sew-hack-tool-bg: rgba(201, 117, 81, 0.05);
+  --sew-hack-panel-bg: #ffffff;
+  --sew-hack-handle-bg: rgba(255, 255, 255, 0.92);
+  --sew-hack-handle-border: rgba(168, 91, 58, 0.5);
+}
+
+.sew-hack-layout {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) minmax(280px, 340px);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+@media (max-width: 980px) {
+  .sew-hack-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sew-hack-tools,
+.sew-hack-summary {
+  background: var(--sew-hack-panel-bg, #fff);
+  border-radius: 14px;
+  box-shadow: var(--studio-shadow-soft, 0 1px 2px rgba(0, 0, 0, 0.04));
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.sew-hack-tools-heading {
+  font-family: var(--studio-font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--sew-accent-strong, #a85b3a);
+}
+
+.sew-hack-tools-empty {
+  color: var(--studio-ink-soft, #5c5347);
+  font-size: 0.9rem;
+}
+
+.sew-hack-tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sew-hack-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sew-hack-option-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--studio-ink, #3d2f22);
+}
+
+.sew-hack-option-readout {
+  font-variant-numeric: tabular-nums;
+  color: var(--sew-accent-strong, #a85b3a);
+  font-weight: 500;
+}
+
+.sew-hack-option-description {
+  font-size: 0.8rem;
+  color: var(--studio-ink-soft, #5c5347);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sew-hack-option input[type='range'] {
+  width: 100%;
+  accent-color: var(--sew-accent, #c97551);
+}
+
+.sew-hack-option-toggle {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== Canvas + handles =============================================== */
+
+.sew-hack-canvas {
+  position: relative;
+  background: #f7f4ee;
+  border-radius: 14px;
+  min-height: 480px;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+}
+
+.sew-hack-canvas-empty {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--studio-ink-soft, #5c5347);
+  font-size: 0.95rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sew-hack-canvas-error {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  right: 0.8rem;
+  background: rgba(168, 91, 58, 0.12);
+  color: #6b2d18;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.sew-hack-viewer-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
+.sew-hack-viewer-loading-overlay {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--sew-accent-strong, #a85b3a);
+  font-size: 0.8rem;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sew-hack-handles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sew-hack-handle-anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.sew-hack-handle-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: var(--sew-hack-handle-bg, #fff);
+  border: 1.5px solid var(--sew-hack-handle-border, #a85b3a);
+  color: var(--studio-ink, #3d2f22);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  touch-action: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.sew-hack-handle-chip:hover {
+  background: var(--sew-accent-soft, rgba(201, 117, 81, 0.12));
+}
+
+.sew-hack-handle-chip.drag.axis-vertical {
+  cursor: ns-resize;
+}
+
+.sew-hack-handle-chip.drag.axis-horizontal {
+  cursor: ew-resize;
+}
+
+.sew-hack-handle-chip.on {
+  background: var(--sew-accent, #c97551);
+  color: #fff;
+}
+
+.sew-hack-handle-chip.off {
+  background: #fafaf6;
+  color: var(--studio-ink-soft, #5c5347);
+  border-color: rgba(70, 49, 38, 0.3);
+}
+
+.sew-hack-handle-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.sew-hack-handle-picker {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.4rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  padding: 0.3rem;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
+
+.sew-hack-handle-picker-item {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--studio-ink, #3d2f22);
+}
+
+.sew-hack-handle-picker-item:hover {
+  background: var(--sew-accent-soft, rgba(201, 117, 81, 0.12));
+}
+
+.sew-hack-handle-picker-item.active {
+  background: var(--sew-accent, #c97551);
+  color: #fff;
+}
+
+/* ===== Summary panel ================================================== */
+
+.sew-hack-summary-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sew-hack-summary-heading {
+  font-family: var(--studio-font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--sew-accent-strong, #a85b3a);
+}
+
+.sew-hack-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 10px;
+  background: var(--sew-hack-tool-bg);
+  padding: 0.7rem 0.9rem;
+}
+
+.sew-hack-summary-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.sew-hack-summary-key {
+  color: var(--studio-ink-soft, #5c5347);
+}
+
+.sew-hack-summary-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--sew-accent-strong, #a85b3a);
+  font-weight: 500;
+}
+
+.sew-hack-summary-reset {
+  background: transparent;
+  border: none;
+  color: var(--sew-accent-strong, #a85b3a);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  padding: 0;
+}
+
+.sew-hack-save-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sew-rule, rgba(70, 49, 38, 0.18));
+}
+
+.sew-hack-save-label {
+  font-size: 0.8rem;
+  color: var(--studio-ink-soft, #5c5347);
+}
+
+.sew-hack-save-input {
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--sew-rule, rgba(70, 49, 38, 0.18));
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--studio-ink, #3d2f22);
+}
+
+.sew-hack-save-error {
+  color: #6b2d18;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.sew-hack-save-success {
+  color: #2f5d3a;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.sew-hack-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sew-rule, rgba(70, 49, 38, 0.18));
+}
+
+.sew-hack-downloads-heading {
+  font-family: var(--studio-font-display, 'Fraunces', serif);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0 0.2rem;
+}
+
+.sew-hack-download-label {
+  font-size: 0.8rem;
+  color: var(--studio-ink-soft, #5c5347);
+}
+
+.sew-hack-downloads-note {
+  font-size: 0.78rem;
+  color: var(--studio-ink-soft, #5c5347);
+  margin: 0.3rem 0 0;
+  line-height: 1.4;
+}
+
+/* ===== Gate preview ==================================================== */
+
+.sew-hack-gate-preview {
+  max-width: 600px;
+  margin: 1rem auto;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+}
