@@ -227,6 +227,23 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/web exec tsx scripts/seed-freesewing-showcase-patterns.ts
 
+      # S-8a hero-flat batch — renders the finished-garment line drawing
+      # for every mapped SewingPattern slug, uploads to R2, attaches the
+      # resulting Media row to SewingPattern.heroMediaId. Idempotent on
+      # content hash + renderer version, non-blocking so a renderer bug
+      # never blocks the deploy.
+      - name: Render sewing hero flats (idempotent, non-blocking)
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/web exec tsx scripts/render-sewing-hero-flats.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match

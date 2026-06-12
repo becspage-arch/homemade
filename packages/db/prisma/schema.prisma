@@ -5365,6 +5365,15 @@ model SewingPattern {
   hero                   Media?                @relation("SewingPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
   heroGenerationStatus   ImageGenerationStatus @default(PENDING)
   preferUserPhotoForHero Boolean               @default(false)
+
+  // S-8a hero-flat renderer state. heroRendererVersion stores the
+  // rendererVersion that produced the current hero. The batch script
+  // re-renders any row where heroRendererVersion < RENDERER_VERSION (or
+  // the row has no heroMediaId at all). heroNeedsFlatHand flags rows
+  // whose archetype is not mapped — a human / illustrator picks up the
+  // hero instead of the parametric renderer.
+  heroRendererVersion    Int                   @default(0)
+  heroNeedsFlatHand      Boolean               @default(false)
   premium                Boolean               @default(false)
   visibility             Visibility            @default(PRIVATE)
   publishedAt            DateTime?
