@@ -1,0 +1,118 @@
+{
+  "slug": "wiring-a-three-way-intermediate-lighting-switch",
+  "title": "Wiring a three-way intermediate lighting switch",
+  "subtitle": "Add an intermediate switch to an existing two-way switching circuit so a light can be controlled from three positions",
+  "excerpt": "How to wire an intermediate switch into an existing two-way lighting circuit to give three-position switching. Covers the intermediate switch connection, the cable route between the three switch positions, and the correct terminal connections.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET On-Site Guide 18th Edition (referenced, not reproduced). UK two-way and intermediate switching wiring practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "intermediate-switch",
+      "term": "Intermediate switch",
+      "definition": "A four-terminal switch that reverses the connection between two pairs of conductors. Used in the middle of a three-position (or more) lighting circuit: the two end positions are standard two-way switches, and every intermediate position is an intermediate switch. The switch has two sets of terminals: L1/L2 (incoming strapping) and L3/L4 (outgoing strapping)."
+    },
+    {
+      "slug": "strapping-wire",
+      "term": "Strapping wire (lighting)",
+      "definition": "The cable that runs between two-way and intermediate switches to carry the switching signal. In a standard three-wire and earth cable, the three conductors (red/brown, yellow/black, blue) carry the strapping connections between switch positions. The strapping cable does not carry permanent live or neutral: it carries the switch signal only."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "intermediate-switch" } }], "text": "intermediate switch" },
+          { "type": "text", "text": " slots into the middle of a two-way lighting circuit. It connects to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "strapping-wire" } }], "text": "strapping wire" },
+          { "type": "text", "text": " between the two end switches. Flipping the intermediate switch reverses the strapping connection and changes the lamp state." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, lock off, verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB protecting the lighting circuit. Fit a lock-off device over the MCB and hang a written warning tag stating the circuit is under work. Prove your two-pole voltage tester is working by testing it at a known live socket using the proving unit (live test). Test at the switch you are working on (dead test). Retest at the proving unit (confirming the tester still reads live). All three stages of the live-dead-live test must pass before you touch any conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identify the existing strapping cable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the back box at the new switch position. If an existing two-way cable runs through this point, break into it here. If no cable is present, run a three-core and earth cable from the nearest existing two-way switch to this box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the intermediate switch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The intermediate switch has four terminals in two pairs: L1/L2 and L3/L4. From the cable coming from the left two-way switch, connect the two strapping conductors to L1 and L2. From the cable going to the right two-way switch, connect the two strapping conductors to L3 and L4. Connect all earth conductors to the earth terminal in the back box. Tape any conductor re-used as live (standard grey cable convention: mark the cable ends brown to indicate live use as required by the 18th Edition)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Restore supply and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off device and restore the MCB. Test the switching from all three positions: the light should switch on and off correctly from each switch position in turn, with no position failing to operate or latching the light on permanently." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light only switches from two of the three positions, not from the intermediate switch",
+              "cause": "Strapping wires connected to wrong terminal pair on the intermediate switch.",
+              "fix": "Isolate and re-check: the L1/L2 pair connects to the incoming cable and the L3/L4 pair connects to the outgoing cable. Swap if reversed."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Light permanently on or permanently off regardless of switch position",
+              "cause": "Strapping conductors crossed between terminal pairs (both incoming wires on one pair, both outgoing on the other, but wrong conductors within each pair).",
+              "fix": "Map the original two-way circuit before disconnecting. Photograph the original wiring as a reference before altering."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

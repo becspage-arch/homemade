@@ -1,0 +1,119 @@
+{
+  "slug": "fitting-a-two-port-zone-valve-to-a-heating-circuit",
+  "title": "Fitting a two-port zone valve to a heating circuit",
+  "subtitle": "Install a motorised zone valve on a wet central heating or hot water circuit for independent zone control",
+  "excerpt": "How to fit a two-port motorised zone valve to a wet heating circuit. Covers isolating the circuit, fitting the valve body in the correct flow direction, connecting the wiring to the wiring centre, and commissioning the controls.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK central heating controls trade practice.",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "blowtorch-mapp", "isOptional": true },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "two-port-zone-valve",
+      "term": "Two-port zone valve",
+      "definition": "A motorised valve with one inlet and one outlet that opens or closes a heating circuit under the control of a thermostat. When the thermostat calls for heat, the motor opens the valve and an end switch in the valve sends a signal to the boiler and pump to run. UK standard zone valve sizes are 22 mm (heating circuits) and 15 mm (smaller domestic hot water diverter applications). Honeywell V4043 and Drayton LE4 are common UK types."
+    },
+    {
+      "slug": "wiring-centre",
+      "term": "Heating wiring centre",
+      "definition": "A terminal strip box that centralises all the low-voltage control wiring connections for a central heating system: thermostats, zone valves, programmer, boiler, and pump. The wiring centre is the hub that enforces the correct control sequence (zone valve calls for heat, end switch fires boiler and pump). Located near the boiler or consumer unit."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "two-port-zone-valve" } }], "text": "A two-port zone valve" },
+          { "type": "text", "text": " divides a heating system into independently controlled zones. The valve body fits into the pipework with the motor assembly clipped on and wired to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wiring-centre" } }], "text": "wiring centre" },
+          { "type": "text", "text": ". The plumbing work and the electrical wiring are both straightforward but the wiring must follow the correct control diagram for the system." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, drain, and cut in the valve position" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Close the isolation valves either side of the planned valve position. Drain the pipework between them by opening the lowest draw-off on the circuit. Check the valve datasheet for the installed face-to-face length and cut a pipe section to match. Fit the valve body using compression fittings, with the flow arrow matching the water flow direction." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: Isolate the electrical supply before wiring" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Mains voltage at the wiring centre",
+          "body": "Isolate the MCB or fused spur for the heating controls before opening the wiring centre. Use the two-pole tester with proving unit to confirm dead before connecting any wires."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Wire the zone valve actuator" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run the 5-core cable from the zone valve actuator head to the wiring centre. Connect the five conductors (grey, orange, white, blue, and earth) following the wiring diagram for the specific valve type (Honeywell, Drayton, or Grundfos diagrams are available in the installation instructions). Typically: blue to neutral, grey to switched live from the zone thermostat, white to boiler/pump live, orange to permanent live via a fuse, and earth to earth." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Commission the valve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Clip the motor assembly onto the valve body. Restore the water supply and check the compression joints for leaks. Restore the electrical supply. Test the zone valve by calling for heat from the zone thermostat: the valve should open (listen for the quiet motor sound) and the boiler and pump should fire. Use the manual override lever on the valve head to open the valve without power as a further commissioning check." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler fires but the zone does not heat up",
+              "cause": "Valve opens but the end switch wiring is incorrect, so the boiler fires but the pump does not run.",
+              "fix": "Re-check the white wire (pump/boiler live) connection at the wiring centre. The valve end switch must have a complete circuit to activate the pump."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Valve leaks at the compression fitting after installation",
+              "cause": "Olive not fully seated on the pipe, or olive was over-compressed during fitting.",
+              "fix": "Close the isolation valves, loosen the compression nut, inspect the olive (replace if deformed), and re-tighten to two flats past hand-tight."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

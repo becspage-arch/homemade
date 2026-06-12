@@ -356,3 +356,194 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 15:36:52
+
+Generated: 2026-06-12T15:36:52.860Z
+
+Processed: 6
+PASS: 4
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 6 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- impressing-vintage-lace-in-clay: hero-missing
+- throwing-a-stoneware-ramekin-set: hero-missing
+
+---
+
+## Run at 15:37:08
+
+Generated: 2026-06-12T15:37:08.605Z
+
+Processed: 4
+PASS: 4
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 16:18:14
+
+Generated: 2026-06-12T16:18:14.593Z
+
+Processed: 63
+PASS: 3
+STILL_BLOCKED: 60
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 180 |
+| grade-level-strict | 35 |
+| body-missing-method | 4 |
+| banned-phrase-honest | 1 |
+
+## Still BLOCKED (sample 20)
+
+- after-storm-checks-on-a-smallholding: hero-missing, grade-level-strict
+- alpacas-on-a-smallholding: hero-missing, grade-level-strict
+- basic-tractor-maintenance-for-smallholders: hero-missing, grade-level-strict
+- beeswax-candle-making: hero-missing
+- beeswax-lip-balm-and-polish: hero-missing
+- breeding-from-a-sow-natural-service: hero-missing
+- bucket-training-twin-lambs: hero-missing
+- building-hollow-clay-forms-without-cracking: hero-missing
+- butchering-a-rabbit-for-the-freezer: hero-missing
+- chicken-coop-litter-choices: hero-missing
+- coil-built-basket-weave-texture-bowl: hero-missing
+- cone-6-crystalline-glaze-application: hero-missing
+- countryside-stewardship-basics-for-smallholders: hero-missing, grade-level-strict
+- doe-kindling-day-management: hero-missing
+- foot-ring-wax-resist-technique: hero-missing
+- heat-stress-in-laying-hens: hero-missing
+- hedge-laying-basics: hero-missing
+- incubator-cleaning-and-calibration: hero-missing, grade-level-strict
+- interpreting-sheep-blood-results: hero-missing
+- kiln-furniture-and-shelf-placement: hero-missing
+
+---
+
+## Run at 16:19:29
+
+Generated: 2026-06-12T16:19:29.248Z
+
+Processed: 375
+PASS: 375
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 16:20:54
+
+Generated: 2026-06-12T16:20:54.943Z
+
+Processed: 18
+PASS: 0
+STILL_BLOCKED: 18
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 54 |
+| grade-level-strict | 5 |
+| prose-prep-steps | 3 |
+
+## Still BLOCKED (sample 20)
+
+- air-dry-clay-painting-with-coloured-slips: hero-missing
+- air-dry-clay-sea-glass-impression-dish: hero-missing
+- burnishing-polymer-clay-for-high-gloss: hero-missing
+- coil-built-conical-tumbler-set: hero-missing
+- coil-built-frog-planter-air-dry: hero-missing
+- conditioning-and-blending-polymer-clay: hero-missing
+- making-smooth-joins-in-air-dry-clay: hero-missing
+- paper-clay-toadstool-garden-decoration: hero-missing
+- pinch-pot-cat-figurine-air-dry: hero-missing
+- pinch-pot-olive-dish-elongated: hero-missing
+- polymer-clay-faux-wood-grain-pendant: hero-missing
+- polymer-clay-kaleidoscope-cane-earrings: hero-missing, grade-level-strict
+- polymer-clay-mica-shift-technique: hero-missing
+- polymer-clay-sculpted-sea-turtle: hero-missing
+- sgraffito-two-colour-slip-technique: hero-missing
+- slab-built-butter-dish-with-lid: hero-missing
+- slab-built-desk-organiser-with-sections: hero-missing, prose-prep-steps
+- slab-built-hexagonal-tile-wall-panel: hero-missing
+
+---
+
+## Run at 17:36:06
+
+Generated: 2026-06-12T17:36:06.806Z
+
+Processed: 526
+PASS: 515
+STILL_BLOCKED: 11
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 40 |
+| grade-level-strict | 28 |
+| voice-violation | 4 |
+| hero-missing | 3 |
+
+## Still BLOCKED (sample 20)
+
+- applying-an-interior-lime-render-finish-coat: grade-level-strict
+- applying-exterior-limewash-to-a-rendered-wall: grade-level-strict
+- cleaning-and-restoring-a-tarnished-silver-plated-picture-frame: grade-level-strict
+- fitting-a-low-voltage-garden-lighting-transformer: voice-violation, grade-level-strict
+- fitting-a-magnetic-central-heating-filter: grade-level-strict
+- fitting-a-plasterboard-window-reveal-lining: grade-level-strict
+- fitting-a-two-port-zone-valve-to-a-heating-circuit: hero-missing
+- fitting-an-underfloor-heating-manifold-to-a-push-fit-circuit: grade-level-strict
+- fitting-exterior-featheredge-timber-cladding: voice-violation, grade-level-strict
+- fitting-pvc-fascia-board-over-rotted-timber-fascia: grade-level-strict
+- wiring-a-three-way-intermediate-lighting-switch: grade-level-strict
+
+---
+
+## Run at 17:36:31
+
+Generated: 2026-06-12T17:36:31.589Z
+
+Processed: 515
+PASS: 515
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

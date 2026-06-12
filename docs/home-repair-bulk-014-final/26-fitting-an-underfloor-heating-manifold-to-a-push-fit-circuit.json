@@ -1,0 +1,127 @@
+{
+  "slug": "fitting-an-underfloor-heating-manifold-to-a-push-fit-circuit",
+  "title": "Fitting an underfloor heating manifold to a push-fit circuit",
+  "subtitle": "Connect a wet underfloor heating manifold to the household heating circuit using push-fit pipe",
+  "excerpt": "How to connect a wet underfloor heating manifold to an existing hot water heating circuit. Covers siting the manifold cabinet, connecting the flow and return to the heating circuit, pressure testing, and commissioning the zone pump and actuators.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Manufacturer installation guidance (Emmeti, Wunda, Polyplumb open access). UK UFH trade practice.",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ufh-manifold",
+      "term": "Underfloor heating manifold",
+      "definition": "The distribution unit for a wet underfloor heating system. A manifold has a flow rail (incoming hot water from the boiler) and a return rail, with a connection port for each loop of underfloor pipe. Each port has a lockshield valve to balance the flow through each loop and an actuator connection for zone thermostatic control. Manifolds connect to the main circuit via 22 mm copper or push-fit connections."
+    },
+    {
+      "slug": "pressure-testing-ufh",
+      "term": "Pressure testing (UFH)",
+      "definition": "The process of pressurising the underfloor heating pipework after installation to check for leaks before the screed or floor covering is laid over it. UK standard: pressurise to 3 bar (or 1.5 times the working pressure, whichever is higher) and hold for one hour with no pressure drop. Required before any floor covering is laid over the pipes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ufh-manifold" } }], "text": "An underfloor heating manifold" },
+          { "type": "text", "text": " connects the floor loops to the boiler circuit. Fitting the manifold itself is a plumbing job; the floor loops will have been laid before the screed. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pressure-testing-ufh" } }], "text": "Pressure testing" },
+          { "type": "text", "text": " the system before any floor covering is laid is not optional: a leak under a finished floor is a disaster." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate the heating circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the boiler and close the isolation valves on the flow and return branches from the main heating circuit where the manifold will connect. Drain the isolated section by opening a low draw-off point and holding it open until water stops. Have a towel and tray below the cut positions." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the manifold cabinet to the wall" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the manifold cabinet or bracket to the wall using the drill and suitable masonry fixings. The manifold must be accessible for annual balancing and servicing and positioned so the flow and return drop vertically to meet the circuit tails below. Check the cabinet is level with the spirit level." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the manifold to the main circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect the manifold flow and return tails to the main circuit using 22 mm push-fit adaptors or compression fittings. The manifold flow (labelled with a red mark) connects to the circuit flow; the manifold return (blue) connects to the circuit return. Fit a balancing valve on the return connection to allow the UFH circuit to be balanced against the rest of the heating system." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the floor loops to the manifold ports" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect each floor loop to a flow and return port pair on the manifold using the manifold connections specified for the pipe type (most UK push-fit UFH systems use a Polyplumb or Hep2O connection). Label each loop at the manifold with its zone name. Open all the manifold port lockshield valves to the fully open position for initial commissioning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pressure test before commissioning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect a hand pump pressure test gauge to the manifold fill point. Pressurise the UFH circuit to 3 bar cold and monitor for one hour with no pressure drop. Walk the floor area to check for wet patches at loop joints if any are accessible. Once pressure is confirmed, open the main circuit isolation valves and restore normal system pressure. Commission the zone actuators and thermostat following the manufacturer's control diagram." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "One loop has noticeably less heat output than others",
+              "cause": "Loop not fully balanced: flow rate through that loop is lower than the others.",
+              "fix": "Open the lockshield valve on the underperforming loop one full turn and close adjacent loops slightly. Rebalance over several heating cycles until all loops reach similar temperatures."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Pressure test shows slow pressure drop over one hour",
+              "cause": "Minor leak at a manifold connection or at a push-fit loop connection inside the floor.",
+              "fix": "Check all accessible manifold connections first by feeling for moisture. If the leak is inside the floor, the screed must be located and repaired before laying the floor covering."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

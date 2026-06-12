@@ -1,0 +1,107 @@
+{
+  "slug": "fitting-a-magnetic-central-heating-filter",
+  "title": "Fitting a magnetic central heating filter",
+  "subtitle": "Install an inline magnetic filter on the heating return pipe to capture sludge and protect the boiler",
+  "excerpt": "How to fit a magnetic central heating filter (such as a Fernox TF1 or Magnaclean) to the heating system return pipework. Covers isolating the circuit, cutting in the filter on the return pipe, connecting, flushing, and adding inhibitor.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Manufacturer installation guidance (Fernox, Magnaclean open access). UK central heating trade practice.",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "pipe-cutter-mini", "isOptional": true },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "magnetic-heating-filter",
+      "term": "Magnetic central heating filter",
+      "definition": "An inline filter fitted to the heating system return pipe that contains a powerful magnet to capture ferrous sludge (magnetite) and a mesh or chamber to trap non-ferrous particles. Captures the black iron oxide sludge that accumulates in heating systems and causes boiler inefficiency, pump wear, and radiator cold spots. Cleaned annually by closing the isolation valves and removing the filter bowl."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "magnetic-heating-filter" } }], "text": "A magnetic central heating filter" },
+          { "type": "text", "text": " is fitted on the return pipe, close to the boiler where the flow velocity is consistent. It catches the black sludge that coats heating systems from the inside, extends boiler and pump life, and is a condition of many boiler warranties. Fitting one is a half-day job requiring two cuts in the return pipe." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate and drain the return circuit" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the boiler. Close the isolation valves on both the flow and return pipes close to the boiler. Open the drain cock on the return circuit (typically at the lowest radiator or at the boiler return) to drain water from between the isolation valves. Have a towel and shallow tray beneath the planned filter position before cutting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut in the filter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut a section of the 22 mm (or 28 mm) return pipe to the face-to-face dimension of the filter body (stated in the installation guide; typically 120 to 140 mm). Most magnetic filters come with isolation valves integrated into the connection tails, so the filter assembly bolts between two push-fit or compression adaptors. Connect the inlet and outlet tails following the flow direction marked on the filter body. Tighten all connections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Refill and flush" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Open the isolation valves slowly and check all connections for leaks. If the system was drained below the feed point, re-fill through the filling loop (the flexible braided hose connecting the mains to the heating system). Bleed all radiators and the pump after refilling. Run the boiler at full heat for one hour and then check the filter bowl: if it has collected black sludge in the first few hours, the system has a significant contamination load and a full power-flush is recommended." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Add inhibitor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add a dose of central heating inhibitor (such as Fernox F1) via the feed tank, a radiator bleed valve, or the filter service port. Check the concentration with the manufacturer's test strips. The right level stops further corrosion inside the system." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Filter bowl fills with black sludge within days of fitting",
+              "cause": "Existing system has heavy sludge contamination, often from years without a filter.",
+              "fix": "Clean the filter bowl weekly until the collection rate slows. Consider a full power-flush of the system if radiator cold spots persist after fitting the filter."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Heating system loses pressure after fitting the filter",
+              "cause": "Air introduced during the cut-in has not been fully bled from the system.",
+              "fix": "Bleed all radiators systematically starting at the lowest and working upward. Top up the system pressure at the filling loop to 1.0 to 1.5 bar when cold."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

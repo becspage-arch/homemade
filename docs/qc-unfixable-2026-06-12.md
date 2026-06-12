@@ -1493,3 +1493,98 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - how-to-work-satin-stitch-in-cross-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
 - troubleshooting-cross-stitch-tension hero-missing — applied: hero-fill-deferred-to-standalone-script
 - washing-and-pressing-finished-cross-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- impressing-vintage-lace-in-clay hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-stoneware-ramekin-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- after-storm-checks-on-a-smallholding hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- alpacas-on-a-smallholding hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- basic-tractor-maintenance-for-smallholders hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- beeswax-candle-making hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beeswax-lip-balm-and-polish hero-missing — applied: hero-fill-deferred-to-standalone-script
+- breeding-from-a-sow-natural-service hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bucket-training-twin-lambs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- building-hollow-clay-forms-without-cracking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butchering-a-rabbit-for-the-freezer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chicken-coop-litter-choices hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coil-built-basket-weave-texture-bowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cone-6-crystalline-glaze-application hero-missing — applied: hero-fill-deferred-to-standalone-script
+- countryside-stewardship-basics-for-smallholders hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- doe-kindling-day-management hero-missing — applied: hero-fill-deferred-to-standalone-script
+- foot-ring-wax-resist-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- heat-stress-in-laying-hens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hedge-laying-basics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- incubator-cleaning-and-calibration hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- interpreting-sheep-blood-results hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kiln-furniture-and-shelf-placement hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-bee-candy-for-winter hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-mead-from-surplus-honey hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-large-rabbit-litters hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-pig-weaning-age-and-timing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-sour-crop-in-chickens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- milking-a-dairy-sheep hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mixing-a-rabbit-feed-ration-at-home hero-missing — applied: hero-fill-deferred-to-standalone-script
+- outdoor-rabbit-run-flooring-options hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pig-body-condition-scoring hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pig-paddock-rotation-for-soil-recovery hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pig-tusk-management-and-safety hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pinch-pot-miniature-teacup-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-double-ended-bookmark hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-skeined-yarn-brooch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- poultry-housing-ventilation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- processing-a-pig-for-the-freezer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rabbit-mating-observation-and-confirmation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rabbit-show-preparation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reading-a-livestock-market-catalogue hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reading-hive-sounds-for-colony-health hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rendering-lard-from-home-pigs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- selling-eggs-at-the-farm-gate hero-missing — applied: hero-fill-deferred-to-standalone-script
+- setting-up-a-bantam-coop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- setting-up-a-small-goat-dairy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-cake-stand-decorative hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-geometric-wall-triptych hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-open-star-nesting-dishes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-shield-wall-hanging-air-dry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soda-firing-introduction hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soft-cheese-from-goats-milk hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- sow-farrowing-signs-and-labour-support hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-garlic-keeper hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-salt-pig hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-stoneware-cruet-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-stoneware-french-butter-crock hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-stoneware-wine-cooler hero-missing — applied: hero-fill-deferred-to-standalone-script
+- throwing-a-stoneware-yunomi-tea-glass hero-missing — applied: hero-fill-deferred-to-standalone-script
+- thrown-and-altered-oval-bowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- top-bar-hive-management hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wildlife-strip-planting-on-a-smallholding hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- air-dry-clay-painting-with-coloured-slips hero-missing — applied: hero-fill-deferred-to-standalone-script
+- air-dry-clay-sea-glass-impression-dish hero-missing — applied: hero-fill-deferred-to-standalone-script
+- burnishing-polymer-clay-for-high-gloss hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coil-built-conical-tumbler-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coil-built-frog-planter-air-dry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- conditioning-and-blending-polymer-clay hero-missing — applied: hero-fill-deferred-to-standalone-script
+- making-smooth-joins-in-air-dry-clay hero-missing — applied: hero-fill-deferred-to-standalone-script
+- paper-clay-toadstool-garden-decoration hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pinch-pot-cat-figurine-air-dry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pinch-pot-olive-dish-elongated hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-faux-wood-grain-pendant hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-kaleidoscope-cane-earrings hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-mica-shift-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polymer-clay-sculpted-sea-turtle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sgraffito-two-colour-slip-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-butter-dish-with-lid hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slab-built-desk-organiser-with-sections hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- slab-built-hexagonal-tile-wall-panel hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- applying-an-interior-lime-render-finish-coat grade-level-strict — applied: 
+- applying-exterior-limewash-to-a-rendered-wall grade-level-strict — applied: 
+- cleaning-and-restoring-a-tarnished-silver-plated-picture-frame grade-level-strict — applied: 
+- fitting-a-low-voltage-garden-lighting-transformer voice-violation,grade-level-strict — applied: 
+- fitting-a-magnetic-central-heating-filter grade-level-strict — applied: 
+- fitting-a-plasterboard-window-reveal-lining grade-level-strict — applied: 
+- fitting-a-two-port-zone-valve-to-a-heating-circuit hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-an-underfloor-heating-manifold-to-a-push-fit-circuit grade-level-strict — applied: 
+- fitting-exterior-featheredge-timber-cladding voice-violation,grade-level-strict — applied: 
+- fitting-pvc-fascia-board-over-rotted-timber-fascia grade-level-strict — applied: 
+- wiring-a-three-way-intermediate-lighting-switch grade-level-strict — applied: 
