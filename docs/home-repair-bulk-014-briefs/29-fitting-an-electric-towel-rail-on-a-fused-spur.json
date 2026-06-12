@@ -1,0 +1,153 @@
+{
+  "slug": "fitting-an-electric-towel-rail-on-a-fused-spur",
+  "title": "Fitting an electric towel rail on a fused spur",
+  "subtitle": "Fix a heated towel rail to the bathroom wall, run the supply cable from the nearest ring main, and connect it via a fused connection unit",
+  "excerpt": "How to fit an electric towel rail on a fused spur. Covers fixing the towel rail, planning and running the cable route, fitting the fused connection unit, making the connections, and testing.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). IET Wiring Regulations BS 7671 bathroom zone requirements (referenced, not reproduced). UK trade electrical practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "fused-connection-unit",
+      "term": "Fused connection unit",
+      "definition": "A surface- or flush-mounted outlet that permanently wires a fixed appliance to the mains supply via an internal cartridge fuse, typically 13 A or 3 A. It replaces the need for a socket and plug on an appliance that remains connected permanently. For a towel rail in a bathroom, the fused spur must be outside the bathroom zones defined in BS 7671."
+    },
+    {
+      "slug": "bathroom-electrical-zones",
+      "term": "Bathroom electrical zones",
+      "definition": "Areas within a bathroom defined by BS 7671 Wiring Regulations that restrict the type and IP rating of electrical equipment permitted. Zone 0 is inside the bath or shower tray; Zone 1 is above the tray up to 2.25 m; Zone 2 extends 600 mm horizontally beyond Zone 1. A fused spur and switched isolator for a towel rail must be outside these zones, typically mounted outside the bathroom door or high on a wall."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "electric towel rail wiring",
+    "heated towel rail installation",
+    "towel rail fused spur"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "An electric towel rail is wired via a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fused-connection-unit" } }],
+            "text": "fused connection unit"
+          },
+          {
+            "type": "text",
+            "text": " sited outside the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bathroom-electrical-zones" } }],
+            "text": "bathroom electrical zones"
+          },
+          {
+            "type": "text",
+            "text": " defined in BS 7671. INTERMEDIATE: the zone rules, cable routing, and making joints at the ring main are the key elements."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the towel rail" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark the fixing positions on the bathroom wall using the spirit level to ensure the rail hangs vertically. Drill and plug the holes. Fix the wall brackets with the screws supplied. Hang the rail on the brackets and check it is secure. Feed the rail supply cable from the connection point at the back or bottom of the rail to the planned cable route."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate and plan the spur route" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Identify the nearest ring main circuit from which the spur will be taken. Isolate that circuit at the consumer unit. Confirm dead at the socket or junction box using the two-pole voltage tester, first confirmed working on the proving unit. Plan the cable route from the ring main to the fused spur position outside the bathroom zones."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Run the cable and make connections" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Run 2.5 mm twin-and-earth cable from the ring main to the fused connection unit. Surface-run in a white mini-trunking for a clean finish in bathrooms, or chase into the wall plaster for a concealed run. Connect the spur at the ring main in a correctly rated junction box or at the socket terminals. Run a second cable from the fused spur to the towel rail supply point."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the fused spur and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the supply cable to the Feed terminals on the fused spur backplate and the load cable to the Load terminals. Fit a 13 A fuse for a towel rail rated above 700 W or a 3 A fuse for lower-rated rails. Restore the power. Switch on the fused spur and check the towel rail heats up. Check for warmth at the element through the rail body."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Fuse blows immediately when power is restored",
+              "cause": "A short circuit in the cable run or within the rail element itself.",
+              "fix": "Disconnect the rail and test the circuit: if the fuse holds, the fault is in the rail. If it still blows, the fault is in the cable: check for pinched or cut insulation at every chase entry point."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Rail heats unevenly, with some sections cold",
+              "cause": "Air is trapped in the fluid within a fluid-filled rail, or one section of the element has failed.",
+              "fix": "For a fluid-filled rail, use the filling valve or bleed point if provided. For a dry element rail, the element section must be replaced or the whole rail replaced."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

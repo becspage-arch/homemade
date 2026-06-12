@@ -1,0 +1,127 @@
+{
+  "slug": "fitting-a-low-voltage-garden-lighting-transformer",
+  "title": "Fitting a low-voltage garden lighting transformer",
+  "subtitle": "Install a weatherproof 12 V transformer to supply a run of low-voltage garden path or patio lights",
+  "excerpt": "How to install a 12 V garden lighting transformer in a weatherproof external enclosure and connect a cable run of low-voltage garden lights. Covers siting and fixing the transformer, connecting the 230 V supply, and wiring the 12 V output to the lighting cable.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). IET On-Site Guide 18th Edition (referenced, not reproduced).",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "garden-lighting-transformer",
+      "term": "Garden lighting transformer",
+      "definition": "A step-down transformer that converts 230 V mains supply to 12 V AC or DC for low-voltage garden lighting. Rated by wattage (typically 40 to 300 W); the wattage must exceed the total wattage of all lights on the circuit. Weatherproof versions are rated IP44 or higher for outdoor use. Some models include a photocell or timer."
+    },
+    {
+      "slug": "garden-armoured-cable",
+      "term": "Armoured garden cable",
+      "definition": "A steel-wire-armoured (SWA) cable rated for direct burial or surface use in outdoor conditions. The steel armour protects against accidental damage from garden tools. For 230 V garden power supplies, 2.5 mm2 SWA is the minimum size. The armour must be properly terminated and earthed at both ends."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "garden-lighting-transformer" } }], "text": "A garden lighting transformer" },
+          { "type": "text", "text": " reduces the mains supply to a safe low voltage at the point where the lighting cable enters the garden. The 230 V supply to the transformer must run in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "garden-armoured-cable" } }], "text": "armoured cable" },
+          { "type": "text", "text": " from the house, protected by an RCD and a dedicated fused circuit breaker at the consumer unit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, lock off, verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB for the outdoor circuit. Fit the lock-off device and hang a written warning tag. Prove your two-pole voltage tester at a known live supply using the proving unit (live test), test at the circuit terminals you will be working on (dead test), then retest at the proving unit (confirming the tester still reads live). All three stages of the live-dead-live test must complete before touching any conductor." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Site and fix the transformer housing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the weatherproof enclosure to an exterior wall at a convenient height, away from direct rain splash and preferably under an eaves overhang. Use appropriate wall fixings for the substrate. The enclosure must be IP44-rated or higher for outdoor use. Run the armoured supply cable from the house consumer unit to the enclosure in a route that avoids buried services; lay it at least 600 mm deep if buried, or clip to the wall surface in galvanised conduit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the 230 V supply to the transformer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Terminate the armoured cable in the housing using a cable gland that grips the armour and provides an earth connection. Connect the brown conductor to live, the blue to neutral, and the armour earth to the earth terminal. The transformer input terminals are usually marked L, N, and E. Tighten all terminal screws." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the 12 V output and lighting cable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connect the low-voltage garden lighting cable to the 12 V output terminals. The lighting cable (typically 2-core, 1.5 mm2) runs from the transformer to the first light and loops between each subsequent light. Follow the lighting system manufacturer's connection instructions for the connector type used. Do not exceed the maximum cable run or total watt load stated in the transformer documentation." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Restore supply and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the lock-off device and restore the MCB. Test all lights. Set the photocell or timer if fitted." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Some lights in the run do not illuminate",
+              "cause": "Cable resistance over a long run drops the voltage below the minimum needed for the furthest lights.",
+              "fix": "Reduce the cable run length, use a heavier gauge cable (2.5 mm2 instead of 1.5 mm2), or add a second transformer at the midpoint of a long run."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips immediately on restoration of supply",
+              "cause": "Wiring fault, damaged armoured cable, or the total load of the lights exceeds the transformer rating.",
+              "fix": "Check total lamp wattage against the transformer rating. Inspect the armoured cable for damage, especially at bends."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

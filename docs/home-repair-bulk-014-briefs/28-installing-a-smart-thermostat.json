@@ -1,0 +1,164 @@
+{
+  "slug": "installing-a-smart-thermostat",
+  "title": "Installing a smart thermostat",
+  "subtitle": "Replace a manual room thermostat with a smart thermostat that allows app control, scheduling, and weather compensation",
+  "excerpt": "How to replace a wired manual room thermostat with a smart thermostat. Covers identifying the thermostat wiring, photographing the connections, fitting the smart base, connecting the receiver at the boiler, and setting up the app.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK trade heating controls installation practice and smart thermostat manufacturer installation guides (open access).",
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "room-thermostat",
+      "term": "Room thermostat",
+      "definition": "A device that senses the room temperature and switches the boiler on when the temperature falls below the set point and off when it rises above. Most wired room thermostats use a two-wire connection: a common neutral and a switched live that closes when the thermostat calls for heat."
+    },
+    {
+      "slug": "heat-call-wire",
+      "term": "Heat call wire",
+      "definition": "The switched-live wire in a heating control circuit that carries the signal from the room thermostat to the boiler or motorised valve. When the thermostat calls for heat, this wire is energised, opening the motorised valve or signalling the boiler to fire. Identifying this wire correctly is the key step in replacing a thermostat."
+    },
+    {
+      "slug": "receiver-unit",
+      "term": "Receiver unit",
+      "definition": "The component of a wireless smart thermostat system fitted at or near the boiler or heating controls. It receives the wireless signal from the thermostat head and interrupts or closes the heat-call circuit to the boiler or motorised valve."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "smart thermostat installation",
+    "replacing room thermostat",
+    "Hive thermostat fitting",
+    "Nest thermostat installation"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A smart thermostat replaces a manual "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "room-thermostat" } }],
+            "text": "room thermostat"
+          },
+          {
+            "type": "text",
+            "text": " with app and voice control, scheduling, and weather compensation. Most systems use a simple two-wire connection at the existing backplate. INTERMEDIATE: identifying the correct wires is the skill; the physical work is minimal."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Turn off the boiler and isolate the supply" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch the boiler programmer to off. Isolate the circuit at the consumer unit. Confirm dead with the two-pole voltage tester, first tested against the proving unit, at the thermostat backplate terminals. Note the circuit breaker position so you can restore power correctly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remove the old thermostat and photograph the wiring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Unclip or unscrew the thermostat from the backplate. Take a clear photograph of every wire and terminal before disconnecting anything. Identify the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-call-wire" } }],
+            "text": "heat call wire"
+          },
+          {
+            "type": "text",
+            "text": ", the neutral, and the permanent live (if present). Label each wire with masking tape if needed. Remove the wires from the old backplate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the smart thermostat base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fit the new smart thermostat backplate to the wall, using the same fixings if possible. Connect the wires according to the smart thermostat wiring diagram, matching the original terminal functions. Most smart thermostats need only two wires: the heat call and the neutral. If the old thermostat had a permanent live wire in addition to the heat call and neutral, check the smart thermostat manual for the three-wire wiring diagram."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the receiver at the boiler and set up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a wireless smart thermostat, fit the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "receiver-unit" } }],
+            "text": "receiver unit"
+          },
+          {
+            "type": "text",
+            "text": " at the boiler control panel or heating programmer position. Wire the receiver into the existing heat-call circuit in place of the old programmer's room thermostat terminals. Restore the power. Follow the manufacturer's pairing instructions to connect the thermostat and receiver. Install the app on a smartphone, then commission the schedule."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler does not respond when the thermostat calls for heat",
+              "cause": "The heat call wire is connected to the wrong terminal on the smart backplate, or the receiver is not correctly wired into the boiler circuit.",
+              "fix": "Check the wiring photograph and compare each terminal connection with the smart thermostat manual. Re-check the receiver wiring at the boiler."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Boiler runs continuously regardless of the thermostat setting",
+              "cause": "The heat call circuit has been bridged across both terminals, effectively removing the thermostat control.",
+              "fix": "Check that there is no bridge wire across the heat call terminals on the smart base. The heat call circuit must be interrupted by the thermostat."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

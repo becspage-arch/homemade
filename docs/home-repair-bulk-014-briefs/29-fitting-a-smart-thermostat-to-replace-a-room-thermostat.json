@@ -1,0 +1,110 @@
+{
+  "slug": "fitting-a-smart-thermostat-to-replace-a-room-thermostat",
+  "title": "Fitting a smart thermostat to replace a room thermostat",
+  "subtitle": "Replace an existing wired room thermostat with a WiFi-enabled smart thermostat on the same wiring",
+  "excerpt": "How to replace a standard wired room thermostat with a smart thermostat. Covers identifying the existing wiring, matching to the new thermostat terminals, fitting the new base plate, connecting the wires, and pairing with the app.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Manufacturer installation guides for Hive, tado, Honeywell T6 (open access). UK wiring practice for room thermostats.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "room-thermostat-wiring",
+      "term": "Room thermostat wiring",
+      "definition": "A standard UK room thermostat uses two or three wires from the heating wiring centre: one permanent live (to power the thermostat display), one switched live (the call-for-heat signal), and one neutral. Some older thermostats use only two wires (switched live and neutral) and have no permanent live feed. Smart thermostats require a permanent live, a neutral, and a switched live to operate."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fitting a smart thermostat to an existing wired system is a like-for-like swap: the same cable that powered the old thermostat connects to the new one. The main variable is whether a permanent live feed is available at the thermostat position. Check " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "room-thermostat-wiring" } }], "text": "room thermostat wiring" },
+          { "type": "text", "text": " before ordering the smart thermostat: a three-wire installation is compatible with all models; a two-wire installation may need a neutral added at the wiring centre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, lock off, verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB for the heating controls circuit. Fit the lock-off device and hang a written warning tag. Prove the two-pole voltage tester at a known live supply using the proving unit (live test). Test at the existing thermostat terminals (dead test). Retest at the proving unit (confirming the tester still reads live). All three stages of the live-dead-live sequence must pass before touching the wiring." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remove the old thermostat and photograph the wiring" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Unscrew the old thermostat from the wall. Before disconnecting any wires, photograph the existing terminal connections clearly. Note the terminal labels on the old unit and which colour wire goes to each terminal. Most older thermostats label terminals 1, 2, 3 or L, N, SL (switched live)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identify and connect the wires to the new thermostat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Consult the new smart thermostat wiring diagram to identify which of its terminals corresponds to the permanent live, neutral, and switched live. Using the photograph of the old wiring as a reference, connect each wire to the correct new terminal. In most UK three-wire installations: brown is permanent live, blue is neutral, and grey or red is switched live. Tighten all screws. Do not leave any bare conductor visible outside the terminal." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the base plate and restore supply" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the new base plate to the wall using the supplied screws. Check it is level with the spirit level. Clip the thermostat display unit onto the base plate. Remove the lock-off device and restore the MCB. The thermostat display should illuminate. Follow the manufacturer's app pairing instructions to connect the thermostat to the household WiFi and the heating controls hub (if the system uses one)." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Smart thermostat display does not power on after fitting",
+              "cause": "No permanent live feed reaching the thermostat, or neutral missing.",
+              "fix": "Check that the permanent live terminal is connected to a live wire. Some older systems have only a switched live and neutral at the thermostat: add a permanent live from the wiring centre."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Thermostat calls for heat but the boiler does not fire",
+              "cause": "Switched live terminal connection incorrect, or the wiring centre has not been updated for the new thermostat demand signal.",
+              "fix": "Re-check the switched live connection at the thermostat. Some smart thermostats output 230 V on the switched live; others output a dry-contact signal. Match the thermostat output type to the wiring centre input type."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

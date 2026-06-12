@@ -1,0 +1,116 @@
+{
+  "slug": "extending-a-lighting-circuit-with-a-junction-box",
+  "title": "Extending a lighting circuit with a junction box",
+  "subtitle": "Branch a new light fitting from an existing lighting circuit cable using a three-terminal junction box",
+  "excerpt": "How to tap off a new light position from an existing lighting circuit using a three-terminal junction box. Covers identifying the existing circuit cable, making the junction, running the new cable to the new fitting, and testing the installation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "IET On-Site Guide 18th Edition (referenced, not reproduced). UK domestic electrical installation practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "lock-off-device", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "wire-strippers", "isOptional": false },
+    { "slug": "side-cutters", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "junction-box-20a",
+      "term": "Junction box, 20 A lighting",
+      "definition": "A round or square enclosure with three screw-terminal blocks, used to create a permanent junction in cable. Rated 20 A for lighting circuits. Accessible junction boxes are required by UK wiring regulations to remain accessible after the installation is complete; they cannot be buried in walls or concealed in inaccessible voids. Usually fixed to a joist in the ceiling void."
+    },
+    {
+      "slug": "loop-in-lighting",
+      "term": "Loop-in wiring (lighting)",
+      "definition": "The standard UK lighting circuit wiring method since the 1960s. The permanent live loops through a terminal in the ceiling rose from one fitting to the next, and a switch cable drops from the rose to the wall switch. A junction box tap branches from the mains cable before it reaches the rose, not at the switch."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "junction-box-20a" } }], "text": "A 20 A lighting junction box" },
+          { "type": "text", "text": " branches a new light position from an existing ceiling cable in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "loop-in-lighting" } }], "text": "loop-in wiring" },
+          { "type": "text", "text": ". The junction is made in the ceiling void, the box is fixed to a joist, and new twin-and-earth cable runs to the new fitting. The box must remain accessible after the work is complete." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, lock off, verify dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "At the consumer unit, switch off the MCB protecting the lighting circuit. Fit the lock-off device over the MCB and hang a written warning tag. Prove your two-pole voltage tester live at the proving unit (live test). Test at the existing lighting cable you intend to tap into (dead test). Retest at the proving unit (confirming the tester still reads live). Do not cut or open any cable until all three stages pass." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Locate the existing lighting cable" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Access the ceiling void at the planned junction point. Identify the main circuit cable by tracing it back from the nearest existing ceiling rose. The main circuit cable (usually 1.0 or 1.5 mm2 twin-and-earth) runs between roses. Choose a point along this cable close to the new fitting position and close enough to a joist to fix the junction box." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut in the junction box" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the junction box to a joist or noggin with a screw. Cut the existing main circuit cable and strip back 50 mm of sheath on each cut end. Strip the individual conductors by 8 mm. Connect the left-hand side of the cut cable to the junction box terminals: brown to terminal 1 (live), blue to terminal 2 (neutral), earth to terminal 3 (earth). Connect the right-hand side of the cut cable to the same terminals: this re-joins the circuit." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Run the new cable and test" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Run 1.0 mm2 twin-and-earth from the junction box to the new fitting position. Connect the new cable conductors to the same three terminals (brown to live, blue to neutral, earth to earth). Secure the new cable with cable clips at 400 mm intervals. At the new fitting, connect the cable to the ceiling rose or light fitting following its connection diagram. Remove the lock-off device and restore the MCB. Test both the existing and new light switch correctly." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Existing lights on the circuit no longer work after fitting the junction box",
+              "cause": "The circuit has been broken at the junction box: one side of the cut cable was not reconnected.",
+              "fix": "Open the junction box and check that both the incoming and outgoing mains cable conductors are terminated in the same terminals."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "MCB trips when the new light is switched on",
+              "cause": "Short circuit in the new wiring, or the total load of the new fitting exceeds the remaining capacity of the circuit.",
+              "fix": "Check the total wattage of all fittings on the circuit against the MCB rating. For a 6 A MCB the safe maximum load is 1200 W. Check the new cable for pinched or exposed conductors."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

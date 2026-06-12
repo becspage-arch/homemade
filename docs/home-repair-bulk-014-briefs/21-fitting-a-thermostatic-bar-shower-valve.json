@@ -1,0 +1,129 @@
+{
+  "slug": "fitting-a-thermostatic-bar-shower-valve",
+  "title": "Fitting a thermostatic bar shower valve",
+  "subtitle": "Replace or install a surface-mounted thermostatic bar valve on a gravity-fed or pressurised shower supply",
+  "excerpt": "How to install a thermostatic bar shower valve on copper pipework. Covers isolating the water supply, cutting in the supply pipes, connecting the valve inlets, fitting the arm and head, and commissioning.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK plumbing trade practice for domestic shower valves.",
+  "recipeTools": [
+    { "slug": "pipe-cutter-15-22mm", "isOptional": false },
+    { "slug": "blowtorch-mapp", "isOptional": true },
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false },
+    { "slug": "flux-water-soluble", "isOptional": true },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thermostatic-bar-valve",
+      "term": "Thermostatic bar valve",
+      "definition": "A shower mixing valve with a thermostatic cartridge that maintains the mixed water temperature to within 1 to 2 degrees of the set point regardless of fluctuations in the supply pressure or temperature. A separate volume control handle opens and closes the flow. Bar valves are surface-mounted with the supply pipes concealed in the wall or run in surface-mounted pipe clips."
+    },
+    {
+      "slug": "shower-valve-centres",
+      "term": "Valve inlet centres",
+      "definition": "The distance between the two supply pipe inlets on the back of the shower valve body. Most UK bar valves have 150 mm centres. Hot is on the left, cold on the right (when viewed from the front). The supply pipes must be run to match these centres before fixing the valve backplate to the wall."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermostatic-bar-valve" } }], "text": "A thermostatic bar shower valve" },
+          { "type": "text", "text": " mixes hot and cold water at a set temperature and maintains that temperature automatically. Fitting one replaces an older manual mixer or an over-bath shower and requires connecting 15 mm copper or plastic supply pipes to the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "shower-valve-centres" } }], "text": "valve inlet centres" },
+          { "type": "text", "text": "." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate and drain the supply pipes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn off the hot and cold water supplies to the shower position. If the existing hot supply runs from the cylinder or a combi boiler, close the isolating valve on that branch. If there is no local isolation valve, turn off the mains stopcock. Drain the pipes by opening the lowest draw-off point on each circuit and holding it open until water stops running." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the valve backplate and run the supply pipes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fix the valve backplate to the tiled wall using the screws and plugs supplied, checking it is level. Run the 15 mm hot and cold supply pipes to the backplate, spaced to match the 150 mm valve inlet centres. Use compression or push-fit fittings (or solder end-feed fittings if copper is being used with a torch) to connect the pipes and terminate each with a short tail that aligns with the valve inlets. Fit an in-line service valve on each supply pipe within accessible reach of the valve; this allows future servicing without isolating at the stopcock." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the valve to the supply pipes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply PTFE tape to the threaded inlet connectors on the valve body (5 turns clockwise on the male thread). Connect the hot inlet on the left to the hot supply pipe and the cold inlet on the right to the cold. Tighten the inlet compression nuts with the adjustable spanner. Do not overtighten; two flats past hand-tight is correct for most connections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the shower arm and head" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Screw the shower arm into the outlet port on the valve, wrapping PTFE tape on the thread first. Attach the shower head to the arm. Fix the arm to the wall with the wall rose cover plate supplied." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Commission the valve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn the supply on slowly and check all connections for leaks before setting the temperature. The thermostatic cartridge is factory-set at around 38 to 40 degrees Celsius. Follow the manufacturer's instructions to adjust the maximum temperature stop if the water arrives hotter or cooler than the factory setting. UK Building Regulations Part G require thermostatic controls to prevent scalding in showers used by children and vulnerable adults." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Valve runs hot even at the coldest setting",
+              "cause": "Hot and cold inlets connected in reverse.",
+              "fix": "Turn off the supplies, swap the connections so hot is on the left inlet and cold is on the right, and recommission."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Low flow rate from the shower head despite adequate supply pressure",
+              "cause": "Debris from the pipe work has lodged in the inlet strainer inside the valve.",
+              "fix": "Close the service valves, remove the inlet connectors, and clean the mesh strainers inside each inlet port. This is common after new pipework is installed."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

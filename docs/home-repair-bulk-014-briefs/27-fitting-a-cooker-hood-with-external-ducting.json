@@ -1,0 +1,151 @@
+{
+  "slug": "fitting-a-cooker-hood-with-external-ducting",
+  "title": "Fitting a cooker hood with external ducting",
+  "subtitle": "Fix a recirculating or ducted cooker hood under a kitchen cabinet, core a duct hole through the wall, and connect the hood to an external wall cap",
+  "excerpt": "How to fit a cooker hood above a hob with external duct extraction. Covers planning the duct route, fixing the hood, connecting the electrics at a fused spur, drilling the core, fitting the duct and wall cap, and testing.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK trade electrical and kitchen installation practice. IET On-Site Guide (referenced, not reproduced).",
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "sds-drill", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cooker-hood",
+      "term": "Cooker hood",
+      "definition": "An extraction unit mounted above a hob that draws cooking vapour and grease through filters, then either recirculates the cleaned air back into the kitchen through activated carbon filters, or expels it outside through a rigid or flexible duct to a wall cap. External ducting is significantly more effective for steam and odour removal."
+    },
+    {
+      "slug": "fused-connection-unit-hood",
+      "term": "Fused connection unit",
+      "definition": "An electrical connection outlet, also called a fused spur, that provides a permanently wired 240 V supply to a fixed appliance. It contains a cartridge fuse, typically 3 A or 5 A for a cooker hood. The hood flex connects to the unit's load terminals rather than to a plug socket."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "cooker hood installation",
+    "extractor hood fitting",
+    "ducted cooker hood"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cooker-hood" } }],
+            "text": "cooker hood"
+          },
+          {
+            "type": "text",
+            "text": " extracts cooking vapour by ducting the extracted air outside through a rigid or flexible duct and a wall cap. INTERMEDIATE: plan the duct route before fixing the hood, as drilling cores through walls is difficult to undo and must avoid buried cables and pipes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plan the duct route" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Survey the route from the hood outlet to the outside wall. Rigid round duct (100 or 125 mm diameter) is the most efficient, with smooth bends rather than sharp elbows. Use a cable and pipe detector to scan the wall before coring. Keep the duct run as short and straight as possible: every additional metre and every 90-degree bend reduces the extraction rate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate and confirm dead at the electrical supply" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Isolate the circuit at the consumer unit. Confirm the supply is dead at the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fused-connection-unit-hood" } }],
+            "text": "fused connection unit"
+          },
+          {
+            "type": "text",
+            "text": " using the two-pole voltage tester, first tested on the proving unit to confirm it is working. Only connect the hood once the supply has been confirmed dead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the hood and connect the electrics" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fix the hood to the underside of the kitchen cabinet using the fixings supplied. The standard mounting height is 650 to 750 mm above the hob surface for a gas hob and 450 to 600 mm above an induction or electric hob. Feed the hood flex to the fused spur and connect Live, Neutral, and Earth to the load terminals. Fit a 3 A fuse."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Core the wall and fit the duct" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Core the duct hole through the external wall at the correct position and height with the SDS drill fitted with a core drill bit. Angle the core slightly downward from inside to outside so condensate drains away from the kitchen. Push the duct into the core hole and seal around the duct with flexible outdoor sealant. Fit the wall cap outside and the backdraughting shutter inside."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Hood motor runs but extraction rate is poor",
+              "cause": "The duct is too long, has too many bends, or the wall cap backdraughting shutter is stuck closed.",
+              "fix": "Check the shutter opens freely when the hood is running. Reduce the duct length or number of bends if possible. Check the grease filters are clean."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Cold draughts come into the kitchen through the hood when it is switched off",
+              "cause": "The backdraughting shutter in the wall cap is not sealing properly.",
+              "fix": "Inspect the shutter for damage or blockage and clean or replace it. An additional non-return flap inside the duct at the hood outlet prevents backdraughts."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

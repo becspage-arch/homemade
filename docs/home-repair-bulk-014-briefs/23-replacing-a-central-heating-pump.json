@@ -1,0 +1,121 @@
+{
+  "slug": "replacing-a-central-heating-pump",
+  "title": "Replacing a central heating pump",
+  "subtitle": "Remove and swap out a failing circulator pump on a wet central heating system",
+  "excerpt": "How to replace a faulty central heating circulator pump. Covers isolating the pump valves, draining the pump body, removing the old pump, fitting the new pump in the correct orientation, and recommissioning.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "plumbing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK central heating trade practice.",
+  "recipeTools": [
+    { "slug": "adjustable-spanner-200mm", "isOptional": false },
+    { "slug": "stilson-pipe-wrench-300mm", "isOptional": true },
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "ptfe-tape", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "central-heating-pump",
+      "term": "Central heating circulator pump",
+      "definition": "A small electric wet-rotor pump that circulates hot water around the heating circuit between the boiler and the radiators. Fitted in the flow or return pipework, typically in 22 mm pipework between isolation valves. Modern pumps are variable-speed with automatic head settings. Standard replacement UK pumps are the Grundfos UPS2 or Wilo Stratos PICO series."
+    },
+    {
+      "slug": "pump-gland-nut",
+      "term": "Pump gland nut",
+      "definition": "The large threaded nut at each end of the pump body that compresses the pump O-ring seal against the pump valve body or the flanged fitting. Loosening the gland nut releases the pump for removal. The gland nut requires a large adjustable spanner (typically 45 to 55 mm across the flats)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "central-heating-pump" } }], "text": "A central heating circulator pump" },
+          { "type": "text", "text": " can be replaced without draining the entire heating system if it is fitted between pump isolating valves (most installations are). The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pump-gland-nut" } }], "text": "gland nuts" },
+          { "type": "text", "text": " each end of the pump body compress the O-ring seals; loosen them to remove the pump and re-tighten them to seal the new one." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: Isolate, lock off, and drain the pump body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Switch off the boiler at the programmer or room thermostat and allow the system to cool. Close the isolation valves either side of the pump (they have a slotted head: turn the slot 90 degrees to close). Place towels and a shallow tray beneath the pump to catch any water that drains from the pump body when the gland nuts are loosened. Loosen the bleed screw on top of the pump head (if present) to release any trapped pressure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Disconnect the electrical supply" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "warning",
+          "title": "Electricity at the pump",
+          "body": "The pump has a 230 V electrical supply. Switch off the electrical supply at the fused spur or the circuit breaker serving the pump or the boiler before removing the pump wiring cover. Use the voltage tester to verify the terminal block is dead before handling wires."
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Remove the wiring cover on the pump head. Note or photograph the wire connections (live, neutral, earth). Disconnect the wires. Most modern pumps use a Wago-style terminal block for tool-free connection." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Remove the old pump" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use the adjustable spanner to loosen the gland nuts at each end of the pump body. Water will drip from the gland as the nut releases; the tray below catches this. Unscrew both gland nuts fully and slide the pump body free from the flanged fittings. Check the O-rings in the flanged fittings; replace them if they are flattened or cracked." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fit the new pump and recommission" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit the new pump body between the flanges, ensuring the pump flow arrow on the body matches the flow direction of the circuit (the arrow points in the direction of water travel). Tighten the gland nuts evenly. Reconnect the electrical wiring to the new pump terminal block, matching live, neutral, and earth. Replace the wiring cover. Open the isolation valves fully and bleed any air from the pump bleed screw. Switch the boiler back on and verify the pump runs (feel for a slight vibration on the pump body) and that all radiators heat up." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "New pump vibrates loudly and heating performance is poor",
+              "cause": "Pump fitted with flow arrow pointing the wrong direction, or air in the pump.",
+              "fix": "Check the flow direction arrow matches the circuit flow. If correct, use the bleed screw to release trapped air from the pump head."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Gland nut leaks after tightening",
+              "cause": "O-ring in the flanged fitting is old and compressed, or gland nut was cross-threaded.",
+              "fix": "Close the isolation valves, unscrew the gland nut, replace the O-ring in the flanged fitting, and re-tighten the gland nut."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

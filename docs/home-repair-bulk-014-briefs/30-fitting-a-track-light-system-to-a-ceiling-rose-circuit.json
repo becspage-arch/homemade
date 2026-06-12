@@ -1,0 +1,165 @@
+{
+  "slug": "fitting-a-track-light-system-to-a-ceiling-rose-circuit",
+  "title": "Fitting a track light system to a ceiling rose circuit",
+  "subtitle": "Replace a ceiling rose and pendant with a track lighting system fed from the existing ceiling cable, using a track live-feed adaptor",
+  "excerpt": "How to replace a ceiling rose with a track lighting system. Covers isolating the circuit, identifying the switched live at the rose, connecting the track live-feed adaptor, fixing the track to the ceiling, and fitting the spotlights.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "electrical",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). IET Wiring Regulations BS 7671 (referenced, not reproduced). UK trade electrical installation practice.",
+  "recipeTools": [
+    { "slug": "voltage-tester-pen", "isOptional": false },
+    { "slug": "voltage-tester-2-pole", "isOptional": false },
+    { "slug": "proving-unit", "isOptional": false },
+    { "slug": "electricians-screwdriver-set", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level-200mm", "isOptional": true },
+    { "slug": "tape-measure-5m", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ceiling-rose",
+      "term": "Ceiling rose",
+      "definition": "The outlet fitting at the ceiling where the mains lighting circuit cable terminates. It typically contains a three-terminal block connecting the permanent live, switched live, and neutral. The light pendant flex connects to the switched live and neutral to power the lamp."
+    },
+    {
+      "slug": "switched-live",
+      "term": "Switched live",
+      "definition": "The cable core in a lighting circuit that carries the live voltage only when the wall switch is in the on position. At the ceiling rose, the switched live is the wire that should become live when tested with the switch on. A track adaptor connects to the switched live and the neutral to power the track."
+    },
+    {
+      "slug": "track-live-feed-adaptor",
+      "term": "Track live-feed adaptor",
+      "definition": "A fitting that connects the track lighting rail to the ceiling rose cable. It screws to the ceiling at the rose position, connects to the existing circuit wires, and feeds the live and neutral into the track. One end is wired like a ceiling rose; the other connects to the track rail body."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "track lighting installation",
+    "replacing ceiling rose with track",
+    "ceiling track light fitting"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Track lighting replaces a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ceiling-rose" } }],
+            "text": "ceiling rose"
+          },
+          {
+            "type": "text",
+            "text": ". A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "track-live-feed-adaptor" } }],
+            "text": "track live-feed adaptor"
+          },
+          {
+            "type": "text",
+            "text": " mounts in the rose position and feeds several moveable spotlights. INTERMEDIATE: find the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "switched-live" } }],
+            "text": "switched live"
+          },
+          {
+            "type": "text",
+            "text": " wire before making any connection."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Isolate the circuit and confirm dead" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Switch off the circuit at the consumer unit. Turn the wall switch to the on position to give the switched live wire a chance to become live, then confirm both the permanent live and switched live are dead at the ceiling rose using the two-pole voltage tester, first verified on the proving unit. Remove the rose cover and pendant flex."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Identify the wires at the rose" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Photograph the wiring at the rose before disconnecting. At a standard loop-in rose there are terminal blocks for the permanent live and switched live, plus a neutral block. The switched live connects to the wall switch loop. Mark the switched live with a small piece of tape before disconnecting the old rose."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connect the track adaptor" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Connect the switched live and neutral cables to the correct terminals in the track live-feed adaptor according to its wiring diagram. Secure the earth. Screw the adaptor body to the ceiling at the rose position, ensuring it bears onto the ceiling structure rather than just the plasterboard."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the track and fit spotlights" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Clip or screw the track rail to the ceiling, connecting it to the adaptor at the centre or end as the track design requires. Fix the track at intervals into the ceiling joists for rails longer than 1 m. Fit the spotlight heads by engaging them in the track at any position, rotating to lock. Restore the circuit power and test all heads."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Track does not light when the switch is turned on",
+              "cause": "The adaptor is wired to the permanent live rather than the switched live, or there is a loose connection at the adaptor terminals.",
+              "fix": "Isolate the circuit, reopen the adaptor, and check each wire against the wiring photograph. The switched live must connect to the load terminal."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Some spotlights on the track do not come on",
+              "cause": "The spotlight head is not correctly engaged in the track, or the lamp in that head has failed.",
+              "fix": "Remove the head, re-engage it firmly in the track, and rotate until it clicks into the locked position. Replace the lamp if the connection is good."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

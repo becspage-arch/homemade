@@ -1,0 +1,111 @@
+{
+  "slug": "building-a-wall-mounted-garage-storage-shelf",
+  "title": "Building a wall-mounted garage storage shelf",
+  "subtitle": "Fix a heavy-duty plywood shelf to a garage wall using timber battens and angle brackets",
+  "excerpt": "How to build and fix a sturdy wall-mounted shelf in a garage. Covers locating wall studs or masonry, fixing the back batten, cutting the shelf board from plywood, supporting with side brackets, and loading guidance.",
+  "type": "PATTERN",
+  "categorySlug": "home-repair",
+  "subCategorySlug": "woodwork",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "timeMinutes": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Collins Complete DIY Manual (referenced, not reproduced). UK workshop and garage storage trade practice.",
+  "recipeTools": [
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "sds-drill", "isOptional": true },
+    { "slug": "circular-saw", "isOptional": true },
+    { "slug": "crosscut-saw", "isOptional": false },
+    { "slug": "spirit-level-1200mm", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "carpenters-pencil", "isOptional": false },
+    { "slug": "screwdriver-set-pozidriv", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "back-batten-shelf",
+      "term": "Back batten (shelf)",
+      "definition": "A length of 75 x 50 mm or 100 x 50 mm timber screwed horizontally to the wall at the rear of the shelf. The back batten carries most of the shelf load in shear directly into the wall fixings. The shelf board sits on top of the back batten and is screwed down into it."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A wall-mounted garage shelf carries heavy loads when it is fixed correctly into the masonry or the stud frame behind the lining. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-batten-shelf" } }], "text": "back batten" },
+          { "type": "text", "text": " does the load work; the side brackets prevent the shelf edge from sagging. Use 18 mm plywood for the shelf board, not MDF or chipboard, which are not robust enough for a garage environment." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Locate the wall structure and mark the shelf height" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On a masonry wall, you can fix anywhere by drilling and plugging. On a timber stud wall, locate the studs with a stud detector or by tapping (a hollow sound between studs, a solid sound on a stud) and fix through the plasterboard into the stud. Mark the shelf height with a pencil line at the position of the top edge of the back batten. Use the spirit level to make this line perfectly horizontal across the full shelf length." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fix the back batten" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the back batten (75 x 50 mm treated softwood) to the required shelf length. Hold it against the wall with the top edge on the pencil line and drill through the batten and the wall at 400 to 600 mm centres. On masonry, use a 10 mm SDS bit or masonry bit to drill to 70 mm depth and fit M10 frame anchors or 10 mm Fischer wall plugs with 75 mm screws. On a stud wall, use 75 mm screws into the studs, ideally two fixings per stud." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut and fix the shelf board" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cut the shelf board from 18 mm structural plywood to the required width and length. Place it on top of the back batten and screw down through the shelf board into the batten from above at 200 mm centres. Use 50 mm screws. If the shelf is deeper than 350 mm, fit a side support bracket at each end: a right-angle steel bracket or a cut timber knee-brace screwed to the wall and to the underside of the shelf." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finish and load guidance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply a coat of exterior wood primer or a garage floor paint to the plywood shelf surface if you want a durable, wipeable finish. A single 18 mm plywood shelf supported at the back and both ends over a 1.2 m span will comfortably carry 50 kg of evenly distributed load; avoid point-loading at the centre of the span with heavy items." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Shelf sags in the middle under load",
+              "cause": "Shelf board thickness insufficient for the span, or side brackets absent.",
+              "fix": "Fit a central support bracket to the wall under the shelf at the midpoint of the span. Alternatively, fit a front batten across the front edge of the shelf (a fascia) which stiffens the board."
+            }
+          },
+          {
+            "type": "troubleshooterRow",
+            "attrs": {
+              "symptom": "Back batten pulled away from masonry wall",
+              "cause": "Wall plugs or fixings inadequate for the load.",
+              "fix": "Use M10 frame anchors (chemical anchors for loose-block walls) rather than plastic plugs for heavy garage shelving. Space fixings at 400 mm maximum."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
