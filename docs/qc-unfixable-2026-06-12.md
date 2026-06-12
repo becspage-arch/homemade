@@ -1,0 +1,1412 @@
+# qc-unfixable 2026-06-12
+
+Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will retry these on its next fire (after the 24-hour exclusion window).
+
+- alexanders-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- annual-vegetables-in-forest-garden hero-missing,voice-violation,grade-level-strict,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,body-rewrite:1,orientation-from-excerpt
+- buckwheat-summer-cover hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- caucasian-spinach-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- chop-and-drop-mulching hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- comfrey-bocking-14-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- comfrey-liquid-feed hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- crochet-magic-ring hero-missing — applied: hero-fill-deferred-to-standalone-script
+- daubenton-perennial-kale hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- elder-in-the-garden hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- forest-garden-ground-cover-layer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- forest-garden-herbaceous-layer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- forest-garden-root-layer hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- forest-garden-shrub-layer hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- garlic-mustard-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- good-king-henry-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- granny-square-basic-three-round hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hazel-in-forest-garden hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- how-to-hold-a-crochet-hook hero-missing — applied: hero-fill-deferred-to-standalone-script
+- how-to-work-a-treble hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hugelkultur-raised-bed hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- jerusalem-artichoke-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- lovage-growing hero-missing,botanical-lecture-opening,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- mashua-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- nettle-liquid-feed hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- no-dig-ongoing-mulch-management hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- oca-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- perennial-leek-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- perennial-vegetables-variety-selection hero-missing,voice-violation,grade-level-strict,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,body-rewrite:1,orientation-from-excerpt
+- phacelia-green-manure hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- polyculture-bed-design hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- sea-kale-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- sheet-mulching-a-new-bed hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- skirret-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- sorrel-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- starting-a-forest-garden hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- starting-a-no-dig-bed hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- swales-on-contour hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- sweet-cicely-growing hero-missing,botanical-lecture-opening,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- three-sisters-polyculture hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- welsh-onion-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- white-clover-living-mulch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wild-garlic-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+- yacon-growing hero-missing,opening-pattern-missing-hook — applied: hero-fill-deferred-to-standalone-script,orientation-from-excerpt
+
+- crochet-choosing-yarn-type hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-edging-crab-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-edging-scallop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-ergonomics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-fibre-care-acrylic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-fibre-care-cotton hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-fibre-care-wool hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-fibre-types-guide hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-holding-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hook-sizes-guide hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-left-handed-mirror hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mohair-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pattern-repeat-notation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-post-stitch-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-reading-a-ball-band hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- crochet-russian-join hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-uk-us-terms hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-working-into-back-bump hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-working-into-bottom-loop hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- crochet-blocking-acrylic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-blocking-cotton hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-calculating-yardage hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-chart-reading hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- 1970s-wrap-cardigan-crochet grade-level-strict — applied: 
+- advent-wreath-cover grade-level-strict — applied: 
+- american-apple-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- amigurumi-crocodile grade-level-strict — applied: 
+- amigurumi-donkey grade-level-strict — applied: 
+- amigurumi-elephant grade-level-strict — applied: 
+- amigurumi-firefly grade-level-strict — applied: 
+- amigurumi-ghost grade-level-strict — applied: 
+- amigurumi-gingerbread-man grade-level-strict — applied: 
+- amigurumi-highland-cow grade-level-strict — applied: 
+- amigurumi-horse grade-level-strict — applied: 
+- amigurumi-iguana grade-level-strict — applied: 
+- amigurumi-jellyfish hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-kangaroo hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-kitten hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-kiwi hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-koala hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-komodo-dragon hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-ladybird hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-leaf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-lion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-llama hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-lobster hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-meerkat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mermaid hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-avocado hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-bear hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-bee hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-bunny hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-cat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-ghost hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-heart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-mushroom hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-star hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mini-whale hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-monkey hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-moon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mouse-woodland hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-mushroom hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-new-year-star hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-newt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-octopus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-ostrich hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-owl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pachycephalosaurus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-panda hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-panda-bear hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-parrot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-peacock hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pelican hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-penguin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-phoenix hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pig hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pigeon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pine-tree hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pineapple hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pizza-slice hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-planet-earth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-platypus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-polar-bear hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pterodactyl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-puffin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-pumpkin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-quokka hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-rabbit-farm hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-rainbow hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-raindrop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-red-panda hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-reindeer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-rhino hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-robin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-rocket-ship hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-rose hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-salamander hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-santa hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-saturn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-seahorse hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-seal hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-shark hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-sheep hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-shooting-star hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-sloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snail hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snail-bug hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snake-python hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snowflake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snowman hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-snowy-owl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-spider hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-squirrel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-starfish hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-stegosaurus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-strawberry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-sun-bear hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-sunflower hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-sushi-roll hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-swan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-t-rex hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-teddy-bear hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-telephone hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-telescope hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-toad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-tortoise-giant hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-tortoise-pet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-toucan hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-train-engine hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-tree-frog hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-tree-oak hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-triceratops hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-turtle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-ufo hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-unicorn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-valentine-bear hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-velociraptor hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-walrus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-warthog hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-watermelon-slice hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-werewolf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-whale hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-wildebeest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-witch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-wombat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-yak hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- amigurumi-zebra hero-missing — applied: hero-fill-deferred-to-standalone-script
+- apple-crumble-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- apple-frangipane-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- applying-for-a-cph-number voice-violation,grade-level-strict — applied: 
+- applying-polyurethane-varnish-to-bare-wood-furniture grade-level-strict — applied: 
+- applying-shellac-sanding-sealer-before-varnishing-or-painting voice-violation,grade-level-strict — applied: 
+- aran-cable-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- arancini-al-burro prose-prep-steps — applied: 
+- ashwagandha-tincture-for-burnout grade-level-strict — applied: 
+- ashwagandha-warm-milk grade-level-strict — applied: 
+- asymmetric-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- autumn-leaves-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- baby-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- baby-earflap-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- baby-safe-bottom-balm voice-violation — applied: 
+- backward-loop-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- basic-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- basic-cable-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- basic-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- basketweave-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beach-cover-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beanie-with-brim hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beard-balm-cedarwood voice-violation — applied: 
+- beard-oil-sandalwood voice-violation — applied: 
+- beef-and-guinness-stew prose-prep-steps — applied: 
+- beef-stroganoff grade-level-strict — applied: 
+- beret hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bias-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- blower-door-airtightness-test-consumer-guide grade-level-strict — applied: 
+- boho-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bohus-mini-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bohus-mini-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bridal-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brimmed-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brioche-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brioche-one-colour hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brioche-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brioche-two-colour hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broken-rib-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-baby-blanket-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-bag-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-cushion-cover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-hat-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-table-runner-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broomstick-lace-wrist-warmers-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brown-stew prose-prep-steps — applied: 
+- brown-sugar-vanilla-lip-scrub voice-violation — applied: 
+- bucket-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bullion-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butterfly-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butterfly-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butternut-squash-soup prose-prep-steps — applied: 
+- c2c-cardigan grade-level-strict — applied: 
+- cable-and-ribbing-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cable-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cable-rib-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- calculating-winter-feed-requirements-for-livestock voice-violation,grade-level-strict — applied: 
+- calendula-chamomile-face-balm voice-violation — applied: 
+- calendula-lip-balm voice-violation — applied: 
+- calendula-profile grade-level-strict — applied: 
+- carrot-and-orange-soup prose-prep-steps — applied: 
+- cedarwood-vetiver-cologne-balm voice-violation — applied: 
+- centred-double-decrease hero-missing — applied: hero-fill-deferred-to-standalone-script
+- challah-round-rosh-hashanah opening-pattern-missing-hook — applied: recipe-yield-appended
+- chamomile-tincture-for-nervous-digestion grade-level-strict — applied: 
+- chevron-blanket grade-level-strict — applied: 
+- chevron-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chevron-stripe-jumper-crochet grade-level-strict — applied: 
+- chicken-and-ham-pie prose-prep-steps — applied: 
+- chicken-and-leek-pie prose-prep-steps — applied: 
+- child-striped-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-crackle-rice-krispie opening-pattern-missing-hook — applied: recipe-yield-appended
+- chocolate-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- choosing-a-pig-breed-for-the-smallholding grade-level-strict — applied: 
+- choosing-linen grade-level-strict — applied: 
+- chunky-openwork-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- circular-needle-sizing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- classic-round-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cleaning-and-conditioning-a-leather-jacket grade-level-strict — applied: 
+- cleavers-lymphatic-infusion voice-violation,grade-level-strict — applied: 
+- cloche hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cluster-lace-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cock-a-leekie prose-prep-steps — applied: 
+- coffee-and-walnut-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- coffee-walnut-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- colour-block-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- colour-field-cardigan-crochet grade-level-strict — applied: 
+- colourwork-yoke-pullover-crochet grade-level-strict — applied: 
+- composting-meat-and-dairy grade-level-strict — applied: 
+- coniglio-alla-cacciatora grade-level-strict — applied: 
+- contrast-brim-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- contrast-tip-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- corner-to-corner-cushion-cover grade-level-strict — applied: 
+- cotton-beach-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cream-of-mushroom-soup prose-prep-steps — applied: 
+- crescent-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-adjusting-tension-for-gauge voice-violation — applied: em-dash-body
+- crochet-african-flower-hexagon voice-violation,grade-level-strict — applied: 
+- crochet-animal-bird voice-violation — applied: 
+- crochet-animal-cat voice-violation — applied: 
+- crochet-animal-fox voice-violation — applied: 
+- crochet-bavarian-square voice-violation,grade-level-strict — applied: 
+- crochet-blocking-acrylic-and-synthetics voice-violation — applied: em-dash-body
+- crochet-bobble-stitch voice-violation — applied: em-dash-body
+- crochet-broomstick-cluster-stitch voice-violation — applied: em-dash-body
+- crochet-broomstick-loop-stitch voice-violation — applied: em-dash-body
+- crochet-building-consistent-practice voice-violation — applied: em-dash-body
+- crochet-carrying-yarn voice-violation — applied: em-dash-body
+- crochet-chain-in-depth voice-violation — applied: em-dash-body
+- crochet-chain-stitch voice-violation — applied: 
+- crochet-chainless-foundation-row voice-violation — applied: em-dash-body
+- crochet-changing-colour voice-violation — applied: em-dash-body
+- crochet-choosing-first-project voice-violation — applied: em-dash-body
+- crochet-choosing-yarn-fibre voice-violation — applied: em-dash-body
+- crochet-colour-block-cardigan grade-level-strict — applied: 
+- crochet-construction-top-down-bottom-up voice-violation — applied: em-dash-body
+- crochet-continuous-spirals voice-violation — applied: 
+- crochet-counting-stitches hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-crocodile-stitch grade-level-strict — applied: 
+- crochet-crossed-double-treble voice-violation — applied: em-dash-body
+- crochet-crossed-treble voice-violation — applied: em-dash-body
+- crochet-decoding-pattern-repeats voice-violation — applied: em-dash-body
+- crochet-decrease-basics voice-violation — applied: em-dash-body
+- crochet-decreasing-at-edges hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-diamond-cable-vest grade-level-strict — applied: 
+- crochet-double-crochet-in-depth voice-violation — applied: em-dash-body
+- crochet-double-crochet-uk-stitch voice-violation — applied: em-dash-body
+- crochet-double-granny-square voice-violation,grade-level-strict — applied: 
+- crochet-double-treble-in-depth voice-violation — applied: em-dash-body
+- crochet-double-treble-stitch voice-violation — applied: em-dash-body
+- crochet-dropped-stitch-fix voice-violation — applied: 
+- crochet-edging-single-row hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-fan-stitch voice-violation — applied: em-dash-body
+- crochet-fastening-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-five-petal-flower-round voice-violation,grade-level-strict — applied: 
+- crochet-flo-blo-technique voice-violation — applied: em-dash-body
+- crochet-frogging grade-level-strict — applied: 
+- crochet-gauge-adjustment hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-gauge-for-round-work voice-violation — applied: em-dash-body
+- crochet-granny-cluster voice-violation — applied: em-dash-body
+- crochet-granny-square-basics voice-violation — applied: em-dash-body
+- crochet-granny-square-eight-round voice-violation — applied: em-dash-body
+- crochet-granny-square-five-round voice-violation — applied: em-dash-body
+- crochet-granny-square-six-round voice-violation — applied: em-dash-body
+- crochet-granny-square-three-colour voice-violation — applied: em-dash-body
+- crochet-granny-square-three-round voice-violation — applied: em-dash-body
+- crochet-granny-square-two-colour voice-violation — applied: em-dash-body
+- crochet-granny-stripe-panel voice-violation,grade-level-strict — applied: 
+- crochet-hairpin-braid-join voice-violation — applied: em-dash-body
+- crochet-hairpin-lace-basic voice-violation — applied: em-dash-body
+- crochet-half-treble-in-depth voice-violation — applied: em-dash-body
+- crochet-half-treble-stitch voice-violation — applied: 
+- crochet-herringbone-htr-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-herringbone-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hexagon-basic hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hexagon-granny-style hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hexagon-half hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hexagon-lacy hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hexagon-popcorn hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hexagon-treble-cluster hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hexagon-two-colour hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hiking-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hook-hold-and-ergonomics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-hook-materials hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-hook-size-choice hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-increase-basics hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-infinity-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-interlocking-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-invisible-decrease-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-invisible-fasten-off hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-irish-motif-basics hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-jogger-trousers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-join-as-you-go hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-join-as-you-go-square hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-joined-rounds-technique hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-joining-a-new-ball hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-joining-round-technique hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-joining-single-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-kaftan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-kaleidoscope-round hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-key-fob hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-kimono-sleeves-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-lantern-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-leaf-fern hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-leaf-holly hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-leaf-ivy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-leaf-maple hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-leaf-oak hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-learning-to-read-your-crochet hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-leg-warmers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-linked-dc-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-log-cabin-square-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-log-cabin-square-four-colour hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-log-cabin-square-textured hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-longline-blazer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-lounge-shorts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-lounge-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-luggage-tag hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-magic-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-magic-ring-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-magic-ring-vs-chain-ring hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mandala-advanced-ten-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-mandala-eight-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mandala-five-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mandala-lacy-eight-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mandala-three-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mattress-stitch-seam hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-maxi-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-maxi-skirt-boho hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-midi-skirt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-miscounted-stitches hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-mitred-square-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mitred-square-striped hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mitred-square-two-colour hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mittens-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mobile-hanging hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mosaic-square hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-chevron-round hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-circle-lacy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-flat-circle hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-granny-solid-treble hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-half-granny hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-lace-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-puff-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-shell-round hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-solid-circle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-spiral-round hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-star-six-point hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-sunburst-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-motif-v-stitch-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mouse-pad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-mug-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-napkin-rings hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-notions-and-accessories hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-outdoor-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-overlay-stitch-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-oversized-shirt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pattern-sizing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-peasant-blouse hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-peplum-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-photo-frame-surround hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-picot-chain-edge hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-picot-edge hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-picture-cord-hanger hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pineapple-centre-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pinwheel-motif-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pinwheel-motif-dense hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pinwheel-motif-lacy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-playsuit hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-poncho hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-popcorn-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-post-dc-stitches hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-post-tr-stitches hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-puff-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-pumpkin-decoration hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-pyjama-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-reading-schematics hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-reading-stitch-tops hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-reading-symbol-charts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-reading-written-patterns hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-recovering-dropped-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-ripple-round-motif hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-rose-layered hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-rose-rolled hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-round-gauge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-row-end-increase hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-rows-and-rounds hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-running-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-sewing-in-tails hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-shell-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-shell-top-twinset hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-short-rows hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-shorts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-shrug-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-side-button-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-side-slit-pullover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-slip-dress hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-slip-knot hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-slip-stitch-seam-tutorial hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-slip-stitch-tutorial hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-slip-stitch-uses hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-snowflake-advanced hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-solomons-knot-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-spider-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-sports-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-spray-blocking hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-square-basic-four-round hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-square-bobble-block hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-square-eight-round-textured hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-square-popcorn-block hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-square-six-round-granny hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-star-motif-eight-point hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-star-motif-five-point hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-star-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-statement-sleeve-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-steam-blocking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-sunburst-motif-advanced hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-sunburst-motif-basic hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-surface-slip-stitch-technique hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-swimsuit-cover-pants hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-swimwear-cover-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-swing-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tapestry-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tassel-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tassel-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tension-adjustment hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tension-swatching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tension-troubleshooting hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-tent-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-textured-vest-rib-sides hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-themed-heart-basic hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-themed-moon-star hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-themed-pumpkin hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-themed-star-wreath hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-thermal-base-layer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-third-loop-htr hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-three-needle-equivalent hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tie-dye-look-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tinking hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-track-jacket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tray-liner hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-treble-cluster-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-treble-in-depth hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-tree-skirt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-triple-treble-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-tube-skirt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunic-with-pockets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-extended-stitch hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-foundation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-full-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-honeycomb-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-knit-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-purl-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-return-pass hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-simple-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-tunisian-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-turning-chain-counts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-twinset-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-twisted-foundation-chain hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-uk-us-terminology-guide hero-missing,voice-violation,grade-level-strict — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-using-stitch-markers hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-v-stitch hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-variegated-yarn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-vest-longline hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-vintage-fan-round hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-vintage-wheel-square hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-waffle-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-waistcoat-stitch-in-depth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wall-hanging hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-washing-and-care-symbols hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-weaving-in-ends hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-wedding-shrug hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wet-blocking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-whipstitch-join-tutorial hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-why-gauge-matters hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wide-leg-lounge-trousers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-willow-tree-motif hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script
+- crochet-windbreaker-style hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-winter-coat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-working-a-flat-circle hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-working-into-chain-space hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wrap-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wrap-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-wrist-warmers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-yarn-over-technique hero-missing,voice-violation — applied: hero-fill-deferred-to-standalone-script,em-dash-body
+- crochet-yarn-substitution hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-yarn-weight-system hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-yoga-set-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-zip-hoodie-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crocodile-stitch-accent-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crocodile-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cropped-crochet-jacket hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- cropped-crochet-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-crochet-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crossed-dc-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crossed-double-treble-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crostata-di-nutella opening-pattern-missing-hook — applied: recipe-yield-appended
+- crostata-di-ricotta opening-pattern-missing-hook — applied: recipe-yield-appended
+- custard-tart-portuguese opening-pattern-missing-hook — applied: recipe-yield-appended
+- cutlery-travel-wrap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- damper opening-pattern-missing-hook — applied: recipe-yield-appended
+- decorative-bowl-centrepiece hero-missing — applied: hero-fill-deferred-to-standalone-script
+- decorative-crochet-buttons hero-missing — applied: hero-fill-deferred-to-standalone-script
+- deodorant-paste voice-violation — applied: 
+- desk-tidy-basket-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- desk-wrist-rest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- devils-food-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- diamond-mesh-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- doorknob-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dorset-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- double-brimmed-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- double-cable-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- double-cowl-lace-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- double-picot-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- double-thick-oven-mitt hero-missing — applied: hero-fill-deferred-to-standalone-script
+- double-treble-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- doubled-vs-single-thread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dpn-setup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drop-shoulder-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drop-shoulder-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drop-stitch-lace hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drop-stitch-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dtr-mesh-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ear-flap-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ear-warmer-headband hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ear-warming-neckwarmer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- einkorn-sourdough opening-pattern-missing-hook — applied: recipe-yield-appended
+- english-muffins opening-pattern-missing-hook — applied: recipe-yield-appended
+- english-muffins-griddle opening-pattern-missing-hook — applied: recipe-yield-appended
+- evening-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- evening-wrap-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- extended-size-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- extended-size-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- extended-size-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fabric-choice-for-blackwork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fabric-counts-explained hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- fair-isle-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fair-isle-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fair-isle-style-yoke-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- fan-lace-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fan-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fan-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fan-stitch-rectangular-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- feather-and-fan-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fern-lace-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- festival-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- filet-crochet-shawl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- filet-mesh-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- filet-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- filet-square-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fingering-weight-crib-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- finishing-a-blackwork-piece hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fisherman-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fishermans-rib-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitted-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitted-rib-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-domestic-water-softener-bypass-valve grade-level-strict — applied: 
+- fitting-a-double-pole-isolator-switch-for-an-electric-shower voice-violation,grade-level-strict — applied: 
+- fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets grade-level-strict — applied: 
+- fitting-a-pressure-reducing-valve-to-a-mains-supply grade-level-strict — applied: 
+- fitting-a-programmable-room-thermostat grade-level-strict — applied: 
+- fitting-a-ventilation-grille-in-an-external-cavity-wall voice-violation,grade-level-strict — applied: 
+- fitting-a-window-opening-restrictor grade-level-strict — applied: 
+- fitting-an-outdoor-security-light-on-an-existing-circuit grade-level-strict — applied: 
+- fitting-polystyrene-coving-with-adhesive voice-violation,grade-level-strict — applied: 
+- floral-lace-trim-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- four-shaft-bronson-lace grade-level-strict — applied: 
+- four-stitch-cable-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- framing-embroidery hero-missing — applied: hero-fill-deferred-to-standalone-script
+- frankincense-rosehip-face-serum voice-violation — applied: 
+- freezer-paper-template hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- french-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- french-dip prose-prep-steps — applied: 
+- french-press-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fringed-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- front-loop-only-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- front-post-ribbed-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fruit-bowl-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- garden-pond-liner-repair grade-level-strict — applied: 
+- garlic-and-thyme-oxymel grade-level-strict — applied: 
+- garter-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- garter-stitch-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gauge-in-pattern-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gauge-swatch-basics hero-missing — applied: hero-fill-deferred-to-standalone-script
+- genoa-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- german-twisted-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gilt-selection-for-breeding grade-level-strict — applied: 
+- ginseng-profile grade-level-strict — applied: 
+- glasses-case hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gluten-free-chocolate-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- goat-kid-weaning-and-growth-checks grade-level-strict — applied: 
+- going-paperless-home-systems voice-violation,grade-level-strict — applied: 
+- gooseberry-and-elderflower-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- gradient-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gradient-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-hex-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-hexagon-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-coat-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-dress-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- granny-square-join-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-poncho-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-poncho-with-fringe hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-sampler-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-shrug-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-square-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-stripe-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granny-stripe-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gravity-fed-water-supply-from-spring grade-level-strict — applied: 
+- green-bean-casserole prose-prep-steps — applied: 
+- growing-calendula grade-level-strict — applied: 
+- growing-rosemary-from-cuttings voice-violation — applied: 
+- growing-tomatoes-from-seed voice-violation — applied: 
+- gumbo prose-prep-steps — applied: 
+- hair-tie-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-baby-blanket-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-bookmark-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-cushion-cover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-headband-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-table-runner-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-wall-hanging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hairpin-lace-wrap-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- half-knot-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- half-treble-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- handled-market-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hanging-lining-paper-before-decorating voice-violation,grade-level-strict — applied: 
+- hanging-wall-star hero-missing — applied: hero-fill-deferred-to-standalone-script
+- harcha opening-pattern-missing-hook — applied: recipe-yield-appended
+- hawthorn-berry-decoction grade-level-strict — applied: 
+- hawthorn-profile voice-violation — applied: 
+- heart-bunting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- heart-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- heat-erasable-pen-transfer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- heirloom-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- helical-knitting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- helix-stripe-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hemp-seed-cold-process-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hemp-seed-face-oil voice-violation — applied: 
+- hemp-yarn-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herb-pot-trio-covers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herbal-medicine-and-drug-interactions grade-level-strict — applied: 
+- herd-health-programme-pig-vaccination-calendar grade-level-strict — applied: 
+- herringbone-htr-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herringbone-htr-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herringbone-htr-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herringbone-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herringbone-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hexagon-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hexagon-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- high-neck-bodycon-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- holbein-stitch-deep-dive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- honey-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- honey-harvest-uncapping-and-extraction voice-violation,grade-level-strict — applied: 
+- honey-roast-carrots-and-parsnips prose-prep-steps — applied: 
+- honey-walnut-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- honeycomb-cable-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hooded-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hooded-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- horizontal-stripe-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hot-process-bar-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- house-door-stop-cover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- htr-blo-washcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- htr-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- icelandic-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- infinity-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- infinity-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- insulated-plasterboard-dot-and-dab grade-level-strict — applied: 
+- intarsia-colourwork-intro hero-missing — applied: hero-fill-deferred-to-standalone-script
+- intarsia-heart-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- intarsia-heart-pullover-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- intarsia-stripe-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- internal-wall-insulation-one-room-pattern grade-level-strict — applied: 
+- irish-crochet-bag-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-bookmark-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-bookmark-set-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-butterfly-motif-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-collar-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-cuff-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-flower-motif-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-headband-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-leaf-motif-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-rose-brooch-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-sampler-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-crochet-square-motif-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- irish-stew prose-prep-steps — applied: 
+- iron-on-transfer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- italian-tubular-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- jacket-potato-with-tuna-mayo-and-sweetcorn prose-prep-steps — applied: 
+- jambalaya grade-level-strict — applied: 
+- jenys-stretchy-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- jogless-stripes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- joining-without-twisting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- judys-magic-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- k1p1-ribbing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- k2p2-ribbing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- k2tog hero-missing — applied: hero-fill-deferred-to-standalone-script
+- k2tog-decrease hero-missing — applied: hero-fill-deferred-to-standalone-script
+- key-lime-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- kfb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- khobz opening-pattern-missing-hook — applied: recipe-yield-appended
+- kids-beanie-hat-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-drop-shoulder-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-dungarees-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-hoodie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-hoodie-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-leggings-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-poncho-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-raglan-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-shorts-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-summer-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-tunic-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kids-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kimono-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kitchen-utensil-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kitchen-utensil-pot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kitchener-graft hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knit-headband hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knit-stitch-deep-dive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knit-through-back-loop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knitted-on-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knot-stitch-and-bobble hero-missing — applied: hero-fill-deferred-to-standalone-script
+- knot-stitch-needlework hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-beret hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- lace-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-evening-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-eyelet-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-headband hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-neck-wrap-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-stole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lacy-open-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- laptop-sleeve-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- large-centrepiece-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- large-fruit-bowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lattice-stitch-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- latvian-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- laundry-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lavender-herb-sachet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lavender-tincture-for-anxiety grade-level-strict — applied: 
+- leaf-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- leaf-garland hero-missing — applied: hero-fill-deferred-to-standalone-script
+- leaf-lace-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- leaf-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- legal-predator-control-on-a-smallholding grade-level-strict — applied: 
+- lemon-balm-tincture grade-level-strict — applied: 
+- lemon-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-peel-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-peel-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-shortbread opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- lidded-trinket-box hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lifted-increase hero-missing — applied: hero-fill-deferred-to-standalone-script
+- light-box-transfer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lighting-for-needlework hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lightweight-dk-yoke-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-beach-tunic-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-midi-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-stitch-square-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-stitch-tank hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-stitch-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-summer-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linen-wide-leg-trousers-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linked-treble-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- linked-treble-cushion-cover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- linked-treble-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- liquid-castile-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- livestock-insurance-basics-for-smallholders grade-level-strict — applied: 
+- loft-insulation-joists-vs-rafter-level grade-level-strict — applied: 
+- log-holder-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- long-oversized-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- long-sleeve-shrug-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- long-tail-cast-on-deep-dive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- m1l-m1r hero-missing — applied: hero-fill-deferred-to-standalone-script
+- magic-loop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- magic-ring-granny-motif-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- managing-finisher-pigs-growth-and-condition grade-level-strict — applied: 
+- managing-rabbit-aggression-in-a-colony voice-violation,grade-level-strict — applied: 
+- manchester-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- marble-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- market-shopper-tote hero-missing — applied: hero-fill-deferred-to-standalone-script
+- market-tote-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- marled-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- maternity-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- maternity-lounge-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- maternity-pullover-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- maternity-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mating-rabbits-and-managing-gestation grade-level-strict — applied: 
+- mattress-stitch-seam hero-missing — applied: hero-fill-deferred-to-standalone-script
+- medication-and-blister-pack-disposal voice-violation,grade-level-strict — applied: 
+- mens-chunky-zip-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-cotton-tee hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-crochet-hoodie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-crochet-shorts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-crochet-tank-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-crochet-waistcoat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-drop-shoulder-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-drop-shoulder-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-fisherman-rib-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-henley-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-open-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-outdoor-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-oversized-hoodie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-polo-shirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-raglan-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-ribbed-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-rugby-stripe-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-set-in-sleeve-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-tunic-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mens-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mesh-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mesh-lace-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mesh-tube-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- microwavable-bowl-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- midi-crochet-dress hero-missing — applied: hero-fill-deferred-to-standalone-script
+- milk-thistle-seed-decoction grade-level-strict — applied: 
+- milking-equipment-cleaning-and-sterilising grade-level-strict — applied: 
+- mini-cactus-pot-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mini-granny-hexagon-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mini-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mini-trinket-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mint-sauce prose-prep-steps — applied: 
+- mixed-stitch-sampler-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mock-cable-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mock-cable-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mock-neck-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- modern-minimalist-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mohair-cowl-lace-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mohair-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mosaic-colourwork-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mosaic-colourwork-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moss-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moss-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moss-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moss-stitch-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moss-stitch-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- motherwort-tincture grade-level-strict — applied: 
+- mounting-fabric-in-a-q-snap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mounting-fabric-in-a-wooden-hoop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moussaka prose-prep-steps — applied: 
+- mulligatawny prose-prep-steps — applied: 
+- natural-fibre-tank-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- neck-rest-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needle-felted-weasel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- neem-hair-oil voice-violation — applied: 
+- nesting-basket-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nettle-seed-tincture-for-adrenal-fatigue grade-level-strict — applied: 
+- norwegian-rose-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- notifiable-livestock-disease-reporting grade-level-strict — applied: 
+- nursing-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nursing-nightgown-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nursing-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nursing-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- octopus-red-wine prose-prep-steps — applied: 
+- off-peak-tariff-switching-guide voice-violation,grade-level-strict — applied: 
+- off-shoulder-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- office-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- office-wrap-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- offset-ripple-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- olive-oil-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- olive-oil-cake-italian opening-pattern-missing-hook — applied: recipe-yield-appended
+- olive-oil-orange-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- ombre-fade-pullover-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- on-farm-injection-technique-for-livestock grade-level-strict — applied: 
+- one-shoulder-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- open-back-top-crochet hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- openwork-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- openwork-triangle-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- orange-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- organic-cotton-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- organising-thread-and-tools hero-missing — applied: hero-fill-deferred-to-standalone-script
+- outdoor-pig-water-supply-in-winter grade-level-strict — applied: 
+- oval-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oval-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oval-doorstep-mat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- overlay-mesh-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- overlay-mosaic-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oversized-crochet-tee hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oversized-hoodie-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oversized-scarf-wrap-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oversized-tunic-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- padded-straight-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- parkin-yorkshire opening-pattern-missing-hook — applied: recipe-yield-appended
+- parking-the-needle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- party-top-sequin-look-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pasteis-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- pastel-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- pecan-bourbon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- pecan-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- pencil-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pencil-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- peppermint-profile grade-level-strict — applied: 
+- petal-stitch-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- phone-stand-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picking-up-sts-horizontal hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picking-up-sts-vertical hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picnic-storage-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picot-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picot-edged-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picot-edged-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- picot-lace-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pillbox-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pine-juniper-solid-perfume voice-violation — applied: 
+- pineapple-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pineapple-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pineapple-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pineapple-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- plaited-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- plant-pot-cover-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- plum-frangipane-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- pocket-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pointed-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polpette-al-sugo prose-prep-steps — applied: 
+- pompom-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- popcorn-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- popcorn-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- popcorn-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- portuguese-custard-tarts opening-pattern-missing-hook — applied: recipe-yield-appended
+- post-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- postpartum-wrap-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- posture-and-wrist-health hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pot-holder-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- prayer-shawl-lace-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pre-shave-oil voice-violation — applied: 
+- pre-washing-fabric hero-missing — applied: hero-fill-deferred-to-standalone-script
+- preparing-fabric-edges hero-missing — applied: hero-fill-deferred-to-standalone-script
+- preserving-jar-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- prick-and-pounce-transfer hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- provisional-cast-on hero-missing — applied: hero-fill-deferred-to-standalone-script
+- puff-stitch-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- puff-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- puff-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- puff-stitch-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- puff-stitch-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pumpkin-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- purl-stitch-deep-dive hero-missing — applied: hero-fill-deferred-to-standalone-script
+- purl-through-back-loop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rabbit-buck-management-and-conditioning grade-level-strict — applied: 
+- rabbit-coccidiosis-in-kits voice-violation,grade-level-strict — applied: 
+- rabbit-deep-litter-colony-bedding voice-violation,grade-level-strict — applied: 
+- rabbit-ear-infection-recognition-and-treatment grade-level-strict — applied: 
+- rabbit-pasteurellosis-management voice-violation,grade-level-strict — applied: 
+- rabbit-respiratory-infections-early-signs voice-violation,grade-level-strict — applied: 
+- rabbit-vaccination-schedule-uk voice-violation,grade-level-strict — applied: 
+- rabbit-winter-management-outdoor-colony voice-violation,grade-level-strict — applied: 
+- rag-rug-coiled-on-frame-loom grade-level-strict — applied: 
+- re-grouting-and-resealing-a-tiled-shower-enclosure grade-level-strict — applied: 
+- re-webbing-and-re-foaming-a-mid-century-armchair-seat voice-violation,grade-level-strict — applied: 
+- reading-a-blackwork-chart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reading-and-completing-livestock-movement-forms voice-violation,grade-level-strict — applied: 
+- rectangle-dc-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rectangle-wrap-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rectangular-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- red-velvet-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- releasing-hoop-tension hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- remote-control-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- removing-stitches hero-missing — applied: hero-fill-deferred-to-standalone-script
+- removing-transfer-marks hero-missing — applied: hero-fill-deferred-to-standalone-script
+- repair-cafe-guide grade-level-strict — applied: 
+- repairing-a-continuously-running-wc-cistern voice-violation,grade-level-strict — applied: 
+- repairing-a-hollow-sounding-floor-tile grade-level-strict — applied: 
+- repairing-a-sagging-plasterboard-ceiling grade-level-strict — applied: 
+- restoring-chrome-and-metal-fittings-on-vintage-furniture grade-level-strict — applied: 
+- retro-crop-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- retro-stripe-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- retro-swimsuit-coverup-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- reversible-vs-single-sided-blackwork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rhubarb-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- ribbed-and-cabled-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-hem-drop-shoulder-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-htr-washcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-scarf-1x1 hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ribbed-scarf-2x2 hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rigatoni-con-polpettine grade-level-strict — applied: 
+- ripple-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ripple-pattern-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-carrots prose-prep-steps — applied: 
+- rosehip-chamomile-balm voice-violation — applied: 
+- rosemary-digestif-tea voice-violation,grade-level-strict — applied: 
+- rosemary-hair-oil voice-violation — applied: 
+- rosemary-infusion-for-circulation grade-level-strict — applied: 
+- round-coaster-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ruffled-lace-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- running-stitch-needlework hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sage-tea-for-hot-flushes grade-level-strict — applied: 
+- salmon-and-dill-pie prose-prep-steps — applied: 
+- scallop-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- scarf-cowl-convertible hero-missing — applied: hero-fill-deferred-to-standalone-script
+- scroll-frame-setup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sealing-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seamless-yoke-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sedge-stitch-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-bar prose-prep-steps — applied: 
+- seed-packet-holder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-stitch-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-stitch-lumbar-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-stitch-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- set-in-sleeve-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- set-in-sleeve-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sewing-on-a-button hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sewn-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shading-by-stitch-density hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shampoo-bar-basic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shea-hair-mask voice-violation — applied: 
+- sheep-footbath-design-and-use grade-level-strict — applied: 
+- shell-edged-face-cloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-lace-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-table-runner hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shirt-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- short-sleeve-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shortbread-all-butter-rounds opening-pattern-missing-hook — applied: recipe-yield-appended
+- side-to-side-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- simnel-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- simnel-cake-easter opening-pattern-missing-hook — applied: recipe-yield-appended
+- simple-cable-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- simple-treble-adult-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- single-cable-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- single-skein-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- six-stitch-cable-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sk2p hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ski-style-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slate-frame-setup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sleeveless-open-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slip-knotting-thread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slip-stitch-checkers-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slip-stitch-colourwork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slip-stitch-needlework hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slouchy-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slouchy-beret hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slouchy-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slouchy-oversized-beanie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- small-coiled-rope-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- smallholding-fencing-seasonal-maintenance voice-violation,grade-level-strict — applied: 
+- smart-cropped-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- smart-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- smock-dress-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- smoked-haddock-and-leek-pie prose-prep-steps — applied: 
+- snood hero-missing — applied: hero-fill-deferred-to-standalone-script
+- snood-lace-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- snowflake-bunting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- snowflake-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sock-heel-turn hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soda-bread-brown-wholemeal opening-pattern-missing-hook — applied: recipe-yield-appended
+- soda-bread-irish opening-pattern-missing-hook — applied: recipe-yield-appended
+- solar-cooking-parabolic-cooker voice-violation,grade-level-strict — applied: 
+- solar-pv-export-limit-g98-g99 grade-level-strict — applied: 
+- solar-thermal-collector-installation grade-level-strict — applied: 
+- solid-lotion-bar voice-violation — applied: 
+- solomons-knot-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sourcing-dried-herbs-quality-guide grade-level-strict — applied: 
+- soy-candle-rose-geranium grade-level-strict — applied: 
+- spaghetti-strap-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spider-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spider-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spike-stitch-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spike-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spiral-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- split-hem-tunic-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spray-blocking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spring-door-wreath hero-missing — applied: hero-fill-deferred-to-standalone-script
+- square-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- square-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- square-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- square-motif-sampler-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ssk hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ssk-decrease hero-missing — applied: hero-fill-deferred-to-standalone-script
+- st-johns-wort-infused-oil-for-nerve-pain content-type-opening-mismatch — applied: orientation-from-excerpt
+- staggered-stripe-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- standard-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- star-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- star-stitch-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- star-stitch-cushion-cover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- star-stitch-face-cloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- steak-and-kidney-pie prose-prep-steps — applied: 
+- steam-blocking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stockinette-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- storage-pot-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stovetop-mac-and-cheese grade-level-strict — applied: 
+- straight-stitch-needlework hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stretchy-lace-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stripe-colourwork-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-dc-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-floor-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-hoodie-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-htr-baby-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-round-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- striped-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- structured-jacket-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stuffed-cabbage-rolls grade-level-strict — applied: 
+- stuffed-peppers grade-level-strict,prose-prep-steps — applied: 
+- summer-cover-up-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- summer-lace-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- summer-lace-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- summer-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- summer-overheating-risk-assessment grade-level-strict — applied: 
+- sun-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sunflower-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-back-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-basic-couching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-basket-weave-fill hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-beaded-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-blanket-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-brick-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-bricked-couching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-bullion-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-chain-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-colonial-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-cretan-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-detached-chain hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-double-feather-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-embroidered-card hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-encroaching-satin-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-feather-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-flat-satin-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-fly-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-french-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-heavy-chain hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-herringbone-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-holbein-stitch hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-laid-work-background hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-lazy-daisy-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-long-and-short-stitch hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-mini-hoop-art hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-padded-satin-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-palestrina-knot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-pattern-couching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-pekinese-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-raised-stem-band hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-raised-stem-stitch-wheel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-roumanian-couching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-sampler-band hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-satin-shading hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-simple-flower-outline hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-single-loop-bullion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-small-monogram hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-spiders-web-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-spiders-web-variation hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-split-back-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-split-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-stem-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-surface-satin-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-threaded-back-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-trellis-couching hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-twisted-chain hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-whipped-back-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-woven-picot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-woven-wheel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- swedish-meatballs grade-level-strict — applied: 
+- sweet-potato-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- tailored-vest-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tall-round-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tarte-flambee opening-pattern-missing-hook — applied: recipe-yield-appended
+- tensioning-fabric-in-a-frame hero-missing — applied: hero-fill-deferred-to-standalone-script
+- thermal-imaging-survey-guide grade-level-strict — applied: 
+- thermal-mass-passive-solar-design grade-level-strict — applied: 
+- third-loop-htr-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- thread-choice-for-blackwork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- threading-a-needle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- three-into-three-increase hero-missing — applied: hero-fill-deferred-to-standalone-script
+- three-needle-cast-off hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tiered-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tissue-box-cover hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- toddler-crochet-shorts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- toddler-crochet-vest hero-missing — applied: hero-fill-deferred-to-standalone-script
+- toddler-hat hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tool-library-and-community-lending grade-level-strict — applied: 
+- top-down-raglan-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- top-down-raglan-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- top-down-yoke-cardigan hero-missing — applied: hero-fill-deferred-to-standalone-script
+- top-down-yoke-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- top-down-yoke-tunic hero-missing — applied: hero-fill-deferred-to-standalone-script
+- toy-storage-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- traveling-cable-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- traveling-vine-scarf hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- treacle-ginger-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-soda-bread opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-tart-classic opening-pattern-missing-hook — applied: recipe-yield-appended
+- treating-aspergillosis-in-chicks voice-violation,grade-level-strict — applied: 
+- treating-mycoplasma-in-a-laying-flock grade-level-strict — applied: 
+- treble-mesh-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- triangle-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- triangle-pennant-bunting hero-missing — applied: hero-fill-deferred-to-standalone-script
+- triangle-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- triple-chocolate-layer-cake prose-prep-steps — applied: 
+- triple-glazing-decision-guide grade-level-strict — applied: 
+- triple-treble-lap-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-cable-stitch-headband-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-entrelac-scarf-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-full-stitch-bag-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-honeycomb-cushion-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-knit-stitch-hat-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-lace-stitch-wrap-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-mesh-stitch-market-bag-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-reverse-stitch-tablet-case-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-simple-stitch-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-simple-stitch-blanket-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tunisian-smock-stitch-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- turtleneck-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- twisted-yarn-over hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-circulars hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-colour-brioche-scarf hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-colour-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-colour-ribbed-cowl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-tone-drop-shoulder-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- two-tone-intarsia-cushion hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- two-tone-round-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tying-off-cleanly hero-missing — applied: hero-fill-deferred-to-standalone-script
+- underfloor-heating-heat-pump-compatibility grade-level-strict — applied: 
+- underground-rainwater-tank-sizing voice-violation,grade-level-strict — applied: 
+- understanding-varroa-lifecycle grade-level-strict — applied: 
+- using-a-needle-threader hero-missing — applied: hero-fill-deferred-to-standalone-script
+- using-a-thimble hero-missing — applied: hero-fill-deferred-to-standalone-script
+- v-neck-chunky-pullover-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- v-neck-drop-shoulder-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- v-stitch-blanket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- v-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- v-stitch-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- varroa-alcohol-wash-monitoring grade-level-strict — applied: 
+- vermicompost-tea-making voice-violation,grade-level-strict — applied: 
+- vest-with-ribbed-sides-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vetiver-sea-salt-body-scrub voice-violation — applied: 
+- victoria-sponge-with-buttercream opening-pattern-missing-hook — applied: recipe-yield-appended
+- vintage-lace-collar-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vintage-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vintage-sailor-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vintage-spider-web-doily-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vintage-tatting-look-edging-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- voltage-optimiser-evidence-review grade-level-strict — applied: 
+- waffle-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waffle-stitch-pullover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waffle-stitch-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waistcoat-stitch-dishcloth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waistcoat-stitch-throw hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wall-hanging-planter-basket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- walnut-coffee-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- warm-ear-flap-hat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- washing-finished-embroidery hero-missing — applied: hero-fill-deferred-to-standalone-script
+- watch-cap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- water-bottle-cosy hero-missing — applied: hero-fill-deferred-to-standalone-script
+- water-soluble-pen-transfer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waterfall-lace-shawl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- weaving-in-ends hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wedding-fruit-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- wet-blocking hero-missing — applied: hero-fill-deferred-to-standalone-script
+- why-gauge-matters hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wide-lace-cowl-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wide-leg-trousers-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wide-rib-cardigan-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wild-mushroom-and-chestnut-soup prose-prep-steps — applied: 
+- wood-ash-in-compost grade-level-strict — applied: 
+- wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
+- work-blazer-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- work-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- working-with-magnification hero-missing — applied: hero-fill-deferred-to-standalone-script
+- working-with-metallic-thread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- working-with-weighted-fabric hero-missing — applied: hero-fill-deferred-to-standalone-script
+- working-without-a-transfer hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wormery-setup-and-management grade-level-strict — applied: 
+- woven-look-tapestry-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- wrap-skirt-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yarn-over hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yarn-over-increase hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yorkshire-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- axe-to-knife-progression hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carved-apple-dessert-fork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carved-birch-butter-pat hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- carved-hazel-jam-spoon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carved-hazel-wooden-scoop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carved-lime-olive-spoon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carving-a-deep-bowl-spoon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carving-faces-in-wood hero-missing — applied: hero-fill-deferred-to-standalone-script
+- choosing-your-first-carving-wood hero-missing — applied: hero-fill-deferred-to-standalone-script
+- green-ash-chair-spindle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- green-birch-kuksa-blank hero-missing — applied: hero-fill-deferred-to-standalone-script
+- green-oak-corner-shelf-bracket hero-missing — applied: hero-fill-deferred-to-standalone-script
+- green-wood-seasoning-and-storage hero-missing — applied: hero-fill-deferred-to-standalone-script
+- long-fingerless-gauntlets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mock-cable-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mosaic-colourwork-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- norwegian-star-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- peasant-thumb-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pine-pencil-tray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- plain-ribbed-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- riven-ash-hay-rake-head hero-missing — applied: hero-fill-deferred-to-standalone-script
+- riven-hazel-hurdle-stake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sanquhar-chequerboard-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-rib-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- seed-stitch-wrist-warmers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- selbu-style-mittens-dk hero-missing — applied: hero-fill-deferred-to-standalone-script
+- self-striping-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shetland-yoke-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- snowflake-fair-isle-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sport-weight-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stocking-stitch-mittens-dk hero-missing — applied: hero-fill-deferred-to-standalone-script
+- super-chunky-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- thrummed-mittens hero-missing — applied: hero-fill-deferred-to-standalone-script
+- travelling-vine-fingerless-mitts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- whittled-birch-whistle hero-missing — applied: hero-fill-deferred-to-standalone-script
+- whittled-hazel-clothes-peg hero-missing — applied: hero-fill-deferred-to-standalone-script
+- whittled-oak-garden-dibber hero-missing — applied: hero-fill-deferred-to-standalone-script
+- whittled-sycamore-salt-scoop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- willow-grades-and-varieties hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- wood-for-boxes-and-small-furniture hero-missing — applied: hero-fill-deferred-to-standalone-script

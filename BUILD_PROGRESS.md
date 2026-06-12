@@ -1797,7 +1797,7 @@ Revise the rates here when actuals diverge from estimates.
 | 4 | Herbal medicine | 2,500 | 0 | Not started — ~1 wk setup | 2.5 |
 | 5 | Mindset | 4,300 | 885 PUBLISHED (bulks 001–022 + editorial pass) | ✅ schema + backlog + authoring prompt v6 + anti-tells + 11 sub-categories. **bulk-022 (autopilot-queue-extra, 2026-05-28):** 40 entries PUBLISHED — multi-category gap-fill (BODY, HOME, MOTHERHOOD, AGEING, GRIEF, SPIRITUALITY, TIME, HEALTH, RELATIONSHIPS, FORGIVENESS). Practice-type spread targeted under-served sub-categories (RITUAL, ACTIVITY, MEDITATION, EMBODIMENT, SPELL). Mindset 845 → 885. Report: `docs/mindset-bulk-022-report.md`. | 4.3 |
 | 6 | Crochet | 2,500 | 277 PUBLISHED (Foundations 57 + Stitches 60 + Motifs 120 + TECHNIQUE bulk-004 +40) | ✅ X1 autopilot foundation landed 2026-06-09 — schema (constructionDirection / bodyShape / gradingNotes + Category.autopilotContentTypesEnabled / techniqueSlugs / criticalTechniques / aliases), 5 master author prompts (technique + motif + homeware full; garment + amigurumi stubs waiting on X2), autopilot routine content-type routing, pipelineStatus = READY. Autopilot picks TECHNIQUE / STITCH / MOTIF / HOMEWARE only — GARMENT + AMIGURUMI wait for X2. **bulk-004 TECHNIQUE (autopilot-queue, 2026-06-12):** 40 TECHNIQUE tutorials PUBLISHED to `foundations` sub-category — blocking (acrylic, cotton), yarn selection (choosing yarn, fibre types, ball band, mohair, variegated), joins (magic knot, Russian join), finishing (fastening off, edging crab/scallop/single-row), seaming (dc seam, live-edge join), Tunisian foundation + return pass, pattern reading (written, chart, UK/US terms, repeat notation), shaping (short rows, decreasing at edges), gauge (round gauge, adjustment), post stitches, ergonomics, left-handed mirror, holding yarn, counting stitches, fibre care (wool/cotton/acrylic), yarn substitution. Tools seeded: steam-iron, tunisian-hook (+2). Report: docs/crochet-bulk-004-technique-report.md. | 2.5 |
-| 7 | Knitting | 1,500 | 0 | Not started — ~1 wk setup | 1.5 |
+| 7 | Knitting | 1,500 | 204+ PUBLISHED (K-6 ×150 + K-4.4 ×14 + mitt-glove bulk-001 ×40) | ✅ K-1 pipeline-setup READY. K-6 batch: 150 tutorials (hat ×50, scarf-cowl ×50, techniques ×50). K-4.4: 14 technique anchor tutorials. **mitt-glove bulk-001 (autopilot-queue, 2026-06-12):** 40 PATTERN tutorials PUBLISHED — plain ribbed ×4, cabled ×4, Fair Isle / stranded ×6, lace ×3, colourwork ×4, Aran / chunky ×3, specialty technique (double-knit, brioche, fisherman's rib, thrummed, cotton, partial-fingers) ×6, children ×2, wrist-warmer ×4, gauntlet ×1, sport-weight ×1, super-chunky ×1, self-striping ×1. All 3 adult sizes (S/M/L); child sizes CS/CM where applicable. Constructions: magic-loop throughout, afterthought-thumb ×20, thumb-gusset ×18, peasant-thumb ×2. Report: docs/knitting-bulk-001-mitt-glove-report.md. | 1.5 |
 | 8 | Needlework | 800 | 0 | Not started — ~1 wk setup | 0.8 |
 | 9 | Sewing | 1,200 | 0 | Not started — ~1 wk setup | 1.2 |
 | 10 | Fibre arts | 800 | 516 PUBLISHED (bulk-001 through bulk-014, 2026-06-02) | ✅ bulks 001 – 014 done: felting ×155, spinning ×104, weaving ×102, natural-dyeing ×75, macramé ×53, rug-making ×27. Reports: docs/fibre-arts-bulk-001-report.md through docs/fibre-arts-bulk-014-report.md. | 0.8 |
@@ -3798,3 +3798,25 @@ The kingdom column tells the truth at the data level (FUNGI rows sit beside PLAN
 Garden: 16 sub-cats total (was 17). 14 autopilot-enabled (was 15; foraging now disabled). 2 specialist stubs (unchanged). The 4 PUBLISHED garden tutorials (rosemary, strawberries, tomatoes, calendula) carry no garden/foraging links and continue to render unchanged.
 
 Sustainability: 7 sub-cats total (was 6). All autopilot-enabled. The mix-percentage paragraph in the umbrella will be re-calibrated when sustainability next runs pipeline-setup.
+
+## Knitting mitt-glove bulk-001 — autopilot batch (2026-06-12)
+
+knitting/mitt-glove — 40 PATTERN tutorials, all PUBLISHED. Sub-category count: 0 → 40.
+
+**Autopilot routing:** queue picked `mitt-glove` (0 published, lowest count). Author prompt at `docs/knitting-mitt-glove-author.md`.
+
+**40 tutorials published:**
+plain-ribbed-fingerless-mitts, stocking-stitch-mittens-dk, seed-stitch-wrist-warmers, childs-striped-mittens, 2x2-rib-fingerless-mitts-aran, cabled-fingerless-mitts-dk, convertible-mitten-dk, selbu-style-mittens-dk, lace-fingerless-mitts-dk, fair-isle-fingerless-mitts, cabled-aran-mittens, brioche-fingerless-mitts, lace-wrist-warmers-fingering, chunky-fingerless-mitts, in-the-round-wrist-warmers, garter-stitch-mittens, sport-weight-fingerless-mitts, norwegian-star-mittens, latvian-braid-mittens, contrast-tip-mittens, mock-cable-fingerless-mitts, gusseted-thumb-fingerless-mitts, mosaic-colourwork-fingerless-mitts, long-fingerless-gauntlets, adult-striped-mittens, peasant-thumb-mittens, seed-rib-fingerless-mitts, childs-cable-mittens, fishermans-rib-fingerless-mitts, aran-twisted-rib-mittens, shetland-yoke-mittens, super-chunky-mittens, self-striping-fingerless-mitts, snowflake-fair-isle-mittens, travelling-vine-fingerless-mitts, sanquhar-chequerboard-mitts, double-knit-mittens, fingerless-gloves-partial-fingers, cotton-fingerless-mitts, thrummed-mittens.
+
+**Construction mix:** afterthought-thumb ×20, thumb-gusset ×18, peasant-thumb ×2. All used magic-loop construction. Sizes: adult S(18) / M(20) / L(22) cm; child CS(14) / CM(16) cm on child patterns.
+
+**Voice-check fixes:**
+- knitting-stranded-colourwork invalid stitch slug → replaced with knitting-fair-isle (×1)
+- knitting-mock-cable invalid stitch slug → replaced with knitting-slip-stitch (×1)
+- Banned phrase "a tapestry" → "your tapestry needle" (×1)
+- Em-dash in body (×1)
+- Tricolon → two adjectives (×1)
+
+**QC tail:** hero-fill filled 143 knitting heroes (pexels 139, unsplash 3, wikimedia 1). qc-fix processed 62 candidates (22 pass, 40 still_blocked). Relevance queue written to `docs/image-relevance-queue-knitting-001.json`.
+
+Report: `docs/knitting-bulk-001-mitt-glove-report.md`.
