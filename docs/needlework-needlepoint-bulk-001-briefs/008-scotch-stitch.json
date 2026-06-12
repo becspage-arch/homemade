@@ -1,0 +1,93 @@
+{
+  "slug": "needlepoint-scotch-stitch",
+  "title": "Scotch stitch",
+  "subtitle": "Five diagonal stitches forming a square block on canvas",
+  "excerpt": "Scotch stitch builds square blocks across the canvas, each made from five diagonal stitches increasing then decreasing in length. The blocks create a raised, textured surface and cover the canvas in a satisfying rhythm.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), Scotch stitch entry. Weldon's Practical Needlework, canvaswork series.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "needlepoint-mosaic-stitch", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["Scotch stitch needlepoint", "Scottish stitch", "crossed square stitch"],
+  "glossaryTerms": [
+    {
+      "slug": "scotch-stitch",
+      "term": "Scotch stitch",
+      "definition": "Five diagonal stitches worked over one, two, three, two, and one canvas intersection in sequence. The five stitches form a square block. The blocks tile the canvas in a diagonal grid."
+    }
+  ],
+  "heroPrompt": "Scotch stitch blocks on 13-count canvas in warm tan wool, showing the raised square blocks in a diagonal grid, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scotch stitch works five diagonal stitches in a sequence: over one canvas intersection, over two, over three, over two, over one. The five stitches form a neat square block, three holes wide and three holes tall. The blocks tile the canvas with a diagonal grid pattern." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The raised centre stitch gives the surface a slight woven texture. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "scotch-stitch" } }], "text": "Scotch stitch" },
+          { "type": "text", "text": " covers canvas faster than tent stitch and is useful for geometric borders, backgrounds, and any area where a bold texture is wanted." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One strand of Persian wool, or two strands of tapestry wool" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work Scotch stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark a three-by-three square area of canvas (nine holes by nine holes, giving one block with a border). Bring the needle up at the lower left of the block." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch 1: one diagonal over one intersection. Stitch 2: one diagonal over two intersections, starting one hole lower and one to the right. Stitch 3: one diagonal over three intersections. Stitch 4: over two intersections. Stitch 5: over one intersection. The five stitches fill the three-by-three block." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move to the next block three holes to the right. Repeat the five-stitch sequence." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the row, begin the second row three holes below the first. Offset the blocks so the grid aligns." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Two-colour Scotch stitch" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A single row of tent stitch between the blocks, in a second colour, outlines each block and makes the grid more defined. This version is sometimes called chequered Scotch stitch. Work all the blocks first, then fill the single-hole gaps between them with tent stitch in the second colour." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Long centre stitch standing proud of the block",
+              "cause": "The three-intersection stitch needs slightly less pull than the shorter stitches on either side.",
+              "fix": "Keep all five stitches in one block at the same gentle tension. The centre stitch will appear slightly raised, which is normal and desirable."
+            },
+            {
+              "symptom": "Blocks not quite squaring up",
+              "cause": "Starting hole off by one.",
+              "fix": "Each block occupies exactly three canvas holes in both directions. Count the starting hole before placing the first stitch of each block."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

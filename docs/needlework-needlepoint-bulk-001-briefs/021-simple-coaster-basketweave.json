@@ -1,0 +1,101 @@
+{
+  "slug": "needlepoint-coaster-basketweave",
+  "title": "Needlepoint coaster in basketweave stitch",
+  "subtitle": "A 10 cm square worked entirely in basketweave tent stitch on 13-count canvas",
+  "excerpt": "This small coaster is worked in basketweave tent stitch on 13-count canvas, with a two-colour geometric border and a plain fill centre. Finished size is 10 by 10 cm. A first piece for learning basketweave on a manageable scale.",
+  "type": "PATTERN",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Design synthesised from geometric border motifs in Therese de Dillmont, Encyclopaedia of Needlework (1886). Weldon's Practical Needlework, canvaswork series (1887).",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["tent-stitch-basketweave", "reading-a-counted-chart", "blocking-distorted-canvas", "tying-off-cleanly"],
+  "criticalTechniques": ["tent-stitch-basketweave"],
+  "aliases": ["needlepoint coaster", "basketweave coaster", "first needlepoint project"],
+  "glossaryTerms": [
+    {
+      "slug": "mount-board",
+      "term": "Mount board",
+      "definition": "Acid-free rigid card used to back a finished needlepoint piece before framing or mounting in a case."
+    }
+  ],
+  "heroPrompt": "Two small finished needlepoint coasters in navy and cream on a wooden table, showing the basketweave stitch texture and geometric border, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This coaster is a 50 by 50 stitch square worked on 13-count mono canvas, finishing at 10 by 10 cm when blocked and mounted. The design has a two-row geometric border in a contrast colour and a plain basketweave fill in the centre. Two thread colours, one stitch technique, a useful result." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas, cut 20 by 20 cm (leaves a 5 cm margin around the 50-stitch design)" },
+            { "label": "Thread — main colour", "value": "One strand of Persian wool in a dark shade. About 4 m covers the centre fill" },
+            { "label": "Thread — border colour", "value": "One strand of Persian wool in a light or contrast shade. About 1 m for the border" },
+            { "label": "Needle", "value": "Tapestry size 20" },
+            { "label": "Frame", "value": "Small scroll frame or hoop. A hoop works at this scale" },
+            { "label": "Backing", "value": "Felt or thin mount board, cut 10 by 10 cm, to finish the back of the coaster" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stretching the canvas" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mount the canvas on a small hoop or scroll frame. Keep the canvas threads straight in both directions as you mount. The canvas grain should run squarely; if it is pulled at an angle in the hoop, the finished piece will distort." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stitches used" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The whole coaster uses " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tent-stitch-basketweave", "label": "basketweave tent stitch" } }], "text": "basketweave tent stitch" },
+          { "type": "text", "text": " throughout. No other stitch is needed." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working method" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work the design stitches first, background fill last. This is the standard needlepoint convention: the design stitches set the canvas tension, and the background fills in around them." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the centre of the canvas with two basting threads, one horizontal and one vertical. The crossing point is the centre of the 50 by 50 design area." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the two-row border: count 25 holes from the centre in each direction to find the outer edge of the design. Work the outer border row in the contrast colour, then the inner border row directly inside it. Both rows use basketweave." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the centre with the main colour in basketweave. Work in diagonal rows as the technique requires. Check the direction at the start of each row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the 50 by 50 area is complete, remove the basting threads. Block the canvas by dampening and pinning square to a board overnight." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once dry, trim the canvas margin to 1.5 cm. Fold the margin to the back and secure with a few hand stitches at each corner. Cut a piece of felt to 10 by 10 cm and slip-stitch it to the back to cover the laced margin. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mount-board" } }], "text": "mount board" },
+          { "type": "text", "text": " alternative: lace the canvas over a 10 by 10 cm piece of thin board and glue the felt backing over the board." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The same size canvas and the same two-colour approach works well with a Scotch stitch fill instead of basketweave, which gives a more textured surface." }
+        ]
+      }
+    ]
+  }
+}

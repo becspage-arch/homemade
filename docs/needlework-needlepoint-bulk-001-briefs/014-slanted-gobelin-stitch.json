@@ -1,0 +1,81 @@
+{
+  "slug": "needlepoint-slanted-gobelin-stitch",
+  "title": "Slanted Gobelin stitch",
+  "subtitle": "A long diagonal stitch over two canvas threads for smooth shaded fills",
+  "excerpt": "Slanted Gobelin works diagonal stitches over two horizontal and one vertical canvas thread. Rows share a common stitch line and the stitches slant slightly less steeply than tent stitch, covering the canvas with a smooth, corded texture.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), oblique Gobelin entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["tent-stitch-continental", "reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["slanted gobelin", "oblique gobelin", "encroaching gobelin"],
+  "glossaryTerms": [
+    {
+      "slug": "slanted-gobelin-stitch",
+      "term": "Slanted Gobelin stitch",
+      "definition": "A diagonal stitch worked over two vertical and one horizontal canvas thread. The slant is gentler than continental tent stitch. Rows share a common stitch line to give solid coverage."
+    }
+  ],
+  "heroPrompt": "Slanted Gobelin stitch on 13-count canvas in graduating shades of warm rose, showing the gentle diagonal and the smooth shaded rows, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Slanted Gobelin stitch is a diagonal stitch that covers two canvas threads vertically and one thread horizontally. The slant is shallower than continental tent stitch. Worked in rows where each row shares the top edge of the row below, it covers canvas with a smooth, slightly corded texture." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The shallow angle means colour changes between rows read as smooth bands rather than sharp lines. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slanted-gobelin-stitch" } }], "text": "Slanted Gobelin stitch" },
+          { "type": "text", "text": " is often used for sky areas and large background fills where a gentle gradation of colour reads better than the tight texture of tent stitch." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "Two strands of Persian wool. Slanted Gobelin needs more thread than tent stitch for full coverage" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work slanted Gobelin stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left of the first stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count two threads up and one thread to the right. Insert the needle at this point. The stitch slants from lower left to upper right, but more gently than a tent stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one thread to the right of the starting hole for the next stitch. Continue across the row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On the second row, share the top line of holes used by the first row. This gives solid coverage with no gap between rows." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Gaps between rows",
+              "cause": "Second row not starting from the shared line.",
+              "fix": "The top of every first-row stitch is the bottom of the corresponding second-row stitch. Use the same line of holes."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "needlepoint-cashmere-stitch",
+  "title": "Cashmere stitch",
+  "subtitle": "An elongated mosaic block that covers canvas in a rectangular unit",
+  "excerpt": "Cashmere stitch works a four-stitch diagonal block, wider than mosaic and narrower than Scotch. The unit covers two canvas holes wide and three holes tall, giving a brick-like texture with a diagonal lean.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), cashmere stitch entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "needlepoint-mosaic-stitch", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["cashmere stitch needlepoint", "elongated mosaic"],
+  "glossaryTerms": [
+    {
+      "slug": "cashmere-stitch",
+      "term": "Cashmere stitch",
+      "definition": "A four-stitch diagonal block worked over one, two, two, and one canvas intersections. The block is two holes wide and three holes tall."
+    }
+  ],
+  "heroPrompt": "Cashmere stitch on 13-count canvas in warm caramel wool, showing the rectangular diagonal blocks in neat rows, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cashmere stitch is a four-stitch diagonal block: one short diagonal over one canvas intersection, two medium diagonals over two intersections each, one short diagonal over one intersection. The block is three holes tall and two holes wide." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "It sits between mosaic stitch (shorter) and Scotch stitch (squarer) in the composite-block family. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cashmere-stitch" } }], "text": "Cashmere stitch" },
+          { "type": "text", "text": " is good for diagonal fills where a rectangular rather than square unit suits the design." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One strand of Persian wool" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work cashmere stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left of a two-by-three block area (two canvas holes wide, three canvas holes tall)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch 1: one short diagonal over one canvas intersection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch 2: one diagonal over two intersections, starting one hole lower and one to the right." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch 3: one diagonal over two intersections, in the same direction, one hole further down." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stitch 4: one short diagonal over one intersection to close the block." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move two holes to the right for the next block. Work across the row, then offset the next row by two holes down to continue the pattern." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Blocks look uneven",
+              "cause": "The two middle stitches are the same length, but if the tension differs they read differently.",
+              "fix": "Keep all four stitches in each block at the same gentle pull."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "blocking-needlepoint-canvas",
+  "title": "Blocking a needlepoint canvas",
+  "subtitle": "Stretching and squaring the finished canvas before mounting",
+  "excerpt": "Needlepoint canvas often distorts during work, particularly under diagonal tent stitches. Blocking is the process of wetting and pinning the canvas square on a board while it dries. The canvas stays in its corrected shape once dry.",
+  "type": "READING",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), finishing chapter. Weldon's Practical Needlework, canvaswork series.",
+  "recipeTools": [
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["blocking-distorted-canvas", "mounting-framing-needlepoint"],
+  "criticalTechniques": ["blocking-distorted-canvas"],
+  "aliases": ["blocking needlepoint", "squaring a canvas", "needlepoint finishing", "stretching canvas"],
+  "glossaryTerms": [
+    {
+      "slug": "blocking-distorted-canvas",
+      "term": "Blocking",
+      "definition": "Wetting a finished needlepoint piece and pinning it square to a board while it dries. The wet canvas threads relax and hold their corrected position as they dry."
+    }
+  ],
+  "heroPrompt": "A needlepoint canvas pinned to a foam blocking board with T-pins, slightly damp, squared to a right-angle template, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most needlepoint canvases distort during work. Tent stitch, in particular, pulls the canvas diagonally. The corners of a finished tent-stitch piece often point rather than sitting square. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blocking-distorted-canvas" } }], "text": "Blocking" },
+          { "type": "text", "text": " corrects this. The process takes a few minutes to set up, then the canvas dries overnight." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Blocking board", "value": "A piece of softboard, thick foam, or a folded-towel stack large enough for the canvas. Must take pins without splitting" },
+            { "label": "Pins", "value": "Stainless-steel T-pins or rustproof sewing pins, one every 2 cm around the perimeter" },
+            { "label": "Set square or right-angle tool", "value": "To check the corners are truly square as you pin" },
+            { "label": "Clean water", "value": "A bowl or plant mister of clean water at room temperature. Do not use hot water" },
+            { "label": "Ruler", "value": "To verify the canvas dimensions as you stretch" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to block a needlepoint canvas" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mist the canvas lightly with water on both sides, or dampen it with a wet cloth. The canvas should be evenly damp but not soaking. Wool threads relax once wet and will take a new shape as they dry." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the canvas right-side-down on the blocking board. Pin one corner with two T-pins, making sure the canvas threads run square to the board edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the opposite corner square and pin it. Use a set square to check both corners are right angles before adding more pins." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pin the two remaining corners, then fill in the pins every 2 cm around the perimeter, pulling the canvas straight as you go. The canvas should feel taut but should not be stretched so hard the threads pucker." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the canvas pinned to the board overnight. Check it is fully dry before removing the pins. A damp canvas will distort again as soon as the pins come out." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When blocking is not enough" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Very heavily distorted canvases, particularly those worked in continental tent stitch without a frame, may need two blocking sessions. Unpin, re-dampen, and re-pin a second time. The canvas usually straightens fully after two sessions." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stitch types that distort less" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Basketweave tent stitch distorts the canvas far less than continental because its back threads run in alternating directions. Bargello distorts it differently, pulling upward rather than diagonally. Any tent-stitch piece worked without a frame will need blocking. Pieces mounted on a scroll frame throughout often need only a light block or none at all." }
+        ]
+      }
+    ]
+  }
+}

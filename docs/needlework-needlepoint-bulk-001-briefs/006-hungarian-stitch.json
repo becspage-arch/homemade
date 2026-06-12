@@ -1,0 +1,86 @@
+{
+  "slug": "needlepoint-hungarian-stitch",
+  "title": "Hungarian stitch",
+  "subtitle": "Short and long upright stitches grouped into diamond shapes",
+  "excerpt": "Hungarian stitch groups upright stitches in sets of three, alternating short, long, and short, to build a repeating diamond pattern across the canvas. It covers well and makes a neat geometric texture.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), Hungarian stitch entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["Hungarian ground stitch", "diamond stitch needlepoint"],
+  "glossaryTerms": [
+    {
+      "slug": "hungarian-stitch",
+      "term": "Hungarian stitch",
+      "definition": "Groups of three upright stitches worked over two, four, and two canvas threads. The groups interlock on alternate rows to form a repeating diamond pattern."
+    }
+  ],
+  "heroPrompt": "Hungarian stitch on 13-count canvas in warm ochre and cream wool, showing the diamond pattern clearly, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hungarian stitch works upright stitches in groups of three: short over two threads, long over four threads, short over two again. Each group leaves a gap of one canvas hole before the next group. On the next row, the groups are offset so the long stitches fit into the gaps of the row above. The result is a repeating diamond." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Two colours give the most readable version of the pattern: one colour for the long stitches, another for the short. The diamonds of the long stitches read as the foreground, the short stitches as a background grid." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "Two colours of Persian wool, one strand each. The long stitch uses more thread than the short; prepare longer lengths for the main colour" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hungarian-stitch" } }], "text": "Hungarian stitch" }
+      ] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First row, first colour: work one short upright stitch over two canvas threads, one long upright stitch over four threads, one short stitch over two threads. Skip one canvas hole and repeat the group. Continue across the row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First row, second colour: fill the gaps between the first-colour groups with a single short stitch over two canvas threads." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Second row: offset the groups by two canvas holes so the long stitches of the second row sit in the spaces left between the long stitches of the first row. The diamond shape builds as the rows accumulate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating rows, keeping the offset consistent. After four rows the full diamond repeat is visible." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Diamond pattern not appearing",
+              "cause": "Second row offset wrong. The long stitches of adjacent rows must sit two holes apart horizontally.",
+              "fix": "Count back to the first row and re-measure the offset before continuing."
+            },
+            {
+              "symptom": "Thread bunching at the long stitches",
+              "cause": "Long stitches over four threads need slightly less tension than short stitches to lie flat.",
+              "fix": "Keep the thread relaxed on the long stitch. A tight pull makes long upright stitches hump up above the surface."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

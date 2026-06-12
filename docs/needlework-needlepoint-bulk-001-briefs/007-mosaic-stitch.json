@@ -1,0 +1,94 @@
+{
+  "slug": "needlepoint-mosaic-stitch",
+  "title": "Mosaic stitch",
+  "subtitle": "Three-stitch diagonal blocks that build a textured repeat",
+  "excerpt": "Mosaic stitch groups three diagonal stitches (short, long, short) into a small square block. The blocks repeat across the canvas in a diagonal grid. The stitch covers quickly and gives a fine, even texture.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), mosaic stitch entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tent-stitch-continental", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["mosaic stitch needlepoint", "diagonal mosaic", "three-stitch mosaic"],
+  "glossaryTerms": [
+    {
+      "slug": "mosaic-stitch",
+      "term": "Mosaic stitch",
+      "definition": "A diagonal composite stitch made of three stitches: one over one canvas intersection, one over two intersections, one over one intersection. The group fills a two-by-two area of canvas."
+    }
+  ],
+  "heroPrompt": "Mosaic stitch on 13-count canvas in moss green and cream wool, showing the repeating diagonal block pattern, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mosaic stitch builds diagonal blocks across the canvas. Each block uses three stitches: a short diagonal over one hole, a long diagonal over two holes, then a short diagonal again. The block covers a two by two hole area." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The blocks sit in a grid. Worked in one colour, the surface is a fine diagonal texture. In two colours, the blocks contrast and the grid becomes a clear geometric pattern. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mosaic-stitch" } }], "text": "Mosaic stitch" },
+          { "type": "text", "text": " is faster than tent stitch for large fills because each block covers four canvas holes rather than one." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One strand of Persian wool. A second contrasting colour is optional but shows the pattern clearly" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work mosaic stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left of the first two-by-two block area. Work one short diagonal stitch over one canvas intersection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one hole below and to the right of the first stitch. Work one long diagonal stitch over two canvas intersections." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one hole below and to the right of the second stitch. Work one short diagonal stitch over one intersection to complete the block." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left of the next block, two holes to the right, and repeat. Work across the row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the second row, offset the blocks by two holes, so the blocks fit between the blocks of the first row." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Blocks not aligning into a clean grid",
+              "cause": "Starting the second row at the wrong offset.",
+              "fix": "Each block is two canvas holes wide. The second row starts two holes down and offset two holes from the first row. Count carefully before placing the first block of each new row."
+            },
+            {
+              "symptom": "Long stitch puckering",
+              "cause": "Too much tension on the two-intersection diagonal.",
+              "fix": "Ease the thread slightly on the long stitch to match the tension of the short stitches on either side."
+            }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scotch stitch expands the mosaic block idea into a larger five-stitch square. Cashmere stitch stretches the mosaic unit into a three-hole-wide rectangle." }
+        ]
+      }
+    ]
+  }
+}

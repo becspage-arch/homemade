@@ -1,0 +1,467 @@
+{
+  "slug": "needlepoint-first-sampler",
+  "title": "Needlepoint beginner sampler",
+  "subtitle": "A small sampler panel demonstrating four stitches in labelled sections on 13-count canvas",
+  "excerpt": "This sampler panel is designed as a reference piece for a new needlepoint worker. Four stitch types: continental tent, basketweave tent, brick, and Hungarian: are each worked in a named 4 cm section. Finished size is 16 by 24 cm.",
+  "type": "PATTERN",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sampler stitch selection derived from standard Victorian canvaswork instruction sequences in Therese de Dillmont, Encyclopaedia of Needlework (1886) and Weldon's Practical Needlework, canvaswork series.",
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle-20",
+      "isOptional": false
+    },
+    {
+      "slug": "scroll-frame",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
+  ],
+  "techniqueSlugs": [
+    "tent-stitch-continental",
+    "tent-stitch-basketweave",
+    "brick-stitch-needlepoint",
+    "hungarian-stitch",
+    "blocking-distorted-canvas"
+  ],
+  "criticalTechniques": [
+    "tent-stitch-continental",
+    "tent-stitch-basketweave"
+  ],
+  "aliases": [
+    "needlepoint sampler",
+    "beginner needlepoint sampler",
+    "canvaswork practice piece",
+    "needlepoint stitch sampler"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sampler",
+      "term": "Sampler",
+      "definition": "A needlework piece that demonstrates a range of stitches or techniques, traditionally kept as a reference. Victorian samplers often recorded the stitcher's name, date, and a verse alongside the stitch examples."
+    }
+  ],
+  "heroPrompt": "A small rectangular needlepoint sampler with four clearly distinct stitch sections in blue and cream, tacked to a cork board, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A sampler teaches four stitches in one sitting. Keep the finished piece beside the canvas as a reference. This design divides an 83 by 125 hole panel into four equal horizontal sections, one stitch per section."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sampler"
+                }
+              }
+            ],
+            "text": "sampler"
+          },
+          {
+            "type": "text",
+            "text": " is the best first needlepoint project for two reasons: it teaches four different stitches in one sitting, and the finished piece serves as a reference you can hold next to the canvas while learning. This design divides a 83 by 125 hole panel into four equal horizontal sections, one stitch per section, with a two-hole dividing line between each."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            {
+              "label": "Canvas",
+              "value": "13-count mono canvas, cut 27 by 35 cm (leaves a 5 cm margin around the 83 by 125 hole design area)"
+            },
+            {
+              "label": "Thread: main (dark)",
+              "value": "Persian wool. Suggested: DMC 930 / Anchor 1035 (dark antique blue). About 20 m"
+            },
+            {
+              "label": "Thread: contrast (cream)",
+              "value": "Persian wool. Suggested: DMC 712 / Anchor 926 (cream). About 10 m"
+            },
+            {
+              "label": "Thread: dividers (accent)",
+              "value": "Persian wool. Suggested: DMC 310 / Anchor 403 (black). About 3 m"
+            },
+            {
+              "label": "Needle",
+              "value": "Tapestry size 20"
+            },
+            {
+              "label": "Frame",
+              "value": "Scroll frame"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Palette"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Main: DMC 930 / Anchor 1035: dark antique blue"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Contrast: DMC 712 / Anchor 926: cream"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dividers: DMC 310 / Anchor 403: black"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stretching the canvas"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mount on a scroll frame. Each stitch section has a different distortion pattern; a frame gives consistent tension across all four."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each of the four sections introduces one stitch:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "tent-stitch-continental",
+                          "label": "Continental tent stitch"
+                        }
+                      }
+                    ],
+                    "text": "Continental tent stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Section 1, top): main colour on cream background"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "tent-stitch-basketweave",
+                          "label": "Basketweave tent stitch"
+                        }
+                      }
+                    ],
+                    "text": "Basketweave tent stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Section 2): main colour fill only"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "brick-stitch-needlepoint",
+                          "label": "Brick stitch"
+                        }
+                      }
+                    ],
+                    "text": "Brick stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Section 3): alternating main and cream rows"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "hungarian-stitch",
+                          "label": "Hungarian stitch"
+                        }
+                      }
+                    ],
+                    "text": "Hungarian stitch"
+                  },
+                  {
+                    "type": "text",
+                    "text": " (Section 4, bottom): main and cream interlocked"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark the design boundary and the three dividing lines at holes 31, 63, and 95 across the 125-hole height. Work a single row of black continental stitches along each dividing line."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work Section 1 in continental tent stitch. Fill the 83 by 29 hole area with two colours, placing a simple geometric motif (a small diamond or check) using the contrast colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work Section 2 in basketweave tent stitch, full fill in main colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work Section 3 in brick stitch, alternating main and cream in adjacent rows."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work Section 4 in Hungarian stitch, main and cream interlocked. Block the finished sampler by dampening and pinning."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Leave the sampler unframed for use as a reference, tacking it to a cork board. Or mount and frame it as a record of the first session."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A second sampler in three sections covers the major compound and straight stitches. Try mosaic stitch, Scotch stitch, and bargello wave."
+          }
+        ]
+      }
+    ]
+  }
+}

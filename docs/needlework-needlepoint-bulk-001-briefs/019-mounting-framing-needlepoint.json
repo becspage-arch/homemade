@@ -1,0 +1,70 @@
+{
+  "slug": "mounting-framing-needlepoint",
+  "title": "Mounting and framing a needlepoint panel",
+  "subtitle": "Lacing the blocked canvas over board and fitting it into a frame",
+  "excerpt": "A finished needlepoint panel is mounted by stretching and lacing it over a firm board, then fitting the board into a frame. The lacing holds the canvas taut without adhesives, and the work can be removed and re-stretched if needed.",
+  "type": "READING",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), mounting and framing chapter. Weldon's Practical Needlework, finishing series.",
+  "recipeTools": [
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["blocking-distorted-canvas", "mounting-framing-needlepoint"],
+  "criticalTechniques": ["blocking-distorted-canvas"],
+  "aliases": ["lacing needlepoint", "mounting needlepoint", "framing needlepoint canvas"],
+  "glossaryTerms": [
+    {
+      "slug": "lacing",
+      "term": "Lacing",
+      "definition": "Securing a needlepoint canvas over a mounting board by threading a strong thread through the canvas margins and pulling the canvas tight in both directions. No adhesive is used."
+    }
+  ],
+  "heroPrompt": "A blocked needlepoint panel being laced over a grey board, showing the lacing thread on the back in a herringbone pattern, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once a needlepoint panel has been blocked and dried square, it is mounted by stretching it over a firm board and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lacing" } }], "text": "lacing" },
+          { "type": "text", "text": " it in place. Lacing uses no adhesive and can be undone and redone if the panel needs re-cleaning or re-blocking." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Mounting board", "value": "Acid-free mountboard, foamcore, or hardboard cut to the design size. Must be rigid. Avoid ordinary cardboard, which is acidic and will rot the canvas over time" },
+            { "label": "Lacing thread", "value": "Strong linen thread, button thread, or upholstery thread. At least twice the perimeter in length" },
+            { "label": "Needle", "value": "Tapestry needle or a curved upholstery needle for easier lacing" },
+            { "label": "Pins", "value": "T-pins or sewing pins for positioning" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to mount the canvas" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Block the canvas first and leave it fully dry. A damp canvas will re-distort on the board." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Centre the canvas over the board. The canvas margin should extend at least 3 cm past the board edges on all sides. Pin the canvas to the board temporarily to hold the position." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the top canvas margin to the back of the board. Thread the lacing needle with a long length of lacing thread. Lace across the top margin from left to right: bring the thread from the canvas front through the canvas margin, across the back of the board, and through the margin on the other side. Work in a simple herringbone or running stitch, keeping the lacing about 2 cm apart. Pull the canvas taut as you go." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat for the bottom margin, pulling the canvas taut and lacing back across in the opposite direction." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lace the two side margins in the same way. Fold the corners neatly, as you would wrapping a package. Secure with a few hand stitches." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit the mounted canvas into a frame without glass if possible. Glass traps humidity and can cause the wool to felt over years. If glass is used for protection, keep it a few millimetres clear of the canvas surface." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Cushion covers and upholstered pieces" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cushion cover backs are usually plain fabric cut the same size as the worked front. Sew the back to the front along three sides, right sides facing, insert the cushion pad, and slip-stitch the fourth side closed. Use a zip in the fourth side if the cover will need washing. Needlepoint cushions can be surface-cleaned but not machine washed." }
+        ]
+      }
+    ]
+  }
+}

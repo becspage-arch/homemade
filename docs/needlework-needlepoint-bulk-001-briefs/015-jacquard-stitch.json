@@ -1,0 +1,80 @@
+{
+  "slug": "needlepoint-jacquard-stitch",
+  "title": "Jacquard stitch",
+  "subtitle": "Alternating rows of continental and slanted Gobelin in a stepped zigzag",
+  "excerpt": "Jacquard stitch combines continental tent stitch and slanted Gobelin in alternating diagonal steps. The two stitch lengths create a woven-looking pattern that is particularly good for geometric backgrounds.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882), Jacquard stitch entry. Weldon's Practical Needlework, canvaswork series.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["tent-stitch-continental", "needlepoint-slanted-gobelin-stitch", "reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["tent-stitch-continental", "reading-a-counted-chart"],
+  "aliases": ["Jacquard stitch needlepoint", "combined tent gobelin"],
+  "glossaryTerms": [
+    {
+      "slug": "jacquard-stitch",
+      "term": "Jacquard stitch",
+      "definition": "A needlepoint stitch that alternates rows of continental tent stitch over one intersection with slanted Gobelin stitch over two intersections. The two lengths create a stepped, woven surface."
+    }
+  ],
+  "heroPrompt": "Jacquard stitch on 13-count canvas in two shades of teal, showing the alternating stitch lengths in stepped diagonal rows, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jacquard stitch combines two diagonal stitch lengths in alternating diagonal rows. One row uses continental tent stitches over one canvas intersection. The next row uses slanted Gobelin stitches over two canvas intersections. The two rows together create a stepped diagonal pattern that covers the canvas with a woven look." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Working " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "jacquard-stitch" } }], "text": "Jacquard stitch" },
+          { "type": "text", "text": " in two colours (one per row) makes the two stitch types visually distinct and creates a pattern that looks like woven cloth." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One or two colours of Persian wool, one strand" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work Jacquard stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first diagonal row in continental tent stitch. Place diagonal stitches over one canvas intersection each, moving from lower left to upper right." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the second diagonal row in slanted Gobelin: diagonal stitches over two canvas intersections. Place it right next to the first row, running parallel to it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating tent and Gobelin rows across the canvas. Both rows travel in the same diagonal direction and together tile the canvas in a step pattern." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Pattern not aligning",
+              "cause": "The two stitch types need careful positioning so the longer Gobelin stitches fit between the tent stitch rows.",
+              "fix": "After the first tent row and the first Gobelin row are placed, count that the Gobelin stitches sit squarely in the spaces left by the tent stitches before continuing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

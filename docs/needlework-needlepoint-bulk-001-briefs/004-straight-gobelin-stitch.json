@@ -1,0 +1,93 @@
+{
+  "slug": "needlepoint-straight-gobelin-stitch",
+  "title": "Straight Gobelin stitch",
+  "subtitle": "Upright stitches worked over two or three canvas threads",
+  "excerpt": "Straight Gobelin covers canvas with upright stitches, each spanning two or three canvas threads. The result is a corduroy-like horizontal texture, useful for backgrounds and geometric borders.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), Gobelin stitch entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["gobelin stitch", "upright gobelin", "straight gobelin needlepoint"],
+  "glossaryTerms": [
+    {
+      "slug": "straight-gobelin-stitch",
+      "term": "Straight Gobelin stitch",
+      "definition": "An upright stitch worked over two or three canvas threads in parallel rows. Each stitch covers two threads vertically; the rows share a common hole between them."
+    }
+  ],
+  "heroPrompt": "Straight Gobelin stitch on 13-count canvas in deep burgundy wool, showing rows of upright stitches with a slight raised horizontal texture, daylight.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Straight Gobelin stitch covers canvas with upright stitches, each spanning two or three vertical canvas threads. The stitches sit side by side in rows, and each row shares a common line of holes with the row below. The texture is horizontal and slightly raised, similar to corduroy." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Worked over two threads, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "straight-gobelin-stitch" } }], "text": "straight Gobelin stitch" },
+          { "type": "text", "text": " makes a fine, close texture. Worked over three threads, it reads as a broader stripe. Both versions are used for geometric borders and background fills where the tent stitch family would be too dense." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "Two strands of Persian wool, or one strand of tapestry wool — straight Gobelin needs more coverage than tent stitch because the canvas shows between rows if the thread is thin" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work straight Gobelin over two threads" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the base of the first stitch, level with the lower edge of the row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count up two canvas threads and insert the needle at the top of those two threads. You have placed one vertical stitch over two canvas threads." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one canvas hole to the right of the starting hole to begin the next stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work across the row. At the end, begin the next row by coming up through the same line of holes used as the top of the first row. The rows interlock at their shared line." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Canvas threads showing between rows",
+              "cause": "Thread too thin for the canvas count, or stitches not filling every hole.",
+              "fix": "Add a strand of thread. Check you are using the correct shared-hole line between rows."
+            },
+            {
+              "symptom": "Rows not lying flat",
+              "cause": "Even tension is critical for upright stitches; pulling the thread too tight bunches the canvas.",
+              "fix": "Keep tension consistent. Upright stitches need slightly less pull than diagonal stitches."
+            }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Straight Gobelin is the starting point for brick stitch, where alternate rows are offset by one hole to create an interlocking pattern. It also underpins Hungarian stitch, which pairs groups of upright stitches into diamond shapes." }
+        ]
+      }
+    ]
+  }
+}

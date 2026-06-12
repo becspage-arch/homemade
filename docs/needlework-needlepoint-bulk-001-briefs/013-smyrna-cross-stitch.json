@@ -1,0 +1,86 @@
+{
+  "slug": "needlepoint-smyrna-cross",
+  "title": "Smyrna cross stitch",
+  "subtitle": "An upright cross placed over a diagonal cross to form an eight-pointed shape",
+  "excerpt": "Smyrna cross works a diagonal cross first, then an upright cross directly on top. The two crosses share the same four holes and together make an eight-pointed shape that stands noticeably above the canvas surface.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882), Smyrna stitch entry. Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "embroidery-hoop-10", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["Smyrna stitch", "double cross stitch", "leviathan stitch", "oblong cross stitch"],
+  "glossaryTerms": [
+    {
+      "slug": "smyrna-cross",
+      "term": "Smyrna cross stitch",
+      "definition": "Two crosses worked on the same four canvas holes: first a diagonal cross stitch, then an upright cross placed on top. The combined stitch makes an eight-pointed shape."
+    }
+  ],
+  "heroPrompt": "Smyrna cross stitches on 13-count canvas in deep red wool, showing rows of eight-pointed raised cross shapes, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Smyrna cross stitch places two crosses on the same four canvas holes. The first cross is diagonal: lower left to upper right, then lower right to upper left. The second cross is upright: bottom to top, then left to right. The upright cross sits on top of the diagonal, and the eight limbs give a prominent raised shape." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work it in one colour for a bold textured repeat. Or use two colours: one for the diagonal cross, one for the upright, to show the star structure clearly." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas. A hoop or frame both work; a frame keeps the canvas squarer under the upright-cross tension" },
+            { "label": "Thread", "value": "One strand of Persian wool. Two colours are optional but show the stitch structure clearly" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smyrna-cross" } }], "text": "Smyrna cross stitch" }
+      ] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a diagonal cross over a two-by-two canvas area: bring the needle up at the lower left, insert at the upper right. Bring the needle up at the lower right, insert at the upper left." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Now work the upright cross over the same four holes: bring the needle up at the bottom centre, insert at the top centre. Bring the needle up at the left centre, insert at the right centre." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The vertical stitch of the upright cross is the last stitch worked, and crosses the horizontal. Keep this consistent across the piece. Always the vertical on top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move two holes to the right for the next stitch. Work across the row." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Upright cross sitting off-centre",
+              "cause": "The four centre holes of the block do not align with the diagonal cross holes.",
+              "fix": "On a two-by-two block, the centre holes are the same four holes as the diagonal cross corners. The mid-point of each side is where the upright cross arms enter and exit."
+            },
+            {
+              "symptom": "Stitches from different rows inconsistent",
+              "cause": "Alternating which cross goes on top.",
+              "fix": "Commit to vertical-on-top throughout the piece. Check every few stitches."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

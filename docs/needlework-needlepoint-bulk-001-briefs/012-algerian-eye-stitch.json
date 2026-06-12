@@ -1,0 +1,92 @@
+{
+  "slug": "needlepoint-algerian-eye-stitch",
+  "title": "Algerian eye stitch",
+  "subtitle": "Eight radiating stitches forming an open star on canvas",
+  "excerpt": "Algerian eye stitch works eight stitches radiating from a central hole, each stitch entering the canvas from the outer edge of a four-by-four block. The stitches pull the central hole open to give an eyelet or star effect.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), drawn thread and pulled work chapter. Caulfeild and Saward, Dictionary of Needlework (1882), Algerian eye entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["Algerian eye", "eye stitch", "star eyelet", "eyelet stitch needlepoint"],
+  "glossaryTerms": [
+    {
+      "slug": "algerian-eye-stitch",
+      "term": "Algerian eye stitch",
+      "definition": "Eight stitches radiating from a single central hole, worked on evenweave or canvas. Each stitch enters from the outer edge of the block and exits at the centre, pulling the central hole slightly open."
+    }
+  ],
+  "heroPrompt": "Algerian eye stitch on 13-count canvas in navy and ecru wool, showing a row of open star shapes with their characteristic pulled centres, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Algerian eye stitch works eight stitches from the outer edge of a four-by-four canvas block, all meeting at the centre hole. The thread pulls the central hole slightly open as the stitches are drawn through it. The result is an open star or eyelet shape." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The stitch is worked on the corners and midpoints of each side of the block: eight positions in total. Each position has one stitch. The stitches are always worked in the same rotational direction to keep the pull on the central hole consistent." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One strand of Persian wool, or a single strand of stranded cotton — the pulled central hole only opens clearly with a finer thread" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "algerian-eye-stitch" } }], "text": "Algerian eye stitch" }
+      ] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark a four-by-four block on the canvas. Identify the eight outer positions: four corners, and the mid-point of each side." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at one outer position, insert it at the central hole. Pull the thread firmly through the centre to slightly open the hole. This is one stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work clockwise around the block, bringing the needle up at each outer position in turn and inserting it at the centre hole each time." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After all eight stitches, pass the needle under the stitches on the back to reach the starting position for the next eyelet." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The direction of working matters: if some stitches go clockwise and others anti-clockwise, the pull on the centre hole is uneven and the star collapses. Work every stitch in the same rotational direction through the whole piece." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Centre hole not opening clearly",
+              "cause": "Thread too thick, or pull not consistent.",
+              "fix": "Pull each stitch firmly as it passes through the centre. Use a finer thread. On 13-count canvas, one thin strand gives a cleaner eyelet than two strands."
+            },
+            {
+              "symptom": "Star shape irregular",
+              "cause": "Stitches out of order around the block, creating uneven pull.",
+              "fix": "Work strictly clockwise around the eight positions. Do not skip positions or re-enter the centre from an off-order direction."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

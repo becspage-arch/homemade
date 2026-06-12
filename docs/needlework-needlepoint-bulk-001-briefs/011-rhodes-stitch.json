@@ -1,0 +1,87 @@
+{
+  "slug": "needlepoint-rhodes-stitch",
+  "title": "Rhodes stitch",
+  "subtitle": "A raised square stitch worked in overlapping spokes from the corners",
+  "excerpt": "Rhodes stitch builds a thick, raised square by working a series of long stitches from each corner toward the centre, rotating one hole at a time around the block. The layered spokes create a bold, three-dimensional surface.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Caulfeild and Saward, Dictionary of Needlework (1882), star stitch entry. Weldon's Practical Needlework, canvaswork series (1887).",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["Rhodes stitch needlepoint", "Rhodes square", "star square stitch"],
+  "glossaryTerms": [
+    {
+      "slug": "rhodes-stitch",
+      "term": "Rhodes stitch",
+      "definition": "A needlepoint stitch worked over a square canvas area, typically four by four or six by six holes. Stitches radiate from hole to hole around the perimeter, each crossing the centre. The layered result is thick and raised."
+    }
+  ],
+  "heroPrompt": "Rhodes stitch squares on 13-count canvas in deep plum wool, showing two completed raised squares side by side, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rhodes stitch covers a square area of canvas with a series of long stitches, each crossing from one side of the square to the other. Each stitch moves one hole around the perimeter of the square, and all stitches cross the centre. The layered result is thick and noticeably raised above the surface." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rhodes-stitch" } }], "text": "Rhodes stitch" },
+          { "type": "text", "text": " over a six-by-six area makes a bold square with a pronounced three-dimensional surface. Used as a repeat, the squares create a studded geometric texture. Used as isolated accents against a tent-stitch background, each square reads as a decorative feature." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "Two strands of Persian wool. The raised effect needs more thread than flat stitches" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work Rhodes stitch over a four-by-four block" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the four-by-four block on the canvas: four holes across, four holes down." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left corner of the block. Insert it at the upper right corner. This is the first stitch, diagonally crossing the whole block." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move one hole clockwise around the perimeter. Bring the needle up one hole to the right of the lower left corner. Insert it one hole down from the upper right corner. This second stitch crosses the centre at a slightly different angle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue moving one hole clockwise on the entry side and one hole clockwise on the exit side for each stitch. Work through all the perimeter holes. The stitches accumulate to fill the square with a layered raised centre." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After the last stitch, work a small tie stitch across the centre if the top threads are loose. This is optional but keeps the raised dome tidy." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Stitches pulling off-centre",
+              "cause": "Inconsistent starting hole position around the perimeter.",
+              "fix": "Work one stitch clockwise at a time. Keep the perimeter hole count consistent on both entry and exit for each stitch."
+            },
+            {
+              "symptom": "Centre tangle",
+              "cause": "Too many stitches crossing at slightly different angles can create a small tangle in the middle.",
+              "fix": "Use the needle tip to ease the centre threads apart and lay them flat before working the last few stitches."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

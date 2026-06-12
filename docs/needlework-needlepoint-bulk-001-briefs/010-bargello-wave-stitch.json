@@ -1,0 +1,107 @@
+{
+  "slug": "needlepoint-bargello-basic-wave",
+  "title": "Bargello basic wave",
+  "subtitle": "Long upright stitches stepped into a repeating zigzag",
+  "excerpt": "Bargello works long upright stitches across canvas, each row offset vertically from the one above to create a wave or zigzag. The pattern covers quickly and is worked in multiple colours for vivid geometric effects.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), Florentine stitch entry. Weldon's Practical Needlework, Berlin work series.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["bargello stitch", "Florentine work", "Florentine stitch", "flame stitch", "Hungarian point"],
+  "glossaryTerms": [
+    {
+      "slug": "bargello-stitch",
+      "term": "Bargello stitch",
+      "definition": "Long upright stitches over four or more canvas threads, stepped up or down by a set number of threads on each adjacent stitch. Multiple rows build the wave or zigzag pattern, traditionally worked in graduating colours."
+    },
+    {
+      "slug": "step-count",
+      "term": "Step count",
+      "definition": "In bargello, the number of canvas threads each stitch moves up or down from its neighbour. A step of two means each stitch begins two threads higher (or lower) than the previous one."
+    }
+  ],
+  "heroPrompt": "Bargello wave pattern on 13-count canvas in a graduated sequence from deep teal to pale aqua, showing the upright stitches and the wave rhythm, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bargello covers canvas with long upright stitches, each stitch shifted up or down by a fixed number of threads from its neighbour. The shift creates a wave or zigzag across the canvas. Working the same wave in multiple colours, changing colour every row, builds the characteristic graduated effect." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The stitch covers canvas faster than any other needlepoint technique. A cushion front in " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bargello-stitch" } }], "text": "bargello stitch" },
+          { "type": "text", "text": " takes considerably less time than the same size in tent stitch. The long stitches can catch if the finished piece takes hard wear, so bargello suits framed panels, cushion fronts for occasional use, and box covers." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame. Bargello pulls the canvas upward; a frame is essential" },
+            { "label": "Thread", "value": "Tapestry wool, one strand, in four to six graduating colours. Bargello uses large amounts of thread; prepare generous lengths" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work a basic bargello wave" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a basic wave, use stitches over four canvas threads and a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "step-count" } }], "text": "step count" },
+          { "type": "text", "text": " of two. Each stitch begins two threads higher (or lower) than the previous." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the centre of the canvas horizontally. Start the first row of stitches from the centre, working outward to both edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Establish the wave by stepping: work several stitches stepping upward by two threads each, then several stitches stepping downward by two threads each. This is the first row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the second row in a second colour, following exactly the same wave as the first row but one stitch-height above. Each stitch starts from the hole at the top of the stitch below it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the canvas with rows in graduating colours, following the same wave through the whole piece. Working from top to bottom after the first row is complete keeps the rhythm easier to follow." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Establishing the first row",
+          "body": "The first row of a bargello piece is the hardest. Count carefully from the centre outward and re-check the wave before starting the second row. Every subsequent row is a copy of the first."
+        }
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Wave drifting out of step across the canvas",
+              "cause": "First row miscounted, then subsequent rows copied the mistake.",
+              "fix": "Re-count the first row from the centre before committing to more than two rows. Once three rows are correct, the subsequent rows are much easier."
+            },
+            {
+              "symptom": "Canvas pulling upward",
+              "cause": "Long upright stitches on a free-hanging canvas have no diagonal pull to balance the vertical tension.",
+              "fix": "Mount on a scroll frame before starting. Block the finished piece."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

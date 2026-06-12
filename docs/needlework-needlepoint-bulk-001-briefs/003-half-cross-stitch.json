@@ -1,0 +1,101 @@
+{
+  "slug": "needlepoint-half-cross-stitch",
+  "title": "Half-cross stitch",
+  "subtitle": "The economical tent stitch with thin backing",
+  "excerpt": "Half-cross stitch makes the same diagonal front face as continental tent stitch but uses far less thread on the back. The trade-off is lower canvas coverage and a less padded result.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), half-cross entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "embroidery-hoop-10", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["tent-stitch-continental", "tying-off-cleanly"],
+  "criticalTechniques": ["tying-off-cleanly"],
+  "aliases": ["half cross", "economical tent stitch", "half-cross needlepoint"],
+  "glossaryTerms": [
+    {
+      "slug": "half-cross-stitch",
+      "term": "Half-cross stitch",
+      "definition": "A tent stitch variant where the needle enters the canvas at the position directly above the starting hole, making one short diagonal on the front. The back carries only a very short straight stitch rather than the longer diagonal of continental."
+    }
+  ],
+  "heroPrompt": "Half-cross stitch sampler on 13-count canvas in soft sage wool, showing both front and back side by side, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Half-cross stitch places a single diagonal stitch across one canvas intersection, the same front face as continental or basketweave tent. The needle enters straight up, not diagonally, so the back carries only a short vertical stitch rather than a longer diagonal pass." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The stitch uses roughly half the thread of " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tent-stitch-continental", "label": "continental tent stitch" } }], "text": "continental tent stitch" },
+          { "type": "text", "text": ". The canvas coverage is lower and the back padding thinner, so a half-cross finished piece is less firm. It is practical for wall panels and framed pieces where the front view is what matters and thread economy is a priority." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count interlock canvas (interlock is more stable than mono canvas for half-cross, because mono canvas can pull under half-cross tension)" },
+            { "label": "Thread", "value": "One strand of Persian wool, or two strands of tapestry wool" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work half-cross stitch" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up at the lower left of the first intersection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert the needle directly above the entry point, one canvas thread higher. The stitch slants from lower left to upper right on the front, just as in continental." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the needle up one position to the right to start the next stitch. The needle passes horizontally under one canvas thread on the back." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue across the row. On the return row, turn the canvas and work back in the same way. All stitches slant in the same direction on the front." }] }] }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Because the back stitches are so short, " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "half-cross-stitch" } }], "text": "half-cross stitch" },
+          { "type": "text", "text": " works best on interlock canvas. The woven threads hold the canvas square even without the back-thread padding that continental provides." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Canvas pulling badly out of square",
+              "cause": "Half-cross on mono canvas has too little back-thread padding to resist diagonal pull.",
+              "fix": "Switch to interlock canvas, or change to continental or basketweave tent stitch for the project."
+            },
+            {
+              "symptom": "Canvas threads showing between stitches",
+              "cause": "Short back stitches do not compact the canvas threads as firmly as continental.",
+              "fix": "Add a strand of thread, or choose continental for areas that need full, dense coverage."
+            }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "When to choose half-cross" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Half-cross is a practical choice for large background areas on framed or mounted pieces where the back is never seen. For cushion covers, chair pads, and anything that takes handling or wear, continental or basketweave gives a firmer, more durable result." }
+        ]
+      }
+    ]
+  }
+}

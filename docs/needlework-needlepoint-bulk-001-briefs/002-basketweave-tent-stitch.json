@@ -1,0 +1,128 @@
+{
+  "slug": "needlepoint-basketweave-tent-stitch",
+  "title": "Basketweave tent stitch",
+  "subtitle": "The diagonal-row stitch that keeps the canvas square",
+  "excerpt": "Basketweave tent stitch covers canvas with the same diagonal face as continental, but the rows travel diagonally so the back builds a woven texture. It pulls the canvas less and is the standard stitch for large background fills.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter (Project Gutenberg #20776). Caulfeild and Saward, Dictionary of Needlework (1882), tent stitch entry. Weldon's Practical Needlework, canvaswork series (1887).",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["tent-stitch-basketweave", "tent-stitch-continental", "reading-a-counted-chart", "blocking-distorted-canvas"],
+  "criticalTechniques": ["tent-stitch-basketweave"],
+  "aliases": ["basketweave stitch", "diagonal tent stitch", "needlepoint basketweave"],
+  "glossaryTerms": [
+    {
+      "slug": "tent-stitch-basketweave",
+      "term": "Basketweave tent stitch",
+      "definition": "Tent stitch worked in diagonal rows. The back of the canvas builds a woven pattern of alternating horizontal and vertical passes. Distributes tension better than continental so the canvas stays squarer during work."
+    },
+    {
+      "slug": "diagonal-row",
+      "term": "Diagonal row",
+      "definition": "In basketweave needlepoint, a row that travels from corner to corner across the canvas rather than straight across. Down-rows and up-rows alternate to build the woven back."
+    }
+  ],
+  "heroPrompt": "Basketweave tent stitch in progress on 13-count mono canvas, showing the back with its woven texture alongside the front, natural light, navy wool.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tent-stitch-basketweave" } }], "text": "Basketweave tent stitch" },
+          { "type": "text", "text": " works the same diagonal front face as " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tent-stitch-continental", "label": "continental tent stitch" } }], "text": "continental tent stitch" },
+          { "type": "text", "text": ", but the rows travel diagonally across the canvas rather than straight across. The back builds a woven, basket-like texture. This distribution of thread weight keeps the canvas much squarer during work." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The stitch has two directions: down-rows and up-rows. On a down-row the needle enters horizontally. On an up-row the needle enters vertically. Getting the direction right on each row is the only thing to learn." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "When to use basketweave over continental",
+          "body": "Use basketweave for large background fills and for any area you want to keep flat. Use continental for small areas, fine detail, and spots where diagonal rows are awkward to set up."
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "One strand of Persian wool, or two strands of tapestry wool" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work basketweave" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Basketweave rows travel diagonally, either downward or upward. Each row alternates direction." }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Start at the upper left intersection of the area you want to fill. Bring the needle up at the lower left corner of that intersection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work one diagonal down-row: insert the needle at the upper right corner of each intersection, then bring it up horizontally by passing the needle under one canvas thread before coming up at the next position. The stitch on the back is horizontal." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the down-row, start an up-row: work back upward along the next diagonal. On up-rows, the needle enters the canvas vertically. Bring it up under one canvas thread to reach the next position." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating down-rows and up-rows. The front accumulates diagonal stitches pointing consistently from lower left to upper right. The back weaves horizontal and vertical passes in alternating rows." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When you stop work mid-row, note whether you were working a down-row or an up-row. Resume with the same direction. Two consecutive down-rows or two consecutive up-rows create a faint ridge on the front." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Reading the " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "diagonal-row" } }], "text": "diagonal row" },
+        { "type": "text", "text": " direction" }
+      ] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The easiest way to check which direction to resume on is to look at the back of the canvas. If the last stitches on the back run horizontally, the next row is an up-row. If they run vertically, the next row is a down-row." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Faint ridge across the stitching",
+              "cause": "Two consecutive rows in the same direction create a double pass of thread in the same angle.",
+              "fix": "Before resuming after a break, check the back of the canvas to confirm which direction is next."
+            },
+            {
+              "symptom": "Canvas bulging at the edges",
+              "cause": "Tension pulled too tight on the turn at the end of each row.",
+              "fix": "Keep the stitch tension consistent with the body of the row. The turn stitch needs the same gentle pull as the others."
+            }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Basketweave fills large areas well. Once it is comfortable, try adding texture with " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "needlepoint-scotch-stitch", "label": "Scotch stitch" } }], "text": "Scotch stitch" },
+          { "type": "text", "text": " for decorative blocks, or " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "needlepoint-bargello-basic", "label": "bargello" } }], "text": "bargello" },
+          { "type": "text", "text": " for geometric wave patterns." }
+        ]
+      }
+    ]
+  }
+}

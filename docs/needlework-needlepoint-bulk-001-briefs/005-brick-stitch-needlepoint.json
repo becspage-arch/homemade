@@ -1,0 +1,93 @@
+{
+  "slug": "needlepoint-brick-stitch",
+  "title": "Brick stitch for needlepoint",
+  "subtitle": "Offset rows of upright stitches with a staggered brick pattern",
+  "excerpt": "Brick stitch works rows of upright stitches, each offset from the row above by half a stitch width. The result is an interlocking brick-wall pattern that fills large areas evenly and is good for colour shading.",
+  "type": "TECHNIQUE",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Therese de Dillmont, Encyclopaedia of Needlework (1886), canvaswork chapter. Caulfeild and Saward, Dictionary of Needlework (1882), brick stitch entry.",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["reading-a-counted-chart", "tying-off-cleanly"],
+  "criticalTechniques": ["reading-a-counted-chart"],
+  "aliases": ["brick stitch", "interlocking gobelin", "needlepoint brick fill"],
+  "glossaryTerms": [
+    {
+      "slug": "brick-stitch",
+      "term": "Brick stitch",
+      "definition": "Rows of upright stitches on canvas, each row offset by half a stitch width from the row above, so alternate rows interlock like courses of brickwork."
+    }
+  ],
+  "heroPrompt": "Brick stitch on 13-count canvas in two shades of blue wool, showing the staggered pattern and colour transition, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brick stitch is rows of upright stitches, each row offset from the one above by one canvas hole. The stitches fit together like courses of brickwork. It covers canvas completely and is a practical fill stitch for large areas. The offset makes it ideal for shading one colour into another in gentle steps." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The stitch is related to straight Gobelin but the offset removes the ridge between rows, giving a smoother, denser surface." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas on a scroll frame" },
+            { "label": "Thread", "value": "Two strands of Persian wool — brick stitch needs slightly more thread than tent stitch for full coverage" },
+            { "label": "Needle", "value": "Tapestry size 20" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "How to work " },
+        { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brick-stitch" } }], "text": "brick stitch" }
+      ] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the first row of upright stitches across the canvas, each stitch spanning two canvas threads vertically. Use every hole along the base line." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On the second row, offset the stitches by one canvas hole to the right (or left) relative to the row above. The top of each second-row stitch shares the line of holes used as the mid-point of the first-row stitches." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On the third row, return to the original alignment. The stitches on the third row sit directly below the stitches in the first row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue alternating alignment on each row. After a few rows, the brickwork pattern is visible." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Using brick stitch for colour shading" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Change colour at the start of a new row. Because the rows interlock, a colour boundary in brick stitch creates a smooth zigzag edge rather than a straight line. This makes gentle tone-on-tone transitions (dark blue to mid blue to light blue) read smoothly across a large fill area." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Rows drifting out of alignment",
+              "cause": "The offset shifts one hole each row, but it is easy to drift two holes by mistake.",
+              "fix": "Count back to the first row and check the alignment before starting the third row."
+            },
+            {
+              "symptom": "Canvas showing at the edge of the fill area",
+              "cause": "The edge row has incomplete stitches where the staggered pattern hits the boundary.",
+              "fix": "Work partial stitches at the boundary to fill the remaining holes, reducing stitch height as needed."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

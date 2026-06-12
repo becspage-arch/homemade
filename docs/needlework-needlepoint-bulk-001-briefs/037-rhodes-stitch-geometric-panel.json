@@ -1,0 +1,111 @@
+{
+  "slug": "needlepoint-panel-rhodes-stitch-geometric",
+  "title": "Rhodes stitch geometric panel",
+  "subtitle": "A framed panel of interlocking Rhodes stitch squares with a basketweave background on 13-count canvas",
+  "excerpt": "Rhodes stitch creates raised, three-dimensional squares from layered spoke stitches. This small framed panel arranges nine Rhodes stitch squares in a three-by-three grid against a basketweave background. Finished size is 18 by 18 cm.",
+  "type": "PATTERN",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rhodes stitch construction from Therese de Dillmont, Encyclopaedia of Needlework (1886), raised canvas stitch chapter. Grid arrangement synthesised from geometric stitch patterns in Caulfeild and Saward, Dictionary of Needlework (1882).",
+  "recipeTools": [
+    { "slug": "tapestry-needle-20", "isOptional": false },
+    { "slug": "scroll-frame", "isOptional": false },
+    { "slug": "embroidery-scissors", "isOptional": false }
+  ],
+  "techniqueSlugs": ["rhodes-stitch", "tent-stitch-basketweave", "blocking-distorted-canvas", "mounting-framing-needlepoint"],
+  "criticalTechniques": ["rhodes-stitch"],
+  "aliases": ["Rhodes stitch panel", "raised needlepoint panel", "three-dimensional needlepoint"],
+  "glossaryTerms": [
+    {
+      "slug": "raised-stitch",
+      "term": "Raised stitch",
+      "definition": "A needlepoint stitch that builds up above the canvas surface in multiple layers. Rhodes stitch and velvet stitch are the two most common raised stitches in traditional canvaswork."
+    }
+  ],
+  "heroPrompt": "A small square framed needlepoint panel showing a three-by-three grid of raised Rhodes stitch squares in deep red on cream, showing the three-dimensional texture, natural side light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rhodes stitch creates a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "raised-stitch" } }], "text": "raised stitch" },
+          { "type": "text", "text": " that stands noticeably above the canvas surface. Each square uses 8 to 16 spoke stitches radiating from the corners of a square, layered in sequence. This panel places nine Rhodes stitch squares in a 3 by 3 grid on a basketweave background, with a narrow plain border. The design area is 94 by 94 holes, finishing at 18 by 18 cm." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What you need" }] },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            { "label": "Canvas", "value": "13-count mono canvas, cut 29 by 29 cm (leaves a 5 cm margin around the 94 by 94 hole design area)" },
+            { "label": "Thread: Rhodes squares", "value": "Persian wool. Suggested: DMC 816 / Anchor 1005 (garnet). About 20 m. Each Rhodes stitch square at 6 by 6 holes uses about 1.5 m" },
+            { "label": "Thread: background", "value": "Persian wool. Suggested: DMC 712 / Anchor 926 (cream). About 15 m" },
+            { "label": "Thread: border", "value": "Persian wool. Suggested: DMC 838 / Anchor 1088 (very dark beige brown). About 4 m" },
+            { "label": "Needle", "value": "Tapestry size 20" },
+            { "label": "Frame", "value": "Small scroll frame or hoop" },
+            { "label": "Mounting board", "value": "Acid-free board, 18 by 18 cm" }
+          ]
+        }
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Palette" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rhodes squares: DMC 816 / Anchor 1005: garnet" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Background: DMC 712 / Anchor 926: cream" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Border: DMC 838 / Anchor 1088: very dark beige brown" }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stretching the canvas" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mount on a frame. The Rhodes stitch spokes pull the canvas at multiple angles; a frame keeps the background fill stable around the raised squares." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Stitches used" }] },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "rhodes-stitch", "label": "Rhodes stitch" } }], "text": "Rhodes stitch" },
+            { "type": "text", "text": ": 8 spoke stitches over a 6 by 6 hole square, each spoke from a corner to the opposite corner, worked in strict sequence" }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "tent-stitch-basketweave", "label": "Basketweave tent stitch" } }], "text": "Basketweave tent stitch" },
+            { "type": "text", "text": ": background and border fill" }
+          ] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Working method" }] },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark the design boundary and the 3 by 3 grid of Rhodes stitch positions. Each Rhodes square occupies a 6 by 6 hole area; the nine squares are spaced 4 holes apart with the border running 8 holes in from the canvas edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work all nine Rhodes stitch squares first. Work each square from the bottom-left corner to the top-right corner in the first spoke, rotating clockwise for each subsequent spoke. The layered spokes build up the raised centre automatically as each row is completed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the border in the dark shade using basketweave tent stitch." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the cream background in basketweave, working carefully around the base of each Rhodes stitch square." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Block the finished canvas by dampening and pressing under a book for a few hours. Full pin-blocking would flatten the raised Rhodes stitches; pressing only is correct here." }] }] }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "Finishing" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lace the blocked canvas over the acid-free board and fit into a square picture frame. A narrow frame in a contrasting colour suits the geometric character of the design." }
+        ]
+      },
+      { "type": "heading", "attrs": { "level": 2 }, "content": [{ "type": "text", "text": "What to try next" }] },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 5 by 5 grid of Rhodes stitch squares at a smaller 4 by 4 hole scale, on 18-count canvas, gives the same raised texture in a finer, more delicate scale." }
+        ]
+      }
+    ]
+  }
+}

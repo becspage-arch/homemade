@@ -1,0 +1,570 @@
+{
+  "slug": "needlepoint-advanced-sampler-eight-stitches",
+  "title": "Needlepoint reference sampler: eight stitches",
+  "subtitle": "A landscape-format sampler demonstrating eight stitch types in labelled panels on 13-count canvas",
+  "excerpt": "This larger reference sampler demonstrates eight distinct needlepoint stitches in labelled rectangular panels on a single 25 by 35 cm piece. It is designed to hang as a working reference, showing how each stitch looks in use rather than as a diagram.",
+  "type": "PATTERN",
+  "categorySlug": "needlework",
+  "subCategorySlug": "needlepoint",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Stitch sequence and proportions derived from Therese de Dillmont, Encyclopaedia of Needlework (1886) and Weldon's Practical Needlework, canvaswork technique series (1880s). Sampler layout synthesised as a contemporary teaching piece.",
+  "recipeTools": [
+    {
+      "slug": "tapestry-needle-20",
+      "isOptional": false
+    },
+    {
+      "slug": "scroll-frame",
+      "isOptional": false
+    },
+    {
+      "slug": "embroidery-scissors",
+      "isOptional": false
+    }
+  ],
+  "techniqueSlugs": [
+    "tent-stitch-continental",
+    "tent-stitch-basketweave",
+    "scotch-stitch",
+    "cashmere-stitch",
+    "mosaic-stitch",
+    "bargello-wave-stitch",
+    "algerian-eye-stitch",
+    "rhodes-stitch",
+    "blocking-distorted-canvas",
+    "mounting-framing-needlepoint"
+  ],
+  "criticalTechniques": [
+    "tent-stitch-basketweave",
+    "scotch-stitch",
+    "bargello-wave-stitch"
+  ],
+  "aliases": [
+    "needlepoint stitch sampler",
+    "canvaswork reference sampler",
+    "eight stitch needlepoint sampler"
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "canvas-count-13",
+      "term": "13-count canvas",
+      "definition": "Needlepoint canvas with 13 holes per 2.5 cm (per inch). The standard working count for most domestic needlepoint pieces using Persian or tapestry wool."
+    }
+  ],
+  "heroPrompt": "A landscape-format framed needlepoint sampler showing eight distinct stitch panels in two colours, each panel labelled with the stitch name, hanging on a cream wall, natural light.",
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This reference sampler fills a 130 by 182 hole panel on "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "canvas-count-13"
+                }
+              }
+            ],
+            "text": "13-count canvas"
+          },
+          {
+            "type": "text",
+            "text": " with eight stitch panels, each 56 by 40 holes, arranged in two rows of four. A dark dividing strip separates the panels in both directions. The finished sampler is 25 by 35 cm. Two thread colours: dark and light: run through all eight panels so the stitch structure is clearly readable."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "items": [
+            {
+              "label": "Canvas",
+              "value": "13-count mono canvas, cut 36 by 46 cm (leaves a 5 cm margin around the 130 by 182 hole design area)"
+            },
+            {
+              "label": "Thread: dark (main)",
+              "value": "Persian wool. Suggested: DMC 930 / Anchor 1035 (dark antique blue). About 40 m"
+            },
+            {
+              "label": "Thread: light (contrast)",
+              "value": "Persian wool. Suggested: DMC 712 / Anchor 926 (cream). About 30 m"
+            },
+            {
+              "label": "Thread: dividers",
+              "value": "Persian wool. Suggested: DMC 310 / Anchor 403 (black). About 8 m"
+            },
+            {
+              "label": "Needle",
+              "value": "Tapestry size 20 (switch to size 22 for the Algerian eye panel)"
+            },
+            {
+              "label": "Frame",
+              "value": "Large scroll frame"
+            },
+            {
+              "label": "Mounting board",
+              "value": "Acid-free board, 25 by 35 cm"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Palette"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Main: DMC 930 / Anchor 1035: dark antique blue"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Contrast: DMC 712 / Anchor 926: cream"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dividers: DMC 310 / Anchor 403: black"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stretching the canvas"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mount on a large scroll frame. The eight different stitch types each distort the canvas differently; a frame gives a consistent baseline."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stitches used"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eight stitches, one per panel:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 1: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "tent-stitch-continental",
+                          "label": "Continental tent stitch"
+                        }
+                      }
+                    ],
+                    "text": "Continental tent stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 2: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "tent-stitch-basketweave",
+                          "label": "Basketweave tent stitch"
+                        }
+                      }
+                    ],
+                    "text": "Basketweave tent stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 3: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "scotch-stitch",
+                          "label": "Scotch stitch"
+                        }
+                      }
+                    ],
+                    "text": "Scotch stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 4: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "cashmere-stitch",
+                          "label": "Cashmere stitch"
+                        }
+                      }
+                    ],
+                    "text": "Cashmere stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 5: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "mosaic-stitch",
+                          "label": "Mosaic stitch"
+                        }
+                      }
+                    ],
+                    "text": "Mosaic stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 6: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "bargello-wave-stitch",
+                          "label": "Bargello wave stitch"
+                        }
+                      }
+                    ],
+                    "text": "Bargello wave stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 7: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "algerian-eye-stitch",
+                          "label": "Algerian eye stitch"
+                        }
+                      }
+                    ],
+                    "text": "Algerian eye stitch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 8: "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "techniqueLink",
+                        "attrs": {
+                          "techniqueSlug": "rhodes-stitch",
+                          "label": "Rhodes stitch"
+                        }
+                      }
+                    ],
+                    "text": "Rhodes stitch"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Working method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mark the full design boundary on the canvas. Mark the four dividing strips: two vertical strips 2 holes wide at holes 57 and 115, and one horizontal strip 2 holes wide at hole 65. Work all dividing strips in black continental stitch first."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work each stitch panel in turn. Use the dark shade as the primary colour in each panel and the cream as either the background fill or an alternating element. This keeps the overall sampler visually consistent even though each stitch has a different character."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Panel 7 (Algerian eye): switch to the size 22 needle for the eyelet stitches. The finer needle draws the threads through the centre hole cleanly without distorting the canvas grid."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Block the finished sampler by dampening and pressing under a board for two hours. Full pin-blocking is not used here because Panel 8 (Rhodes stitch) has raised elements that would be flattened by pinning."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finishing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lace the blocked sampler over the acid-free mounting board. Frame in a landscape-format picture frame, or hang unframed as a reference piece tacked to a cork board."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each of the eight stitches here has its own standalone project in the needlepoint library. The sampler is the index. Each standalone entry has the full instructions."
+          }
+        ]
+      }
+    ]
+  }
+}
