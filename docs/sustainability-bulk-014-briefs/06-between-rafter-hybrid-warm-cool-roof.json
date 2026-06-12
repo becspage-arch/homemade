@@ -13,17 +13,31 @@
   "approximateCostGbp": 600,
   "paybackYears": 5,
   "recipeTools": [
-    { "slug": "tape-measure", "isOptional": false },
-    { "slug": "cordless-drill", "isOptional": false },
-    { "slug": "craft-knife", "isOptional": false },
-    { "slug": "spirit-level", "isOptional": false }
+    {
+      "slug": "tape-measure",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "spirit-level",
+      "isOptional": false
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "thermal-bridging",
       "term": "Thermal bridging",
-      "definition": "Heat loss through a structural element — typically timber or metal — that bypasses the insulation material sitting between the structural members."
+      "definition": "Heat loss through a structural element, typically timber or metal, that bypasses the insulation material sitting between the structural members."
     },
     {
       "slug": "cold-roof",
@@ -36,94 +50,268 @@
       "definition": "A roof construction where insulation is placed at rafter level or above, so the structural timbers and any loft space sit within the warm envelope of the building."
     }
   ],
-  "techniqueSlugs": ["insulating-attic-room-sloped-ceiling", "loft-room-rafter-insulation", "insulating-below-rafters-warm-roof"],
-  "criticalTechniques": ["insulating-attic-room-sloped-ceiling"],
+  "techniqueSlugs": [
+    "insulating-attic-room-sloped-ceiling",
+    "loft-room-rafter-insulation",
+    "insulating-below-rafters-warm-roof"
+  ],
+  "criticalTechniques": [
+    "insulating-attic-room-sloped-ceiling"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Fitting insulation only between the rafters achieves a poor " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridging" } }], "text": "thermal bridging" },
-          { "type": "text", "text": " result, because the rafter timbers themselves conduct heat at roughly five times the rate of the mineral wool between them. A 100 mm timber rafter at 600 mm centres creates a bridged U-value about 15% worse than the unbridged calculation suggests. Adding a 40 mm below-rafter layer of PIR or wood fibre closes that gap." }
+          {
+            "type": "text",
+            "text": "Fitting insulation only between the rafters achieves a poor "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridging"
+                }
+              }
+            ],
+            "text": "thermal bridging"
+          },
+          {
+            "type": "text",
+            "text": " result, because the rafter timbers themselves conduct heat at roughly five times the rate of the mineral wool between them. A 100 mm timber rafter at 600 mm centres creates a bridged U-value about 15% worse than the unbridged calculation suggests. Adding a 40 mm below-rafter layer of PIR or wood fibre closes that gap."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "This is the hybrid approach: fill the rafter depth with mineral wool (or spray foam, or cut-and-cobble PIR) and then board over the bottom of the rafters with a continuous layer. A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "warm-roof" } }], "text": "warm roof" },
-          { "type": "text", "text": " with over-rafter boards is better still, but when the slates cannot be lifted the hybrid is the best accessible option from inside." }
+          {
+            "type": "text",
+            "text": "This is the hybrid approach. Fill the rafter depth with mineral wool, spray foam, or cut-and-cobble PIR. Then board across the bottom of the rafters with a continuous layer. A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warm-roof"
+                }
+              }
+            ],
+            "text": "warm roof"
+          },
+          {
+            "type": "text",
+            "text": " with over-rafter boards is better still. When the slates cannot be lifted, the hybrid is the best option available from inside."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Why the cold roof comparison matters" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Why the cold roof comparison matters"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-roof" } }], "text": "cold roof" },
-          { "type": "text", "text": " insulated at ceiling level (typical loft conversion with rooms below unused space) can achieve U-values of 0.15–0.18 W/m²·K with 270 mm of mineral wool, because there is no bridging through rafters at ceiling level. A room-in-roof scenario where the insulation must follow the rafter plane is inherently harder to insulate well; the hybrid method makes the best of the situation." }
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cold-roof"
+                }
+              }
+            ],
+            "text": "cold roof"
+          },
+          {
+            "type": "text",
+            "text": " insulated at ceiling level can achieve U-values of 0.15 to 0.18 W/m²·K with 270 mm of mineral wool. There is no rafter bridging at ceiling level. A room-in-roof is harder to insulate well because the insulation must follow the rafter plane. The hybrid method makes the best of that situation."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Worked example" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A Victorian terrace with 100 mm deep rafters at 450 mm centres. Between-rafter mineral wool fills the full 100 mm depth, leaving a 50 mm ventilation gap behind the sarking felt. Below-rafter layer: 40 mm PIR at lambda 0.022 (R-value 1.82 m²·K/W). Combined bridged U-value: approximately 0.35 W/m²·K. Adding a 60 mm below-rafter layer brings this to approximately 0.26 W/m²·K — still short of the 0.18 W/m²·K target but a substantial improvement on the uninsulated roof at 2.0 W/m²·K." }
+          {
+            "type": "text",
+            "text": "A Victorian terrace with 100 mm deep rafters at 450 mm centres. Between-rafter mineral wool fills the full 100 mm depth, leaving a 50 mm ventilation gap behind the sarking felt. Below-rafter layer: 40 mm PIR at lambda 0.022 (R-value 1.82 m²·K/W). Combined bridged U-value: approximately 0.35 W/m²·K. Adding a 60 mm below-rafter layer brings this to approximately 0.26 W/m²·K, still short of the 0.18 W/m²·K target but a substantial improvement on the uninsulated roof at 2.0 W/m²·K."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Ventilation and moisture" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ventilation and moisture"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Between-rafter insulation on a pitched roof must retain at least 50 mm of clear ventilation space between the top of the insulation and the underside of the sarking felt or boarding. Without this ventilation gap, moisture condensing on the cold sarking felt has nowhere to drain. If the rafters are not deep enough to allow 50 mm plus full insulation fill, use a counter-batten spacer against the rafter top to create the gap." }
+          {
+            "type": "text",
+            "text": "Between-rafter insulation on a pitched roof must retain at least 50 mm of clear ventilation space between the top of the insulation and the underside of the sarking felt or boarding. Without this ventilation gap, moisture condensing on the cold sarking felt has nowhere to drain. If the rafters are not deep enough to allow 50 mm plus full insulation fill, use a counter-batten spacer against the rafter top to create the gap."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The installation sequence" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The installation sequence"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix ventilation baffles (rigid polystyrene or cardboard rafter vents) against the sarking felt at the top of each rafter bay. These hold the ventilation gap clear as you pack insulation below." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut mineral wool batts to fill the rafter bays from the ventilation baffle down to the rafter bottom. Pack firmly without compressing the batt — compression reduces the R-value." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix the below-rafter PIR boards across the bottom of the rafters with drywall screws through the board into the rafter. Stagger board joints so no through-joint runs from top to bottom of the assembly." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all board-to-board joints with aluminium tape. This also functions as the airtightness layer — tape every seam." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Board over with 12.5 mm plasterboard. Allow for raking the plasterboard to the roof pitch before cutting. Fix with plasterboard screws at 300 mm centres into every rafter." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fix ventilation baffles (rigid polystyrene or cardboard rafter vents) against the sarking felt at the top of each rafter bay. These hold the ventilation gap clear as you pack insulation below."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut mineral wool batts to fill the rafter bays from the ventilation baffle down to the rafter bottom. Pack firmly without compressing the batt, compression reduces the R-value."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fix the below-rafter PIR boards across the bottom of the rafters with drywall screws through the board into the rafter. Stagger board joints so no through-joint runs from top to bottom of the assembly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape all board-to-board joints with aluminium tape. This also functions as the airtightness layer, tape every seam."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Board over with 12.5 mm plasterboard. Allow for raking the plasterboard to the roof pitch before cutting. Fix with plasterboard screws at 300 mm centres into every rafter."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What done well looks like" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Continuous insulation layer with no gaps at wall plates or around roof lights. Below-rafter board joints taped and sealed. Ventilation gap intact above the mineral wool. Surface temperature of the plasterboard ceiling in cold weather close to room air temperature rather than noticeably cold to the touch." }
+          {
+            "type": "text",
+            "text": "Continuous insulation layer with no gaps at wall plates or around roof lights. Below-rafter board joints taped and sealed. Ventilation gap intact above the mineral wool. Surface temperature of the plasterboard ceiling in cold weather close to room air temperature rather than noticeably cold to the touch."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Condensation on the inside of the plasterboard ceiling in winter", "cause": "Ventilation gap missing or blocked, causing moisture to accumulate against the cold sarking", "fix": "Check that rafter ventilation baffles are in place; probe with a thin wire to confirm the 50 mm gap is clear at the ridge." },
-            { "symptom": "Draughts still felt around a roof light after fitting the below-rafter layer", "cause": "The roof light frame bypasses the insulation layer; the perimeter junction is not sealed", "fix": "Pack mineral wool around the roof light frame and seal the junction between the frame and the PIR board with low-expansion foam and aluminium tape." }
+            {
+              "symptom": "Condensation on the inside of the plasterboard ceiling in winter",
+              "cause": "Ventilation gap missing or blocked, causing moisture to accumulate against the cold sarking",
+              "fix": "Check that rafter ventilation baffles are in place; probe with a thin wire to confirm the 50 mm gap is clear at the ridge."
+            },
+            {
+              "symptom": "Draughts still felt around a roof light after fitting the below-rafter layer",
+              "cause": "The roof light frame bypasses the insulation layer; the perimeter junction is not sealed",
+              "fix": "Pack mineral wool around the roof light frame and seal the junction between the frame and the PIR board with low-expansion foam and aluminium tape."
+            }
           ]
         }
       }

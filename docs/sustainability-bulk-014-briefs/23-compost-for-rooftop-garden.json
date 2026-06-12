@@ -13,7 +13,9 @@
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "peat-free",
@@ -23,10 +25,14 @@
     {
       "slug": "worm-castings",
       "term": "Worm castings",
-      "definition": "The solid excretions of compost worms — a finished, fine-textured compost with a higher available nutrient content than standard compost."
+      "definition": "The solid excretions of compost worms, a finished, fine-textured compost with a higher available nutrient content than standard compost."
     }
   ],
-  "techniqueSlugs": ["compost-for-container-growing", "making-compost-based-potting-mix", "balcony-indoor-composting-options"],
+  "techniqueSlugs": [
+    "compost-for-container-growing",
+    "making-compost-based-potting-mix",
+    "balcony-indoor-composting-options"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -34,70 +40,223 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Rooftop containers and raised beds compact and lose fertility faster than in-ground beds because there are no earthworms cycling material, no subsoil to buffer drying, and the growing medium flushes nutrients quickly with regular irrigation. Annual top-dressing and periodic medium replacement are the two maintenance requirements." }
+          {
+            "type": "text",
+            "text": "Rooftop containers and raised beds compact and lose fertility faster than in-ground beds. There are no earthworms to cycle material. There is no subsoil to buffer drying. Regular irrigation flushes nutrients out quickly. The two maintenance tasks are annual top-dressing and periodic medium replacement."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Weight is the primary constraint" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Weight is the primary constraint"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A structural rooftop typically carries 150–250 kg/m² of imposed load. A standard peat-free growing medium weighs approximately 350–500 kg/m³ when saturated. A 200 mm deep raised bed of standard compost weighs 70–100 kg/m² when wet. For many rooftops, that is close to the structural limit. Never add compost to a rooftop growing system without confirming the roof's imposed-load rating with a structural engineer." }
+          {
+            "type": "text",
+            "text": "A structural rooftop typically carries 150 to 250 kg/m² of imposed load. A standard peat-free growing medium weighs approximately 350 to 500 kg/m³ when saturated. A 200 mm deep raised bed of standard compost weighs 70 to 100 kg/m² when wet. For many rooftops, that is close to the structural limit. Never add compost to a rooftop growing system without confirming the roof's imposed-load rating with a structural engineer."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Lightweight growing medium options" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Lightweight growing medium options"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Green roof extensive medium: crushed brick and perlite with 15–20% organic material. Weighs 90–130 kg/m³ dry. " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "peat-free" } }], "text": "Peat-free" },
-            { "type": "text", "text": " and drains freely. Only suitable for drought-tolerant plants." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Perlite and coir mix: 1 part perlite to 2 parts coir by volume. Approximately 200–280 kg/m³ saturated. Needs regular liquid feeding as it holds few nutrients on its own." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Commercial lightweight growing media (e.g. Seramis, expanded clay aggregate mixes): specifically designed for container growing with reduced wet weight." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Green roof extensive medium: crushed brick and perlite with 15 to 20% organic material. Weighs 90 to 130 kg/m³ dry. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "peat-free"
+                        }
+                      }
+                    ],
+                    "text": "Peat-free"
+                  },
+                  {
+                    "type": "text",
+                    "text": " and drains freely. Only suitable for drought-tolerant plants."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Perlite and coir mix: 1 part perlite to 2 parts coir by volume. Approximately 200 to 280 kg/m³ saturated. Needs regular liquid feeding as it holds few nutrients on its own."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Commercial lightweight growing media (e.g. Seramis, expanded clay aggregate mixes): specifically designed for container growing with reduced wet weight."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Annual top-dressing routine" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Annual top-dressing routine"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "In spring, apply a 20–30 mm layer of mature " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worm-castings" } }], "text": "worm castings" },
-            { "type": "text", "text": " or green compost to the top of each container. Do not dig it in — surface application allows it to mix in gradually without disturbing roots." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Every 3–4 years, replace 30–50% of the growing medium in permanent containers. Remove old compacted medium and replace with fresh lightweight mix." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In spring, apply a 20 to 30 mm layer of mature "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "worm-castings"
+                        }
+                      }
+                    ],
+                    "text": "worm castings"
+                  },
+                  {
+                    "type": "text",
+                    "text": " or green compost to the top of each container. Do not dig it in, surface application allows it to mix in gradually without disturbing roots."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Every 3 to 4 years, replace 30 to 50% of the growing medium in permanent containers. Remove old compacted medium and replace with fresh lightweight mix."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Sourcing compost without a ground garden" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing compost without a ground garden"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Council green-waste compost: most UK councils sell PAS 100-certified green compost by the bag or bulk bag. Call the local depot — bulk bags are usually cheaper per litre than garden-centre bags." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wormery on the roof or balcony: a stacking wormery processes kitchen waste into castings in the same space where the growing happens. Even a single small wormery produces enough castings to top-dress 2–4 m² of growing area per year." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Council green-waste compost: most UK councils sell PAS 100-certified green compost by the bag or bulk bag. Call the local depot, bulk bags are usually cheaper per litre than garden-centre bags."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wormery on the roof or balcony: a stacking wormery processes kitchen waste into castings in the same space where the growing happens. Even a single small wormery produces enough castings to top-dress 2 to 4 m² of growing area per year."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Growing medium sags and compacts within one season", "cause": "High proportion of fine compost particles settling under repeated irrigation; no structural amendment", "fix": "Mix in 20–30% perlite or fine grit by volume when replacing the medium. This keeps drainage channels open as organic matter breaks down." }
+            {
+              "symptom": "Growing medium sags and compacts within one season",
+              "cause": "High proportion of fine compost particles settling under repeated irrigation; no structural amendment",
+              "fix": "Mix in 20 to 30% perlite or fine grit by volume when replacing the medium. This keeps drainage channels open as organic matter breaks down."
+            }
           ]
         }
       }

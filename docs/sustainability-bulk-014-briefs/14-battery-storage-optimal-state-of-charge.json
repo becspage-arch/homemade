@@ -13,7 +13,9 @@
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "state-of-charge",
@@ -23,7 +25,7 @@
     {
       "slug": "battery-storage",
       "term": "Battery storage",
-      "definition": "A home energy storage system that stores electricity — typically from solar PV — for use at night or during high-tariff periods."
+      "definition": "A home energy storage system that stores electricity, typically from solar PV, for use at night or during high-tariff periods."
     },
     {
       "slug": "depth-of-discharge",
@@ -31,7 +33,11 @@
       "definition": "The percentage of a battery's capacity that has been used in a single cycle. A 10 kWh battery discharged from 90% to 20% SoC has a DoD of 70%."
     }
   ],
-  "techniqueSlugs": ["standalone-home-battery-decision-guide", "solar-battery-storage-sizing", "battery-capacity-degradation"],
+  "techniqueSlugs": [
+    "standalone-home-battery-decision-guide",
+    "solar-battery-storage-sizing",
+    "battery-capacity-degradation"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -39,74 +45,229 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Lithium battery capacity decreases with each charge cycle. The rate of decrease depends heavily on how the battery is used. Charging to 100% and discharging to 0% repeatedly — full " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "depth-of-discharge" } }], "text": "depth of discharge" },
-          { "type": "text", "text": " — degrades cells faster than keeping the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "state-of-charge" } }], "text": "state of charge" },
-          { "type": "text", "text": " between 20% and 90%. Most home " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "battery-storage" } }], "text": "battery storage" },
-          { "type": "text", "text": " systems enforce maximum and minimum charge limits through the battery management system (BMS), but the default settings vary by product." }
+          {
+            "type": "text",
+            "text": "Lithium battery capacity decreases with each charge cycle. The rate of decrease depends heavily on how the battery is used. Charging to 100% and discharging to 0% repeatedly, full "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "depth-of-discharge"
+                }
+              }
+            ],
+            "text": "depth of discharge"
+          },
+          {
+            "type": "text",
+            "text": ", degrades cells faster than keeping the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "state-of-charge"
+                }
+              }
+            ],
+            "text": "state of charge"
+          },
+          {
+            "type": "text",
+            "text": " between 20% and 90%. Most home "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "battery-storage"
+                }
+              }
+            ],
+            "text": "battery storage"
+          },
+          {
+            "type": "text",
+            "text": " systems enforce maximum and minimum charge limits through the battery management system (BMS), but the default settings vary by product."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The two main battery chemistries" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The two main battery chemistries"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lithium iron phosphate (LFP): used in most current home batteries (BYD, GivEnergy, Pylontech). More tolerant of full charges and discharges than NMC; rated for 3,000–6,000 cycles to 80% capacity at full DoD. Less heat-sensitive than NMC." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Nickel manganese cobalt (NMC): used in Tesla Powerwall 2 and some older systems. More energy-dense than LFP but degrades faster at high SoC. Tesla recommends keeping Powerwall below 100% unless you have backup reserve requirements." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lithium iron phosphate (LFP): used in most current home batteries (BYD, GivEnergy, Pylontech). More tolerant of full charges and discharges than NMC; rated for 3,000 to 6,000 cycles to 80% capacity at full DoD. Less heat-sensitive than NMC."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Nickel manganese cobalt (NMC): used in Tesla Powerwall 2 and some older systems. More energy-dense than LFP but degrades faster at high SoC. Tesla recommends keeping Powerwall below 100% unless you have backup reserve requirements."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The recommended charge window" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "For daily self-consumption use, set the maximum charge limit to 90–95% and the minimum discharge limit to 10–15%. This extends expected cycle life by 20–40% compared to full cycles, at the cost of roughly 10–15% of usable capacity. The trade-off is usually worth it over a 10-year system life." }
+          {
+            "type": "text",
+            "text": "The recommended charge window"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Exception: if you are on a time-of-use tariff and charging from the grid at off-peak rates to use at peak, charging to 100% for planned evening use is acceptable occasionally. Holding a battery at 100% overnight repeatedly — with no plan to discharge it before the next solar day — accelerates degradation." }
+          {
+            "type": "text",
+            "text": "For daily self-consumption use, set the maximum charge limit to 90 to 95% and the minimum discharge limit to 10 to 15%. This extends expected cycle life by 20 to 40% compared to full cycles, at the cost of roughly 10 to 15% of usable capacity. The trade-off is usually worth it over a 10-year system life."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "There is one exception. If you are on a time-of-use tariff and charging from the grid at off-peak rates, charging to 100% for planned evening use is acceptable now and then. The problem is holding a battery at 100% overnight repeatedly. If there is no plan to discharge it before the next solar day, this accelerates degradation."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where to find the charge settings" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where to find the charge settings"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "GivEnergy / Solis / Sofar: accessible via the inverter's web portal or the manufacturer app. Look for \"charge upper limit\" and \"discharge lower limit\" settings." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tesla Powerwall: set the \"reserve for power outages\" percentage in the Tesla app; the system will charge to 100% only when grid backup is needed beyond the reserve." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sonnen: managed automatically by the BMS; user can set a reserve percentage." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "GivEnergy / Solis / Sofar: accessible via the inverter's web portal or the manufacturer app. Look for \"charge upper limit\" and \"discharge lower limit\" settings."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tesla Powerwall: set the \"reserve for power outages\" percentage in the Tesla app. The system will only charge to 100% when grid backup is needed beyond the reserve level."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sonnen: managed automatically by the BMS; user can set a reserve percentage."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Temperature and degradation" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Temperature and degradation"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "High ambient temperature accelerates degradation. A battery in an uninsulated south-facing garage that reaches 35–40°C in summer degrades measurably faster than one in a cool utility room. If your battery is in a hot location, consider keeping the maximum charge limit at 80% in summer." }
+          {
+            "type": "text",
+            "text": "High ambient temperature accelerates degradation. A battery in an uninsulated south-facing garage that reaches 35 to 40°C in summer degrades measurably faster than one in a cool utility room. If your battery is in a hot location, consider keeping the maximum charge limit at 80% in summer."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Battery capacity seems to have dropped significantly after two years", "cause": "System has been cycling to 100% and 0% daily; or high-temperature exposure", "fix": "Check the cycle count in the monitoring app; adjust charge limits to 20–90% going forward. Most manufacturers' warranties are voided only by operating outside the recommended temperature range, not by full cycling." },
-            { "symptom": "Battery not charging beyond 80% even though limit is set to 90%", "cause": "BMS is in a protective mode due to cell imbalance or temperature compensation", "fix": "Allow the battery to run a full calibration cycle (manufacturer-specific: usually charge to 100% then discharge to 10% under normal load). If the problem persists, contact the manufacturer." }
+            {
+              "symptom": "Battery capacity seems to have dropped significantly after two years",
+              "cause": "System has been cycling to 100% and 0% daily; or high-temperature exposure",
+              "fix": "Check the cycle count in the monitoring app; adjust charge limits to 20 to 90% going forward. Most manufacturers' warranties are voided only by operating outside the recommended temperature range, not by full cycling."
+            },
+            {
+              "symptom": "Battery not charging beyond 80% even though limit is set to 90%",
+              "cause": "BMS is in a protective mode due to cell imbalance or temperature compensation",
+              "fix": "Allow the battery to run a full calibration cycle (manufacturer-specific: usually charge to 100% then discharge to 10% under normal load). If the problem persists, contact the manufacturer."
+            }
           ]
         }
       }

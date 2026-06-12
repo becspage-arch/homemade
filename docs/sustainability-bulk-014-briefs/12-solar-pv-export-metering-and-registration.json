@@ -9,11 +9,13 @@
   "difficulty": "BEGINNER",
   "season": null,
   "sourceType": "SYNTHESISED",
-  "sourceNotes": "Ofgem Smart Export Guarantee guidance (2024); Engineering Recommendation G98 and G99 — MCS installer obligations; MPAN and DNO notification process guidance from National Grid ESO.",
+  "sourceNotes": "Ofgem Smart Export Guarantee guidance (2024); Engineering Recommendation G98 and G99, MCS installer obligations; MPAN and DNO notification process guidance from National Grid ESO.",
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "smart-export-guarantee",
@@ -31,7 +33,11 @@
       "definition": "The UK quality standard for small-scale renewable energy systems. MCS certification is required for installations to be eligible for the Smart Export Guarantee."
     }
   ],
-  "techniqueSlugs": ["smart-export-guarantee-explained", "solar-pv-export-limit-g98-g99", "solar-pv-system-monitoring"],
+  "techniqueSlugs": [
+    "smart-export-guarantee-explained",
+    "solar-pv-export-limit-g98-g99",
+    "solar-pv-system-monitoring"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -39,76 +45,179 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The installation step and the registration step are separate. An " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }], "text": "MCS" },
-          { "type": "text", "text": "-certified installer handles the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dno" } }], "text": "DNO" },
-          { "type": "text", "text": " notification as part of their work. Registering for the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-export-guarantee" } }], "text": "Smart Export Guarantee" },
-          { "type": "text", "text": " and getting the correct export meter set up is typically the homeowner's responsibility. Many households with systems installed since 2020 are still not registered for SEG and are exporting electricity to the grid unpaid." }
+          {
+            "type": "text",
+            "text": "The installation step and the registration step are separate. An "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mcs"
+                }
+              }
+            ],
+            "text": "MCS"
+          },
+          {
+            "type": "text",
+            "text": "-certified installer handles the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dno"
+                }
+              }
+            ],
+            "text": "DNO"
+          },
+          {
+            "type": "text",
+            "text": " notification as part of their work. Registering for the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "smart-export-guarantee"
+                }
+              }
+            ],
+            "text": "Smart Export Guarantee"
+          },
+          {
+            "type": "text",
+            "text": " and getting the correct export meter set up is typically the homeowner's responsibility. Many households with systems installed since 2020 are still not registered for SEG and are exporting electricity to the grid unpaid."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step 1 — Confirm the installer has notified the DNO" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 1: Confirm the installer has notified the DNO"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "For systems up to 3.68 kWp (single-phase, G98 limit), the installer self-notifies the DNO within 28 days of commissioning. Ask the installer to confirm the G98 notification was sent. For systems above 3.68 kWp, G99 applies — the installer must get DNO approval before connecting, and the DNO registers the system formally." }
+          {
+            "type": "text",
+            "text": "For systems up to 3.68 kWp (single-phase, G98 limit), the installer self-notifies the DNO within 28 days of commissioning. Ask the installer to confirm the G98 notification was sent. For systems above 3.68 kWp, G99 applies, the installer must get DNO approval before connecting, and the DNO registers the system formally."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step 2 — Get your MCS certificate" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 2: Get your MCS certificate"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The installer issues an MCS installation certificate on completion. This certificate is required for SEG registration. If the installer has not issued one within a week of installation, chase them — the certificate is a contractual deliverable, not optional." }
+          {
+            "type": "text",
+            "text": "The installer issues an MCS installation certificate on completion. You need this certificate to register for the SEG. If the installer has not issued one within a week of installation, chase them. The certificate is a contractual deliverable, not optional."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step 3 — Check whether your meter can measure export" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 3: Check whether your meter can measure export"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "To be paid for actual exported units, your meter must be able to measure export. A SMETS2 smart meter can record both import and export; an old non-smart meter cannot measure export and your SEG tariff will be on a deemed basis (a fixed estimated percentage of generation). Contact your electricity supplier to confirm the meter type and, if needed, request a smart meter upgrade. This is free in most cases." }
+          {
+            "type": "text",
+            "text": "To be paid for actual exported units, your meter must be able to measure export. A SMETS2 smart meter can record both import and export; an old non-smart meter cannot measure export and your SEG tariff will be on a deemed basis (a fixed estimated percentage of generation). Contact your electricity supplier to confirm the meter type and, if needed, request a smart meter upgrade. This is free in most cases."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step 4 — Register for an SEG tariff" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 4: Register for an SEG tariff"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "You can register with any SEG licensee — it does not have to be your current electricity supplier. SEG export rates vary from 5p/kWh to 24p/kWh depending on the tariff and whether it is fixed or flexible (time-of-use linked). Apply online with the MCS certificate number, your MPAN (the supply number on your electricity bill), and your inverter details. The SEG licensee will process the application and confirm export metering is linked." }
+          {
+            "type": "text",
+            "text": "You can register with any SEG licensee, it does not have to be your current electricity supplier. SEG export rates vary from 5p/kWh to 24p/kWh depending on the tariff and whether it is fixed or flexible (time-of-use linked). Apply online with the MCS certificate number, your MPAN (the supply number on your electricity bill), and your inverter details. The SEG licensee will process the application and confirm export metering is linked."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Step 5 — Check the system is generating what it should" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step 5: Check the system is generating what it should"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Log into your inverter monitoring portal or check the inverter display and compare actual generation against the predicted yield the installer quoted. For a 3.5 kWp south-facing system at 30° pitch in southern England, expect around 3,000–3,300 kWh in the first full year. Significantly lower generation in the first year suggests a wiring or configuration problem worth investigating before the installer warranty period ends." }
+          {
+            "type": "text",
+            "text": "Log into your inverter monitoring portal or check the inverter display. Compare actual generation against the predicted yield the installer quoted. A 3.5 kWp south-facing system at 30° pitch in southern England should produce around 3,000 to 3,300 kWh in the first full year. Significantly lower output suggests a wiring or configuration problem. Investigate before the installer warranty period ends."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "SEG application rejected — MCS certificate number not recognised", "cause": "Installer has not registered the system on the MCS database yet", "fix": "Ask the installer to confirm the registration on the MCS certification body database (check via the MCS postcode search). There can be a 1–2 week lag between issuing the certificate and it appearing on the public register." },
-            { "symptom": "SEG payments are far lower than expected based on generation figures", "cause": "Meter is on a deemed export basis rather than measured export; exporting a higher proportion than the deemed percentage", "fix": "Request a smart meter upgrade from your supplier; switch to a measured-export SEG tariff once the meter is in place." }
+            {
+              "symptom": "SEG application rejected, MCS certificate number not recognised",
+              "cause": "Installer has not registered the system on the MCS database yet",
+              "fix": "Ask the installer to confirm the registration on the MCS certification body database (check via the MCS postcode search). There can be a 1 to 2 week lag between issuing the certificate and it appearing on the public register."
+            },
+            {
+              "symptom": "SEG payments are far lower than expected based on generation figures",
+              "cause": "Meter is on a deemed export basis rather than measured export; exporting a higher proportion than the deemed percentage",
+              "fix": "Request a smart meter upgrade from your supplier; switch to a measured-export SEG tariff once the meter is in place."
+            }
           ]
         }
       }

@@ -13,16 +13,19 @@
   "approximateCostGbp": 150,
   "paybackYears": 3,
   "recipeTools": [
-    { "slug": "plastering-trowel", "isOptional": false },
-    { "slug": "hawk-plastering-board", "isOptional": false },
-    { "slug": "tape-measure", "isOptional": true }
+    {
+      "slug": "tape-measure",
+      "isOptional": true
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "parge-coat",
       "term": "Parge coat",
-      "definition": "A thin (3–6 mm) render coat applied to the inner face of a masonry wall to seal air paths through mortar joints and open-textured brick or stone, improving airtightness without introducing a plastic membrane."
+      "definition": "A thin (3 to 6 mm) render coat applied to the inner face of a masonry wall to seal air paths through mortar joints and open-textured brick or stone, improving airtightness without introducing a plastic membrane."
     },
     {
       "slug": "breathable-insulation",
@@ -35,103 +38,320 @@
       "definition": "Condensation that forms within a wall construction rather than on its surface, occurring when warm moist air meets a cold layer inside the wall assembly."
     }
   ],
-  "techniqueSlugs": ["internal-wall-insulation-dew-point", "breathable-insulation-pre-1919", "vapour-control-layers-explained"],
-  "criticalTechniques": ["internal-wall-insulation-dew-point"],
+  "techniqueSlugs": [
+    "internal-wall-insulation-dew-point",
+    "breathable-insulation-pre-1919",
+    "vapour-control-layers-explained"
+  ],
+  "criticalTechniques": [
+    "internal-wall-insulation-dew-point"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "parge-coat" } }], "text": "parge coat" },
-          { "type": "text", "text": " is a 3–6 mm render applied to the inner face of an old solid wall. Lime mortar joints in Victorian brickwork, open-textured stone, and rubble-filled walls all allow air to seep through, even when the wall feels solid. The parge coat seals those paths without introducing a plastic vapour membrane that would trap moisture in a wall that needs to breathe." }
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "parge-coat"
+                }
+              }
+            ],
+            "text": "parge coat"
+          },
+          {
+            "type": "text",
+            "text": " is a 3 to 6 mm render applied to the inner face of an old solid wall. Lime mortar joints in Victorian brickwork, open-textured stone, and rubble-filled walls all allow air to seep through, even when the wall feels solid. The parge coat seals those paths without introducing a plastic vapour membrane that would trap moisture in a wall that needs to breathe."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "In a pre-1919 house with solid brick or stone walls, a parge coat is typically the first step before applying " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "breathable-insulation" } }], "text": "breathable insulation" },
-          { "type": "text", "text": ". It costs a fraction of a full internal wall insulation job and can achieve a measurable improvement in airtightness on its own." }
+          {
+            "type": "text",
+            "text": "In a pre-1919 house with solid brick or stone walls, a parge coat is typically the first step before applying "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "breathable-insulation"
+                }
+              }
+            ],
+            "text": "breathable insulation"
+          },
+          {
+            "type": "text",
+            "text": ". It costs a fraction of a full internal wall insulation job and can achieve a measurable improvement in airtightness on its own."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "When a parge coat is the right tool" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When a parge coat is the right tool"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Solid brick or stone walls built with lime mortar (pre-1919 and many inter-war buildings). These have open joints and occasional voids behind the internal face." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft-floor-to-wall junctions: the parge coat bridges the gap between the top of the wall and the first rafter, closing one of the largest air-leakage paths in old terraces." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Behind timber-frame partitions in older houses where the air-leakage path runs behind the plaster and into the floor void." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Solid brick or stone walls built with lime mortar (pre-1919 and many inter-war buildings). These have open joints and occasional voids behind the internal face."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Loft-floor-to-wall junctions: the parge coat bridges the gap between the top of the wall and the first rafter, closing one of the largest air-leakage paths in old terraces."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Behind timber-frame partitions in older houses where the air-leakage path runs behind the plaster and into the floor void."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Mix and application" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix and application"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The standard parge coat mix for a solid brick wall is 1 part NHL 3.5 (natural hydraulic lime) to 3 parts sharp sand. For a more airtight result, add a small amount of air-entraining admixture and apply in two passes: a 3 mm scratch coat, allowed to stiffen for 24 hours, followed by a 3 mm finish coat. The two-pass method closes pinholes that a single thick coat leaves." }
+          {
+            "type": "text",
+            "text": "The standard parge coat mix for a solid brick wall is 1 part NHL 3.5 (natural hydraulic lime) to 3 parts sharp sand. For a more airtight result, add a small amount of air-entraining admixture and apply in two passes: a 3 mm scratch coat, allowed to stiffen for 24 hours, followed by a 3 mm finish coat. The two-pass method closes pinholes that a single thick coat leaves."
+          }
         ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dampen the wall surface with water 20 minutes before applying the scratch coat. Dry masonry pulls moisture out of lime render too fast, causing shrinkage cracks." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the scratch coat in a continuous sweep with a plastering trowel, working from the bottom of the wall upward. Use the trowel edge to rake a light scratch pattern before it stiffens." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow the scratch coat to stiffen (not fully dry) before the finish coat: typically 12–24 hours depending on temperature. Mist with water if the coat begins to dry out in warm weather." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the finish coat by the same method. Feather into corners and around service penetrations." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep the finished coat damp and out of direct sunlight for 3–5 days. Lime carbonates slowly; rushing the cure causes surface chalking." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dampen the wall surface with water 20 minutes before applying the scratch coat. Dry masonry pulls moisture out of lime render too fast, causing shrinkage cracks."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply the scratch coat in a continuous sweep with a plastering trowel, working from the bottom of the wall upward. Use the trowel edge to rake a light scratch pattern before it stiffens."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Allow the scratch coat to stiffen (not fully dry) before the finish coat: typically 12 to 24 hours depending on temperature. Mist with water if the coat begins to dry out in warm weather."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply the finish coat by the same method. Feather into corners and around service penetrations."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Keep the finished coat damp and out of direct sunlight for 3 to 5 days. Lime carbonates slowly; rushing the cure causes surface chalking."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The condensation risk check" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The condensation risk check"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A parge coat alone does not change where the dew point falls within the wall. If the wall already had " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interstitial-condensation" } }], "text": "interstitial condensation" },
-          { "type": "text", "text": " issues, the parge coat will not fix them. If insulation is to be added behind the parge coat, model the dew point before proceeding. For solid lime-and-brick walls the answer is almost always to use a breathable insulation (wood fibre, sheep wool) rather than PIR." }
+          {
+            "type": "text",
+            "text": "A parge coat alone does not change where the dew point falls within the wall. If the wall already had "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "interstitial-condensation"
+                }
+              }
+            ],
+            "text": "interstitial condensation"
+          },
+          {
+            "type": "text",
+            "text": " issues, the parge coat will not fix them. If insulation is to be added behind the parge coat, model the dew point before proceeding. For solid lime-and-brick walls the answer is almost always to use a breathable insulation (wood fibre, sheep wool) rather than PIR."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What done well looks like" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done well looks like"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "No cracks visible after a month. The coat feels firm and slightly flexible, not dusty or powdery. Air leakage through the treated wall section is reduced to near zero; a smoke pencil held against the surface in a pressurised test finds no movement." }
+          {
+            "type": "text",
+            "text": "No cracks visible after a month. The coat feels firm and slightly flexible, not dusty or powdery. Air leakage through the treated wall section is reduced to near zero; a smoke pencil held against the surface in a pressurised test finds no movement."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What done badly looks like" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What done badly looks like"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A single thick coat applied to a dry wall that shrinks and maps-cracks within days. Lime applied in frost; the coat spalls off. A cement-sand render applied to an old lime wall that becomes the harder face and forces moisture through the masonry instead." }
+          {
+            "type": "text",
+            "text": "A single thick coat applied to a dry wall that shrinks and maps-cracks within days. Lime applied in frost; the coat spalls off. A cement-sand render applied to an old lime wall that becomes the harder face and forces moisture through the masonry instead."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Fine map cracking across the whole coat within a week", "cause": "Coat too thick in single pass, or wall too dry at application", "fix": "Hack off, dampen wall thoroughly, reapply in two thinner passes with a minimum 12-hour gap." },
-            { "symptom": "Coat feels dusty and soft after curing", "cause": "Mix too lean (too much sand) or cured too quickly in sun/wind", "fix": "Scratch off the soft layer back to firm material. Mist the remaining coat and keep covered for 5 days." },
-            { "symptom": "Coat debonding from wall in patches", "cause": "Old paint, loose plaster, or a glazed brick surface not keyed before application", "fix": "Hack all loose material back to masonry; apply a bonding slurry of neat NHL before the render coat." }
+            {
+              "symptom": "Fine map cracking across the whole coat within a week",
+              "cause": "Coat too thick in single pass, or wall too dry at application",
+              "fix": "Hack off, dampen wall thoroughly, reapply in two thinner passes with a minimum 12-hour gap."
+            },
+            {
+              "symptom": "Coat feels dusty and soft after curing",
+              "cause": "Mix too lean (too much sand) or cured too quickly in sun/wind",
+              "fix": "Scratch off the soft layer back to firm material. Mist the remaining coat and keep covered for 5 days."
+            },
+            {
+              "symptom": "Coat debonding from wall in patches",
+              "cause": "Old paint, loose plaster, or a glazed brick surface not keyed before application",
+              "fix": "Hack all loose material back to masonry; apply a bonding slurry of neat NHL before the render coat."
+            }
           ]
         }
       }

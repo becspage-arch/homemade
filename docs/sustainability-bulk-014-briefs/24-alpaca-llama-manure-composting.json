@@ -13,22 +13,31 @@
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [
-    { "slug": "compost-thermometer", "isOptional": true }
+    {
+      "slug": "compost-thermometer",
+      "isOptional": true
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "cn-ratio",
       "term": "C:N ratio",
-      "definition": "The ratio of carbon-rich (brown) materials to nitrogen-rich (green) materials in a compost heap. A ratio of roughly 25–30:1 carbon to nitrogen is optimal for fast decomposition."
+      "definition": "The ratio of carbon-rich (brown) materials to nitrogen-rich (green) materials in a compost heap. A ratio of roughly 25 to 30:1 carbon to nitrogen is optimal for fast decomposition."
     },
     {
       "slug": "hot-compost",
       "term": "Hot compost",
-      "definition": "A composting method where the heap is managed to reach and maintain temperatures of 55–70°C, killing weed seeds and pathogens."
+      "definition": "A composting method where the heap is managed to reach and maintain temperatures of 55 to 70°C, killing weed seeds and pathogens."
     }
   ],
-  "techniqueSlugs": ["horse-manure-hot-composting", "hot-composting-activation-sequence", "understanding-the-cn-ratio"],
+  "techniqueSlugs": [
+    "horse-manure-hot-composting",
+    "hot-composting-activation-sequence",
+    "understanding-the-cn-ratio"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -36,61 +45,182 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Alpaca and llama manure — often called 'camelid gold' — has a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }], "text": "C:N ratio" },
-          { "type": "text", "text": " of roughly 15–20:1, lower in nitrogen than horse (20–25:1) but higher than straw (80:1). The pellets are dry and low in ammonia, which means low odour and low risk of burning plants if applied directly — a significant practical advantage over horse manure." }
+          {
+            "type": "text",
+            "text": "Alpaca and llama manure, often called 'camelid gold', has a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cn-ratio"
+                }
+              }
+            ],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": " of roughly 15 to 20:1. This is lower in nitrogen than horse manure (20 to 25:1) but higher than straw (80:1). The pellets are dry and low in ammonia. This means low odour and a low risk of burning plants if applied directly. That is a practical advantage over horse manure."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Direct application versus composting" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Camelid manure is one of the few manures that can be applied to beds without prior composting, because its low nitrogen and low moisture content mean it is unlikely to scorch plants or introduce pathogens at the levels seen in pig or poultry manure. Apply it as a mulch at 50–75 mm depth in autumn, or fork 20–30 mm into the top 50 mm of bed soil in spring." }
+          {
+            "type": "text",
+            "text": "Direct application versus composting"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Composting improves the result: the finished compost is more uniform, the nutrients are more readily available, and any weed seeds in the straw bedding mixed with the manure are killed in a " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot compost" },
-          { "type": "text", "text": " process." }
+          {
+            "type": "text",
+            "text": "Camelid manure is one of the few manures that can go straight onto beds. Its low nitrogen and low moisture content mean it is unlikely to scorch plants. It does not carry pathogens at the levels found in pig or poultry manure. Apply it as a mulch at 50 to 75 mm depth in autumn. In spring, fork 20 to 30 mm into the top 50 mm of bed soil."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Composting gives a better result. The finished compost is more uniform and the nutrients are more available. Any weed seeds in the straw bedding are killed in a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hot-compost"
+                }
+              }
+            ],
+            "text": "hot compost"
+          },
+          {
+            "type": "text",
+            "text": " process."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Composting the manure" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Composting the manure"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix camelid manure with straw bedding (which comes with it), additional brown material, and any garden waste. Aim for a 3:1 brown to green ratio by volume if the manure is fresh and moist." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Build the heap to at least 1 m³ and cover. Camelid manure heats well in a batch but because its nitrogen is lower than horse manure it heats more slowly — allow 3–4 days before checking temperature." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn after 2 weeks and check for even breakdown. The pellet shape will have disappeared; the mass should smell earthy with no ammonia." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow a 3-month maturation period before applying to beds with food crops. The Soil Association standard requires a 3-month gap between fresh manure application and harvest for surface-growing crops." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix camelid manure with straw bedding (which comes with it), additional brown material, and any garden waste. Aim for a 3:1 brown to green ratio by volume if the manure is fresh and moist."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build the heap to at least 1 m³ and cover. Camelid manure heats well in a batch but because its nitrogen is lower than horse manure it heats more slowly, allow 3 to 4 days before checking temperature."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn after 2 weeks and check for even breakdown. The pellet shape will have disappeared; the mass should smell earthy with no ammonia."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Allow a 3-month maturation period before applying to beds with food crops. The Soil Association standard requires a 3-month gap between fresh manure application and harvest for surface-growing crops."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Sourcing camelid manure" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourcing camelid manure"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Alpaca and llama farms are common in the UK, particularly in Wales, the Cotswolds, and the Yorkshire Dales. Many farms bag and sell manure directly or will allow collection at the farm gate at low or no cost. The volume available from a single farm can be large; a small trailer load is typically more than enough for an allotment or kitchen garden." }
+          {
+            "type": "text",
+            "text": "Alpaca and llama farms are common in the UK, particularly in Wales, the Cotswolds, and the Yorkshire Dales. Many farms bag and sell manure directly or will allow collection at the farm gate at low or no cost. The volume available from a single farm can be large; a small trailer load is typically more than enough for an allotment or kitchen garden."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Heap with camelid manure does not heat above 40°C", "cause": "Insufficient nitrogen for a fast hot compost; the manure's C:N ratio is too high without additional nitrogen input", "fix": "Add a concentrated nitrogen source: fresh nettles, chicken manure pellets (if organic certification is not required), or diluted urine. Turn the heap after adding." },
-            { "symptom": "Finished compost has a lot of undecomposed straw bedding", "cause": "Straw takes longer to break down than the manure pellets; heap may have been too dry", "fix": "Sieve the finished compost and return the straw to the active heap. Shredding or chopping straw before composting speeds breakdown significantly." }
+            {
+              "symptom": "Heap with camelid manure does not heat above 40°C",
+              "cause": "Insufficient nitrogen for a fast hot compost; the manure's C:N ratio is too high without additional nitrogen input",
+              "fix": "Add a concentrated nitrogen source: fresh nettles, chicken manure pellets (if organic certification is not required), or diluted urine. Turn the heap after adding."
+            },
+            {
+              "symptom": "Finished compost has a lot of undecomposed straw bedding",
+              "cause": "Straw takes longer to break down than the manure pellets; heap may have been too dry",
+              "fix": "Sieve the finished compost and return the straw to the active heap. Shredding or chopping straw before composting speeds breakdown significantly."
+            }
           ]
         }
       }

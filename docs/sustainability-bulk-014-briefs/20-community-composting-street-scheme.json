@@ -13,18 +13,29 @@
   "approximateCostGbp": 200,
   "paybackYears": null,
   "recipeTools": [
-    { "slug": "compost-thermometer", "isOptional": true },
-    { "slug": "compost-aerator", "isOptional": true }
+    {
+      "slug": "compost-thermometer",
+      "isOptional": true
+    },
+    {
+      "slug": "compost-aerator",
+      "isOptional": true
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "cold-compost",
       "term": "Cold compost",
-      "definition": "A slow composting method where material is added to a heap or bin over time without active temperature management, breaking down over 6–18 months."
+      "definition": "A slow composting method where material is added to a heap or bin over time without active temperature management, breaking down over 6 to 18 months."
     }
   ],
-  "techniqueSlugs": ["composting-in-a-community-garden", "communal-compost-bin-shared-garden"],
+  "techniqueSlugs": [
+    "composting-in-a-community-garden",
+    "communal-compost-bin-shared-garden"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -32,69 +43,254 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A street composting scheme needs a site, some bins, a small rota, and a simple agreement about what can and cannot go in. The composting itself is easy. The part that takes effort is keeping the scheme running when the original organiser goes on holiday or moves house." }
+          {
+            "type": "text",
+            "text": "A street composting scheme needs a site, some bins, a small rota, and a simple agreement about what can and cannot go in. The composting itself is easy. The part that takes effort is keeping the scheme running when the original organiser goes on holiday or moves house."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Finding a site" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finding a site"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A resident with a large garden who is happy to host the bins. This is the simplest arrangement. The host keeps a share of the finished compost; the responsibility for access and maintenance sits on a nominated person, not just the host." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A shared green space: an allotment site, a community garden, or a council-owned verge (needs council permission). Most councils are supportive of community composting on their land if there is a responsible contact." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The site needs to be within 200 m of the participating households — further than that and drop-off rates fall sharply. People carry a kitchen caddy, not a bin bag." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A resident with a large garden who is happy to host the bins. This is the simplest arrangement. The host keeps a share of the finished compost; the responsibility for access and maintenance sits on a nominated person, not just the host."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A shared green space: an allotment site, a community garden, or a council-owned verge (needs council permission). Most councils are supportive of community composting on their land if there is a responsible contact."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The site needs to be within 200 m of the participating households, further than that and drop-off rates fall sharply. People carry a kitchen caddy, not a bin bag."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The minimum kit" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The minimum kit"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Two large bins (320-litre or 600-litre): one for active filling, one maturing. A two-bin system keeps the mature compost separate from fresh material." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A container of wood chip or cardboard torn into pieces near the bins. Participants add a handful of brown material with each caddy deposit; this is the primary quality-control step." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A printed 'what can go in' guide fixed to the bin lid. Contamination (cooked meat, oil, dairy in open " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-compost" } }], "text": "cold compost" },
-            { "type": "text", "text": " bins) causes smell and attracts rodents." }
-          ] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Two large bins (320-litre or 600-litre): one for active filling, one maturing. A two-bin system keeps the mature compost separate from fresh material."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A container of wood chip or cardboard torn into pieces near the bins. Participants add a handful of brown material with each caddy deposit; this is the primary quality-control step."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A printed 'what can go in' guide fixed to the bin lid. Contamination (cooked meat, oil, dairy in open "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "cold-compost"
+                        }
+                      }
+                    ],
+                    "text": "cold compost"
+                  },
+                  {
+                    "type": "text",
+                    "text": " bins) causes smell and attracts rodents."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The social organisation" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The social organisation"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Recruit 4–8 households to start. More than 10 at launch is often harder to manage; the scheme is easier to grow than to shrink." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Agree a simple rota: one person per week checks the bins, adds brown material if needed, and flags any contamination." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Decide how the finished compost is shared — by household, by the amount deposited, or by a draw. Equality is less important than clarity; disputes about compost allocation end schemes faster than bin problems." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set a WhatsApp group or a shared note on the bin for quick communication when something needs fixing." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Recruit 4 to 8 households to start. More than 10 at launch is often harder to manage; the scheme is easier to grow than to shrink."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Agree a simple rota: one person per week checks the bins, adds brown material if needed, and flags any contamination."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Decide how the finished compost is shared, by household, by the amount deposited, or by a draw. Equality is less important than clarity; disputes about compost allocation end schemes faster than bin problems."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set a WhatsApp group or a shared note on the bin for quick communication when something needs fixing."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to expect in the first year" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to expect in the first year"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A two-bin scheme with 6 households typically produces 200–300 litres of finished compost per year. The maturation bin needs to sit for 4–6 months before harvest. The first batch is often imperfect — some coarse woody material, some unfinished kitchen waste. Screen it through a 10 mm sieve before using on beds; the oversize goes back into the active bin." }
+          {
+            "type": "text",
+            "text": "A two-bin scheme with 6 households typically produces 200 to 300 litres of finished compost per year. The maturation bin needs to sit for 4 to 6 months before harvest. The first batch is often imperfect, some coarse woody material, some unfinished kitchen waste. Screen it through a 10 mm sieve before using on beds; the oversize goes back into the active bin."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Bins smell bad; neighbours complaining", "cause": "Too much fresh kitchen waste without brown cover; possibly cooked meat or cooked food in the bin", "fix": "Remove any obviously wrong material; fork in a large quantity of wood chip or torn cardboard; agree to check deposits more actively for a fortnight." },
-            { "symptom": "Participation has dropped to two households after six months", "cause": "The scheme is not convenient enough; people default to the council food-waste bin when the scheme requires more effort", "fix": "Move the bins closer to the drop-off point; simplify the 'what's allowed' list; consider a hot composting approach that accepts cooked food." }
+            {
+              "symptom": "Bins smell bad; neighbours complaining",
+              "cause": "Too much fresh kitchen waste without brown cover; possibly cooked meat or cooked food in the bin",
+              "fix": "Remove any obviously wrong material; fork in a large quantity of wood chip or torn cardboard; agree to check deposits more actively for a fortnight."
+            },
+            {
+              "symptom": "Participation has dropped to two households after six months",
+              "cause": "The scheme is not convenient enough; people default to the council food-waste bin when the scheme requires more effort",
+              "fix": "Move the bins closer to the drop-off point; simplify the 'what's allowed' list; consider a hot composting approach that accepts cooked food."
+            }
           ]
         }
       }

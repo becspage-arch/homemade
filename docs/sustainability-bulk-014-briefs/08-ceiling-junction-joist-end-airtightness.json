@@ -13,9 +13,14 @@
   "approximateCostGbp": 30,
   "paybackYears": 1,
   "recipeTools": [
-    { "slug": "tape-measure", "isOptional": false }
+    {
+      "slug": "tape-measure",
+      "isOptional": false
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "joist-end-bearing",
@@ -28,7 +33,11 @@
       "definition": "A route through a building element that allows uncontrolled air movement between inside and outside, increasing heat loss and reducing comfort."
     }
   ],
-  "techniqueSlugs": ["airtightness-survey-smoke-pencil", "blower-door-airtightness-test-consumer-guide", "foam-sealing-service-penetrations"],
+  "techniqueSlugs": [
+    "airtightness-survey-smoke-pencil",
+    "blower-door-airtightness-test-consumer-guide",
+    "foam-sealing-service-penetrations"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -36,61 +45,182 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Where a floor joist is built into a masonry wall, the mortar around the " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "joist-end-bearing" } }], "text": "joist end bearing" },
-          { "type": "text", "text": " cracks and shrinks over decades. That crack opens a direct " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "air-leakage-path" } }], "text": "air leakage path" },
-          { "type": "text", "text": " from the cavity or the external wall into the floor void and from there into the room. In a cold snap you may feel a draught running along the skirting board or from behind the coving at ceiling level; that is this junction leaking." }
+          {
+            "type": "text",
+            "text": "Where a floor joist is built into a masonry wall, the mortar around the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "joist-end-bearing"
+                }
+              }
+            ],
+            "text": "joist end bearing"
+          },
+          {
+            "type": "text",
+            "text": " cracks and shrinks over decades. That crack opens a direct "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "air-leakage-path"
+                }
+              }
+            ],
+            "text": "air leakage path"
+          },
+          {
+            "type": "text",
+            "text": " from the cavity or the external wall into the floor void and from there into the room. In a cold snap you may feel a draught running along the skirting board or from behind the coving at ceiling level; that is this junction leaking."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Finding the leak" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finding the leak"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "On a cold windy day, run the back of your hand along the skirting board and the coving on external walls. A draught cool enough to feel indicates air movement from behind the ceiling or floor void. An incense stick or a dampened paper held near the same line shows airflow more clearly in milder conditions." }
+          {
+            "type": "text",
+            "text": "On a cold windy day, run the back of your hand along the skirting board and the coving on external walls. A draught cool enough to feel indicates air movement from behind the ceiling or floor void. An incense stick or a dampened paper held near the same line shows airflow more clearly in milder conditions."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The sealing approach — from inside" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The sealing approach: from inside"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Without opening the ceiling or floor, access to the joist end is limited. The most effective sealing from inside is to fill the gap between the skirting board, the floor, and the wall with a continuous bead of silicone or acrylic caulk, and to tape the coving-to-wall and coving-to-ceiling junctions with a flexible sealant. This does not seal the joist end itself but closes the path from the void into the room." }
+          {
+            "type": "text",
+            "text": "Without opening the ceiling or floor, access to the joist end is limited. The most effective sealing from inside is to fill the gap between the skirting board, the floor, and the wall with a continuous bead of silicone or acrylic caulk, and to tape the coving-to-wall and coving-to-ceiling junctions with a flexible sealant. This does not seal the joist end itself but closes the path from the void into the room."
+          }
         ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the skirting board carefully (a bolster chisel and patience). The gap behind the skirting between the floor and the wall face is where cold air enters the room." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the gap along the base of the wall behind the skirting with low-expansion foam. Allow to cure before trimming flush." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Refix the skirting board; seal the skirting-to-floor and skirting-to-wall junctions with a paintable acrylic caulk. Smooth with a damp finger." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the ceiling junction: apply a bead of acrylic caulk behind the coving and at the coving-to-wall joint. Where coving is absent, apply sealant directly at the ceiling-to-wall junction." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the skirting board carefully (a bolster chisel and patience). The gap behind the skirting between the floor and the wall face is where cold air enters the room."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fill the gap along the base of the wall behind the skirting with low-expansion foam. Allow to cure before trimming flush."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Refix the skirting board; seal the skirting-to-floor and skirting-to-wall junctions with a paintable acrylic caulk. Smooth with a damp finger."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For the ceiling junction: apply a bead of acrylic caulk behind the coving and at the coving-to-wall joint. Where coving is absent, apply sealant directly at the ceiling-to-wall junction."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The thorough approach — from inside the floor void" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The thorough approach: from inside the floor void"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Where access to the floor void is possible (suspended timber ground floor via a crawl space, or a first floor via a loft hatch), apply low-expansion foam around each joist where it meets the wall plate. Pay particular attention to the gap between the joist end, the wall plate, and the external masonry." }
+          {
+            "type": "text",
+            "text": "Where access to the floor void is possible (suspended timber ground floor via a crawl space, or a first floor via a loft hatch), apply low-expansion foam around each joist where it meets the wall plate. Pay particular attention to the gap between the joist end, the wall plate, and the external masonry."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Draught still present at skirting level after sealing", "cause": "Air path enters through the floor surface as well as behind the skirting — floorboard gaps near the wall", "fix": "Fill the first two or three floorboard gaps near the external wall with a flexible sealant or papier-mâché fill." },
-            { "symptom": "Sealant at skirting-to-wall joint cracks within one winter", "cause": "Rigid silicone or plaster filler was used; thermal movement opens the joint", "fix": "Replace with a flexible acrylic caulk rated for building movement joints (look for Class 12.5 on the label)." }
+            {
+              "symptom": "Draught still present at skirting level after sealing",
+              "cause": "Air path enters through the floor surface as well as behind the skirting, floorboard gaps near the wall",
+              "fix": "Fill the first two or three floorboard gaps near the external wall with a flexible sealant or papier-mâché fill."
+            },
+            {
+              "symptom": "Sealant at skirting-to-wall joint cracks within one winter",
+              "cause": "Rigid silicone or plaster filler was used; thermal movement opens the joint",
+              "fix": "Replace with a flexible acrylic caulk rated for building movement joints (look for Class 12.5 on the label)."
+            }
           ]
         }
       }

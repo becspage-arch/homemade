@@ -13,96 +13,336 @@
   "approximateCostGbp": 20,
   "paybackYears": null,
   "recipeTools": [
-    { "slug": "compost-thermometer", "isOptional": false },
-    { "slug": "compost-aerator", "isOptional": true }
+    {
+      "slug": "compost-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "compost-aerator",
+      "isOptional": true
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "hot-compost",
       "term": "Hot compost",
-      "definition": "A composting method where the heap is managed to reach and maintain temperatures of 55–70°C, which kills weed seeds and pathogens and breaks down material in 4–8 weeks rather than months."
+      "definition": "A composting method where the heap is managed to reach and maintain temperatures of 55 to 70°C, which kills weed seeds and pathogens and breaks down material in 4 to 8 weeks rather than months."
     },
     {
       "slug": "cn-ratio",
       "term": "C:N ratio",
-      "definition": "The ratio of carbon-rich (brown) materials to nitrogen-rich (green) materials in a compost heap. A ratio of roughly 25–30:1 carbon to nitrogen is optimal for fast decomposition."
+      "definition": "The ratio of carbon-rich (brown) materials to nitrogen-rich (green) materials in a compost heap. A ratio of roughly 25 to 30:1 carbon to nitrogen is optimal for fast decomposition."
     }
   ],
-  "techniqueSlugs": ["three-bin-hot-compost-system", "hot-composting-temperature-monitoring", "compost-activators"],
-  "criticalTechniques": ["hot-composting-temperature-monitoring"],
+  "techniqueSlugs": [
+    "three-bin-hot-compost-system",
+    "hot-composting-temperature-monitoring",
+    "compost-activators"
+  ],
+  "criticalTechniques": [
+    "hot-composting-temperature-monitoring"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }], "text": "hot compost" },
-          { "type": "text", "text": " heap needs three things to heat: the right " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cn-ratio" } }], "text": "C:N ratio" },
-          { "type": "text", "text": ", adequate moisture, and enough mass to hold heat. Get all three right at the start and the heap heats itself within 48 hours. Get one wrong and the heap sits cold and slow no matter what you add." }
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hot-compost"
+                }
+              }
+            ],
+            "text": "hot compost"
+          },
+          {
+            "type": "text",
+            "text": " heap needs three things to heat: the right "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cn-ratio"
+                }
+              }
+            ],
+            "text": "C:N ratio"
+          },
+          {
+            "type": "text",
+            "text": ", adequate moisture, and enough mass to hold heat. Get all three right at the start and the heap heats itself within 48 hours. Get one wrong and the heap sits cold and slow no matter what you add."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The material requirements before you build" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The material requirements before you build"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Minimum 1 m³ of total material. Smaller heaps lose heat as fast as they generate it. A cubic metre is roughly 200 litres of kitchen waste plus a similar volume of browns." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A roughly 3:1 mix by volume of brown materials (cardboard, straw, wood chip, dry leaves) to green materials (kitchen waste, fresh grass, green plant trimmings). By weight the mix is closer to 2:1 greens to browns because greens are denser." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Moisture: the heap should feel like a wrung-out sponge. Dry material produces no microbial heat. Waterlogged material goes anaerobic and smells rather than composting." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Minimum 1 m³ of total material. Smaller heaps lose heat as fast as they generate it. A cubic metre is roughly 200 litres of kitchen waste plus a similar volume of browns."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A roughly 3:1 mix by volume of brown materials (cardboard, straw, wood chip, dry leaves) to green materials (kitchen waste, fresh grass, green plant trimmings). By weight the mix is closer to 2:1 greens to browns because greens are denser."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Moisture: the heap should feel like a wrung-out sponge. Dry material produces no microbial heat. Waterlogged material goes anaerobic and smells rather than composting."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The build sequence" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The build sequence"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Start with a 100–150 mm layer of coarse brown material on the ground: wood chip, woody prunings, or cardboard. This keeps the base aerated." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a 100 mm layer of greens — kitchen waste, grass clippings, fresh weeds. Do not fill the bin with greens in one layer; they compact and go anaerobic." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a 50–75 mm layer of browns. Water the layer if the material is very dry." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat until the bin is full or the materials are exhausted. Each green layer should be sandwiched between brown layers." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover the heap with a lid, tarpaulin, or a layer of cardboard. This retains moisture and heat." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Start with a 100 to 150 mm layer of coarse brown material on the ground: wood chip, woody prunings, or cardboard. This keeps the base aerated."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a 100 mm layer of greens, kitchen waste, grass clippings, fresh weeds. Do not fill the bin with greens in one layer; they compact and go anaerobic."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a 50 to 75 mm layer of browns. Water the layer if the material is very dry."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeat until the bin is full or the materials are exhausted. Each green layer should be sandwiched between brown layers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the heap with a lid, tarpaulin, or a layer of cardboard. This retains moisture and heat."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The 48-hour check" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The 48-hour check"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Insert a compost thermometer 300 mm into the centre of the heap 24 and 48 hours after building. The centre should be 45–55°C within 24 hours and above 55°C within 48 hours if the C:N ratio and moisture are right. If the temperature stays below 40°C after 48 hours, the heap needs adjustment." }
+          {
+            "type": "text",
+            "text": "Insert a compost thermometer 300 mm into the centre of the heap 24 and 48 hours after building. The centre should be 45 to 55°C within 24 hours and above 55°C within 48 hours if the C:N ratio and moisture are right. If the temperature stays below 40°C after 48 hours, the heap needs adjustment."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Adjustments if the heap does not heat" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjustments if the heap does not heat"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heap feels dry: water thoroughly through the top and turn to distribute moisture." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heap is mostly browns: add a concentrated nitrogen source — fresh nettles, diluted urine (1:10 with water), or grass clippings. Mix in well." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heap is mostly greens: the heap may be heating but ventilating its heat through the compacted mass. Break it up with a fork and repack with more brown layers." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heap is below minimum volume: consolidate into one bay if you have a multi-bin system, or add more material before rechecking." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heap feels dry: water thoroughly through the top and turn to distribute moisture."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heap is mostly browns: add a concentrated nitrogen source, fresh nettles, diluted urine (1:10 with water), or grass clippings. Mix in well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heap is mostly greens: the heap may be heating but ventilating its heat through the compacted mass. Break it up with a fork and repack with more brown layers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heap is below minimum volume: if you have a multi-bin system, consolidate into one bay. Otherwise add more material before rechecking."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Heap heats for two days then cools back to ambient", "cause": "Oxygen depleted in the centre; microbial activity slows as CO₂ builds up", "fix": "Turn the heap — move the outer cool material to the centre and the hot centre material to the outside. This reinjects air and restarts the heating cycle." },
-            { "symptom": "Heap smells of ammonia after three days", "cause": "Too much nitrogen relative to carbon; greens are breaking down and releasing nitrogen as ammonia gas", "fix": "Add a substantial quantity of browns and turn. Cardboard torn into 100 mm pieces absorbs the excess nitrogen effectively." }
+            {
+              "symptom": "Heap heats for two days then cools back to ambient",
+              "cause": "Oxygen depleted in the centre; microbial activity slows as CO₂ builds up",
+              "fix": "Turn the heap, move the outer cool material to the centre and the hot centre material to the outside. This reinjects air and restarts the heating cycle."
+            },
+            {
+              "symptom": "Heap smells of ammonia after three days",
+              "cause": "Too much nitrogen relative to carbon; greens are breaking down and releasing nitrogen as ammonia gas",
+              "fix": "Add a substantial quantity of browns and turn. Cardboard torn into 100 mm pieces absorbs the excess nitrogen effectively."
+            }
           ]
         }
       }

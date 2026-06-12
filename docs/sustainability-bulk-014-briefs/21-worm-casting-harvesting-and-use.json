@@ -13,12 +13,14 @@
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "worm-castings",
       "term": "Worm castings",
-      "definition": "The solid excretions of compost worms — a finished, fine-textured compost with a higher available nutrient content than standard compost and a rich microbial community."
+      "definition": "The solid excretions of compost worms, a finished, fine-textured compost with a higher available nutrient content than standard compost and a rich microbial community."
     },
     {
       "slug": "leachate",
@@ -26,7 +28,11 @@
       "definition": "The liquid that drains from a wormery or compost bin. In vermicomposting, sometimes called 'worm tea', though true worm tea is made by steeping castings in water rather than using raw drainage."
     }
   ],
-  "techniqueSlugs": ["wormery-setup-and-management", "vermicomposting-in-a-flat", "vermicomposting-troubleshooting"],
+  "techniqueSlugs": [
+    "wormery-setup-and-management",
+    "vermicomposting-in-a-flat",
+    "vermicomposting-troubleshooting"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -34,63 +40,263 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Worm castings look like fine dark crumble — no visible food scraps, no smell beyond damp earth. When the bottom tray of a stacking wormery is 90% castings and few worms remain in it, it is ready to harvest. Rushing this step and scooping from an active tray takes the worms with the castings." }
+          {
+            "type": "text",
+            "text": "Worm castings look like fine dark crumble, no visible food scraps, no smell beyond damp earth. When the bottom tray of a stacking wormery is 90% castings and few worms remain in it, it is ready to harvest. Rushing this step and scooping from an active tray takes the worms with the castings."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Knowing when the castings are ready" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Knowing when the castings are ready"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "The tray is full of dark, earthy, fine-textured " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "worm-castings" } }], "text": "worm castings" },
-            { "type": "text", "text": " with little visible food material." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When you open the tray, most worms have migrated up to the active feeding tray above. A few worms in the lower tray are normal; large numbers mean the tray has not finished processing." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A stacking wormery typically produces one harvestable tray every 3–4 months for a 2-person household with regular kitchen waste input." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The tray is full of dark, earthy, fine-textured "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "worm-castings"
+                        }
+                      }
+                    ],
+                    "text": "worm castings"
+                  },
+                  {
+                    "type": "text",
+                    "text": " with little visible food material."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When you open the tray, most worms have migrated up to the active feeding tray above. A few worms in the lower tray are normal; large numbers mean the tray has not finished processing."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A stacking wormery produces roughly one harvestable tray every 3 to 4 months. This assumes a 2-person household with regular kitchen waste input."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The light-migration method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The light-migration method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move the castings tray to a well-lit area — on a table near a window, in daylight. Spread the contents into a wide, shallow pyramid on a piece of card or newspaper." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wait 15 minutes. Red wigglers avoid light; they migrate down and toward the centre of the pile." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gently scrape the outer, top layers of castings off the surface into a container. The worms remain in the centre base of the pile." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat: reform the pile from the remaining material, wait 10 minutes, scrape the outer layer. Two or three cycles separates most of the castings with minimal worm loss." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the worms (in the remaining small ball of material) to the active wormery tray." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Move the castings tray to a well-lit area, on a table near a window, in daylight. Spread the contents into a wide, shallow pyramid on a piece of card or newspaper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wait 15 minutes. Red wigglers avoid light; they migrate down and toward the centre of the pile."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Gently scrape the outer, top layers of castings off the surface into a container. The worms remain in the centre base of the pile."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeat: reform the pile from the remaining material, wait 10 minutes, scrape the outer layer. Two or three cycles separates most of the castings with minimal worm loss."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the worms (in the remaining small ball of material) to the active wormery tray."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Using the castings" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Using the castings"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seed-raising compost: mix 1 part castings to 3–4 parts peat-free compost. Castings are too rich to use undiluted for seedlings — excess available nitrogen causes lush but fragile growth." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Potting compost top-dressing: a 10–20 mm layer worked into the surface of a container." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Liquid feed: steep 1 part castings in 10 parts water for 24 hours, stir, strain, and apply to plant roots. The " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "leachate" } }], "text": "leachate" },
-            { "type": "text", "text": " collected from the wormery sump is a ready-made version of this, diluted 10:1 before use." }
-          ] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Seed-raising compost: mix 1 part castings to 3 to 4 parts peat-free compost. Castings are too rich to use undiluted for seedlings, excess available nitrogen causes lush but fragile growth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Potting compost top-dressing: a 10 to 20 mm layer worked into the surface of a container."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Liquid feed: steep 1 part castings in 10 parts water for 24 hours, stir, strain, and apply to plant roots. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "leachate"
+                        }
+                      }
+                    ],
+                    "text": "leachate"
+                  },
+                  {
+                    "type": "text",
+                    "text": " collected from the wormery sump is a ready-made version of this, diluted 10:1 before use."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Many worms still in the bottom tray after 3 months", "cause": "Bottom tray has not finished processing; too much fresh or wet material still present", "fix": "Stop adding food to the bottom tray for 2–3 weeks; place food only in the tray above. The worms will migrate up as the bottom tray exhausts." },
-            { "symptom": "Castings smell sour or like silage", "cause": "Tray too wet; anaerobic conditions developed in the lower section", "fix": "Mix in some dry shredded cardboard; leave the lid off for a day to allow air circulation. If the smell is strong, delay harvest by 2–3 weeks." }
+            {
+              "symptom": "Many worms still in the bottom tray after 3 months",
+              "cause": "Bottom tray has not finished processing; too much fresh or wet material still present",
+              "fix": "Stop adding food to the bottom tray for 2 to 3 weeks; place food only in the tray above. The worms will migrate up as the bottom tray exhausts."
+            },
+            {
+              "symptom": "Castings smell sour or like silage",
+              "cause": "Tray too wet; anaerobic conditions developed in the lower section",
+              "fix": "Mix in some dry shredded cardboard; leave the lid off for a day to allow air circulation. If the smell is strong, delay harvest by 2 to 3 weeks."
+            }
           ]
         }
       }

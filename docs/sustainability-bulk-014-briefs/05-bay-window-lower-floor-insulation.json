@@ -13,10 +13,22 @@
   "approximateCostGbp": 80,
   "paybackYears": 4,
   "recipeTools": [
-    { "slug": "tape-measure", "isOptional": false },
-    { "slug": "cordless-drill", "isOptional": false },
-    { "slug": "craft-knife", "isOptional": false },
-    { "slug": "spirit-level", "isOptional": true }
+    {
+      "slug": "tape-measure",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "spirit-level",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [
     {
@@ -27,10 +39,13 @@
     {
       "slug": "pir-board",
       "term": "PIR board",
-      "definition": "Polyisocyanurate rigid insulation board — a closed-cell foam product with high thermal resistance per mm, commonly used in floor, wall, and roof insulation."
+      "definition": "Polyisocyanurate rigid insulation board, a closed-cell foam product with high thermal resistance per mm, commonly used in floor, wall, and roof insulation."
     }
   ],
-  "techniqueSlugs": ["suspended-ground-floor-rigid-board-insulation", "floor-slab-perimeter-insulation-retrofit"],
+  "techniqueSlugs": [
+    "suspended-ground-floor-rigid-board-insulation",
+    "floor-slab-perimeter-insulation-retrofit"
+  ],
   "criticalTechniques": [],
   "projectSchedule": [
     {
@@ -61,86 +76,345 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The projecting floor of a Victorian bay window is essentially a cantilever slab suspended between the front wall and the main ground floor. Three faces of the bay floor expose the underside to cold external air." },
-          { "type": "text", "text": " A " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }], "text": "thermal bridge" },
-          { "type": "text", "text": " runs around the perimeter where the bay frame meets the main wall. Fitting insulation boards across the soffit of the bay and sealing the perimeter junction cuts the cold floor and reduces heating demand in the bay area." }
+          {
+            "type": "text",
+            "text": "The projecting floor of a Victorian bay window is a cantilever slab. It sits between the front wall and the main ground floor. Three faces of the bay floor expose the underside to cold external air."
+          },
+          {
+            "type": "text",
+            "text": " A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thermal-bridge"
+                }
+              }
+            ],
+            "text": "thermal bridge"
+          },
+          {
+            "type": "text",
+            "text": " runs around the perimeter where the bay frame meets the main wall. Fitting insulation boards across the soffit of the bay and sealing the perimeter junction cuts the cold floor and reduces heating demand in the bay area."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you'll need" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Materials" }]
-      },
-      {
-        "type": "bulletList",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "50 mm PIR board — enough to cover the bay soffit panels (typical bay soffit: 0.5–1.2 m²)" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Low-expansion polyurethane adhesive foam for bonding the boards to the soffit deck" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Intumescent fire-rated foam for sealing the perimeter gaps at the structural junction" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Aluminium tape for sealing board-to-board joints" }] }] }
+          {
+            "type": "text",
+            "text": "What you'll need"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Tools" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Materials"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape measure, pencil" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Straight edge and craft knife (or a fine-toothed saw) for cutting PIR cleanly" }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Access ladder to reach the bay soffit (typically 600–800 mm above ground)" }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "50 mm PIR board, enough to cover the bay soffit panels (typical bay soffit: 0.5 to 1.2 m²)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Low-expansion polyurethane adhesive foam for bonding the boards to the soffit deck"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Intumescent fire-rated foam to seal the perimeter gaps where the board meets the structural timber"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Aluminium tape for sealing board-to-board joints"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Tools"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape measure, pencil"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Straight edge and craft knife (or a fine-toothed saw) for cutting PIR cleanly"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Access ladder to reach the bay soffit (typically 600 to 800 mm above ground)"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "infoPanel",
-        "attrs": { "type": "warning" },
-        "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Before you start cutting or drilling. Eye protection for every cut. Wear gloves when handling cut PIR board — the edges are sharp. Keep a dust mask handy; PIR offcuts produce fine foam dust when sawn." }] }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The installation" }]
-      },
-      {
-        "type": "orderedList",
+        "attrs": {
+          "type": "warning"
+        },
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure each soffit panel opening precisely. Bay soffits on terraced houses are often slightly out of square; measure both diagonals." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Cut the " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pir-board" } }], "text": "PIR board" },
-            { "type": "text", "text": " to fit each opening with a 3–5 mm clearance around the perimeter. A tight fit without adhesive risks the board falling out as the adhesive foam cures." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply low-expansion PU adhesive foam in a perimeter bead and two diagonal lines across the board face. Press the board up into the soffit opening and hold for 60 seconds while the foam begins to grip." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the perimeter gap between the board edge and the timber framing with intumescent fire-rated foam. Fire-rated foam is required wherever insulation sits adjacent to a structural timber member — standard low-expansion foam is not fire-rated." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all board-to-board joints with aluminium tape. This closes the small gaps at board edges that are otherwise the weakest thermal paths." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the junction where the bay meets the main ground-floor structure. The gap between the bay soffit boards and the main floor zone is the remaining thermal bridge; seal it with low-expansion foam." }] }] }
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Before you start cutting or drilling. Eye protection for every cut. Wear gloves when handling cut PIR board, the edges are sharp. Keep a dust mask handy; PIR offcuts produce fine foam dust when sawn."
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What to expect" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The installation"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure each soffit panel opening precisely. Bay soffits on terraced houses are often slightly out of square; measure both diagonals."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "pir-board"
+                        }
+                      }
+                    ],
+                    "text": "PIR board"
+                  },
+                  {
+                    "type": "text",
+                    "text": " to fit each opening with a 3 to 5 mm clearance around the perimeter. A tight fit without adhesive risks the board falling out as the adhesive foam sets."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply low-expansion PU adhesive foam in a perimeter bead and two diagonal lines across the board face. Press the board up into the soffit opening and hold for 60 seconds while the foam begins to grip."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fill the perimeter gap between the board edge and the timber frame with intumescent fire-rated foam. Standard low-expansion foam is not fire-rated. Use fire-rated foam wherever insulation sits next to a structural timber member."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape all board-to-board joints with aluminium tape. This closes the small gaps at board edges that are otherwise the weakest thermal paths."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the junction where the bay meets the main ground-floor structure. The gap between the bay soffit boards and the main floor zone is the remaining thermal bridge; seal it with low-expansion foam."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to expect"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "After one heating season the bay floor temperature typically rises by 3–6°C under cold conditions. This is especially noticeable if the bay is used as a sitting area. The junction with the main wall will remain slightly cooler than the central bay floor; that residual cold bridge is reduced but not eliminated by this approach." }
+          {
+            "type": "text",
+            "text": "After one heating season the bay floor temperature typically rises by 3 to 6°C under cold conditions. This is especially noticeable if the bay is used as a sitting area. The junction with the main wall will remain slightly cooler than the central bay floor; that residual cold bridge is reduced but not eliminated by this approach."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Board falls out of soffit opening within a week", "cause": "PU foam under-applied or board cut too large creating stress on the glue bond", "fix": "Remove board; clean off old foam; re-cut with 5 mm clearance; apply foam in a continuous perimeter bead plus two diagonal runs; hold in place for 2 minutes while foam cures." },
-            { "symptom": "Cold draught felt around the edge of the bay soffit inside the room", "cause": "Gap at the junction between the bay soffit insulation and the main floor structure", "fix": "Seal the perimeter gap from below with low-expansion foam and cover with a plaster coving or quadrant bead." }
+            {
+              "symptom": "Board falls out of soffit opening within a week",
+              "cause": "PU foam under-applied or board cut too large creating stress on the glue bond",
+              "fix": "Remove board; clean off old foam; re-cut with 5 mm clearance; apply foam in a continuous perimeter bead plus two diagonal runs; hold in place for 2 minutes while foam cures."
+            },
+            {
+              "symptom": "Cold draught felt around the edge of the bay soffit inside the room",
+              "cause": "Gap at the junction between the bay soffit insulation and the main floor structure",
+              "fix": "Seal the perimeter gap from below with low-expansion foam and cover with a plaster coving or quadrant bead."
+            }
           ]
         }
       }

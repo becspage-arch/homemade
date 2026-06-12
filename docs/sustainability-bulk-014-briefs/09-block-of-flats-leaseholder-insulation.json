@@ -13,7 +13,9 @@
   "approximateCostGbp": null,
   "paybackYears": null,
   "recipeTools": [],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "solid-wall-insulation",
@@ -23,10 +25,14 @@
     {
       "slug": "eco4",
       "term": "ECO4",
-      "definition": "Energy Company Obligation — a UK government scheme requiring larger energy suppliers to fund energy efficiency improvements in homes with low income or vulnerability qualifications."
+      "definition": "Energy Company Obligation, a UK government scheme requiring larger energy suppliers to fund energy efficiency improvements in homes with low income or vulnerability qualifications."
     }
   ],
-  "techniqueSlugs": ["internal-wall-insulation-how-to-choose", "external-wall-insulation-decision-guide", "listed-building-insulation-options"],
+  "techniqueSlugs": [
+    "internal-wall-insulation-how-to-choose",
+    "external-wall-insulation-decision-guide",
+    "listed-building-insulation-options"
+  ],
   "criticalTechniques": [],
   "body": {
     "type": "doc",
@@ -34,70 +40,232 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A leaseholder in a block of flats does not own the external fabric of the building. The roof, external walls, and common areas are typically owned by the freeholder (or a management company). This shapes what an individual flat owner can insulate unilaterally and what requires building-wide agreement." }
+          {
+            "type": "text",
+            "text": "A leaseholder in a block of flats does not own the external fabric of the building. The roof, external walls, and common areas are typically owned by the freeholder (or a management company). This shapes what an individual flat owner can insulate unilaterally and what requires building-wide agreement."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you can do within your own flat" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you can do within your own flat"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Internal wall insulation on the external walls inside your flat. A 50–75 mm " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solid-wall-insulation" } }], "text": "solid wall insulation" },
-            { "type": "text", "text": " lining loses some floor area but needs no consent from other leaseholders. Check your lease for specific alteration clauses — some require written freeholder consent for internal works affecting structural elements." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Double or secondary glazing of your existing windows if the windows are within your demise (your lease boundary). Check the lease plan; many blocks include the windows in the common parts even where they are on your flat's facade." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draught-proofing your flat's front door and window frames. This is maintenance, not alteration, and is within normal leaseholder rights." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insulating the floor void inside your flat if there is a suspended timber floor over an unheated crawl space. This typically requires no external consent." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Internal wall insulation on the external walls inside your flat. A 50 to 75 mm "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "solid-wall-insulation"
+                        }
+                      }
+                    ],
+                    "text": "solid wall insulation"
+                  },
+                  {
+                    "type": "text",
+                    "text": " lining loses some floor area but needs no consent from other leaseholders. Check your lease for specific alteration clauses, some require written freeholder consent for internal works affecting structural elements."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Double or secondary glazing of your existing windows if the windows are within your demise (your lease boundary). Check the lease plan; many blocks include the windows in the common parts even where they are on your flat's facade."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Draught-proofing your flat's front door and window frames. This is maintenance, not alteration, and is within normal leaseholder rights."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Insulating the floor void inside your flat if there is a suspended timber floor over an unheated crawl space. This typically requires no external consent."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What requires building-wide consent" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What requires building-wide consent"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External wall insulation. Any work to the external fabric of the building requires freeholder consent. Most leases also require the agreement of all leaseholders if the work affects common parts. A whole-block EWI scheme is more viable than a single-flat scheme and typically achieves better grant funding." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roof insulation. The loft above the top flat is typically common property. The top-flat leaseholder usually cannot insulate the roof without freeholder approval." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ground-floor underfloor insulation where the void under the building is a common service area." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "External wall insulation. Any work to the external fabric of the building requires freeholder consent. Most leases also require the agreement of all leaseholders if the work affects common parts. A whole-block EWI scheme is more viable than a single-flat scheme and typically achieves better grant funding."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roof insulation. The loft above the top flat is typically common property. The top-flat leaseholder usually cannot insulate the roof without freeholder approval."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ground-floor underfloor insulation where the void under the building is a common service area."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Organising a building-wide scheme" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Organising a building-wide scheme"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A whole-block retrofit is more cost-effective per flat than individual work. The freeholder can pass the cost of improvements through a Section 20 consultation (Landlord and Tenant Act). Grants through " },
-          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eco4" } }], "text": "ECO4" },
-          { "type": "text", "text": " and the Great British Insulation Scheme are available for whole-block solid-wall and loft insulation if the block qualifies on EPC and income criteria. A Retrofit Coordinator (required under PAS 2035 for publicly funded work) can assess and manage the scheme." }
+          {
+            "type": "text",
+            "text": "A whole-block retrofit is more cost-effective per flat than individual work. The freeholder can pass the cost of improvements through a Section 20 consultation (Landlord and Tenant Act). Grants through "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "eco4"
+                }
+              }
+            ],
+            "text": "ECO4"
+          },
+          {
+            "type": "text",
+            "text": " and the Great British Insulation Scheme are available for whole-block solid-wall and loft insulation if the block qualifies on EPC and income criteria. A Retrofit Coordinator (required under PAS 2035 for publicly funded work) can assess and manage the scheme."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The commonhold alternative" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The commonhold alternative"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "In a commonhold block (much rarer in the UK), the owners collectively control the common parts and can vote through improvements without a freeholder as a blocking party. A retrofit decision in a commonhold block follows the commonhold community statement voting rules rather than lease consent." }
+          {
+            "type": "text",
+            "text": "Commonhold blocks are much rarer in the UK. In a commonhold, the owners together control the common parts and can vote through improvements. There is no freeholder to block the decision. Retrofit decisions follow the commonhold community statement voting rules, not lease consent."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Freeholder refuses consent for internal wall insulation citing lease terms", "cause": "Some leases prohibit any alteration without consent; others specify that consent cannot be unreasonably withheld", "fix": "Obtain the lease wording and seek advice from the Leasehold Advisory Service (free). If the alteration is reasonable and non-structural, refusal may be challengeable." },
-            { "symptom": "Other leaseholders are not interested in a building-wide EWI scheme", "cause": "Upfront cost and disruption concerns; lack of trust in the freeholder managing the process", "fix": "Commission a whole-block energy survey and circulate the projected savings per flat. Grant funding that makes the scheme near-zero cost often unlocks agreement." }
+            {
+              "symptom": "Freeholder refuses consent for internal wall insulation citing lease terms",
+              "cause": "Some leases prohibit any alteration without consent; others specify that consent cannot be unreasonably withheld",
+              "fix": "Obtain the lease wording and seek advice from the Leasehold Advisory Service (free). If the alteration is reasonable and non-structural, refusal may be challengeable."
+            },
+            {
+              "symptom": "Other leaseholders are not interested in a building-wide EWI scheme",
+              "cause": "Upfront cost and disruption concerns; lack of trust in the freeholder managing the process",
+              "fix": "Commission a whole-block energy survey and circulate the projected savings per flat. Grant funding that makes the scheme near-zero cost often unlocks agreement."
+            }
           ]
         }
       }

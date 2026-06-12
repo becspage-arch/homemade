@@ -13,16 +13,27 @@
   "approximateCostGbp": 200,
   "paybackYears": 3,
   "recipeTools": [
-    { "slug": "tape-measure", "isOptional": false },
-    { "slug": "cordless-drill", "isOptional": false },
-    { "slug": "craft-knife", "isOptional": false }
+    {
+      "slug": "tape-measure",
+      "isOptional": false
+    },
+    {
+      "slug": "cordless-drill",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-knife",
+      "isOptional": false
+    }
   ],
-  "recipe": { "foundational": false },
+  "recipe": {
+    "foundational": false
+  },
   "glossaryTerms": [
     {
       "slug": "linear-thermal-bridge",
       "term": "Linear thermal bridge",
-      "definition": "A continuous path of heat loss along a line — such as a wall/floor junction or a continuous steel beam — as opposed to a point bridge at an isolated fixing."
+      "definition": "A continuous path of heat loss along a line, such as a wall/floor junction or a continuous steel beam, as opposed to a point bridge at an isolated fixing."
     },
     {
       "slug": "psi-value",
@@ -30,79 +41,261 @@
       "definition": "The linear thermal transmittance of a junction or thermal bridge, measured in W/m·K. Lower is better."
     }
   ],
-  "techniqueSlugs": ["thermal-bridging-explained", "cold-bridge-lintel-boxing-insulation"],
-  "criticalTechniques": ["thermal-bridging-explained"],
+  "techniqueSlugs": [
+    "thermal-bridging-explained",
+    "cold-bridge-lintel-boxing-insulation"
+  ],
+  "criticalTechniques": [
+    "thermal-bridging-explained"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A structural steel post or concrete column that passes through an external wall carries heat from inside to outside far faster than the surrounding insulation can stop. Steel has a thermal conductivity of roughly 50 W/m·K; mineral wool is around 0.035 W/m·K. The column bypasses the insulation by a factor of 1,400." }
+          {
+            "type": "text",
+            "text": "A structural steel post or concrete column that passes through an external wall carries heat from inside to outside far faster than the surrounding insulation can stop. Steel has a thermal conductivity of roughly 50 W/m·K; mineral wool is around 0.035 W/m·K. The column bypasses the insulation by a factor of 1,400."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "On the internal surface, the column surface temperature drops well below room air temperature in cold weather. When warm moist room air meets that cold surface, condensation forms, often leading to mould growth at the column base. Wrapping the column in insulation keeps its surface temperature above the dew point." }
+          {
+            "type": "text",
+            "text": "On the internal surface, the column surface temperature drops well below room air temperature in cold weather. When warm moist room air meets that cold surface, condensation forms, often leading to mould growth at the column base. Wrapping the column in insulation keeps its surface temperature above the dew point."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need to know first" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need to know first"
+          }
+        ]
       },
       {
         "type": "bulletList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Check whether the column carries load from above. A structural post cannot have its surface area reduced without engineer approval; insulation is added around the outside of the column, not replacing any material." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check fire compartmentation: a structural steel post inside a fire-compartment wall may require intumescent protection. Confirm with a fire engineer before covering with insulation if the column has existing intumescent paint." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the column cross-section and the available space for insulation. A steel RSJ in a 100 mm wall cavity needs at least 50 mm of insulation on each exposed face to produce a meaningful surface temperature improvement." }] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check whether the column carries load from above. A structural post cannot have its surface area reduced without engineer approval; insulation is added around the outside of the column, not replacing any material."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check fire compartmentation. A structural steel post inside a fire-compartment wall may need intumescent protection. If the column already has intumescent paint, confirm with a fire engineer before covering it with insulation."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure the column cross-section and the available space for insulation. A steel RSJ in a 100 mm wall cavity needs at least 50 mm of insulation on each exposed face to produce a meaningful surface temperature improvement."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "The insulation approach" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "The insulation approach"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clean the column surface and allow to dry. Any rust should be wire-brushed back and treated with a rust converter before insulation goes on." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Cut PIR board panels to wrap each face of the column. For a circular column, use a phenolic foam board (more flexible) or cut triangular wedges that approximate the curve and fill gaps with foam. The " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "linear-thermal-bridge" } }], "text": "linear thermal bridge" },
-            { "type": "text", "text": " at each column runs from floor to ceiling; cover the full height." }
-          ] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bond the PIR panels to the column with low-expansion PU adhesive foam. On a steel column with intumescent paint, use a compatible adhesive rather than PU foam — check the paint manufacturer's guidance." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tape all panel joints with aluminium tape to complete the airtight layer." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Board over the insulation with 9.5 mm plasterboard if a flush finish is required, or leave the insulation as the final finish if the column is in a utility area." }] }] },
-          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
-            { "type": "text", "text": "Check the " },
-            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "psi-value" } }], "text": "psi value" },
-            { "type": "text", "text": " of the junction at the floor and ceiling. These are secondary bridges where the column meets the floor slab; fill the perimeter gap with foam before plastering." }
-          ] }] }
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Clean the column surface and allow to dry. Any rust should be wire-brushed back and treated with a rust converter before insulation goes on."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut PIR board panels to wrap each face of the column. For a circular column, use a phenolic foam board (more flexible) or cut triangular wedges that approximate the curve and fill gaps with foam. The "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "linear-thermal-bridge"
+                        }
+                      }
+                    ],
+                    "text": "linear thermal bridge"
+                  },
+                  {
+                    "type": "text",
+                    "text": " at each column runs from floor to ceiling; cover the full height."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bond the PIR panels to the column with low-expansion PU adhesive foam. On a steel column with intumescent paint, use a compatible adhesive rather than PU foam, check the paint manufacturer's guidance."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tape all panel joints with aluminium tape to complete the airtight layer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Board over the insulation with 9.5 mm plasterboard for a flush finish. In a utility area, the insulation can be left as the final finish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "psi-value"
+                        }
+                      }
+                    ],
+                    "text": "psi value"
+                  },
+                  {
+                    "type": "text",
+                    "text": " of the junction at the floor and ceiling. These are secondary bridges where the column meets the floor slab; fill the perimeter gap with foam before plastering."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Worked example" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Worked example"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "A 150×150 mm steel RHS post in an extension wall. Room temperature 20°C, external temperature 0°C. Uninsulated column surface temperature: approximately 5°C (dew point at 50% RH: 9°C — condensation certain). With 50 mm PIR on three exposed faces: column surface temperature rises to approximately 14–16°C — above the dew point, condensation eliminated." }
+          {
+            "type": "text",
+            "text": "A 150×150 mm steel hollow section post in an extension wall. Room temperature 20°C, external temperature 0°C. Uninsulated column surface temperature: approximately 5°C (dew point at 50% RH: 9°C, condensation certain). With 50 mm PIR on three exposed faces: column surface temperature rises to approximately 14 to 16°C, above the dew point, condensation eliminated."
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            { "symptom": "Condensation continues to appear at the base of the wrapped column", "cause": "The insulation was not taken down to floor level; the uninsulated column base is still cold", "fix": "Remove the skirting and extend the PIR wrap to the floor; seal the base with foam." },
-            { "symptom": "Mould returning on the plasterboard face of the column after two winters", "cause": "Insulation layer too thin; column surface still cold enough to lower plasterboard surface temperature below dew point", "fix": "Check the insulation thickness; add another 25 mm layer if space allows." }
+            {
+              "symptom": "Condensation continues to appear at the base of the wrapped column",
+              "cause": "The insulation was not taken down to floor level; the uninsulated column base is still cold",
+              "fix": "Remove the skirting and extend the PIR wrap to the floor; seal the base with foam."
+            },
+            {
+              "symptom": "Mould returning on the plasterboard face of the column after two winters",
+              "cause": "Insulation layer too thin; column surface still cold enough to lower plasterboard surface temperature below dew point",
+              "fix": "Check the insulation thickness; add another 25 mm layer if space allows."
+            }
           ]
         }
       }
