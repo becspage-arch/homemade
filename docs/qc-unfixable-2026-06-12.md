@@ -1588,3 +1588,55 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - fitting-exterior-featheredge-timber-cladding voice-violation,grade-level-strict — applied: 
 - fitting-pvc-fascia-board-over-rotted-timber-fascia grade-level-strict — applied: 
 - wiring-a-three-way-intermediate-lighting-switch grade-level-strict — applied: 
+
+- fitting-a-concealed-cistern-back-to-wall-toilet voice-violation,grade-level-strict — applied: 
+- fitting-deep-buttoning-to-an-upholstered-back grade-level-strict — applied: 
+- fitting-insulating-plasterboard-to-a-cold-external-wall voice-violation,grade-level-strict — applied: 
+- insulating-a-cold-water-storage-tank grade-level-strict — applied: 
+- making-a-zippered-scatter-cushion-in-upholstery-fabric voice-violation,grade-level-strict — applied: 
+- painting-behind-a-radiator-with-a-radiator-roller grade-level-strict — applied: 
+- repairing-a-rotten-window-frame-corner-with-epoxy-filler grade-level-strict — applied: 
+
+- ashwagandha-profile  — applied: medical-disclaimer,body-rewrite:7,century-to-sourceNotes:1,dry-run
+- burdock-decoction-for-acne  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- calendula-eyewash  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:3,orientation-from-excerpt,dry-run
+- calendula-sitz-bath  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:4,dry-run
+- cayenne-compress-for-joint-pain  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- cleavers-infusion-for-pelvic-health  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- comfrey-profile  — applied: medical-disclaimer,body-rewrite:6,century-to-sourceNotes:2,orientation-from-excerpt,dry-run
+- dandelion-leaf-infusion-for-water-retention  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:1,dry-run
+- dandelion-profile  — applied: medical-disclaimer,body-rewrite:6,century-to-sourceNotes:2,orientation-from-excerpt,dry-run
+- dandelion-root-coffee-substitute  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- echinacea-infusion-for-cold-prevention  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- echinacea-profile  — applied: medical-disclaimer,body-rewrite:6,century-to-sourceNotes:1,orientation-from-excerpt,dry-run
+- elderberry-tincture  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:4,orientation-from-excerpt,dry-run
+- elderflower-hot-infusion-for-hayfever  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- fennel-profile  — applied: medical-disclaimer,body-rewrite:7,century-to-sourceNotes:2,orientation-from-excerpt,dry-run
+- ginseng-tincture-for-low-energy  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- herbal-preparations-for-children  — applied: body-rewrite:7,dry-run
+- holy-basil-infusion-for-daily-calm  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- hops-infusion-for-sleeplessness  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- how-tinctures-work  — applied: body-rewrite:7,dry-run
+- lavender-infusion-for-nervous-tension  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- lavender-inhalation-for-acute-anxiety  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:2,orientation-from-excerpt,dry-run
+- lemon-balm-profile  — applied: medical-disclaimer,body-rewrite:9,century-to-sourceNotes:2,dry-run
+- licorice-decoction-for-dry-cough  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:2,dry-run
+- milk-thistle-tincture-for-liver-support  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:2,orientation-from-excerpt,dry-run
+- motherwort-tincture-for-heart-palpitations  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- mugwort-steam-for-period-cramps  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- raspberry-leaf-tincture  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- rosemary-profile  — applied: medical-disclaimer,body-rewrite:5,dry-run
+- sage-and-thyme-steam-for-sinus-congestion  — applied: medical-disclaimer,ingredient-quantity:3,body-rewrite:3,dry-run
+- sage-profile  — applied: medical-disclaimer,body-rewrite:7,dry-run
+- st-johns-wort-tincture  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:2,orientation-from-excerpt,dry-run
+- thyme-infused-oil-for-muscle-rub  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- thyme-infusion-for-digestive-spasm  — applied: medical-disclaimer,ingredient-quantity:2,dry-run
+- thyme-profile  — applied: medical-disclaimer,body-rewrite:8,century-to-sourceNotes:2,dry-run
+- turmeric-decoction-for-chronic-inflammation  — applied: medical-disclaimer,ingredient-quantity:4,body-rewrite:2,dry-run
+- understanding-herbal-safety-principles  — applied: body-rewrite:6,dry-run
+- valerian-profile  — applied: medical-disclaimer,body-rewrite:9,century-to-sourceNotes:1,orientation-from-excerpt,dry-run
+- yarrow-bath-for-aching-legs  — applied: medical-disclaimer,ingredient-quantity:2,body-rewrite:3,orientation-from-excerpt,dry-run
+- yarrow-compress-for-varicose-veins  — applied: medical-disclaimer,ingredient-quantity:2,orientation-from-excerpt,dry-run
+- yarrow-profile  — applied: medical-disclaimer,body-rewrite:9,century-to-sourceNotes:2,dry-run
+
+- wet-felted-christmas-bauble-set hero-missing — applied: hero-fill-deferred-to-standalone-script

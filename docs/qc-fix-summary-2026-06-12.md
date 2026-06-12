@@ -547,3 +547,118 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 17:45:30
+
+Generated: 2026-06-12T17:45:30.010Z
+
+Processed: 69
+PASS: 62
+STILL_BLOCKED: 7
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 40 |
+| grade-level-strict | 20 |
+| voice-violation | 6 |
+
+## Still BLOCKED (sample 20)
+
+- fitting-a-concealed-cistern-back-to-wall-toilet: voice-violation, grade-level-strict
+- fitting-deep-buttoning-to-an-upholstered-back: grade-level-strict
+- fitting-insulating-plasterboard-to-a-cold-external-wall: voice-violation, grade-level-strict
+- insulating-a-cold-water-storage-tank: grade-level-strict
+- making-a-zippered-scatter-cushion-in-upholstery-fabric: voice-violation, grade-level-strict
+- painting-behind-a-radiator-with-a-radiator-roller: grade-level-strict
+- repairing-a-rotten-window-frame-corner-with-epoxy-filler: grade-level-strict
+
+---
+
+## Run at 20:33:37
+
+Generated: 2026-06-12T20:33:37.005Z
+
+Processed: 41
+PASS: 0
+STILL_BLOCKED: 41
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 171 |
+| medical-disclaimer-nonstandard | 114 |
+| grade-level-strict | 111 |
+| opening-pattern-missing-hook | 33 |
+| content-type-opening-mismatch | 30 |
+| historical-century-in-body | 27 |
+| soft-medical-claim | 3 |
+
+## Still BLOCKED (sample 20)
+
+- ashwagandha-profile: 
+- burdock-decoction-for-acne: 
+- calendula-eyewash: 
+- calendula-sitz-bath: 
+- cayenne-compress-for-joint-pain: 
+- cleavers-infusion-for-pelvic-health: 
+- comfrey-profile: 
+- dandelion-leaf-infusion-for-water-retention: 
+- dandelion-profile: 
+- dandelion-root-coffee-substitute: 
+- echinacea-infusion-for-cold-prevention: 
+- echinacea-profile: 
+- elderberry-tincture: 
+- elderflower-hot-infusion-for-hayfever: 
+- fennel-profile: 
+- ginseng-tincture-for-low-energy: 
+- herbal-preparations-for-children: 
+- holy-basil-infusion-for-daily-calm: 
+- hops-infusion-for-sleeplessness: 
+- how-tinctures-work: 
+
+---
+
+## Run at 20:34:28
+
+Generated: 2026-06-12T20:34:28.707Z
+
+Processed: 81
+PASS: 81
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 20:40:34
+
+Generated: 2026-06-12T20:40:34.780Z
+
+Processed: 39
+PASS: 38
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 8 |
+| hero-missing | 3 |
+
+## Still BLOCKED (sample 20)
+
+- wet-felted-christmas-bauble-set: hero-missing

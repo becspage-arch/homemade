@@ -1,9 +1,9 @@
 # fal.ai billing halt
 
-**Stopped at:** 2026-06-12T17:34:23.542Z
+**Stopped at:** 2026-06-12T20:40:12.581Z
 **Script:** `fixup-hero-fill`
-**Progress:** 15 / 40 processed; **25 remaining this run**
-**Backlog (PUBLISHED with no hero):** 55
+**Progress:** 34 / 39 processed; **5 remaining this run**
+**Backlog (PUBLISHED with no hero):** 17
 **Estimated top-up to finish:** £0.10 (£0.0024 per image, assumes 30 % Flux gap)
 
 ## What happened
@@ -23,9 +23,9 @@ fal.ai returned HTTP 403 with a billing-related response:
 
 ## Context
 
-- **unsplash:** 2
-- **pexels:** 13
-- **wikimedia:** 0
+- **unsplash:** 0
+- **pexels:** 33
+- **wikimedia:** 1
 - **pixabay:** 0
 - **flux-schnell:** 0
 - **failed:** 0
