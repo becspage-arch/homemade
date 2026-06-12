@@ -1,0 +1,103 @@
+{
+  "slug": "rabbit-mating-observation-and-confirmation",
+  "title": "Observing rabbit mating and confirming pregnancy",
+  "subtitle": "What to watch for and how to palpate for kits at 14 days.",
+  "excerpt": "Rabbit mating is fast and unmistakable. The doe is brought to the buck's cage, the mating takes 1 to 3 minutes, and the buck falls sideways with a characteristic grunt. Confirming pregnancy by abdominal palpation at day 12 to 14 is a valuable skill that avoids keeping empty does on full rations.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "rabbits",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Bob Bennett, Storey's Guide to Raising Rabbits (5th edn., 2009), breeding chapter. Merck Veterinary Manual, Rabbit Reproduction (2022). British Rabbit Council, Breeding Guidance (2021).",
+  "glossaryTerms": [
+    {
+      "slug": "palpation-rabbit",
+      "term": "Palpation",
+      "definition": "Feeling the abdomen of a doe with the fingers to detect the small grape-sized embryos at 12 to 14 days after mating."
+    },
+    {
+      "slug": "false-pregnancy-rabbit",
+      "term": "False pregnancy",
+      "definition": "A condition in does where ovulation occurs but no embryos are present. The doe builds a nest and pulls fur on a normal schedule. Lasts 16 to 18 days before the hormone cycle resets."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["breeding rabbits", "rabbit pregnancy check", "rabbit mating management"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rabbits are induced ovulators: the act of mating triggers the release of eggs, so the timing of fertilisation is very reliable. A healthy doe brought to a proven buck will usually conceive in 90% of matings. The two skills worth learning are reading the mating, and confirming the pregnancy at day 14 by " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "palpation-rabbit" } }], "text": "palpation" },
+          { "type": "text", "text": "." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Introducing the doe to the buck" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Always bring the doe to the buck's cage. Does are territorial; a buck placed in the doe's cage is often attacked before he can mate. Place the doe in the buck's cage and watch. A receptive doe lifts her hindquarters when the buck approaches; a non-receptive doe runs circles or sits flat against the floor." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The mating itself takes a few seconds. The buck mounts, thrusts briefly, and falls to one side with a grunt or squeal. This is the fall-off, the sign that ejaculation has occurred. One confirmed fall-off is sufficient for fertilisation. Remove the doe after 2 to 3 fall-offs maximum." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Confirming pregnancy by palpation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Palpate at day 12 to 14 after mating. Embryos are too small to feel before this. After day 16, they become harder to distinguish from gut contents." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the doe gently on a table with one hand supporting the front. With the other hand, slide your thumb and forefinger into the lower abdomen from either side, just above the pelvis. Curl the fingers upward slightly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A pregnant doe has marble-sized, firm, smooth objects that slip easily between the fingers. These are the embryos in their individual amniotic sacs. They feel distinctly different from the pliable, irregular gut contents. Count what you can: a typical range is 5 to 10." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not apply pressure to move or squeeze the embryos. Firm pressure can cause resorption." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "If palpation finds nothing" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "An empty doe may be genuinely empty (mating failed) or may be in " },
+              { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "false-pregnancy-rabbit" } }], "text": "false pregnancy" },
+              { "type": "text", "text": ". Wait 18 days from the mating date; if no nest-building behaviour appears, remate. If she builds a nest at day 26 to 28 but produces no kits, she was in false pregnancy. Remate 2 to 3 days after the pseudopregnancy resolves." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Buck is showing no interest in the doe",
+              "cause": "Young buck not yet sexually mature (under 4 months), too hot weather, or the buck has been overworked",
+              "fix": "Rest the buck for 48 hours. Bucks reach full sexual maturity at 6 months; a 4-month buck may be slow to start. Heat over 29 C temporarily suppresses mating drive in bucks."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Doe attacks the buck when placed in his cage",
+              "cause": "Non-receptive doe (not in a receptive phase), or a very dominant doe",
+              "fix": "Remove the doe immediately to avoid injury. Try again 3 to 4 days later. A doe that is consistently aggressive even when in oestrus may not be suitable for breeding."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

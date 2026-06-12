@@ -1,0 +1,106 @@
+{
+  "slug": "milking-a-dairy-sheep",
+  "title": "Hand milking a dairy sheep",
+  "subtitle": "The daily routine for a small dairy ewe from let-down to yield recording.",
+  "excerpt": "Hand milking a dairy sheep takes 10 to 15 minutes per animal once the ewe is trained and you have a reliable technique. Dairy breeds such as East Friesian, Lacaune, and their crosses give 1 to 2 litres per day at peak, with a natural lactation of 4 to 6 months. The milking routine is built around consistent timing, clean equipment, and keeping the ewe calm.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ann Starbard, Storey's Guide to Raising Dairy Goats (applied to sheep, comparable technique). British Sheep Dairying Association, Milking Sheep at Home (2021). Paula Marchetti, Small-Scale Sheep Milking (Acres USA, 2018).",
+  "glossaryTerms": [
+    {
+      "slug": "let-down-sheep",
+      "term": "Let-down",
+      "definition": "The release of milk from the teat cistern in response to handling or suckling. Triggered by oxytocin. Without let-down, very little milk can be extracted."
+    },
+    {
+      "slug": "teat-cistern",
+      "term": "Teat cistern",
+      "definition": "The small reservoir of milk at the base of the teat that is released during let-down. In dairy sheep, this is proportionally larger than in beef breeds."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sheep milking technique", "hand milking ewe", "dairy sheep routine"],
+  "recipeTools": [
+    { "slug": "milk-strainer", "isOptional": false },
+    { "slug": "milking-pail", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dairy sheep are milked in a standing position on a milking stand or platform that brings the udder to a workable height. A calm ewe that has been on the stand since lambing will accept milking with minimal restraint. A nervous or untrained ewe needs patient, consistent handling in the early weeks to build the association between the stand and feed reward." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Before milking" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wash your hands. Prepare a bucket of warm water for teat cleaning and a clean, dry milking vessel." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lead the ewe to the milking stand and offer her a small feed in the headlock. The feed stimulates " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "let-down-sheep" } }], "text": "let-down" },
+            { "type": "text", "text": " and keeps her occupied." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Examine the udder for heat, swelling, or hardness. Milk that is stringy, clotted, or watery from one half of the udder indicates mastitis; call the vet before milking that half." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strip the first 2 to 3 squirts from each teat into a strip cup or dark-coloured tray. This removes the plug of milk that has been in the teat canal, which has the highest bacterial load, and allows you to check for abnormalities." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The milking technique" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Sheep teats are shorter and smaller than goat teats. Grasp the teat between thumb and forefinger, trapping milk in the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "teat-cistern" } }], "text": "teat cistern" },
+          { "type": "text", "text": " by closing the thumb and forefinger first. Then roll the remaining fingers downward in sequence to squeeze the milk out. This is the thumb roll technique. Do not pull the teat downward; pull is less effective and can cause discomfort." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After milking" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply teat dip or teat spray to both teats immediately after milking. This reduces bacterial entry through the open teat canal." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strain the milk immediately through a milk strainer with a disposable filter pad into a clean container. Cover and refrigerate within 30 minutes of milking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Record the yield in a simple log (date, animal ID, litres). Yield records over several weeks reveal when the animal's lactation is declining and when to plan weaning of any lambs still sharing the milk." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Ewe kicks repeatedly during milking",
+              "cause": "Teat soreness (possibly early subclinical mastitis or chapping), or not yet habituated to the stand",
+              "fix": "Check for teat damage or heat in the udder. If the udder is healthy, persist with calm, consistent milking sessions and generous rewards. A hobble strap around both hind legs calms many ewes temporarily while they learn to tolerate the process."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Yield drops suddenly by half in one session",
+              "cause": "Stress, a change in routine, incomplete let-down, or early mastitis in one half",
+              "fix": "Check both halves individually. A sudden drop across both halves suggests a stress cause; a drop in one half only points toward subclinical mastitis — run a California Mastitis Test (CMT) or call the vet."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

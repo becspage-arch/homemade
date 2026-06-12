@@ -1,0 +1,107 @@
+{
+  "slug": "soft-cheese-from-goats-milk",
+  "title": "Making soft cheese from goats' milk",
+  "subtitle": "A simple acid-set chèvre-style fresh cheese from home-produced milk.",
+  "excerpt": "A soft, fresh goats' cheese requires only milk, a starter culture or lemon juice, rennet, and salt. The process is gentle: acidify, add a small amount of rennet, allow the curd to set overnight, drain in muslin, and salt to taste. The whole thing takes 20 minutes of active work and 12 to 18 hours of hands-off time.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mary Karlin, Artisan Cheese Making at Home (2011), fresh cheeses chapter. Ivan Larcher, The Cheesemaker's Manual (2014). Rikki Carroll, Home Cheese Making (3rd edn., 2010).",
+  "glossaryTerms": [
+    {
+      "slug": "rennet-cheese",
+      "term": "Rennet",
+      "definition": "An enzyme (chymosin) that causes milk proteins to coagulate into a gel. Available as liquid, tablet, or powder from cheesemaking suppliers."
+    },
+    {
+      "slug": "mesophilic-starter",
+      "term": "Mesophilic starter",
+      "definition": "A freeze-dried culture of lactic acid bacteria used to acidify milk before or alongside rennet. Works at temperatures of 20 to 30 C."
+    },
+    {
+      "slug": "whey-cheese",
+      "term": "Whey",
+      "definition": "The liquid drained off when milk curds are formed and separated. Nutritious and can be used in bread, scones, or as pig and poultry feed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["goat cheese recipe", "fresh chèvre", "home goat cheese making"],
+  "recipeTools": [
+    { "slug": "muslin-cloth", "isOptional": false },
+    { "slug": "sieve", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This recipe makes a soft, spreadable fresh cheese in the chèvre style. It uses a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mesophilic-starter" } }], "text": "mesophilic starter" },
+          { "type": "text", "text": " to acidify the milk and a small amount of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rennet-cheese" } }], "text": "rennet" },
+          { "type": "text", "text": " to set a firm curd. The result is mild, slightly tangy, and ready to eat the same day the draining is complete." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients for 250 to 300 g of fresh cheese" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "2 litres fresh goats' milk (pasteurised is fine; raw milk gives a more complex flavour)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "1 packet mesophilic starter culture, or 3 tablespoons live-culture plain yogurt" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "2 drops liquid animal rennet diluted in 2 tablespoons cold water (or 1/4 rennet tablet, dissolved)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "1 teaspoon fine salt (or to taste after draining)" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm the milk gently to 22 C in a clean pot. Stir in the starter culture, cover, and leave for 30 minutes to allow the bacteria to begin working." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the diluted rennet and stir with 5 gentle up-and-down strokes only. Do not agitate further. Cover and leave at room temperature (20 to 22 C) for 12 to 18 hours. The curd is ready when it has pulled away from the sides of the pot and a clean break appears when you insert a knife." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle the curd gently into a muslin-lined sieve over a bowl. Do not break the curd more than necessary. Tie the corners of the muslin and hang to drain, or leave in the sieve in the refrigerator for 6 to 12 hours. The longer it drains, the firmer the result." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season with salt, mix well, and taste. The fresh cheese keeps for 5 to 7 days refrigerated. The " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "whey-cheese" } }], "text": "whey" },
+            { "type": "text", "text": " can be used in bread or fed to pigs and poultry." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Curd did not set after 18 hours; milk still liquid",
+              "cause": "Rennet was inactivated (too old, overheated, or diluted in chlorinated tap water), or milk temperature was too low",
+              "fix": "Check the rennet expiry date and ensure the diluting water is unchlorinated (cooled boiled water works). Warm the milk to 25 C and add fresh rennet."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Cheese tastes too acidic or has a bitter finish",
+              "cause": "Over-acidification from too long in warm conditions or too much starter",
+              "fix": "Reduce the starter quantity or the ripening time at warm temperature. A shorter ripening window (12 hours) produces a milder cheese."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "incubator-cleaning-and-calibration",
+  "title": "Cleaning and calibrating a poultry incubator",
+  "subtitle": "Preparing the machine between hatches to protect fertility and hatchability.",
+  "excerpt": "A dirty incubator carries bacteria and mould from one hatch to the next, infecting developing embryos before they can hatch. Full disinfection between every hatch and a calibration check at the start of each season keeps infection rates low and temperature accuracy high. Both steps take under 2 hours.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 90,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gail Damerow, Storey's Guide to Raising Chickens (4th edn., 2017), incubation chapter. Practical Poultry magazine, Incubator hygiene (Oct 2021). AHDB Poultry, Incubation and Hatchery Hygiene (2019).",
+  "glossaryTerms": [
+    {
+      "slug": "incubator-calibration",
+      "term": "Calibration",
+      "definition": "Checking the temperature and humidity displayed by the incubator controls against a known-accurate reference thermometer and hygrometer before each hatch."
+    },
+    {
+      "slug": "hatch-debris",
+      "term": "Hatch debris",
+      "definition": "Shell fragments, membrane, fluff, and dried albumen left in an incubator after chicks hatch. A major source of bacteria and mould if not removed promptly."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["cleaning incubator", "incubator disinfection", "calibrating egg incubator"],
+  "recipeTools": [
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Most incubation failures trace back to two causes: poor temperature accuracy and contamination. A newly cleaned, calibrated incubator removes both risks at once. The cleaning process is straightforward as long as all " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hatch-debris" } }], "text": "hatch debris" },
+          { "type": "text", "text": " is removed before disinfectant is applied." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cleaning after a hatch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove all chicks, eggs, and trays. Unplug the incubator. Allow to cool fully before handling the heating element if accessible." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove all loose debris by hand, then vacuum out the remaining fluff and fragments with a small handheld vacuum. Disinfectant applied over debris does not penetrate; the physical removal step is not optional." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wash all removable components (trays, water channels, egg turners) with hot water and a food-grade detergent. Rinse thoroughly and allow to dry completely before reassembling." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wipe all internal surfaces of the cabinet with a diluted virucidal/bactericidal disinfectant (e.g. Virkon S at label rate, or a similar product labelled for poultry hatcheries). Follow the contact time specified on the label before wiping off." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the incubator open to air out in a dust-free location for 24 hours before storing or setting up for the next hatch." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calibrating before the next hatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "incubator-calibration" } }], "text": "Calibration" },
+          { "type": "text", "text": " confirms that the incubator display matches the actual temperature at egg level. Cheap sensors drift; a 0.5 C gap matters over a 21-day incubation." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the incubator to your target temperature (37.5 C for still-air, 37.7 C for fan-assisted for most poultry). Allow 4 hours to stabilise before reading." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a reference thermometer at egg level and compare it with the display. Adjust the control until both agree on the target temperature." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check humidity using a separate hygrometer if your incubator has humidity control. Target 45 to 55% relative humidity for most poultry through days 1 to 18, rising to 65 to 70% at lockdown." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Membrane and shell fragments are stuck firmly to the incubator floor",
+              "cause": "Dried albumen acts as a glue; normal after a busy hatch",
+              "fix": "Soak the stuck areas with a damp cloth for 5 to 10 minutes before scraping. Do not use a sharp tool that could damage the incubator floor or sensors."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Incubator temperature fluctuates by 1 C or more",
+              "cause": "Faulty thermostat, or the incubator is placed in a location with inconsistent ambient temperature",
+              "fix": "Move the incubator away from windows, direct sunlight, and external doors. If fluctuation persists in a stable environment, the thermostat needs replacing or the incubator should be serviced."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

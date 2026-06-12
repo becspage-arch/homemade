@@ -1,0 +1,109 @@
+{
+  "slug": "basic-tractor-maintenance-for-smallholders",
+  "title": "Basic tractor maintenance for a smallholding",
+  "subtitle": "The daily and monthly checks that keep a compact tractor reliable.",
+  "excerpt": "A compact utility tractor (under 60 hp) is the most common mechanised tool on a smallholding. Most failures on these machines are preventable: low oil, a clogged air filter, or hydraulic fluid that has not been changed. A 15-minute daily check before use and a monthly service routine cover 90% of what goes wrong.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Kubota B Series Operator Manual (general principles, widely applicable). Andrew Brind and Tim Waistell, Running a Small Farm (2017). NFU Mutual, Tractor Safety and Maintenance Guide (2021).",
+  "glossaryTerms": [
+    {
+      "slug": "pto-shaft",
+      "term": "PTO (power take-off)",
+      "definition": "The rotating shaft at the rear of a tractor that transmits engine power to implements such as mowers, slashers, and wood chippers."
+    },
+    {
+      "slug": "hydraulic-fluid-tractor",
+      "term": "Hydraulic fluid",
+      "definition": "The pressurised fluid used to operate the three-point linkage, front loader, and hydraulic remote connections on a tractor. Also lubricates the transmission on most compact tractors."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["tractor service smallholding", "compact tractor maintenance", "utility tractor checks"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Compact tractors used on smallholdings work in demanding conditions: wet fields, muddy gates, dusty hay barns. The engine, transmission, and hydraulic system all benefit from regular attention. Most of the checks described here take less time than cleaning the mud off the bodywork." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Daily pre-use checks" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Engine oil: check dipstick before starting. Top up with the correct grade (see the operator manual). A warm engine burns oil faster; cold checks are more accurate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "" },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hydraulic-fluid-tractor" } }], "text": "Hydraulic fluid" },
+            { "type": "text", "text": ": check the sight glass or dipstick on the rear transmission case. Level should be within the marked range with the tractor on level ground." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Coolant level: sight glass on the expansion tank, not the radiator cap. Top up with the correct antifreeze mix if low." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tyres: check for obvious cuts, embedded objects, and under-inflation. A low front tyre is dangerous on any slope." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "" },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pto-shaft" } }], "text": "PTO guard" },
+            { "type": "text", "text": ": confirm the PTO guard is in place before hitching any implement. PTO injuries are among the most serious farm accidents." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Monthly maintenance" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Air filter: remove and tap gently to dislodge dust. Replace if the foam or paper element is heavily contaminated. A clogged air filter causes black smoke and poor power." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Battery terminals: check for corrosion and clean with a dry wire brush if white deposits are forming." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grease points: apply grease gun to all nipples on the front axle, linkage pins, and any implement hitch points. Frequency varies by model; see operator manual." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual service items" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Engine oil and filter: drain and replace at the manufacturer's interval, or annually." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hydraulic fluid and filter: some compact tractors use the same fluid for hydraulic and transmission. Change annually or at the manufacturer's service interval." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fuel filter: replace annually or at signs of fuel delivery problems (hard starting, hunting idle)." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Black smoke from the exhaust under load",
+              "cause": "Clogged air filter or injector problem",
+              "fix": "Check and clean the air filter first — this is the most common cause. If smoke persists after cleaning or replacing the filter, the injectors need attention from a diesel mechanic."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Three-point linkage drops slowly when the engine is off",
+              "cause": "Internal hydraulic valve or cylinder seal wear",
+              "fix": "This is a normal long-term wear issue. For operations where the implement must stay at height (moving stock between fields with a front-loader bucket, for example), keep the engine running. A full hydraulic service from a tractor dealer resolves it."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

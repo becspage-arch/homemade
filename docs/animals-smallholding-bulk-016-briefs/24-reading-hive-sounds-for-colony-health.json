@@ -1,0 +1,112 @@
+{
+  "slug": "reading-hive-sounds-for-colony-health",
+  "title": "Reading hive sounds for colony health",
+  "subtitle": "What the sound of a colony tells you before you open the hive.",
+  "excerpt": "An experienced beekeeper can learn a great deal about a colony before lifting a single frame. The sound of the hive, from the low steady hum of a content colony to the roar of a queenless or disturbed one, is a first-line indicator of what you will find inside. Learning to read it reduces disturbance and speeds diagnosis.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ted Hooper, Guide to Bees and Honey (7th edn., 2010), colony assessment chapter. BBKA, Seasonal Beekeeping (2019). Thomas Seeley, Honeybee Democracy (2010), communication chapter.",
+  "glossaryTerms": [
+    {
+      "slug": "piping-queen",
+      "term": "Piping",
+      "definition": "A high-pitched tooting or quacking sound made by a virgin queen as she challenges other queens in the hive. Indicates a queen is present and the colony may swarm."
+    },
+    {
+      "slug": "queenless-roar",
+      "term": "Queenless roar",
+      "definition": "The loud, disorganised hum of a colony that has lost its queen. Distinct from the steady buzz of a queen-right colony."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["listening to bees", "hive sound diagnosis", "bee colony sounds meaning"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bees communicate through sound, vibration, and pheromone. The sounds audible to a beekeeper at the hive entrance or with an ear to the box fall into a small number of patterns. Learning these patterns gives you a useful pre-inspection read." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The content colony" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A queen-right colony on a warm day makes a steady, moderate hum, slightly irregular, with individual buzzes weaving in and out. If you put your ear to the hive wall, you hear this as a relaxed, multilayer sound. The bees are going about their business. This is the baseline you are comparing everything else to." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The queenless roar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "queenless-roar" } }], "text": "queenless roar" },
+          { "type": "text", "text": " is louder and more disorganised than the content hum. The pitch is higher and the sound lacks the steady rhythm of a normal colony. Bees at the entrance may be fanning harder and the activity looks frantic rather than purposeful. If the hive sounds like this before disturbance, inspect for queen presence." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Piping and queen competition" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "piping-queen" } }], "text": "Piping" },
+          { "type": "text", "text": " is a distinctive, repeating high note (tooot-tooot) heard from outside the hive or clearly when you rest a hand on the box. It means a virgin queen has emerged and is challenging other capped queens. If you hear piping, the colony is likely in a post-swarm state with an unmated queen. Do not inspect for 2 to 3 weeks; let the queen mate and return before disturbing the colony." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The defensive roar" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A colony that has been disturbed or that contains a more defensive population will go into a roaring, high-pitched alarm when you approach. The sound escalates sharply as soon as you touch the hive. This is not the same as the queenless roar: it starts from normal and rises with disturbance. Open cautiously with adequate smoke and work slowly." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Using a stethoscope in winter" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "In winter, hold a stethoscope to the hive wall to check whether the colony is alive without opening the box. A live cluster produces a faint but unmistakable hum. Silence for more than 10 seconds means the colony has likely died. Wait for a mild day (above 10 C) before opening to investigate." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Hive is completely silent in April when it should be active",
+              "cause": "Colony has died over winter, or has absconded",
+              "fix": "Open on a mild day. Check for the remains of a cluster. No cluster, pollen stores still present, and empty cells with the outer frames still capped suggest starvation. Wax moth or varroa damage presents differently: look for chalkbrood, perforated capping, or mite debris on the floor."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Constant high roar from a hive during a summer nectar dearth",
+              "cause": "Robbing in progress: bees from other colonies attempting to steal stores",
+              "fix": "Reduce the entrance to 2 to 3 cm immediately. Watch the entrance for bees fighting and bees trying to enter from the side of the hive. If robbing is severe, reduce to a 1-bee entrance and leave for 48 hours."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

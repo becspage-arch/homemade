@@ -1,0 +1,105 @@
+{
+  "slug": "heat-stress-in-laying-hens",
+  "title": "Preventing and managing heat stress in laying hens",
+  "subtitle": "Keeping hens comfortable and productive through a UK summer heatwave.",
+  "excerpt": "Chickens do not sweat; they shed heat by panting and by holding their wings away from their body. Once ambient temperature rises above 27 C, a laying flock will start to show the effects of heat stress: panting, reduced feed intake, thin-shelled eggs, and a sharp drop in laying rate. Heat stress above 35 C can be fatal.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gail Damerow, Storey's Guide to Raising Chickens (4th edn., 2017). Poultry World, Heat stress management UK (July 2022). AHDB Poultry, Managing Laying Hens in Hot Weather (2021).",
+  "glossaryTerms": [
+    {
+      "slug": "panting-hen",
+      "term": "Panting",
+      "definition": "Rapid open-beak breathing in poultry, the primary mechanism for releasing excess heat. Moderate panting on a hot day is normal; severe, continuous panting with wings held out is a sign of heat stress."
+    },
+    {
+      "slug": "electrolyte-poultry",
+      "term": "Electrolytes",
+      "definition": "Mineral salts (sodium, potassium, chloride) added to drinking water to replace those lost through panting. Available as poultry-specific preparations."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["chickens in hot weather", "heat stroke hens", "keeping hens cool in summer"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "UK summers are getting hotter and more unpredictable. A flock that coped fine for years may now face temperatures it has not encountered before. The management response is straightforward: shade, cold water, and ventilation. The time to set these up is before the heatwave, not during it." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs of heat stress" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open-beak " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "panting-hen" } }], "text": "panting" },
+            { "type": "text", "text": " with wings held away from the body." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pale, limp comb and wattles. A normally red comb that looks dull or slightly blue is a warning sign." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hens lying flat on shaded ground with feet extended." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sharp drop in daily egg count; thin, rough shells; or loss of shell pigmentation." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Immediate steps during a heatwave" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Maximise shade in the run. Position a large tarpaulin or shade sail over the sunniest part of the run. Move any portable shelters to create shaded areas on the ground." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Provide additional water drinkers in the shade and refresh them with cold water two to three times per day. Hens drink significantly more in hot weather. An empty drinker on a 35 C day can cause rapid dehydration." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "electrolyte-poultry" } }], "text": "electrolytes" },
+            { "type": "text", "text": " to the water at the manufacturer's rate during sustained heatwaves. This replaces minerals lost through panting." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open all coop ventilation fully at night and leave the pop-hole open if the run is predator-proof. Night is when the coop temperature should drop; a sealed coop in summer can be warmer inside than outside." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "A hen that collapses from heat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A collapsed hen that is unresponsive but still breathing needs to be moved immediately to a cool, shaded place. Place her on a cool damp cloth. Offer cool (not ice-cold) water from a dropper to the side of the beak. Do not immerse her. If she does not recover within 15 to 20 minutes, call a vet." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Egg production drops sharply during hot weather but no other symptoms visible",
+              "cause": "Normal thermal response: hens divert energy away from egg production when body temperature is elevated",
+              "fix": "This is a physiological response, not a disease. Production recovers once temperatures drop. Focus on shade and water management to reduce the impact."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Hens crowding at the water drinker and others cannot access it",
+              "cause": "Too few drinker points for the flock size",
+              "fix": "Provide at minimum one drinker access point per 10 birds. In hot weather, one per 5 birds is better. Spread drinkers across the run in shaded locations."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

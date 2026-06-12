@@ -1,0 +1,108 @@
+{
+  "slug": "reading-a-livestock-market-catalogue",
+  "title": "Reading a livestock market catalogue",
+  "subtitle": "Decoding the abbreviations, conditions, and entry types before you bid.",
+  "excerpt": "A livestock market catalogue contains all the information you need to make a purchasing decision before the animal goes through the ring. Breed abbreviations, age and sex codes, health scheme statuses, and movement records are all there once you know how to read them. Going in unprepared leads to hasty buying and avoidable mistakes.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Farmers Weekly, A beginner's guide to livestock markets (2022). National Farmers Union, Buying Livestock: A Guide for New Entrants (2021). AHDB Beef and Lamb, Understanding Cattle Movement Records (2020).",
+  "glossaryTerms": [
+    {
+      "slug": "ear-tag-code",
+      "term": "Ear tag code",
+      "definition": "The UK sheep and cattle ear tag system: UK country prefix, flock or herd number, and individual animal number. The tag carries the movement history of the animal."
+    },
+    {
+      "slug": "health-scheme-status",
+      "term": "Health scheme status",
+      "definition": "Accreditation from organisations such as SAC Premium Health or SQPHS indicating the source flock/herd is routinely tested for specific diseases."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["livestock auction catalogue", "farm auction buying guide", "sheep cattle market catalogue"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A livestock market catalogue is published before the sale, available at the market office or online. Study it before the animals arrive to shortlist lots, note vendors, and set a price before you are standing at the ring under pressure." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Lot information" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Each lot entry typically contains:" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lot number: the order animals come through the ring." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vendor name and holding address. Worth checking: is this a known or recommended vendor?" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Breed (often abbreviated): BF = Bluefaced Leicester, T = Texel, SW = Suffolk cross, HE = Hereford, AA = Aberdeen Angus, etc. Catalogue key pages at the back list the full abbreviations." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sex and age code: ewe lambs (EL), hogg (H), gimmers (G), ewes in lamb (EIL), shearlings. Cattle codes include: heifer (H), steer (ST), cow in calf (CIC)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "" },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ear-tag-code" } }], "text": "Ear tag" },
+            { "type": "text", "text": " numbers for ID and traceability. Check them against the vendor's movement documents." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Health and movement information" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Look for any " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "health-scheme-status" } }], "text": "health scheme status" },
+          { "type": "text", "text": " listed against a lot. SAC Premium Health, SQPHS, or CHeCS accreditation indicates regular disease testing. Animals from accredited herds or flocks carry lower disease risk. If no status is listed, this does not mean the animals are unhealthy (most smallholding sales are of non-accredited stock), but it does mean you have less information." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sale conditions to read before bidding" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warranty conditions: many lots are sold with a short warranty period (e.g. 48 hours for in-calf status, 3 days for general soundness). Read the exact terms in the catalogue; they vary by auctioneer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reserve price: not always listed but the auctioneer will often indicate during the sale." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Movement restrictions: check whether any movement standstill will apply to your holding after purchase. Currently in England, cattle movements trigger a 6-day standstill on your holding for cattle." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Catalogue lists animals as 'in lamb to Texel' but no scan result is given",
+              "cause": "Vendor has not scanned the ewes, or scanning is implied from tupping records only",
+              "fix": "Ask the auctioneer to clarify before bidding whether the in-lamb status is scan-confirmed or tupping-recorded. Tupping record only means individual animals may be empty."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Lot description uses an abbreviation not in the catalogue key",
+              "cause": "Regional variation in abbreviation conventions, or a breed not listed in the printed key",
+              "fix": "Ask at the market office before the sale starts. Auctioneers expect these questions from new buyers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

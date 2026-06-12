@@ -1,0 +1,108 @@
+{
+  "slug": "after-storm-checks-on-a-smallholding",
+  "title": "After-storm checks on a smallholding",
+  "subtitle": "A systematic walk-round to catch damage and welfare risks before the morning routine.",
+  "excerpt": "A storm night on a smallholding can leave fence damage that lets livestock out onto roads, shelter roofs at dangerous angles, and water troughs contaminated by debris. A methodical walk-round at first light, done in a consistent order, means nothing gets missed. This guide gives a route and a checklist to follow after any storm of 50 mph or above.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NFU, Farm Storm Damage Checklist (2023). Farm Safety Foundation, After a Storm: Guidance for Farmers (2022). Countryfile Magazine, Dealing with Storm Damage on a Smallholding (2021).",
+  "glossaryTerms": [
+    {
+      "slug": "livestock-escape-point",
+      "term": "Escape point",
+      "definition": "Any section of fence, gate, or hedge that livestock could breach. After a storm, fallen trees, bent posts, and lifted rails all create new escape points."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["storm damage farm check", "post-storm livestock welfare", "smallholding storm inspection"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The first priority after a severe storm is animal safety: are all animals present and where they should be? Carry out a headcount before anything else. Livestock that have escaped overnight may be on roads or in a neighbour's field. Contact the local police and any adjacent landowners immediately if you discover a shortfall." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fencing and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "livestock-escape-point" } }], "text": "escape points" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Walk the full perimeter of every paddock that holds livestock, even if you heard nothing overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Look for fallen trees or large branches on stock netting or wooden rails. A tree across a fence creates both an escape point and a potential entrapment." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check all electric fence runs with a fence tester. Wet vegetation dragged across the tape by wind often grounds the fence without breaking it visibly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Temporary repairs with stock netting and strainer posts: get the breach secure before attending to anything else. Use heavy staples or hinge-joint wire to close gaps rapidly." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Shelter and housing" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check all field shelters and open-sided buildings for structural movement. A shelter with a shifted roof line should be assessed for safety before animals re-enter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Look for missing roof sheets, particularly on Dutch barns and polycarbonate-roofed shelters. Corrugated sheets become projectiles in storm-force wind and can carry several hundred metres." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check stabling and housing for water ingress from lifted tiles or damaged fascia." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water and power" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check water troughs for debris. Leaves, branches, and dead animals fallen into open troughs during the storm require immediate cleaning before livestock drink." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If power is out, check whether electrically powered water systems (pumps, automatic drinkers) are functioning. Provide manual water if not." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check fence energisers for damage, especially pole-mounted units." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Downed power lines" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "If you find any downed overhead power cables, do not approach. Call Western Power Distribution (or your regional DNO) immediately, and keep livestock and people well clear. A fallen cable on a wet fence can electrify the entire run." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Animals appear distressed or are grouping unusually after the storm",
+              "cause": "Storm stress, a smell or noise stimulus still present, or one or more animals injured during the night",
+              "fix": "Observe for physical injury: lameness, eye injuries, lacerations from debris. Calm the group by speaking quietly and moving slowly. Separate any visibly injured animal for closer examination."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Large tree has fallen across a paddock and livestock may be trapped",
+              "cause": "Storm damage to mature trees is unpredictable; older oaks and ash near paddocks are a known risk",
+              "fix": "Approach slowly and check whether any animals are under or trapped by the tree before attempting to move them. Call a livestock vet or animal welfare officer if an animal is trapped and cannot be freed by hand."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

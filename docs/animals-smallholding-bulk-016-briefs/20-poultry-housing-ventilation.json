@@ -1,0 +1,111 @@
+{
+  "slug": "poultry-housing-ventilation",
+  "title": "Ventilating a chicken house",
+  "subtitle": "Getting fresh air in without draughts on the roost.",
+  "excerpt": "Ventilation is the single most important and most commonly under-provided feature in backyard chicken housing. A coop that is damp, smells of ammonia, or has condensation on the walls is under-ventilated. More air movement almost always improves flock health. The challenge is delivering that air without a draught hitting roosting birds.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gail Damerow, Storey's Guide to Raising Chickens (4th edn., 2017), housing and ventilation. Chris Graham, Haynes Chicken Manual (2nd edn., 2012). RSPCA, Welfare Standards for Chickens (2022).",
+  "glossaryTerms": [
+    {
+      "slug": "stack-effect-ventilation",
+      "term": "Stack effect",
+      "definition": "Natural ventilation caused by warm air rising and escaping through high openings, drawing cooler fresh air in through lower ones. Works without fans in a well-designed coop."
+    },
+    {
+      "slug": "draught-vs-ventilation",
+      "term": "Draught",
+      "definition": "A direct flow of cold air over roosting birds. Different from general air movement: ventilation is desirable, draughts on the roost are not."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["chicken coop air flow", "hen house ventilation", "preventing coop dampness"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Chickens produce a surprising amount of moisture and ammonia overnight from respiration and droppings. Without adequate ventilation, this moisture condenses on the walls and ceiling, the litter becomes wet, ammonia concentrations rise, and respiratory disease follows. A cold coop is far less harmful than a damp, stale one." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How much ventilation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "As a rule of thumb, the total area of ventilation openings should be roughly 1/10 of the floor area of the coop. For a 2 m x 1 m coop (2 m2 floor), you need at least 200 cm2 of ventilation opening: two 10 x 10 cm mesh-covered vents, or a continuous mesh strip along the eaves 10 cm deep." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Vent placement for the stack effect" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stack-effect-ventilation" } }], "text": "stack effect" },
+          { "type": "text", "text": " does the work of moving air through the coop without mechanical assistance. To use it effectively:" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place inlet vents low on the walls, below the level of the roost perch. These bring in fresh cool air." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place outlet vents as high as possible, ideally at or above ridge level. Hot, moisture-laden air exits through these. A ridge vent along the full length of the roof peak is the most effective configuration." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover all openings with hardware cloth (weld mesh, 12.5 mm x 12.5 mm) to exclude predators." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Avoiding draughts on the roost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "draught-vs-ventilation" } }], "text": "draught" },
+          { "type": "text", "text": " on a sleeping bird chills it through its feathers, which reduces its natural insulation. The critical principle is that air movement should pass above or below the roost, not across it. If you have a wall vent level with the perch, deflect air upward with a baffle board inside the coop so the incoming air hits the ceiling before circulating down." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Winter versus summer management" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "In winter, many keepers close vents to keep the coop warm. This is a mistake unless the ventilation is truly excessive. A cold, well-ventilated coop is healthier than a warm, damp one. Reduce opening sizes in cold weather if necessary, but never close all ventilation. In summer, maximise air flow; many commercial coops open the full eave line in July and August." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Condensation on the ceiling and walls every morning",
+              "cause": "Not enough ventilation outlet for the moisture the birds are producing overnight",
+              "fix": "Add more outlet ventilation at the highest point of the coop. Even a 10 x 50 cm mesh opening at ridge level makes a significant difference in a small coop."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Birds sneezing or showing bubbling eyes, worse in cold weather",
+              "cause": "Chronic respiratory disease exacerbated by ammonia irritation from poor ventilation",
+              "fix": "Improve ventilation immediately. If symptoms persist after the ammonia levels reduce (the coop no longer smells), consult a vet for diagnosis and treatment of the underlying infection."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

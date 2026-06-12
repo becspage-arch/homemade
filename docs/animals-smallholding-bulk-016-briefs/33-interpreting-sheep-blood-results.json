@@ -1,0 +1,113 @@
+{
+  "slug": "interpreting-sheep-blood-results",
+  "title": "Interpreting sheep blood test results",
+  "subtitle": "What the most common panels tell you about trace element status and metabolic health.",
+  "excerpt": "Blood testing a small sheep flock two to four times per year gives objective data on trace element levels and metabolic health that clinical observation alone cannot provide. The most common panels test cobalt/B12, selenium, copper, and metabolic indicators including BHB and NEFA. Understanding what the numbers mean lets you act before clinical signs appear.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "timeMinutes": 25,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sheep Veterinary Society, Blood Testing in Sheep (2021). AHDB Beef and Lamb, Trace Elements in Sheep (2022). SAC Consulting, Metabolic Profiling in Sheep (2020).",
+  "glossaryTerms": [
+    {
+      "slug": "bhb-sheep",
+      "term": "Beta-hydroxybutyrate (BHB)",
+      "definition": "A ketone body measured in blood. Elevated BHB indicates negative energy balance (pregnancy toxaemia risk in late-pregnancy ewes)."
+    },
+    {
+      "slug": "nefa-sheep",
+      "term": "NEFA",
+      "definition": "Non-esterified fatty acids. Elevated NEFA in late pregnancy indicates the ewe is mobilising body fat to compensate for insufficient feed intake."
+    },
+    {
+      "slug": "cobalt-b12-sheep",
+      "term": "Cobalt/B12",
+      "definition": "Cobalt is required by rumen microbes to synthesise vitamin B12. Low cobalt/B12 causes pine (cobalt deficiency), leading to poor growth and ill-thrift in lambs on cobalt-deficient pasture."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["sheep blood test results guide", "trace elements in sheep", "metabolic profiling ewes"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Blood testing in sheep is most useful when done as a flock profile rather than on individual sick animals. Testing 6 to 8 animals from each age group gives a picture of where the flock stands, and whether supplementation is needed before problems turn clinical." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trace element panels" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "" },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cobalt-b12-sheep" } }], "text": "Cobalt/B12" },
+            { "type": "text", "text": ": liver B12 is the most sensitive indicator. Blood B12 reflects recent exposure; liver B12 reflects long-term status. Marginal: 100 to 200 nmol/l blood B12. Deficient: below 100 nmol/l. Treatment: oral cobalt bullets or cobalt-fortified compound." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Selenium: whole blood selenium is the standard measurement. Marginal deficiency: 0.05 to 0.10 mg/l whole blood. Adequate: 0.10 to 0.25 mg/l. UK upland soils are very frequently selenium-deficient. Response includes white muscle disease in lambs (stiff hindquarters, difficulty walking)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Copper: normal serum range 9 to 19 micromol/l. High-molybdenum soils can cause low copper even when dietary intake is adequate. Do not supplement without a confirmed deficiency; excess copper is fatal in sheep." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Metabolic profile for late-pregnancy ewes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Blood " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bhb-sheep" } }], "text": "BHB" },
+          { "type": "text", "text": " and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nefa-sheep" } }], "text": "NEFA" },
+          { "type": "text", "text": " are the key metabolic indicators for ewes in the last 4 to 6 weeks of pregnancy. Test 6 to 8 ewes from the multiple-bearing group (twins and triplets)." }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "BHB below 0.6 mmol/l: normal. 0.6 to 0.8: marginal; increase energy supplementation. Above 0.8: sub-clinical pregnancy toxaemia; act urgently." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "NEFA above 0.4 mmol/l in the last 3 weeks: at risk of pregnancy toxaemia. Review feeding and consider a glucogenic drench such as propylene glycol." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Sampling protocol" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Blood for trace element testing should be taken before feeding and handled according to your vet's instructions (e.g. into specific vacutainers for different analytes). Samples for BHB and NEFA must be processed promptly; discuss with your vet or use a farm-side meter for BHB if immediate lab submission is not possible." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Results show low selenium but lambs look clinically healthy",
+              "cause": "Marginal deficiency without overt clinical signs; subclinical effects include reduced immunity and poor growth rate",
+              "fix": "Discuss with the vet whether to supplement selenate in compound feed, injectable selenium/vitamin E, or selenium bullets. The method depends on flock size and the degree of deficiency."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "BHB values elevated in the flock profile but no ewes looking unwell",
+              "cause": "Subclinical pregnancy toxaemia developing in multiple-bearing ewes with insufficient energy intake",
+              "fix": "Immediately increase the energy density of the late-pregnancy ration. Add a glucogenic supplement (molasses-glucose or propylene glycol drench) for the highest-BHB animals. Re-test in 10 days."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

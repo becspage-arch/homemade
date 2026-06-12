@@ -1,0 +1,109 @@
+{
+  "slug": "chicken-coop-litter-choices",
+  "title": "Choosing litter for a chicken coop",
+  "subtitle": "The properties that matter and what to use for each system.",
+  "excerpt": "Coop litter sits between the birds and the floor, absorbs moisture from droppings, dilutes ammonia, and composts slowly if managed as deep litter. The right material depends on your cleaning regime, climate, and whether you want litter to compost in place or be removed regularly.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gail Damerow, Storey's Guide to Raising Chickens (4th edn., 2017), litter chapter. Chris Graham, Haynes Chicken Manual (2nd edn., 2012). RSPCA, Keeping Chickens (2023).",
+  "glossaryTerms": [
+    {
+      "slug": "deep-litter-method",
+      "term": "Deep litter method",
+      "definition": "A litter management system where material is added on top of existing litter and turned periodically, building up a composting layer over several months rather than being cleaned out weekly."
+    },
+    {
+      "slug": "ammonia-litter",
+      "term": "Ammonia",
+      "definition": "Gas released from nitrogen compounds in droppings. High levels irritate respiratory tracts and are a major welfare concern in poorly managed coop litter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["chicken bedding", "coop substrate", "poultry litter guide"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Good litter management is one of the most practical contributions you can make to flock health. The ideal litter is absorbent, low in dust, hard to compact, and available locally at a reasonable cost. No single material is perfect in all respects." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What good litter does" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Absorbs moisture from droppings and reduces " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ammonia-litter" } }], "text": "ammonia" },
+            { "type": "text", "text": ", keeping footpads dry." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Provides cushioning on hard floors, particularly for heavy breeds prone to bumblefoot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Supports natural scratching and foraging behaviour." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common litter materials compared" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wheat straw: cheap and widely available. Good insulation but compacts quickly, especially when wet. Needs turning or topping up every 5 to 7 days in a frequently occupied coop." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chopped straw: better moisture absorption than long straw, less compact. Often sold as horse bedding; practical for poultry too." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wood shavings (dust-extracted): very absorbent, good for the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deep-litter-method" } }], "text": "deep litter method" },
+            { "type": "text", "text": ". Use only dust-extracted shavings; fine sawdust causes respiratory problems. Avoid cedar shavings, which have toxic oils." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hemp bedding: excellent absorption, low dust, very slow to compact. More expensive than straw or shavings but lasts significantly longer before needing replacement." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sand: very easy to clean with a scoop, does not compost in place. Works well in the run or under the perches but is cold in winter and heavy to change." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Managing litter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For weekly clean-out: remove all litter, scrub the floor, allow to dry, and lay fresh. This is simple but produces a large volume of used litter and removes any composting benefits." }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the deep litter method: start with 10 to 15 cm of wood shavings or straw. When the surface becomes damp, fork it over and add a top layer of fresh material. The mass composts, generates heat in winter, and reduces odour if done well. Clean out completely once or twice per year and use on the garden. The method fails if the litter gets too wet or is never turned." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Coop smells strongly of ammonia even after recent litter change",
+              "cause": "Too many birds for the coop floor area, or ventilation insufficient to carry moisture and ammonia away",
+              "fix": "Add more ventilation to the upper walls. Reduce stocking density if possible. For immediate relief, add a thick layer of fresh dry litter and increase turning frequency."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Litter gets wet under the perches within a day or two of cleaning",
+              "cause": "Most droppings fall under the perch overnight, concentrating moisture in one area",
+              "fix": "Install a dropping board under the perch and clean it daily or every other day. This removes the bulk of the overnight droppings before they saturate the floor litter."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "top-bar-hive-management",
+  "title": "Managing a top-bar hive",
+  "subtitle": "Inspections, comb management, and harvesting in a horizontal hive.",
+  "excerpt": "A top-bar hive (TBH) is a horizontal box in which bees build natural comb hanging from wooden bars across the top. There are no frames, no supers, and no spinner extraction: just a knife and a press. TBH management is gentler and simpler than Langstroth in some respects, but the natural comb requires more careful handling.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 90,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Phil Chandler, The Barefoot Beekeeper (3rd edn., 2009). Les Crowder and Heather Harrell, Top-Bar Beekeeping (2012). BBKA, Top-Bar Hives Factsheet (2021).",
+  "glossaryTerms": [
+    {
+      "slug": "natural-comb-tbh",
+      "term": "Natural comb",
+      "definition": "Beeswax comb built by bees from a starter strip on a top bar, following the colony's own cell-size preferences rather than a pre-formed foundation."
+    },
+    {
+      "slug": "follower-board",
+      "term": "Follower board",
+      "definition": "A solid board placed at the rear of the active colony in a top-bar hive to limit the space the bees manage and prevent cross-combing into unused bars."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["TBH beekeeping", "horizontal hive management", "Kenyan top bar hive"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "bee-smoker", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A top-bar hive keeps bees in a way that is close to their natural nest structure: combs of varying cell sizes hanging free, with the colony managing its own space from front to back. Your management job is to ensure the bees have enough room, that cross-combing does not occur, and that you can access each bar for inspection." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up and the follower board" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "New colonies start at the entrance end of the hive and build back. Use a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "follower-board" } }], "text": "follower board" },
+          { "type": "text", "text": " to limit the initial space to 8 to 10 bars. Move the follower board back by one or two bars every week in spring as the colony grows. Adding space too quickly before the bees can maintain temperature across it leads to poor brood development." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Inspecting" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the hive from the side by removing the roof. Use smoke at the entrance and at any gap you open." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the hive tool gently along the top edge of each bar to break propolis seals. Lift bars straight up, keeping the comb vertical at all times. " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "natural-comb-tbh" } }], "text": "Natural comb" },
+            { "type": "text", "text": " is fragile in warm weather; tilting a comb above 45 degrees risks it folding and breaking." }] }]
+          },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Inspect for queen presence, signs of disease, and space. A top-bar colony that is running out of room will start to build comb in the empty bars ahead of the follower board, which is a reliable signal to expand the space." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Harvesting honey" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Honey is harvested by removing bars of fully capped comb from the honey storage area (at the rear of the hive, furthest from the entrance). Cut the comb from the bar with a sharp knife and crush it in a muslin-lined sieve over a bucket. The honey drips through; the wax remains in the cloth. This takes 12 to 24 hours. One full-size top-bar comb yields 500 to 800 g of honey depending on cell depth." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Cross-combing and how to prevent it" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Cross-combing happens when bees build a comb attached to two adjacent bars rather than one. It makes individual bars impossible to remove without cutting. Prevent it by ensuring each bar has a wax starter strip (a thin triangle of wax foundation or melted wax) fixed to its underside, and by inspecting every 5 to 7 days in the main building season." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Comb breaks away from the bar when being lifted",
+              "cause": "Heavy honey-filled comb in warm weather; the wax softens above 35 C",
+              "fix": "Inspect during the cooler part of the day (early morning or evening). Support the comb from below with your other hand when lifting. Broken comb can be re-attached by wiring it to a new bar."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Bees are building cross-combs despite starter strips",
+              "cause": "Starter strips not firmly attached, or space between bars slightly too wide",
+              "fix": "Check bar spacing: the bee space between bars should be 8 to 9 mm (standard bee space). Wider gaps invite cross-building. Melt starter strips back on if they have detached."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

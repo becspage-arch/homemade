@@ -1,0 +1,112 @@
+{
+  "slug": "countryside-stewardship-basics-for-smallholders",
+  "title": "Countryside Stewardship basics for smallholders",
+  "subtitle": "What Mid Tier offers a small agricultural holding and how to navigate an application.",
+  "excerpt": "Countryside Stewardship (CS) is the main English agri-environment scheme. A smallholding that farms at least 3 hectares of registered agricultural land can apply to Mid Tier for annual payments to manage hedgerows, water margins, wildflower areas, and field corner habitats. The scheme has a set application window each year and requires a Farm Environment Record.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "timeMinutes": 25,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rural Payments Agency, Countryside Stewardship: How to Apply for Mid Tier (2023). Natural England, Countryside Stewardship Guidance for Applicants (2023). DEFRA, Farming for the Future: Agri-Environment Schemes (2022).",
+  "glossaryTerms": [
+    {
+      "slug": "farm-environment-record",
+      "term": "Farm Environment Record (FER)",
+      "definition": "A map of the holding that identifies habitat features eligible for Countryside Stewardship options. Required as part of a Mid Tier application."
+    },
+    {
+      "slug": "cs-option-code",
+      "term": "CS option",
+      "definition": "A Countryside Stewardship management unit identified by a code (e.g. AB8 for winter bird food, HK6 for hedgerow management). Each option has a fixed annual payment rate per hectare or per 100 metres."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["agri-environment scheme small farm", "Countryside Stewardship application", "CS Mid Tier smallholding"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Countryside Stewardship Mid Tier is administered through the Rural Payments Agency (RPA) and applied for through the Rural Payments Service online portal. The annual application window typically runs from January to July. Agreements last 5 years. Payments are made annually per " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cs-option-code" } }], "text": "CS option" },
+          { "type": "text", "text": " taken on." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Is your holding eligible?" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You must have at least 3 hectares of registered agricultural land. Land must be registered with the RPA in the Rural Land Register." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "You must have a Single Business Identifier (SBI) number and be registered with the Rural Payments Service." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The land must be under your management (owned, tenanted, or under a grazing agreement) for the duration of the 5-year agreement." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common options for smallholdings" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "HK6: Manage hedgerows at a fixed annual rate per 100 m. Requires cutting on a 2 or 3-year rotation rather than annually, leaving hedges to grow taller." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "HK3: Hedgerow restoration (planting gaps, paid per 100 m)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "WT4: Watercourse fencing (2 m riparian buffer, paid per metre). Excludes livestock from stream banks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "AB8: Flower-rich margins and plots, paid per hectare. Manages field corners or margins as diverse wildflower areas." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The Farm Environment Record" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "farm-environment-record" } }], "text": "Farm Environment Record" },
+          { "type": "text", "text": " is a map of your holding marked with the habitats and areas you plan to enter into each option. Complete it within the Rural Payments Service portal. Walk your land first, noting every hedgerow, watercourse, and potential option area." }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Getting advice before applying" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Natural England has local Higher Tier and Mid Tier advisers who will visit your holding free of charge and help identify the most appropriate options. Their input significantly improves the quality of an application. Contact your local Natural England office in January to request a visit before the application opens." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Application was rejected with 'land not eligible' error",
+              "cause": "Field parcels not registered in the Rural Land Register, or land boundaries differ between the RPA record and the actual field",
+              "fix": "Check your RPA land register map. Fields may need to be submitted as new parcel requests. Call the RPA helpline; they process boundary corrections during the application window."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Uncertain which option best fits a scrubby, rough-grass field corner",
+              "cause": "Multiple options may apply; the choice depends on the target species and existing habitat condition",
+              "fix": "Ask your Natural England adviser. Field corners with existing rough grass and scrub may qualify for higher-value options than basic AB8. The advisor's visit resolves these choices at no cost."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

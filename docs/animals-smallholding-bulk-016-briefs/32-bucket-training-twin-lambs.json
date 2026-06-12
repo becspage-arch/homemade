@@ -1,0 +1,106 @@
+{
+  "slug": "bucket-training-twin-lambs",
+  "title": "Bucket training twin lambs",
+  "subtitle": "Getting two lambs onto the bottle and eventually onto a bucket feeder.",
+  "excerpt": "When a ewe cannot feed twin lambs adequately, or when a lamb is orphaned, bucket or bottle feeding keeps it alive and growing. The transition from bottle to a self-service bucket feeder reduces the labour demand significantly. Getting two lambs onto the same bucket without one dominating the other is the main management challenge.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Lamb Survival and Management (2021). Practical Sheep Farming (British Sheep Dairying Association, 2020). John Seymour, Complete Self-Sufficiency (1976), sheep chapter.",
+  "glossaryTerms": [
+    {
+      "slug": "colostrum-ewe",
+      "term": "Colostrum",
+      "definition": "The first milk from a ewe after lambing, dense with antibodies. Lambs must receive at least 200 ml within the first 6 hours of life."
+    },
+    {
+      "slug": "ad-lib-bucket-feeder",
+      "term": "Ad-lib bucket feeder",
+      "definition": "A bucket fitted with a teat that allows lambs to feed at will. The bucket holds cold milk replacer, which does not ferment as quickly as warm, reducing the number of refills needed."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["bottle feeding lambs", "orphan lamb feeding", "pet lamb bucket training"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The first priority with any new lamb is " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colostrum-ewe" } }], "text": "colostrum" },
+          { "type": "text", "text": ". A lamb that has not had colostrum within 6 hours is at high risk; even if its ewe cannot provide enough, use frozen ewe colostrum, cow colostrum, or a commercial colostrum substitute. Never start a lamb on milk replacer before colostrum." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Bottle feeding: first 24 hours" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm colostrum or milk replacer to body temperature (38 to 39 C). Test on your wrist; it should feel warm but not hot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hold the lamb in a natural suckling position (supported upright, not on its back). Gently open the lamb's mouth and offer the teat. Most lambs latch instinctively once they have the teat correctly positioned." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Feed 50 ml per kg bodyweight every 4 hours in the first 24 hours. A 4 kg lamb needs 200 ml per feed, 6 times per day." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Transitioning to cold ad-lib bucket feeding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "From day 3 to 5, most lambs can begin to learn the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ad-lib-bucket-feeder" } }], "text": "ad-lib bucket feeder" },
+          { "type": "text", "text": ". Cold milk replacer (4 to 8 C) slows fermentation, reduces overeating, and cuts the labour to one or two bucket refills per day." }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the bucket with cold milk replacer mixed according to the manufacturer's rate. Fix the bucket at a comfortable height: the teat should sit just above snout level when the lamb stands naturally." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Show each lamb the teat by dipping it briefly in warm milk and guiding the lamb's snout to it. Some lambs learn within 10 minutes; others need 2 to 3 sessions over 2 days." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "With twin lambs, position the bucket so both can access a teat simultaneously. Observe that both are feeding; a larger or more assertive twin can prevent the smaller one from accessing the teat." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Weaning age" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Lambs can be weaned from milk replacer at 6 to 8 weeks of age, provided they are eating a minimum of 200 to 250 g of lamb starter pellets per day. Reduce milk access over 5 to 7 days rather than cutting off abruptly." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Lamb has a bloated abdomen and is uncomfortable after a feed",
+              "cause": "Overfeeding or too-warm milk causing abnormal rumen fermentation; or white muscle disease",
+              "fix": "Reduce the amount per feed. Ensure the lamb is not bolting large quantities at once. Persistent bloat with a stiff-legged gait may be white muscle disease (selenium deficiency); call the vet."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Smaller twin not gaining weight despite access to the bucket",
+              "cause": "Being displaced from the teat by the larger twin",
+              "fix": "Temporarily separate the twins for three feeds per day, offering the smaller one individual access to the teat. Once the smaller lamb is feeding confidently, re-introduce them together."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
