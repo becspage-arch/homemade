@@ -1,0 +1,188 @@
+{
+  "slug": "cone-6-crystalline-glaze-application",
+  "title": "Cone 6 crystalline glaze application",
+  "subtitle": "How to apply and fire a zinc silicate crystalline glaze that grows visible crystals during the firing cycle",
+  "excerpt": "Crystalline glazes produce large, snowflake-like crystals on the glaze surface by holding the kiln at a specific temperature below peak for several hours during the cooling cycle. The crystals grow from zinc silicate seeded into the glaze recipe. Application, kiln setup, and firing schedule are all critical , any deviation produces a different crystal pattern.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cone 6 crystalline glaze technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-smooth"],
+  "requiredCraftMaterials": ["cone-6-crystalline-glaze"],
+  "recipeTools": [
+    { "slug": "banding-wheel", "isOptional": false },
+    { "slug": "pottery-brush-mop", "isOptional": false },
+    { "slug": "electric-kiln-small", "isOptional": false },
+    { "slug": "kiln-shelf", "isOptional": false },
+    { "slug": "kiln-post", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "glossaryTerms": [
+    {
+      "slug": "crystalline-glaze",
+      "term": "Crystalline glaze",
+      "definition": "A glaze containing zinc silicate that grows visible macrocrystals during a precisely controlled cooling hold"
+    },
+    {
+      "slug": "nucleation",
+      "term": "Nucleation",
+      "definition": "The initial crystal growth stage: zinc silicate seed crystals form when the kiln hits the nucleation hold temperature"
+    },
+    {
+      "slug": "crystal-hold",
+      "term": "Crystal hold",
+      "definition": "The temperature range (usually 1050-1080 degrees C) at which the kiln is held for 1-4 hours to grow the crystals to visible size"
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "Pyrometric measure of heat-work in a kiln. Cone 6 is approx 1220 degrees C , the peak for this firing"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Crystalline glazes are high-run glazes: they flow significantly during firing and will adhere the pot to any shelf surface not protected by a wax-resist catch plate. Always fire crystalline-glazed pieces on a separate catch saucer that is sacrificed or removed after firing. Never fire directly on an unprotected kiln shelf. Silica dust: mix wet, wear a P100 respirator for all raw glaze powder handling. Do not open a hot kiln below 80 degrees C." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crystalline-glaze", "label": "Crystalline glaze" } }],
+            "text": "Crystalline glaze"
+          },
+          { "type": "text", "text": " results depend on three things: the glaze recipe, the thickness of application, and the firing schedule. Getting all three right at once takes several test firings. The technique below uses a pre-tested recipe; adapting to new recipes requires systematic testing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Piece preparation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Crystalline glazes work best on tall, smooth, tapered forms , vases and bottles , where the glaze can run downward without pooling on a flat surface. The piece must be bisque-fired and clean. Do not use crystalline glaze on flat-bottomed pieces without a catch plate beneath them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the glaze" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wax the base and the lower 20 mm of the exterior of the piece , crystalline glaze will run, and any glaze below this line will adhere the piece to the catch plate. Apply two coats of kiln wash wax or dip in hot wax." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Prepare the catch saucer: a flat bisque-fired disc 20 mm larger than the base of your piece, coated with alumina wash to prevent the running glaze from bonding permanently to the saucer. The piece sits on the saucer; both go into the kiln together." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply the crystalline glaze with a mop brush in three coats on the upper exterior, each coat applied in a different direction. Total thickness should be 2-3 mm. The glaze will look thick and lumpy , this is correct." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Firing schedule" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Ramp to " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone", "label": "cone" } }],
+                "text": "cone"
+              },
+              { "type": "text", "text": " 6 peak (1220 degrees C) at 100-150 degrees C per hour." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Drop immediately to " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nucleation", "label": "nucleation" } }],
+                "text": "nucleation"
+              },
+              { "type": "text", "text": " temperature: 1090 degrees C. Hold for 30 minutes. This sets the seed crystals." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Drop to the " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crystal-hold", "label": "crystal hold" } }],
+                "text": "crystal hold"
+              },
+              { "type": "text", "text": " range: 1060-1070 degrees C. Hold for 2-4 hours. Longer holds produce larger crystals." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Allow natural cool from the crystal hold temperature. Do not force-cool. Open kiln below 80 degrees C only." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What correct crystals look like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Successful crystalline glaze shows large, radiate crystal structures 15-50 mm across embedded in a smooth, glassy background. Each crystal has a visible hub with radiating spokes. Crystal colour varies from white to gold depending on glaze recipe and atmosphere. A blank surface with no crystals means the nucleation hold was too short or the glaze too thin. Crystals that have run off the piece mean the glaze was too thick or the hold temperature too high." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "No crystals formed",
+              "cause": "Nucleation hold was skipped or too brief; or glaze layer was too thin",
+              "fix": "Run a test tile with the same glaze at 3 mm thickness. Extend the nucleation hold to 45 minutes. Check the kiln thermocouple is calibrated."
+            },
+            {
+              "problem": "Glaze ran off the piece completely",
+              "cause": "Glaze applied too thickly; or peak temperature held too long",
+              "fix": "Reduce glaze thickness to 2 mm. Do not hold at peak temperature , ramp directly through and begin the drop immediately."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

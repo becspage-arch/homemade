@@ -1,0 +1,181 @@
+{
+  "slug": "soda-firing-introduction",
+  "title": "Soda firing introduction",
+  "subtitle": "How sodium bicarbonate vapour glazes stoneware in a combustion kiln without applying a liquid glaze",
+  "excerpt": "In soda firing, sodium bicarbonate or soda ash solution is introduced into a hot combustion kiln. The sodium vapour reacts with silica in the clay surface to create a glaze in-situ , no liquid glaze is applied to the pot. The result is a subtle, irregular surface with flashing and texture that reflects the specific position of each piece in the kiln.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Soda firing technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["stoneware-grogged"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "kiln-shelf", "isOptional": false },
+    { "slug": "kiln-post", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "glossaryTerms": [
+    {
+      "slug": "soda-firing",
+      "term": "Soda firing",
+      "definition": "A kiln atmosphere technique where sodium vapour , from bicarbonate or soda ash introduced at peak temperature , reacts with the clay surface to form a glaze in-situ"
+    },
+    {
+      "slug": "flashing",
+      "term": "Flashing",
+      "definition": "Colour variation on the clay surface caused by the uneven distribution of soda vapour in the kiln , a characteristic effect of soda, wood, and salt firing"
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "Pyrometric measure of heat-work. Soda firing typically targets cone 10 (approx 1280 degrees C)"
+    },
+    {
+      "slug": "wadding",
+      "term": "Wadding",
+      "definition": "A mixture of alumina and kaolin pressed into small pads, used to support pots on kiln shelves and prevent them sticking when glaze flashes onto the base"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": { "variant": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Soda firing requires a fuel-fired kiln (gas, propane, or wood) , electric kilns cannot be used. Introducing sodium compounds into a hot kiln produces caustic vapour and requires full face protection (face shield, not just glasses), heat-resistant gloves, and a respirator rated for caustic gases. The kiln must be set up outdoors or in a purpose-built firing shed with adequate ventilation. Do not introduce soda compounds into the kiln without appropriate personal protective equipment. This technique is for studio potters with access to an appropriate kiln setup." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soda-firing", "label": "Soda firing" } }],
+            "text": "Soda firing"
+          },
+          { "type": "text", "text": " is in the same family as salt firing but uses sodium bicarbonate or soda ash instead of rock salt. Both produce a sodium vapour that creates glaze from the clay surface itself. Soda gives a slightly softer, more matte result than salt; the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flashing", "label": "flashing" } }],
+            "text": "flashing"
+          },
+          { "type": "text", "text": " patterns are unique to each firing because they depend on the position of each pot relative to the burners and the soda introduction points." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Clay body requirements" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soda firing works best with high-fire grogged stoneware. The grog adds texture that the soda vapour clings to, accentuating the surface quality. Low-fire earthenware clay bodies cannot withstand soda firing temperatures." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Kiln loading" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Bisque fire all pots before loading the soda kiln. Apply slips or engobes to surfaces where colour variation is wanted , slips modify how the soda vapour reacts with the clay. Pieces that will be fully soda-glazed should not have liquid glaze applied , the soda coating is the glaze." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Support all pots on " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wadding", "label": "wadding" } }],
+                "text": "wadding"
+              },
+              { "type": "text", "text": " , soda vapour can flash onto any bare clay-to-shelf contact and fuse the pot to the shelf. Wadding lifts the pot free and makes removal after firing straightforward." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Space pots with more clearance than a standard glaze firing , soda vapour needs to travel around all surfaces." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Soda introduction" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [
+              { "type": "text", "text": "Fire the kiln to " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cone", "label": "cone" } }],
+                "text": "cone"
+              },
+              { "type": "text", "text": " 10 (approx 1280 degrees C) using the kiln's standard firing schedule. Introduce the soda when the kiln reaches peak temperature, not before." }
+            ]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix sodium bicarbonate with water to form a thick slurry. Introduce through the kiln spy hole or dedicated soda ports using a long-handled spray system or a soda bucket poured against the flame path. A total of 200-300 g of sodium bicarbonate per cubic foot of kiln space is a typical starting quantity." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Introduce the soda in three to four additions spaced 15 minutes apart. Each introduction produces a burst of vapour that travels through the kiln. Check draw tiles after the final addition to assess surface quality." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What successful soda firing looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A good soda-fired surface has irregular flashing from orange to brown to grey, a subtle texture where the clay body shows through, and a slight sheen that is neither fully matte nor fully glassy. Each piece from the same firing looks related but not identical. This variability is a characteristic of the process, not a defect." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "Surface looks underfired , no soda reaction, dry and sandy",
+              "cause": "Soda introduced before peak temperature, or insufficient soda quantity",
+              "fix": "Introduce soda only at peak temperature. Increase to 300 g per cubic foot on the next firing."
+            },
+            {
+              "problem": "Pots stuck to kiln shelves",
+              "cause": "Wadding was insufficient or the pot was placed directly on the shelf without wadding",
+              "fix": "All pots in soda firing must be wadded. Use alumina-kaolin wadding balls at three or four points under each piece."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
