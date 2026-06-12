@@ -1162,6 +1162,21 @@ async function main() {
   }
 
   console.log(`\nDone. ${patterns.length} patterns upserted.`)
+
+  const pendingProductShot = await prisma.sewingPattern.count({
+    where: {
+      garmentCategory: { in: ['ACCESSORIES'] },
+      heroProductShotMediaId: null,
+      heroProductShotFallback: false,
+    },
+  })
+  if (pendingProductShot > 0) {
+    console.log(
+      `\nS-8b: ${pendingProductShot} accessory patterns still need a product-shot hero.\n` +
+        `Run apps/web/scripts/generate-sewing-product-shots.ts in a Claude Code\n` +
+        `worker session (Fal Flux 1.1 Pro generate + Claude vision self-judge).`,
+    )
+  }
 }
 
 main()

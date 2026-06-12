@@ -1389,6 +1389,16 @@ model Media {
   // Sewing S-2 (phase_sewing_schema_001).
   sewingPatternHeros SewingPattern[] @relation("SewingPatternHero")
 
+  // Sewing S-8b: AI-generated product-shot heroes for bag / home /
+  // accessory patterns.
+  sewingPatternHeroProductShots SewingPattern[] @relation("SewingPatternHeroProductShot")
+
+  // Optional semantic category for Media rows where the source / type pair
+  // doesn't fully disambiguate. Set by category-specific generators (S-8b
+  // for product shots; future flat-drawing batches likewise). Null on all
+  // pre-existing rows.
+  kind MediaKind?
+
   // Crochet image pipeline (phase_crochet_image_pipeline).
   stitchPreviews Stitch[] @relation("StitchPreview")
 
@@ -1427,9 +1437,17 @@ enum MediaVerificationStatus {
   SYNTHETIC_FALLBACK
 }
 
+/// Semantic kind tag for Media rows produced by a specific generator.
+/// Optional; pre-existing rows leave it null. Lets queries filter for "all
+/// product-shot heroes" without overloading the Media.type / Media.source
+/// pair.
+enum MediaKind {
+  HERO_PRODUCT_SHOT
+}
+
 /// Shared by Tutorial.diagramGenerationStatus, Pattern.heroGenerationStatus,
 /// and CrochetPattern.heroGenerationStatus. Each pipeline only writes a
-/// subset of these values — Pipeline A (diagrams) never sets
+/// subset of these values. Pipeline A (diagrams) never sets
 /// SYNTHETIC_FALLBACK; Pipeline B (heroes) never sets NO_SOURCE.
 enum ImageGenerationStatus {
   PENDING
@@ -5351,6 +5369,22 @@ model SewingPattern {
   visibility             Visibility            @default(PRIVATE)
   publishedAt            DateTime?
 
+  // Secondary product-shot hero for the bag / home / accessory sub-cats
+  // where industry convention is product photography rather than a flat
+  // line drawing (S-8b). Bag / home / accessory pattern detail pages render
+  // both the S-8a parametric flat and this product shot; library cards use
+  // whichever is set. `heroProductShotFallback=true` means the autonomous
+  // worker exhausted 5 retries and the S-8a flat stays the only hero.
+  // `heroProductShotScriptVersion` lets a future run force a regenerate
+  // by bumping the version on the pattern. The 5-attempt retry budget is
+  // tracked in `heroProductShotAttempts`.
+  heroProductShotMediaId       String?
+  heroProductShot              Media?   @relation("SewingPatternHeroProductShot", fields: [heroProductShotMediaId], references: [id], onDelete: SetNull)
+  heroProductShotPrompt        String?
+  heroProductShotAttempts      Int      @default(0)
+  heroProductShotFallback      Boolean  @default(false)
+  heroProductShotScriptVersion Int      @default(1)
+
   // Errata and credits. `errataLog` is an append-only log of corrections
   // since the version was cut; the Studio shows it in the pattern footer.
   // `testerCredits` carries the role-and-credit pairs surfaced in the
@@ -5378,6 +5412,7 @@ model SewingPattern {
   @@index([isFreesewingDesign])
   @@index([skillLevel])
   @@index([heroMediaId])
+  @@index([heroProductShotMediaId])
   @@index([tutorialId])
   @@index([visibility, publishedAt])
 }
